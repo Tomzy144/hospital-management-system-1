@@ -1,9 +1,16 @@
+<?php include '../../backend/config/connection.php';?>
+<?php include 'backend/config/session-validation.php';?>
+
+<?php
+ $staff_id= $_POST['staff_id'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dashboard.css">
      <!-- font aweasome link-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Hospital management System</title>
@@ -18,7 +25,7 @@
     <div class="div-logo">
         <a href="#">Hospital management System</a>
     </div>
-    <a href="signin.html">
+    <a href="../index.php">
     <button class="signIn">SignOut</button>
 </a>
 </div>
