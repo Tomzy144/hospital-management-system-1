@@ -1,4 +1,4 @@
-<?php include '../config/connection.php';?>
+<?php include '../../backend/config/connection.php';?>
 
 <?php require_once('session-validation.php');?>
 
@@ -8,7 +8,7 @@
 
 	case 'get_page':
 		$page=$_POST['page'];
-		require_once ('dashboard.php');
+		require_once ('page-content.php');
 	break;
 
 	case 'record':
@@ -31,7 +31,7 @@
 
 	case 'dashboard':
 		$page=$_POST['page'];
-		require_once ('dashboard.php');
+		require_once ('page-content.php');
 	break;
 
 	case 'get_menu_page':
@@ -50,6 +50,7 @@
 		session_destroy();
 		?>
 		<script>
+			window.alert("Logging Out");
 		window.parent(location="../../");
 		</script>
 		<?php

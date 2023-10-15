@@ -30,6 +30,7 @@ function _sign_in(){
         user_login(email,password);
     }else{
         $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
+        window.alert("Fill the neccessary field")
     }
 };
 
@@ -60,11 +61,13 @@ function user_login(email,password){
    if(scheck==1){
     $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
     $('#loginform').submit();
+    window.alert("Welcome Back")
    }else if(scheck==2){
+    window.alert("Account does not exists")
            $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
     }else{
     $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid Email or Password</span>').fadeIn(500).delay(5000).fadeOut(100);
-
+    window.alert("Account does not exists")
     }
     $('#login_btn').html(btn_text);
     document.getElementById('login_btn').disabled=false;
