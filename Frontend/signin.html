@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Signin.css">
+    <title>SignIn</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+        <h2>Please SignIn</h2>
+        <form action="" id="passwordSubmit">
+           <div class='form-control'>
+                <input type='text' required autoComplete='off' />
+                <label>Your Full Name</label>
+            </div> 
+            <div class='form-control'>
+                <input type='email' required autoComplete='off' id="confirmEmail"/>
+                <label for='email'>Email</label>
+            </div>
+         
+            <div class='form-control'>
+                <label for="password" name="password">Password</label>
+                <input type="password" id="password"  required autocomplete="off">
+            </div>
+           
+             <div class='form-control'>
+                <label for="confirmPassword" name="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" required autocomplete="off">
+            </div> 
+            <button type="submit"  class='btn' id="submission">Submit</button>
+           
+            <!-- <p class='text'>Dont have an account?
+             <a href='/register'>Register</a>
+            </p> -->
+        </form>
+    </div>
+  </div>
+
+    <script src="signin-form-validation.js"></script>
+</body>
+</html>

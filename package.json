@@ -1,0 +1,17 @@
+{
+  "name": "hospital-management-system",
+  "version": "1.0.0",
+  "description": "\"Hospital Management System\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"Kingsley Effiong Etete\"",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "http": "^0.0.1-security",
+    "icons": "^1.0.0",
+    "react": "^18.2.0"
+  }
+}
