@@ -21,6 +21,7 @@ if($s_staff_id!=''){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Frontend/index.css">
+    <link rel="icon" href="Frontend/Images/1282798.jpg">
     <title>SignIn</title>
 
 </head>
@@ -54,9 +55,9 @@ if($s_staff_id!=''){
             </div>  -->
             <button type="button"  class='btn' id="login_btn" title="Login" onclick="_sign_in()" >Submit</button>
            
-            <!-- <p class='text'>Dont have an account?
-             <a href='/register'>Register</a>
-            </p> -->
+            <p class='text'>
+             <a href='/Frontend/forgotten-password.html' class="password-link">Forgotten Password</a>
+            </p>
         </form>
     </div>
   </div>
