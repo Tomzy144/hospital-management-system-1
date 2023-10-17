@@ -105,14 +105,15 @@ function _proceed_reset_password(){
             var staff_id = data.staff_id;
                 
             if(scheck==1){ //user Active
+                window.alert("success");
                 _reset_password(staff_id);
-                windows.alert("sucess");
             }else if(scheck==2){ //user suspended
+                window.alert("account suspended");
                 $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
-                windows.alert("user suspended");
+                window.alert("user suspended");
             }else{
                 $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid INVALID  EMAIL ADDRESS</span>').fadeIn(500).delay(5000).fadeOut(100);
-                windows.alert("User does not exists");
+                window.alert("User does not exists");
             }
             $('#reset_pwd_btn').html(btn_text);
             document.getElementById('reset_pwd_btn').disabled=false;
