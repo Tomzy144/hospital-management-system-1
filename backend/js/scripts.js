@@ -82,6 +82,7 @@ function user_login(email,password){
 function _proceed_reset_password(){
     var email = $('#reset_password_email').val();
     if((email=='')||(email.indexOf('@')<=0)){
+        window.alert("enter your email");
         $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Please Enter Your Email Address<br /><span></span>').fadeIn(500).delay(5000).fadeOut(100);
     }else{
    //////////////// get btn text ////////////////
@@ -94,7 +95,7 @@ function _proceed_reset_password(){
     var dataString ='action='+ action+'&email='+ email;
     $.ajax({
     type: "POST",
-    url: "config/code.php",
+    url: "../backend/config/code.php",//otp-reset.php
     data: dataString,
     cache: false,
     dataType: 'json',
@@ -105,11 +106,13 @@ function _proceed_reset_password(){
                 
             if(scheck==1){ //user Active
                 _reset_password(staff_id);
+                windows.alert("sucess");
             }else if(scheck==2){ //user suspended
                 $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
+                windows.alert("user suspended");
             }else{
                 $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid INVALID  EMAIL ADDRESS</span>').fadeIn(500).delay(5000).fadeOut(100);
-
+                windows.alert("User does not exists");
             }
             $('#reset_pwd_btn').html(btn_text);
             document.getElementById('reset_pwd_btn').disabled=false;
@@ -126,11 +129,13 @@ function _reset_password(staff_id){
     var dataString ='action='+ action+'&staff_id='+ staff_id;
     $.ajax({
     type: "POST",
-    url: "config/code.php",
+    url: "../backend/config/code.php",
     data: dataString,
     cache: false,
     success: function(html){
         $('#next_2').html(html);
+        // $('/../../frontend/otp.reset.php').html(html);
+        // window.parent(location="../frontend/otp-reset.php").html(html);
     }
     });
 }
@@ -167,10 +172,12 @@ function _finish_reset_password(staff_id){
     var cpassword = $('#r_cpassword').val();
     
     if((otp=='')||(password=='')||(cpassword=='')){
+        window.alert("Please fill the neccessary field");
         $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Please Fill All Fields<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
     }else{
         
             if(password!=cpassword){
+                window.alert("Passwords doesn't match");
                 $('#not-success-div').html('<div><i class="bi-x-circle"></i></div> Password NOT Match<br /><span>Check the password and try again</span>').fadeIn(500).delay(5000).fadeOut(100);
             }else{
             if ((password.match(/^(?=[^A-Z]*[A-Z])(?=[^!"#$%&'()*+,-.:;<=>?@[\]^_`{|}~]*[!"#$%&'()*+,-.:;<=>?@[\]^_`{|}~])(?=\D*\d).{8,}$/))&&(password.length>=8)) {
@@ -183,7 +190,7 @@ function _finish_reset_password(staff_id){
         var dataString ='action='+ action+'&staff_id='+ staff_id+'&otp='+ otp+'&password='+ password;
             $.ajax({
             type: "POST",
-            url: "config/code.php",
+            url: "../backend/config/code.php",
             data: dataString,
             cache: false,
             dataType: 'json',
@@ -192,6 +199,9 @@ function _finish_reset_password(staff_id){
             var scheck = data.check;
             if(scheck==1){
                 _password_reset_completed(staff_id);
+                window.alert("Password reset successful");
+               window.parent(location="../index.php").html(html);
+
             }else{
                 $('#not-success-div').html('<div><i class="bi-x-circle"></i></div> INVALID OTP<br /><span>Check the OTP and try again</span>').fadeIn(500).delay(5000).fadeOut(100);
             $('#finish-reset-btn').html(btn_text);

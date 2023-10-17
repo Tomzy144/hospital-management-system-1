@@ -55,8 +55,7 @@
 			
 		?>
 					<script>
-					window.parent(location="../../frontend/dashboard.php");
-					windows.alert("hello");
+						window.parent(location="../../frontend/dashboard.php");
 					</script>
 		<?php
 			
@@ -97,11 +96,17 @@
 		  $otp = rand(111111,999999);
 		  ////////////////update user OTP///////////////
 		  mysqli_query($conn,"UPDATE staff_tab SET otp='$otp' WHERE staff_id ='$staff_id'") or die("cannot update staff_tab");
-		  ////////////////send OTP true email///////////////
+		  ////////////////send OTP through email///////////////
 		//   $mail_to_send='send_reset_password_otp';
 		//   require_once('mail/mail.php');
 		$page=$action;
-	 require_once('page-content.php');
+	 require_once('../../frontend/otp-reset.php');
+	 ?>
+	<!-- <script>
+	 	window.parent(location="../frontend/otp-reset.php");
+ 	</script> -->
+ <?php 
+	
 	break;
 
 
@@ -117,7 +122,7 @@
 		mysqli_query($conn,"UPDATE staff_tab SET otp='$otp' WHERE staff_id ='$staff_id'")or die("cannot update staff_tab");
 		////////////////send OTP true email///////////////
 		//$mail_to_send='send_reset_password_otp';
-		require_once('page-content.php');
+		// require_once('../../frontend/otp-reset.php');
 	break;	
 
 
