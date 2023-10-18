@@ -13,8 +13,6 @@ $page=='reset_password';
              ?>
   
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
