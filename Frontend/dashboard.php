@@ -32,7 +32,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard.css">
      <!-- font aweasome link-->
+     <!--Clould Font-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!--Tomiwa font-->
+<link href="Frontend/awesome-font/awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <title>Hospital management System</title>
 </head>
 
@@ -40,6 +43,7 @@
 <div class="navbar" > 
     <div class="toggle" id="open-toggle">
         <i class="fas fa-bars"></i>
+        <!-- <i class="fa fa-heart"></i> -->
 
     </div>
     <div class="div-logo">
