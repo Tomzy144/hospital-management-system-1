@@ -35,7 +35,7 @@
      <!--Clould Font-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <!--Tomiwa font-->
-<link href="Frontend/awesome-font/awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+<link href="awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <title>Hospital management System</title>
 </head>
 
