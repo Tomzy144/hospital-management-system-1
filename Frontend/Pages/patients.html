@@ -3,23 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="../index.css">
     <title>Patient</title>
 </head>
 <body>
    <div class="patient-container">
     <div  class="patient-navbar">
-        <h2>Hospital Management System</h2>
+        <h2>Patient Admission Lists</h2>
     </div>
         <div class="nav-menu">
 
             <ul class="menu-items">
+                <a href="#">
                 <li class="items">
-                    <i class="fas fa-user"  id="card-icons"></i>
+                    <i class="fa fa-book "></i>
+                    <h4>Notes</h4>
                 </li>
+            </a>
+                <a href="#">
+                <li class="items">
+                    <i class="fa fa-check "></i>
+                    <h4>Activity Log</h4>
+                </li>
+            </a>
+                <a href="#">
+                <li class="items">
+                    <i class="fa fa-registered"></i>
+                    <h4>Results</h4>
+                </li>
+            </a>
+                <a href="#">
+                <li class="items">
+                    <i class="fa fa-bed"></i>
+                    <h4>Wards</h4>
+                </li>
+            </a>
+                <a href="#">
+                <li class="items">
+                    <i class="fa fa-user-circle-o"></i>
+                    <h4>Reception</h4>
+                </li>
+            </a>
             </ul>
     </div>
+    <div class="search-container">
+    <div class="search-bar">
+        <div id="select">
+            <p id="selectText"></p>
+            <i class="fa fa-sort-desc"></i>
+            <ul id="list">
+                <li class="options">All </li>
+                <li class="options">Inpatients </li>
+                <li class="options">Outpatients</li>
+                <li class="options">Waiting List</li>
+                <li class="options">Appointment</li>
+                <li class="options">Test</li>
+                <li class="options">ANC</li>
+                <li class="options">Today inputs</li>
+            </ul>
+        </div>
+        <input type="search" id="inputfield" placeholder="Search In All Categories">
+        <i class="fa fa-search" id="submit-input"></i>
+    </div> 
+</div>
+    <div class="div-table">
+    <table border="2">
+    <thead> 
+        <th>
+             <d>#</d>
+        </th>
+        <th>
+            <d>Patient's Name</d>
+        </th>
+        <th>
+            <d>Number</d>
+        </th>
+        <th>
+            <d>Status</d>
+        </th>
+    </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Loveth</td>
+                <td>DE-17012</td>
+                <td><i class="fa fa-circle" id="color-changing"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
    </div>
+   <script>
+    const select =  document.getElementById("select");
+    const list = document.getElementById("list");
+    const selectText = document.getElementById("selectText");
+    const options = document.getElementsByClassName("options");
+    const inputfield = document.getElementById("inputfield");
+    const submitInput = document.getElementById("submit-input");
+
+
+    select.addEventListener("click", function(){
+        list.classList.toggle("open");
+    })
+
+    const user = 1;
+    submitInput.addEventListener("load", function(){
+        submitInput.innerHTML = user.toString();
+    })
+
+    for(option of options){
+        option.addEventListener("click", function(){
+            selectText.innerHTML = this.innerHTML;
+            inputfield.placeholder = 'Search In ' + selectText.innerHTML
+        })
+    }
+   </script>
 </body>
-</html>
+</html> 

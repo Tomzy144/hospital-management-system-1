@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="dashboard.css">
      <!-- font aweasome link-->
      <!--Clould Font-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
 <!--Tomiwa font-->
 <link href="awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <title>Hospital management System</title>
@@ -42,8 +42,7 @@
 <body>
 <div class="navbar" > 
     <div class="toggle" id="open-toggle">
-        <i class="fas fa-bars"></i>
-        <!-- <i class="fa fa-heart"></i> -->
+        <i class="fa fa-navicon (alias)"></i>
 
     </div>
     <div class="div-logo">
@@ -53,58 +52,58 @@
         <form method="post" action="../backend/dashboardconfig/code.php" id="logoutform">
             <input type="hidden" name="action" value="logout"/>    
           
-            <button class="signIn"  onclick="document.getElementById('logoutform').submit();">SignOut</button>
+            <button class="signIn"  onclick="document.getElementById('logoutform').submit();"><i class="fa fa-sign-out"></i></button>
         </form>
 </div>
 
 <nav class="sidebar" id="sidebar" >
     <div class="menu-content">  
         <div class="close-toggle" id="close-toggle">
-        <i class="fas fa-times"></i>  
+        <i class="fa fa-times"></i>  
     </div>
         <ul class="menu-items">
             <li class="items">
-                <i class="fas fa-user"></i>
+                <i class="fa fa-user"></i>
                 <a href="">Patients</a>
             </li>
             <li class="items">
-                <i class="fas fa-user-md"></i>
+            <link href="awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
                 <a href="">Doctor</a>
             </li>
             <li class="items">
-                <i class="fas fa-user-nurse"></i>
+                <i class="fa fa-user-md"></i>
                 <a href="">Nurse</a>
             </li>
             <li class="items">
-                <i class="fas fa-prescription-bottle"></i>
+                <i class="fa fa-plus-square "></i>
                 <a href="">Phamacy</a>
             </li>
             <li class="items">
-                <i class="fas fa-flask"></i>
+                <i class="fa fa-flask"></i>
                 <a href="">Labouratory</a>
             </li>
             <li class="items">
-                <i class="fas fa-clipboard-list"></i> 
+                <i class="fa fa-hospital-o"></i> 
                 <a href="">Precedures</a>
             </li>
             <li class="items">
-               <i class="fas fa-money-bill"></i> 
+               <i class="fa fa-money "></i> 
                 <a href="">Finance</a>
             </li>
             <li class="items">
-                <i class="fas fa-user-tie"></i>
+                <i class="fa fa-user-circle-o"></i>
                 <a href="">Receptionist</a>
             </li>
             <li class="items">
-                <i class="fas fa-stethoscope"></i>
+                <i class="fa fa-stethoscope"></i>
                 <a href="">Physiotherapy</a>
             </li>
             <li class="items">
-                <i class="fas fa-users"></i> 
+                <i class="fa fa-users"></i> 
                 <a href="">Staffs</a>
             </li>
             <li class="items">
-                <i class="fas fa-bed"></i>
+                <i class="fa fa-bed"></i>
                 <a href="">Wards & Beds</a>
             </li>
         </ul>
@@ -118,7 +117,7 @@
             <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-user"  id="card-icons"></i>
+                <i class="fa fa-user"  id="card-icons"></i>
             </div>
                 <h2>Patients</h2>
         </div>
@@ -126,7 +125,7 @@
     <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-user-md"  id="card-icons"></i>
+                <i class="fa fa-user-md"  id="card-icons"></i>
             </div>
                 <h2>Doctor</h2>
         </div>
@@ -134,7 +133,7 @@
     <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-user-nurse" id="card-icons"></i>
+                <i class="fa fa-user-md" id="card-icons"></i>
             </div>
                 <h2>Nurse</h2>
         </div>
@@ -142,7 +141,7 @@
     <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-prescription-bottle"  id="card-icons"></i>
+                <i class="fa fa-plus-square "  id="card-icons"></i>
             </div>
                 <h2>Phamacy</h2>
         </div>
@@ -152,7 +151,7 @@
      <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-flask" id="card-icons"></i>
+                <i class="fa fa-flask" id="card-icons"></i>
             </div>
                 <h2>Labouratory</h2>
         </div>
@@ -160,7 +159,7 @@
         <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-clipboard-list" id="card-icons"></i> 
+                <i class="fa fa-hospital-o" id="card-icons"></i> 
             </div>
                 <h2>Precedures</h2>
         </div>
@@ -168,7 +167,7 @@
     <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-money-bill" id="card-icons"></i> 
+                <i class="fa fa-money " id="card-icons"></i> 
             </div>
                 <h2>Finance</h2>
         </div>
@@ -176,7 +175,7 @@
     <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-user-tie" id="card-icons"></i>
+                <i class="fa fa-user-circle-o" id="card-icons"></i>
             </div>
                 <h2>Receptionist</h2>
         </div>
@@ -186,7 +185,7 @@
      <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-stethoscope" id="card-icons"></i>
+                <i class="fa fa-stethoscope" id="card-icons"></i>
             </div>
                 <h2>Physiotherapy</h2>
         </div>
@@ -194,7 +193,7 @@
         <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-users" id="card-icons"></i> 
+                <i class="fa fa-users" id="card-icons"></i> 
             </div>
                 <h2>Staffs</h2>
         </div>
@@ -202,7 +201,7 @@
     <a href="#">
         <div class="cards">
             <div class="card-icons">
-                <i class="fas fa-bed" id="card-icons"></i>
+                <i class="fa fa-bed" id="card-icons"></i>
             </div>
                 <h2>Wards & Beds</h2>
         </div>
@@ -211,22 +210,6 @@
     </div>
     </div>
 </main>
-
-
-       
-  
-
     <script src="dashboard.js"></script>
 </body>
 </html>
-
-
-
-<!--Font awesome Linking -->
-    <!-- <i class="fas fa-home"></i>
-    <i class="fas fa-heart"></i>
-    <i class="fas fa-star"></i> -->
-
-    <!-- You can customize icons as needed -->
-    <!-- <i class="fas fa-smile fa-2x"></i>
-    <i class="fas fa-camera fa-lg"></i> -->

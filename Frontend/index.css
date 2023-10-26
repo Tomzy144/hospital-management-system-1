@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:cambria;
 }
 
 
@@ -142,19 +143,132 @@ h2{
 
 .patient-container{
     width: 100%;
-    height: 10vh;
+    height: 100vh;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: red;
+    background-color: rgb(255, 255, 255);
 }
 .patient-navbar{
     background-color:rgb(4 47 46);
     height: 60px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.nav-menu{
+    width:100%;
+    height: 8vh;
+    max-width: 100%;
+    border-bottom: 1px solid rgb(200, 195, 195);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.menu-items{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.items {
+    text-decoration: none;
+    margin: 0 0.4rem;
+    display: flex;
+    color: #ffffff;
+    font-size: 1rem;
+    background-color:rgb(4 47 46);
+    padding: 0.5rem;
+}
+a{
+    text-decoration: none;
+}
+.search-container{
     width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar{
+    background-color: #ffffff; 
+    box-shadow: 2px 2px 2px 2px rgb(208, 206, 206);
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    padding: 2px;
+    align-items: center;
+    height: 60px;
+    border-radius: 4px;
 }
 
+#select{
+    background-color: #11283f; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 300px;
+    padding: 19px 20px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px ;
+}
+
+#select ul{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: #11283f; 
+    color: rgb(255, 255, 255);
+    width: 100%;
+    border-radius:4px ;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+#select ul li{
+    padding: 10px 20px; 
+    cursor: pointer;
+    list-style: none;
+}
+input{
+    padding: 10px 25px;
+    border: none;
+    width: 50%;
+    outline: none;
+    font-size: 18px;
+} 
+#select ul.open{
+    max-height: 400px;
+}
+#submit-input{
+    font-size: 1.3rem;
+    color: #11283f; 
+    cursor: pointer;
+}
+.div-table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;;
+}
+table{
+    border: none;
+    width: 70%;
+    text-align: center;
+    font-size: 1.4rem;
+}
+thead th{
+    border: none;
+    border-bottom: 1px solid #dad7d7;  
+}
+
+tbody tr td{
+    border: none;
+}
+#color-changing{
+    color: rgb(236, 83, 0) !important;
+}
