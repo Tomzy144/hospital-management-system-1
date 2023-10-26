@@ -82,13 +82,28 @@ function _get_role_details($conn, $role_id){
 }
 
 /////////////////////////////////////////
-function _get_status_details($conn, $status_id){
-    $query=mysqli_query($conn, "SELECT * FROM status_tab WHERE status_id='$status_id'");    
-    $fetch=mysqli_fetch_array($query);
-    $status_name=$fetch['status_name'];
+// function _get_status_details($conn, $status_id){
+//     $query=mysqli_query($conn, "SELECT * FROM status_tab WHERE status_id='$status_id'");    
+//     $fetch=mysqli_fetch_array($query);
+//     $status_name=$fetch['status_name'];
 
-    return '[{"status_name":"'.$status_name.'"}]';
+//     return '[{"status_name":"'.$status_name.'"}]';
+// }
+function _get_status_details($conn, $status_id) {
+    $query = mysqli_query($conn, "SELECT status_name FROM status_tab WHERE status_id = '$status_id'");
+    
+    if ($fetch = mysqli_fetch_assoc($query)) {
+        // Fetch the result as an associative array
+
+        // Encode the associative array as a JSON string
+        return json_encode($fetch);
+    } else {
+        // Handle the case where no results were found for the given status_id.
+        return json_encode(array("error" => "Status not found"));
+    }
 }
+
+
 
 function _get_user_details($conn, $s_staff_id){
     $query=mysqli_query($conn, "SELECT * FROM staff_tab WHERE staff_id='$s_staff_id'");    
@@ -144,6 +159,24 @@ function _get_staff_profile_details($conn, $staff_id){
 }
 
 
+
+function _get_patient_profile_details($conn, $patient_id){
+    $query=mysqli_query($conn, "SELECT * FROM patient WHERE patient_id='$patient_id'");
+    $fetch=mysqli_fetch_array($query);
+        $patient_id=$fetch['patient_id'];
+        $fullname=$fetch['fullname'];
+        $email=$fetch['email'];
+        $phonenumber=$fetch['phonenumber'];
+        $role_id=$fetch['role_id'];
+        $status_id=$fetch['status_id'];
+        $passport=$fetch['passport'];
+		$date=$fetch['date'];
+		$last_login=$fetch['last_login'];
+
+    return '[{"patient_id":"'.$patient_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
+}
+
+
 /////////////////////////////////////////
 function _get_sequence_count($conn, $item){
 	$count=mysqli_fetch_array(mysqli_query($conn,"SELECT counter_value FROM counter_tab WHERE counter_id = '$item' FOR UPDATE"));
@@ -189,22 +222,38 @@ function _get_total_count($conn, $pcount) {
 
 
 
-function _get_patient_details($conn, $patient_id){
-    $query=mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");    
-    $fetch=mysqli_fetch_array($query);
-    $patient_id=$fetch['patient_id'];
-    $fullname=$fetch['fullname'];
-    $email=$fetch['email'];
-    $phonenumber=$fetch['phonenumber'];
-    $role_id=$fetch['role_id'];
-    $status_id=$fetch['status_id'];
-    $passport=$fetch['passport'];
-    $date=$fetch['date'];
-    $last_login=$fetch['last_login'];
+// function _get_patient_details($conn, $patient_id){
+//     $patient_id ="pat0001";
+//     $query=mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");    
+//     $fetch=mysqli_fetch_array($query);
+//     $sn=$fetch['sn'];
+//     $patient_id=$fetch['patient_id'];
+//     $fullname=$fetch['fullname'];
+//     $email=$fetch['email'];
+//     $phonenumber=$fetch['phonenumber'];
+//     $role_id=$fetch['role_id'];
+//     $status_id=$fetch['status_id'];
+//     $passport=$fetch['passport'];
+//     $date=$fetch['date'];
+//     $last_login=$fetch['last_login'];
 
-    return '[{"patient_id":"'.$patient_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
-}
+//     return '[{"patient_id":"'.$patient_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'","sn":"'.$sn.'"}]';
+// }
 	
+
+function _get_patient_details($conn, $patient_id) {
+    $patient_id ="pat0001";
+    $query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");
+    
+    if ($fetch = mysqli_fetch_assoc($query)) {
+     
+        return json_encode($fetch);
+    } else {
+      
+        return json_encode(array("error" => "Patient not found"));
+    }
+}
+
 
 
 

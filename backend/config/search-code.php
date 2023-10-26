@@ -1,5 +1,6 @@
-
+<!-- ?php include 'connection.php'?> -->
 <?php if ($search_page=='staff-list'){ ?> 
+
     	
         <?php
             $search_like="(staff_id like '%$all_search_txt%' OR 
@@ -9,22 +10,22 @@
             date like '%$all_search_txt%' OR 
             last_login like '%$all_search_txt%')";
            
-            $profile_query=mysqli_query($conn, "SELECT * FROM staff_tab WHERE  status_id='$status_id' AND $search_like AND role_id=2 ORDER BY fullname ASC")or die ('cannot select staff_tab');
+            $profile_query=mysqli_query($conn, "SELECT * FROM patient_tab WHERE  status_id='$status_id' AND $search_like AND role_id=2 ORDER BY fullname ASC")or die ('cannot select patient_tab');
             $no=0;
             while($fetch_query=mysqli_fetch_array($profile_query)){
             $no++;
-            $staff_id=$fetch_query['staff_id'];
+            $patient_id=$fetch_query['staff_id'];
             $no++;
-            $fetch_staff_profile=$callclass->_get_staff_profile_details($conn, $staff_id);
-            $staff_profile_array = json_decode($fetch_staff_profile, true);
-            $fullname= $staff_profile_array[0]['fullname'];
-            $email= $staff_profile_array[0]['email'];
-            $phonenumber= $staff_profile_array[0]['phonenumber'];
-            $role_id= $staff_profile_array[0]['role_id'];
-            $status_id= $staff_profile_array[0]['status_id'];
-            $passport= $staff_profile_array[0]['passport'];
-            $date= $staff_profile_array[0]['date'];  
-            $last_login= $staff_profile_array[0]['last_login'];
+            $fetch_patient_profile=$callclass->_get_patient_profile_details($conn, $patient_id);
+            $patient_profile_array = json_decode($fetch_staff_profile, true);
+            $fullname= $patient_profile_array[0]['fullname'];
+            $email= $patient_profile_array[0]['email'];
+            $phonenumber= $patient_profile_array[0]['phonenumber'];
+            $role_id= $patient_profile_array[0]['role_id'];
+            $status_id= $patient_profile_array[0]['status_id'];
+            $passport= $staff_propatient_profile_arrayfile_array[0]['passport'];
+            $date= $patient_profile_array[0]['date'];  
+            $last_login= $patient_profile_array[0]['last_login'];
             
             
             $fetch_status=$callclass->_get_status_details($conn, $status_id);
