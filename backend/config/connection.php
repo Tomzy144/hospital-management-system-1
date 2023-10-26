@@ -154,6 +154,61 @@ function _get_sequence_count($conn, $item){
 }
 
 
+
+function _get_total_count($conn, $pcount) {
+    // Query the database to get the counter_value
+    $queryResult = mysqli_query($conn, "SELECT * FROM `counter_tab` WHERE `counter_id`  = 'PAT'");//$pcount
+    
+    if (!$queryResult) {
+        return '{"error": "Database query error"}';
+    }
+    
+    $pquery = mysqli_fetch_assoc($queryResult);
+
+    if ($pquery) {
+        
+        $counterValue = $pquery['counter_value'];
+
+      
+        return '{"counter_id": "' . $counterValue . '"}';
+    } else {
+       
+        return '{"error": "Counter not found"}';
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function _get_patient_details($conn, $patient_id){
+    $query=mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");    
+    $fetch=mysqli_fetch_array($query);
+    $patient_id=$fetch['patient_id'];
+    $fullname=$fetch['fullname'];
+    $email=$fetch['email'];
+    $phonenumber=$fetch['phonenumber'];
+    $role_id=$fetch['role_id'];
+    $status_id=$fetch['status_id'];
+    $passport=$fetch['passport'];
+    $date=$fetch['date'];
+    $last_login=$fetch['last_login'];
+
+    return '[{"patient_id":"'.$patient_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
+}
+	
+
+
+
+
 }//end of class
 $callclass=new allClass();
 

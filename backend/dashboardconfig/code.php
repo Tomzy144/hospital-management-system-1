@@ -58,11 +58,11 @@
 
 
 
-	 case 'fetch_staff_list': 
+	 case 'fetch_patient_list': 
 		$status_id=$_POST['status_id'];
 		$all_search_txt=$_POST['all_search_txt'];
 		$search_page='staff-list';
-		require_once('sub-code.php');
+		require_once('search-code.php');
   	break;	
 
 

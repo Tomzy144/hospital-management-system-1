@@ -64,7 +64,7 @@
         <ul class="menu-items">
             <li class="items">
                 <i class="fa fa-user"></i>
-                <a href="../patients.html">Patients</a>
+                <a href="pages/patients.php">Patients</a>
             </li>
             <li class="items">
             <link href="awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
@@ -114,7 +114,7 @@
     <div class="container">
         <h1>Dashboard</h1>
         <div class="flex-cards">
-            <a href="../patients.html">
+            <a href="pages/patients.php">
         <div class="cards">
             <div class="card-icons">
                 <i class="fa fa-user"  id="card-icons"></i>
