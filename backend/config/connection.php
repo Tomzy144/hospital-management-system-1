@@ -260,6 +260,17 @@ function _get_patient_details($conn, $patient_id) {
 
 
 
+function search_patient($conn, $total_patient) {
+    $query=mysqli_query($conn, "SELECT * FROM patient_tab");    
+    $fetch=mysqli_fetch_array($query);
+    $total_patient=$fetch['role_name'];
+
+    return '[{"totalp":"'.$total_patient.'"}]';
+}
+
+
+
+
 
 }//end of class
 $callclass=new allClass();

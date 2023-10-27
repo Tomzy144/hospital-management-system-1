@@ -1,17 +1,17 @@
 <!-- ?php include 'connection.php'?> -->
-<?php if ($search_page=='staff-list'){ ?> 
+<!-- ?php if ($search_page =='patient-list'){ ?>  -->
 
     	
         <?php
-            $search_like="(staff_id like '%$all_search_txt%' OR 
-            fullname like '%$all_search_txt%' OR 
-            email like '%$all_search_txt%' OR 
-            phonenumber like '%$all_search_txt%' OR 
-            date like '%$all_search_txt%' OR 
-            last_login like '%$all_search_txt%')";
+            $searchTerm="(patient_id like '%$search_term%' OR 
+            fullname like '%$search_term%' OR 
+            email like '%$search_term%' OR 
+            phonenumber like '%$search_term%' OR 
+            date like '%$search_term%' OR 
+            last_login like '%$search_term%')";
            
-            $profile_query=mysqli_query($conn, "SELECT * FROM patient_tab WHERE  status_id='$status_id' AND $search_like AND role_id=2 ORDER BY fullname ASC")or die ('cannot select patient_tab');
-            $no=0;
+            $profile_query=mysqli_query($conn, "SELECT * FROM patient_tab  AND $searchTerm AND role_id=2 ORDER BY fullname ASC");
+            $no=0; 
             while($fetch_query=mysqli_fetch_array($profile_query)){
             $no++;
             $patient_id=$fetch_query['staff_id'];
@@ -23,7 +23,7 @@
             $phonenumber= $patient_profile_array[0]['phonenumber'];
             $role_id= $patient_profile_array[0]['role_id'];
             $status_id= $patient_profile_array[0]['status_id'];
-            $passport= $staff_propatient_profile_arrayfile_array[0]['passport'];
+            $passport= $aptient_propatient_profile_arrayfile_array[0]['passport'];
             $date= $patient_profile_array[0]['date'];  
             $last_login= $patient_profile_array[0]['last_login'];
             
@@ -39,7 +39,7 @@
         ?>
 
                     
-            <div class="active-staff-profile">
+            <div class="active-patient-profile">
                 <?php if ($passport==''){?>
                 <div class="img-div">
                     <img src="../../upload_pix/staff_pix/profile.jpg" alt="profile picture">
@@ -60,7 +60,7 @@
                     <span class="name"><?php echo $role_name?></span><br/>
                     <span class="name"><?php echo $status_name?></span>                  
                 </div> 
-                <button class="btn"  title="Edit Profile" onclick="_get_form_with_id('edit-staff-form','<?php echo $staff_id; ?>')"><i class="bi-pencil-square"></i></button>      
+                <button class="btn"  title="Edit Profile" onclick="_get_form_with_id('edit-patient-form','<?php echo $patient_id; ?>')"><i class="bi-pencil-square"></i></button>      
             </div>
         <?php } ?>
         <br clear="all" />
@@ -72,9 +72,11 @@
         <?php } ?>
                     
    
+<!-- 
+?php }?> -->
 
-<?php }?>
 
+<!--  //////////////////////////////////////////////////////////// -->
 
 
 <?php if ($search_page=='university-list'){

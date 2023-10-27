@@ -255,3 +255,54 @@ function _resend_otp(ids,staff_id){
 
 
 
+
+
+
+
+
+   
+ 
+        // Simulated patient data
+        const patients = [
+            { id: 1, name: "John Doe" },
+            { id: 2, name: "Jane Smith" },
+            { id: 3, name: "Alice Johnson" },
+            // Add more patient data here
+        ];
+
+        function searchPatients() {
+            const searchInput = document.getElementById("searchInput");
+            const searchResults = document.getElementById("searchResults");
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            // Clear previous search results
+            searchResults.innerHTML = "";
+
+            // Filter patients based on the search term
+            const filteredPatients = patients.filter(patient => patient.name.toLowerCase().includes(searchTerm));
+
+            // Display search results
+            filteredPatients.forEach(patient => {
+                const li = document.createElement("li");
+                li.textContent = patient.name;
+                searchResults.appendChild(li);
+            });
+        }
+   
+
+        
+// function fetch_patient(patient_id){
+//     var action='fetch_patient';
+//     // $('#next_2').html('<div class="ajax-loader">loading...<br><img src="all-images/images/ajax-loader.gif"/></div>').fadeIn(500);
+//     var dataString ='action='+ action+'&patient_id='+ patient_id;
+//     $.ajax({
+//     type: "POST",
+//     url: "config/search.php",
+//     data: dataString,
+//     cache: false,
+//     success: function(html){$('#next_2').html(html);}
+//     });
+// }
+
+
+

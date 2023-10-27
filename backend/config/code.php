@@ -151,6 +151,27 @@
 	  	require_once('index.php');
 	  break;
 
+
+	  
+	case 'fetch_patient':
+		$staff_id=$_POST['staff_id'];		  
+		$user_array=$callclass->_get_staff_details($conn, $staff_id);
+		$u_array = json_decode($user_array, true);
+		$fullname= $u_array[0]['fullname'];
+		$email= $u_array[0]['email'];
+		
+		// $otp = rand(111111,999999);
+		// ////////////////update user OTP///////////////
+		mysqli_query($conn,"SELECT * FROM patient_tab WHERE patient_id ='$patient_id'")or die("cannot select patient_tab");
+		////////////////send OTP true email///////////////
+		//$mail_to_send='send_reset_password_otp';
+		// require_once('../../frontend/otp-reset.php');
+	break;	
+
+
+
+
+
 	}
 
 
