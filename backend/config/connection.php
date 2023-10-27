@@ -105,6 +105,24 @@ function _get_status_details($conn, $status_id) {
 
 
 
+function _get_category_details($conn, $category_id) {
+    $query = mysqli_query($conn, "SELECT category_name FROM category_tab WHERE category_id = '$category_id'");
+
+    if ($fetch = mysqli_fetch_assoc($query)) {
+        // Fetch the result as an associative array
+        return json_encode($fetch);
+    } else {
+        // Handle the case where no results were found for the given category_id.
+        header('Content-Type: application/json');
+        echo json_encode(array("error" => "Category not found"));
+        exit; // Terminate the script after sending the error response
+    }
+}
+
+
+
+
+
 function _get_user_details($conn, $s_staff_id){
     $query=mysqli_query($conn, "SELECT * FROM staff_tab WHERE staff_id='$s_staff_id'");    
     $fetch=mysqli_fetch_array($query);
@@ -169,11 +187,12 @@ function _get_patient_profile_details($conn, $patient_id){
         $phonenumber=$fetch['phonenumber'];
         $role_id=$fetch['role_id'];
         $status_id=$fetch['status_id'];
+        $category_id=$fetch['category_id'];
         $passport=$fetch['passport'];
 		$date=$fetch['date'];
 		$last_login=$fetch['last_login'];
 
-    return '[{"patient_id":"'.$patient_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
+    return '[{"patient_id":"'.$patient_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","category_id":"'.$category_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
 }
 
 
