@@ -188,6 +188,9 @@ function _get_sequence_count($conn, $item){
 
 
 
+
+
+
 function _get_total_count($conn, $pcount) {
     // Query the database to get the counter_value
     $queryResult = mysqli_query($conn, "SELECT * FROM `counter_tab` WHERE `counter_id`  = 'PAT'");//$pcount
