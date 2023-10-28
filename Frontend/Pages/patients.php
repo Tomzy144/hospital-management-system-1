@@ -1,26 +1,15 @@
 <?php include '../../backend/config/connection.php'?>
 
 
-<?php include '../../backend/dashboardconfig/session-validation.php';?>
+<?php include '../../backend/dashboardconfig/session-validation.php';
+include '../../backend/config/search.php'?>
 
 <?php
  $patient_id= $_POST['patient_id'];
 ?>
 
 <?php    
-//     $fetch_patient_profile=$callclass->_get_patient_details($conn, $patient_id);
-//     $patient_profile_array = json_decode($fetch_patient_profile, true);
-//     $sn= $patient_profile_array[0]['sn'];
-//     $fullname= $patient_profile_array[0]['fullname'];
-//     $email= $patient_profile_array[0]['email'];
-//     $phonenumber= $patient_profile_array[0]['phonenumber'];
-//    // $role_id= $staff_profile_array[0]['role_id'];
-//     $status_id= $patient_profile_array[0]['status_id'];
-//     $date= $patient_profile_array[0]['date'];
-//     $last_login= $patient_profile_array[0]['last_login'];
-//    $passport = $patientf_profile_array[0]["passport"];
     
-
 $fetch_patient_profile = $callclass->_get_patient_details($conn, $patient_id);
 
 $patient_profile_array = json_decode($fetch_patient_profile, true);
@@ -31,6 +20,7 @@ if ($patient_profile_array) {
     $email = $patient_profile_array['email'];
     $phonenumber = $patient_profile_array['phonenumber'];
     $status_id = $patient_profile_array['status_id'];
+    $category_id = $patient_profile_array['category_id'];
     $date = $patient_profile_array['date'];
     $last_login = $patient_profile_array['last_login'];
     $passport = $patient_profile_array['passport'];
@@ -41,14 +31,6 @@ if ($patient_profile_array) {
 }
 
 
-
-
-
-        
-    // $fetch_status=$callclass->_get_status_details($conn, $status_id);
-    // $status_array = json_decode($fetch_status, true);
-    // $status_name= $status_array[0]['status_name'];
-   
     $fetch_status = $callclass->_get_status_details($conn, $status_id);
     $status_array = json_decode($fetch_status, true);
     
@@ -58,24 +40,32 @@ if ($patient_profile_array) {
         // Handle the case where status details were not found.
         // You might want to return an error message or take other appropriate action.
     }
+
+
+
+
+    $fetch_category = $callclass->_get_category_details($conn, $category_id);
+
+    // Check if the category details were successfully retrieved
+    if ($fetch_category !== false) {
+        $category_array = json_decode($fetch_category, true);
     
-
-
-
-
+        // Check if category_name exists in the response
+        if (isset($category_array['category_name'])) {
+            $category_name = $category_array['category_name'];
+        } else {
+            // Handle the case where category_name was not found in the response.
+            // You might want to return an error message or take other appropriate action.
+        }
+    } else {
+        // Handle the case where category details were not found.
+        // You might want to return an error message or take other appropriate action.
+    }
+    
     $fetch_pcount = $callclass->_get_total_count($conn, $pcount);
     $pcount_array = json_decode($fetch_pcount, true);
     $pcount = $pcount_array['counter_id'];
     
-
-
-//    //for search
-//     $status_id=$_POST['status_id'];
-// 		$all_search_txt=$_POST['all_search_txt'];
-// 		$search_page='staff-list';
-// 		require_once('../../backend/config/search-code.php');
-
-
 ?>
  
 
@@ -130,28 +120,37 @@ if ($patient_profile_array) {
             </a>
             </ul>
     </div>
+   
     <div class="search-container">
     <div class="search-bar">
         <div id="select">
             <p id="selectText"></p>
             <i class="fa fa-sort-desc"></i>
-            <ul id="list">
-                <li class="options">All </li>
-                <li class="options">Inpatients </li>
-                <li class="options">Outpatients</li>
-                <li class="options">Waiting List</li>
-                <li class="options">Appointment</li>
-                <li class="options">Test</li>
-                <li class="options">ANC</li>
-                <li class="options">Today inputs</li>
-            </ul>
+            
+    <ul id="list">
+        <li class="options" id="0" onclick="filterTable('All')">All</li>
+        <li class="options" id="1" onclick="filterTable('Inpatients')">Inpatients</li>
+        <li class="options" id="2" onclick="filterTable('Outpatients')">Outpatients</li>
+        <li class="options" id="3" onclick="filterTable('Waiting List')">Waiting List</li>
+        <li class="options" id="4" onclick="filterTable('Appointment')">Appointment</li>
+        <li class="options" id="5"  onclick="filterTable('Test')">Test</li>
+        <li class="options" id="6"  onclick="filterTable('ANC')">ANC</li>
+        <li class="options" id="7"  onclick="filterTable('Today inputs')">Today inputs</li>
+        <!-- Add more options here -->
+    </ul>
         </div>
-        <input type="search" id="inputfield" placeholder="Search In All Categories">
-        <i class="fa fa-search" id="submit-input"> <?php echo $pcount ?></i>
+
+      
+            <input id="search_term" onkeyup="_fetch_patient_list()" name="search_term" type="text" placeholder="Type here to search..." title="Type here to search" />
+          
+            <i class="fa fa-search" onclick="_fetch_patient_list()" id="submit-input"> <?php echo $pcount ?></i>
+      
     </div> 
-</div>
-    <div class="div-table">
-    <table border="2">
+    </div>
+    <!-- </form> -->
+  
+    <div class="div-table" >
+    <table border="2" id="dataTable" >
     <?php $sql = "SELECT * FROM patient_tab"; 
     $result = $conn->query($sql);
     ?>
@@ -160,41 +159,47 @@ if ($patient_profile_array) {
              <d>#</d>
         </th>
         <th>
+             <d>id</d>
+        </th>
+        <th>
             <d>Patient's Name</d>
         </th>
         <th>
             <d>Number</d>
         </th>
+        <!-- <th>
+            <d>Category</d>
+        </th> -->
+        <th>
+            <d>Date</d>
+        </th>
         <th>
             <d>Status</d>
         </th>
-    </thead>
-  
-                        
-        <tbody>
-             <?php
-           if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . $row["sn"] . "</td>";
-                echo "<td>" . $row["fullname"] . "</td>";
-                echo "<td>" . $row["phonenumber"] . "</td>";
-                // echo "<td>" . $row["status_id"] . "</td>";
+    </thead>              
+        <tbody id="searchResultsBody" >
+        <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["sn"] . "</td>";
+                    echo "<td>" . $row["patient_id"] . "</td>";
+                    echo "<td>" . $row["fullname"] . "</td>";
+                    echo "<td>" . $row["phonenumber"] . "</td>";
+                    
+                    // echo "<td>" . $row["status_id"] . "</td>";
+                    // echo "<td>" .$row['$category_name'] . $category_name . "</td>";
+              
+                echo "<td>" . $row["date"] . "</td>";
                 echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
+              
                 echo "</tr>";
             }
         } else {
             echo "<tr><td colspan='5'>No records found</td></tr>";
         }
-        $conn->close();?>
-        
-                            
-               
-
+        ?>
         </tbody>
-
-
-
     </table>
 </div>
    </div>
@@ -205,7 +210,7 @@ if ($patient_profile_array) {
     const options = document.getElementsByClassName("options");
     const inputfield = document.getElementById("inputfield");
     const submitInput = document.getElementById("submit-input");
-
+    const id = document.getElementById("id");
 
     select.addEventListener("click", function(){
         list.classList.toggle("open");
@@ -218,7 +223,7 @@ if ($patient_profile_array) {
 
     for(option of options){
         option.addEventListener("click", function(){
-            selectText.innerHTML = this.innerHTML;
+            selectText.innerHTML = this.innerHTML,id;
             inputfield.placeholder = 'Search In ' + selectText.innerHTML
         })
     }
@@ -226,7 +231,16 @@ if ($patient_profile_array) {
 
 
 
+
+
+
+
+
+
+
 <!-- ////tomzy's script  -->
+
+
 <script>
 
 
@@ -249,9 +263,103 @@ if ($patient_profile_array) {
 
 
 
+
+/////////////////////////
+
+
+
+function _fetch_patient_list() {
+  
+
+    const search_term = document.getElementById("search_term").value;
+const searchResultsBody = document.getElementById("searchResultsBody");
+
+// Clearing the existing search results
+searchResultsBody.innerHTML = "";
+
+//  an AJAX request to fetch search results
+fetch('../../backend/config/search.php?search_term=' + search_term)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Filtering patients based on the search term
+        const searchTerm = search_term.toLowerCase();
+        const filteredPatients = data.filter(patient => (
+            patient.sn.toLowerCase().includes(searchTerm) ||
+            patient.patient_id.toLowerCase().includes(searchTerm) ||
+            patient.fullname.toLowerCase().includes(searchTerm) ||
+            patient.email.toLowerCase().includes(searchTerm) ||
+            patient.phonenumber.toLowerCase().includes(searchTerm) ||
+            patient.date.toLowerCase().includes(searchTerm) ||
+            patient.status_id.toLowerCase().includes(searchTerm) ||
+            patient.last_login.toLowerCase().includes(searchTerm)
+        ));
+
+
+
+
+       // Displaying search results in the table
+    filteredPatients.forEach(patient => {
+    const row = searchResultsBody.insertRow();
+    row.insertCell(0).textContent = patient.sn;
+    row.insertCell(1).textContent = patient.patient_id;
+    row.insertCell(2).textContent = patient.fullname;
+    // row.insertCell(3).textContent = patient.email;
+    row.insertCell(3).textContent = patient.phonenumber;
+    row.insertCell(4).textContent = patient.date;
+
+    const statusCell = row.insertCell(5);
+    const icon = document.createElement("i");
+    icon.className = "fa fa-circle"; // Replace with the desired Font Awesome icon class
+
+    if (patient.status_id === "1") {
+        icon.style.color = "green";
+    } else if (patient.status_id === "2") {
+        icon.style.color = "red";
+    }
+
+    statusCell.appendChild(icon);
+});
+
+    })
+    .catch(error => {
+        console.error('Error during AJAX request:', error);
+    });
+
+
+
+
+    function filterTable(option) {
+            var table = document.getElementById("searchResultsBody"); // Get the table element
+            var rows = table.getElementsByTagName("tr"); // Get all table rows
+
+            for (var i = 1; i < rows.length; i++) {
+                var row = rows[i];
+                var status = row.cells[2].textContent; // Assuming the status is in the third column
+
+                // Check the selected option and show/hide rows accordingly
+                if (option === "All" || option === status) {
+                    row.style.display = "table-row"; // Show the row
+                } else {
+                    row.style.display = "none"; // Hide the row
+                }
+            }
+        }
+
+
+
+
+
+
+}
+
+
 </script>
 
- 
-  
-</body>
-</html> 
+
+
+
