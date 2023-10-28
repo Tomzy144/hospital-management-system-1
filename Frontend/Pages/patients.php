@@ -128,16 +128,29 @@ if ($patient_profile_array) {
             <i class="fa fa-sort-desc"></i>
             
     <ul id="list">
-        <li class="options" id="0" onclick="filterTable('All')">All</li>
-        <li class="options" id="1" onclick="filterTable('Inpatients')">Inpatients</li>
-        <li class="options" id="2" onclick="filterTable('Outpatients')">Outpatients</li>
-        <li class="options" id="3" onclick="filterTable('Waiting List')">Waiting List</li>
-        <li class="options" id="4" onclick="filterTable('Appointment')">Appointment</li>
-        <li class="options" id="5"  onclick="filterTable('Test')">Test</li>
-        <li class="options" id="6"  onclick="filterTable('ANC')">ANC</li>
-        <li class="options" id="7"  onclick="filterTable('Today inputs')">Today inputs</li>
+        <li class="options" id="0" onclick="showTable('All')">All</li>
+        <li class="options" id="1" onclick="showTable('Inpatients')">Inpatients</li>
+        <li class="options" id="2" onclick="showTable('Outpatients')">Outpatients</li>
+        <li class="options" id="3" onclick="showTable('Waitinglist')">Waiting List</li>
+        <li class="options" id="4" onclick="showTable('Appointment')">Appointment</li>
+        <li class="options" id="5"  onclick="showTable('Test')">Test</li>
+        <li class="options" id="6"  onclick="showTable('ANC')">ANC</li>
+        <li class="options" id="7"  onclick="showTable('Todayinputs')">Today inputs</li>
         <!-- Add more options here -->
     </ul>
+
+
+
+
+    <!-- <ul id="list">
+    <li class="options" id="0" onclick="showTable('categoryAll')">All</li>
+    <li class="options" id="1" onclick="showTable('categoryInpatients')">Inpatients</li>
+     Add similar list items for other categories
+</ul> -->
+
+
+
+
         </div>
 
       
@@ -150,7 +163,7 @@ if ($patient_profile_array) {
     <!-- </form> -->
   
     <div class="div-table" >
-    <table border="2" id="dataTable" >
+    <table border="2" id="All" >
     <?php $sql = "SELECT * FROM patient_tab"; 
     $result = $conn->query($sql);
     ?>
@@ -201,6 +214,423 @@ if ($patient_profile_array) {
         ?>
         </tbody>
     </table>
+
+
+
+<!-- inpatients table -->
+
+
+    
+
+<!-- <table id="All" class="category-table">
+    Table content for "All" category 
+</table> -->
+
+<table id="Inpatients" class="category-table" style="display: none;">
+
+<?php $sql = "SELECT * FROM patient_tab WHERE category_id = '1'" or die("cant fetch"); 
+    $result = $conn->query($sql);
+    ?>
+
+<thead> 
+        <th>
+             <d>#</d>
+        </th>
+        <th>
+             <d>id</d>
+        </th>
+        <th>
+            <d>Patient's Name</d>
+        </th>
+        <th>
+            <d>Number</d>
+        </th>
+        <!-- <th>
+            <d>Category</d>
+        </th> -->
+        <th>
+            <d>Date</d>
+        </th>
+        <th>
+            <d>Status</d>
+        </th>
+    </thead>              
+        <tbody id="searchResultsBody" >
+        <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["sn"] . "</td>";
+                    echo "<td>" . $row["patient_id"] . "</td>";
+                    echo "<td>" . $row["fullname"] . "</td>";
+                    echo "<td>" . $row["phonenumber"] . "</td>";
+                    
+                    // echo "<td>" . $row["status_id"] . "</td>";
+                    // echo "<td>" .$row['$category_name'] . $category_name . "</td>";
+              
+                echo "<td>" . $row["date"] . "</td>";
+                echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
+              
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>No records found</td></tr>";
+        }
+        ?>
+        </tbody>
+    <!-- Table content for "Inpatients" category -->
+</table>
+
+
+<!-- outpatients table -->
+
+<table id="Outpatients" class="category-table" style="display: none;">
+
+<?php $sql = "SELECT * FROM patient_tab WHERE category_id = '2'" or die("cant fetch"); 
+    $result = $conn->query($sql);
+    ?>
+
+<thead> 
+        <th>
+             <d>#</d>
+        </th>
+        <th>
+             <d>id</d>
+        </th>
+        <th>
+            <d>Patient's Name</d>
+        </th>
+        <th>
+            <d>Number</d>
+        </th>
+        <!-- <th>
+            <d>Category</d>
+        </th> -->
+        <th>
+            <d>Date</d>
+        </th>
+        <th>
+            <d>Status</d>
+        </th>
+    </thead>              
+        <tbody id="searchResultsBody" >
+        <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["sn"] . "</td>";
+                    echo "<td>" . $row["patient_id"] . "</td>";
+                    echo "<td>" . $row["fullname"] . "</td>";
+                    echo "<td>" . $row["phonenumber"] . "</td>";
+                    
+                    // echo "<td>" . $row["status_id"] . "</td>";
+                    // echo "<td>" .$row['$category_name'] . $category_name . "</td>";
+              
+                echo "<td>" . $row["date"] . "</td>";
+                echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
+              
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>No records found</td></tr>";
+        }
+        ?>
+        </tbody>
+    <!-- Table content for "Inpatients" category -->
+</table>
+
+<!-- WaitingList table -->
+
+<table id="Waitinglist" class="category-table" style="display: none;">
+
+<?php $sql = "SELECT * FROM patient_tab WHERE category_id = '3'" or die("cant fetch"); 
+    $result = $conn->query($sql);
+    ?>
+
+<thead> 
+        <th>
+             <d>#</d>
+        </th>
+        <th>
+             <d>id</d>
+        </th>
+        <th>
+            <d>Patient's Name</d>
+        </th>
+        <th>
+            <d>Number</d>
+        </th>
+        <!-- <th>
+            <d>Category</d>
+        </th> -->
+        <th>
+            <d>Date</d>
+        </th>
+        <th>
+            <d>Status</d>
+        </th>
+    </thead>              
+        <tbody id="searchResultsBody" >
+        <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["sn"] . "</td>";
+                    echo "<td>" . $row["patient_id"] . "</td>";
+                    echo "<td>" . $row["fullname"] . "</td>";
+                    echo "<td>" . $row["phonenumber"] . "</td>";
+                    
+                    // echo "<td>" . $row["status_id"] . "</td>";
+                    // echo "<td>" .$row['$category_name'] . $category_name . "</td>";
+              
+                echo "<td>" . $row["date"] . "</td>";
+                echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
+              
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>No records found</td></tr>";
+        }
+        ?>
+        </tbody>
+</table>
+
+
+<!-- Appointment table -->
+<table id="Appointment" class="category-table" style="display: none;">
+
+<?php $sql = "SELECT * FROM patient_tab WHERE category_id = '4'" or die("cant fetch"); 
+    $result = $conn->query($sql);
+    ?>
+
+<thead> 
+        <th>
+             <d>#</d>
+        </th>
+        <th>
+             <d>id</d>
+        </th>
+        <th>
+            <d>Patient's Name</d>
+        </th>
+        <th>
+            <d>Number</d>
+        </th>
+        <!-- <th>
+            <d>Category</d>
+        </th> -->
+        <th>
+            <d>Date</d>
+        </th>
+        <th>
+            <d>Status</d>
+        </th>
+    </thead>              
+        <tbody id="searchResultsBody" >
+        <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["sn"] . "</td>";
+                    echo "<td>" . $row["patient_id"] . "</td>";
+                    echo "<td>" . $row["fullname"] . "</td>";
+                    echo "<td>" . $row["phonenumber"] . "</td>";
+                    
+                    // echo "<td>" . $row["status_id"] . "</td>";
+                    // echo "<td>" .$row['$category_name'] . $category_name . "</td>";
+              
+                echo "<td>" . $row["date"] . "</td>";
+                echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
+              
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>No records found</td></tr>";
+        }
+        ?>
+        </tbody>
+</table>
+
+<!-- Test table -->
+<table id="Test" class="category-table" style="display: none;">
+
+<?php $sql = "SELECT * FROM patient_tab WHERE category_id = '5'" or die("cant fetch"); 
+    $result = $conn->query($sql);
+    ?>
+
+<thead> 
+        <th>
+             <d>#</d>
+        </th>
+        <th>
+             <d>id</d>
+        </th>
+        <th>
+            <d>Patient's Name</d>
+        </th>
+        <th>
+            <d>Number</d>
+        </th>
+        <!-- <th>
+            <d>Category</d>
+        </th> -->
+        <th>
+            <d>Date</d>
+        </th>
+        <th>
+            <d>Status</d>
+        </th>
+    </thead>              
+        <tbody id="searchResultsBody" >
+        <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["sn"] . "</td>";
+                    echo "<td>" . $row["patient_id"] . "</td>";
+                    echo "<td>" . $row["fullname"] . "</td>";
+                    echo "<td>" . $row["phonenumber"] . "</td>";
+                    
+                    // echo "<td>" . $row["status_id"] . "</td>";
+                    // echo "<td>" .$row['$category_name'] . $category_name . "</td>";
+              
+                echo "<td>" . $row["date"] . "</td>";
+                echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
+              
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>No records found</td></tr>";
+        }
+        ?>
+        </tbody>
+</table>
+
+
+
+<!-- ANC table -->
+<table id="ANC" class="category-table" style="display: none;">
+
+<?php $sql = "SELECT * FROM patient_tab WHERE category_id = '6'" or die("cant fetch"); 
+    $result = $conn->query($sql);
+    ?>
+
+<thead> 
+        <th>
+             <d>#</d>
+        </th>
+        <th>
+             <d>id</d>
+        </th>
+        <th>
+            <d>Patient's Name</d>
+        </th>
+        <th>
+            <d>Number</d>
+        </th>
+        <!-- <th>
+            <d>Category</d>
+        </th> -->
+        <th>
+            <d>Date</d>
+        </th>
+        <th>
+            <d>Status</d>
+        </th>
+    </thead>              
+        <tbody id="searchResultsBody">
+        <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["sn"] . "</td>";
+                    echo "<td>" . $row["patient_id"] . "</td>";
+                    echo "<td>" . $row["fullname"] . "</td>";
+                    echo "<td>" . $row["phonenumber"] . "</td>";
+                    
+                    // echo "<td>" . $row["status_id"] . "</td>";
+                    // echo "<td>" .$row['$category_name'] . $category_name . "</td>";
+              
+                echo "<td>" . $row["date"] . "</td>";
+                echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
+              
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>No records found</td></tr>";
+        }
+        ?>
+        </tbody>
+</table>
+
+
+
+
+
+
+<!-- todaysinput table -->
+<table id="Todayinputs" class="category-table" style="display: none;">
+
+<?php $sql = "SELECT * FROM patient_tab WHERE category_id = '7'" or die("cant fetch"); 
+    $result = $conn->query($sql);
+    ?>
+
+<thead> 
+        <th>
+             <d>#</d>
+        </th>
+        <th>
+             <d>id</d>
+        </th>
+        <th>
+            <d>Patient's Name</d>
+        </th>
+        <th>
+            <d>Number</d>
+        </th>
+        <!-- <th>
+            <d>Category</d>
+        </th> -->
+        <th>
+            <d>Date</d>
+        </th>
+        <th>
+            <d>Status</d>
+        </th>
+    </thead>              
+        <tbody id="searchResultsBody" >
+        <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["sn"] . "</td>";
+                    echo "<td>" . $row["patient_id"] . "</td>";
+                    echo "<td>" . $row["fullname"] . "</td>";
+                    echo "<td>" . $row["phonenumber"] . "</td>";
+                    
+                    // echo "<td>" . $row["status_id"] . "</td>";
+                    // echo "<td>" .$row['$category_name'] . $category_name . "</td>";
+              
+                echo "<td>" . $row["date"] . "</td>";
+                echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
+              
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>No records found</td></tr>";
+        }
+        ?>
+        </tbody>
+</table>
+
+
+
+<!-- end of tables -->
+
+
+
+
+
 </div>
    </div>
    <script>
@@ -260,106 +690,101 @@ if ($patient_profile_array) {
     });
 
 
+        //////////////////////////////////////////////////////
+
+
+
+    function _fetch_patient_list() {
+    
+
+        const search_term = document.getElementById("search_term").value;
+        const searchResultsBody = document.getElementById("searchResultsBody");
+
+        // Clearing the existing search results
+        searchResultsBody.innerHTML = "";
+
+        //  an AJAX request to fetch search results
+        fetch('../../backend/config/search.php?search_term=' + search_term)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Filtering patients based on the search term
+                const searchTerm = search_term.toLowerCase();
+                const filteredPatients = data.filter(patient => (
+                    patient.sn.toLowerCase().includes(searchTerm) ||
+                    patient.patient_id.toLowerCase().includes(searchTerm) ||
+                    patient.fullname.toLowerCase().includes(searchTerm) ||
+                    patient.email.toLowerCase().includes(searchTerm) ||
+                    patient.phonenumber.toLowerCase().includes(searchTerm) ||
+                    patient.date.toLowerCase().includes(searchTerm) ||
+                    patient.status_id.toLowerCase().includes(searchTerm) ||
+                    patient.last_login.toLowerCase().includes(searchTerm)
+                ));
 
 
 
 
-/////////////////////////
+        // Displaying search results in the table
+        filteredPatients.forEach(patient => {
+        const row = searchResultsBody.insertRow();
+        row.insertCell(0).textContent = patient.sn;
+        row.insertCell(1).textContent = patient.patient_id;
+        row.insertCell(2).textContent = patient.fullname;
+        // row.insertCell(3).textContent = patient.email;
+        row.insertCell(3).textContent = patient.phonenumber;
+        row.insertCell(4).textContent = patient.date;
 
+        const statusCell = row.insertCell(5);
+        const icon = document.createElement("i");
+        icon.className = "fa fa-circle"; // Replace with the desired Font Awesome icon class
 
-
-function _fetch_patient_list() {
-  
-
-    const search_term = document.getElementById("search_term").value;
-const searchResultsBody = document.getElementById("searchResultsBody");
-
-// Clearing the existing search results
-searchResultsBody.innerHTML = "";
-
-//  an AJAX request to fetch search results
-fetch('../../backend/config/search.php?search_term=' + search_term)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+        if (patient.status_id === "1") {
+            icon.style.color = "green";
+        } else if (patient.status_id === "2") {
+            icon.style.color = "red";
         }
-        return response.json();
-    })
-    .then(data => {
-        // Filtering patients based on the search term
-        const searchTerm = search_term.toLowerCase();
-        const filteredPatients = data.filter(patient => (
-            patient.sn.toLowerCase().includes(searchTerm) ||
-            patient.patient_id.toLowerCase().includes(searchTerm) ||
-            patient.fullname.toLowerCase().includes(searchTerm) ||
-            patient.email.toLowerCase().includes(searchTerm) ||
-            patient.phonenumber.toLowerCase().includes(searchTerm) ||
-            patient.date.toLowerCase().includes(searchTerm) ||
-            patient.status_id.toLowerCase().includes(searchTerm) ||
-            patient.last_login.toLowerCase().includes(searchTerm)
-        ));
 
-
-
-
-       // Displaying search results in the table
-    filteredPatients.forEach(patient => {
-    const row = searchResultsBody.insertRow();
-    row.insertCell(0).textContent = patient.sn;
-    row.insertCell(1).textContent = patient.patient_id;
-    row.insertCell(2).textContent = patient.fullname;
-    // row.insertCell(3).textContent = patient.email;
-    row.insertCell(3).textContent = patient.phonenumber;
-    row.insertCell(4).textContent = patient.date;
-
-    const statusCell = row.insertCell(5);
-    const icon = document.createElement("i");
-    icon.className = "fa fa-circle"; // Replace with the desired Font Awesome icon class
-
-    if (patient.status_id === "1") {
-        icon.style.color = "green";
-    } else if (patient.status_id === "2") {
-        icon.style.color = "red";
-    }
-
-    statusCell.appendChild(icon);
-});
-
-    })
-    .catch(error => {
-        console.error('Error during AJAX request:', error);
+        statusCell.appendChild(icon);
     });
 
+        })
+        .catch(error => {
+            console.error('Error during AJAX request:', error);
+        });
+    }
 
 
+        ////////////////////////////////////////////////////////////////
 
-    function filterTable(option) {
-            var table = document.getElementById("searchResultsBody"); // Get the table element
-            var rows = table.getElementsByTagName("tr"); // Get all table rows
 
-            for (var i = 1; i < rows.length; i++) {
-                var row = rows[i];
-                var status = row.cells[2].textContent; // Assuming the status is in the third column
+    function showTable(category) {
+        var tables = document.getElementsByClassName("category-table");
 
-                // Check the selected option and show/hide rows accordingly
-                if (option === "All" || option === status) {
-                    row.style.display = "table-row"; // Show the row
-                } else {
-                    row.style.display = "none"; // Hide the row
-                }
+        // Hide the "All" table
+        var allTable = document.getElementById('All');
+        if (allTable) {
+            allTable.style.display = 'none';
+        }
+
+        // Hide all other tables
+        for (var i = 0; i < tables.length; i++) {
+            if (tables[i].id !== category) {
+                tables[i].style.display = 'none';
             }
         }
 
-
-
-
-
-
-}
-
+        // Show the selected table
+        var selectedTable = document.getElementById(category);
+        if (selectedTable) {
+            selectedTable.style.display = 'table';
+        }
+    }
 
 </script>
-
 
 
 
