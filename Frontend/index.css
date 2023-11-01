@@ -204,7 +204,7 @@ a{
 }
 
 #select{
-    background-color: #11283f; 
+    background-color:  rgb(4 47 46);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -220,7 +220,7 @@ a{
     position: absolute;
     top: 80px;
     left: 0;
-    background: #11283f; 
+    background:  rgb(4 47 46);
     color: rgb(255, 255, 255);
     width: 100%;
     border-radius:4px ;
@@ -261,14 +261,96 @@ table{
     text-align: center;
     font-size: 1.4rem;
 }
-thead th{
+table th{
     border: none;
-    border-bottom: 1px solid #dad7d7;  
+    border-bottom: none;
+    background-color:  rgb(4 47 46); 
+    padding: 2rem;
+    border-bottom-left-radius: 19px;
+    color: #fff;
 }
 
 tbody tr td{
     border: none;
+    text-align: left;
+    background-color: #007281;
+    color: #fff;
+    padding: 1.5rem;
+    border-top-right-radius: 19px;
+    border-bottom-left-radius: 19px;
 }
 #color-changing{
     color: rgb(236, 83, 0) !important;
+}
+
+.patients-links-to-profile{
+   color: #ffffff;
+}
+
+
+tbody tr td:nth-child(2){
+    background-color:rgb(4 47 46); 
+  
+}
+tbody tr td:nth-child(4){
+    background-color:rgb(4 47 46); 
+}
+tbody tr td:nth-child(6){
+    background-color:rgb(4 47 46); 
+}
+.container-timer{
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    margin: 6rem auto;
+}
+.timer-box-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.timer-box{
+    padding: 0.2rem 0.5rem;
+    background-color:rgb(4 47 46);  ;
+    margin: 0 4px;
+    color: #fff;
+    font-size: 23px;
+    border: none;
+    border-bottom-right-radius: 19px;
+}
+.timer-text{
+    color: rgb(176, 170, 170);
+    font-size: 18px;
+}
+.accordion-container{
+    width: 100%;
+    max-width: 50%;
+    height: fit-content;
+    margin: 0 auto;
+}
+
+.accordion-dropdown{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:rgb(4 47 46); 
+    padding: 1.4rem;
+    color: #fff;
+    margin: 2rem 0;
+    transition: all ease-in;
+    transition-duration: 2s;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.4rem;
+}
+.hidden{
+    display: none;
+}
+#open-accordion-one, #close-accordion-one, #open-accordion-two, #close-accordion-two, #open-accordion-three, #close-accordion-three{
+    cursor: pointer;
 }

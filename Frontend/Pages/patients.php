@@ -163,7 +163,7 @@ if ($patient_profile_array) {
     <!-- </form> -->
   
     <div class="div-table" >
-    <table border="2" id="All" >
+    <table id="All" >
     <?php $sql = "SELECT * FROM patient_tab"; 
     $result = $conn->query($sql);
     ?>
@@ -196,15 +196,12 @@ if ($patient_profile_array) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row["sn"] . "</td>";
-                    echo "<td>" . $row["patient_id"] . "</td>";
+                    //updated kingsley added a link tag here
+                    echo "<td><a href='patients_profile.html' class='patients-links-to-profile'>" . $row["patient_id"] . "</a></td>";
                     echo "<td>" . $row["fullname"] . "</td>";
                     echo "<td>" . $row["phonenumber"] . "</td>";
-                    
-                    // echo "<td>" . $row["status_id"] . "</td>";
-                    // echo "<td>" .$row['$category_name'] . $category_name . "</td>";
-              
-                echo "<td>" . $row["date"] . "</td>";
-                echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
+                    echo "<td>" . $row["date"] . "</td>";
+                    echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
               
                 echo "</tr>";
             }
@@ -303,9 +300,7 @@ if ($patient_profile_array) {
         <th>
             <d>Number</d>
         </th>
-        <!-- <th>
-            <d>Category</d>
-        </th> -->
+       
         <th>
             <d>Date</d>
         </th>
@@ -466,7 +461,7 @@ if ($patient_profile_array) {
              <d>id</d>
         </th>
         <th>
-            <d>Patient's Name</d>
+            <a href =""<d>Patient's Name</d>
         </th>
         <th>
             <d>Number</d>
@@ -683,9 +678,9 @@ if ($patient_profile_array) {
         var value = element.getAttribute('data-value');
 
         if (value === "1") {
-            element.style.color = "green";
+            element.style.color = "#00ff00";
         } else if (value === "2") {
-            element.style.color = "red";
+            element.style.color = "#ffe200";
         }
     });
 
