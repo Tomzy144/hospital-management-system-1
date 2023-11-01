@@ -48,6 +48,7 @@
                     </a>
                     </ul>
             </div>
+            <!--timer-->
             <div class="container-timer">
                 <h3 class="timer-text">Ongoing Case Since</h3>
                 <div class="timer-box-content">
@@ -58,103 +59,66 @@
             </div>
             <h3 class="timer-text">Days Hours Mins Secs</h3>
         </div>
-
+               <!--accordion for labouratory examiniation-->
         <div class="accordion-container">
+            <div class="flex-container-for-click1">
+           <h3>Labouratory Examination </h3> 
+            <i class="fa fa-plus" id="click-open-button-accordion1"></i> 
+            <i class="fa fa-minus" id="click-close-button-accordion1"></i>
+        </div>
+            <div class="show-accodion hide" id="entire-accordion1">
                 <div class="accordion-dropdown">
                     <h3>CLINICAL CHEMISTRY</h3>
                     <i class="fa fa-plus" id="open-accordion-one"></i>
+                    <i class="fa fa-minus" id="close-accordion-one"></i>
                 </div>
             <div class="accordion hidden" id="accordion-one">
-                <div class="flex">
-                <h1>I'm Testing Accordion😍</h1>
-                <i class="fa fa-minus" id="close-accordion-one"></i>
+             
             </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </p>
-            </div>
-
                 <div class="accordion-dropdown">
                     <h3>IMMONOASSAY SINGLE TEST</h3>
                     <i class="fa fa-plus" id="open-accordion-two"></i>
+                    <i class="fa fa-minus" id="close-accordion-two"></i>
                 </div>
             <div class="accordion hidden" id="accordion-two">
-                <div class="flex">
-                <h1>I'm Testing Accordion😍</h1>
-                <i class="fa fa-minus" id="close-accordion-two"></i>
-            </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </p>
             </div>
                 <div class="accordion-dropdown">
                     <h3>THYRIOD SINGLE TEST</h3>
                     <i class="fa fa-plus" id="open-accordion-three"></i>
+                    <i class="fa fa-minus" id="close-accordion-three"></i>
                 </div>
             <div class="accordion hidden" id="accordion-three">
-                <div class="flex">
-                <h1>I'm Testing Accordion😍</h1>
-                <i class="fa fa-minus" id="close-accordion-three"></i>
-            </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </p>
             </div>
         </div>
+        <!--accordion for vital information-->
+        <div class="flex-container-for-click2">
+           <h3>Vital Information</h3> 
+            <i class="fa fa-plus" id="click-open-button-accordion2"></i> 
+            <i class="fa fa-minus" id="click-close-button-accordion2"></i>
+        </div>
+            <div class="show-accodion hide" id="entire-accordion2">
+               <div class="vital-container">
+                <!--impatient vital information-->
+                <div class="impatient-vital-info-dropdown">
+                    <h4>Impatient Vital</h4>
+                    <i class="fa fa-plus" id="open-dropdown-vital1"></i> 
+                    <i class="fa fa-minus" id="close-dropdown-vital1"></i>
+                </div>
+                <div class="impatient-accordion hide-impatient">
 
-   <script>
-    'use strict';
-   let firstTimerTextChange = document.querySelector('#timer');
-   firstTimerTextChange.style.color = '#ff0000';
+                </div>
+                    <!--Outpatient vital information-->
+                <div class="outpatient-vital-info-dropdown">
+                    <h4>OutPatient Vital</h4>
+                    <i class="fa fa-plus" id="open-dropdown-vital2"></i> 
+                    <i class="fa fa-minus" id="close-dropdown-vital2"></i>
+                </div>
+                <div class="outpatient-accordion hide-outpatient">
 
-    const openAccordion1 = document.querySelector('#open-accordion-one');
-    const closeAccordion1 = document.querySelector('#close-accordion-one');
-    const openAccordion2 = document.querySelector('#open-accordion-two');
-    const closeAccordio2 = document.querySelector('#close-accordion-two');
-    const openAccordion3 = document.querySelector('#open-accordion-three');
-    const closeAccordion3 = document.querySelector('#close-accordion-three');
-    const accordion1 =  document.querySelector('#accordion-one');
-    const accordion2 =  document.querySelector('#accordion-two');
-    const accordion3 =  document.querySelector('#accordion-three');
+                </div>
+        </div>
+        </div>
 
-    openAccordion1.addEventListener('click', function(){
-        accordion1.classList.remove('hidden');
-    });
-    closeAccordion1.addEventListener('click', function(){
-        accordion1.classList.add('hidden');
-    })
-    openAccordion2.addEventListener('click', function(){
-        accordion2.classList.remove('hidden');
-    })
-    closeAccordio2.addEventListener('click', function(){
-        accordion2.classList.add('hidden');
-    })
-    openAccordion3.addEventListener('click', function(){
-        accordion3.classList.remove('hidden');
-    });
-    closeAccordion3.addEventListener('click', function(){
-        accordion3.classList.add('hidden');
-    })
-
-    
-   </script>
+   <script src="./patients-profile.js"></script>
 </body>
 </html>
