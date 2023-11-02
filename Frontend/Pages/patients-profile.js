@@ -1,4 +1,4 @@
-'use strict';
+
    let firstTimerTextChange = document.querySelector('#timer');
    firstTimerTextChange.style.color = '#ff0000';
     //entire accordion 1
@@ -21,7 +21,7 @@
         clickEntireAccordionOpen1.style.display = "none";
         clickEntireAccordionClose1.style.display = "block";
         
-    })
+    });
     //updating the click events of close of the entire accordion
     clickEntireAccordionClose1.addEventListener('click', function(){
         entireAccordion1.classList.add("hide");
@@ -58,7 +58,7 @@
         accordion3.classList.add('hidden');
         openAccordion3.style.display = "block";
         closeAccordion3.style.display = "none";
-    })
+    });
 
 //entire accordion 2
    const clickEntireAccordionOpen2 = document.querySelector("#click-open-button-accordion2");
@@ -105,8 +105,26 @@
         outpatientAccordion.classList.add("hide-outpatient");
         openVitalAccordion2.style.display = "block";
         closeVitalAccordion2.style.display = "none";
-    })
+    });
+
+    //entire accordion 3
+
+    const clickEntireAccordionOpen3 = document.querySelector("#click-open-button-accordion3");
+    const clickEntireAccordionClose3 = document.querySelector("#click-close-button-accordion3");
+    const entireAccordion3 = document.querySelector("#entire-accordion3");
 
 
-
-
+        clickEntireAccordionOpen3.addEventListener("click", function(){
+            entireAccordion3.classList.remove("info-hidden");
+            clickEntireAccordionOpen3.style.display = "none";
+            clickEntireAccordionClose3.style.display = "block";
+        })
+        clickEntireAccordionClose3.addEventListener("click", function(){
+            entireAccordion3.classList.add("info-hidden");
+            clickEntireAccordionOpen3.style.display = "block";
+            clickEntireAccordionClose3.style.display = "none";
+        })
+        
+ 
+    
+    

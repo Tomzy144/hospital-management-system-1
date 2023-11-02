@@ -7,15 +7,16 @@
     font-family:cambria;
 }
 
+
 :root{
-    --bg: rgb(4 47 46);
-    --bg2:#fff2f2;
-    --hover-effect: rgb(15 118 110);
-    --c:#fff;
+    --deep-green: rgb(4 47 46);
+    --light-blue:#09529b;
+    --white:#ffffff;
+    --light-green:#0c9aae;
     --font-family:Arial;
+    --light-grey:#fff2f2;
     --font-heading:2rem;
     --icons-size:1.4rem;
-    
 }
 .div-logo{
     font-size: 2rem;
@@ -23,16 +24,13 @@
     margin: 0 auto;
 }
 .div-logo a{
-    color: var(--c);
+    color: var(--white);
   
 }
-/* body{
-    min-height: 100vh;
-    background: var(--bg2);
-} */
+
 
 .navbar{
-    background: var(--bg);
+    background: var(--deep-green);
     width: 100%;
     min-width: 100%;
     height: 60px;
@@ -62,11 +60,11 @@
     height: 100%;
     padding: 1.2rem;
     top: 2rem;
-    background: var(--bg);
+    background: var(--deep-green);
 }
 
 .sidebar a{
-    color: var(--c);
+    color: var(--white);
     text-decoration:none !important;;
     font-family: var(--font-family);
     
@@ -105,7 +103,7 @@
 }
 
 .items:hover{
-    background-color: var(--hover-effect);
+    background-color: var(--light-green);
     padding: 2rem;
     color: #000000;
 }
@@ -114,7 +112,7 @@
     color: #ffffff;
 }
 i{
-    color: var(--bg2); 
+    color: var(--white); 
     font-size: var(--icons-size);
 }
 
@@ -133,7 +131,7 @@ i:hover{
     align-items: center;
 }
 h1{
-    color: #00828e;
+    color: var(--light-green);
 }
 .flex-cards{
     display: flex;
@@ -165,14 +163,11 @@ h1{
 }
 
 #card-icons{
-    color: #00828e;
+    color: var(--light-green);
     font-size: 3rem;
 }
 
 h2{
-    color:#00828e;
+    color:var(--light-green);
 }
-
-
-
 

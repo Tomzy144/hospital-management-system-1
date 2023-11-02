@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="patients-profile.css">
     <link href="../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <title>Patients Profiles</title>
 </head>
@@ -14,7 +14,7 @@
                 <h2>Patients Profile</h2>
             </div>
                 <div class="nav-menu">
-        
+                    
                     <ul class="menu-items">
                         <a href="#">
                         <li class="items">
@@ -59,8 +59,9 @@
             </div>
             <h3 class="timer-text">Days Hours Mins Secs</h3>
         </div>
-               <!--accordion for labouratory examiniation-->
+              
         <div class="accordion-container">
+             <!--accordion for labouratory examiniation-->
             <div class="flex-container-for-click1">
            <h3>Labouratory Examination </h3> 
             <i class="fa fa-plus" id="click-open-button-accordion1"></i> 
@@ -100,12 +101,53 @@
                <div class="vital-container">
                 <!--impatient vital information-->
                 <div class="impatient-vital-info-dropdown">
-                    <h4>Impatient Vital</h4>
+                    <h4>Impatient Vital (Every 24hours)</h4>
                     <i class="fa fa-plus" id="open-dropdown-vital1"></i> 
                     <i class="fa fa-minus" id="close-dropdown-vital1"></i>
                 </div>
                 <div class="impatient-accordion hide-impatient">
-
+                    <table>
+                        <thead>
+                            <th>Days/Months/Year/Time</th>
+                            <th>Temperature</th>
+                            <th>BP(mm/Hg)</th>
+                            <th>Pulse(bp/m)</th>
+                            <th>Resp.(cm)</th>
+                            <th>spa2(%)</th>
+                            <th>weight(kg)</th>
+                            <th>Intake(m/s)</th>
+                            <th>Output</th>
+                            <th>Bmi</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>13th January, 2023</td>
+                                <td>30deg</td>
+                                <td>100hg</td>
+                                <td>70m</td>
+                                <td>1cm</td>
+                                <td>80%</td>
+                                <td>60kg</td>
+                                <td>120m</td>
+                                <td>7</td>
+                                <td>60</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>13th January, 2023</td>
+                                <td>30deg</td>
+                                <td>100hg</td>
+                                <td>70m</td>
+                                <td>1cm</td>
+                                <td>80%</td>
+                                <td>60kg</td>
+                                <td>120m</td>
+                                <td>7</td>
+                                <td>60</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                     <!--Outpatient vital information-->
                 <div class="outpatient-vital-info-dropdown">
@@ -114,11 +156,104 @@
                     <i class="fa fa-minus" id="close-dropdown-vital2"></i>
                 </div>
                 <div class="outpatient-accordion hide-outpatient">
-
+                    <!--Days of outpatient vitals-->
+                            <table>
+                                <thead>
+                                    <th>Days/Months/Year/Time</th>
+                                    <th>Temperature</th>
+                                    <th>BP(mm/Hg)</th>
+                                    <th>Pulse(bp/m)</th>
+                                    <th>Respiratory(cm)</th>
+                                    <th>Weight(kg)</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>13th January, 2023</td>
+                                        <td>30deg</td>
+                                        <td>100hg</td>
+                                        <td>70m</td>
+                                        <td>1cm</td>
+                                        <td>60kg</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td>13th January, 2023</td>
+                                        <td>30deg</td>
+                                        <td>100hg</td>
+                                        <td>70m</td>
+                                        <td>1cm</td>
+                                        <td>60kg</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td>13th January, 2023</td>
+                                        <td>30deg</td>
+                                        <td>100hg</td>
+                                        <td>70m</td>
+                                        <td>1cm</td>
+                                        <td>60kg</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td>13th January, 2023</td>
+                                        <td>30deg</td>
+                                        <td>100hg</td>
+                                        <td>70m</td>
+                                        <td>1cm</td>
+                                        <td>60kg</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                            </table>
+                            </div>
                 </div>
         </div>
+        <div class="flex-container-for-click3">
+            <h3>Patient Personal Information</h3> 
+             <i class="fa fa-plus" id="click-open-button-accordion3"></i> 
+             <i class="fa fa-minus" id="click-close-button-accordion3"></i>
+         </div>
+         <div class="info-accordion info-hidden" id="entire-accordion3">
+            <h1>Bio Data</h1>
+                <div class="flex-info1">
+                    <h4 class="info">Gender:</h4>
+                    <h4 class="info">Female</h4>
+                </div>
+                <div class="flex-info1">
+                    <h4 class="info">Birth of Date:</h4>
+                    <h4 class="info">6 Nove, 1982</h4>
+                </div>
+                <div class="flex-info1">
+                    <h4 class="info">Home Address:</h4>
+                    <h4 class="info">47 Mayne Avenue Street, Calabar</h4>
+                </div>
+                <div class="flex-info1">
+                    <h4 class="info">Phone Number:</h4>
+                    <h4 class="info">+23498243542</h4>
+                </div><br>
+                <h1>Next of Kin</h1>
+                <div class="flex-info1">
+                    <h4 class="info">Gender:</h4>
+                    <h4 class="info">Female</h4>
+                </div>
+                <div class="flex-info1">
+                    <h4 class="info">Home Address:</h4>
+                    <h4 class="info">47 Mayne Avenue Street, Calabar</h4>
+                </div>
+                <div class="flex-info1">
+                    <h4 class="info">Phone Number:</h4>
+                    <h4 class="info">+23498243542</h4>
+                </div>
+                <div class="flex-info1">
+                    <h4 class="info">Relationship</h4>
+                    <h4 class="info">Brother</h4>
+                </div>
+         </div>
         </div>
-
-   <script src="./patients-profile.js"></script>
+           
+   <script src="patients-profile.js"></script>
 </body>
 </html>
