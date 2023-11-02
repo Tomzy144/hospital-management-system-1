@@ -181,14 +181,14 @@ a{
 }
 .impatient-accordion{
     background-color: #fff;
-    box-shadow: 2px 2px 1px 1px var(--light-green);
+    box-shadow: 2px 2px 1px 3px  var(--light-green);
     width: fit-content;
     height: 200px;
     margin: 1rem 0;
 }
 .outpatient-accordion{
     background-color: #fff;
-    box-shadow: 2px 2px 1px 1px var(--light-green);
+    box-shadow: 2px 2px 1px 3px var(--light-green);
     width: fit-content;
     height: 300px;
     margin: 1rem 0;
@@ -220,7 +220,7 @@ table{
     .info-accordion{
         width: fit-content;
         height: fit-content;
-        box-shadow: 0.5px 0.5px 1px 1px var(--light-green);
+        box-shadow: 2px 2px 1px 3px  var(--deep-green);
         /* background-color: var(--deep-green); */
         color: var(--deep-green);
         justify-content: center;
