@@ -20,7 +20,14 @@
         entireAccordion1.classList.remove("hide");
         clickEntireAccordionOpen1.style.display = "none";
         clickEntireAccordionClose1.style.display = "block";
-        
+        //closes the entireaccordion 2 a open dropdown icon when you click on the first entire accordion element
+        entireAccordion2.classList.add("hide");
+        clickEntireAccordionOpen2.style.display = "block";
+        clickEntireAccordionClose2.style.display = "none";
+        //closes the entireaccordion 3 and return a open dropdown icon when you click on the first entire accordion element
+        entireAccordion3.classList.add("info-hidden");    
+        clickEntireAccordionOpen3.style.display = "block";
+        clickEntireAccordionClose3.style.display = "none";
     });
     //updating the click events of close of the entire accordion
     clickEntireAccordionClose1.addEventListener('click', function(){
@@ -77,6 +84,14 @@
         entireAccordion2.classList.remove("hide");
         clickEntireAccordionOpen2.style.display = "none";
         clickEntireAccordionClose2.style.display = "block";
+        //closes the entireaccordion 1 an open dropdown icon when you click on the first entire accordion element
+        entireAccordion1.classList.add("hide");
+        clickEntireAccordionOpen1.style.display = "block";
+        clickEntireAccordionClose1.style.display = "none";
+        //closes the entireaccordion 3 an open dropdown icon when you click on the first entire accordion element
+        entireAccordion3.classList.add("info-hidden");
+        clickEntireAccordionOpen3.style.display = "block";
+        clickEntireAccordionClose3.style.display = "none";
     })
     clickEntireAccordionClose2.addEventListener('click', function(){
         entireAccordion2.classList.add("hide");
@@ -113,11 +128,22 @@
     const clickEntireAccordionClose3 = document.querySelector("#click-close-button-accordion3");
     const entireAccordion3 = document.querySelector("#entire-accordion3");
 
-
+    
         clickEntireAccordionOpen3.addEventListener("click", function(){
-            entireAccordion3.classList.remove("info-hidden");
-            clickEntireAccordionOpen3.style.display = "none";
-            clickEntireAccordionClose3.style.display = "block";
+        entireAccordion3.classList.remove("info-hidden");
+        clickEntireAccordionOpen3.style.display = "none";
+        clickEntireAccordionClose3.style.display = "block";
+        //closes the entireaccordion 1 a open dropdown icon when you click on the first entire accordion element
+        entireAccordion1.classList.add("hide");
+        clickEntireAccordionOpen1.style.display = "block";
+        clickEntireAccordionClose1.style.display = "none";
+        //closes the entireaccordion 2 a open dropdown icon when you click on the first entire accordion element
+        entireAccordion2.classList.add("hide");
+        clickEntireAccordionOpen2.style.display = "block";
+        clickEntireAccordionClose2.style.display = "none";
+
+
+
         })
         clickEntireAccordionClose3.addEventListener("click", function(){
             entireAccordion3.classList.add("info-hidden");
