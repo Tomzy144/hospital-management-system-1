@@ -271,7 +271,7 @@ table th{
     border: none;
     border-bottom: none;
     background-color:  var(--deep-green); 
-    padding: 2rem;
+    padding: 1rem;
     border-bottom-left-radius: 19px;
     color: #fff;
 }
@@ -281,7 +281,7 @@ tbody tr td{
     text-align: left;
     background-color: var(--light-green);
     color: #fff;
-    padding: 1.5rem;
+    padding: 0.5rem;
     border-top-right-radius: 19px;
     border-bottom-left-radius: 19px;
 }
@@ -294,7 +294,7 @@ tbody tr td{
 }
 
 
-tbody tr td:nth-child(2){
+/* tbody tr td:nth-child(2){
     background-color:var(--deep-green) 
   
 }
@@ -303,5 +303,5 @@ tbody tr td:nth-child(4){
 }
 tbody tr td:nth-child(6){
     background-color:var(--deep-green) ;
-}
+} */
 
