@@ -738,9 +738,9 @@ if ($patient_profile_array) {
         icon.className = "fa fa-circle"; // Replace with the desired Font Awesome icon class
 
         if (patient.status_id === "1") {
-            icon.style.color = "green";
+            icon.style.color = "rgb(0, 255, 0)";
         } else if (patient.status_id === "2") {
-            icon.style.color = "red";
+            icon.style.color = "rgb(255, 226, 0";
         }
 
         statusCell.appendChild(icon);
