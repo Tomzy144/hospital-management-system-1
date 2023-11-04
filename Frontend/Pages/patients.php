@@ -779,6 +779,21 @@ if ($patient_profile_array) {
         }
     }
 
+    //Patient Page redirecting
+    function openNewPage() {
+      // Check if the link has been clicked before
+      if (sessionStorage.getItem('linkClicked') === null) {
+        //The URL of the page you want to open.
+        var url = 'patients_profile.html';
+
+        // Open the new page in a new browser window or tab.
+        window.parent(location=(url));
+
+        // Set a session storage flag to indicate that the link has been clicked
+        sessionStorage.setItem('linkClicked', 'true');
+      }
+    }
+
 </script>
 
 

@@ -267,20 +267,29 @@ table{
     text-align: center;
     font-size: 1.4rem;
 }
-table th{
+th{
     border: none;
     border-bottom: none;
     background-color:  var(--deep-green); 
-    padding: 1rem;
-    border-bottom-left-radius: 19px;
+    padding: 0.8rem;
+    /* border-bottom-left-radius: 19px; */
     color: #fff;
 }
 
-tbody tr td{
+tr:nth-child(1){
+    border: none;
+    text-align: left;
+    background-color: var(--white);
+    color:var(--deep-green);
+    padding: 0.5rem;
+    border-top-right-radius: 19px;
+    border-bottom-left-radius: 19px;
+}
+tr:nth-child(2){
     border: none;
     text-align: left;
     background-color: var(--light-green);
-    color: #fff;
+    color:var(--white);
     padding: 0.5rem;
     border-top-right-radius: 19px;
     border-bottom-left-radius: 19px;
