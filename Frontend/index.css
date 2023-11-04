@@ -282,8 +282,7 @@ tr:nth-child(1){
     background-color: var(--white);
     color:var(--deep-green);
     padding: 0.5rem;
-    border-top-right-radius: 19px;
-    border-bottom-left-radius: 19px;
+    cursor: pointer;
 }
 tr:nth-child(2){
     border: none;
@@ -291,26 +290,8 @@ tr:nth-child(2){
     background-color: var(--light-green);
     color:var(--white);
     padding: 0.5rem;
-    border-top-right-radius: 19px;
-    border-bottom-left-radius: 19px;
+    cursor: pointer;
 }
 #color-changing{
     color: rgb(236, 83, 0) !important;
 }
-
-.patients-links-to-profile{
-   color: #ffffff;
-}
-
-
-/* tbody tr td:nth-child(2){
-    background-color:var(--deep-green) 
-  
-}
-tbody tr td:nth-child(4){
-    background-color:var(--deep-green) 
-}
-tbody tr td:nth-child(6){
-    background-color:var(--deep-green) ;
-} */
-

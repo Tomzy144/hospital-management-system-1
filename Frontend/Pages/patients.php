@@ -194,10 +194,10 @@ if ($patient_profile_array) {
         <?php
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
+                    echo "<tr onClick='openNewPage();'>";
                     echo "<td>" . $row["sn"] . "</td>";
                     //updated kingsley added a link tag here
-                    echo "<td ?> id='redirecting' <?php "> . $row["patient_id"] . "</td>";
+                    echo "<td>". $row["patient_id"] . "</td>";
                     echo "<td>" . $row["fullname"] . "</td>";
                     echo "<td>" . $row["phonenumber"] . "</td>";
                     echo "<td>" . $row["date"] . "</td>";
@@ -780,18 +780,15 @@ if ($patient_profile_array) {
     }
 
     //Patient Page redirecting
+
+   
     function openNewPage() {
-      // Check if the link has been clicked before
-      if (sessionStorage.getItem('linkClicked') === null) {
         //The URL of the page you want to open.
         var url = 'patients_profile.html';
 
         // Open the new page in a new browser window or tab.
         window.parent(location=(url));
 
-        // Set a session storage flag to indicate that the link has been clicked
-        sessionStorage.setItem('linkClicked', 'true');
-      }
     }
 
 </script>

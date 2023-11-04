@@ -11,9 +11,33 @@
     const closeAccordion2 = document.querySelector('#close-accordion-two');
     const openAccordion3 = document.querySelector('#open-accordion-three');
     const closeAccordion3 = document.querySelector('#close-accordion-three');
+    const openAccordion4 = document.querySelector('#open-accordion-four');
+    const closeAccordion4 = document.querySelector('#close-accordion-four');
+    const openAccordion5 = document.querySelector('#open-accordion-five');
+    const closeAccordion5 = document.querySelector('#close-accordion-five');
+    const openAccordion6 = document.querySelector('#open-accordion-six');
+    const closeAccordion6 = document.querySelector('#close-accordion-six');
+    const openAccordion7 = document.querySelector('#open-accordion-seven');
+    const closeAccordion7 = document.querySelector('#close-accordion-seven');
+    const openAccordion8 = document.querySelector('#open-accordion-eight');
+    const closeAccordion8 = document.querySelector('#close-accordion-eight');
+    const openAccordion9 = document.querySelector('#open-accordion-nine');
+    const closeAccordion9 = document.querySelector('#close-accordion-nine');
+    const openAccordion10 = document.querySelector('#open-accordion-ten');
+    const closeAccordion10 = document.querySelector('#close-accordion-ten');
+    const openAccordion11 = document.querySelector('#open-accordion-eleven');
+    const closeAccordion11 = document.querySelector('#close-accordion-eleven');
     const accordion1 =  document.querySelector('#accordion-one');
     const accordion2 =  document.querySelector('#accordion-two');
     const accordion3 =  document.querySelector('#accordion-three');
+    const accordion4=  document.querySelector('#accordion-four');
+    const accordion5=  document.querySelector('#accordion-five');
+    const accordion6=  document.querySelector('#accordion-six');
+    const accordion7=  document.querySelector('#accordion-seven');
+    const accordion8=  document.querySelector('#accordion-eight');
+    const accordion9=  document.querySelector('#accordion-nine');
+    const accordion10=  document.querySelector('#accordion-ten');
+    const accordion11=  document.querySelector('#accordion-eleven');
 
     //updating the click events of open of the entire accordion
         clickEntireAccordionOpen1.addEventListener('click', function(){
@@ -65,6 +89,95 @@
         accordion3.classList.add('hidden');
         openAccordion3.style.display = "block";
         closeAccordion3.style.display = "none";
+    });
+
+    openAccordion4.addEventListener('click', function(){
+        accordion4.classList.remove('hidden');
+        openAccordion4.style.display = "none";
+        closeAccordion4.style.display = "block";
+    });
+
+    closeAccordion4.addEventListener('click', function(){
+        accordion4.classList.add('hidden');
+        openAccordion4.style.display = "block";
+        closeAccordion4.style.display = "none";
+    });
+    openAccordion5.addEventListener('click', function(){
+        accordion5.classList.remove('hidden');
+        openAccordion5.style.display = "none";
+        closeAccordion5.style.display = "block";
+    });
+
+    closeAccordion5.addEventListener('click', function(){
+        accordion5.classList.add('hidden');
+        openAccordion5.style.display = "block";
+        closeAccordion5.style.display = "none";
+    });
+    openAccordion6.addEventListener('click', function(){
+        accordion6.classList.remove('hidden');
+        openAccordion6.style.display = "none";
+        closeAccordion6.style.display = "block";
+    });
+
+    closeAccordion6.addEventListener('click', function(){
+        accordion6.classList.add('hidden');
+        openAccordion6.style.display = "block";
+        closeAccordion6.style.display = "none";
+    });
+    openAccordion7.addEventListener('click', function(){
+        accordion7.classList.remove('hidden');
+        openAccordion7.style.display = "none";
+        closeAccordion7.style.display = "block";
+    });
+
+    closeAccordion7.addEventListener('click', function(){
+        accordion7.classList.add('hidden');
+        openAccordion7.style.display = "block";
+        closeAccordion7.style.display = "none";
+    });
+    openAccordion8.addEventListener('click', function(){
+        accordion8.classList.remove('hidden');
+        openAccordion8.style.display = "none";
+        closeAccordion8.style.display = "block";
+    });
+
+    closeAccordion8.addEventListener('click', function(){
+        accordion8.classList.add('hidden');
+        openAccordion8.style.display = "block";
+        closeAccordion8.style.display = "none";
+    });
+    openAccordion9.addEventListener('click', function(){
+        accordion9.classList.remove('hidden');
+        openAccordion9.style.display = "none";
+        closeAccordion9.style.display = "block";
+    });
+
+    closeAccordion9.addEventListener('click', function(){
+        accordion9.classList.add('hidden');
+        openAccordion9.style.display = "block";
+        closeAccordion9.style.display = "none";
+    });
+    openAccordion10.addEventListener('click', function(){
+        accordion10.classList.remove('hidden');
+        openAccordion10.style.display = "none";
+        closeAccordion10.style.display = "block";
+    });
+
+    closeAccordion10.addEventListener('click', function(){
+        accordion10.classList.add('hidden');
+        openAccordion10.style.display = "block";
+        closeAccordion10.style.display = "none";
+    });
+    openAccordion11.addEventListener('click', function(){
+        accordion11.classList.remove('hidden');
+        openAccordion11.style.display = "none";
+        closeAccordion11.style.display = "block";
+    });
+
+    closeAccordion11.addEventListener('click', function(){
+        accordion11.classList.add('hidden');
+        openAccordion11.style.display = "block";
+        closeAccordion11.style.display = "none";
     });
 
 //entire accordion 2
