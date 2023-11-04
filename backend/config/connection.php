@@ -13,7 +13,7 @@ $website_url= "http://localhost/hospital-management-system"
 <?php
 $thename='Hospital Management System'; 
 ?>
-<!--  -->
+
 <?php
     // Database Configuration //
     $HOST_NAME = "localhost";
