@@ -197,7 +197,7 @@ if ($patient_profile_array) {
                     echo "<tr>";
                     echo "<td>" . $row["sn"] . "</td>";
                     //updated kingsley added a link tag here
-                    echo "<td ?> id="redirecting" <?php >" . $row["patient_id"] . "</td>";
+                    echo "<td ?> id='redirecting' <?php "> . $row["patient_id"] . "</td>";
                     echo "<td>" . $row["fullname"] . "</td>";
                     echo "<td>" . $row["phonenumber"] . "</td>";
                     echo "<td>" . $row["date"] . "</td>";
