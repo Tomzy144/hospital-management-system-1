@@ -83,10 +83,11 @@ if ($patient_profile_array) {
 <body>
    <div class="patient-container">
     <div  class="patient-navbar">
+        <!---BACK ARROW-->
+        <i class="fa fa-arrow-circle-o-left" id='back-arrow' onClick='backWardArrow()'></i>
         <h2>Patient Admission Lists</h2>
     </div>
         <div class="nav-menu">
-
             <ul class="menu-items">
                 <a href="#">
                 <li class="items">
@@ -789,6 +790,13 @@ if ($patient_profile_array) {
         // Open the new page in a new browser window or tab.
         window.parent(location=(url));
 
+    }
+
+    //BACK ARROW TO THE DASHBOARD
+    function backWardArrow(){
+        var urlBackwardArrow = '../dashboard.php';
+        window.parent(location=(urlBackwardArrow));
+      
     }
 
 </script>

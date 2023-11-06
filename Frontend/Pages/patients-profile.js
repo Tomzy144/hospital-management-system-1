@@ -264,6 +264,11 @@
             clickEntireAccordionClose3.style.display = "none";
         })
         
- 
+   //BACK ARROW TO THE DASHBOARD
+   function backWardArrow(){
+    var urlBackwardArrow = 'patients.php';
+    window.parent(location=(urlBackwardArrow));
+  
+}
     
     

@@ -100,12 +100,13 @@
     font-size: var(--icons-size);
     width: 100%;
     cursor: pointer;
+    color: #fff;
 }
 
 .items:hover{
     background-color: var(--light-green);
     padding: 2rem;
-    color: #000000;
+   color: #fff;
 }
 
 .items a:hover{
@@ -157,6 +158,7 @@ h1{
     transition: all 0.9s linear;
     animation-name:initial;
     animation-duration: 2s;
+    cursor: pointer;
 }
 .cards:hover{
     transform: scale(1.2);

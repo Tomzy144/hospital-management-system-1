@@ -32,4 +32,57 @@ closeToggleSidebar.addEventListener("click", function(){
 })
 
 
+//patient page redirect
+
+function openPatientsList(){
+    let urlPatient = 'pages/patients.php';
+
+    window.parent(location=(urlPatient));
+};
+function openDoctorPage(){
+    let urlDoctor = '/';
+    window.parent(location=(urlDoctor));
+};
+function openNursePage(){
+    let urlNurse = '/';
+    window.parent(location=(urlNurse));
+};
+function openPharmacyPage(){
+    let urlPharmacy = '/';
+    window.parent(location=(urlPharmacy));
+};
+function openLabPage(){
+    let urlLab = '/';
+    window.parent(location=(urlLab));
+};
+function openPrecedurePage(){
+    let urlPrecedure = '/';
+    window.parent(location=(urlPrecedure));
+};
+function openFinancePage(){
+    let urlFinance = '/';
+    window.parent(location=(urlFinance));
+}
+function openRecepPage(){
+    let urlRecep = '/';
+    window.parent(location=(urlRecep));
+};
+function openPhysiotherapyPage(){
+    let urlPhysiotherapy = '/';
+    window.parent(location=(urlPhysiotherapy));
+};
+function openStaffPage(){
+    let urlStaff = '/';
+    window.parent(location=(urlStaff));
+};
+function openWardBed(){
+    let urlWardBed = '/';
+    window.parent(location=(urlWardBed));
+};
+
+
+
+
+
+
 
