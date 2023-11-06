@@ -78,6 +78,7 @@ if ($patient_profile_array) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="../index.css">
+    <script src ="patient.js"></script>
     <title>Patient</title>
 </head>
 <body>
@@ -689,103 +690,40 @@ if ($patient_profile_array) {
         //////////////////////////////////////////////////////
 
 
+        const tableRows = document.querySelectorAll('tr[patient_id]');
 
-    function _fetch_patient_list() {
-    
-
-        const search_term = document.getElementById("search_term").value;
-        const searchResultsBody = document.getElementById("searchResultsBody");
-
-        // Clearing the existing search results
-        searchResultsBody.innerHTML = "";
-
-        //  an AJAX request to fetch search results
-        fetch('../../backend/config/search.php?search_term=' + search_term)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Filtering patients based on the search term
-                const searchTerm = search_term.toLowerCase();
-                const filteredPatients = data.filter(patient => (
-                    patient.sn.toLowerCase().includes(searchTerm) ||
-                    patient.patient_id.toLowerCase().includes(searchTerm) ||
-                    patient.fullname.toLowerCase().includes(searchTerm) ||
-                    patient.email.toLowerCase().includes(searchTerm) ||
-                    patient.phonenumber.toLowerCase().includes(searchTerm) ||
-                    patient.date.toLowerCase().includes(searchTerm) ||
-                    patient.status_id.toLowerCase().includes(searchTerm) ||
-                    patient.last_login.toLowerCase().includes(searchTerm)
-                ));
-
-
-
-
-        // Displaying search results in the table
-        filteredPatients.forEach(patient => {
-        const row = searchResultsBody.insertRow();
-        row.insertCell(0).textContent = patient.sn;
-        row.insertCell(1).textContent = patient.patient_id;
-        row.insertCell(2).textContent = patient.fullname;
-        // row.insertCell(3).textContent = patient.email;
-        row.insertCell(3).textContent = patient.phonenumber;
-        row.insertCell(4).textContent = patient.date;
-
-        const statusCell = row.insertCell(5);
-        const icon = document.createElement("i");
-        icon.className = "fa fa-circle"; // Replace with the desired Font Awesome icon class
-
-        if (patient.status_id === "1") {
-            icon.style.color = "rgb(0, 255, 0)";
-        } else if (patient.status_id === "2") {
-            icon.style.color = "rgb(255, 226, 0";
-        }
-
-        statusCell.appendChild(icon);
-    });
-
-        })
-        .catch(error => {
-            console.error('Error during AJAX request:', error);
+        // Add click event listeners to the table rows
+        tableRows.forEach((row) => {
+            row.addEventListener('click', () => {
+                const id = row.getAttribute('data-id');
+                window.location.href = `individual.html?id=${id}`;
+            });
         });
-    }
+ 
 
 
-        ////////////////////////////////////////////////////////////////
 
 
-    function showTable(category) {
-        var tables = document.getElementsByClassName("category-table");
 
-        // Hide the "All" table
-        var allTable = document.getElementById('All');
-        if (allTable) {
-            allTable.style.display = 'none';
-        }
 
-        // Hide all other tables
-        for (var i = 0; i < tables.length; i++) {
-            if (tables[i].id !== category) {
-                tables[i].style.display = 'none';
-            }
-        }
 
-        // Show the selected table
-        var selectedTable = document.getElementById(category);
-        if (selectedTable) {
-            selectedTable.style.display = 'table';
-        }
-    }
+
+
+
+
+
+
+
+
+
+
+// end of tomiwa's script
+   
 
     //Patient Page redirecting
-
-   
-    function openNewPage() {
+    function openNewPage(patient_id) {
         //The URL of the page you want to open.
-        var url = 'patients_profile.html';
+        var url = 'patients_profile.php';
 
         // Open the new page in a new browser window or tab.
         window.parent(location=(url));
