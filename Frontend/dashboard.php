@@ -62,49 +62,49 @@
         <i class="fa fa-times"></i>  
     </div>
         <ul class="menu-items">
-            <li class="items">
+            <li class="items" onClick='openPatientsList()'>
                 <i class="fa fa-user"></i>
-                <a href="pages/patients.php">Patients</a>
+               Patients
             </li>
-            <li class="items">
-            <link href="awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
-                <a href="">Doctor</a>
+            <li class="items" onClick='openDoctorPage()'>
+            <i class="fa fa-user-md"></i>
+                Doctor
             </li>
-            <li class="items">
+            <li class="items" onClick='openNursePage()'>
                 <i class="fa fa-user-md"></i>
-                <a href="">Nurse</a>
+                Nurse
             </li>
-            <li class="items">
+            <li class="items" onClick='openPharmacyPage()'>
                 <i class="fa fa-plus-square "></i>
-                <a href="">Phamacy</a>
+                Phamacy
             </li>
-            <li class="items">
+            <li class="items" onClick='openLabPage()'>
                 <i class="fa fa-flask"></i>
-                <a href="">Labouratory</a>
+                Labouratory
             </li>
-            <li class="items">
+            <li class="items" onClick='openPrecedurePage()'>
                 <i class="fa fa-hospital-o"></i> 
-                <a href="">Precedures</a>
+                Precedures
             </li>
-            <li class="items">
+            <li class="items"  onClick='openFinancePage()'>
                <i class="fa fa-money "></i> 
-                <a href="">Finance</a>
+                Finance
             </li>
-            <li class="items">
+            <li class="items" onClick='openRecepPage()'>
                 <i class="fa fa-user-circle-o"></i>
-                <a href="">Receptionist</a>
+                Receptionist
             </li>
-            <li class="items">
+            <li class="items" onClick='openPhysiotherapyPage()'>
                 <i class="fa fa-stethoscope"></i>
-                <a href="">Physiotherapy</a>
+                Physiotherapy
             </li>
-            <li class="items">
+            <li class="items" onClick='openStaffPage()'>
                 <i class="fa fa-users"></i> 
-                <a href="">Staffs</a>
+                Staffs
             </li>
-            <li class="items">
+            <li class="items" onClick='openWardBed()'>
                 <i class="fa fa-bed"></i>
-                <a href="">Wards & Beds</a>
+                Wards & Beds
             </li>
         </ul>
     </div>
@@ -114,99 +114,76 @@
     <div class="container">
         <h1>Dashboard</h1>
         <div class="flex-cards">
-            <a href="pages/patients.php">
-        <div class="cards">
+        <div class="cards" onClick='openPatientsList()'>
             <div class="card-icons">
                 <i class="fa fa-user"  id="card-icons"></i>
             </div>
                 <h2>Patients</h2>
         </div>
-    </a>
-    <a href="#">
-        <div class="cards">
+        <div class="cards" onClick='openDoctorPage()'>
             <div class="card-icons">
                 <i class="fa fa-user-md"  id="card-icons"></i>
             </div>
                 <h2>Doctor</h2>
         </div>
-    </a>
-    <a href="#">
-        <div class="cards">
+        <div class="cards" onClick='openNursePage()'>
             <div class="card-icons">
                 <i class="fa fa-user-md" id="card-icons"></i>
             </div>
                 <h2>Nurse</h2>
         </div>
-    </a>
-    <a href="#">
-        <div class="cards">
+        <div class="cards" onClick='openPharmacyPage()'>
             <div class="card-icons">
                 <i class="fa fa-plus-square "  id="card-icons"></i>
             </div>
                 <h2>Phamacy</h2>
         </div>
-    </a>
     </div>
         <div class="flex-cards">
-     <a href="#">
-        <div class="cards">
+        <div class="cards" onClick='openLabPage()'>
             <div class="card-icons">
                 <i class="fa fa-flask" id="card-icons"></i>
             </div>
                 <h2>Labouratory</h2>
         </div>
-    </a>
-        <a href="#">
-        <div class="cards">
+        <div class="cards" onClick='openPrecedurePage()'>
             <div class="card-icons">
                 <i class="fa fa-hospital-o" id="card-icons"></i> 
             </div>
                 <h2>Precedures</h2>
         </div>
-    </a>
-    <a href="#">
-        <div class="cards">
+        <div class="cards" onClick='openFinancePage()'>
             <div class="card-icons">
                 <i class="fa fa-money " id="card-icons"></i> 
             </div>
                 <h2>Finance</h2>
         </div>
-    </a>
-    <a href="#">
-        <div class="cards">
+        <div class="cards" onClick='openRecepPage()'>
             <div class="card-icons">
                 <i class="fa fa-user-circle-o" id="card-icons"></i>
             </div>
                 <h2>Receptionist</h2>
         </div>
-    </a>
     </div>
         <div class="flex-cards">
-     <a href="#">
-        <div class="cards">
+        <div class="cards" onClick='openPhysiotherapyPage()'>
             <div class="card-icons">
                 <i class="fa fa-stethoscope" id="card-icons"></i>
             </div>
                 <h2>Physiotherapy</h2>
         </div>
-    </a>
-        <a href="#">
-        <div class="cards">
+        <div class="cards" onClick='openStaffPage()'>
             <div class="card-icons">
                 <i class="fa fa-users" id="card-icons"></i> 
             </div>
                 <h2>Staffs</h2>
         </div>
-    </a>
-    <a href="#">
-        <div class="cards">
+        <div class="cards" onClick='openWardBed()'>
             <div class="card-icons">
                 <i class="fa fa-bed" id="card-icons"></i>
             </div>
                 <h2>Wards & Beds</h2>
-        </div>
-    </a>
-      
+        </div> 
     </div>
     </div>
 </main>
