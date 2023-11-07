@@ -4,12 +4,21 @@
 <?php include '../../backend/dashboardconfig/session-validation.php';
 include '../../backend/config/search.php'?>
 
+
+
+
 <?php
+
  $patient_id= $_POST['patient_id'];
+ echo $patient_id;
 ?>
 
+
+
 <?php    
-    
+
+
+
 $fetch_patient_profile = $callclass->_get_patient_details($conn, $patient_id);
 
 $patient_profile_array = json_decode($fetch_patient_profile, true);
@@ -44,23 +53,23 @@ if ($patient_profile_array) {
 
 
 
-    $fetch_category = $callclass->_get_category_details($conn, $category_id);
+    // $fetch_category = $callclass->_get_category_details($conn, $category_id);
 
-    // Check if the category details were successfully retrieved
-    if ($fetch_category !== false) {
-        $category_array = json_decode($fetch_category, true);
+    // // Check if the category details were successfully retrieved
+    // if ($fetch_category !== false) {
+    //     $category_array = json_decode($fetch_category, true);
     
-        // Check if category_name exists in the response
-        if (isset($category_array['category_name'])) {
-            $category_name = $category_array['category_name'];
-        } else {
-            // Handle the case where category_name was not found in the response.
-            // You might want to return an error message or take other appropriate action.
-        }
-    } else {
-        // Handle the case where category details were not found.
-        // You might want to return an error message or take other appropriate action.
-    }
+    //     // Check if category_name exists in the response
+    //     if (isset($category_array['category_name'])) {
+    //         $category_name = $category_array['category_name'];
+    //     } else {
+    //         // Handle the case where category_name was not found in the response.
+    //         // You might want to return an error message or take other appropriate action.
+    //     }
+    // } else {
+    //     // Handle the case where category details were not found.
+    //     // You might want to return an error message or take other appropriate action.
+    // }
     
     $fetch_pcount = $callclass->_get_total_count($conn, $pcount);
     $pcount_array = json_decode($fetch_pcount, true);
@@ -79,6 +88,7 @@ if ($patient_profile_array) {
     <link href="../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="../index.css">
     <script src ="patient.js"></script>
+    <script src="jquery-v3.6.1.min.js"></script>
     <title>Patient</title>
 </head>
 <body>
@@ -192,28 +202,31 @@ if ($patient_profile_array) {
             <d>Status</d>
         </th>
     </thead>              
+    <!-- ///////////////////////////////////////////////////////////////////// -->
         <tbody id="searchResultsBody" >
         <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr onClick='openNewPage();'>";
+       
+       if ($result->num_rows > 0) {
+           while ($row = $result->fetch_assoc()) {
+               $patient_id = $row["patient_id"];
+               echo "<tr data-patient-id='$patient_id' onClick='next_page(this);'>";
+
+
                     echo "<td>" . $row["sn"] . "</td>";
-                    //updated kingsley added a link tag here
                     echo "<td>". $row["patient_id"] . "</td>";
                     echo "<td>" . $row["fullname"] . "</td>";
                     echo "<td>" . $row["phonenumber"] . "</td>";
                     echo "<td>" . $row["date"] . "</td>";
                     echo "<td><i class='fa fa-circle' data-value='" . $row["status_id"] . "' data-status='" . $row["status_name"] . "'></i> " . $row["status_name"] . "</td>";
-              
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='5'>No records found</td></tr>";
-        }
-        ?>
+               echo "</tr>";
+           }
+       } else {
+           echo "<tr><td colspan='6'>No records found</td></tr>";
+       }
+       ?>
+       
         </tbody>
     </table>
-
 
 
 <!-- inpatients table -->
@@ -690,17 +703,6 @@ if ($patient_profile_array) {
         //////////////////////////////////////////////////////
 
 
-        const tableRows = document.querySelectorAll('tr[patient_id]');
-
-        // Add click event listeners to the table rows
-        tableRows.forEach((row) => {
-            row.addEventListener('click', () => {
-                const id = row.getAttribute('data-id');
-                window.location.href = `individual.html?id=${id}`;
-            });
-        });
- 
-
 
 
 
@@ -720,16 +722,17 @@ if ($patient_profile_array) {
 // end of tomiwa's script
    
 
-    //Patient Page redirecting
-    function openNewPage(patient_id) {
-        //The URL of the page you want to open.
-        var url = 'patients_profile.php';
+// //     //Patient Page redirecting
+//     function openNewPage(patient_id) {
+//     // The URL of the page you want to open.
+//     var url = 'patients_profile.php?id=' + patient_id; // Include the patient_id as a query parameter
 
-        // Open the new page in a new browser window or tab.
-        window.parent(location=(url));
+//     // Open the new page in the current browser window or tab.
+//     window.parent(location =( url));
+// }
 
-    }
 
+///////////////////
     //BACK ARROW TO THE DASHBOARD
     function backWardArrow(){
         var urlBackwardArrow = '../dashboard.php';

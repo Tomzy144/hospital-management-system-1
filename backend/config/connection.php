@@ -105,19 +105,19 @@ function _get_status_details($conn, $status_id) {
 
 
 
-function _get_category_details($conn, $category_id) {
-    $query = mysqli_query($conn, "SELECT category_name FROM category_tab WHERE category_id = '$category_id'");
+// function _get_category_details($conn, $category_id) {
+//     $query = mysqli_query($conn, "SELECT category_name FROM category_tab WHERE category_id = '$category_id'");
 
-    if ($fetch = mysqli_fetch_assoc($query)) {
-        // Fetch the result as an associative array
-        return json_encode($fetch);
-    } else {
-        // Handle the case where no results were found for the given category_id.
-        header('Content-Type: application/json');
-        echo json_encode(array("error" => "Category not found"));
-        exit; // Terminate the script after sending the error response
-    }
-}
+//     if ($fetch = mysqli_fetch_assoc($query)) {
+//         // Fetch the result as an associative array
+//         return json_encode($fetch);
+//     } else {
+//         // Handle the case where no results were found for the given category_id.
+//         // header('Content-Type: application/json');
+//         echo json_encode(array("error" => "Category not found"));
+//         exit; // Terminate the script after sending the error response
+//     }
+// }
 
 
 
@@ -264,7 +264,22 @@ function _get_total_count($conn, $pcount) {
 	
 
 function _get_patient_details($conn, $patient_id) {
-    $patient_id ="pat0001";
+    // $patient_id ="pat0001";
+    $squery = mysqli_query($conn, "SELECT patient_id FROM patient_tab");
+    if ($fetch = mysqli_fetch_assoc($squery)) {
+
+        $patient_id =$squery;
+       
+    } else {
+      
+        // return json_encode(array("error" => "Patient not found"));
+    
+
+
+
+
+
+  
     $query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");
     
     if ($fetch = mysqli_fetch_assoc($query)) {
@@ -275,6 +290,27 @@ function _get_patient_details($conn, $patient_id) {
         return json_encode(array("error" => "Patient not found"));
     }
 }
+}
+
+
+
+// function _get_patient_details($conn, $patient_id) {
+//     // Sanitize the input to prevent SQL injection (if not already done)
+//     $patient_id = mysqli_real_escape_string($conn, $patient_id);
+
+//     // Query to retrieve patient details based on the provided patient_id
+//     $query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");
+
+//     if ($query) {
+//         if ($fetch = mysqli_fetch_assoc($query)) {
+//             return json_encode($fetch);
+//         } else {
+//             return json_encode(array("error" => "Patient not found"));
+//         }
+//     } else {
+//         return json_encode(array("error" => "Query failed"));
+//     }
+// }
 
 
 

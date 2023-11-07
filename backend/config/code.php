@@ -38,7 +38,6 @@
 			}else{
 				$check=0;
 			}
-			sleep(1);
 							
 			echo json_encode(array("check" => $check, )); 
 	break;
@@ -51,7 +50,7 @@
 				$_SESSION['staff_id'] = $staff_id;
 				$s_staff_id=$_SESSION['staff_id'];
 				mysqli_query($conn,"UPDATE `staff_tab` SET last_login=NOW() WHERE staff_id='$s_staff_id'"); //// update last login
-				sleep(1);
+				
 			
 		?>
 					<script>
@@ -169,6 +168,42 @@
 	break;	
 
 
+
+
+
+
+	case 'patients_page':
+		$patient_id = $_POST['patient_id'];
+	
+		$userquery = mysqli_query($conn, "SELECT * FROM `patient_tab` WHERE patient_id = '$patient_id'") or die("cant select");
+		$usersel = mysqli_fetch_array($userquery);
+		$check = $usersel['patient_id'];
+
+		//require '../../Frontend/Pages/patients_profile.php';
+	
+		echo json_encode(array('check' => $check));
+		
+	break;
+	
+
+
+
+	
+
+
+
+
+
+	case 'patient_profile_page':
+		$patient_id = $_POST['patient_id'];
+	
+		$userquery = mysqli_query($conn, "SELECT * FROM `patient_tab` WHERE patient_id = '$patient_id'") or die("cant select");
+		$usersel = mysqli_fetch_array($userquery);
+		$check = $usersel['patient_id'];
+	
+		echo json_encode(array('check' => $check));
+		break;
+	
 
 
 
