@@ -87,6 +87,13 @@ function _fetch_patient_list() {
 }
 
 
+
+
+
+////////////////////////////////////////////////
+
+
+
 // function _next_page(next_id) {
 //     $('.login-div').hide();
 //     $('#'+next_id).fadeIn(1000);
@@ -95,116 +102,67 @@ function _fetch_patient_list() {
 
 
 
-////////////////////////////////////////////////
-        // let spatient_id = patient_id;
-    // var action = 'patients_page';
-    // var dataString = 'action=' + action + '&patient_id=' +spatient_id;
-
-function next_page(patient_id) {
-    var spatient_id = patient_id.getAttribute('data-patient-id');
-
-
-    var action = 'patients_profile';
-    var dataString = 'action=' + action + '&patient_id=' +spatient_id;
-  
-
-    $.ajax({
-        type: "POST",
-        url: "../../backend/config/code.php",
-        data: dataString,
-        dataType: 'json',
-        cache: false,
-        success: function(data) {
-            alert(data);
-                var scheck = data.check;
-                if (scheck === spatient_id ) {
-                    // window.alert("User is active");
-                    window.alert(spatient_id);
-                    window.location.href = "patients_profile.php";
-                   
-                    console.log(patient_id);
-                   
-                } else if (scheck === 'suspended') {
-                    window.alert("User account is suspended");
-                } else {
-                    window.alert("Invalid email address");
-                }
-          
-        }
-        // error: function(jqXHR, textStatus, errorThrown) {
-        //     // Handle AJAX request errors
-        //     console.error("AJAX Error: " + textStatus, errorThrown);
-        //     //window.alert("An error occurred during the request");
-        // }
-    });
-
-
-
-
-    $.ajax({
-        type: "POST",
-        url: "patients_profile.php",
-        data: dataString,
-        dataType: 'json',
-        cache: false,
-        success: function(data) {
-            alert(data);
-                var scheck = data.check;
-                if (scheck === spatient_id ) {
-                    // window.alert("User is active");
-                    window.alert(spatient_id);
-                 
-                   window.location.href = "patients_profile.php";
-                   
-                    console.log(patient_id);
-                   
-                } else if (scheck === 'suspended') {
-                    window.alert("User account is suspended");
-                } else {
-                    window.alert("Invalid email address");
-                }
-          
-         }
-        // error: function(jqXHR, textStatus, errorThrown) {
-        //     // Handle AJAX request errors
-        //     console.error("AJAX Error: " + textStatus, errorThrown);
-        //     //window.alert("An error occurred during the request");
-        // }
-    });
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // function next_page(patient_id) {
-//     // Do something with the patient_id, e.g., redirect to a new page
-//     window.location.href = "new_page.php?patient_id=" + patient_id;
-// }
+//     var spatient_id = patient_id.getAttribute('data-patient-id');
+//     var action = 'patients_page';
+//     var dataString = 'action=' + action + '&patient_id=' + spatient_id;
+
+//     $.ajax({
+//         type: "POST",
+//         url: "../../backend/config/code.php",
+//         data: dataString,
+//         dataType: 'json',
+//         cache: false,
+//         success: function(data) {
+//             alert(data);
+//             var scheck = data.check;
+//             if (scheck === spatient_id) {
+//                 // window.alert("User is active");
+//                 window.alert(spatient_id);
+//                 console.log(patient_id);
+//                // window.location.href = "patients_profile.php"; // Redirect after success
+//                window.location.href = "patients_profile.php?patient_id=" + spatient_id;
+
+//             } else if (scheck === 'suspended') {
+//                 window.alert("User account is suspended");
+//             } else {
+//                 window.alert("Invalid email address");
+//             }
+//         },
+//         error: function(jqXHR, textStatus, errorThrown) {
+//             // Handle AJAX request errors
+//             console.error("AJAX Error: " + textStatus, errorThrown);
+//             window.alert("An error occurred during the request");
+//         }
+//     });
+
+
+
+
+function next_page(patient_id) {
+    var spatient_id = patient_id.getAttribute('data-patient-id');
+    var action = 'patients_profile';
+
+    // Create a form dynamically
+    var form = document.createElement('form');
+    form.method = 'post';
+    form.action = 'patients_profile.php';
+
+    // Create a hidden input field for patient_id
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'patient_id';
+    input.value = spatient_id;
+
+    // Append the input to the form
+    form.appendChild(input);
+
+    // Append the form to the body and submit it
+    document.body.appendChild(form);
+    form.submit();
+}
 
 
 

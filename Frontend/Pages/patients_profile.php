@@ -9,6 +9,9 @@ include '../../backend/config/search.php'?>
 <?php
 
 
+$patient_id = $_POST['patient_id'];
+
+
 $case == 'patient_profile_page';
 
 if (isset($_POST['patient_id'])) {
@@ -22,9 +25,7 @@ if (isset($_POST['patient_id'])) {
 }
 
 
-//  $patient_id =$_POST['check']
 
-//  echo $patient_id;
 
 
     

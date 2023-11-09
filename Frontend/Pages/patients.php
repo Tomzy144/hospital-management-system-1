@@ -8,9 +8,11 @@ include '../../backend/config/search.php'?>
 
 
 <?php
-
+// session_start();
+// $_SESSION['current_patient_id'] = $scheck;
 //  $patient_id= $_POST['patient_id'];
- echo $patient_id;
+//  echo $patient_id;
+
 ?>
 
 
@@ -213,6 +215,9 @@ if ($patient_profile_array) {
                $_POST['patient_id'] = $patient_id;
             //    echo $_POST['patient_id'];
                echo "<tr data-patient-id='$patient_id' onClick='next_page(this);'>";
+
+                // $spatient_id= $patient_id;
+            
 
 
                     echo "<td>" . $row["sn"] . "</td>";

@@ -179,13 +179,7 @@
 		$usersel = mysqli_fetch_array($userquery);
 		$check = $usersel['patient_id'];
 
-	
-	
-		echo json_encode(array('check' => $check));
-
-
-		// require '../../Frontend/Pages/patients_profile.php';
-		
+		echo json_encode(array('check' => $check));		
 	break;
 	
 
