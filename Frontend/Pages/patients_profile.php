@@ -12,17 +12,17 @@ include '../../backend/config/search.php'?>
 $patient_id = $_POST['patient_id'];
 
 
-$case == 'patient_profile_page';
+// $case == 'patient_profile_page';
 
-if (isset($_POST['patient_id'])) {
-    $patient_id = $_POST['patient_id'];
-    // Now you can use $patient_id in your PHP code
+// if (isset($_POST['patient_id'])) {
+//     $patient_id = $_POST['patient_id'];
+//     // Now you can use $patient_id in your PHP code
 
-    echo json_encode(array('patient_id' => $patient_id));
-} else {
-    $response = ['result' => 'error', 'message' => 'No patient_id received'];
-    echo json_encode($response);
-}
+//     echo json_encode(array('patient_id' => $patient_id));
+// } else {
+//     $response = ['result' => 'error', 'message' => 'No patient_id received'];
+//     echo json_encode($response);
+// }
 
 
 
@@ -93,7 +93,7 @@ if ($patient_profile_array) {
  ?>
 
 
-
+<!-- end of php declarations -->
 
 
 

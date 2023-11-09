@@ -150,7 +150,7 @@ function next_page(patient_id) {
     form.method = 'post';
     form.action = 'patients_profile.php';
 
-    // Create a hidden input field for patient_id
+    // Creates a hidden input field for patient_id
     var input = document.createElement('input');
     input.type = 'hidden';
     input.name = 'patient_id';
