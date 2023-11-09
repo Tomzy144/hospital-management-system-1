@@ -1,51 +1,32 @@
-<?php include '../../backend/config/connection.php'?>
+<!-- ?php include '../../backend/config/connection.php'?> -->
+<?php include '../../backend/config/code.php'?>
 
-
-<?php // include '../../backend/dashboardconfig/session-validation.php';
+<?php include '../../backend/dashboardconfig/session-validation.php';
 include '../../backend/config/search.php'?>
 
-<?php
-
-$page=='patient_profile_page';
-
-$patient_id= $_POST['patient_id'];
-?>
-
-
 
 
 <?php
 
-// Check if the patient ID was sent via POST
+
+$case == 'patient_profile_page';
+
 if (isset($_POST['patient_id'])) {
     $patient_id = $_POST['patient_id'];
+    // Now you can use $patient_id in your PHP code
 
-    // You can now use $patientId in your PHP code
-    // Perform database queries or other operations based on the ID
-    // For demonstration, we'll just echo the received ID
-    echo "Received patient ID: " . $patient_id;
+    echo json_encode(array('patient_id' => $patient_id));
 } else {
-    // Handle the case where the ID was not sent
-    echo "No patient ID received";
+    $response = ['result' => 'error', 'message' => 'No patient_id received'];
+    echo json_encode($response);
 }
-?>
 
 
+//  $patient_id =$_POST['check']
+
+//  echo $patient_id;
 
 
-
-
-
-   
-
-
-
-
-
-<?php 
- echo $patient_id ?>
-
-<?php    
     
 $fetch_patient_profile = $callclass->_get_patient_details($conn, $patient_id);
 
@@ -93,22 +74,22 @@ if ($patient_profile_array) {
 
     // $fetch_category = $callclass->_get_category_details($conn, $category_id);
 
-    // // Check if the category details were successfully retrieved
-    // if ($fetch_category !== false) {
-    //     $category_array = json_decode($fetch_category, true);
+    // Check if the category details were successfully retrieved
+    if ($fetch_category !== false) {
+        $category_array = json_decode($fetch_category, true);
     
-    //     // Check if category_name exists in the response
-    //     if (isset($category_array['category_name'])) {
-    //         $category_name = $category_array['category_name'];
-    //     } else {
-    //         // Handle the case where category_name was not found in the response.
-    //         // You might want to return an error message or take other appropriate action.
-    //     }
-    // } else {
-    //     // Handle the case where category details were not found.
-    //     // You might want to return an error message or take other appropriate action.
-    // }
-    ?>
+        // Check if category_name exists in the response
+        if (isset($category_array['category_name'])) {
+            $category_name = $category_array['category_name'];
+        } else {
+            // Handle the case where category_name was not found in the response.
+            // You might want to return an error message or take other appropriate action.
+        }
+    } else {
+        // Handle the case where category details were not found.
+        // You might want to return an error message or take other appropriate action.
+    }
+ ?>
 
 
 
@@ -135,7 +116,8 @@ if ($patient_profile_array) {
     <script src="jquery-v3.6.1.min.js"></script>
     <title>Patients Profiles</title>
 </head>
-<body onClick="patients_profile_page(patient_id);">
+<body onClick="patients_profile_page('<?php echo $patient_id; ?>');">
+
 
 
    
@@ -513,3 +495,6 @@ if ($patient_profile_array) {
    <script src="patients-profile.js"></script>
 </body>
 </html>
+
+
+

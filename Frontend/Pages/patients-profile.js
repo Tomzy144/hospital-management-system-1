@@ -272,3 +272,33 @@
 }
     
     
+////////////////////////////////////////////////////
+
+
+//////////////tomzy's script 
+
+
+function patients_profile_page(patient_id) {
+    // var patient_id = row.getAttribute('data-patient-id');
+    var action = 'patients_page';
+    var dataString = 'action=' + action + '&patient_id=' + patient_id;
+
+    $.ajax({
+        type: "POST",
+        url: "../../backend/config/code.php",
+        data: dataString,
+        dataType: 'json',
+        cache: false,
+        success: function(data) {
+            // Handle the response from the server
+            // You can use the 'patient_id' sent from the server if needed
+            var receivedPatientId = data.patient_id;
+            console.log(receivedPatientId);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Handle AJAX request errors
+            console.error("AJAX Error: " + textStatus, errorThrown);
+        }
+    });
+}
+

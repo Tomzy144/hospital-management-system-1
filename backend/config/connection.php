@@ -262,34 +262,24 @@ function _get_total_count($conn, $pcount) {
 //     return '[{"patient_id":"'.$patient_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'","sn":"'.$sn.'"}]';
 // }
 	
-
 function _get_patient_details($conn, $patient_id) {
-    // $patient_id ="pat0001";
-    $squery = mysqli_query($conn, "SELECT patient_id FROM patient_tab");
-    if ($fetch = mysqli_fetch_assoc($squery)) {
-
-        $patient_id =$squery;
-       
-    } else {
-      
-        // return json_encode(array("error" => "Patient not found"));
+    // Query to check if the patient_id exists
+//    $patient_id = "pat0001";
+  $_POST['patient_id'] = $patient_id;
+    $checkQuery = mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");
     
-
-
-
-
-
-  
-    $query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");
-    
-    if ($fetch = mysqli_fetch_assoc($query)) {
-     
-        return json_encode($fetch);
+    if ($checkResult = mysqli_fetch_assoc($checkQuery)) {
+        // If a patient with the given ID exists, fetch their details
+        $query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");
+        
+        if ($fetch = mysqli_fetch_assoc($query)) {
+            return json_encode($fetch);
+        } else {
+            return json_encode(array("error" => "Patient details not found"));
+        }
     } else {
-      
         return json_encode(array("error" => "Patient not found"));
     }
-}
 }
 
 
@@ -331,3 +321,4 @@ function search_patient($conn, $total_patient) {
 $callclass=new allClass();
 
 
+//$array = $callclass->_get_setup_backend_settings_detail($conn, 'BK_ID001',$staff_id);

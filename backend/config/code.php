@@ -179,9 +179,12 @@
 		$usersel = mysqli_fetch_array($userquery);
 		$check = $usersel['patient_id'];
 
-		//require '../../Frontend/Pages/patients_profile.php';
+	
 	
 		echo json_encode(array('check' => $check));
+
+
+		// require '../../Frontend/Pages/patients_profile.php';
 		
 	break;
 	
@@ -194,12 +197,14 @@
 
 
 
-	case 'patient_profile_page':
+	case 'patients_profile_page':
 		$patient_id = $_POST['patient_id'];
 	
-		$userquery = mysqli_query($conn, "SELECT * FROM `patient_tab` WHERE patient_id = '$patient_id'") or die("cant select");
-		$usersel = mysqli_fetch_array($userquery);
-		$check = $usersel['patient_id'];
+		$puserquery = mysqli_query($conn, "SELECT * FROM `patient_tab` WHERE patient_id = $patient_id") or die("cant select");
+		$pusersel = mysqli_fetch_array($puserquery);
+		$check = $pusersel['patient_id'];
+
+		echo $check;
 	
 		echo json_encode(array('check' => $check));
 		break;

@@ -9,7 +9,7 @@ include '../../backend/config/search.php'?>
 
 <?php
 
- $patient_id= $_POST['patient_id'];
+//  $patient_id= $_POST['patient_id'];
  echo $patient_id;
 ?>
 
@@ -208,7 +208,10 @@ if ($patient_profile_array) {
        
        if ($result->num_rows > 0) {
            while ($row = $result->fetch_assoc()) {
+           
                $patient_id = $row["patient_id"];
+               $_POST['patient_id'] = $patient_id;
+            //    echo $_POST['patient_id'];
                echo "<tr data-patient-id='$patient_id' onClick='next_page(this);'>";
 
 
