@@ -11,6 +11,9 @@
     box-sizing: border-box;
     font-family:cambria;
 }
+/*SUPERADMIN SIGNIN PAGE, LOGIN PAGE AND RESET OTP PAGE*/
+
+/*SUPERADMIN SIGNIN*/
 
 .container{
     color: #ffffff;
@@ -26,35 +29,6 @@
     flex-direction: column;
 
 }
-.container-2{
-    color: #ffffff;
-    width: 100%;
-    height: 100vh;
-    background-image: url(Images/1282821.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
-}
-.container-3{
-    color: #ffffff;
-    width: 100%;
-    height: 100vh;
-    background-image: url(Images/1282794.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
-}
-
 .form-container{
     background-color: var(--deep-green); 
     width: fit-content;
@@ -63,28 +37,6 @@
     margin: 10% auto;
     border-radius: 5px;
     color: #ffffff;
-}
-.form-container-2{
-    background-color: var(--light-blue);
-    width: fit-content;
-    height: fit-content;
-    padding: 40px 60px;
-    margin: 10% auto;
-    border-radius: 5px;
-    color: #ffffff;
-}
-.form-container-3{
-    background-color:var(--light-green);
-    width: fit-content;
-    height: fit-content;
-    padding: 40px 60px;
-    margin: 10% auto;
-    border-radius: 5px;
-    color: #ffffff;
-}
-h2{
-    color: #ffffff;
-    text-align: center;
 }
 #login-div-container a{
     text-decoration: none;
@@ -100,6 +52,30 @@ h2{
     border: 0;
     border-radius: 5px;
 }
+/*SUPER ADMIN FORGOT PASSWORD*/
+.container-2{
+    color: #ffffff;
+    width: 100%;
+    height: 100vh;
+    background-image: url(Images/1282821.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+.form-container-2{
+    background-color: var(--light-blue);
+    width: fit-content;
+    height: fit-content;
+    padding: 40px 60px;
+    margin: 10% auto;
+    border-radius: 5px;
+    color: #ffffff;
+}
 .btn-2{
     cursor: pointer;
     display: inline-block;
@@ -111,6 +87,37 @@ h2{
     border: 0;
     border-radius: 5px;
 }
+/*SUPER ADMIN OTP RESET*/
+.container-3{
+    color: #ffffff;
+    width: 100%;
+    height: 100vh;
+    background-image: url(Images/1282794.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-container-3{
+    background-color:var(--light-green);
+    width: fit-content;
+    height: fit-content;
+    padding: 40px 60px;
+    margin: 10% auto;
+    border-radius: 5px;
+    color: #ffffff;
+}
+h2{
+    color: #ffffff;
+    text-align: center;
+}
+
+
 .password-link{
     color: #ffffff;
 }
@@ -146,7 +153,9 @@ h2{
     outline:0;
     border-bottom-color: lightblue !important;
 }
+/*SIGNIN PAGE, LOGIN PAGE AND RESET OTP PAGE*/
 
+/*PATIENT LISTS*/
 .patient-container{
     width: 100%;
     height: 100vh;
