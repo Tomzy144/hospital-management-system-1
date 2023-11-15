@@ -7,6 +7,7 @@
     <title>FRIDDA</title>
 </head>
 <body>
+    <!--STYLE-->
     <style>
         *{
             margin: 0;
@@ -15,12 +16,12 @@
             font-family: Arial, Helvetica, sans-serif;
         }
         .index-container{
-    background-image: url(./Images/137028.jpg);
-    width: 100%;
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+            background-image:linear-gradient(rgb(0,0,0,0.4)50%, rgb(0,0,0,0.4)50%), url(./Images/137028.jpg);
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }  
         .navbar{
             display: flex;
@@ -39,13 +40,14 @@
             font-size: 2rem;
         }
         .btn{
-            background-color: #073a7b;
+            background: none;
+            border: 2px solid #fff;
             color: #ffffff;
             padding: 0.6rem;
             font-size: 1.5rem;
-            border: none;  
             font-weight: bold;
             cursor: pointer;
+            border-radius: 8px;
         }
         .btn:active{
             transform: scale(1);
@@ -69,19 +71,26 @@
         h5, h3{
             color: rgb(151, 146, 146);
         }
-        .btn-doctor, .btn-nurse, .btn-receptionist{
-            background-color: #073a7b;
+        .btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab{
+            background: none;
+            border: 2px solid #fc0000;
             color: #ffffff;
-            border: none;
             border-radius: 5px;
             font-size: 1.4rem;
             padding: 0.6rem;
             cursor: pointer;
             margin: 1rem 0;
         }
-        /* .btn-doctor, .btn-nurse, .btn-receptionist::after{
-            transform: scale(1.2);
-        } */
+        .pop-up-btn-doctor, .pop-up-btn-nurse, .pop-up-btn-receptionist, .pop-up-btn-lab{
+            background: blue;
+            border: none;
+            color: #ffffff;
+            border-radius: 5px;
+            font-size: 1.4rem;
+            padding: 0.6rem;
+            cursor: pointer;
+            margin: 1rem 0;
+        }
         .hidden{
             display: none;
         }
@@ -95,25 +104,161 @@
             z-index: 5;
             opacity: 88%;
         }
+        main{
+            width: 100%;
+            height: 500px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding: 1rem;
+        }
+        .login-container{
+           width: 100%;
+           margin-top: 5rem;
+           display: flex;
+           flex-direction: row;
+           justify-content: center;
+        }
+        .flexs-container{
+        width: 100%;
+       }
+        .sections-container{
+            display: flex !important;
+            flex-direction: column;
+            margin: 0.5rem 1rem;
+        }
+        h2, p{
+            color: #fff;
+            font-size: 16px;
+        }
+        .doctor-reg-form{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 650px;
+            padding: 1rem;
+            height: 450px;
+            background-color: #fff;
+            transform: translate(-50%, -50%);
+            z-index: 13;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+        }
+        .hid{
+            display: none;
+        }
+        .form-container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 1rem;
+        }
+        form{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        input{
+            padding: 0.5rem;
+            margin: 0.7rem 0;
+            outline: none;
+            border: 1px solid rgb(210, 214, 210);
+        }
+        input::after{
+            outline:none;
+            border: none;
+        }
+        .btn-reg{
+            background-color: blue;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.4rem;
+            padding: 0.6rem;
+            cursor: pointer;
+            margin: 1rem 0;
+        }
     </style>
+
+    <!--HTML-->
     <div class="index-container">
         <nav class="navbar">
             <div class="logo">
                 <h1>FRIDDA</h1>
             </div>
                 <button class="btn" id="getting-started-btn">Getting Started</button>
+                 </nav>
+                <main>
+                     <h1 style="font-size: 2.3rem; line-height: 3.2rem;">Patients Health is <br/> <span style="border: 2px solid rgb(255, 255, 255); padding: 0.4rem; border-radius: 6px;">Our Priority</span></h1>
+                     <p style="  color: #fff;
+                     font-size: 1.5rem;
+                     padding: 2rem 0;">We work as a team to make the life <br/>of our patients wonderful.<br>Make yourself useful</p>
+                     <div class="login-container">
+                        <div class="flexs-container">
+                        <div class="sections-container">
+                            <h2>For Doctors</h2>
+                            <p>Doctors can login here</p>
+                            <button class="btn-doctor">Login as a Doctors</button>
+                        </div>
+                        <div class="sections-container">
+                            <h2>For Nurse</h2>
+                            <p>Nurse can login here</p>
+                            <button class="btn-nurse">Login as a Nurse</button>
+                        </div>
+                    </div>
+                    <div class="flexs-container">
+                        <div class="sections-container">
+                            <h2>For Receptionist</h2>
+                            <p>Receptionist can login here</p>
+                            <button class="btn-receptionist">Login as a Receptionist</button>
+                        </div>
+                        <div class="sections-container">
+                            <h2>For Lap Scientist</h2>
+                            <p>Lab Scientist can login here</p>
+                            <button class="btn-lab">Login as a Lab Scientist</button>
+                        </div>
+                    </div>
+                     </div>
+                </main>
             </div>
-        </nav>
         <div class="doctor-nurse-rep-popup-container hidden">
             <h3>Who are you?</h3>
-            <button class="btn-doctor">Doctor</button>
+            <button  class="pop-up-btn-doctor" id="btn-doctor">Doctor</button>
             <h5>OR</h5>
-            <button class="btn-nurse">Nurse</button>
+            <button class="pop-up-btn-nurse">Nurse</button>
             <h5>OR</h5>
-            <button class="btn-receptionist">Receptionist</button>
+            <button class="pop-up-btn-receptionist">Receptionist</button>
+            <h5>OR</h5>
+            <button class="pop-up-btn-lab">Lab Scientist</button>
+        </div>
+        <div class="doctor-reg-form hid">
+            <h3>Doctor Registration</h3>
+            <form action="">
+            <span class="form-container">
+                <input type="text" placeholder="First Name">
+                <input type="number" placeholder="Phone Number">
+                <input type="date">
+               <input type="password" placeholder="Password">
+            </span>
+
+            <span class="form-container">
+                <input type="text" placeholder="Last Name">
+                <input type="email" placeholder="Email Id">
+                <input type="text" placeholder="Address"> 
+               <input type="password" placeholder="Confirmed Password">
+            </span>
+            </form>
+            <button class="btn-reg">REGISTER</button>
         </div>
         <div class="overlay hidden"></div>
     </div>
+
+    <!--Script-->
     <script>
        const getStartedClickEvent =  document.querySelector("#getting-started-btn");
        const popUp = document.querySelector(".doctor-nurse-rep-popup-container");
@@ -131,13 +276,30 @@
        }
 
        document.addEventListener("keydown", function(e){
-        // console.log(e.key && !modal.classList.contains('hidden') );
-        console.log(e.key);
         if(e.key === 'Escape'){
             closeGetStartedClickEvent(); 
         }
 })
+       overlay.addEventListener("click", closeGetStartedClickEvent);
 
+       //Dcotor Click EventHandler
+       const btnClickDoctor = document.querySelector("#btn-doctor");
+       const PopUpDcotorReg = document.querySelector(".doctor-reg-form");
+
+       btnClickDoctor.addEventListener("click", function(){
+        PopUpDcotorReg.classList.remove("hid");
+        overlay.classList.remove("hidden");
+       });
+       const closebtnClickDoctor = function(){
+        PopUpDcotorReg.classList.add("hid");
+        overlay.classList.add("hidden");
+       }
+       document.addEventListener("keydown", function(e){
+        if(e.key === 'Escape'){
+            closebtnClickDoctor(); 
+        }
+})
+overlay.addEventListener("click", closebtnClickDoctor);
     </script>
 </body>
 </html>
