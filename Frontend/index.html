@@ -244,15 +244,15 @@
             <h3>Doctor Registration</h3>
             <form method="post" enctype="multipart/form-data" >
             <span class="form-container">
-                <input type="text" placeholder="First Name" id="first_name_text">
+                <input type="text" placeholder="FullName" id="full_name_text">
                 <input type="number" placeholder="Phone Number" id="phone_number">
                 <input type="date" id="date">
                <input type="password" placeholder="Password" id="password">
             </span>
 
             <span class="form-container">
-                <input type="text" placeholder="Last Name" id="last_name_text">
-                <input type="email" placeholder="Email Id" id="email">
+                <input type="text" placeholder="Dcotor Id" id="id_text">
+                <input type="email" placeholder="Email" id="email">
                 <input type="text" placeholder="Address" id="address_text"> 
                <input type="password" placeholder="Confirmed Password" id="confirmed_password">
             </span>
@@ -310,21 +310,20 @@ overlay.addEventListener("click", closebtnClickDoctor);
 function _sign_in(){ 
     var email = document.querySelector('#email').value;
     var password = document.querySelector('#password').value;
-    var ConfirmedPassword = document.querySelector('#confirmed_password').value;
-    var FirstNameTexts = document.querySelector('#first_name_text').value;
-    var LastNameTexts = document.querySelector('#last_name_text').value;
-    var AddressTexts = document.querySelector('#address_text').value;
+    var confirmedPassword = document.querySelector('#confirmed_password').value;
+    var fullNameTexts = document.querySelector('#full_name_text').value;
+    var doctoridTexts = document.querySelector('#id_text').value;
+    var addressTexts = document.querySelector('#address_text').value;
     var date = document.querySelector('#date').value;
     var phoneNumber = document.querySelector('#phone_number').value;
 
     //check if the input field is empty.
-    if((email!='')&&(password!='')&&(ConfirmedPassword!='') && (phoneNumber!='') && (FirstNameTexts!='') && (LastNameTexts!='') && (AddressTexts!='')&& (date!='')){
+    if((email!='')&&(password!='')&&(confirmedPassword!='') && (phoneNumber!='') && (fullNameTexts!='') && (doctoridTexts!='') && (addressTexts!='')&& (date!='')){
         closebtnClickDoctor();
         closeGetStartedClickEvent();
         window.alert('Thank you for Registering, Click on your fied Login button to access your portal')
         location.reload(true);
     }else{
-        // $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
         window.alert("Fill the neccessary field");
     }
 };
