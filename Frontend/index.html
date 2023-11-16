@@ -3,191 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="index_landingpage.css">
     <title>FRIDDA</title>
 </head>
 <body>
-    <!--STYLE-->
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .index-container{
-            background-image:linear-gradient(rgb(0,0,0,0.4)50%, rgb(0,0,0,0.4)50%), url(./Images/137028.jpg);
-            width: 100%;
-            height: 120vh;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }  
-        .navbar{
-            display: flex;
-            width: 100%;
-            justify-content: space-around;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            z-index: 3;
-            padding: 0.5rem;
-            flex-direction: row;
-            border-bottom: 1px solid #fff;
-        } 
-        h1{
-            color: #fff;
-            font-size: 2rem; 
-        }
-        .btn{
-            background: none;
-            border: 2px solid #fff;
-            color: #ffffff;
-            padding: 0.6rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 8px;
-        }
-        .btn:active{
-            transform: scale(1);
-        }
-        .doctor-nurse-rep-popup-container{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 350px;
-            padding: 2rem;
-            background-color: #fff;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            border-radius: 5px;
-            box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-        }
-        h5, h3{
-            color: rgb(151, 146, 146);
-        }
-        .btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab{
-            background: none;
-            border: 2px solid  blue;
-            color: #ffffff;
-            border-radius: 5px;
-            font-size: 1.4rem;
-            padding: 0.6rem;
-            cursor: pointer;
-            margin: 1rem 0;
-        }
-        .pop-up-btn-doctor, .pop-up-btn-nurse, .pop-up-btn-receptionist, .pop-up-btn-lab{
-            background: blue;
-            border: none;
-            color: #ffffff;
-            border-radius: 5px;
-            font-size: 1.4rem;
-            padding: 0.6rem;
-            cursor: pointer;
-            margin: 1rem 0;
-        }
-        .hidden{
-            display: none;
-        }
-        .overlay{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: rgb(0, 0, 0);
-            z-index: 5;
-            opacity: 88%;
-        }
-        main{
-            width: 100%;
-            height: 500px;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            padding: 1rem;
-        }
-        .login-container{
-           width: 100%;
-           margin-top: 5rem;
-           display: flex;
-           flex-direction: row;
-           justify-content: center;
-        }
-        .flexs-container{
-        width: 100%;
-       }
-        .sections-container{
-            display: flex !important;
-            flex-direction: column;
-            margin: 0.5rem 1rem;
-        }
-        h2, p{
-            color: #fff;
-            font-size: 16px;
-        }
-        .doctor-reg-form{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 650px;
-            padding: 1rem;
-            height: 450px;
-            background-color: #fff;
-            transform: translate(-50%, -50%);
-            z-index: 13;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            border-radius: 5px;
-            box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-        }
-        .hid{
-            display: none;
-        }
-        .form-container{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin: 0 1rem;
-        }
-        form{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-        }
-        input{
-            padding: 0.5rem;
-            margin: 0.7rem 0;
-            outline: none;
-            border: 1px solid rgb(210, 214, 210);
-        }
-        input::after{
-            outline:none;
-            border: none;
-        }
-        .btn-reg{
-            background-color: blue;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.4rem;
-            padding: 0.6rem;
-            cursor: pointer;
-            margin: 1rem 0;
-            position: absolute;
-            bottom: 8%;
-            left: 10%;
-            width: 80%;
-        }
-    </style>
+
 
     <!--HTML-->
     <div class="index-container">
@@ -240,100 +60,36 @@
             <h3>Who are you?</h3>
             <button  class="pop-up-btn-doctor" id="btn-doctor">Doctor</button>
             <h5>OR</h5>
-            <button class="pop-up-btn-nurse">Nurse</button>
+            <button class="pop-up-btn-nurse" id="btn-nurse">Nurse</button>
             <h5>OR</h5>
-            <button class="pop-up-btn-receptionist">Receptionist</button>
+            <button class="pop-up-btn-receptionist" id="btn-receptionist">Receptionist</button>
             <h5>OR</h5>
-            <button class="pop-up-btn-lab">Lab Scientist</button>
+            <button class="pop-up-btn-lab" id="btn-lab">Lab Scientist</button>
         </div>
-        <div class="doctor-reg-form hid">
-            <h3>Doctor Registration</h3>
-            <form method="post" enctype="multipart/form-data" >
-            <span class="form-container">
-                <input type="text" placeholder="FullName" id="full_name_text">
-                <input type="number" placeholder="Phone Number" id="phone_number">
-                <input type="date" id="date">
-               <input type="password" placeholder="Password" id="password">
-            </span>
 
-            <span class="form-container">
-                <input type="text" placeholder="Dcotor Id" id="id_text">
-                <input type="email" placeholder="Email" id="email">
-                <input type="text" placeholder="Address" id="address_text"> 
-               <input type="password" placeholder="Confirmed Password" id="confirmed_password">
-            </span>
-            <button type="button" class="btn-reg" onclick="_sign_in()">REGISTER</button>
-            </form>
-           
-        </div>
+        <!--Doctor Reg Form-->
+      
+        <div id="doctor-container">
+            
+          </div>
+        
+          <div id="nurse-container">
+            
+          </div>
+          <div id="receptionist-container">
+            
+          </div>
+          <div id="lab-container">
+            
+          </div>
+       
+
+
         <div class="overlay hidden"></div>
     </div>
 
     <!--Script-->
-    <script>
-        'use strict';
-       const getStartedClickEvent =  document.querySelector("#getting-started-btn");
-       const popUp = document.querySelector(".doctor-nurse-rep-popup-container");
-       const overlay = document.querySelector(".overlay");
+    <script src="index_landingpage.js"></script>
 
-       //Create a clickEvent for the Get Started Button
-       getStartedClickEvent.addEventListener("click", function(){
-                popUp.classList.remove("hidden");
-                overlay.classList.remove("hidden");
-       });
-
-       const closeGetStartedClickEvent = function(){
-                popUp.classList.add("hidden");
-                overlay.classList.add("hidden");
-       }
-
-       document.addEventListener("keydown", function(e){
-        if(e.key === 'Escape'){
-            closeGetStartedClickEvent(); 
-        }
-})
-       overlay.addEventListener("click", closeGetStartedClickEvent);
-
-       //Dcotor Click EventHandler
-       const btnClickDoctor = document.querySelector("#btn-doctor");
-       const PopUpDcotorReg = document.querySelector(".doctor-reg-form");
-
-       btnClickDoctor.addEventListener("click", function(){
-        PopUpDcotorReg.classList.remove("hid");
-        overlay.classList.remove("hidden");
-       });
-       const closebtnClickDoctor = function(){
-        PopUpDcotorReg.classList.add("hid");
-        overlay.classList.add("hidden");
-       }
-       document.addEventListener("keydown", function(e){
-        if(e.key === 'Escape'){
-            closebtnClickDoctor(); 
-        }
-})
-overlay.addEventListener("click", closebtnClickDoctor);
-
-function _sign_in(){ 
-    var email = document.querySelector('#email').value;
-    var password = document.querySelector('#password').value;
-    var confirmedPassword = document.querySelector('#confirmed_password').value;
-    var fullNameTexts = document.querySelector('#full_name_text').value;
-    var doctoridTexts = document.querySelector('#id_text').value;
-    var addressTexts = document.querySelector('#address_text').value;
-    var date = document.querySelector('#date').value;
-    var phoneNumber = document.querySelector('#phone_number').value;
-
-    //check if the input field is empty.
-    if((email!='')&&(password!='')&&(confirmedPassword!='') && (phoneNumber!='') && (fullNameTexts!='') && (doctoridTexts!='') && (addressTexts!='')&& (date!='')){
-        closebtnClickDoctor();
-        closeGetStartedClickEvent();
-        window.alert('Thank you for Registering, Click on your fied Login button to access your portal')
-        location.reload(true);
-    }else{
-        window.alert("Fill the neccessary field");
-    }
-};
-
-    </script>
 </body>
 </html>
