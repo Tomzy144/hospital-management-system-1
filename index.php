@@ -32,11 +32,6 @@ if($s_staff_id!=''){
     <div class="form-container">
         <h2>Please SignIn</h2>
         <form action="backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
-           <!-- <div class='form-control'>
-            
-                <input type='text'  autoComplete='off' />
-                <label>Your Full Name</label>
-            </div>  -->
             <div class='form-control'>
                 <input type='email' id="email" name="email" autoComplete='off'/>
                 <label for='email'>Email</label>
@@ -48,11 +43,6 @@ if($s_staff_id!=''){
           
             </div>
             <input name="action" value="login" type="hidden" />
-           
-             <!-- <div class='form-control'>
-                <input type="password" id="confirmPassword" required autocomplete="off">
-                <label for="confirmPassword" name="confirmPassword">Confirm Password</label>
-            </div>  -->
             <button type="button"  class='btn' id="login_btn" title="Login" onclick="_sign_in()" >Submit</button>
            
             <p class='text'>
