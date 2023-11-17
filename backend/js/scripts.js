@@ -302,7 +302,4 @@ function _resend_otp(ids,staff_id){
 //     cache: false,
 //     success: function(html){$('#next_2').html(html);}
 //     });
-// }
-
-
 

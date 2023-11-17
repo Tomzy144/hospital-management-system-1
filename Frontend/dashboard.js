@@ -36,7 +36,6 @@ closeToggleSidebar.addEventListener("click", function(){
 
 function openPatientsList(){
     let urlPatient = 'pages/patients.php';
-
     window.parent(location=(urlPatient));
 };
 function openDoctorPage(){
