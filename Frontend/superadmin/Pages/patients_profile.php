@@ -494,7 +494,7 @@ if ($patient_profile_array) {
          </div>
         </div>
            
-
+        <script src ="js/patients-profile.js"></script>
 </body>
 </html>
 
