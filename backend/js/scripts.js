@@ -51,7 +51,7 @@ function user_login(email,password){
    
    $.ajax({
    type: "POST",
-   url: "backend/config/code.php",
+   url: "../../backend/config/code.php",
    data: dataString,
    dataType: 'json',
    cache: false,

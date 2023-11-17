@@ -20,6 +20,6 @@
 		session_destroy();
 ?>
 		<script>
-        window.parent(location="<?php echo $website_url?>/admin/");
+        window.parent(location="<?php echo $website_url?>/../");
         </script>
 <?php }?>

@@ -35,7 +35,7 @@ closeToggleSidebar.addEventListener("click", function(){
 //patient page redirect
 
 function openPatientsList(){
-    let urlPatient = 'pages/patients.php';
+    let urlPatient = '../superadmin/pages/patients.php';
     window.parent(location=(urlPatient));
 };
 function openDoctorPage(){

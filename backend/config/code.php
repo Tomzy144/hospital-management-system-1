@@ -54,7 +54,7 @@
 			
 		?>
 					<script>
-						window.parent(location="../../frontend/dashboard.php");
+						window.parent(location="../../frontend/superadmin/dashboard.php");
 					</script>
 		<?php
 			

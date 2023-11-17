@@ -1,8 +1,8 @@
 <!-- ?php include '../../backend/config/connection.php'?> -->
-<?php include '../../backend/config/code.php'?>
+<?php include '../../../backend/config/code.php'?>
 
 <?php include '../../backend/dashboardconfig/session-validation.php';
-include '../../backend/config/search.php'?>
+include '../../../backend/config/search.php'?>
 
 
 
@@ -111,10 +111,11 @@ if ($patient_profile_array) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="patients-profile.css">
-    <link href="../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
-    <script src ="patient.js"></script>
-    <script src="jquery-v3.6.1.min.js"></script>
+    <link rel="stylesheet" href="css/patients-profile.css">
+    <link href="../../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+    <script src ="js/patient.js"></script>
+    <script src="js/jquery-v3.6.1.min.js"></script>
+
     <title>Patients Profiles</title>
 </head>
 <body onClick="patients_profile_page('<?php echo $patient_id; ?>');">
@@ -493,7 +494,7 @@ if ($patient_profile_array) {
          </div>
         </div>
            
-   <script src="patients-profile.js"></script>
+
 </body>
 </html>
 

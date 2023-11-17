@@ -51,7 +51,7 @@
 		?>
 		<script>
 			window.alert("Logging Out");
-		window.parent(location="../../");
+		window.parent(location="../../frontend/superadmin");
 		</script>
 		<?php
 	break;

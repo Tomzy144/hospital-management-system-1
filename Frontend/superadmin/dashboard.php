@@ -1,5 +1,5 @@
-<?php include '../backend/config/connection.php';?>
-<?php include '../backend/dashboardconfig/session-validation.php';?>
+<?php include '../../backend/config/connection.php';?>
+<?php include '../../backend/dashboardconfig/session-validation.php';?>
 
 <?php
  $staff_id= $_POST['staff_id'];
@@ -30,12 +30,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="css/dashboard.css">
      <!-- font aweasome link-->
      <!--Clould Font-->
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
 <!--Tomiwa font-->
-<link href="awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+<link href="../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <title>Hospital management System</title>
 </head>
 
@@ -49,7 +49,7 @@
         <a href="#">Hospital management System</a>
     </div>
     
-        <form method="post" action="../backend/dashboardconfig/code.php" id="logoutform">
+        <form method="post" action="../../backend/dashboardconfig/code.php" id="logoutform">
             <input type="hidden" name="action" value="logout"/>    
           
             <button class="signIn"  onclick="document.getElementById('logoutform').submit();"><i class="fa fa-sign-out"></i></button>
@@ -187,6 +187,6 @@
     </div>
     </div>
 </main>
-    <script src="dashboard.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>

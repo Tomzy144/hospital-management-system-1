@@ -1,4 +1,4 @@
-<?php include 'backend/config/connection.php'?>
+<?php include '../../backend/config/connection.php'?>
 
 
 
@@ -6,7 +6,7 @@
 if($s_staff_id!=''){
 ?>
     <script>
-	window.parent(location="frontend/dashboard.php/");
+	window.parent(location="dashboard.php/");
 	</script>
 <?php }?>
 
@@ -20,8 +20,8 @@ if($s_staff_id!=''){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Frontend/index.css">
-    <link rel="icon" href="Frontend/Images/1282798.jpg">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="Frontend/superadmin/Images/1282798.jpg">
     <title>SignIn</title>
 
 </head>
@@ -31,7 +31,7 @@ if($s_staff_id!=''){
   <div class="container">
     <div class="form-container">
         <h2>Please SignIn</h2>
-        <form action="backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+        <form action="../../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
             <div class='form-control'>
                 <input type='email' id="email" name="email" autoComplete='off'/>
                 <label for='email'>Email</label>
@@ -54,7 +54,7 @@ if($s_staff_id!=''){
 
     <!-- <script src="signin-form-validation.js"></script> -->
  
-    <script src="backend/js/scripts.js"></script>
-    <script src="backend/js/jquery-v3.6.1.min.js"></script>
+    <script src="../../backend/js/scripts.js"></script>
+    <script src="../../backend/js/jquery-v3.6.1.min.js"></script>
 </body>
 </html>

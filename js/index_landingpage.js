@@ -222,7 +222,7 @@
 // }
 
 function log_in(){
-    let urlLogin = './index.php';
+    let urlLogin = './frontend/superadmin/index.php';
     window.parent(location=(urlLogin));
 };
 

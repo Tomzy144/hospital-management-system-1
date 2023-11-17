@@ -285,7 +285,7 @@ function patients_profile_page(patient_id) {
 
     $.ajax({
         type: "POST",
-        url: "../../backend/config/code.php",
+        url: "../../../backend/config/code.php",
         data: dataString,
         dataType: 'json',
         cache: false,
