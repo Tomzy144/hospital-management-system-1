@@ -5,10 +5,74 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background-color: rgba(0, 94, 93, 0.9);
+  }
+
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 94, 93, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s, visibility 1s;
+    z-index: 1000;
+  }
+
+  .loading-content {
+    text-align: center;
+  }
+
+  /* Hide loading overlay when content is loaded */
+  body.loaded .loading-overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Add your own loading animation styles here */
+  .loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid rgba(0, 94, 93, 0.9);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .content-container {
+    overflow: hidden;
+    width: 0;
+    transition: width 1s;
+  }
+
+  .loaded .content-container {
+    width: 100%;
+  }
+
+  /* Your page content styles go here */
+  .page-content {
+    width: 0;
+    transition: width 1s;
+    width: 100%;
+  }
+
 .index-container{
     background-image:linear-gradient(rgb(0,0,0,0.4)50%, rgb(0,0,0,0.4)50%), url(../frontend/Images/137028.jpg);
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,40 +93,9 @@ h1{
     color: #fff;
     font-size: 2rem; 
 }
-.btn{
-    background: none;
-    border: 2px solid #fff;
-    color: #ffffff;
-    padding: 0.6rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px;
-}
-.btn:active{
-    transform: scale(1);
-}
-.doctor-nurse-rep-popup-container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    padding: 2rem;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-}
-h5, h3{
-    color: rgb(151, 146, 146);
-}
+
 .btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab{
-    background: none;
+    background-color: rgba(0, 94, 93, 0.9);
     border: 4px solid  #fff;
     color: #ffffff;
     border-radius: 5px;
@@ -71,23 +104,10 @@ h5, h3{
     cursor: pointer;
     margin: 1rem 0;
 }
-.pop-up-btn-doctor, .pop-up-btn-nurse, .pop-up-btn-receptionist, .pop-up-btn-lab{
-    background: blue;
-    border: none;
-    color: #ffffff;
-    border-radius: 5px;
-    font-size: 1.4rem;
-    padding: 0.6rem;
-    cursor: pointer;
-    margin: 1rem 0;
-}
-.hidden{
-    display: none;
-}
 .overlay{
     position: absolute;
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     top: 0;
     left: 0;
     background-color: rgb(0, 0, 0);
@@ -105,7 +125,7 @@ main{
 }
 .login-container{
    width: 100%;
-   margin-top: 5rem;
+   margin-top: 2rem;
    display: flex;
    flex-direction: row;
    justify-content: center;
@@ -122,120 +142,140 @@ h2, p{
     color: #fff;
     font-size: 16px;
 }
-/*Doctor Form css*/
-.doctor-reg-form{
+/*Doctor Login*/
+.doctor-login{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 650px;
+    width: 350px;
     padding: 1rem;
-    height: 450px;
+    height: 380px;
     background-color: #fff;
     transform: translate(-50%, -50%);
     z-index: 13;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
 }
-.hid{
-    display: none;
-}
-.form-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0 1rem;
-}
-form{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-input{
-    padding: 0.5rem;
-    margin: 0.7rem 0;
-    outline: none;
-    border: 1px solid rgb(210, 214, 210);
-}
-input::after{
-    outline:none;
-    border: none;
-}
-.btn-reg{
-    background-color: blue;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.4rem;
-    padding: 0.6rem;
-    cursor: pointer;
-    margin: 1rem 0;
-    position: absolute;
-    bottom: 8%;
-    left: 10%;
-    width: 80%;
-}
-
-
-/*Nurse Css*/
-
-.nurse-reg-form{
+/*Nurse Login*/
+.nurse-login{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 650px;
+    width: 350px;
     padding: 1rem;
-    height: 450px;
+    height: 380px;
     background-color: #fff;
     transform: translate(-50%, -50%);
     z-index: 13;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
 }
 
-/*Receptionist Css*/
-.receptionist-reg-form{
+
+/*Receptioninst Login*/
+.recep-login{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 650px;
+    width: 350px;
     padding: 1rem;
-    height: 450px;
+    height: 380px;    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+}
+
+/*Lab Login*/
+.lab-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: 380px;
     background-color: #fff;
     transform: translate(-50%, -50%);
     z-index: 13;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
 }
-/*Lab Css*/
-.lab-reg-form{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 650px;
-    padding: 1rem;
-    height: 450px;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-}
+
 .hidden{
     display: none;
+}
+
+.login-form-h1{
+    color: rgb(76, 73, 73);
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    text-align: center;
+    font-weight:bolder;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* margin-bottom: 20px; */
+    position: relative;
+    margin: 1rem 0;
+    color: rgb(76, 73, 73);
+}
+  i{
+    position: absolute;
+    left: 5px;
+    top: 63%;
+    transform: translateY(-50%);
+  }
+.form-control input{
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid rgb(131, 126, 126);
+    text-indent: 25px;
+    font-size:1.1rem;
+}
+.form-control input:focus{
+    padding: 12px 0;
+    text-indent: 25px;
+    font-size:1.1rem;
+    border-color: rgba(0, 94, 93, 0.9);
+}
+.btn{
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    background-color: rgba(0, 94, 93, 0.9);
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+.btn:active{
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    background-color: rgba(0, 94, 93, 0.9);
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.btn:hover{
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: ease-in-out;
+    transition: 2s;
 }

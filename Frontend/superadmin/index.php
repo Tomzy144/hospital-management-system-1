@@ -33,14 +33,13 @@ if($s_staff_id!=''){
         <h2>Please SignIn</h2>
         <form action="../../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
             <div class='form-control'>
+            <label for='email'>Email</label>
                 <input type='email' id="email" name="email" autoComplete='off'/>
-                <label for='email'>Email</label>
             </div>
          
             <div class='form-control'>
+            <label for="password">Password</label>
                 <input type="password" id="password" name="spass" autocomplete="off">
-                <label for="password">Password</label>
-          
             </div>
             <input name="action" value="login" type="hidden" />
             <button type="button"  class='btn' id="login_btn" title="Login" onclick="_sign_in()" >Submit</button>
@@ -53,7 +52,6 @@ if($s_staff_id!=''){
   </div>
 
     <!-- <script src="signin-form-validation.js"></script> -->
- 
     <script src="../../backend/js/scripts.js"></script>
     <script src="../../backend/js/jquery-v3.6.1.min.js"></script>
 </body>

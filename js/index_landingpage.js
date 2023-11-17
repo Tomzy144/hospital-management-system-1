@@ -1,228 +1,198 @@
 'use strict';
-// const getStartedClickEvent =  document.querySelector("#getting-started-btn");
-// const popUp = document.querySelector(".doctor-nurse-rep-popup-container");
-// const overlay = document.querySelector(".overlay");
 
-// //Create a clickEvent for the Get Started Button
-// getStartedClickEvent.addEventListener("click", function(){
-//          popUp.classList.remove("hidden");
-//          overlay.classList.remove("hidden");
-// });
+//using this function to pass into all the section login
+const log_inAll = function(roles, formHtml){
+    let container = document.getElementById(roles + '-container');
+    container.innerHTML = formHtml;
+}
 
-// const closeGetStartedClickEvent = function(){
-//          popUp.classList.add("hidden");
-//          overlay.classList.add("hidden");
-// }
+//Doctor Login
+const open_doctor_login_form = function(){
+    const doctor_login = document.querySelector(".doctor-login");
+    const dark_background = document.querySelector(".overlay")
+    doctor_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
 
-// document.addEventListener("keydown", function(e){
-//  if(e.key === 'Escape'){
-//      closeGetStartedClickEvent(); 
-//  }
-// })
-// overlay.addEventListener("click", closeGetStartedClickEvent);
+const close_doctor_login_form = function(){
+    const doctor_login = document.querySelector(".doctor-login");
+    const dark_background = document.querySelector(".overlay")
+    doctor_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
 
-// //Dcotor Click EventHandler
+const doctor_login_form = `
+    <div class="doctor-login hidden">
+        <h1 class="login-form-h1">Login (Doctor)</h1>
+        <form>
+        <div class="form-control">
+        <label for='email'>Email</label>
+        <i class="fa fa-user-plus"></i>
+        <input type="email" name="email" autoComplete='off'/> 
+        </div>
 
-// const generateRegistrationForm = function(role, formHtml){
-//     let container = document.getElementById(role + '-container');
-//     container.innerHTML = formHtml;
-// }
+        <div class="form-control">
+        <label for='number'>Your ID</label>
+        <i class="fa fa-key"></i>
+        <input type="number" name="number" autoComplete='off'/> 
+        </div>
 
-
-// let doctorFormHtml = `
-// <div class="doctor-reg-form hidden">
-// <h3>Doctor Registration</h3>
-// <form method="post" enctype="multipart/form-data" >
-// <span class="form-container">
-//     <input type="text" placeholder="FullName" id="full_name_text">
-//     <input type="number" placeholder="Phone Number" id="phone_number">
-//     <input type="date" id="date">
-//    <input type="password" placeholder="Password" id="password">
-// </span>
-
-// <span class="form-container">
-//     <input type="text" placeholder="Doctor Id" id="id_text">
-//     <input type="email" placeholder="Email" id="email">
-//     <input type="text" placeholder="Address" id="address_text"> 
-//    <input type="password" placeholder="Confirmed Password" id="confirmed_password">
-// </span>
-// <button type="button" class="btn-reg" onclick="_sign_in()">REGISTER</button>
-// </form>
-// </div>
-// `;
-// generateRegistrationForm('doctor', doctorFormHtml);
-
-// let nurseFormHtml = `
-// <div class="nurse-reg-form hidden">
-// <h3>Nurse Registration</h3>
-// <form method="post" enctype="multipart/form-data">
-// <span class="form-container">
-//     <input type="text" placeholder="FullName" id="full_name_text">
-//     <input type="number" placeholder="Phone Number" id="phone_number">
-//     <input type="date" id="date">
-//    <input type="password" placeholder="Password" id="password">
-// </span>
-
-// <span class="form-container">
-//     <input type="text" placeholder="Nurse Id" id="id_text">
-//     <input type="email" placeholder="Email" id="email">
-//     <input type="text" placeholder="Address" id="address_text"> 
-//    <input type="password" placeholder="Confirmed Password" id="confirmed_password">
-// </span>
-// <button type="button" class="btn-reg" onclick="_sign_in()">REGISTER</button>
-// </form>
-// </div>
-// `
-// generateRegistrationForm('nurse', nurseFormHtml);
-
-// let receptionistFormHtml =`
-// <div class="receptionist-reg-form hidden">
-// <h3>Receptionist Registration</h3>
-// <form method="post" enctype="multipart/form-data">
-// <span class="form-container">
-//     <input type="text" placeholder="FullName" id="full_name_text">
-//     <input type="number" placeholder="Phone Number" id="phone_number">
-//     <input type="date" id="date">
-//    <input type="password" placeholder="Password" id="password">
-// </span>
-
-// <span class="form-container">
-//     <input type="text" placeholder="Receptionist Id" id="id_text">
-//     <input type="email" placeholder="Email" id="email">
-//     <input type="text" placeholder="Address" id="address_text"> 
-//    <input type="password" placeholder="Confirmed Password" id="confirmed_password">
-// </span>
-// <button type="button" class="btn-reg" onclick="_sign_in()">REGISTER</button>
-// </form>
-// </div>
-// `
-
-// generateRegistrationForm('receptionist', receptionistFormHtml);
-
-// let labFormHtml = `
-// <div class="lab-reg-form hidden">
-// <h3>Lab Doctor Registration</h3>
-// <form method="post" enctype="multipart/form-data">
-// <span class="form-container">
-//     <input type="text" placeholder="FullName" id="full_name_text">
-//     <input type="number" placeholder="Phone Number" id="phone_number">
-//     <input type="date" id="date">
-//    <input type="password" placeholder="Password" id="password">
-// </span>
-
-// <span class="form-container">
-//     <input type="text" placeholder="Lab Doctor Id" id="id_text">
-//     <input type="email" placeholder="Email" id="email">
-//     <input type="text" placeholder="Address" id="address_text"> 
-//    <input type="password" placeholder="Confirmed Password" id="confirmed_password">
-// </span>
-// <button type="button" class="btn-reg" onclick="_sign_in()">REGISTER</button>
-// </form>
-// </div>
-// `
-// generateRegistrationForm('lab', labFormHtml)
-
-// //doctor handleclick
-// const btnClickDoctor = document.querySelector("#btn-doctor");
-// const PopUpDcotorReg = document.querySelector(".doctor-reg-form");
-
-// btnClickDoctor.addEventListener("click", function(){
-//  PopUpDcotorReg.classList.remove("hidden");
-//  overlay.classList.remove("hidden");
-// });
-// const closebtnClickDoctor = function(){
-//  PopUpDcotorReg.classList.add("hidden");
-//  overlay.classList.add("hidden");
-// }
-// document.addEventListener("keydown", function(e){
-//  if(e.key === 'Escape'){
-//      closebtnClickDoctor(); 
-//  }
-// })
+        <div class="form-control">
+        <label for='password'>Password</label>
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" autoComplete='off'/> 
+        </div>
+        <button type="button" class="btn">Login</button>
+        <form>
+    </div>
+`
+log_inAll('doctor', doctor_login_form);
 
 
 
-// //nurse handleclick
-// const btnClickNurse = document.querySelector("#btn-nurse");
-// const popUpNurseReg = document.querySelector(".nurse-reg-form");
+//Nurse Login
+const open_nurse_login_form = function() {
+    const nurse_login = document.querySelector(".nurse-login");
+    const dark_background = document.querySelector(".overlay");
+    nurse_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+const close_nurse_login_form = function(){
+    const nurse_login = document.querySelector(".nurse-login");
+    const dark_background = document.querySelector(".overlay")
+    nurse_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const nurse_login_form = `
+<div class="nurse-login hidden">
+    <h1 class="login-form-h1">Login (Nurse)</h1>
+    <form>
+    <div class="form-control">
+    <label for='email'>Email</label>
+    <i class="fa fa-user-plus"></i>
+    <input type="email" name="email" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='number'>Your ID</label>
+    <i class="fa fa-key"></i>
+    <input type="number" name="number" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='password'>Password</label>
+    <i class="fa fa-lock"></i>
+    <input type="password" name="password" autoComplete='off'/> 
+    </div>
+    <button type="button" class="btn">Login</button>
+    <form>
+</div>
+`
+log_inAll('nurse', nurse_login_form);
 
 
-// btnClickNurse.addEventListener("click", function(){
-//     popUpNurseReg.classList.remove("hidden");
-//     overlay.classList.remove("hidden");
-// })
 
-// const closebtnClickNurse = function(){
-//     popUpNurseReg.classList.add("hidden");
-//     overlay.classList.add("hidden");
-// }
+//Receptionist Login;
+const open_recep_login_form = function(){
+    const recep_login = document.querySelector(".recep-login");
+    const dark_background = document.querySelector(".overlay");
+    recep_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+const close_recep_login_form = function(){
+    const recep_login = document.querySelector(".recep-login");
+    const dark_background = document.querySelector(".overlay");
+    recep_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const recep_login_form = `
+<div class="recep-login hidden">
+    <h1 class="login-form-h1">Login (Receptionist)</h1>
+    <form>
+    <div class="form-control">
+    <label for='email'>Email</label>
+    <i class="fa fa-user-plus"></i>
+    <input type="email" name="email" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='number'>Your ID</label>
+    <i class="fa fa-key"></i>
+    <input type="number" name="number" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='password'>Password</label>
+    <i class="fa fa-lock"></i>
+    <input type="password" name="password" autoComplete='off'/> 
+    </div>
+    <button type="button" class="btn">Login</button>
+<form>
+</div>
+`
+log_inAll('recep', recep_login_form);
+
+//Lab Login
+const open_lab_login_form = function(){
+    const lab_login = document.querySelector(".lab-login");
+    const dark_background = document.querySelector(".overlay");
+    lab_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+
+const close_lab_login_form = function() {
+    const lab_login = document.querySelector(".lab-login");
+    const dark_background = document.querySelector(".overlay");
+    lab_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const lab_login_form = `
+<div class="lab-login hidden">
+    <h1 class="login-form-h1">Login (Lab Scientist)</h1>
+    <form>
+    <div class="form-control">
+    <label for='email'>Email</label>
+    <i class="fa fa-user-plus"></i>
+    <input type="email" name="email" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='number'>Your ID</label>
+    <i class="fa fa-key"></i>
+    <input type="number" name="number" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='password'>Password</label>
+    <i class="fa fa-lock"></i>
+    <input type="password" name="password" autoComplete='off'/> 
+    </div>
+    <button type="button" class="btn">Login</button>
+    <form>
+</div>
+`
+log_inAll('lab', lab_login_form);
+
+//closeDarkBackground
+const dark_background = document.querySelector(".overlay")
+dark_background.addEventListener("click", function(){
+    close_doctor_login_form();
+    close_nurse_login_form();
+    close_recep_login_form();
+    close_lab_login_form();
+    });
 
 
-// //receptionist handleClick
-// const btnClickReceptionist  = document.querySelector("#btn-receptionist");
-// const popUpReceptionist = document.querySelector(".receptionist-reg-form")
-
-// btnClickReceptionist.addEventListener("click", function(){
-//     popUpReceptionist.classList.remove("hidden");
-//     overlay.classList.remove("hidden");
-// })
-
-// const closebtnClickReceptionist = function(){
-//     popUpReceptionist.classList.add("hidden");
-//     overlay.classList.add("hidden");
-// }
-
-
-// //lab handleClick
-// const btnClickLab  = document.querySelector("#btn-lab");
-// const popUpLab = document.querySelector(".lab-reg-form")
-
-
-// btnClickLab.addEventListener("click", function(){
-//     popUpLab.classList.remove("hidden");
-//     overlay.classList.remove("hidden");
-// })
-
-// const closebtnClickLab = function(){
-//     popUpLab.classList.add("hidden");
-//     overlay.classList.add("hidden");
-// }
-
-// overlay.addEventListener("click", function(){
-//     closebtnClickDoctor();
-//     closebtnClickNurse();
-//     closebtnClickReceptionist()
-//     closebtnClickLab();
-// });
-
-// function _sign_in(){ 
-// var email = document.querySelector('#email').value;
-// var password = document.querySelector('#password').value;
-// var confirmedPassword = document.querySelector('#confirmed_password').value;
-// var fullNameTexts = document.querySelector('#full_name_text').value;
-// var doctoridTexts = document.querySelector('#id_text').value;
-// var addressTexts = document.querySelector('#address_text').value;
-// var date = document.querySelector('#date').value;
-// var phoneNumber = document.querySelector('#phone_number').value;
-
-// //check if the input field is empty.
-// if((email!='')&&(password!='')&&(confirmedPassword!='') && (phoneNumber!='') && (fullNameTexts!='') && (doctoridTexts!='') && (addressTexts!='')&& (date!='')){
-//  closebtnClickDoctor();
-//  closeGetStartedClickEvent();
-//  window.alert('Thank you for Registering, Click on your fied Login button to access your portal')
-//  location.reload(true);
-// }else{
-//  window.alert("Fill the neccessary field");
-// }
-// };
-
-// function log_in (){
-//     let urlLogin = '../index.php';
-//     window.parent(location=(urlLogin));
-// }
-
+//superAdmin linking
 function log_in(){
     let urlLogin = './frontend/superadmin/index.php';
     window.parent(location=(urlLogin));
 };
+document.addEventListener('DOMContentLoaded', function() {
+    // Add 'fade-in' class to the body after the DOM content is loaded
+    document.body.classList.add('loaded');
+})
 

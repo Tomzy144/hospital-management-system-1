@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index_landingpage.css">
-       <!--Script-->
-       <script src="js/index_landingpage.js"></script>
+    <link href="frontend/awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+
     <title>FRIDDA</title>
 </head>
 <body>
 
 
     <!--HTML-->
+    <div class="content-container">
     <div class="index-container">
         <nav class="navbar">
             <div class="logo">
@@ -29,24 +30,24 @@
                         <div class="sections-container">
                             <h2>For Doctors</h2>
                             <p>Doctors can login here</p>
-                            <button class="btn-doctor">Login as a Doctors</button>
+                            <button class="btn-doctor" onclick="open_doctor_login_form()">Login as a Doctors</button>
                         </div>
                         <div class="sections-container">
                             <h2>For Nurse</h2>
                             <p>Nurse can login here</p>
-                            <button class="btn-nurse">Login as a Nurse</button>
+                            <button class="btn-nurse" onclick="open_nurse_login_form()">Login as a Nurse</button>
                         </div>
                     </div>
                     <div class="flexs-container">
                         <div class="sections-container">
                             <h2>For Receptionist</h2>
                             <p>Receptionist can login here</p>
-                            <button class="btn-receptionist">Login as a Receptionist</button>
+                            <button class="btn-receptionist" onclick="open_recep_login_form()">Login as a Receptionist</button>
                         </div>
                         <div class="sections-container">
                             <h2>For Lap Scientist</h2>
                             <p>Lab Scientist can login here</p>
-                            <button class="btn-lab">Login as a Lab Scientist</button>
+                            <button class="btn-lab" onclick="open_lab_login_form()">Login as a Lab Scientist</button>
                         </div>
                     </div>
                     
@@ -58,39 +59,22 @@
                     </div>
                 </main>
             </div>
-        <!-- <div class="doctor-nurse-rep-popup-container hidden">
-            <h3>Who are you?</h3>
-            <button  class="pop-up-btn-doctor" id="btn-doctor">Doctor</button>
-            <h5>OR</h5>
-            <button class="pop-up-btn-nurse" id="btn-nurse">Nurse</button>
-            <h5>OR</h5>
-            <button class="pop-up-btn-receptionist" id="btn-receptionist">Receptionist</button>
-            <h5>OR</h5>
-            <button class="pop-up-btn-lab" id="btn-lab">Lab Scientist</button>
-        </div> -->
 
-        <!--Doctor Reg Form-->
-      
-        <div id="doctor-container">
-            
-          </div>
-        
-          <div id="nurse-container">
-            
-          </div>
-          <div id="receptionist-container">
-            
-          </div>
-          <div id="lab-container">
-            
-          </div>
-       
-
-
+           <div id="doctor-container"></div>
+           <div id="nurse-container"></div>
+           <div id="recep-container"></div>
+           <div id="lab-container"></div>
         <div class="overlay hidden"></div>
     </div>
 
- 
-
+    <div class="loading-overlay">
+        <div class="loading-content">
+          <div class="loader"></div>
+          <p>Welcome..........</p>
+        </div>
+    </div>
+      </div>
+        <!--Script-->
+        <script src="js/index_landingpage.js"></script>
 </body>
 </html>
