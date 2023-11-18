@@ -270,7 +270,7 @@ h2, p{
     width: 100%;
     padding: 0.6rem;
     border: none;
-    background-color: rgba(0, 94, 93, 0.9);
+    background-color:blue;
     border-radius: 4px;
     color: #fff;
     cursor: pointer;
@@ -279,7 +279,7 @@ h2, p{
     width: 100%;
     padding: 0.6rem;
     border: none;
-    background-color: #0000;
+    background-color: #00000000;
     border-radius: 4px;
     color: #fff;
     cursor: pointer;
@@ -290,7 +290,7 @@ h2, p{
     width: 100%;
     padding: 0.6rem;
     border: none;
-    background-color:blue;
+    background-color:rgb(0, 0, 0);
     border-radius: 4px;
     color: #fff;
     cursor: pointer;

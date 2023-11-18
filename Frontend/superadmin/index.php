@@ -46,6 +46,7 @@ if($s_staff_id!=''){
            
             <p class='text'>
              <a href='frontend/forgotten-password.php' class="password-link">Forgotten Password</a>
+             <!-- <a href='./hospital-management-system\index.html' class="password-link">Back to Home</a> -->
             </p>
         </form>
     </div>
