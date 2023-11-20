@@ -23,6 +23,7 @@ const close_doctor_login_form = function(){
 
 const doctor_login_form = `
     <div class="doctor-login hidden">
+    <i class="fa fa-times-circle" id='close-icon-doctor'></i>
         <h1 class="login-form-h1">Login (Doctor)</h1>
         <form>
         <div class="form-control">
@@ -66,6 +67,7 @@ const close_nurse_login_form = function(){
 
 const nurse_login_form = `
 <div class="nurse-login hidden">
+<i class="fa fa-times-circle" id='close-icon-nurse'></i>
     <h1 class="login-form-h1">Login (Nurse)</h1>
     <form>
     <div class="form-control">
@@ -109,6 +111,7 @@ const close_recep_login_form = function(){
 
 const recep_login_form = `
 <div class="recep-login hidden">
+<i class="fa fa-times-circle" id='close-icon-recep'></i>
     <h1 class="login-form-h1">Login (Receptionist)</h1>
     <form>
     <div class="form-control">
@@ -151,6 +154,7 @@ const close_lab_login_form = function() {
 
 const lab_login_form = `
 <div class="lab-login hidden">
+<i class="fa fa-times-circle" id='close-icon-lab'></i>
     <h1 class="login-form-h1">Login (Lab Scientist)</h1>
     <form>
     <div class="form-control">
@@ -185,6 +189,23 @@ dark_background.addEventListener("click", function(){
     close_lab_login_form();
     });
 
+const closeIconDoc = document.querySelector("#close-icon-doctor");
+const closeIconNurse = document.querySelector("#close-icon-nurse");
+const closeIconRecep = document.querySelector("#close-icon-recep");
+const closeIconLab = document.querySelector("#close-icon-lab");
+
+closeIconDoc.addEventListener("click", function(){
+        close_doctor_login_form();
+})
+closeIconNurse.addEventListener("click", function(){
+    close_nurse_login_form();
+})
+closeIconRecep.addEventListener("click", function(){
+    close_recep_login_form();;
+})
+closeIconLab.addEventListener("click", function(){
+    close_lab_login_form();
+})
 
 //superAdmin linking
 function log_in(){
