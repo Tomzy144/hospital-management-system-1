@@ -131,7 +131,7 @@ const recep_login_form = `
     <i class="fa fa-lock"></i>
     <input type="password" name="password" autoComplete='off'/> 
     </div>
-    <button type="button" class="btn">Login</button>
+    <button type="button" class="btn" onclick="submission_url()">Login</button>
 <form>
 </div>
 `
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //preloader
 
 
-const preloaderDuration = 2000; // 3 seconds
+const preloaderDuration = 2000; // 2 seconds
 
 // Wait for the window to load
 window.onload = function() {
@@ -230,3 +230,8 @@ window.onload = function() {
     document.querySelector('content-container').style.display = 'block';
   }, preloaderDuration);
 };
+
+const submission_url = function(){
+    let url = 'frontend/receptionist/dashboard.html';
+    window.parent(location =(url));
+}

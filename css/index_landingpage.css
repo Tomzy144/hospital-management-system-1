@@ -39,12 +39,9 @@ body {
     z-index: 1000;
   }
 
-  .loading-content {
-    text-align: center;
-  }
 
   /* Hide loading overlay when content is loaded */
-  body.loaded .loading-overlay {
+  body .loading-overlay {
     opacity: 0;
     visibility: hidden;
   }
