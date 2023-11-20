@@ -154,7 +154,7 @@ h1{
     padding: 1.1rem;
     transition: ease-in-out 2s;
     background:var(--c);
-    box-shadow: 1px 1px 4px #b7aeae;
+    box-shadow: 0 3rem 5rem rgba(189, 186, 186, 0.3);
     transition: all 0.9s linear;
     animation-name:initial;
     animation-duration: 2s;

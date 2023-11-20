@@ -307,3 +307,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add 'fade-in' class to the body after the DOM content is loaded
     document.body.classList.add('loaded');
 })
+const preloaderDuration = 3000; // 3 seconds
+
+// Wait for the window to load
+window.onload = function() {
+  // Hide the preloader after the specified duration
+  setTimeout(function() {
+    document.getElementById('preloader').style.display = 'none';
+    document.querySelector('container').style.display = 'block';
+  }, preloaderDuration);
+};
+
+// const forgottenPasswordUrl = function() {
+//     let url = 'frontend/forgotten-password.php';
+//     window.parent(location = (url));
+// }

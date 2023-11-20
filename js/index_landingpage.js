@@ -27,7 +27,7 @@ const doctor_login_form = `
         <form>
         <div class="form-control">
         <label for='email'>Email</label>
-        <i class="fa fa-user-plus"></i>
+        <i class="fa fa-address-book"></i>
         <input type="email" name="email" autoComplete='off'/> 
         </div>
 
@@ -70,7 +70,7 @@ const nurse_login_form = `
     <form>
     <div class="form-control">
     <label for='email'>Email</label>
-    <i class="fa fa-user-plus"></i>
+    <i class="fa fa-address-book"></i>
     <input type="email" name="email" autoComplete='off'/> 
     </div>
 
@@ -113,7 +113,7 @@ const recep_login_form = `
     <form>
     <div class="form-control">
     <label for='email'>Email</label>
-    <i class="fa fa-user-plus"></i>
+    <i class="fa fa-address-book"></i>
     <input type="email" name="email" autoComplete='off'/> 
     </div>
 
@@ -155,14 +155,14 @@ const lab_login_form = `
     <form>
     <div class="form-control">
     <label for='email'>Email</label>
-    <i class="fa fa-user-plus"></i>
+    <i class="fa fa-address-book"></i>
     <input type="email" name="email" autoComplete='off'/> 
     </div>
 
     <div class="form-control">
     <label for='number'>Your ID</label>
     <i class="fa fa-key"></i>
-    <input type="number" name="number" autoComplete='off'/> 
+    <input type="text" name="number" autoComplete='off'/> 
     </div>
 
     <div class="form-control">
@@ -196,3 +196,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('loaded');
 })
 
+//preloader
+
+
+const preloaderDuration = 4000; // 3 seconds
+
+// Wait for the window to load
+window.onload = function() {
+  // Hide the preloader after the specified duration
+  setTimeout(function() {
+    document.getElementById('preloader').style.display = 'none';
+    document.querySelector('content-container').style.display = 'block';
+  }, preloaderDuration);
+};

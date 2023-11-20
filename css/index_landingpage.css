@@ -9,11 +9,18 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     overflow: hidden;
-    background-image:url(../Frontend/Images/137028.jpg);
+    background-image:url(../Frontend/Images/shutterstock_2122167485.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+  }
+  #preloader{
+    background: black url(../Frontend/Images/0_QdX-f4eHiimvQZoZ.gif)no-repeat center center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
   }
 
   .loading-overlay {
@@ -22,7 +29,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 94, 93, 0.9);
+    background: rgba(0, 61, 60, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,24 +49,11 @@ body {
     visibility: hidden;
   }
 
-  /* Add your own loading animation styles here */
-  .loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid rgba(0, 94, 93, 0.9);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 2s linear infinite;
-  }
-
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
   .content-container {
     overflow: hidden;
     width: 0;
     transition: width 2s;
+    transition-delay: 3.8s;
   }
 
   .loaded .content-container {
@@ -74,7 +68,7 @@ body {
   }
 
 .index-container{
-    background-image:linear-gradient(rgb(0,0,0,0.4)50%, rgb(0,0,0,0.4)50%), url(../frontend/Images/137028.jpg);
+    background-image:linear-gradient(rgb(0,0,0,0.4)50%, rgb(0,0,0,0.4)50%), url(../frontend/Images/shutterstock_1189798159.jpg);
     width: 100%;
     height: 100vh;
     background-position: center;
@@ -111,16 +105,20 @@ h1{
 }
 
 .btn-doctor:hover{
-  background-color:blue;
+  background-color:rgb(255, 255, 255);
+  color: #000000;
 }
 .btn-nurse:hover{
-  background-color:blue;
+  background-color:rgb(255, 255, 255);
+  color: #000000;
 }
 .btn-receptionist:hover{
-  background-color:blue;
+  background-color:rgb(255, 255, 255);
+  color: #000000;
 }
 .btn-lab:hover{
-  background-color:blue;
+  background-color:rgb(255, 255, 255);
+  color: #000000;
 }
 .overlay{
     position: absolute;
@@ -232,7 +230,7 @@ h2, p{
 }
 
 .login-form-h1{
-    color: rgb(76, 73, 73);
+    color: rgba(0, 61, 60, 0.9);
     font-size: 1.4rem;
     padding: 1rem 0;
     text-align: center;
@@ -245,7 +243,7 @@ h2, p{
     /* margin-bottom: 20px; */
     position: relative;
     margin: 1rem 0;
-    color: rgb(76, 73, 73);
+    color: rgba(0, 61, 60, 0.9);
 }
   i{
     position: absolute;
@@ -256,7 +254,7 @@ h2, p{
 .form-control input{
     padding: 12px 0;
     border: none;
-    border-bottom: 1px solid rgb(131, 126, 126);
+    border-bottom: 1px solid rgba(0, 61, 60, 0.9);
     text-indent: 25px;
     font-size:1.1rem;
 }
@@ -264,13 +262,13 @@ h2, p{
     padding: 12px 0;
     text-indent: 25px;
     font-size:1.1rem;
-    border-color: rgba(0, 94, 93, 0.9);
+    border-color: rgba(0, 61, 60, 0.9);
 }
 .btn{
     width: 100%;
     padding: 0.6rem;
     border: none;
-    background-color:blue;
+    background-color:rgba(0, 61, 60, 0.9);
     border-radius: 4px;
     color: #fff;
     cursor: pointer;
