@@ -54,7 +54,7 @@
 			
 		?>
 					<script>
-						window.parent(location="../../frontend/superadmin/dashboard.php");
+						window.parent(location=" ../../frontend/superadmin/dashboard.php");
 					</script>
 		<?php
 			
@@ -99,7 +99,7 @@
 		//   $mail_to_send='send_reset_password_otp';
 		//   require_once('mail/mail.php');
 		$page=$action;
-	 require_once('../../frontend/otp-reset.php');
+	 require_once('../../frontend/superadmin/otp-reset.php');
 	 ?>
 	<!-- <script>
 	 	window.parent(location="../frontend/otp-reset.php");

@@ -1,5 +1,5 @@
 
-<?php include '../../backend/config/connection.php';?>
+<!-- ?php include '../../backend/config/connection.php';?> -->
 
 <?php
 $page=='reset_password';
@@ -10,7 +10,7 @@ $page=='reset_password';
             $email=$fetch_query['email'];
             $phonenumber=$fetch_query['phonenumber']
                                 
-             ?>
+?>
   
 
 <!DOCTYPE html>
@@ -43,12 +43,13 @@ $page=='reset_password';
                 <input type="password" required autocomplete="off" type="password" id="r_cpassword" name="confirmpassword" title="Confirm Password"/>
                 <label for="confirmPassword" name="confirmPassword">Confirm new password</label>
             </div> 
-            <button type="button"  title="Reset" id="finish-reset-btn" onclick="_finish_reset_password('<?php echo $staff_id;?>')"  class='btn'>Reset Password</button>
+            <button type="button"  title="Reset" id="finish-reset-btn" onclick="_finish_reset_password('<?php echo $staff_id;?>');"  class='btn'>Reset Password</button>
            
         
     </div>
   </div>
- 
+  <script src="../../backend/js/scripts.js"></script>
+    <script src="../../backend/js/jquery-v3.6.1.min.js"></script>
   <!-- <script src="signin-form-validation.js"></script> -->
 </body>
 <?php  }?> 

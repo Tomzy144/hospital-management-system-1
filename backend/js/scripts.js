@@ -130,7 +130,7 @@ function _reset_password(staff_id){
     var dataString ='action='+ action+'&staff_id='+ staff_id;
     $.ajax({
     type: "POST",
-    url: "../backend/config/code.php",
+    url: "../../backend/config/code.php",
     data: dataString,
     cache: false,
     success: function(html){
@@ -191,7 +191,7 @@ function _finish_reset_password(staff_id){
         var dataString ='action='+ action+'&staff_id='+ staff_id+'&otp='+ otp+'&password='+ password;
             $.ajax({
             type: "POST",
-            url: "../backend/config/code.php",
+            url: "../../backend/config/code.php",
             data: dataString,
             cache: false,
             dataType: 'json',
@@ -201,7 +201,7 @@ function _finish_reset_password(staff_id){
             if(scheck==1){
                 _password_reset_completed(staff_id);
                 window.alert("Password reset successful");
-               window.parent(location="../index.php").html(html);
+               window.parent(location="index.php").html(html);
 
             }else{
                 $('#not-success-div').html('<div><i class="bi-x-circle"></i></div> INVALID OTP<br /><span>Check the OTP and try again</span>').fadeIn(500).delay(5000).fadeOut(100);

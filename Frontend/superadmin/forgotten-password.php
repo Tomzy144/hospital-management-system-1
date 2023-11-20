@@ -32,7 +32,7 @@
                 </div>
                 <!--<a href="./otp-reset.php">-->    <button type="button"  type="button"  title="Next" id="reset_pwd_btn" onclick="_proceed_reset_password()" class='btn-2'>Proceed   <i class="fa fa-arrow-right"></i></button>  <!--</a>-->
                 <p class='text'> Already have an account
-                 <a href='../' class="password-link">Log In</a>
+                 <a href='index.php' class="password-link">Log In</a>
                 </p>
             </form>
         </div>
