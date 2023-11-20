@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //preloader
 
 
-const preloaderDuration = 4000; // 3 seconds
+const preloaderDuration = 2000; // 3 seconds
 
 // Wait for the window to load
 window.onload = function() {

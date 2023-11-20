@@ -1,5 +1,5 @@
 
-<?php include '../backend/config/connection.php';?>
+<?php include '../../backend/config/connection.php';?>
 
 
 
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Forgotten Password</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body id="next_2">
     
@@ -39,7 +39,7 @@
       </div>
 
 
-    <script src="../backend/js/scripts.js"></script>
-    <script src="../backend/js/jquery-v3.6.1.min.js"></script>
+    <script src="../../backend/js/scripts.js"></script>
+    <script src="../../backend/js/jquery-v3.6.1.min.js"></script>
 </body>
 </html>

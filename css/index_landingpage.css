@@ -53,7 +53,7 @@ body {
     overflow: hidden;
     width: 0;
     transition: width 2s;
-    transition-delay: 3.8s;
+    transition-delay: 1.8s;
   }
 
   .loaded .content-container {

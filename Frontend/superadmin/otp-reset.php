@@ -1,5 +1,5 @@
 
-<?php include '../backend/config/connection.php';?>
+<?php include '../../backend/config/connection.php';?>
 
 <?php
 $page=='reset_password';
@@ -18,7 +18,7 @@ $page=='reset_password';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>OTP RESET</title>
 </head>
 <body>

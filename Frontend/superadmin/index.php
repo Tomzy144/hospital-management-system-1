@@ -45,7 +45,7 @@ if($s_staff_id!=''){
             <button type="button"  class='btn' id="login_btn" title="Login" onclick="_sign_in()" >Submit</button>
            
             <p class='text'>
-             <a href='frontend/forgotten-password.php' class="password-link">Forgotten Password</a>
+             <a href='forgotten-password.php' class="password-link">Forgotten Password</a>
             </p>
         </form>
     </div>
