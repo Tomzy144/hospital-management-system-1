@@ -52,7 +52,18 @@ if ($patient_profile_array) {
     $kphonenumber = $patient_profile_array['kphonenumber'];
     $krelationship = $patient_profile_array['krelationship'];
     $kaddress = $patient_profile_array['kaddress'];
-    // $kfullname = $patient_profile_array['kfullname'];
+
+
+
+
+
+    $occupation = $patient_profile_array['occupation'];
+    $past_obsterics = $patient_profile_array['past_obsterics'];
+    $medical_history = $patient_profile_array['medical_history'];
+    $sexual_history = $patient_profile_array['sexual_history'];
+    $past_disease = $patient_profile_array['past_disease'];
+    $family_disease = $patient_profile_array['family_disease'];
+    $past_surgery = $patient_profile_array['past_surgery'];
 
 } else {
     $fullname=  "error";
@@ -431,7 +442,7 @@ if ($patient_profile_array) {
                 </div>
                 <div class="flex-info1">
                     <h4 class="info">Relationship:</h4>
-                    <h4 class="info"><?php echo $krelationship?></h4>
+                    <h4 class="info"><?php echo $krelationship ?></h4>
                 </div>
                 <hr style="color: rgb(245, 245, 244);"/>
                 <div style="display: flex; justify-content: center; align-items: center; padding: 1rem;"> 
@@ -440,7 +451,7 @@ if ($patient_profile_array) {
             </div>  
                 <div class="flex-info1">
                     <h4 class="info">Present Occupation:</h4>
-                    <h4 class="info">Software Engineer</h4>
+                    <h4 class="info"><?php echo $occupation ?></h4>
                 </div>
                 <hr style="color: rgb(245, 245, 244);"/>
                 <div style="display: flex; justify-content: center; align-items: center; padding: 1rem"> 
@@ -448,7 +459,7 @@ if ($patient_profile_array) {
                 <h2 style="color: black;">Past Obsterics</h2>
             </div>
                 <div class="flex-info1">
-                    <h4 class="info">No Obsterics</h4>
+                    <h4 class="info"><?php echo $past_obsterics ?></h4>
                 </div>
                 <hr style="color: rgb(245, 245, 244);"/>
                 <div style="display: flex; justify-content: center; align-items: center; padding: 1rem"> 
@@ -456,7 +467,7 @@ if ($patient_profile_array) {
                 <h2 style="color: black;">Medical History</h2>
                 </div>
                 <div class="flex-info1">
-                    <h4 class="info">No Medical History</h4>
+                    <h4 class="info"><?php echo $medical_history ?></h4>
                 </div>
                 <hr style="color: rgb(245, 245, 244);"/>
                 <div style="display: flex; justify-content: center; align-items: center; padding: 1rem"> 
@@ -465,7 +476,7 @@ if ($patient_profile_array) {
                 </div>
                 
                 <div class="flex-info1">
-                    <h4 class="info">No Sexual History</h4>
+                    <h4 class="info"><?php echo $sexual_history ?></h4>
                 </div>
                 <hr style="color: rgb(245, 245, 244);"/>
                 <div style="display: flex; justify-content: center; align-items: center; padding: 1rem"> 
@@ -473,7 +484,7 @@ if ($patient_profile_array) {
                 <h2 style="color: black;">Past Disease</h2>
                 </div>
                 <div class="flex-info1">
-                    <h4 class="info">No Past Disease</h4>
+                    <h4 class="info"><?php echo $past_disease ?></h4>
                 </div>
                 <hr style="color: rgb(245, 245, 244);"/>
                 <div style="display: flex; justify-content: center; align-items: center; padding: 1rem"> 
@@ -481,7 +492,7 @@ if ($patient_profile_array) {
                 <h2 style="color: black;">Family Disease</h2>
                 </div>
                 <div class="flex-info1">
-                    <h4 class="info">No Past Family Disease</h4>
+                    <h4 class="info"><?php echo $family_disease ?></h4>
                 </div>
                 <hr style="color: rgb(245, 245, 244);"/>
                 <div style="display: flex; justify-content: center; align-items: center; padding: 1rem"> 
@@ -489,7 +500,7 @@ if ($patient_profile_array) {
                 <h2 style="color: black;">Past Surgery</h2>
                 </div>
                 <div class="flex-info1">
-                    <h4 class="info">No Past Surgery</h4>
+                    <h4 class="info"><?php echo $past_surgery ?></h4>
                 </div>
          </div>
         </div>
