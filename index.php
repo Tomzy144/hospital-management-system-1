@@ -2,7 +2,13 @@
 
 
 
-
+<?php
+if($s_staff_id!=''&& $page = 'receptionist_dash'){
+?>
+    <script>
+	window.parent(location="frontend/receptionist/index.php");
+	</script>
+<?php }?>
 
 
 <!DOCTYPE html>

@@ -6,7 +6,7 @@
 if($s_staff_id!=''){
 ?>
     <script>
-	window.parent(location="dashboard.php/");
+	window.parent(location="dashboard.php");
 	</script>
 <?php }?>
 

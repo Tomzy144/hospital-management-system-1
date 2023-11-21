@@ -127,7 +127,7 @@ const recep_login_form = `
 if($s_staff_id!=''){
 ?>
     <script>
-	window.parent(location="../frontend/receptionist/");
+	window.parent(location="../frontend/receptionist/index.php");
 	</script>
 <?php }?>
 

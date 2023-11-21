@@ -56,7 +56,7 @@
 		?>
 					<script>
 
-						window.parent(location="../frontend/receptionist/");
+						window.parent(location="../frontend/receptionist/index.php");
 					</script>
 		<?php
 			
