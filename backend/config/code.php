@@ -16,9 +16,11 @@
 	  
  	case 'login_check': // for user login
 		$email=trim($_POST['email']);
+		$role_id=trim($_POST['role_id']);
 	///	$temp_password=trim(($_POST['password']));
 		$password=trim(($_POST['password']));
-			$query=mysqli_query($conn,"SELECT * FROM staff_tab WHERE `email`='$email' AND `password`='$password'");
+
+			$query=mysqli_query($conn,"SELECT * FROM staff_tab WHERE `email`='$email' AND `password`='$password' AND `role_id`='$role_id'");
 			$usercount = mysqli_num_rows($query);
 			if ($usercount>0){
 				$usersel=mysqli_fetch_array($query);
@@ -44,7 +46,7 @@
 
 
 	case 'login': // login from index
-		$userquery = mysqli_query ($conn,"SELECT * FROM `staff_tab` WHERE email = '$email' AND `password` = '$spass' AND status_id= '1' AND role_id= '1' ");
+		$userquery = mysqli_query ($conn,"SELECT * FROM `staff_tab` WHERE email = '$email' AND `password` = '$spass' AND status_id= '1' ");
 				$usersel=mysqli_fetch_array($userquery);
 				$staff_id=$usersel['staff_id'];
 				$_SESSION['staff_id'] = $staff_id;

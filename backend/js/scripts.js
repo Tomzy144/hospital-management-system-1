@@ -38,7 +38,7 @@ function _sign_in(){
 
 
 ///////////////////// user login ///////////////////////////////////////////
-function user_login(email,password){
+function user_login(email,password,role_id){
     var action='login_check';
     
    //////////////// get btn text ////////////////
@@ -46,8 +46,8 @@ function user_login(email,password){
    $('#login_btn').html('Authenticating...');
    document.getElementById('login_btn').disabled=true;
    ////////////////////////////////////////////////	
-    
-    var dataString ='action='+ action+'&email='+ email + '&password='+ password;
+    role_id= 1;
+    var dataString ='action='+ action+'&email='+ email + '&password='+ password + '&role_id='+ role_id;
    
    $.ajax({
    type: "POST",
