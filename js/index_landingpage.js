@@ -119,6 +119,19 @@ const close_recep_login_form = function(){
 const recep_login_form = `
 
 
+<?php include '../backend/config/connection.php'?>
+
+
+
+<?php
+if($s_staff_id!=''){
+?>
+    <script>
+	window.parent(location="../frontend/receptionist/");
+	</script>
+<?php }?>
+
+
 
 
 

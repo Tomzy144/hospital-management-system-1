@@ -1,5 +1,5 @@
 <?php include '../../backend/config/connection.php';?>
-<?php include '../../backend/dashboardconfig/session-validation.php';?>
+<?php include '../../config/session-validation.php';?>
 
 
 
