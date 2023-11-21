@@ -208,7 +208,58 @@
 
 
 
-	}
+	
+
+
+
+	case 'add_staff': 
+		$fullname=trim(strtoupper($_POST['fullname']));
+		$email=$_POST['email'];
+		$phonenumber=$_POST['phonenumber'];
+		$role_id=$_POST['role_id'];
+		$status_id=$_POST['status_id'];
+		
+		$email_query=mysqli_query($conn, "SELECT * FROM staff_tab WHERE `email`='$email'");
+        $check_query_count=mysqli_num_rows($email_query);
+
+        if(($check_query_count>0)){	
+			$check=0;//// invalid Email.
+             }else{
+				$check=1;
+			
+
+		///////////////////////geting sequence//////////////////////////
+		$sequence=$callclass->_get_sequence_count($conn, 'STF');
+		$array = json_decode($sequence, true);
+		$no= $array[0]['no'];
+		//$num= $array[0]['num'];
+		$staff_id='STF'.$no;
+		
+	
+			mysqli_query($conn,"INSERT INTO `staff_tab`
+			(`staff_id`, `fullname`, `email`, `phonenumber`, `role_id`, `status_id`, `date`, `last_login`) VALUES 
+			('$staff_id', '$fullname', '$email', '$phonenumber', '$role_id', '$status_id', NOW(), NOW())")or die (mysqli_error($conn));
+		/////////// get alert//////////////////////////////////
+		}
+		echo json_encode(array("check" => $check)); 
+	break;	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
 
 
 ?>
