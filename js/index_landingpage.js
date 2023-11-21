@@ -39,7 +39,7 @@ const doctor_login_form = `
         <div class="form-control">
         <label for='number'>Your ID</label>
         <i class="fa fa-key"></i>
-        <input type="number" name="number" autoComplete='off'/> 
+        <input type="number"  name="number" autoComplete='off'/> 
         </div>
 
         <div class="form-control">
@@ -141,7 +141,7 @@ const recep_login_form = `
         <i class="fa fa-lock"></i>
         <input type="password" id="password" name="spass" autocomplete="off">
         </div>
-        
+
         <input name="action" value="login" type="hidden" />
         <button type="button" class="btn" id="login_btn" title="Login" onclick="_sign_in();">Login</button>  
     <form>
