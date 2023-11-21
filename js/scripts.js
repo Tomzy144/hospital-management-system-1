@@ -316,13 +316,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function _add_staff(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function _add_patient(){
 	var fullname = $('#fullname').val();
-	var email = $('#email').val();
+	// var email = $('#email').val();
 	var phonenumber = $('#phonenumber').val();
-    var role_id = $('#role_id').val();
-    var status_id = $('#status_id').val();
-	if((fullname=='')||(email=='')||(phonenumber=='')||(role_id=='')||(status_id=='')){
+    var dob = $('#dob').val();
+    var home_address = $('#home_address').val();
+	if((fullname=='')||(phonenumber=='')||(dob=='')||(home_address=='')){
 		$('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
     }else{
 		 //////////////// get btn text ////////////////
@@ -330,11 +372,11 @@ function _add_staff(){
          document.getElementById('proceed-btn').disabled=true;
  ////////////////////////////////////////////////	
 		
-		  var action = 'add_staff';		 
-          var dataString ='action='+ action+'&fullname='+ fullname +'&email='+ email+'&phonenumber='+ phonenumber +'&role_id='+ role_id+'&status_id='+ status_id;
+		  var action = 'add_patient';		 
+          var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&home_address='+ home_address;
           $.ajax({
           type: "POST",
-          url: "config/code.php",
+          url: "../../../config/code.php",
           data: dataString,
           cache: false,
           dataType: 'json',
@@ -346,8 +388,9 @@ function _add_staff(){
                     $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
                 }else{ //user suspended
 					$('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
-                    _get_page('active-staff','active-staff');
-                    alert_close()
+                    // _get_page('active-staff','active-staff');
+                    // alert_close();
+                    window.alert("Registration Successful");
                 }
                 $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
                 document.getElementById('proceed-btn').disabled=false;

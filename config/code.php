@@ -212,14 +212,14 @@
 
 
 
-	case 'add_staff': 
+	case 'add_patient': 
 		$fullname=trim(strtoupper($_POST['fullname']));
 		$email=$_POST['email'];
 		$phonenumber=$_POST['phonenumber'];
-		$role_id=$_POST['role_id'];
-		$status_id=$_POST['status_id'];
+		$dateofbirth=$_POST['dob'];
+		$address=$_POST['address'];
 		
-		$email_query=mysqli_query($conn, "SELECT * FROM staff_tab WHERE `email`='$email'");
+		$email_query=mysqli_query($conn, "SELECT * FROM patient_tab WHERE `email`='$email'");
         $check_query_count=mysqli_num_rows($email_query);
 
         if(($check_query_count>0)){	
@@ -229,16 +229,16 @@
 			
 
 		///////////////////////geting sequence//////////////////////////
-		$sequence=$callclass->_get_sequence_count($conn, 'STF');
+		$sequence=$callclass->_get_sequence_count($conn, 'pat');
 		$array = json_decode($sequence, true);
 		$no= $array[0]['no'];
 		//$num= $array[0]['num'];
-		$staff_id='STF'.$no;
+		$patient_id='PAT'.$no;
 		
 	
-			mysqli_query($conn,"INSERT INTO `staff_tab`
-			(`staff_id`, `fullname`, `email`, `phonenumber`, `role_id`, `status_id`, `date`, `last_login`) VALUES 
-			('$staff_id', '$fullname', '$email', '$phonenumber', '$role_id', '$status_id', NOW(), NOW())")or die (mysqli_error($conn));
+			mysqli_query($conn,"INSERT INTO `patient_tab`
+			(`patient_id`, `fullname`, `phonenumber`, `dateofbirth`, `address`, `date`) VALUES 
+			('$patient_id', '$fullname', '$phonenumber', '$dateofbirth', '$address', NOW())")or die (mysqli_error($conn));
 		/////////// get alert//////////////////////////////////
 		}
 		echo json_encode(array("check" => $check)); 

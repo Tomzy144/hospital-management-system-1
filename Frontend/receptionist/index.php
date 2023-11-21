@@ -66,11 +66,11 @@
     </div>
     <script>
         const patientForm = function(){
-            let url = 'patient-registration-form/patients-registration-form.html';
+            let url = 'patient-registration-form/patients-registration-form.php';
             window.parent(location = (url));
         }
         const AppoimentBooking = function(){
-            let url = 'appointment-booker/appointment.html';
+            let url = 'appointment-booker/appointment.php';
             window.parent(location = (url));
         }
     </script>
