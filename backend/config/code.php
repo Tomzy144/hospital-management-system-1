@@ -44,7 +44,7 @@
 
 
 	case 'login': // login from index
-		$userquery = mysqli_query ($conn,"SELECT * FROM `staff_tab` WHERE email = '$email' AND `password` = '$spass' AND status_id=1");
+		$userquery = mysqli_query ($conn,"SELECT * FROM `staff_tab` WHERE email = '$email' AND `password` = '$spass' AND status_id= '1' AND role_id= '1' ");
 				$usersel=mysqli_fetch_array($userquery);
 				$staff_id=$usersel['staff_id'];
 				$_SESSION['staff_id'] = $staff_id;

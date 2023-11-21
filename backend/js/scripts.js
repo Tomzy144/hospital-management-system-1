@@ -63,11 +63,11 @@ function user_login(email,password){
     $('#loginform').submit();
     window.alert("Welcome Back")
    }else if(scheck==2){
-    window.alert("Account does not exists")
+    window.alert("Account does not exists");
            $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
     }else{
     $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid Email or Password</span>').fadeIn(500).delay(5000).fadeOut(100);
-    window.alert("Account does not exists")
+    window.alert("Invalid Login Details");
     }
     $('#login_btn').html(btn_text);
     document.getElementById('login_btn').disabled=false;
