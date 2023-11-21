@@ -63,7 +63,7 @@ function user_login(email,password,user_id){
     $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
     $('#loginform').submit();
     window.alert("Welcome Back");
-    // window.parent(location="frontend/receptionist/");
+    
    }else if(scheck==2){
     window.alert("Account does not exists")
            $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
