@@ -383,7 +383,9 @@ function _add_patient(){
           cache: false,
           success: function(data){
                   var scheck = data.check;
+                  var  fpatient_id = data.patient_id;
                   var email = data.email;
+                  
                   if(scheck==0){ //user Active
                     $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
                 }else{ //user suspended
@@ -391,6 +393,7 @@ function _add_patient(){
                     // _get_page('active-staff','active-staff');
                     // alert_close();
                     window.alert("Registration Successful");
+                    window.alert("This patient's ID is" + fpatient_id );
                 }
                 $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
                 document.getElementById('proceed-btn').disabled=false;

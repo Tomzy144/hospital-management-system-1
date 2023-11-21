@@ -212,37 +212,36 @@
 
 
 
+	
 	case 'add_patient': 
-		$fullname=trim(strtoupper($_POST['fullname']));
-		$email=$_POST['email'];
-		$phonenumber=$_POST['phonenumber'];
-		$dateofbirth=$_POST['dob'];
-		$address=$_POST['address'];
+		$fullname = trim(strtoupper($_POST['fullname']));
+		$email = $_POST['email'];
+		$phonenumber = $_POST['phonenumber'];
+		$dateofbirth = $_POST['dob'];
+		$address = $_POST['address'];
 		
-		$email_query=mysqli_query($conn, "SELECT * FROM patient_tab WHERE `email`='$email'");
-        $check_query_count=mysqli_num_rows($email_query);
-
-        if(($check_query_count>0)){	
-			$check=0;//// invalid Email.
-             }else{
-				$check=1;
-			
-
-		///////////////////////geting sequence//////////////////////////
-		$sequence=$callclass->_get_sequence_count($conn, 'pat');
-		$array = json_decode($sequence, true);
-		$no= $array[0]['no'];
-		//$num= $array[0]['num'];
-		$patient_id='PAT'.$no;
-		
+		$email_query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE `email`='$email'");
+		$check_query_count = mysqli_num_rows($email_query);
+	
+		if ($check_query_count > 0) {	
+			$check = 0; // invalid Email.
+		} else {
+			$check = 1;
+	
+			// get sequence
+			$sequence = $callclass->_get_sequence_count($conn, 'pat');
+			$array = json_decode($sequence, true);
+			$no = $array[0]['no'];
+			$patient_id = 'pat' . $no;
 	
 			mysqli_query($conn,"INSERT INTO `patient_tab`
 			(`patient_id`, `fullname`, `phonenumber`, `dateofbirth`, `address`, `date`) VALUES 
-			('$patient_id', '$fullname', '$phonenumber', '$dateofbirth', '$address', NOW())")or die (mysqli_error($conn));
-		/////////// get alert//////////////////////////////////
+			('$patient_id', '$fullname', '$phonenumber', '$dateofbirth', '$address', NOW())") or die (mysqli_error($conn));
 		}
-		echo json_encode(array("check" => $check)); 
-	break;	
+	
+		echo json_encode(array("check" => $check, "patient_id" => $patient_id));
+		break;
+	
 
 
 
