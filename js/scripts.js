@@ -360,11 +360,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function _add_patient(){
 	var fullname = $('#fullname').val();
-	// var email = $('#email').val();
 	var phonenumber = $('#phonenumber').val();
     var dob = $('#dob').val();
-    var home_address = $('#home_address').val();
-	if((fullname=='')||(phonenumber=='')||(dob=='')||(home_address=='')){
+    var gender = $('#gender').val();
+    var kname = $('#kname').val();
+    var krelationship = $('#krelationship').val();
+    var kaddress = $('#kaddress').val();
+    var knumber = $('#knumber').val();
+    var kgender = $('#kgender').val();
+    var occupation = $('#occupation').val();
+    var past_obsterics = $('#past_obsterics').val();
+    var medical_history = $('#medical_history').val();
+    var sexual_history = $('#sexual_history').val();
+    var past_disease = $('#past_disease').val();
+    var family_disease = $('#family_disease').val();
+    var pass_surgery = $('#pass_surgery').val();
+    
+
+	if((fullname=='')||(phonenumber=='')||(dob=='')||(home_address=='')||(gender=='') ||(home_address=='') ||(home_address=='') ||(home_address=='') ||(home_address=='') ||(home_address=='') ||(home_address=='') ||(home_address=='') ||(home_address=='') ||(home_address=='') ||(home_address=='')                                             )                                                   {
 		$('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
     }else{
 		 //////////////// get btn text ////////////////
