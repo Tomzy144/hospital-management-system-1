@@ -1,3 +1,10 @@
+<?php include 'backend/config/connection.php'?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index_landingpage.css">
     <link href="frontend/awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery-v3.6.1.min.js"></script>
 
     <title>FRIDDA</title>
 </head>
 <body>
-
+<?php $page = 'login' ?>
 
     <!--HTML-->
     <div id="preloader">

@@ -22,6 +22,10 @@ const close_doctor_login_form = function(){
 }
 
 const doctor_login_form = `
+
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
     <div class="doctor-login hidden">
     <i class="fa fa-times-circle" id='close-icon-doctor'></i>
         <h1 class="login-form-h1">Login (Doctor)</h1>
@@ -66,6 +70,9 @@ const close_nurse_login_form = function(){
 }
 
 const nurse_login_form = `
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
 <div class="nurse-login hidden">
 <i class="fa fa-times-circle" id='close-icon-nurse'></i>
     <h1 class="login-form-h1">Login (Nurse)</h1>
@@ -110,30 +117,36 @@ const close_recep_login_form = function(){
 }
 
 const recep_login_form = `
+
+
+
 <div class="recep-login hidden">
 <i class="fa fa-times-circle" id='close-icon-recep'></i>
     <h1 class="login-form-h1">Login (Receptionist)</h1>
+    <form action="config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+        <div class="form-control">
+        <label for='email'>Email</label>
+        <i class="fa fa-address-book"></i>
+        <input type='email' id="email" name="email" autoComplete='off'/>
+        </div>
+
+        <div class="form-control">
+        <label for='number'>Your ID</label>
+        <i class="fa fa-key"></i>
+        <input type="text" name="number" autoComplete='off'/> 
+        </div>
+
+        <div class="form-control">
+        <label for='password'>Password</label>
+        <i class="fa fa-lock"></i>
+        <input type="password" id="password" name="spass" autocomplete="off">
+        </div>
+        
+        <input name="action" value="login" type="hidden" />
+        <button type="button" class="btn" id="login_btn" title="Login" onclick="_sign_in();">Login</button>  
     <form>
-    <div class="form-control">
-    <label for='email'>Email</label>
-    <i class="fa fa-address-book"></i>
-    <input type="email" name="email" autoComplete='off'/> 
-    </div>
-
-    <div class="form-control">
-    <label for='number'>Your ID</label>
-    <i class="fa fa-key"></i>
-    <input type="number" name="number" autoComplete='off'/> 
-    </div>
-
-    <div class="form-control">
-    <label for='password'>Password</label>
-    <i class="fa fa-lock"></i>
-    <input type="password" name="password" autoComplete='off'/> 
-    </div>
-    <button type="button" class="btn" onclick="submission_url()">Login</button>
-<form>
 </div>
+
 `
 log_inAll('recep', recep_login_form);
 
@@ -153,28 +166,31 @@ const close_lab_login_form = function() {
 }
 
 const lab_login_form = `
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
 <div class="lab-login hidden">
 <i class="fa fa-times-circle" id='close-icon-lab'></i>
     <h1 class="login-form-h1">Login (Lab Scientist)</h1>
-    <form>
-    <div class="form-control">
-    <label for='email'>Email</label>
-    <i class="fa fa-address-book"></i>
-    <input type="email" name="email" autoComplete='off'/> 
-    </div>
+    <form action="../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+        <div class="form-control">
+        <label for='email'>Email</label>
+        <i class="fa fa-address-book"></i>
+        <input type='email' id="email" name="email" autoComplete='off'/>
+        </div>
 
-    <div class="form-control">
-    <label for='number'>Your ID</label>
-    <i class="fa fa-key"></i>
-    <input type="text" name="number" autoComplete='off'/> 
-    </div>
+        <div class="form-control">
+        <label for='number'>Your ID</label>
+        <i class="fa fa-key"></i>
+        <input type="text" name="number" autoComplete='off'/> 
+        </div>
 
-    <div class="form-control">
-    <label for='password'>Password</label>
-    <i class="fa fa-lock"></i>
-    <input type="password" name="password" autoComplete='off'/> 
-    </div>
-    <button type="button" class="btn">Login</button>
+        <div class="form-control">
+        <label for='password'>Password</label>
+        <i class="fa fa-lock"></i>
+        <input type="password" id="password" name="spass" autocomplete="off">
+        </div>
+        <button type="button" id="login_btn" title="Login" onclick="_sign_in();"  class="btn">Login</button>
     <form>
 </div>
 `
@@ -232,6 +248,7 @@ window.onload = function() {
 };
 
 const submission_url = function(){
-    let url = 'frontend/receptionist/dashboard.html';
+    let url = 'frontend/receptionist/index.php';
     window.parent(location =(url));
 }
+
