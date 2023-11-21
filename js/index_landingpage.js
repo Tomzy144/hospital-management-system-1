@@ -120,6 +120,9 @@ const recep_login_form = `
 
 
 
+
+
+
 <div class="recep-login hidden">
 <i class="fa fa-times-circle" id='close-icon-recep'></i>
     <h1 class="login-form-h1">Login (Receptionist)</h1>
@@ -133,7 +136,7 @@ const recep_login_form = `
         <div class="form-control">
         <label for='number'>Your ID</label>
         <i class="fa fa-key"></i>
-        <input type="text" name="number" autoComplete='off'/> 
+        <input type="text" id= "user_id" name="user_id" autoComplete='off'/> 
         </div>
 
         <div class="form-control">

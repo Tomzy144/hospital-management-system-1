@@ -26,8 +26,9 @@ $('#'+next_id).fadeIn(1000);
 function _sign_in(){ 
     var email = $('#email').val();
     var password = $('#password').val();
-    if((email!='')&&(password!='')){
-        user_login(email,password);
+    var user_id = $('#user_id').val();
+    if((email!='')&&(password!='')&&(user_id!='')){
+        user_login(email,password,user_id);
     }else{
         $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
         window.alert("Fill the neccessary field")
@@ -38,7 +39,7 @@ function _sign_in(){
 
 
 ///////////////////// user login ///////////////////////////////////////////
-function user_login(email,password){
+function user_login(email,password,user_id){
     var action='login_check';
     
    //////////////// get btn text ////////////////
@@ -47,7 +48,7 @@ function user_login(email,password){
    document.getElementById('login_btn').disabled=true;
    ////////////////////////////////////////////////	
     
-    var dataString ='action='+ action+'&email='+ email + '&password='+ password;
+    var dataString ='action='+ action+'&email='+ email + '&password='+ password + '&user_id='+ user_id;
    
    $.ajax({
    type: "POST",
@@ -68,7 +69,7 @@ function user_login(email,password){
            $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
     }else{
     $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid Email or Password</span>').fadeIn(500).delay(5000).fadeOut(100);
-    window.alert("Account does not exists")
+    window.alert("Invalid Login Details")
     }
     $('#login_btn').html(btn_text);
     document.getElementById('login_btn').disabled=false;

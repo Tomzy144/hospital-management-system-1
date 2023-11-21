@@ -18,7 +18,9 @@
 		$email=trim($_POST['email']);
 	///	$temp_password=trim(($_POST['password']));
 		$password=trim(($_POST['password']));
-			$query=mysqli_query($conn,"SELECT * FROM staff_tab WHERE `email`='$email' AND `password`='$password'");
+		$user_id=trim(($_POST['user_id']));
+
+			$query=mysqli_query($conn,"SELECT * FROM staff_tab WHERE `email`='$email' AND `password`='$password' AND `staff_id` = '$user_id'");
 			$usercount = mysqli_num_rows($query);
 			if ($usercount>0){
 				$usersel=mysqli_fetch_array($query);
