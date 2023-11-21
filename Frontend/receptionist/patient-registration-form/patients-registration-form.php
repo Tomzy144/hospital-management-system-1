@@ -106,7 +106,7 @@
         <div class="form-control">
         <label for="phone_number">Phone Number</label>
         <i class="fa fa-phone"></i>
-        <input type="number"  id="knumber" placeholder="Phone_ number">
+        <input type="number"  id="kphonenumber" placeholder="Phone_ number">
     </div>
 
 </div>
@@ -178,7 +178,7 @@
     <div class="form-control">
     <label for="Occupation">Past Surgery</label>
     <i class="fa fa-twitch"></i>
-    <input type="text" id="pass_surgery" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
+    <input type="text" id="past_surgery" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
 </div>
 </div>
 <button type="button" class="btn-back">Back</button>
