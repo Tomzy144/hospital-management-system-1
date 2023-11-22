@@ -219,56 +219,12 @@
     })
 
     //reload page
-    // const reloadPage  = document.querySelector("#proceed-btn");
-    // reloadPage.addEventListener("click", function(){
-    //     location.reload(true);
-    // })
 
-    //back to dashboard page
+    const reloadPage  = document.querySelector("#proceed-btn");
 
-    const dashboard = function(){
-        let url = '../index.php';
-        window.parent(location =(url));
-    }
-    //checked button
-    const checked1 =  document.querySelector(".check1")
-    const checked2 =  document.querySelector(".check2")
-    const checked3 =  document.querySelector(".check3")
-    const checked4 =  document.querySelector(".check4")
-
-    function handleCheckboxChange() {
-        //checked1
-      if (checked1.checked) {
-        checked2.disabled = true;
-      } else {
-        checked2.disabled = false;
-      }
-      
-      if (checked2.checked) {
-        checked1.disabled = true;
-      } else {
-        checked1.disabled = false;
-      }
-      //checked2
-      if (checked3.checked) {
-        checked4.disabled = true;
-      } else {
-        checked4.disabled = false;
-      }
-      
-      if (checked4.checked) {
-        checked3.disabled = true;
-      } else {
-        checked3.disabled = false;
-      }
-    }
-
-    // Attach the event listener to both checkboxes
-    checked1.addEventListener('change', handleCheckboxChange);
-    checked2.addEventListener('change', handleCheckboxChange);
-    checked3.addEventListener('change', handleCheckboxChange);
-    checked4.addEventListener('change', handleCheckboxChange);
-  </script>
+    reloadPage.addEventListener("click", function(){
+        location.reload(true);
+    })
 
    
 
