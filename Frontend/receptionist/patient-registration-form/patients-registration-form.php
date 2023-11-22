@@ -215,6 +215,15 @@
         section2.classList.remove("current-section");
         btnNext.style.display = "block";
     })
+
+    //reload page
+
+    const reloadPage  = document.querySelector("#proceed-btn");
+
+    reloadPage.addEventListener("click", function(){
+        location.reload(true);
+    })
+
    
 
 </script>

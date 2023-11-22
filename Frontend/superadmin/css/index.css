@@ -337,3 +337,11 @@ tr:nth-child(2){
 }
 
 
+#sign-out{
+    color: aqua;
+    font-size: 30px;
+    position: absolute;
+    right: 3rem;
+    top: 1rem;
+    cursor: pointer;
+}

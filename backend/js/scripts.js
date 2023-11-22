@@ -354,3 +354,8 @@ function _add_staff(){
 				});
 	}
 }	
+
+const homepage = ()=>{
+    let url = '../../index.php';
+    window.parent(location = (url));
+}

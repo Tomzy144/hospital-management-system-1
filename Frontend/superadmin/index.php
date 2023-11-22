@@ -22,6 +22,7 @@ if($s_staff_id!=''){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="Frontend/superadmin/Images/1282798.jpg">
+    <link rel="stylesheet" href="../awesome-font/css/font-awesome.min.css">
     <title>SignIn</title>
 
 </head>
@@ -29,6 +30,7 @@ if($s_staff_id!=''){
 <?php $page = 'login';?>
 
   <div class="container">
+  <i class="fa fa-sign-out" id='sign-out' onClick="homepage()"></i>
     <div class="form-container">
         <h2>Please SignIn</h2>
         <form action="../../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
