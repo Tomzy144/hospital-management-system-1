@@ -410,6 +410,9 @@ function _add_patient(){
                     // alert_close();
                     window.alert("Registration Successful");
                     window.alert("This patient's ID is "+ fpatient_id );
+                    const reloadPage  = document.querySelector("#proceed-btn");
+                    reloadPage.addEventListener("click", function(){
+                        location.reload(true);})
                 }
                 $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
                 document.getElementById('proceed-btn').disabled=false;
