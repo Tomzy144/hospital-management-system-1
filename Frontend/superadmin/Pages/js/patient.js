@@ -33,7 +33,7 @@ function _fetch_patient_list() {
     searchResultsBody.innerHTML = "";
 
     //  an AJAX request to fetch search results
-    fetch('../../../../backend/config/search.php?search_term=' + search_term)
+    fetch('../../../backend/config/search.php?search_term=' + search_term)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
