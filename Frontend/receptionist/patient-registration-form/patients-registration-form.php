@@ -30,9 +30,11 @@
 </head>
 <body>
     <nav class="navbar">
+    <i class="fa fa-mail-reply (alias)" id='sign-out' onClick='dashboard()'></i>
         <div class="logo">
             <h1>Patient Admission Form</h1>
         </div>
+   
              </nav>
 <div class="container">
     <div class="form-container">
@@ -72,11 +74,11 @@
     <div class="form-display2">
        
     <label for="radio">
-        <input type="radio" id="gender" name="gender" value="male">
+        <input type="checkbox" id="gender" name="gender" value="option1" class='check1'>
         Male
       </label>
       <label for="radio">
-        <input type="radio" id="gender" name="gender" value="female">
+        <input type="checkbox" id="gender" name="gender" value="option2" class='check2'>
         Female
       </label>
     </div>
@@ -114,11 +116,11 @@
 <div class="form-display2">
    
 <label for="radio">
-    <input type="radio"  id="kgender" name="gender" value="male">
+    <input type="checkbox"  id="kgender" name="gender" value="option3"  class='check3'>
     Male
   </label>
   <label for="radio">
-    <input type="radio" id="kgender" name="gender" value="female">
+    <input type="checkbox" id="kgender" name="gender" value="option4"  class='check4'>
     Female
   </label>
 </div>
@@ -217,12 +219,56 @@
     })
 
     //reload page
+    // const reloadPage  = document.querySelector("#proceed-btn");
+    // reloadPage.addEventListener("click", function(){
+    //     location.reload(true);
+    // })
 
-    const reloadPage  = document.querySelector("#proceed-btn");
+    //back to dashboard page
 
-    reloadPage.addEventListener("click", function(){
-        location.reload(true);
-    })
+    const dashboard = function(){
+        let url = '../index.php';
+        window.parent(location =(url));
+    }
+    //checked button
+    const checked1 =  document.querySelector(".check1")
+    const checked2 =  document.querySelector(".check2")
+    const checked3 =  document.querySelector(".check3")
+    const checked4 =  document.querySelector(".check4")
+
+    function handleCheckboxChange() {
+        //checked1
+      if (checked1.checked) {
+        checked2.disabled = true;
+      } else {
+        checked2.disabled = false;
+      }
+      
+      if (checked2.checked) {
+        checked1.disabled = true;
+      } else {
+        checked1.disabled = false;
+      }
+      //checked2
+      if (checked3.checked) {
+        checked4.disabled = true;
+      } else {
+        checked4.disabled = false;
+      }
+      
+      if (checked4.checked) {
+        checked3.disabled = true;
+      } else {
+        checked3.disabled = false;
+      }
+    }
+
+    // Attach the event listener to both checkboxes
+    checked1.addEventListener('change', handleCheckboxChange);
+    checked2.addEventListener('change', handleCheckboxChange);
+    checked3.addEventListener('change', handleCheckboxChange);
+    checked4.addEventListener('change', handleCheckboxChange);
+  </script>
 
    
 

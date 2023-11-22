@@ -7,7 +7,7 @@
 .navbar{
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
@@ -20,8 +20,15 @@
 h1{
     color: #fff;
     font-size: 2rem; 
-   
 }
+#sign-out{
+    position: fixed;
+    right:30px;
+    font-size: 30px;
+    top: 14px;
+    color: #fff;
+    cursor: pointer;
+  }
 
 .container-dashboard{
     background-color: #ffffff;

@@ -52,10 +52,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receptionist Dashboard</title>
     <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href='../awesome-font/css/font-awesome.min.css'
 </head>
 <body>
 
     <nav class="navbar">
+    <i class="fa fa-sign-out" id='sign-out' onClick='home_page()'></i>
         <div class="logo">
             <h1>Receptionist Dashboard</h1>
         </div>
@@ -71,6 +73,12 @@
         }
         const AppoimentBooking = function(){
             let url = 'appointment-booker/appointment.php';
+            window.parent(location = (url));
+        }
+
+
+        const home_page = function(){
+            let url = '../../index.php';
             window.parent(location = (url));
         }
     </script>
