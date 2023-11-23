@@ -414,9 +414,7 @@ function _add_patient() {
         vcategory = "7";
     }
 
-    window.alert(vgender);
-    window.alert(vkgender);
-    window.alert(vcategory);
+   
 
 
     
