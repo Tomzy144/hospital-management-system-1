@@ -58,6 +58,7 @@
 
     <nav class="navbar">
     <i class="fa fa-sign-out" id='sign-out' onClick='home_page()'></i>
+    <button id='btn' onClick="patient_list()">Patient Lists</button>
         <div class="logo">
             <h1>Receptionist Dashboard</h1>
         </div>
@@ -79,6 +80,11 @@
 
         const home_page = function(){
             let url = '../../index.php';
+            window.parent(location = (url));
+        }
+
+        const patient_list = ()=>{
+            let url = "../superadmin/Pages/patients.php";
             window.parent(location = (url));
         }
     </script>

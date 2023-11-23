@@ -74,11 +74,11 @@
     <div class="form-display2">
        
     <label for="radio">
-        <input type="checkbox" id="gender" name="gender" value="option1" class='check1'>
+        <input type="checkbox" id="gender" name="gender" value="Male" class='check1'>
         Male
       </label>
       <label for="radio">
-        <input type="checkbox" id="gender" name="gender" value="option2" class='check2'>
+        <input type="checkbox" id="gender" name="gender" value="Female" class='check2'>
         Female
       </label>
     </div>
@@ -114,14 +114,48 @@
 </div>
 <label>Gender</label>
 <div class="form-display2">
-   
 <label for="radio">
-    <input type="checkbox"  id="kgender" name="gender" value="option3"  class='check3'>
+    <input type="checkbox" id="kgender" name="gender" value="Female"  class='check4'>
+    Female
+  </label>
+<label for="radio">
+    <input type="checkbox"  id="kgender" name="gender" value="Male"  class='check3'>
     Male
   </label>
-  <label for="radio">
-    <input type="checkbox" id="kgender" name="gender" value="option4"  class='check4'>
-    Female
+
+</div>
+<label>What kind  of patient Category are you?</label>
+<div class="form-display2">
+<label for="radio">
+    <input type="checkbox" name="gender" value="Inpatients"  class='check_category1'>
+    Inpatients
+  </label>
+<label for="radio">
+    <input type="checkbox" name="gender" value="Outpatients"  class='check_category2'>
+    Outpatients
+  </label>
+<label for="radio">
+    <input type="checkbox" name="gender" value="Waiting List"  class='check_category3'>
+    Waiting List
+  </label>
+</div>
+
+<div class="form-display2">
+<label for="radio">
+    <input type="checkbox" name="gender" value="Appointment"  class='check_category4'>
+    Appointment
+  </label>
+<label for="radio">
+    <input type="checkbox" name="gender" value="Test"  class='check_category5'>
+    Test
+  </label>
+<label for="radio">
+    <input type="checkbox" name="gender" value="ANC"  class='check_category6'>
+    ANC
+  </label>
+<label for="radio">
+    <input type="checkbox" name="gender" value="Today Input"  class='check_category7'>
+    Today Input
   </label>
 </div>
 <button type="button" class="btn-next">Next</button>
@@ -218,18 +252,202 @@
         btnNext.style.display = "block";
     })
 
-    //reload page
 
-    const reloadPage  = document.querySelector("#proceed-btn");
-
-    reloadPage.addEventListener("click", function(){
-        location.reload(true);
-    })
-
+    //dashboardPage link
+    const dashboard = ()=>{
+        let url = "../index.php";
+        window.parent(location=(url))
+    }
+  
    
+    const checked1 =  document.querySelector(".check1")
+    const checked2 =  document.querySelector(".check2")
+    const checked3 =  document.querySelector(".check3")
+    const checked4 =  document.querySelector(".check4")
+
+    function handleCheckboxChange() {
+        //checked1
+      if (checked1.checked) {
+        checked2.disabled = true;
+      } else {
+        checked2.disabled = false;
+      }
+      
+      if (checked2.checked) {
+        checked1.disabled = true;
+      } else {
+        checked1.disabled = false;
+      }
+      //checked2
+      if (checked3.checked) {
+        checked4.disabled = true;
+      } else {
+        checked4.disabled = false;
+      }
+      
+      if (checked4.checked) {
+        checked3.disabled = true;
+      } else {
+        checked3.disabled = false;
+      }
+    }
+
+    // Attach the event listener to both checkboxes
+    checked1.addEventListener('change', handleCheckboxChange);
+    checked2.addEventListener('change', handleCheckboxChange);
+    checked3.addEventListener('change', handleCheckboxChange);
+    checked4.addEventListener('change', handleCheckboxChange);
+
+
+    //kind of category
+    const check_category1 = document.querySelector(".check_category1")
+    const check_category2= document.querySelector(".check_category2")
+    const check_category3 = document.querySelector(".check_category3")
+    const check_category4 = document.querySelector(".check_category4")
+    const check_category5 = document.querySelector(".check_category5")
+    const check_category6 = document.querySelector(".check_category6")
+    const check_category7 = document.querySelector(".check_category7")
+
+
+   const handleCheckboxCategoryChange1 = ()=>{
+    //checked 1
+        if(check_category1.checked){
+            check_category2.disabled = true;
+            check_category3.disabled = true;
+            check_category4.disabled = true;
+            check_category5.disabled = true;
+            check_category6.disabled = true;
+            check_category7.disabled = true;
+        }else{
+            check_category2.disabled = false;
+            check_category3.disabled = false;
+            check_category4.disabled = false;
+            check_category5.disabled = false;
+            check_category6.disabled = false;
+            check_category7.disabled = false;
+        }
+      
+        }
+  //for checked2
+        const handleCheckboxCategoryChange2 = ()=>{
+
+        if(check_category2.checked){
+            check_category1.disabled = true;
+            check_category3.disabled = true;
+            check_category4.disabled = true;
+            check_category5.disabled = true;
+            check_category6.disabled = true;
+            check_category7.disabled = true;
+        }else{
+            check_category1.disabled = false;
+            check_category3.disabled = false;
+            check_category4.disabled = false;
+            check_category5.disabled = false;
+            check_category6.disabled = false;
+            check_category7.disabled = false;
+        }
+    }
+
+        //for checked 3
+        const handleCheckboxCategoryChange3 = ()=>{
+        if(check_category3.checked){
+            check_category1.disabled = true;
+            check_category2.disabled = true;
+            check_category4.disabled = true;
+            check_category5.disabled = true;
+            check_category6.disabled = true;
+            check_category7.disabled = true;
+        }else{
+            check_category1.disabled = false;
+            check_category2.disabled = false;
+            check_category4.disabled = false;
+            check_category5.disabled = false;
+            check_category6.disabled = false;
+            check_category7.disabled = false;
+        }
+    }
+        //for checked 4
+        const handleCheckboxCategoryChange4 = ()=>{
+        if(check_category4.checked){
+            check_category1.disabled = true;
+            check_category2.disabled = true;
+            check_category3.disabled = true;
+            check_category5.disabled = true;
+            check_category6.disabled = true;
+            check_category7.disabled = true;
+        }else{
+            check_category1.disabled = false;
+            check_category2.disabled = false;
+            check_category3.disabled = false;
+            check_category5.disabled = false;
+            check_category6.disabled = false;
+            check_category7.disabled = false;
+        }
+    }
+        //for checked 5
+        const handleCheckboxCategoryChange5 = ()=>{
+        if(check_category5.checked){
+            check_category1.disabled = true;
+            check_category2.disabled = true;
+            check_category3.disabled = true;
+            check_category4.disabled = true;
+            check_category6.disabled = true;
+            check_category7.disabled = true;
+        }else{
+            check_category1.disabled = false;
+            check_category2.disabled = false;
+            check_category3.disabled = false;
+            check_category4.disabled = false;
+            check_category6.disabled = false;
+            check_category7.disabled = false;
+        }
+    }
+        //for checked 6
+        const handleCheckboxCategoryChange6 = ()=>{
+        if(check_category6.checked){
+            check_category1.disabled = true;
+            check_category2.disabled = true;
+            check_category3.disabled = true;
+            check_category4.disabled = true;
+            check_category5.disabled = true;
+            check_category7.disabled = true;
+        }else{
+            check_category1.disabled = false;
+            check_category2.disabled = false;
+            check_category3.disabled = false;
+            check_category4.disabled = false;
+            check_category5.disabled = false;
+            check_category7.disabled = false;
+        }
+    }
+        //for checked 7
+        const handleCheckboxCategoryChange7 = ()=>{
+        if(check_category7.checked){
+            check_category1.disabled = true;
+            check_category2.disabled = true;
+            check_category3.disabled = true;
+            check_category4.disabled = true;
+            check_category5.disabled = true;
+            check_category6.disabled = true;
+        }else{
+            check_category1.disabled = false;
+            check_category2.disabled = false;
+            check_category3.disabled = false;
+            check_category4.disabled = false;
+            check_category5.disabled = false;
+            check_category6.disabled = false;
+        }
+    }
+
+   check_category1.addEventListener('change', handleCheckboxCategoryChange1);
+   check_category2.addEventListener('change', handleCheckboxCategoryChange2);
+   check_category3.addEventListener('change', handleCheckboxCategoryChange3);
+   check_category4.addEventListener('change', handleCheckboxCategoryChange4);
+   check_category5.addEventListener('change', handleCheckboxCategoryChange5);
+   check_category6.addEventListener('change', handleCheckboxCategoryChange6);
+   check_category7.addEventListener('change', handleCheckboxCategoryChange7);
+
 
 </script>
-
-
 </body>
 </html>

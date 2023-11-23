@@ -71,6 +71,7 @@ h1{
 .form-display2{
     display: flex;
     justify-content: center;
+    margin: 1rem 0;
 }
 label{
     font-size: 15px;
