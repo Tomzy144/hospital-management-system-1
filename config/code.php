@@ -153,6 +153,17 @@
 	  break;
 
 
+	  case 'logout':
+		session_destroy();
+		?>
+		<script>
+			window.alert("Logging Out");
+		window.parent(location="../");
+		</script>
+		<?php
+	break;
+
+
 	  
 	case 'fetch_patient':
 		$staff_id=$_POST['staff_id'];		  
@@ -219,12 +230,12 @@
 		$phonenumber = $_POST['phonenumber'];
 		$dateofbirth = $_POST['dob'];
 		$address = $_POST['address'];
-		$gender = $_POST['gender'];
+		$gender = $_POST['vgender'];
 		$kname = $_POST['kname'];
 		$krelationship = $_POST['krelationship'];
 		$kaddress = $_POST['kaddress'];
 		$kphonenumber = $_POST['kphonenumber'];
-		$kgender = $_POST['kgender'];
+		$kgender = $_POST['vkgender'];
 		$occupation = $_POST['occupation'];
 		$past_obsterics = $_POST['past_obsterics'];
 		$sexual_history = $_POST['sexual_history'];
@@ -233,6 +244,8 @@
 		$past_surgery = $_POST['past_surgery'];
 		$medical_history = $_POST['medical_history'];
 		$status_id= '1';
+		$category = $_POST['vcategory'];
+
 		
 		$phonenumber_query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE `phonenumber`='$phonenumber'");
 		$check_query_count = mysqli_num_rows($phonenumber_query);
@@ -249,8 +262,8 @@
 			$patient_id = 'pat' . $no;
 	
 			mysqli_query($conn,"INSERT INTO `patient_tab`
-			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`) VALUES 
-			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW())") or die (mysqli_error($conn));
+			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`category_id`) VALUES 
+			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW(),'$category')") or die (mysqli_error($conn));
 		}
 	
 		echo json_encode(array("check" => $check, "patient_id" => $patient_id));

@@ -363,12 +363,14 @@ function _add_patient(){
 	var phonenumber = $('#phonenumber').val();
     var dob = $('#dob').val();
     var gender = $('#gender').val();
+    // var gender2 = $('#gender2').val();
     var address = $('#address').val();
     var kname = $('#kname').val();
     var krelationship = $('#krelationship').val();
     var kaddress = $('#kaddress').val();
     var kphonenumber = $('#kphonenumber').val();
     var kgender = $('#kgender').val();
+    // var kgender2 = $('#kgender2').val();
     var occupation = $('#occupation').val();
     var past_obsterics = $('#past_obsterics').val();
     var medical_history = $('#medical_history').val();
@@ -376,9 +378,49 @@ function _add_patient(){
     var past_disease = $('#past_disease').val();
     var family_disease = $('#family_disease').val();
     var past_surgery = $('#past_surgery').val();
+    var category = $('#category').val();
+    ///////////////////
+    var vgender;
+    var vkgender;
+    if(gender ==="Male"){
+        vgender='Male';
+
+    }
+    else if (gender==="Female"){
+        vgender='Female';
+    }
+
+    if(kgender ==="Male"){
+        vkgender='Male';
+
+    }
+    else if (kgender==="Female"){
+        vkgender='Female';
+    }
+
+    var vcategory;
+    
+    if (category === "Inpatients") {
+        vcategory = "1";
+    } else if (category === "Outpatients") {
+        vcategory = "2";
+    } else if (category === "Waiting_List") {
+        vcategory = "3";
+    } else if (category === "Appointment") {
+        vcategory = "4";
+    } else if (category === "Test") {
+        vcategory = "5";
+    } else if (category === "ANC") {
+        vcategory = "6";
+    } else if (category === "Today_Input") {
+        vcategory = "7";
+    }
+    
+    window.alert(vcategory);
+    
     
 
-	if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(gender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(kgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='') ||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')){
+	if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='') ||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')||(vcategory=='')){
 		$('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
         window.alert("Fill All fields");
     }else{
@@ -388,7 +430,7 @@ function _add_patient(){
  ////////////////////////////////////////////////	
 		
 		  var action = 'add_patient';		 
-          var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ gender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ kgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+'&past_surgery='+family_disease+'&past_surgery='+ past_surgery+'&medical_history='+ medical_history;
+          var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+'&family_disease='+family_disease+'&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory;
           $.ajax({
           type: "POST",
           url: "../../../config/code.php",
