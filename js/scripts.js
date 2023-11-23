@@ -353,24 +353,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
-
-
-function _add_patient(){
-	var fullname = $('#fullname').val();
-	var phonenumber = $('#phonenumber').val();
+function _add_patient() {
+    var fullname = $('#fullname').val();
+    var phonenumber = $('#phonenumber').val();
     var dob = $('#dob').val();
-    var gender = $('#gender').val();
-    // var gender2 = $('#gender2').val();
+    var gender1 = $('#gender1').is(':checked');
+    var gender2 = $('#gender2').is(':checked');
     var address = $('#address').val();
     var kname = $('#kname').val();
     var krelationship = $('#krelationship').val();
     var kaddress = $('#kaddress').val();
     var kphonenumber = $('#kphonenumber').val();
-    var kgender = $('#kgender').val();
-    // var kgender2 = $('#kgender2').val();
+    var kgender1 = $('#kgender1').is(':checked');
+    var kgender2 = $('#kgender2').is(':checked');
     var occupation = $('#occupation').val();
     var past_obsterics = $('#past_obsterics').val();
     var medical_history = $('#medical_history').val();
@@ -378,46 +373,52 @@ function _add_patient(){
     var past_disease = $('#past_disease').val();
     var family_disease = $('#family_disease').val();
     var past_surgery = $('#past_surgery').val();
-    var category = $('#category').val();
-    ///////////////////
+    var category1 = $('#category1').is(':checked');
+    var category2 = $('#category2').is(':checked');
+    var category3 = $('#category3').is(':checked');
+    var category4 = $('#category4').is(':checked');
+    var category5 = $('#category5').is(':checked');
+    var category6 = $('#category6').is(':checked');
+    var category7 = $('#category7').is(':checked');
+
     var vgender;
     var vkgender;
-    if(gender ==="Male"){
-        vgender='Male';
 
-    }
-    else if (gender==="Female"){
-        vgender='Female';
+    if (gender1) {
+        vgender = 'Male';
+    } else if (gender2) {
+        vgender = 'Female';
     }
 
-    if(kgender ==="Male"){
-        vkgender='Male';
-
-    }
-    else if (kgender==="Female"){
-        vkgender='Female';
+    if (kgender1) {
+        vkgender = 'Female';
+    } else if (kgender2) {
+        vkgender = 'Male';
     }
 
     var vcategory;
-    
-    if (category === "Inpatients") {
+
+    if (category1) {
         vcategory = "1";
-    } else if (category === "Outpatients") {
+    } else if (category2) {
         vcategory = "2";
-    } else if (category === "Waiting_List") {
+    } else if (category3) {
         vcategory = "3";
-    } else if (category === "Appointment") {
+    } else if (category4) {
         vcategory = "4";
-    } else if (category === "Test") {
+    } else if (category5) {
         vcategory = "5";
-    } else if (category === "ANC") {
+    } else if (category6) {
         vcategory = "6";
-    } else if (category === "Today_Input") {
+    } else if (category7) {
         vcategory = "7";
     }
-    
+
+    window.alert(vgender);
+    window.alert(vkgender);
     window.alert(vcategory);
-    
+
+
     
 
 	if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='') ||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')||(vcategory=='')){
@@ -430,7 +431,7 @@ function _add_patient(){
  ////////////////////////////////////////////////	
 		
 		  var action = 'add_patient';		 
-          var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+'&family_disease='+family_disease+'&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory;
+          var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+'&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory;
           $.ajax({
           type: "POST",
           url: "../../../config/code.php",

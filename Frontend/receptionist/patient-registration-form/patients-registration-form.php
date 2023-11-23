@@ -74,11 +74,11 @@
     <div class="form-display2">
        
     <label for="radio">
-        <input type="checkbox" id="gender" name="gender" value="Male" class='check1'>
+        <input type="checkbox" id="gender1" name="gender" value="Male" class='check1'>
         Male
       </label>
       <label for="radio">
-        <input type="checkbox" id="gender" name="gender" value="Female" class='check2'>
+        <input type="checkbox" id="gender2" name="gender" value="Female" class='check2'>
         Female
       </label>
     </div>
@@ -115,11 +115,11 @@
 <label>Gender</label>
 <div class="form-display2">
 <label for="radio">
-    <input type="checkbox" id="kgender" name="gender" value="Female"  class='check4'>
+    <input type="checkbox" id="kgender1" name="gender" value="Female"  class='check4'>
     Female
   </label>
 <label for="radio">
-    <input type="checkbox"  id="kgender" name="gender" value="Male"  class='check3'>
+    <input type="checkbox"  id="kgender2" name="gender" value="Male"  class='check3'>
     Male
   </label>
 
@@ -127,34 +127,34 @@
 <label>What kind  of patient Category are you?</label>
 <div class="form-display2">
 <label for="radio">
-    <input type="checkbox" id="category" name="gender" value="Inpatients"  class='check_category1'>
+    <input type="checkbox" id="category1" name="gender" value="Inpatients"  class='check_category1'>
     Inpatients
   </label>
 <label for="radio">
-    <input type="checkbox" id="category" name="gender" value="Outpatients"  class='check_category2'>
+    <input type="checkbox" id="category2" name="gender" value="Outpatients"  class='check_category2'>
     Outpatients
   </label>
 <label for="radio">
-    <input type="checkbox" id="category" name="gender" value="Waiting_List"  class='check_category3'>
+    <input type="checkbox" id="category3" name="gender" value="Waiting_List"  class='check_category3'>
     Waiting List
   </label>
 </div>
 
 <div class="form-display2">
 <label for="radio">
-    <input type="checkbox"  id="category"name="gender" value="Appointment"  class='check_category4'>
+    <input type="checkbox"  id="category4"name="gender" value="Appointment"  class='check_category4'>
     Appointment
   </label>
 <label for="radio">
-    <input type="checkbox" id="category" name="gender" value="Test"  class='check_category5'>
+    <input type="checkbox" id="category5" name="gender" value="Test"  class='check_category5'>
     Test
   </label>
 <label for="radio">
-    <input type="checkbox" id="category" name="gender" value="ANC"  class='check_category6'>
+    <input type="checkbox" id="category6" name="gender" value="ANC"  class='check_category6'>
     ANC
   </label>
 <label for="radio">
-    <input type="checkbox" id="category" name="gender" value="Today_Input"  class='check_category7'>
+    <input type="checkbox" id="category7" name="gender" value="Today_Input"  class='check_category7'>
     Today Input
   </label>
 </div>

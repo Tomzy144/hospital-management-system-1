@@ -230,12 +230,12 @@
 		$phonenumber = $_POST['phonenumber'];
 		$dateofbirth = $_POST['dob'];
 		$address = $_POST['address'];
-		$gender = $_POST['vgender'];
+		$gender = $_POST['gender'];
 		$kname = $_POST['kname'];
 		$krelationship = $_POST['krelationship'];
 		$kaddress = $_POST['kaddress'];
 		$kphonenumber = $_POST['kphonenumber'];
-		$kgender = $_POST['vkgender'];
+		$kgender = $_POST['kgender'];
 		$occupation = $_POST['occupation'];
 		$past_obsterics = $_POST['past_obsterics'];
 		$sexual_history = $_POST['sexual_history'];
@@ -244,7 +244,7 @@
 		$past_surgery = $_POST['past_surgery'];
 		$medical_history = $_POST['medical_history'];
 		$status_id= '1';
-		$category = $_POST['vcategory'];
+		$category = $_POST['category'];
 
 		
 		$phonenumber_query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE `phonenumber`='$phonenumber'");
