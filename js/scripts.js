@@ -395,7 +395,7 @@ function _add_patient() {
     } else if (kgender2) {
         vkgender = 'Male';
     }
-
+/////for category
     var vcategory;
 
     if (category1) {
