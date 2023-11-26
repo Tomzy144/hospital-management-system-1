@@ -88,7 +88,7 @@
       
 
         const patient_list = ()=>{
-            let url = "../superadmin/Pages/patients.php";
+            let url = "page/patients-lists.php";
             window.parent(location = (url));
         }
     </script>
