@@ -100,40 +100,6 @@ if ($patient_profile_array) {
         <i class="fa fa-arrow-circle-o-left" id='logout-arrow' onClick=' logout_home()'></i>
         <h2>Patient Admission Lists</h2>
     </div>
-        <div class="nav-menu">
-            <ul class="menu-items">
-                <a href="#">
-                <li class="items">
-                    <i class="fa fa-book "></i>
-                    <h4>Notes</h4>
-                </li>
-            </a>
-                <a href="#">
-                <li class="items">
-                    <i class="fa fa-check "></i>
-                    <h4>Activity Log</h4>
-                </li>
-            </a>
-                <a href="#">
-                <li class="items">
-                    <i class="fa fa-registered"></i>
-                    <h4>Results</h4>
-                </li>
-            </a>
-                <a href="#">
-                <li class="items">
-                    <i class="fa fa-bed"></i>
-                    <h4>Wards</h4>
-                </li>
-            </a>
-                <a href="#">
-                <li class="items">
-                    <i class="fa fa-user-circle-o"></i>
-                    <h4>Reception</h4>
-                </li>
-            </a>
-            </ul>
-    </div>
    
     <div class="search-container">
     <div class="search-bar">
