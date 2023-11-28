@@ -24,8 +24,8 @@
   .form-container {
     overflow: hidden;
     width: 0;
-    transition: width 2s;
-    transition-delay: 3.8s;
+    transition: width 0.5s;
+    transition-delay: 0.5s;
   }
   .form-container {
     width: 100%;

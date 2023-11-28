@@ -52,14 +52,14 @@ button{
    background-color: rgb(4 47 46);
    color: #fff;
    cursor: pointer;
-   transition:all ease-in-out 1s;
+   transition:all ease-in-out 0.5s;
    font-size: 24px;
 }
 button:hover{
     background-color: #fff;
     border: 1px solid rgb(4 47 46);
     color: rgb(4 47 46);
-    transition: all ease-in-out 2s; 
+    transition: all ease-in-out 0.5s; 
    
 }
 #btn{
@@ -74,6 +74,6 @@ button:hover{
     background-color: #fff;
     border: 1px solid rgb(4 47 46);
     color: rgb(4 47 46);
-    transition: all ease-in-out 2s; 
+    transition: all ease-in-out 0.5s; 
    
 }

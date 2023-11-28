@@ -49,7 +49,7 @@ body {
   .content-container {
     overflow: hidden;
     width: 0;
-    transition: width 2s;
+    transition: width 0.5s;
     transition-delay: 1.8s;
   }
 
@@ -98,7 +98,7 @@ h1{
     padding: 0.6rem;
     cursor: pointer;
     margin: 1rem 0;
-    transition:all ease-in-out 1s;
+    transition:all ease-in-out 0.5s;
 }
 
 .btn-doctor:hover{
@@ -325,5 +325,5 @@ h2, p{
     color: #fff;
     cursor: pointer;
     transition: ease-in-out;
-    transition: 2s;
+    transition: 0.5s;
 }
