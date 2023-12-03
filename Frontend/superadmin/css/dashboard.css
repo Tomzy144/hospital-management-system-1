@@ -27,7 +27,22 @@
     color: var(--white);
   
 }
-
+body {
+    margin: 0;
+    overflow-x: hidden;
+    /* background-color: #ff9999; */
+    transition: background-color 0.5s;
+    opacity: 100%; /* Set initial opacity to 0 for the entire body */
+    transition: opacity 0.5s ease-out; /* Add fade-in transition for opacity */
+}
+.contents{
+          position: absolute;
+            top: 50%;
+            right: 0; /* Start from the right */
+            transform: translate(100%, -50%); /* Initial position is outside the viewport */
+            opacity: 1; /* Set initial opacity to 1 */
+            transition: transform 0.8s ease-out, width 0.8s ease-out; /* Add transitions for transform and width */
+}
 
 .navbar{
     background: var(--deep-green);
@@ -154,7 +169,7 @@ h1{
     padding: 1.1rem;
     transition: ease-in-out 2s;
     background:var(--c);
-    box-shadow: 0 3rem 5rem rgba(189, 186, 186, 0.3);
+    box-shadow: 0 3rem 5rem rgba(230, 227, 227, 0.3);
     transition: all 0.5s linear;
     animation-name:initial;
     animation-duration: 0.5s;

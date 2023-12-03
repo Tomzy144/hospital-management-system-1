@@ -109,7 +109,7 @@
         </ul>
     </div>
 </nav>
-
+<div class="contents">
 <main>
     <div class="container">
         <h1>Dashboard</h1>
@@ -187,6 +187,7 @@
     </div>
     </div>
 </main>
+</div>
     <script src="js/dashboard.js"></script>
 </body>
 </html>

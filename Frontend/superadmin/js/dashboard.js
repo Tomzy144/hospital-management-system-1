@@ -30,6 +30,15 @@ closeToggleSidebar.addEventListener("click", function(){
     }
 
 })
+function transitionContent() {
+    document.body.style.opacity = '1'; /* Set opacity to 1 for the body */
+    const pageContent = document.querySelector('.contents');
+    pageContent.style.transform = 'translate(-0, -65%)'; /* Move in from the right */
+    pageContent.style.width = '100%'; /* Change the width, adjust as needed */
+  }
+  
+  window.onload = transitionContent;
+  
 
 
 //patient page redirect

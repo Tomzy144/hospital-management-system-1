@@ -268,3 +268,19 @@ const submission_url = function(){
     window.parent(location =(url));
 }
 
+// const keyPress =   document.addEventListener("keypress")
+// console.log(keyPress.key);
+
+// document.windoow(addEventListener("DOMContentLoaded", function(){
+//     if(windoow.keyPress === keyPress.key) {
+// })
+// // const escapeClose = function (){
+
+// //     if(onclick("keypress") === "Escape"){
+// //         close_doctor_login_form();
+// //     }else{
+// //         "Not woking and check on the code"
+// //     }
+// // }
+
+// escapeClose();

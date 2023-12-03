@@ -70,9 +70,22 @@
             <h1>Receptionist Dashboard</h1>
         </div>
              </nav>
+             <div class="sidebar">
+    <div class="togglebar">
+    <i class="fa fa-bars"></i>
+    <i class="fa fa-times"></i>
+    </div>
+    <div class="checkbar">
+    <i class='fa fa-calendar-check-o active'></i>
+    <i class='fa fa-envelope active'></i> 
+    <i class='fa fa-user-circle-o active'></i>
+    </div>
+   </div>
+   <div class="contents">
     <div class="container-dashboard">
         <button onclick="patientForm()">PATIENT ADMISSION FORM</button>
         <button onclick="AppoimentBooking()">BOOKING APPOINTMENT SITTER</button>
+    </div>
     </div>
     <script>
         const patientForm = function(){
@@ -83,14 +96,55 @@
             let url = 'appointment-booker/appointment.php';
             window.parent(location = (url));
         }
+        function transitionContent() {
+  document.body.style.opacity = '1'; /* Set opacity to 1 for the body */
+  const pageContent = document.querySelector('.contents');
+  pageContent.style.transform = 'translate(-0, -65%)'; /* Move in from the right */
+  pageContent.style.width = '100%'; /* Change the width, adjust as needed */
+}
+
+window.onload = transitionContent;
 
 
-      
 
         const patient_list = ()=>{
             let url = "page/patients-lists.php";
             window.parent(location = (url));
         }
+        const addEvent  = document.getElementById("btn");
+const show = document.querySelector(".drop-down")
+const calender = document.querySelector(".fa-calendar-check-o");
+const envelope = document.querySelector(".fa-envelope");
+const user = document.querySelector(".fa-user-circle-o");
+const toggleOpen = document.querySelector(".fa-bars");
+const toggleClose = document.querySelector(".fa-times");
+const sidebar = document.querySelector(".sidebar");
+
+
+//Manipulate sidebar 
+toggleOpen.addEventListener("click", function() {
+    envelope.innerHTML = '  Chat';
+    user.innerHTML =   '  Account';
+    calender.innerHTML = '  Appoitment';
+    sidebar.classList.toggle("active")
+    toggleOpen.style.display = "none";
+    toggleClose.style.display = "block";
+})
+
+toggleClose.addEventListener("click", function() {
+    envelope.innerHTML = ' '
+    user.innerHTML =   '  ';
+    calender.innerHTML = '  ';
+    sidebar.classList.toggle("active")
+    toggleOpen.style.display = "block";
+    toggleClose.style.display = "none";
+    
+})
+
+addEvent.addEventListener("click", function(){
+    show.classList.remove("hidden")
+
+})
     </script>
 </body>
 </html>
