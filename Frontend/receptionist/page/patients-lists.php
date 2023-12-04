@@ -89,7 +89,7 @@ if ($patient_profile_array) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="index.css">
-    <script src ="js/patient.js"></script>
+    <script src ="../../superadmin/pages/js/patient.js"></script>
     <script src="js/jquery-v3.6.1.min.js"></script>
     <title>Patient</title>
 </head>
