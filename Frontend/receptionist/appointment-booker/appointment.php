@@ -64,7 +64,6 @@
 <select id="roles" onchange="getDoctors()">
     <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
-    <option value="dermatologist">Dermatologist</option>
     <!-- Add more role options as needed -->
 </select>
 
@@ -80,6 +79,12 @@
 <div id="calendar"></div>
     </div>
     </div>
+    <!-- <div class="appoitment-form">
+        <form id="form">
+            <label for="name">Full Name</label>
+            <input type="text" placeholder="Input name" autocomplete="off">
+        </form>
+    </div> -->
 </body>
 <script src="appoitment.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
