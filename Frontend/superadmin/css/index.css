@@ -11,16 +11,13 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+body {
+    width: 100%;
+    height: 100%;
+}
 /*SUPERADMIN SIGNIN PAGE, LOGIN PAGE AND RESET OTP PAGE*/
 
 /*SUPERADMIN SIGNIN*/
-#preloader{
-    background: black url(../../Images/0_QdX-f4eHiimvQZoZ.gif)no-repeat center center;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    z-index: 2000;
-  }
   .form-container {
     overflow: hidden;
     width: 0;
@@ -33,7 +30,7 @@
 .container{
     color: #ffffff;
     width: 100%;
-    height: 100vh;
+    height: 1000px;
     background-image: url(../../Images/shutterstock_2122167485.jpg);
     background-position: center;
     background-size: cover;

@@ -14,12 +14,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    height: 1000px;
   }
   #preloader{
     background: black url(../Frontend/Images/loading-38.gif)no-repeat center center;
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: 2000;
   }
 
@@ -67,8 +68,11 @@ body {
 .index-container{
     background-image:linear-gradient(rgb(0,0,0,0.4)50%, rgb(0,0,0,0.4)50%), url(../frontend/Images/shutterstock_1189798159.jpg);
     width: 100%;
-    height: 100vh;
+    height: 1300px;
     background-position: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     background-repeat: no-repeat;
     background-size: cover;
 }  
@@ -77,9 +81,9 @@ body {
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
+    /* position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 999; */
     padding: 0.5rem;
     flex-direction: row;
     border-bottom: 1px solid #fff;
@@ -120,7 +124,7 @@ h1{
 .overlay{
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0;
     background-color: rgb(0, 0, 0);
@@ -129,10 +133,10 @@ h1{
 }
 main{
     width: 100%;
-    height: 100%;
+    height: 900px;
    display: flex;
+   margin: 0 auto;
    flex-direction: column;
-   margin-top: 2rem;
    justify-content: center;
     padding: 5rem;
 }

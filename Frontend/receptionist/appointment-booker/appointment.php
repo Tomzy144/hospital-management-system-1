@@ -76,12 +76,18 @@
 <div id="calendar"></div>
     </div>
     </div>
-    <!-- <div class="appoitment-form">
+    <div class="appoitment-form hidden">
         <form id="form">
+            <div class="form-control">
             <label for="name">Full Name</label>
             <input type="text" placeholder="Input name" autocomplete="off">
+            </div>
+            <div class="form-control">
+            <label for="name">Reason for appoitment</label>
+         <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
         </form>
-    </div> -->
+    </div>
 </body>
 <script src="appoitment.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
