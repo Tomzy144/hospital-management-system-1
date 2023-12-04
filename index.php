@@ -39,10 +39,10 @@ if($s_staff_id!=''&& $page = 'receptionist_dash'){
                 <!-- <button class="btn" id="getting-started-btn">Getting Started</button> -->
                  </nav>
                 <main>
-                     <h1 style="font-size: 2.3rem; line-height: 3.2rem;">Your Journey to Better  <br/> <span style="border: 2px solid rgb(255, 255, 255); padding: 0.4rem; border-radius: 6px;">Health Start Here</span></h1>
+                     <!-- <h1 style="font-size: 2.3rem; line-height: 3.2rem;">Your Journey to Better  <br/> <span style="border: 2px solid rgb(255, 255, 255); padding: 0.4rem; border-radius: 6px;">Health Start Here</span></h1>
                      <p style="  color: #fff;
                      font-size: 1.5rem;
-                     padding: 2rem 0;">We work as a team to make the life <br/>of our patients wonderful.<br>Make yourself useful</p>
+                     padding: 2rem 0;">We work as a team to make the life <br/>of our patients wonderful.<br>Make yourself useful</p> -->
                      <div class="login-container">
                         <div class="flexs-container">
                         <div class="sections-container">

@@ -35,23 +35,20 @@
         </div>
     <div class="activities">
         <div class="activities-container">
-            <h3 style = 'font-size:1.5rem; padding:1rem'>Appoitment Schedule for a patient with Doctor Micheal</h3>
-            <h4 style='font-size:1rem'>1hour, one-to-one meeting</h4>
-            <h4 style='font-size:1rem'>Status: Pending</h4>
+            <span>Appoitment Schedule for a patient with Doctor Micheal</span>
+            <span>Status: Pending</span>
             <button id='edit-schedule'>Edit Schedule</button>
             <button  id='delete-schedule'>Delete Schedule</button>
         </div>
         <div class="activities-container">
-        <h3 style = 'font-size:1.5rem; padding:1rem'>Appoitment Schedule for a patient with Doctor Micheal</h3>
-            <h4 style='font-size:1rem'>1hour, one-to-one meeting</h4>
-            <h4 style='font-size:1.rem'>Status: Accepted</h4>
+        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
+            <span>Status: Accepted</span>
             <button id='edit-schedule'>Edit Schedule</button>
             <button  id='delete-schedule'>Delete Schedule</button>
         </div>
         <div class="activities-container">
-        <h3 style = 'font-size:1.5rem; padding:1rem'>Appoitment Schedule for a patient with Doctor Micheal</h3>
-            <h4 style='font-size:1rem'>1hour, one-to-one meeting</h4>
-            <h4 style='font-size:1rem'>Status: Rejected</h4>
+        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
+            <span style='font-size:1rem'>Status: Rejected</span>
             <button id='edit-schedule'>Edit Schedule</button>
             <button id='delete-schedule'>Delete Schedule</button>
         </div>

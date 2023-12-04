@@ -59,16 +59,14 @@
     <nav class="navbar">
     <!-- <i class="fa fa-sign-out" id='sign-out' onClick='home_page()'></i> -->
 
-    <form method="post" action="./../../config/code.php" id="logoutform">
-            <input type="hidden" name="action" value="logout"/>    
-          
-              <i class="fa fa-sign-out" id="sign-out"onclick="document.getElementById('logoutform').submit();"></i>
-        </form>
-
     <button id='btn' onClick="patient_list()">Patient Lists</button>
         <div class="logo">
-            <h1>Receptionist Dashboard</h1>
+            <span style="font-size:2rem; color:#fff;">Receptionist Dashboard</span>
         </div>
+    <form method="post" action="./../../config/code.php" id="logoutform">
+            <input type="hidden" name="action" value="logout"/>    
+              <i class="fa fa-sign-out" id="sign-out"onclick="document.getElementById('logoutform').submit();"></i>
+        </form>
              </nav>
              <div class="sidebar">
     <div class="togglebar">
@@ -96,14 +94,14 @@
             let url = 'appointment-booker/appointment.php';
             window.parent(location = (url));
         }
-        function transitionContent() {
-  document.body.style.opacity = '1'; /* Set opacity to 1 for the body */
-  const pageContent = document.querySelector('.contents');
-  pageContent.style.transform = 'translate(-0, -65%)'; /* Move in from the right */
-  pageContent.style.width = '100%'; /* Change the width, adjust as needed */
-}
+//         function transitionContent() {
+//   document.body.style.opacity = '1'; /* Set opacity to 1 for the body */
+//   const pageContent = document.querySelector('.contents');
+//   pageContent.style.transform = 'translate(-0, -65%)'; /* Move in from the right */
+//   pageContent.style.width = '100%'; /* Change the width, adjust as needed */
+// }
 
-window.onload = transitionContent;
+// window.onload = transitionContent;
 
 
 
