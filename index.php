@@ -31,7 +31,6 @@ if($s_staff_id!=''&& $page = 'receptionist_dash'){
 
     </div>
     <!-- <div class="content-container"> -->
-    <div class="index-container">
         <nav class="navbar">
             <div class="logo">
                 <h1>HOSPITAL MANAGEMENT SYSTEM</h1>
@@ -74,7 +73,6 @@ if($s_staff_id!=''&& $page = 'receptionist_dash'){
                         <h2>For Super Admin</h2>
                         <p>Super Admin can login here</p>
                         <button class="btn-lab" onclick="log_in()">Super Admin</button>
-                    </div>
                 </main>
 
            <div id="doctor-container"></div>

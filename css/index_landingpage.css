@@ -9,13 +9,10 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    overflow: hidden;
-    background-image:linear-gradient(rgb(0,0,0,0.4)50%, rgb(0,0,0,0.4)50%), url(../frontend/Images/shutterstock_1189798159.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
-    height:100vh;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000000;
   }
   #preloader{
     background: black url(../Frontend/Images/loading-38.gif)no-repeat center center;
