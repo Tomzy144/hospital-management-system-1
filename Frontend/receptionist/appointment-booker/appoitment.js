@@ -98,6 +98,9 @@ const roles = document.querySelector(".doctors-roles")
 roles.classList.toggle("hidden")
 const appoitment = document.querySelector(".appoitment-calender");
 appoitment.classList.toggle("hidden")
+const appoitment_form = document.querySelector(".appoitment-form")
+appoitment_form.classList.remove("hidden")
+
 }
 
 

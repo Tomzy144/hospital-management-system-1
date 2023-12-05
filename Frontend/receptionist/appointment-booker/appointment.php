@@ -72,12 +72,9 @@
 <button id="continue" onClick="submitRoles()">Continue</button>
     </div>
     <div class="appoitment-calender hidden">
-    <h2>Doctor Appointment Booking System</h2>
 
 <div id="calendar"></div>
-    </div>
-    </div>
-    <div class="appoitment-form hidden">
+<div class="appoitment-form hidden">
         <form id="form">
             <div class="form-control">
             <label for="name">Full Name</label>
@@ -87,8 +84,12 @@
             <label for="name">Reason for appoitment</label>
          <textarea name="" id="" cols="30" rows="10"></textarea>
             </div>
+            <button id="sub">Submit</button>
         </form>
     </div>
+    </div>
+    </div>
+
 </body>
 <script src="appoitment.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

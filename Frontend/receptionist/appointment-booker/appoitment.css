@@ -202,13 +202,10 @@ background-color: rgb(0, 123, 121); ;;
 }
 .event-form{
     width: 100%;
-    background-color: #fff;
     padding: 2rem;
-    position: absolute;
-    top: 5%;
-    transform: translate(-50%, -50%) !important;
-    left: 50%;
-    top: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     z-index: 888;
 }
 
@@ -255,13 +252,18 @@ select{
     color: #fff;
 }
 .appoitment-calender{
-    width: 50%;
-    /* color: #fff; */
+    width: fit-content;
+   display: flex;
+   flex-direction: column;
+   background-color:rgb(0, 123, 121); 
+   justify-content: center;;
+   align-items: center;
     height: fit-content;
     padding: 2rem;
-    background-color:rgb(0, 123, 121); 
     margin: 0 auto; 
     border-radius: 6px;
+    color: #fff;
+    text-align: center;
 }
 #calendar {
     max-width: 800px;
@@ -271,13 +273,6 @@ select{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
-/* .fc-icon {
-    color: aqua;
-    background-color: red;
-} */
-/* .fc-day-number{
-    color:red;
-} */
 p {
     text-align: center;
     font-size: 18px;
@@ -288,12 +283,10 @@ p {
     display: none;
 }
 .appoitment-form{
-    background-color:rgb(0, 123, 121); 
     width: 500px;
     padding: 2rem;
     height: fit-content;
     border-radius: 6px;
-    margin: 0 auto;
 }
 
 #form{
@@ -309,13 +302,31 @@ p {
     /* padding: 1rem; */
 }
 label{
-    font-size: 1.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: left;
+}
+h2{
     color: #fff;
 }
 input{
     width: 350px;
+    border: 3px solid #000000;
     padding: 0.5rem;
     font-size: 1rem;
     border: none;
     border-radius: 3px;
+}
+#sub{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+#sub:hover{
+    background-color: #000000;
+    color: #fff;
 }
