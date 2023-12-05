@@ -136,7 +136,7 @@ if ($patient_profile_array) {
    
         <div class="patient-container">
             <div  class="patient-navbar">
-                <i class="fa fa-arrow-circle-o-left" id='back-arrow-patientslist' onClick='backWardArrow()'></i>
+                <i class="fa fa-long-arrow-left t" id='back-arrow-patientslist' onClick='backWardArrow()'></i>
                 <h2>Patients Profile</h2>
             </div>
                 <div class="nav-menu">

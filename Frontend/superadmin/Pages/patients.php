@@ -97,7 +97,7 @@ if ($patient_profile_array) {
    <div class="patient-container">
     <div  class="patient-navbar">
         <!---BACK ARROW-->
-        <i class="fa fa-arrow-circle-o-left" id='back-arrow' onClick='backWardArrow()'></i>
+        <i class="fa fa-long-arrow-left " id='back-arrow' onClick='backWardArrow()'></i>
         <h2>Patient Admission Lists</h2>
     </div>
         <div class="nav-menu">

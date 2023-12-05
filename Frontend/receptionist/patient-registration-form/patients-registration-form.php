@@ -31,7 +31,7 @@
 <body>
     <div class="content-con">
     <nav class="navbar">
-    <i class="fa fa-mail-reply (alias)" id='sign-out' onClick='dashboard()'></i>
+    <i class="fa fa-long-arrow-left " id='sign-out' onClick='dashboard()'></i>
         <div class="logo">
             <h1>Patient Admission Form</h1>
         </div>
