@@ -29,6 +29,7 @@
     <script src="../../../js/jquery-v3.6.1.min.js"></script>
 </head>
 <body>
+    <div class="content-con">
     <nav class="navbar">
     <i class="fa fa-mail-reply (alias)" id='sign-out' onClick='dashboard()'></i>
         <div class="logo">
@@ -36,7 +37,7 @@
         </div>
    
              </nav>
-<div class="container">
+             <div class="form">
     <div class="form-container">
         <h2>Fill in the neccesary information</h2>
         <form action="">
@@ -221,9 +222,10 @@
 
 <button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Submit</button>
  </div>
-        </form> 
-       
-    </div>
+        </form>
+        </div> 
+        </div>
+        </div>
 </div>
 <script>
 
