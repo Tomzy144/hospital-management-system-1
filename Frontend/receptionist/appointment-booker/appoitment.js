@@ -10,8 +10,11 @@ const eventfill = document.querySelector("#btn-drop-down")
 
 const doctorsData = {
   cardiologist: ['Dr. Tomiwa', 'Dr. Johnson'],
-  dermatologist: ['Dr. Kingsley', 'Dr. White']
-  // Add more roles and corresponding doctors as needed
+  dermatologist: ['Dr. Kingsley', 'Dr. White'],
+  surgeon:['Dr. Priceless', 'Dr John'],
+  psychiatrist:['Dr. Towa', 'Dr Paul'],
+  family_medicine:['Dr. Praise', 'Dr Trinity'],
+  dermatologist: ['Dr.Tom',  ] // Add more roles and corresponding doctors as needed
 };
 
 function getDoctors() {

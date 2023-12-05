@@ -30,7 +30,7 @@ if($s_staff_id!=''&& $page = 'receptionist_dash'){
     <div id="preloader">
 
     </div>
-    <div class="content-container">
+    <!-- <div class="content-container"> -->
     <div class="index-container">
         <nav class="navbar">
             <div class="logo">
@@ -76,7 +76,6 @@ if($s_staff_id!=''&& $page = 'receptionist_dash'){
                         <button class="btn-lab" onclick="log_in()">Super Admin</button>
                     </div>
                 </main>
-            </div>
 
            <div id="doctor-container"></div>
            <div id="nurse-container"></div>

@@ -61,6 +61,7 @@
 <select id="roles" onchange="getDoctors()">
     <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
+    <option value="surgeon">Surgeon</option>
     <!-- Add more role options as needed -->
 </select>
 

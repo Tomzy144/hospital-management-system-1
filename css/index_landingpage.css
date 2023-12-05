@@ -1,7 +1,8 @@
 
 *{
-    margin: 0;
+   
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -9,12 +10,12 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     overflow: hidden;
-    background-image:url(../Frontend/Images/shutterstock_2122167485.jpg);
+    background-image:linear-gradient(rgb(0,0,0,0.4)50%, rgb(0,0,0,0.4)50%), url(../frontend/Images/shutterstock_1189798159.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 1000px;
+    height:100vh;
   }
   #preloader{
     background: black url(../Frontend/Images/loading-38.gif)no-repeat center center;
@@ -65,25 +66,27 @@ body {
     width: 100%;
   }
 
-.index-container{
+/* .index-container{
     background-image:linear-gradient(rgb(0,0,0,0.4)50%, rgb(0,0,0,0.4)50%), url(../frontend/Images/shutterstock_1189798159.jpg);
     width: 100%;
-    height: 1300px;
+    height: 100%;
     background-position: center;
     margin: 0 auto;
+     margin: 0;
+     padding: 0;
     display: flex;
     flex-direction: column;
     background-repeat: no-repeat;
     background-size: cover;
-}  
+}   */
 .navbar{
     display: flex;
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    /* position: fixed;
+    position: fixed;
     top: 0;
-    z-index: 999; */
+    z-index: 999;
     padding: 0.5rem;
     flex-direction: row;
     border-bottom: 1px solid #fff;
@@ -133,9 +136,9 @@ h1{
 }
 main{
     width: 100%;
-    height: 900px;
+    height: 100%;
    display: flex;
-   margin: 0 auto;
+   /* margin: 0 auto; */
    flex-direction: column;
    justify-content: center;
     padding: 5rem;
