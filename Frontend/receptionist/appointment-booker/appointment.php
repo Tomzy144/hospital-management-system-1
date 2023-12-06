@@ -62,6 +62,29 @@
     <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
+    <option value="psychiatrist">Psychiatrist:</option>
+    <option value="family_medicine">Family Medicine</option>
+    <option value="dermatologist">Dermatologist</option>
+    <option value="anaesthesiology">Anaesthesiology</option>
+    <option value="rheumatologist">Rheumatologist</option>
+    <option value="endocrinologist">Endocrinologist</option>
+    <option value="nephrologist">Nephrologist</option>
+    <option value="neurologist">Neurologist</option>
+    <option value="pediatrician">Pediatrician</option>
+    <option value="urologist">Urologist</option>
+    <option value="radiologist">Radiologist</option>
+    <option value="dentist">Dentist</option>
+    <option value="pulmonologist">Pulmonologist</option>
+    <option value="podiatristian">Podiatristian</option>
+    <option value="emergency_physician">Emergency Physician</option>
+    <option value="anaesthesiologist">Anaesthesiologist</option>
+    <option value="cardiologist">Cardiologist</option>
+    <option value="oncologist">Oncologist</option>
+    <option value="gastroenterologist">Gastroenterologist</option>
+    <option value="ophthanlmologist">Ophthanlmologist</option>
+    <option value="cardology">Cardology</option>
+    <option value="allergist">Allergist</option>
+    <option value="orthopedic_surgoen">Orthopedic Surgoen</option>
     <!-- Add more role options as needed -->
 </select>
 
