@@ -57,7 +57,6 @@
 <body>
 
     <nav class="navbar">
-    <!-- <i class="fa fa-sign-out" id='sign-out' onClick='home_page()'></i> -->
 
     <button id='btn' onClick="patient_list()">Patient Lists</button>
         <div class="logo">
@@ -87,11 +86,11 @@
     </div>
     <script>
         const patientForm = function(){
-            let url = 'patient-registration-form/patients-registration-form.php';
+            let url = 'patient-registration-form/';
             window.parent(location = (url));
         }
         const AppoimentBooking = function(){
-            let url = 'appointment-booker/appointment.php';
+            let url = 'appointment-booker/';
             window.parent(location = (url));
         }
 //         function transitionContent() {
