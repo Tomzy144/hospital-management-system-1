@@ -233,7 +233,6 @@
     <option value="ward5">Ward 5</option>
     <option value="ward6">Ward 6</option>
     <option value="ward7">Ward 7</option>
-    <option value="ward6">Ward 6</option>
 </select>
         </div>
         </div>
