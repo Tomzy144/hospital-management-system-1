@@ -223,7 +223,20 @@
 <button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Submit</button>
  </div>
         </form>
-        </div> 
+        <div class="ward hidden" >
+        <select id="beds" onchange="hideSelect(this)">
+    <option value="empty">Choose a Ward</option>
+    <option value="ward1">Ward 1</option>
+    <option value="ward2">Ward 2</option>
+    <option value="ward3">Ward 3</option>
+    <option value="ward4">Ward 4:</option>
+    <option value="ward5">Ward 5</option>
+    <option value="ward6">Ward 6</option>
+    <option value="ward7">Ward 7</option>
+    <option value="ward6">Ward 6</option>
+</select>
+        </div>
+        </div>
         </div>
         </div>
 </div>
@@ -320,6 +333,7 @@
             check_category5.disabled = true;
             check_category6.disabled = true;
             check_category7.disabled = true;
+         document.querySelector(".ward").classList.remove("hidden")
         }else{
             check_category2.disabled = false;
             check_category3.disabled = false;
@@ -327,9 +341,40 @@
             check_category5.disabled = false;
             check_category6.disabled = false;
             check_category7.disabled = false;
+            document.querySelector(".ward").classList.add("hidden")
         }
       
         }
+
+        // const select = document.querySelector(".ward");
+        // const selectOption = select.options[select.selectedIndex].value;
+
+
+        // const hideSelect = function(){
+
+        //     if(selectOption ==="ward1"){
+        //         select.style.display = "none";
+        //     }
+        // }
+
+        //Array for bed wards
+
+    const options = ['ward1', 'ward2', 'ward3', 'ward4', 'ward5', 'ward6',]
+    var select = document.querySelector(".ward");
+    for(var i =0; i < options.length; i++){
+        var value = options[i];
+    }
+    
+    
+    
+    function hideSelect(select) {
+if (select.value) {
+  select.style.display = "none";
+} else {
+  select.style.display = "block";
+}
+}
+  
   //for checked2
         const handleCheckboxCategoryChange2 = ()=>{
 

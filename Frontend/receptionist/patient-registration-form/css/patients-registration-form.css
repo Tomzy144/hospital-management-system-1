@@ -47,6 +47,7 @@ h1{
     background-color: rgb(4 47 46);
     box-shadow: rgba(113, 112, 114, 0.15) 0px 48px 100px 0px;
     color: #fff;
+    position: relative;
     padding: 2rem;
     text-align: center;
     margin: 5rem 0;
@@ -71,7 +72,7 @@ h1{
 .form-display2{
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
+    margin: 2rem 0;
 }
 label{
     font-size: 15px;
@@ -155,6 +156,25 @@ i{
   .btn-next{
     display:none;
   }
+  .ward{
+    width:fit-content;
+    height: fit-content;
+    padding: 1rem;
+    /* background-color: black; */
+    position: absolute;
+    top: 80%;
+    left: 20%;
+  }
+  .hidden{
+    display: none;
+  }
+  select{
+    padding: 1rem;
+    border: none;
+    background-color: #fff;
+    font: 15px;
+    cursor: pointer;
+}
 @media screen and (max-width: 1200px){
  
 }
