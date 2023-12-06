@@ -101,12 +101,13 @@
         <form id="form">
             <div class="form-control">
             <label for="name">Full Name</label>
-            <input type="text" placeholder="Input name" autocomplete="off">
+            <input type="text" id="name" placeholder="Input name" autocomplete="off">
             </div>
             <div class="form-control">
             <label for="name">Reason for appoitment</label>
-         <textarea name="" id="" cols="30" rows="10"></textarea>
+         <textarea name="" id="reason" cols="30" rows="10"></textarea>
             </div>
+            <input type="text" id="date" placeholder="Input name" autocomplete="off">
             <button id="sub">Submit</button>
         </form>
     </div>
@@ -138,7 +139,10 @@
                 ],
                 dayClick: function(date, jsEvent, view) {
                     // Redirect to another page with the selected date
-                    window.location.href = 'anotherPage.html?selectedDate=' + moment(date).format('YYYY-MM-DD');
+                    // window.location.href = 'anotherPage.html?selectedDate=' + moment(date).format('YYYY-MM-DD');
+                    var app;
+                   app = moment(date).format('YYYY-MM-DD');
+                   window.alert(app);
                 },
             });
         });
