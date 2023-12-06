@@ -107,7 +107,7 @@
             <label for="name">Reason for appoitment</label>
          <textarea name="" id="reason" cols="30" rows="10"></textarea>
             </div>
-            <input type="text" id="date" placeholder="Input name" autocomplete="off">
+            <input type="hidden" id="date"  placeholder="Input name" value="">
             <button id="sub">Submit</button>
         </form>
     </div>
@@ -142,7 +142,8 @@
                     // window.location.href = 'anotherPage.html?selectedDate=' + moment(date).format('YYYY-MM-DD');
                     var app;
                    app = moment(date).format('YYYY-MM-DD');
-                   window.alert(app);
+                   document.getElementById("date").value = app;
+                //    window.alert(app);
                 },
             });
         });
