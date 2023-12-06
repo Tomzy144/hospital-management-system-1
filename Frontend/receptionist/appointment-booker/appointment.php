@@ -141,7 +141,7 @@
                     // Redirect to another page with the selected date
                     // window.location.href = 'anotherPage.html?selectedDate=' + moment(date).format('YYYY-MM-DD');
                     var app;
-                   app = moment(date).format('YYYY-MM-DD');
+                   app = moment(date).format('DD-MM-YYYY');
                    document.getElementById("date").value = app;
                 //    window.alert(app);
                 },
