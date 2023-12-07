@@ -113,17 +113,20 @@
         </div>
             <div class="form-control">
             <label for="name">Reason for appoitment</label>
-         <textarea name="" id="reason" cols="30" rows="10"></textarea>
+         <textarea name="" id="reason" cols="30" rows="10" value=""></textarea>
             </div>
-            <input type="hidden" id="date"  placeholder="Input name" value="">
-            <button id="sub">Submit</button>
+            <input type="hidden" id="date"  value="">
+            <input type="hidden" id="role"  value="">
+            <input type="hidden" id="doctor"  value="">
+            <button id="sub" type="button" onClick="appointment_booker();" >Submit</button>
         </form>
     </div>
     </div>
     </div>
 
 </body>
-<script src="appoitment.js"></script>
+<script src="js/appoitment.js"></script>
+<script src="js/jquery-v3.6.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
@@ -158,6 +161,7 @@
           $('#selectedDate').text(formattedDate);
           if (prevSelectedDate) {
             prevSelectedDate.css('background-color', '');
+            document.getElementById("date").value = date;
           }
 
           // Change the background color of the clicked date cell to green

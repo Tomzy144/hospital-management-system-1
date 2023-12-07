@@ -126,11 +126,12 @@ const selectedDoctor = document.getElementById('doctors').value;
 
 if (selectedRole && selectedDoctor) {
   alert(`Selected Doctor: ${selectedDoctor}\nRole: ${selectedRole}`);
+  document.getElementById("doctor").value = selectedDoctor;
+  document.getElementById("role").value = selectedRole;
 } else {
   alert('Please select a doctor role and ait  doctor.');
 }
-window.alert(roles);
-window.alert(appoitment);
+
 
 }
 
@@ -158,3 +159,113 @@ window.alert(appoitment);
 //       },
 //   });
 // });
+
+
+
+
+//////////////////////tomiwa's script
+
+
+// <input type="hidden" id="date"  value="">
+// <input type="hidden" id="role"  value="">
+// <input type="hidden" id="doctor"  value="">
+
+
+
+// function appoitment_booker(staff_id){
+//   var action='appointment_booker';
+//   var role = document.getElementById('role').value;
+//   var doctor =document.getElementById('doctor').value
+//   var dataString ='action='+ action+'&staff_id='+ staff_id+'&role='+role+'&doctor='+doctor;
+//   $.ajax({
+//   type: "POST",
+//   url: "../appointment-booking-code/appointment-booking-code.php",
+//   data: dataString,
+//   cache: false,
+//   success: function(html){
+//       // $('#next_2').html(html);
+//       alert("Appointment Sent");
+//       // $('/../../frontend/otp.reset.php').html(html);
+//       // window.parent(location="../frontend/otp-reset.php").html(html);
+//   }
+//   });
+// }
+
+
+
+
+
+
+function appointment_booker(){
+	var role = $('#role').val();
+	var doctor = $('#doctor').val();
+  var date =$('#date').val();
+  var name =$('#name').val();
+  var reason =$('#reason').val();
+  var time =$('#time').val();
+
+	if((role=='')||(doctor=='')||(date=='')||(name=='')||(reason=='')||(time=='')){
+		$('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
+    alert("error");
+    }else{
+		 //////////////// get btn text ////////////////
+         $('#sub').html('PROCESSING...');
+         document.getElementById('sub').disabled=true;
+ ////////////////////////////////////////////////	
+		
+		  var action = 'appointment_booker';		 
+          var dataString ='action='+ action+'&role='+ role +'&doctor='+ doctor+'&date='+ date+'&name='+ name+'&reason='+ reason+'&time='+ time;
+          $.ajax({
+          type: "POST",
+          url: "appointment-booking-code/appointment-booking-code.php",
+          data: dataString,
+          cache: false,
+          dataType: 'json',
+          cache: false,
+          success: function(){
+          //         var scheck = data.check;
+          //         var email = data.email;
+          //         if(scheck==0){ //user Active
+          //           $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
+          //       }else{ //user suspended
+					// $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+          //           _get_page('active-staff','active-staff');
+          //           alert_close()
+          //       }
+          //       $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
+          //       document.getElementById('proceed-btn').disabled=false;
+
+
+            } 
+				});
+	}
+}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function appoitment_deleter(staff_id){
+//   var action='reset_password';
+//   $('#next_2').html('<div class="ajax-loader">loading...<br><img src="all-images/images/ajax-loader.gif"/></div>').fadeIn(500);
+//   var dataString ='action='+ action+'&staff_id='+ staff_id;
+//   $.ajax({
+//   type: "POST",
+//   url: "../../backend/config/code.php",
+//   data: dataString,
+//   cache: false,
+//   success: function(html){
+//       $('#next_2').html(html);
+//       // $('/../../frontend/otp.reset.php').html(html);
+//       // window.parent(location="../frontend/otp-reset.php").html(html);
+//   }
+//   });
+// }

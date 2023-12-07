@@ -214,7 +214,7 @@
 		echo $check;
 	
 		echo json_encode(array('check' => $check));
-		break;
+	break;
 	
 
 
