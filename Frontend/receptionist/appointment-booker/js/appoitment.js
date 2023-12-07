@@ -222,18 +222,20 @@ function appointment_booker(){
           cache: false,
           dataType: 'json',
           cache: false,
-          success: function(){
-          //         var scheck = data.check;
-          //         var email = data.email;
-          //         if(scheck==0){ //user Active
-          //           $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
-          //       }else{ //user suspended
-					// $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
-          //           _get_page('active-staff','active-staff');
-          //           alert_close()
-          //       }
-          //       $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
-          //       document.getElementById('proceed-btn').disabled=false;
+          success: function(data){
+                  var scheck = data.check;
+                  // var email = data.email;
+                  if(scheck==0){ //user Active
+                    $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
+                    alert("this appointment already exists");
+                }else{ //user suspended
+					$('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+                    // _get_page('active-staff','active-staff');
+                    // alert_close()
+                    alert("appointment Submitted Successfully");
+                }
+                $('#sub').html('Continue');
+                document.getElementById('sub').disabled=false;
 
 
             } 
