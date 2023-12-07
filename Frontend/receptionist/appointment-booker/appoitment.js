@@ -127,8 +127,11 @@ const selectedDoctor = document.getElementById('doctors').value;
 if (selectedRole && selectedDoctor) {
   alert(`Selected Doctor: ${selectedDoctor}\nRole: ${selectedRole}`);
 } else {
-  alert('Please select a doctor role and a doctor.');
+  alert('Please select a doctor role and ait  doctor.');
 }
+window.alert(roles);
+window.alert(appoitment);
+
 }
 
 

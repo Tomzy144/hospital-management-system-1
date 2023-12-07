@@ -92,7 +92,7 @@
 <select id="doctors">
     <!-- Doctors for the selected role will be dynamically added here -->
 </select>
-<button id="continue" onClick="submitRoles()">Continue</button>
+<button id="continue" type="submit" onClick="submitRoles()">Continue</button>
     </div>
     <div class="appoitment-calender hidden">
 
