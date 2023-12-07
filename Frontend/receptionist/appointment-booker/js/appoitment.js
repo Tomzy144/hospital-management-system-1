@@ -8,51 +8,51 @@ const toggleClose = document.querySelector(".fa-times");
 const sidebar = document.querySelector(".sidebar");
 const eventfill = document.querySelector("#btn-drop-down")
 
-const doctorsData = {
-  cardiologist: ['Dr. Tomiwa', 'Dr. Johnson'],
-  dermatologist: ['Dr. Kingsley', 'Dr. White'],
-  surgeon:['Dr. Priceless', 'Dr John'],
-  psychiatrist:['Dr. Towa', 'Dr Paul'],
-  family_medicine:['Dr. Praise', 'Dr Trinity'],
-  dermatologist: ['Dr.Tom', 'Dr Ruth' ],
-  anaesthesiology:['Dr. Drake', 'Dr. Drake'],
-  rheumatologist:['Dr. Peace', 'Dr Jude'],
-  endocrinologist:['Dr. Grace', 'Dr. Houston'],
-  nephrologist:['Dr. Goodness', 'Dr Goodnews'],
-  neurologist:['Dr. Goodness', 'Dr.Peace'],
-  pediatrician:['Dr. Fooad', 'Dr. Fooad'],
-  urologist:['Dr. Uro', 'Dr. Fooad'],
-  radiologist:['Dr. Fooad', 'Dr. Fooad'],
-  dentist:['Dr. Gofade', 'Dr. Fooad'],
-  pulmonologist:['Dr. Foatt', 'Dr. Fooad'],
-  podiatristian:['Dr. Foatt', 'Dr. Fogad'],
-  emergency_physician:['Dr. Good', 'Dr. Tom'],
-  anaesthesiologist:['Dr. Green', 'Dr. Green'],
-  cardiologist:['Dr Ben', 'Dr. White'],
-  oncologist:['Dr. Bemson', 'Dr. Green'],
-  gastroenterologist:['Dr. Houston', 'Dr. Green'],
-  ophthanlmologist:['Dr. Jous', 'Dr. King'],
-  cardology:['Dr. Funke', 'Dr Roseline'],
-  allergist:['Dr. Postel', 'Dr.Houston'],
-  orthopedic_surgoen:['Dr.Lookman', 'Dr. Chelsea'],
-};
+// const doctorsData = {
+//   cardiologist: ['Dr. Tomiwa', 'Dr. Johnson'],
+//   dermatologist: ['Dr. Kingsley', 'Dr. White'],
+//   surgeon:['Dr. Priceless', 'Dr John'],
+//   psychiatrist:['Dr. Towa', 'Dr Paul'],
+//   family_medicine:['Dr. Praise', 'Dr Trinity'],
+//   dermatologist: ['Dr.Tom', 'Dr Ruth' ],
+//   anaesthesiology:['Dr. Drake', 'Dr. Drake'],
+//   rheumatologist:['Dr. Peace', 'Dr Jude'],
+//   endocrinologist:['Dr. Grace', 'Dr. Houston'],
+//   nephrologist:['Dr. Goodness', 'Dr Goodnews'],
+//   neurologist:['Dr. Goodness', 'Dr.Peace'],
+//   pediatrician:['Dr. Fooad', 'Dr. Fooad'],
+//   urologist:['Dr. Uro', 'Dr. Fooad'],
+//   radiologist:['Dr. Fooad', 'Dr. Fooad'],
+//   dentist:['Dr. Gofade', 'Dr. Fooad'],
+//   pulmonologist:['Dr. Foatt', 'Dr. Fooad'],
+//   podiatristian:['Dr. Foatt', 'Dr. Fogad'],
+//   emergency_physician:['Dr. Good', 'Dr. Tom'],
+//   anaesthesiologist:['Dr. Green', 'Dr. Green'],
+//   cardiologist:['Dr Ben', 'Dr. White'],
+//   oncologist:['Dr. Bemson', 'Dr. Green'],
+//   gastroenterologist:['Dr. Houston', 'Dr. Green'],
+//   ophthanlmologist:['Dr. Jous', 'Dr. King'],
+//   cardology:['Dr. Funke', 'Dr Roseline'],
+//   allergist:['Dr. Postel', 'Dr.Houston'],
+//   orthopedic_surgoen:['Dr.Lookman', 'Dr. Chelsea'],
+// };
 
-function getDoctors() {
-  const selectedRole = document.getElementById('roles').value;
-  const doctorsSelect = document.getElementById('doctors');
-  doctorsSelect.innerHTML = ''; // Clear previous options
+// function getDoctors() {
+//   const selectedRole = document.getElementById('roles').value;
+//   const doctorsSelect = document.getElementById('doctors');
+//   doctorsSelect.innerHTML = ''; // Clear previous options
 
-  // Populate the doctors select box based on the selected role
-  doctorsData[selectedRole].forEach(doctor => {
-      const option = document.createElement('option');
-      option.value = doctor;
-      option.text = doctor;
-      doctorsSelect.appendChild(option);
-  });
-}
+//   // Populate the doctors select box based on the selected role
+//   doctorsData[selectedRole].forEach(doctor => {
+//       const option = document.createElement('option');
+//       option.value = doctor;
+//       option.text = doctor;
+//       doctorsSelect.appendChild(option);
+//   });
+// }
 
-// Initial population of doctors based on the default selected role
-getDoctors();
+// // Initial population of doctors based on the default selected role
+// getDoctors();
 //Manipulate sidebar 
 toggleOpen.addEventListener("click", function() {
     envelope.innerHTML = '  Chat';
@@ -129,7 +129,7 @@ if (selectedRole && selectedDoctor) {
   document.getElementById("doctor").value = selectedDoctor;
   document.getElementById("role").value = selectedRole;
 } else {
-  alert('Please select a doctor role and ait  doctor.');
+  alert('Please select a doctor role and it  doctor.');
 }
 
 
@@ -166,45 +166,214 @@ if (selectedRole && selectedDoctor) {
 //////////////////////tomiwa's script
 
 
-// <input type="hidden" id="date"  value="">
-// <input type="hidden" id="role"  value="">
-// <input type="hidden" id="doctor"  value="">
 
 
 
-// function appoitment_booker(staff_id){
-//   var action='appointment_booker';
-//   var role = document.getElementById('role').value;
-//   var doctor =document.getElementById('doctor').value
-//   var dataString ='action='+ action+'&staff_id='+ staff_id+'&role='+role+'&doctor='+doctor;
-//   $.ajax({
-//   type: "POST",
-//   url: "../appointment-booking-code/appointment-booking-code.php",
-//   data: dataString,
-//   cache: false,
-//   success: function(html){
-//       // $('#next_2').html(html);
-//       alert("Appointment Sent");
-//       // $('/../../frontend/otp.reset.php').html(html);
-//       // window.parent(location="../frontend/otp-reset.php").html(html);
-//   }
-//   });
-// }
 
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Call the function to populate the dropdown when the page is fully loaded
+  getRoles();
+});
+
+function getRoles() {
+  $('#roles').html('<option>LOADING...</option>'); // Set loading message
+  $('#roles').prop('disabled', true); // Disable the dropdown
+
+  var action = 'getRoles';
+  var data = { action: action }; // Use an object to define data
+
+  $.ajax({
+    type: "POST",
+    url: "appointment-booking-code/appointment-booking-code.php",
+    data: data, // Pass the data object directly
+    cache: false,
+    dataType: 'json',
+    success: function (data) {
+      // Check for success and populate the dropdown
+      if (data.success) {
+        populateRolesDropdown(data.roles); // Assuming 'roles' is the key for roles in your response
+      } else {
+        console.error('Error:', data.message);
+      }
+    },
+    error: function (xhr, status, error) {
+      console.error('AJAX Error:', status, error);
+    }
+  });
+}
+
+function populateRolesDropdown(roles) {
+  var rolesDropdown = document.getElementById("roles");
+
+  // Clear existing options
+  rolesDropdown.innerHTML = '';
+
+  // Add options based on the fetched data
+  for (var i = 0; i < roles.length; i++) {
+    var option = document.createElement("option");
+    option.value = roles[i].role_id; // Assuming the role object has a 'role_id' property
+    option.textContent = roles[i].doctor_role_name; // Assuming the role object has a 'doctor_role_name' property
+    rolesDropdown.appendChild(option);
+  }
+
+  // Enable the dropdown after populating options
+  $('#roles').prop('disabled', false);
+}
+
+/////////////////////////////////
+
+
+
+
+
+
+
+
+function getDoctors() {
+  $('#doctors').html('<option>LOADING...</option>'); // Set loading message
+  $('#doctors').prop('disabled', true); // Disable the dropdown
+
+  var action = 'getDoctors';
+  var role = $('#roles').val(); 
+  var dataString = 'action=' + action + '&role=' + role;
+alert(role);
+  $.ajax({
+    type: 'POST',
+    url: 'appointment-booking-code/appointment-booking-code.php',
+    data: dataString,
+    cache: false,
+    dataType: 'json',
+    success: function (data) {
+      // Check for success and populate the dropdown
+      if (data.success) {
+        populateDoctorsDropdown(data.doctors); // Assuming 'doctors' is the key for doctors in your response
+      } else {
+        console.error('Error:', data.message);
+      }
+    },
+    error: function (xhr, status, error) {
+      console.error('AJAX Error:', status, error);
+    },
+  });
+}
+
+
+function populateDoctorsDropdown(doctors) {
+  var doctorsDropdown = document.getElementById('doctors');
+
+  // Clear existing options
+  doctorsDropdown.innerHTML = '';
+
+  // Add options based on the fetched data
+  for (var i = 0; i < doctors.length; i++) {
+    var option = document.createElement('option');
+    option.value = doctors[i].doctors_id; // Assuming the doctor object has a 'doctors_id' property
+    option.textContent = doctors[i].fullname; // Assuming the doctor object has a 'fullname' property
+    doctorsDropdown.appendChild(option);
+  }
+
+  // Enable the dropdown after populating options
+  $('#doctors').prop('disabled', false);
+}
 
 
 
 
 
 function appointment_booker(){
-	var role = $('#role').val();
+	var role = $('#roles').val();
 	var doctor = $('#doctor').val();
   var date =$('#date').val();
   var name =$('#name').val();
   var reason =$('#reason').val();
   var time =$('#time').val();
+  var role_id;
 
-	if((role=='')||(doctor=='')||(date=='')||(name=='')||(reason=='')||(time=='')){
+
+  // Map the role to the corresponding doctor_role_id
+  switch (role) {
+    case 'cardiologist':
+      role_id = '1';
+      break;
+    case 'dermatologist':
+      role_id = '2';
+      break;
+    case 'surgeon':
+      role_id = '3';
+      break;
+    case 'psychiatrist':
+      role_id = '4';
+      break;
+    case 'family_medicine':
+      role_id = '5';
+      break;
+    case 'anaesthesiology':
+      role_id = '7';
+      break;
+    case 'rheumatologist':
+      role_id = '8';
+      break;
+    case 'endocrinologist':
+      role_id = '9';
+      break;
+    case 'nephrologist':
+      role_id = '10';
+      break;
+    case 'neurologist':
+      role_id = '11';
+      break;
+    case 'pediatrician':
+      role_id = '12';
+      break;
+    case 'urologist':
+      role_id = '13';
+      break;
+    case 'radiologist':
+      role_id = '14';
+      break;
+    case 'dentist':
+      role_id = '15';
+      break;
+    case 'pulmonologist':
+      role_id = '16';
+      break;
+    case 'podiatristian':
+      role_id = '17';
+      break;
+    case 'emergency_physician':
+      role_id = '18';
+      break;
+    case 'anaesthesiologist':
+      role_id = '19';
+      break;
+    case 'oncologist':
+      role_id = '21';
+      break;
+    case 'gastroenterologist':
+      role_id = '22';
+      break;
+    case 'ophthalmologist':
+      role_id = '23';
+      break;
+    case 'cardology':
+      role_id = '24';
+      break;
+    case 'allergist':
+      role_id = '25';
+      break;
+    case 'orthopedic_surgeon':
+      role_id = '26';
+      break;
+    default:
+      role_id = ''; // Set a default value or handle the case when the role is not recognized
+  }
+
+
+	if((role_id=='')||(doctor=='')||(date=='')||(name=='')||(reason=='')||(time=='')){
 		$('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
     alert("error");
     }else{
@@ -214,7 +383,7 @@ function appointment_booker(){
  ////////////////////////////////////////////////	
 		
 		  var action = 'appointment_booker';		 
-          var dataString ='action='+ action+'&role='+ role +'&doctor='+ doctor+'&date='+ date+'&name='+ name+'&reason='+ reason+'&time='+ time;
+          var dataString ='action='+ action+'&role_id='+ role_id +'&doctor='+ doctor+'&date='+ date+'&name='+ name+'&reason='+ reason+'&time='+ time;
           $.ajax({
           type: "POST",
           url: "appointment-booking-code/appointment-booking-code.php",
@@ -244,30 +413,3 @@ function appointment_booker(){
 }	
 
 
-
-
-
-
-
-
-
-
-
-
-
-// function appoitment_deleter(staff_id){
-//   var action='reset_password';
-//   $('#next_2').html('<div class="ajax-loader">loading...<br><img src="all-images/images/ajax-loader.gif"/></div>').fadeIn(500);
-//   var dataString ='action='+ action+'&staff_id='+ staff_id;
-//   $.ajax({
-//   type: "POST",
-//   url: "../../backend/config/code.php",
-//   data: dataString,
-//   cache: false,
-//   success: function(html){
-//       $('#next_2').html(html);
-//       // $('/../../frontend/otp.reset.php').html(html);
-//       // window.parent(location="../frontend/otp-reset.php").html(html);
-//   }
-//   });
-// }

@@ -29,7 +29,7 @@
    
     
     case 'appointment_booker': 
-        $role_id = trim(strtoupper($_POST['role_id']));
+        $role_id = $_POST['role_id'];
         $doctor = $_POST['doctor'];
         $date = $_POST['date'];
         $reason = $_POST['reason'];
@@ -37,7 +37,7 @@
         $time = $_POST['time'];
     
         // Use prepared statement to prevent SQL injection
-        $exists_query = mysqli_query($conn, "SELECT * FROM appointment_tab WHERE `time`='$time' AND `patient_name`='$name' AND `doctor_id`='$doctor' AND `date`='$date'");
+        $exists_query = mysqli_query($conn, "SELECT * FROM appointment_tab WHERE `time`= '$time' AND `patient_name`='$name' AND `doctor_id`='$doctor' AND `appointment_date`='$date'");
         $check_query_count = mysqli_num_rows($exists_query);
     
         if ($check_query_count > 0) {   
@@ -66,25 +66,87 @@
 
 
 
+ 
+        case 'getRoles': 
+
+            try {
+                // Assuming you have a valid database connection established with $conn
+        
+                $query = mysqli_query($conn, "SELECT * FROM doctor_role_tab");
+                
+                if ($query) {
+                    $roles = array();
+        
+                    // Fetch the data from the result set
+                    while ($row = mysqli_fetch_assoc($query)) {
+                        $roles[] = $row;
+                    }
+        
+                    echo json_encode(array("success" => true, "roles" => $roles));
+                } else {
+                    echo json_encode(array("success" => false, "message" => "Error executing the query"));
+                }
+            } catch (Exception $e) {
+                echo json_encode(array("success" => false, "message" => "Exception: " . $e->getMessage()));
+            }
+            break;
+
+
+        
+            case 'getDoctors': 
+                $role = $_POST['role'];
+              
+            
+                    $query = mysqli_query($conn, "SELECT doctor_tab.fullname
+                    FROM doctor_tab
+                    JOIN doctor_role_tab ON doctor_tab.doctor_role_id = doctor_role_tab.doctor_role_id
+                    WHERE doctor_role_tab.doctor_role_id = '$role'");
+                    
+                    if ($query) {
+                        $doctors = array();
+            
+                        // Fetch the data from the result set
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            $doctors[] = $row;
+                        }
+            
+                        echo json_encode(array("success" => true, "doctors" => $doctors));
+                    } else {
+                        echo json_encode(array("success" => false, "message" => "Error executing the query"));
+                    }
+                break;
 
 
 
 
 
+    
 
 
-
-
-    // case 'appointment_delete':
-    //     $patient_id = $_POST['patient_id'];
-
-    //     $puserquery = mysqli_query($conn, "SELECT * FROM `patient_tab` WHERE patient_id = $patient_id") or die("cant select");
-    //     $pusersel = mysqli_fetch_array($puserquery);
-    //     $check = $pusersel['patient_id'];
-
-    //     echo $check;
-
-    //     echo json_encode(array('check' => $check));
-    // break;
 
 }?>
+
+
+<?php
+// Assuming you have a database connection established
+
+if (isset($_POST['getAllRoles'])) {
+    try {
+        // Perform a database query to get all roles
+        // Replace 'your_database_table' and 'your_column_name' with your actual table and column names
+     
+        $statement = $pdo->prepare($query);
+        $statement->execute();
+        $roles = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        // Return the data as JSON
+        echo json_encode($roles);
+    } catch (PDOException $e) {
+        // Handle database error
+        echo json_encode(['error' => 'Database error']);
+    }
+    exit();
+}
+
+// Handle other cases or functions in your script if needed
+?>

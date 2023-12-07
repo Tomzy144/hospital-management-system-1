@@ -27,9 +27,9 @@
    <div class="contents">
     <div class="add-new">
         <div class="flex">
-        <button id='btn-drop-down' onclick="transitionContents()">
+        <button id='btn-drop-down'>
             <!-- <i class="fa fa-plus"></i> -->
-            <span>Book an Appoitment</span>
+            <span>Book an Appointment</span>
            </button>
         </div>
         </div>
@@ -58,8 +58,10 @@
     <div class="event-form hidden">
     <div class="doctors-roles">
     <label for="roles">Doctor Role:</label>
-<select id="roles" onchange="getDoctors()">
-    <option value="cardiologist">Cardiologist</option>
+<select id="roles"  onClick="getRoles();" onchange="getDoctors()">
+
+<option>Select</option>
+    <!-- <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
     <option value="psychiatrist">Psychiatrist:</option>
@@ -84,7 +86,7 @@
     <option value="ophthanlmologist">Ophthanlmologist</option>
     <option value="cardology">Cardology</option>
     <option value="allergist">Allergist</option>
-    <option value="orthopedic_surgoen">Orthopedic Surgoen</option>
+    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> -->
     <!-- Add more role options as needed -->
 </select>
 
@@ -92,7 +94,7 @@
 <select id="doctors">
     <!-- Doctors for the selected role will be dynamically added here -->
 </select>
-<button id="continue" type="submit" onClick="submitRoles()">Continue</button>
+<button id="continue" type="submit" onClick="submitRoles()" >Continue</button>
     </div>
     <div class="appoitment-calender hidden">
 
