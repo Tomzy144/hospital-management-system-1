@@ -105,8 +105,11 @@
         </div>
         <div class="form-control">
             <label for="name">Selected Date</label>
-            <!-- <input type="text" id="name" placeholder="Input name" autocomplete="off"> -->
             <span id="selectedDate">2023-10-3 </span>
+        </div>
+        <div class="form-control">
+            <label for="name">Selected Time</label>
+            <input type="time" id="time" name="time">
         </div>
             <div class="form-control">
             <label for="name">Reason for appoitment</label>
@@ -127,6 +130,11 @@
    
     <script>
       $(document).ready(function() {
+
+        let prevSelectedDate;
+
+        var todayDate = moment().format('DD-MM-YYYY');
+      $('#selectedDate').text(todayDate);
       $('#calendar').fullCalendar({
         header: {
           left: 'prev,next today',
@@ -144,14 +152,20 @@
         ],
         dayClick: function(date, jsEvent, view) {
           // Use Moment.js to format the selected date
-          var formattedDate = moment(date).format('YYYY-MM-DD');
+          var formattedDate = moment(date).format('DD-MM-YYYY');
 
           // Display the selected date on the page
           $('#selectedDate').text(formattedDate);
+          if (prevSelectedDate) {
+            prevSelectedDate.css('background-color', '');
+          }
 
-          // Redirect to another page with the selected date
-          // Commented out for demonstration purposes
-          // window.location.href = './appointment.js' + formattedDate;
+          // Change the background color of the clicked date cell to green
+          $(this).css('background-color', 'green');
+
+          // Update the previously selected date
+          prevSelectedDate = $(this);
+
         },
       });
     });

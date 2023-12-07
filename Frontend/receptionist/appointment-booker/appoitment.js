@@ -121,29 +121,37 @@ appoitment.classList.toggle("hidden")
 const appoitment_form = document.querySelector(".appoitment-form")
 appoitment_form.classList.remove("hidden")
 
+const selectedRole = document.getElementById('roles').value;
+const selectedDoctor = document.getElementById('doctors').value;
+
+if (selectedRole && selectedDoctor) {
+  alert(`Selected Doctor: ${selectedDoctor}\nRole: ${selectedRole}`);
+} else {
+  alert('Please select a doctor role and a doctor.');
+}
 }
 
 
 
-$(document).ready(function() {
-  $('#calendar').fullCalendar({
-      header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
-      },
-      defaultView: 'month',
-      events: [
-          {
-              title: 'Available Slot',
-              start: '2023-01-01T09:00:00',
-              end: '2023-01-01T10:00:00',
-          },
-          // Add more events as needed
-      ],
-      dayClick: function(date, jsEvent, view) {
-          // Redirect to another page with the selected date
-          window.location.href = 'anotherPage.html?selectedDate=' + moment(date).format('YYYY-MM-DD');
-      },
-  });
-});
+// $(document).ready(function() {
+//   $('#calendar').fullCalendar({
+//       header: {
+//           left: 'prev,next today',
+//           center: 'title',
+//           right: 'month,agendaWeek,agendaDay'
+//       },
+//       defaultView: 'month',
+//       events: [
+//           {
+//               title: 'Available Slot',
+//               start: '2023-01-01T09:00:00',
+//               end: '2023-01-01T10:00:00',
+//           },
+//           // Add more events as needed
+//       ],
+//       dayClick: function(date, jsEvent, view) {
+//           // Redirect to another page with the selected date
+//           window.location.href = 'anotherPage.html?selectedDate=' + moment(date).format('YYYY-MM-DD');
+//       },
+//   });
+// });
