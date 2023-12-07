@@ -121,6 +121,9 @@ appoitment.classList.toggle("hidden")
 const appoitment_form = document.querySelector(".appoitment-form")
 appoitment_form.classList.remove("hidden")
 
+window.alert(roles);
+window.alert(appoitment);
+
 }
 
 
