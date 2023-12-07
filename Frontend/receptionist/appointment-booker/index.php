@@ -98,11 +98,16 @@
 
 <div id="calendar"></div>
 <div class="appoitment-form hidden">
-        <form id="form">
-            <div class="form-control">
+    <form id="form">
+        <div class="form-control">
             <label for="name">Full Name</label>
             <input type="text" id="name" placeholder="Input name" autocomplete="off">
-            </div>
+        </div>
+        <div class="form-control">
+            <label for="name">Selected Date</label>
+            <!-- <input type="text" id="name" placeholder="Input name" autocomplete="off"> -->
+            <span id="selectedDate">2023-10-3 </span>
+        </div>
             <div class="form-control">
             <label for="name">Reason for appoitment</label>
          <textarea name="" id="reason" cols="30" rows="10"></textarea>
@@ -121,31 +126,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
    
     <script>
-        $(document).ready(function() {
-            $('#calendar').fullCalendar({
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-                defaultView: 'month',
-                events: [
-                    {
-                        title: 'Available Slot',
-                        start: '2023-01-01T09:00:00',
-                        end: '2023-01-01T10:00:00',
-                    },
-                    // Add more events as needed
-                ],
-                dayClick: function(date, jsEvent, view) {
-                    // Redirect to another page with the selected date
-                    // window.location.href = 'anotherPage.html?selectedDate=' + moment(date).format('YYYY-MM-DD');
-                    var app;
-                   app = moment(date).format('DD-MM-YYYY');
-                   document.getElementById("date").value = app;
-                //    window.alert(app);
-                },
-            });
-        });
+      $(document).ready(function() {
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        defaultView: 'month',
+        events: [
+          {
+            title: 'Available Slot',
+            start: '2023-01-01T09:00:00',
+            end: '2023-01-01T10:00:00',
+          },
+          // Add more events as needed
+        ],
+        dayClick: function(date, jsEvent, view) {
+          // Use Moment.js to format the selected date
+          var formattedDate = moment(date).format('YYYY-MM-DD');
+
+          // Display the selected date on the page
+          $('#selectedDate').text(formattedDate);
+
+          // Redirect to another page with the selected date
+          // Commented out for demonstration purposes
+          // window.location.href = './appointment.js' + formattedDate;
+        },
+      });
+    });
     </script>
 </html>
