@@ -100,7 +100,7 @@
 <div class="appoitment-form hidden">
     <form id="form">
         <div class="form-control">
-            <label for="name">Full Name</label>
+            <label for="name">Patient Name</label>
             <input type="text" id="name" placeholder="Input name" autocomplete="off">
         </div>
         <div class="form-control">
@@ -161,7 +161,7 @@
           }
 
           // Change the background color of the clicked date cell to green
-          $(this).css('background-color', 'green');
+          $(this).css('background-color', '#007b79');
 
           // Update the previously selected date
           prevSelectedDate = $(this);
