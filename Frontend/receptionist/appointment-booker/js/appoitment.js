@@ -125,7 +125,7 @@ const selectedRole = document.getElementById('roles').value;
 const selectedDoctor = document.getElementById('doctors').value;
 
 if (selectedRole && selectedDoctor) {
-  alert(`Selected Doctor: ${selectedDoctor}\nRole: ${selectedRole}`);
+  // alert(`Selected Doctor: ${selectedDoctor}\nRole: ${selectedRole}`);
   document.getElementById("doctor").value = selectedDoctor;
   document.getElementById("role").value = selectedRole;
 } else {
@@ -173,6 +173,11 @@ if (selectedRole && selectedDoctor) {
 
 
 
+// Delay the execution of existingFunction by 1 second
+setTimeout(function() {
+  getRoles();
+}, 1000);
+
 
 document.addEventListener("DOMContentLoaded", function() {
   // Call the function to populate the dropdown when the page is fully loaded
@@ -180,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function getRoles() {
+
   $('#roles').html('<option>LOADING...</option>'); // Set loading message
   $('#roles').prop('disabled', true); // Disable the dropdown
 
@@ -374,7 +380,7 @@ function appointment_booker(){
 
 	if((role_id=='')||(doctor=='')||(date=='')||(name=='')||(reason=='')||(time=='')){
 		$('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
-    alert("error");
+    alert("Fill the neccessary fields");
     }else{
 		 //////////////// get btn text ////////////////
          $('#sub').html('PROCESSING...');
@@ -394,13 +400,13 @@ function appointment_booker(){
                   var scheck = data.check;
                   // var email = data.email;
                   if(scheck==0){ //user Active
-                    $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
-                    alert("this appointment already exists");
+                   // $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
+                    alert("This appointment already exists");
                 }else{ //user suspended
-					$('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
-                    // _get_page('active-staff','active-staff');
-                    // alert_close()
+				//	$('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+                
                     alert("appointment Submitted Successfully");
+                    location.reload(true);
                 }
                 $('#sub').html('Continue');
                 document.getElementById('sub').disabled=false;
