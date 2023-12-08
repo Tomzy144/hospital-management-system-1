@@ -215,7 +215,7 @@ function populateRolesDropdown(roles) {
   // Add options based on the fetched data
   for (var i = 0; i < roles.length; i++) {
     var option = document.createElement("option");
-    option.value = roles[i].role_id; // Assuming the role object has a 'role_id' property
+    option.value = roles[i].doctor_role_name; // Assuming the role object has a 'role_id' property
     option.textContent = roles[i].doctor_role_name; // Assuming the role object has a 'doctor_role_name' property
     rolesDropdown.appendChild(option);
   }

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
     <!-- <link rel="stylesheet" href="./receptionist/calendar/fullcalendar-6.1.10/dist/index.global.min.js" /> -->
 </head>
-<body>
+<body onload="getRoles()">
     <div class="navbar">
         <h1>FRIDDA</h1>
     </div>
@@ -61,7 +61,7 @@
 <select id="roles"  onchange="getDoctors()">
 
 <option>Select</option>
-    <option value="cardiologist">Cardiologist</option>
+    <!-- <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
     <option value="psychiatrist">Psychiatrist:</option>
@@ -72,7 +72,7 @@
     <option value="endocrinologist">Endocrinologist</option>
     <option value="nephrologist">Nephrologist</option>
     <option value="neurologist">Neurologist</option>
-    <option value="pediatrician">Pediatrician</option>
+    <option value="pediatrician">Pediatrician</option>                 ///all commentented out bcause they will fetched from database 
     <option value="urologist">Urologist</option>
     <option value="radiologist">Radiologist</option>
     <option value="dentist">Dentist</option>
@@ -86,7 +86,7 @@
     <option value="ophthanlmologist">Ophthanlmologist</option>
     <option value="cardology">Cardology</option>
     <option value="allergist">Allergist</option>
-    <option value="orthopedic_surgoen">Orthopedic Surgoen</option>
+    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> -->
     <!-- Add more role options as needed -->
 </select>
 
