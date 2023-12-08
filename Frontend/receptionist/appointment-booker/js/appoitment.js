@@ -250,7 +250,7 @@ function getDoctors() {
       // Check for success and populate the dropdown
       if (data.success) {
         populateDoctorsDropdown(data.doctors); // Pass the entire array of doctors
-        alert(JSON.stringify(data.doctors)); // Display doctors array as a string
+      
       } else {
         console.error('Error:', data.message);
       }

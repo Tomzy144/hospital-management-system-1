@@ -58,7 +58,7 @@
     <div class="event-form hidden">
     <div class="doctors-roles">
     <label for="roles">Doctor Role:</label>
-<select id="roles"  onchange="getDoctors()">
+<select id="roles"  onclick="getDoctors()">
 
 <option>Select</option>
     <!-- <option value="cardiologist">Cardiologist</option>
