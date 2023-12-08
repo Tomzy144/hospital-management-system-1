@@ -58,10 +58,10 @@
     <div class="event-form hidden">
     <div class="doctors-roles">
     <label for="roles">Doctor Role:</label>
-<select id="roles"  onClick="getRoles();" onchange="getDoctors()">
+<select id="roles"  onchange="getDoctors()">
 
 <option>Select</option>
-    <!-- <option value="cardiologist">Cardiologist</option>
+    <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
     <option value="psychiatrist">Psychiatrist:</option>
@@ -86,7 +86,7 @@
     <option value="ophthanlmologist">Ophthanlmologist</option>
     <option value="cardology">Cardology</option>
     <option value="allergist">Allergist</option>
-    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> -->
+    <option value="orthopedic_surgoen">Orthopedic Surgoen</option>
     <!-- Add more role options as needed -->
 </select>
 

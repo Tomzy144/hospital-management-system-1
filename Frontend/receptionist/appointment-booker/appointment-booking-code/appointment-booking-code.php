@@ -93,31 +93,32 @@
 
 
         
-            case 'getDoctors': 
-                $role = $_POST['role'];
-              
+            case 'getDoctors':
+                // Assuming the role is sent via POST, make sure to sanitize it
+                $role = mysqli_real_escape_string($conn, $_POST['role']);
             
-                    $query = mysqli_query($conn, "SELECT doctor_tab.fullname
+                $query = mysqli_query($conn, "SELECT doctor_tab.doctor_id, doctor_tab.fullname
                     FROM doctor_tab
                     JOIN doctor_role_tab ON doctor_tab.doctor_role_id = doctor_role_tab.doctor_role_id
-                    WHERE doctor_role_tab.doctor_role_id = '$role'");
-                    
-                    if ($query) {
-                        $doctors = array();
+                    WHERE doctor_role_tab.doctor_role_name = '$role'");
             
-                        // Fetch the data from the result set
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            $doctors[] = $row;
-                        }
+                // Debugging: Output the role to see if it's received correctly
             
-                        echo json_encode(array("success" => true, "doctors" => $doctors));
-                    } else {
-                        echo json_encode(array("success" => false, "message" => "Error executing the query"));
+            
+                if ($query) {
+                    $doctors = array();
+            
+                    // Fetch the data from the result set
+                    while ($row = mysqli_fetch_assoc($query)) {
+                        $doctors[] = $row;
                     }
+            
+                    echo json_encode(array("success" => true, "doctors" => $doctors));
+                } else {
+                    echo json_encode(array("success" => false, "message" => "Error executing the query"));
+                }
                 break;
-
-
-
+            
 
 
     

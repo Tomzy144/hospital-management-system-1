@@ -232,7 +232,6 @@ function populateRolesDropdown(roles) {
 
 
 
-
 function getDoctors() {
   $('#doctors').html('<option>LOADING...</option>'); // Set loading message
   $('#doctors').prop('disabled', true); // Disable the dropdown
@@ -240,7 +239,7 @@ function getDoctors() {
   var action = 'getDoctors';
   var role = $('#roles').val(); 
   var dataString = 'action=' + action + '&role=' + role;
-alert(role);
+
   $.ajax({
     type: 'POST',
     url: 'appointment-booking-code/appointment-booking-code.php',
@@ -250,7 +249,8 @@ alert(role);
     success: function (data) {
       // Check for success and populate the dropdown
       if (data.success) {
-        populateDoctorsDropdown(data.doctors); // Assuming 'doctors' is the key for doctors in your response
+        populateDoctorsDropdown(data.doctors); // Pass the entire array of doctors
+        alert(JSON.stringify(data.doctors)); // Display doctors array as a string
       } else {
         console.error('Error:', data.message);
       }
@@ -261,7 +261,6 @@ alert(role);
   });
 }
 
-
 function populateDoctorsDropdown(doctors) {
   var doctorsDropdown = document.getElementById('doctors');
 
@@ -271,7 +270,7 @@ function populateDoctorsDropdown(doctors) {
   // Add options based on the fetched data
   for (var i = 0; i < doctors.length; i++) {
     var option = document.createElement('option');
-    option.value = doctors[i].doctors_id; // Assuming the doctor object has a 'doctors_id' property
+    option.value = doctors[i].doctor_id; // Assuming the doctor object has a 'doctor_id' property
     option.textContent = doctors[i].fullname; // Assuming the doctor object has a 'fullname' property
     doctorsDropdown.appendChild(option);
   }
