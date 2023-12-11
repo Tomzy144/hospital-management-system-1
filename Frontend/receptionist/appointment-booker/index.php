@@ -171,19 +171,36 @@
           // Use Moment.js to format the selected date
           var formattedDate = moment(date).format('DD-MM-YYYY');
 
-          // Display the selected date on the page
-          $('#selectedDate').text(formattedDate);
-          if (prevSelectedDate) {
-            prevSelectedDate.css('background-color', '');
-            document.getElementById("date").value = date;
+           if (moment(date).isSameOrAfter(todayDate, 'day')) {
+            // Display the selected date on the page
+            $('#selectedDate').text(formattedDate);
+
+            // Reset the background color of the previously selected date
+            if (prevSelectedDate) {
+              prevSelectedDate.css('background-color', '');
+            }
+
+            // Change the background color of the clicked date cell to green
+            $(this).css('background-color', '#007b79');
+
+            // Update the previously selected date
+            prevSelectedDate = $(this);
+
+            // Redirect to another page with the selected date
+            // Commented out for demonstration purposes
+            // window.location.href = './appointment.js' + formattedDate;
+          } else {
+            // Inform the user that selecting past dates is not allowed
+            alert('Please choose a future date.');
           }
-
-          // Change the background color of the clicked date cell to green
-          $(this).css('background-color', '#007b79');
-
-          // Update the previously selected date
-          prevSelectedDate = $(this);
-
+        },
+        // Set the valid range to today and beyond
+        validRange: {
+          start: todayDate,
+        },
+        // Allow selection only for dates that are on or after today
+        selectAllow: function(selectInfo) {
+          return moment(selectInfo.start).isSameOrAfter(todayDate, 'day');
         },
       });
     });

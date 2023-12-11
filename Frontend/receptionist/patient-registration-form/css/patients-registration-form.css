@@ -157,13 +157,9 @@ i{
     display:none;
   }
   .ward{
-    width:fit-content;
+    width:100%;;
     height: fit-content;
     padding: 1rem;
-    /* background-color: black; */
-    position: absolute;
-    top: 80%;
-    left: 20%;
   }
   .hidden{
     display: none;
@@ -171,6 +167,8 @@ i{
   select{
     padding: 1rem;
     border: none;
+    width: 100%;
+    margin: 1rem 0;
     background-color: #fff;
     font: 15px;
     cursor: pointer;

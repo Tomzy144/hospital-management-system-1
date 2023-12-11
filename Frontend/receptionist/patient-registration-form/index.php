@@ -159,6 +159,28 @@
     Today Input
   </label>
 </div>
+<div class="ward hidden">
+        <select id="wards">
+    <option value="empty">Choose a Ward</option>
+    <option value="ward1">Ward 1</option>
+    <option value="ward2">Ward 2</option>
+    <option value="ward3">Ward 3</option>
+    <option value="ward4">Ward 4:</option>
+    <option value="ward5">Ward 5</option>
+    <option value="ward6">Ward 6</option>
+    <option value="ward7">Ward 7</option>
+</select>
+        <select id="beds">
+    <option value="empty">Choose a Bed</option>
+    <option value="ward1">Bed1</option>
+    <option value="ward2">Bed 2</option>
+    <option value="ward3">Bed 3</option>
+    <option value="ward4">Bed 4:</option>
+    <option value="ward5">Bed 5</option>
+    <option value="ward6">Bed 6</option>
+    <option value="ward7">Bed 7</option>
+</select>
+        </div>
 <button type="button" class="btn-next">Next</button>
 </div>
  <!--Section 2-->
@@ -222,19 +244,9 @@
 
 <button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Submit</button>
  </div>
+
         </form>
-        <div class="ward hidden" >
-        <select id="beds" onchange="hideSelect(this)">
-    <option value="empty">Choose a Ward</option>
-    <option value="ward1">Ward 1</option>
-    <option value="ward2">Ward 2</option>
-    <option value="ward3">Ward 3</option>
-    <option value="ward4">Ward 4:</option>
-    <option value="ward5">Ward 5</option>
-    <option value="ward6">Ward 6</option>
-    <option value="ward7">Ward 7</option>
-</select>
-        </div>
+   
         </div>
         </div>
         </div>
@@ -345,35 +357,7 @@
       
         }
 
-        // const select = document.querySelector(".ward");
-        // const selectOption = select.options[select.selectedIndex].value;
 
-
-        // const hideSelect = function(){
-
-        //     if(selectOption ==="ward1"){
-        //         select.style.display = "none";
-        //     }
-        // }
-
-        //Array for bed wards
-
-    const options = ['ward1', 'ward2', 'ward3', 'ward4', 'ward5', 'ward6',]
-    var select = document.querySelector(".ward");
-    for(var i =0; i < options.length; i++){
-        var value = options[i];
-    }
-    
-    
-    
-    function hideSelect(select) {
-if (select.value) {
-  select.style.display = "none";
-} else {
-  select.style.display = "block";
-}
-}
-  
   //for checked2
         const handleCheckboxCategoryChange2 = ()=>{
 
