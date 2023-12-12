@@ -157,7 +157,7 @@
 </div>
 <div class="ward hidden">
         <select id="wards">
-    <option value="empty">Choose a Ward</option>
+    <option>Choose a Ward</option>
     <option value="ward1">Ward 1</option>
     <option value="ward2">Ward 2</option>
     <option value="ward3">Ward 3</option>

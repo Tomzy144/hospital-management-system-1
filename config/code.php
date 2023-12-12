@@ -245,6 +245,8 @@
 		$medical_history = $_POST['medical_history'];
 		$status_id= '1';
 		$category = $_POST['category'];
+		$bed = $_POST['bed'];
+		$ward = $_POST['ward'];
 
 		
 		$phonenumber_query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE `phonenumber`='$phonenumber'");
@@ -262,8 +264,8 @@
 			$patient_id = 'pat' . $no;
 	
 			mysqli_query($conn,"INSERT INTO `patient_tab`
-			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`category_id`) VALUES 
-			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW(),'$category')") or die (mysqli_error($conn));
+			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`category_id`,`bed`,`ward`) VALUES 
+			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW(),'$category','$bed','$ward')") or die (mysqli_error($conn));
 		}
 	
 		echo json_encode(array("check" => $check, "patient_id" => $patient_id));

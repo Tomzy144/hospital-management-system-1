@@ -380,7 +380,8 @@ function _add_patient() {
     var category5 = $('#category5').is(':checked');
     var category6 = $('#category6').is(':checked');
     var category7 = $('#category7').is(':checked');
-
+    var bed = $('beds').val();
+    var ward = $('wards').val();
     var vgender;
     var vkgender;
 
@@ -429,7 +430,7 @@ function _add_patient() {
  ////////////////////////////////////////////////	
 		
 		  var action = 'add_patient';		 
-          var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+'&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory;
+          var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+'&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory + '&bed='+ bed+'&ward='+ ward;
           $.ajax({
           type: "POST",
           url: "../../../config/code.php",
@@ -459,3 +460,13 @@ function _add_patient() {
 				});
 	}
 }	
+
+
+
+
+
+
+
+
+
+
