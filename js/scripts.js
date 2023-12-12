@@ -364,12 +364,15 @@ function _add_patient() {
         vcategory = "7";
     }
 
-    if(wards.selectedIndex && beds.selectedIndex){
-        var ward= `${wards.value}`;
-        var bed =  `${beds.value}`;
-    }else{
-        alert("Please select Ward And Bed")
-    }
+    // if(wards.selectedIndex && beds.selectedIndex){
+    //     var ward= `${wards.value}`;
+    //     var bed =  `${beds.value}`;
+    // }else{
+    //     alert("Please select Ward And Bed")
+    // }
+
+    var bed = $('#beds option:selected').val();
+    var ward = $('#wards option:selected').val();
 
     
 
