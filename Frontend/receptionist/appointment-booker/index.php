@@ -46,6 +46,7 @@
         </div>
         </div>
     <div class="activities">
+      <div class="three-container-row">
         <div class="activities-container">
             <span>Appoitment Schedule for a patient with Doctor Micheal</span>
             <span>Status: Pending</span>
@@ -63,6 +64,47 @@
             <span style='font-size:1rem'>Status: Rejected</span>
             <button id='edit-schedule'>Edit Schedule</button>
             <button id='delete-schedule'>Delete Schedule</button>
+            </div>
+        </div>
+      <div class="three-container-row">
+        <div class="activities-container">
+            <span>Appoitment Schedule for a patient with Doctor Micheal</span>
+            <span>Status: Pending</span>
+            <button id='edit-schedule'>Edit Schedule</button>
+            <button  id='delete-schedule'>Delete Schedule</button>
+        </div>
+        <div class="activities-container">
+        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
+            <span>Status: Accepted</span>
+            <button id='edit-schedule'>Edit Schedule</button>
+            <button  id='delete-schedule'>Delete Schedule</button>
+        </div>
+        <div class="activities-container">
+        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
+            <span style='font-size:1rem'>Status: Rejected</span>
+            <button id='edit-schedule'>Edit Schedule</button>
+            <button id='delete-schedule'>Delete Schedule</button>
+            </div>
+        </div>
+      <div class="three-container-row">
+        <div class="activities-container">
+            <span>Appoitment Schedule for a patient with Doctor Micheal</span>
+            <span>Status: Pending</span>
+            <button id='edit-schedule'>Edit Schedule</button>
+            <button  id='delete-schedule'>Delete Schedule</button>
+        </div>
+        <div class="activities-container">
+        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
+            <span>Status: Accepted</span>
+            <button id='edit-schedule'>Edit Schedule</button>
+            <button  id='delete-schedule'>Delete Schedule</button>
+        </div>
+        <div class="activities-container">
+        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
+            <span style='font-size:1rem'>Status: Rejected</span>
+            <button id='edit-schedule'>Edit Schedule</button>
+            <button id='delete-schedule'>Delete Schedule</button>
+            </div>
         </div>
         </div>
     </div>
@@ -141,7 +183,7 @@
 </body>
 <script src="js/appoitment.js"></script>
 <script src="js/jquery-v3.6.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
    
@@ -185,10 +227,6 @@
 
             // Update the previously selected date
             prevSelectedDate = $(this);
-
-            // Redirect to another page with the selected date
-            // Commented out for demonstration purposes
-            // window.location.href = './appointment.js' + formattedDate;
           } else {
             // Inform the user that selecting past dates is not allowed
             alert('Please choose a future date.');
@@ -198,10 +236,11 @@
         validRange: {
           start: todayDate,
         },
+
         // Allow selection only for dates that are on or after today
-        selectAllow: function(selectInfo) {
-          return moment(selectInfo.start).isSameOrAfter(todayDate, 'day');
-        },
+        // selectAllow: function(selectInfo) {
+        //   return moment(selectInfo.start).isSameOrAfter(todayDate, 'day');
+        // },
       });
     });
     </script>
