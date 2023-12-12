@@ -154,10 +154,6 @@
     <input type="checkbox" id="category6" name="gender" value="ANC"  class='check_category6'>
     ANC
   </label>
-<label for="radio">
-    <input type="checkbox" id="category7" name="gender" value="Today_Input"  class='check_category7'>
-    Today Input
-  </label>
 </div>
 <div class="ward hidden">
         <select id="wards">
@@ -165,20 +161,20 @@
     <option value="ward1">Ward 1</option>
     <option value="ward2">Ward 2</option>
     <option value="ward3">Ward 3</option>
-    <option value="ward4">Ward 4:</option>
+    <option value="ward4">Ward 4</option>
     <option value="ward5">Ward 5</option>
     <option value="ward6">Ward 6</option>
     <option value="ward7">Ward 7</option>
 </select>
         <select id="beds">
     <option value="empty">Choose a Bed</option>
-    <option value="ward1">Bed1</option>
-    <option value="ward2">Bed 2</option>
-    <option value="ward3">Bed 3</option>
-    <option value="ward4">Bed 4:</option>
-    <option value="ward5">Bed 5</option>
-    <option value="ward6">Bed 6</option>
-    <option value="ward7">Bed 7</option>
+    <option value="bed1">Bed1</option>
+    <option value="bed2">Bed 2</option>
+    <option value="bed3">Bed 3</option>
+    <option value="bed4">Bed 4</option>
+    <option value="bed5">Bed 5</option>
+    <option value="bed6">Bed 6</option>
+    <option value="bed7">Bed 7</option>
 </select>
         </div>
 <button type="button" class="btn-next">Next</button>
@@ -253,6 +249,8 @@
 </div>
 <script>
 
+
+
    const activeSection = document.querySelector(".current-section");
    const inactiveSection = document.querySelector(".form-section");
    const section1 = document.querySelector("#section1");
@@ -271,7 +269,17 @@
         section1.classList.remove("current-section");
         section2.classList.add("current-section");
         btnNext.style.display = "block";
+        let wards = document.getElementById("wards")
+        let beds = document.getElementById("beds")
+
+        if(wards.selectedIndex && beds.selectedIndex){
+            alert(`${wards.value} and ${beds.value}`)
+        }else{
+            alert("Please select")
+        }
     });
+
+
     const backForm = btnBack.addEventListener("click", function(){
         section1.classList.add("current-section");
         section2.classList.remove("current-section");
@@ -332,7 +340,6 @@
     const check_category4 = document.querySelector(".check_category4")
     const check_category5 = document.querySelector(".check_category5")
     const check_category6 = document.querySelector(".check_category6")
-    const check_category7 = document.querySelector(".check_category7")
 
 
    const handleCheckboxCategoryChange1 = ()=>{
@@ -343,7 +350,6 @@
             check_category4.disabled = true;
             check_category5.disabled = true;
             check_category6.disabled = true;
-            check_category7.disabled = true;
          document.querySelector(".ward").classList.remove("hidden")
         }else{
             check_category2.disabled = false;
@@ -351,7 +357,6 @@
             check_category4.disabled = false;
             check_category5.disabled = false;
             check_category6.disabled = false;
-            check_category7.disabled = false;
             document.querySelector(".ward").classList.add("hidden")
         }
       
@@ -367,14 +372,12 @@
             check_category4.disabled = true;
             check_category5.disabled = true;
             check_category6.disabled = true;
-            check_category7.disabled = true;
         }else{
             check_category1.disabled = false;
             check_category3.disabled = false;
             check_category4.disabled = false;
             check_category5.disabled = false;
             check_category6.disabled = false;
-            check_category7.disabled = false;
         }
     }
 
@@ -386,14 +389,12 @@
             check_category4.disabled = true;
             check_category5.disabled = true;
             check_category6.disabled = true;
-            check_category7.disabled = true;
         }else{
             check_category1.disabled = false;
             check_category2.disabled = false;
             check_category4.disabled = false;
             check_category5.disabled = false;
             check_category6.disabled = false;
-            check_category7.disabled = false;
         }
     }
         //for checked 4
@@ -404,14 +405,12 @@
             check_category3.disabled = true;
             check_category5.disabled = true;
             check_category6.disabled = true;
-            check_category7.disabled = true;
         }else{
             check_category1.disabled = false;
             check_category2.disabled = false;
             check_category3.disabled = false;
             check_category5.disabled = false;
             check_category6.disabled = false;
-            check_category7.disabled = false;
         }
     }
         //for checked 5
@@ -422,14 +421,12 @@
             check_category3.disabled = true;
             check_category4.disabled = true;
             check_category6.disabled = true;
-            check_category7.disabled = true;
         }else{
             check_category1.disabled = false;
             check_category2.disabled = false;
             check_category3.disabled = false;
             check_category4.disabled = false;
             check_category6.disabled = false;
-            check_category7.disabled = false;
         }
     }
         //for checked 6
@@ -440,32 +437,12 @@
             check_category3.disabled = true;
             check_category4.disabled = true;
             check_category5.disabled = true;
-            check_category7.disabled = true;
         }else{
             check_category1.disabled = false;
             check_category2.disabled = false;
             check_category3.disabled = false;
             check_category4.disabled = false;
             check_category5.disabled = false;
-            check_category7.disabled = false;
-        }
-    }
-        //for checked 7
-        const handleCheckboxCategoryChange7 = ()=>{
-        if(check_category7.checked){
-            check_category1.disabled = true;
-            check_category2.disabled = true;
-            check_category3.disabled = true;
-            check_category4.disabled = true;
-            check_category5.disabled = true;
-            check_category6.disabled = true;
-        }else{
-            check_category1.disabled = false;
-            check_category2.disabled = false;
-            check_category3.disabled = false;
-            check_category4.disabled = false;
-            check_category5.disabled = false;
-            check_category6.disabled = false;
         }
     }
 
@@ -475,7 +452,6 @@
    check_category4.addEventListener('change', handleCheckboxCategoryChange4);
    check_category5.addEventListener('change', handleCheckboxCategoryChange5);
    check_category6.addEventListener('change', handleCheckboxCategoryChange6);
-   check_category7.addEventListener('change', handleCheckboxCategoryChange7);
 
 
 </script>
