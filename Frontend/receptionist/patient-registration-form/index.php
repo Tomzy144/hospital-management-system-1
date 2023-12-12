@@ -28,7 +28,7 @@
     <script src="../../../js/scripts.js"></script>
     <script src="../../../js/jquery-v3.6.1.min.js"></script>
 </head>
-<body>
+<body onload="getWards();">
     <div class="content-con">
     <nav class="navbar">
     <i class="fa fa-long-arrow-left " id='sign-out' onClick='dashboard()'></i>
@@ -156,25 +156,25 @@
   </label>
 </div>
 <div class="ward hidden">
-        <select id="wards">
+        <select id="wards" onclick="getBeds();">
     <option>Choose a Ward</option>
-    <option value="ward1">Ward 1</option>
+    <!-- <option value="ward1">Ward 1</option>
     <option value="ward2">Ward 2</option>
-    <option value="ward3">Ward 3</option>
+    <option value="ward3">Ward 3</option>     ///coming from database now 
     <option value="ward4">Ward 4</option>
     <option value="ward5">Ward 5</option>
     <option value="ward6">Ward 6</option>
-    <option value="ward7">Ward 7</option>
+    <option value="ward7">Ward 7</option> -->
 </select>
         <select id="beds">
-    <option value="empty">Choose a Bed</option>
-    <option value="bed1">Bed1</option>
+    <!-- <option>Choose a Bed</option> -->
+    <!-- <option value="bed1">Bed1</option>
     <option value="bed2">Bed 2</option>
-    <option value="bed3">Bed 3</option>
+    <option value="bed3">Bed 3</option>           ////////same
     <option value="bed4">Bed 4</option>
     <option value="bed5">Bed 5</option>
     <option value="bed6">Bed 6</option>
-    <option value="bed7">Bed 7</option>
+    <option value="bed7">Bed 7</option> -->
 </select>
         </div>
 <button type="button" class="btn-next">Next</button>
@@ -269,14 +269,15 @@
         section1.classList.remove("current-section");
         section2.classList.add("current-section");
         btnNext.style.display = "block";
-        let wards = document.getElementById("wards")
-        let beds = document.getElementById("beds")
+        // let wards = document.getElementById("wards")
+        // let beds = document.getElementById("beds")
 
-        if(wards.selectedIndex && beds.selectedIndex){
-            alert(`${wards.value} and ${beds.value}`)
-        }else{
-            alert("Please select")
-        }
+        // if(wards.selectedIndex && beds.selectedIndex){
+        //     var vward = wards.value;
+        //     alert(`${wards.value} and ${beds.value}`)
+        // }else{
+        //     alert("Please select")
+        // }
     });
 
 
