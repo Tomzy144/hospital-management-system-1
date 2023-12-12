@@ -81,7 +81,8 @@
    <div class="contents">
     <div class="container-dashboard">
         <button onclick="patientForm()">PATIENT ADMISSION FORM</button>
-        <button onclick="AppoimentBooking()">BOOKING APPOINTMENT SITTER</button>
+        <button onclick="appoimentBooking()">BOOKING APPOINTMENT SITTER</button>
+        <button onclick="surgicalChemistry()">SURGICAL CHEMESTRY</button>
     </div>
     </div>
     <script>
@@ -89,26 +90,24 @@
             let url = 'patient-registration-form/';
             window.parent(location = (url));
         }
-        const AppoimentBooking = function(){
+        const appoimentBooking = function(){
             let url = 'appointment-booker/';
             window.parent(location = (url));
         }
-//         function transitionContent() {
-//   document.body.style.opacity = '1'; /* Set opacity to 1 for the body */
-//   const pageContent = document.querySelector('.contents');
-//   pageContent.style.transform = 'translate(-0, -65%)'; /* Move in from the right */
-//   pageContent.style.width = '100%'; /* Change the width, adjust as needed */
-// }
 
-// window.onload = transitionContent;
-
-
+        const surgicalChemistry = function(){
+            let url = 'surgical chemistry(surgery-booking)/index.html';
+            window.parent(location = (url));
+        }
 
         const patient_list = ()=>{
             let url = "page/patients-lists.php";
             window.parent(location = (url));
+
+
+
         }
-        const addEvent  = document.getElementById("btn");
+const addEvent  = document.getElementById("btn");
 const show = document.querySelector(".drop-down")
 const calender = document.querySelector(".fa-calendar-check-o");
 const envelope = document.querySelector(".fa-envelope");
