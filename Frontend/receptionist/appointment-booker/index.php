@@ -216,7 +216,9 @@
            if (moment(date).isSameOrAfter(todayDate, 'day')) {
             // Display the selected date on the page
             $('#selectedDate').text(formattedDate);
+            document.getElementById('date').value = date;
 
+           
             // Reset the background color of the previously selected date
             if (prevSelectedDate) {
               prevSelectedDate.css('background-color', '');
@@ -227,6 +229,8 @@
 
             // Update the previously selected date
             prevSelectedDate = $(this);
+           
+            
           } else {
             // Inform the user that selecting past dates is not allowed
             alert('Please choose a future date.');

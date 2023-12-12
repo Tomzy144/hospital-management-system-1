@@ -291,7 +291,7 @@ function populateDoctorsDropdown(doctors) {
 
 function appointment_booker(){
 	var role = $('#roles').val();
-	var doctor = $('#doctor').val();
+	var doctor = $('#doctors').val();
   var date =$('#date').val();
   var name =$('#name').val();
   var reason =$('#reason').val();
