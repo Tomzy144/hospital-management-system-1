@@ -137,28 +137,6 @@ if (selectedRole && selectedDoctor) {
 
 
 
-// $(document).ready(function() {
-//   $('#calendar').fullCalendar({
-//       header: {
-//           left: 'prev,next today',
-//           center: 'title',
-//           right: 'month,agendaWeek,agendaDay'
-//       },
-//       defaultView: 'month',
-//       events: [
-//           {
-//               title: 'Available Slot',
-//               start: '2023-01-01T09:00:00',
-//               end: '2023-01-01T10:00:00',
-//           },
-//           // Add more events as needed
-//       ],
-//       dayClick: function(date, jsEvent, view) {
-//           // Redirect to another page with the selected date
-//           window.location.href = 'anotherPage.html?selectedDate=' + moment(date).format('YYYY-MM-DD');
-//       },
-//   });
-// });
 
 
 

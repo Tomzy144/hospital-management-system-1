@@ -152,7 +152,69 @@
     </div>
     <div class="appoitment-calender hidden">
 
-<div id="calendar"></div>
+    <div class="calendar">
+                <div class="month">
+                    <i class="fa fa-angle-left prev"></i>
+                    <div class="date">
+                        <h1></h1>
+                        <p></p>
+                    </div>
+                    <i class="fa fa-angle-right next"></i>
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="days">
+                    <!-- <div class="prev-date">26</div>
+                    <div class="prev-date">27</div>
+                    <div class="prev-date">28</div>
+                    <div class="prev-date">30</div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div class="today">13</div>
+                    <div>14</div>
+                    <div>15</div>
+                    <div>16</div>
+                    <div>17</div>
+                    <div>18</div>
+                    <div>19</div>
+                    <div>20</div>
+                    <div>21</div>
+                    <div>22</div>
+                    <div>23</div>
+                    <div>24</div>
+                    <div>25</div>
+                    <div>26</div>
+                    <div>27</div>
+                    <div>28</div>
+                    <div>29</div>
+                    <div>30</div>
+                    <div>31</div>
+                    <div class="next-date">1</div>
+                    <div class="next-date">2</div>
+                    <div class="next-date">3</div>
+                    <div class="next-date">4</div>
+                    <div class="next-date">5</div>
+                    <div class="next-date">6</div> -->
+                </div>
+            </div>
+            <h3 class="content"></h3>
 <div class="appoitment-form hidden">
     <form id="form">
         <div class="form-control">
@@ -183,69 +245,85 @@
 </body>
 <script src="js/appoitment.js"></script>
 <script src="js/jquery-v3.6.1.min.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+<script>
+  //This help show the current date and time zone of today
+const date =  new Date()
+
+const renderCalendar = ()=>{
+   date.setDate(1)
+   console.log(date.getDay());
+    //this help shows the current month we are in and its 0 based "which means its counts from 0 throgh the months"
+    const month  = date.getMonth()
+    const monthDays = document.querySelector(".days")
+   const lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0).getDate()
    
-    <script>
-      $(document).ready(function() {
-
-        let prevSelectedDate;
-
-        var todayDate = moment().format('DD-MM-YYYY');
-      $('#selectedDate').text(todayDate);
-      $('#calendar').fullCalendar({
-        header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
-        },
-        defaultView: 'month',
-        events: [
-          {
-            title: 'Available Slot',
-            start: '2023-01-01T09:00:00',
-            end: '2023-01-01T10:00:00',
-          },
-          // Add more events as needed
-        ],
-        dayClick: function(date, jsEvent, view) {
-          // Use Moment.js to format the selected date
-          var formattedDate = moment(date).format('DD-MM-YYYY');
-
-           if (moment(date).isSameOrAfter(todayDate, 'day')) {
-            // Display the selected date on the page
-            $('#selectedDate').text(formattedDate);
-            document.getElementById('date').value = date;
-
+   const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate()
+   
+   const firstDayIndex = date.getDay() 
+   
+   const  lastDayIndex = new Date(date.getFullYear(), date.getMonth() +1, 0).getDay()
+   const nextDays = 7 - lastDayIndex -1
+   //this is the month array of all the selected month
+   const months = [
+       "January", 
+       "February",
+        "March",
+         "April", 
+         "May", 
+         "June", 
+         "July", 
+         "August", 
+         "September",
+          "October", 
+          "November",
+          "December" 
+   ] ; 
+   
+   document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+   document.querySelector(".date p").innerHTML = date.toDateString();
+   // const showDate =  document.querySelector(".content");
+   
+   let days = "";
+   
+   for(let x =  firstDayIndex; x>0; x--){
+       days += `<div class ="prev-date">${prevLastDay - x +1}</div>`;
+   }
+   
+   for(let i = 1; i <=lastDay; i++) {
+       if(i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
            
-            // Reset the background color of the previously selected date
-            if (prevSelectedDate) {
-              prevSelectedDate.css('background-color', '');
-            }
-
-            // Change the background color of the clicked date cell to green
-            $(this).css('background-color', '#007b79');
-
-            // Update the previously selected date
-            prevSelectedDate = $(this);
+           days +=`
+           <div class="calendar-date today" onclick="updateClickedDate(${i})">${i}</div>`;
+       }else{
            
-            
-          } else {
-            // Inform the user that selecting past dates is not allowed
-            alert('Please choose a future date.');
-          }
-        },
-        // Set the valid range to today and beyond
-        validRange: {
-          start: todayDate,
-        },
+           days +=`
+           <div class="calendar-date" onclick="updateClickedDate(${i})">${i}</div> `;
+       }
+   }
+   
+   for(let j =1; j<=nextDays; j++){
+       days += `<div class="next-date">${j}</div>`;
+       monthDays.innerHTML = days;
+   }
+}
+function updateClickedDate(clickedDay) {
+   document.querySelector("#selectedDate").textContent = `${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
+ }
 
-        // Allow selection only for dates that are on or after today
-        // selectAllow: function(selectInfo) {
-        //   return moment(selectInfo.start).isSameOrAfter(todayDate, 'day');
-        // },
-      });
-    });
+
+document.querySelector(".prev").addEventListener("click", function(){
+   date.setMonth(date.getMonth() -1)
+   renderCalendar()
+})
+document.querySelector(".next").addEventListener("click", function(){
+   date.setMonth(date.getMonth()+ 1)
+   renderCalendar()
+})
+renderCalendar()
+</script>
+
+   
+    
     </script>
 </html>
