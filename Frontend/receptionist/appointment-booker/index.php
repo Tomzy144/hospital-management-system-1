@@ -309,7 +309,7 @@ const renderCalendar = ()=>{
 }
 function updateClickedDate(clickedDay) {
    document.querySelector("#selectedDate").textContent = `${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
-   document.getElementById('date').value = date;
+   document.getElementById('date').value=`${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
  }
 
 
