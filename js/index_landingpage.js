@@ -47,12 +47,16 @@ const doctor_login_form = `
         <i class="fa fa-lock"></i>
         <input type="password" name="password" autoComplete='off'/> 
         </div>
-        <button type="button" class="btn">Login</button>
+        <button type="button" class="btn" onClick="if_details_correct_login()">Login</button>
         <form>
     </div>
 `
 log_inAll('doctor', doctor_login_form);
 
+const if_details_correct_login = function(){
+    let url = 'Frontend/doctor/index.php';
+    window.parent(location = (url));
+}
 
 
 //Nurse Login

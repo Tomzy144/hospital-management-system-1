@@ -1,8 +1,11 @@
-<?php include '../../../backend/config/connection.php'?>
+<!-- ?php include '../../backend/config/connection.php'?> -->
+<?php include '../../../backend/config/code.php'?>
+
+<?php include '../../backend/dashboardconfig/session-validation.php';
+include '../../../backend/config/search.php'?>
 
 
-<?php include '../../../backend/dashboardconfig/session-validation.php';
-      include '../../../../backend/config/search.php';?>
+
 <?php
 
 
@@ -119,12 +122,9 @@ if ($patient_profile_array) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
-   
-
+    <link rel="stylesheet" href="css/patients-profile.css">
     <link href="../../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
-    <link rel="stylesheet" href="index.css">
-    <script src ="../../superadmin/pages/js/patient-profile.js"></script>
+    <script src ="js/patient.js"></script>
     <script src="js/jquery-v3.6.1.min.js"></script>
 
     <title>Patients Profiles</title>

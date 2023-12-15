@@ -103,9 +103,6 @@
         const patient_list = ()=>{
             let url = "page/patients-lists.php";
             window.parent(location = (url));
-
-
-
         }
 const addEvent  = document.getElementById("btn");
 const show = document.querySelector(".drop-down")

@@ -88,8 +88,8 @@ if ($patient_profile_array) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
-    <link rel="stylesheet" href="index.css">
-    <script src ="../../superadmin/pages/js/patient.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src ="js/patient.js"></script>
     <script src="js/jquery-v3.6.1.min.js"></script>
     <title>Patient</title>
 </head>
@@ -97,8 +97,42 @@ if ($patient_profile_array) {
    <div class="patient-container">
     <div  class="patient-navbar">
         <!---BACK ARROW-->
-        <i class="fa fa-long-arrow-left" id='logout-arrow' onClick=' logout_home()'></i>
+        <i class="fa fa-long-arrow-left " id='back-arrow' onClick='backWardArrow()'></i>
         <h2>Patient Admission Lists</h2>
+    </div>
+        <div class="nav-menu">
+            <ul class="menu-items">
+                <a href="#">
+                <li class="items">
+                    <i class="fa fa-book "></i>
+                    <h4>Notes</h4>
+                </li>
+            </a>
+                <a href="#">
+                <li class="items">
+                    <i class="fa fa-check "></i>
+                    <h4>Activity Log</h4>
+                </li>
+            </a>
+                <a href="#">
+                <li class="items">
+                    <i class="fa fa-registered"></i>
+                    <h4>Results</h4>
+                </li>
+            </a>
+                <a href="#">
+                <li class="items">
+                    <i class="fa fa-bed"></i>
+                    <h4>Wards</h4>
+                </li>
+            </a>
+                <a href="#">
+                <li class="items">
+                    <i class="fa fa-user-circle-o"></i>
+                    <h4>Reception</h4>
+                </li>
+            </a>
+            </ul>
     </div>
    
     <div class="search-container">
@@ -180,7 +214,7 @@ if ($patient_profile_array) {
                $patient_id = $row["patient_id"];
                $_POST['patient_id'] = $patient_id;
             //    echo $_POST['patient_id'];
-            //    echo "<tr data-patient-id='$patient_id' onClick='next_page(this);'>";
+               echo "<tr data-patient-id='$patient_id' onClick='next_page(this);'>";
 
                 // $spatient_id= $patient_id;
             
@@ -656,13 +690,6 @@ if ($patient_profile_array) {
 
 
 <script>
-
-    //Logout to home
-
-    const logout_home = function(){
-        let url = '../../../index.php'
-        window.parent(location = (url))
-    }
 
 
 
