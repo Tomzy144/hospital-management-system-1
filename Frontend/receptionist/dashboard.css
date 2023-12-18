@@ -122,10 +122,11 @@ h1{
 
 .container-dashboard{
     background-color: #ffffff;
-    width: 100%;
+    width: 1000px;
     color: black;
     height: 100%;
-    margin: 25rem 0;
+    margin: 25rem auto;
+    flex-wrap: wrap;
     display: flex;
     flex-direction: row !important;
     justify-content: center;
@@ -133,7 +134,7 @@ h1{
     position: relative;
 }
 button{
-   margin: 0 3rem;
+   margin: 1rem 3rem;
    border: none;
    padding: 1rem;
    box-shadow: 0 3rem 5rem rgba(230, 227, 227, 0.3);
@@ -142,12 +143,6 @@ button{
    cursor: pointer;
    transition:all ease-in-out 0.5s;
    font-size: 24px;
-}
-button:nth-child(3){
-    background-color:  rgb(4 47 46);
-    position: absolute;
-    left: 33%;
-    top: 150%;
 }
 button:hover{
     background-color: #fff;
