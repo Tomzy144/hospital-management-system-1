@@ -57,7 +57,7 @@ h1{
     cursor: pointer;
     font-size: 30px;
 }
-.sidebar.active{
+.sidebar.active_toggle{
     width: 300px;
 }
 .togglebar .fa-times{
@@ -114,7 +114,7 @@ h1{
     padding: 1rem;
     cursor: pointer;
 }
-.complaint-section{
+.system_review-section{
     width: 1200px;
     height: fit-content;
     background-color: rgb(0, 123, 121); 

@@ -18,7 +18,7 @@
     </div>
     </form>
          </nav>
-    <div class="sidebar">
+         <div class="sidebar">
     <div class="togglebar">
     <i class="fa fa-bars"></i>
     <i class="fa fa-times"></i>
@@ -29,7 +29,7 @@
     <i class='fa fa-user-circle-o active'></i>
     </div>
    </div>
-   <div class="complaint-section">
+   <div class="system_review-section">
         <div class="drop-down1">
             <span>General</span>
             <i class="fa fa-minus" id="close_id_1"></i>

@@ -10,22 +10,27 @@ const sidebar = document.querySelector(".sidebar");
 
 //Manipulate sidebar 
 toggleOpen.addEventListener("click", function() {
-    envelope.innerHTML = '  Chat';
-    user.innerHTML =   '  Account';
-    calender.innerHTML = '  Appoitment';
-    sidebar.classList.toggle("active")
-    toggleOpen.style.display = "none";
-    toggleClose.style.display = "block";
+envelope.innerHTML = '  Chat';
+user.innerHTML =   '  Account';
+calender.innerHTML = '  Appoitment';
+sidebar.classList.toggle("active_toggle")
+toggleOpen.style.display = "none";
+toggleClose.style.display = "block";
 })
 
 toggleClose.addEventListener("click", function() {
-    envelope.innerHTML = ' '
-    user.innerHTML =   '  ';
-    calender.innerHTML = '  ';
-    sidebar.classList.toggle("active")
-    toggleOpen.style.display = "block";
-    toggleClose.style.display = "none";
-    
+envelope.innerHTML = ' '
+user.innerHTML =   '  ';
+calender.innerHTML = '  ';
+sidebar.classList.toggle("active_toggle")
+toggleOpen.style.display = "block";
+toggleClose.style.display = "none";
+
+})
+
+addEvent.addEventListener("click", function(){
+show.classList.remove("hidden")
+
 })
 
 function back_arrow(){
