@@ -99,7 +99,6 @@
            
     <script>
         const addEvent  = document.getElementById("btn");
-        const show = document.querySelector(".drop-down")
         const calender = document.querySelector(".fa-calendar-check-o");
         const envelope = document.querySelector(".fa-envelope");
         const user = document.querySelector(".fa-user-circle-o");
@@ -128,10 +127,6 @@ toggleClose.addEventListener("click", function() {
     
 })
 
-addEvent.addEventListener("click", function(){
-    show.classList.remove("hidden")
-
-})
 function back_arrow(){
     let url = "../../patients_list.php";
     window.parent(location = (url));
