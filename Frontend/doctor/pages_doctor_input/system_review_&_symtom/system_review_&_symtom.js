@@ -197,3 +197,19 @@ cardiovascular_dropdown.addEventListener("click", function(){
         openIcon10.style.display = "block";
     }
 });
+//For Gastrointestinal Dropdown
+const gastrointestinal_dropdown = document.querySelector(".drop-down11");
+const showForm11= document.querySelector(".form11");
+const closeIcon11= document.querySelector("#close_id_11");
+const openIcon11 = document.querySelector("#open_id_11");
+
+gastrointestinal_dropdown.addEventListener("click", function(){
+    showForm11.classList.toggle("hidden");
+    closeIcon11.style.display = "block";
+    openIcon11.style.display = "none";
+    if(showForm11.classList.contains("hidden")){
+        closeIcon11.style.display = "none";
+        openIcon11.style.display = "block";
+    }
+});
+
