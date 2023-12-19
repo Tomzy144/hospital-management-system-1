@@ -9,7 +9,6 @@
 
 </head>
 <body>
-    <div class="container">
     <nav class="navbar">
     <i class="fa fa-long-arrow-left " id="back_arrow" onClick="back_arrow()"></i>
     <div class="logo">
@@ -29,6 +28,7 @@
     <i class='fa fa-user-circle-o active'></i>
     </div>
    </div>
+   <div class="container">
    <div class="system_review-section">
         <div class="drop-down1">
             <span>General</span>

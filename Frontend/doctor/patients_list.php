@@ -134,6 +134,17 @@
              <td>2023-8-6</td>
              <td><i class='fa fa-circle'></i></td>
         </tr>
+    </tbody> 
+
+    <tbody onClick="physical_examination_page_for_this_patient()"> 
+        <tr>
+             <td>1</td>
+             <td>pat01</td>
+             <td>GOODNESS</td>
+             <td>903788322</td>
+             <td>2023-8-6</td>
+             <td><i class='fa fa-circle'></i></td>
+        </tr>
     </tbody>   
 </table>     
 </div>
@@ -240,6 +251,10 @@
     }
     function system_review_page_for_this_patient(){
         let url = 'pages_doctor_input/system_review_&_symtom/system_review_&_symtom.php'
+        window.parent(location = (url));
+    }
+    function physical_examination_page_for_this_patient(){
+        let url = 'pages_doctor_input/physical_examination/physical_examination.php'
         window.parent(location = (url));
     }
 </script>
