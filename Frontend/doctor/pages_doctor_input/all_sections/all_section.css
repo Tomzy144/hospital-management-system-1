@@ -57,7 +57,7 @@ h1{
     cursor: pointer;
     font-size: 30px;
 }
-.sidebar.active{
+.sidebar.active_toggle{
     width: 300px;
 }
 .togglebar .fa-times{
@@ -114,6 +114,33 @@ h1{
     padding: 1rem;
     cursor: pointer;
 }
+.all_sections_input{
+    width: 1000px;
+    height: 100vh;
+    position: relative;
+    color: #fff;
+    margin-top: 10rem;
+    /* background-color: rgb(0, 123, 121);  */
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+/*Start of the complaints Section*/
+.complain_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(4 47 46);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#complaint_icon_minus{
+    display: none;
+}
 .complaint-section{
     width: 1000px;
     height: fit-content;;
@@ -131,11 +158,10 @@ form{
     flex-direction: row;
     flex-wrap: wrap;
 }
-.form-control{
+.complaint_form-control{
     width: 300px;
     height: 150px;
     padding: 0.5rem;
-    /* background-color: blue; */
     display: flex;
     flex-direction: column;
 }
@@ -144,7 +170,7 @@ label {
     font-size: 18px;
     margin: 1rem 0;
 }
-input {
+.complaint-input {
     padding: 1rem;
     border: none;
     font-size: 15px;
@@ -152,21 +178,22 @@ input {
 }
 #btn{
     width: 100%;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     height: fit-content;
     padding: 1rem;
     border: none;
+    margin: 1rem 0;
     cursor: pointer;
     transition: 0.5s;
 }
 #btn:hover{
     background-color: rgb(4 47 46);
-    color: #fff;
+    color: #ffffff;
 }
 
 .overlay{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(0, 0, 0);
     opacity: 80%;
     position: absolute;
@@ -190,6 +217,12 @@ input {
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+}
+.surgical_input{
+    padding: 1rem;
+    border: none;
+    font-size: 15px;
+    border-radius: 2px;  
 }
 .surgical_booking .form-control-precedure{
     display: flex;
@@ -237,28 +270,163 @@ input {
     color: #fff;
     cursor: pointer;
 }
-.btn:active{
+.hidden{
+    display: none;
+}
+/*End of the complaints Section*/
+
+/**Start of the System review Section*/
+.system_dropdown{
     width: 100%;
-    padding: 1rem 0;
-    border: none;
-    background-color: #00000000;
-    border-radius: 4px;
-    color: #fff;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(4 47 46);
+    font-size: 20px;
     cursor: pointer;
-    transform: scale(0.9);
+}
+ #system_icon_minus{
+    display: none;
+ }
+.system_review-section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 123, 121); 
+    padding: 1rem;
+}
+.drop-down1, .drop-down2,  .drop-down3, .drop-down4, .drop-down5, .drop-down6, .drop-down7, .drop-down8, .drop-down9, .drop-down10, .drop-down11{
+    width: 100%; 
+   border-bottom: 4px solid #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+span{
+    color: #fff;
+    font-size: 20px;
+}
+#open_id_1, #close_id_1, #open_id_2, #close_id_2, #open_id_3, #close_id_3,
+#open_id_4, #close_id_4, #open_id_5, #close_id_5,
+#open_id_6, #close_id_6, #open_id_7, #close_id_7,
+#open_id_8, #close_id_8, #open_id_9, #close_id_9,
+#open_id_10, #close_id_10, #open_id_11, #close_id_11{
+    color: #fff;
+    font-size: 20px;
+}
+#close_id_1, #close_id_2, #close_id_3, #close_id_4, #close_id_5, #close_id_6, #close_id_7, #close_id_8,#close_id_9, #close_id_10,  #close_id_11{
+    display: none;
+}
+.active{
+    display: none;
+}
+.form1, .form2, .form3, .form4, .form5,  .form6, .form7, .form8, .form9, .form10, .form11{
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.hidden{
+    display: none;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 1rem 0;
+    justify-content: center;
+    align-items: center;
+}
+label{
+    color: #fff;
+    font-size: 18px;
+}
+/*Start of the Physical Examination*/
+.physical_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(4 47 46);
+    font-size: 20px;
+    cursor: pointer;
+}
+.physical_examination-section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 123, 121); 
+    padding: 1rem;
+}
+.physical_examination_drop-down1, .physical_examination_drop-down2, .physical_examination_drop-down3,
+.physical_examination_drop-down4,
+.physical_examination_drop-down5{
+    width: 100%; 
+   border-bottom: 4px solid #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+#physical_icon_minus{
+    display: none;
+}
+span{
+    color: #fff;
+    font-size: 20px;
+}
+#physical_examination_icon_plus1, #physical_examination_icon_minus1, #physical_examination_icon_plus2, #physical_examination_icon_minus2
+#physical_examination_icon_plus3, #physical_examination_icon_minus3,
+#physical_examination_icon_plus4, #physical_examination_icon_minus4,
+#physical_examination_icon_plus5, #physical_examination_icon_minus5{
+    color: #fff;
+    font-size: 20px;
+}
+#physical_examination_icon_minus1, #physical_examination_icon_minus2,
+#physical_examination_icon_minus3,
+#physical_examination_icon_minus4,
+#physical_examination_icon_minus5{
+    display: none;
+}
+form{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.physical_examination_form-control{
+    width: 300px;
+    height: 150px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    color: #fff;
+    font-size: 18px;
+    margin: 1rem 0;
+}
+input {
+    padding: 2rem;
+    border: none;
+    font-size: 22px;
+    border-radius: 2px;
+}
+.active{
+    display: none;
+}
+.physical_examination_form1, .physical_examination_form2, .physical_examination_form3,
+.physical_examination_form4, .physical_examination_form5{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.btn:hover{
-    width: 100%;
-    padding: 1rem 0;
-    border: none;
-    background-color:rgb(0, 0, 0);
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    transition: ease-in-out;
-    transition: 0.5s;
-}
 .hidden{
     display: none;
 }

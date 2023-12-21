@@ -36,8 +36,8 @@
     <div class="container-dashboard">
         <button onclick="patient_list()">COMPLIANTS</button>
         <button onclick="patient_list()">SYSTEM REVIEW /SYSTEM</button>
-        <button onclick="surgicalChemistry()">PHYSICAL EXAMINATION</button>
-        <button onclick="surgicalChemistry()">TREATMENT & PRESCRIPTION</button>
+        <button onclick="patient_list()">PHYSICAL EXAMINATION</button>
+        <button onclick="patient_list()">TREATMENT & PRESCRIPTION</button>
     </div>
     </div>
     <script>
@@ -46,7 +46,7 @@
             let url = "patients_list.php";
             window.parent(location = (url));
         }
-const addEvent  = document.getElementById("btn");
+
 const show = document.querySelector(".drop-down")
 const calender = document.querySelector(".fa-calendar-check-o");
 const envelope = document.querySelector(".fa-envelope");
@@ -76,10 +76,6 @@ toggleClose.addEventListener("click", function() {
     
 })
 
-addEvent.addEventListener("click", function(){
-    show.classList.remove("hidden")
-
-})
     </script>
 </body>
 </html>

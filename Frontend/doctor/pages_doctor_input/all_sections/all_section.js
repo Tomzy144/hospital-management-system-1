@@ -1,4 +1,4 @@
-const show = document.querySelector(".drop-down")
+//Manipulate sidebar 
 const calender = document.querySelector(".fa-calendar-check-o");
 const envelope = document.querySelector(".fa-envelope");
 const user = document.querySelector(".fa-user-circle-o");
@@ -6,8 +6,6 @@ const toggleOpen = document.querySelector(".fa-bars");
 const toggleClose = document.querySelector(".fa-times");
 const sidebar = document.querySelector(".sidebar");
 
-
-//Manipulate sidebar 
 toggleOpen.addEventListener("click", function() {
 envelope.innerHTML = '  Chat';
 user.innerHTML =   '  Account';
@@ -26,15 +24,84 @@ toggleOpen.style.display = "block";
 toggleClose.style.display = "none";
 
 })
-
-
+//back arrow to the patient list
 function back_arrow(){
-    let url = "../../patients_list.php";
-    window.parent(location = (url));
+let url = "../../patients_list.php";
+window.parent(location = (url));
 }
 
-//form input
-//For General Dropdown
+
+
+
+//Complaints Section
+const complaint_dropdown = document.querySelector(".complain_dropdown");
+const complaint_section = document.querySelector(".complaint-section ");
+const complaint_section_icon_plus = document.querySelector("#complaint_icon_plus");
+const complaint_section_icon_minus = document.querySelector("#complaint_icon_minus");
+const check_1 = document.querySelector("#check1")
+const check_2 = document.querySelector("#check2")
+
+
+
+complaint_dropdown.addEventListener("click", function(){
+complaint_section.classList.toggle("hidden");
+complaint_section_icon_plus.style.display = "none";
+complaint_section_icon_minus.style.display = "block";
+if(complaint_section.classList.contains("hidden")){
+    complaint_section_icon_plus.style.display = "block";
+complaint_section_icon_minus.style.display = "none";
+}
+}) 
+
+//For the surgical form 
+const handle_change = function(){
+    if(check_1.checked){
+    check_2.disabled = true;
+    open_procedure_form();
+}else{
+    check_2.disabled = false;
+}
+if(check_2.checked){
+    check_1.disabled = true;
+}else{
+    check_1.disabled = false;
+}
+}
+
+check_1.addEventListener("change", handle_change);
+check_2.addEventListener("change", handle_change);
+
+const open_procedure_form = function(){
+    document.querySelector(".surgical_booking").classList.remove("hidden");
+    document.querySelector(".overlay").classList.remove("hidden");
+}
+const close_procedure_form = function(){
+    document.querySelector(".surgical_booking").classList.add("hidden");
+    document.querySelector(".overlay").classList.add("hidden");
+};
+
+
+
+// form input
+//System Review dropdown
+const system_dropdown = document.querySelector(".system_dropdown");
+const system_review_section = document.querySelector(".system_review-section");
+const system_review_section_icon_plus = document.querySelector("#system_icon_plus");
+const system_review_section_icon_minus = document.querySelector("#system_icon_minus");
+
+
+
+system_dropdown.addEventListener("click", function(){
+system_review_section.classList.toggle("hidden");
+system_review_section_icon_plus.style.display = "none";
+system_review_section_icon_minus.style.display = "block";
+if(system_review_section.classList.contains("hidden")){
+    system_review_section_icon_plus.style.display = "block";
+    system_review_section_icon_minus.style.display = "none";
+}
+}) 
+
+// For General Dropdown
 const general_dropdown = document.querySelector(".drop-down1");
 const showForm1 = document.querySelector(".form1");
 const closeIcon1 = document.querySelector("#close_id_1");
@@ -207,4 +274,104 @@ gastrointestinal_dropdown.addEventListener("click", function(){
         openIcon11.style.display = "block";
     }
 });
+
+
+//form input
+//System Review dropdown
+const physical_dropdown = document.querySelector(".physical_dropdown");
+const physical_section = document.querySelector(".physical_examination-section");
+const physical_section_icon_plus = document.querySelector("#physical_icon_plus");
+const physical_section_icon_minus = document.querySelector("#physical_icon_minus");
+
+
+
+physical_dropdown.addEventListener("click", function(){
+ physical_section.classList.toggle("hidden");
+ physical_section_icon_plus.style.display = "none";
+ physical_section_icon_minus.style.display = "block";
+if(physical_section.classList.contains("hidden")){
+    physical_section_icon_plus.style.display = "block";
+    physical_section_icon_minus.style.display = "none";
+}
+}) 
+//For General Dropdown
+
+const physical_general_dropdown = document.querySelector(".physical_examination_drop-down1");
+const physical_showForm1 = document.querySelector(".physical_examination_form1");
+const physical_closeIcon1 = document.querySelector("#physical_examination_icon_minus1");
+const physical_openIcon1 = document.querySelector("#physical_examination_icon_plus1");
+
+physical_general_dropdown.addEventListener("click", function(){
+    physical_showForm1.classList.toggle("hidden");
+    physical_closeIcon1.style.display = "block";
+    physical_openIcon1.style.display = "none";
+    if(physical_showForm1.classList.contains("hidden")){
+        physical_closeIcon1.style.display = "none";
+        physical_openIcon1.style.display = "block";
+    }
+});
+
+//For Neurological Dropdown
+const neurological_dropdown = document.querySelector(".physical_examination_drop-down2");
+const physical_showForm2 = document.querySelector(".physical_examination_form2");
+const physical_closeIcon2 = document.querySelector("#physical_examination_icon_minus2")
+const physical_openIcon2 = document.querySelector("#physical_examination_icon_plus2");
+
+neurological_dropdown.addEventListener("click", function(){
+    physical_showForm2.classList.toggle("hidden");
+    physical_closeIcon2.style.display = "block";
+    physical_openIcon2.style.display = "none";
+    if(physical_showForm2.classList.contains("hidden")){
+        physical_closeIcon2.style.display = "none";
+        physical_openIcon2.style.display = "block";
+    }
+});
+//For vital  Dropdown
+const vital_dropdown = document.querySelector(".physical_examination_drop-down3");
+const physical_showForm3 = document.querySelector(".physical_examination_form3");
+const physical_closeIcon3 = document.querySelector("#physical_examination_icon_minus3")
+const physical_openIcon3 = document.querySelector("#physical_examination_icon_plus3");
+
+vital_dropdown.addEventListener("click", function(){
+    physical_showForm3.classList.toggle("hidden");
+    physical_closeIcon3.style.display = "block";
+    physical_openIcon3.style.display = "none";
+    if(physical_showForm3.classList.contains("hidden")){
+        physical_closeIcon3.style.display = "none";
+        physical_openIcon3.style.display = "block";
+    }
+});
+
+//For General Apperance  Dropdown
+const apperance_dropdown = document.querySelector(".physical_examination_drop-down4");
+const physical_showForm4 = document.querySelector(".physical_examination_form4");
+const physical_closeIcon4 = document.querySelector("#physical_examination_icon_minus4")
+const physical_openIcon4 = document.querySelector("#physical_examination_icon_plus4");
+
+apperance_dropdown.addEventListener("click", function(){
+    physical_showForm4.classList.toggle("hidden");
+    physical_closeIcon4.style.display = "block";
+    physical_openIcon4.style.display = "none";
+    if(physical_showForm4.classList.contains("hidden")){
+        physical_closeIcon4.style.display = "none";
+        physical_openIcon4.style.display = "block";
+    }
+});
+
+//For Skin Examination  Dropdown
+const skin_examination_dropdown = document.querySelector(".physical_examination_drop-down5");
+const physical_showForm5 = document.querySelector(".physical_examination_form5");
+const physical_closeIcon5 = document.querySelector("#physical_examination_icon_minus5")
+const physical_openIcon5 = document.querySelector("#physical_examination_icon_plus5");
+
+skin_examination_dropdown.addEventListener("click", function(){
+    physical_showForm5.classList.toggle("hidden");
+    physical_closeIcon5.style.display = "block";
+    physical_openIcon5.style.display = "none";
+    if(physical_showForm5.classList.contains("hidden")){
+        physical_closeIcon5.style.display = "none";
+        physical_openIcon5.style.display = "block";
+    }
+});
+
 

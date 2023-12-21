@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Complaints</title>
-    <link rel="stylesheet" href="system_review_&_symtom.css">
+    <link rel="stylesheet" href="all_section.css">
     <link rel="stylesheet" href="../../../awesome-font/css/font-awesome.min.css">
 
 </head>
 <body>
+    <div class="container">
     <nav class="navbar">
     <i class="fa fa-long-arrow-left " id="back_arrow" onClick="back_arrow()"></i>
     <div class="logo">
         <!---Please you would manipulate this span base on the patient clicked-->
-        <span style="font-size:2rem; color:#fff;">Patient name system review</span>
+        <span style="font-size:2rem; color:#fff;">PRECIOUS JOHN</span>
     </div>
     </form>
          </nav>
-         <div class="sidebar">
+    <div class="sidebar">
     <div class="togglebar">
     <i class="fa fa-bars"></i>
     <i class="fa fa-times"></i>
@@ -28,8 +29,85 @@
     <i class='fa fa-user-circle-o active'></i>
     </div>
    </div>
-   <div class="container">
-   <div class="system_review-section">
+   <div class="all_sections_input">
+    <!--Start of the complaint section--->
+   <div class="complain_dropdown">
+    <span>Complaints</span>
+    <i class="fa fa-plus" id="complaint_icon_plus"></i>
+    <i class="fa fa-minus" id="complaint_icon_minus"></i>
+   </div>
+   <div class="complaint-section hidden">
+        <form action="">
+            <div class="complaint_form-control">
+            <label for="major_complaints">Major Complaints & Duration</label>
+            <input type="text"  class="complaint-input">
+            </div>
+            <div class="complaint_form-control">
+            <label for="major_complaints">History of Presenting Complaints</label>
+            <input type="text" class="complaint-input">
+            </div>
+            <div class="complaint_form-control">
+            <label for="major_complaints">Family & Social History</label>
+            <input type="text" class="complaint-input">
+            </div>
+            <div class="complaint_form-control">
+            <label for="major_complaints">Past Surgical/Medical History</label>
+            <input type="text"  class="complaint-input">
+            </div>
+            <div class="complaint_form-control">
+            <label for="major_complaints">Surgical Procedure</label>
+            <div class="checkbox">
+            <input type="checkbox" name="surgery" id="check1">
+            <label for="surgery">Yes</label>
+            <input type="checkbox" name="surgery" id="check2">
+            <label for="surgery">No</label>
+            </div>
+</div>
+        </form>
+   </div>
+   <div class="surgical_booking hidden">
+    <i class="fa fa-times-circle" id='close-icon' onClick="close_procedure_form()"></i>
+        <h1 class="login-form-h1">Surgical Procedure</h1>
+        <form>
+        <div class="form-control-precedure">
+        <label for='full_name'>Full  name</label>
+        <!-- <i class="fa fa-address-book" id="icons"></i> -->
+        <input type="text" name="full_name" autoComplete='off' class="surgical_input"/> 
+        </div>
+
+        <div class="form-control-precedure">
+        <label for='date'>Date</label>
+        <!-- <i class="fa fa-key" id="icons"></i> -->
+        <input type="date"  name="date" autoComplete='off' class="surgical_input"'/> 
+        </div>
+
+        <div class="form-control-precedure">
+        <label for='operation'>Type of Procedures</label>
+        <!-- <i class="fa fa-lock" id="icons"></i> -->
+        <input type="text" name="procedures" autoComplete='off' class="surgical_input"/> 
+        </div>
+        <div class="form-control-precedure">
+        <label for='phone'>Phone Number</label>
+        <!-- <i class="fa fa-lock" id="icons"></i> -->
+        <input type="number" name="phone" autoComplete='off' class="surgical_input"/> 
+        </div>
+        <div class="form-control-precedure">
+        <label for='email'>Email Address</label>
+        <!-- <i class="fa fa-lock" id="icons"></i> -->
+        <input type="email" name="email" autoComplete='off' class="surgical_input"/> 
+        </div>
+        <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button>
+</form>
+    </div>
+           <!--End of the complaint section--->
+
+               <!--Start of the System & Review section--->
+               <div class="system_dropdown">
+    <span>System Review and Symptom</span>
+    <i class="fa fa-plus" id="system_icon_plus"></i>
+    <i class="fa fa-minus" id="system_icon_minus"></i>
+   </div>
+               <div class="system_review-section hidden">
         <div class="drop-down1">
             <span>General</span>
             <i class="fa fa-minus" id="close_id_1"></i>
@@ -1061,9 +1139,198 @@
                 </div>
   </div>
   </form>
-  <button id="btn" type="button">Save</button>
+  </div>
+  <div class="physical_dropdown">
+    <span>Physical Examination</span>
+    <i class="fa fa-plus" id="physical_icon_plus"></i>
+    <i class="fa fa-minus" id="physical_icon_minus"></i>
    </div>
+  <div class="physical_examination-section hidden">
+        <div class="physical_examination_drop-down1">
+            <span>General</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus1"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus1"></i>
+        </div>
+        <form action="" class="physical_examination_form1 hidden">
+            <div class="physical_examination_form-control">
+            <label for="physical_examination">Physical Examination</label>
+            <input type="text">
+</div>
+        </form>
+        <div class="physical_examination_drop-down2">
+            <span>Neurological</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus2"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus2"></i>
+        </div>
+        <form action="" class="physical_examination_form2 hidden">
+            <div class="physical_examination_form-control">
+            <label for="phyical_status">Mental Status</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="cranial_nerves">Cranial Nerves</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="position_sense">Position Sense</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="vibration_sense">Vibration Sense</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="reflex_technique">Reflex Technique</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="coordination_of_upper">Coordination of upper extremities</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="coordination_of_lower">Coordination of lower extremities</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="gait">Gait</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="glasgow">Glasgow coma scale</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="headache">Eye opening response</label>
+                <div class="radio">
+                <input type="radio" id="spontaneous" name="eye"/>
+                <label for="spontaneous">Spontaneous</label>
+                <input type="radio" id="to_speech" name="eye"/>
+                <label for="to_speech">To speech </label>
+                <input type="radio" id="to_pain" name="eye"/>
+                <label for="no_response">To Pain </label>
+                <input type="radio" id="no_response" name="eye"/>
+                <label for="no_response">No Response</label>
+                </div>
+</div>
+            <div class="physical_examination_form-control">
+            <label for="headache">Best verbal response</label>
+                <div class="radio">
+                <input type="radio" id="oriented" name="verbal"/>
+                <label for="oriented">Oriented to time, place & person </label>
+                <input type="radio" id="confused" name="verbal"/>
+                <label for="confused">Confused 3</label>
+                <input type="radio" id="inappropraite" name="verbal"/>
+                <label for="no_response">Inappropraite words</label>
+                <input type="radio" id="incmprehensible" name="verbal"/>
+                <label for="response">Incomprehensible sounds</label>
+                <input type="radio" id="response" name="verbal"/>
+                <label for="response">No Response</label>
+                </div>
+</div>
+            <div class="physical_examination_form-control">
+            <label for="headache">Best motor response</label>
+                <div class="radio">
+                <input type="radio" id="obey" name="motor"/>
+                <label for="obey">Obey command</label>
+                <input type="radio" id="localized" name="motor"/>
+                <label for="localized">Moved to localised pain</label>
+                <input type="radio" id="flexion" name="motor"/>
+                <label for="flexion">Flexion withdrawal from pain</label>
+                <input type="radio" id="abnornal" name="motor"/>
+                <label for="abnormal">Abnormal flexion(decorticate)</label>
+                <input type="radio" id="response" name="motor"/>
+                <label for="response">No Response</label>
+                </div>
+</div>
+        
+        </form>
+        <div class="physical_examination_drop-down3">
+            <span>Vital Sign</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus3"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus3"></i>
+        </div>
+        <form action="" class="physical_examination_form3 hidden">
+            <div class="physical_examination_form-control">
+            <label for="physical_blood_pressure">Blood Pressure</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="heart_rate">Heart Rate</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="respiratory_rate">Respiratory Rate</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="temperature">Temperature</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="oxygen_saturation">Oxygen Saturation</label>
+            <input type="text">
+            </div>
+</form>
+<div class="physical_examination_drop-down4">
+            <span>General Apperance</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus4"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus4"></i>
+        </div>
+        <form action="" class="physical_examination_form4 hidden">
+            <div class="physical_examination_form-control">
+            <label for="level">Level of Consciousness</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="nutritional">Nutritional Status</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="signs">Signs of Distress/Discomfort</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="body_habitus">Body Habitus</label>
+            <input type="text">
+            </div>
+</form>
+<div class="physical_examination_drop-down5">
+            <span>Skin Examination</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus5"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus5"></i>
+        </div>
+        <form action="" class="physical_examination_form5 hidden">
+            <div class="physical_examination_form-control">
+            <label for="pigmentation">Color/Pigmentation</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="moisture/temperature">Moisture/Temperature</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="lesions/rashes">Lesions/Rashes/Abnormalities</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="bruising">Brusing/Petechiae</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="scars">Scars/Surgical Incisions</label>
+            <input type="text">
+            </div>
+</form>
     </div>
-    <script src="system_review_&_symtom.js"></script>
+    <div class="physical_dropdown">
+    <span>Treatment & Prescription</span>
+    <i class="fa fa-plus" id="physical_icon_plus"></i>
+    <i class="fa fa-minus" id="physical_icon_minus"></i>
+   </div>
+    <button id="btn">Enter</button>
+   </div>
+  </div>
+  <div class="overlay hidden" onClick="close_procedure_form()"></div>
+    <script src="all_section.js"></script>
 </body>
 </html>

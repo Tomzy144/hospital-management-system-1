@@ -114,7 +114,7 @@
         </th>
     </thead>   
 
-    <tbody onClick="complaint_page_for_this_patient()"> 
+    <tbody onClick="all_section_page_for_this_patient()"> 
         <tr>
              <td>1</td>
              <td>pat01</td>
@@ -125,7 +125,7 @@
         </tr>
     </tbody>   
 
-    <tbody onClick="system_review_page_for_this_patient()"> 
+    <tbody onClick="all_section_page_for_this_patient()"> 
         <tr>
              <td>1</td>
              <td>pat01</td>
@@ -136,7 +136,7 @@
         </tr>
     </tbody> 
 
-    <tbody onClick="physical_examination_page_for_this_patient()"> 
+    <tbody onClick="all_section_page_for_this_patient()"> 
         <tr>
              <td>1</td>
              <td>pat01</td>
@@ -245,16 +245,8 @@
         window.parent(location=(urlBackwardArrow));
     }
 
-    function complaint_page_for_this_patient(){
-        let url = 'pages_doctor_input/complaints/complaint.php'
-        window.parent(location = (url));
-    }
-    function system_review_page_for_this_patient(){
-        let url = 'pages_doctor_input/system_review_&_symtom/system_review_&_symtom.php'
-        window.parent(location = (url));
-    }
-    function physical_examination_page_for_this_patient(){
-        let url = 'pages_doctor_input/physical_examination/physical_examination.php'
+    function all_section_page_for_this_patient(){
+        let url = 'pages_doctor_input/all_sections/all_section.php';
         window.parent(location = (url));
     }
 </script>
