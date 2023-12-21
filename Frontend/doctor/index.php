@@ -34,16 +34,18 @@
    </div>
    <div class="contents">
     <div class="container-dashboard">
-        <button onclick="patient_list()">COMPLIANTS</button>
-        <button onclick="patient_list()">SYSTEM REVIEW /SYSTEM</button>
-        <button onclick="patient_list()">PHYSICAL EXAMINATION</button>
-        <button onclick="patient_list()">TREATMENT & PRESCRIPTION</button>
+        <button onclick="patient_list()">PATIENT LIST</button>
+        <button onclick="appoitment()">APPOINTMENT</button>
     </div>
     </div>
     <script>
    
         const patient_list = ()=>{
             let url = "patients_list.php";
+            window.parent(location = (url));
+        }
+        const appoitment = ()=>{
+            let url = "appoitment.php";
             window.parent(location = (url));
         }
 

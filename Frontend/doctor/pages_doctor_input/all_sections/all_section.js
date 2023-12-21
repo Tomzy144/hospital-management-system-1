@@ -374,4 +374,102 @@ skin_examination_dropdown.addEventListener("click", function(){
     }
 });
 
+//For Head and Neck Dropdown
+const pysical_head_neck_dropdown = document.querySelector(".physical_examination_drop-down6");
+const physical_showForm6 = document.querySelector(".physical_examination_form6");
+const physical_closeIcon6 = document.querySelector("#physical_examination_icon_minus6")
+const physical_openIcon6 = document.querySelector("#physical_examination_icon_plus6");
 
+pysical_head_neck_dropdown.addEventListener("click", function(){
+    physical_showForm6.classList.toggle("hidden");
+    physical_closeIcon6.style.display = "block";
+    physical_openIcon6.style.display = "none";
+    if(physical_showForm6.classList.contains("hidden")){
+        physical_closeIcon6.style.display = "none";
+        physical_openIcon6.style.display = "block";
+    }
+});
+
+//For Cardiovascular Examination Dropdown
+const physical_cardiovascular_dropdown = document.querySelector(".physical_examination_drop-down7");
+const physical_showForm7 = document.querySelector(".physical_examination_form7");
+const physical_closeIcon7 = document.querySelector("#physical_examination_icon_minus7")
+const physical_openIcon7 = document.querySelector("#physical_examination_icon_plus7");
+
+physical_cardiovascular_dropdown.addEventListener("click", function(){
+    physical_showForm7.classList.toggle("hidden");
+    physical_closeIcon7.style.display = "block";
+    physical_openIcon7.style.display = "none";
+    if(physical_showForm7.classList.contains("hidden")){
+        physical_closeIcon7.style.display = "none";
+        physical_openIcon7.style.display = "block";
+    }
+});
+
+//For Respiratory Examination Dropdown
+const physical_respiratory_dropdown = document.querySelector(".physical_examination_drop-down8");
+const physical_showForm8 = document.querySelector(".physical_examination_form8");
+const physical_closeIcon8 = document.querySelector("#physical_examination_icon_minus8")
+const physical_openIcon8 = document.querySelector("#physical_examination_icon_plus8");
+
+physical_respiratory_dropdown.addEventListener("click", function(){
+    physical_showForm8.classList.toggle("hidden");
+    physical_closeIcon8.style.display = "block";
+    physical_openIcon8.style.display = "none";
+    if(physical_showForm8.classList.contains("hidden")){
+        physical_closeIcon8.style.display = "none";
+        physical_openIcon8.style.display = "block";
+    }
+});
+
+//For Adominal Examination Dropdown
+const physical_abdominal_dropdown = document.querySelector(".physical_examination_drop-down9");
+const physical_showForm9 = document.querySelector(".physical_examination_form9");
+const physical_closeIcon9 = document.querySelector("#physical_examination_icon_minus9")
+const physical_openIcon9 = document.querySelector("#physical_examination_icon_plus9");
+
+physical_abdominal_dropdown.addEventListener("click", function(){
+    physical_showForm9.classList.toggle("hidden");
+    physical_closeIcon9.style.display = "block";
+    physical_openIcon9.style.display = "none";
+    if(physical_showForm9.classList.contains("hidden")){
+        physical_closeIcon9.style.display = "none";
+        physical_openIcon9.style.display = "block";
+    }
+});
+
+//For Genitourinary Examination Dropdown
+const physical_genitourinary_dropdown = document.querySelector(".physical_examination_drop-down10");
+const physical_showForm10 = document.querySelector(".physical_examination_form10");
+const physical_closeIcon10 = document.querySelector("#physical_examination_icon_minus10")
+const physical_openIcon10 = document.querySelector("#physical_examination_icon_plus10");
+
+physical_genitourinary_dropdown.addEventListener("click", function(){
+    physical_showForm10.classList.toggle("hidden");
+    physical_closeIcon10.style.display = "block";
+    physical_openIcon10.style.display = "none";
+    if(physical_showForm10.classList.contains("hidden")){
+        physical_closeIcon10.style.display = "none";
+        physical_openIcon10.style.display = "block";
+    }
+});
+
+
+
+//Treatment and Prescribtion JS
+const treatment_prescribtion_dropdown = document.querySelector(".treatment_prescribtion_dropdown");
+const treatment_prescribtion_section = document.querySelector(".treatment_prescribtion-section");
+const treatment_prescribtion_icon_plus = document.querySelector("#treatment_prescribtion_icon_plus");
+const treatment_prescribtion_icon_minus = document.querySelector("#treatment_prescribtion_minus");
+
+
+
+treatment_prescribtion_dropdown.addEventListener("click", function(){
+treatment_prescribtion_section.classList.toggle("hidden");
+treatment_prescribtion_icon_plus.style.display = "none";
+treatment_prescribtion_icon_minus.style.display = "block";
+if(treatment_prescribtion_section.classList.contains("hidden")){
+    treatment_prescribtion_icon_plus.style.display = "block";
+    treatment_prescribtion_icon_minus.style.display = "none";
+}
+}) 

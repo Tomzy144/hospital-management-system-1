@@ -80,9 +80,14 @@
         <!-- <i class="fa fa-key" id="icons"></i> -->
         <input type="date"  name="date" autoComplete='off' class="surgical_input"'/> 
         </div>
+        <div class="form-control-precedure">
+        <label for='time'>Time</label>
+        <!-- <i class="fa fa-key" id="icons"></i> -->
+        <input type="time"  name="time" autoComplete='off' class="surgical_input"'/> 
+        </div>
 
         <div class="form-control-precedure">
-        <label for='operation'>Type of Procedures</label>
+        <label for='operation'>Procedure</label>
         <!-- <i class="fa fa-lock" id="icons"></i> -->
         <input type="text" name="procedures" autoComplete='off' class="surgical_input"/> 
         </div>
@@ -92,9 +97,9 @@
         <input type="number" name="phone" autoComplete='off' class="surgical_input"/> 
         </div>
         <div class="form-control-precedure">
-        <label for='email'>Email Address</label>
+        <label for='number'>Cost</label>
         <!-- <i class="fa fa-lock" id="icons"></i> -->
-        <input type="email" name="email" autoComplete='off' class="surgical_input"/> 
+        <input type="number" name="number" autoComplete='off' class="surgical_input"/> 
         </div>
         <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button>
 </form>
@@ -1140,6 +1145,9 @@
   </div>
   </form>
   </div>
+        <!--End of the System & Review section--->
+
+  <!--Start of Physica, Examination-->
   <div class="physical_dropdown">
     <span>Physical Examination</span>
     <i class="fa fa-plus" id="physical_icon_plus"></i>
@@ -1321,13 +1329,276 @@
             <input type="text">
             </div>
 </form>
+<div class="physical_examination_drop-down6">
+            <span>Head and Neck</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus6"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus6"></i>
+        </div>
+        <form action="" class="physical_examination_form6 hidden">
+            <div class="physical_examination_form-control">
+            <label for="scalp/hair/nails">Scalp/Hair/Nails</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="eyes/ears/nose/throat:">Eyes/Ears/Nose/Throat:</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="lesions/rashes">Lesions/Rashes/Abnormalities</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="lymph_nodes">Lymph Nodes</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="neck_rang_of_Motion">Neck Range of Motion</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="presence_of_Bruits_(if applicable)">Presence of Bruits (if applicable)</label>
+            <input type="text">
+            </div>
+</form>
+<div class="physical_examination_drop-down7">
+            <span>Cardiovascular Examination</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus7"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus7"></i>
+        </div>
+        <form action="" class="physical_examination_form7 hidden">
+            <div class="physical_examination_form-control">
+            <label for="scalp/hair/nails">Inspection/Palpation of Precordium</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="auscultation_of_heart_sounds_murmurs">Auscultation of Heart Sounds/Murmurs</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="peripheral_pulses">Peripheral Pulses</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="edema_assessment">Edema Assessment</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="capillary_refill_time">Capillary Refill Time</label>
+            <input type="text">
+</div>
+</form>
+<div class="physical_examination_drop-down8">
+            <span>Respiratory Examination</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus8"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus8"></i>
+        </div>
+           <form action="" class="physical_examination_form8 hidden">
+            <div class="physical_examination_form-control">
+            <label for="respiratory_effort_inspection">Respiratory Effort Inspection</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="palpation/Percussion_of_chest">Palpation/Percussion of Chest</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="auscultation_of_breath Sounds">Auscultation of Breath Sounds</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="cough/sputum_assessment">Cough/Sputum Assessment</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="cough/sputum_assessment">Cough/Sputum Assessment</label>
+            <input type="text">
+            </div>
+</form>
+<div class="physical_examination_drop-down9">
+            <span>Abdominal Examination</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus9"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus9"></i>
+        </div>
+        <form action="" class="physical_examination_form9 hidden">
+            <div class="physical_examination_form-control">
+            <label for="inspection/auscultation/percussion/palpation">Inspection/Auscultation/Percussion</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="presence_of _tenderness/Masses">Presence of Tenderness/Masses</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="bowel_sounds_assessment Sounds">Bowel Sounds Assessment</label>
+            <input type="text">
+            </div>
+</form>
+<div class="physical_examination_drop-down10">
+            <span>Genitourinary Examination</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus10"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus10"></i>
+        </div>
+        <form action="" class="physical_examination_form10 hidden">
+            <div class="physical_examination_form-control">
+            <label for="genitalia_inspection">Genitalia Inspection</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="urinary_function_assessment">Urinary Function Assessment</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="pelvic_examination_(if applicable)_sounds">Pelvic Examination (if applicable)</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="prostate_examination_(if_applicable">Prostate Examination (if applicable)</label>
+            <input type="text">
+            </div>
+</form>
+<div class="physical_examination_drop-down11">
+            <span>Musculoskeletal Examination</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus11"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus11"></i>
+        </div>
+        <form action="" class="physical_examination_form11">
+            <div class="physical_examination_form-control">
+            <label for="inspection/palpation_of_joints/muscles">Inspection/Palpation of Joints/Muscles</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="range_of_motion_assessment">Range of Motion Assessment</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="gait/balance_evaluation">Gait/Balance Evaluation</label>
+            <input type="text">
+            </div>
+</form>
     </div>
-    <div class="physical_dropdown">
+      <!--End of Physica, Examination-->
+
+    <!--Start for Treatment and Prescribtion--->
+    <div class="treatment_prescribtion_dropdown">
     <span>Treatment & Prescription</span>
-    <i class="fa fa-plus" id="physical_icon_plus"></i>
-    <i class="fa fa-minus" id="physical_icon_minus"></i>
+    <i class="fa fa-plus" id="treatment_prescribtion_icon_plus"></i>
+    <i class="fa fa-minus" id="treatment_prescribtion_minus"></i>
    </div>
-    <button id="btn">Enter</button>
+   <div class="treatment_prescribtion-section hidden">
+        <form action="" class="treatment_prescribtion_form1">
+            <div class="treatment_prescribtion_form-control">
+            <label for="drugs">Drugs</label>
+            <input type="text" class="treatment_prescribtion-input_change_width">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="strength">Strength</label>
+            <input type="text" class="treatment_prescribtion-input">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="mode">Mode</label>
+            <select name="mode" id="mode" class="treatment_prescribtion-input">
+                <option value="injection">Injection</option>
+                <option value="capsule">Capsule</option>
+            </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="administration">Administration</label>
+            <select name="administration" id="administration" class="treatment_prescribtion-input">
+                <option value="im">IM</option>
+                <option value="others">Others</option>
+            </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="dos">Dos</label>
+            <input type="number" class="treatment_prescribtion-input">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="unit">Unit</label>
+            <select name="unit" id="unit" class="treatment_prescribtion-input">
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="frequency">Frequency</label>
+            <select name="frequency" id="frequency" class="treatment_prescribtion-input">
+                <option value="hours">24 hourly</option>
+                <option value="others">others</option>
+            </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="duration">Duration</label>
+            <input type="text" class="treatment_prescribtion-input">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="remark">Remark</label>
+            <input type="text" class="treatment_prescribtion-input">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="qty">Qty</label>
+            <input type="text" class="treatment_prescribtion-input">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="cost">Cost</label>
+            <input type="number" class="treatment_prescribtion-input">
+            </div>
+            <i class="fa fa-window-close" id="prescribe_close"></i>
+            <!---Second Sec--->
+            <div class="treatment_prescribtion_form-control">
+            <label for="drugs">Drugs</label>
+            <input type="text" class="treatment_prescribtion-input_change_width">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="strength">Strength</label>
+            <input type="text" class="treatment_prescribtion-input">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="mode">Mode</label>
+            <select name="mode" id="mode" class="treatment_prescribtion-input">
+                <option value="injection">Injection</option>
+                <option value="capsule">Capsule</option>
+            </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="dos">Dos</label>
+            <input type="number" class="treatment_prescribtion-input">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="unit">Unit</label>
+            <select name="unit" id="unit" class="treatment_prescribtion-input">
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="frequency">Frequency</label>
+            <select name="frequency" id="frequency" class="treatment_prescribtion-input">
+                <option value="hours">24 hourly</option>
+                <option value="others">others</option>
+            </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="duration">Duration</label>
+            <input type="text" class="treatment_prescribtion-input">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="remark">Remark</label>
+            <input type="text" class="treatment_prescribtion-input">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="qty">Qty</label>
+            <input type="text" class="treatment_prescribtion-input">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="cost">Cost</label>
+            <input type="number" class="treatment_prescribtion-input">
+            </div>
+            <button id="btn_prescribe">Prescribe</button>      
+        </div>
+        </form>
+        <button id="btn" class="save">Enter</button>
+   </div>
+
    </div>
   </div>
   <div class="overlay hidden" onClick="close_procedure_form()"></div>

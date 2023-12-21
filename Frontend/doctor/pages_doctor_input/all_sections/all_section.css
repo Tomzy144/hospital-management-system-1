@@ -115,12 +115,11 @@ h1{
     cursor: pointer;
 }
 .all_sections_input{
-    width: 1000px;
+    width: 1250px;
     height: 100vh;
     position: relative;
     color: #fff;
     margin-top: 10rem;
-    /* background-color: rgb(0, 123, 121);  */
     flex-direction: column;
     position: relative;
     justify-content: center;
@@ -142,7 +141,7 @@ h1{
     display: none;
 }
 .complaint-section{
-    width: 1000px;
+    width: 100%;
     height: fit-content;;
     background-color: rgb(0, 123, 121); 
     padding: 1rem;
@@ -178,7 +177,7 @@ label {
 }
 #btn{
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 123, 121); 
     height: fit-content;
     padding: 1rem;
     border: none;
@@ -363,7 +362,13 @@ label{
 }
 .physical_examination_drop-down1, .physical_examination_drop-down2, .physical_examination_drop-down3,
 .physical_examination_drop-down4,
-.physical_examination_drop-down5{
+.physical_examination_drop-down5,
+.physical_examination_drop-down6,
+.physical_examination_drop-down7,
+.physical_examination_drop-down8,
+.physical_examination_drop-down9,
+.physical_examination_drop-down10,
+.physical_examination_drop-down11{
     width: 100%; 
    border-bottom: 4px solid #fff;
     padding: 1rem;
@@ -382,14 +387,26 @@ span{
 #physical_examination_icon_plus1, #physical_examination_icon_minus1, #physical_examination_icon_plus2, #physical_examination_icon_minus2
 #physical_examination_icon_plus3, #physical_examination_icon_minus3,
 #physical_examination_icon_plus4, #physical_examination_icon_minus4,
-#physical_examination_icon_plus5, #physical_examination_icon_minus5{
+#physical_examination_icon_plus5, #physical_examination_icon_minus5,
+#physical_examination_icon_plus6, #physical_examination_icon_minus6,
+#physical_examination_icon_plus7, #physical_examination_icon_minus7,
+#physical_examination_icon_plus8, #physical_examination_icon_minus8,
+#physical_examination_icon_plus9, #physical_examination_icon_minus9,
+#physical_examination_icon_plus10, #physical_examination_icon_minus10,
+#physical_examination_icon_plus11, #physical_examination_icon_minus11{
     color: #fff;
     font-size: 20px;
 }
 #physical_examination_icon_minus1, #physical_examination_icon_minus2,
 #physical_examination_icon_minus3,
 #physical_examination_icon_minus4,
-#physical_examination_icon_minus5{
+#physical_examination_icon_minus5,
+#physical_examination_icon_minus6,
+#physical_examination_icon_minus7,
+#physical_examination_icon_minus8,
+#physical_examination_icon_minus9,
+#physical_examination_icon_minus10,
+#physical_examination_icon_minus11{
     display: none;
 }
 form{
@@ -420,13 +437,89 @@ input {
     display: none;
 }
 .physical_examination_form1, .physical_examination_form2, .physical_examination_form3,
-.physical_examination_form4, .physical_examination_form5{
+.physical_examination_form4, .physical_examination_form5 .physical_examination_form6,.physical_examination_form7,
+.physical_examination_form8, .physical_examination_form9,
+.physical_examination_form10,.physical_examination_form11{
     display: flex;
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
+/*Start of the Treatment and Prescribtion*/
+.treatment_prescribtion-section{
+    width: 100%;
+    height: fit-content;;
+    background-color: rgb(0, 123, 121); 
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.treatment_prescribtion_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(4 47 46);
+    font-size: 20px;
+    cursor: pointer;
+}
+.treatment_prescribtion_form1{
+    width: 100%;
+    background-color: rgb(4 47 46);
+    border-radius: 14px;
+}
+.treatment_prescribtion_form-control{
+    width: auto;
+    height: 150px;
+    margin: 0rem 0.1rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+#treatment_prescribtion_minus{
+    display: none;
+}
+.treatment_prescribtion-input {
+    padding: 1rem;
+    border: none;
+    width: 70px;
+    font-size: 15px;
+    border-radius: 2px;
+}
+#prescribe_close{
+    position: absolute;
+    top: 22%;
+    cursor: pointer;
+    left: 96%;
+}
+.treatment_prescribtion-input_change_width{
+    padding: 1rem;
+    border: none;
+    width: 200px;
+    font-size: 15px;
+    border-radius: 2px;
+}
+#btn_prescribe{
+    width: 30%;
+    background-color: rgb(255, 255, 255); 
+    height: fit-content;
+    padding: 1rem;
+    border: none;
+    margin: 1rem auto;
+    cursor: pointer;
+    transition: 0.5s;
+  
+}
+#btn_prescribe:hover{
+    background-color: rgb(0, 123, 121); 
+    color: #ffffff;
+}
 .hidden{
     display: none;
 }
