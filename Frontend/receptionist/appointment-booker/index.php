@@ -18,8 +18,6 @@
     <title>Appoiment</title>
     <link rel="stylesheet" href="./appoitment.css">
     <link rel="stylesheet" href="../../awesome-font/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
-    <!-- <link rel="stylesheet" href="./receptionist/calendar/fullcalendar-6.1.10/dist/index.global.min.js" /> -->
 </head>
 <body onload="getRoles()">
     <div class="navbar">
@@ -230,9 +228,9 @@
             <input type="time" id="time" name="time">
         </div>
             <div class="form-control">
-            <label for="name">Reason for appoitment</label>
-         <textarea name="" id="reason" cols="30" rows="10" value=""></textarea>
-            </div>
+            <label for="text">Request Typet</label>
+            <input type="text" id="text" name="text">          
+        </div>
             <input type="hidden" id="date"  value="">
             <input type="hidden" id="role"  value="">
             <input type="hidden" id="doctor"  value="">

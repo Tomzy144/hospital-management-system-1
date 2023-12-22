@@ -30,8 +30,48 @@
         <div class="head-sec">
             <span>Appoitment Details</span>
             <div class="appoitment_input_control">
+            <i class="fa fa-search" id="search-icon"></i>
                 <input type="text" placeholder="Search here">
             </div>
+        </div>
+        <div class="body_sec">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Patient Name</td>
+                        <td>Date</td>
+                        <td>Time</td>
+                        <td>Request Type</td>
+                        <td>Accept/Reject</td>
+                    </tr>
+                </thead>
+
+                <tbody class="a_1">
+                    <tr>
+                    <td>Princess Udo Asuquo</td>
+                    <td>5-11/2023</td>
+                    <td>9.00</td>
+                    <td>General checkup</td>
+                    <td>
+                        <button>Accept</button>
+                        <button>Reject</button>
+                    </td>
+                    </tr>
+                </tbody>
+
+                <tbody class="a_2">
+                    <tr>
+                    <td>Princess Udo Asuquo</td>
+                    <td>5-11/2023</td>
+                    <td>9.00</td>
+                    <td>General checkup</td>
+                    <td>
+                        <button>Accept</button>
+                        <button>Reject</button>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     </div>
