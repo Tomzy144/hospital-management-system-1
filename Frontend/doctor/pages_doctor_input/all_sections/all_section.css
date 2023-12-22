@@ -368,7 +368,10 @@ label{
 .physical_examination_drop-down8,
 .physical_examination_drop-down9,
 .physical_examination_drop-down10,
-.physical_examination_drop-down11{
+.physical_examination_drop-down11,
+.physical_examination_drop-down12,
+.physical_examination_drop-down13,
+.physical_examination_drop-down14{
     width: 100%; 
    border-bottom: 4px solid #fff;
     padding: 1rem;
@@ -393,7 +396,10 @@ span{
 #physical_examination_icon_plus8, #physical_examination_icon_minus8,
 #physical_examination_icon_plus9, #physical_examination_icon_minus9,
 #physical_examination_icon_plus10, #physical_examination_icon_minus10,
-#physical_examination_icon_plus11, #physical_examination_icon_minus11{
+#physical_examination_icon_plus11, #physical_examination_icon_minus11,
+#physical_examination_icon_plus12, #physical_examination_icon_minus12,
+#physical_examination_icon_plus13, #physical_examination_icon_minus13,
+#physical_examination_icon_plus14, #physical_examination_icon_minus14{
     color: #fff;
     font-size: 20px;
 }
@@ -406,7 +412,10 @@ span{
 #physical_examination_icon_minus8,
 #physical_examination_icon_minus9,
 #physical_examination_icon_minus10,
-#physical_examination_icon_minus11{
+#physical_examination_icon_minus11,
+#physical_examination_icon_minus12,
+#physical_examination_icon_minus13,
+#physical_examination_icon_minus14{
     display: none;
 }
 form{
@@ -439,7 +448,10 @@ input {
 .physical_examination_form1, .physical_examination_form2, .physical_examination_form3,
 .physical_examination_form4, .physical_examination_form5 .physical_examination_form6,.physical_examination_form7,
 .physical_examination_form8, .physical_examination_form9,
-.physical_examination_form10,.physical_examination_form11{
+.physical_examination_form10,.physical_examination_form11
+,.physical_examination_form12,
+.physical_examination_form13,
+.physical_examination_form14{
     display: flex;
     width: 100%;
     flex-direction: row;

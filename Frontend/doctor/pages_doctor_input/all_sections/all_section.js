@@ -454,6 +454,70 @@ physical_genitourinary_dropdown.addEventListener("click", function(){
     }
 });
 
+//For Musculoskeletal Examination Dropdown
+const physical_musculoskeletal_dropdown = document.querySelector(".physical_examination_drop-down11");
+const physical_showForm11 = document.querySelector(".physical_examination_form11");
+const physical_closeIcon11= document.querySelector("#physical_examination_icon_minus11")
+const physical_openIcon11= document.querySelector("#physical_examination_icon_plus11");
+
+physical_musculoskeletal_dropdown.addEventListener("click", function(){
+    physical_showForm11.classList.toggle("hidden");
+    physical_closeIcon11.style.display = "block";
+    physical_openIcon11.style.display = "none";
+    if(physical_showForm11.classList.contains("hidden")){
+        physical_closeIcon11.style.display = "none";
+        physical_openIcon11.style.display = "block";
+    }
+});
+
+//For Neurovascular Assessment of Extremities Dropdown
+const physical_neurovascular_dropdown = document.querySelector(".physical_examination_drop-down12");
+const physical_showForm12 = document.querySelector(".physical_examination_form12");
+const physical_closeIcon12= document.querySelector("#physical_examination_icon_minus12")
+const physical_openIcon12= document.querySelector("#physical_examination_icon_plus12");
+
+physical_neurovascular_dropdown.addEventListener("click", function(){
+    physical_showForm12.classList.toggle("hidden");
+    physical_closeIcon12.style.display = "block";
+    physical_openIcon12.style.display = "none";
+    if(physical_showForm12.classList.contains("hidden")){
+        physical_closeIcon12.style.display = "none";
+        physical_openIcon12.style.display = "block";
+    }
+});
+
+//For Review of Systems (ROS) of Extremities Dropdown
+const physical_review_of_systems_dropdown = document.querySelector(".physical_examination_drop-down13");
+const physical_showForm13 = document.querySelector(".physical_examination_form13");
+const physical_closeIcon13= document.querySelector("#physical_examination_icon_minus13")
+const physical_openIcon13= document.querySelector("#physical_examination_icon_plus13");
+
+physical_review_of_systems_dropdown.addEventListener("click", function(){
+    physical_showForm13.classList.toggle("hidden");
+    physical_closeIcon13.style.display = "block";
+    physical_openIcon13.style.display = "none";
+    if(physical_showForm13.classList.contains("hidden")){
+        physical_closeIcon13.style.display = "none";
+        physical_openIcon13.style.display = "block";
+    }
+});
+
+//For Social and Family History Dropdown
+const physical_Social_and_family_history_dropdown = document.querySelector(".physical_examination_drop-down14");
+const physical_showForm14 = document.querySelector(".physical_examination_form14");
+const physical_closeIcon14= document.querySelector("#physical_examination_icon_minus14")
+const physical_openIcon14= document.querySelector("#physical_examination_icon_plus14");
+
+physical_Social_and_family_history_dropdown.addEventListener("click", function(){
+    physical_showForm14.classList.toggle("hidden");
+    physical_closeIcon14.style.display = "block";
+    physical_openIcon14.style.display = "none";
+    if(physical_closeIcon14.classList.contains("hidden")){
+        physical_closeIcon14.style.display = "none";
+        physical_openIcon14.style.display = "block";
+    }
+});
+
 
 
 //Treatment and Prescribtion JS

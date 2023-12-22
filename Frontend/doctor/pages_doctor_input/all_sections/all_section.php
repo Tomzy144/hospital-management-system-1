@@ -16,7 +16,6 @@
         <!---Please you would manipulate this span base on the patient clicked-->
         <span style="font-size:2rem; color:#fff;">PRECIOUS JOHN</span>
     </div>
-    </form>
          </nav>
     <div class="sidebar">
     <div class="togglebar">
@@ -1461,9 +1460,9 @@
             <i class="fa fa-minus" id="physical_examination_icon_minus11"></i>
             <i class="fa fa-plus" id="physical_examination_icon_plus11"></i>
         </div>
-        <form action="" class="physical_examination_form11">
+        <form action="" class="physical_examination_form11 hidden">
             <div class="physical_examination_form-control">
-            <label for="inspection/palpation_of_joints/muscles">Inspection/Palpation of Joints/Muscles</label>
+            <label for="genitalia_in*Inspection/Palpation of joints_musclesspection">Inspection/Palpation of Joints</label>
             <input type="text">
             </div>
             <div class="physical_examination_form-control">
@@ -1472,6 +1471,87 @@
             </div>
             <div class="physical_examination_form-control">
             <label for="gait/balance_evaluation">Gait/Balance Evaluation</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="pine_examination">pine Examination</label>
+            <input type="text">
+            </div>
+</form>
+<div class="physical_examination_drop-down12">
+            <span>Neurological Examination</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus12"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus12"></i>
+        </div>
+        <form action="" class="physical_examination_form12 hidden">
+            <div class="physical_examination_form-control">
+            <label for="mental_status_assessment">Mental Status Assessment</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="cranial_nerve_examination">Cranial Nerve Examination</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="motor/sensory_function">Motor/Sensory Function</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="reflexes">Reflexes</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="coordination/balance_assessment">Coordination/Balance Assessment</label>
+            <input type="text">
+            </div>
+</form>
+<div class="physical_examination_drop-down13">
+            <span>Review of Systems (ROS)</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus13"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus13"></i>
+        </div>
+        <form action="" class="physical_examination_form13 hidden">
+            <div class="physical_examination_form-control">
+            <label for="cardiovascular_system">Cardiovascular System</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="respiratory_system">Respiratory System</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="gastrointestinal_system">Gastrointestinal System</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="genitourinary_system">Genitourinary System</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="neurological_system">Neurological System</label>
+            <input type="text">
+            </div>
+</form>
+<div class="physical_examination_drop-down14">
+            <span>Social and Family History</span>
+            <i class="fa fa-minus" id="physical_examination_icon_minus14"></i>
+            <i class="fa fa-plus" id="physical_examination_icon_plus14"></i>
+        </div>
+        <form action="" class="physical_examination_form14 hidden">
+            <div class="physical_examination_form-control">
+            <label for="social_habits(smoking,alcohol,drugs)">Social Habits (smoking, alcohol)</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="family_medical_history">Family Medical History</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="occupation/environmental_exposures">Occupation/Environmental</label>
+            <input type="text">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="living_conditions/support_system">Living Conditions/Support System</label>
             <input type="text">
             </div>
 </form>

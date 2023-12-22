@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    height: 60px;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    flex-direction: row;
+    background-color:rgb(4 47 46);
+} 
+
+h1{
+    color: #fff;
+    font-size: 2rem; 
+}
+#sign-out{
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
+.sidebar{
+    position: fixed;
+    width: 80px;
+    height: 100%;
+    background-color:rgb(4 47 46);
+    transition: 0.2s;
+    align-items: start;
+    z-index: 999;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+}
+#back_arrow{
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
+}
+.sidebar.active_toggle{
+    width: 300px;
+}
+.togglebar .fa-times{
+    display: none;
+    cursor: pointer;
+}
+
+
+.togglebar{
+    color: #fff;
+    margin-top: 12px;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.checkbar{
+    color: rgb(4 47 46);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    margin-top: 15rem;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.checkbar .fa{
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    margin: 2rem;
+    border: 8px solid transparent;
+    transition: 2s;
+    cursor: pointer;
+}
+.checkbar .fa.active{
+    transform: translateX(20px);
+    background-color: rgb(255, 255, 255) ;
+    padding: 0.5rem;
+}
+
+.checkbar .fa.active:hover{
+    background-color: rgb(4 47 46);
+    color: #ffffff;
+}
+
+.fa-bars{
+    padding: 1rem;
+    cursor: pointer;
+}
+.container{
+    width: 100%;
+    height: 500px;
+    background-color: red;
+    margin: 10rem 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.contents{
+    width:100%;
+    height:100%;
+}
