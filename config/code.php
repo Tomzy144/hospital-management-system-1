@@ -56,7 +56,7 @@
 		?>
 					<script>
 
-						window.parent(location="../frontend/receptionist/index.php");
+						window.parent(location="../frontend/receptionist/");
 					</script>
 		<?php
 			
@@ -341,6 +341,60 @@
 
 
 
+
+
+/////////////////////doctors
+
+
+  
+case 'doctor_login_check': // for user login
+	$doctor_email=trim($_POST['doctor_email']);
+///	$temp_password=trim(($_POST['password']));
+	$doctor_password=trim(($_POST['doctor_password']));
+	$doctor_id=trim(($_POST['doctor_id']));
+
+		$query=mysqli_query($conn,"SELECT * FROM doctor_tab WHERE `email`='$doctor_email' AND `password`='$doctor_password' AND `doctor_id` = '$doctor_id'");
+		$usercount = mysqli_num_rows($query);
+		if ($usercount>0){
+			$usersel=mysqli_fetch_array($query);
+			$doctor_id=$usersel['doctor_id'];
+			$status_id=$usersel['status_id'];
+			
+				if ($status_id==1){
+					$check=1; ///// account is active
+
+					
+				}else if($status_id==2){
+					$check=2; ///// account is suspended
+					
+				}else {
+					$check=0;
+				}
+		}else{
+			$check=0;
+		}
+						
+		echo json_encode(array("check" => $check, )); 
+break;
+
+
+case 'doctor_login': // login from index
+	$userquery = mysqli_query ($conn,"SELECT * FROM `doctor_tab` WHERE email = '$email' AND `password` = '$doctor_password' AND status_id=1") ;
+			$usersel=mysqli_fetch_array($userquery);
+			$doctor_id=$usersel['doctor_id'];
+			$_SESSION['doctor_id'] = $doctor_id;
+			$s_doctor_id=$_SESSION['doctor_id'];
+			mysqli_query($conn,"UPDATE `doctor_tab` SET last_login=NOW() WHERE doctor_id='$s_staff_id'") or die("cannot update") ; //// update last login
+						
+	?>
+				<script>
+
+					window.parent(location="../frontend/doctor/");
+				</script>
+	<?php
+		
+		
+break;
 
 
 

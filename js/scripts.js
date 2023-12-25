@@ -536,3 +536,62 @@ setTimeout(function() {
   
 
 
+///////////////doctors
+
+
+function _doctor_sign_in(){ 
+    var doctor_email = $('#doctor_email').val();
+    var doctor_password = $('#doctor_password').val();
+    var doctor_id = $('#doctor_id').val();
+    if((doctor_email!='')&&(doctor_password!='')&&(doctor_id!='')){
+        doctor_login(doctor_email,doctor_password,doctor_id);
+    }else{
+        $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
+        window.alert("Fill the neccessary field")
+    }
+};
+
+
+
+
+///////////////////// doctor login ///////////////////////////////////////////
+function doctor_login(doctor_email,doctor_password,doctor_id){
+    var action='doctor_login_check';
+    
+   //////////////// get btn text ////////////////
+   var btn_text=$('#doctor_login_btn').html();
+   $('#doctor_login_btn').html('Authenticating...');
+   document.getElementById('doctor_login_btn').disabled=true;
+   ////////////////////////////////////////////////	
+    
+    var dataString ='action='+ action+'&doctor_email='+ doctor_email + '&doctor_password='+ doctor_password + '&doctor_id='+ doctor_id;
+   
+   $.ajax({
+   type: "POST",
+   url: "config/code.php",
+   data: dataString,
+   dataType: 'json',
+   cache: false,
+   success: function(data){
+    var scheck = data.check;
+
+   if(scheck==1){
+    $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
+    $('#doctor_loginform').submit();
+    window.alert("Welcome Back");
+    
+   }else if(scheck==2){
+    window.alert("Account does not exists")
+           $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
+    }else{
+    $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid Email or Password</span>').fadeIn(500).delay(5000).fadeOut(100);
+    window.alert("Invalid Login Details")
+    }
+    $('#doctor_login_btn').html(btn_text);
+    document.getElementById('doctor_login_btn').disabled=false;
+       $('#doctor_login_btn').html('<i class="fa fa-sign-in"></i> Log-In');
+   }
+   });
+}
+
+

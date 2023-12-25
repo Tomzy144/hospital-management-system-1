@@ -1,6 +1,6 @@
 
 <?php
-    if ($s_staff_id==''){
+    if ($s_staff_id==''||$s_doctor_id=''){
 ?>
        <script>
             window.parent(location="../");
@@ -14,6 +14,17 @@
         $email= $user_array[0]['email'];
         $phonenumber= $user_array[0]['phonenumber'];
         $passport= $user_array[0]['passport'];
+
+
+        $fetch_user=$callclass->_get_doctor_details($conn, $s_doctor_id,$website_url);
+        $user_array = json_decode($fetch_user, true);
+        $doctor_id= $user_array[0]['doctor_id'];
+        $fullname= $user_array[0]['fullname'];
+        $doctor_email= $user_array[0]['doctor_email'];
+        $phonenumber= $user_array[0]['phonenumber'];
+        $passport= $user_array[0]['passport'];
+
+
        }
 ?>
 

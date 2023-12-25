@@ -23,40 +23,53 @@ const close_doctor_login_form = function(){
 
 const doctor_login_form = `
 
-<script src="../../backend/js/scripts.js"></script>
-<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
+<?php include '../backend/config/connection.php'?>
+
+
+
+<?php
+if($s_doctor_id!=''){
+?>
+    <script>
+	window.parent(location="../frontend/doctor/");
+	</script>
+<?php }?>
+
+
 
     <div class="doctor-login hidden">
     <i class="fa fa-times-circle" id='close-icon-doctor'></i>
         <h1 class="login-form-h1">Login (Doctor)</h1>
-        <form>
-        <div class="form-control">
-        <label for='email'>Email</label>
-        <i class="fa fa-address-book"></i>
-        <input type="email" name="email" autoComplete='off'/> 
-        </div>
+        <form action="config/code.php" id="doctor_loginform" enctype="multipart/form-data" method="post">
+            <div class="form-control">
+            <label for='email'>Email</label>
+            <i class="fa fa-address-book"></i>
+            <input type="email" id="doctor_email" name="email" autoComplete='off'/> 
+            </div>
 
-        <div class="form-control">
-        <label for='number'>Your ID</label>
-        <i class="fa fa-key"></i>
-        <input type="number"  name="number" autoComplete='off'/> 
-        </div>
+            <div class="form-control">
+            <label for='number'>Your ID</label>
+            <i class="fa fa-key"></i>
+            <input type="text" id="doctor_id"  name="number" autoComplete='off'/> 
+            </div>
 
-        <div class="form-control">
-        <label for='password'>Password</label>
-        <i class="fa fa-lock"></i>
-        <input type="password" name="password" autoComplete='off'/> 
-        </div>
-        <button type="button" class="btn" onClick="if_details_correct_login()">Login</button>
+            <div class="form-control">
+            <label for='password'>Password</label>
+            <i class="fa fa-lock"></i>
+            <input type="password" id="doctor_password" name="password" autoComplete='off'/> 
+            </div>
+            <input name="action" value="doctor_login" type="hidden" />
+            <button type="button" class="btn" id="doctor_login_btn"title="Login" onclick="_doctor_sign_in();">Login</button>
         <form>
     </div>
 `
 log_inAll('doctor', doctor_login_form);
 
-const if_details_correct_login = function(){
-    let url = 'Frontend/doctor/index.php';
-    window.parent(location = (url));
-}
+// const if_details_correct_login = function(){
+//     let url = 'Frontend/doctor/index.php';
+//     window.parent(location = (url));
+// }
 
 
 //Nurse Login
@@ -127,16 +140,18 @@ const recep_login_form = `
 
 
 
+
 <?php
-if($s_staff_id!=''){
+if($s_staff_id!=''&& $page = 'receptionist_dash'){
 ?>
+<script>
+window.parent(location="../frontend/receptionist/");
+</script>
+<?php } else{
     <script>
-	window.parent(location="../frontend/receptionist/index.php");
-	</script>
-<?php }?>
-
-
-
+window.parent(location="<?php echo $website_url?>/");
+</script>
+}?>
 
 
 

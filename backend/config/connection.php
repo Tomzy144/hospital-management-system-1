@@ -32,6 +32,9 @@ $thename='Hospital Management System';
     $s_staff_id=$_SESSION['staff_id']; 
 ?>
 
+
+
+
 <?php
 ////////// login session
 if ($_POST && !empty($_POST['email'])) {
@@ -45,6 +48,27 @@ $_SESSION['password'] = $_POST['password'];
 $spass=($_SESSION['password']);
 ?>
 
+<?php 
+//////for doctor
+
+// session variables//
+    $s_doctor_id=$_SESSION['doctor_id']; 
+
+
+
+////////// login session
+if ($_POST && !empty($_POST['doctor_email'])) {
+    $_SESSION['doctor_email'] = $_POST['doctor_email'];
+    }
+    $doctor_email=$_SESSION['doctor_email'];
+    if ($_POST && !empty($_POST['doctor_password'])) {
+    $_SESSION['doctor_password'] = $_POST['doctor_password'];
+    
+    }
+    $doctor_password=($_SESSION['doctor_password']);
+
+
+?>
 
 
 
@@ -138,7 +162,27 @@ function _get_user_details($conn, $s_staff_id){
 
     return '[{"staff_id":"'.$staff_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
 }
+//////////////////////////////////////////
+
+function _get_doctor_details($conn, $s_doctor_id){
+    $query=mysqli_query($conn, "SELECT * FROM doctor_tab WHERE doctor_id='$s_doctor_id'");    
+    $fetch=mysqli_fetch_array($query);
+    $doctor_id=$fetch['doctor_id'];
+    $fullname=$fetch['fullname'];
+    $email=$fetch['email'];
+    $phonenumber=$fetch['phonenumber'];
+    $role_id=$fetch['role_id'];
+    $status_id=$fetch['status_id'];
+    $passport=$fetch['passport'];
+    $date=$fetch['date'];
+    $last_login=$fetch['last_login'];
+
+    return '[{"doctor_id":"'.$doctor_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
+}
 	
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 function _get_staff_details($conn, $staff_id){
 		$query=mysqli_query($conn, "SELECT * FROM staff_tab WHERE staff_id='$staff_id'");

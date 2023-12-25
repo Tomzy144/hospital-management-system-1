@@ -1,3 +1,39 @@
+<?php include '../../backend/config/connection.php';?>
+<!-- ?php include '../../backend/dashboardconfig/session-validation.php';?> -->
+
+
+
+
+<?php
+ $doctor_id= $_POST['doctor_id'];
+?>
+
+
+
+
+
+<?php    
+    $fetch_doctor_profile=$callclass->_get_doctor_details($conn, $s_doctor_id);
+    $doctor_profile_array = json_decode($fetch_doctor_profile, true);
+    $fullname= $doctor_profile_array[0]['fullname'];
+    $email= $doctor_profile_array[0]['email'];
+    $phonenumber= $doctor_profile_array[0]['phonenumber'];
+   // $role_id= $doctor_profile_array[0]['role_id'];
+    $status_id= $doctor_profile_array[0]['status_id'];
+    $date= $doctor_profile_array[0]['date'];
+    $last_login= $doctor_profile_array[0]['last_login'];
+   $passport = $doctor_profile_array[0]["passport"];
+    
+        
+    $fetch_status=$callclass->_get_status_details($conn, $status_id);
+    $status_array = json_decode($fetch_status, true);
+    $status_name= $status_array[0]['status_name'];
+   
+?>
+ 
+<?php $page === "doctor_dash"?>
+
+
 
 
 
@@ -6,7 +42,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receptionist Dashboard</title>
+    <title>Doctor Dashboard</title>
     <link rel="stylesheet" href="./dashboard.css">
     <link rel="stylesheet" href='../awesome-font/css/font-awesome.min.css'>
 </head>

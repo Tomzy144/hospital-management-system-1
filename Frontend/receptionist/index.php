@@ -1,11 +1,14 @@
 <?php include '../../backend/config/connection.php';?>
-<?php include '../../backend/dashboardconfig/session-validation.php';?>
+
 
 
 
 
 <?php
  $staff_id= $_POST['staff_id'];
+
+
+
 ?>
 
 

@@ -1,14 +1,7 @@
 <?php include 'backend/config/connection.php'?>
 
+<!-- ?php include '../backend/dashboardconfig/session-validation.php';?> --> 
 
-
-<?php
-if($s_staff_id!=''&& $page = 'receptionist_dash'){
-?>
-    <script>
-	window.parent(location="frontend/receptionist/index.php");
-	</script>
-<?php }?>
 
 
 <!DOCTYPE html>
