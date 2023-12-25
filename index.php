@@ -1,9 +1,5 @@
 <?php include 'backend/config/connection.php'?>
 
-<!-- ?php include '../backend/dashboardconfig/session-validation.php';?> --> 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

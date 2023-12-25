@@ -1,19 +1,13 @@
 <?php include '../../backend/config/connection.php';?>
-
+<?php include '../../backend/dashboardconfig/session-validation.php';?>
+<?php include '../../backend/config/user-validation.php';?>
 
 
 
 
 <?php
  $staff_id= $_POST['staff_id'];
-
-
-
 ?>
-
-
-
-
 
 <?php    
     $fetch_staff_profile=$callclass->_get_user_details($conn, $s_staff_id);
@@ -56,9 +50,18 @@
     <title>Receptionist Dashboard</title>
     <link rel="stylesheet" href="./dashboard.css">
     <link rel="stylesheet" href='../awesome-font/css/font-awesome.min.css'>
+
+   
 </head>
 <body>
-
+<script>
+       if (window.history && window.history.pushState) {
+            window.history.pushState('forward', null,);
+            window.onpopstate = function () {
+                window.history.pushState('forward', null);
+            };
+        }
+    </script>
     <nav class="navbar">
 
     <button id='btn' onClick="patient_list()">Patient Lists</button>

@@ -29,13 +29,15 @@ const doctor_login_form = `
 
 
 <?php
-if($s_doctor_id!=''){
+if ($s_staff_id != '') {
 ?>
     <script>
-	window.parent(location="../frontend/doctor/");
-	</script>
-<?php }?>
+        window.location.href = "<?php echo $website_url?>/frontend/doctor";
+    </script>
+<?php
 
+}
+?>
 
 
     <div class="doctor-login hidden">
@@ -139,19 +141,19 @@ const recep_login_form = `
 <?php include '../backend/config/connection.php'?>
 
 
-
-
 <?php
-if($s_staff_id!=''&& $page = 'receptionist_dash'){
+if ($s_staff_id != '') {
 ?>
-<script>
-window.parent(location="../frontend/receptionist/");
-</script>
-<?php } else{
     <script>
-window.parent(location="<?php echo $website_url?>/");
-</script>
-}?>
+        window.location.href = "<?php echo $website_url?>/frontend/receptionist";
+    </script>
+<?php
+
+}
+?>
+
+
+
 
 
 

@@ -3,14 +3,29 @@
 
 
 <?php
-if($s_staff_id!=''){
+if ($s_staff_id != '') {
 ?>
     <script>
-	window.parent(location="dashboard.php");
-	</script>
-<?php }?>
+        window.location.href = "dashboard.php";
+    </script>
+<?php
+
+}
+?>
 
 
+
+<!-- ?php 
+// Start the session
+session_start();
+
+// Check if the user is already logged in
+if (isset($_SESSION['staff_id'])) {
+    // Redirect to the home page or another secure page
+    header("Location:dashboard.php");
+    exit();
+}
+?> -->
 
 
 
@@ -53,6 +68,7 @@ if($s_staff_id!=''){
     </div>
   </div>
 
+  
     <!-- <script src="signin-form-validation.js"></script> -->
     <script src="../../backend/js/scripts.js"></script>
     <script src="../../backend/js/jquery-v3.6.1.min.js"></script>

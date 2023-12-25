@@ -4,8 +4,6 @@
 
 
 
-
-
 <?php
  $staff_id= $_POST['staff_id'];
 ?>
@@ -42,6 +40,27 @@
 <!--Tomiwa font-->
 <link href="../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <title>Hospital management System</title>
+
+
+
+      <!-- <script>
+        // Function to be executed when the user leaves the page
+        window.onbeforeunload = function() {
+            // Perform an AJAX request to notify the server
+            // that the user is leaving the page
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'logout_script.php', false);
+            xhr.send();
+        };
+    </script> -->
+    <script>
+       if (window.history && window.history.pushState) {
+            window.history.pushState('forward', null,);
+            window.onpopstate = function () {
+                window.history.pushState('forward', null);
+            };
+        }
+    </script>
 </head>
 
 <body>
@@ -192,6 +211,7 @@
     </div>
     </div>
 </main>
+
 </div>
     <script src="js/dashboard.js"></script>
 </body>

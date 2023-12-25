@@ -1,38 +1,32 @@
 <?php include '../../backend/config/connection.php';?>
-<!-- ?php include '../../backend/dashboardconfig/session-validation.php';?> -->
-
+<?php include '../../config/doctor-session-validation.php';?>
 
 
 
 <?php
- $doctor_id= $_POST['doctor_id'];
+$doctor_id = $_POST['doctor_id'];
 ?>
-
-
-
-
 
 <?php    
-    $fetch_doctor_profile=$callclass->_get_doctor_details($conn, $s_doctor_id);
-    $doctor_profile_array = json_decode($fetch_doctor_profile, true);
-    $fullname= $doctor_profile_array[0]['fullname'];
-    $email= $doctor_profile_array[0]['email'];
-    $phonenumber= $doctor_profile_array[0]['phonenumber'];
-   // $role_id= $doctor_profile_array[0]['role_id'];
-    $status_id= $doctor_profile_array[0]['status_id'];
-    $date= $doctor_profile_array[0]['date'];
-    $last_login= $doctor_profile_array[0]['last_login'];
-   $passport = $doctor_profile_array[0]["passport"];
+$fetch_doctor_profile = $callclass->_get_doctor_details($conn, $s_doctor_id);
+$doctor_profile_array = json_decode($fetch_doctor_profile, true);
+$fullname = $doctor_profile_array[0]['fullname'];
+$email = $doctor_profile_array[0]['email'];
+$phonenumber = $doctor_profile_array[0]['phonenumber'];
+// $role_id= $doctor_profile_array[0]['role_id'];
+$status_id = $doctor_profile_array[0]['status_id'];
+$date = $doctor_profile_array[0]['date'];
+$last_login = $doctor_profile_array[0]['last_login'];
+$passport = $doctor_profile_array[0]["passport"];
     
-        
-    $fetch_status=$callclass->_get_status_details($conn, $status_id);
-    $status_array = json_decode($fetch_status, true);
-    $status_name= $status_array[0]['status_name'];
-   
+$fetch_status = $callclass->_get_status_details($conn, $status_id);
+$status_array = json_decode($fetch_status, true);
+$status_name = $status_array[0]['status_name'];
 ?>
- 
-<?php $page === "doctor_dash"?>
 
+<?php 
+$page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
+?>
 
 
 
@@ -47,7 +41,14 @@
     <link rel="stylesheet" href='../awesome-font/css/font-awesome.min.css'>
 </head>
 <body>
-
+<script>
+       if (window.history && window.history.pushState) {
+            window.history.pushState('forward', null,);
+            window.onpopstate = function () {
+                window.history.pushState('forward', null);
+            };
+        }
+    </script>
     <nav class="navbar">
         <div class="logo">
             <span style="font-size:2rem; color:#fff;">Doctor Dashboard</span>
