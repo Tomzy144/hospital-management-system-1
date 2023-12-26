@@ -113,13 +113,16 @@ const nurse_login_form = `
     <i class="fa fa-lock"></i>
     <input type="password" name="password" autoComplete='off'/> 
     </div>
-    <button type="button" class="btn">Login</button>
+    <button type="button" class="btn" onClick="isNurse_active()">Login</button>
     <form>
 </div>
 `
 log_inAll('nurse', nurse_login_form);
 
-
+const isNurse_active = ()=>{
+    let url="Frontend/nurse/index.php"
+    window.parent(location =(url))
+}
 
 //Receptionist Login;
 const open_recep_login_form = function(){
@@ -184,7 +187,10 @@ if ($s_staff_id != '') {
     <form>
 </div>
 
+    
 `
+
+
 log_inAll('recep', recep_login_form);
 
 //Lab Login
