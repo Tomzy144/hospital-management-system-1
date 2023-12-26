@@ -211,6 +211,40 @@ input{
     background-color: #fff;
     padding: 0.4rem;
 }
+.ward_container{
+    width: 100%;
+    height: fit-content;
+    margin: 1rem 0;
+    background-color: #fff;
+    padding: 0.4rem;
+}
+.bed_container{
+    width: 100%;
+    height: fit-content;
+    margin: 1rem 0;
+    background-color: #fff;
+    padding: 0.4rem;
+}
+.impatient_container{
+        width: 100%;
+        height: fit-content;
+        margin: 1rem 0;
+        background-color: #fff;
+        padding: 0.4rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+}
+.form_control{
+    display: flex;
+    flex-direction: column;
+}
+.form_control input{
+    width: 200px;
+    height: 100px;
+    border: 3px solid rgb(4 47 46);
+    margin: 1rem 0.5rem;
+}
 label{
     font-size: 18px;
 }
@@ -228,6 +262,7 @@ textarea{
     border: 3px solid rgb(4 47 46);
     border-radius: 3px;
     background-color: #fff;
+    outline: none;
 }
 #submit{
     width: 100%;

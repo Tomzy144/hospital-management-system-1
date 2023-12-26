@@ -20,7 +20,6 @@
     <i class="fa fa-times"></i>
     </div>
     <div class="checkbar">
-    <i class='fa fa-calendar-check-o active'></i>
     <i class='fa fa-envelope active'></i> 
     <i class='fa fa-user-circle-o active'></i>
     </div>
@@ -55,7 +54,36 @@
                 </div>
                 <div class="patient_info">
                     <span>Precious Joseph</span>
-                    <span>Admitted Tues 29 Nov, 2023 at 2.21pM, Born 20 Hune, 1990(age 54 years), Female</span>
+                    <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
+                    <!--Wards--->
+                    <div class="ward_container hidden">
+                        <label for="ward">Change Ward</label>
+                        <select name="ward" id="ward">
+                            <option value="ward_select"></option>
+                            <option value="ward_1">Ward 1</option>
+                            <option value="ward_2">Ward 2</option>
+                            <option value="ward_3">Ward 3</option>
+                            <option value="ward_4">Ward 4</option>
+                            <option value="ward_5">Ward 5</option>
+                            <option value="ward_6">Ward 6</option>
+                        </select>
+                        <button id="submit">Submit</button>
+                    </div>
+                    <!--Beds--->
+                    <div class="bed_container hidden">
+                        <label for="bed">Change Bed</label>
+                        <select name="bed" id="bed">
+                            <option value="bed_select"></option>
+                            <option value="bed_1">Bed 1</option>
+                            <option value="bed_2">Bed 2</option>
+                            <option value="bed_3">Bed 3</option>
+                            <option value="bed_4">Bed 4</option>
+                            <option value="bed_5">Bed 5</option>
+                            <option value="bed_6">Bed 6</option>
+                        </select>
+                        <button id="submit">Submit</button>
+                    </div>
+                    <!--Ward-- Round-->  
                     <div class="ward_round_container hidden">
                         <label for="stage">Stage</label>
                         <select name="stage" id="stage">
@@ -63,42 +91,111 @@
                             <option value="am">Am</option>
                             <option value="am">Pm</option>
                         </select>
-
                         <label for="note">WR Note</label>
                         <textarea name="note" id="note" cols="30" rows="10"></textarea>
                         <button id="submit">Submit</button>
                     </div>
-                    <div class="buttons">
-                    <button>Ward 6</button>
-                    <button>Bed 6</button>
-                    <button  id="ward_round_btn">Ward Round</button>
-                    <button>Inpatient Vitals</button>
-                    </div>
-                </div>
-            </div>
-            <div class="each_container">
-                <div class="number_container">
-                    2.
-                </div>
-                <div class="patient_info">
-                    <span>Mercy Obong James</span>
-                    <span>Admitted Tues 29 Nov, 2023 at 2.21pM, Born 20 Hune, 1990(age 54 years), Female</span>
-                    <div class="ward_round_container hidden">
-                        <label for="stage">Stage</label>
-                        <select name="stage" id="stage">
-                            <option value="no_selection"></option>
-                            <option value="am">Am</option>
-                            <option value="am">Pm</option>
-                        </select>
 
-                        <label for="note">WR Note</label>
-                        <textarea name="note" id="note" cols="30" rows="10"></textarea>
-                    </div>
+                    <div class="impatient_container hidden">
+                        <div class="form_control">
+              <label for="temperature">Temperature</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="temperature">Temperature</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="b/p">B/P(mm/HG)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="pulse">Pulse(bp/m)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="respiratory">Respiratory(cm)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="weight">Weight(kg)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="height">Height(cm)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="intake">Intake(m/s)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="output">Output(m/s)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="spo2">SPO2(%)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="bmi">BMI</label>
+              <input type="text">
+              </div>
+                     <div class="form_control">
+              <label for="body_fat">Body fat(%)</label>
+              <input type="text">
+              </div>
+              <div class="form_control">
+              <label for="muscle_mass">Muscle mass</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="musc">MUAC</label>
+              <input type="text">
+              </div>
+              <div class="form_control">
+              <label for="resting_metabolism">Restinng metabolism</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="body_age">Body age</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="bmi_for_age">BMI for age</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="visceral_fat">Visceral fat</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="head_circumference">Head circumference</label>
+              <input type="text">
+              </div>
+              <div class="form_control">
+              <label for="wfa">WFA</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="waist_circumference">Waist Circumference</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="hip_circumference">Hip Circumference</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="w_hr">W-HR</label>
+              <input type="text">
+              </div>
+              <button id="submit">Submit</button>
+                  </div>
                     <div class="buttons">
-                    <button>Ward 6</button>
-                    <button>Bed 6</button>
+                    <button id="ward_btn">Ward 6</button>
+                    <button id="bed_btn">Bed 6</button>
                     <button  id="ward_round_btn">Ward Round</button>
-                    <button>Inpatient Vitals</button>
+                    <button id="impatient_vital_btn">Inpatient Vitals</button>
                     </div>
                 </div>
             </div>
@@ -107,3 +204,8 @@
    <script src="nurse_section.js"></script>
 </body>
 </html>
+
+             
+            
+                    
+                  

@@ -27,7 +27,6 @@
     <i class="fa fa-times"></i>
     </div>
     <div class="checkbar">
-    <i class='fa fa-calendar-check-o active'></i>
     <i class='fa fa-envelope active'></i> 
     <i class='fa fa-user-circle-o active'></i>
     </div>

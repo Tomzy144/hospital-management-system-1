@@ -88,7 +88,7 @@
     <div class="container-dashboard">
         <button onclick="patientForm()">PATIENT ADMISSION FORM</button>
         <button onclick="appoimentBooking()">BOOKING APPOINTMENT SITTER</button>
-        <button onclick="surgicalChemistry()">SURGICAL CHEMESTRY</button>
+        <button onclick="surgicalChemistry()">PROCEDURE LIST</button>
     </div>
     </div>
     <script>
@@ -102,7 +102,7 @@
         }
 
         const surgicalChemistry = function(){
-            let url = 'surgical chemistry(surgery-booking)/index.html';
+            let url = 'surgical_chemistry(surgery-booking)/index.php';
             window.parent(location = (url));
         }
 

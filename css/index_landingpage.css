@@ -237,6 +237,7 @@ h2, p{
     border-bottom: 1px solid rgba(0, 61, 60, 0.9);
     text-indent: 25px;
     font-size:1.1rem;
+    outline: none;
 }
 .form-control input:focus{
     padding: 12px 0;
