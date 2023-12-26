@@ -2,7 +2,6 @@
 <?php include '../../config/doctor-session-validation.php';?>
 
 
-
 <?php
 $doctor_id = $_POST['doctor_id'];
 ?>
