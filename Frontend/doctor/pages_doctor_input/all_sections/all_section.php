@@ -14,7 +14,7 @@
     <i class="fa fa-long-arrow-left " id="back_arrow" onClick="back_arrow()"></i>
     <div class="logo">
         <!---Please you would manipulate this span base on the patient clicked-->
-        <span style="font-size:2rem; color:#fff;">PRECIOUS JOHN</span>
+        <span style="font-size:2rem; color:#fff;">Precious John</span>
     </div>
          </nav>
     <div class="sidebar">

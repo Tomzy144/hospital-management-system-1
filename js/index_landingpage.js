@@ -233,11 +233,16 @@ const lab_login_form = `
         <i class="fa fa-lock"></i>
         <input type="password" id="password" name="spass" autocomplete="off">
         </div>
-        <button type="button" id="login_btn" title="Login" onclick="_sign_in();"  class="btn">Login</button>
+        <button type="button" id="login_btn" title="Login" onclick="isLabDoc_active()"  class="btn">Login</button>
     <form>
 </div>
 `
 log_inAll('lab', lab_login_form);
+
+const isLabDoc_active = ()=>{
+    let url="Frontend/labouratory/index.php"
+    window.parent(location =(url))
+}
 
 //closeDarkBackground
 const dark_background = document.querySelector(".overlay")
