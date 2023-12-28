@@ -282,8 +282,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 //preloader
-
-
 const preloaderDuration = 2000; // 2 seconds
 
 // Wait for the window to load

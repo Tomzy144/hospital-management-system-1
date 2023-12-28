@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sidebar{
+    position: fixed;
+    width: 80px;
+    height: 100%;
+    background-color:rgb(4 47 46);
+    transition: 0.2s;
+    align-items: start;
+    z-index: 999;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    top: 0;
+    flex-direction: column;
+}
+
+.sidebar.active{
+    width: 300px;
+}
+.togglebar .fa-times{
+    display: none;
+    cursor: pointer;
+}
+
+
+.togglebar{
+    color: #fff;
+    margin-top: 12px;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.checkbar{
+    color: rgb(4 47 46);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    margin-top: 15rem;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.checkbar .fa{
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    margin: 2rem;
+    border: 8px solid transparent;
+    transition: 2s;
+    cursor: pointer;
+}
+.checkbar .fa.active{
+    transform: translateX(20px);
+    background-color: rgb(255, 255, 255) ;
+    padding: 0.5rem;
+}
+
+.checkbar .fa.active:hover{
+    background-color: rgb(4 47 46);
+    color: #ffffff;
+}
+
+.fa-bars{
+    padding: 1rem;
+    cursor: pointer;
+}
+.navbar{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: 70px;
+    z-index: 999;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    flex-direction: row;
+    background-color:rgb(4 47 46);
+} 
+#back_arrow{
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
+}
+h1{
+    color: #fff;
+    font-size: 2rem; 
+}
+.content{
+    width: 100%;
+    height: 1000px;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*LAB INPUT*/
+.lab_input{
+    width: 900px;
+}
+.labouratory_examination_section{
+width: 100%;
+background-color: rgb(4 47 46);
+color: #fff;
+padding: 1rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+cursor: pointer;
+}
+span{
+    font-size: 20px;
+}
+.clinical_chemistry, .immunoassay,.thyroid, .tumor, .blood, .food, .microbiology,.histopathology,.haematology{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(4 47 46);
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+#open_id_1, #close_id_1,
+#open_id_2, #close_id_2,
+#open_id_3, #close_id_3,
+#open_id_4, #close_id_4,
+#open_id_5, #close_id_5,
+#open_id_6, #close_id_6,
+#open_id_7, #close_id_7,
+#open_id_8, #close_id_8,
+#open_id_9, #close_id_9{
+    color: #fff;
+    font-size: 20px;
+}
+#close_id_1, #close_id_2, #close_id_3,#close_id_4, #close_id_5,#close_id_6,#close_id_7, #close_id_8, #close_id_9{
+    display: none;
+}
+.form1,.form2, .form3, .form4, .form5, .form6,.form7,.form8,.form9{
+    width: 100%;
+    background-color: rgb(0, 123, 121);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+.form_control{
+    width: 300px;
+    color: #fff;
+    font-size: 18px;
+    padding: 0.4rem 1rem;
+    margin: 0.5rem 0;
+}
+#btn{
+    width: 100%;
+    background-color: rgb(0, 123, 121); 
+    height: fit-content;
+    padding: 1rem;
+    border: none;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#btn:hover{
+    background-color: rgb(4 47 46);
+    color: #ffffff;
+}
+.hidden{
+    display: none;
+}

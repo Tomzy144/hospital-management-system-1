@@ -246,7 +246,7 @@
     }
 
     function lab_page_for_this_patient(){
-        let url ='lab_page_input/lap_input.php';
+        let url ='lab_page_input/lab_input.php';
         window.parent(location = (url));
     }
 </script>
