@@ -146,7 +146,7 @@ span{
     color: #fff;
     font-size: 20px;
 }
-#close_id_1, #close_id_2, #close_id_3,#close_id_4, #close_id_5,#close_id_6,#close_id_7, #close_id_8, #close_id_9{
+#close_id_1, #close_id_2, #close_id_3, #close_id_4,  #close_id_5, #close_id_6, #close_id_7, #close_id_8, #close_id_9{
     display: none;
 }
 .form1,.form2, .form3, .form4, .form5, .form6,.form7,.form8,.form9{
@@ -155,6 +155,7 @@ span{
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
 }
 .form_control{
     width: 300px;

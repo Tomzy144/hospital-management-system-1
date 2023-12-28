@@ -35,8 +35,8 @@ const form1 = document.querySelector(".form1");
 
 immunoassay_section.addEventListener("click",()=>{
     form1.classList.toggle("hidden");
-    immunoassay_open_icon1.style.display = "block";
-    immunoassay_close_icon1.style.display = "none";
+    immunoassay_open_icon1.style.display = "none";
+    immunoassay_close_icon1.style.display = "block";
     if(form1.classList.contains("hidden")){
         immunoassay_close_icon1.style.display = "none";
         immunoassay_open_icon1.style.display = "block";
@@ -51,8 +51,8 @@ const form2 = document.querySelector(".form2");
 
 clinical_chemistry_section.addEventListener("click",()=>{
     form2.classList.toggle("hidden");
-    clinical_chemistry_open_icon1.style.display = "block";
-    clinical_chemistry_close_icon1.style.display = "none";
+    clinical_chemistry_open_icon1.style.display = "none";
+    clinical_chemistry_close_icon1.style.display = "block";
     if(form2.classList.contains("hidden")){
         clinical_chemistry_close_icon1.style.display = "none";
         clinical_chemistry_open_icon1.style.display = "block";
@@ -66,8 +66,8 @@ const form3 = document.querySelector(".form3");
 
 thyroid_section.addEventListener("click",()=>{
     form3.classList.toggle("hidden");
-    thyroid_open_icon1.style.display = "block";
-    thyroid_close_icon1.style.display = "none";
+    thyroid_open_icon1.style.display = "none";
+    thyroid_close_icon1.style.display = "block";
     if(form3.classList.contains("hidden")){
         thyroid_close_icon1.style.display = "none";
         thyroid_open_icon1.style.display = "block";
@@ -82,8 +82,8 @@ const form4 = document.querySelector(".form4");
 
 tumor_section.addEventListener("click",()=>{
     form4.classList.toggle("hidden");
-    tumor_open_icon1.style.display = "block";
-    tumor_close_icon1.style.display = "none";
+    tumor_open_icon1.style.display = "none";
+    tumor_close_icon1.style.display = "block";
     if(form4.classList.contains("hidden")){
         tumor_close_icon1.style.display = "none";
         tumor_open_icon1.style.display = "block";
@@ -98,8 +98,8 @@ const form5 = document.querySelector(".form5");
 
 blood_section.addEventListener("click",()=>{
     form5.classList.toggle("hidden");
-    blood_open_icon1.style.display = "block";
-    blood_close_icon1.style.display = "none";
+    blood_open_icon1.style.display = "none";
+    blood_close_icon1.style.display = "block";
     if(form5.classList.contains("hidden")){
         blood_close_icon1.style.display = "none";
         blood_open_icon1.style.display = "block";
@@ -113,8 +113,8 @@ const form6 = document.querySelector(".form6");
 
 food_section.addEventListener("click",()=>{
     form6.classList.toggle("hidden");
-    food_open_icon1.style.display = "block";
-    food_close_icon1.style.display = "none";
+    food_open_icon1.style.display = "none";
+    food_close_icon1.style.display = "block";
     if(form6.classList.contains("hidden")){
         food_close_icon1.style.display = "none";
         food_open_icon1.style.display = "block";
@@ -129,8 +129,8 @@ const form7= document.querySelector(".form7");
 
 microbiology_section.addEventListener("click",()=>{
     form7.classList.toggle("hidden");
-    microbiology_open_icon1.style.display = "block";
-    microbiology_close_icon1.style.display = "none";
+    microbiology_open_icon1.style.display = "none";
+    microbiology_close_icon1.style.display = "block";
     if(form7.classList.contains("hidden")){
         microbiology_close_icon1.style.display = "none";
         microbiology_open_icon1.style.display = "block";
@@ -145,8 +145,8 @@ const form8= document.querySelector(".form8");
 
 histopathology_section.addEventListener("click",()=>{
     form8.classList.toggle("hidden");
-    histopathology_open_icon1.style.display = "block";
-    histopathology_close_icon1.style.display = "none";
+    histopathology_open_icon1.style.display = "none";
+    histopathology_close_icon1.style.display = "block";
     if(form8.classList.contains("hidden")){
         histopathology_close_icon1.style.display = "none";
         histopathology_open_icon1.style.display = "block";
@@ -160,8 +160,8 @@ const form9= document.querySelector(".form9");
 
 haematology_section.addEventListener("click",()=>{
     form9.classList.toggle("hidden");
-    haematology_open_icon1.style.display = "block";
-    haematology_close_icon1.style.display = "none";
+    haematology_open_icon1.style.display = "none";
+    haematology_close_icon1.style.display = "block";
     if(form9.classList.contains("hidden")){
         haematology_close_icon1.style.display = "none";
         haematology_open_icon1.style.display = "block";

@@ -7,6 +7,10 @@
 </head>
 <link rel="stylesheet" href="lab_input.css">
 <link rel="stylesheet" href="../../awesome-font/css/font-awesome.min.css">
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
 <body>
 <nav class="navbar">
 <i class="fa fa-long-arrow-left " id="back_arrow" onClick="back_arrow()"></i>

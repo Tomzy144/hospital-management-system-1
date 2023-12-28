@@ -22,6 +22,7 @@
     font-size: 2rem;
     font-family: var(--font-family);
     margin: 0 auto;
+    animation: zoomIn 1s ease-in-out;
 }
 .div-logo a{
     color: var(--white);
@@ -67,6 +68,7 @@
     color: var(--white);
     text-decoration:none !important;;
     font-family: var(--font-family);
+    animation: zoomIn 1s ease-in-out;
     
 }
 .toggle{
@@ -96,6 +98,7 @@
 }
 .items {
     list-style-type:none;
+    animation: zoomIn 1s ease-in-out;
     margin: 1.2rem 1rem;
     font-size: var(--icons-size);
     width: 100%;
@@ -131,6 +134,7 @@ i:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: zoomIn 1s ease-in-out;
 }
 h1{
     color: var(--light-green);

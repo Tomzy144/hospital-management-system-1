@@ -45,6 +45,7 @@ h1{
 main{
   width: 100%;
   padding: 5rem;
+  animation: lightSpeedInRight 2s ease-in-out 1.3s;
 }
 .btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab{
    background:none;
@@ -118,6 +119,7 @@ h2, p{
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    animation: zoomIn 1s ease-in-out;
 }
 /*Nurse Login*/
 .nurse-login{
@@ -134,6 +136,7 @@ h2, p{
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    animation: zoomIn 1s ease-in-out;
 }
 
 
@@ -151,6 +154,7 @@ h2, p{
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    animation: zoomIn 1s ease-in-out;
 }
 
 /*Lab Login*/
@@ -168,6 +172,7 @@ h2, p{
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    animation: zoomIn 1s ease-in-out;
 }
 
 .hidden{

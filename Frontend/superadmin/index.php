@@ -38,6 +38,10 @@ if (isset($_SESSION['staff_id'])) {
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="Frontend/superadmin/Images/1282798.jpg">
     <link rel="stylesheet" href="../awesome-font/css/font-awesome.min.css">
+    <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
     <title>SignIn</title>
 
 </head>
