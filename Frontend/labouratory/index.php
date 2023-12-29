@@ -31,6 +31,7 @@
    <div class="contents">
     <div class="container-dashboard">
         <button onclick="patient_list()">PATIENT LIST</button>
+        <button onclick="patient_list()"> LIST</button>
     </div>
     </div>
     <script>
