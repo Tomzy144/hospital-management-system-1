@@ -80,7 +80,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <button class="signIn"  onclick="document.getElementById('logoutform').submit();"><i class="fa fa-sign-out"></i></button>
         </form>
 </div>
-
+<div class="contents">
 <nav class="sidebar" id="sidebar" >
     <div class="profile_container">
     <div class="profile" onClick="show_profile_upload()"></div>
@@ -140,7 +140,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <span class="lists hide">Wards & Beds</span>
             </li>
         </ul>
-    </div>
 </nav>
 <main>
     <div class="container">
@@ -215,6 +214,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     </div>
     </div>
 </main>
+</div>
     <script src="js/dashboard.js"></script>
 </body>
 </html>
