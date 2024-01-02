@@ -39,6 +39,10 @@
     z-index: 999;
     top: 0;
 }
+#open-toggle{
+    color: #fff;
+    font-size: 35px;
+}
 .signIn{
     margin-right: 3rem;
     padding: 0.4rem;
@@ -53,14 +57,17 @@
 }
 .sidebar{
     position: fixed;
-    width: 300px;
+    width: fit-content;
     z-index: 998;
-    height: auto;
-    padding: 1.2rem;
+    height: 100%;
+    padding: 1rem 2.5rem;
     top: 2rem;
     background:rgb(0, 158, 251);;
 }
 
+.sidebar.active{
+    background-color: rgb(0, 82, 101);
+}
 .sidebar a{
     color: var(--white);
     text-decoration:none !important;;
@@ -73,11 +80,6 @@
     cursor:pointer;
 }
 
-.close-toggle{
-    position: relative;
-    cursor:pointer;
-    margin-left: 200px;
-}
 .profile_container{
     display: flex;
     flex-direction: column;
@@ -86,18 +88,66 @@
     margin: 0 auto;
 }
 .profile{
-    border-radius: 100%;
-    width: 130px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    width: 100px;
     cursor: pointer;
-    height: 130px;
+    height: 100px;
+    margin-top: 2rem;
     background-image: url(../../Images/4802073.jpg);
-    border: 6px  solid #fff;
+    border: 3px  solid #fff;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 .profile_container span{
     color: #fff;
+}
+.display_profile_container{
+width: 400px;
+background:rgb(0, 158, 251);
+position: absolute;
+top: 10%;
+left: 100%;
+height:auto;
+border-top-right-radius: 30px;
+padding: 1rem 2rem;
+border-bottom-left-radius: 30px;
+border-top-left-radius: 30px;
+border: 2px solid #fff;
+color: #fff;
+animation: zoomIn 1s ease-in-out;
+}
+.flexs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.flexs img{
+    width: 100%;
+    border-radius: 30px;
+    height: 300px;
+}
+.flexs h1{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.profile_btn{
+    margin: 2rem;
+    background:none;
+    width: 100%;
+    cursor: pointer;
+    border: 3px solid rgb(255, 255, 255);
+    padding: 1rem 0;
+    border-radius: 20px;
+    color: #fff;
+}
+.profile_btn:hover{
+background-color:#fff;
+color: black;
 }
 .menu-content{
     position: relative;
@@ -109,8 +159,8 @@
 .menu-items{
     display: flex;
     width: 100%;
-   justify-content: safe;
-   align-items: safe;
+   justify-content: right;
+   align-items: start;
     flex-direction: column;
    
 }
@@ -119,7 +169,7 @@
     animation: zoomIn 1s ease-in-out;
     margin: 1.2rem 1rem;
     font-size: var(--icons-size);
-    width: 100%;
+    width:fit-content;
     cursor: pointer;
     font-size: 18px;
     color: #ffffff;
@@ -132,18 +182,10 @@
    color: #fff;
 }
 
-.items a:hover{
-    color: #ffffff;
-}
-i{
-    color: var(--white); 
-    font-size: 15px;
-}
 
-i:hover{
-    color: #ffffff;
+.hide{
+    display: none;
 }
-
 .container{
     width:100%;
     margin-top: 10rem;

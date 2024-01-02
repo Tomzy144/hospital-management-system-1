@@ -82,59 +82,62 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 </div>
 
 <nav class="sidebar" id="sidebar" >
-    <div class="menu-content">  
-        <div class="close-toggle" id="close-toggle">
-        <i class="fa fa-times"></i>  
-    </div>
     <div class="profile_container">
-    <div class="profile"></div>
-        <span>Doctor Sam</span>
-        <span>Admin</span>
+    <div class="profile" onClick="show_profile_upload()"></div>
+        <span>DOCTOR SAM</span>
+        <span>ADMIN</span>
+    </div>
+    <div class="display_profile_container hide">
+        <div class="flexs">
+        <img src="../Images/4802073.jpg" alt="">
+        <h1>DOCTOR SAM</h1>
+        <button class="profile_btn">UPLOAD PASSPORT</button>
+        </div>
     </div>
         <ul class="menu-items">
             <li class="items" onClick='openPatientsList()'>
-                <i class="fa fa-user"></i>
-               Patients
+                <i class="fa fa-user" id="sidebar_icons"></i>
+              <span class="lists hide">Patients</span> 
             </li>
             <li class="items" onClick='openDoctorPage()'>
-            <i class="fa fa-user-md"></i>
-                Doctor
+            <i class="fa fa-user-md" id="sidebar_icons"></i>
+               <span class="lists hide">Doctor</span> 
             </li>
             <li class="items" onClick='openNursePage()'>
-                <i class="fa fa-user-md"></i>
-                Nurse
+                <i class="fa fa-user-md" id="sidebar_icons"></i>
+                <span class="lists hide">Nurse</span>
             </li>
             <li class="items" onClick='openPharmacyPage()'>
-                <i class="fa fa-plus-square "></i>
-                Phamacy
+                <i class="fa fa-plus-square" id="sidebar_icons"></i>
+              <span class="lists hide">Phamacy</span>  
             </li>
             <li class="items" onClick='openLabPage()'>
-                <i class="fa fa-flask"></i>
-                Labouratory
+                <i class="fa fa-flask" id="sidebar_icons"></i>
+              <span class="lists hide">Labouratory</span>  
             </li>
             <li class="items" onClick='openPrecedurePage()'>
-                <i class="fa fa-hospital-o"></i> 
-                Precedures
+                <i class="fa fa-hospital-o" id="sidebar_icons"></i> 
+               <span class="lists hide">Precedures</span> 
             </li>
             <li class="items"  onClick='openFinancePage()'>
-               <i class="fa fa-money "></i> 
-                Finance
+               <i class="fa fa-money" id="sidebar_icons"></i> 
+                <span class="lists hide">Finance</span>
             </li>
             <li class="items" onClick='openRecepPage()'>
-                <i class="fa fa-user-circle-o"></i>
-                Receptionist
+                <i class="fa fa-user-circle-o" id="sidebar_icons"></i>
+                <span class="lists hide">Receptionist</span>
             </li>
             <li class="items" onClick='openPhysiotherapyPage()'>
-                <i class="fa fa-stethoscope"></i>
-                Physiotherapy
+                <i class="fa fa-stethoscope" id="sidebar_icons"></i>
+               <span class="lists hide">Physiotherapy</span> 
             </li>
             <li class="items" onClick='openStaffPage()'>
-                <i class="fa fa-users"></i> 
-                Staffs
+                <i class="fa fa-users" id="sidebar_icons"></i> 
+                <span class="lists hide">Staffs</span>
             </li>
             <li class="items" onClick='openWardBed()'>
-                <i class="fa fa-bed"></i>
-                Wards & Beds
+                <i class="fa fa-bed" id="sidebar_icons"></i>
+                <span class="lists hide">Wards & Beds</span>
             </li>
         </ul>
     </div>

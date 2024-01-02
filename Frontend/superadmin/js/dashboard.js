@@ -6,39 +6,48 @@ const closeToggleSidebar = document.getElementById("close-toggle");
 
 
 //making the sidebar to be invisible
-sidebar.style.left = "-300px"
+// sidebar.style.left = "fit-content"
 
 
 //this helps the toggle the sidebar open
+const sidebar_icons =()=>{
+    const sidebarIcon = document.querySelectorAll("#sidebar_icons")
+    for(let i =0; i < sidebarIcon.length; i++) {
+      sidebarIcon[i].style.fontSize = "50px"
+    }
+}
+sidebar_icons()
+
 openToggleSidebar.addEventListener("click", function(){
-    const sidebar = document.getElementById("sidebar");
-    if (sidebar.style.left === "-300px"){
-        sidebar.style.left = "0px";
-    }else{
-        sidebar.style.left ="0px"
-    }
+    const sidebar = document.querySelector(".sidebar");
+    const spanText = document.querySelectorAll(".lists")
+  sidebar.classList.toggle("active");
+    if(sidebar.classList.contains("active")){
+        const spanText = document.querySelectorAll(".lists")
+        for(let n =0; n<spanText.length; n++)
+    spanText[n].classList.remove("hide")
 
+    const sidebarIcon = document.querySelectorAll("#sidebar_icons")
+    for(let i =0; i < sidebarIcon.length; i++) {
+      sidebarIcon[i].style.fontSize = "20px"
+    }
+    }else{
+        const spanText = document.querySelectorAll(".lists")
+        for(let n =0; n<spanText.length; n++)
+    spanText[n].classList.add("hide")
+
+    const sidebarIcon = document.querySelectorAll("#sidebar_icons")
+    for(let i =0; i < sidebarIcon.length; i++) {
+      sidebarIcon[i].style.fontSize = "50px"
+    }
+    }
 })
 
-//this helps the toggle the sidebar open
-closeToggleSidebar.addEventListener("click", function(){
-    const sidebar = document.getElementById("sidebar");
-    if(sidebar.style.left === "-300px"){
-        sidebar.style.left ="0px"
-    }else{
-        sidebar.style.left ="-300px"
-    }
 
-})
-// function transitionContent() {
-//     document.body.style.opacity = '1'; /* Set opacity to 1 for the body */
-//     const pageContent = document.querySelector('.contents');
-//     pageContent.style.transform = 'translate(-0, -65%)'; /* Move in from the right */
-//     pageContent.style.width = '100%'; /* Change the width, adjust as needed */
-//   }
-  
-//   window.onload = transitionContent;
-  
+const show_profile_upload = ()=>{
+    const profile_container = document.querySelector(".display_profile_container");
+    profile_container.classList.toggle("hide")
+}
 
 
 //patient page redirect

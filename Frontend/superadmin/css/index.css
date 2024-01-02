@@ -32,7 +32,10 @@
     color: #ffffff;
     width: 100%;
     height: 100vh;
-    background:linear-gradient(-12deg, rgb(100, 227, 255) 0px, rgb(42, 87, 215) 100%) !important;
+    background-image:linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(../../Images/scott-graham-OQMZwNd3ThU-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     justify-content: center;
     align-items: center;
     display: flex;
