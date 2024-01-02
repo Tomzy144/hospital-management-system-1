@@ -101,7 +101,7 @@
     cursor: pointer;
     height: 100px;
     margin-top: 2rem;
-    background-image: url(../../Images/4802073.jpg);
+    background-image: url(../../Images/doctor-offering-medical-teleconsultation.jpg);
     border: 3px  solid #fff;
     background-position: center;
     background-size: cover;
@@ -115,16 +115,16 @@
 width: 400px;
 background:rgb(0, 158, 251);
 position: absolute;
-top: 10%;
+top:0;
 left: 100%;
 height:auto;
-border-top-right-radius: 30px;
-padding: 1rem 2rem;
-border-bottom-left-radius: 30px;
-border-top-left-radius: 30px;
-border: 2px solid #fff;
+padding: 2rem 2rem;
+border-bottom-right-radius: 30px;
 color: #fff;
 animation: zoomIn 1s ease-in-out;
+}
+.display_profile_container.change_color{
+    background-color: rgb(0, 82, 101);
 }
 .flexs{
     width: 100%;
@@ -142,6 +142,7 @@ animation: zoomIn 1s ease-in-out;
     font-size: 30px;
     color: rgb(255, 255, 255);
     text-align: center;
+    margin: 1rem 0;
 }
 .profile_btn{
     margin: 2rem;
@@ -179,7 +180,7 @@ color: black;
     font-size: var(--icons-size);
     width:100%;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 30px;
     color: #ffffff;
 }
 

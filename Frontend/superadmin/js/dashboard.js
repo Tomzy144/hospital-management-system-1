@@ -29,7 +29,7 @@ openToggleSidebar.addEventListener("click", function(){
 
     const sidebarIcon = document.querySelectorAll("#sidebar_icons")
     for(let i =0; i < sidebarIcon.length; i++) {
-      sidebarIcon[i].style.fontSize = "20px"
+      sidebarIcon[i].style.fontSize = "30px"
     }
     }else{
         const spanText = document.querySelectorAll(".lists")
@@ -41,6 +41,13 @@ openToggleSidebar.addEventListener("click", function(){
       sidebarIcon[i].style.fontSize = "50px"
     }
     }
+    const profile_container = document.querySelector(".display_profile_container");
+    profile_container.classList.toggle("change_color");
+
+    // if(profile_container.classList.contains("change_color")){
+    //     profile_container.classList.remove("change_color")
+    // }
+
 })
 
 

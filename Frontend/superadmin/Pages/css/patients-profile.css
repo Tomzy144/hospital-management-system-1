@@ -1,9 +1,4 @@
-:root{
-    --deep-green: rgb(4 47 46);
-    --light-blue:#09529b;
-    --white:#ffffff;
-    --light-green:#0c9aae;
-}
+
 
 *{
     margin: 0;
@@ -12,22 +7,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.patient-container{
-    width: 100%;
-    height: 100vh;
-    max-width: 100%;
-    background-color:var(--white);
-    position: sticky;
-    z-index: 8;
-    top: 0;
-}
 h2{
     color: #ffffff;
     text-align: center;
     font-size: 21px;
 }
 .patient-navbar{
-    background-color:var(--deep-green);
+    background:linear-gradient(-12deg, rgb(100, 227, 255) 0px, rgb(42, 87, 215) 100%);
     height: 60px;
     width: 100%;
     display: flex;
@@ -46,204 +32,61 @@ h2{
     cursor: pointer;
     font-size: 1.7rem;
 }
-.nav-menu{
-    width:100%;
-    height: 8vh;
-    max-width: 100%;
-    border-bottom: 1px solid rgb(200, 195, 195);
-    display: flex;
-    margin: 4rem 0;
-    justify-content: left;
-    align-items: center;
-}
-.menu-items{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-}
-.items {
-    text-decoration: none;
-    margin: 0 0.4rem;
-    display: flex;
-    color: #ffffff;
-    font-size: 1rem;
-    background-color:var(--deep-green);
-    padding: 0.5rem;
-}
-a{
-    text-decoration: none;
-}
-h5{
-    color: #fff;
-}
-h4{
-    color: rgb(0, 0, 0);
+.content{
+    width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container-timer{
     width: 100%;
     max-width: 300px;
     text-align: center;
-    margin: 6rem auto;
+    margin: 0 auto;
 }
 .timer-box-content{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 10em;
     align-items: center;
+    
 }
 .timer-box{
     padding: 0.2rem 0.5rem;
-    background-color:var(--deep-green);
+    background-color:rgb(0, 0, 0);
     margin: 0 4px;
-    color: #fff;
+    color: #ffffff;
     font-size: 23px;
     border: none;
     border-bottom-right-radius: 19px;
 }
 .timer-text{
-    color: rgb(176, 170, 170);
+    color: rgb(0, 0, 0);
     font-size: 18px;
 }
-.accordion-container{
-    width: 100%;
-    max-width: 80%;
-    height: fit-content;
-    margin: 0 auto;
-    position: sticky;
-    z-index: 1;
-    top: 0;
+.all_input{
+    width: 900px;
 }
-.flex-container-for-click1{
+.patient_info{
     display: flex;
     padding: 1rem;
-    background-color: var(--light-green);
+    background:linear-gradient(-12deg, rgb(100, 227, 255) 0px, rgb(42, 87, 215) 100%);
     color: #fff;
     justify-content: space-between;
     font-size: 20px;
+    cursor: pointer;
     margin: 2rem 0;
-    width: 700px;
-    border: none !important;
-}
-
-.flex-container-for-click2{
-    display: flex;
-    padding: 1rem;
-    background-color:  var(--light-blue);
-    color: #fff;
-    justify-content: space-between;
-    font-size: 20px;
-    margin: 2rem 0;
-    width: 700px;
-    border: none !important;
-}
-.flex-container-for-click3{
-    display: flex;
-    padding: 1rem;
-    background-color:  var(--deep-green);
-    color: #fff;
-    justify-content: space-between;
-    font-size: 20px;
-    margin: 2rem 0;
-    width: 700px;
-    border: none !important;
-}
-.accordion{
     width: 100%;
-    height: 300px;
-    background-color: var(--deep-green);
-}
-#close-accordion-one, #close-accordion-two, #close-accordion-three,#close-accordion-four,#close-accordion-five,#close-accordion-six,#close-accordion-seven,#close-accordion-eight,#close-accordion-nine,#close-accordion-ten,#close-accordion-eleven{
-    display: none;
+    border: none;
 }
 
-#click-close-button-accordion1, #click-close-button-accordion2,#click-close-button-accordion3{
+#info_close{
     display: none;
 }
-
-.hide{
-    display: none;
-}
-.accordion-dropdown{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color:var(--deep-green);
-    padding: 0.7rem;
-    color: #fff;
-    margin: 2rem 0;
-    transition: all ease-in;
-    transition-duration: 2s;
-}
-
-.hidden{
-    display: none;
-}
-.vital-container{
-    box-shadow: rgba(173, 172, 172, 0.35) 0px 5px 15px;
-    height: fit-content;
-    width: 100%;
-    padding: 1rem;
-}
-.impatient-vital-info-dropdown{
-    display: flex;
-    padding: 1rem;
-    background-color: #fff;
-    width: 100%;
-    justify-content: space-between;
-    color: #0c9aae;
-    margin: 1rem 0;
-}
-.outpatient-vital-info-dropdown{
-    display: flex;
-    padding: 1rem;
-    background-color: #fff;
-    width: 100%;
-    justify-content: space-between;
-    color: var(--light-green);
-    margin: 1rem 0;
-}
-.impatient-accordion{
-    background-color: #fff;
-    box-shadow: rgba(173, 172, 172, 0.35) 0px 5px 15px;
-    width: fit-content;
-    height: 200px;
-    margin: 1rem 0;
-}
-.outpatient-accordion{
-    background-color: #fff;
-    box-shadow: rgba(173, 172, 172, 0.35) 0px 5px 15px;
-    width: fit-content;
-    height: 300px;
-    margin: 1rem 0;
-}
-.hide-impatient{
-    display: none;
-}
-.hide-outpatient{
-    display: none;
-}
-table{
-    background-color: none;
-    padding: 2rem;
-    margin: 0 auto;
-    color: #fff;
-    font-size: 15px;
-    }
-
-    table th{
-        padding: 0.9rem;
-        background-color: var(--light-green);
-    }
-    table td{
-        padding: 0.6rem;
-        background-color: var(--deep-green);
-        text-align: center;
-    }
-
     .info-accordion{
-        width: 50%;
+        width:100%;
         height: fit-content;
         box-shadow: rgba(173, 172, 172, 0.35) 0px 5px 15px;
         color: var(--deep-green);
@@ -260,26 +103,3 @@ table{
     .info-hidden{
         display: none;
     }
-
-#close-dropdown-vital1, #close-dropdown-vital2{
-   display: none; 
-}
-#open-accordion-one, #close-accordion-one, 
-#open-accordion-two, #close-accordion-two, 
-#open-accordion-three, #close-accordion-three,
-#open-accordion-four, #close-accordion-four,
-#open-accordion-five, #close-accordion-five,
-#open-accordion-six, #close-accordion-six,
-#open-accordion-seven, #close-accordion-seven,
-#open-accordion-eight, #close-accordion-eight,
-#open-accordion-nine, #close-accordion-nine,
-#open-accordion-ten, #close-accordion-ten,
-#open-accordion-eleven, #close-accordion-eleven,
-#click-open-button-accordion1, #click-close-button-accordion1,
-#click-open-button-accordion2, #click-close-button-accordion2,
-#click-open-button-accordion3, #click-close-button-accordion3,
-#open-dropdown-vital1,#close-dropdown-vital1,
-#open-dropdown-vital2,#close-dropdown-vital2
-{
-    cursor: pointer;
-}

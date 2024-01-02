@@ -89,7 +89,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     </div>
     <div class="display_profile_container hide">
         <div class="flexs">
-        <img src="../Images/4802073.jpg" alt="">
+        <img src="../Images/doctor-offering-medical-teleconsultation.jpg" alt="">
         <h1>DOCTOR SAM</h1>
         <button class="profile_btn">UPLOAD PASSPORT</button>
         </div>
