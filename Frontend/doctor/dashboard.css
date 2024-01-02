@@ -4,27 +4,32 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-body {
-    margin: 0;
-    overflow-x: hidden;
-    /* background-color: #ff9999; */
-    transition: background-color 0.5s;
-    opacity: 100%; /* Set initial opacity to 0 for the entire body */
-    transition: opacity 0.5s ease-out; /* Add fade-in transition for opacity */
-}
 .navbar{
-    width: 100%;
-    height: 100px;
-    background-color: rgb(255, 255, 255);
     display: flex;
+    width: 100%;
+    justify-content: space-around;
     align-items: center;
-    box-shadow: 0 3rem 5rem rgba(231, 229, 229, 0.3);
-}
-h1{
-    margin-left: 12rem;
-    color: rgb(4 47 46);
-}
+    position: fixed;
+    height: 60px;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    flex-direction: row;
+    background-color:rgb(4 47 46);
+} 
 
+h1{
+    color: #fff;
+    font-size: 2rem; 
+}
+.log_out_form{
+    width: fit-content;
+}
+#sign-out{
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
 .sidebar{
     position: fixed;
     width: 80px;
@@ -37,17 +42,21 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     top: 0;
+    left: 0;
     flex-direction: column;
 }
-
-.sidebar.active{
+#back_arrow{
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
+}
+.sidebar.active_toggle{
     width: 300px;
 }
 .togglebar .fa-times{
     display: none;
     cursor: pointer;
 }
-
 
 .togglebar{
     color: #fff;
@@ -97,70 +106,508 @@ h1{
     padding: 1rem;
     cursor: pointer;
 }
-.navbar{
+.container{
+    width: 100%;
+    height: 500px;
+    margin: 10rem 0;
+}
+.contents{
+    width:80%;
+    height:400px;
+    margin: 0 auto;
+    background-color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(203, 201, 201, 0.19) 0px 10px 20px, rgba(182, 180, 180, 0.23) 0px 6px 6px;
+}
+.head-sec{
     display: flex;
     width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    height: 80px;
     flex-direction: row;
-    background-color:rgb(4 47 46);
-} 
-
-h1{
-    color: #fff;
-    font-size: 2rem; 
+    align-items: center;
+    padding: 1rem 0;
+    background-color: #ebefef;
+    justify-content: space-between;
 }
-#sign-out{
-    font-size: 30px;
-    color: #fff;
+span{
+    font-size: 20px;
+    padding: 0 1rem;
+}
+.appoitment_input_control{
+    position: relative;
+}
+.appoitment_input{
+    padding: 1rem 2rem;
+    margin-right: 1rem;
+    border: none;
+    outline: none;
+}
+input:focus{
+    border:3px solid rgb(4 47 46);
+}
+#search-icon{
+    position: absolute;
+    top: 32%;
+    right: 15%;
+    color: #d6cfcf;
     cursor: pointer;
-  }
+}
+.body_sec{
+    width: 100%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+table{
+    width: 100%;
+    text-align: center;
+}
+table thead{
+    background-color: rgb(4 47 46);
+    color: #fff;
+    height: 70px;
+    padding: 1rem;
+}
+table .a_1{
+    background-color: rgb(0, 123, 121);
+    height: 70px;
+    color: #fff;
+}
+table .a_2{
+    background-color: #ebefef;
+    height: 70px;
+    color: #000000;
+}
+button{
+    width: 140px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+.hide{
+    display: none;;
+}
 
-.container-dashboard{
-    background-color: #ffffff;
-    width: 1000px;
-    color: black;
-    height: 100%;
-    flex-wrap: wrap;
-    margin: 25rem auto;
+/*Doctor Inputs */
+
+.all_sections_input{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    color: #fff;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+/*Start of the complaints Section*/
+.complain_dropdown{
+    width: 100%;
     display: flex;
-    flex-direction: row !important;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(4 47 46);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#complaint_icon_minus{
+    display: none;
+}
+.complaint-section{
+    width: 100%;
+    height: fit-content;;
+    background-color: rgb(0, 123, 121); 
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
 }
-button{
-   margin: 1rem 3rem;
-   border: none;
-   padding: 1rem;
-   box-shadow: 0 3rem 5rem rgba(230, 227, 227, 0.3);
-   background-color: rgb(4 47 46);
-   color: #fff;
-   cursor: pointer;
-   transition:all ease-in-out 0.5s;
-   font-size: 24px;
+form{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-button:hover{
-    background-color: #fff;
-    border: 1px solid rgb(4 47 46);
-    color: rgb(4 47 46);
-    transition: all ease-in-out 0.5s; 
-   
+.complaint_form-control{
+    width: 300px;
+    height: 150px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    color: #fff;
+    font-size: 18px;
+    margin: 1rem 0;
+}
+.complaint-input {
+    padding: 1rem;
+    border: none;
+    font-size: 15px;
+    border-radius: 2px;
 }
 #btn{
-    background: #0000;
-    padding: 0.5rem;
+    width: 100%;
+    background-color: rgb(0, 123, 121); 
+    height: fit-content;
+    padding: 1rem;
+    border: none;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#btn:hover{
+    background-color: rgb(4 47 46);
+    color: #ffffff;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.surgical_booking{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    padding: 1rem;
+    height: 380px;
+    background-color: rgb(0, 123, 121); 
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+}
+.surgical_input{
+    padding: 1rem;
+    border: none;
+    font-size: 15px;
+    border-radius: 2px;  
+}
+.surgical_booking .form-control-precedure{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    margin: 0.2rem 0;
+    color: rgba(0, 61, 60, 0.9);
+}
+.surgical_booking #icons{
+    position: absolute;
+    left: 5px;
+    top: 63%;
+    transform: translateY(-50%);
+  }
+  .surgical_booking .form-control-precedurel input{
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 61, 60, 0.9);
+    text-indent: 25px;
+    font-size:1.1rem;
+}
+.surgical_booking .form-control-precedurel input:focus{
+    padding: 12px 0;
+    text-indent: 25px;
+    font-size:1.1rem;
+    border-color: rgba(0, 61, 60, 0.9);
+}
+#close-icon{
+    position: absolute;
+    left: 0;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-left: 30rem;
+    color: rgba(255, 255, 255, 0.9);
+    top: 0;
+  }
+.btn{
+    width: 100%;
+    padding: 1rem 0;
+    border: none;
+    margin: 1rem 0;
+    background-color:rgba(0, 61, 60, 0.9);
+    border-radius: 4px;
     color: #fff;
     cursor: pointer;
 }
-#btn:hover{
-    background-color: #fff;
-    border: 1px solid rgb(4 47 46);
-    color: rgb(4 47 46);
-    transition: all ease-in-out 0.5s; 
-   
+.hidden{
+    display: none;
+}
+/*End of the complaints Section*/
+
+/**Start of the System review Section*/
+.system_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(4 47 46);
+    font-size: 20px;
+    cursor: pointer;
+}
+ #system_icon_minus{
+    display: none;
+ }
+.system_review-section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 123, 121); 
+    padding: 1rem;
+}
+.drop-down1, .drop-down2,  .drop-down3, .drop-down4, .drop-down5, .drop-down6, .drop-down7, .drop-down8, .drop-down9, .drop-down10, .drop-down11{
+    width: 100%; 
+   border-bottom: 4px solid #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+span{
+    color: #fff;
+    font-size: 20px;
+}
+#open_id_1, #close_id_1, #open_id_2, #close_id_2, #open_id_3, #close_id_3,
+#open_id_4, #close_id_4, #open_id_5, #close_id_5,
+#open_id_6, #close_id_6, #open_id_7, #close_id_7,
+#open_id_8, #close_id_8, #open_id_9, #close_id_9,
+#open_id_10, #close_id_10, #open_id_11, #close_id_11{
+    color: #fff;
+    font-size: 20px;
+}
+#close_id_1, #close_id_2, #close_id_3, #close_id_4, #close_id_5, #close_id_6, #close_id_7, #close_id_8,#close_id_9, #close_id_10,  #close_id_11{
+    display: none;
+}
+.active{
+    display: none;
+}
+.form1, .form2, .form3, .form4, .form5,  .form6, .form7, .form8, .form9, .form10, .form11{
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.hidden{
+    display: none;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 1rem 0;
+    justify-content: center;
+    align-items: center;
+}
+label{
+    color: #fff;
+    font-size: 18px;
+}
+/*Start of the Physical Examination*/
+.physical_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(4 47 46);
+    font-size: 20px;
+    cursor: pointer;
+}
+.physical_examination-section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 123, 121); 
+    padding: 1rem;
+}
+.physical_examination_drop-down1, .physical_examination_drop-down2, .physical_examination_drop-down3,
+.physical_examination_drop-down4,
+.physical_examination_drop-down5,
+.physical_examination_drop-down6,
+.physical_examination_drop-down7,
+.physical_examination_drop-down8,
+.physical_examination_drop-down9,
+.physical_examination_drop-down10,
+.physical_examination_drop-down11,
+.physical_examination_drop-down12,
+.physical_examination_drop-down13,
+.physical_examination_drop-down14{
+    width: 100%; 
+   border-bottom: 4px solid #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+#physical_icon_minus{
+    display: none;
+}
+span{
+    color: #fff;
+    font-size: 20px;
+}
+#physical_examination_icon_plus1, #physical_examination_icon_minus1, #physical_examination_icon_plus2, #physical_examination_icon_minus2
+#physical_examination_icon_plus3, #physical_examination_icon_minus3,
+#physical_examination_icon_plus4, #physical_examination_icon_minus4,
+#physical_examination_icon_plus5, #physical_examination_icon_minus5,
+#physical_examination_icon_plus6, #physical_examination_icon_minus6,
+#physical_examination_icon_plus7, #physical_examination_icon_minus7,
+#physical_examination_icon_plus8, #physical_examination_icon_minus8,
+#physical_examination_icon_plus9, #physical_examination_icon_minus9,
+#physical_examination_icon_plus10, #physical_examination_icon_minus10,
+#physical_examination_icon_plus11, #physical_examination_icon_minus11,
+#physical_examination_icon_plus12, #physical_examination_icon_minus12,
+#physical_examination_icon_plus13, #physical_examination_icon_minus13,
+#physical_examination_icon_plus14, #physical_examination_icon_minus14{
+    color: #fff;
+    font-size: 20px;
+}
+#physical_examination_icon_minus1, #physical_examination_icon_minus2,
+#physical_examination_icon_minus3,
+#physical_examination_icon_minus4,
+#physical_examination_icon_minus5,
+#physical_examination_icon_minus6,
+#physical_examination_icon_minus7,
+#physical_examination_icon_minus8,
+#physical_examination_icon_minus9,
+#physical_examination_icon_minus10,
+#physical_examination_icon_minus11,
+#physical_examination_icon_minus12,
+#physical_examination_icon_minus13,
+#physical_examination_icon_minus14{
+    display: none;
+}
+form{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.physical_examination_form-control{
+    width: 300px;
+    height: 150px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    color: #fff;
+    font-size: 18px;
+    margin: 1rem 0;
+}
+input {
+    padding: 2rem;
+    border: none;
+    font-size: 22px;
+    border-radius: 2px;
+}
+.active{
+    display: none;
+}
+.physical_examination_form1, .physical_examination_form2, .physical_examination_form3,
+.physical_examination_form4, .physical_examination_form5 .physical_examination_form6,.physical_examination_form7,
+.physical_examination_form8, .physical_examination_form9,
+.physical_examination_form10,.physical_examination_form11
+,.physical_examination_form12,
+.physical_examination_form13,
+.physical_examination_form14{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/*Start of the Treatment and Prescribtion*/
+.treatment_prescribtion-section{
+    width: 100%;
+    height: fit-content;;
+    background-color: rgb(0, 123, 121); 
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.treatment_prescribtion_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(4 47 46);
+    font-size: 20px;
+    cursor: pointer;
+}
+.treatment_prescribtion_form1{
+    width: 100%;
+    background-color: rgb(4 47 46);
+    border-radius: 14px;
+}
+.treatment_prescribtion_form-control{
+    width: auto;
+    height: 150px;
+    margin: 0rem 0.1rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+#treatment_prescribtion_minus{
+    display: none;
+}
+.treatment_prescribtion-input {
+    padding: 1rem;
+    border: none;
+    width: 70px;
+    font-size: 15px;
+    border-radius: 2px;
+}
+#prescribe_close{
+    position: absolute;
+    top: 22%;
+    cursor: pointer;
+    left: 96%;
+}
+.treatment_prescribtion-input_change_width{
+    padding: 1rem;
+    border: none;
+    width: 200px;
+    font-size: 15px;
+    border-radius: 2px;
+}
+#btn_prescribe{
+    width: 30%;
+    background-color: rgb(255, 255, 255); 
+    height: fit-content;
+    padding: 1rem;
+    border: none;
+    margin: 1rem auto;
+    cursor: pointer;
+    transition: 0.5s;
+  
+}
+#btn_prescribe:hover{
+    background-color: rgb(0, 123, 121); 
+    color: #ffffff;
+}
+.hidden{
+    display: none;
 }

@@ -91,6 +91,10 @@ if ($patient_profile_array) {
     <link rel="stylesheet" href="../css/index.css">
     <script src ="js/patient.js"></script>
     <script src="js/jquery-v3.6.1.min.js"></script>
+    <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
     <title>Patient</title>
 </head>
 <body>
@@ -100,7 +104,7 @@ if ($patient_profile_array) {
         <i class="fa fa-long-arrow-left " id='back-arrow' onClick='backWardArrow()'></i>
         <h2>Patient Admission Lists</h2>
     </div>
-        <div class="nav-menu">
+        <!-- <div class="nav-menu">
             <ul class="menu-items">
                 <a href="#">
                 <li class="items">
@@ -134,7 +138,11 @@ if ($patient_profile_array) {
             </a>
             </ul>
     </div>
-   
+    -->
+    <div class="search_table_container">
+        <div class="span_container">
+        <span>Patient Lists<span>
+        </div>
     <div class="search-container">
     <div class="search-bar">
         <div id="select">
@@ -641,7 +649,7 @@ if ($patient_profile_array) {
         </tbody>
 </table>
 
-
+</div>
 
 <!-- end of tables -->
 

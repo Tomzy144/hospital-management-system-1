@@ -49,7 +49,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <?php $page = 'login';?>
 
   <div class="container">
-  <i class="fa fa-sign-out" id='sign-out' onClick="homepage()"></i>
     <div class="form-container">
         <h2>Please SignIn</h2>
         <form action="../../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
@@ -68,6 +67,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <p class='text'>
              <a href='forgotten-password.php' class="password-link">Forgotten Password</a>
             </p>
+            <p class='text' onClick="homepage()">Log out</p>
         </form>
     </div>
   </div>

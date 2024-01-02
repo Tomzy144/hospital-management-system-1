@@ -28,6 +28,8 @@
     <i class='fa fa-user-circle-o active'></i>
     </div>
    </div>
+
+   <!----Start from here-->
    <div class="all_sections_input">
     <!--Start of the complaint section--->
    <div class="complain_dropdown">

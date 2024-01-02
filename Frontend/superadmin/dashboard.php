@@ -71,7 +71,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
     </div>
     <div class="div-logo">
-        <a href="#">Hospital management System</a>
+        <a href="#">Mount Tech Solution</a>
     </div>
     
         <form method="post" action="../../backend/dashboardconfig/code.php" id="logoutform">
@@ -85,6 +85,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <div class="menu-content">  
         <div class="close-toggle" id="close-toggle">
         <i class="fa fa-times"></i>  
+    </div>
+    <div class="profile_container">
+    <div class="profile"></div>
+        <span>Doctor Sam</span>
+        <span>Admin</span>
     </div>
         <ul class="menu-items">
             <li class="items" onClick='openPatientsList()'>
@@ -134,11 +139,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </ul>
     </div>
 </nav>
-<div class="contents">
 <main>
     <div class="container">
         <h1>Dashboard</h1>
-        <div class="flex-cards">
+        <div class="flex_wrap">
         <div class="cards" onClick='openPatientsList()'>
             <div class="card-icons">
                 <i class="fa fa-user"  id="card-icons"></i>
@@ -163,8 +167,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             </div>
                 <h2>Phamacy</h2>
         </div>
-    </div>
-        <div class="flex-cards">
         <div class="cards" onClick='openLabPage()'>
             <div class="card-icons">
                 <i class="fa fa-flask" id="card-icons"></i>
@@ -189,8 +191,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             </div>
                 <h2>Receptionist</h2>
         </div>
-    </div>
-        <div class="flex-cards">
         <div class="cards" onClick='openPhysiotherapyPage()'>
             <div class="card-icons">
                 <i class="fa fa-stethoscope" id="card-icons"></i>
@@ -208,12 +208,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <i class="fa fa-bed" id="card-icons"></i>
             </div>
                 <h2>Wards & Beds</h2>
-        </div> 
+                </div>
     </div>
     </div>
 </main>
-
-</div>
     <script src="js/dashboard.js"></script>
 </body>
 </html>

@@ -303,10 +303,10 @@ function _resend_otp(ids,staff_id){
 //     success: function(html){$('#next_2').html(html);}
 //     });
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Add 'fade-in' class to the body after the DOM content is loaded
-    document.body.classList.add('loaded');
-})
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Add 'fade-in' class to the body after the DOM content is loaded
+//     document.body.classList.add('loaded');
+// })
 
 
 

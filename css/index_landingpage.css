@@ -45,7 +45,7 @@ h1{
 main{
   width: 100%;
   padding: 5rem;
-  animation: lightSpeedInRight 2s ease-in-out 1.3s;
+  animation:slideInLeft 1.2s ease-in-out 1.3s;
 }
 .btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab{
    background:none;
