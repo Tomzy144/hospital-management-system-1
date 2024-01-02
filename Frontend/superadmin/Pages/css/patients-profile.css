@@ -7,10 +7,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h2{
+h1{
     color: #ffffff;
     text-align: center;
-    font-size: 21px;
 }
 .patient-navbar{
     background:linear-gradient(-12deg, rgb(100, 227, 255) 0px, rgb(42, 87, 215) 100%);
@@ -23,6 +22,7 @@ h2{
     position: fixed;
     z-index: 999;
     top: 0;
+    animation: fadeIn 1s ease-in-out;
 }
 #back-arrow-patientslist{
     position: absolute;
@@ -55,7 +55,7 @@ h2{
 }
 .timer-box{
     padding: 0.2rem 0.5rem;
-    background-color:rgb(0, 0, 0);
+    background-color:rgb(42, 87, 215);
     margin: 0 4px;
     color: #ffffff;
     font-size: 23px;
@@ -63,13 +63,13 @@ h2{
     border-bottom-right-radius: 19px;
 }
 .timer-text{
-    color: rgb(0, 0, 0);
+    color: rgb(42, 87, 215);
     font-size: 18px;
 }
 .all_input{
     width: 900px;
 }
-.patient_info{
+.patient_info, .lab_info{
     display: flex;
     padding: 1rem;
     background:linear-gradient(-12deg, rgb(100, 227, 255) 0px, rgb(42, 87, 215) 100%);
@@ -80,26 +80,136 @@ h2{
     margin: 2rem 0;
     width: 100%;
     border: none;
+    animation: zoomIn 1s ease-in-out;
 }
 
-#info_close{
+#info_close, #lab_close{
     display: none;
 }
     .info-accordion{
         width:100%;
         height: fit-content;
+        background:linear-gradient(15deg, rgb(0, 144, 177) 0px, rgb(42, 87, 215) 100%);
         box-shadow: rgba(173, 172, 172, 0.35) 0px 5px 15px;
         color: var(--deep-green);
         justify-content: center;
+        color: #fff;
         padding: 1rem;
+        animation: fadeInUp 0.5s ease-in-out;
     }
+    .info_details{
+        padding: 2rem;
+        margin: 0 auto;
+        cursor: pointer;
+       border: 3px solid #fff;
+        color: #ffffff;
+        transition: all ease-in-out 0.5s;
+        display: flex;
+        flex-direction: row;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+    .info_details:hover{
+        padding: 2rem;
+        margin: 0 auto;
+        cursor: pointer;
+       background-color: #fff;
+        color:#024b7a;
+        transition: all ease-in-out 0.5s;
+        display: flex;
+        flex-direction: row;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+
     .flex-info1{
         font-size: 18px;
         display: flex;
+        color: #ffffff;
     }
     .info{
         margin: 0.5rem 0.4rem;
+        text-transform: uppercase;
     }
     .info-hidden{
         display: none;
     }
+
+    /*LAB INPUT*/
+.lab_input{
+    width: 900px;
+    animation:  fadeInUp 0.5s ease-in-out;
+}
+.labouratory_examination_section{
+width: 100%;
+background-color: rgb(4 47 46);
+color: #fff;
+padding: 1rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+cursor: pointer;
+}
+span{
+    font-size: 20px;
+}
+.clinical_chemistry, .immunoassay,.thyroid, .tumor, .blood, .food, .microbiology,.histopathology,.haematology{
+    width: 100%;
+    color: #fff;
+    background-image: linear-gradient(to left, #0090dc, #047ec3, #056caa, #045b92, #024b7a);
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+#open_id_1, #close_id_1,
+#open_id_2, #close_id_2,
+#open_id_3, #close_id_3,
+#open_id_4, #close_id_4,
+#open_id_5, #close_id_5,
+#open_id_6, #close_id_6,
+#open_id_7, #close_id_7,
+#open_id_8, #close_id_8,
+#open_id_9, #close_id_9{
+    color: #fff;
+    font-size: 20px;
+}
+#close_id_1, #close_id_2, #close_id_3, #close_id_4,  #close_id_5, #close_id_6, #close_id_7, #close_id_8, #close_id_9{
+    display: none;
+}
+.form1,.form2, .form3, .form4, .form5, .form6,.form7,.form8,.form9{
+    width: 100%;
+    background-image: linear-gradient(to left, #0090dc, #047ec3, #056caa, #045b92, #024b7a);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+.form_control{
+    width: 300px;
+    color: #fff;
+    font-size: 18px;
+    padding: 0.4rem 1rem;
+    margin: 0.5rem 0;
+}
+#btn{
+    width: 100%;
+    background-color: rgb(0, 123, 121); 
+    height: fit-content;
+    padding: 1rem;
+    border: none;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#btn:hover{
+    background-color: rgb(4 47 46);
+    color: #ffffff;
+}
+.hidden{
+    display: none;
+}
