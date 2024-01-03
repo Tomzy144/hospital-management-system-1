@@ -280,7 +280,7 @@ gastrointestinal_dropdown.addEventListener("click", function(){
 
 
 //form input
-//System Review dropdown
+//Pysical dropdown
 const physical_dropdown = document.querySelector(".physical_dropdown");
 const physical_section = document.querySelector(".physical_examination-section");
 const physical_section_icon_plus = document.querySelector("#physical_icon_plus");

@@ -197,7 +197,234 @@ const disabledCheckbox = ()=>{
 }
 disabledCheckbox()
 
-        
+
+
+//Complaints Section
+const complaint = document.querySelector(".complain");
+const complaint_section = document.querySelector(".complaint-section ");
+const complaint_section_icon_plus = document.querySelector("#complaint_icon_plus");
+const complaint_section_icon_minus = document.querySelector("#complaint_icon_minus");
+const check_1 = document.querySelector("#check1")
+const check_2 = document.querySelector("#check2")
+
+
+
+complaint.addEventListener("click", function(){
+complaint_section.classList.toggle("hidden");
+complaint_section_icon_plus.style.display = "none";
+complaint_section_icon_minus.style.display = "block";
+if(complaint_section.classList.contains("hidden")){
+    complaint_section_icon_plus.style.display = "block";
+complaint_section_icon_minus.style.display = "none";
+}
+})         
+const readOnlyInput = ()=>{
+    const complainInput = document.querySelectorAll(".complaint-input");
+    complainInput.forEach(function(complaint){
+       complaint.readOnly = true;
+     complaint.value = "Testing";
+    })
+    
+}
+readOnlyInput()
+
+
+
+// form input
+//System Review dropdown
+const system = document.querySelector(".system");
+const system_review_section = document.querySelector(".system_review-section");
+const system_review_section_icon_plus = document.querySelector("#system_icon_plus");
+const system_review_section_icon_minus = document.querySelector("#system_icon_minus");
+
+
+
+system.addEventListener("click", function(){
+system_review_section.classList.toggle("hidden");
+system_review_section_icon_plus.style.display = "none";
+system_review_section_icon_minus.style.display = "block";
+if(system_review_section.classList.contains("hidden")){
+    system_review_section_icon_plus.style.display = "block";
+    system_review_section_icon_minus.style.display = "none";
+}
+}) 
+
+// For General Dropdown
+const general_dropdown = document.querySelector(".drop-down1");
+const showForm1 = document.querySelector(".gen_form1");
+const closeIcon1 = document.querySelector("#close_1");
+const openIcon1 = document.querySelector("#open_1");
+
+general_dropdown.addEventListener("click", function(){
+    showForm1.classList.toggle("hidden");
+    closeIcon1.style.display = "block";
+    openIcon1.style.display = "none";
+    if(showForm1.classList.contains("hidden")){
+        closeIcon1.style.display = "none";
+        openIcon1.style.display = "block";
+    }
+});
+
+
+//For Skin Dropdown
+const skin_dropdown = document.querySelector(".drop-down2");
+const showForm2 = document.querySelector(".skin_form2");
+const closeIcon2 = document.querySelector("#close_2");
+const openIcon2 = document.querySelector("#open_2");
+
+skin_dropdown.addEventListener("click", function(){
+    showForm2.classList.toggle("hidden");
+    closeIcon2.style.display = "block";
+    openIcon2.style.display = "none";
+    if(showForm2.classList.contains("hidden")){
+        closeIcon2.style.display = "none";
+        openIcon2.style.display = "block";
+    }
+});
+
+//For EndoCrine Dropdown
+const endocrine_dropdown = document.querySelector(".drop-down3");
+const showForm3 = document.querySelector(".endo_form3");
+const closeIcon3 = document.querySelector("#close_3");
+const openIcon3 = document.querySelector("#open_3");
+
+endocrine_dropdown.addEventListener("click", function(){
+    showForm3.classList.toggle("hidden");
+    closeIcon3.style.display = "block";
+    openIcon3.style.display = "none";
+    if(showForm3.classList.contains("hidden")){
+        closeIcon3.style.display = "none";
+        openIcon3.style.display = "block";
+    }
+});
+
+//For Hematopioetic Dropdown
+const hematopioetice_dropdown = document.querySelector(".drop-down4");
+const showForm4 = document.querySelector(".hermato_form4");
+const closeIcon4 = document.querySelector("#close_4");
+const openIcon4 = document.querySelector("#open_4");
+
+hematopioetice_dropdown.addEventListener("click", function(){
+    showForm4.classList.toggle("hidden");
+    closeIcon4.style.display = "block";
+    openIcon4.style.display = "none";
+    if(showForm4.classList.contains("hidden")){
+        closeIcon4.style.display = "none";
+        openIcon4.style.display = "block";
+    }
+});
+//For Muscoskeletal Dropdown
+const muscoskeletal_dropdown = document.querySelector(".drop-down5");
+const showForm5 = document.querySelector(".mus_form5");
+const closeIcon5 = document.querySelector("#close_5");
+const openIcon5 = document.querySelector("#open_5");
+
+muscoskeletal_dropdown.addEventListener("click", function(){
+    showForm5.classList.toggle("hidden");
+    closeIcon5.style.display = "block";
+    openIcon5.style.display = "none";
+    if(showForm5.classList.contains("hidden")){
+        closeIcon5.style.display = "none";
+        openIcon5.style.display = "block";
+    }
+});
+
+//For head & neck Dropdown
+const head_neck_dropdown = document.querySelector(".drop-down6");
+const showForm6 = document.querySelector(".head_neck_form6");
+const closeIcon6 = document.querySelector("#close_6");
+const openIcon6 = document.querySelector("#open_6");
+
+head_neck_dropdown.addEventListener("click", function(){
+    showForm6.classList.toggle("hidden");
+    closeIcon6.style.display = "block";
+    openIcon6.style.display = "none";
+    if(showForm6.classList.contains("hidden")){
+        closeIcon6.style.display = "none";
+        openIcon6.style.display = "block";
+    }
+});
+
+//For Ears, Nose, Sinuses, Mouth & Throat Dropdown
+const ear_nose_sinuses_mouth_throat_dropdown = document.querySelector(".drop-down7");
+const showForm7 = document.querySelector(".ear_nose_form7");
+const closeIcon7 = document.querySelector("#close_7");
+const openIcon7 = document.querySelector("#open_7");
+
+ear_nose_sinuses_mouth_throat_dropdown.addEventListener("click", function(){
+    showForm7.classList.toggle("hidden");
+    closeIcon7.style.display = "block";
+    openIcon7.style.display = "none";
+    if(showForm7.classList.contains("hidden")){
+        closeIcon7.style.display = "none";
+        openIcon7.style.display = "block";
+    }
+});
+
+//For Breast Dropdown
+const breast_dropdown = document.querySelector(".drop-down8");
+const showForm8 = document.querySelector(".breast_form8");
+const closeIcon8 = document.querySelector("#close_8");
+const openIcon8 = document.querySelector("#open_8");
+
+breast_dropdown.addEventListener("click", function(){
+    showForm8.classList.toggle("hidden");
+    closeIcon8.style.display = "block";
+    openIcon8.style.display = "none";
+    if(showForm8.classList.contains("hidden")){
+        closeIcon8.style.display = "none";
+        openIcon8.style.display = "block";
+    }
+});
+
+//For Respiratory Dropdown
+const respiratory_dropdown = document.querySelector(".drop-down9");
+const showForm9 = document.querySelector(".res_form9");
+const closeIcon9 = document.querySelector("#close_9");
+const openIcon9 = document.querySelector("#open_9");
+
+respiratory_dropdown.addEventListener("click", function(){
+    showForm9.classList.toggle("hidden");
+    closeIcon9.style.display = "block";
+    openIcon9.style.display = "none";
+    if(showForm9.classList.contains("hidden")){
+        closeIcon9.style.display = "none";
+        openIcon9.style.display = "block";
+    }
+});
+//For Cardiovascular Dropdown
+const cardiovascular_dropdown = document.querySelector(".drop-down10");
+const showForm10 = document.querySelector(".form10");
+const closeIcon10 = document.querySelector("#close_10");
+const openIcon10 = document.querySelector("#open_10");
+
+cardiovascular_dropdown.addEventListener("click", function(){
+    showForm10.classList.toggle("hidden");
+    closeIcon10.style.display = "block";
+    openIcon10.style.display = "none";
+    if(showForm10.classList.contains("hidden")){
+        closeIcon10.style.display = "none";
+        openIcon10.style.display = "block";
+    }
+});
+//For Gastrointestinal Dropdown
+const gastrointestinal_dropdown = document.querySelector(".drop-down11");
+const showForm11= document.querySelector(".form11");
+const closeIcon11= document.querySelector("#close_11");
+const openIcon11 = document.querySelector("#open_11");
+
+gastrointestinal_dropdown.addEventListener("click", function(){
+    showForm11.classList.toggle("hidden");
+    closeIcon11.style.display = "block";
+    openIcon11.style.display = "none";
+    if(showForm11.classList.contains("hidden")){
+        closeIcon11.style.display = "none";
+        openIcon11.style.display = "block";
+    }
+});
+
+
+
    //BACK ARROW TO THE DASHBOARD
    function backWardArrow(){
     var urlBackwardArrow = 'patients.php';
@@ -205,6 +432,13 @@ disabledCheckbox()
   
 }
     
+const testInput = ()=>{
+    const test13 = document.querySelector(".test")
+    test13.value = "Hello, world!"
+    complaint.value = test13
+}
+// testInput()
+
     
 ////////////////////////////////////////////////////
 

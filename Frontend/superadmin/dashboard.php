@@ -38,6 +38,9 @@
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Montserrat:wght@100&family=Open+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,300;1,100&family=Quicksand:wght@500;600;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
 <!--Tomiwa font-->
 <link href="../awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <title>Hospital management System</title>
@@ -83,15 +86,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <div class="contents">
 <nav class="sidebar" id="sidebar" >
     <div class="profile_container">
-    <div class="profile" onClick="show_profile_upload()"></div>
+    <div class="profile"></div>
         <span>DOCTOR SAM</span>
         <span>ADMIN</span>
     </div>
     <div class="display_profile_container hide">
         <div class="flexs">
         <img src="../Images/doctor-offering-medical-teleconsultation.jpg" alt="">
-        <h1>DOCTOR SAM</h1>
+        <!-- <h1>DOCTOR SAM</h1> -->
         <button class="profile_btn">UPLOAD PASSPORT</button>
+        <span style ="cursor:pointer;">Change password</span>
         </div>
     </div>
         <ul class="menu-items">
@@ -127,10 +131,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <i class="fa fa-user-circle-o" id="sidebar_icons"></i>
                 <span class="lists hide">Receptionist</span>
             </li>
-            <li class="items" onClick='openPhysiotherapyPage()'>
+            <!-- <li class="items" onClick='openPhysiotherapyPage()'>
                 <i class="fa fa-stethoscope" id="sidebar_icons"></i>
                <span class="lists hide">Physiotherapy</span> 
-            </li>
+            </li> -->
             <li class="items" onClick='openStaffPage()'>
                 <i class="fa fa-users" id="sidebar_icons"></i> 
                 <span class="lists hide">Staffs</span>
@@ -138,6 +142,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <li class="items" onClick='openWardBed()'>
                 <i class="fa fa-bed" id="sidebar_icons"></i>
                 <span class="lists hide">Wards & Beds</span>
+            </li>
+            <li class="items"onClick="show_profile_upload()">
+                <i class="fa fa-gear (alias)" id="sidebar_icons" ></i>
+                <span class="lists hide">Account</span>
             </li>
         </ul>
 </nav>
@@ -193,12 +201,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             </div>
                 <h2>Receptionist</h2>
         </div>
-        <div class="cards" onClick='openPhysiotherapyPage()'>
+        <!-- <div class="cards" onClick='openPhysiotherapyPage()'>
             <div class="card-icons">
                 <i class="fa fa-stethoscope" id="card-icons"></i>
             </div>
                 <h2>Physiotherapy</h2>
-        </div>
+        </div> -->
         <div class="cards" onClick='openStaffPage()'>
             <div class="card-icons">
                 <i class="fa fa-users" id="card-icons"></i> 

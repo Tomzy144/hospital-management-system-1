@@ -11,6 +11,9 @@
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Montserrat:wght@100&family=Open+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,300;1,100&family=Quicksand:wght@500;600;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
     <script src="js/scripts.js"></script>
     <script src="js/jquery-v3.6.1.min.js"></script>
 
@@ -26,7 +29,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <!-- <div class="content-container"> -->
         <nav class="navbar">
             <div class="logo">
-                <h1>HOSPITAL MANAGEMENT SYSTEM</h1>
+                <h1>MOUNT TECH SOLUTION</h1>
             </div>
                 <!-- <button class="btn" id="getting-started-btn">Getting Started</button> -->
                  </nav>

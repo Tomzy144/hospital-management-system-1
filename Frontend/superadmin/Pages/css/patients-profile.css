@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Quicksand", sans-serif;
 }
 
 h1{
@@ -12,7 +12,7 @@ h1{
     text-align: center;
 }
 .patient-navbar{
-    background:linear-gradient(-12deg, rgb(100, 227, 255) 0px, rgb(42, 87, 215) 100%);
+    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
     height: 60px;
     width: 100%;
     display: flex;
@@ -55,7 +55,7 @@ h1{
 }
 .timer-box{
     padding: 0.2rem 0.5rem;
-    background-color:rgb(42, 87, 215);
+    background-image: linear-gradient(to left top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
     margin: 0 4px;
     color: #ffffff;
     font-size: 23px;
@@ -63,16 +63,16 @@ h1{
     border-bottom-right-radius: 19px;
 }
 .timer-text{
-    color: rgb(42, 87, 215);
+    color: rgb(0, 28, 104);
     font-size: 18px;
 }
 .all_input{
     width: 900px;
 }
-.patient_info, .lab_info{
+.patient_info, .lab_info,.complain, .system{
     display: flex;
     padding: 1rem;
-    background:linear-gradient(-12deg, rgb(100, 227, 255) 0px, rgb(42, 87, 215) 100%);
+    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
     color: #fff;
     justify-content: space-between;
     font-size: 20px;
@@ -89,7 +89,7 @@ h1{
     .info-accordion{
         width:100%;
         height: fit-content;
-        background:linear-gradient(15deg, rgb(0, 144, 177) 0px, rgb(42, 87, 215) 100%);
+        background-image: linear-gradient(to left top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
         box-shadow: rgba(173, 172, 172, 0.35) 0px 5px 15px;
         color: var(--deep-green);
         justify-content: center;
@@ -98,8 +98,8 @@ h1{
         animation: fadeInUp 0.5s ease-in-out;
     }
     .info_details{
-        padding: 2rem;
-        margin: 0 auto;
+        padding: 1rem;
+        margin: 1rem auto;
         cursor: pointer;
        border: 3px solid #fff;
         color: #ffffff;
@@ -111,11 +111,11 @@ h1{
         align-items: center;
     }
     .info_details:hover{
-        padding: 2rem;
-        margin: 0 auto;
+        padding: 1rem;
+        margin: 1rem auto;
         cursor: pointer;
        background-color: #fff;
-        color:#024b7a;
+        color:#000000;
         transition: all ease-in-out 0.5s;
         display: flex;
         flex-direction: row;
@@ -158,7 +158,7 @@ span{
 .clinical_chemistry, .immunoassay,.thyroid, .tumor, .blood, .food, .microbiology,.histopathology,.haematology{
     width: 100%;
     color: #fff;
-    background-image: linear-gradient(to left, #0090dc, #047ec3, #056caa, #045b92, #024b7a);
+    background-image: linear-gradient(to bottom, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
     padding: 1rem 1rem;
     border-bottom: 1px solid #fff;
     display: flex;
@@ -183,12 +183,13 @@ span{
 }
 .form1,.form2, .form3, .form4, .form5, .form6,.form7,.form8,.form9{
     width: 100%;
-    background-image: linear-gradient(to left, #0090dc, #047ec3, #056caa, #045b92, #024b7a);
+    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
     animation: fadeInUp 0.5s ease-in-out;
 }
+
 .form_control{
     width: 300px;
     color: #fff;
@@ -196,20 +197,113 @@ span{
     padding: 0.4rem 1rem;
     margin: 0.5rem 0;
 }
-#btn{
+.hidden{
+    display: none;
+}
+
+
+
+/*Start of the complaints Section*/
+
+#complaint_icon_minus{
+    display: none;
+}
+form{
+    display: flex;
     width: 100%;
-    background-color: rgb(0, 123, 121); 
-    height: fit-content;
+    flex-direction: row;
+    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    flex-wrap: wrap;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+.complaint_form-control{
+    width: 300px;
+    height: 150px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    color: #fff;
+    font-size: 18px;
+    margin: 1rem 0;
+}
+.complaint-input {
     padding: 1rem;
     border: none;
-    margin: 1rem 0;
-    cursor: pointer;
-    transition: 0.5s;
+    font-size: 15px;
+    outline: none;
+    border-radius: 2px;
 }
-#btn:hover{
-    background-color: rgb(4 47 46);
-    color: #ffffff;
+.test{
+    padding: 1rem;
+    border: none;
+    font-size: 15px;
+    border-radius: 2px;
+}
+
+
+/**Start of the System review Section*/
+
+ #system_icon_minus{
+    display: none;
+ }
+.system_review-section{
+    width: 100%;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    padding: 1rem;
+}
+.drop-down1, .drop-down2,  .drop-down3, .drop-down4, .drop-down5, .drop-down6, .drop-down7, .drop-down8, .drop-down9, .drop-down10, .drop-down11{
+    width: 100%; 
+   border-bottom: 4px solid #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+span{
+    color: #fff;
+    font-size: 20px;
+}
+#open_1, #close_1, #open_2, #close_2, #open_3, #close_3,
+#open_4, #close_4, #open_5, #close_5,
+#open_6, #close_6, #open_7, #close_7,
+#open_8, #close_8, #open_9, #close_9,
+#open_10, #close_10, #open_11, #close_11{
+    color: #fff;
+    font-size: 20px;
+}
+#close_1, #close_2, #close_3, #close_4, #close_5, #close_6, #close_7, #close_8, #close_9, #close_10,  #close_11{
+    display: none;
+}
+.active{
+    display: none;
+}
+.gen_form1, .skin_form2, .endo_form3, .hermato_form4, .mus_form5,  .head_neck_form6, .ear_nose_form7, .breast_form8, .res_form9, .car_form10, .gas_form11{
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    animation: fadeInUp 0.5s ease-in-out;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 1rem 0;
+    justify-content: center;
+    align-items: center;
+}
+label{
+    color: #fff;
+    font-size: 18px;
 }
 .hidden{
     display: none;
 }
+/*End of System Review*/

@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Quicksand", sans-serif;
 }
 /* body {
     width: 100%;
@@ -250,7 +250,6 @@ a{
     box-shadow: rgba(69, 65, 78, 0.1) 0px 1px 6px 1px;
     margin: 0 auto;
     margin-top: 5rem;
-    padding: 1rem 1rem;
     transform: translate(-50%, -50%);
     top: 30%;
     left: 50%;
@@ -264,7 +263,8 @@ a{
 .span_container span{
     font-size: 20px;
     font-weight: bold;
-    color: #bab5b5;
+    padding: 0 1rem;
+    color: #000000;
     text-transform: uppercase;
 }
 .search-container{
@@ -339,16 +339,17 @@ input:focus{
     cursor: pointer;
 }
 .div-table{
-    display: block;
+display: block;
   width: 100%;
   overflow-x: auto;
-  font-size: 20px;
   display: flex;
 }
 table{
     width: 100%;
     margin-bottom: 1rem;
+    text-transform:uppercase;
     background-color: transparent;
+    font-size: 20px;
     border-collapse: collapse;
     animation: slideInLeft 1s ease-in-out;
 
@@ -361,7 +362,9 @@ table th {
     text-align: center;
     color: #fff;
 }
-
+.table_row{
+    background-color: red;
+}
 table td{
     border: none;
     text-align: left;
@@ -369,7 +372,7 @@ table td{
     color: #000000;
     padding: 1rem;
     text-align: center;
-    /* margin: 0.5rem 0; */
+    border-bottom: 1px solid rgb(244, 240, 240);
     cursor: pointer;
 }
 #color-changing{

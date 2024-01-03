@@ -13,40 +13,55 @@ const closeToggleSidebar = document.getElementById("close-toggle");
 const sidebar_icons =()=>{
     const sidebarIcon = document.querySelectorAll("#sidebar_icons")
     for(let i =0; i < sidebarIcon.length; i++) {
-      sidebarIcon[i].style.fontSize = "50px"
+      sidebarIcon[i].style.fontSize = "20px"
     }
 }
 sidebar_icons()
 
 openToggleSidebar.addEventListener("click", function(){
     const sidebar = document.querySelector(".sidebar");
-    const spanText = document.querySelectorAll(".lists")
   sidebar.classList.toggle("active");
     if(sidebar.classList.contains("active")){
         const spanText = document.querySelectorAll(".lists")
         for(let n =0; n<spanText.length; n++)
-    spanText[n].classList.remove("hide")
+        spanText[n].classList.remove("hide")
 
     const sidebarIcon = document.querySelectorAll("#sidebar_icons")
     for(let i =0; i < sidebarIcon.length; i++) {
-      sidebarIcon[i].style.fontSize = "30px"
+      sidebarIcon[i].style.fontSize = "20px"
     }
-    }else{
+    const list = document.querySelectorAll(".items");
+    for(let l=0; l < list.length; l++){
+     list[l].addEventListener("mouseover",()=>{
+       list[l].style.color = "rgb(0, 82, 101)";
+      })
+      list[l].addEventListener("mouseout",()=>{
+        list[l].style.color = "#fff";
+      })
+    }
+    }
+    
+    else{
         const spanText = document.querySelectorAll(".lists")
         for(let n =0; n<spanText.length; n++)
     spanText[n].classList.add("hide")
 
     const sidebarIcon = document.querySelectorAll("#sidebar_icons")
     for(let i =0; i < sidebarIcon.length; i++) {
-      sidebarIcon[i].style.fontSize = "50px"
+        sidebarIcon[i].style.fontSize = "20px"
+    }
+    const list = document.querySelectorAll(".items");
+    for(let l=0; l < list.length; l++){
+     list[l].addEventListener("mouseover",()=>{
+       list[l].style.color = "rgb(0, 158, 251)";
+      })
+      list[l].addEventListener("mouseout",()=>{
+        list[l].style.color = "#fff";
+      })
     }
     }
     const profile_container = document.querySelector(".display_profile_container");
     profile_container.classList.toggle("change_color");
-
-    // if(profile_container.classList.contains("change_color")){
-    //     profile_container.classList.remove("change_color")
-    // }
 
 })
 

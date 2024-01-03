@@ -95,6 +95,9 @@ if ($patient_profile_array) {
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Montserrat:wght@100&family=Open+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,300;1,100&family=Quicksand:wght@500;600;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
     <title>Patient</title>
 </head>
 <body>
@@ -197,14 +200,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
              <d>id</d>
         </th>
         <th>
-            <d>Patient's Name</d>
+             <d>Passport</d>
+        </th>
+        <th>
+            <d>Patient</d>
         </th>
         <th>
             <d>Number</d>
         </th>
-        <!-- <th>
-            <d>Category</d>
-        </th> -->
         <th>
             <d>Date</d>
         </th>
@@ -230,6 +233,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                     echo "<td>" . $row["sn"] . "</td>";
                     echo "<td>". $row["patient_id"] . "</td>";
+                    echo "<td>". $row["image"] . "</td>";
                     echo "<td>" . $row["fullname"] . "</td>";
                     echo "<td>" . $row["phonenumber"] . "</td>";
                     echo "<td>" . $row["date"] . "</td>";
