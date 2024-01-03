@@ -347,6 +347,29 @@ function _get_patient_details($conn, $patient_id) {
 // }
 
 
+function _get_appointment_details($conn, $s_doctor_id){
+    // Query the database to select all fields from the appointment_tab table where doctor_id matches $s_doctor_id
+    $query = mysqli_query($conn, "SELECT * FROM appointment_tab WHERE doctor_id='$s_doctor_id'");    
+    
+    // Fetch the first row from the result set
+    $fetch = mysqli_fetch_array($query);
+    
+    // Extract individual fields from the fetched row
+    $doctor_id = $fetch['doctor_id'];
+    $patient_name = $fetch['patient_name'];
+    $email = $fetch['email'];
+    $phonenumber = $fetch['phonenumber'];
+    $role_id = $fetch['role_id'];
+    $status_id = $fetch['status_id'];
+    $passport = $fetch['passport'];
+    $appointment_date = $fetch['appointment_date'];
+    $appointment_reason = $fetch['reason'];
+
+    // Create and return a JSON-formatted string containing the extracted data
+    return '[{"doctor_id":"'.$doctor_id.'","patient_name":"'.$patient_name.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","appointment_date":"'.$appointment_date.'","reason":"'.$appointment_reason.'"}]';
+}
+
+
 
 
 function search_patient($conn, $total_patient) {

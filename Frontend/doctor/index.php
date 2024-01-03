@@ -16,8 +16,7 @@ $phonenumber = $doctor_profile_array[0]['phonenumber'];
 $status_id = $doctor_profile_array[0]['status_id'];
 $date = $doctor_profile_array[0]['date'];
 $last_login = $doctor_profile_array[0]['last_login'];
-$passport = $doctor_profile_array[0]["passport"];
-    
+$passport = $doctor_profile_array[0]["passport"]; 
 $fetch_status = $callclass->_get_status_details($conn, $status_id);
 $status_array = json_decode($fetch_status, true);
 $status_name = $status_array[0]['status_name'];
@@ -26,6 +25,34 @@ $status_name = $status_array[0]['status_name'];
 <?php 
 $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
 ?>
+
+
+
+<?php
+    $fetch_appointment = $callclass->_get_appointment_details($conn, $s_doctor_id);
+    $doctor_appointment_array = json_decode($fetch_appointment, true);
+
+    // Check if decoding was successful
+    if ($doctor_appointment_array !== null) {
+        // Access values from the decoded array
+        $patient_name = $doctor_appointment_array[0]['patient_name'];
+        $email = $doctor_appointment_array[0]['email'];
+        $phonenumber = $doctor_appointment_array[0]['phonenumber'];
+        $role_id = $doctor_appointment_array[0]['role_id'];
+        $status_id = $doctor_appointment_array[0]['status_id'];
+        $passport = $doctor_appointment_array[0]['passport'];
+        $appointment_date = $doctor_appointment_array[0]['appointment_date'];
+        $appointment_reason = $doctor_appointment_array[0]['reason'];
+
+        // Now you can use these variables as needed in your code
+    } else {
+        // Handle the case where decoding failed
+        echo "Failed to decode JSON";
+    }
+?>
+
+
+
 
 
 
@@ -81,43 +108,53 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
             </div>
         </div>
         <div class="body_sec">
-            <table>
-                <thead>
-                    <tr>
-                        <td>Patient Name</td>
-                        <td>Date</td>
-                        <td>Time</td>
-                        <td>Request Type</td>
-                        <td>Accept/Reject</td>
-                    </tr>
-                </thead>
+        <?php
+$sql = "SELECT * FROM appointment_tab WHERE doctor_id ='$s_doctor_id'";
+$result = $conn->query($sql);
+?>
+<table>
 
-                <tbody class="a_1">
-                    <tr>
-                    <td>Princess Udo Asuquo</td>
-                    <td>5-11/2023</td>
-                    <td>9.00</td>
-                    <td>General checkup</td>
-                    <td>
+    <thead>
+        <tr>
+            <td>Patient Name</td>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Request Type</td>
+            <td>Accept/Reject</td>
+        </tr>
+    </thead>
+
+    <tbody class="a_1">
+        <?php
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                
+                // Corrected column name
+                echo "<td>" . $row["patient_name"] . "</td>";
+                echo "<td>" . $row["appointment_date"] . "</td>";
+                echo "<td>" . $row["time"] . "</td>";
+                echo "<td>" . $row["reason"] . "</td>";
+                ?>
+                <td>
                     <button onClick="display_input()">Accept</button>
-                        <button>Reject</button>
-                    </td>
-                    </tr>
-                </tbody>
+                    <button>Reject</button>
+                </td>
+                </tr>
+            <?php
+            }
+        } else {
+            echo "<tr><td colspan='5'>No records found</td></tr>";
+        }
+        ?>
+    </tbody>
+</table>
 
-                <tbody class="a_2">
-                    <tr>
-                    <td>Princess Udo Asuquo</td>
-                    <td>5-11/2023</td>
-                    <td>9.00</td>
-                    <td>General checkup</td>
-                    <td>
-                        <button onClick="display_input()">Accept</button>
-                        <button>Reject</button>
-                    </td>
-                    </tr>
-                </tbody>
-            </table>
+      
+
+
+
         </div>
 
 
