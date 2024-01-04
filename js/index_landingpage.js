@@ -239,6 +239,100 @@ const lab_login_form = `
 `
 log_inAll('lab', lab_login_form);
 
+
+
+//Staff Manager Login
+const open_staff_manager_login_form = function(){
+    const staff_manager_login = document.querySelector(".staff_manager-login");
+    const dark_background = document.querySelector(".overlay");
+    staff_manager_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+
+const close_staff_manager_login_form = function() {
+    const staff_manager_login = document.querySelector(".staff_manager-login");
+    const dark_background = document.querySelector(".overlay");
+    staff_manager_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const staff_manager_login_form = `
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
+<div class="staff_manager-login hidden">
+<i class="fa fa-times-circle" id='close-icon-staff_manager'></i>
+    <h1 class="login-form-h1">Login (Staff Manager)</h1>
+    <form action="../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+        <div class="form-control">
+        <label for='email'>Email</label>
+        <i class="fa fa-address-book"></i>
+        <input type='email' id="email" name="email" autoComplete='off'/>
+        </div>
+
+        <div class="form-control">
+        <label for='number'>Your ID</label>
+        <i class="fa fa-key"></i>
+        <input type="text" name="number" autoComplete='off'/> 
+        </div>
+
+        <div class="form-control">
+        <label for='password'>Password</label>
+        <i class="fa fa-lock"></i>
+        <input type="password" id="password" name="spass" autocomplete="off">
+        </div>
+        <button type="button" id="login_btn" title="Login" onclick="isLabDoc_active()"  class="btn">Login</button>
+    <form>
+</div>
+`
+log_inAll('staff_manager', staff_manager_login_form);
+
+//Martanity Login
+const open_martanity_login_form = function(){
+    const martanity_login = document.querySelector(".martanity-login");
+    const dark_background = document.querySelector(".overlay");
+    martanity_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+
+const close_martanity_login_form = function() {
+    const staff_manager_login = document.querySelector(".martanity-login");
+    const dark_background = document.querySelector(".overlay");
+    staff_manager_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const martanity_login_form = `
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
+<div class="martanity-login hidden">
+<i class="fa fa-times-circle" id='close-icon-martanity'></i>
+    <h1 class="login-form-h1">Login (Martanity)</h1>
+    <form action="../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+        <div class="form-control">
+        <label for='email'>Email</label>
+        <i class="fa fa-address-book"></i>
+        <input type='email' id="email" name="email" autoComplete='off'/>
+        </div>
+
+        <div class="form-control">
+        <label for='number'>Your ID</label>
+        <i class="fa fa-key"></i>
+        <input type="text" name="number" autoComplete='off'/> 
+        </div>
+
+        <div class="form-control">
+        <label for='password'>Password</label>
+        <i class="fa fa-lock"></i>
+        <input type="password" id="password" name="spass" autocomplete="off">
+        </div>
+        <button type="button" id="login_btn" title="Login" onclick="isLabDoc_active()"  class="btn">Login</button>
+    <form>
+</div>
+`
+log_inAll('martanity', martanity_login_form);
+
 const isLabDoc_active = ()=>{
     let url="Frontend/labouratory/index.php"
     window.parent(location =(url))
@@ -251,12 +345,16 @@ dark_background.addEventListener("click", function(){
     close_nurse_login_form();
     close_recep_login_form();
     close_lab_login_form();
+    close_staff_manager_login_form();
+    close_martanity_login_form()
     });
 
 const closeIconDoc = document.querySelector("#close-icon-doctor");
 const closeIconNurse = document.querySelector("#close-icon-nurse");
 const closeIconRecep = document.querySelector("#close-icon-recep");
 const closeIconLab = document.querySelector("#close-icon-lab");
+const closeIconStaff_manager = document.querySelector("#close-icon-staff_manager");
+const closeIconMartanity = document.querySelector("#close-icon-martanity");
 
 closeIconDoc.addEventListener("click", function(){
         close_doctor_login_form();
@@ -269,6 +367,12 @@ closeIconRecep.addEventListener("click", function(){
 })
 closeIconLab.addEventListener("click", function(){
     close_lab_login_form();
+})
+closeIconStaff_manager.addEventListener("click", function(){
+    close_staff_manager_login_form()
+})
+closeIconMartanity.addEventListener("click", function(){
+    close_martanity_login_form()
 })
 
 //superAdmin linking

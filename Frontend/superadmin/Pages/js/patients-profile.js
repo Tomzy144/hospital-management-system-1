@@ -437,7 +437,24 @@ const testInput = ()=>{
     test13.value = "Hello, world!"
     complaint.value = test13
 }
-// testInput()
+
+
+//VITALS
+const patients_vitals = document.querySelector(".patient_vitals");
+const open_icon_for_patient = document.querySelector("#vitals_open")
+const close_icon_for_patient = document.querySelector("#vitals_close");
+const showVitals = document.querySelector(".show_vitals")
+
+patients_vitals.addEventListener("click", ()=>{
+    showVitals.classList.toggle("hidden");
+    open_icon_for_patient.style.display = "none";
+    close_icon_for_patient.style.display = "block";
+    if(showVitals.classList.contains("hidden")){
+        open_icon_for_patient.style.display = "block";
+        close_icon_for_patient.style.display = "none";
+    }
+})
+
 
     
 ////////////////////////////////////////////////////

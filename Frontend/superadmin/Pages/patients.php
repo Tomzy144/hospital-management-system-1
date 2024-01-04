@@ -143,9 +143,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     </div>
     -->
     <div class="search_table_container">
-        <div class="span_container">
-        <span>Patient Lists<span>
-        </div>
     <div class="search-container">
     <div class="search-bar">
         <div id="select">
@@ -200,7 +197,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
              <d>id</d>
         </th>
         <th>
-             <d>Passport</d>
+             <d>Pp</d>
         </th>
         <th>
             <d>Patient</d>

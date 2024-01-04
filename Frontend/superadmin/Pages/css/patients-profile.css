@@ -6,7 +6,14 @@
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
 }
-
+body{
+    height: 100%;
+    width: 100%;
+    background-image: url(../../../Images/Gallery\ of\ Renovation\ and\ Extension\ of\ the\ Hameln\ County\ Hospital\ _\ Nickl\ &\ Partner\ Architekten\ -\ 4.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 h1{
     color: #ffffff;
     text-align: center;
@@ -33,11 +40,12 @@ h1{
     font-size: 1.7rem;
 }
 .content{
-    width: 100%;
+width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
 }
 .container-timer{
     width: 100%;
@@ -63,13 +71,13 @@ h1{
     border-bottom-right-radius: 19px;
 }
 .timer-text{
-    color: rgb(0, 28, 104);
+    color: rgb(255, 255, 255);
     font-size: 18px;
 }
 .all_input{
     width: 900px;
 }
-.patient_info, .lab_info,.complain, .system{
+.patient_info, .lab_info,.complain, .system, .patient_vitals{
     display: flex;
     padding: 1rem;
     background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
@@ -83,7 +91,7 @@ h1{
     animation: zoomIn 1s ease-in-out;
 }
 
-#info_close, #lab_close{
+#info_close, #lab_close, #vitals_close{
     display: none;
 }
     .info-accordion{
@@ -98,7 +106,6 @@ h1{
         animation: fadeInUp 0.5s ease-in-out;
     }
     .info_details{
-        padding: 1rem;
         margin: 1rem auto;
         cursor: pointer;
        border: 3px solid #fff;
@@ -111,7 +118,6 @@ h1{
         align-items: center;
     }
     .info_details:hover{
-        padding: 1rem;
         margin: 1rem auto;
         cursor: pointer;
        background-color: #fff;
@@ -303,7 +309,66 @@ label{
     color: #fff;
     font-size: 18px;
 }
+
+/*End of System Review*/
+
+/*Start of Vitals*/
+.show_vitals{
+    display: block;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.impatient_vital, .outpatient_vital, .antenatal_vital{
+    width: 100%;
+    padding: 1rem;
+    background-color: red;
+    animation: fadeInUp 0.5s ease-in-out;
+    background-image: linear-gradient(to top, #003b60, #003e60, #004b6e, #005374, #005472);
+    display: flex;
+    border-bottom: 3px solid #fff;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#impatient_close, #outpatient_close, #antenatal_close{
+    display: none;
+}
+.table_div{
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow-x: auto;
+    display: flex;
+    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    padding: 0.5rem;
+    color: #fff;
+    font-size: 15px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+table th{
+    background-image: linear-gradient(to top, #003b60, #003e60, #004b6e, #005374, #005472);
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+}
+table td{
+    background-color: #ffffff;
+    color: black;
+    padding: 1rem;
+
+    border-bottom: 2px solid rgb(242, 239, 239);
+}
+.date_time_vital{
+    color: #000000;
+    font-size: 15px;
+}
 .hidden{
     display: none;
 }
-/*End of System Review*/

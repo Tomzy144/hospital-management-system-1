@@ -54,23 +54,37 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                             <button class="btn-receptionist" onclick="open_recep_login_form()">Login as a Receptionist</button>
                         </div>
                         <div class="sections-container">
+                            <h2>For Matarnity</h2>
+                            <p>Matarnity can login here</p>
+                            <button class="btn-martanity" onclick="open_martanity_login_form()">Login as a Martanity</button>
+                        </div>
+                    </div>
+                    <div class="flexs-container">
+                        <div class="sections-container">
+                            <h2>For Staff Manager</h2>
+                            <p>Staff Manager can login here</p>
+                            <button class="btn-staff_manager" onclick="open_staff_manager_login_form()">Login as a Staff Manager</button>
+                        </div>
+                        <div class="sections-container">
                             <h2>For Lap Scientist</h2>
                             <p>Lab Scientist can login here</p>
                             <button class="btn-lab" onclick="open_lab_login_form()">Login as a Lab Scientist</button>
                         </div>
                     </div>
-                    
                      </div>
                      <div class="sections-container">
                         <h2>For Super Admin</h2>
                         <p>Super Admin can login here</p>
                         <button class="btn-lab" onclick="log_in()">Super Admin</button>
+                    </div>
                 </main>
 
            <div id="doctor-container"></div>
            <div id="nurse-container"></div>
            <div id="recep-container"></div>
            <div id="lab-container"></div>
+           <div id="staff_manager-container"></div>
+           <div id="martanity-container"></div>
         <div class="overlay hidden"></div>
     </div>
 <!--Animation-->

@@ -138,7 +138,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 </head>
 <body>
 
-   
+<div class="content">
             <div  class="patient-navbar">
                 <i class="fa fa-long-arrow-left t" id='back-arrow-patientslist' onClick='backWardArrow()'></i>
                 <h1>KING PROFILE</h1>
@@ -153,8 +153,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             </div>
             <h3 class="timer-text">Days Hours Mins Secs</h3>
         </div>
-        </div>
-        <div class="content">
             <div class="all_input">
         <div class="patient_info">
             <h3>Patient Personal Information</h3> 
@@ -347,7 +345,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
         <div class="form_control">
                 <input type="checkbox">
-                <label for="">Potassium (#1,000)</label>
+                <label for=""black;ck;tassium (#1,000)</label>
         </div>
         <div class="form_control">
                 <input type="checkbox">
@@ -1796,8 +1794,190 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   </div>
   </form>
   </div>
+  <div class="patient_vitals">
+            <h3>Vitals</h3> 
+             <i class="fa fa-plus" id="vitals_open"></i> 
+             <i class="fa fa-minus" id="vitals_close"></i>
+         </div>
+         <div class="show_vitals hidden">
+         <div class="impatient_vital">
+                <h3>Impatient Vitals</h3>
+         </div>
+         <div class="table_div">
+                <table>
+                        <thead>
+                        <th>24/7</th>
+                        <th>Temp(C)</th>
+                        <th>BP(mmHg)</th>
+                        <th>Pulse(bp/m)</th>
+                        <th>Resp.(cm)</th>
+                        <th>Spo2(%)</th>
+                        <th>Weight(kg)</th>
+                        <th>Intake(m/s)</th>
+                        <th>Output</th>
+                        <th>BMI</th>
+                        </thead>
+                        <tbody>
+                                <td>
+                                        <span class="date_time_vital">1st Jan. 2024</span>
+                                        <span class="date_time_vital" >2:30pm</span>
+                                </td>
+                                <td>36</td>
+                                <td>120/60</td>
+                                <td>60</td>
+                                <td>16</td>
+                                <td>97</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                        </tbody>
+                        <tbody>
+                                <td>
+                                        <span class="date_time_vital">2nd Jan. 2024</span>
+                                        <span class="date_time_vital" >4.10pm</span>
+                                </td>
+                                <td>36</td>
+                                <td>120/60</td>
+                                <td>60</td>
+                                <td>16</td>
+                                <td>97</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                        </tbody>
+                        <tbody>
+                                <td>
+                                        <span class="date_time_vital">18th Feb. 2024</span>
+                                        <span class="date_time_vital" >11.00am</span>
+                                </td>
+                                <td>36</td>
+                                <td>120/60</td>
+                                <td>60</td>
+                                <td>16</td>
+                                <td>97</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                        </tbody>
+                </table>
+         </div>
+         <div class="outpatient_vital">
+                <h3>Outpatient Vitals</h3>
+         </div>
+         <div class="table_div">
+                <table>
+                        <thead>
+                        <th>Every visit</th>
+                        <th>Temp(C)</th>
+                        <th>BP(mmHg)</th>
+                        <th>Pulse(bp/m)</th>
+                        <th>Resp.(cm)</th>
+                        <th>Weight(kg)</th>
+                        </thead>
+                        <tbody>
+                                <td>
+                                        <span class="date_time_vital">7th Mar. 2024</span>
+                                        <span class="date_time_vital" >9:30pm</span>
+                                </td>
+                                <td>36</td>
+                                <td>120/60</td>
+                                <td>16</td>
+                                <td>97</td>
+                                <td>0</td>
+                        </tbody>
+                        <tbody>
+                                <td>
+                                        <span class="date_time_vital">22nd July. 2024</span>
+                                        <span class="date_time_vital" >.5.00pm</span>
+                                </td>
+                                <td>36</td>
+                                <td>120/60</td>
+                                <td>16</td>
+                                <td>97</td>
+                                <td>0</td>
+                        </tbody>
+                        <tbody>
+                                <td>
+                                        <span class="date_time_vital">4th Aug. 2024</span>
+                                        <span class="date_time_vital" >1.00am</span>
+                                </td>
+                                <td>36</td>
+                                <td>120/60</td>
+                                <td>16</td>
+                                <td>97</td>
+                                <td>0</td>
+                        </tbody>
+                </table>
+         </div>
+         <div class="antenatal_vital">
+                <h3>Antenatal</h3>
+         </div>
+         <div class="table_div">
+                <table>
+                        <thead>
+                        <th>Every visit</th>
+                        <th>LMP</th>
+                        <th>EDO</th>
+                        <th>Gravida</th>
+                        <th>Parity</th>
+                        <th>Recent FP</th>
+                        <th>Infertility</th>
+                        <th>Paternal BG</th>
+                        <th>Paternal Gen</th>
+                        <th>Date</th>
+                        </thead>
+                        <tbody>
+                                <td>
+                                        <span class="date_time_vital">7th Mar. 2024</span>
+                                        <span class="date_time_vital" >9:30pm</span>
+                                </td>
+                                <td>Unknown</td>
+                                <td>Thu 8 Jun</td>
+                                <td>1</td>
+                                <td>Nill</td>
+                                <td>Nill</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Tue 15 Nov 2024</td>
+                        </tbody>
+                        <tbody>
+                        <td>
+                                        <span class="date_time_vital">7th Mar. 2024</span>
+                                        <span class="date_time_vital" >9:30pm</span>
+                                </td>
+                                <td>Unknown</td>
+                                <td>Thu 8 Jun</td>
+                                <td>1</td>
+                                <td>Nill</td>
+                                <td>Nill</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Tue 15 Nov 2024</td>
+                        </tbody>
+                        <tbody>
+                        <td>
+                                        <span class="date_time_vital">7th Mar. 2024</span>
+                                        <span class="date_time_vital" >9:30pm</span>
+                                </td>
+                                <td>Unknown</td>
+                                <td>Thu 8 Jun</td>
+                                <td>1</td>
+                                <td>Nill</td>
+                                <td>Nill</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Tue 15 Nov 2024</td>
+                        </tbody>
+                </table>
+         </div>
+         </div>
    </div>
-           
            
              
         <!--End of the System & Review section--->
