@@ -201,12 +201,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             </div>
                 <h2>Receptionist</h2>
         </div>
-        <!-- <div class="cards" onClick='openPhysiotherapyPage()'>
-            <div class="card-icons">
-                <i class="fa fa-stethoscope" id="card-icons"></i>
-            </div>
-                <h2>Physiotherapy</h2>
-        </div> -->
+
         <div class="cards" onClick='openStaffPage()'>
             <div class="card-icons">
                 <i class="fa fa-users" id="card-icons"></i> 
@@ -218,6 +213,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <i class="fa fa-bed" id="card-icons"></i>
             </div>
                 <h2>Wards & Beds</h2>
+                </div>
+        <div class="cards" onClick='openWardBed()'>
+            <div class="card-icons">
+                <i class="fa fa-stethoscope" id="card-icons"></i>
+            </div>
+                <h2>Matarnity</h2>
+                </div>
+        <div class="cards" onClick='openWardBed()'>
+            <div class="card-icons">
+                <i class="fa fa-users" id="card-icons"></i>
+            </div>
+                <h2>Staff Management</h2>
                 </div>
     </div>
     </div>

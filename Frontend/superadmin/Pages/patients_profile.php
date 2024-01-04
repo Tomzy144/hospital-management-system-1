@@ -1976,6 +1976,137 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                         </tbody>
                 </table>
          </div>
+         <div class="antenatal_vital">
+                <h3>Postnatal</h3>
+         </div>
+         <div class="table_div">
+                <table>
+                        <thead>
+                        <th>Every visit</th>
+                        <th>LMP</th>
+                        <th>EDO</th>
+                        <th>Gravida</th>
+                        <th>Parity</th>
+                        <th>Recent FP</th>
+                        <th>Infertility</th>
+                        <th>Paternal BG</th>
+                        <th>Paternal Gen</th>
+                        <th>Date</th>
+                        </thead>
+                        <tbody>
+                                <td>
+                                        <span class="date_time_vital">7th Mar. 2024</span>
+                                        <span class="date_time_vital" >9:30pm</span>
+                                </td>
+                                <td>Unknown</td>
+                                <td>Thu 8 Jun</td>
+                                <td>1</td>
+                                <td>Nill</td>
+                                <td>Nill</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Tue 15 Nov 2024</td>
+                        </tbody>
+                        <tbody>
+                        <td>
+                                        <span class="date_time_vital">7th Mar. 2024</span>
+                                        <span class="date_time_vital" >9:30pm</span>
+                                </td>
+                                <td>Unknown</td>
+                                <td>Thu 8 Jun</td>
+                                <td>1</td>
+                                <td>Nill</td>
+                                <td>Nill</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Tue 15 Nov 2024</td>
+                        </tbody>
+                        <tbody>
+                        <td>
+                                        <span class="date_time_vital">7th Mar. 2024</span>
+                                        <span class="date_time_vital" >9:30pm</span>
+                                </td>
+                                <td>Unknown</td>
+                                <td>Thu 8 Jun</td>
+                                <td>1</td>
+                                <td>Nill</td>
+                                <td>Nill</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Tue 15 Nov 2024</td>
+                        </tbody>
+                </table>
+         </div>
+         </div>
+         <div class="treatment_prescribtion">
+            <h3>Treatment and Prescribtion</h3> 
+             <i class="fa fa-plus" id="treatment_prescribtion_open"></i> 
+             <i class="fa fa-minus" id="treatment_prescribtion_close"></i>
+         </div>
+         <div class="table_div_treatment_prescribion hidden">
+                <table>
+                        <thead>
+                        <th>Drugs</th>
+                        <th>Strength</th>
+                        <th>Mode</th>
+                        <th>Administration</th>
+                        <th>Dos</th>
+                        <th>Unit</th>
+                        <th>Frequency</th>
+                        <th>Duration</th>
+                        <th>Remark</th>
+                        <th>Qty</th>
+                        <th>Cost</th>
+                        </thead>
+                        <tbody>
+                                <td>Paracetamol</td>
+                                <td>25mg</td>
+                                <td>Injection</td>
+                                <td>IM</td>
+                                <td>10</td>
+                                <td>3</td>
+                                <td>24/hours</td>
+                                <td>3</td>
+                                <td>Good</td>
+                                <td>200</td>
+                                <td>$30,000</td>
+                        </tbody>
+
+                        <thead>
+                        <th>Drugs</th>
+                        <th>Strength</th>
+                        <th>Mode</th>
+                        <th>Dos</th>
+                        <th>Unit</th>
+                        <th>Frequency</th>
+                        <th>Duration</th>
+                        <th>Remark</th>
+                        <th>Qty</th>
+                        <th>Cost</th>
+                        </thead>
+                        <tbody>
+                                <td>Amaten</td>
+                                <td>50mg</td>
+                                <td>Caplsule</td>
+                                <td>10</td>
+                                <td>3</td>
+                                <td>24/hours</td>
+                                <td>3</td>
+                                <td>Good</td>
+                                <td>200</td>
+                                <td>$20,000</td>
+                        </tbody>
+                </table>
+         </div>
+         <div class="diagnosis">
+            <h3>Diagnosis</h3> 
+             <i class="fa fa-plus" id="diagnosis_open"></i> 
+             <i class="fa fa-minus" id="diagnosis_close"></i>
+         </div>
+         <div class="table_div_diagnosis hidden">
          </div>
    </div>
            

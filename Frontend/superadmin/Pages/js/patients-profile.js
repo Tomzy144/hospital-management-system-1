@@ -456,6 +456,42 @@ patients_vitals.addEventListener("click", ()=>{
 })
 
 
+///TREATMENT AND PRESCIBTION
+
+const treatment_prescribtion = document.querySelector(".treatment_prescribtion");
+const treatment_prescribtion_open = document.querySelector("#treatment_prescribtion_open");
+const treatment_prescribtion_close = document.querySelector("#treatment_prescribtion_close");
+const table_div_treatment_prescribion = document.querySelector(".table_div_treatment_prescribion")
+
+treatment_prescribtion.addEventListener("click",()=>{
+    table_div_treatment_prescribion.classList.toggle("hidden");
+    treatment_prescribtion_close.style.display="block";
+    treatment_prescribtion_open.style.display="none";
+    if(table_div_treatment_prescribion.classList.contains("hidden")){
+        treatment_prescribtion_close.style.display="none";
+        treatment_prescribtion_open.style.display="block";
+    }
+
+})
+
+///DIAGNOSIS
+
+
+const diagnosis = document.querySelector(".diagnosis");
+const diagnosis_open = document.querySelector("#diagnosis_open");
+const diagnosis_close = document.querySelector("#diagnosis_close");
+const table_div_diagnosis = document.querySelector(".table_div_diagnosis")
+
+diagnosis.addEventListener("click",()=>{
+    table_div_diagnosis.classList.toggle("hidden");
+    diagnosis_close.style.display="block";
+    diagnosis_open.style.display="none";
+    if(table_div_diagnosis.classList.contains("hidden")){
+        diagnosis_close.style.display="none";
+        diagnosis_open.style.display="block";
+    }
+
+})
     
 ////////////////////////////////////////////////////
 
