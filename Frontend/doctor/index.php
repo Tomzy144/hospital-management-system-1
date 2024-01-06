@@ -131,14 +131,14 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 
-                // Corrected column name
+            
                 echo "<td>" . $row["patient_name"] . "</td>";
                 echo "<td>" . $row["appointment_date"] . "</td>";
                 echo "<td>" . $row["time"] . "</td>";
                 echo "<td>" . $row["reason"] . "</td>";
                 ?>
                 <td>
-                    <button onClick="display_input()">Accept</button>
+                    <button onClick="display_input(<?php $patient_id ?>)">Accept</button>
                     <button>Reject</button>
                 </td>
                 </tr>

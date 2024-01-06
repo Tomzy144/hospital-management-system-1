@@ -548,3 +548,16 @@ const display_input = ()=>{
     document.querySelector(".all_sections_input").classList.remove("hide");
     document.querySelector(".body_sec").style.display = "none";
 }
+
+
+
+
+
+
+
+
+
+
+//////////tomzy's script
+
+
