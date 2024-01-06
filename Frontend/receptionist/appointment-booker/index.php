@@ -220,6 +220,10 @@
             <input type="text" id="name" placeholder="Input name" autocomplete="off">
         </div>
         <div class="form-control">
+            <label for="name">Patient ID</label>
+            <input type="text" id="name" placeholder="Input id" autocomplete="off">
+        </div>
+        <div class="form-control">
             <label for="name">Selected Date</label>
             <span id="selectedDate">2023-10-3 </span>
         </div>
