@@ -267,13 +267,70 @@ function populateDoctorsDropdown(doctors) {
 
 
 
+
+function appointment_booker_validation(){
+
+  var patient_id = $('#patient_id').val();
+	var fullname = $('#name').val();
+
+
+
+  if((patient_id=='')||(fullname=='')){
+		//$('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
+    alert("Fill in the neccessary field");
+    }else{
+		
+  var action='appointment_booker_check';
+    
+   //////////////// get btn text ////////////////
+   var btn_text=$('#sub').html();
+   $('#sub').html('Authenticating...');
+   document.getElementById('sub').disabled=true;
+   ////////////////////////////////////////////////	
+
+
+    var dataString ='action='+ action+'&patient_id='+ patient_id + '&fullname='+ fullname;
+   
+   $.ajax({
+   type: "POST",
+   url: "appointment-booking-code/appointment-booking-code.php",
+   data: dataString,
+   dataType: 'json',
+   cache: false,
+   success: function(data){
+    var scheck = data.check;
+
+   if(scheck==1){
+   // $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
+   alert(patient_id);
+    appointment_booker();
+    
+    // window.alert("Welcome Back")
+   }else {
+    window.alert("This Patient Profile does not exists\n Please Check the Patient Name and Patient_ID for possible Error(s)");
+          // $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
+    }
+    $('#sub').html(btn_text);
+    document.getElementById('sub').disabled=false;
+       $('#sub').html('Submit');
+   }
+   });
+}
+
+
+}
+
+
+
+
 function appointment_booker(){
-	var role = $('#roles').val();
+  var role = $('#roles').val();
 	var doctor = $('#doctors').val();
   var date =$('#date').val();
   var name =$('#name').val();
   var reason =$('#reason').val();
   var time =$('#time').val();
+  var patient_id = $('#patient_id').val();
   var role_id;
 
 
@@ -356,17 +413,17 @@ function appointment_booker(){
   }
 
 
-	if((role_id=='')||(doctor=='')||(date=='')||(name=='')||(reason=='')||(time=='')){
+	if((role_id=='')||(doctor=='')||(date=='')||(patient_id=='')||(name=='')||(reason=='')||(time=='')){
 		$('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
     alert("Fill the neccessary fields");
     }else{
 		 //////////////// get btn text ////////////////
          $('#sub').html('PROCESSING...');
          document.getElementById('sub').disabled=true;
- ////////////////////////////////////////////////	
+//  ////////////////////////////////////////////////	
 		
 		  var action = 'appointment_booker';		 
-          var dataString ='action='+ action+'&role_id='+ role_id +'&doctor='+ doctor+'&date='+ date+'&name='+ name+'&reason='+ reason+'&time='+ time;
+          var dataString ='action='+ action+'&role_id='+ role_id +'&doctor='+ doctor+'&date='+ date +'&patient_id='+ patient_id+'&name='+ name+'&reason='+ reason+'&time='+ time;
           $.ajax({
           type: "POST",
           url: "appointment-booking-code/appointment-booking-code.php",

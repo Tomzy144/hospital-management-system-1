@@ -28,36 +28,32 @@
 
    
     
-    case 'appointment_booker': 
-        $role_id = $_POST['role_id'];
-        $doctor = $_POST['doctor'];
-        $date = $_POST['date'];
-        $reason = $_POST['reason'];
-        $name = $_POST['name'];
-        $time = $_POST['time'];
-        $patient_id= $_POST['patient_id'];
+    case 'appointment_booker_check': 
+        $patient_id = $_POST['patient_id'];
+        $fullname = $_POST['fullname'];
+      
     
         // Use prepared statement to prevent SQL injection
-        $exists_query = mysqli_query($conn, "SELECT * FROM appointment_tab WHERE `time`= '$time' AND `patient_name`='$name' AND `doctor_id`='$doctor' AND `appointment_date`='$date'");
+        $exists_query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE `fullname`= '$fullname' AND `patient_id`='$patient_id'");
         $check_query_count = mysqli_num_rows($exists_query);
     
         if ($check_query_count > 0) {   
-            $check = 0; // Invalid appointment.
+            $check = 1; // exists.
         } else {
-            $check = 1;
+            $check = 0; //patient info doesnt not exits 
     
-            // Inserting a new appointment using prepared statement
-            $insert_query = mysqli_query($conn, "INSERT INTO `appointment_tab` (`appointment_date`, `patient_name`, `reason`, `time`, `role_id`, `doctor_id`,`patient_id`)
-             VALUES ('$date', '$name', '$reason', '$time', '$role_id', '$doctor','$patient_id')") or die(mysqli_error($conn));
+            // // Inserting a new appointment using prepared statement
+            // $insert_query = mysqli_query($conn, "INSERT INTO `appointment_tab` (`appointment_date`, `patient_name`, `reason`, `time`, `role_id`, `doctor_id`,`patient_id`)
+            //  VALUES ('$date', '$name', '$reason', '$time', '$role_id', '$doctor','$patient_id')") or die(mysqli_error($conn));
     
-            // Check if the insertion was successful
-            if ($insert_query) {
-                // Success
-                // You can add additional code here if needed
-            } else {
-                // Failure
-                $check = 0;
-            }
+            // // Check if the insertion was successful
+            // if ($insert_query) {
+            //     // Success
+            //     // You can add additional code here if needed
+            // } else {
+            //     // Failure
+            //     $check = 0;
+            // }
         }
     
         echo json_encode(array("check" => $check)); 
@@ -65,6 +61,43 @@
     
 
 
+    
+        case 'appointment_booker': 
+            $role_id = $_POST['role_id'];
+            $doctor = $_POST['doctor'];
+            $date = $_POST['date'];
+            $reason = $_POST['reason'];
+            $name = $_POST['name'];
+            $time = $_POST['time'];
+            $patient_id= $_POST['patient_id'];
+        
+            // Use prepared statement to prevent SQL injection
+            $exists_query = mysqli_query($conn, "SELECT * FROM appointment_tab WHERE `time`= '$time' AND `patient_name`='$name' AND `doctor_id`='$doctor' AND `appointment_date`='$date'");
+            $check_query_count = mysqli_num_rows($exists_query);
+        
+            if ($check_query_count > 0) {   
+                $check = 0; // Invalid appointment.
+            } else {
+                $check = 1;
+        
+                // Inserting a new appointment using prepared statement
+                $insert_query = mysqli_query($conn, "INSERT INTO `appointment_tab` (`appointment_date`, `patient_name`, `reason`, `time`, `role_id`, `doctor_id`,`patient_id`)
+                 VALUES ('$date', '$name', '$reason', '$time', '$role_id', '$doctor','$patient_id')") or die(mysqli_error($conn));
+        
+                // Check if the insertion was successful
+                if ($insert_query) {
+                    // Success
+                    // You can add additional code here if needed
+                } else {
+                    // Failure
+                    $check = 0;
+                }
+            }
+        
+            echo json_encode(array("check" => $check)); 
+            break;
+        
+    
 
 
  

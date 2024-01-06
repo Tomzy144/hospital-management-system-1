@@ -221,7 +221,7 @@
         </div>
         <div class="form-control">
             <label for="name">Patient ID</label>
-            <input type="text" id="name" placeholder="Input id" autocomplete="off">
+            <input type="text" id="patient_id" placeholder="Input id" autocomplete="off">
         </div>
         <div class="form-control">
             <label for="name">Selected Date</label>
@@ -233,12 +233,12 @@
         </div>
             <div class="form-control">
             <label for="text">Request Typet</label>
-            <input type="text" id="text" name="text">          
+            <input type="text" id="reason" name="text">          
         </div>
             <input type="hidden" id="date"  value="">
             <input type="hidden" id="role"  value="">
             <input type="hidden" id="doctor"  value="">
-            <button id="sub" type="button" onClick="appointment_booker();" >Submit</button>
+            <button id="sub" type="button" onClick="appointment_booker_validation();" >Submit</button>
         </form>
     </div>
     </div>
