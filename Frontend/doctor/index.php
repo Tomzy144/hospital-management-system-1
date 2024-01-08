@@ -124,32 +124,50 @@ $result = $conn->query($sql);
         </tr>
     </thead>
 
-    <tbody class="a_1">
-        <?php
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                
-            
-                echo "<td>" . $row["patient_name"] . "</td>";
-                echo "<td>" . $row["appointment_date"] . "</td>";
-                echo "<td>" . $row["time"] . "</td>";
-                echo "<td>" . $row["reason"] . "</td>";
-                ?>
-                <td>
-                    <button onClick="display_input(<?php $patient_id ?>)">Accept</button>
-                    <button>Reject</button>
-                </td>
-                </tr>
+   <tbody class="a_1">
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row["patient_name"] . "</td>";
+            echo "<td>" . $row["appointment_date"] . "</td>";
+            echo "<td>" . $row["time"] . "</td>";
+            echo "<td>" . $row["reason"] . "</td>";
+            echo "<td>";
+            // Pass $row["patient_id"] to the JavaScript functions
+            ?>
+            <button class="accept-btn" type="button" data-patient-id="<?php echo $row["patient_id"]; ?>">Accept</button>
+            <button class="reject-btn" data-patient-id="<?php echo $row["patient_id"]; ?>">Reject</button>
             <?php
-            }
-        } else {
-            echo "<tr><td colspan='5'>No records found</td></tr>";
+            echo "</td>";
+            echo "</tr>";
         }
-        ?>
-    </tbody>
+    } else {
+        echo "<tr><td colspan='5'>No records found</td></tr>";
+    }
+    ?>
+</tbody>
 </table>
+
+<script>
+    // Use event listeners to handle button clicks
+    document.querySelectorAll('.accept-btn').forEach(function (button) {
+        button.addEventListener('click', function () {
+            var patientId = this.getAttribute('data-patient-id');
+            accept_input(patientId);
+            display_input();
+        });
+    });
+
+    document.querySelectorAll('.reject-btn').forEach(function (button) {
+        button.addEventListener('click', function () {
+            var patientId = this.getAttribute('data-patient-id');
+            delete_input(patientId);
+        });
+    });
+
+    // Your existing JavaScript functions (accept_input, display_input, delete_input) here
+</script>
 
       
 
@@ -158,11 +176,15 @@ $result = $conn->query($sql);
         </div>
 
 
+    <?php
+        $patient_id = $_POST['patient_id'];
+    ?>
+
      <!----Start from here-->
    <div class="all_sections_input hide">
     <!--Start of the complaint section--->
    <div class="complain_dropdown">
-    <span>Complaints</span>
+    <span>Complaints <?php echo $patient_id ?></span>
     <i class="fa fa-plus" id="complaint_icon_plus"></i>
     <i class="fa fa-minus" id="complaint_icon_minus"></i>
    </div>

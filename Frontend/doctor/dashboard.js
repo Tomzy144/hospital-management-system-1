@@ -559,5 +559,26 @@ const display_input = ()=>{
 
 
 //////////tomzy's script
+function accept_input(patient_id) {
+    alert(patient_id);
+
+    // Create a form dynamically
+    var form = document.createElement('form');
+    form.method = 'post';
+    form.action = 'index.php';
+
+    // Creates a hidden input field for patient_id
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'patient_id';
+    input.value = patient_id; // Use the actual patient_id, not the button element
+
+    // Append the input to the form
+    form.appendChild(input);
+
+    // Append the form to the body and submit it
+    document.body.appendChild(form);
+    form.submit();
+}
 
 
