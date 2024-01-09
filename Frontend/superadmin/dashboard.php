@@ -70,7 +70,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <body>
 <div class="navbar" > 
     <div class="toggle" id="open-toggle">
-        <i class="fa fa-navicon (alias)"></i>
+        <i class="fa fa-toggle-on"></i>
 
     </div>
     <div class="div-logo">
@@ -111,18 +111,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <i class="fa fa-user-md" id="sidebar_icons"></i>
                 <span class="lists hide">Nurse</span>
             </li>
-            <li class="items" onClick='openPharmacyPage()'>
-                <i class="fa fa-plus-square" id="sidebar_icons"></i>
-              <span class="lists hide">Phamacy</span>  
-            </li>
-            <li class="items" onClick='openLabPage()'>
-                <i class="fa fa-flask" id="sidebar_icons"></i>
-              <span class="lists hide">Labouratory</span>  
-            </li>
-            <li class="items" onClick='openPrecedurePage()'>
-                <i class="fa fa-hospital-o" id="sidebar_icons"></i> 
-               <span class="lists hide">Precedures</span> 
-            </li>
             <li class="items"  onClick='openFinancePage()'>
                <i class="fa fa-money" id="sidebar_icons"></i> 
                 <span class="lists hide">Finance</span>
@@ -131,10 +119,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <i class="fa fa-user-circle-o" id="sidebar_icons"></i>
                 <span class="lists hide">Receptionist</span>
             </li>
-            <!-- <li class="items" onClick='openPhysiotherapyPage()'>
-                <i class="fa fa-stethoscope" id="sidebar_icons"></i>
-               <span class="lists hide">Physiotherapy</span> 
-            </li> -->
             <li class="items" onClick='openStaffPage()'>
                 <i class="fa fa-users" id="sidebar_icons"></i> 
                 <span class="lists hide">Staffs</span>
