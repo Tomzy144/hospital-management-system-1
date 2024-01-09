@@ -141,7 +141,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <div class="content">
             <div  class="patient-navbar">
                 <i class="fa fa-long-arrow-left t" id='back-arrow-patientslist' onClick='backWardArrow()'></i>
-                <h1>KING PROFILE</h1>
+                <h1><?php echo $fullname ?> PROFILE</h1>
             </div>
             <!--timer-->
             <div class="container-timer">

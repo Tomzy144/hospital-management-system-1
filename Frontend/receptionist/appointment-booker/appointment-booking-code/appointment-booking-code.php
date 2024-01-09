@@ -70,6 +70,8 @@
             $name = $_POST['name'];
             $time = $_POST['time'];
             $patient_id= $_POST['patient_id'];
+            // $patient_id= $_POST['patient_id'];
+            $appointment_status_id= "1";
         
             // Use prepared statement to prevent SQL injection
             $exists_query = mysqli_query($conn, "SELECT * FROM appointment_tab WHERE `time`= '$time' AND `patient_name`='$name' AND `doctor_id`='$doctor' AND `appointment_date`='$date'");
@@ -79,10 +81,15 @@
                 $check = 0; // Invalid appointment.
             } else {
                 $check = 1;
-        
+                $sequence=$callclass->_get_sequence_count($conn, 'APP');
+                $array = json_decode($sequence, true);
+                $no= $array[0]['no'];
+                //$num= $array[0]['num'];
+                $appointment_id='APP'.$no;
+
                 // Inserting a new appointment using prepared statement
-                $insert_query = mysqli_query($conn, "INSERT INTO `appointment_tab` (`appointment_date`, `patient_name`, `reason`, `time`, `role_id`, `doctor_id`,`patient_id`)
-                 VALUES ('$date', '$name', '$reason', '$time', '$role_id', '$doctor','$patient_id')") or die(mysqli_error($conn));
+                $insert_query = mysqli_query($conn, "INSERT INTO `appointment_tab` (`appointment_date`, `patient_name`, `reason`, `time`, `role_id`, `doctor_id`,`patient_id`,`appointment_id`,`appointment_status_id`)
+                 VALUES ('$date', '$name', '$reason', '$time', '$role_id', '$doctor','$patient_id','$appointment_id','$appointment_status_id')") or die(mysqli_error($conn));
         
                 // Check if the insertion was successful
                 if ($insert_query) {

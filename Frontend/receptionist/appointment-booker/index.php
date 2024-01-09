@@ -6,6 +6,8 @@
 
 <?php
  $staff_id= $_POST['staff_id'];
+
+
 ?>
 
 
@@ -35,75 +37,64 @@
     </div>
    </div>
    <div class="contents">
-    <div class="add-new">
-        <div class="flex">
-        <button id='btn-drop-down'>
-            <!-- <i class="fa fa-plus"></i> -->
-            <span>Book an Appointment</span>
-           </button>
-        </div>
-        </div>
-    <div class="activities">
-      <div class="three-container-row">
-        <div class="activities-container">
-            <span>Appoitment Schedule for a patient with Doctor Micheal</span>
-            <span>Status: Pending</span>
-            <button id='edit-schedule'>Edit Schedule</button>
-            <button  id='delete-schedule'>Delete Schedule</button>
-        </div>
-        <div class="activities-container">
-        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
-            <span>Status: Accepted</span>
-            <button id='edit-schedule'>Edit Schedule</button>
-            <button  id='delete-schedule'>Delete Schedule</button>
-        </div>
-        <div class="activities-container">
-        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
-            <span style='font-size:1rem'>Status: Rejected</span>
-            <button id='edit-schedule'>Edit Schedule</button>
-            <button id='delete-schedule'>Delete Schedule</button>
+        <div class="add-new">
+            <div class="flex">
+                <button id='btn-drop-down'>
+                    <!-- <i class="fa fa-plus"></i> -->
+                    <span>Book an Appointment</span>
+                </button>
             </div>
         </div>
-      <div class="three-container-row">
-        <div class="activities-container">
-            <span>Appoitment Schedule for a patient with Doctor Micheal</span>
-            <span>Status: Pending</span>
-            <button id='edit-schedule'>Edit Schedule</button>
-            <button  id='delete-schedule'>Delete Schedule</button>
-        </div>
-        <div class="activities-container">
-        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
-            <span>Status: Accepted</span>
-            <button id='edit-schedule'>Edit Schedule</button>
-            <button  id='delete-schedule'>Delete Schedule</button>
-        </div>
-        <div class="activities-container">
-        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
-            <span style='font-size:1rem'>Status: Rejected</span>
-            <button id='edit-schedule'>Edit Schedule</button>
-            <button id='delete-schedule'>Delete Schedule</button>
-            </div>
-        </div>
-      <div class="three-container-row">
-        <div class="activities-container">
-            <span>Appoitment Schedule for a patient with Doctor Micheal</span>
-            <span>Status: Pending</span>
-            <button id='edit-schedule'>Edit Schedule</button>
-            <button  id='delete-schedule'>Delete Schedule</button>
-        </div>
-        <div class="activities-container">
-        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
-            <span>Status: Accepted</span>
-            <button id='edit-schedule'>Edit Schedule</button>
-            <button  id='delete-schedule'>Delete Schedule</button>
-        </div>
-        <div class="activities-container">
-        <span>Appoitment Schedule for a patient with Doctor Micheal</span>
-            <span style='font-size:1rem'>Status: Rejected</span>
-            <button id='edit-schedule'>Edit Schedule</button>
-            <button id='delete-schedule'>Delete Schedule</button>
-            </div>
-        </div>
+                <div class="activities">
+                <!-- <div class="three-container-row"> -->
+                    <!-- <div class="activities-container"> -->
+                    <?php
+
+            // Fetch data from the appointments table
+            $sql = "SELECT * FROM appointment_tab";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    // Fetch doctor name for the current appointment
+                    $doctor_id = $row["doctor_id"];
+                    $sql_doctor = "SELECT fullname FROM doctor_tab WHERE doctor_id = '$doctor_id'";
+                    $doctor_result = $conn->query($sql_doctor);
+
+                    if ($doctor_result->num_rows > 0) {
+                        $doctor_row = $doctor_result->fetch_assoc();
+                        $doctor_name = $doctor_row['fullname'];
+                    } else {
+                        $doctor_name = "Unknown Doctor";
+                    }
+
+                    // Fetch appointment status name for the current appointment
+                    $appointment_status_id = $row["appointment_status_id"];
+                    $sql_status = "SELECT appointment_status_name FROM appointment_status_tab WHERE appointment_status_id = '$appointment_status_id'";
+                    $status_result = $conn->query($sql_status);
+
+                    if ($status_result->num_rows > 0) {
+                        $status_row = $status_result->fetch_assoc();
+                        $appointment_status_name = $status_row['appointment_status_name'];
+                    } else {
+                        $appointment_status_name = "Unknown Status";
+                    }
+
+                    // Display appointment information
+                    echo "<div class='three-container-row'>";
+                    echo "    <div class='activities-container'>";
+                    echo "       <span>Appointment Schedule for Patient Name: " .  $row["patient_name"] . " with Doctor: " . $doctor_name . "</span>";
+                    echo "        <span>Status: " . $appointment_status_name . "</span>";
+                    echo "        <button id='edit-schedule' class='edit-schedule'>Edit Schedule</button>";
+                    echo "        <button id='delete-schedule' class='delete-schedule'>Delete Schedule</button>";
+                    echo "    </div>";
+                    echo "</div>";
+                }
+            } else {
+                echo "No appointments found.";
+            }
+
+            ?>
         </div>
     </div>
 

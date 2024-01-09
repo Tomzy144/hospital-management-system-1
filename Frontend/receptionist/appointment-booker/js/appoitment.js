@@ -302,7 +302,7 @@ function appointment_booker_validation(){
 
    if(scheck==1){
    // $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
-   alert(patient_id);
+ 
     appointment_booker();
     
     // window.alert("Welcome Back")
