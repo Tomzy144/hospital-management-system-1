@@ -29,9 +29,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           </i>
           </div>
           <div class="profile">
-            <div class="profile_account">
-            <img id="image_profile_account" src="../Images/IMG_3745.JPG" alt=""><br/>
+            <div class="profile_account hide">
+            <img id="image_profile_account" src="../Images/IMG_3745.JPG" alt="">
             <h3>Kingsley Etete Effiong</h3>
+            <button class="btn_submit">Upload Image</button>
+            <span>change password</span>
         </div>
             <div class="image">
             <img src="../Images/IMG_3745.JPG" alt="">
@@ -39,7 +41,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             </div>
         </img>  
             <span>Kingsley Etete Effiong</span>
-            <i class="fa fa-caret-down" id="icon"></i>
+            <i class="fa fa-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>
     </div>
@@ -61,9 +63,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <button onClick="click_antenal_button()">Antenatal Admission</button>
     <button>Vital</button>
     <button>Prescribtion</button>
-    <button>Doctor Appoitment</button>
+    <button onClick="click_appoitment_button()">Doctor Appoitment</button>
     </div>
     </div>
+
+        <div class="appoitment_section hide">
+            <div class="appoitment_container">
+                <section class="doctor_page"></section>
+            <section class="appoitments">
+            <h1>Appoitments</h1>
+            <div class="cards_container">
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            </div>
+            </section>
+            </div>
+        </div>
 
     <div class="form_container_for_antenatal hide">
     <form action="">

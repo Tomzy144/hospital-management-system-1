@@ -53,6 +53,12 @@ body{
     padding: 0.5rem 0.5rem;
     position: relative;
 }
+#icon-drop{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
 .notification1{
     position: absolute;
     top: 0;
@@ -95,9 +101,10 @@ body{
     width: 300px;
     position: absolute;
     background:linear-gradient(-12deg, rgb(42, 87, 215) 0px, rgb(42, 87, 215) 100%) !important;
-    height: 300px;
+    height: fit-content;
     top: 100%;
     right: 2%;
+    padding: 1rem 1rem;
     box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
@@ -108,6 +115,27 @@ body{
     height: 140px;
     border-radius: 100%;
     background:rgb(0, 158, 251);;
+}
+.profile_account .btn_submit{
+    width: 100%;
+    background-color: #fff;
+    padding: 0.7rem;
+    border: none;
+    color: rgb(42, 87, 215);
+    border-radius: 5px;
+    transition: all  ease-in-out 0.6s;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+.profile_account  .btn_submit:hover{
+    transform: scale(0.98);
+    background: none;
+    color:rgb(255, 255, 255);
+    border: 2px solid #fff;
+}
+.profile_account span{
+    text-align: left;
+    cursor: pointer;
 }
 .profile_account h3{
     color: rgb(255, 255, 255);
@@ -202,7 +230,7 @@ body{
 }
 .contents{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background:linear-gradient(-12deg, rgb(42, 87, 215) 0px, rgb(42, 87, 215) 100%) !important;
     display: flex;;
     flex-direction: column;
@@ -366,3 +394,60 @@ form span{
     color:rgb(42, 87, 215);
     animation: fadeIn 1s ease-in-out;
 }
+
+
+/*appoitment section*/
+.appoitment_section{
+    width: 100%;
+    background-color: #fff;
+    height: 100%;
+}
+
+.appoitment_container{
+    margin: 2rem auto 0 auto;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.appoitment_container .appoitments{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 1rem 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:  center;
+}
+.appoitments h1{
+    padding: 1rem;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+    border-radius: 22px;
+}
+
+.cards_container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items:  center;
+}
+.cards{
+    width: 350px;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
+    margin: 1rem 1rem;
+}
+.appoitment_container .doctor_page{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(42, 87, 215);
+    margin: 1rem 0 0;
+}
+

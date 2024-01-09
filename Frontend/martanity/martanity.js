@@ -3,7 +3,6 @@ const click_antenal_button = ()=>{
     body_change_background.classList.add("hide");
     const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
     show_antenatal_form.classList.remove("hide")
-    body_change_background.classList.add("not_active");
 }
 
 
@@ -100,3 +99,22 @@ const backFrom3Pos = ()=>{
     back_btn2Pos.style.display = "block";
     
 }
+
+
+//PROFILE IMAGE
+const profile_container  =  document.querySelector(".profile_account");
+const click_icon_for_profile = ()=>{
+    profile_container.classList.toggle("hide");
+};
+
+
+const click_appoitment_button = ()=>{
+    const body_change_background = document.querySelector('.contents');
+    body_change_background.classList.add("hide");
+    const show_antenatal_form = document.querySelector(".appoitment_section");
+    show_antenatal_form.classList.remove("hide");
+}
+
+
+
+//calendar
