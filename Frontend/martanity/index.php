@@ -29,21 +29,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           </i>
           </div>
           <div class="profile">
+            <div class="profile_account">
+            <img id="image_profile_account" src="../Images/IMG_3745.JPG" alt=""><br/>
+            <h3>Kingsley Etete Effiong</h3>
+        </div>
             <div class="image">
             <img src="../Images/IMG_3745.JPG" alt="">
             <div class="active"></div>
             </div>
         </img>  
             <span>Kingsley Etete Effiong</span>
+            <i class="fa fa-caret-down" id="icon"></i>
           </div>
         </div>
     </div>
     <div class="dashboard_contents">
         <div class="sidebar">
                <div class="sidebar_contents">
-                <span>Hi Sir</span>
+                <span>Company Logo</span>
                </div>
-        
+            <div class="sidebar_icons">
+                <i class="fa fa-envelope" id="icon"></i>
+                <i class="fa fa-medkit" id="icon"></i>
+                <i class="fa fa-hospital-o" id="icon"></i>
+                <i class="fa fa-sign-out" id="icon"></i>
+            </div>
         </div>
         <div class="contents">
     <div class="button_container">

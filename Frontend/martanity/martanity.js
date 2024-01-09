@@ -56,7 +56,7 @@ const click_postnatal_button = ()=>{
     const body_change_background = document.querySelector('.contents');
     const show_antenatal_form = document.querySelector(".form_container_for_postnatal");
     show_antenatal_form.classList.remove("hide")
-    body_change_background.classList.add("not_active");
+    body_change_background.classList.add("hide");
 }
 
 

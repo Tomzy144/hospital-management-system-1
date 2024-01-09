@@ -33,7 +33,7 @@ openToggleSidebar.addEventListener("click", function(){
     const list = document.querySelectorAll(".items");
     for(let l=0; l < list.length; l++){
      list[l].addEventListener("mouseover",()=>{
-       list[l].style.color = "rgb(0, 82, 101)";
+       list[l].style.color = " rgb(0, 158, 251)";
       })
       list[l].addEventListener("mouseout",()=>{
         list[l].style.color = "#fff";
@@ -53,7 +53,7 @@ openToggleSidebar.addEventListener("click", function(){
     const list = document.querySelectorAll(".items");
     for(let l=0; l < list.length; l++){
      list[l].addEventListener("mouseover",()=>{
-       list[l].style.color = "rgb(0, 158, 251)";
+       list[l].style.color = "rgb(42, 87, 215)";
       })
       list[l].addEventListener("mouseout",()=>{
         list[l].style.color = "#fff";

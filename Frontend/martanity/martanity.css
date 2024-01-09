@@ -12,7 +12,7 @@ body{
 .navbar{
     width: 100%;
     height: 75px;
-    background: rgb(158, 77, 154);
+    background:linear-gradient(-12deg, rgb(42, 87, 215) 0px, rgb(42, 87, 215) 100%) !important;
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -65,7 +65,7 @@ body{
     font-size: 15px;
     text-align: center;
     border-radius: 100%;
-    background-color: rgb(158, 77, 154);
+    background:rgb(0, 158, 251);;
     border: 2px solid #fff;
 }
 .notification2{
@@ -80,7 +80,7 @@ body{
     font-size: 15px;
     text-align: center;
     border-radius: 100%;
-    background-color: rgb(158, 77, 154);
+    background:rgb(0, 158, 251);;
     border: 2px solid #fff;
 }
 .profile{
@@ -91,6 +91,28 @@ body{
     justify-content: center;
     align-items: center;;
 }
+.profile_account{
+    width: 300px;
+    position: absolute;
+    background:linear-gradient(-12deg, rgb(42, 87, 215) 0px, rgb(42, 87, 215) 100%) !important;
+    height: 300px;
+    top: 100%;
+    right: 2%;
+    box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#image_profile_account{
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
+}
+.profile_account h3{
+    color: rgb(255, 255, 255);
+}
+
 .profile img{
     width: 50px;
     margin: 0 0.8rem;
@@ -118,7 +140,7 @@ body{
     margin: 0 7rem;
     border-radius: 5px;
     cursor: pointer;
-    color: rgb(158, 77, 154);
+    color: rgb(0, 158, 251);;
     font-size: 12px;
     transition: all ease-in-out 0.6s;
 }
@@ -132,7 +154,7 @@ body{
 .dashboard_contents {
     width: 100%;
     height: 100vh;
-    background-image: url(../Images/8788372.jpg);
+    background-image: url(../Images/137028.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -152,15 +174,36 @@ body{
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 1000;
-    background: rgb(158, 77, 154);
+    background:rgb(42, 87, 215);
 }
 .sidebar_contents{
-    margin: 1rem 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+   color: #fff;
+   height: 75px;
+   cursor: pointer;
+   text-align: center;
+   border-bottom: 2px solid rgba(255, 255, 255);
+}
+.sidebar_icons{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.sidebar_icons #icon{
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 2rem 0;
 }
 .contents{
     width: 100%;
     height: 100%;
-    background: rgb(158, 77, 154);
+    background:linear-gradient(-12deg, rgb(42, 87, 215) 0px, rgb(42, 87, 215) 100%) !important;
     display: flex;;
     flex-direction: column;
     align-items: center;
@@ -172,9 +215,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.contents.not_active{
-    display: none;
-}
+
 .form_section{
     display: none;
   }
@@ -196,7 +237,7 @@ h1{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #fff;
     overflow: hidden;
-    color: rgb(158, 77, 154);
+    color: rgb(42, 87, 215);
     animation: fadeIn 1s ease-in-out;
 }
 form{
@@ -208,7 +249,7 @@ form span{
     text-align: center;
     font-size: 18px;
     font-weight: bold;
-    color: rgb(158, 77, 154);
+    color: rgb(42, 87, 215);
     letter-spacing: 4px;
     animation: slideInLeft 1s ease-in-out;
 }
@@ -222,18 +263,19 @@ form span{
 .form_control input{
     padding: 0.6rem;
     border: none;
-    border-bottom: 1px solid rgb(231, 165, 226);
+    border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
 
 }
 .form_control input:focus{
-    border: 2px solid rgb(231, 165, 226);
+    border: 2px solid rgb(42, 87, 215);
 }
 .btn_next1, .btn_next2, .btn_next3{
     width: 100%;
-    background-color: rgb(158, 77, 154);
+    background-color: rgb(42, 87, 215);
     padding: 0.7rem;
     border: none;
+    border-radius: 5px;
     color: #fff;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
@@ -241,10 +283,11 @@ form span{
 }
 .btn_back2{
     width: 100%;
-    background-color: rgb(158, 77, 154);
+    background-color: rgb(42, 87, 215);
     padding: 0.7rem;
     border: none;
     color: #fff;
+    border-radius: 5px;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
     margin: 1rem 0;
@@ -252,14 +295,15 @@ form span{
 .btn_back2:hover{
     transform: scale(0.98);
     background-color: #fff;
-    color:rgb(158, 77, 154); 
-    border: 2px solid rgb(158, 77, 154);
+    color:rgb(42, 87, 215);
+    border: 2px solid rgb(42, 87, 215);
 }
 .btn_back3{
     width: 100%;
-    background-color: rgb(158, 77, 154);
+    background-color: rgb(42, 87, 215);
     padding: 0.7rem;
     border: none;
+    border-radius: 5px;
     color: #fff;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
@@ -268,15 +312,16 @@ form span{
 .btn_back3:hover{
     transform: scale(0.98);
     background-color: #fff;
-    color:rgb(158, 77, 154); 
-    border: 2px solid rgb(158, 77, 154);
+    color:rgb(42, 87, 215);
+    border: 2px solid rgb(42, 87, 215);
 }
 .btn_submit{
     width: 100%;
-    background-color: rgb(158, 77, 154);
+    background-color: rgb(42, 87, 215);
     padding: 0.7rem;
     border: none;
     color: #fff;
+    border-radius: 5px;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
     margin: 1rem 0;
@@ -284,27 +329,27 @@ form span{
 .btn_submit:hover{
     transform: scale(0.98);
     background-color: #fff;
-    color:rgb(158, 77, 154); 
-    border: 2px solid rgb(158, 77, 154);
+    color:rgb(42, 87, 215);
+    border: 2px solid rgb(42, 87, 215);
 }
 
 .btn_next1:hover{
     transform: scale(0.98);
     background-color: #fff;
-    color:rgb(158, 77, 154); 
-    border: 2px solid rgb(158, 77, 154);
+    color:rgb(42, 87, 215);
+    border: 2px solid rgb(42, 87, 215);
 }
 .btn_next2:hover{
     transform: scale(0.98);
     background-color: #fff;
-    color:rgb(158, 77, 154); 
-    border: 2px solid rgb(158, 77, 154);
+    color:rgb(42, 87, 215);
+    border: 2px solid rgb(42, 87, 215);
 }
 .btn_next3:hover{
     transform: scale(0.98);
     background-color: #fff;
-    color:rgb(158, 77, 154); 
-    border: 2px solid rgb(158, 77, 154);
+    color:rgb(42, 87, 215);
+    border: 2px solid rgb(42, 87, 215);
 }
 .hide{
     display: none;
@@ -318,6 +363,6 @@ form span{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #fff;
     overflow: hidden;
-    color:rgb(158, 77, 154);
+    color:rgb(42, 87, 215);
     animation: fadeIn 1s ease-in-out;
 }
