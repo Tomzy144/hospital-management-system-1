@@ -117,4 +117,58 @@ const click_appoitment_button = ()=>{
 
 
 
-//calendar
+//DOCTOR
+const doctorsData = {
+  cardiologist: ['Dr. Tomiwa', 'Dr. Johnson'],
+  dermatologist: ['Dr. Kingsley', 'Dr. White'],
+  surgeon:['Dr. Priceless', 'Dr John'],
+  psychiatrist:['Dr. Towa', 'Dr Paul'],
+  family_medicine:['Dr. Praise', 'Dr Trinity'],
+  dermatologist: ['Dr.Tom', 'Dr Ruth' ],
+  anaesthesiology:['Dr. Drake', 'Dr. Drake'],
+  rheumatologist:['Dr. Peace', 'Dr Jude'],
+  endocrinologist:['Dr. Grace', 'Dr. Houston'],
+  nephrologist:['Dr. Goodness', 'Dr Goodnews'],
+  neurologist:['Dr. Goodness', 'Dr.Peace'],
+  pediatrician:['Dr. Fooad', 'Dr. Fooad'],
+  urologist:['Dr. Uro', 'Dr. Fooad'],
+  radiologist:['Dr. Fooad', 'Dr. Fooad'],
+  dentist:['Dr. Gofade', 'Dr. Fooad'],
+  pulmonologist:['Dr. Foatt', 'Dr. Fooad'],
+  podiatristian:['Dr. Foatt', 'Dr. Fogad'],
+  emergency_physician:['Dr. Good', 'Dr. Tom'],
+  anaesthesiologist:['Dr. Green', 'Dr. Green'],
+  cardiologist:['Dr Ben', 'Dr. White'],
+  oncologist:['Dr. Bemson', 'Dr. Green'],
+  gastroenterologist:['Dr. Houston', 'Dr. Green'],
+  ophthanlmologist:['Dr. Jous', 'Dr. King'],
+  cardology:['Dr. Funke', 'Dr Roseline'],
+  allergist:['Dr. Postel', 'Dr.Houston'],
+  orthopedic_surgoen:['Dr.Lookman', 'Dr. Chelsea'],
+};
+
+function getDoctors() {
+  const selectedRole = document.getElementById('roles').value;
+  const doctorsSelect = document.getElementById('doctors');
+  doctorsSelect.innerHTML = ''; // Clear previous options
+
+  // Populate the doctors select box based on the selected role
+  doctorsData[selectedRole].forEach(doctor => {
+      const option = document.createElement('option');
+      option.value = doctor;
+      option.text = doctor;
+      doctorsSelect.appendChild(option);
+  });
+}
+
+// Initial population of doctors based on the default selected role
+getDoctors();
+
+
+//VITALS
+const click_vital_button = ()=>{
+    const body_change_background = document.querySelector('.contents');
+    body_change_background.classList.add("hide");
+    const show_antenatal_form = document.querySelector(".vital_input");
+    show_antenatal_form.classList.remove("hide");
+}

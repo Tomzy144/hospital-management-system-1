@@ -30,17 +30,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           </div>
           <div class="profile">
             <div class="profile_account hide">
-            <img id="image_profile_account" src="../Images/IMG_3745.JPG" alt="">
-            <h3>Kingsley Etete Effiong</h3>
+            <img id="image_profile_account" src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+            <h4>Princess Esther Asuquo</h4>
             <button class="btn_submit">Upload Image</button>
             <span>change password</span>
         </div>
             <div class="image">
-            <img src="../Images/IMG_3745.JPG" alt="">
+            <img src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
             <div class="active"></div>
             </div>
         </img>  
-            <span>Kingsley Etete Effiong</span>
+            <span>Princess Esther Asuquo</span>
             <i class="fa fa-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>
@@ -48,7 +48,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <div class="dashboard_contents">
         <div class="sidebar">
                <div class="sidebar_contents">
-                <span>Company Logo</span>
+                <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
                </div>
             <div class="sidebar_icons">
                 <i class="fa fa-envelope" id="icon"></i>
@@ -61,21 +61,130 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <div class="button_container">
     <button onClick="click_postnatal_button()">Postnatal Admission</button>
     <button onClick="click_antenal_button()">Antenatal Admission</button>
-    <button>Vital</button>
+    <button onClick="click_vital_button()">Vital</button>
     <button>Prescribtion</button>
     <button onClick="click_appoitment_button()">Doctor Appoitment</button>
     </div>
     </div>
 
-        <div class="appoitment_section hide">
+<div class="appoitment_section hide">
             <div class="appoitment_container">
-                <section class="doctor_page"></section>
+                <section class="doctor_page">
+                    <div class="doc_roles">
+                <label for="roles">Doctor Role:</label>
+<select id="roles"  onclick="getDoctors()">
+<option>Select</option>
+    <option value="cardiologist">Cardiologist</option>
+    <option value="dermatologist">Dermatologist</option>
+    <option value="surgeon">Surgeon</option>
+    <option value="psychiatrist">Psychiatrist:</option>
+    <option value="family_medicine">Family Medicine</option>
+    <option value="dermatologist">Dermatologist</option>
+    <option value="anaesthesiology">Anaesthesiology</option>
+    <option value="rheumatologist">Rheumatologist</option>
+    <option value="endocrinologist">Endocrinologist</option>
+    <option value="nephrologist">Nephrologist</option>
+    <option value="neurologist">Neurologist</option>
+    <option value="pediatrician">Pediatrician</option>                
+    <option value="urologist">Urologist</option>
+    <option value="radiologist">Radiologist</option>
+    <option value="dentist">Dentist</option>
+    <option value="pulmonologist">Pulmonologist</option>
+    <option value="podiatristian">Podiatristian</option>
+    <option value="emergency_physician">Emergency Physician</option>
+    <option value="anaesthesiologist">Anaesthesiologist</option>
+    <option value="cardiologist">Cardiologist</option>
+    <option value="oncologist">Oncologist</option>
+    <option value="gastroenterologist">Gastroenterologist</option>
+    <option value="ophthanlmologist">Ophthanlmologist</option>
+    <option value="cardology">Cardology</option>
+    <option value="allergist">Allergist</option>
+    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
+    <!-- Add more role options as needed-->
+</select>
+<label for="doctors">Select Doctor:</label>
+<select id="doctors">
+    Doctors for the selected role will be dynamically added here
+</select>
+<button id="continue" type="submit" onClick="submitRoles()" >Continue</button>
+</div>
+                </section>
+
             <section class="appoitments">
             <h1>Appoitments</h1>
             <div class="cards_container">
-            <div class="cards"></div>
-            <div class="cards"></div>
-            <div class="cards"></div>
+            <div class="cards">
+                <div class="profile">
+                    <img src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
+                    <div class="name_role">
+                    <h3>Dr. Rita John</h3>
+                    <h4>Gynaecologist</h4>
+                    </div>
+                </div>
+                <div class="date_time">
+                    <div class="date">
+                        <i class="fa fa-calendar"></i>
+                        <span>2/03/2024</span>
+                    </div>
+                    <div class="time">
+                    <i class="fa fa-clock-o"></i>
+                    <span>2.30pm</span>
+                    </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn">Accepted</button>
+                        <button class="btn">Rejected</button>
+                        <button class="btn">Pending</button>
+                    </div>
+            </div>
+            <div class="cards">
+            <div class="profile">
+                    <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+                    <div class="name_role">
+                    <h3>Dr. Patience Emmanuel</h3>
+                    <h4>Gynaecologist</h4>
+                    </div>
+                </div>
+                <div class="date_time">
+                    <div class="date">
+                        <i class="fa fa-calendar"></i>
+                        <span>2/03/2024</span>
+                    </div>
+                    <div class="time">
+                    <i class="fa fa-clock-o"></i>
+                    <span>2.30pm</span>
+                    </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn">Accepted</button>
+                        <button class="btn">Rejected</button>
+                        <button class="btn">Pending</button>
+                    </div>
+            </div>
+            <div class="cards">
+            <div class="profile">
+                    <img src="../Images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
+                    <div class="name_role">
+                    <h3>Dr. Kingsley Patrick</h3>
+                    <h4>Gynaecologist</h4>
+                    </div>
+                </div>
+                <div class="date_time">
+                    <div class="date">
+                        <i class="fa fa-calendar"></i>
+                        <span>2/03/2024</span>
+                    </div>
+                    <div class="time">
+                    <i class="fa fa-clock-o"></i>
+                    <span>2.30pm</span>
+                    </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn">Accepted</button>
+                        <button class="btn">Rejected</button>
+                        <button class="btn">Pending</button>
+                    </div>
+            </div>
             </div>
             </section>
             </div>
@@ -154,6 +263,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <button class="btn_back2" type="button" id="btn_next" onClick="backFrom2()">Back</button>
         <button class="btn_next2" type="button" id="btn_next" onClick="nextForm2()">Next</button>
 </div>
+
 <div class="form_section current_section" id="section3">
         <span>Antenatal Care Information</span>
         <div class="form_control">
@@ -316,6 +426,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
     </form>
     </div>
+    <div class="vital_input hide">
+    
+</div>
     </div>
 <script src="martanity.js"></script>
 </body>
