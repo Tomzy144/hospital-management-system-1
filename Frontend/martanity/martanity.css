@@ -7,7 +7,10 @@
 
 body{
     width: 100%;
-    height: 100%;
+    min-height:100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
     }
 .navbar{
     width: 100%;
@@ -183,6 +186,7 @@ body{
     color: #fff;
     transform: scale(0.98);
 }
+
 .dashboard_contents {
     width: 100%;
     height: 100vh;
@@ -236,17 +240,40 @@ body{
 .contents{
     width: 100%;
     height: 100vh;
-    background:linear-gradient(-12deg, rgb(42, 87, 215) 0px, rgb(42, 87, 215) 100%) !important;
+    background-image:linear-gradient(to top, rgb(0,0,0,0.5)50%, rgb(0,0,0,0.5)50%), url(../Images/alexander-grey-uS5lTkVwSb0-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;;
     flex-direction: column;
     align-items: center;
     justify-content: center;;
 }
 .button_container{
-    width: 500px;
+    width:900px;
     height: auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+#btn_sections{
+    padding: 1rem 3rem;
+    margin: 2rem 3rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 9px;
+    color: rgb(42, 87, 215);;
+    background-color: #fff;
+    transition: all ease-in-out 0.5s;
+    animation: zoomIn 01s ease-in-out;
+}
+#btn_sections:hover{
+    background-color: rgb(0, 158, 251);
+    padding: 1rem 3rem;
+    margin: 2rem 3rem;
+    transform: translate(1.3);
+    color: #fff;
 }
 
 .form_section{
@@ -384,9 +411,7 @@ form span{
     color:rgb(42, 87, 215);
     border: 2px solid rgb(42, 87, 215);
 }
-.hide{
-    display: none;
-}
+
 
 /*POSTNATAL*/
 .form_container_for_postnatal{
@@ -407,24 +432,29 @@ form span{
     background-color: #fff;
     height: 100%;
 }
+/*VITALS*/;
+.dashboard_contents .nurse_vital_section_vital{
+    width: 100%;
+    background-color: #fff;
+    height: 100%;
+}
 
 .appoitment_container{
     margin: 2rem auto 0 auto;
     height: 100%;
     width: 90%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: start;
 }
 .appoitment_container .appoitments{
     width: 100%;
-    height: 100%;
+    height:max-content;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: 1rem 0 0;
+    margin: 0 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items:  center;
 }
 .appoitments h1{
@@ -436,14 +466,14 @@ form span{
 .cards_container{
     display: flex;
     width: 100%;
-    height: 100%;
+    height: max-content;
     justify-content: center;
     flex-wrap: wrap;
     align-items:  center;
 }
 .cards{
     width: 350px;
-    height: fit-content;
+    height: max-content;
     background-color: #fff;
     animation: zoomIn 01s ease-in-out;
     box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
@@ -493,30 +523,45 @@ form span{
     margin: 0 1rem;
     color: #fff;
 }
-.appoitment_container .doctor_page{
+.doctor_roles_name{
     width: 100%;
-    height: 100%;
-    background-color: rgb(42, 87, 215);
-    margin: 1rem 0 0;
+    height:max-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     justify-content: center;
+    padding: 2rem;
+    position: relative;
     align-items: center;
 }
+#close_appoitment_form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #0000a4;
+    font-size: 30px;
+    box-shadow: rgba(159, 158, 158, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
 .doc_roles{
-    width: 500px;
+    width: 45rem;
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: left;
     padding: 1rem;
-    background-color: #fff;
+    margin: 1rem 0;
+    background: rgb(42, 87, 215);
     animation: fadeIn 01s ease-in-out;
 }
-label{
-    color: rgb(42, 87, 215);;
+.doc_roles label{
+    color: rgb(255, 255, 255);;
     animation: zoomIn 01s ease-in-out;
 }
-select{
+.doc_roles select{
     padding: 1rem;
     border: none;
     border: 2px solid rgb(42, 87, 215); ;
@@ -526,17 +571,411 @@ select{
     color: rgb(42, 87, 215);;
 }
 #continue{
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(255, 255, 255);
     padding: 1rem 1rem;
     border: none;
     animation: zoomIn 01s ease-in-out;
+    color:  rgb(42, 87, 215);
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+#continue:hover{
+    background-color: #fff;
+    padding: 1rem 1rem;
+    color: black;
+   transform: scale(0.98);
+}
+
+.calendar{
+    width: 45rem;
+    height: 46rem;
+    background-color: rgb(42, 87, 215);
+    margin: 1rem 0;
+    box-shadow: 0,0.5rem 3rem rgba(0,0,0,0.4);
     color: #fff;
+}
+.month{
+    width: 100%;
+    height: 6rem;
+    background-color :rgb(0, 68, 255) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+   text-align: center;
+   color: #ffffff;;
+}
+
+.month i{
+    font: 2rem;
+    cursor: pointer;
+    animation: zoomIn 01s ease-in-out;
+}
+.month h1{
+    font-size: 1.5rem;
+    font-weight: 400;
+    animation: zoomIn 01s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.month p{
+    font-size: 1rem;
+    animation: zoomIn 01s ease-in-out;
 }
 
 
-/*VITAL INPUT*/
-.vital_input{
+.weekdays{
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    animation: zoomIn 01s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+.weekdays div{
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem/7  );
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.days{
+    width: 100%;
+    display: flex;
+    animation: zoomIn 01s ease-in-out;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+}
+.days div{
+    font-size: 1rem;
+    margin: 0.3rem;
+    width: calc(40.2rem/7 );
+    height: 5rem;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today){
+    background-color: rgb(0, 68, 255);
+    border:0.2rem solid #d1cece;
+    cursor: pointer;
+}
+
+.prev-date{
+    opacity: 0.5;
+}
+
+.next-date{
+    opacity: 0.5;
+}
+.content{
+    color: #db0000;
+    font-size: 2rem;
+}
+.clicked {
+    background-color: #aaffaa; /* Light green color for clicked date */
+  }
+
+.today{
+    background-color: #0044ff;
+}
+.hidden{
+
+    display: none;
+}
+
+.form_appoitment{
+    width:100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: fit-content;
+    background: rgb(42, 87, 215);
+    color: #fff;
+    padding: 1rem 1rem;
+}
+
+.form_appoitment .form{
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form_appoitment .form_control{
+    width: 100%;
+    animation: none;
+    height: auto;
+    margin: 1em 0;
+}
+.form_appoitment label{
+    color: #fff;
+}
+.form_appoitment input{
+    width: 100%;
+    background-color: none;
+    padding: 1rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+.selected_date{
+    padding: 1rem 1rem;
+    background-color: #fff;
+    color: black;
+    box-shadow: rgba(137, 136, 136, 0.35) 0px 5px 15px;
+}
+.btn_submit_appoitment{
+    width: 100%;
+    background-color:rgb(42, 87, 215);
+    color: #fff;
+    border: none;
+    margin: 0 auto;
+    padding: 0.9rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+.btn_submit_appoitment:hover{
+    background-color: #fff;
+    color: black;
+}
+
+/*VITALS*/
+
+.new_vital{
     width: 100%;
     height: 100%;
+    background-color: rgb(42, 87, 215);
+}
+
+.search-container{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar{
+    background-color: #ffffff; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    animation: zoomIn 01s ease-in-out;
+    padding: 2px;
+    align-items: center;
+    height: 60px;
+    border-radius: 4px;
+}
+
+#select{
+    background-color:  rgb(42, 87, 215);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 300px;
+    padding: 19px 20px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px ;
+}
+
+#select ul{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color:rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius:4px ;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+#select ul li{
+    padding: 10px 20px; 
+    cursor: pointer;
+    list-style: none;
+}
+input{
+    padding: 10px 25px;
+    border: none;
+    width: 50%;
+    outline: none;
+    font-size: 18px;
+} 
+#select ul.open{
+    max-height: 400px;
+}
+#submit-input{
+    font-size: 1.3rem;
+    color:rgb(42, 87, 215);
+    cursor: pointer;
+}
+
+.patient_container{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+.flex_container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.each_container{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0 ;
+}
+.number_container{
+    width: 100px;
+    animation: zoomIn 01s ease-in-out;
+    height: 100px;
     background-color: rgb(255, 255, 255);
+    display: flex;
+    color: rgb(42, 87, 215);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    justify-content: center;
+    align-items: center;
+}
+.patient_info{
+    width: 700px;
+    height: fit-content;
+    animation: zoomIn 01s ease-in-out;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    color: rgb(42, 87, 215);
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    flex-direction: column;
+    margin: 0 1rem;
+}
+.patient_info span{
+    font-size: 17px;
+    animation:slideInDown 01s ease-in-out;
+    color: rgb(42, 87, 215);
+}
+
+.vitals_input{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    background-color: rgb(42, 87, 215);
+}
+.btn_vital{
+    width: 100%;
+    background-color: rgb(42, 87, 215);
+    padding: 1em 0.5em;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin: 1rem 0;
+    transition: all ease-in-out 0.5s
+}
+.btn_vital:hover{
+    background: none;
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);
+}
+
+.vitals_input .vital_form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: fit-content;
+    padding: 1.5rem 0;
+    color: #fff;
+}
+.vitals_input .vital_form .form_control{
+    width: auto;
+    margin: 1rem 1rem;
+    height: 100px;
+}
+.vital_form .form_control label{
+    width: fit-content;
+}
+.vital_form .form_control input{
+    width: fit-content;
+    padding: 2rem;
+}
+.vital_form .form_control textarea
+{
+    width: 500px;
+    height: 100px;
+    border: none;
+}
+/*Treatment and Prescribtion */
+.treatment_prescribtion_container{
+    width: 100%;
+    height: 100vh;
+ background-image: url(../Images/—Pngtree—3d\ stethoscope\ syringe\ injection\ background_1174087.png);
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.treatment_prescribtion_container .flex_contain{
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    margin: 2em auto;
+    display: flex;
+
+}
+.treatment_prescribtion_container .form_container{
+    width: 400px;
+    height:fit-content;
+    background-color: rgb(42, 87, 215);
+    overflow: hidden;
+    margin:2em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2rem;
+}
+.calpsule{
+    padding: 1rem;
+    background-color: #fff;
+    color: rgb(42, 87, 215);;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    animation: zoomIn 1s ease-in-out;
+    font-size: 24px;
+}
+
+.form_container input{
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+}
+.form_container label{
+    color: #fff;
+    font-size: 22px;
+}
+
+.form_container select{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+.hidden{
+    display: none;
 }

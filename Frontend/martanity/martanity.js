@@ -3,6 +3,24 @@ const click_antenal_button = ()=>{
     body_change_background.classList.add("hide");
     const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
     show_antenatal_form.classList.remove("hide")
+
+
+    const show_postnatal_form = document.querySelector(".form_container_for_postnatal");
+    show_postnatal_form.classList.add("hide")
+
+//APPOITMENT
+    const show_appoitment_form = document.querySelector(".appoitment_section");
+    show_appoitment_form.classList.add("hide");
+
+    //TREATMENT
+
+    const treatment_prescribtion_form = document.querySelector(".treatment_prescribtion_container");
+    treatment_prescribtion_form.classList.add("hidden");
+
+    //VITAL
+    const show_vital_form = document.querySelector(".new_vital");
+    show_vital_form.classList.add("hidden");
+
 }
 
 
@@ -53,9 +71,27 @@ const backFrom3 = ()=>{
 
 const click_postnatal_button = ()=>{
     const body_change_background = document.querySelector('.contents');
-    const show_antenatal_form = document.querySelector(".form_container_for_postnatal");
-    show_antenatal_form.classList.remove("hide")
+    const show_postnatal_form = document.querySelector(".form_container_for_postnatal");
+    show_postnatal_form.classList.remove("hide")
     body_change_background.classList.add("hide");
+
+//APPOITMENT
+    const show_appoitment_form = document.querySelector(".appoitment_section");
+    show_appoitment_form.classList.add("hide");
+
+    //TREATMENT
+
+    const treatment_prescribtion_form = document.querySelector(".treatment_prescribtion_container");
+    treatment_prescribtion_form.classList.add("hidden");
+
+    //VITAL
+    const show_vital_form = document.querySelector(".new_vital");
+    show_vital_form.classList.add("hidden");
+
+
+    //ANTINATAL
+    const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
+    show_antenatal_form.classList.add("hide")
 }
 
 
@@ -111,8 +147,29 @@ const click_icon_for_profile = ()=>{
 const click_appoitment_button = ()=>{
     const body_change_background = document.querySelector('.contents');
     body_change_background.classList.add("hide");
-    const show_antenatal_form = document.querySelector(".appoitment_section");
-    show_antenatal_form.classList.remove("hide");
+    const show_appoitment_form = document.querySelector(".appoitment_section");
+    show_appoitment_form.classList.remove("hide");
+    document.querySelector("#btn_appoitment").style.display = "block";
+
+    //TREATMENT
+
+    const treatment_prescribtion_form = document.querySelector(".treatment_prescribtion_container");
+    treatment_prescribtion_form.classList.add("hidden");
+
+    //VITAL
+    const show_vital_form = document.querySelector(".new_vital");
+    show_vital_form.classList.add("hidden");
+
+
+    
+    //POSTNATAL
+
+    const show_postnatal_form = document.querySelector(".form_container_for_postnatal");
+    show_postnatal_form.classList.add("hide")
+
+    //ANTINATAL
+    const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
+    show_antenatal_form.classList.add("hide")
 }
 
 
@@ -153,22 +210,201 @@ function getDoctors() {
   doctorsSelect.innerHTML = ''; // Clear previous options
 
   // Populate the doctors select box based on the selected role
-  doctorsData[selectedRole].forEach(doctor => {
-      const option = document.createElement('option');
-      option.value = doctor;
-      option.text = doctor;
-      doctorsSelect.appendChild(option);
-  });
+//   doctorsData[selectedRole].forEach(doctor => {
+//       const option = document.createElement('option');
+//       option.value = doctor;
+//       option.text = doctor;
+//       doctorsSelect.appendChild(option);
+//   });
 }
 
 // Initial population of doctors based on the default selected role
 getDoctors();
 
 
+
+//CALENDAR
+ //This help show the current date and time zone of today
+ const date =  new Date()
+
+ const renderCalendar = ()=>{
+    date.setDate(1)
+    // console.log(date.getDay());
+     //this help shows the current month we are in and its 0 based "which means its counts from 0 throgh the months"
+    //  const month  = date.getMonth()
+     const monthDays = document.querySelector(".days")
+    const lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0).getDate()
+    
+    const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate()
+    
+    const firstDayIndex = date.getDay() 
+    
+    const  lastDayIndex = new Date(date.getFullYear(), date.getMonth() +1, 0).getDay()
+    const nextDays = 7 - lastDayIndex -1
+    //this is the month array of all the selected month
+    const months = [
+        "January", 
+        "February",
+         "March",
+          "April", 
+          "May", 
+          "June", 
+          "July", 
+          "August", 
+          "September",
+           "October", 
+           "November",
+           "December" 
+    ] ; 
+    
+    document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+    document.querySelector(".date p").innerHTML = new Date().toDateString();
+    // const showDate =  document.querySelector(".content");
+    
+    let days = "";
+    
+    for(let x =  firstDayIndex; x>0; x--){
+        days += `<div class ="prev-date">${prevLastDay - x +1}</div>`;
+    }
+    
+    for(let i = 1; i <=lastDay; i++) {
+        if(i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
+            
+            days +=`
+            <div class="calendar-date today" onclick="updateClickedDate(${i})">${i}</div>`;
+        }else{
+            
+            days +=`
+            <div class="calendar-date" onclick="updateClickedDate(${i})">${i}</div> `;
+        }
+    }
+    
+    for(let j =1; j<=nextDays; j++){
+        days += `<div class="next-date">${j}</div>`;
+        monthDays.innerHTML = days;
+    }
+ }
+ function updateClickedDate(clickedDay) {
+    document.querySelector(".selected_date").textContent = `${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
+    document.getElementById('date').value=`${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
+  }
+ 
+ 
+ document.querySelector(".prev").addEventListener("click", function(){
+    date.setMonth(date.getMonth() -1)
+    renderCalendar()
+ })
+ document.querySelector(".next").addEventListener("click", function(){
+    date.setMonth(date.getMonth()+ 1)
+    renderCalendar()
+ })
+ renderCalendar()
+
+
+//BOOK AN APPOINTMENT
+const appoitment_booking = ()=>{
+    const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
+    form_doctor_roles_name.classList.remove("hide");
+}
+
+//dont show appoitment booking button
+document.querySelector("#btn_appoitment").style.display = "none";
+
+
+const submitRoles = ()=>{
+    const appoitment_form = document.querySelector(".appoitment_form");
+    appoitment_form.classList.remove("hidden");
+}
+
+const close_appoitment_form = ()=>{
+    const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
+    form_doctor_roles_name.classList.add("hide");
+}
+
+
 //VITALS
 const click_vital_button = ()=>{
     const body_change_background = document.querySelector('.contents');
     body_change_background.classList.add("hide");
-    const show_antenatal_form = document.querySelector(".vital_input");
-    show_antenatal_form.classList.remove("hide");
+    const show_vital_form = document.querySelector(".new_vital");
+    show_vital_form.classList.remove("hidden");
+
+
+
+    //TREATMENT
+    const treatment_prescribtion_form = document.querySelector(".treatment_prescribtion_container");
+    treatment_prescribtion_form.classList.add("hidden");
+
+
+    //APPOINTMENT
+    const show_appoitment_form = document.querySelector(".appoitment_section");
+    show_appoitment_form.classList.add("hide");
+    
+    //POSTNATAL
+
+    const show_postnatal_form = document.querySelector(".form_container_for_postnatal");
+    show_postnatal_form.classList.add("hide")
+
+    //ANTINATAL
+    const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
+    show_antenatal_form.classList.add("hide")
+}
+
+//Search Bar
+const select =  document.getElementById("select");
+const list = document.getElementById("list");
+const selectText = document.getElementById("selectText");
+const options = document.getElementsByClassName("options");
+const inputfield = document.getElementById("inputfield");
+const submitInput = document.getElementById("submit-input");
+const id = document.getElementById("id");
+
+select.addEventListener("click", function(){
+    list.classList.toggle("open");
+})
+
+const user_select = 1;
+submitInput.addEventListener("load", function(){
+    submitInput.innerHTML = user_select.toString();
+})
+
+for(option of options){
+    option.addEventListener("click", function(){
+        selectText.innerHTML = this.innerHTML,id;
+        inputfield.placeholder = 'Search In ' + selectText.innerHTML
+    })
+}
+
+
+//show vitals
+const showVitals = function(){
+    const vital_container = document.querySelector(".vitals_input");
+    vital_container.classList.toggle("hidden")
+}
+
+
+///TREATMENT AND PRESCRIBION
+
+const click_prescribtion_button = ()=>{
+    const body_change_background = document.querySelector('.contents');
+    body_change_background.classList.add("hide");
+    const treatment_prescribtion_form = document.querySelector(".treatment_prescribtion_container");
+    treatment_prescribtion_form.classList.remove("hidden");
+
+    //VITAL
+    const show_vital_form = document.querySelector(".new_vital");
+    show_vital_form.classList.add("hidden");
+
+    //APPOINTMENT
+    const show_appoitment_form = document.querySelector(".appoitment_section");
+    show_appoitment_form.classList.add("hide");
+    
+    //POSTNATAL
+
+    const show_postnatal_form = document.querySelector(".form_container_for_postnatal");
+    show_postnatal_form.classList.add("hide")
+
+    //ANTINATAL
+    const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
+    show_antenatal_form.classList.add("hide")
 }
