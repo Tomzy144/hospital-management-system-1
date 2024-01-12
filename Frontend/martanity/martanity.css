@@ -8,10 +8,11 @@
 body{
     width: 100%;
     min-height:100vh;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    }
+    background-image: url(../Images/19374.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .navbar{
     width: 100%;
     height: 75px;
@@ -187,7 +188,7 @@ body{
     transform: scale(0.98);
 }
 
-.dashboard_contents {
+/* .dashboard_contents {
     width: 100%;
     height: 100vh;
     background-image: url(../Images/137028.jpg);
@@ -199,7 +200,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;;
-}
+} */
 
 .sidebar{
     width: 75px;
@@ -227,30 +228,29 @@ body{
     animation: zoomIn 01s ease-in-out;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     height: 100%;
 }
 .sidebar_icons #icon{
     color: #fff;
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 .contents{
     width: 100%;
     height: 100vh;
-    background-image:linear-gradient(to top, rgb(0,0,0,0.5)50%, rgb(0,0,0,0.5)50%), url(../Images/alexander-grey-uS5lTkVwSb0-unsplash.jpg);
+    background-image:linear-gradient(to top, rgb(0,0,0,0.5)50%, rgb(0,0,0,0.5)50%), url(../Images/19374.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;;
+    justify-content: center;
 }
 .button_container{
-    width:900px;
+    width:80%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -258,20 +258,22 @@ body{
     align-items: center;
 }
 #btn_sections{
-    padding: 1rem 3rem;
-    margin: 2rem 3rem;
-    border: none;
+    background: none;
+    border: 4px solid #fff;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 0.6rem;
     cursor: pointer;
-    border-radius: 9px;
-    color: rgb(42, 87, 215);;
-    background-color: #fff;
+    margin: 1rem 1rem;
     transition: all ease-in-out 0.5s;
     animation: zoomIn 01s ease-in-out;
 }
 #btn_sections:hover{
     background-color: rgb(0, 158, 251);
-    padding: 1rem 3rem;
-    margin: 2rem 3rem;
+    padding: 0.6rem;
+    cursor: pointer;
+    margin: 1rem 1rem;
     transform: translate(1.3);
     color: #fff;
 }
@@ -296,6 +298,7 @@ h1{
     padding: 2rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #fff;
+    margin: 6rem auto;
     overflow: hidden;
     color: rgb(42, 87, 215);
     animation: fadeIn 1s ease-in-out;
@@ -320,14 +323,15 @@ form span{
     margin: 0.8rem 0;
     flex-direction: column;
 }
-.form_control input{
+.form_container_for_antenatal .form_control input{
     padding: 0.6rem;
     border: none;
     border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
+    width: 100%;
 
 }
-.form_control input:focus{
+.form_container_for_antenatal .form_control input:focus{
     border: 2px solid rgb(42, 87, 215);
 }
 .btn_next1, .btn_next2, .btn_next3{
@@ -421,15 +425,25 @@ form span{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #fff;
     overflow: hidden;
+    margin: 6rem auto;
     color:rgb(42, 87, 215);
     animation: fadeIn 1s ease-in-out;
 }
 
-
+.form_container_for_postnatal .form_control input{
+    padding: 0.6rem;
+    border: none;
+    border-bottom: 1px solid rgb(42, 87, 215);
+    outline: none;
+    width: 100%;
+}
+.form_container_for_postnatal .form_control input:focus{
+    border: 2px solid rgb(42, 87, 215);
+}
 /*appoitment section*/
 .appoitment_section{
     width: 100%;
-    background-color: #fff;
+    /* background-color: #fff; */
     height: 100%;
 }
 /*VITALS*/;
@@ -445,12 +459,13 @@ form span{
     width: 90%;
     display: flex;
     flex-direction: row;
+    margin: 6rem auto;
     justify-content: start;
 }
 .appoitment_container .appoitments{
     width: 100%;
     height:max-content;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 0 1rem;
     display: flex;
@@ -537,7 +552,7 @@ form span{
     position: absolute;
     top: 0;
     right: 0;
-    color: #0000a4;
+    color: #ffffff;
     font-size: 30px;
     box-shadow: rgba(159, 158, 158, 0.35) 0px 5px 15px;
     cursor: pointer;
@@ -554,36 +569,34 @@ form span{
     justify-content: left;
     padding: 1rem;
     margin: 1rem 0;
-    background: rgb(42, 87, 215);
+    background: #fff;
     animation: fadeIn 01s ease-in-out;
 }
 .doc_roles label{
-    color: rgb(255, 255, 255);;
+    color: rgb(42, 87, 215); 
     animation: zoomIn 01s ease-in-out;
 }
 .doc_roles select{
     padding: 1rem;
     border: none;
-    border: 2px solid rgb(42, 87, 215); ;
-    background-color: #fff;
+    border: 2px solid #fff;; 
+    background-color:rgb(42, 87, 215); 
     animation: zoomIn 01s ease-in-out;
     margin: 1rem 0;
-    color: rgb(42, 87, 215);;
+    color: rgb(255, 255, 255);;
 }
 #continue{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(42, 87, 215);
     padding: 1rem 1rem;
     border: none;
     animation: zoomIn 01s ease-in-out;
-    color:  rgb(42, 87, 215);
+    color:  rgb(255, 255, 255);
     cursor: pointer;
     transition: all ease-in-out 0.5s;
 }
 #continue:hover{
-    background-color: #fff;
+    border: 1px solid rgb(42, 87, 215);
     padding: 1rem 1rem;
-    color: black;
-   transform: scale(0.98);
 }
 
 .calendar{
@@ -597,13 +610,13 @@ form span{
 .month{
     width: 100%;
     height: 6rem;
-    background-color :rgb(0, 68, 255) ;
+    background-color :rgb(255, 255, 255) ;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
    text-align: center;
-   color: #ffffff;;
+   color: rgb(42, 87, 215);
 }
 
 .month i{
@@ -695,8 +708,8 @@ form span{
     width:100%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: fit-content;
-    background: rgb(42, 87, 215);
-    color: #fff;
+    background: rgb(255, 255, 255);
+    color: #0044ff;
     padding: 1rem 1rem;
 }
 
@@ -714,20 +727,24 @@ form span{
     margin: 1em 0;
 }
 .form_appoitment label{
-    color: #fff;
+    color: rgb(42, 87, 215);
 }
 .form_appoitment input{
     width: 100%;
     background-color: none;
     padding: 1rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid rgb(42, 87, 215);;
     
 }
 .selected_date{
     padding: 1rem 1rem;
-    background-color: #fff;
-    color: black;
-    box-shadow: rgba(137, 136, 136, 0.35) 0px 5px 15px;
+    background-color: rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
+}
+.form_appoitment textarea{
+    border: none;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
 }
 .btn_submit_appoitment{
     width: 100%;
@@ -748,8 +765,8 @@ form span{
 
 .new_vital{
     width: 100%;
+    margin: 2rem auto;
     height: 100%;
-    background-color: rgb(42, 87, 215);
 }
 
 .search-container{
@@ -923,31 +940,23 @@ input{
     border: none;
 }
 /*Treatment and Prescribtion */
-.treatment_prescribtion_container{
-    width: 100%;
-    height: 100vh;
- background-image: url(../Images/—Pngtree—3d\ stethoscope\ syringe\ injection\ background_1174087.png);
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
-}
+
 
 .treatment_prescribtion_container .flex_contain{
-    width: 100%;
+    width:100%;
     height: fit-content;
-    justify-content: center;
-    margin: 2em auto;
+    margin: 6rem auto;
     display: flex;
-
+    flex-direction:column ;
 }
 .treatment_prescribtion_container .form_container{
-    width: 400px;
+    width:50%;
     height:fit-content;
     background-color: rgb(42, 87, 215);
     overflow: hidden;
-    margin:2em;
+    margin:2em auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 2rem;
+    /* padding: 2rem; */
 }
 .calpsule{
     padding: 1rem;
@@ -959,20 +968,34 @@ input{
     animation: zoomIn 1s ease-in-out;
     font-size: 24px;
 }
+.prescribtion_form{
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.prescribtion_form .form_control{
+    display: flex;
+    width: 300px;
+    margin: 1rem 1rem;
+    flex-direction: column;
+}
 
 .form_container input{
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: rgb(255, 255, 255);
 }
 .form_container label{
     color: #fff;
-    font-size: 22px;
+    font-size: 15px;
 }
 
 .form_container select{
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     border: none;
     background-color: rgb(255, 255, 255);
 }

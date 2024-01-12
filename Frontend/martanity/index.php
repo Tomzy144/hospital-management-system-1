@@ -45,7 +45,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           </div>
         </div>
     </div>
-    <div class="dashboard_contents">
         <div class="sidebar">
                <div class="sidebar_contents">
                 <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
@@ -64,9 +63,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <div class="button_container">
     <button onClick="click_postnatal_button()" id="btn_sections">Postnatal Admission</button>
     <button onClick="click_antenal_button()" id="btn_sections">Antenatal Admission</button>
-    <button onClick="click_vital_button()" id="btn_sections">Vital</button>
-    <button id="btn_sections" onClick="click_prescribtion_button()">Prescribtion</button>
     <button onClick="click_appoitment_button()" id="btn_sections">Doctor Appoitment</button>
+    <button id="btn_sections" onClick="click_prescribtion_button()">Prescribtion</button>
+    <button onClick="click_vital_button()" id="btn_sections">Vital</button>
     </div>
     </div>
 
@@ -370,16 +369,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Vital Signs</label>
         <input type="text">
       </div>
-
-        <span>Informed Consent</span>
-        <div class="form_control">
-        <label for="">Consent for treatment</label>
-        <input type="text">
-   </div>
-   <div class="form_control">
-        <label for="">Consent for Procedures</label>
-        <input type="text">
-        </div>
         <button class="btn_back3" type="button" id="btn_next" onClick="backFrom3()">Back</button>
         <button class="btn_submit" type="button">Submit</button>
         </div>
@@ -488,16 +477,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Current Medications</label>
         <input type="text">
       </div>
-
-        <span>Informed Consent</span>
-        <div class="form_control">
-        <label for="">Consent for treatment</label>
-        <input type="text">
-   </div>
-   <div class="form_control">
-        <label for="">Consent for Procedures</label>
-        <input type="text">
-        </div>
         <button class="btn_back3" type="button" id="btn_next_pos" onClick="backFrom3Pos()">Back</button>
         <button class="btn_submit" type="button">Submit</button>
         </div>
@@ -507,7 +486,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <div class="flex_contain">
                 <div class="form_container">
                 <div class="calpsule">
-                    <span>Calsule</span>
+                    <span>Calpsule</span>
                 </div>
                 <form action="" class="prescribtion_form">
                 <div class="form_control">
@@ -753,7 +732,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                         </form>
                     </div>
 </div>
-    </div>
     </div>
 <script src="martanity.js"></script>
 </body>
