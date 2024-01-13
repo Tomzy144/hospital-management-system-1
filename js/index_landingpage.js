@@ -93,7 +93,7 @@ const nurse_login_form = `
 <script src="../../backend/js/jquery-v3.6.1.min.js"></script>
 
 <div class="nurse-login hidden">
-<i class="fa fa-times-circle" id='close-icon-nurse'></i>
+<i class="fa fa-times-circle" id='close-icon-radiography'></i>
     <h1 class="login-form-h1">Login (Nurse)</h1>
     <form>
     <div class="form-control">
@@ -120,6 +120,55 @@ const nurse_login_form = `
 log_inAll('nurse', nurse_login_form);
 
 const isNurse_active = ()=>{
+    let url="Frontend/nurse/index.php"
+    window.parent(location =(url))
+}
+//Radiologist Login
+const open_radiologist_login_form = function() {
+    const radiologist_login = document.querySelector(".radiologist-login");
+    const dark_background = document.querySelector(".overlay");
+    radiologist_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+const close_radiologist_login_form = function(){
+    const radiologist_login = document.querySelector(".radiologist-login");
+    const dark_background = document.querySelector(".overlay")
+    radiologist_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const radiologist_login_form = `
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
+<div class="radiologist-login hidden">
+<i class="fa fa-times-circle" id='close-icon-nurse'></i>
+    <h1 class="login-form-h1">Login (Radiologist)</h1>
+    <form>
+    <div class="form-control">
+    <label for='email'>Email</label>
+    <i class="fa fa-address-book"></i>
+    <input type="email" name="email" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='number'>Your ID</label>
+    <i class="fa fa-key"></i>
+    <input type="number" name="number" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='password'>Password</label>
+    <i class="fa fa-lock"></i>
+    <input type="password" name="password" autoComplete='off'/> 
+    </div>
+    <button type="button" class="btn" onClick="isRadiologist_active()">Login</button>
+    <form>
+</div>
+`
+log_inAll('radiologist', radiologist_login_form);
+
+const isRadiologist_active = ()=>{
     let url="Frontend/nurse/index.php"
     window.parent(location =(url))
 }

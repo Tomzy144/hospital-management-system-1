@@ -87,7 +87,7 @@
                     <div class="ward_round_container hidden">
                         <label for="stage">Stage</label>
                         <select name="stage" id="stage">
-                            <option value="no_selection"></option>
+                            <option value="no_selection">zd</option>
                             <option value="am">Am</option>
                             <option value="am">Pm</option>
                         </select>

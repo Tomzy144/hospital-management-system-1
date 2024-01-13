@@ -22,16 +22,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <body>
 <?php $page = 'login' ?>
 
-    <!--HTML-->
     <div id="preloader">
 
     </div>
-    <!-- <div class="content-container"> -->
         <nav class="navbar">
             <div class="logo">
-                <h1>MOUNT TECH SOLUTION</h1>
+            <img width="200px" height="200px" src="Frontend/Images/Mount_Tech_Logo-removebg-preview.png" alt="">
             </div>
-                <!-- <button class="btn" id="getting-started-btn">Getting Started</button> -->
                  </nav>
                 <main>
                      <div class="login-container">
@@ -45,6 +42,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                             <h2>For Nurse</h2>
                             <p>Nurse can login here</p>
                             <button class="btn-nurse" onclick="open_nurse_login_form()">Login as a Nurse</button>
+                        </div>
+                        <div class="sections-container">
+                            <h2>For Radiography</h2>
+                            <p>Radiologist can login here</p>
+                            <button class="btn-nurse" onclick="open_radiologist_login_form()">Login as a Radiologist</button>
                         </div>
                     </div>
                     <div class="flexs-container">
@@ -85,6 +87,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
            <div id="lab-container"></div>
            <div id="staff_manager-container"></div>
            <div id="martanity-container"></div>
+           <div id="radiologist-container"></div>
         <div class="overlay hidden"></div>
     </div>
 <!--Animation-->

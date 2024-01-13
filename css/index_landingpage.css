@@ -37,7 +37,6 @@ body {
     z-index: 999;
     padding: 0.5rem;
     flex-direction: row;
-    border-bottom: 1px solid #fff;
 } 
 h1{
     color: #fff;
@@ -48,7 +47,7 @@ main{
   padding: 5rem;
   animation:slideInLeft 1.2s ease-in-out 1.3s;
 }
-.btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab, .btn-staff_manager, .btn-martanity{
+.btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab, .btn-staff_manager, .btn-martanity, .btn-radiography{
    background:none;
     border: 4px solid  #fff;
     color: #ffffff;
@@ -81,6 +80,10 @@ main{
   color: #000000;
 }
 .btn-martanity:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-radiography:hover{
   background-color:rgb(255, 255, 255);
   color: #000000;
 }
@@ -132,6 +135,24 @@ h2, p{
 }
 /*Nurse Login*/
 .nurse-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: 380px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    animation: zoomIn 1s ease-in-out;
+}
+
+/*Radiologist*/
+.radiologist-login{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -273,6 +294,15 @@ h2, p{
   top: 0;
 }
 #close-icon-martanity{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: rgba(0, 61, 60, 0.9);
+  top: 0;
+}
+#close-icon-radiography{
   position: absolute;
   left: 0;
   margin-top: 1rem;

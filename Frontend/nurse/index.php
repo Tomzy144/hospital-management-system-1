@@ -56,7 +56,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <i class="fa fa-sign-out" id="icon"></i>
             </div>
         </div>
-        <div class="new_vital hidden">
+        <div class="new_vital">
     <div class="search-container">
     <div class="search-bar">
         <div id="select">
@@ -88,11 +88,140 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <div class="patient_info">
                     <span>Precious Joseph</span>
                     <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
-                    <button class= "btn_vital" onClick="showVitals()">Ward</button>
-                    <button class= "btn_vital" onClick="showVitals()">Bed</button>
-                    <button class= "btn_vital" onClick="showVitals()">Ward Round</button>
+                    <button class= "btn_ward" onClick="showVitals()">Ward</button>
+                        <!--Wards--->
+                        <div class="ward_container hidden">
+                        <label for="ward">Change Ward</label>
+                        <select name="ward" id="ward">
+                            <option value="ward_select"></option>
+                            <option value="ward_1">Ward 1</option>
+                            <option value="ward_2">Ward 2</option>
+                            <option value="ward_3">Ward 3</option>
+                            <option value="ward_4">Ward 4</option>
+                            <option value="ward_5">Ward 5</option>
+                            <option value="ward_6">Ward 6</option>
+                        </select>
+                    </div>
+
+                    <button class= "btn_bed" onClick="showVitals()">Bed</button>
+                    <div class="bed_container hidden">
+                        <label for="bed">Change Bed</label>
+                        <select name="bed" id="bed">
+                            <option value="bed_select"></option>
+                            <option value="bed_1">Bed 1</option>
+                            <option value="bed_2">Bed 2</option>
+                            <option value="bed_3">Bed 3</option>
+                            <option value="bed_4">Bed 4</option>
+                            <option value="bed_5">Bed 5</option>
+                            <option value="bed_6">Bed 6</option>
+                        </select>
+                    </div>
+                    <button class= "btn_ward_round" onClick="showVitals()">Ward Round</button>
+                    <div class="ward_round_container hidden">
+                        <label for="stage">Stage</label>
+                        <select name="stage" id="stage">
+                            <option value="no_selection"></option>
+                            <option value="am">Am</option>
+                            <option value="am">Pm</option>
+                        </select>
+                        <label for="note">WR Note</label>
+                        <textarea name="note" id="note" cols="30" rows="10"></textarea>
+                    </div>
+
                     <button class= "btn_vital" onClick="showVitals()">Vital Input</button>
-                    <div class="vitals_input"></div>
+                    <div class="vitals_input hidden">
+                    <form action="">
+                        <div class="form_control">
+              <label for="temperature">Temperature</label>
+              <input type="text">
+              </div>
+                    
+                        <div class="form_control">
+              <label for="b/p">B/P(mm/HG)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="pulse">Pulse(bp/m)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="respiratory">Respiratory(cm)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="weight">Weight(kg)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="height">Height(cm)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="intake">Intake(m/s)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="output">Output(m/s)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="spo2">SPO2(%)</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="bmi">BMI</label>
+              <input type="text">
+              </div>
+                     <div class="form_control">
+              <label for="body_fat">Body fat(%)</label>
+              <input type="text">
+              </div>
+              <div class="form_control">
+              <label for="muscle_mass">Muscle mass</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="musc">MUAC</label>
+              <input type="text">
+              </div>
+              <div class="form_control">
+              <label for="resting_metabolism">Restinng metabolism</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="body_age">Body age</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="bmi_for_age">BMI for age</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="visceral_fat">Visceral fat</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="head_circumference">Head circumference</label>
+              <input type="text">
+              </div>
+              <div class="form_control">
+              <label for="wfa">WFA</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="waist_circumference">Waist Circumference</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="hip_circumference">Hip Circumference</label>
+              <input type="text">
+              </div>
+                        <div class="form_control">
+              <label for="w_hr">W-HR</label>
+              <input type="text">
+              </form>
+</div>
+                    </div>
 </div>
 </div>
 <div class="each_container">
@@ -142,6 +271,38 @@ for(option of options){
     })
 }
 
+
+//Patient Ward Round
+const btn_ward_round = document.querySelector(".btn_ward_round");
+const ward_round_container = document.querySelector(".ward_round_container");
+
+btn_ward_round.addEventListener("click",()=>{
+    ward_round_container.classList.toggle("hidden")
+});
+
+//Patient Ward
+const btn_ward = document.querySelector(".btn_ward");
+const ward_container = document.querySelector(".ward_container");
+
+btn_ward.addEventListener("click",()=>{
+    ward_container.classList.toggle("hidden")
+});
+
+//Patient Bed
+const btn_bed = document.querySelector(".btn_bed");
+const bed_container = document.querySelector(".bed_container");
+
+btn_bed.addEventListener("click",()=>{
+    bed_container.classList.toggle("hidden")
+});
+
+//Patient Vital
+const btn_impatient_vital = document.querySelector(".btn_vital");
+const impatient_container = document.querySelector(".vitals_input");
+
+btn_impatient_vital.addEventListener("click",()=>{
+    impatient_container.classList.toggle("hidden")
+});
 
     </script>
 </body>

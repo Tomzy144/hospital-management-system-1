@@ -354,7 +354,7 @@ input{
     height: fit-content;
     background-color: rgb(42, 87, 215);
 }
-.btn_vital{
+.btn_vital, .btn_ward, .btn_ward_round, .btn_bed{
     width: 100%;
     background-color: rgb(42, 87, 215);
     padding: 1em 0.5em;
@@ -369,7 +369,21 @@ input{
     border: 1px solid rgb(42, 87, 215);
     color: rgb(42, 87, 215);
 }
-
+.btn_ward:hover{
+    background: none;
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);
+}
+.btn_ward_round:hover{
+    background: none;
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);
+}
+.btn_bed:hover{
+    background: none;
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);
+}
 .vitals_input .vital_form{
     width: 100%;
     display: flex;
@@ -400,66 +414,91 @@ input{
     height: 100px;
     border: none;
 }
-/*Treatment and Prescribtion */
 
-
-.treatment_prescribtion_container .flex_contain{
-    width:100%;
-    height: fit-content;
-    margin: 6rem auto;
-    display: flex;
-    flex-direction:column ;
-}
-.treatment_prescribtion_container .form_container{
-    width:50%;
-    height:fit-content;
-    background-color: rgb(42, 87, 215);
-    overflow: hidden;
-    margin:2em auto;
+.ward_container{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    /* padding: 2rem; */
+    padding: 1rem 1rem;
 }
-.calpsule{
+.ward_container label{
+    margin: 1rem 0;
+}
+#ward{
+    padding: 1rem 1rem;
+    background-color: rgb(0, 158, 251);
+    width: 100%;
+    border: none;
+    color: #fff;
+}
+#ward option{
+    background-color: rgb(0, 158, 251);
+    width: 100%;
+    border: none;
+}
+
+.bed_container{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 1rem 1rem;
+}
+#bed{
+    padding: 1rem 1rem;
+    background-color: rgb(0, 158, 251);
+    width: 100%;
+    border: none;
+    color: #fff;
+}
+.ward_round_container{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 1rem 1rem;
+}
+
+#stage{
+    padding: 1rem 1rem;
+    background-color: rgb(0, 158, 251);
+    width: 100%;
+    border: none;
+    color: #fff;
+}
+.ward_round_container label{
+   margin-top: 1rem;
+}
+.ward_round_container textarea{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(0, 158, 251);
+    border: none;
+}
+.vitals_input{
+    width: 100%;
+    background-color: rgb(0, 158, 251);
     padding: 1rem;
-    background-color: #fff;
-    color: rgb(42, 87, 215);;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    animation: zoomIn 1s ease-in-out;
-    font-size: 24px;
+    height: fit-content;
 }
-.prescribtion_form{
-    display: flex;
+.vitals_input form{
+    width: 100%;
     height: 100%;
-    flex-direction: row;
-    justify-content: center;
+    display: flex;
     flex-wrap: wrap;
 }
-
-.prescribtion_form .form_control{
-    display: flex;
-    width: 300px;
-    margin: 1rem 1rem;
-    flex-direction: column;
-}
-
-.form_container input{
-    width: 100%;
-    padding: 0.5rem;
-    background-color: rgb(255, 255, 255);
-}
-.form_container label{
+.vitals_input label{
     color: #fff;
-    font-size: 15px;
+}
+.vitals_input .form_control{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 1rem 0.5rem;
 }
 
-.form_container select{
+.vitals_input input{
     width: 100%;
-    padding: 0.5rem;
-    border: none;
-    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 158, 251);
 }
-.hide{
+.hidden{
     display: none;
 }
