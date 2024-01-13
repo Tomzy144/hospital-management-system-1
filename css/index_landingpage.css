@@ -9,7 +9,7 @@ body {
   color: #ffffff;
   width: 100%;
   height: 100vh;
-  background-image: url(../Frontend/Images/shutterstock_1189798159.jpg);
+  background-image: url(../Frontend/Images/26836.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -19,10 +19,11 @@ body {
   flex-direction: column;
   }
   #preloader{
-    background: black url(../Frontend/Images/loading-38.gif)no-repeat center center;
+    background: #2a57d7 url(../Frontend/Images/Wait.gif)no-repeat center center;
     position: fixed;
     width: 100%;
     height: 100%;
+    font-size: 40px;
     z-index: 1000;
   }
 

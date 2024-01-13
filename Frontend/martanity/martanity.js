@@ -348,6 +348,8 @@ const click_vital_button = ()=>{
     //ANTINATAL
     const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
     show_antenatal_form.classList.add("hide")
+
+
 }
 
 //Search Bar

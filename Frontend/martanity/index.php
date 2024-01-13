@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martanity</title>
+    <title>Martanity Dashboard</title>
     <link rel="stylesheet" href="../awesome-font/css/font-awesome.min.css">
     <link rel="stylesheet" href="martanity.css">
     <link
