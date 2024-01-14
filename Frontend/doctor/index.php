@@ -153,8 +153,8 @@ $result = $conn->query($sql);
     // Use event listeners to handle button clicks
     document.querySelectorAll('.accept-btn').forEach(function (button) {
         button.addEventListener('click', function () {
-            var patientId = this.getAttribute('data-patient-id');
-            accept_input(patientId);
+            // var patientId = this.getAttribute('data-patient-id');
+            // accept_input(patientId);
             display_input();
         });
     });
