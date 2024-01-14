@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Quicksand", "sans-serif";
 }
 body{
     width: 100%;
@@ -91,7 +91,7 @@ body{
     font-size: 15px;
     text-align: center;
     border-radius: 100%;
-    background:rgb(0, 158, 251);;
+    background:rgb(0, 158, 251);
     border: 2px solid #fff;
 }
 .profile{
@@ -267,8 +267,7 @@ button:hover{
 /*PATIENT FORM*/
 .patients_form_container{
     width: 100%;
-   /* margin: 0 auto; */
-    background-image: url(../Images/26836.jpg);
+    /* background-image: url(../Images/26836.jpg); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -289,13 +288,13 @@ button:hover{
   }
   .form-container{
       width:500px;
-      background-color: rgb(4 47 46);
-      box-shadow: rgba(113, 112, 114, 0.15) 0px 48px 100px 0px;
-      color: #fff;
+      background-color: rgb(255, 255, 255);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      color: rgb(42, 87, 215);
       position: relative;
       padding: 2rem;
       text-align: center;
-      margin: 5rem auto;
+      margin: 8rem auto;
   }
   
   .form-display{
@@ -305,13 +304,12 @@ button:hover{
   }
   
   .form-control{
-      margin: 1rem 1rem;
-      width: 100%;
+      margin: 1rem 0;
       display: flex;
       text-align: left;
       flex-direction: column;
       position: relative;
-      color: #fff;
+      color: rgb(42, 87, 215);
   }
   .form-display2{
       display: flex;
@@ -320,7 +318,7 @@ button:hover{
   }
   label{
       font-size: 15px;
-      color: rgb(255, 255, 255);
+      color: rgb(42, 87, 215);
       font-weight: bold;
   }
   input{
@@ -328,27 +326,27 @@ button:hover{
       padding: 0.5rem;
       background: none;
       border: none;
-      border: 1px solid rgb(255, 255, 255);
+      border-bottom:  1px solid rgb(42, 87, 215);
       text-indent: 18px;
-      color: #fff;
-      font-size: 15px;
-      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(42, 87, 215);
       font-weight: bold;
       outline: none;
+      padding: 10px 25px;
+  font-size: 18px;
   }
   input:focus{
-      border: 1px solid rgb(0, 153, 255) !important;
+      border: 2px solid rgb(42, 87, 215);
   }
   .patients_form_container i{
       position: absolute;
       left: 5px;
       top: 70%;
-      color: rgb(255, 255, 255);
+      color: rgb(42, 87, 215);
       transform: translateY(-50%);
     }
-    .btn-next{
+    .btn-next, .btn-next_next{
       width: 100%;
-      background-color: rgb(255, 255, 255) !important;
+      background-color: rgb(0, 158, 251);
       color: rgb(4 47 46);
       border: none;
       margin: 1rem 0;
@@ -356,11 +354,11 @@ button:hover{
       padding: 0.5rem;
       transition: all ease-in-out 2s;
     }
-    .btn-next:hover{
+    .btn-next, .btn-next_next:hover{
       background-color: rgb(0, 153, 255) !important;
       color: #fff;
     }
-    .btn-back{
+    .btn-back, .btn-back_back{
       width: 100%;
       background-color: rgb(0, 153, 255) !important;
       color: rgb(255, 255, 255);
@@ -370,7 +368,7 @@ button:hover{
       padding: 0.5rem;
       transition: all ease-in-out 2s;
     }
-    .btn-back:hover{
+    .btn-back, .btn-back_back:hover{
       background-color: rgb(255, 255, 255) !important;
       color: rgb(4 47 46);
     }

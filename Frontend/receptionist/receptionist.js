@@ -44,28 +44,44 @@ const activeSection = document.querySelector(".current-section");
 const inactiveSection = document.querySelector(".form-section");
 const section1 = document.querySelector("#section1");
 const section2 = document.querySelector("#section2");
+const section3 = document.querySelector("#section3");
 const btnNext = document.querySelector(".btn-next");
+const btnNextNext = document.querySelector(".btn-next_next");
 const btnBack = document.querySelector(".btn-back");
+const btnBackBack = document.querySelector(".btn-back_back");
 
 //Current section
  section1.classList.add("current-section");
  section2.classList.remove("current-section");
+ section3.classList.remove("current-section")
 
  btnNext.style.display = "block";
+ btnNextNext.style.display = "block";
  btnBack.style.display = "block";
 
 const nextForm =  btnNext.addEventListener("click", function(){
      section1.classList.remove("current-section");
-     section2.classList.add("current-section");
+     section3.classList.add("current-section");
      btnNext.style.display = "block";
+  
+ });
+const nextNextForm =  btnNextNext.addEventListener("click", function(){
+     section3.classList.remove("current-section");
+     section2.classList.add("current-section");
+     btnNextNext.style.display = "block";
   
  });
 
 
  const backForm = btnBack.addEventListener("click", function(){
-     section1.classList.add("current-section");
+     section3.classList.add("current-section");
      section2.classList.remove("current-section");
      btnNext.style.display = "block";
+ })
+ const backBackForm = btnBackBack.addEventListener("click", function(){
+     section1.classList.add("current-section");
+     section3.classList.remove("current-section");
+     btnNextNext.style.display = "block";
  })
 
 

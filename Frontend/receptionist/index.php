@@ -50,6 +50,12 @@
     <title>Receptionist Dashboard</title>
     <link rel="stylesheet" href="./dashboard.css">
     <link rel="stylesheet" href='../awesome-font/css/font-awesome.min.css'>
+    <script src="../../js/scripts.js"></script>
+    <script src="../../js/jquery-v3.6.1.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Montserrat:wght@100&family=Open+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,300;1,100&family=Quicksand:wght@500;600;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
 
    
 </head>
@@ -117,34 +123,36 @@
         <form action="">
             <div class="form-section current-section" id="section1">
             <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
-            <div class="form-display">
+            <!-- <div class="form-control">
+            <label for="full_name">Upload Image</label>
+            <i class="fa fa-user" class="form_icon"></i>
+            <input type="file">
+        </div> -->
             <div class="form-control">
             <label for="full_name">Full Name</label>
-            <i class="fa fa-user-plus" class="form_icon"></i>
-            <input type="text" placeholder="full_name" id="fullname" autocapitalize="off" autocomplete="off">
+            <i class="fa fa-user" class="form_icon"></i>
+            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
         </div>
 
             <div class="form-control">
             <label for="date_of_birth">Date of Birth</label>
             <i class="fa fa-calendar" class="form_icon"></i>
-            <input type="date" id="dob" placeholder="date_of_birth">
+            <input type="date" id="dob">
         </div>
 
-    </div>
-            <div class="form-display">
+
             <div class="form-control">
                 <i class="fa fa-home" class="form_icon"></i>
             <label for="home_address">Home Address</label>
-            <input type="text" id="address" placeholder="home_address" autocomplete="off">
+            <input type="text" id="address" autocomplete="off">
         </div>
 
             <div class="form-control">
             <label for="phone_number">Phone Number</label>
             <i class="fa fa-phone" class="form_icon"></i>
-            <input type="number" id="phonenumber" placeholder="Phone_ number">
+            <input type="number" id="phonenumber">
         </div>
 
-    </div>
     <label>Gender</label>
     <div class="form-display2">
        
@@ -157,49 +165,7 @@
         Female
       </label>
     </div>
-    <hr style="margin: 1rem; color: #fff;"/>
-    <h3 style="text-align: left; margin-top: 1rem;">Next of Kins</h3>
-    <div class="form-display">
-        <div class="form-control">
-        <label for="full_name" class="form_icon">Full Name</label>
-        <i class="fa fa-user-plus"></i>
-        <input type="text" placeholder="full_name" id="kname" autocapitalize="off" autocomplete="off">
-    </div>
-
-        <div class="form-control">
-        <label for="relationship">RelationShip</label>
-        <i class="fa fa-users" class="form_icon"></i>
-        <input type="text"  id="krelationship" placeholder="relationship">
-    </div>
-
-</div>
-        <div class="form-display">
-        <div class="form-control">
-            <i class="fa fa-home" class="form_icon"></i>
-        <label for="home_address">Home Address</label>
-        <input type="text"  id="kaddress" placeholder="home_address" autocomplete="off">
-    </div>
-
-        <div class="form-control">
-        <label for="phone_number">Phone Number</label>
-        <i class="fa fa-phone" class="form_icon"></i>
-        <input type="number"  id="kphonenumber" placeholder="Phone_ number">
-    </div>
-
-</div>
-<label>Gender</label>
-<div class="form-display2">
-<label for="radio">
-    <input type="checkbox" id="kgender1" name="gender" value="Female"  class='check4'>
-    Female
-  </label>
-<label for="radio">
-    <input type="checkbox"  id="kgender2" name="gender" value="Male"  class='check3'>
-    Male
-  </label>
-
-</div>
-<label>What kind  of patient Category are you?</label>
+    <label>What kind  of patient Category are you?</label>
 <div class="form-display2">
 <label for="radio">
     <input type="checkbox" id="category1" name="gender" value="Inpatients"  class='check_category1'>
@@ -239,8 +205,8 @@
     <option value="ward5">Ward 5</option>
     <option value="ward6">Ward 6</option>
     <option value="ward7">Ward 7</option> -->
-</select>
-        <select id="beds">
+<!-- </select>
+        <select id="beds"> -->
     <!-- <option>Choose a Bed</option> -->
     <!-- <option value="bed1">Bed1</option>
     <option value="bed2">Bed 2</option>
@@ -251,68 +217,98 @@
     <option value="bed7">Bed 7</option> -->
 </select>
         </div>
-<button type="button" class="btn-next">Next</button>
+    <button type="button" class="btn-next">Next</button>
+    </div>
+    <div class="form-section current-section" id="section3">
+    <h3 style="text-align: left; margin-top: 1rem;">Next of Kins</h3>
+        <div class="form-control">
+        <label for="full_name" class="form_icon">Full Name</label>
+        <i class="fa fa-user"></i>
+        <input type="text"  id="kname" autocapitalize="off" autocomplete="off">
+    </div>
+
+        <div class="form-control">
+        <label for="relationship">RelationShip</label>
+        <i class="fa fa-users" class="form_icon"></i>
+        <input type="text"  id="krelationship">
+    </div>
+
+        <div class="form-control">
+            <i class="fa fa-home" class="form_icon"></i>
+        <label for="home_address">Home Address</label>
+        <input type="text"  id="kaddress"  autocomplete="off">
+    </div>
+
+        <div class="form-control">
+        <label for="phone_number">Phone Number</label>
+        <i class="fa fa-phone" class="form_icon"></i>
+        <input type="number"  id="kphonenumber">
+    </div>
+
+<label>Gender</label>
+<div class="form-display2">
+<label for="radio">
+    <input type="checkbox" id="kgender1" name="gender" value="Female"  class='check4'>
+    Female
+  </label>
+<label for="radio">
+    <input type="checkbox"  id="kgender2" name="gender" value="Male"  class='check3'>
+    Male
+  </label>
+
 </div>
+
+
+        <button type="button" class="btn-back_back">Back</button>
+<button type="button" class="btn-next_next">Next</button>
+    </div>
  <!--Section 2-->
  <div class="form-section current-section" id="section2">
 <h3 style="text-align: left; margin-top: 1rem;">Social History</h3>
-<div class="form-display">
     <div class="form-control">
     <label for="Occupation">Occupation</label>
     <i class="fa fa-twitch" class="form_icon"></i>
-    <input type="text" id="occupation"  placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
-</div>
+    <input type="text" id="occupation"  autocapitalize="off" autofocus autocomplete="off">
 </div>
 
-<div class="form-display">
     <div class="form-control">
     <label for="Occupation">Past Obsterics</label>
     <i class="fa fa-twitch" class="form_icon"></i>
-    <input type="text" id="past_obsterics" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
-</div>
+    <input type="text" id="past_obsterics" autocapitalize="off" autofocus autocomplete="off">
 </div>
 
-<div class="form-display">
     <div class="form-control">
     <label for="Occupation">Medical History</label>
     <i class="fa fa-twitch" class="form_icon"></i>
-    <input type="text" id="medical_history" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
-</div>
+    <input type="text" id="medical_history" autocapitalize="off" autofocus autocomplete="off">
 </div>
 
-<div class="form-display">
     <div class="form-control">
     <label for="Occupation">Sexual History</label>
     <i class="fa fa-twitch" class="form_icon"></i>
-    <input type="text" id="sexual_history" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
-</div>
+    <input type="text" id="sexual_history" autocapitalize="off" autofocus autocomplete="off">
 </div>
 
-<div class="form-display">
     <div class="form-control">
     <label for="Occupation">Past Disease</label>
     <i class="fa fa-twitch" class="form_icon"></i>
-    <input type="text" id="past_disease" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
-</div>
+    <input type="text" id="past_disease" autocapitalize="off" autofocus autocomplete="off">
 </div>
 
-<div class="form-display">
     <div class="form-control">
     <label for="Occupation">Family Disease</label>
     <i class="fa fa-twitch" class="form_icon"></i>
-    <input type="text" id="family_disease" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
+    <input type="text" id="family_disease" autocapitalize="off" autofocus autocomplete="off">
 </div>
-</div>
-<div class="form-display">
     <div class="form-control">
     <label for="Occupation">Past Surgery</label>
     <i class="fa fa-twitch" class="form_icon"></i>
-    <input type="text" id="past_surgery" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
-</div>
+    <input type="text" id="past_surgery" autocapitalize="off" autofocus autocomplete="off">
 </div>
 <button type="button" class="btn-back">Back</button>
-
 <button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Submit</button>
+
+
  </div>
 
         </form>
