@@ -106,37 +106,223 @@
         </div>
    <div class="contents">
     <div class="button_container">
-        <button onclick="patientForm()">PATIENT ADMISSION FORM</button>
+        <button onclick="open_patient_form()">PATIENT ADMISSION FORM</button>
         <button onclick="appoimentBooking()">BOOKING APPOINTMENT SITTER</button>
         <button onclick="surgicalChemistry()">PROCEDURE LIST</button>
         </div>
     </div>
+    <div class="patients_form_container hide">
+    <div class="form-container">
+        <h2>Fill in the neccesary information</h2>
+        <form action="">
+            <div class="form-section current-section" id="section1">
+            <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
+            <div class="form-display">
+            <div class="form-control">
+            <label for="full_name">Full Name</label>
+            <i class="fa fa-user-plus" class="form_icon"></i>
+            <input type="text" placeholder="full_name" id="fullname" autocapitalize="off" autocomplete="off">
+        </div>
+
+            <div class="form-control">
+            <label for="date_of_birth">Date of Birth</label>
+            <i class="fa fa-calendar" class="form_icon"></i>
+            <input type="date" id="dob" placeholder="date_of_birth">
+        </div>
+
+    </div>
+            <div class="form-display">
+            <div class="form-control">
+                <i class="fa fa-home" class="form_icon"></i>
+            <label for="home_address">Home Address</label>
+            <input type="text" id="address" placeholder="home_address" autocomplete="off">
+        </div>
+
+            <div class="form-control">
+            <label for="phone_number">Phone Number</label>
+            <i class="fa fa-phone" class="form_icon"></i>
+            <input type="number" id="phonenumber" placeholder="Phone_ number">
+        </div>
+
+    </div>
+    <label>Gender</label>
+    <div class="form-display2">
+       
+    <label for="radio">
+        <input type="checkbox" id="gender1" name="gender" value="Male" class='check1'>
+        Male
+      </label>
+      <label for="radio">
+        <input type="checkbox" id="gender2" name="gender" value="Female" class='check2'>
+        Female
+      </label>
+    </div>
+    <hr style="margin: 1rem; color: #fff;"/>
+    <h3 style="text-align: left; margin-top: 1rem;">Next of Kins</h3>
+    <div class="form-display">
+        <div class="form-control">
+        <label for="full_name" class="form_icon">Full Name</label>
+        <i class="fa fa-user-plus"></i>
+        <input type="text" placeholder="full_name" id="kname" autocapitalize="off" autocomplete="off">
+    </div>
+
+        <div class="form-control">
+        <label for="relationship">RelationShip</label>
+        <i class="fa fa-users" class="form_icon"></i>
+        <input type="text"  id="krelationship" placeholder="relationship">
+    </div>
+
+</div>
+        <div class="form-display">
+        <div class="form-control">
+            <i class="fa fa-home" class="form_icon"></i>
+        <label for="home_address">Home Address</label>
+        <input type="text"  id="kaddress" placeholder="home_address" autocomplete="off">
+    </div>
+
+        <div class="form-control">
+        <label for="phone_number">Phone Number</label>
+        <i class="fa fa-phone" class="form_icon"></i>
+        <input type="number"  id="kphonenumber" placeholder="Phone_ number">
+    </div>
+
+</div>
+<label>Gender</label>
+<div class="form-display2">
+<label for="radio">
+    <input type="checkbox" id="kgender1" name="gender" value="Female"  class='check4'>
+    Female
+  </label>
+<label for="radio">
+    <input type="checkbox"  id="kgender2" name="gender" value="Male"  class='check3'>
+    Male
+  </label>
+
+</div>
+<label>What kind  of patient Category are you?</label>
+<div class="form-display2">
+<label for="radio">
+    <input type="checkbox" id="category1" name="gender" value="Inpatients"  class='check_category1'>
+    Inpatients
+  </label>
+<label for="radio">
+    <input type="checkbox" id="category2" name="gender" value="Outpatients"  class='check_category2'>
+    Outpatients
+  </label>
+<label for="radio">
+    <input type="checkbox" id="category3" name="gender" value="Waiting_List"  class='check_category3'>
+    Waiting List
+  </label>
+</div>
+
+<div class="form-display2">
+<label for="radio">
+    <input type="checkbox"  id="category4"name="gender" value="Appointment"  class='check_category4'>
+    Appointment
+  </label>
+<label for="radio">
+    <input type="checkbox" id="category5" name="gender" value="Test"  class='check_category5'>
+    Test
+  </label>
+<label for="radio">
+    <input type="checkbox" id="category6" name="gender" value="ANC"  class='check_category6'>
+    ANC
+  </label>
+</div>
+<div class="ward hidden">
+        <select id="wards" onclick="getBeds();">
+    <option>Choose a Ward</option>
+    <!-- <option value="ward1">Ward 1</option>
+    <option value="ward2">Ward 2</option>
+    <option value="ward3">Ward 3</option>     ///coming from database now 
+    <option value="ward4">Ward 4</option>
+    <option value="ward5">Ward 5</option>
+    <option value="ward6">Ward 6</option>
+    <option value="ward7">Ward 7</option> -->
+</select>
+        <select id="beds">
+    <!-- <option>Choose a Bed</option> -->
+    <!-- <option value="bed1">Bed1</option>
+    <option value="bed2">Bed 2</option>
+    <option value="bed3">Bed 3</option>           ////////same
+    <option value="bed4">Bed 4</option>
+    <option value="bed5">Bed 5</option>
+    <option value="bed6">Bed 6</option>
+    <option value="bed7">Bed 7</option> -->
+</select>
+        </div>
+<button type="button" class="btn-next">Next</button>
+</div>
+ <!--Section 2-->
+ <div class="form-section current-section" id="section2">
+<h3 style="text-align: left; margin-top: 1rem;">Social History</h3>
+<div class="form-display">
+    <div class="form-control">
+    <label for="Occupation">Occupation</label>
+    <i class="fa fa-twitch" class="form_icon"></i>
+    <input type="text" id="occupation"  placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
+</div>
+</div>
+
+<div class="form-display">
+    <div class="form-control">
+    <label for="Occupation">Past Obsterics</label>
+    <i class="fa fa-twitch" class="form_icon"></i>
+    <input type="text" id="past_obsterics" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
+</div>
+</div>
+
+<div class="form-display">
+    <div class="form-control">
+    <label for="Occupation">Medical History</label>
+    <i class="fa fa-twitch" class="form_icon"></i>
+    <input type="text" id="medical_history" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
+</div>
+</div>
+
+<div class="form-display">
+    <div class="form-control">
+    <label for="Occupation">Sexual History</label>
+    <i class="fa fa-twitch" class="form_icon"></i>
+    <input type="text" id="sexual_history" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
+</div>
+</div>
+
+<div class="form-display">
+    <div class="form-control">
+    <label for="Occupation">Past Disease</label>
+    <i class="fa fa-twitch" class="form_icon"></i>
+    <input type="text" id="past_disease" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
+</div>
+</div>
+
+<div class="form-display">
+    <div class="form-control">
+    <label for="Occupation">Family Disease</label>
+    <i class="fa fa-twitch" class="form_icon"></i>
+    <input type="text" id="family_disease" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
+</div>
+</div>
+<div class="form-display">
+    <div class="form-control">
+    <label for="Occupation">Past Surgery</label>
+    <i class="fa fa-twitch" class="form_icon"></i>
+    <input type="text" id="past_surgery" placeholder="Specify" autocapitalize="off" autofocus autocomplete="off">
+</div>
+</div>
+<button type="button" class="btn-back">Back</button>
+
+<button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Submit</button>
+ </div>
+
+        </form>
+   
+        </div>
+    </div>
+    </div>
+    <script src="receptionist.js"></script>
     <script>
-        const patientForm = function(){
-            let url = 'patient-registration-form/';
-            window.parent(location = (url));
-        }
-        const appoimentBooking = function(){
-            let url = 'appointment-booker/';
-            window.parent(location = (url));
-        }
-
-        const surgicalChemistry = function(){
-            let url = 'surgical_chemistry(surgery-booking)/index.php';
-            window.parent(location = (url));
-        }
-
-        const patient_list = ()=>{
-            let url = "page/patients-lists.php";
-            window.parent(location = (url));
-        }
-
-
-   //PROFILE IMAGE
-   const profile_container  =  document.querySelector(".profile_account");
-const click_icon_for_profile = ()=>{
-    profile_container.classList.toggle("hide");
-};
+       
     </script>
 </body>
 </html>

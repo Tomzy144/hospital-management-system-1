@@ -269,15 +269,7 @@
         section1.classList.remove("current-section");
         section2.classList.add("current-section");
         btnNext.style.display = "block";
-        // let wards = document.getElementById("wards")
-        // let beds = document.getElementById("beds")
-
-        // if(wards.selectedIndex && beds.selectedIndex){
-        //     var vward = wards.value;
-        //     alert(`${wards.value} and ${beds.value}`)
-        // }else{
-        //     alert("Please select")
-        // }
+     
     });
 
 
