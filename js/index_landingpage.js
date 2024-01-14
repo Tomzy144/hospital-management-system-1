@@ -446,6 +446,7 @@ window.onload = function() {
   // Hide the preloader after the specified duration
   setTimeout(function() {
     document.getElementById('preloader').style.display = 'none';
+    document.querySelector('.preloader_background').style.display = 'none';
     document.querySelector('content-container').style.display = 'block';
   }, preloaderDuration);
 };

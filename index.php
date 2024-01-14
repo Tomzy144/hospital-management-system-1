@@ -21,10 +21,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 </head>
 <body>
 <?php $page = 'login' ?>
-
-    <div id="preloader">
+<div class="preloader_background">
+<div id="preloader">
 
     </div>
+</div>
+    
         <nav class="navbar">
             <div class="logo">
             <img width="200px" height="200px" src="Frontend/Images/Mount_Tech_Logo-removebg-preview.png" alt="">

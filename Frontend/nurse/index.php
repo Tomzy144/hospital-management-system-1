@@ -239,6 +239,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     </div>
 </div>
     <script>
+
+        
    //PROFILE IMAGE
 const profile_container  =  document.querySelector(".profile_account");
 const click_icon_for_profile = ()=>{
