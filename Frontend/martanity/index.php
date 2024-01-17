@@ -152,12 +152,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     <label for="">Selected Time</label>
                     <input type="time">
                 </div>
-                <div class="form_control">
+                <div class="form_control_text_area">
                     <label for="">Request Type</label>
                     <textarea name="" id="" cols="30" rows="10"></textarea>
                 </div>
+                <button class="btn_submit_appoitment">Submit</button>
             </form>
-            <button class="btn_submit_appoitment">Submit</button>
         </div>
         </div>
                 </section>
@@ -183,9 +183,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     </div>
                     </div>
                     <div class="buttons">
-                        <button class="btn">Accepted</button>
-                        <button class="btn">Rejected</button>
-                        <button class="btn">Pending</button>
+                        <button class="btn" id="btn_pending">Pending</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_accepted">Accepted</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_declined">Declined</button>
                     </div>
             </div>
             <div class="cards">
@@ -207,9 +211,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     </div>
                     </div>
                     <div class="buttons">
-                        <button class="btn">Accepted</button>
-                        <button class="btn">Rejected</button>
-                        <button class="btn">Pending</button>
+                        <button class="btn" id="btn_pending">Pending</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_accepted">Accepted</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_declined">Declined</button>
                     </div>
             </div>
             <div class="cards">
@@ -231,9 +239,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     </div>
                     </div>
                     <div class="buttons">
-                        <button class="btn">Accepted</button>
-                        <button class="btn">Rejected</button>
-                        <button class="btn">Pending</button>
+                        <button class="btn" id="btn_pending">Pending</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_accepted">Accepted</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_declined">Declined</button>
                     </div>
             </div>
             <div class="cards">
@@ -255,9 +267,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     </div>
                     </div>
                     <div class="buttons">
-                        <button class="btn">Accepted</button>
-                        <button class="btn">Rejected</button>
-                        <button class="btn">Pending</button>
+                        <button class="btn" id="btn_pending">Pending</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_accepted">Accepted</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_declined">Declined</button>
                     </div>
             </div>
             </div>
@@ -269,6 +285,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <form action="">
         <div class="form_section current_section" id="section1">
         <h1>Antenatal Registration Form</h1>
+        <div class="upload_image">
+            <h1 id="upload_text">Upload Image</h1>
+             <video id="videoElement" width="400" height="300" autoplay></video>
+            <i class="fa fa-plus" id="capture_image" onclick="openCamera()"></i>
+            <canvas id="canvasElement" style="display: none;"></canvas>
+            <img id="capturedImage" style="display: none;">
+        </div>
+        <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
+        <div class="btn_capture hide" onClick="takePicture()">Capture</div>
         <span>Patient Info</span>
     <div class="form_control">
         <label for="">Full name</label>
@@ -379,6 +404,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <form action="">
         <div class="form_section current_section" id="section1_pos">
         <h1>Postnatal Registration Form</h1>
+        <div class="upload_image">
+            <h1 id="upload_text">Upload Image</h1>
+             <video id="videoElement" width="400" height="300" autoplay></video>
+            <i class="fa fa-plus" id="capture_image" onclick="openCamera()"></i>
+            <canvas id="canvasElement" style="display: none;"></canvas>
+            <img id="capturedImage" style="display: none;">
+        </div>
+        <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
+        <div class="btn_capture hide" onClick="takePicture()">Capture</div>
         <span>Patient Info</span>
     <div class="form_control">
         <label for="">Full name</label>

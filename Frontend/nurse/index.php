@@ -103,19 +103,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                         </select>
                     </div>
 
-                    <button class= "btn_bed" onClick="showVitals()">Bed</button>
-                    <div class="bed_container hidden">
-                        <label for="bed">Change Bed</label>
-                        <select name="bed" id="bed">
-                            <option value="bed_select"></option>
-                            <option value="bed_1">Bed 1</option>
-                            <option value="bed_2">Bed 2</option>
-                            <option value="bed_3">Bed 3</option>
-                            <option value="bed_4">Bed 4</option>
-                            <option value="bed_5">Bed 5</option>
-                            <option value="bed_6">Bed 6</option>
-                        </select>
-                    </div>
                     <button class= "btn_ward_round" onClick="showVitals()">Ward Round</button>
                     <div class="ward_round_container hidden">
                         <label for="stage">Stage</label>
@@ -232,7 +219,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     <span>Michelle Prince</span>
                     <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
                     <button class= "btn_vital" onClick="showVitals()">Ward</button>
-                    <button class= "btn_vital" onClick="showVitals()">Bed</button>
                     <button class= "btn_vital" onClick="showVitals()">Ward Round</button>
                     <button class= "btn_vital" onClick="showVitals()">Vital Input</button>
                     <div class="vitals_input hidden">

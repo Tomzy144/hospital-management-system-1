@@ -410,3 +410,72 @@ const click_prescribtion_button = ()=>{
     const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
     show_antenatal_form.classList.add("hide")
 }
+
+
+
+//camera
+let videoElement = document.getElementById('videoElement');
+let canvasElement = document.getElementById('canvasElement');
+let capturedImageElement = document.getElementById('capturedImage');
+let stream;
+
+function openCamera() {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (cameraStream) {
+      stream = cameraStream;
+      videoElement.srcObject = cameraStream;
+    })
+    .catch(function (error) {
+      console.error('Error accessing the camera: ', error);
+    });
+
+    const capture_image = document.querySelector('#capture_image');
+    capture_image.style.display="none"
+    const upload_text = document.querySelector('#upload_text');
+    upload_text.style.display="none"
+    const showClickButton = document.querySelector(".btn_capture")
+    showClickButton.classList.remove("hide");
+
+    const showClickButtonForRecapture = document.querySelector(".btn_re_capture")
+    showClickButtonForRecapture.classList.remove("hide")
+}
+
+function takePicture() {
+  if (stream) {
+    let context = canvasElement.getContext('2d');
+    canvasElement.width = videoElement.videoWidth;
+    canvasElement.height = videoElement.videoHeight;
+    context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+
+    // Convert the canvas content to a data URL representing a PNG image
+    let imageDataURL = canvasElement.toDataURL('image/png');
+
+    // Display the captured image
+    capturedImageElement.src = imageDataURL;
+    capturedImageElement.style.display = 'block';
+
+    // Stop the camera stream
+    stopCamera();
+  }
+}
+function retakePicture() {
+    // Hide the captured image
+    capturedImageElement.style.display = 'none';
+
+    // Stop the camera stream
+    stopCamera();
+
+    // Reopen the camera for retake
+    openCamera();
+  }
+function stopCamera() {
+  if (stream) {
+    let tracks = stream.getTracks();
+
+    // Stop all tracks
+    tracks.forEach(track => track.stop());
+
+    // Remove the stream from the video element
+    videoElement.srcObject = null;
+  }
+}

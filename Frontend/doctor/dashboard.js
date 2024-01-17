@@ -1,41 +1,25 @@
-//Manipulate sidebar 
-const calender = document.querySelector(".fa-calendar-check-o");
-const envelope = document.querySelector(".fa-envelope");
-const user = document.querySelector(".fa-user-circle-o");
-const toggleOpen = document.querySelector(".fa-bars");
-const toggleClose = document.querySelector(".fa-times");
-const sidebar = document.querySelector(".sidebar");
 
-toggleOpen.addEventListener("click", function() {
-envelope.innerHTML = '  Chat';
-user.innerHTML =   '  Account';
-calender.innerHTML = '  Appoitment';
-sidebar.classList.toggle("active_toggle")
-toggleOpen.style.display = "none";
-toggleClose.style.display = "block";
-})
+//PROFILE IMAGE
+const profile_container  =  document.querySelector(".profile_account");
+const click_icon_for_profile = ()=>{
+    profile_container.classList.toggle("hide");
+};
 
-toggleClose.addEventListener("click", function() {
-envelope.innerHTML = ' '
-user.innerHTML =   '  ';
-calender.innerHTML = '  ';
-sidebar.classList.toggle("active_toggle")
-toggleOpen.style.display = "block";
-toggleClose.style.display = "none";
+//BACK ARROW
+const backWardArrow = ()=>{
+document.querySelector(".head-sec").style.display="flex";
+document.querySelector(".body_sec").style.display="block";
+document.querySelector(".all_sections_input").classList.toggle("hide");
+}
 
-})
-//back arrow to the patient list
-function back_arrow(){
-    let url = "index.php";
-    window.parent(location = (url));
-    }
+// backWardArrow()
 
+
+//hide backarrow
+document.querySelector("#back-arrow").style.display="none";
 
     //Doctor Inputs
     
-
-
-
 //Complaints Section
 const complaint_dropdown = document.querySelector(".complain_dropdown");
 const complaint_section = document.querySelector(".complaint-section ");

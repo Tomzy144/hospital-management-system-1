@@ -68,9 +68,10 @@
             };
         }
     </script>
+    <!----SIDEBAR AND  NAVBAR-->
    <div class="navbar">
         <div class="section1">
-            
+        <button id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
         </div>
         <div class="section2">
             <div class="icons">
@@ -110,6 +111,7 @@
                 <i class="fa fa-sign-out" id="icon"></i>
             </div>
         </div>
+        <!----LANDING PAGE OF THIS SECTION--->
    <div class="contents">
     <div class="button_container">
         <button onclick="open_patient_form()">PATIENT ADMISSION FORM</button>
@@ -117,17 +119,302 @@
         <button onclick="surgicalChemistry()">PROCEDURE LIST</button>
         </div>
     </div>
+
+    <!----SURGICAL BOOKING BASE ON THE DOCTOR INPUT--->
+  <div class="surgical_booking hide">
+    <div class="table_container">
+        <table>
+            <thead>
+                       <th>Doctor Name</th>
+                        <th>Doctor ID & Profile</th>
+                        <th>Patient Name</th>
+                        <th>Patient ID & Profile</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Procedure</th>
+                        <th>Phone Number</th>
+                        <th>Cost</th>
+                        <th>Status</th>
+            </thead>
+            <tbody>
+                    <td>Doc. Esther Udo</td>
+                    <td>Doc.0001</td>
+                    <td>Gift John</td>
+                    <td>Doc.002</td>
+                    <td>12-02-2023</td>
+                    <td>5.00</td>
+                    <td><span>Head Surgery</span></td>
+                    <td>08177829333</td>
+                    <td>#20,000.00</td>
+                    <td><div class="circle_red"></div></td>
+                </tbody>
+            <tbody>
+                    <td>Doc. Esther Udo</td>
+                    <td>Doc.0001 <img src=../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt=""></img></td>
+                    <td>Gift John</td>
+                    <td>Doc.002</td>
+                    <td>12-02-2023</td>
+                    <td>5.00</td>
+                    <td><span>Head Surgery</span></td>
+                    <td>08177829333</td>
+                    <td>#20,000.00</td>
+                    <td><div class="circle_yellow"></div></td>
+                </tbody>
+            <tbody>
+                    <td>Doc. Esther Udo</td>
+                    <td>Doc.0001</td>
+                    <td>Gift John</td>
+                    <td>Doc.002</td>
+                    <td>12-02-2023</td>
+                    <td>5.00</td>
+                    <td><span>Head Surgery</span></td>
+                    <td>08177829333</td>
+                    <td>#20,000.00</td>
+                    <td><div class="circle_green"></div></td>
+                </tbody>
+            <tbody>
+                    <td>Doc. Esther Udo</td>
+                    <td>Doc.0001</td>
+                    <td>Gift John</td>
+                    <td>Doc.002</td>
+                    <td>12-02-2023</td>
+                    <td>5.00</td>
+                    <td><span>Head Surgery</span></td>
+                    <td>08177829333</td>
+                    <td>#20,000.00</td>
+                    <td><div class="circle_red"></div></td>
+                </tbody>
+        </table>
+    </div>
+  </div>
+  <!---APPOITMENT SECTION -->
+<div class="appoitment_section hide">
+            <div class="appoitment_container">
+                <section class="doctor_roles_name hide">
+                    <i class="fa fa-times" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
+                <div class="appoitment-calender">
+                    <div class="doc_roles">
+                <label for="roles">Doctor Role:</label>
+<select id="roles"  onclick="getDoctors()">
+<option>Select</option>
+    <option value="cardiologist">Cardiologist</option>
+    <option value="dermatologist">Dermatologist</option>
+    <option value="surgeon">Surgeon</option>
+    <option value="psychiatrist">Psychiatrist:</option>
+    <option value="family_medicine">Family Medicine</option>
+    <option value="dermatologist">Dermatologist</option>
+    <option value="anaesthesiology">Anaesthesiology</option>
+    <option value="rheumatologist">Rheumatologist</option>
+    <option value="endocrinologist">Endocrinologist</option>
+    <option value="nephrologist">Nephrologist</option>
+    <option value="neurologist">Neurologist</option>
+    <option value="pediatrician">Pediatrician</option>                
+    <option value="urologist">Urologist</option>
+    <option value="radiologist">Radiologist</option>
+    <option value="dentist">Dentist</option>
+    <option value="pulmonologist">Pulmonologist</option>
+    <option value="podiatristian">Podiatristian</option>
+    <option value="emergency_physician">Emergency Physician</option>
+    <option value="anaesthesiologist">Anaesthesiologist</option>
+    <option value="cardiologist">Cardiologist</option>
+    <option value="oncologist">Oncologist</option>
+    <option value="gastroenterologist">Gastroenterologist</option>
+    <option value="ophthanlmologist">Ophthanlmologist</option>
+    <option value="cardology">Cardology</option>
+    <option value="allergist">Allergist</option>
+    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
+    <!-- Add more role options as needed-->
+</select>
+<label for="doctors">Select Doctor:</label>
+<select id="doctors">
+    Doctors for the selected role will be dynamically added here
+</select>
+<button id="continue" type="submit" onClick="submitRoles()" >Continue</button>
+</div>
+    <div class="appoitment_form hidden">
+<div class="calendar">
+            <div class="month">
+                <i class="fa fa-angle-left prev"></i>
+                <div class="date">
+                    <h1></h1>
+                    <p></p>
+                </div>
+                <i class="fa fa-angle-right next"></i>
+            </div>
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days"> </div>
+        </div>
+        <div class="form_appoitment">
+            <h3>Fill in the neccessary Information</h3>
+            <form action="" class="form">
+                <div class="form_control">
+                    <label for="">Patient Name</label>
+                    <input type="text" placeholder="john">
+                </div>
+                <div class="form_control">
+                    <label for="">Patient Id</label>
+                    <input type="text" placeholder="id001">
+                </div>
+                <div class="form_control">
+                    <label for="">Selected Date</label>
+                    <div class="selected_date">03-01-2024</div>
+                </div>
+                <div class="form_control">
+                    <label for="">Selected Time</label>
+                    <input type="time">
+                </div>
+                <div class="form_control_text_area">
+                    <label for="">Request Type</label>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <button class="btn_submit_appoitment">Submit</button>
+                </div>
+            </form>
+        </div>
+        </div>
+                </section>
+            <section class="appoitments">
+            <h1>Appoitments</h1>
+            <div class="cards_container">
+            <div class="cards">
+                <div class="profile">
+                    <img src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
+                    <div class="name_role">
+                    <h3>Dr. Rita John</h3>
+                    <h4>Gynaecologist</h4>
+                    </div>
+                </div>
+                <div class="date_time">
+                    <div class="date">
+                        <i class="fa fa-calendar"></i>
+                        <span>2/03/2024</span>
+                    </div>
+                    <div class="time">
+                    <i class="fa fa-clock-o"></i>
+                    <span>2.30pm</span>
+                    </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_pending">Pending</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_accepted">Accepted</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_declined">Declined</button>
+                    </div>
+            </div>
+            <div class="cards">
+                <div class="profile">
+                    <img src="../Images/513d2ccb77e948b687079bc2d6f42661.jpg" alt="">
+                    <div class="name_role">
+                    <h3>Dr. Mary Asuquo</h3>
+                    <h4>Gynaecologist</h4>
+                    </div>
+                </div>
+                <div class="date_time">
+                    <div class="date">
+                        <i class="fa fa-calendar"></i>
+                        <span>2/03/2024</span>
+                    </div>
+                    <div class="time">
+                    <i class="fa fa-clock-o"></i>
+                    <span>2.30pm</span>
+                    </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_pending">Pending</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_accepted">Accepted</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_declined">Declined</button>
+                    </div>
+            </div>
+            <div class="cards">
+            <div class="profile">
+                    <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+                    <div class="name_role">
+                    <h3>Dr. Patience Emmanuel</h3>
+                    <h4>Gynaecologist</h4>
+                    </div>
+                </div>
+                <div class="date_time">
+                    <div class="date">
+                        <i class="fa fa-calendar"></i>
+                        <span>2/03/2024</span>
+                    </div>
+                    <div class="time">
+                    <i class="fa fa-clock-o"></i>
+                    <span>2.30pm</span>
+                    </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_pending">Pending</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_accepted">Accepted</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_declined">Declined</button>
+                    </div>
+            </div>
+            <div class="cards">
+            <div class="profile">
+                    <img src="../Images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
+                    <div class="name_role">
+                    <h3>Dr. Kingsley Patrick</h3>
+                    <h4>Gynaecologist</h4>
+                    </div>
+                </div>
+                <div class="date_time">
+                    <div class="date">
+                        <i class="fa fa-calendar"></i>
+                        <span>2/03/2024</span>
+                    </div>
+                    <div class="time">
+                    <i class="fa fa-clock-o"></i>
+                    <span>2.30pm</span>
+                    </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_pending">Pending</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_accepted">Accepted</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" id="btn_declined">Declined</button>
+                    </div>
+            </div>
+            </div>
+            </section>
+            </div>
+        </div>
+<!----PATIENT FORM -->
     <div class="patients_form_container hide">
     <div class="form-container">
+        <div class="upload_image">
+            <h1 id="upload_text">Upload Image</h1>
+             <video id="videoElement" width="400" height="300" autoplay></video>
+            <i class="fa fa-plus" id="capture_image" onclick="openCamera()"></i>
+            <canvas id="canvasElement" style="display: none;"></canvas>
+            <img id="capturedImage" style="display: none;">
+        </div>
+        <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
+        <div class="btn_capture hide" onClick="takePicture()">Capture</div>
         <h2>Fill in the neccesary information</h2>
         <form action="">
             <div class="form-section current-section" id="section1">
             <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
-            <!-- <div class="form-control">
-            <label for="full_name">Upload Image</label>
-            <i class="fa fa-user" class="form_icon"></i>
-            <input type="file">
-        </div> -->
             <div class="form-control">
             <label for="full_name">Full Name</label>
             <i class="fa fa-user" class="form_icon"></i>
@@ -307,12 +594,8 @@
 </div>
 <button type="button" class="btn-back">Back</button>
 <button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Submit</button>
-
-
  </div>
-
         </form>
-   
         </div>
     </div>
     </div>

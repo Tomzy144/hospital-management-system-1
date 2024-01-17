@@ -36,6 +36,9 @@
              </nav>
              <div class="form">
     <div class="form-container">
+        <div class="upload_image">
+            <h1>Hello Sir</h1>
+        </div>
         <h2>Fill in the neccesary information</h2>
         <form action="">
             <div class="form-section current-section" id="section1">

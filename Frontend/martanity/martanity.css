@@ -290,6 +290,7 @@ h1{
     color: rgb(42, 87, 215);
     animation: fadeIn 1s ease-in-out;
 }
+
 form{
     width: 100%;
     display: flex;
@@ -427,12 +428,63 @@ form span{
 .form_container_for_postnatal .form_control input:focus{
     border: 2px solid rgb(42, 87, 215);
 }
+.upload_image{
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    box-shadow: rgba(212, 210, 210, 0.35) 0px 5px 15px;
+    margin: 0 auto;
+    overflow: hidden;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);;
+    position: relative;
+    text-align: center;
+}
+.upload_image h1{
+    padding: 2rem;
+    font-size: 30px;
+    position: absolute;
+}
+#capture_image{
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 0.5rem;
+    width: max-content;
+    position: absolute;
+   margin-left: 80%;
+    background-color: rgb(42, 87, 215);
+}
+#capturedImage{
+    position: absolute;
+}
+.btn_capture{
+    width: fit-content;
+    padding: 0.5rem;
+    border: none;
+    margin: 1rem 0;
+    cursor: pointer;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+}
+.btn_re_capture{
+    width: fit-content;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+}
 /*appoitment section*/
 .appoitment_section{
     width: 100%;
     /* background-color: #fff; */
     height: 100%;
 }
+
 /*VITALS*/;
 .dashboard_contents .nurse_vital_section_vital{
     width: 100%;
@@ -495,6 +547,15 @@ form span{
     height: 90px;
 
 }
+#btn_declined{
+    width: 100%;
+}
+#btn_accepted{
+    width: 100%;
+}
+#btn_pending{
+    width: 100%;
+}
 .profile .name_role{
     display: flex;
     color: rgb(158, 160, 166);;
@@ -522,6 +583,7 @@ form span{
     padding: 0.5em 1em;
     background-color:rgb(42, 87, 215) ;
     border: none;
+    cursor: pointer;
     margin: 0 1rem;
     color: #fff;
 }
@@ -704,14 +766,16 @@ form span{
     width:100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    /* justify-content: center; */
+    flex-wrap: wrap;
 }
 
 .form_appoitment .form_control{
-    width: 100%;
+    width: 40%;
     animation: none;
     height: auto;
-    margin: 1em 0;
+    margin: 1em 1em;
 }
 .form_appoitment label{
     color: rgb(42, 87, 215);
@@ -723,15 +787,23 @@ form span{
     border: 2px solid rgb(42, 87, 215);;
     
 }
+.form_appoitment .form_control_text_area{
+    width: 100%;
+    animation: none;
+    height: auto;
+    margin: 1em 1em;
+}
 .selected_date{
     padding: 1rem 1rem;
     background-color: rgb(42, 87, 215);
+    border: 2px solid rgb(42, 87, 215);;
     color: rgb(255, 255, 255);
 }
 .form_appoitment textarea{
     border: none;
     background-color: rgb(42, 87, 215);
     color: #fff;
+    width: 100%;
 }
 .btn_submit_appoitment{
     width: 100%;
@@ -746,6 +818,7 @@ form span{
 .btn_submit_appoitment:hover{
     background-color: #fff;
     color: black;
+    border: 2px solid rgb(42, 87, 215);;
 }
 
 /*VITALS*/
