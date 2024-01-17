@@ -426,13 +426,13 @@ input{
 }
 #ward{
     padding: 1rem 1rem;
-    background-color: rgb(0, 158, 251);
+    background-color: rgb(0, 0, 0);
     width: 100%;
     border: none;
     color: #fff;
 }
 #ward option{
-    background-color: rgb(0, 158, 251);
+    background-color: rgb(0, 0, 0);
     width: 100%;
     border: none;
 }
@@ -445,7 +445,7 @@ input{
 }
 #bed{
     padding: 1rem 1rem;
-    background-color: rgb(0, 158, 251);
+    background-color: rgb(0, 0, 0);
     width: 100%;
     border: none;
     color: #fff;
@@ -459,7 +459,7 @@ input{
 
 #stage{
     padding: 1rem 1rem;
-    background-color: rgb(0, 158, 251);
+    background-color: rgb(0, 0, 0);
     width: 100%;
     border: none;
     color: #fff;
@@ -470,12 +470,12 @@ input{
 .ward_round_container textarea{
     width: 100%;
     color: #fff;
-    background-color: rgb(0, 158, 251);
+    background-color: rgb(0, 0, 0);
     border: none;
 }
 .vitals_input{
     width: 100%;
-    background-color: rgb(0, 158, 251);
+    background-color: rgb(0, 0, 0);
     padding: 1rem;
     height: fit-content;
 }
@@ -497,7 +497,7 @@ input{
 
 .vitals_input input{
     width: 100%;
-    border: 2px solid rgb(0, 158, 251);
+    border: 2px solid rgb(0, 0, 0);
 }
 .hidden{
     display: none;

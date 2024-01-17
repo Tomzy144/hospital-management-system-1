@@ -276,13 +276,6 @@ btn_ward.addEventListener("click",()=>{
     ward_container.classList.toggle("hidden")
 });
 
-//Patient Bed
-const btn_bed = document.querySelector(".btn_bed");
-const bed_container = document.querySelector(".bed_container");
-
-btn_bed.addEventListener("click",()=>{
-    bed_container.classList.toggle("hidden")
-});
 
 //Patient Vital
 const btn_impatient_vital = document.querySelector(".btn_vital");
