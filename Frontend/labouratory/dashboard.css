@@ -2,157 +2,367 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Quicksand", "Helvetica Neue", Helvetica;
+}
+body{
+    width: 100%;
+    min-height:100vh;
+    background-image: url(../Images/26836.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .navbar{
     width: 100%;
-    height: 100px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    box-shadow: 0 3rem 5rem rgba(231, 229, 229, 0.3);
-}
-h1{
-    margin-left: 12rem;
-    color: rgb(4 47 46);
-}
-
-.sidebar{
+    height: 75px;
+    background:linear-gradient(-12deg, rgb(42, 87, 215) 0px, rgb(42, 87, 215) 100%) !important;
     position: fixed;
-    width: 80px;
-    height: 100%;
-    background-color:rgb(4 47 46);
-    transition: 0.2s;
-    align-items: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
+    top: 0;
     z-index: 999;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    top: 0;
-    flex-direction: column;
+    box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
 }
 
-.sidebar.active{
-    width: 300px;
-}
-.togglebar .fa-times{
-    display: none;
-    cursor: pointer;
-}
-
-
-.togglebar{
-    color: #fff;
-    margin-top: 12px;
-    border-bottom: 1px solid #fff;
-    width: 100%;
-    display: flex;
-    position: absolute;
-    top: 0;
-    flex-direction: column;
-    font-size: 2rem;
-    justify-content: center;
-    align-items: center;
-}
-.checkbar{
-    color: rgb(4 47 46);
-    width: 100%;
+.section1{
+    width: 500px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    font-size: 1.6rem;
-    margin-top: 15rem;
+    justify-content: center;
+    animation: zoomIn 1s ease-in-out;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
 }
-.checkbar .fa{
-    position: relative;
-    width: 100%;
-    border-radius: 12px;
-    margin: 2rem;
-    border: 8px solid transparent;
-    transition: 2s;
+#back-arrow{
+    color: #fff;
+    font-size: 30px;
     cursor: pointer;
 }
-.checkbar .fa.active{
-    transform: translateX(20px);
-    background-color: rgb(255, 255, 255) ;
-    padding: 0.5rem;
-}
-
-.checkbar .fa.active:hover{
-    background-color: rgb(4 47 46);
-    color: #ffffff;
-}
-
-.fa-bars{
-    padding: 1rem;
-    cursor: pointer;
-}
-.navbar{
+.section2{
+    width: 600px;
+    height: 100%;
     display: flex;
-    width: 100%;
+    flex-direction: row;
+    animation: zoomIn 1s ease-in-out;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-    flex-direction: row;
-    background-color:rgb(4 47 46);
-} 
-
-h1{
-    color: #fff;
-    font-size: 2rem; 
 }
-#sign-out{
-    font-size: 30px;
+.icons{
     color: #fff;
-    cursor: pointer;
-  }
-
-.container-dashboard{
-    background-color: #ffffff;
-    width: 1000px;
-    color: black;
-    height: 100%;
-    flex-wrap: wrap;
-    margin: 25rem auto;
+    font-size: 30px;
+    width: 150px;
     display: flex;
-    flex-direction: row !important;
-    justify-content: center;
+    justify-content: center;;
     align-items: center;
+    height: 100%;
+}
+#icon{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
     position: relative;
 }
-button{
-   margin: 1rem 3rem;
-   border: none;
-   padding: 1rem;
-   box-shadow: 0 3rem 5rem rgba(230, 227, 227, 0.3);
-   background-color: rgb(4 47 46);
-   color: #fff;
-   cursor: pointer;
-   transition:all ease-in-out 0.5s;
-   font-size: 24px;
+#icon-drop{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
 }
-button:hover{
-    background-color: #fff;
-    border: 1px solid rgb(4 47 46);
-    color: rgb(4 47 46);
-    transition: all ease-in-out 0.5s; 
-   
+.notification1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
+    border: 2px solid #fff;
 }
-#btn{
-    background: #0000;
-    padding: 0.5rem;
+.notification2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
+    border: 2px solid #fff;
+}
+.profile{
+    width: 50%;
+    height: 100%;
+    display: flex;
     color: #fff;
+    justify-content: center;
+    align-items: center;;
+}
+.profile_account{
+    width: 300px;
+    position: absolute;
+    background:linear-gradient(-12deg, rgb(42, 87, 215) 0px, rgb(42, 87, 215) 100%) !important;
+    height: fit-content;
+    top: 100%;
+    animation: zoomIn 01s ease-in-out;
+    right: 2%;
+    padding: 1rem 1rem;
+    box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#image_profile_account{
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
+}
+.profile_account .btn_submit{
+    width: 100%;
+    background-color: #fff;
+    padding: 0.7rem;
+    border: none;
+    color: rgb(42, 87, 215);
+    border-radius: 5px;
+    transition: all  ease-in-out 0.6s;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+.profile_account  .btn_submit:hover{
+    transform: scale(0.98);
+    background: none;
+    color:rgb(255, 255, 255);
+    border: 2px solid #fff;
+}
+.profile_account span{
+    text-align: left;
     cursor: pointer;
 }
-#btn:hover{
+.profile_account h3{
+    color: rgb(255, 255, 255);
+}
+
+.profile img{
+    width: 50px;
+    margin: 0 0.8rem;
+    border: 3px solid #fff;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.image{
+    position: relative;
+}
+.profile .active_on{
+    position: absolute;
+    bottom: 5%;
+    right: 15%;
+    background-color: rgb(0, 193, 65);
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+}
+#btn_appoitment{
+    padding: 0.7rem 1rem;
+    border: none;
     background-color: #fff;
-    border: 1px solid rgb(4 47 46);
-    color: rgb(4 47 46);
-    transition: all ease-in-out 0.5s; 
-   
+    margin: 0 7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(42, 87, 215);
+    font-size: 12px;
+    transition: all ease-in-out 0.6s;
+}
+#btn_appoitment:hover{
+    padding: 0.7rem 1rem;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    transform: scale(0.98);
+}
+
+
+.sidebar{
+    width: 75px;
+    height: fit-content;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1000;
+    background:rgb(42, 87, 215);
+}
+.sidebar_contents{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+   color: #fff;
+   height: 75px;
+   cursor: pointer;
+   text-align: center;
+   border-bottom: 2px solid rgba(255, 255, 255);
+}
+.sidebar_icons{
+    width: 100%;
+    animation: zoomIn 01s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.sidebar_icons #icon{
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+
+
+.contents{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../Images/26836.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.button_container{
+    width:80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#btn_sections{
+    background: none;
+    border: 4px solid #fff;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 0.6rem;
+    cursor: pointer;
+    margin: 1rem 1rem;
+    transition: all ease-in-out 0.5s;
+    animation: zoomIn 01s ease-in-out;
+}
+#btn_sections:hover{
+    background-color: rgb(0, 158, 251);
+    padding: 0.6rem;
+    cursor: pointer;
+    margin: 1rem 1rem;
+    transform: translate(1.3);
+    color: #fff;
+}
+.labouratory_examination{
+    width: 100%;
+    height: 100vh;
+}
+
+/*LAB INPUT*/
+.lab_input{
+    width: 900px;
+    margin: 7rem auto;
+}
+
+span{
+    font-size: 20px;
+}
+.clinical_chemistry, .immunoassay,.thyroid, .tumor, .blood, .food, .microbiology,.histopathology,.haematology{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+#open_id_1, #close_id_1,
+#open_id_2, #close_id_2,
+#open_id_3, #close_id_3,
+#open_id_4, #close_id_4,
+#open_id_5, #close_id_5,
+#open_id_6, #close_id_6,
+#open_id_7, #close_id_7,
+#open_id_8, #close_id_8,
+#open_id_9, #close_id_9{
+    color: #fff;
+    font-size: 20px;
+}
+#close_id_1, #close_id_2, #close_id_3, #close_id_4,  #close_id_5, #close_id_6, #close_id_7, #close_id_8, #close_id_9{
+    display: none;
+}
+.form1,.form2, .form3, .form4, .form5, .form6,.form7,.form8,.form9{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+.form_control{
+    width: 300px;
+    color: #fff;
+    font-size: 18px;
+    padding: 0.4rem 1rem;
+    margin: 0.5rem 0;
+}
+#btn{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: fit-content;
+    padding: 1rem;
+    border: none;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#btn:hover{
+    background-color: rgb(42, 87, 215);
+    color: #ffffff;
+}
+.labouratory_examination .upload{
+    color: #fff;
+    font-size: 23px;
+}
+.labouratory_examination  #file_upload{
+    color: #ffffff;
+    padding: 0.5rem;
+    background-color: rgb(42, 87, 215);
+    font-size: 20px;
+    border: 2px solid rgb(42, 87, 215);
+}
+.hidden{
+    display: none;
+}
+.diagnosis{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+.hide{
+    display: none;
 }
