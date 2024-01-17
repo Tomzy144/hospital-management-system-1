@@ -200,9 +200,9 @@
                 <div class="appoitment-calender">
                     <div class="doc_roles">
                 <label for="roles">Doctor Role:</label>
-<select id="roles"  onclick="getDoctors()">
-<option>Select</option>
-    <option value="cardiologist">Cardiologist</option>
+<select id="roles" >
+<option  onclick="getDoctors()">Select</option>
+    <!-- <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
     <option value="psychiatrist">Psychiatrist:</option>
@@ -227,12 +227,12 @@
     <option value="ophthanlmologist">Ophthanlmologist</option>
     <option value="cardology">Cardology</option>
     <option value="allergist">Allergist</option>
-    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
+    <option value="orthopedic_surgoen">Orthopedic Surgoen</option>  -->
     <!-- Add more role options as needed-->
 </select>
 <label for="doctors">Select Doctor:</label>
 <select id="doctors">
-    Doctors for the selected role will be dynamically added here
+    <!-- Doctors for the selected role will be dynamically added here -->
 </select>
 <button id="continue" type="submit" onClick="submitRoles()" >Continue</button>
 </div>
