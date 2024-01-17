@@ -59,7 +59,8 @@
 
    
 </head>
-<body>
+<body onload="getWards()">
+
 <script>
        if (window.history && window.history.pushState) {
             window.history.pushState('forward', null,);
@@ -496,8 +497,8 @@
     <option value="ward5">Ward 5</option>
     <option value="ward6">Ward 6</option>
     <option value="ward7">Ward 7</option> -->
-<!-- </select>
-        <select id="beds"> -->
+</select>
+        <select id="beds">
     <!-- <option>Choose a Bed</option> -->
     <!-- <option value="bed1">Bed1</option>
     <option value="bed2">Bed 2</option>
