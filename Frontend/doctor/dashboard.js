@@ -10,6 +10,7 @@ const backWardArrow = ()=>{
 document.querySelector(".head-sec").style.display="flex";
 document.querySelector(".body_sec").style.display="block";
 document.querySelector(".all_sections_input").classList.toggle("hide");
+document.querySelector("#back-arrow").style.display="none";
 }
 
 // backWardArrow()

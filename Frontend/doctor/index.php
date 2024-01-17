@@ -145,6 +145,7 @@ $result = $conn->query($sql);
     <thead>
         <tr>
             <td>Patient Name</td>
+            <td>Patient ID</td>
             <td>Date</td>
             <td>Time</td>
             <td>Request Type</td>
@@ -158,6 +159,7 @@ $result = $conn->query($sql);
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row["patient_name"] . "</td>";
+            echo "<td>" . $row["patienti_id"] . "</td>";
             echo "<td>" . $row["appointment_date"] . "</td>";
             echo "<td>" . $row["time"] . "</td>";
             echo "<td>" . $row["reason"] . "</td>";
