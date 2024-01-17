@@ -100,7 +100,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           <div class="profile">
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
-            <h4>Doctor Victor Samuel</h4>
+            <h4><?php echo $fullname ?></h4>
             <button class="btn_submit">Upload Image</button>
             <span>change password</span>
         </div>
@@ -109,7 +109,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <div class="active_on"></div>
             </div>
         </img>  
-            <span>Doctor Victor Samuel</span>
+            <span><?php echo $fullname ?></span>
             <i class="fa fa-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>
@@ -121,7 +121,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <div class="sidebar_icons">
                 <i class="fa fa-envelope" id="icon"></i>
                 <i class="fa fa-hospital-o" id="icon"onClick="click_appoitment_button()"></i>
-                <i class="fa fa-sign-out" id="icon"></i>
+                <i class="fa fa-sign-out"  id="icon" onclick="document.getElementById('logoutform').submit();"></i>
+                <form method="post" action="../../config/code.php" id="logoutform">
+                    <input type="hidden" name="action" value="logout"/>    
+                </form>
+                <!--<i class="fa fa-sign-out" id="icon"></i> -->
             </div>
         </div>
 
@@ -159,7 +163,7 @@ $result = $conn->query($sql);
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row["patient_name"] . "</td>";
-            echo "<td>" . $row["patienti_id"] . "</td>";
+            echo "<td>" . $row["patient_id"] . "</td>";
             echo "<td>" . $row["appointment_date"] . "</td>";
             echo "<td>" . $row["time"] . "</td>";
             echo "<td>" . $row["reason"] . "</td>";
