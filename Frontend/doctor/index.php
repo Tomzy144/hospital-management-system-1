@@ -251,8 +251,9 @@ $result = $conn->query($sql);
             </div>
 </div>
             <div class="complaint_form-control">
-          <button id="complaint_button_for_surgery">Done</button>
-          <button id="complaint_button_for_surgery">Cancelled</button>
+            <button type="button" id="button_to_check_surgery" onClick="click_when_surgery_is_done_or_canceled()">Click here only when the Surgery is been Cancelled OR Done</button>
+          <button class="complaint_button_for_surgery_done hide">Done</button>
+          <button class="complaint_button_for_surgery_cancelled hide">Cancelled</button>
 </div>
         </form>
    </div>
@@ -1745,6 +1746,7 @@ $result = $conn->query($sql);
    </div>
    <div class="treatment_prescribtion-section hidden">
         <form action="" class="treatment_prescribtion_form1">
+        <div class="treatment_prescribtion_flexs">
             <div class="treatment_prescribtion_form-control">
             <label for="drugs">Drugs</label>
             <input type="text" class="treatment_prescribtion-input_change_width" id="drugs">
@@ -1802,7 +1804,9 @@ $result = $conn->query($sql);
             <input type="number" class="treatment_prescribtion-input">
             </div>
             <i class="fa fa-window-close" id="prescribe_close"></i>
+        </div>
             <!---Second Sec--->
+            <div class="treatment_prescribtion_flexs">
             <div class="treatment_prescribtion_form-control">
             <label for="drugs">Drugs</label>
             <input type="text" class="treatment_prescribtion-input_change_width">
@@ -1851,6 +1855,7 @@ $result = $conn->query($sql);
             <div class="treatment_prescribtion_form-control">
             <label for="cost">Cost</label>
             <input type="number" class="treatment_prescribtion-input" id="cost">
+            </div>
             </div>
             <button id="btn_prescribe">Prescribe</button>      
         </div>

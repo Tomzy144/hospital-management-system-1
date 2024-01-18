@@ -69,6 +69,12 @@ const close_procedure_form = function(){
 };
 
 
+//CHECK IF THE SURGERY IS DONE OR CANCELLED
+const click_when_surgery_is_done_or_canceled = ()=>{
+    document.querySelector(".complaint_button_for_surgery_done").classList.remove("hide");
+    document.querySelector(".complaint_button_for_surgery_cancelled").classList.remove("hide");
+    document.querySelector("#button_to_check_surgery").style.display="none";
+}
 
 // form input
 //System Review dropdown

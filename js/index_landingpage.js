@@ -93,7 +93,7 @@ const nurse_login_form = `
 <script src="../../backend/js/jquery-v3.6.1.min.js"></script>
 
 <div class="nurse-login hidden">
-<i class="fa fa-times-circle" id='close-icon-radiography'></i>
+<i class="fa fa-times-circle" id='close-icon-nurse'></i>
     <h1 class="login-form-h1">Login (Nurse)</h1>
     <form>
     <div class="form-control">
@@ -142,7 +142,7 @@ const radiologist_login_form = `
 <script src="../../backend/js/jquery-v3.6.1.min.js"></script>
 
 <div class="radiologist-login hidden">
-<i class="fa fa-times-circle" id='close-icon-nurse'></i>
+<i class="fa fa-times-circle" id='close-icon-radiologist'></i>
     <h1 class="login-form-h1">Login (Radiologist)</h1>
     <form>
     <div class="form-control">
@@ -396,6 +396,7 @@ const dark_background = document.querySelector(".overlay")
 dark_background.addEventListener("click", function(){
     close_doctor_login_form();
     close_nurse_login_form();
+    close_radiologist_login_form();
     close_recep_login_form();
     close_lab_login_form();
     close_staff_manager_login_form();
@@ -404,6 +405,7 @@ dark_background.addEventListener("click", function(){
 
 const closeIconDoc = document.querySelector("#close-icon-doctor");
 const closeIconNurse = document.querySelector("#close-icon-nurse");
+const closeIconRadiologist = document.querySelector("#close-icon-radiologist");
 const closeIconRecep = document.querySelector("#close-icon-recep");
 const closeIconLab = document.querySelector("#close-icon-lab");
 const closeIconStaff_manager = document.querySelector("#close-icon-staff_manager");
@@ -421,6 +423,10 @@ closeIconRecep.addEventListener("click", function(){
 closeIconLab.addEventListener("click", function(){
     close_lab_login_form();
 })
+closeIconRadiologist.addEventListener("click", function(){
+    close_radiologist_login_form();
+})
+
 closeIconStaff_manager.addEventListener("click", function(){
     close_staff_manager_login_form()
 })
@@ -455,20 +461,3 @@ const submission_url = function(){
     let url = 'frontend/receptionist/index.php';
     window.parent(location =(url));
 }
-
-// const keyPress =   document.addEventListener("keypress")
-// console.log(keyPress.key);
-
-// document.windoow(addEventListener("DOMContentLoaded", function(){
-//     if(windoow.keyPress === keyPress.key) {
-// })
-// // const escapeClose = function (){
-
-// //     if(onclick("keypress") === "Escape"){
-// //         close_doctor_login_form();
-// //     }else{
-// //         "Not woking and check on the code"
-// //     }
-// // }
-
-// escapeClose();
