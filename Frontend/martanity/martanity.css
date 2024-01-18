@@ -810,7 +810,7 @@ form span{
     background-color:rgb(42, 87, 215);
     color: #fff;
     border: none;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding: 0.9rem;
     cursor: pointer;
     transition: all ease-in-out 0.5s;

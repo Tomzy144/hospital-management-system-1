@@ -153,7 +153,7 @@ $result = $conn->query($sql);
         </tr>
     </thead>
 
-   <tbody class="a_1">
+   <tbody>
     <?php
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {

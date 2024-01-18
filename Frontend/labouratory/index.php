@@ -66,10 +66,79 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             </div>
         </div>
         <div class="contents">
-    <div class="button_container">
+    <div class="button_container hide">
     <button onClick="click_labouratory_examination()" id="btn_sections">Labouratory Examination</button>
     <button onClick="click_diagnosis()" id="btn_sections">Diagnosis</button>
     </div>
+
+    
+    <div class="appiontment_booking_container">
+        <div class="appiontment">
+        <div class="head_sec">
+            <span>Appoitment Details</span>
+            <div class="appoitment_input_control">
+            <i class="fa fa-search" id="search_icon"></i>
+                <input type="text" placeholder="Search here" class="appoitment_input">
+            </div>
+        </div>
+        <div class="table_container">
+          <table>
+            <thead>
+              <td>Patient Name</td>
+              <td>Patient Id</td>
+              <td>Date</td>
+              <td>Time</td>
+              <td>Request Type</td>
+              <td>Accept/Reject</td>
+            </thead>
+            <tbody>
+              <td>Princess Precious</td>
+              <td>Pat001</td>
+              <td>22-02-2024</td>
+              <td>2:30PM</td>
+              <td>Medical Test</td>
+              <td>
+                <button onClick="show_buttons()">Accept</button>
+                <button>Reject</button>
+              </td>
+            </tbody>
+            <tbody>
+              <td>Princess Precious</td>
+              <td>Pat001</td>
+              <td>22-02-2024</td>
+              <td>2:30PM</td>
+              <td>Medical Test</td>
+              <td>
+                <button>Accept</button>
+                <button>Reject</button>
+              </td>
+            </tbody>
+            <tbody>
+              <td>Princess Precious</td>
+              <td>Pat001</td>
+              <td>22-02-2024</td>
+              <td>2:30PM</td>
+              <td>Medical Test</td>
+              <td>
+                <button>Accept</button>
+                <button>Reject</button>
+              </td>
+            </tbody>
+            <tbody>
+              <td>Princess Precious</td>
+              <td>Pat001</td>
+              <td>22-02-2024</td>
+              <td>2:30PM</td>
+              <td>Medical Test</td>
+              <td>
+                <button>Accept</button>
+                <button>Reject</button>
+              </td>
+            </tbody>
+          </table>
+        </div>
+        </div>
+          </div>
     <!---DIAGNOSIS---->
     </div>
     <div class="diagnosis hide">
@@ -77,8 +146,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     </div>
        <!---LABOURATORY EXAMINATION---->
 
-    <div class="labouratory_examination hide">
-    <div class="lab_input">
+    <div class="lab_input hide">
        <div class="immunoassay">
       <span>Immunoassay Single Tests</span>
       <i class="fa fa-plus" id="open_id_1"></i>
@@ -548,8 +616,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        <input type="file" id="file_upload">
        <button id="btn" class="save">Enter</button>
        </div>
-    </div>
-
     <script>
    
      //PROFILE IMAGE
@@ -560,12 +626,18 @@ const click_icon_for_profile = ()=>{
 
 const click_labouratory_examination = ()=>{
     document.querySelector(".contents").style.display = "none";
-    document.querySelector(".labouratory_examination").classList.remove("hide");
+    document.querySelector(".lab_input ").classList.remove("hide");
     document.querySelector("#back-arrow").style.display = "flex";
 }
-
 document.querySelector("#back-arrow").style.display = "none";
 
+
+//SHOW BUTTONS FOR SECELECTIONS
+const show_buttons = ()=>{
+    document.querySelector(".button_container").classList.remove("hide");
+  const appoitment_container = document.querySelector(".appiontment_booking_container");
+  appoitment_container.style.display = "none";
+}
 //Lab 
 
 

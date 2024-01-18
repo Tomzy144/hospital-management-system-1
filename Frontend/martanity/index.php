@@ -155,8 +155,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <div class="form_control_text_area">
                     <label for="">Request Type</label>
                     <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <button class="btn_submit_appoitment">Submit</button>
                 </div>
-                <button class="btn_submit_appoitment">Submit</button>
             </form>
         </div>
         </div>

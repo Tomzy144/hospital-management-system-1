@@ -169,7 +169,7 @@ const radiologist_login_form = `
 log_inAll('radiologist', radiologist_login_form);
 
 const isRadiologist_active = ()=>{
-    let url="Frontend/nurse/index.php"
+    let url="Frontend/radiology/index.php"
     window.parent(location =(url))
 }
 

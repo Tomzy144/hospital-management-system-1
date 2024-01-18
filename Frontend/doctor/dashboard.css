@@ -11,7 +11,10 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
 .navbar{
     width: 100%;
     height: 75px;
@@ -230,17 +233,9 @@ body{
 }
 .container{
     width: 65%;
-    height: max-content;
-    margin: 10rem auto;
 }
 .contents{
     width:100%;
-    height:max-content;
-    margin: 0 auto;
-    background-color:transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .head-sec{
@@ -254,7 +249,7 @@ body{
     justify-content: space-between;
 }
 
-span{
+.head-sec span{
     font-size: 17px;
     padding: 0 1rem;
 }
@@ -278,44 +273,43 @@ input:focus{
     position: absolute;
     top: 32%;
     right: 15%;
-    color: #d6cfcf;
+    color: #000000;
     cursor: pointer;
 }
 .body_sec{
     width: 100%;
-    font-size: 19px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: auto;
 }
 table{
     width: 100%;
-    text-align: center;
-    border-collapse: collapse;
 }
-table thead{
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-    height: 70px;
+ table thead td{
+    background-color: rgb(42, 87, 215);;
     padding: 1rem;
-}
-table .a_1 td{
-    background-color: rgb(255, 255, 255);;
-    height: 70px;
-    color: #000000;
-    padding: 0.5rem;
-}
-
-.body_sec button{
-    width: 140px;
-    height: 40px;
-    border: none;
     color: #fff;
+}
+ table tbody{
+    margin: 1rem 0;
+}
+ table tbody td{
+    background-color: rgb(0, 0, 0);;
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #fff;
+}
+.body_sec button{
+    padding: 0.5rem 0.5rem;
+    background-color: #fff;
+    border: none;
     cursor: pointer;
-    background-color: #000000;
     transition: all ease-in-out 0.5s;
 
 }
 .body_sec button:hover{
-    background-color:rgb(42, 87, 215);
     color: #fff;
+    background: none
 }
 .hide{
     display: none;;
@@ -329,7 +323,7 @@ table .a_1 td{
 .all_sections_input{
     width: 100%;
     height: auto;
-    margin: 0 auto;
+    margin: 5rem auto;
     color: #fff;
     flex-direction: column;
     position: relative;
@@ -405,7 +399,7 @@ label {
 }
 #btn{
     width: 300px;
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(0, 0, 0);
     height: fit-content;
     padding: 1rem;
     border: none;
