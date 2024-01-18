@@ -389,7 +389,7 @@ function _add_patient() {
           var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+'&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory + '&bed='+ bed+'&ward='+ ward;
           $.ajax({
           type: "POST",
-          url: "../../../config/code.php",
+          url: "../../config/code.php",
           data: dataString,
           cache: false,
           dataType: 'json',
@@ -445,7 +445,7 @@ setTimeout(function() {
   
     $.ajax({
       type: "POST",
-      url: "../../../config/code.php",
+      url: "../../config/code.php",
       data: data, // Pass the data object directly
       cache: false,
       dataType: 'json',
@@ -494,7 +494,7 @@ setTimeout(function() {
   
     $.ajax({
       type: 'POST',
-      url: '../../../config/code.php',
+      url: "../../config/code.php",
       data: dataString,
       cache: false,
       dataType: 'json',

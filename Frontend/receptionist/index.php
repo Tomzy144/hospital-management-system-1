@@ -59,7 +59,8 @@
 
    
 </head>
-<body>
+<body onload="getWards()">
+
 <script>
        if (window.history && window.history.pushState) {
             window.history.pushState('forward', null,);
@@ -108,7 +109,11 @@
                 <i class="fa fa-file" id="icon"></i>
                 <i class="fa fa-hospital-o" id="icon"></i>
                 <i class="fa fa-edit (alias)" id="icon" onClick="click_vital_button()" ></i>
-                <i class="fa fa-sign-out" id="icon"></i>
+                <!-- <i class="fa fa-sign-out" id="icon"></i> -->
+                <i class="fa fa-sign-out"  id="icon" onclick="document.getElementById('logoutform').submit();"></i>
+                <form method="post" action="../../config/code.php" id="logoutform">
+                    <input type="hidden" name="action" value="logout"/>    
+                </form>
             </div>
         </div>
         <!----LANDING PAGE OF THIS SECTION--->
@@ -195,9 +200,9 @@
                 <div class="appoitment-calender">
                     <div class="doc_roles">
                 <label for="roles">Doctor Role:</label>
-<select id="roles"  onclick="getDoctors()">
-<option>Select</option>
-    <option value="cardiologist">Cardiologist</option>
+<select id="roles" >
+<option  onclick="getDoctors()">Select</option>
+    <!-- <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
     <option value="psychiatrist">Psychiatrist:</option>
@@ -222,12 +227,12 @@
     <option value="ophthanlmologist">Ophthanlmologist</option>
     <option value="cardology">Cardology</option>
     <option value="allergist">Allergist</option>
-    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
+    <option value="orthopedic_surgoen">Orthopedic Surgoen</option>  -->
     <!-- Add more role options as needed-->
 </select>
 <label for="doctors">Select Doctor:</label>
 <select id="doctors">
-    Doctors for the selected role will be dynamically added here
+    <!-- Doctors for the selected role will be dynamically added here -->
 </select>
 <button id="continue" type="submit" onClick="submitRoles()" >Continue</button>
 </div>
@@ -492,8 +497,8 @@
     <option value="ward5">Ward 5</option>
     <option value="ward6">Ward 6</option>
     <option value="ward7">Ward 7</option> -->
-<!-- </select>
-        <select id="beds"> -->
+</select>
+        <select id="beds">
     <!-- <option>Choose a Bed</option> -->
     <!-- <option value="bed1">Bed1</option>
     <option value="bed2">Bed 2</option>
