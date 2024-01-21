@@ -62,10 +62,12 @@ check_2.addEventListener("change", handle_change);
 const open_procedure_form = function(){
     document.querySelector(".surgical_booking").classList.remove("hidden");
     document.querySelector(".overlay").classList.remove("hidden");
+    document.querySelector("#back-arrow").style.display = "none";
 }
 const close_procedure_form = function(){
     document.querySelector(".surgical_booking").classList.add("hidden");
     document.querySelector(".overlay").classList.add("hidden");
+    document.querySelector("#back-arrow").style.display = "block";
 };
 
 

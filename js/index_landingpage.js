@@ -330,11 +330,16 @@ const staff_manager_login_form = `
         <i class="fa fa-lock"></i>
         <input type="password" id="password" name="spass" autocomplete="off">
         </div>
-        <button type="button" id="login_btn" title="Login" onclick="isLabDoc_active()"  class="btn">Login</button>
+        <button type="button" id="login_btn" title="Login" onclick="isStaff_manager_active()"  class="btn">Login</button>
     <form>
 </div>
 `
 log_inAll('staff_manager', staff_manager_login_form);
+
+const isStaff_manager_active = ()=>{
+    let url="Frontend/staff_management/index.php"
+    window.parent(location =(url))
+}
 
 //Martanity Login
 const open_martanity_login_form = function(){

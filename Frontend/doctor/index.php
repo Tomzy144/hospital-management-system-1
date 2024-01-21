@@ -1775,7 +1775,7 @@ $result = $conn->query($sql);
             </div>
             <div class="treatment_prescribtion_form-control">
             <label for="dos">Dos</label>
-            <input type="number" class="treatment_prescribtion-input" id="dos"> 
+            <input type="text" class="treatment_prescribtion-input" id="dos"> 
             </div>
             <div class="treatment_prescribtion_form-control">
             <label for="unit">Unit</label>
@@ -1805,9 +1805,9 @@ $result = $conn->query($sql);
             </div>
             <div class="treatment_prescribtion_form-control">
             <label for="cost">Cost</label>
-            <input type="number" class="treatment_prescribtion-input">
+            <input type="text" class="treatment_prescribtion-input">
             </div>
-            <i class="fa fa-window-close" id="prescribe_close"></i>
+            <i class="fa fa-plus" id="prescribe_close"></i>
         </div>
             <!---Second Sec--->
             <div class="treatment_prescribtion_flexs">
@@ -1828,7 +1828,7 @@ $result = $conn->query($sql);
             </div>
             <div class="treatment_prescribtion_form-control">
             <label for="dos">Dos</label>
-            <input type="number" class="treatment_prescribtion-input">
+            <input type="text" class="treatment_prescribtion-input">
             </div>
             <div class="treatment_prescribtion_form-control">
             <label for="unit">Unit</label>
@@ -1858,7 +1858,7 @@ $result = $conn->query($sql);
             </div>
             <div class="treatment_prescribtion_form-control">
             <label for="cost">Cost</label>
-            <input type="number" class="treatment_prescribtion-input" id="cost">
+            <input type="text" class="treatment_prescribtion-input" id="cost">
             </div>
             </div>
             <button id="btn_prescribe">Prescribe</button>      

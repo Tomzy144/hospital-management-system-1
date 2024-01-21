@@ -9,7 +9,7 @@
 body{
     height: 100%;
     width: 100%;
-    background-image: url(../../../Images/26836.jpg);
+    background-image: url(../../../Images/19374.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,7 +19,7 @@ h1{
     text-align: center;
 }
 .patient-navbar{
-    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    background-color: rgb(42, 87, 215);
     height: 60px;
     width: 100%;
     display: flex;
@@ -63,7 +63,7 @@ width: 100%;
 }
 .timer-box{
     padding: 0.2rem 0.5rem;
-    background-image: linear-gradient(to left top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    background-color: rgb(42, 87, 215);
     margin: 0 4px;
     color: #ffffff;
     font-size: 23px;
@@ -80,7 +80,7 @@ width: 100%;
 .patient_info, .lab_info,.complain, .system, .patient_vitals, .treatment_prescribtion, .diagnosis{
     display: flex;
     padding: 1rem;
-    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    background-color: rgb(42, 87, 215);
     color: #fff;
     justify-content: space-between;
     font-size: 20px;
@@ -97,7 +97,7 @@ width: 100%;
     .info-accordion{
         width:100%;
         height: fit-content;
-        background-image: linear-gradient(to left top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+        background-color: rgb(42, 87, 215);
         box-shadow: rgba(173, 172, 172, 0.35) 0px 5px 15px;
         color: var(--deep-green);
         justify-content: center;
@@ -164,7 +164,7 @@ span{
 .clinical_chemistry, .immunoassay,.thyroid, .tumor, .blood, .food, .microbiology,.histopathology,.haematology{
     width: 100%;
     color: #fff;
-    background-image: linear-gradient(to bottom, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    background-color: rgb(42, 87, 215);
     padding: 1rem 1rem;
     border-bottom: 1px solid #fff;
     display: flex;
@@ -189,7 +189,7 @@ span{
 }
 .form1,.form2, .form3, .form4, .form5, .form6,.form7,.form8,.form9{
     width: 100%;
-    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    background-color: rgb(42, 87, 215);
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
@@ -218,7 +218,7 @@ form{
     display: flex;
     width: 100%;
     flex-direction: row;
-    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    background-color: rgb(42, 87, 215);
     flex-wrap: wrap;
     animation: fadeInUp 0.5s ease-in-out;
 }
@@ -258,7 +258,7 @@ label {
     width: 100%;
     height: fit-content;
     animation: fadeInUp 0.5s ease-in-out;
-    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    background-color: rgb(42, 87, 215);
     padding: 1rem;
 }
 .drop-down1, .drop-down2,  .drop-down3, .drop-down4, .drop-down5, .drop-down6, .drop-down7, .drop-down8, .drop-down9, .drop-down10, .drop-down11{
@@ -321,9 +321,8 @@ label{
 .impatient_vital, .outpatient_vital, .antenatal_vital{
     width: 100%;
     padding: 1rem;
-    background-color: red;
     animation: fadeInUp 0.5s ease-in-out;
-    background-image: linear-gradient(to top, #003b60, #003e60, #004b6e, #005374, #005472);
+    background-color: rgb(42, 87, 215);
     display: flex;
     border-bottom: 3px solid #fff;
     justify-content: space-between;
@@ -342,7 +341,7 @@ label{
     display: block;
     overflow-x: auto;
     display: flex;
-    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    background-color: rgb(42, 87, 215);
     padding: 0.5rem;
     color: #fff;
     font-size: 15px;
@@ -354,7 +353,7 @@ table{
     text-align: center;
 }
 table th{
-    background-image: linear-gradient(to top, #003b60, #003e60, #004b6e, #005374, #005472);
+    background-color: rgb(42, 87, 215);
     color: rgb(255, 255, 255);
     padding: 1rem;
 }
@@ -375,7 +374,7 @@ table td{
     display: block;
     overflow-x: auto;
     display: flex;
-    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    background-color: rgb(42, 87, 215);
     padding: 0.5rem;
     color: #fff;
     font-size: 15px;
@@ -386,7 +385,7 @@ table td{
     display: block;
     overflow-x: auto;
     display: flex;
-    background-image: linear-gradient(to top, #0062a1, #0072b1, #0083c1, #0095d1, #00a6e0);
+    background-color: rgb(42, 87, 215);
     padding: 0.5rem;
     color: #fff;
     font-size: 15px;

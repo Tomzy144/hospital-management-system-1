@@ -407,6 +407,7 @@
 <!----PATIENT FORM -->
     <div class="patients_form_container hide">
     <div class="form-container">
+        <h1>Patient Admission Form</h1>
         <div class="upload_image">
              <video id="videoElement" width="400" height="300" autoplay></video>
             <i class="fa fa-plus" id="capture_image" onclick="openCamera()"></i>
