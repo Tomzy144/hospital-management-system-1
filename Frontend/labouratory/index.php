@@ -605,16 +605,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <label for="">Blood Film Examination (#5,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="8000" class="checkbox">
                 <label for="">Bone Marrow Aspiration</label>
         </div>
         <div class="form_control">
-                <input type="checkbox" id="platelet">
-                <label for="">Platelet Count (#6,000)</label>
+                <input type="checkbox" id="platelet" value="6000" class="checkbox">
+                <label for="platelet">Platelet Count (#6,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
-                <label for="">Bleeding Time and Clotting Time (#6,000)</label>
+                <input type="checkbox" value="12000" class="checkbox">
+                <label for="">Bleeding Time and Clotting Time (#12,000)</label>
+                <p id="test"></p>
         </div>
        </form>
        <button id="btn" class="save" onClick="show_test_booking()">Enter</button>
@@ -668,14 +669,44 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
     <script>
 
-        const checkbox = document.getElementById("platelet");
-        
-        // checkbox.addEventListener("click", ()=>{
+        const checkboxs = document.querySelectorAll(".checkbox");
+        console.log(checkboxs);
+
+        const updateSum = ()=>{
+                let sum = 0;
+
+        checkboxs.forEach(function(checkbox){
+                      if(checkbox.checked){
+                        sum += parseInt(checkbox.value, 10);
+                      }
+                      let testSum = document.querySelector("#test");
+                        testSum.textContent = sum;
+                        console.log(sum);
+        }),
+        console.log(sum);
+        }
+        checkboxs.forEach(function(checkbox){
+                if(checkbox.checked){
+                checkbox.addEventListener('change', updateSum);
+                }
+        })
+
+
+        //use later//
+
+        // checkbox.addEventListener("change", ()=>{
         //         var label = document.querySelector('label[for="platelet"]');
         //         var numericValue = label.textContent.replace(/,/g, '').match(/\b\d+\b/g);
-        //         console.log('Checkbox is checked:', checkbox.checked);
-        //     console.log('Numeric value:', numericValue ? numericValue[0] : null);
+        //         if(checkbox.checked){
+        //             const convert_to_number = parseFloat(numericValue) + 1
+        //                 console.log(convert_to_number);
+        //         }else{
+        //                 alert(
+        //                         'Not checked'
+        //                 )
+        //         }
         // });
+     //use later//
 
 
 //TEST  BOOKING
