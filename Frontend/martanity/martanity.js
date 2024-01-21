@@ -385,7 +385,7 @@ const showVitals = function(){
 }
 
 
-///TREATMENT AND PRESCRIBION
+///TREATMENT AND PRESCRITION
 
 const click_prescribtion_button = ()=>{
     const body_change_background = document.querySelector('.contents');
@@ -413,69 +413,136 @@ const click_prescribtion_button = ()=>{
 
 
 
-//camera
-let videoElement = document.getElementById('videoElement');
-let canvasElement = document.getElementById('canvasElement');
-let capturedImageElement = document.getElementById('capturedImage');
-let stream;
+//camera for postnatal
+let videoElement1 = document.getElementById('videoElement_postnatal');
+let canvasElement1 = document.getElementById('canvasElement_postnatal');
+let capturedImageElement1 = document.getElementById('capturedImage_postnatal');
+let stream1;
 
-function openCamera() {
+function openCamera1() {
   navigator.mediaDevices.getUserMedia({ video: true })
     .then(function (cameraStream) {
-      stream = cameraStream;
-      videoElement.srcObject = cameraStream;
+      stream1 = cameraStream;
+      videoElement1.srcObject = cameraStream;
     })
     .catch(function (error) {
       console.error('Error accessing the camera: ', error);
     });
 
-    const capture_image = document.querySelector('#capture_image');
+    const capture_image = document.querySelector('#capture_image_postnatal');
     capture_image.style.display="none"
-    const upload_text = document.querySelector('#upload_text');
-    upload_text.style.display="none"
-    const showClickButton = document.querySelector(".btn_capture")
+
+    const showClickButton = document.querySelector(".btn_capture1")
     showClickButton.classList.remove("hide");
 
-    const showClickButtonForRecapture = document.querySelector(".btn_re_capture")
+    const showClickButtonForRecapture = document.querySelector(".btn_re_capture1")
     showClickButtonForRecapture.classList.remove("hide")
 }
 
-function takePicture() {
-  if (stream) {
-    let context = canvasElement.getContext('2d');
-    canvasElement.width = videoElement.videoWidth;
-    canvasElement.height = videoElement.videoHeight;
-    context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+function takePicture1() {
+  if (stream1) {
+    let context = canvasElement1.getContext('2d');
+    canvasElement1.width = videoElement1.videoWidth;
+    canvasElement1.height = videoElement1.videoHeight;
+    context.drawImage(videoElement1, 0, 0, canvasElement1.width, canvasElement1.height);
 
     // Convert the canvas content to a data URL representing a PNG image
-    let imageDataURL = canvasElement.toDataURL('image/png');
+    let imageDataURL = canvasElement1.toDataURL('image/png');
 
     // Display the captured image
-    capturedImageElement.src = imageDataURL;
-    capturedImageElement.style.display = 'block';
+    capturedImageElement1.src = imageDataURL;
+    capturedImageElement1.style.display = 'block';
 
     // Stop the camera stream
-    stopCamera();
+    stopCamera1();
   }
 }
-function retakePicture() {
+function retakePicture1() {
     // Hide the captured image
-    capturedImageElement.style.display = 'none';
+    capturedImageElement1.style.display = 'none';
 
     // Stop the camera stream
-    stopCamera();
+    stopCamera1();
 
     // Reopen the camera for retake
-    openCamera();
+    openCamera1();
   }
-function stopCamera() {
-  if (stream) {
-    let tracks = stream.getTracks();
+function stopCamera1() {
+  if (stream1) {
+    let tracks = stream1.getTracks();
 
     // Stop all tracks
     tracks.forEach(track => track.stop());
 
     // Remove the stream from the video element
-    videoElement.srcObject = null;
+    videoElement1.srcObject = null;
+  }
+}
+
+
+
+//camera for antenatal
+let videoElement2 = document.getElementById('videoElement_antenatal');
+let canvasElement2 = document.getElementById('canvasElement_antenatal');
+let capturedImageElement2 = document.getElementById('capturedImage_antenatal');
+let stream2;
+
+function openCamera2() {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (cameraStream) {
+      stream2 = cameraStream;
+      videoElement2.srcObject = cameraStream;
+    })
+    .catch(function (error) {
+      console.error('Error accessing the camera: ', error);
+    });
+
+    const capture_image = document.querySelector('#capture_image_antenatal');
+    capture_image.style.display="none"
+
+    const showClickButton = document.querySelector(".btn_capture2")
+    showClickButton.classList.remove("hide");
+
+    const showClickButtonForRecapture = document.querySelector(".btn_re_capture2")
+    showClickButtonForRecapture.classList.remove("hide")
+}
+
+function takePicture2() {
+  if (stream2) {
+    let context = canvasElement2.getContext('2d');
+    canvasElement2.width = videoElement2.videoWidth;
+    canvasElement2.height = videoElement2.videoHeight;
+    context.drawImage(videoElement2, 0, 0, canvasElement2.width, canvasElement2.height);
+
+    // Convert the canvas content to a data URL representing a PNG image
+    let imageDataURL = canvasElement2.toDataURL('image/png');
+
+    // Display the captured image
+    capturedImageElement2.src = imageDataURL;
+    capturedImageElement2.style.display = 'block';
+
+    // Stop the camera stream
+    stopCamera2();
+  }
+}
+function retakePicture2() {
+    // Hide the captured image
+    capturedImageElement2.style.display = 'none';
+
+    // Stop the camera stream
+    stopCamera2();
+
+    // Reopen the camera for retake
+    openCamera2();
+  }
+function stopCamera2() {
+  if (stream2) {
+    let tracks = stream2.getTracks();
+
+    // Stop all tracks
+    tracks.forEach(track => track.stop());
+
+    // Remove the stream from the video element
+    videoElement2.srcObject = null;
   }
 }

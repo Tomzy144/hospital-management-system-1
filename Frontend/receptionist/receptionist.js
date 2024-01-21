@@ -307,8 +307,7 @@ function openCamera() {
 
     const capture_image = document.querySelector('#capture_image');
     capture_image.style.display="none"
-    const upload_text = document.querySelector('#upload_text');
-    upload_text.style.display="none"
+    
     const showClickButton = document.querySelector(".btn_capture")
     showClickButton.classList.remove("hide");
 
@@ -397,12 +396,12 @@ function stopCamera() {
     doctorsSelect.innerHTML = ''; // Clear previous options
   
     // Populate the doctors select box based on the selected role
-    doctorsData[selectedRole].forEach(doctor => {
-        const option = document.createElement('option');
-        option.value = doctor;
-        option.text = doctor;
-        doctorsSelect.appendChild(option);
-    });
+    // doctorsData[selectedRole].forEach(doctor => {
+    //     const option = document.createElement('option');
+    //     option.value = doctor;
+    //     option.text = doctor;
+    //     doctorsSelect.appendChild(option);
+    // });
   }
   
   // Initial population of doctors based on the default selected role

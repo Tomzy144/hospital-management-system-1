@@ -27,7 +27,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
          <!---SIDEBAR AND NAVBAR-->
     <div class="navbar">
         <div class="section1">
-        <i class="fa fa-long-arrow-left " id="back-arrow" onclick="backWardArrow()"></i>
+        <i class="fa fa-long-arrow-left" id="back-arrow" onclick="backWardArrow()"></i>
+        <i class="fa fa-long-arrow-left" id="back-arrow_to_home" onclick="back_arrow_to_home()"></i>
         </div>
         <div class="section2">
             <div class="icons">
@@ -98,8 +99,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
               <td>2:30PM</td>
               <td>Medical Test</td>
               <td>
-                <button onClick="show_buttons()">Accept</button>
-                <button>Reject</button>
+                <button onClick="show_buttons()" id="accept_button">Accept</button>
+                <button id="reject_button">Reject</button>
+                <i class="fa fa-times" id="cancel_appoitment" ></i>
               </td>
             </tbody>
             <tbody>
@@ -109,8 +111,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
               <td>2:30PM</td>
               <td>Medical Test</td>
               <td>
-                <button>Accept</button>
-                <button>Reject</button>
+                <button id="accept_button">Accept</button>
+                <button id="reject_button">Reject</button>
+                <i class="fa fa-times" id="cancel_appoitment"></i>
               </td>
             </tbody>
             <tbody>
@@ -120,8 +123,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
               <td>2:30PM</td>
               <td>Medical Test</td>
               <td>
-                <button>Accept</button>
-                <button>Reject</button>
+                <button id="accept_button">Accept</button>
+                <button id="reject_button">Reject</button>
+                <i class="fa fa-times" id="cancel_appoitment"></i>
               </td>
             </tbody>
             <tbody>
@@ -131,8 +135,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
               <td>2:30PM</td>
               <td>Medical Test</td>
               <td>
-                <button>Accept</button>
-                <button>Reject</button>
+                <button id="accept_button">Accept</button>
+                <button id="reject_button">Reject</button>
+                <i class="fa fa-times" id="cancel_appoitment"></i>
               </td>
             </tbody>
           </table>
@@ -147,6 +152,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        <!---LABOURATORY EXAMINATION---->
 
     <div class="lab_input hide">
+        <div class="lab_container">
        <div class="immunoassay">
       <span>Immunoassay Single Tests</span>
       <i class="fa fa-plus" id="open_id_1"></i>
@@ -603,7 +609,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <label for="">Bone Marrow Aspiration</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" id="platelet">
                 <label for="">Platelet Count (#6,000)</label>
         </div>
         <div class="form_control">
@@ -611,12 +617,76 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <label for="">Bleeding Time and Clotting Time (#6,000)</label>
         </div>
        </form>
-
+       <button id="btn" class="save" onClick="show_test_booking()">Enter</button>
+       <button id="btn" class="save">Edit</button>
+       <div class="upload_container">
        <label for="" class="upload">Upload Test Result</label>
        <input type="file" id="file_upload">
-       <button id="btn" class="save">Enter</button>
+       </div>
+       </div>
+       <div class="test_booking hide">
+        <i class="fa fa-times" id="close" onClick="hide_test_booking()"></i>
+        <img class="booking_hospital_logo" src="../Images/logo gif.gif" alt="" >
+        <h1>Test Booking</h1>
+        <table>
+                <thead>
+                        <td>Tests</td>
+                        <td>Amount </td>
+                </thead>
+                <tbody>
+                        <td>Maleria Typhiod</td>
+                        <td><p>#30,000.00</p></td>
+                </tbody>
+                <tbody>
+                        <td>Maleria Typhiod</td>
+                        <td><p>#30,000.00</p></td>
+                </tbody>
+                <tbody>
+                        <td>Maleria Typhiod</td>
+                        <td><p>#30,000.00</p></td>
+                </tbody>
+                <tbody>
+                        <td>Maleria Typhiod</td>
+                        <td><p>#30,000.00</p></td>
+                </tbody>
+                <tbody>
+                        <td>Maleria Typhiod</td>
+                        <td><p>#30,000.00</p></td>
+                </tbody>
+                <tbody>
+                        <td>Maleria Typhiod</td>
+                        <td><p>#30,000.00</p></td>
+                </tbody>
+        </table>
+        <div id="total">
+                <p>Total</p>
+                <p>#100,000.00</p>
+        </div>
+        <button class="btn">Book Now</button>
+       </div>
+       <div class="overlay hide"></div>
        </div>
     <script>
+
+        const checkbox = document.getElementById("platelet");
+        
+        // checkbox.addEventListener("click", ()=>{
+        //         var label = document.querySelector('label[for="platelet"]');
+        //         var numericValue = label.textContent.replace(/,/g, '').match(/\b\d+\b/g);
+        //         console.log('Checkbox is checked:', checkbox.checked);
+        //     console.log('Numeric value:', numericValue ? numericValue[0] : null);
+        // });
+
+
+//TEST  BOOKING
+const show_test_booking = ()=>{
+        document.querySelector(".overlay").classList.remove("hide");
+        document.querySelector(".test_booking").classList.remove("hide");
+}
+const hide_test_booking = ()=>{
+        document.querySelector(".overlay").classList.add("hide");
+        document.querySelector(".test_booking").classList.add("hide");
+}
    
      //PROFILE IMAGE
 const profile_container  =  document.querySelector(".profile_account");
@@ -628,18 +698,22 @@ const click_labouratory_examination = ()=>{
     document.querySelector(".contents").style.display = "none";
     document.querySelector(".lab_input ").classList.remove("hide");
     document.querySelector("#back-arrow").style.display = "flex";
+    document.querySelector("#back-arrow_to_home").style.display = "none";
 }
 document.querySelector("#back-arrow").style.display = "none";
 
 
 //SHOW BUTTONS FOR SECELECTIONS
 const show_buttons = ()=>{
-    document.querySelector(".button_container").classList.remove("hide");
+    document.querySelector(".button_container").style.display = "flex";
   const appoitment_container = document.querySelector(".appiontment_booking_container");
   appoitment_container.style.display = "none";
+  document.querySelector("#back-arrow_to_home").style.display = "flex";
+  document.querySelector("button").style.display = "none";
 }
-//Lab 
 
+
+//Lab 
 
 //For immunoassay_section Dropdown
 const immunoassay_section = document.querySelector(".immunoassay")
@@ -787,14 +861,27 @@ const click_diagnosis= ()=>{
     document.querySelector(".contents").style.display = "none";
     document.querySelector(".diagnosis").classList.remove("hide");
     document.querySelector("#back-arrow").style.display = "flex";
+    document.querySelector("#back-arrow_to_home").style.display = "none";
 }
 
 const backWardArrow = ()=>{
     document.querySelector(".contents").style.display = "flex";
     document.querySelector(".diagnosis").classList.add("hide");
-    document.querySelector(".labouratory_examination").classList.add("hide");
-}
+    document.querySelector(".lab_input").classList.add("hide");
+    document.querySelector("#back-arrow").style.display = "none";
+    document.querySelector("#back-arrow_to_home").style.display = "block";
 
+}
+document.querySelector("#back-arrow_to_home").style.display = "none";
+
+const back_arrow_to_home = ()=>{
+    document.querySelector(".button_container").style.display = "none";
+    document.querySelector("#back-arrow_to_home").style.display = "none";
+    const appoitment_container = document.querySelector(".appiontment_booking_container");
+  appoitment_container.style.display = "block";
+  document.querySelector("#accept_button").style.display = "none";
+  document.querySelector("#reject_button").style.display = "none";
+}
     </script>
 </body>
 </html>

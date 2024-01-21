@@ -408,7 +408,6 @@
     <div class="patients_form_container hide">
     <div class="form-container">
         <div class="upload_image">
-            <h1 id="upload_text">Upload Image</h1>
              <video id="videoElement" width="400" height="300" autoplay></video>
             <i class="fa fa-plus" id="capture_image" onclick="openCamera()"></i>
             <canvas id="canvasElement" style="display: none;"></canvas>

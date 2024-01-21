@@ -322,6 +322,61 @@ form span{
 .form_container_for_antenatal .form_control input:focus{
     border: 2px solid rgb(42, 87, 215);
 }
+
+.upload_image_antenatal{
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 0 auto;
+    overflow: hidden;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);;
+    position: relative;
+    text-align: center;
+}
+.upload_image_antenatal h1{
+    padding: 2rem;
+    font-size: 30px;
+    position: absolute;
+}
+#capture_image_antenatal{
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 0.5rem;
+    width: max-content;
+    position: absolute;
+    right:9%;
+    bottom: 14%;
+    background-color: rgb(42, 87, 215);
+}
+#capturedImage_antenatal{
+    position: absolute;
+}
+.btn_capture2{
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    margin: 2rem 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+}
+.btn_re_capture2{
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 2rem 0;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+}
 .btn_next1, .btn_next2, .btn_next3{
     width: 100%;
     background-color: rgb(42, 87, 215);
@@ -348,7 +403,7 @@ form span{
     transform: scale(0.98);
     background-color: #fff;
     color:rgb(42, 87, 215);
-    border: 2px solid rgb(42, 87, 215);
+    border: 1px solid rgb(42, 87, 215);
 }
 .btn_back3{
     width: 100%;
@@ -365,7 +420,7 @@ form span{
     transform: scale(0.98);
     background-color: #fff;
     color:rgb(42, 87, 215);
-    border: 2px solid rgb(42, 87, 215);
+    border: 1px solid rgb(42, 87, 215);
 }
 .btn_submit{
     width: 100%;
@@ -382,26 +437,26 @@ form span{
     transform: scale(0.98);
     background-color: #fff;
     color:rgb(42, 87, 215);
-    border: 2px solid rgb(42, 87, 215);
+    border: 1px solid rgb(42, 87, 215);
 }
 
 .btn_next1:hover{
     transform: scale(0.98);
     background-color: #fff;
     color:rgb(42, 87, 215);
-    border: 2px solid rgb(42, 87, 215);
+    border:1px solid rgb(42, 87, 215);
 }
 .btn_next2:hover{
     transform: scale(0.98);
     background-color: #fff;
     color:rgb(42, 87, 215);
-    border: 2px solid rgb(42, 87, 215);
+    border: 1px solid rgb(42, 87, 215);
 }
 .btn_next3:hover{
     transform: scale(0.98);
     background-color: #fff;
     color:rgb(42, 87, 215);
-    border: 2px solid rgb(42, 87, 215);
+    border: 1px solid rgb(42, 87, 215);
 }
 
 
@@ -428,11 +483,11 @@ form span{
 .form_container_for_postnatal .form_control input:focus{
     border: 2px solid rgb(42, 87, 215);
 }
-.upload_image{
+.upload_image_postnatal{
     width: 250px;
     height: 250px;
     border-radius: 100%;
-    box-shadow: rgba(212, 210, 210, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 0 auto;
     overflow: hidden;;
     display: flex;
@@ -442,12 +497,12 @@ form span{
     position: relative;
     text-align: center;
 }
-.upload_image h1{
+.upload_image_postnatal h1{
     padding: 2rem;
     font-size: 30px;
     position: absolute;
 }
-#capture_image{
+#capture_image_postnatal{
     font-size: 22px;
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -455,24 +510,28 @@ form span{
     padding: 0.5rem;
     width: max-content;
     position: absolute;
-   margin-left: 80%;
+    right:9%;
+    bottom: 14%;
     background-color: rgb(42, 87, 215);
 }
-#capturedImage{
+#capturedImage_postnatal{
     position: absolute;
 }
-.btn_capture{
-    width: fit-content;
+.btn_capture1{
+    width: 100%;
     padding: 0.5rem;
     border: none;
-    margin: 1rem 0;
+    margin: 2rem 0;
+    text-align: center;
     cursor: pointer;
     background-color: rgb(42, 87, 215);
     color: #fff;
 }
-.btn_re_capture{
-    width: fit-content;
+.btn_re_capture1{
+    width: 100%;
     padding: 0.5rem;
+    text-align: center;
+    margin: 2rem 0;
     border: none;
     cursor: pointer;
     background-color: rgb(42, 87, 215);
@@ -481,7 +540,6 @@ form span{
 /*appoitment section*/
 .appoitment_section{
     width: 100%;
-    /* background-color: #fff; */
     height: 100%;
 }
 

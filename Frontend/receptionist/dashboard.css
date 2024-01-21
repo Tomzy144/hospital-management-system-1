@@ -276,7 +276,7 @@ body{
     width: 250px;
     height: 250px;
     border-radius: 100%;
-    box-shadow: rgba(212, 210, 210, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 0 auto;
     overflow: hidden;;
     display: flex;
@@ -286,37 +286,36 @@ body{
     position: relative;
     text-align: center;
 }
-.upload_image h1{
-    padding: 2rem;
-    font-size: 30px;
-    position: absolute;
-}
 #capture_image{
-    font-size: 22px;
+    font-size: 18px;
     color: rgb(255, 255, 255);
     cursor: pointer;
     border-radius: 100%;
     padding: 0.5rem;
     width: max-content;
     position: absolute;
-   margin-left: 83%;
+    right:9%;
+    bottom: 14%;
     background-color: rgb(42, 87, 215);
 }
 #capturedImage{
     position: absolute;
 }
 .btn_capture{
-    width: fit-content;
+    width: 100%;
     padding: 0.5rem;
+    text-align: center;
+    margin: 2rem 0;
     border: none;
-    margin: 1rem 0;
     cursor: pointer;
     background-color: rgb(42, 87, 215);
     color: #fff;
 }
 .btn_re_capture{
-    width: fit-content;
+    width: 100%;
     padding: 0.5rem;
+    text-align: center;
+    margin: 2rem 0;
     border: none;
     cursor: pointer;
     background-color: rgb(42, 87, 215);

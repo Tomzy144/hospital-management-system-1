@@ -285,15 +285,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <form action="">
         <div class="form_section current_section" id="section1">
         <h1>Antenatal Registration Form</h1>
-        <div class="upload_image">
-            <h1 id="upload_text">Upload Image</h1>
-             <video id="videoElement" width="400" height="300" autoplay></video>
-            <i class="fa fa-plus" id="capture_image" onclick="openCamera()"></i>
-            <canvas id="canvasElement" style="display: none;"></canvas>
-            <img id="capturedImage" style="display: none;">
+        <div class="upload_image_antenatal">
+             <video id="videoElement_antenatal" width="400" height="300" autoplay></video>
+            <i class="fa fa-plus" id="capture_image_antenatal" onclick="openCamera2()"></i>
+            <canvas id="canvasElement_antenatal" style="display: none;"></canvas>
+            <img id="capturedImage_antenatal" style="display: none;">
         </div>
-        <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
-        <div class="btn_capture hide" onClick="takePicture()">Capture</div>
+        <div class="btn_re_capture2 hide"  onclick="retakePicture2()">Recapture</div>
+        <div class="btn_capture2 hide" onClick="takePicture2()">Capture</div>
+        <h2>Fill in the neccesary information</h2>
         <span>Patient Info</span>
     <div class="form_control">
         <label for="">Full name</label>
@@ -404,15 +404,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <form action="">
         <div class="form_section current_section" id="section1_pos">
         <h1>Postnatal Registration Form</h1>
-        <div class="upload_image">
-            <h1 id="upload_text">Upload Image</h1>
-             <video id="videoElement" width="400" height="300" autoplay></video>
-            <i class="fa fa-plus" id="capture_image" onclick="openCamera()"></i>
-            <canvas id="canvasElement" style="display: none;"></canvas>
-            <img id="capturedImage" style="display: none;">
+        <div class="upload_image_postnatal">
+             <video id="videoElement_postnatal" width="400" height="300" autoplay></video>
+            <i class="fa fa-plus" id="capture_image_postnatal" onclick="openCamera1()"></i>
+            <canvas id="canvasElement_postnatal" style="display: none;"></canvas>
+            <img id="capturedImage_postnatal" style="display: none;">
         </div>
-        <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
-        <div class="btn_capture hide" onClick="takePicture()">Capture</div>
+        <div class="btn_re_capture1 hide"  onclick="retakePicture1()">Recapture</div>
+        <div class="btn_capture1 hide" onClick="takePicture1()">Capture</div>
+        <h2>Fill in the neccesary information</h2>
         <span>Patient Info</span>
     <div class="form_control">
         <label for="">Full name</label>
