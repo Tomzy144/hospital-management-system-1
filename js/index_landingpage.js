@@ -485,16 +485,16 @@ const surgical_suite_manager_login_form = `
     <i class="fa fa-lock"></i>
     <input type="password" name="password" autoComplete='off'/> 
     </div>
-    <button type="button" class="btn" onClick="isRadiologist_active()">Login</button>
+    <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
     <form>
 </div>
 `
 log_inAll('surgical_suite_manager', surgical_suite_manager_login_form);
 
-// const isRadiologist_active = ()=>{
-//     let url="Frontend/radiology/index.php"
-//     window.parent(location =(url))
-// }
+const isSurgical_suite_active = ()=>{
+    let url="Frontend/surgical_suite_management/index.php"
+    window.parent(location =(url))
+}
 
 //closeDarkBackground
 const dark_background = document.querySelector(".overlay")

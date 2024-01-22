@@ -253,31 +253,14 @@ $result = $conn->query($sql);
             <input type="checkbox" name="surgery" id="check2">
             <label for="surgery">No</label>
             </div>
-</div>
-            <div class="complaint_form-control">
-            <button type="button" id="button_to_check_surgery" onClick="click_when_surgery_is_done_or_canceled()">Click here only when the Surgery is been Cancelled OR Done</button>
-          <button class="complaint_button_for_surgery_done hide">Done</button>
-          <button class="complaint_button_for_surgery_cancelled hide">Cancelled</button>
-</div>
+    </div>
+ 
         </form>
    </div>
    <div class="surgical_booking hidden">
     <i class="fa fa-times-circle" id='close-icon' onClick="close_procedure_form()"></i>
         <h1 class="login-form-h1">Surgical Procedure</h1>
         <form>
-        <div class="form-control-precedure">
-        <label for='full_name'>Full  name</label>
-        <input type="text" name="full_name" autoComplete='off' class="surgical_input" id="full_name"/> 
-        </div>
-
-        <div class="form-control-precedure">
-        <label for='date'>Date</label>
-        <input type="date"  name="date" autoComplete='off' class="surgical_input" id="date"/> 
-        </div>
-        <div class="form-control-precedure">
-        <label for='time'>Time</label>
-        <input type="time"  name="time" autoComplete='off' class="surgical_input" id="time"/> 
-        </div>
 
         <div class="form-control-precedure">
         <label for='procedure'>Procedure</label>
@@ -286,10 +269,6 @@ $result = $conn->query($sql);
         <div class="form-control-precedure">
         <label for='phone_number'>Phone Number</label>
         <input type="text" name="phone_number" autoComplete='off' class="surgical_input" id="phone_number"/> 
-        </div>
-        <div class="form-control-precedure">
-        <label for='cost'>Cost</label>
-        <input type="text" name="cost" autoComplete='off' class="surgical_input" id="cost"/> 
         </div>
         <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button>
 </form>

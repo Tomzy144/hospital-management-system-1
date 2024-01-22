@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Quicksand", Franklin Gothic Book;
 }
 
 body{
@@ -227,7 +227,7 @@ body{
 .contents{
     width: 100%;
     height: 100vh;
-    background-image: url(../Images/26836.jpg);
+    background-image: url(../Images/19374.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -42,7 +42,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           <div class="profile">
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="">
-            <h4>Doctor Kingsley Etete Effiong</h4>
+            <h4>Immaculater Odu</h4>
             <button class="btn_submit">Upload Image</button>
             <span>change password</span>
         </div>
@@ -160,59 +160,59 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
        <form action="" class="form1 hidden">
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="3000" class="checkbox">
                 <label for="">Pregnancy Test (hCG) (#3,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
-                <label for="">HIV Test</label>
+                <input type="checkbox" value="2000" class="checkbox">
+                <label for="">HIV Test (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="1000" class="checkbox">
                 <label for="">Hepatitis B Surface Antigen (HBsAg) (#1,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Thyroid Stimulating Hormone (TSH) Test (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Troponin Test (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">IgE Allergy Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="5000" class="checkbox">
                 <label for="">Anti-Nuclear Antibody (ANA) Test(#5,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Drug Screening Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">C-reactive Protein (CRP) Test (#6,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Rheumatoid Factor (RF) Test (#6,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">D-dimer Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Insulin Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Cortisol Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Digoxin Test</label>
         </div>
        </form>
@@ -224,79 +224,79 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
        <form action="" class="form2 hidden">
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="3000" class="checkbox">
                 <label for="">Full electrolytes (#3,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Sodium</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="1000" class="checkbox">
                 <label for="">Potassium (#1,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Bicarbonate (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Chloride (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Urea</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="5000" class="checkbox">
                 <label for="">Electrolytes & urea (e & u) (#5,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Creatinine</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Diabetes screening (#6,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Hba 1c (#6,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Urinalysis</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Fasting blood sugar (fbs)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Random blood sugar</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">2-hr pp blood sugar</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Kidney function test (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Liver function test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Glycaemic Studies</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Lipid Profile (Full)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Renal Function Test (#6,000)</label>
         </div>
        </form>
@@ -307,31 +307,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
        <form action="" class="form3 hidden">
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="3000" class="checkbox">
                 <label for="">Thyroid Stimulating Hormone (TSH) Test (#3,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Free Thyroxine (FT4) Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="1000" class="checkbox">
                 <label for="">Total Thyroxine (T4) Test (#1,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Free Triiodothyronine (FT3) Test (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Total Triiodothyronine (T3) Test (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Thyroid Peroxidase Antibodies (TPOAb) Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="5000" class="checkbox">
                 <label for="">Thyroglobulin Antibodies (TgAb) Test(#5,000)</label>
         </div>
        </form>
@@ -342,43 +342,43 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
        <form action="" class="form4 hidden">
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="3000" class="checkbox">
                 <label for="">Prostate-Specific Antigen (PSA) Test (#3,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Carcinoembryonic Antigen (CEA) Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="1000" class="checkbox">
                 <label for="">Alpha-Fetoprotein (AFP) Test (#1,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">CA 125 Test (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">CA 19-9 Test (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">CA 15-3 Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="5000" class="checkbox">
                 <label for="">Beta-2 Microglobulin (B2M) Test (#5,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Human Chorionic Gonadotropin (hCG) Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Thyroglobulin Test (#6,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Neuron-Specific Enolase (NSE) Test(#6,000)</label>
         </div>
        </form>
@@ -389,43 +389,43 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
        <form action="" class="form5 hidden">
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="3000" class="checkbox">
                 <label for="">Blood Typing (ABO and Rh) (#3,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Crossmatching</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="1000" class="checkbox">
                 <label for="">Direct Antiglobulin Test (DAT) (#1,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Indirect Antiglobulin Test (IAT) (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Antibody Screen (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Blood Donor Screening</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="5000" class="checkbox">
                 <label for="">Blood Component Separation (#5,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Platelet Function Assay</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Coagulation Factor Assays (#6,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Hemoglobin Electrophoresis (#6,000)</label>
         </div>
        </form>
@@ -436,43 +436,43 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
        <form action="" class="form6 hidden">
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="3000" class="checkbox">
                 <label for="">Fecal Coliform Test (#3,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Salmonella Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="1000" class="checkbox">
                 <label for="">Staphylococcus aureus Test (#1,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Escherichia coli (E. coli) Test (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Hepatitis A Test (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Norovirus Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="5000" class="checkbox">
                 <label for="">Listeria Test (#5,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Shigella Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Campylobacter Test (#6,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">otal Plate Count (TPC) Test (#6,000)</label>
         </div>
        </form>
@@ -483,43 +483,43 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
        <form action="" class="form7 hidden">
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="3000" class="checkbox">
                 <label for="">Gram Stain (#3,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">SAcid-Fast Stain</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="1000" class="checkbox">
                 <label for="">Culture and Sensitivity (C&S) (#1,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Blood Culture (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Urine Culture (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Fungal Culture</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="5000" class="checkbox">
                 <label for="">Parasitological Examination (#5,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Widal Test</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Rapid Strep Test (#6,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Giemsa Stain (#6,000)</label>
         </div>
        </form>
@@ -530,43 +530,43 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
        <form action="" class="form8 hidden">
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="3000" class="checkbox">
                 <label for="">Biopsy (#3,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Frozen Section</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="1000" class="checkbox">
                 <label for="">Fine Needle Aspiration (FNA) (#1,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Immunohistochemistry (IHC) (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Hematoxylin and Eosin (H&E) Stain (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Special Stains</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="5000" class="checkbox">
                 <label for="">Immunofluorescence (#5,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">In Situ Hybridization (ISH)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Tumor Grading (#6,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="6000" class="checkbox">
                 <label for="">Tumor Markers in Histopathology (#6,000)</label>
         </div>
        </form>
@@ -577,19 +577,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
        <form action="" class="form9 hidden">
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="3000" class="checkbox">
                 <label for="">Complete Blood Count (CBC) (#3,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Hemoglobin Electrophoresis</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="1000" class="checkbox">
                 <label for="">Erythrocyte Sedimentation Rate (ESR) (#1,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="2000" class="checkbox">
                 <label for="">Coagulation Studies (#2,000)</label>
         </div>
         <div class="form_control">
@@ -601,7 +601,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <label for="">Reticulocyte Count</label>
         </div>
         <div class="form_control">
-                <input type="checkbox" value="5000" class="checkbox>
+                <input type="checkbox" value="5000" class="checkbox">
                 <label for="">Blood Film Examination (#5,000)</label>
         </div>
         <div class="form_control">
@@ -651,6 +651,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
 
         //ADD THE AMOUNT ON WHICH CLICKED TO THE LIST OF RECEIPT
+        const checkboxes = document.querySelectorAll(".checkbox");
+        checkboxes.forEach(function(checkbox){
+        checkbox.checked = false;
+        });
+
+
         const update_table = ()=>{
                 const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
                 
@@ -663,11 +669,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                         // Insert cells with checkbox value and label
                         var cell1 = newRow.insertCell(0);
-                        cell1.textContent = checkbox.parentNode.textContent.trim();
+                         cell1.textContent = checkbox.parentNode.textContent.trim().replace(/[^a-zA-Z\s]/g, '');
                         var cell2 = newRow.insertCell(1);
                         cell2.textContent = checkbox.value;
-
-                       
                         }
                 })
         }
@@ -683,8 +687,7 @@ window.onload = function() {
                         sum += parseInt(checkbox.value, 10);
                       }
                       let testSum = document.querySelector("#total");
-                        testSum.textContent = sum;
-                        // console.log(sum);
+                    testSum.textContent = sum
         })
         }
         checkboxs.forEach(function(checkbox){
