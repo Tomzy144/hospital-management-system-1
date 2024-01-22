@@ -414,37 +414,40 @@
             <canvas id="canvasElement" style="display: none;"></canvas>
             <img id="capturedImage" style="display: none;">
         </div>
+        <div class="flex_capture_div">
         <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
         <div class="btn_capture hide" onClick="takePicture()">Capture</div>
-        <h2>Fill in the neccesary information</h2>
+        </div>
         <form action="">
+            <!-- <h2>Fill in the neccesary information</h2> -->
             <div class="form-section current-section" id="section1">
             <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
+            <div class="form_control_group">
             <div class="form-control">
             <label for="full_name">Full Name</label>
-            <i class="fa fa-user" class="form_icon"></i>
+            <!-- <i class="fa fa-user" class="form_icon"></i> -->
             <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
         </div>
 
             <div class="form-control">
             <label for="date_of_birth">Date of Birth</label>
-            <i class="fa fa-calendar" class="form_icon"></i>
+            <!-- <i class="fa fa-calendar" class="form_icon"></i> -->
             <input type="date" id="dob">
         </div>
-
-
+        </div>
+        <div class="form_control_group">
             <div class="form-control">
-                <i class="fa fa-home" class="form_icon"></i>
+                <!-- <i class="fa fa-home" class="form_icon"></i> -->
             <label for="home_address">Home Address</label>
             <input type="text" id="address" autocomplete="off">
         </div>
 
             <div class="form-control">
             <label for="phone_number">Phone Number</label>
-            <i class="fa fa-phone" class="form_icon"></i>
-            <input type="number" id="phonenumber">
+            <!-- <i class="fa fa-phone" class="form_icon"></i> -->
+            <input type="text" id="phonenumber">
         </div>
-
+        </div>
     <label>Gender</label>
     <div class="form-display2">
        
@@ -457,7 +460,7 @@
         Female
       </label>
     </div>
-    <label>What kind  of patient Category are you?</label>
+    <!-- <label>What kind  of patient Category are you?</label>
 <div class="form-display2">
 <label for="radio">
     <input type="checkbox" id="category1" name="gender" value="Inpatients"  class='check_category1'>
@@ -471,8 +474,8 @@
     <input type="checkbox" id="category3" name="gender" value="Waiting_List"  class='check_category3'>
     Waiting List
   </label>
-</div>
-
+</div> -->
+<!-- 
 <div class="form-display2">
 <label for="radio">
     <input type="checkbox"  id="category4"name="gender" value="Appointment"  class='check_category4'>
@@ -486,7 +489,7 @@
     <input type="checkbox" id="category6" name="gender" value="ANC"  class='check_category6'>
     ANC
   </label>
-</div>
+</div> -->
 <div class="ward hidden">
         <select id="wards" onclick="getBeds();">
     <option>Choose a Ward</option>
@@ -515,25 +518,25 @@
     <h3 style="text-align: left; margin-top: 1rem;">Next of Kins</h3>
         <div class="form-control">
         <label for="full_name" class="form_icon">Full Name</label>
-        <i class="fa fa-user"></i>
+        <!-- <i class="fa fa-user"></i> -->
         <input type="text"  id="kname" autocapitalize="off" autocomplete="off">
     </div>
 
         <div class="form-control">
         <label for="relationship">RelationShip</label>
-        <i class="fa fa-users" class="form_icon"></i>
+        <!-- <i class="fa fa-users" class="form_icon"></i> -->
         <input type="text"  id="krelationship">
     </div>
 
         <div class="form-control">
-            <i class="fa fa-home" class="form_icon"></i>
+            <!-- <i class="fa fa-home" class="form_icon"></i> -->
         <label for="home_address">Home Address</label>
         <input type="text"  id="kaddress"  autocomplete="off">
     </div>
 
         <div class="form-control">
         <label for="phone_number">Phone Number</label>
-        <i class="fa fa-phone" class="form_icon"></i>
+        <!-- <i class="fa fa-phone" class="form_icon"></i> -->
         <input type="number"  id="kphonenumber">
     </div>
 

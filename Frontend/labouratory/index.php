@@ -698,25 +698,6 @@ window.onload = function() {
         })
 }
 
-
-
-        //use later//
-
-        // checkbox.addEventListener("change", ()=>{
-        //         var label = document.querySelector('label[for="platelet"]');
-        //         var numericValue = label.textContent.replace(/,/g, '').match(/\b\d+\b/g);
-        //         if(checkbox.checked){
-        //             const convert_to_number = parseFloat(numericValue) + 1
-        //                 console.log(convert_to_number);
-        //         }else{
-        //                 alert(
-        //                         'Not checked'
-        //                 )
-        //         }
-        // });
-     //use later//
-
-
 //TEST  BOOKING
 const show_test_booking = ()=>{
         document.querySelector(".overlay").classList.remove("hide");

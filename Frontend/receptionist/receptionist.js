@@ -168,124 +168,124 @@ const nextNextForm =  btnNextNext.addEventListener("click", function(){
 
 
  //kind of category
- const check_category1 = document.querySelector(".check_category1")
- const check_category2= document.querySelector(".check_category2")
- const check_category3 = document.querySelector(".check_category3")
- const check_category4 = document.querySelector(".check_category4")
- const check_category5 = document.querySelector(".check_category5")
- const check_category6 = document.querySelector(".check_category6")
+//  const check_category1 = document.querySelector(".check_category1")
+//  const check_category2= document.querySelector(".check_category2")
+//  const check_category3 = document.querySelector(".check_category3")
+//  const check_category4 = document.querySelector(".check_category4")
+//  const check_category5 = document.querySelector(".check_category5")
+//  const check_category6 = document.querySelector(".check_category6")
 
 
-const handleCheckboxCategoryChange1 = ()=>{
+// const handleCheckboxCategoryChange1 = ()=>{
  //checked 1
-     if(check_category1.checked){
-         check_category2.disabled = true;
-         check_category3.disabled = true;
-         check_category4.disabled = true;
-         check_category5.disabled = true;
-         check_category6.disabled = true;
-      document.querySelector(".ward").classList.remove("hidden")
-     }else{
-         check_category2.disabled = false;
-         check_category3.disabled = false;
-         check_category4.disabled = false;
-         check_category5.disabled = false;
-         check_category6.disabled = false;
-         document.querySelector(".ward").classList.add("hidden")
-     }
+    //  if(check_category1.checked){
+    //      check_category2.disabled = true;
+    //      check_category3.disabled = true;
+    //      check_category4.disabled = true;
+    //      check_category5.disabled = true;
+    //      check_category6.disabled = true;
+    //   document.querySelector(".ward").classList.remove("hidden")
+    //  }else{
+    //      check_category2.disabled = false;
+    //      check_category3.disabled = false;
+    //      check_category4.disabled = false;
+    //      check_category5.disabled = false;
+    //      check_category6.disabled = false;
+    //      document.querySelector(".ward").classList.add("hidden")
+    //  }
    
-     }
+    //  }
 
 
 //for checked2
-     const handleCheckboxCategoryChange2 = ()=>{
+//      const handleCheckboxCategoryChange2 = ()=>{
 
-     if(check_category2.checked){
-         check_category1.disabled = true;
-         check_category3.disabled = true;
-         check_category4.disabled = true;
-         check_category5.disabled = true;
-         check_category6.disabled = true;
-     }else{
-         check_category1.disabled = false;
-         check_category3.disabled = false;
-         check_category4.disabled = false;
-         check_category5.disabled = false;
-         check_category6.disabled = false;
-     }
- }
+//      if(check_category2.checked){
+//          check_category1.disabled = true;
+//          check_category3.disabled = true;
+//          check_category4.disabled = true;
+//          check_category5.disabled = true;
+//          check_category6.disabled = true;
+//      }else{
+//          check_category1.disabled = false;
+//          check_category3.disabled = false;
+//          check_category4.disabled = false;
+//          check_category5.disabled = false;
+//          check_category6.disabled = false;
+//      }
+//  }
 
      //for checked 3
-     const handleCheckboxCategoryChange3 = ()=>{
-     if(check_category3.checked){
-         check_category1.disabled = true;
-         check_category2.disabled = true;
-         check_category4.disabled = true;
-         check_category5.disabled = true;
-         check_category6.disabled = true;
-     }else{
-         check_category1.disabled = false;
-         check_category2.disabled = false;
-         check_category4.disabled = false;
-         check_category5.disabled = false;
-         check_category6.disabled = false;
-     }
- }
+//      const handleCheckboxCategoryChange3 = ()=>{
+//      if(check_category3.checked){
+//          check_category1.disabled = true;
+//          check_category2.disabled = true;
+//          check_category4.disabled = true;
+//          check_category5.disabled = true;
+//          check_category6.disabled = true;
+//      }else{
+//          check_category1.disabled = false;
+//          check_category2.disabled = false;
+//          check_category4.disabled = false;
+//          check_category5.disabled = false;
+//          check_category6.disabled = false;
+//      }
+//  }
      //for checked 4
-     const handleCheckboxCategoryChange4 = ()=>{
-     if(check_category4.checked){
-         check_category1.disabled = true;
-         check_category2.disabled = true;
-         check_category3.disabled = true;
-         check_category5.disabled = true;
-         check_category6.disabled = true;
-     }else{
-         check_category1.disabled = false;
-         check_category2.disabled = false;
-         check_category3.disabled = false;
-         check_category5.disabled = false;
-         check_category6.disabled = false;
-     }
- }
+//      const handleCheckboxCategoryChange4 = ()=>{
+//      if(check_category4.checked){
+//          check_category1.disabled = true;
+//          check_category2.disabled = true;
+//          check_category3.disabled = true;
+//          check_category5.disabled = true;
+//          check_category6.disabled = true;
+//      }else{
+//          check_category1.disabled = false;
+//          check_category2.disabled = false;
+//          check_category3.disabled = false;
+//          check_category5.disabled = false;
+//          check_category6.disabled = false;
+//      }
+//  }
      //for checked 5
-     const handleCheckboxCategoryChange5 = ()=>{
-     if(check_category5.checked){
-         check_category1.disabled = true;
-         check_category2.disabled = true;
-         check_category3.disabled = true;
-         check_category4.disabled = true;
-         check_category6.disabled = true;
-     }else{
-         check_category1.disabled = false;
-         check_category2.disabled = false;
-         check_category3.disabled = false;
-         check_category4.disabled = false;
-         check_category6.disabled = false;
-     }
- }
+//      const handleCheckboxCategoryChange5 = ()=>{
+//      if(check_category5.checked){
+//          check_category1.disabled = true;
+//          check_category2.disabled = true;
+//          check_category3.disabled = true;
+//          check_category4.disabled = true;
+//          check_category6.disabled = true;
+//      }else{
+//          check_category1.disabled = false;
+//          check_category2.disabled = false;
+//          check_category3.disabled = false;
+//          check_category4.disabled = false;
+//          check_category6.disabled = false;
+//      }
+//  }
      //for checked 6
-     const handleCheckboxCategoryChange6 = ()=>{
-     if(check_category6.checked){
-         check_category1.disabled = true;
-         check_category2.disabled = true;
-         check_category3.disabled = true;
-         check_category4.disabled = true;
-         check_category5.disabled = true;
-     }else{
-         check_category1.disabled = false;
-         check_category2.disabled = false;
-         check_category3.disabled = false;
-         check_category4.disabled = false;
-         check_category5.disabled = false;
-     }
- }
+//      const handleCheckboxCategoryChange6 = ()=>{
+//      if(check_category6.checked){
+//          check_category1.disabled = true;
+//          check_category2.disabled = true;
+//          check_category3.disabled = true;
+//          check_category4.disabled = true;
+//          check_category5.disabled = true;
+//      }else{
+//          check_category1.disabled = false;
+//          check_category2.disabled = false;
+//          check_category3.disabled = false;
+//          check_category4.disabled = false;
+//          check_category5.disabled = false;
+//      }
+//  }
 
-check_category1.addEventListener('change', handleCheckboxCategoryChange1);
-check_category2.addEventListener('change', handleCheckboxCategoryChange2);
-check_category3.addEventListener('change', handleCheckboxCategoryChange3);
-check_category4.addEventListener('change', handleCheckboxCategoryChange4);
-check_category5.addEventListener('change', handleCheckboxCategoryChange5);
-check_category6.addEventListener('change', handleCheckboxCategoryChange6);
+// check_category1.addEventListener('change', handleCheckboxCategoryChange1);
+// check_category2.addEventListener('change', handleCheckboxCategoryChange2);
+// check_category3.addEventListener('change', handleCheckboxCategoryChange3);
+// check_category4.addEventListener('change', handleCheckboxCategoryChange4);
+// check_category5.addEventListener('change', handleCheckboxCategoryChange5);
+// check_category6.addEventListener('change', handleCheckboxCategoryChange6);
 
 
 
