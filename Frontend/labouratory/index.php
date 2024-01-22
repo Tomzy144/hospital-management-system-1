@@ -593,29 +593,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <label for="">Coagulation Studies (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value ="2000" class="checkbox">
                 <label for="">Peripheral Blood Smear (#2,000)</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="0" class="checkbox">
                 <label for="">Reticulocyte Count</label>
         </div>
         <div class="form_control">
-                <input type="checkbox">
+                <input type="checkbox" value="5000" class="checkbox>
                 <label for="">Blood Film Examination (#5,000)</label>
         </div>
         <div class="form_control">
+          
                 <input type="checkbox" value="8000" class="checkbox">
-                <label for="">Bone Marrow Aspiration</label>
+                <label for="">Bone Marrow Aspiration 8,000</label>
         </div>
         <div class="form_control">
-                <input type="checkbox" id="platelet" value="6000" class="checkbox">
-                <label for="platelet">Platelet Count (#6,000)</label>
+               
+                <input type="checkbox" id="platelet" value="6000" class="checkbox"
+                <label for="">Platelet Count (#6,000)</label>
         </div>
         <div class="form_control">
+                
                 <input type="checkbox" value="12000" class="checkbox">
                 <label for="">Bleeding Time and Clotting Time (#12,000)</label>
-                <p id="test"></p>
         </div>
        </form>
        <button id="btn" class="save" onClick="show_test_booking()">Enter</button>
@@ -629,39 +631,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <i class="fa fa-times" id="close" onClick="hide_test_booking()"></i>
         <img class="booking_hospital_logo" src="../Images/logo gif.gif" alt="" >
         <h1>Test Booking</h1>
-        <table>
+        <table id="dataTable">
                 <thead>
-                        <td>Tests</td>
                         <td>Amount </td>
+                        <td>Tests</td>
                 </thead>
                 <tbody>
-                        <td>Maleria Typhiod</td>
-                        <td><p>#30,000.00</p></td>
-                </tbody>
-                <tbody>
-                        <td>Maleria Typhiod</td>
-                        <td><p>#30,000.00</p></td>
-                </tbody>
-                <tbody>
-                        <td>Maleria Typhiod</td>
-                        <td><p>#30,000.00</p></td>
-                </tbody>
-                <tbody>
-                        <td>Maleria Typhiod</td>
-                        <td><p>#30,000.00</p></td>
-                </tbody>
-                <tbody>
-                        <td>Maleria Typhiod</td>
-                        <td><p>#30,000.00</p></td>
-                </tbody>
-                <tbody>
-                        <td>Maleria Typhiod</td>
-                        <td><p>#30,000.00</p></td>
                 </tbody>
         </table>
-        <div id="total">
+        <div class="total">
                 <p>Total</p>
-                <p>#100,000.00</p>
+                <p id="total">#100,000.00</p>
         </div>
         <button class="btn">Book Now</button>
        </div>
@@ -669,27 +649,52 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </div>
     <script>
 
-        const checkboxs = document.querySelectorAll(".checkbox");
-        console.log(checkboxs);
 
+        //ADD THE AMOUNT ON WHICH CLICKED TO THE LIST OF RECEIPT
+        const update_table = ()=>{
+                const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+                
+                tableBody.innerHTML = "";
+                const checkboxes = document.querySelectorAll(".checkbox");
+                checkboxes.forEach(function(checkbox){
+                        if(checkbox.checked){
+                                  // Create a new row
+                                var newRow = tableBody.insertRow();
+
+                        // Insert cells with checkbox value and label
+                        var cell1 = newRow.insertCell(0);
+                        cell1.textContent = checkbox.parentNode.textContent.trim();
+                        var cell2 = newRow.insertCell(1);
+                        cell2.textContent = checkbox.value;
+
+                       
+                        }
+                })
+        }
+
+
+//SUM ALL THE LAB TEST PRICES
+window.onload = function() {
+        const checkboxs = document.querySelectorAll(".checkbox");
         const updateSum = ()=>{
                 let sum = 0;
-
         checkboxs.forEach(function(checkbox){
                       if(checkbox.checked){
                         sum += parseInt(checkbox.value, 10);
                       }
-                      let testSum = document.querySelector("#test");
+                      let testSum = document.querySelector("#total");
                         testSum.textContent = sum;
-                        console.log(sum);
-        }),
-        console.log(sum);
+                        // console.log(sum);
+        })
         }
         checkboxs.forEach(function(checkbox){
-                if(checkbox.checked){
-                checkbox.addEventListener('change', updateSum);
-                }
+                checkbox.addEventListener('change', ()=>{
+                        update_table();
+                        updateSum();
+                })
         })
+}
+
 
 
         //use later//
@@ -717,6 +722,11 @@ const show_test_booking = ()=>{
 const hide_test_booking = ()=>{
         document.querySelector(".overlay").classList.add("hide");
         document.querySelector(".test_booking").classList.add("hide");
+        const checkboxs = document.querySelectorAll(".checkbox");
+        checkboxs.forEach(function(checkbox){
+              checkbox.checked = false;
+                })
+
 }
    
      //PROFILE IMAGE

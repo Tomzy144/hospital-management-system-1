@@ -53,14 +53,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     </div>
                     <div class="flexs-container">
                         <div class="sections-container">
-                            <h2>For Receptionist</h2>
-                            <p>Receptionist can login here</p>
-                            <button class="btn-receptionist" onclick="open_recep_login_form()">Login as a Receptionist</button>
+                            <h2>For Health Records and Information</h2>
+                            <p>Health Records and Information can login here</p>
+                            <button class="btn-receptionist" onclick="open_recep_login_form()">Login as a Health Records and Information</button>
                         </div>
                         <div class="sections-container">
                             <h2>For Matarnity</h2>
                             <p>Matarnity can login here</p>
                             <button class="btn-martanity" onclick="open_martanity_login_form()">Login as a Martanity</button>
+                        </div>
+                        <div class="sections-container">
+                            <h2>For Accounting</h2>
+                            <p>Account Manager can login here</p>
+                            <button class="btn-account_manager" onclick="open_account_manager_login_form()">Login as a Account Manager</button>
                         </div>
                     </div>
                     <div class="flexs-container">
@@ -68,6 +73,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                             <h2>For Staff Manager</h2>
                             <p>Staff Manager can login here</p>
                             <button class="btn-staff_manager" onclick="open_staff_manager_login_form()">Login as a Staff Manager</button>
+                        </div>
+                        <div class="sections-container">
+                            <h2>For Surgical Suite Manager</h2>
+                            <p>Surgical Suite Manager can login here</p>
+                            <button class="btn-surgical_suite" onclick="open_surgical_suite_manager_login_form()">Login as a Surgical Suite Manager</button>
                         </div>
                         <div class="sections-container">
                             <h2>For Lap Scientist</h2>
@@ -90,6 +100,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
            <div id="staff_manager-container"></div>
            <div id="martanity-container"></div>
            <div id="radiologist-container"></div>
+           <div id="account_manager-container"></div>
+           <div id="surgical_suite_manager-container"></div>
         <div class="overlay hidden"></div>
     </div>
 <!--Animation-->

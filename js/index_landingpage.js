@@ -211,7 +211,7 @@ if ($s_staff_id != '') {
 
 <div class="recep-login hidden">
 <i class="fa fa-times-circle" id='close-icon-recep'></i>
-    <h1 class="login-form-h1">Login (Receptionist)</h1>
+    <h1 class="login-form-h1">Login (Health Records and Information)</h1>
     <form action="config/code.php" id="loginform" enctype="multipart/form-data" method="post">
         <div class="form-control">
         <label for='email'>Email</label>
@@ -396,6 +396,106 @@ const isMartinity_active = ()=>{
     window.parent(location =(url))
 }
 
+//Account Manager Login
+const open_account_manager_login_form = function() {
+    const account_manager_login = document.querySelector(".account_manager-login");
+    const dark_background = document.querySelector(".overlay");
+    account_manager_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+const close_account_manager_login_form = function(){
+    const account_manager_login = document.querySelector(".account_manager-login");
+    const dark_background = document.querySelector(".overlay")
+    account_manager_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const account_manager_login_form = `
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
+<div class="account_manager-login hidden">
+<i class="fa fa-times-circle" id='close-icon-account_manager'></i>
+    <h1 class="login-form-h1">Login (Account Manager)</h1>
+    <form>
+    <div class="form-control">
+    <label for='email'>Email</label>
+    <i class="fa fa-address-book"></i>
+    <input type="email" name="email" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='number'>Your ID</label>
+    <i class="fa fa-key"></i>
+    <input type="number" name="number" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='password'>Password</label>
+    <i class="fa fa-lock"></i>
+    <input type="password" name="password" autoComplete='off'/> 
+    </div>
+    <button type="button" class="btn" onClick="isRadiologist_active()">Login</button>
+    <form>
+</div>
+`
+log_inAll('account_manager', account_manager_login_form);
+
+// const isRadiologist_active = ()=>{
+//     let url="Frontend/radiology/index.php"
+//     window.parent(location =(url))
+// }
+
+//Surgical Suite Manager Login
+const open_surgical_suite_manager_login_form = function() {
+    const surgical_suite_manager_login = document.querySelector(".surgical_suite_manager-login");
+    const dark_background = document.querySelector(".overlay");
+    surgical_suite_manager_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+const close_surgical_suite_manager_login_form = function(){
+    const surgical_suite_manager_login = document.querySelector(".surgical_suite_manager-login");
+    const dark_background = document.querySelector(".overlay")
+    surgical_suite_manager_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const surgical_suite_manager_login_form = `
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
+<div class="surgical_suite_manager-login hidden">
+<i class="fa fa-times-circle" id='close-icon-surgical_suite_manager'></i>
+    <h1 class="login-form-h1">Login (Surgical Suite Manager)</h1>
+    <form>
+    <div class="form-control">
+    <label for='email'>Email</label>
+    <i class="fa fa-address-book"></i>
+    <input type="email" name="email" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='number'>Your ID</label>
+    <i class="fa fa-key"></i>
+    <input type="number" name="number" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='password'>Password</label>
+    <i class="fa fa-lock"></i>
+    <input type="password" name="password" autoComplete='off'/> 
+    </div>
+    <button type="button" class="btn" onClick="isRadiologist_active()">Login</button>
+    <form>
+</div>
+`
+log_inAll('surgical_suite_manager', surgical_suite_manager_login_form);
+
+// const isRadiologist_active = ()=>{
+//     let url="Frontend/radiology/index.php"
+//     window.parent(location =(url))
+// }
+
 //closeDarkBackground
 const dark_background = document.querySelector(".overlay")
 dark_background.addEventListener("click", function(){
@@ -406,6 +506,8 @@ dark_background.addEventListener("click", function(){
     close_lab_login_form();
     close_staff_manager_login_form();
     close_martanity_login_form()
+    close_account_manager_login_form()
+    close_surgical_suite_manager_login_form()
     });
 
 const closeIconDoc = document.querySelector("#close-icon-doctor");
@@ -415,6 +517,8 @@ const closeIconRecep = document.querySelector("#close-icon-recep");
 const closeIconLab = document.querySelector("#close-icon-lab");
 const closeIconStaff_manager = document.querySelector("#close-icon-staff_manager");
 const closeIconMartanity = document.querySelector("#close-icon-martanity");
+const closeIconAccount_manager = document.querySelector("#close-icon-account_manager");
+const closeIconSurgical_suite_manager = document.querySelector("#close-icon-surgical_suite_manager");
 
 closeIconDoc.addEventListener("click", function(){
         close_doctor_login_form();
@@ -437,6 +541,12 @@ closeIconStaff_manager.addEventListener("click", function(){
 })
 closeIconMartanity.addEventListener("click", function(){
     close_martanity_login_form()
+})
+closeIconAccount_manager.addEventListener("click", function(){
+    close_account_manager_login_form()
+})
+closeIconSurgical_suite_manager.addEventListener("click", function(){
+    close_surgical_suite_manager_login_form()
 })
 
 //superAdmin linking

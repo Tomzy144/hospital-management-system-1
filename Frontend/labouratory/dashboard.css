@@ -529,7 +529,7 @@ span{
 .test_booking table tbody td{
     padding: 0.5rem 2rem;
 }
-#total{
+.total{
     width: 100%;
     display: flex;
     justify-content: space-between;

@@ -812,7 +812,7 @@ form span{
 }
 
 .form_appoitment{
-    width:100%;
+    width:45rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: fit-content;
     background: rgb(255, 255, 255);
@@ -876,7 +876,7 @@ form span{
 .btn_submit_appoitment:hover{
     background-color: #fff;
     color: black;
-    border: 2px solid rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);;
 }
 
 /*VITALS*/
