@@ -46,20 +46,151 @@
                 <i class="fa fa-sign-out" id="icon"></i>
             </div>
         </div> 
-        <div class="contents">
-    <div class="button_container">
-    <!-- <button onClick="book_surgery()" id="btn_sections">Book Surgery</button>
-    <button onClick="click_antenal_button()" id="btn_sections">Consent Form</button>
-    <button onClick="click_appoitment_button()" id="btn_sections">Vitals</button>
-    <button id="btn_sections" onClick="click_prescribtion_button()">Surgical Management</button> -->
-    
-    </div>
-    </div>
-    <div class="book_surgery hide">
-            <div class="form_container">
-                <h1>Book Surgery</h1>
+    <div class="contents">
+          <div class="appiontment_booking_container">
+        <div class="appiontment">
+        <div class="head_sec">
+            <span>Appoitment Details</span>
+            <div class="appoitment_input_control">
+            <i class="fa fa-search" id="search_icon"></i>
+                <input type="text" placeholder="Search here" class="appoitment_input">
             </div>
-    </div>
+        </div>
+        <div class="table_container">
+          <table>
+            <thead>
+              <td>Patient Name</td>
+              <td>Patient Id</td>
+              <td>Doctor Name</td>
+              <td>Procedure</td>
+              <td>Phone Number</td>
+              <td>Accept/Reject</td>
+            </thead>
+            <tbody>
+              <td>Princess Precious</td>
+              <td>Pat001</td>
+              <td>Doc. John</td>
+              <td>Head Surgery</td>
+              <td>0816973232</td>
+              <td>
+                <button onClick="booking_section()">Accept</button>
+                <button>Reject</button>
+              </td>
+            </tbody>
+            <tbody>
+            <td>Princess Precious</td>
+              <td>Pat001</td>
+              <td>Doc. John</td>
+              <td>Head Surgery</td>
+              <td>0816973232</td>
+              <td>
+                <button>Accept</button>
+                <button>Reject</button>
+              </td>
+            </tbody>
+            <tbody>
+            <td>Princess Precious</td>
+              <td>Pat001</td>
+              <td>Doc. John</td>
+              <td>Head Surgery</td>
+              <td>0816973232</td>
+              <td>
+                <button>Accept</button>
+                <button>Reject</button>
+              </td>
+            </tbody>
+            <tbody>
+            <td>Princess Precious</td>
+              <td>Pat001</td>
+              <td>Doc. John</td>
+              <td>Head Surgery</td>
+              <td>0816973232</td>
+              <td>
+                <button>Accept</button>
+                <button>Reject</button>
+              </td>
+            </tbody>
+          </table>
+        </div>
+        </div>
+          </div>
+        </div>
+        <div class="booking_section hide">
+            <div class="booking_container">
+                <span>Princess Precious</span>
+                <form action="">
+                    <div class="form_control_group">
+                    <div class="form_control">
+                        <label for="">Type of Surgery & Amount</label>
+                        <input type="text">
+                    </div>
+                    <div class="form_control">
+                        <label for="">Amount</label>
+                        <input type="text">
+                    </div>
+                    </div>
+                    <div class="form_control_group">
+                    <div class="form_control">
+                        <label for="">Special Equipment</label>
+                        <input type="text">
+                    </div>
+                    <div class="form_control">
+                        <label for="">Date of Surgery</label>
+                        <input type="date">
+                    </div>
+                    <div class="form_control">
+                        <label for="">Time of Surgery</label>
+                        <input type="time">
+                    </div>
+                    .</div>
+                    <div class="form_control_group">
+                    <div class="form_control">
+                        <label for="">Select Surgeon</label>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Select Anostologist</label>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="form_control_group">
+                    <div class="form_control">
+                        <label for="">Select Nurse</label>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Select Opeating Room</label>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    </div>
+                    <button>Book</button>
+                </form>
+            </div>
+        </div>
         <script src="index.js"></script>
 </body>
 </html>

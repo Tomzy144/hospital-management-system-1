@@ -5,7 +5,7 @@ const click_icon_for_profile = ()=>{
 };
 
 //BOOK SURGERY PAGE
-const book_surgery = ()=>{
+const booking_section = ()=>{
 document.querySelector(".contents").style.display="none";
-document.querySelector(".book_surgery").classList.remove("hide");
+document.querySelector(".booking_section").classList.remove("hide");
 }
