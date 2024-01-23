@@ -123,6 +123,45 @@ const nextNextForm =  btnNextNext.addEventListener("click", function(){
  }
 
 
+//FAMILY PLAN
+const selectBox  = document.querySelector("#select_box");
+const family_plan = document.querySelector(".family_plan")
+
+selectBox.addEventListener("change", function(){
+  if(selectBox.value === "family_plan"){
+    family_plan.classList.remove("hide");
+  }else{
+    family_plan.classList.add("hide");
+  }
+});
+
+const family_check_true = document.querySelector("#family_check_true");
+const family_check_false = document.querySelector("#family_check_false");
+const check_input_family_id_number = document.querySelector(".input_family_id_number")
+
+const handleCheckboxFamiilyChange = ()=>{
+    if(family_check_true.checked){
+      family_check_false.disabled = true;
+      check_input_family_id_number.classList.remove("hide");
+      family_plan.classList.add("hide");
+    }else{
+      family_check_false.disabled = false;
+    }
+
+    if(family_check_false.checked){
+      family_check_true.disabled = true;
+    }else{
+      family_check_true.disabled = false;
+    }
+}
+
+family_check_true.addEventListener("change", handleCheckboxFamiilyChange);
+family_check_false.addEventListener("change", handleCheckboxFamiilyChange);
+
+
+
+
+//GENDER
  const checked1 =  document.querySelector(".check1")
  const checked2 =  document.querySelector(".check2")
  const checked3 =  document.querySelector(".check3")

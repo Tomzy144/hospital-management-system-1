@@ -448,14 +448,62 @@
             <input type="text" id="phonenumber">
         </div>
         </div>
+        <div class="form-control">
+        <label for="hmo">Hospital Plans</label>
+            <select name="" id="select_box">
+                <option value=""></option>
+                <option value="family_plan" onClick="family_plan()">Family Plan</option>
+                <option value="">Personal</option>
+                <option value="">Hygeia</option>
+                <option value="">Novo Africa Healthcare</option>
+                <option value="">NHIS</option>
+                <option value="">Biz Ben School</option>
+                <option value="">Novo Health Africa</option>
+                <option value="">Online Clinic</option>
+                <option value="">Roding</option>
+                <option value="">Clearline</option>
+                <option value="">United Health</option>
+                <option value="">Infinity</option>
+                <option value="">KnownTech</option>
+                <option value="">Sterling</option>
+                <option value="">Avon</option>
+                <option value="">Wellness</option>
+                <option value="">Scan</option>
+                <option value="">Reliance</option>
+                <option value="">Lab Patients</option>
+                <option value="">Scan</option>
+                <option value="">Axiom</option>
+                <option value="">Clearline HMO</option>
+                <option value="">Century Medicaid</option>
+            </select>
+        </div>
+        <div class="family_plan hide">
+        <label for="">Do you have any Registered Family Member?</label>
+        <div class="form-display2">
+        <label for="checkbox">
+        <input type="checkbox" name="yes" value="Yes" id="family_check_true">
+            Yes
+        </label>
+        <label for="checkbox">
+        <input type="checkbox" name="no" value="No" id="family_check_false">
+            No
+        </label>
+        </div>
+        </div>
+        <div class="input_family_id_number hide">
+            <label for="">Insert Id number for Verification</label>
+            <input type="text">
+            <button type="button" class="btn_verify">Verify</button>
+        </div>
+
     <label>Gender</label>
     <div class="form-display2">
        
-    <label for="radio">
+    <label for="checkbox">
         <input type="checkbox" id="gender1" name="gender" value="Male" class='check1'>
         Male
       </label>
-      <label for="radio">
+      <label for="checkbox">
         <input type="checkbox" id="gender2" name="gender" value="Female" class='check2'>
         Female
       </label>

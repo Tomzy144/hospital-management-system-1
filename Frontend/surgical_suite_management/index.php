@@ -43,6 +43,8 @@
                </div>
             <div class="sidebar_icons">
                 <i class="fa fa-envelope" id="icon"></i>
+                <i class="fa fa-book" id="icon" onClick="consent_container()"></i>
+                <i class="fa fa-edit (alias)" id="icon"></i>
                 <i class="fa fa-sign-out" id="icon"></i>
             </div>
         </div> 
@@ -117,7 +119,7 @@
         </div>
         <div class="booking_section hide">
             <div class="booking_container">
-                <span>Princess Precious</span>
+                <span>PRINCESS PRECIOUS</span>
                 <form action="">
                     <div class="form_control_group">
                     <div class="form_control">
@@ -190,7 +192,58 @@
                     <button>Book</button>
                 </form>
             </div>
+          </div>
+          <div class="conscent_container hide">
+          <div class="search-container">
+    <div class="search-bar">
+        <div id="select">
+            <p id="selectText"></p>
+            <i class="fa fa-sort-desc"></i>
+            
+    <ul id="list">
+        <li class="options" id="0" onclick="showTable('All')">All</li>
+        <li class="options" id="1" onclick="showTable('Inpatients')">Inpatients</li>
+        <li class="options" id="2" onclick="showTable('Outpatients')">Outpatients</li>
+        <li class="options" id="3" onclick="showTable('Waitinglist')">Waiting List</li>
+        <li class="options" id="4" onclick="showTable('Appointment')">Appointment</li>
+        <li class="options" id="5"  onclick="showTable('Test')">Test</li>
+        <li class="options" id="6"  onclick="showTable('ANC')">ANC</li>
+        <li class="options" id="7"  onclick="showTable('Todayinputs')">Today inputs</li>
+        <!-- Add more options here -->
+    </ul>
         </div>
+            <input id="search_term" name="search_term" type="text" placeholder="Type here to search..." title="Type here to search" />
+            <i class="fa fa-search"  id="submit-input"></i>
+    </div> 
+    </div>
+
+    <div class="patient_container">
+        <div class="flex_container">
+            <div class="each_container">
+                <div class="number_container">
+                    1.
+                </div>
+                <div class="patient_info">
+                    <span>Precious Joseph</span>
+                    <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
+                    <button class= "btn_upload" onClick="upload_document()">Upload</button>
+           </div>
+          </div>
+          </div>
+          </div>
+
+          <div class="upload_document_page hide">
+            <h1>Upload Files & Documents</h1>
+          <div class="flex_upload_div">
+            <div class="upload_container">
+              <i class="fa fa-folder-open" id="upload_icon"></i>
+              <span>Drag and drop file</span>
+              <h1>-OR-</h1>
+              <input type="file" value="Upload File" class="browse_file">
+            </div>
+          </div>
+          </div>
+        
         <script src="index.js"></script>
 </body>
 </html>
