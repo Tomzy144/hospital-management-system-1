@@ -139,7 +139,7 @@ body{
     transform: scale(0.98);
     background: none;
     color:rgb(255, 255, 255);
-    border: 2px solid #fff;
+    border: 1px solid #fff;
 }
 .profile_account span{
     text-align: left;
@@ -310,9 +310,11 @@ body{
     text-align: center;
     margin: 0.5rem 0.5rem;
     border: none;
+    border-radius: 20px;
     cursor: pointer;
     background-color: rgb(42, 87, 215);
     color: #fff;
+    transition: all  ease-in-out 0.5s; 
 }
 .btn_re_capture{
     width: 50%;
@@ -320,9 +322,21 @@ body{
     text-align: center;
     margin: 0.5rem 0.5rem;
     border: none;
+    border-radius: 20px;
     cursor: pointer;
     background-color: rgb(42, 87, 215);
     color: #fff;
+    transition: all  ease-in-out 0.5s; 
+}
+.btn_capture:hover{
+    background:none;
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
+}
+.btn_re_capture:hover{
+    background:none;
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
 }
 .form{
     width: 100%;

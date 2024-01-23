@@ -516,6 +516,7 @@
     </div>
     <div class="form-section current-section" id="section3">
     <h3 style="text-align: left; margin-top: 1rem;">Next of Kins</h3>
+    <div class="form_control_group">
         <div class="form-control">
         <label for="full_name" class="form_icon">Full Name</label>
         <!-- <i class="fa fa-user"></i> -->
@@ -527,7 +528,8 @@
         <!-- <i class="fa fa-users" class="form_icon"></i> -->
         <input type="text"  id="krelationship">
     </div>
-
+    </div>
+    <div class="form_control_group">
         <div class="form-control">
             <!-- <i class="fa fa-home" class="form_icon"></i> -->
         <label for="home_address">Home Address</label>
@@ -537,9 +539,9 @@
         <div class="form-control">
         <label for="phone_number">Phone Number</label>
         <!-- <i class="fa fa-phone" class="form_icon"></i> -->
-        <input type="number"  id="kphonenumber">
+        <input type="text"  id="kphonenumber">
     </div>
-
+    </div>
 <label>Gender</label>
 <div class="form-display2">
 <label for="radio">

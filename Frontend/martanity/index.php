@@ -291,10 +291,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <canvas id="canvasElement_antenatal" style="display: none;"></canvas>
             <img id="capturedImage_antenatal" style="display: none;">
         </div>
+        <div class="flex_capture_div">
         <div class="btn_re_capture2 hide"  onclick="retakePicture2()">Recapture</div>
         <div class="btn_capture2 hide" onClick="takePicture2()">Capture</div>
-        <h2>Fill in the neccesary information</h2>
+        </div>
+        <!-- <h2>Fill in the neccesary information</h2> -->
         <span>Patient Info</span>
+        <div class="form_control_group">
     <div class="form_control">
         <label for="">Full name</label>
         <input type="text">
@@ -304,7 +307,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Date of Birth</label>
         <input type="date">
         </div>
-
+        </div>
+        <div class="form_control_group">
         <div class="form_control">
         <label for="">Address</label>
         <input type="text">
@@ -314,14 +318,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Contact Number</label>
         <input type="text">
         </div>
-
+        </div>
         <div class="form_control">
         <label for="">Emergency Contact</label>
         <input type="text">
         </div>
  
         <span>Spouse/Partner Information</span>
-   
+
+        <div class="form_control_group">
         <div class="form_control">
         <label for="">Full Name</label>
         <input type="text">
@@ -331,11 +336,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Contact Number</label>
         <input type="text">
         </div>
+        </div>
         <button class="btn_next1" type="button" id="btn_next" onClick="nextForm1()">Next</button>
         </div>
     <div class="form_section current_section" id="section2">
 
         <span>Insurance Information</span>
+
+        <div class="form_control_group">
         <div class="form_control">
         <label for="">Insurance Provider</label>
         <input type="text">
@@ -345,8 +353,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Policy Number</label>
         <input type="text">
         </div>
-
+        </div>
         <span>Medical History</span>
+
+        <div class="form_control_group">
     <div class="form_control">
         <label for="">Previous Pregnacies</label>
         <input type="text">
@@ -355,7 +365,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Chronic Condition</label>
         <input type="text">
         </div>
-
+        </div>
         <div class="form_control">
         <label for="">Alergies</label>
         <input type="text">
@@ -367,6 +377,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
 <div class="form_section current_section" id="section3">
         <span>Antenatal Care Information</span>
+        <div class="form_control_group">
         <div class="form_control">
         <label for="">Date of first prenatal visit</label>
         <input type="date">
@@ -375,6 +386,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Curent Gestational Age</label>
         <input type="text">
     </div>
+    </div>
+    <div class="form_control_group">
     <div class="form_control">
         <label for="">Prenatal visit</label>
         <input type="text">
@@ -384,7 +397,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Recent Ultrasound details</label>
         <input type="text">
     </div>
+    </div>
         <span>Health Status</span>
+        <div class="form_control_group">
   <div class="form_control">
         <label for="">Current Medications</label>
         <input type="text">
@@ -394,6 +409,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Vital Signs</label>
         <input type="text">
       </div>
+    </div>
         <button class="btn_back3" type="button" id="btn_next" onClick="backFrom3()">Back</button>
         <button class="btn_submit" type="button">Submit</button>
         </div>
@@ -410,10 +426,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <canvas id="canvasElement_postnatal" style="display: none;"></canvas>
             <img id="capturedImage_postnatal" style="display: none;">
         </div>
+        <div class="flex_capture_div">
         <div class="btn_re_capture1 hide"  onclick="retakePicture1()">Recapture</div>
         <div class="btn_capture1 hide" onClick="takePicture1()">Capture</div>
-        <h2>Fill in the neccesary information</h2>
+    </div>
+        <!-- <h2>Fill in the neccesary information</h2> -->
         <span>Patient Info</span>
+        <div class="form_control_group">
     <div class="form_control">
         <label for="">Full name</label>
         <input type="text">
@@ -423,7 +442,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Date of Birth</label>
         <input type="date">
         </div>
-
+        </div>
+        <div class="form_control_group">
         <div class="form_control">
         <label for="">Address</label>
         <input type="text">
@@ -433,6 +453,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Contact Number</label>
         <input type="text">
         </div>
+        </div>
 
         <div class="form_control">
         <label for="">Emergency Contact</label>
@@ -440,7 +461,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
  
         <span>Spouse/Partner Information</span>
-   
+        <div class="form_control_group">
         <div class="form_control">
         <label for="">Full Name</label>
         <input type="text">
@@ -450,11 +471,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Contact Number</label>
         <input type="text">
         </div>
+        </div>
         <button class="btn_next1" type="button" id="btn_next_pos" onClick="nextForm1Pos()">Next</button>
         </div>
     <div class="form_section current_section" id="section2_pos">
 
         <span>Insurance Information</span>
+        <div class="form_control_group">
         <div class="form_control">
         <label for="">Insurance Provider</label>
         <input type="text">
@@ -464,8 +487,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Policy Number</label>
         <input type="text">
         </div>
-
+        </div>
         <span>Delivery Details</span>
+
+        <div class="form_control_group">
     <div class="form_control">
         <label for="">Date and time of the Delievery</label>
         <input type="datetime-local">
@@ -474,7 +499,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Mode of Delivery</label>
         <input type="text">
         </div>
-
+        </div>
         <div class="form_control">
         <label for="">Complications During Delivery</label>
         <input type="text">
@@ -484,6 +509,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 </div>
 <div class="form_section current_section" id="section3_pos">
         <span>Postpartum Care Information</span>
+        <div class="form_control_group">
         <div class="form_control">
         <label for="">Recovery Progress</label>
         <input type="text">
@@ -492,17 +518,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Breastfeeding Support</label>
         <input type="text">
     </div>
+    </div>
     <div class="form_control">
         <label for="">Postpartum Checkup Schedule</label>
         <input type="text">
     </div>
 
         <span>Health Status</span>
+        <div class="form_control_group">
   <div class="form_control">
         <label for="">Vital Signs</label>
         <input type="text">
       </div>
-
+    </div>
+    <div class="form_control_group">
       <div class="form_control">
         <label for="">Pain Assessment</label>
         <input type="text">
@@ -511,6 +540,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Current Medications</label>
         <input type="text">
       </div>
+    </div>
         <button class="btn_back3" type="button" id="btn_next_pos" onClick="backFrom3Pos()">Back</button>
         <button class="btn_submit" type="button">Submit</button>
         </div>

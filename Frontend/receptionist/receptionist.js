@@ -112,11 +112,6 @@ const nextNextForm =  btnNextNext.addEventListener("click", function(){
      btnNextNext.style.display = "block";
      let upload_image = document.querySelector(".upload_image");
      upload_image.style.display = "block";
-     const showClickButton = document.querySelector(".btn_capture")
-     showClickButton.classList.remove("hide");
- 
-     const showClickButtonForRecapture = document.querySelector(".btn_re_capture")
-     showClickButtonForRecapture.classList.remove("hide")
      
  })
 
