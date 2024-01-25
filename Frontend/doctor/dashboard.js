@@ -536,7 +536,7 @@ if(treatment_prescribtion_section.classList.contains("hidden")){
 //DISPLAY INPUT
 const display_input = (data) => {
     document.querySelector(".all_sections_input").classList.remove("hide");
-    document.querySelector(".all_sections_input").innerHTML = data; // Update the content
+    // document.querySelector(".all_sections_input").innerHTML = data; // Update the content
     document.querySelector(".body_sec").style.display = "none";
 }
 

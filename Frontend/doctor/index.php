@@ -215,18 +215,18 @@ $result = $conn->query($sql);
 
 
        
-
-    
-
-     <!----Start from here-->
-   <div class="all_sections_input hide" data-patient-id="<?php echo $patient_id ?>">
-   <?php
+        <?php
       
       $patient_id = $_POST['patient_id'];
   ?>
+    
+
+     <!----Start from here-->
+   <div class="all_sections_input hide">
+  
     <!--Start of the complaint section--->
    <div class="complain_dropdown">
-    <span>Complaints <?php echo $patient_id ?></span>
+    <span>Complaints</span>
     
     <i class="fa fa-plus" id="complaint_icon_plus"></i>
     <i class="fa fa-minus" id="complaint_icon_minus"></i>
