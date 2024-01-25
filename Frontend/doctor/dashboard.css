@@ -469,7 +469,7 @@ label {
 .surgical_booking{
     position: absolute;
     width: 500px;
-    top: 25%;
+    top: 10%;
     left: 25%;
     padding: 1rem;
     height: 380px;
@@ -493,6 +493,15 @@ label {
 }
 .surgical_input:focus{
     border: 1px solid rgba(255, 255, 255);
+}
+.surgical_booking textarea{
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+.surgical_booking textarea:focus{
+    border: 1px solid rgba(255, 255, 255);
+    background-color: #fff;
 }
 .surgical_booking .form-control-precedure{
     display: flex;
@@ -827,6 +836,289 @@ label {
     background-color: rgb(42, 87, 215);
     color: #ffffff;
 }
+.discharged_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#discharged_icon_minus{
+    display: none;
+}
+.discharged-section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #fff;
+    align-items: left;
+    justify-content: start;
+    position: relative;
+}
+.off_on_button{
+    width: fit-content;
+    height: fit-content;
+}
+
+.discharged-section #discharge_off{
+    color: yellow;
+    font-size: 30px;
+    cursor: pointer;
+}
+.discharged-section #discharge_on{
+    color: rgb(0, 255, 0);
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+.discharge_form{
+    width: 50%;
+}
+.discharge_form form{
+    display: flex;
+    flex-direction: column;
+}
+.discharge_form form .form_control{
+    margin: 0.6rem 0;
+}
+.discharge_form form .form_control input{
+    border: none;
+  border-bottom: 2px solid #fff;
+  background: none;
+  color: #fff;
+  font-size: 18px;
+}
+.discharge_form form .form_control label{
+  font-size: 20px;
+}
+.discharge_form form .form_control textarea{
+    border: none;
+    outline: none;
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #000000;
+    font-size: 18px;
+}
+.discharge_form form #btn_save_discharge{
+    border: none;
+    outline: none;
+    width: fit-content;
+    padding: 0.5rem;
+    background:none;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    border: 2px solid #fff;
+    color: #ffffff;
+}
+.discharge_form form #btn_save_discharge:hover{
+background-color: #fff;
+color: #000000;
+}
+
+/*COMFIRMED DEATH SECTION*/
+.confirmed_death_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#confirmed_death_icon_minus{
+    display: none;
+}
+.confirmed_death-section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+    display: flex;
+    border: 2px solid #fff;
+    flex-direction: column;
+    align-items: left;
+    justify-content: start;
+    position: relative;
+}
+
+.off_on_button{
+    width: fit-content;
+    height: fit-content;
+}
+
+.confirmed_death-section #confirmed_death_off{
+    color: yellow;
+    font-size: 30px;
+    cursor: pointer;
+}
+.confirmed_death-section #confirmed_death_on{
+    color: red;
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+.confirmed_death_form{
+    width: 50%;
+}
+.confirmed_death_form form{
+    display: flex;
+    flex-direction: column;
+}
+.confirmed_death_form form .form_control{
+    margin: 0.6rem 0;
+}
+.confirmed_death_form form .form_control input{
+    border: none;
+  border-bottom: 2px solid #fff;
+  background: none;
+  color: #fff;
+  font-size: 18px;
+}
+.confirmed_death_form form .form_control label{
+  font-size: 20px;
+}
+.confirmed_death_form form .form_control textarea{
+    border: none;
+    outline: none;
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #000000;
+    font-size: 18px;
+}
+.confirmed_death_form form #btn_save_confirmed_death{
+    border: none;
+    outline: none;
+    width: fit-content;
+    padding: 0.5rem;
+    background:none;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    border: 2px solid #fff;
+    color: #ffffff;
+}
+.confirmed_death_form form #btn_save_confirmed_death:hover{
+background-color: #fff;
+color: #000000;
+}
+
+/*DEATH FORM*/
+
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-image: url(../Images/19374.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 12;
+    top: 0;
+    left: 0;
+}
+
+.death_form_booking{
+    position: absolute;
+    width: 500px;
+    top: 3%;
+    left: 25%;
+    padding: 1rem;
+    height: 380px;
+    background-color:rgb(42, 87, 215);
+    z-index: 13;
+    height:fit-content;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.death_form_booking .form-control input{
+    padding: 0.5rem;
+    border: none;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255);
+    background:none;
+    outline: none;
+    width: 100%;
+    color: #fff;
+}
+.death_form_booking .form-control input:focus{
+    border: 1px solid rgba(255, 255, 255);
+}
+.death_form_booking .form-control label{
+    text-align: left;
+}
+.death_form_booking .form-control textarea{
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+.death_form_booking textarea:focus{
+    border: 1px solid rgba(255, 255, 255);
+    background-color: #fff;
+}
+.death_form_booking .form-control{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    justify-content: left;
+    align-items: start;
+    margin: 0.2rem 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+.death_form_booking #icons{
+    position: absolute;
+    left: 5px;
+    top: 63%;
+    transform: translateY(-50%);
+  }
+  death_form_booking #close-icon{
+    position: absolute;
+    left: 0;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-left: 30rem;
+    color: rgba(255, 255, 255, 0.9);
+    top: 0;
+  }
+  .death_form_booking .form-control textarea{
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255);
+    font-size: 15px;
+    background-color: #fff;
+    outline: none;
+    width: 100%;
+    color: #000000;
+}
+.death_form_booking .btn{
+    width: 100%;
+    padding: 1rem 0;
+    border: none;
+    margin: 1rem 0;
+    background-color:rgb(0, 0, 0);;
+    border-radius: 4px;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+}
+.death_form_booking .btn:hover{
+    background-color: white;
+    color: #000000;
+}
+
 .hidden{
     display: none;
 }

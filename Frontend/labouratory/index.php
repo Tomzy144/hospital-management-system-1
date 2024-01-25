@@ -15,15 +15,6 @@ rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <span style="font-size:2rem; color:#fff;">LabDoc Dashboard</span>
-        </div>
-    <form method="post" action="./../../config/code.php" id="logoutform">
-            <input type="hidden" name="action" value="logout"/>    
-              <i class="fa fa-sign-out" id="sign-out"onclick="document.getElementById('logoutform').submit();"></i>
-        </form>
-             </nav>
          <!---SIDEBAR AND NAVBAR-->
     <div class="navbar">
         <div class="section1">
@@ -101,6 +92,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
               <td>
                 <button onClick="show_buttons()" id="accept_button">Accept</button>
                 <button id="reject_button">Reject</button>
+                <button id="reject_button">Pending</button>
                 <i class="fa fa-times" id="cancel_appoitment" ></i>
               </td>
             </tbody>
@@ -113,6 +105,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
               <td>
                 <button id="accept_button">Accept</button>
                 <button id="reject_button">Reject</button>
+                <button id="reject_button">Pending</button>
                 <i class="fa fa-times" id="cancel_appoitment"></i>
               </td>
             </tbody>
@@ -125,6 +118,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
               <td>
                 <button id="accept_button">Accept</button>
                 <button id="reject_button">Reject</button>
+                <button id="reject_button">Pending</button>
                 <i class="fa fa-times" id="cancel_appoitment"></i>
               </td>
             </tbody>
@@ -137,6 +131,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
               <td>
                 <button id="accept_button">Accept</button>
                 <button id="reject_button">Reject</button>
+                <button id="reject_button">Pending</button>
                 <i class="fa fa-times" id="cancel_appoitment"></i>
               </td>
             </tbody>

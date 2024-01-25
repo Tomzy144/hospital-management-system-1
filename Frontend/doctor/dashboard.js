@@ -536,12 +536,83 @@ if(treatment_prescribtion_section.classList.contains("hidden")){
 
 
 //DISPLAY INPUT
-
 const display_input = ()=>{
     document.querySelector(".all_sections_input").classList.remove("hide");
     document.querySelector(".body_sec").style.display = "none";
 }
 
+//DISCHARGE INPUT
+//Complaints Section
+const discharged_dropdown = document.querySelector(".discharged_dropdown");
+const discharged_section = document.querySelector(".discharged-section");
+const discharged_section_icon_plus = document.querySelector("#discharged_icon_plus");
+const discharged_section_icon_minus = document.querySelector("#discharged_icon_minus");
+
+discharged_dropdown.addEventListener("click", function(){
+    discharged_section.classList.toggle("hidden");
+    discharged_section_icon_plus.style.display = "none";
+    discharged_section_icon_minus.style.display = "block";
+    if(discharged_section.classList.contains("hidden")){
+        discharged_section_icon_plus.style.display = "block";
+        discharged_section_icon_minus.style.display = "none";
+    }
+    }) 
+
+    //DISCHARGED BUTTONS
+    const toogle_on_discharged = ()=>{
+        document.querySelector("#discharge_on").style.display = "block";
+        document.querySelector("#discharge_off").style.display = "none";
+        document.querySelector(".discharge_form").classList.toggle("hidden")
+    }
+    const toogle_off_discharged = ()=>{
+        document.querySelector("#discharge_on").style.display = "none";
+        document.querySelector("#discharge_off").style.display = "block";
+        document.querySelector(".discharge_form").classList.add("hidden")
+    }
+
+    
+//DEAD INPUT
+
+const confirmed_death_dropdown = document.querySelector(".confirmed_death_dropdown");
+const confirmed_death_section = document.querySelector(".confirmed_death-section");
+const confirmed_death_section_icon_plus = document.querySelector("#confirmed_death_icon_plus");
+const confirmed_death_section_icon_minus = document.querySelector("#confirmed_death_icon_minus");
+
+confirmed_death_dropdown.addEventListener("click", function(){
+    confirmed_death_section.classList.toggle("hidden");
+    confirmed_death_section_icon_plus.style.display = "none";
+    confirmed_death_section_icon_minus.style.display = "block";
+    if(confirmed_death_section.classList.contains("hidden")){
+        confirmed_death_section_icon_plus.style.display = "block";
+        confirmed_death_section_icon_minus.style.display = "none";
+    }
+    }) 
+    //DEATH BUTTONS
+    const toogle_on_confirmed_death = ()=>{
+        document.querySelector("#confirmed_death_on").style.display = "block";
+        document.querySelector("#confirmed_death_off").style.display = "none";
+        document.querySelector(".confirmed_death_form").classList.toggle("hidden")
+    }
+    const toogle_off_confirmed_death = ()=>{
+        document.querySelector("#confirmed_death_on").style.display = "none";
+        document.querySelector("#confirmed_death_off").style.display = "block";
+        document.querySelector(".confirmed_death_form").classList.add("hidden")
+    }
+
+
+    //DEATH FORM
+
+    const show_death_form = ()=>{
+        document.querySelector(".death_form_booking").classList.remove("hidden");
+        document.querySelector(".overlay").classList.remove("hidden");
+        document.querySelector("#back-arrow").style.display="none";
+    }
+
+    const close_death_form = ()=>{
+        document.querySelector(".death_form_booking").classList.add("hidden");
+        document.querySelector(".overlay").classList.add("hidden");
+        document.querySelector("#back-arrow").style.display="block";
+    }
 
 
 

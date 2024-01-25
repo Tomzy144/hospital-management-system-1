@@ -24,6 +24,10 @@ const upload_document = ()=>{
     document.querySelector(".patient_container").style.display="none";
     document.querySelector(".upload_document_page").classList.remove("hide");
 }
+//VITAL CONTAINER
+const vital_section = ()=>{
+    
+}
 
 //Search Bar
 const select =  document.getElementById("select");
@@ -50,4 +54,3 @@ for(option of options){
     })
 }
 
-//UPLOAD CONTAINER

@@ -270,7 +270,15 @@ $result = $conn->query($sql);
         <label for='phone_number'>Phone Number</label>
         <input type="text" name="phone_number" autoComplete='off' class="surgical_input" id="phone_number"/> 
         </div>
-        <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button>
+        <div class="form-control-precedure">
+        <label for='pass_surgery'>Past Surgery</label>
+        <input type="text" name="pass_surgery" autoComplete='off' class="surgical_input" id="pass_surgery"/> 
+        </div>
+        <div class="form-control-precedure">
+        <label for='message'>Message</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <button type="button" class="btn" onClick="if_details_correct_login()">Transfer</button>
 </form>
     </div>
            <!--End of the complaint section--->
@@ -1843,7 +1851,100 @@ $result = $conn->query($sql);
             <button id="btn_prescribe">Prescribe</button>      
         </div>
         </form>
-        <button id="btn" class="save">Enter</button>
+        <!--Discharge Section--->
+        <div class="discharged_dropdown">
+    <span>Discharged</span>
+    <i class="fa fa-plus" id="discharged_icon_plus"></i>
+    <i class="fa fa-minus" id="discharged_icon_minus"></i>
+   </div>
+   <div class="discharged-section hidden">
+    <div class="off_on_button ">
+        <i class="fa fa-toggle-off" id="discharge_off" onClick="toogle_on_discharged()"></i>
+        <i class="fa fa-toggle-on" id="discharge_on" onClick="toogle_off_discharged()"></i>
+        </div>
+            <div class="discharge_form hidden">
+        <form action="">
+             <div class="form_control">
+                <label for="">Date of Discharge</label>
+            <input type="date">
+            </div> 
+             <div class="form_control">
+                <label for="">Time of Discharge</label>
+            <input type="time">
+            </div> 
+             <div class="form_control">
+                <label for="">Message</label><br/>
+                <textarea name="" id="" cols="20" rows="5"></textarea>
+            </div> 
+            <button type="button" id="btn_save_discharge" class="save" onClick="death_form_popup()">Comfirm Discharge</button>
+        </form>
+        </div>
+   </div>
+        <!--Discharge Section--->
+        <div class="confirmed_death_dropdown">
+    <span>Confirmed Death</span>
+    <i class="fa fa-plus" id="confirmed_death_icon_plus"></i>
+    <i class="fa fa-minus" id="confirmed_death_icon_minus"></i>
+   </div>
+   <div class="confirmed_death-section hidden">
+   <div class="off_on_button ">
+        <i class="fa fa-toggle-off" id="confirmed_death_off" onClick="toogle_on_confirmed_death()"></i>
+        <i class="fa fa-toggle-on" id="confirmed_death_on" onClick="toogle_off_confirmed_death()"></i>
+        </div>
+            <div class="confirmed_death_form hidden">
+        <form action="">
+             <div class="form_control">
+                <label for="">Date of Death</label>
+            <input type="date">
+            </div> 
+             <div class="form_control">
+                <label for="">Time of Death</label>
+            <input type="time">
+            </div> 
+             <div class="form_control">
+                <label for="">Cause of Death</label><br/>
+                <textarea name="" id="" cols="20" rows="5"></textarea>
+            </div> 
+            <button type="button" id="btn_save_confirmed_death" class="save" onClick="show_death_form()">Comfirm Dead</button>
+        </form>
+        </div>
+    </div>
+    <div class="death_form_booking hidden">
+    <i class="fa fa-times-circle" id='close-icon' onClick="close_death_form()"></i>
+        <h1 class="login-form-h1">Morgue Tranfer</h1>
+        <form>
+
+        <div class="form-control">
+        <label for=''>Date of Death</label>
+        <input type="date" name="procedures" autoComplete='off' id="death_of_death
+        _name"/> 
+        </div>
+        <div class="form-control">
+        <label for=''>Date of Birth </label>
+        <input type="date" name="phone_number" autoComplete='off'  id="date_of_birth"/> 
+        </div>
+        <div class="form-control">
+        <label for=''>Cause of Death</label>
+        <textarea name="" id="" cols="20" rows="5"></textarea>
+        </div>
+        <h1>Next of Kin</h1>
+        <div class="form-control">
+        <label for=''>Full Name</label>
+        <input type="text" name="next_of_kin" autoComplete='off'  id="next_of_kin"/> 
+        </div>
+        <div class="form-control">
+        <label for=''>Relationship to Deceassed</label>
+        <input type="text" name="next_of_kin" autoComplete='off'  id="next_of_kin"/> 
+        </div>
+        <div class="form-control">
+        <label for=''>Contact Info</label>
+        <input type="text" name="contact_info" autoComplete='off'  id="contact_info"/> 
+        </div>
+        <button type="button" class="btn" onClick="if_details_correct_login()">Transfer</button>
+</form>
+    </div>
+    <button id="btn" class="save">Enter</button>
+   </div>
    </div>
    </div>
    </div>
