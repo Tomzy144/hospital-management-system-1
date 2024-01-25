@@ -188,9 +188,9 @@ $result = $conn->query($sql);
     // Use event listeners to handle button clicks
     document.querySelectorAll('.accept-btn').forEach(function (button) {
         button.addEventListener('click', function () {
-            // var patientId = this.getAttribute('data-patient-id');
-            // accept_input(patientId);
-            display_input();
+            var patientId = this.getAttribute('data-patient-id');
+            accept_input(patientId);
+            
             const hideHeadSec = document.querySelector(".head-sec");
             hideHeadSec.style.display ="none";
             document.querySelector("#back-arrow").style.display="block";
@@ -214,9 +214,11 @@ $result = $conn->query($sql);
         </div>
 
 
-    <?php
-        $patient_id = $_POST['patient_id'];
-    ?>
+        <?php
+      
+            $patient_id = $_POST['patient_id'];
+        ?>
+
     
 
      <!----Start from here-->
@@ -224,6 +226,7 @@ $result = $conn->query($sql);
     <!--Start of the complaint section--->
    <div class="complain_dropdown">
     <span>Complaints <?php echo $patient_id ?></span>
+    
     <i class="fa fa-plus" id="complaint_icon_plus"></i>
     <i class="fa fa-minus" id="complaint_icon_minus"></i>
    </div>
@@ -258,20 +261,20 @@ $result = $conn->query($sql);
         </form>
    </div>
    <div class="surgical_booking hidden">
-    <i class="fa fa-times-circle" id='close-icon' onClick="close_procedure_form()"></i>
+        <i class="fa fa-times-circle" id='close-icon' onClick="close_procedure_form()"></i>
         <h1 class="login-form-h1">Surgical Procedure</h1>
         <form>
 
-        <div class="form-control-precedure">
-        <label for='procedure'>Procedure</label>
-        <input type="text" name="procedures" autoComplete='off' class="surgical_input" id="procedure"/> 
-        </div>
-        <div class="form-control-precedure">
-        <label for='phone_number'>Phone Number</label>
-        <input type="text" name="phone_number" autoComplete='off' class="surgical_input" id="phone_number"/> 
-        </div>
-        <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button>
-</form>
+            <div class="form-control-precedure">
+            <label for='procedure'>Procedure</label>
+            <input type="text" name="procedures" autoComplete='off' class="surgical_input" id="procedure"/> 
+            </div>
+            <div class="form-control-precedure">
+            <label for='phone_number'>Phone Number</label>
+            <input type="text" name="phone_number" autoComplete='off' class="surgical_input" id="phone_number"/> 
+            </div>
+            <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button>
+        </form>
     </div>
            <!--End of the complaint section--->
            
