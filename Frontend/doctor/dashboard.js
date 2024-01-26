@@ -531,7 +531,6 @@ if(treatment_prescribtion_section.classList.contains("hidden")){
     treatment_prescribtion_icon_minus.style.display = "none";
 }
 }) 
-<<<<<<< HEAD
 
 //SHOW LIST OF APPOITMENT 
 const show_appoitment_list_section = ()=>{
@@ -548,15 +547,13 @@ const show_appoitment_list_section = ()=>{
 
 //DISPLAY INPUT
 const display_input = ()=>{
-=======
 //DISPLAY INPUT
 const display_input = (data) => {
->>>>>>> 9cc644d0fb0e11a5cdbde7fe6e8489fe46fe24ee
     document.querySelector(".all_sections_input").classList.remove("hide");
     // document.querySelector(".all_sections_input").innerHTML = data; // Update the content
     document.querySelector(".body_sec").style.display = "none";
 }
-
+}
 //DISCHARGE INPUT
 //Complaints Section
 const discharged_dropdown = document.querySelector(".discharged_dropdown");
@@ -663,7 +660,6 @@ function accept_input(patient_id) {
 
 
 
-<<<<<<< HEAD
 
     //BEGINNING OF THE APPOITMENT 
 
@@ -844,6 +840,3 @@ const close_appoitment_form = ()=>{
 //     form.submit();
 // }
 
-
-=======
->>>>>>> 9cc644d0fb0e11a5cdbde7fe6e8489fe46fe24ee
