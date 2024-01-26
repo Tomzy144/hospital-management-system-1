@@ -531,6 +531,7 @@ if(treatment_prescribtion_section.classList.contains("hidden")){
     treatment_prescribtion_icon_minus.style.display = "none";
 }
 }) 
+<<<<<<< HEAD
 
 //SHOW LIST OF APPOITMENT 
 const show_appoitment_list_section = ()=>{
@@ -547,7 +548,12 @@ const show_appoitment_list_section = ()=>{
 
 //DISPLAY INPUT
 const display_input = ()=>{
+=======
+//DISPLAY INPUT
+const display_input = (data) => {
+>>>>>>> 9cc644d0fb0e11a5cdbde7fe6e8489fe46fe24ee
     document.querySelector(".all_sections_input").classList.remove("hide");
+    // document.querySelector(".all_sections_input").innerHTML = data; // Update the content
     document.querySelector(".body_sec").style.display = "none";
 }
 
@@ -625,9 +631,39 @@ confirmed_death_dropdown.addEventListener("click", function(){
     }
     ///END OF DEATH FORM
 
+function accept_input(patient_id) {
+    // Display an alert with the patient_id
+    alert(patient_id);
+
+    // Create a FormData object to store form data
+    var formData = new FormData();
+    formData.append('patient_id', patient_id);
+
+    // Make an asynchronous request using Fetch API
+    fetch('index.php', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        // Assuming the server sends back HTML content
+        display_input(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
 
 
 
+
+
+<<<<<<< HEAD
 
     //BEGINNING OF THE APPOITMENT 
 
@@ -809,3 +845,5 @@ const close_appoitment_form = ()=>{
 // }
 
 
+=======
+>>>>>>> 9cc644d0fb0e11a5cdbde7fe6e8489fe46fe24ee
