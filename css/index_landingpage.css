@@ -70,7 +70,7 @@ main{
   padding: 5rem;
   animation:zoomIn 1.2s ease-in-out 1.3s;
 }
-.btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab, .btn-staff_manager, .btn-martanity, .btn-radiography, .btn-surgical_suite, .btn-account_manager{
+.btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab, .btn-staff_manager, .btn-martanity, .btn-radiography, .btn-surgical_suite, .btn-account_manager, .btn-emergency_manager, .btn-pharmacist,  .btn-morgue_manager {
    background:none;
     border: 4px solid  #fff;
     color: #ffffff;
@@ -119,6 +119,18 @@ main{
   color: #000000;
 }
 .btn-account_manager:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-emergency_manager:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-pharmacist:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-morgue_manager:hover{
   background-color:rgb(255, 255, 255);
   color: #000000;
 }
@@ -310,6 +322,57 @@ h2, p{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     animation: zoomIn 1s ease-in-out;
 }
+/*Emergency Manager Login*/
+.emergency_manager-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+/*Pharmacist Login*/
+.pharmacist-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+/*Morgue Manager Login*/
+.morgue_manager-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
 
 
 
@@ -398,6 +461,33 @@ h2, p{
   top: 0;
 }
 #close-icon-surgical_suite_manager{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: rgb(42, 87, 215);
+  top: 0;
+}
+#close-icon-emergency_manager{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: rgb(42, 87, 215);
+  top: 0;
+}
+#close-icon-pharmacist{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: rgb(42, 87, 215);
+  top: 0;
+}
+#close-icon-morgue_manager{
   position: absolute;
   left: 0;
   margin-top: 1rem;

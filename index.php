@@ -53,7 +53,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                         <div class="sections-container">
                             <h2>For Emergency Manager</h2>
                             <p>Emergency Manager can login here</p>
-                            <button class="btn-nurse" onclick="open_radiologist_login_form()">Login as a Emergency Manager</button>
+                            <button class="btn-nurse" onclick="open_emergency_manager_login_form()">Login as a Emergency Manager</button>
                         </div>
                     </div>
                     <div class="flexs-container">
@@ -75,7 +75,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                         <div class="sections-container">
                             <h2>For Pharmacist</h2>
                             <p>Pharmacist can login here</p>
-                            <button class="btn-account_manager" onclick="open_account_manager_login_form()">Login as a Pharmacist</button>
+                            <button class="btn-account_manager" onclick="open_pharmacist_login_form()">Login as a Pharmacist</button>
                         </div>
                     </div>
                     <div class="flexs-container">
@@ -97,7 +97,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                         <div class="sections-container">
                             <h2>For Morgue Manager</h2>
                             <p>Morgue Manager can login here</p>
-                            <button class="btn-lab" onclick="open_lab_login_form()">Login as a Morgue Manager</button>
+                            <button class="btn-lab" onclick="open_morgue_manager_login_form()">Login as a Morgue Manager</button>
                         </div>
                     </div>
                      </div>
@@ -117,6 +117,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
            <div id="radiologist-container"></div>
            <div id="account_manager-container"></div>
            <div id="surgical_suite_manager-container"></div>
+           <div id="emergency_manager-container"></div>
+           <div id="pharmacist-container"></div>
+           <div id="morgue_manager-container"></div>
         <div class="overlay hidden"></div>
     </div>
 <!--Animation-->

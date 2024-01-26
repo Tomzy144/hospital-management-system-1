@@ -495,6 +495,155 @@ const isSurgical_suite_active = ()=>{
     let url="Frontend/surgical_suite_management/index.php"
     window.parent(location =(url))
 }
+//Emergency Manager Login
+const open_emergency_manager_login_form = function() {
+    const emergency_manager_login = document.querySelector(".emergency_manager-login");
+    const dark_background = document.querySelector(".overlay");
+    emergency_manager_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+const close_emergency_manager_login_form = function(){
+    const emergency_manager_login = document.querySelector(".emergency_manager-login");
+    const dark_background = document.querySelector(".overlay")
+    emergency_manager_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const emergency_manager_login_form = `
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
+<div class="emergency_manager-login hidden">
+<i class="fa fa-times-circle" id='close-icon-emergency_manager'></i>
+    <h1 class="login-form-h1">Login (Emergency Manager)</h1>
+    <form>
+    <div class="form-control">
+    <label for='email'>Email</label>
+    <i class="fa fa-address-book"></i>
+    <input type="email" name="email" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='number'>Your ID</label>
+    <i class="fa fa-key"></i>
+    <input type="number" name="number" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='password'>Password</label>
+    <i class="fa fa-lock"></i>
+    <input type="password" name="password" autoComplete='off'/> 
+    </div>
+    <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
+    <form>
+</div>
+`
+log_inAll('emergency_manager', emergency_manager_login_form);
+
+// const isSurgical_suite_active = ()=>{
+//     let url="Frontend/surgical_suite_management/index.php"
+//     window.parent(location =(url))
+// }
+
+//Pharmacist Login
+const open_pharmacist_login_form = function() {
+    const pharmacist_login = document.querySelector(".pharmacist-login");
+    const dark_background = document.querySelector(".overlay");
+    pharmacist_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+const close_pharmacist_login_form = function(){
+    const pharmacist_login = document.querySelector(".pharmacist-login");
+    const dark_background = document.querySelector(".overlay")
+    pharmacist_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const pharmacist_login_form = `
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
+<div class="pharmacist-login hidden">
+<i class="fa fa-times-circle" id='close-icon-pharmacist'></i>
+    <h1 class="login-form-h1">Login (Pharmacist)</h1>
+    <form>
+    <div class="form-control">
+    <label for='email'>Email</label>
+    <i class="fa fa-address-book"></i>
+    <input type="email" name="email" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='number'>Your ID</label>
+    <i class="fa fa-key"></i>
+    <input type="number" name="number" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='password'>Password</label>
+    <i class="fa fa-lock"></i>
+    <input type="password" name="password" autoComplete='off'/> 
+    </div>
+    <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
+    <form>
+</div>
+`
+log_inAll('pharmacist', pharmacist_login_form);
+
+// const isSurgical_suite_active = ()=>{
+//     let url="Frontend/surgical_suite_management/index.php"
+//     window.parent(location =(url))
+// }
+
+//Morgue Manager Login
+const open_morgue_manager_login_form = function() {
+    const morgue_manager_login = document.querySelector(".morgue_manager-login");
+    const dark_background = document.querySelector(".overlay");
+    morgue_manager_login.classList.remove("hidden");
+    dark_background.classList.remove("hidden");
+};
+const close_morgue_manager_login_form = function(){
+    const morgue_manager_login = document.querySelector(".morgue_manager-login");
+    const dark_background = document.querySelector(".overlay")
+    morgue_manager_login.classList.add("hidden");
+    dark_background.classList.add("hidden");
+}
+
+const morgue_manager_login_form = `
+<script src="../../backend/js/scripts.js"></script>
+<script src="../../backend/js/jquery-v3.6.1.min.js"></script>
+
+<div class="morgue_manager-login hidden">
+<i class="fa fa-times-circle" id='close-icon-morgue_manager'></i>
+    <h1 class="login-form-h1">Login (Morgue Manager)</h1>
+    <form>
+    <div class="form-control">
+    <label for='email'>Email</label>
+    <i class="fa fa-address-book"></i>
+    <input type="email" name="email" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='number'>Your ID</label>
+    <i class="fa fa-key"></i>
+    <input type="number" name="number" autoComplete='off'/> 
+    </div>
+
+    <div class="form-control">
+    <label for='password'>Password</label>
+    <i class="fa fa-lock"></i>
+    <input type="password" name="password" autoComplete='off'/> 
+    </div>
+    <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
+    <form>
+</div>
+`
+log_inAll('morgue_manager', morgue_manager_login_form);
+
+// const isSurgical_suite_active = ()=>{
+//     let url="Frontend/surgical_suite_management/index.php"
+//     window.parent(location =(url))
+// }
 
 //closeDarkBackground
 const dark_background = document.querySelector(".overlay")
@@ -508,6 +657,9 @@ dark_background.addEventListener("click", function(){
     close_martanity_login_form()
     close_account_manager_login_form()
     close_surgical_suite_manager_login_form()
+    close_emergency_manager_login_form()
+    close_pharmacist_login_form()
+    close_morgue_manager_login_form()
     });
 
 const closeIconDoc = document.querySelector("#close-icon-doctor");
@@ -519,6 +671,9 @@ const closeIconStaff_manager = document.querySelector("#close-icon-staff_manager
 const closeIconMartanity = document.querySelector("#close-icon-martanity");
 const closeIconAccount_manager = document.querySelector("#close-icon-account_manager");
 const closeIconSurgical_suite_manager = document.querySelector("#close-icon-surgical_suite_manager");
+const closeIconEmergency_manager = document.querySelector("#close-icon-emergency_manager");
+const closeIconPharmacist = document.querySelector("#close-icon-pharmacist");
+const closeIconMorgue_manager = document.querySelector("#close-icon-morgue_manager");
 
 closeIconDoc.addEventListener("click", function(){
         close_doctor_login_form();
@@ -547,6 +702,15 @@ closeIconAccount_manager.addEventListener("click", function(){
 })
 closeIconSurgical_suite_manager.addEventListener("click", function(){
     close_surgical_suite_manager_login_form()
+})
+closeIconEmergency_manager.addEventListener("click", function(){
+    close_emergency_manager_login_form()
+})
+closeIconPharmacist.addEventListener("click", function(){
+    close_pharmacist_login_form()
+})
+closeIconMorgue_manager.addEventListener("click", function(){
+    close_morgue_manager_login_form()
 })
 
 //superAdmin linking
