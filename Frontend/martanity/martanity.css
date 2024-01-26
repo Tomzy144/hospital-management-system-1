@@ -571,6 +571,8 @@ form span{
     color: rgb(42, 87, 215);;
     border: 1px solid rgb(42, 87, 215);
 }
+
+
 /*appoitment section*/
 .appoitment_section{
     width: 100%;
@@ -596,7 +598,6 @@ form span{
 .appoitment_container .appoitments{
     width: 100%;
     height:max-content;
-    /* background-color: rgb(255, 255, 255); */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 0 1rem;
     display: flex;
@@ -859,7 +860,6 @@ form span{
     height: 100%;
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     flex-wrap: wrap;
 }
 

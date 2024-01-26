@@ -29,7 +29,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     
         <nav class="navbar">
             <div class="logo">
-            <img width="200px" height="200px" src="Frontend/Images/Mount_Tech_Logo-removebg-preview.png" alt="">
+            <!-- <img width="200px" height="200px" src="Frontend/Images/Mount_Tech_Logo-removebg-preview.png" alt=""> -->
             </div>
                  </nav>
                 <main>
@@ -50,6 +50,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                             <p>Radiologist can login here</p>
                             <button class="btn-nurse" onclick="open_radiologist_login_form()">Login as a Radiologist</button>
                         </div>
+                        <div class="sections-container">
+                            <h2>For Emergency Manager</h2>
+                            <p>Emergency Manager can login here</p>
+                            <button class="btn-nurse" onclick="open_radiologist_login_form()">Login as a Emergency Manager</button>
+                        </div>
                     </div>
                     <div class="flexs-container">
                         <div class="sections-container">
@@ -67,6 +72,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                             <p>Account Manager can login here</p>
                             <button class="btn-account_manager" onclick="open_account_manager_login_form()">Login as a Account Manager</button>
                         </div>
+                        <div class="sections-container">
+                            <h2>For Pharmacist</h2>
+                            <p>Pharmacist can login here</p>
+                            <button class="btn-account_manager" onclick="open_account_manager_login_form()">Login as a Pharmacist</button>
+                        </div>
                     </div>
                     <div class="flexs-container">
                         <div class="sections-container">
@@ -83,6 +93,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                             <h2>For Lap Scientist</h2>
                             <p>Lab Scientist can login here</p>
                             <button class="btn-lab" onclick="open_lab_login_form()">Login as a Lab Scientist</button>
+                        </div>
+                        <div class="sections-container">
+                            <h2>For Morgue Manager</h2>
+                            <p>Morgue Manager can login here</p>
+                            <button class="btn-lab" onclick="open_lab_login_form()">Login as a Morgue Manager</button>
                         </div>
                     </div>
                      </div>

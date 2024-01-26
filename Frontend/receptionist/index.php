@@ -120,7 +120,7 @@
    <div class="contents">
     <div class="button_container">
         <button onclick="open_patient_form()">PATIENT ADMISSION FORM</button>
-        <button onclick="appoimentBooking()">BOOKING APPOINTMENT SITTER</button>
+        <button onclick="appoimentBooking()">CHECKUP</button>
         <button onclick="surgicalChemistry()">PROCEDURE LIST</button>
         </div>
     </div>

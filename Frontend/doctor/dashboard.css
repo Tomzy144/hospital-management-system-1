@@ -251,7 +251,6 @@ body{
 
 .head-sec span{
     font-size: 17px;
-    padding: 0 1rem;
 }
 .appoitment_input_control{
     position: relative;
@@ -394,49 +393,30 @@ label {
 .complaint-input:focus{
     border: 2px solid #fff;
 }
-.complaint_button_for_surgery_done{
-    padding: 1rem 1rem;
+.btn_book_appoitment{
     background-color: #fff;
-    color: #000000;
     border: none;
-    margin: 0.5rem 0;
+    padding:1rem;
+    width: fit-content;
     transition: all ease-in-out 0.5s;
     cursor: pointer;
 }
-.complaint_button_for_surgery_cancelled{
-    padding: 1rem 1rem;
-    background-color: #fff;
-    color: #000000;
-    border: none;
-    margin: 0.5rem 0;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
+.btn_book_appoitment:hover{
+    background:none;
+    border:1px solid #fff;
+    padding:1rem;
+    width: fit-content;
+    color:#ffffff;
 }
-#button_to_check_surgery{
-    padding: 1rem 1rem;
-    background-color: #fff;
-    color: #000000;
-    border: none;
-    margin: 0.5rem 0;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
-}
-#button_to_check_surgery:hover{
-    background: none;
-    color: #fff;
-    border: 1px solid #ffffff;
-}
-
-.complaint_button_for_surgery_done:hover{
-    background: none;
-    color: #fff;
-    border: 1px solid #ffffff;
-}
-.complaint_button_for_surgery_cancelled:hover{
-    background: none;
-    color: #fff;
-    border: 1px solid #ffffff;
-}
+    .complaint_form-control-appoitment{
+        width: 300px;
+        height: 150px;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+    }
 #btn{
     width: 100%;
     background-color: rgb(0, 0, 0);
@@ -468,7 +448,7 @@ label {
 
 .surgical_booking{
     position: absolute;
-    width: 500px;
+    width: 530px;
     top: 10%;
     left: 25%;
     padding: 1rem;
@@ -490,6 +470,9 @@ label {
     outline: none;
     text-indent: 25px;
     color: #fff;
+}
+.surgical_booking form{
+    margin: 2rem 0.5rem;
 }
 .surgical_input:focus{
     border: 1px solid rgba(255, 255, 255);
@@ -522,6 +505,7 @@ label {
     left: 0;
     margin-top: 1rem;
     cursor: pointer;
+    font-size: 20px;
     margin-left: 30rem;
     color: rgba(255, 255, 255, 0.9);
     top: 0;
@@ -1119,6 +1103,345 @@ color: #000000;
     color: #000000;
 }
 
+/*appoitment section*/
+.appoitment_section{
+    width: 100%;
+    height: 100%;
+}
+
+/*VITALS*/;
+.dashboard_contents .nurse_vital_section_vital{
+    width: 100%;
+    background-color: #fff;
+    height: 100%;
+}
+
+.appoitment_container{
+    margin: 2rem auto 0 auto;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 6rem auto;
+    justify-content: start;
+}
+.appoitment_container .appoitments{
+    width: 100%;
+    height:max-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+}
+.appoitments h1{
+    padding: 1rem;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+}
+
+.cards_container{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items:  center;
+}
+.cards{
+    width: 350px;
+    height: max-content;
+    background-color: #fff;
+    animation: zoomIn 01s ease-in-out;
+    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
+    margin: 1rem 1rem;
+}
+.cards  .profile{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 100px;
+}
+.cards .profile img{
+    width: 90px;
+    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
+    height: 90px;
+
+}
+#btn_declined{
+    width: 100%;
+}
+#btn_accepted{
+    width: 100%;
+}
+#btn_pending{
+    width: 100%;
+}
+.profile .name_role{
+    display: flex;
+    color: rgb(158, 160, 166);;
+    flex-direction: column;
+}
+.profile h3{
+    color: black;
+}
+.date_time{
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    display: flex;
+    background-color:rgb(42, 87, 215) ;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    margin: 1rem 0;
+    justify-content: center;
+}
+.buttons .btn{
+    padding: 0.5em 1em;
+    background-color:rgb(42, 87, 215) ;
+    border: none;
+    cursor: pointer;
+    margin: 0 1rem;
+    color: #fff;
+}
+.doctor_roles_name{
+    width: 100%;
+    height:max-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    align-items: center;
+}
+#close_appoitment_form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    font-size: 30px;
+    box-shadow: rgba(159, 158, 158, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
+.doc_roles{
+    width: 45rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #fff;
+    animation: fadeIn 01s ease-in-out;
+}
+.doc_roles label{
+    color: rgb(42, 87, 215); 
+    animation: zoomIn 01s ease-in-out;
+}
+.doc_roles select{
+    padding: 1rem;
+    border: none;
+    border: 2px solid #fff;; 
+    background-color:rgb(42, 87, 215); 
+    animation: zoomIn 01s ease-in-out;
+    margin: 1rem 0;
+    color: rgb(255, 255, 255);;
+}
+#continue{
+    background-color: rgb(42, 87, 215);
+    padding: 1rem 1rem;
+    border: none;
+    animation: zoomIn 01s ease-in-out;
+    color:  rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+#continue:hover{
+    border: 1px solid rgb(42, 87, 215);
+    padding: 1rem 1rem;
+}
+
+.calendar{
+    width: 45rem;
+    height: 46rem;
+    background-color: rgb(42, 87, 215);
+    margin: 1rem 0;
+    box-shadow: 0,0.5rem 3rem rgba(0,0,0,0.4);
+    color: #fff;
+}
+.month{
+    width: 100%;
+    height: 6rem;
+    background-color :rgb(255, 255, 255) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+   text-align: center;
+   color: rgb(42, 87, 215);
+}
+
+.month i{
+    font: 2rem;
+    cursor: pointer;
+    animation: zoomIn 01s ease-in-out;
+}
+.month h1{
+    font-size: 1.5rem;
+    font-weight: 400;
+    animation: zoomIn 01s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.month p{
+    font-size: 1rem;
+    animation: zoomIn 01s ease-in-out;
+}
+
+
+.weekdays{
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    animation: zoomIn 01s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+.weekdays div{
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem/7  );
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.days{
+    width: 100%;
+    display: flex;
+    animation: zoomIn 01s ease-in-out;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+}
+.days div{
+    font-size: 1rem;
+    margin: 0.3rem;
+    width: calc(40.2rem/7 );
+    height: 5rem;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today){
+    background-color: rgb(0, 68, 255);
+    border:0.2rem solid #d1cece;
+    cursor: pointer;
+}
+
+.prev-date{
+    opacity: 0.5;
+}
+
+.next-date{
+    opacity: 0.5;
+}
+.content{
+    color: #db0000;
+    font-size: 2rem;
+}
+.clicked {
+    background-color: #aaffaa; /* Light green color for clicked date */
+  }
+
+.today{
+    background-color: #0044ff;
+}
+.hidden{
+
+    display: none;
+}
+
+.form_appoitment{
+    width:45rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: fit-content;
+    background: rgb(255, 255, 255);
+    color: #0044ff;
+    padding: 1rem 1rem;
+}
+
+.form_appoitment .form{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form_appoitment .form_control{
+    width: 40%;
+    animation: none;
+    height: auto;
+    margin: 1em 1em;
+}
+.form_appoitment label{
+    color: rgb(42, 87, 215);
+}
+.form_appoitment input{
+    width: 100%;
+    background-color: none;
+    padding: 1rem 1rem;
+    border: 2px solid rgb(42, 87, 215);;
+    
+}
+.form_appoitment .form_control_text_area{
+    width: 100%;
+    animation: none;
+    height: auto;
+    margin: 1em 1em;
+}
+.selected_date{
+    padding: 1rem 1rem;
+    background-color: rgb(42, 87, 215);
+    border: 2px solid rgb(42, 87, 215);;
+    color: rgb(255, 255, 255);
+}
+.form_appoitment textarea{
+    border: none;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+    width: 100%;
+}
+.btn_submit_appoitment{
+    width: 100%;
+    background-color:rgb(42, 87, 215);
+    color: #fff;
+    border: none;
+    margin: 1rem auto;
+    padding: 0.9rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+.btn_submit_appoitment:hover{
+    background-color: #fff;
+    color: black;
+    border: 1px solid rgb(42, 87, 215);;
+}
 .hidden{
     display: none;
 }

@@ -617,10 +617,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        </form>
        <button id="btn" class="save" onClick="show_test_booking()">Enter</button>
        <button id="btn" class="save">Edit</button>
-       <div class="upload_container">
-       <label for="" class="upload">Upload Test Result</label>
-       <input type="file" id="file_upload">
-       </div>
        </div>
        <div class="test_booking hide">
         <i class="fa fa-times" id="close" onClick="hide_test_booking()"></i>

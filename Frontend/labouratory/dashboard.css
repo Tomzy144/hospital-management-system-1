@@ -282,11 +282,9 @@ body{
 }
 
 /*APPOITMENT */
-
 .appiontment_booking_container{
     width: 60%;
     height: fit-content;
-    margin: 0 auto;
 }
 .head_sec{
     width: 100%;
@@ -379,10 +377,10 @@ body{
 /*LAB INPUT*/
 .lab_input{
     width: 1000px;
-    margin: 3rem auto;
+    margin: 5rem auto;
 }
 .lab_container{
-    width: fit-content;
+    width: 100%;
     height: auto;
     padding: 2rem;
     margin: 0 auto;
@@ -396,8 +394,7 @@ span{
     width: 100%;
     color: #fff;
     background-color: rgb(42, 87, 215);
-    padding: 1rem 1rem;
-    border-bottom: 1px solid #fff;
+    padding: 0.5rem 0.5rem;
     display: flex;
     cursor: pointer;
     justify-content: space-between;

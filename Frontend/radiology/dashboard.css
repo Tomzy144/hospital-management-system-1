@@ -14,6 +14,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .navbar{
     width: 100%;
@@ -235,7 +236,7 @@ body{
 .appiontment_booking_container{
     width: 60%;
     height: fit-content;
-    margin: 0 auto;
+    margin: 6rem auto;
 }
 .head_sec{
     width: 100%;
@@ -302,4 +303,456 @@ body{
 .table_container button:hover{
     color: #fff;
     background: none;
+}
+
+/*RADIOLOGY SECTION*/
+
+.radiology_input{
+    width: 1000px;
+   margin: 5rem auto;
+   background-color: red;
+}
+.radiology_container {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    margin: 0 auto;
+    box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
+    background-color: rgb(42, 87, 215);
+}
+/*RADIOGRAPHY*/
+.radiography{
+  width: 100%;
+  color: #fff;
+  background-color: rgb(42, 87, 215);
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+}
+span{
+    font-size: 20px;
+}
+.radiography #radiography_minus_icon{
+display: none;
+}
+.radiography_form{
+    width: 100%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+/*TOMOGRAPHY*/
+.tomography_scan{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tomography_scan_minus_icon{
+display: none;
+}
+.tomography_scan_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+/*Magnetic*/
+.magnetic{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#magnetic_minus_icon{
+display: none;
+}
+.magnetic_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+/*Ultrasound_*/
+.ultrasound{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ultrasound_minus_icon{
+display: none;
+}
+.ultrasound_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+/*Nuclear*/
+.nuclear{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nuclear_minus_icon{
+display: none;
+}
+.nuclear_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+/*Fluoroscopy*/
+.fluoroscopy{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#fluoroscopy_minus_icon{
+display: none;
+}
+.fluoroscopy_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+/*Mammography*/
+.mammography{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mammography_minus_icon{
+display: none;
+}
+.mammography_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*interventional_radiology*/
+.interventional_radiology{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#interventional_radiology_minus_icon{
+display: none;
+}
+.interventional_radiology_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*Magnetic Resonance*/
+.magnetic_resonance{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#magnetic_resonance_minus_icon{
+display: none;
+}
+.magnetic_resonance_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*Dual Energy */
+.dual_energy{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dual_energy_minus_icon{
+display: none;
+}
+.dual_energy_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*Chest X-ray */
+.chest_x_ray{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chest_x_ray_minus_icon{
+display: none;
+}
+.chest_x_ray_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*Myelography */
+.myelography{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#myelography_minus_icon{
+display: none;
+}
+.myelography_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*Arthrography */
+.arthrography{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#arthrography_minus_icon{
+display: none;
+}
+.arthrography_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*Hysterosalpingography */
+.hysterosalpingography{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hysterosalpingography_minus_icon{
+display: none;
+}
+.hysterosalpingography_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*Cholangiography */
+.cholangiography{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cholangiography_minus_icon{
+display: none;
+}
+.cholangiography_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*Angiography */
+.angiography{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#angiography_minus_icon{
+display: none;
+}
+.angiography_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*Functional MRI */
+.functional_mri{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#functional_mri_minus_icon{
+display: none;
+}
+.functional_mri_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+/*Cardiac Imaging */
+.cardiac_imaging{
+    width: 100%;
+    color: #fff;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cardiac_imaging_minus_icon{
+display: none;
+}
+.cardiac_imaging_form{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.form_control {
+    width: 300px;
+    color: #fff;
+    font-size: 18px;
+    padding: 0.4rem 1rem;
+    margin: 0.5rem 0;
+  }
+label{
+    color: #fff;
+    font-size: 18px;
+}
+.hide{
+    display: none;
 }
