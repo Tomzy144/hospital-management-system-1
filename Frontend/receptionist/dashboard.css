@@ -937,6 +937,11 @@ body{
     border-radius: 100%;
     background-color: rgb(255, 166, 0);
 }
+/* .walk_in_patient_page{
+    width: 100%;
+    height:100%;
+    background-color: red;
+} */
 .hide{
     display: none;
 }

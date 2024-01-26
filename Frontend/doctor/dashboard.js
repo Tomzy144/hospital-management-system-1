@@ -13,8 +13,6 @@ document.querySelector(".all_sections_input").classList.toggle("hide");
 document.querySelector("#back-arrow").style.display="none";
 }
 
-// backWardArrow()
-
 
 //hide backarrow
 document.querySelector("#back-arrow").style.display="none";
@@ -537,7 +535,6 @@ const show_appoitment_list_section = ()=>{
     document.querySelector(".container").style.display="block";
     document.querySelector(".appoitment_section").classList.add("hidden");
     document.querySelector("#btn_appoitment").style.display = "none";
-    document.querySelector("#back-arrow").style.display="none";
     document.querySelector(".head-sec").style.display="flex";
     document.querySelector(".body_sec").style.display="block";
     document.querySelector(".all_sections_input").classList.add("hide");

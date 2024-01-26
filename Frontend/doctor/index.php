@@ -127,6 +127,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <i class="fa fa-envelope" id="icon"></i>
                 <!-- <i class="fa fa-hospital-o" id="icon"onClick="show_appoitment_section()"></i> -->
                 <i class="fa fa-users" id="icon"onClick="show_appoitment_list_section()"></i>
+                <i class="fa fa-user" id="icon"></i>
                 <i class="fa fa-sign-out"  id="icon" onclick="document.getElementById('logoutform').submit();"></i>
                 <form method="post" action="../../config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
@@ -256,7 +257,7 @@ $result = $conn->query($sql);
             <input type="text"  class="complaint-input" id="past_sugical_medical_history">
             </div>
             <div class="complaint_form-control">
-            <label for="major_complaints">Surgical Procedure</label>
+            <label for="major_complaints">Recommend patient for Surgery</label>
             <div class="checkbox">
             <input type="checkbox" name="surgery" id="check1">
             <label for="surgery">Yes</label>
@@ -297,16 +298,7 @@ $result = $conn->query($sql);
             <textarea name="message" id="message" cols="30" rows="10"></textarea>
             </div>
             <button type="button" class="btn" onClick="if_details_correct_login()">Transfer</button>
-        </form>
-            <div class="form-control-precedure">
-            <label for='procedure'>Procedure</label>
-            <input type="text" name="procedures"  class="surgical_input" id="procedure"> 
-            </div>
-            <div class="form-control-precedure">
-            <label for='phone_number'>Phone Number</label>
-            <input type="text" name="phone_number" autoComplete='off' class="surgical_input" id="phone_number"/> 
-            </div>
-            <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button>
+            <!-- <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button> -->
         </form>
 
         
@@ -314,7 +306,6 @@ $result = $conn->query($sql);
     new Def.Autocompleter.Search('procedure', 'https://clinicaltables.nlm.nih.gov/api/procedures/v3/search');
               
 </script>
-
     </div>
            <!--End of the complaint section--->
            
@@ -2072,9 +2063,9 @@ $result = $conn->query($sql);
                     <input type="time">
                 </div>
                 <div class="form_control_text_area">
-                    <label for="">Request Type</label>
+                    <label for="">Doctor Comment</label>
                     <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <button class="btn_submit_appoitment">Submit</button>
+                    <button class="btn_submit_appoitment">Transfer</button>
                 </div>
             </form>
         </div>

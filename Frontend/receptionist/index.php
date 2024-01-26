@@ -121,10 +121,11 @@
     <div class="button_container">
         <button onclick="open_patient_form()">PATIENT ADMISSION FORM</button>
         <button onclick="appoimentBooking()">CHECKUP</button>
-        <button onclick="surgicalChemistry()">PROCEDURE LIST</button>
+        <!-- <button onclick="surgicalChemistry()">PROCEDURE LIST</button> -->
+        <button onclick="surgicalChemistry()">WALK-IN PATIENT FORM</button>
         </div>
     </div>
-
+            
     <!----SURGICAL BOOKING BASE ON THE DOCTOR INPUT--->
   <div class="surgical_booking hide">
     <div class="table_container">
@@ -404,6 +405,7 @@
             </section>
             </div>
         </div>
+      >
 <!----PATIENT FORM -->
     <div class="patients_form_container hide">
     <div class="form-container">

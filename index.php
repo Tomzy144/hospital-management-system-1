@@ -48,12 +48,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                         <div class="sections-container">
                             <h2>For Radiography</h2>
                             <p>Radiologist can login here</p>
-                            <button class="btn-nurse" onclick="open_radiologist_login_form()">Login as a Radiologist</button>
+                            <button class="btn-radiography" onclick="open_radiologist_login_form()">Login as a Radiologist</button>
                         </div>
                         <div class="sections-container">
                             <h2>For Emergency Manager</h2>
                             <p>Emergency Manager can login here</p>
-                            <button class="btn-nurse" onclick="open_emergency_manager_login_form()">Login as a Emergency Manager</button>
+                            <button class="btn-emergency_manager" onclick="open_emergency_manager_login_form()">Login as a Emergency Manager</button>
+                        </div>
+                        <div class="sections-container">
+                            <h2>For Intensive Care Unit </h2>
+                            <p> Intensive Care Unit Manager can login here</p>
+                            <button class="btn-nurse" onclick="open_emergency_manager_login_form()">Login as a  Intensive Care Unit Manager</button>
                         </div>
                     </div>
                     <div class="flexs-container">
@@ -75,7 +80,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                         <div class="sections-container">
                             <h2>For Pharmacist</h2>
                             <p>Pharmacist can login here</p>
-                            <button class="btn-account_manager" onclick="open_pharmacist_login_form()">Login as a Pharmacist</button>
+                            <button class="btn-pharmacist" onclick="open_pharmacist_login_form()">Login as a Pharmacist</button>
+                        </div>
+                        <div class="sections-container">
+                            <h2>For Post Anesthesia Unit</h2>
+                            <p>Post Anesthesia Unit Manager can login here</p>
+                            <button class="btn-pharmacist" onclick="open_pharmacist_login_form()">Login as a Post Anesthesia Unit Manager</button>
                         </div>
                     </div>
                     <div class="flexs-container">
