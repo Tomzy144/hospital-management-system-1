@@ -280,27 +280,24 @@ $result = $conn->query($sql);
         <i class="fa fa-times-circle" id='close-icon' onClick="close_procedure_form()"></i>
         <h1 class="login-form-h1">Surgical Procedure</h1>
         <form>
-
-<<<<<<< HEAD
-        <div class="form-control-precedure">
-        <label for='procedure'>Procedure</label>
-        <input type="text" name="procedures" autoComplete='off' class="surgical_input" id="procedure"/> 
-        </div>
-        <div class="form-control-precedure">
-        <label for='phone_number'>Phone Number</label>
-        <input type="text" name="phone_number" autoComplete='off' class="surgical_input" id="phone_number"/> 
-        </div>
-        <div class="form-control-precedure">
-        <label for='pass_surgery'>Past Surgery</label>
-        <input type="text" name="pass_surgery" autoComplete='off' class="surgical_input" id="pass_surgery"/> 
-        </div>
-        <div class="form-control-precedure">
-        <label for='message'>Message</label>
-        <textarea name="message" id="message" cols="30" rows="10"></textarea>
-        </div>
-        <button type="button" class="btn" onClick="if_details_correct_login()">Transfer</button>
-</form>
-=======
+            <div class="form-control-precedure">
+            <label for='procedure'>Procedure</label>
+            <input type="text" name="procedures" autoComplete='off' class="surgical_input" id="procedure"/> 
+            </div>
+            <div class="form-control-precedure">
+            <label for='phone_number'>Phone Number</label>
+            <input type="text" name="phone_number" autoComplete='off' class="surgical_input" id="phone_number"/> 
+            </div>
+            <div class="form-control-precedure">
+            <label for='pass_surgery'>Past Surgery</label>
+            <input type="text" name="pass_surgery" autoComplete='off' class="surgical_input" id="pass_surgery"/> 
+            </div>
+            <div class="form-control-precedure">
+            <label for='message'>Message</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+            <button type="button" class="btn" onClick="if_details_correct_login()">Transfer</button>
+        </form>
             <div class="form-control-precedure">
             <label for='procedure'>Procedure</label>
             <input type="text" name="procedures"  class="surgical_input" id="procedure"> 
@@ -318,8 +315,6 @@ $result = $conn->query($sql);
               
 </script>
 
-
->>>>>>> 9cc644d0fb0e11a5cdbde7fe6e8489fe46fe24ee
     </div>
            <!--End of the complaint section--->
            

@@ -545,15 +545,13 @@ const show_appoitment_list_section = ()=>{
 
 
 
-//DISPLAY INPUT
-const display_input = ()=>{
+
 //DISPLAY INPUT
 const display_input = (data) => {
     document.querySelector(".all_sections_input").classList.remove("hide");
-    // document.querySelector(".all_sections_input").innerHTML = data; // Update the content
     document.querySelector(".body_sec").style.display = "none";
 }
-}
+
 //DISCHARGE INPUT
 //Complaints Section
 const discharged_dropdown = document.querySelector(".discharged_dropdown");
@@ -628,6 +626,9 @@ confirmed_death_dropdown.addEventListener("click", function(){
     }
     ///END OF DEATH FORM
 
+
+
+////tomzy's script 
 function accept_input(patient_id) {
     // Display an alert with the patient_id
     alert(patient_id);
@@ -817,26 +818,39 @@ const close_appoitment_form = ()=>{
 
 
 
-//////////tomzy's script
+// ////////tomzy's script
+// //DISPLAY INPUT
+// const display_input = (data) => {
+//     document.getElementById('resultContainer').innerHTML = data;
+//     document.querySelector(".all_sections_input").classList.remove("hide");
+//     document.querySelector(".body_sec").style.display = "none";
+// }
+
 // function accept_input(patient_id) {
+//     // Display an alert with the patient_id
 //     alert(patient_id);
 
-//     // Create a form dynamically
-//     var form = document.createElement('form');
-//     form.method = 'post';
-//     form.action = 'index.php';
+//     // Create a FormData object to store form data
+//     var formData = new FormData();
+//     formData.append('patient_id', patient_id);
 
-//     // Creates a hidden input field for patient_id
-//     var input = document.createElement('input');
-//     input.type = 'hidden';
-//     input.name = 'patient_id';
-//     input.value = patient_id; // Use the actual patient_id, not the button element
-
-//     // Append the input to the form
-//     form.appendChild(input);
-
-//     // Append the form to the body and submit it
-//     document.body.appendChild(form);
-//     form.submit();
+//     // Make an asynchronous request using Fetch API
+//     fetch('index.php', {
+//         method: 'POST',
+//         body: formData,
+//     })
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         return response.text();
+//     })
+//     .then(data => {
+//         // Assuming the server sends back HTML content
+//         display_input(data);
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
 // }
 
