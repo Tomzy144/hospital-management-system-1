@@ -24,6 +24,7 @@ body{
     align-items: center;;
     top: 0;
     z-index: 999;
+    background-color: #0057c2;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -48,6 +49,7 @@ body{
 #back-arrow{
     color: #fff;
     font-size: 30px;
+    display: none;
     cursor: pointer;
 }
 .section2{
@@ -292,39 +294,212 @@ input:focus{
 }
 table{
     width: 100%;
+    height: 200px;
     border-collapse: collapse;
+    overflow-y: hidden;
 }
  table thead td{
     background-color: rgb(42, 87, 215);;
     padding: 1rem;
     color: #fff;
+    font-size: 21px;
 }
  table tbody{
     margin: 1rem 0;
 }
  table tbody td{
-    background-color: rgb(0, 0, 0);;
+    background-color: rgb(255, 255, 255);;
     padding: 1rem;
+    font-size: 20px;
     margin: 1rem 0;
-    color: #fff;
+    color: #000000;
 }
 .body_sec button{
-    padding: 0.5rem 0.5rem;
-    background-color: #fff;
+    padding: 0.5rem 1rem;
+    background-color: rgb(42, 87, 215);
     border: none;
     cursor: pointer;
+    border-radius: 20px;
+    color: #fff;
     transition: all ease-in-out 0.5s;
-
+}
+.body_sec button:nth-child(2){
+    padding: 0.5rem 1rem;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
 }
 .body_sec button:hover{
-    color: #fff;
+    color: #000000;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(42, 87, 215);
+    background: none
+}
+.body_sec button:hover:nth-child(2){
+    color: #000000;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(255, 0, 0);
     background: none
 }
 .hide{
     display: none;;
 }
+/*PATIENT PERSONAL INFORMATION*/
+.info_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 14px;
+    cursor: pointer;
+}
+.info_dropdown span{
+    font-size: 22px;
+}
 
+#info_icon_minus{
+    display: none;
+}
+.info_section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+}
+.info_title{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;;
+    padding: 1rem;
+}
+.info_section .circle{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.personal_info_section{
+    height: fit-content;
+    width: auto;
+    margin: 1rem 1rem;
+}
+.personal_info_section .details_flexs{
+    display: flex;
+}
+.personal_info_section .details_flexs h3{
+  margin: 0.5em 0.5em;
+}
+/*LAB INFORMATION*/
+.lab_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 14px;
+    cursor: pointer;
+}
+.lab_dropdown span{
+    font-size: 22px;
+}
 
+#lab_icon_minus{
+    display: none;
+}
+.lab_section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+}
+.lab_section button{
+    padding: 1rem;
+    background-color: #000000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.lab_section button:hover{
+    padding: 1rem;
+    background:none;
+    border:1px solid #000000;
+    color: #000000;
+}
+
+/*RADIOLOGY INFORMATION*/
+.radiology_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 14px;
+    cursor: pointer;
+}
+.radiology_dropdown span{
+    font-size: 22px;
+}
+
+#radiology_icon_minus{
+    display: none;
+}
+.radiology_section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+}
+.radiology_section button{
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: #000000;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+.radiology_section button:hover{
+    padding: 1rem;
+    background:none;
+    border:1px solid #000000;
+    color: #000000;
+}
+/*VITALS  INFORMATION*/
+.vitals_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 14px;
+    cursor: pointer;
+}
+.vitals_dropdown span{
+    font-size: 22px;
+}
+
+#vitals_icon_minus{
+    display: none;
+}
+.vitals_section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+}
 
 
 /*Doctor Inputs */
@@ -354,7 +529,7 @@ table{
     cursor: pointer;
 }
 .complain_dropdown span{
-    font-size: 15px;
+    font-size: 22px;
 }
 
 #complaint_icon_minus{
@@ -479,6 +654,11 @@ label {
     outline: none;
     color: #fff;
 }
+.surgical_booking .surgical_input:focus{
+    background:none;
+    color: #fff;
+    outline: none;
+}
 .surgical_booking form{
     margin: 2rem 0.5rem;
 }
@@ -546,7 +726,7 @@ label {
     flex-direction: row;
     justify-content: space-between;
     background-color: rgb(0, 0, 0);;
-    font-size: 15px;
+    font-size: 22px;
     cursor: pointer;
 }
  #system_icon_minus{
@@ -615,7 +795,7 @@ label{
     flex-direction: row;
     justify-content: space-between;
     background-color: rgb(0, 0, 0);;
-    font-size: 15px;
+    font-size: 22px;
     cursor: pointer;
 }
 .physical_examination-section{
@@ -749,7 +929,7 @@ label {
     flex-direction: row;
     justify-content: space-between;
     background-color: rgb(0, 0, 0);;
-    font-size: 15px;
+    font-size: 22px;
     cursor: pointer;
 }
 .treatment_prescribtion_form1{
@@ -835,7 +1015,7 @@ label {
     flex-direction: row;
     justify-content: space-between;
     background-color: rgb(0, 0, 0);;
-    font-size: 15px;
+    font-size: 22px;
     cursor: pointer;
 }
 
@@ -923,7 +1103,7 @@ color: #000000;
     flex-direction: row;
     justify-content: space-between;
     background-color: rgb(0, 0, 0);;
-    font-size: 15px;
+    font-size: 22px;
     cursor: pointer;
 }
 

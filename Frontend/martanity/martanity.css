@@ -23,6 +23,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;;
+    background-color: #0057c2;
     top: 0;
     z-index: 999;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

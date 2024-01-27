@@ -90,8 +90,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <!---SIDEBAR AND NAVBAR-->
     <div class="navbar">
         <div class="section1">
-        <i class="fa fa-long-arrow-left " id="back-arrow" onclick="backWardArrow()"></i>
-        <button id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
+        <i class="fa fa-long-arrow-left hide " id="back-arrow" onclick="backWardArrow()"></i>
+        <button class="hide" id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
         </div>
         <div class="section2">
             <div class="icons">
@@ -155,6 +155,8 @@ $result = $conn->query($sql);
 
     <thead>
         <tr>
+            <td>#</td>
+            <td>PASSPORT IMAGE</td>
             <td>Patient Name</td>
             <td>Patient ID</td>
             <td>Date</td>
@@ -169,6 +171,8 @@ $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
+            echo "<td>" . $row["number"] . "</td>";
+            echo "<td>" . $row["number"] . "</td>";
             echo "<td>" . $row["patient_name"] . "</td>";
             echo "<td>" . $row["patient_id"] . "</td>";
             echo "<td>" . $row["appointment_date"] . "</td>";
@@ -230,11 +234,284 @@ $result = $conn->query($sql);
 
      <!----Start from here-->
    <div class="all_sections_input hide">
+    <!---PATIENT PERSONAL INFO-->
+   <div class="info_dropdown" onClick="personal_info_section()">
+    <span>Personal Information</span>
+    <i class="fa fa-plus" id="info_icon_plus"></i>
+    <i class="fa fa-minus" id="info_icon_minus"></i>
+   </div>
+   <div class="info_section hide">
+   <div class="info_title">
+             <i class="fa fa-user-circle-o"></i>
+            <h2>PATIENT PASSPORT</h2>
+    </div>
+    <div class="circle">
+        <img src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+    </div>
+   <div class="info_title">
+             <i class="fa fa-user-circle-o"></i>
+            <h2>BIO DATA</h2>
+    </div>
+    <div class="personal_info_section">
+        <div class="details_flexs">
+        <h3>Name:</h3>
+        <h3>Princess Happiness</h3>
+        </div>
+        <div class="details_flexs">
+        <h3>Gender:</h3>
+        <h3>Female</h3>
+        </div>
+        <div class="details_flexs">
+        <h3>Date of Birth:</h3>
+        <h3>2005-04-04</h3>
+        </div>
+        <div class="details_flexs">
+        <h3>Home Address:</h3>
+        <h3>23 Enebong Street Calabar</h3>
+        </div>
+        <div class="details_flexs">
+        <h3>Phone Number:</h3>
+        <h3>09078932923</h3>
+        </div>
+    </div>
+    <div class="info_title">
+             <i class="fa fa-user-circle-o"></i>
+            <h2>NEXT OF KIN BIO DATA</h2>
+    </div>
+    <div class="personal_info_section">
+        <div class="details_flexs">
+        <h3>Name:</h3>
+        <h3>Princess Happiness</h3>
+        </div>
+        <div class="details_flexs">
+        <h3>Gender:</h3>
+        <h3>Female</h3>
+        </div>
+        <div class="details_flexs">
+        <h3>Home Address:</h3>
+        <h3>23 Enebong Street Calabar</h3>
+        </div>
+        <div class="details_flexs">
+        <h3>Phone Number:</h3>
+        <h3>09078932923</h3>
+        </div>
+        <div class="details_flexs">
+        <h3>Relationship:</h3>
+        <h3>Brother</h3>
+        </div>
+    </div>
+    <div class="info_title">
+             <i class="fa fa-history"></i>
+            <h2>SOCIAL HISTORY</h2>
+    </div>
+    <div class="personal_info_section">
+        <div class="details_flexs">
+        <h3>Occupation:</h3>
+        <h3>Developer</h3>
+        </div>
+        </div>
+        <div class="info_title">
+             <i class="fa fa-hdd-o "></i>
+            <h2>PAST OBSTERICS</h2>
+    </div>
+    <div class="personal_info_section">
+        <div class="details_flexs">
+        <h3>None</h3>
+        </div>
+        </div>
+        <div class="info_title">
+             <i class="fa fa-hospital-o"></i>
+            <h2>MEDICAL HISTORY</h2>
+    </div>
+    <div class="personal_info_section">
+        <div class="details_flexs">
+        <h3>None</h3>
+        </div>
+        </div>
+        <div class="info_title">
+             <i class="fa fa-user-circle"></i>
+            <h2>SEXUAL HISTORY</h2>
+    </div>
+    <div class="personal_info_section">
+        <div class="details_flexs">
+        <h3>None</h3>
+        </div>
+        </div>
+        <div class="info_title">
+             <i class="fa fa-tachometer"></i>
+            <h2>PAST DISEASES</h2>
+    </div>
+    <div class="personal_info_section">
+        <div class="details_flexs">
+        <h3>None</h3>
+        </div>
+        </div>
+        <div class="info_title">
+             <i class="fa fa-tachometer"></i>
+            <h2>FAMILY DISEASE</h2>
+    </div>
+    <div class="personal_info_section">
+        <div class="details_flexs">
+        <h3>None</h3>
+        </div>
+        </div>
+        <div class="info_title">
+             <i class="ffa fa-thermometer-0 (alias)"></i>
+            <h2>PAST SURGERY</h2>
+    </div>
+    <div class="personal_info_section">
+        <div class="details_flexs">
+        <h3>None</h3>
+        </div>
+        </div>
+   </div>
+   <!---LABOURATORY INFORMATIONS--->
+   <div class="lab_dropdown" onClick="lab_section()">
+    <span>Labouratory Information</span>
+    <i class="fa fa-plus" id="lab_icon_plus"></i>
+    <i class="fa fa-minus" id="lab_icon_minus"></i>
+    </div>
+    <div class="lab_section hide">
+            <table>
+                <thead>
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>Kind of Test</td>
+                    <td>Test Specific</td>
+                    <td>Test Result</td>
+                </thead>
+                <tbody>
+                    <td>22-09-2024</td>
+                    <td>3:30PM</td>
+                    <td>Immunoassay Single Tests</td>
+                    <td>
+                        <p> Drug Screening Test</p>
+                        <p> Digoxin Test</p>
+                        <p> Cortisol Test</p>
+                        <p> Rheumatoid Factor (RF) Test</p>
+                    </td>
+                    <td>
+                        <button>Click Here to Download Test Result</button>
+                    </td>
+                </tbody>
+                <tbody>
+                    <td>22-09-2024</td>
+                    <td>3:30PM</td>
+                    <td>Immunoassay Single Tests</td>
+                    <td>
+                        <p> Drug Screening Test</p>
+                        <p> Digoxin Test</p>
+                        <p> Cortisol Test</p>
+                        <p> Rheumatoid Factor (RF) Test</p>
+                    </td>
+                    <td>
+                        <button>Click Here to Download Test Result</button>
+                    </td>
+                </tbody>
+            </table>
+    </div>
+   <!---RADIOLOGY INFORMATIONS--->
+   <div class="radiology_dropdown" onClick="radiology_section()">
+    <span>Radiology Information</span>
+    <i class="fa fa-plus" id="radiology_icon_plus"></i>
+    <i class="fa fa-minus" id="radiology_icon_minus"></i>
+    </div>
+    <div class="radiology_section hide">
+    <table>
+                <thead>
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>Kind of Scan</td>
+                    <td>Test Specific</td>
+                    <td>Scan Result</td>
+                </thead>
+                <tbody>
+                    <td>22-09-2024</td>
+                    <td>3:30PM</td>
+                    <td>X-ray (Radiography)</td>
+                    <td>
+                        <p> Chest X-ray (CXR)</p>
+                        <p> Bone X-ray (Bone Radiography)</p>
+                        <p>  X-ray for Foreign Body Detection</p>
+                        <p> Cervical Spine X-ray</p>
+                    </td>
+                    <td>
+                        <button>Click Here to Download Scan Result</button>
+                    </td>
+                </tbody>
+            </table>
+    </div>
+   <!---NURSES VITAL INFORMATIONS--->
+   <div class="vitals_dropdown" onClick="vitals_section()">
+    <span>Vitals Information</span>
+    <i class="fa fa-plus" id="vitals_icon_plus"></i>
+    <i class="fa fa-minus" id="vitals_icon_minus"></i>
+    </div>
+    <div class="vitals_section hide">
+                <table>
+                        <thead>
+                        <td>24/7</td>
+                        <td>Temp(C)</td>
+                        <td>BP(mmdg)</td>
+                        <td>Pulse(bp/m)</td>
+                        <td>Resp.(cm)</td>
+                        <td>Spo2(%)</td>
+                        <td>Weigdt(kg)</td>
+                        <td>Intake(m/s)</td>
+                        <td>Output</td>
+                        <td>BMI</td>
+                        </thead>
+                        <tbody>
+                                <td>
+                                        <p>1st Jan. 2024</p>
+                                        <p>2:30pm</p>
+                                </td>
+                                <td>36</td>
+                                <td>120/60</td>
+                                <td>60</td>
+                                <td>16</td>
+                                <td>97</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                        </tbody>
+                        <tbody>
+                                <td>
+                                        <p>2nd Jan. 2024</p>
+                                        <p>4.10pm</p>
+                                </td>
+                                <td>36</td>
+                                <td>120/60</td>
+                                <td>60</td>
+                                <td>16</td>
+                                <td>97</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                        </tbody>
+                        <tbody>
+                                <td>
+                                        <p>18th Feb. 2024</p>
+                                        <p >11.00am</p>
+                                </td>
+                                <td>36</td>
+                                <td>120/60</td>
+                                <td>60</td>
+                                <td>16</td>
+                                <td>97</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                        </tbody>
+                </table>
+    </div>
   
     <!--Start of the complaint section--->
    <div class="complain_dropdown">
     <span>Complaints</span>
-    
     <i class="fa fa-plus" id="complaint_icon_plus"></i>
     <i class="fa fa-minus" id="complaint_icon_minus"></i>
    </div>

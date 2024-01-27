@@ -34,6 +34,7 @@ body{
     align-items: center;
     justify-content: space-between;
     display:flex;
+    background-color: #0057c2;
     position: fixed;
     z-index: 999;
     top: 0;

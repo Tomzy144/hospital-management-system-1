@@ -19,7 +19,7 @@ h1{
     text-align: center;
 }
 .patient-navbar{
-    background-color: rgb(42, 87, 215);
+    background-color: #0057c2;
     height: 60px;
     width: 100%;
     display: flex;
@@ -98,7 +98,7 @@ width: 100%;
         width:100%;
         height: fit-content;
         background-color: rgb(42, 87, 215);
-        box-shadow: rgba(173, 172, 172, 0.35) 0px 5px 15px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         color: var(--deep-green);
         justify-content: center;
         color: #fff;

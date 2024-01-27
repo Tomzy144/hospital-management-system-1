@@ -13,9 +13,54 @@ document.querySelector(".all_sections_input").classList.toggle("hide");
 document.querySelector("#back-arrow").style.display="none";
 }
 
-
+  
 //hide backarrow
 document.querySelector("#back-arrow").style.display="none";
+
+
+//PERSONAL INFORMATION SECTION AS READ ONLY
+const personal_info_section = ()=>{
+    document.querySelector(".info_section").classList.toggle("hide");
+    document.querySelector("#info_icon_plus").style.display="none";
+    document.querySelector("#info_icon_minus").style.display="block";
+    if(document.querySelector(".info_section").classList.contains("hide")){
+        document.querySelector("#info_icon_plus").style.display="block";
+        document.querySelector("#info_icon_minus").style.display="none";
+    }
+}
+
+//LAB SECTION AS READ ONLY
+const lab_section = ()=>{
+    document.querySelector(".lab_section").classList.toggle("hide");
+    document.querySelector("#lab_icon_plus").style.display="none";
+    document.querySelector("#lab_icon_minus").style.display="block";
+    if(document.querySelector(".lab_section").classList.contains("hide")){
+        document.querySelector("#lab_icon_plus").style.display="block";
+        document.querySelector("#lab_icon_minus").style.display="none";
+    }
+}
+//RADIOLOOGY SECTION AS READ ONLY
+const radiology_section = ()=>{
+    document.querySelector(".radiology_section").classList.toggle("hide");
+    document.querySelector("#radiology_icon_plus").style.display="none";
+    document.querySelector("#radiology_icon_minus").style.display="block";
+    if(document.querySelector(".radiology_section").classList.contains("hide")){
+        document.querySelector("#radiology_icon_plus").style.display="block";
+        document.querySelector("#radiology_icon_minus").style.display="none";
+    }
+}
+//RADIOLOOGY SECTION AS READ ONLY
+const vitals_section = ()=>{
+    document.querySelector(".vitals_section").classList.toggle("hide");
+    document.querySelector("#vitals_icon_plus").style.display="none";
+    document.querySelector("#vitals_icon_minus").style.display="block";
+    if(document.querySelector(".vitals_section").classList.contains("hide")){
+        document.querySelector("#vitals_icon_plus").style.display="block";
+        document.querySelector("#vitals_icon_minus").style.display="none";
+    }
+}
+
+
 
     //Doctor Inputs
     
