@@ -582,6 +582,7 @@ const show_appoitment_list_section = ()=>{
     document.querySelector("#btn_appoitment").style.display = "none";
     document.querySelector(".head-sec").style.display="flex";
     document.querySelector(".body_sec").style.display="block";
+    document.querySelector("#back-arrow").style.display="none";
     document.querySelector(".all_sections_input").classList.add("hide");
 }
 
