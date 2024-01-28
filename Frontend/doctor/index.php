@@ -5,8 +5,14 @@
 <?php
 $doctor_id = $_POST['doctor_id'];
 ?>
+      <?php
+      
+      $patient_id = $_POST['patient_id'];
+  ?>
+    
 
 <?php    
+
 $fetch_doctor_profile = $callclass->_get_doctor_details($conn, $s_doctor_id);
 $doctor_profile_array = json_decode($fetch_doctor_profile, true);
 $fullname = $doctor_profile_array[0]['fullname'];
@@ -28,6 +34,17 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
 
 
 
+<?php 
+    
+
+
+    $fetch_status = $callclass->_get_status_details($conn, $status_id);
+    $status_array = json_decode($fetch_status, true);
+    
+    ?>
+
+
+
 <?php
     $fetch_appointment = $callclass->_get_appointment_details($conn, $s_doctor_id);
     $doctor_appointment_array = json_decode($fetch_appointment, true);
@@ -35,7 +52,7 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
     // Check if decoding was successful
     if ($doctor_appointment_array !== null) {
         // Access values from the decoded array
-        $patient_name = $doctor_appointment_array[0]['patient_name'];
+        $apatient_name = $doctor_appointment_array[0]['patient_name'];
         $email = $doctor_appointment_array[0]['email'];
         $phonenumber = $doctor_appointment_array[0]['phonenumber'];
         $role_id = $doctor_appointment_array[0]['role_id'];
@@ -49,6 +66,76 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
         // Handle the case where decoding failed
         echo "Failed to decode JSON";
     }
+
+
+
+    
+    if (isset($_POST['patient_id'])) {
+        // Retrieve the patient_id from the POST request
+        $patient_id = $_POST['patient_id'];
+    
+        // Now you can use $patient_id in your PHP code
+        // For example, you can echo it back as the response
+        echo "Received patient_id: " . $patient_id;
+    }
+    
+    
+    
+    $fetch_patient_profile = $callclass->_get_patient_details($conn, $patient_id);
+
+    $patient_profile_array = json_decode($fetch_patient_profile, true);
+    
+    if ($patient_profile_array) {
+        $sn = $patient_profile_array['sn'];
+        $patient_name = $patient_profile_array['fullname'];
+        $email = $patient_profile_array['email'];
+        $gender = $patient_profile_array['gender'];
+        $dateofbirth = $patient_profile_array['dateofbirth'];
+        $address = $patient_profile_array['address'];
+        $phonenumber = $patient_profile_array['phonenumber'];
+        $status_id = $patient_profile_array['status_id'];
+        $category_id = $patient_profile_array['category_id'];
+        $date = $patient_profile_array['date'];
+        $last_login = $patient_profile_array['last_login'];
+        $passport = $patient_profile_array['passport'];
+        ///next of kin
+        $kname = $patient_profile_array['kname'];
+        $kgender = $patient_profile_array['kgender'];
+        $kphonenumber = $patient_profile_array['kphonenumber'];
+        $krelationship = $patient_profile_array['krelationship'];
+        $kaddress = $patient_profile_array['kaddress'];
+    
+    
+    
+    
+    
+        $occupation = $patient_profile_array['occupation'];
+        $past_obsterics = $patient_profile_array['past_obsterics'];
+        $medical_history = $patient_profile_array['medical_history'];
+        $sexual_history = $patient_profile_array['sexual_history'];
+        $past_disease = $patient_profile_array['past_disease'];
+        $family_disease = $patient_profile_array['family_disease'];
+        $past_surgery = $patient_profile_array['past_surgery'];
+    
+    } else {
+        $patient_name =  "error";
+        // Handle the case where the patient details were not found.
+        // You might want to return an error message or take other appropriate action.
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
 
 
@@ -225,12 +312,35 @@ $result = $conn->query($sql);
         </div>
 
 
+
+       <?php $page = "patient_page"
        
-        <?php
-      
-      $patient_id = $_POST['patient_id'];
-  ?>
-    
+       ?>
+
+
+
+
+
+
+<?php
+if(isset($_POST['phpValue'])) {
+    // Retrieve the value from the AJAX request
+    $phpVariable = $_POST['phpValue'];
+
+    // Use the value in your PHP code
+    echo "Received value in PHP: " . $phpVariable;
+}
+?>
+
+
+
+
+
+
+
+
+
+
 
      <!----Start from here-->
    <div class="all_sections_input hide">
@@ -254,16 +364,16 @@ $result = $conn->query($sql);
     </div>
     <div class="personal_info_section">
         <div class="details_flexs">
-        <h3>Name:</h3>
-        <h3>Princess Happiness</h3>
+        <h3>Name: <?php echo $patient_id ?> </h3>
+        <h3><?php echo $patient_name?> </h3>
         </div>
         <div class="details_flexs">
         <h3>Gender:</h3>
-        <h3>Female</h3>
+        <h3><?php echo $gender ?></h3>
         </div>
         <div class="details_flexs">
         <h3>Date of Birth:</h3>
-        <h3>2005-04-04</h3>
+        <h3><?php echo $dateofbirth ?></h3>
         </div>
         <div class="details_flexs">
         <h3>Home Address:</h3>

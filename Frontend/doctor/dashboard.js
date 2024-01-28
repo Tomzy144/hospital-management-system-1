@@ -27,6 +27,15 @@ const personal_info_section = ()=>{
         document.querySelector("#info_icon_plus").style.display="block";
         document.querySelector("#info_icon_minus").style.display="none";
     }
+    display_input();
+
+
+
+
+
+
+
+
 }
 
 //LAB SECTION AS READ ONLY
@@ -590,9 +599,25 @@ const show_appoitment_list_section = ()=>{
 
 
 //DISPLAY INPUT
-const display_input = (data) => {
+const display_input = () => {
     document.querySelector(".all_sections_input").classList.remove("hide");
     document.querySelector(".body_sec").style.display = "none";
+
+    
+    var hiddenValue = document.getElementById('all_sections_input').innerText;
+    document.getElementById('body_sec').innerText = hiddenValue;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "index.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Handle the response from the server if needed
+            console.log('Server response:', xhr.responseText);
+        }
+    };
+    // Send the value to the PHP script
+    xhr.send("phpValue=" + encodeURIComponent(hiddenValue));
 }
 
 //DISCHARGE INPUT
