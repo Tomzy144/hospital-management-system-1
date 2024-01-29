@@ -215,8 +215,8 @@ $result = $conn->query($sql);
     document.querySelectorAll('.accept-btn').forEach(function (button) {
         button.addEventListener('click', function () {
             var patientId = this.getAttribute('data-patient-id');
-          display_input();
-            accept_input(patientId);
+            // display_input();
+            loadPatientProfile(patientId);
             
             const hideHeadSec = document.querySelector(".head-sec");
             hideHeadSec.style.display ="none";
@@ -231,7 +231,6 @@ $result = $conn->query($sql);
         });
     });
 
-    // Your existing JavaScript functions (accept_input, display_input, delete_input) here
 
 
 
@@ -243,7 +242,7 @@ $result = $conn->query($sql);
 
         </div>
 
-<?php
+<!-- ?php
 // Check if the button is clicked and the patient_id is set in the POST request
 if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
     // Retrieve the patient_id from the POST request
@@ -273,27 +272,7 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
     }
     exit; // Terminate the script after processing the AJAX request
 }
-?>
-
-<!-- HTML code for the button and container -->
-<!-- <button id="loadPatientProfileButton">Load Patient Profile</button> -->
-<div id="patientDetailsContainer"></div>
-
-<script>
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
+?> -->
 
 <?php
 // Assuming you have a function getPatientProfile that takes a patient ID and returns the profile
@@ -312,13 +291,63 @@ if (isset($_POST['patientId'])) {
 
 
 
+<?php
+// Check if the button is clicked and the patient_id is set in the POST request
+if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
+    // Retrieve the patient_id from the POST request
+    $patient_id = $_POST['patient_id'];
+
+    // Fetch patient details using your _get_patient_details function
+    $fetch_patient_profile = $callclass->_get_patient_details($conn, $patient_id);
+
+    // Decode the JSON response
+    $patient_profile_array = json_decode($fetch_patient_profile, true);
+
+    if ($patient_profile_array) {
+        // Extract patient details from the response
+        $sn = $patient_profile_array['sn'];
+        $patient_name = $patient_profile_array['fullname'];
+        $email = $patient_profile_array['email'];
+        $gender = $patient_profile_array['gender'];
+        $dateofbirth = $patient_profile_array['dateofbirth'];
+        $address = $patient_profile_array['address'];
+        $phonenumber = $patient_profile_array['phonenumber'];
+        $status_id = $patient_profile_array['status_id'];
+        $category_id = $patient_profile_array['category_id'];
+        $date = $patient_profile_array['date'];
+        $last_login = $patient_profile_array['last_login'];
+        $passport = $patient_profile_array['passport'];
+        ///next of kin
+        $kname = $patient_profile_array['kname'];
+        $kgender = $patient_profile_array['kgender'];
+        $kphonenumber = $patient_profile_array['kphonenumber'];
+        $krelationship = $patient_profile_array['krelationship'];
+        $kaddress = $patient_profile_array['kaddress'];
+    
+    
+    
+    
+    
+        $occupation = $patient_profile_array['occupation'];
+        $past_obsterics = $patient_profile_array['past_obsterics'];
+        $medical_history = $patient_profile_array['medical_history'];
+        $sexual_history = $patient_profile_array['sexual_history'];
+        $past_disease = $patient_profile_array['past_disease'];
+        $family_disease = $patient_profile_array['family_disease'];
+        $past_surgery = $patient_profile_array['past_surgery'];
+        
+       
+   
+
+?>
+
 
 
 
      <!----Start from here-->
-   <div class="all_sections_input hide">
+   <div class="all_sections_input hide" id="patientDetailsContainer">
     <!---PATIENT PERSONAL INFO-->
-   <div class="info_dropdown" onClick="personal_info_section()">
+   <div class="info_dropdown"  onClick="personal_info_section()">
     <span>Personal Information</span>
     <i class="fa fa-plus" id="info_icon_plus"></i>
     <i class="fa fa-minus" id="info_icon_minus"></i>
@@ -448,6 +477,7 @@ if (isset($_POST['patientId'])) {
         </div>
         </div>
    </div>
+ 
    <!---LABOURATORY INFORMATIONS--->
    <div class="lab_dropdown" onClick="lab_section()">
     <span>Labouratory Information</span>
@@ -492,7 +522,9 @@ if (isset($_POST['patientId'])) {
                     </td>
                 </tbody>
             </table>
+          
     </div>
+ 
    <!---RADIOLOGY INFORMATIONS--->
    <div class="radiology_dropdown" onClick="radiology_section()">
     <span>Radiology Information</span>
@@ -669,7 +701,7 @@ if (isset($_POST['patientId'])) {
     </div>
 
            <!--End of the complaint section--->
-    <?php  ?>        
+         
          
 
                <!--Start of the System & Review section--->
@@ -2333,6 +2365,16 @@ if (isset($_POST['patientId'])) {
     </div>
     <button id="btn" class="save">Enter</button>
    </div>
+   <?php 
+   
+   
+} else {
+    // Handle the case where the patient details were not found
+    echo '<p>Error: Patient details not found</p>';
+}
+exit; // Terminate the script after processing the AJAX request
+}
+?>
    </div>
    </div>
    </div>
