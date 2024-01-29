@@ -211,7 +211,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <thead>
         <tr>
             <td>#</td>
-            <td>PASSPORT IMAGE</td>
+            <td>PASSPORT</td>
             <td>Patient Name</td>
             <td>Patient ID</td>
             <td>Date</td>
@@ -222,7 +222,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
    <tbody>
         <tr>
             <td>1</td>
-            <td></td>
+            <td>
+                <div class="image">
+                <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
+                </div>
+            </td>
             <td>Precious Bassey</td>
             <td>001</td>
             <td>22-02-2024</td>
@@ -343,7 +347,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
               <input type="text">
               </div>
                      <div class="form_control">
-              <label for="body_fat">Body fat(%)</label>
+              <lacenter; for="body_fat">Body fat(%)</label>
               <input type="text">
               </div>
               <div class="form_control">

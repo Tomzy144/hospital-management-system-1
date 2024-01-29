@@ -338,6 +338,18 @@ table{
     border: 1px solid rgb(255, 0, 0);
     background: none
 }
+
+
+.body_sec .image{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
 /*PERSONAL PROFILE VITAL*/
 .personal_profile_vital{
 margin: 0 auto;
