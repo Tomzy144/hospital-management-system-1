@@ -435,16 +435,16 @@ const account_manager_login_form = `
     <i class="fa fa-lock"></i>
     <input type="password" name="password" autoComplete='off'/> 
     </div>
-    <button type="button" class="btn" onClick="isRadiologist_active()">Login</button>
+    <button type="button" class="btn" onClick="isAccount_manager_active()">Login</button>
     <form>
 </div>
 `
 log_inAll('account_manager', account_manager_login_form);
 
-// const isRadiologist_active = ()=>{
-//     let url="Frontend/radiology/index.php"
-//     window.parent(location =(url))
-// }
+const isAccount_manager_active = ()=>{
+    let url="Frontend/account_management/index.php"
+    window.parent(location =(url))
+}
 
 //Surgical Suite Manager Login
 const open_surgical_suite_manager_login_form = function() {
