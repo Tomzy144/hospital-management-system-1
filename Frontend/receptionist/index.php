@@ -101,7 +101,7 @@
         </div>
     </div>
         <div class="sidebar">
-               <div class="sidebar_contents">
+               <div class="sidebar_contents" onClick="homepage_section()">
                 <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
                </div>
             <div class="sidebar_icons">
@@ -120,12 +120,86 @@
    <div class="contents">
     <div class="button_container">
         <button onclick="open_patient_form()">PATIENT ADMISSION FORM</button>
-        <button onclick="appoimentBooking()">CHECKUP</button>
+        <!-- <button onclick="appoimentBooking()">CHECKUP</button> -->
+        <button onclick="checkup_page()">CHECKUP </button>
         <!-- <button onclick="surgicalChemistry()">PROCEDURE LIST</button> -->
-        <button onclick="surgicalChemistry()">WALK-IN PATIENT FORM</button>
+        <button onclick="walkin_patient_form()">WALK-IN PATIENT BOOKING</button>
         </div>
     </div>
-            
+            <div class="checkup_section hide">
+
+            </div>
+            <div class="walkin_patient_section hide">
+            <div class="form-container">
+        <h1>WalkIn Admission Form</h1>
+        <div class="walkin_in_section_upload_image">
+             <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
+            <i class="fa fa-plus" id="walkin_in_section_capture_image" onclick="walkin_patient_openCamera()"></i>
+            <canvas id="walkin_in_section_canvasElement" style="display: none;"></canvas>
+            <img id="walkin_in_section_capturedImage" style="display: none;">
+        </div>
+        <div class="flex_capture_div">
+        <div class="walkin_in_section_btn_re_capture hide"  onclick="walkin_patient_retakePicture()">Recapture</div>
+        <div class="walkin_in_section_btn_capture hide" onClick="walkin_patient_takePicture()">Capture</div>
+        </div>
+        <form action="">
+            <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
+            <div class="form_control_group">
+            <div class="form-control">
+            <label for="full_name">Full Name</label>
+            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
+        </div>
+
+            <div class="form-control">
+            <label for="date_of_birth">Date of Birth</label>
+            <input type="date" id="dob">
+        </div>
+        </div>
+        <div class="form_control_group">
+            <div class="form-control">
+            <label for="home_address">Home Address</label>
+            <input type="text" id="address" autocomplete="off">
+        </div>
+
+            <div class="form-control">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" id="phonenumber">
+        </div>
+    </div>
+
+    <label>Gender</label>
+    <div class="form-display2">
+    <label for="checkbox">
+        <input type="checkbox" class="walkinin_check1"  name="gender" value="Male">
+        Male
+      </label>
+      <label for="checkbox">
+        <input type="checkbox" class="walkinin_check2"  name="gender" value="Female">
+        Female
+      </label>
+    </div>
+    <h3 style="text-align: left; margin-top: 1rem;">Emergency Details</h3>
+    <div class="form_control_group">
+            <div class="form-control">
+            <label for="full_name">Full Name</label>
+            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
+        </div>
+
+            <div class="form-control">
+            <label for="date_of_birth">RelationShip</label>
+            <input type="text" id="relationship">
+        </div>
+        </div>
+        <div class="form_control_group">
+            <div class="form-control">
+            <label for="home_address">Phone Number</label>
+            <input type="text" id="address" autocomplete="off">
+        </div>
+    </div>
+    <button type="button" class="btn-submit">Submit</button>
+    </form>
+    </div>
+            </div>
     <!----SURGICAL BOOKING BASE ON THE DOCTOR INPUT--->
   <div class="surgical_booking hide">
     <div class="table_container">
