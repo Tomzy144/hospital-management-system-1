@@ -602,22 +602,6 @@ const show_appoitment_list_section = ()=>{
 const display_input = () => {
     document.querySelector(".all_sections_input").classList.remove("hide");
     document.querySelector(".body_sec").style.display = "none";
-
-    
-    var hiddenValue = document.getElementById('all_sections_input').innerText;
-    document.getElementById('body_sec').innerText = hiddenValue;
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "index.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Handle the response from the server if needed
-            console.log('Server response:', xhr.responseText);
-        }
-    };
-    // Send the value to the PHP script
-    xhr.send("phpValue=" + encodeURIComponent(hiddenValue));
 }
 
 //DISCHARGE INPUT
@@ -696,34 +680,115 @@ confirmed_death_dropdown.addEventListener("click", function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////tomzy's script 
-function accept_input(patient_id) {
-    // Display an alert with the patient_id
-    alert(patient_id);
 
-    // Create a FormData object to store form data
-    var formData = new FormData();
-    formData.append('patient_id', patient_id);
 
-    // Make an asynchronous request using Fetch API
-    fetch('index.php', {
-        method: 'POST',
-        body: formData,
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+document.querySelector('[data-patient-id]').addEventListener('click', function() {
+    // Get the patient ID from the data attribute of the clicked element
+    var patientId = this.getAttribute('data-patient-id');
+
+    // Call the loadPatientProfile function with the retrieved patient ID
+    loadPatientProfile(patientId);
+});
+
+
+function loadPatientProfile(patient_id) {
+    // Make an asynchronous request to fetch patient details using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'index.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Update the patientDetailsContainer with the received HTML
+            document.getElementById('patientDetailsContainer').innerHTML = xhr.responseText;
         }
-        return response.text();
-    })
-    .then(data => {
-        // Assuming the server sends back HTML content
-        display_input(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    };
+    // Send the patient_id to the PHP script
+    xhr.send('load_patient_profile=1&patient_id=' + encodeURIComponent(patient_id));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

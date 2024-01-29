@@ -5,10 +5,7 @@
 <?php
 $doctor_id = $_POST['doctor_id'];
 ?>
-      <?php
-      
-      $patient_id = $_POST['patient_id'];
-  ?>
+
     
 
 <?php    
@@ -66,75 +63,6 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
         // Handle the case where decoding failed
         echo "Failed to decode JSON";
     }
-
-
-
-    
-    if (isset($_POST['patient_id'])) {
-        // Retrieve the patient_id from the POST request
-        $patient_id = $_POST['patient_id'];
-    
-        // Now you can use $patient_id in your PHP code
-        // For example, you can echo it back as the response
-        echo "Received patient_id: " . $patient_id;
-    }
-    
-    
-    
-    $fetch_patient_profile = $callclass->_get_patient_details($conn, $patient_id);
-
-    $patient_profile_array = json_decode($fetch_patient_profile, true);
-    
-    if ($patient_profile_array) {
-        $sn = $patient_profile_array['sn'];
-        $patient_name = $patient_profile_array['fullname'];
-        $email = $patient_profile_array['email'];
-        $gender = $patient_profile_array['gender'];
-        $dateofbirth = $patient_profile_array['dateofbirth'];
-        $address = $patient_profile_array['address'];
-        $phonenumber = $patient_profile_array['phonenumber'];
-        $status_id = $patient_profile_array['status_id'];
-        $category_id = $patient_profile_array['category_id'];
-        $date = $patient_profile_array['date'];
-        $last_login = $patient_profile_array['last_login'];
-        $passport = $patient_profile_array['passport'];
-        ///next of kin
-        $kname = $patient_profile_array['kname'];
-        $kgender = $patient_profile_array['kgender'];
-        $kphonenumber = $patient_profile_array['kphonenumber'];
-        $krelationship = $patient_profile_array['krelationship'];
-        $kaddress = $patient_profile_array['kaddress'];
-    
-    
-    
-    
-    
-        $occupation = $patient_profile_array['occupation'];
-        $past_obsterics = $patient_profile_array['past_obsterics'];
-        $medical_history = $patient_profile_array['medical_history'];
-        $sexual_history = $patient_profile_array['sexual_history'];
-        $past_disease = $patient_profile_array['past_disease'];
-        $family_disease = $patient_profile_array['family_disease'];
-        $past_surgery = $patient_profile_array['past_surgery'];
-    
-    } else {
-        $patient_name =  "error";
-        // Handle the case where the patient details were not found.
-        // You might want to return an error message or take other appropriate action.
-    }
-    
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
 
@@ -287,6 +215,7 @@ $result = $conn->query($sql);
     document.querySelectorAll('.accept-btn').forEach(function (button) {
         button.addEventListener('click', function () {
             var patientId = this.getAttribute('data-patient-id');
+          display_input();
             accept_input(patientId);
             
             const hideHeadSec = document.querySelector(".head-sec");
@@ -303,6 +232,9 @@ $result = $conn->query($sql);
     });
 
     // Your existing JavaScript functions (accept_input, display_input, delete_input) here
+
+
+
 </script>
 
       
@@ -311,11 +243,52 @@ $result = $conn->query($sql);
 
         </div>
 
+<?php
+// Check if the button is clicked and the patient_id is set in the POST request
+if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
+    // Retrieve the patient_id from the POST request
+    $patient_id = $_POST['patient_id'];
+
+    // Fetch patient details using your _get_patient_details function
+    $fetch_patient_profile = $callclass->_get_patient_details($conn, $patient_id);
+
+    // Decode the JSON response
+    $patient_profile_array = json_decode($fetch_patient_profile, true);
+
+    if ($patient_profile_array) {
+        // Extract patient details from the response
+        $sn = $patient_profile_array['sn'];
+        $patient_name = $patient_profile_array['fullname'];
+        // ... (rest of the details)
+
+        // Output the patient details HTML
+        echo '<div>';
+        echo '<h2>Patient Details</h2>';
+        echo '<p>Name: ' . $patient_name . '</p>';
+        // ... (output other details as needed)
+        echo '</div>';
+    } else {
+        // Handle the case where the patient details were not found
+        echo '<p>Error: Patient details not found</p>';
+    }
+    exit; // Terminate the script after processing the AJAX request
+}
+?>
+
+<!-- HTML code for the button and container -->
+<!-- <button id="loadPatientProfileButton">Load Patient Profile</button> -->
+<div id="patientDetailsContainer"></div>
+
+<script>
 
 
-       <?php $page = "patient_page"
-       
-       ?>
+</script>
+
+
+
+
+
+
 
 
 
@@ -323,17 +296,17 @@ $result = $conn->query($sql);
 
 
 <?php
-if(isset($_POST['phpValue'])) {
-    // Retrieve the value from the AJAX request
-    $phpVariable = $_POST['phpValue'];
+// Assuming you have a function getPatientProfile that takes a patient ID and returns the profile
+function getPatientProfile($patientId) {
+    // Fetch the patient profile from your database
+    // Return the profile as a string
+}
 
-    // Use the value in your PHP code
-    echo "Received value in PHP: " . $phpVariable;
+if (isset($_POST['patientId'])) {
+    echo getPatientProfile($_POST['patientId']);
+    exit;
 }
 ?>
-
-
-
 
 
 
@@ -694,9 +667,10 @@ if(isset($_POST['phpValue'])) {
               
 </script>
     </div>
+
            <!--End of the complaint section--->
-           
-           
+    <?php  ?>        
+         
 
                <!--Start of the System & Review section--->
                <div class="system_dropdown">
