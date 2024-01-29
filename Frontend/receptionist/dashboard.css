@@ -400,11 +400,9 @@ body{
       background: none;
       border: none;
       border-bottom:  1px solid rgb(42, 87, 215);
-      /* text-indent: 18px; */
       color: rgb(42, 87, 215);
       font-weight: bold;
       outline: none;
-      padding: 10px 25px;
       font-size: 18px;
   }
   
@@ -938,11 +936,82 @@ body{
     border-radius: 100%;
     background-color: rgb(255, 166, 0);
 }
-/* .walk_in_patient_page{
-    width: 100%;
-    height:100%;
+.checkup_section{
     background-color: red;
-} */
+    height: 100vh;
+    width: 100%;
+}
+/*WALKIN PATIENTS */
+.walkin_patient_section{
+    height: 100vh;
+    width: 100%;
+}
+.walkin_in_section_upload_image{
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    box-shadow: rgba(187, 186, 186, 0.35) 0px 5px 15px;
+    margin: 0 auto;
+    overflow: hidden;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);;
+    position: relative;
+    text-align: center;
+}
+.walkin_in_section_upload_image #walkin_in_section_capture_image{
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 0.5rem;
+    width: max-content;
+    position: absolute;
+    right:9%;
+    bottom: 14%;
+    background-color: rgb(42, 87, 215);
+}
+#walkin_in_section_capturedImage{
+    position: absolute;
+}
+.flex_capture_div{
+    display: flex;
+}
+.walkin_in_section_btn_capture{
+    width: 50%;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0.5rem 0.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+    transition: all  ease-in-out 0.5s; 
+}
+.walkin_in_section_btn_re_capture{
+    width: 50%;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0.5rem 0.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+    transition: all  ease-in-out 0.5s; 
+}
+.walkin_in_section_btn_capture:hover{
+    background:none;
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
+}
+.walkin_in_section_btn_re_capture:hover{
+    background:none;
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
+}
 .hide{
     display: none;
 }

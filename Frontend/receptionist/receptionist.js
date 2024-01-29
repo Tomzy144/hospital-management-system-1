@@ -132,6 +132,7 @@ selectBox.addEventListener("change", function(){
     family_plan.classList.remove("hide");
   }else{
     family_plan.classList.add("hide");
+    check_input_family_id_number.classList.add("hide");
   }
 });
 
@@ -150,6 +151,8 @@ const handleCheckboxFamiilyChange = ()=>{
 
     if(family_check_false.checked){
       family_check_true.disabled = true;
+      check_input_family_id_number.classList.add("hide");
+      family_plan.classList.add("hide");
     }else{
       family_check_true.disabled = false;
     }
@@ -544,4 +547,127 @@ function stopCamera() {
   
  
 
-  ///SURGICAL BOOKING
+//WALKIN PATIENT FORM
+const walkin_patient_form = ()=>{
+  document.querySelector(".contents").style.display = "none";
+  document.querySelector(".surgical_booking").classList.add("hide");
+  document.querySelector(".appoitment_section").classList.add("hide");
+  document.querySelector(".patients_form_container").classList.add("hide");
+  document.querySelector(".walkin_patient_section").classList.remove("hide");
+}
+
+//WALKIN CAMERA PATIENT FORM
+//camera
+let walkin_patient_videoElement = document.getElementById('walkin_in_section_videoElement');
+let walkin_patient_canvasElement = document.getElementById('walkin_in_section_canvasElement');
+let walkin_patient_capturedImageElement = document.getElementById('walkin_in_section_capturedImage');
+let walkin_patient_stream;
+
+function walkin_patient_openCamera() {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (cameraStream) {
+      walkin_patient_stream = cameraStream;
+      walkin_patient_videoElement.srcObject = cameraStream;
+    })
+    .catch(function (error) {
+      console.error('Error accessing the camera: ', error);
+    });
+
+    const walkin_in_section_capturedImage = document.querySelector('#walkin_in_section_capturedImage');
+    walkin_in_section_capturedImage.style.display="none"
+
+    const walkin_in_section_capture_image = document.querySelector('#walkin_in_section_capture_image');
+    walkin_in_section_capture_image.style.display="none"
+    
+    const showClickButton = document.querySelector(".walkin_in_section_btn_capture")
+    showClickButton.classList.remove("hide");
+
+    const showClickButtonForRecapture = document.querySelector(".walkin_in_section_btn_re_capture")
+    showClickButtonForRecapture.classList.remove("hide")
+}
+
+function walkin_patient_takePicture() {
+  if (walkin_patient_stream) {
+    let context = walkin_patient_canvasElement.getContext('2d');
+    walkin_patient_canvasElement.width = walkin_patient_videoElement.videoWidth;
+    walkin_patient_canvasElement.height = walkin_patient_videoElement.videoHeight;
+    context.drawImage(walkin_patient_videoElement, 0, 0, walkin_patient_canvasElement.width, walkin_patient_canvasElement.height);
+
+    // Convert the canvas content to a data URL representing a PNG image
+    let imageDataURL = walkin_patient_canvasElement.toDataURL('image/png');
+
+    // Display the captured image
+    walkin_patient_capturedImageElement.src = imageDataURL;
+    walkin_patient_capturedImageElement.style.display = 'block';
+
+    // Stop the camera stream
+    stopCamera();
+  }
+}
+function walkin_patient_retakePicture() {
+    // Hide the captured image
+    capturedImageElement.style.display = 'none';
+
+    // Stop the camera stream
+    walkin_patient_stopCamera();
+
+    // Reopen the camera for retake
+    walkin_patient_openCamera();
+  }
+function walkin_patient_stopCamera() {
+  if (walkin_patient_stream) {
+    let tracks = walkin_patient_stream.getTracks();
+
+    // Stop all tracks
+    tracks.forEach(track => track.stop());
+
+    // Remove the stream from the video element
+    walkin_patient_videoElement.srcObject = null;
+  }
+}
+
+//GENDER
+const walkinin_check1 =  document.querySelector(".walkinin_check1")
+const walkinin_check2 =  document.querySelector(".walkinin_check2")
+
+
+function handleCheckboxChangeWalkin() {
+    //checked1
+  if (walkinin_check1.checked) {
+    walkinin_check2.disabled = true;
+  } else {
+    walkinin_check2.disabled = false;
+  }
+  
+  if (walkinin_check2.checked) {
+    walkinin_check1.disabled = true;
+  } else {
+    walkinin_check1.disabled = false;
+  }
+}
+
+walkinin_check1.addEventListener('change', handleCheckboxChangeWalkin);
+walkinin_check2.addEventListener('change', handleCheckboxChangeWalkin);
+
+
+
+
+//BACK TO HOMEPAGE 
+const homepage_section = ()=>{
+  document.querySelector(".contents").style.display = "flex";
+  document.querySelector(".surgical_booking").classList.add("hide");
+  document.querySelector(".appoitment_section").classList.add("hide");
+  document.querySelector(".patients_form_container").style.display = "none";
+  document.querySelector("#btn_appoitment").style.display = "none";
+  document.querySelector(".walkin_patient_section").classList.add("hide");
+  document.querySelector(".checkup_section").classList.add("hide");
+}
+//CHECKUP SECTION
+const checkup_page = ()=>{
+  document.querySelector(".contents").style.display = "none";
+  document.querySelector(".surgical_booking").classList.add("hide");
+  document.querySelector(".appoitment_section").classList.add("hide");
+  document.querySelector(".patients_form_container").classList.add("hide");
+  document.querySelector(".checkup_section").classList.remove("hide");
+  document.querySelector(".walkin_patient_section").classList.add("hide");
+}
