@@ -6,7 +6,10 @@
 $doctor_id = $_POST['doctor_id'];
 ?>
 
+    
+
 <?php    
+
 $fetch_doctor_profile = $callclass->_get_doctor_details($conn, $s_doctor_id);
 $doctor_profile_array = json_decode($fetch_doctor_profile, true);
 $fullname = $doctor_profile_array[0]['fullname'];
@@ -28,6 +31,17 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
 
 
 
+<?php 
+    
+
+
+    $fetch_status = $callclass->_get_status_details($conn, $status_id);
+    $status_array = json_decode($fetch_status, true);
+    
+    ?>
+
+
+
 <?php
     $fetch_appointment = $callclass->_get_appointment_details($conn, $s_doctor_id);
     $doctor_appointment_array = json_decode($fetch_appointment, true);
@@ -35,7 +49,7 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
     // Check if decoding was successful
     if ($doctor_appointment_array !== null) {
         // Access values from the decoded array
-        $patient_name = $doctor_appointment_array[0]['patient_name'];
+        $apatient_name = $doctor_appointment_array[0]['patient_name'];
         $email = $doctor_appointment_array[0]['email'];
         $phonenumber = $doctor_appointment_array[0]['phonenumber'];
         $role_id = $doctor_appointment_array[0]['role_id'];
@@ -49,6 +63,7 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
         // Handle the case where decoding failed
         echo "Failed to decode JSON";
     }
+
 ?>
 
 
@@ -200,6 +215,7 @@ $result = $conn->query($sql);
     document.querySelectorAll('.accept-btn').forEach(function (button) {
         button.addEventListener('click', function () {
             var patientId = this.getAttribute('data-patient-id');
+          display_input();
             accept_input(patientId);
             
             const hideHeadSec = document.querySelector(".head-sec");
@@ -216,6 +232,9 @@ $result = $conn->query($sql);
     });
 
     // Your existing JavaScript functions (accept_input, display_input, delete_input) here
+
+
+
 </script>
 
       
@@ -224,13 +243,77 @@ $result = $conn->query($sql);
 
         </div>
 
+<?php
+// Check if the button is clicked and the patient_id is set in the POST request
+if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
+    // Retrieve the patient_id from the POST request
+    $patient_id = $_POST['patient_id'];
 
-       
-        <?php
-      
-      $patient_id = $_POST['patient_id'];
-  ?>
-    
+    // Fetch patient details using your _get_patient_details function
+    $fetch_patient_profile = $callclass->_get_patient_details($conn, $patient_id);
+
+    // Decode the JSON response
+    $patient_profile_array = json_decode($fetch_patient_profile, true);
+
+    if ($patient_profile_array) {
+        // Extract patient details from the response
+        $sn = $patient_profile_array['sn'];
+        $patient_name = $patient_profile_array['fullname'];
+        // ... (rest of the details)
+
+        // Output the patient details HTML
+        echo '<div>';
+        echo '<h2>Patient Details</h2>';
+        echo '<p>Name: ' . $patient_name . '</p>';
+        // ... (output other details as needed)
+        echo '</div>';
+    } else {
+        // Handle the case where the patient details were not found
+        echo '<p>Error: Patient details not found</p>';
+    }
+    exit; // Terminate the script after processing the AJAX request
+}
+?>
+
+<!-- HTML code for the button and container -->
+<!-- <button id="loadPatientProfileButton">Load Patient Profile</button> -->
+<div id="patientDetailsContainer"></div>
+
+<script>
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+// Assuming you have a function getPatientProfile that takes a patient ID and returns the profile
+function getPatientProfile($patientId) {
+    // Fetch the patient profile from your database
+    // Return the profile as a string
+}
+
+if (isset($_POST['patientId'])) {
+    echo getPatientProfile($_POST['patientId']);
+    exit;
+}
+?>
+
+
+
+
+
+
+
 
      <!----Start from here-->
    <div class="all_sections_input hide">
@@ -254,16 +337,16 @@ $result = $conn->query($sql);
     </div>
     <div class="personal_info_section">
         <div class="details_flexs">
-        <h3>Name:</h3>
-        <h3>Princess Happiness</h3>
+        <h3>Name: <?php echo $patient_id ?> </h3>
+        <h3><?php echo $patient_name?> </h3>
         </div>
         <div class="details_flexs">
         <h3>Gender:</h3>
-        <h3>Female</h3>
+        <h3><?php echo $gender ?></h3>
         </div>
         <div class="details_flexs">
         <h3>Date of Birth:</h3>
-        <h3>2005-04-04</h3>
+        <h3><?php echo $dateofbirth ?></h3>
         </div>
         <div class="details_flexs">
         <h3>Home Address:</h3>
@@ -584,9 +667,10 @@ $result = $conn->query($sql);
               
 </script>
     </div>
+
            <!--End of the complaint section--->
-           
-           
+    <?php  ?>        
+         
 
                <!--Start of the System & Review section--->
                <div class="system_dropdown">
