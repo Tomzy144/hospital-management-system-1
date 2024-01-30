@@ -115,6 +115,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #0057c2;
 }
 
 #image_profile_account{
@@ -233,39 +234,35 @@ body{
 
 
 .pending_transaction_section{
-    width: fit-content;
+    width: 100%;
     display: flex;
-    margin: 0 0 0 90px;
+    margin: 0 0 0 6rem;
     flex-wrap: wrap;
+    height:fit-content ;
     justify-content: center;
-}
-
-.contents{
-    width:100%;
-    height: fit-content;
-   margin: 5em 0;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .head-sec{
     display: flex;
     width: 100%;
-    height: 50px;
+    height: 70px;
     flex-direction: row;
     align-items: center;
+    background-color: #fff;
     padding: 0 1rem;
     justify-content: space-between;
-    color: #fff;
+    margin: 4rem 0 0 0;
+    color: #000000;
 }
 
 .head-sec span{
     font-size: 26px;
-    color: #fff;
+    color: #000000;
 }
 .pending_transaction_input_control{
     position: relative;
 }
 .pending_transaction_input{
-    padding: 1rem 0.3rem;
+    padding: 0.5rem 0.3rem;
     margin-right: 1rem;
     border: none;
     font-size: 18px;
@@ -287,15 +284,13 @@ input:focus{
 }
 .body_sec{
     width: 100%;
-    height: auto;
-    padding: 1rem 1rem;
 }
 table{
     width: 100%;
-    height: auto;
     border-collapse: collapse;
-    overflow-y: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     flex-wrap: wrap;
+    height: max-content;
 }
  table thead td{
     background-color: rgb(42, 87, 215);;
@@ -309,9 +304,9 @@ table{
  table tbody td{
     background-color: rgb(255, 255, 255);;
     font-size: 20px;
-    margin: 1rem 0;
+    padding: 0 1rem;
+    margin: 1rem 1rem;
     border-bottom: 2px solid rgb(232, 229, 229);
-    padding: 0.5rem;
     color: #000000;
 }
 .body_sec button{
@@ -321,7 +316,7 @@ table{
     width: 80%;
     cursor: pointer;
     margin: 1rem 1rem;
-    border-radius: 20px;
+    border-radius: 5px;
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
@@ -357,25 +352,54 @@ table{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+}
+.pending_transaction_list_pagination{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 8px ;
+    border-bottom-right-radius: 8px ;
+    height: 50px;
+    margin: 0 auto;
+}
+.pending_transaction_list_pagination .flexs{
+    display: flex;;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.pending_transaction_list_pagination .flexs p{
+    background-color: rgb(42, 87, 215);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out  0.5s
+}
+.pending_transaction_list_pagination .flexs p:hover{
+   transform: scale(0.94);
 }
 .successful_transaction{
     border-bottom-left-radius: 19px;
-    width: 400px;
+    width: 430px;
     height: fit-content;
-    padding: 1rem 1rem;
+    position: relative;
+    right: 0;
+    padding: 1rem 0;
+    height: 100vh;
+    margin: 0 0 0 1rem;
+    overflow-y: auto;
     background-color: rgb(255, 255, 255);
 }
 .flex_container{
-    margin: 5rem auto;
+    margin: 5rem 0rem 10em 0;
 }
 .successful_transaction span{
     font-size: 26px;
 }
 .transaction_box{
-    width: 350px;
-    height: 100px;
-    padding: 1em;
+    width: 320px;
+    height: fit-content;
+    padding: 0.5em 0.5em ;
     background-color:  rgb(42, 87, 215);
     border-radius: 0.5rem;
     display: flex;
@@ -384,27 +408,26 @@ table{
     align-items: center;;
     color: #fff;
     margin: 1rem auto;
+    transition: all ease-in-out 0.5s;
+}
+.transaction_box:hover{
+    transform: scale(0.98);
+    background-color: rgb(255, 0, 0);
 }
 .transaction_box h1{
     font-size: 24px;
 }
-.transaction_box .circle_icon{
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
+.transaction_box .amount_item{
     display: flex;
     justify-content: center;
-    color: rgb(42, 87, 215);
-    /* color: #009d00; */
-    align-items: center;
-    background-color: #fff;
-}
-.transaction_box .circle_icon #icon{
-    font-size: 25px;
+    align-items: start;
+    width: fit-content;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 .total_trasaction{
-    width: 350px;
-    padding: 1em;
+    width: 320px;
+    padding: 1em 1em;
     background-color: rgb(255, 0, 0);
     border-radius: 0.5rem;
     display: flex;
@@ -414,6 +437,224 @@ table{
     align-items: center;
     color: #fff;
     margin: 1rem auto;
+}
+.personal_total_transaction_section{
+    width: 300px;
+    height: 150px;
+    background-color: #ffffff; 
+    position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    left: 0;
+    bottom: 0;;
+    border-top-right-radius: 10px;
+}
+.personal_total_transaction_section p{
+    font-size: 20px;
+    padding: 0 0.5em;
+    font-weight: bold;
+    color: rgb(42, 87, 215);;
+}
+#confirmed_amount{
+    padding: 1rem;
+    background-color: rgb(42, 87, 215);
+    width: 100%;
+    font-size: 25px;
+    color: #fff;
+    height: 100%;
+}
+.check_cash_pos{
+    width: 500px;
+    position: absolute;
+    height: fit-content;
+    top: 50%;
+    left:50%;
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 11;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#close_pos_cash{
+    color: #0057c2;
+    font-size: 27px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    top: 0;
+}
+.check_cash_pos h1{
+    color: #0057c2;
+    padding: 1rem 0;
+}
+.check_cash_pos button{
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 100%;
+    border: none;
+    font-size: 20px;
+    padding: 1rem;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    background-color: #0057c2;
+}
+.check_cash_pos button:hover{
+    background: none;
+    border: 1px solid #0057c2;
+    color: #000000;
+}
+.receipt_printing{
+    width: 600px;
+    position: absolute;
+    height: fit-content;
+    top: 50%;
+    left:50%;
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 11;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.receipt_printing .container{
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin: 0.5em 0;
+    background-color: #000000;
+   border: 2px solid black;
+}
+.receipt_printing img{
+    position: absolute;
+    top: 22%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    opacity: 12%;
+}
+.receipt_printing .container .name{
+   text-align: left;
+}
+.receipt_printing .container .date_and_id{
+   text-align: left;
+}
+.receipt_printing .container p{
+   color: #ffffff;
+   font-size: 22px;
+   padding: 0 1em;
+}
+.description_and_amount{
+    border: 1px solid black;
+    padding: 1rem;
+    height: fit-content;
+    width: 100%;
+}
+.description_and_amount table{
+    border-collapse: collapse;
+    box-shadow: none
+}
+
+.description_and_amount table thead td {
+    background: none;
+    color: #000000;
+    padding: 1rem 1rem;
+    margin: 0.5em 0.5em;
+}
+.description_and_amount table tbody td {
+    background: none;
+    border: 1px solid black;
+    color: #000000;
+    box-shadow: none;
+    padding: 1rem 1rem;
+    margin: 0.5em 3em;
+}
+#totalling{
+    background-color: #000000;
+    color: #fff;
+}
+.payment_method{
+    width: 100%;
+    height: fit-content;
+    margin-top: 1rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
+}
+.payment_method .section1{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: left;
+    text-align: left;
+}
+.payment_method .section2{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: left;
+    text-align: left;
+}
+/*HISTORY OF TRANSACTIONS*/
+.successful_transaction_history{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.successfull_transaction_section{
+    width: 80%;
+    margin: 0 auto;
+}
+.successfull_transaction_section .body_sec {
+    margin: 0 0 0 0;
+}
+.successfull_transaction_section .body_sec table tbody td{
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  border-bottom: 2px solid rgb(232, 229, 229);
+  color: #000000;
+}
+.successfull_transaction_section .body_sec  button{
+    padding: 0.7rem 0;
+    background-color:  #009d00; 
+    border: none;
+    width: 80%;
+    cursor: pointer;
+    margin: 1rem 1rem;
+    border-radius: 5px;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.successfull_transaction_section .body_sec  button:hover{
+    color: #000000;
+    padding: 0.7rem 0;
+    border: 1px solid #009d00; 
+    background: none
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-image: url(../Images/19374.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 .hide{
     display: none;
