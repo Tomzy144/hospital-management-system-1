@@ -223,17 +223,27 @@ body{
     margin: 1rem 0;
 }
 
-/*APPOITMENT SECTION*/
-.pending_transaction_section{
+/*TRANSACTION SECTION*/
+.transaction_Section{
     width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.container{
-    width: 60%;
-    margin: 5rem 0;
+
+.pending_transaction_section{
+    width: fit-content;
+    display: flex;
+    margin: 0 0 0 90px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
 .contents{
     width:100%;
+    height: fit-content;
+   margin: 5em 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .head-sec{
@@ -243,21 +253,22 @@ body{
     flex-direction: row;
     align-items: center;
     padding: 0 1rem;
-    background-color: #ffffff;
     justify-content: space-between;
+    color: #fff;
 }
 
 .head-sec span{
-    font-size: 17px;
+    font-size: 26px;
+    color: #fff;
 }
 .pending_transaction_input_control{
     position: relative;
 }
 .pending_transaction_input{
-    padding: 0.5rem 0.3rem;
+    padding: 1rem 0.3rem;
     margin-right: 1rem;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     width: 100%;
     outline: none;
 }
@@ -270,21 +281,21 @@ input:focus{
 #search-icon{
     position: absolute;
     top: 32%;
-    right: 15%;
-    color: #000000;
+    right: 7%;
+    color: #afabab;
     cursor: pointer;
 }
 .body_sec{
     width: 100%;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: auto;
+    padding: 1rem 1rem;
 }
 table{
     width: 100%;
     height: auto;
     border-collapse: collapse;
-    overflow-y: hidden;
+    overflow-y: auto;
+    flex-wrap: wrap;
 }
  table thead td{
     background-color: rgb(42, 87, 215);;
@@ -300,13 +311,14 @@ table{
     font-size: 20px;
     margin: 1rem 0;
     border-bottom: 2px solid rgb(232, 229, 229);
-    padding: 2rem;
+    padding: 0.5rem;
     color: #000000;
 }
 .body_sec button{
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 0;
     background-color: rgb(42, 87, 215);
     border: none;
+    width: 80%;
     cursor: pointer;
     margin: 1rem 1rem;
     border-radius: 20px;
@@ -314,9 +326,10 @@ table{
     transition: all ease-in-out 0.5s;
 }
 .body_sec button:nth-child(2){
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 0;
     background-color: rgb(255, 0, 0);
     border: none;
+    width: 80%;
     cursor: pointer;
     color: #fff;
     margin: 1rem 1rem;
@@ -324,13 +337,13 @@ table{
 }
 .body_sec button:hover{
     color: #000000;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 0;
     border: 1px solid rgb(42, 87, 215);
     background: none
 }
 .body_sec button:hover:nth-child(2){
     color: #000000;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 0;
     border: 1px solid rgb(255, 0, 0);
     background: none
 }
@@ -346,14 +359,61 @@ table{
     align-items: center;
     background-color: red;
 }
-.transaction_successful_section{
-    width: 500px;
-    height: auto !important;
-    padding: 1rem;
-    position: fixed;
-    right: 0;
-    top: 5rem;
-    background-color: rgb(0, 0, 0);
+.successful_transaction{
+    border-bottom-left-radius: 19px;
+    width: 400px;
+    height: fit-content;
+    padding: 1rem 1rem;
+    background-color: rgb(255, 255, 255);
+}
+.flex_container{
+    margin: 5rem auto;
+}
+.successful_transaction span{
+    font-size: 26px;
+}
+.transaction_box{
+    width: 350px;
+    height: 100px;
+    padding: 1em;
+    background-color:  rgb(42, 87, 215);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;;
+    color: #fff;
+    margin: 1rem auto;
+}
+.transaction_box h1{
+    font-size: 24px;
+}
+.transaction_box .circle_icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    color: rgb(42, 87, 215);
+    /* color: #009d00; */
+    align-items: center;
+    background-color: #fff;
+}
+.transaction_box .circle_icon #icon{
+    font-size: 25px;
+}
+.total_trasaction{
+    width: 350px;
+    padding: 1em;
+    background-color: rgb(255, 0, 0);
+    border-radius: 0.5rem;
+    display: flex;
+    overflow-y: auto;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+    color: #fff;
+    margin: 1rem auto;
 }
 .hide{
     display: none;

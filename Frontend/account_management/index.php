@@ -46,11 +46,11 @@
                 <i class="fa fa-sign-out" id="icon"></i>
             </div>
         </div>
+        <div class="transaction_Section">
         <div class="pending_transaction_section">
-        <div class="container">
     <div class="contents">
         <div class="head-sec">
-            <span style="color:black;">Pending Transactions</span>
+            <span>Pending Transactions</span>
             <div class="pending_transaction_input_control">
             <i class="fa fa-search" id="search-icon"></i>
                 <input type="text" placeholder="Search here" class="pending_transaction_input">
@@ -66,6 +66,8 @@
             <td>Patient ID</td>
             <td>Date</td>
             <td>Time</td>
+            <td>Request Type</td>
+            <td>Amount</td>
             <td>Paid/Cancelled</td>
         </tr>
     </thead>
@@ -80,7 +82,9 @@
             <td>Precious Bassey</td>
             <td>001</td>
             <td>22-02-2024</td>
-            <td>2:30PM</td>
+            <td>2:30PM</td>  
+            <td>Rendered service of malaria test</td>  
+            <td>30,000.00</td>  
             <td>
             <button class="accept-btn" type="button" onClick="personal_profile_section()">Paid</button>
             <button class="reject-btn">Cancelled</button>
@@ -98,25 +102,9 @@
             <td>Precious Bassey</td>
             <td>001</td>
             <td>22-02-2024</td>
-            <td>2:30PM</td>
-            <td>
-            <button class="accept-btn" type="button" onClick="personal_profile_section()">Paid</button>
-            <button class="reject-btn">Cancelled</button>
-            </td>
-        </tr>
-</tbody>
-   <tbody>
-        <tr>
-            <td>1</td>
-            <td>
-                <div class="image">
-                <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
-                </div>
-            </td>
-            <td>Precious Bassey</td>
-            <td>001</td>
-            <td>22-02-2024</td>
-            <td>2:30PM</td>
+            <td>2:30PM</td>  
+            <td>Rendered service of malaria test</td>  
+            <td>30,000.00</td>  
             <td>
             <button class="accept-btn" type="button" onClick="personal_profile_section()">Paid</button>
             <button class="reject-btn">Cancelled</button>
@@ -126,9 +114,6 @@
 </table>
         </div>
         </div>
-        </div>
-        <div class="transaction_successful_section">
-            
         </div>
         </div>
     <script src="index.js"></script>
