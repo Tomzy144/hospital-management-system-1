@@ -713,35 +713,29 @@ document.querySelector('[data-patient-id]').addEventListener('click', function()
     var patientId = this.getAttribute('data-patient-id');
 
     // Call the loadPatientProfile function with the retrieved patient ID
-    loadPatientProfile(patientId);
+    // loadPatientProfile(patientId);
   
 
 });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Your JavaScript code here
-        function loadPatientProfile(patient_id) {
-            // Make an asynchronous request to fetch patient details using AJAX
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'index.php', true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // Update the patientDetailsContainer with the received HTML
-                    var container = document.getElementById('patientDetailsContainer');
-                    if (container) {
-                        container.innerHTML = xhr.responseText;
-                    } else {
-                        console.error("Element with ID 'patientDetailsContainer' not found");
-                    }
-                }
-            };
-            // Send the patient_id to the PHP script
-            xhr.send('load_patient_profile=1&patient_id=' + encodeURIComponent(patient_id));
-        }
 
-        // Attach event listeners or any other code that should run after DOM is loaded
-    });
+function loadPatientProfile(patient_id) {
+    // Make an asynchronous request to fetch patient details using AJAX
+    alert(patient_id);
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'index.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Update the patientDetailsContainer with the received HTML
+         
+            document.getElementById('patientDetailsContainer').innerHTML = xhr.responseText;
+            
+        }
+    };
+    // Send the patient_id to the PHP script
+    xhr.send('load_patient_profile=1&patient_id=' + encodeURIComponent(patient_id));
+}
 
 
 
