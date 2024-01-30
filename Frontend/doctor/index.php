@@ -342,12 +342,12 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
 ?>
 
 
-<div id="" ></div>
+<div id="patientDetailsContainer"></div>
 
      <!----Start from here-->
    <div class="all_sections_input hide">
     <!---PATIENT PERSONAL INFO-->
-   <div class="info_dropdown"  id="patientDetailsContainer"  onClick="personal_info_section()">
+   <div class="info_dropdown"    onClick="personal_info_section()">
     <span>Personal Information</span>
     <i class="fa fa-plus" id="info_icon_plus"></i>
     <i class="fa fa-minus" id="info_icon_minus"></i>

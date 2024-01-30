@@ -729,7 +729,13 @@ function loadPatientProfile(patient_id) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // Update the patientDetailsContainer with the received HTML
          
-            document.getElementById('patientDetailsContainer').innerHTML = xhr.responseText;
+            var container = document.getElementById('patientDetailsContainer');
+            if (container) {
+                container.innerHTML = xhr.responseText;
+            } else {
+                console.error("Element with ID 'patientDetailsContainer' not found");
+            }
+            
             
         }
     };
