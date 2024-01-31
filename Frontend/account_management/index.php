@@ -319,12 +319,12 @@
             </div>
         </div>
         <div class="body_sec">
-<table>
+<table id="transactionBody">
     <thead>
         <tr>
             <td>#</td>
             <td>PASSPORT</td>
-            <td>Patient Name/Patient ID</td>
+            <td>Patient Name <br/>Patient ID</td>
             <td>Date/Time</td>
             <td>Request Type/Amount</td>
             <td>Status</td>
@@ -333,12 +333,12 @@
     <tbody>
         <td>1</td>
         <td>
-        <div class="image">
+        <div class="image" id="transaction_image">
                 <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
         </div>
         </td>
         <td>
-            <p>Princess Precious Asuquo</p>
+            <p>Queen Precious Asuquo</p>
             <p>PAT0001</p>
         </td>
         <td>
@@ -349,49 +349,10 @@
         <p>Rendered service of malaria test</p>
         <p>N30,000.00</p>
         </td>
-        <td><button>Successful</button></td>
+        <td><button id="successful_button">Successful</button></td>
     </tbody>
     <tbody>
-        <td>1</td>
-        <td>
-        <div class="image">
-                <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
-        </div>
-        </td>
-        <td>
-            <p>Princess Precious Asuquo</p>
-            <p>PAT0001</p>
-        </td>
-        <td>
-            <p>23-09-2024</p>
-            <p>23:09</p>
-        </td>
-        <td>
-        <p>Rendered service of malaria test</p>
-        <p>N30,000.00</p>
-        </td>
-        <td><button>Successful</button></td>
-    </tbody>
-    <tbody>
-        <td>1</td>
-        <td>
-        <div class="image">
-                <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
-        </div>
-        </td>
-        <td>Princess Precious Asuquo</td>
-        <td>
-            <p>23-09-2024</p>
-            <p>23:09</p>
-        </td>
-        <td>
-        <p>Rendered service of malaria test</p>
-        <p>N30,000.00</p>
-        </td>
-        <td><button>Successful</button></td>
-    </tbody>
-    <tbody>
-        <td>1</td>
+        <!-- <td>1</td>
         <td>
         <div class="image">
                 <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
@@ -409,56 +370,14 @@
         <p>Rendered service of malaria test</p>
         <p>N30,000.00</p>
         </td>
-        <td><button>Successful</button></td>
-    </tbody>
-    <tbody>
-        <td>1</td>
-        <td>
-        <div class="image">
-                <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
-        </div>
-        </td>
-        <td>
-            <p>Princess Precious Asuquo</p>
-            <p>PAT0001</p>
-        </td>
-        <td>
-            <p>23-09-2024</p>
-            <p>23:09</p>
-        </td>
-        <td>
-        <p>Rendered service of malaria test</p>
-        <p>N30,000.00</p>
-        </td>
-        <td><button>Successful</button></td>
-    </tbody>
-    <tbody>
-        <td>1</td>
-        <td>
-        <div class="image">
-                <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
-        </div>
-        </td>
-        <td>
-            <p>Princess Precious Asuquo</p>
-            <p>PAT0001</p>
-        </td>
-        <td>
-            <p>23-09-2024</p>
-            <p>23:09</p>
-        </td>
-        <td>
-        <p>Rendered service of malaria test</p>
-        <p>N30,000.00</p>
-        </td>
-        <td><button>Successful</button></td>
+        <td><button>Successful</button></td> -->
     </tbody>
 </table>
         </div>
         <div class="pending_transaction_list_pagination">
                 <div class="flexs">
-                    <p>Prev List</p>
-                    <p>Next List</p>
+                    <p id="prev">Prev List</p>
+                    <p id="next">Next List</p>
                 </div>
         </div>
     </div>

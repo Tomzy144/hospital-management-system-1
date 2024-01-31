@@ -1085,8 +1085,8 @@ input{
     width: fit-content;
 }
 .vital_form .form_control input{
-    width: fit-content;
-    padding: 2rem;
+    width: 300px;
+    padding:1rem;
 }
 .vital_form .form_control textarea
 {

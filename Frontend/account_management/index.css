@@ -629,6 +629,11 @@ table{
 .successfull_transaction_section .body_sec {
     margin: 0 0 0 0;
 }
+img {
+    max-width: 50px;  /* Set the maximum width for the images */
+    height: auto;
+    border-radius: 100%;
+}
 .successfull_transaction_section .body_sec table tbody td{
   background-color: rgb(255, 255, 255);
   font-size: 20px;

@@ -657,13 +657,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             
     <ul id="list">
         <li class="options" id="0" onclick="showTable('All')">All</li>
-        <li class="options" id="1" onclick="showTable('Inpatients')">Inpatients</li>
-        <li class="options" id="2" onclick="showTable('Outpatients')">Outpatients</li>
-        <li class="options" id="3" onclick="showTable('Waitinglist')">Waiting List</li>
-        <li class="options" id="4" onclick="showTable('Appointment')">Appointment</li>
-        <li class="options" id="5"  onclick="showTable('Test')">Test</li>
+        <li class="options" id="1" onclick="showTable('POC')">POC</li>
         <li class="options" id="6"  onclick="showTable('ANC')">ANC</li>
-        <li class="options" id="7"  onclick="showTable('Todayinputs')">Today inputs</li>
         <!-- Add more options here -->
     </ul>
         </div>
