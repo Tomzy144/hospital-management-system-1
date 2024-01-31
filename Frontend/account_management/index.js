@@ -36,12 +36,15 @@ const show_print_recepit = ()=>{
 //PRINT RECEIPT
 function printDivContent() {
     var printContents = document.querySelector('.receipt_printing').innerHTML;
-    var printWindow = window.open('', '_blank');
+    var printWindow = window.open();
     
-    printWindow.document.write('<html><head><title>Print Div Content</title></head><body>');
+    printWindow.document.write('<html><head><title>Receipt</title></head><body>');
+      // Link to the external CSS file
+      printWindow.document.write('<link rel="stylesheet" href="index.css">');
     printWindow.document.write(printContents);
     printWindow.document.write('</body></html>');
 
     printWindow.document.close();
     printWindow.print();
+    printWindow.close();
 }

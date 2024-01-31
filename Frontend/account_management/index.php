@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Management</title>
     <link rel="stylesheet" href="index.css">
+    
     <link rel="stylesheet" href="../awesome-font/css/font-awesome.min.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="navbar">
@@ -183,11 +187,10 @@
                 </div>
         </div>
         <div class="personal_total_transaction_section">
-            <p>Acct001</p>
             <p>Comfirmed Transactions</p>
             <p>Cash at hand:200.000.00</p>
             <p>POS:50,000.00</p>
-            <p id="confirmed_amount">N250,000.00</p>
+            <p id="confirmed_amount"> Total: N250,000.00</p>
         </div>
         </div>
         <!---SUCCESSFUL DAILY TRANSFER SECTION-->
@@ -249,7 +252,7 @@
         </div>
         </div>
         <div class="receipt_printing hide">
-                <img src="../Images/Mount_Tech_Logo-removebg-preview.png" alt="">
+                <!-- <img id="img" src="../Images/Mount_Tech_Logo-removebg-preview.png" alt=""> -->
                 <h1>RECEIPT</h1>
                 <div class="container">
                     <div class="name">
@@ -288,7 +291,7 @@
                             <td>2,300.00</td>
                         </tbody>
                         <tbody>
-                            <td id="totalling">Total</td>
+                            <td id="totalling" style="backgr">Total</td>
                             <td id="totalling">13,300.00</td>
                         </tbody>
                     </table>

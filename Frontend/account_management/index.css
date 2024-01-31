@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Quicksand", Franklin Gothic Book;;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 body{
@@ -379,7 +381,6 @@ table{
    transform: scale(0.94);
 }
 .successful_transaction{
-    border-bottom-left-radius: 19px;
     width: 430px;
     height: fit-content;
     position: relative;
@@ -387,6 +388,7 @@ table{
     padding: 1rem 0;
     height: 100vh;
     margin: 0 0 0 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow-y: auto;
     background-color: rgb(255, 255, 255);
 }
@@ -394,14 +396,15 @@ table{
     margin: 5rem 0rem 10em 0;
 }
 .successful_transaction span{
-    font-size: 26px;
+    font-size: 20px;
+    padding: 0 0.5em;
+
 }
 .transaction_box{
     width: 320px;
     height: fit-content;
     padding: 0.5em 0.5em ;
     background-color:  rgb(42, 87, 215);
-    border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -411,11 +414,13 @@ table{
     transition: all ease-in-out 0.5s;
 }
 .transaction_box:hover{
-    transform: scale(0.98);
-    background-color: rgb(255, 0, 0);
+    transform: scale(0.89);
+    background:none;
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
 }
 .transaction_box h1{
-    font-size: 24px;
+    font-size: 20px;
 }
 .transaction_box .amount_item{
     display: flex;
@@ -429,7 +434,6 @@ table{
     width: 320px;
     padding: 1em 1em;
     background-color: rgb(255, 0, 0);
-    border-radius: 0.5rem;
     display: flex;
     overflow-y: auto;
     justify-content: space-between;
@@ -437,9 +441,15 @@ table{
     align-items: center;
     color: #fff;
     margin: 1rem auto;
+    transition: all ease-in-out 0.5s;
+}
+.total_trasaction:hover{
+    background: none;
+    border: 1px solid rgb(255, 0, 0);
+    color: rgb(255, 0, 0);;
 }
 .personal_total_transaction_section{
-    width: 300px;
+    width: 350px;
     height: 150px;
     background-color: #ffffff; 
     position: fixed;
@@ -456,9 +466,9 @@ table{
 }
 #confirmed_amount{
     padding: 1rem;
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(255, 3, 3);
     width: 100%;
-    font-size: 25px;
+    font-size: 20px;
     color: #fff;
     height: 100%;
 }

@@ -4,7 +4,9 @@
     box-sizing: border-box;
     transition:0.5s;
     text-decoration: none;
-    font-family: "Quicksand", Franklin Gothic Book;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 body{
