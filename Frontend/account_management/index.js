@@ -49,48 +49,128 @@ function printDivContent() {
 }
 
 
+//PENDING TRANSACTIONS
+document.addEventListener('DOMContentLoaded', function(){
+    //Created an Array that collects all the element and value, i used object to get the values for each of them // KINGSLEY CODE LINE
+    const pendingTransaction = [
+        {number:"1", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+    },
+        {number:"2", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+    },
+        {number:"3", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+    },
+        {number:"4", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+    },
+        {number:"5", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+    },
+        {number:"6", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+    },
+        {number:"7", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+    },
+    ];
+    //SET CURRENT INDEXT TO 0, I.e. ARRAY TO 0;
+    let currentIndexPen = 0;
+    const tableBodyPen = document.querySelector('#pendingTransactions tbody');
+    const prevPen = document.querySelector("#prevPen");
+    const nextPen = document.querySelector("#nextPen");
 
-//PUSHING OLD CONFIRMED TRANSACTIONS TO THE NEXT BUTTON
-const button = document.getElementById("successful_button").textContent
+    //UPDATING THE TABE BODY
+    const updateTablePen = ()=>{
+        //SET TABLE BODY TO BLANK
+        tableBodyPen.innerHTML ="";
+        //SET CURRENT INDEX TO 4 AND GET THE MIN VALUE OF THE PENDING TRANSACTION LENGTH AND STORE IN THE ENDINDEXPEN VAR
+        let endIndexPen = Math.min(currentIndexPen + 4, pendingTransaction.length);
+        //LOOP THROUGH THE CURRENTINDEX AND CHECK IF THE CURRENTINDEX IS LESS THAN THE MIN VALUE F YES, ITS ITERATE
+        for(let i = currentIndexPen; i < endIndexPen; i++){
+            //CREATED A TABLEROW FOR THE BODY AND ADDED CELLS TO THEM
+            let row  = tableBodyPen.insertRow();
+            let cell0 = row.insertCell(0);
+            let cell1 = row.insertCell(1);
+            let cell2 = row.insertCell(2);
+            let cell3 = row.insertCell(3);
+            let cell4 = row.insertCell(4);
+            let cell5 = row.insertCell(5);
+
+            //ADDED EACH OF THE PENDING TRANSATION ARRAYS TO THE TABLE CELLS
+            cell0.innerHTML = pendingTransaction[i].number;
+            let ImageEle = document.createElement("img");
+            ImageEle.src = pendingTransaction[i].imageUrl;
+            cell1.appendChild(ImageEle);
+            cell2.innerHTML = `${pendingTransaction[i].name_id.name} <br/> ${pendingTransaction[i].name_id.id}`;
+            cell3.innerHTML = `${pendingTransaction[i].date_time.date} <br/> ${pendingTransaction[i].date_time.time}`;
+            cell4.innerHTML = `${pendingTransaction[i].request_type_amount.request_type} <br/> ${pendingTransaction[i].request_type_amount.amount}`;
+            //ACCEPT BUTTON FOR ACCEPTNG TRANSACTION
+            let accpetButton = document.createElement('button');
+            accpetButton.innerHTML = 'Accept';
+            accpetButton.id = "accept_button";
+            accpetButton.addEventListener("click", check_cash_or_pos)
+            //REJECT BUTTON FOR REJECTING TRACTION
+            let rejectButton = document.createElement('button');
+            rejectButton.innerHTML = 'Reject';
+            rejectButton.id = "reject_button";
+            `${cell5.appendChild(accpetButton)} <br/> ${cell5.appendChild(rejectButton)}`;
+        }
+
+    };
+    updateTablePen();
+    //RETURN TO THE PREVIOUS INDEX VALUE BY 4
+    prevPen.addEventListener('click', function(){
+        currentIndexPen = Math.max(currentIndexPen - 4, 0);
+        updateTablePen();
+    });
+    //GO TO THE NEXT VALUE BY 4
+    nextPen.addEventListener('click', function(){
+        currentIndexPen += 4;
+        if(currentIndexPen >= pendingTransaction.length){
+            currentIndexPen = 0;
+        }
+        updateTablePen()
+    })
+});
+
+
+
+
+
+
+//SUCCESSFUL CONFIRMED TRANSACTIONS
 
 document.addEventListener('DOMContentLoaded', function(){
     const successfulTransaction = [
-        {number: "1", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button
+        {number: "1", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}
         },
-        {number: "2", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button
+        {number: "2", imageUrl: '../Images/80e729b199b61a6c183b85263d35a6ef.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}
         },
-        {number: "3", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button
+        {number: "3", imageUrl: '../Images/486bb8db10b50c178cc502e861e64daf.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}
         },
-        {number: "4", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button
+        {number: "4", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}
         },
-        {number: "5", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "5", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "6", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "6", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "7", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "7", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "8", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "8", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "9", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "9", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "10", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "10", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "11", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "11", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "12", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "12", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "13", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "13", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "14", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "14", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "15", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        {number: "15", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"} 
         },
-        {number: "16", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
-        }
     ];
 
     let currentIndex = 0;
-    const tableBody = document.querySelector("#transactionBody tbody");
+    const tableBody = document.querySelector("#successfulTransaction tbody");
     const prev = document.querySelector("#prev");
     const next = document.querySelector("#next");
 
@@ -121,9 +201,14 @@ document.addEventListener('DOMContentLoaded', function(){
                cell2.innerHTML =`${successfulTransaction[i].name_id.name} <br/>  ${successfulTransaction[i].name_id.id}`
                cell3.innerHTML = `${successfulTransaction[i].date_time.date} <br/> ${successfulTransaction[i].date_time.time}`
                cell4.innerHTML = `${successfulTransaction[i].request_type_amount.request_type} <br/> ${successfulTransaction[i].request_type_amount.amount}`
-               cell5.innerHTML = successfulTransaction[i].status_active
+               var successful_button = document.createElement("button");
+               successful_button.textContent = "Successful"
+;               successful_button.id =  "button_successful";
+                successful_button.onclick   = function(){
+                    alert("Successful");
+                }
+                cell5.appendChild(successful_button);
         }
-
     }
     updateTable();
     prev.addEventListener('click', ()=>{

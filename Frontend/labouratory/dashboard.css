@@ -245,7 +245,7 @@ body{
 
 
 .contents{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-image: url(../Images/26836.jpg);
     background-position: center;
@@ -309,6 +309,7 @@ body{
 }
 .appoitment_input{
     padding: 0.5rem 0.5rem;
+    width: 200px;
     outline: none;
     border: none;
     background-color: #fff;
@@ -471,9 +472,9 @@ span{
     display: none;
 }
 .diagnosis{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    background-color: #fff;
+    background-color: #ff0000;
 }
 
 /*TEST BOOKING*/

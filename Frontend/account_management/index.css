@@ -311,7 +311,7 @@ table{
     border-bottom: 2px solid rgb(232, 229, 229);
     color: #000000;
 }
-.body_sec button{
+#accept_button{
     padding: 0.7rem 0;
     background-color: rgb(42, 87, 215);
     border: none;
@@ -322,23 +322,24 @@ table{
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
-.body_sec button:nth-child(2){
+#reject_button{
     padding: 0.7rem 0;
     background-color: rgb(255, 0, 0);
     border: none;
     width: 80%;
     cursor: pointer;
+    border-radius: 5px;
     color: #fff;
     margin: 1rem 1rem;
     transition: all ease-in-out 0.5s;
 }
-.body_sec button:hover{
+#accept_button:hover{
     color: #000000;
     padding: 0.7rem 0;
     border: 1px solid rgb(42, 87, 215);
     background: none
 }
-.body_sec button:hover:nth-child(2){
+#reject_button:hover{
     color: #000000;
     padding: 0.7rem 0;
     border: 1px solid rgb(255, 0, 0);
@@ -630,8 +631,8 @@ table{
     margin: 0 0 0 0;
 }
 img {
-    max-width: 50px;  /* Set the maximum width for the images */
-    height: auto;
+    width: 50px;  /* Set the maximum width for the images */
+    height: 50px;
     border-radius: 100%;
 }
 .successfull_transaction_section .body_sec table tbody td{
@@ -642,7 +643,7 @@ img {
   border-bottom: 2px solid rgb(232, 229, 229);
   color: #000000;
 }
-.successfull_transaction_section .body_sec  button{
+ #button_successful{
     padding: 0.7rem 0;
     background-color:  #009d00; 
     border: none;
@@ -653,7 +654,7 @@ img {
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
-.successfull_transaction_section .body_sec  button:hover{
+ #button_successful:hover{
     color: #000000;
     padding: 0.7rem 0;
     border: 1px solid #009d00; 

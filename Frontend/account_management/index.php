@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="body_sec">
-<table>
+<table id="pendingTransactions">
     <thead>
         <tr>
             <td>#</td>
@@ -75,7 +75,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <!-- <tr>
             <td>1</td>
             <td>
                 <div class="image">
@@ -95,12 +95,12 @@
                 <p>N30,000.00</p>
             </td>  
             <td>
-            <button class="accept-btn" type="button" onClick="check_cash_or_pos()">Paid</button>
-            <button class="reject-btn">Cancelled</button>
+            <button class="accept-btn" type="button" onClick="check_cash_or_pos()" id="paid">Paid</button>
+            <button class="reject-btn" id="cancelled">Cancelled</button>
             </td>
-        </tr>
+        </tr> -->
 </tbody>
-    <tbody>
+    <!-- <tbody>
         <tr>
             <td>1</td>
             <td>
@@ -177,16 +177,17 @@
             <button class="reject-btn">Cancelled</button>
             </td>
         </tr>
-</tbody>
+</tbody> -->
 </table>
         </div>
         <div class="pending_transaction_list_pagination">
                 <div class="flexs">
-                    <p>Prev List</p>
-                    <p>Next List</p>
+                    <p id="prevPen">Prev List</p>
+                    <p id="nextPen">Next List</p>
                 </div>
         </div>
         <div class="personal_total_transaction_section">
+            <p>MGTACCOUNT0001</p>
             <p>Comfirmed Transactions</p>
             <p>Cash at hand:200.000.00</p>
             <p>POS:50,000.00</p>
@@ -319,7 +320,7 @@
             </div>
         </div>
         <div class="body_sec">
-<table id="transactionBody">
+<table id="successfulTransaction">
     <thead>
         <tr>
             <td>#</td>
@@ -352,25 +353,7 @@
         <td><button id="successful_button">Successful</button></td>
     </tbody>
     <tbody>
-        <!-- <td>1</td>
-        <td>
-        <div class="image">
-                <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
-        </div>
-        </td>
-        <td>
-            <p>Princess Precious Asuquo</p>
-            <p>PAT0001</p>
-        </td>
-        <td>
-            <p>23-09-2024</p>
-            <p>23:09</p>
-        </td>
-        <td>
-        <p>Rendered service of malaria test</p>
-        <p>N30,000.00</p>
-        </td>
-        <td><button>Successful</button></td> -->
+
     </tbody>
 </table>
         </div>
