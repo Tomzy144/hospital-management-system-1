@@ -70,6 +70,22 @@ document.addEventListener('DOMContentLoaded', function(){
         {number: "7", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
         },
         {number: "8", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        },
+        {number: "9", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        },
+        {number: "10", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        },
+        {number: "11", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        },
+        {number: "12", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        },
+        {number: "13", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        },
+        {number: "14", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        },
+        {number: "15", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
+        },
+        {number: "16", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}, status_active:button 
         }
     ];
 
