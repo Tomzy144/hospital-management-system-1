@@ -26,6 +26,8 @@ const close_check_cash_or_pos = ()=>{
 
 }
 
+//PRINTING SECTION
+
 //SHOW PRINT receipt
 const show_print_receipt = ()=>{
     document.querySelector(".overlay").classList.remove("hide");
@@ -38,9 +40,9 @@ function printDivContent() {
     var printContents = document.querySelector('.receipt_printing').innerHTML;
     var printWindow = window.open();
        // Link to the external CSS file
-    printWindow.document.write('<link rel="stylesheet" href="index.css">');
-    printWindow.document.write('<html><head><title>Receipt</title></head><body>');
-    printWindow.document.write(printContents);
+       printWindow.document.write('<html><head><title>Receipt</title></head><body>');
+       printWindow.document.write(printContents);
+       printWindow.document.write('<link rel="stylesheet" href="index.css">');
     printWindow.document.write('</body></html>');
 
     printWindow.document.close();
