@@ -351,7 +351,7 @@ body{
     flex-direction: column;
   }
   .form-container{
-      width:500px;
+      width:fit-content;
       background-color: rgb(255, 255, 255);
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       color: rgb(42, 87, 215);
@@ -386,6 +386,8 @@ body{
   }
   .form_control_group{
     display: flex;
+   justify-content: center;
+   width: 100%;
   }
   .form-display2{
       display: flex;

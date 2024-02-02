@@ -283,7 +283,7 @@ h1{
     letter-spacing: 3px;
 }
 .form_container_for_antenatal{
-    width: 500px;
+    width: 1000px;
     height: fit-content;
     padding: 2rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -482,7 +482,7 @@ form span{
 
 /*POSTNATAL*/
 .form_container_for_postnatal{
-    width: 500px;
+    width: 1000px;
     height: fit-content;
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

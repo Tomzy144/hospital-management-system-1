@@ -153,18 +153,15 @@
             <label for="date_of_birth">Date of Birth</label>
             <input type="date" id="dob">
         </div>
-        </div>
-        <div class="form_control_group">
-            <div class="form-control">
+        <div class="form-control">
             <label for="home_address">Home Address</label>
             <input type="text" id="address" autocomplete="off">
         </div>
-
-            <div class="form-control">
+        <div class="form-control">
             <label for="phone_number">Phone Number</label>
             <input type="text" id="phonenumber">
         </div>
-    </div>
+        </div>
 
     <label>Gender</label>
     <div class="form-display2">
@@ -188,13 +185,11 @@
             <label for="date_of_birth">RelationShip</label>
             <input type="text" id="relationship">
         </div>
-        </div>
-        <div class="form_control_group">
-            <div class="form-control">
+        <div class="form-control">
             <label for="home_address">Phone Number</label>
             <input type="text" id="address" autocomplete="off">
         </div>
-    </div>
+        </div>
     <button type="button" class="btn-submit">Submit</button>
     </form>
     </div>
@@ -509,9 +504,7 @@
             <!-- <i class="fa fa-calendar" class="form_icon"></i> -->
             <input type="date" id="dob">
         </div>
-        </div>
-        <div class="form_control_group">
-            <div class="form-control">
+        <div class="form-control">
                 <!-- <i class="fa fa-home" class="form_icon"></i> -->
             <label for="home_address">Home Address</label>
             <input type="text" id="address" autocomplete="off">
@@ -522,6 +515,7 @@
             <!-- <i class="fa fa-phone" class="form_icon"></i> -->
             <input type="text" id="phonenumber">
         </div>
+    
         </div>
         <div class="form-control">
         <label for="hmo">Hospital Plans</label>
@@ -685,46 +679,48 @@
  <!--Section 2-->
  <div class="form-section current-section" id="section2">
 <h3 style="text-align: left; margin-top: 1rem;">Social History</h3>
+<div class="form_control_group">
     <div class="form-control">
     <label for="Occupation">Occupation</label>
-    <i class="fa fa-twitch" class="form_icon"></i>
     <input type="text" id="occupation"  autocapitalize="off" autofocus autocomplete="off">
 </div>
 
     <div class="form-control">
     <label for="Occupation">Past Obsterics</label>
-    <i class="fa fa-twitch" class="form_icon"></i>
     <input type="text" id="past_obsterics" autocapitalize="off" autofocus autocomplete="off">
 </div>
 
     <div class="form-control">
     <label for="Occupation">Medical History</label>
-    <i class="fa fa-twitch" class="form_icon"></i>
     <input type="text" id="medical_history" autocapitalize="off" autofocus autocomplete="off">
 </div>
-
+    </div>
+    <div class="form_control_group">
     <div class="form-control">
     <label for="Occupation">Sexual History</label>
-    <i class="fa fa-twitch" class="form_icon"></i>
     <input type="text" id="sexual_history" autocapitalize="off" autofocus autocomplete="off">
 </div>
 
     <div class="form-control">
     <label for="Occupation">Past Disease</label>
-    <i class="fa fa-twitch" class="form_icon"></i>
     <input type="text" id="past_disease" autocapitalize="off" autofocus autocomplete="off">
 </div>
 
     <div class="form-control">
     <label for="Occupation">Family Disease</label>
-    <i class="fa fa-twitch" class="form_icon"></i>
     <input type="text" id="family_disease" autocapitalize="off" autofocus autocomplete="off">
 </div>
+    </div>
+    <div class="form_control_group">
     <div class="form-control">
     <label for="Occupation">Past Surgery</label>
-    <i class="fa fa-twitch" class="form_icon"></i>
     <input type="text" id="past_surgery" autocapitalize="off" autofocus autocomplete="off">
 </div>
+    <div class="form-control">
+    <label for="Occupation">Health History</label>
+    <input type="text" id="past_surgery" autocapitalize="off" autofocus autocomplete="off">
+</div>
+    </div>
 <button type="button" class="btn-back">Back</button>
 <button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Submit</button>
  </div>

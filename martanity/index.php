@@ -307,10 +307,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Date of Birth</label>
         <input type="date">
         </div>
+        <div class="form_control">
+        <label for="">Address</label>
+        <input type="text">
+        </div>
         </div>
         <div class="form_control_group">
         <div class="form_control">
-        <label for="">Address</label>
+        <label for="">Emergency Contact</label>
         <input type="text">
         </div>
 
@@ -319,11 +323,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <input type="text">
         </div>
         </div>
-        <div class="form_control">
-        <label for="">Emergency Contact</label>
-        <input type="text">
-        </div>
- 
+   
         <span>Spouse/Partner Information</span>
 
         <div class="form_control_group">
@@ -442,23 +442,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <label for="">Date of Birth</label>
         <input type="date">
         </div>
-        </div>
-        <div class="form_control_group">
         <div class="form_control">
         <label for="">Address</label>
         <input type="text">
         </div>
-
+        </div>
+        <div class="form_control_group">
+        <div class="form_control">
+        <label for="">Emergency Contact</label>
+        <input type="text">
+        </div>
         <div class="form_control">
         <label for="">Contact Number</label>
         <input type="text">
         </div>
         </div>
 
-        <div class="form_control">
-        <label for="">Emergency Contact</label>
-        <input type="text">
-        </div>
+      
  
         <span>Spouse/Partner Information</span>
         <div class="form_control_group">
