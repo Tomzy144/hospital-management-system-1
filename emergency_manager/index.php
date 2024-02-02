@@ -18,6 +18,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <body>
     <div id="navbar-container"></div>
     <div id="emergency_form-container"></div>
+    <div id="patient_list_page-container"></div>
+
+    </div>
     <script src="js/section.js"></script> 
     <script src="js/script.js"></script> 
 </body>

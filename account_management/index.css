@@ -462,7 +462,6 @@ table{
 .personal_total_transaction_section p{
     font-size: 20px;
     padding: 0 0.5em;
-    font-weight: bold;
     color: rgb(42, 87, 215);;
 }
 #confirmed_amount{

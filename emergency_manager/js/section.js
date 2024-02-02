@@ -41,7 +41,7 @@ const Navbar = `
          </div>
       <div class="sidebar_icons">
           <i class="fa fa-envelope" id="icon"></i>
-          <i class="fa fa-hospital-o" id="icon"onClick="click_appoitment_button()"></i>
+          <i class="fa fa-hospital-o" id="icon"onClick="show_emergency_patient_list()"></i>
           <i class="fa fa-sign-out" id="icon"></i>
       </div>
   </div>
@@ -114,3 +114,129 @@ const emergency_form = `
 </div>
 `
 AllSection('emergency_form', emergency_form)
+
+
+
+const patient_list_page = `
+<!----APPOITMENT SECTION-->
+<div class="patient_list_section hide">
+<div class="container">
+<div class="contents">
+<div class="head-sec">
+  <span style="color:black;">Patient Lists</span>
+  <div class="appoitment_input_control">
+  <i class="fa fa-search" id="search-icon"></i>
+      <input type="text" placeholder="Search here" class="appoitment_input">
+  </div>
+</div>
+<div class="body_sec">
+<table>
+<thead>
+<tr>
+  <td>#</td>
+  <td>Patient Name</td>
+  <td>Patient ID</td>
+  <td>Phone Number</td>
+  <td>Cause of the Incident</td>
+  <td>Status</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>0903278232</td>
+  <td>Accident</td>
+  <td>
+    <div class="green"></div>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>0903278232</td>
+  <td>Accident</td>
+  <td>
+  <div class="red"></div>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>0903278232</td>
+  <td>Accident</td>
+  <td>
+  <div class="yellow"></div>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>0903278232</td>
+  <td>Accident</td>
+  <td>
+  <div class="red"></div>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>0903278232</td>
+  <td>Accident</td>
+  <td>
+  <div class="green"></div>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>0903278232</td>
+  <td>Accident</td>
+  <td>
+  <div class="yellow"></div>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>0903278232</td>
+  <td>Accident</td>
+  <td>
+  <div class="yellow"></div>
+  </td>
+</tr>
+</tbody>
+</table>
+<div class="pending_transaction_list_pagination">
+<div class="flexs">
+    <p id="prevPen">Prev List</p>
+    <p id="nextPen">Next List</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div>
+`
+AllSection('patient_list_page', patient_list_page);
+
+
