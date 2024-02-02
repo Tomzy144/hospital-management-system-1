@@ -26,8 +26,8 @@ const close_check_cash_or_pos = ()=>{
 
 }
 
-//SHOW PRINT RECEPIT
-const show_print_recepit = ()=>{
+//SHOW PRINT receipt
+const show_print_receipt = ()=>{
     document.querySelector(".overlay").classList.remove("hide");
     document.querySelector(".check_cash_pos").classList.add("hide");
     document.querySelector(".receipt_printing").classList.remove("hide");
