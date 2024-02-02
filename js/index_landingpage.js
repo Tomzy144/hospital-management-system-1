@@ -120,7 +120,7 @@ const nurse_login_form = `
 log_inAll('nurse', nurse_login_form);
 
 const isNurse_active = ()=>{
-    let url="Frontend/nurse/index.php"
+    let url="nurse/index.php"
     window.parent(location =(url))
 }
 //Radiologist Login
@@ -169,7 +169,7 @@ const radiologist_login_form = `
 log_inAll('radiologist', radiologist_login_form);
 
 const isRadiologist_active = ()=>{
-    let url="Frontend/radiology/index.php"
+    let url="radiology/index.php"
     window.parent(location =(url))
 }
 
@@ -288,7 +288,10 @@ const lab_login_form = `
 `
 log_inAll('lab', lab_login_form);
 
-
+const isLabDoc_active = ()=>{
+    let url="labouratory/index.php"
+    window.parent(location =(url))
+}
 
 //Staff Manager Login
 const open_staff_manager_login_form = function(){
@@ -337,7 +340,7 @@ const staff_manager_login_form = `
 log_inAll('staff_manager', staff_manager_login_form);
 
 const isStaff_manager_active = ()=>{
-    let url="Frontend/staff_management/index.php"
+    let url="staff_management/index.php"
     window.parent(location =(url))
 }
 
@@ -387,12 +390,8 @@ const martanity_login_form = `
 `
 log_inAll('martanity', martanity_login_form);
 
-const isLabDoc_active = ()=>{
-    let url="Frontend/labouratory/index.php"
-    window.parent(location =(url))
-}
 const isMartinity_active = ()=>{
-    let url="Frontend/martanity/index.php";
+    let url="martanity/index.php";
     window.parent(location =(url))
 }
 
@@ -442,7 +441,7 @@ const account_manager_login_form = `
 log_inAll('account_manager', account_manager_login_form);
 
 const isAccount_manager_active = ()=>{
-    let url="Frontend/account_management/index.php"
+    let url="account_management/index.php"
     window.parent(location =(url))
 }
 
@@ -492,7 +491,7 @@ const surgical_suite_manager_login_form = `
 log_inAll('surgical_suite_manager', surgical_suite_manager_login_form);
 
 const isSurgical_suite_active = ()=>{
-    let url="Frontend/surgical_suite_management/index.php"
+    let url="surgical_suite_management/index.php"
     window.parent(location =(url))
 }
 //Emergency Manager Login
@@ -534,16 +533,16 @@ const emergency_manager_login_form = `
     <i class="fa fa-lock"></i>
     <input type="password" name="password" autoComplete='off'/> 
     </div>
-    <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
+    <button type="button" class="btn" onClick="isEmergency_manager_active()">Login</button>
     <form>
 </div>
 `
 log_inAll('emergency_manager', emergency_manager_login_form);
 
-// const isSurgical_suite_active = ()=>{
-//     let url="Frontend/surgical_suite_management/index.php"
-//     window.parent(location =(url))
-// }
+const isEmergency_manager_active = ()=>{
+    let url="emergency_manager/index.php";
+    window.parent(location =(url))
+}
 
 //Pharmacist Login
 const open_pharmacist_login_form = function() {
