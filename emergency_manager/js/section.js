@@ -88,6 +88,10 @@ const emergency_form = `
     <input type="text">
     </div>
     </div>
+    <div class="form_control">
+    <label for="">Relatonship</label>
+    <input type="text">
+    </div>
     <span>Incident Details</span>
     <div class="form_control_group">
     <div class="form_control">
@@ -99,20 +103,8 @@ const emergency_form = `
     <label for="">Time of the Incident</label>
     <input type="time">
     </div>
-    </div>
-    <span>Family Details</span>
-    <div class="form_control_group">
-    <div class="form_control">
-    <label for="">Full Name</label>
-    <input type="text">
-   </div>
-
    <div class="form_control">
-    <label for="">Relatonship</label>
-    <input type="text">
-    </div>
-   <div class="form_control">
-    <label for="">Phone Number</label>
+    <label for="">Cause of the Incident</label>
     <input type="text">
     </div>
     </div>

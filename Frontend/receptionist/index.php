@@ -190,6 +190,7 @@
             <input type="text" id="address" autocomplete="off">
         </div>
         </div>
+
     <button type="button" class="btn-submit">Submit</button>
     </form>
     </div>
@@ -504,6 +505,8 @@
             <!-- <i class="fa fa-calendar" class="form_icon"></i> -->
             <input type="date" id="dob">
         </div>
+        </div>
+        <div class="form_control_group">
         <div class="form-control">
                 <!-- <i class="fa fa-home" class="form_icon"></i> -->
             <label for="home_address">Home Address</label>
@@ -515,8 +518,7 @@
             <!-- <i class="fa fa-phone" class="form_icon"></i> -->
             <input type="text" id="phonenumber">
         </div>
-    
-        </div>
+            </div>
         <div class="form-control">
         <label for="hmo">Hospital Plans</label>
             <select name="" id="select_box">

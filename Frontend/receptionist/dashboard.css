@@ -372,21 +372,29 @@ body{
       display: flex;
       text-align: left;
       flex-direction: column;
+      width: 100%;
       position: relative;
       color: rgb(42, 87, 215);
   }
   .show_family_plan{
-    display: block;
+    display: flex;
+  }
+  .input_family_id_number input{
+    width: 200px;
+  }
+  .input_family_id_number{
+    display: flex;
+    flex-direction: column;
   }
   .form-control select{
     border: 1px solid rgb(42, 87, 215);
     color: rgb(42, 87, 215);
     font-size: 18px;
     padding: 0.5rem;
+    width: fit-content;
   }
   .form_control_group{
     display: flex;
-   justify-content: center;
    width: 100%;
   }
   .form-display2{
@@ -412,7 +420,7 @@ body{
   
 
   input:focus{
-      border: 2px solid rgb(42, 87, 215);
+      border: 1px solid rgb(42, 87, 215);
   }
   .form-control i{
       position: absolute;
