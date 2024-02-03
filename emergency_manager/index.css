@@ -119,6 +119,7 @@ body{
     padding: 1rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
+    background-color: #0057c2;
     flex-direction: column;
     align-items: center;
 }
@@ -230,7 +231,7 @@ body{
 }
 
 .emergency_form_container{
-    width: 1000px;
+    width: fit-content;
     height: fit-content;
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -297,13 +298,13 @@ form span{
 
 /*APPOITMENT SECTION*/
 .patient_list_section{
-    width: 72%;
+    width:1200px;
     display: flex;
     margin: 0   auto;
 }
 
 .container{
-    width: 72%;
+    width: 100%;
     margin: 5rem auto;
 }
 .contents{
@@ -396,7 +397,28 @@ table{
     border-radius: 100%;
 }
 
-.pending_transaction_list_pagination{
+.switch_plan, .transfer{
+    border: none;
+    background-color: rgb(42, 87, 215);
+    width: 100%;
+    padding: 0.5rem;
+    color: #fff;
+    border-radius: 20px;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+.switch_plan:hover, .transfer:hover{
+    border: 1px solid rgb(42, 87, 215);
+    background:none;
+    width: 100%;
+    padding: 0.5rem;
+    color: #000000;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.emergency_patient_list_pagination{
     width: 100%;
     background-color: rgb(255, 255, 255);
     border-bottom-left-radius: 8px ;
@@ -404,13 +426,13 @@ table{
     height: 50px;
     margin: 0 auto;
 }
-.pending_transaction_list_pagination .flexs{
+.emergency_patient_list_pagination .flexs{
     display: flex;;
     height: 100%;
     justify-content: space-around;
     align-items: center;
 }
-.pending_transaction_list_pagination .flexs p{
+.emergency_patient_list_pagination .flexs p{
     background-color: rgb(42, 87, 215);
     padding: 0.5em 1em;
     border-radius: 5px;
@@ -418,7 +440,7 @@ table{
     color: #fff;
     transition: all ease-in-out  0.5s
 }
-.pending_transaction_list_pagination .flexs p:hover{
+.emergency_patient_list_pagination .flexs p:hover{
    transform: scale(0.94);
 }
 .hide{

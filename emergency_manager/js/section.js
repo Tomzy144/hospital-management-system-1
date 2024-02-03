@@ -139,6 +139,7 @@ const patient_list_page = `
   <td>Phone Number</td>
   <td>Cause of the Incident</td>
   <td>Status</td>
+  <td>Responses</td>
 </tr>
 </thead>
 <tbody>
@@ -151,29 +152,8 @@ const patient_list_page = `
   <td>
     <div class="green"></div>
   </td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-  <td>1</td>
-  <td>Precious Bassey</td>
-  <td>001</td>
-  <td>0903278232</td>
-  <td>Accident</td>
   <td>
-  <div class="red"></div>
-  </td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-  <td>1</td>
-  <td>Precious Bassey</td>
-  <td>001</td>
-  <td>0903278232</td>
-  <td>Accident</td>
-  <td>
-  <div class="yellow"></div>
+  <button class="switch_plan">Switch to plan</button>
   </td>
 </tr>
 </tbody>
@@ -187,18 +167,9 @@ const patient_list_page = `
   <td>
   <div class="red"></div>
   </td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-  <td>1</td>
-  <td>Precious Bassey</td>
-  <td>001</td>
-  <td>0903278232</td>
-  <td>Accident</td>
   <td>
-  <div class="green"></div>
-  </td>
+<button class="transfer">Transfer to Morgue</button>
+</td>
 </tr>
 </tbody>
 <tbody>
@@ -211,22 +182,13 @@ const patient_list_page = `
   <td>
   <div class="yellow"></div>
   </td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-  <td>1</td>
-  <td>Precious Bassey</td>
-  <td>001</td>
-  <td>0903278232</td>
-  <td>Accident</td>
   <td>
-  <div class="yellow"></div>
+  <button class="transfer">Transfer to Surgical Unit</button>
   </td>
 </tr>
 </tbody>
 </table>
-<div class="pending_transaction_list_pagination">
+<div class="emergency_patient_list_pagination">
 <div class="flexs">
     <p id="prevPen">Prev List</p>
     <p id="nextPen">Next List</p>
