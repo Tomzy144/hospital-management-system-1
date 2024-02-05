@@ -25,6 +25,13 @@ const close_check_cash_or_pos = ()=>{
     document.querySelector(".check_cash_pos").classList.add("hide");
 
 }
+const close_print_div = ()=>{
+    document.querySelector(".overlay").classList.remove("hide");
+    document.querySelector(".check_cash_pos").classList.remove("hide");
+    document.querySelector(".receipt_printing").classList.add("hide");
+
+
+}
 
 //PRINTING SECTION
 

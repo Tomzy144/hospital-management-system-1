@@ -351,18 +351,6 @@ body{
 .pending_transaction_list_pagination .flexs p:hover{
    transform: scale(0.94);
 }
-.successful_transaction{
-    width: 430px;
-    height: fit-content;
-    position: relative;
-    right: 0;
-    padding: 1rem 0;
-    height: 100vh;
-    margin: 0 0 0 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    overflow-y: auto;
-    background-color: rgb(255, 255, 255);
-}
 
 
 /*RADIOLOGY SECTION*/

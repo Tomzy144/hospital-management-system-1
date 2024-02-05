@@ -539,13 +539,13 @@ table{
     background-color: #000000;
    border: 2px solid black;
 }
-.receipt_printing img{
+#print_close{
+    color: #000000;
+    font-size: 25px;
     position: absolute;
-    top: 22%;
-    right: 10%;
-    width: 100px;
-    height: 100px;
-    opacity: 12%;
+    right: 0;
+    top: 0 ;
+    cursor: pointer;
 }
 .receipt_printing .container .name{
    text-align: left;
@@ -557,6 +557,10 @@ table{
    color: #ffffff;
    font-size: 16px;
    padding: 0 1em;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
 }
 .description_and_amount{
     border: 1px solid black;

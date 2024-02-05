@@ -73,19 +73,12 @@ const click_labouratory_examination = ()=>{
     document.querySelector(".contents").style.display = "none";
     document.querySelector(".lab_input ").classList.remove("hide");
     document.querySelector("#back-arrow").style.display = "flex";
-    document.querySelector("#back-arrow_to_home").style.display = "none";
 }
 document.querySelector("#back-arrow").style.display = "none";
 
 
 //SHOW BUTTONS FOR SECELECTIONS
-const show_buttons = ()=>{
-    document.querySelector(".button_container").style.display = "flex";
-  const appoitment_container = document.querySelector(".appiontment_booking_container");
-  appoitment_container.style.display = "none";
-  document.querySelector("#back-arrow_to_home").style.display = "flex";
-  document.querySelector("button").style.display = "none";
-}
+
 
 
 //Lab 
@@ -232,28 +225,24 @@ haematology_section.addEventListener("click",()=>{
 })
 
 
-const click_diagnosis= ()=>{
-    document.querySelector(".contents").style.display = "none";
-    document.querySelector(".diagnosis").classList.remove("hide");
-    document.querySelector("#back-arrow").style.display = "flex";
-    document.querySelector("#back-arrow_to_home").style.display = "none";
-}
+// const click_diagnosis= ()=>{
+//     document.querySelector(".contents").style.display = "none";
+//     document.querySelector(".diagnosis").classList.remove("hide");
+//     document.querySelector("#back-arrow").style.display = "flex";
+//     document.querySelector("#back-arrow_to_home").style.display = "none";
+// }
 
 const backWardArrow = ()=>{
     document.querySelector(".contents").style.display = "flex";
-    document.querySelector(".diagnosis").classList.add("hide");
     document.querySelector(".lab_input").classList.add("hide");
     document.querySelector("#back-arrow").style.display = "none";
-    document.querySelector("#back-arrow_to_home").style.display = "block";
-
 }
-document.querySelector("#back-arrow_to_home").style.display = "none";
 
-const back_arrow_to_home = ()=>{
-    document.querySelector(".button_container").style.display = "none";
-    document.querySelector("#back-arrow_to_home").style.display = "none";
-    const appoitment_container = document.querySelector(".appiontment_booking_container");
-  appoitment_container.style.display = "block";
-  document.querySelector("#accept_button").style.display = "none";
-  document.querySelector("#reject_button").style.display = "none";
-}
+// const back_arrow_to_home = ()=>{
+//     document.querySelector(".button_container").style.display = "none";
+//     document.querySelector("#back-arrow_to_home").style.display = "none";
+//     const appoitment_container = document.querySelector(".appiontment_booking_container");
+//   appoitment_container.style.display = "block";
+//   document.querySelector("#accept_button").style.display = "none";
+//   document.querySelector("#reject_button").style.display = "none";
+// }

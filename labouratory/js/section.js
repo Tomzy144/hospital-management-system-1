@@ -471,13 +471,11 @@ const lab_sec = `
         <label for="">Platelet Count (#6,000)</label>
 </div>
 <div class="form_control">
-        
         <input type="checkbox" value="12000" class="checkbox">
         <label for="">Bleeding Time and Clotting Time (#12,000)</label>
 </div>
 </form>
 <button id="btn" class="save" onClick="show_test_booking()">Enter</button>
-<button id="btn" class="save">Edit</button>
 </div>
 <div class="test_booking hide">
 <i class="fa fa-times" id="close" onClick="hide_test_booking()"></i>
@@ -498,101 +496,151 @@ const lab_sec = `
 <button class="btn">Book Now</button>
 </div>
 <div class="overlay hide"></div>
+<div class="result">
+<h1>LABORATORY RESULT</h1>
+<div class="profile_div">
+<div class="profile_name">
+<span>Kingsley Effiong</span>
+<span>PAT0002</span>
+</div>
+<div class="img_div">
+<img src ="../Images/80e729b199b61a6c183b85263d35a6ef.jpg"></img>
+</img>
+</div>
+</div>
+<div class="result_for_dia_complaint_upload">
+        <div class="flex_control">
+        <label>Diagnosis</label>
+        <input type= "text"></input>
+        </div>
+        <div class="flex_control">
+        <label>Complaints</label>
+        <textarea col="10" row="10"></textarea>
+        </div>
+        <div class="flex_control">
+        <label>Upload Test Result</label>
+        <input type= "file"></input>
+        </div>
+</div>
 </div>
 
 `
 AllSection('lab_section', lab_sec);
 
-const diagnosis_sec=`
-<div class="diagnosis hide">
-    <h1>Diagnosis</h1>
-    </div>
-`
-AllSection('diagnosis_section', diagnosis_sec);
+
 
 const landing_page_section = `
 <div class="contents">
-<div class="button_container hide">
-<button onClick="click_labouratory_examination()" id="btn_sections">Labouratory Examination</button>
-<button onClick="click_diagnosis()" id="btn_sections">Diagnosis</button>
+<div class="appiontment">
+<div class="head_sec">
+  <span>Appoitment Details</span>
+  <div class="appoitment_input_control">
+  <i class="fa fa-search" id="search_icon"></i>
+      <input type="text" placeholder="Search here" class="appoitment_input">
+  </div>
 </div>
-
-
-<div class="appiontment_booking_container">
-    <div class="appiontment">
-    <div class="head_sec">
-        <span>Appoitment Details</span>
-        <div class="appoitment_input_control">
-        <i class="fa fa-search" id="search_icon"></i>
-            <input type="text" placeholder="Search here" class="appoitment_input">
+<div class="table_container">
+<table>
+  <thead>
+    <td>Patient Name</td>
+    <td>Patient Id</td>
+    <td>Date</td>
+    <td>Time</td>
+    <td>Request Type</td>
+    <td>Accept/Reject</td>
+  </thead>
+  <tbody>
+    <td>Princess Precious</td>
+    <td>Pat001</td>
+    <td>22-02-2024</td>
+    <td>2:30PM</td>
+    <td>Medical Test</td>
+    <td>
+      <button onClick="click_labouratory_examination()">Accept</button>
+      <button>Reject</button>
+    </td>
+  </tbody>
+  <tbody>
+    <td>Princess Precious</td>
+    <td>Pat001</td>
+    <td>22-02-2024</td>
+    <td>2:30PM</td>
+    <td>Medical Test</td>
+    <td>
+      <button>Accept</button>
+      <button>Reject</button>
+    </td>
+  </tbody>
+  <tbody>
+    <td>Princess Precious</td>
+    <td>Pat001</td>
+    <td>22-02-2024</td>
+    <td>2:30PM</td>
+    <td>Medical Test</td>
+    <td>
+      <button>Accept</button>
+      <button>Reject</button>
+    </td>
+  </tbody>
+  <tbody>
+    <td>Princess Precious</td>
+    <td>Pat001</td>
+    <td>22-02-2024</td>
+    <td>2:30PM</td>
+    <td>Medical Test</td>
+    <td>
+      <button>Accept</button>
+      <button>Reject</button>
+    </td>
+  </tbody>
+  <tbody>
+    <td>Princess Precious</td>
+    <td>Pat001</td>
+    <td>22-02-2024</td>
+    <td>2:30PM</td>
+    <td>Medical Test</td>
+    <td>
+      <button>Accept</button>
+      <button>Reject</button>
+    </td>
+  </tbody>
+</table>
+</div>
+<div class="lab_pagination">
+        <div class="flexs">
+            <p id="prevPen">Prev List</p>
+            <p id="nextPen">Next List</p>
         </div>
-    </div>
-    <div class="table_container">
-      <table>
-        <thead>
-          <td>Patient Name</td>
-          <td>Patient Id</td>
-          <td>Date</td>
-          <td>Time</td>
-          <td>Request Type</td>
-          <td>Accept/Reject</td>
-        </thead>
-        <tbody>
-          <td>Princess Precious</td>
-          <td>Pat001</td>
-          <td>22-02-2024</td>
-          <td>2:30PM</td>
-          <td>Medical Test</td>
-          <td>
-            <button onClick="show_buttons()" id="accept_button">Accept</button>
-            <button id="reject_button">Reject</button>
-            <button id="reject_button">Pending</button>
-            <i class="fa fa-times" id="cancel_appoitment" ></i>
-          </td>
-        </tbody>
-        <tbody>
-          <td>Princess Precious</td>
-          <td>Pat001</td>
-          <td>22-02-2024</td>
-          <td>2:30PM</td>
-          <td>Medical Test</td>
-          <td>
-            <button id="accept_button">Accept</button>
-            <button id="reject_button">Reject</button>
-            <button id="reject_button">Pending</button>
-            <i class="fa fa-times" id="cancel_appoitment"></i>
-          </td>
-        </tbody>
-        <tbody>
-          <td>Princess Precious</td>
-          <td>Pat001</td>
-          <td>22-02-2024</td>
-          <td>2:30PM</td>
-          <td>Medical Test</td>
-          <td>
-            <button id="accept_button">Accept</button>
-            <button id="reject_button">Reject</button>
-            <button id="reject_button">Pending</button>
-            <i class="fa fa-times" id="cancel_appoitment"></i>
-          </td>
-        </tbody>
-        <tbody>
-          <td>Princess Precious</td>
-          <td>Pat001</td>
-          <td>22-02-2024</td>
-          <td>2:30PM</td>
-          <td>Medical Test</td>
-          <td>
-            <button id="accept_button">Accept</button>
-            <button id="reject_button">Reject</button>
-            <button id="reject_button">Pending</button>
-            <i class="fa fa-times" id="cancel_appoitment"></i>
-          </td>
-        </tbody>
-      </table>
-    </div>
-    </div>
-      </div>
+</div>
+</div>
+<div class="approved_appoitment">
+<div class="table_container">
+<table>
+  <thead>
+    <td>Patient Name</td>
+    <td>Patient Id</td>
+    <td>Status</td>
+  </thead>
+  <tbody>
+    <td>Princess Precious</td>
+    <td>Pat001</td>
+    <td>
+      <button id="in_progress">In Progress
+      <i class="fa fa-times" id="close_appoitment"></i>
+      </button>
+    </td>
+  </tbody>
+  <tbody>
+    <td>Princess Precious</td>
+    <td>Pat001</td>
+    <td>
+      <button id="completed">Completed
+      <i class="fa fa-times" id="close_appoitment"></i>
+      </button>
+    </td>
+  </tbody>
+</div>
+</div>
 `
 
 AllSection('landing_page_content_section', landing_page_section);

@@ -155,7 +155,7 @@ const printing_receipt_section = `
 </div>
 </div>
 <div class="receipt_printing hide">
-<i class="fa fa-times" id="close_pos_cash" onClick="close_check_cash_or_pos()"></i>
+<i class="fa fa-times" id="print_close" onClick="close_print_div()"></i>
     <!-- <img id="img" src="../Images/Mount_Tech_Logo-removebg-preview.png" alt=""> -->
     <h1>RECEIPT</h1>
     <div class="container">
