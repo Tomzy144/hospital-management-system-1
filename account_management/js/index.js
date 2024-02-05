@@ -35,39 +35,25 @@ const show_print_receipt = ()=>{
     document.querySelector(".receipt_printing").classList.remove("hide");
 }
 
-//PRINT RECEIPT
-function printDivContent() {
-    var printContents = document.querySelector('.receipt_printing').innerHTML;
-    var printWindow = window.open();
-       // Link to the external CSS file
-       printWindow.document.write('<html><head><title>Receipt</title></head><body>');
-       printWindow.document.write(printContents);
-       printWindow.document.write('<link rel="stylesheet" href="index.css">');
-    printWindow.document.write('</body></html>');
 
-    printWindow.document.close();
-    printWindow.print();
-    printWindow.close();
-}
-
+document.addEventListener('DOMContentLoaded', function(){
 
 //PENDING TRANSACTIONS
-document.addEventListener('DOMContentLoaded', function(){
     //Created an Array that collects all the element and value, i used object to get the values for each of them // KINGSLEY CODE LINE
     const pendingTransaction = [
         {number:"1", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
     },
-        {number:"2", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+        {number:"2", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"HIV Test", amount:"80,000.00"}
     },
-        {number:"3", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+        {number:"3", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Eye Test", amount:"230,000.00"}
     },
-        {number:"4", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+        {number:"4", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Food Test", amount:"10,000.00"}
     },
-        {number:"5", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+        {number:"5", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Nose Drug", amount:"90,000.00"}
     },
-        {number:"6", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+        {number:"6", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Ear Drug", amount:"620,000.00"}
     },
-        {number:"7", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+        {number:"7", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Teeth Checkup", amount:"412,000.00"}
     },
     ];
     //SET CURRENT INDEXT TO 0, I.e. ARRAY TO 0;
@@ -101,20 +87,50 @@ document.addEventListener('DOMContentLoaded', function(){
             cell2.innerHTML = `${pendingTransaction[i].name_id.name} <br/> ${pendingTransaction[i].name_id.id}`;
             cell3.innerHTML = `${pendingTransaction[i].date_time.date} <br/> ${pendingTransaction[i].date_time.time}`;
             cell4.innerHTML = `${pendingTransaction[i].request_type_amount.request_type} <br/> ${pendingTransaction[i].request_type_amount.amount}`;
+
+            
             //ACCEPT BUTTON FOR ACCEPTNG TRANSACTION
             let accpetButton = document.createElement('button');
             accpetButton.innerHTML = 'Accept';
             accpetButton.id = "accept_button";
-            accpetButton.addEventListener("click", check_cash_or_pos)
+            accpetButton.addEventListener("click", function(){
+                check_cash_or_pos();
+                //PRINT TRANSATION RECEIPT
+                const receipt = [
+                    {description: "Purchased on Maleria Drugs", amount: ""},
+                ]
+                const tableBodyRep = document.querySelector("#tableReceipt tbody");
+            
+                const updateReceipt = ()=>{
+                    tableBodyRep.innerHTML = ""
+                    const row = tableBodyRep.insertRow();
+                    let cell0 = row.insertCell(0);
+                    let cell1 = row.insertCell(1);
+                    cell0.innerHTML = `${pendingTransaction[i].request_type_amount.request_type}` 
+                    cell1.innerHTML =`${pendingTransaction[i].request_type_amount.amount}`
+                  const totalTransaction =   document.querySelector("#total_transaction")
+                  totalTransaction.innerHTML =  `${pendingTransaction[i].request_type_amount.amount}`;
+                }
+                
+                updateReceipt()
+            });
+
+
+      
+
             //REJECT BUTTON FOR REJECTING TRACTION
             let rejectButton = document.createElement('button');
             rejectButton.innerHTML = 'Reject';
             rejectButton.id = "reject_button";
+            
             `${cell5.appendChild(accpetButton)} <br/> ${cell5.appendChild(rejectButton)}`;
+
+
         }
 
     };
     updateTablePen();
+    
     //RETURN TO THE PREVIOUS INDEX VALUE BY 4
     prevPen.addEventListener('click', function(){
         currentIndexPen = Math.max(currentIndexPen - 4, 0);
@@ -128,15 +144,12 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         updateTablePen()
     })
+
+   
+
 });
 
-
-
-
-
-
 //SUCCESSFUL CONFIRMED TRANSACTIONS
-
 document.addEventListener('DOMContentLoaded', function(){
     const successfulTransaction = [
         {number: "1", imageUrl: '../Images/imaculater.jpg', name_id: {name:"John", id:"PAT00032"}, date_time:{date:"22-09-2024", time:"23:00PM"}, request_type_amount:{request_type:"Maleria Drugs", amount:"30,000.00"}
@@ -205,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function(){
                cell4.innerHTML = `${successfulTransaction[i].request_type_amount.request_type} <br/> ${successfulTransaction[i].request_type_amount.amount}`
                var successful_button = document.createElement("button");
                successful_button.textContent = "Successful"
-;               successful_button.id =  "button_successful";
+              successful_button.id =  "button_successful";
                 successful_button.onclick   = function(){
                     alert("Successful");
                 }
@@ -213,6 +226,8 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
     updateTable();
+
+
     prev.addEventListener('click', ()=>{
                // Move to the previous set of transactions
                currentIndex = Math.max(currentIndex - 5, 0);
@@ -235,5 +250,4 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 
 });
-
 

@@ -473,7 +473,7 @@ table{
     height: 100%;
 }
 .check_cash_pos{
-    width: 500px;
+    width: 300px;
     position: absolute;
     height: fit-content;
     top: 50%;
@@ -505,7 +505,7 @@ table{
     height: 100%;
     border: none;
     font-size: 20px;
-    padding: 1rem;
+    padding: 0.5rem;
     color: #fff;
     transition: all ease-in-out 0.5s;
     background-color: #0057c2;
@@ -516,7 +516,7 @@ table{
     color: #000000;
 }
 .receipt_printing{
-    width: 600px;
+    width: 500px;
     position: absolute;
     height: fit-content;
     top: 50%;
@@ -531,12 +531,11 @@ table{
 }
 .receipt_printing .container{
     width: 100%;
-    height: 100px;
+    height: fit-content;
     justify-content: space-between;
     align-items: center;
     display: flex;
     position: relative;
-    margin: 0.5em 0;
     background-color: #000000;
    border: 2px solid black;
 }
@@ -556,7 +555,7 @@ table{
 }
 .receipt_printing .container p{
    color: #ffffff;
-   font-size: 22px;
+   font-size: 16px;
    padding: 0 1em;
 }
 .description_and_amount{
@@ -582,6 +581,7 @@ table{
     color: #000000;
     box-shadow: none;
     padding: 1rem 1rem;
+    font-size: 18px;
     margin: 0.5em 3em;
 }
 #totalling{

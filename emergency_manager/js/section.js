@@ -41,16 +41,44 @@ const Navbar = `
          </div>
       <div class="sidebar_icons">
           <i class="fa fa-envelope" id="icon"></i>
+          <i class="fa fa-user-md" id="icon"></i>
           <i class="fa fa-hospital-o" id="icon"onClick="show_emergency_patient_list()"></i>
           <i class="fa fa-sign-out" id="icon"></i>
       </div>
   </div>
 `
 
-AllSection('navbar', Navbar)
+AllSection('navbar', Navbar);
+
+   //PROFILE IMAGE
+   const profile_container  =  document.querySelector(".profile_account");
+   const click_icon_for_profile = ()=>{
+       profile_container.classList.toggle("hide");
+   };
+const show_emergency_patient_list = ()=>{
+    document.querySelector(".patient_list_section").classList.remove("hide");
+    document.querySelector(".emergency_form_container").style.display="none"
+}
+
+
+const landing_page = `
+<div class="landing_page">
+<div class="landing_section">
+<button onClick="view_emergency_form()">EMERGENCY FORM</button>
+<button onClick="view_emergency_form()">DOCTOR</button>
+<button onClick="view_emergency_form()">NURSE</button>
+<button onClick="view_emergency_form()">RADIOLOGY</button>
+<button onClick="view_emergency_form()">LABOURATORY</button>
+<button onClick="view_emergency_form()">SURGICAL SUITE</button>
+<button onClick="view_emergency_form()">ICU</button>
+<button onClick="view_emergency_form()">MORGUE</button>
+</div>
+</div>
+`
+AllSection("landing_page", landing_page)
 
 const emergency_form = `
-<div class="emergency_form_container">
+<div class="emergency_form_container hide">
 <form action="">
 <h1>EMERGENCY FORM</h1>
     <h2>Fill in the neccesary information</h2> 
@@ -115,6 +143,10 @@ const emergency_form = `
 `
 AllSection('emergency_form', emergency_form)
 
+const view_emergency_form = ()=>{
+  document.querySelector(".emergency_form_container").classList.remove("hide");
+  document.querySelector(".landing_page").style.display = "none";
+}
 
 
 const patient_list_page = `
@@ -200,5 +232,12 @@ const patient_list_page = `
       </div>
 `
 AllSection('patient_list_page', patient_list_page);
+
+const doctors = `
+<div class="doctor_container hide">
+
+</div>
+`
+AllSection('doctor', doctors);
 
 

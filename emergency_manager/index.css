@@ -229,14 +229,48 @@ body{
     cursor: pointer;
     margin: 1rem 0;
 }
+.landing_page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.landing_section{
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.landing_page button{
+    background-color: white;
+    border: 2px solid #fff;
+    padding: 2rem;
+    font-size: 26px;
+    cursor: pointer;
+    color: #0057c2;
+    margin: 0.5rem;
+    transition: all ease-in-out 0.5s;
+}
+.landing_page button:hover{
+    background:none;
+    border: 2px solid #fff;
+    padding: 2rem;
+    margin: 0.5rem;
+    font-size: 22px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
 
 .emergency_form_container{
-    width: fit-content;
+    width: 1200px;
     height: fit-content;
-    padding: 1rem;
+    padding:2rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #fff;
-    margin: 0   auto;
     overflow: hidden;
     color: rgb(42, 87, 215);
     animation: fadeIn 1s ease-in-out;
@@ -244,6 +278,7 @@ body{
 
 form{
     width: 100%;
+    color: rgb(42, 87, 215);;
     margin: 4.2rem auto 0;
     display: flex;
     flex-direction: column;
@@ -442,6 +477,12 @@ table{
 }
 .emergency_patient_list_pagination .flexs p:hover{
    transform: scale(0.94);
+}
+
+.doctor_container{
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
 }
 .hide{
     display: none; ;
