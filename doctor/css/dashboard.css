@@ -1,176 +1,1639 @@
 *{
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition:0.5s;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
-
-
-:root{
-    --deep-green: rgb(4 47 46);
-    --light-blue:#09529b;
-    --white:#ffffff;
-    --light-green:#0c9aae;
-    --font-family:Arial, Helvetica, sans-serif;
-    --light-grey:#fff2f2;
-    --font-heading:2rem;
-    --icons-size:1.4rem;
-}
-.div-logo{
-    font-size: 2rem;
-    font-family: var(--font-family);
-    margin: 0 auto;
-}
-.div-logo a{
-    color: var(--white);
-  
-}
-
-
-.navbar{
-    background: var(--deep-green);
+body{
     width: 100%;
-    min-width: 100%;
-    height: 60px;
+    min-height:100vh;
+    background-image: url(../Images/19374.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    display:flex;
+    }
+.navbar{
+    width: 100%;
+    height: 75px;
     position: fixed;
-    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
     top: 0;
+    z-index: 999;
+    background-color: #0057c2;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.signIn{
-    margin-right: 3rem;
-    padding: 0.4rem;
-    font-size: 1.3rem;
-    border: none;
-    background:none;
+
+.section1{
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: zoomIn 1s ease-in-out;
+    align-items: center;
+}
+.section1_div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: zoomIn 1s ease-in-out;
+    align-items: center;
+}
+#back-arrow{
     color: #fff;
+    font-size: 30px;
+    display: none;
     cursor: pointer;
 }
-.signIn:hover{
-   transform: scale(1.3);
+.section2{
+    width: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    animation: zoomIn 1s ease-in-out;
+    justify-content: space-around;
+    align-items: center;
 }
-.sidebar{
-    position: fixed !important;
+.icons{
+    color: #fff;
+    font-size: 30px;
+    width: 150px;
+    display: flex;
+    justify-content: center;;
+    align-items: center;
+    height: 100%;
+}
+#icon{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
+#icon-drop{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
+.notification1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
+    border: 2px solid #fff;
+}
+.notification2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
+    border: 2px solid #fff;
+}
+.profile{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;;
+}
+.profile span{
+    font-size: 17px;
+}
+.profile_account{
     width: 300px;
-    z-index: 998;
-    height: 100%;
-    padding: 1.2rem;
-    top: 2rem;
-    background: var(--deep-green);
+    position: absolute;
+    height: fit-content;
+    top: 100%;
+    animation: zoomIn 01s ease-in-out;
+    right: 2%;
+    padding: 1rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.sidebar a{
-    color: var(--white);
-    text-decoration:none !important;;
-    font-family: var(--font-family);
-    
+#image_profile_account{
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
 }
-.toggle{
-    margin-left: 3rem;
-    cursor:pointer;
-}
-
-.close-toggle{
-    position: relative;
-    cursor:pointer;
-    margin-left: 200px;
-}
-
-.menu-content{
-    position: relative;
-    height: 100%;
+.profile_account .btn_submit{
     width: 100%;
-    padding: 1.2em;
+    background-color: #fff;
+    padding: 0.7rem;
+    border: none;
+    color: rgb(42, 87, 215);
+    border-radius: 5px;
+    transition: all  ease-in-out 0.6s;
+    cursor: pointer;
+    margin: 1rem 0;
 }
-.menu-items{
+.profile_account  .btn_submit:hover{
+    transform: scale(0.98);
+    background: none;
+    color:rgb(255, 255, 255);
+    border: 1px solid #fff;
+}
+.profile_account span{
+    text-align: left;
+    cursor: pointer;
+}
+.profile_account h3{
+    color: rgb(255, 255, 255);
+}
+
+.profile img{
+    width: 50px;
+    margin: 0 0.8rem;
+    border: 3px solid #fff;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.image{
+    position: relative;
+}
+.profile .active_on{
+    position: absolute;
+    bottom: 5%;
+    right: 15%;
+    background-color: rgb(0, 193, 65);
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+}
+#btn_appoitment{
+    padding: 0.7rem 1rem;
+    border: none;
+    background-color: #fff;
+    margin: 0 7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(42, 87, 215);
+    font-size: 12px;
+    transition: all ease-in-out 0.6s;
+}
+#btn_appoitment:hover{
+    padding: 0.7rem 1rem;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    transform: scale(0.98);
+}
+
+
+.sidebar{
+    width: 75px;
+    height: fit-content;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1000;
+}
+.sidebar_contents{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+   color: #fff;
+   height: 75px;
+   cursor: pointer;
+   text-align: center;
+   border-bottom: 2px solid rgba(255, 255, 255);
+}
+.sidebar_icons{
+    width: 100%;
+    animation: zoomIn 01s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.sidebar_icons #icon{
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+.container{
+    width: 65%;
+    margin: 5rem auto;
+}
+
+.contents{
+    width:100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.head-sec{
     display: flex;
     width: 100%;
-   justify-content: safe;
-   align-items: safe;
-    flex-direction: column;
-   
+    height: 50px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: #ffffff;
+    justify-content: space-between;
 }
-.items {
-    list-style-type:none;
-    margin: 1.2rem 1rem;
-    font-size: var(--icons-size);
+
+.head-sec span{
+    font-size: 17px;
+}
+.appoitment_input_control{
+    position: relative;
+}
+.appoitment_input{
+    padding: 0.5rem 0.3rem;
+    margin-right: 1rem;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+.appoitment_input input{
+    background-color: rgb(0, 0, 0);;
+}
+input:focus{
+    border:1px solid rgb(42, 87, 215) 
+}
+#search-icon{
+    position: absolute;
+    top: 32%;
+    right: 15%;
+    color: #000000;
+    cursor: pointer;
+}
+.body_sec{
     width: 100%;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: auto;
+}
+table{
+    width: 100%;
+    height: 200px;
+    border-collapse: collapse;
+    overflow-y: hidden;
+}
+ table thead td{
+    background-color: rgb(42, 87, 215);;
+    padding: 1rem;
+    color: #fff;
+    font-size: 21px;
+}
+ table tbody{
+    margin: 1rem 0;
+}
+ table tbody td{
+    background-color: rgb(255, 255, 255);;
+    padding: 1rem;
+    font-size: 20px;
+    margin: 1rem 0;
+    color: #000000;
+}
+.body_sec button{
+    padding: 0.5rem 1rem;
+    background-color: rgb(42, 87, 215);
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.body_sec button:nth-child(2){
+    padding: 0.5rem 1rem;
+    background-color: rgb(255, 0, 0);
+    border: none;
     cursor: pointer;
     color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.body_sec button:hover{
+    color: #000000;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(42, 87, 215);
+    background: none
+}
+.body_sec button:hover:nth-child(2){
+    color: #000000;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(255, 0, 0);
+    background: none
+}
+.hide{
+    display: none;;
+}
+/*PATIENT PERSONAL INFORMATION*/
+.info_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 14px;
+    cursor: pointer;
+}
+.info_dropdown span{
+    font-size: 22px;
 }
 
-.items:hover{
-    background-color: var(--light-green);
-    padding: 2rem;
-   color: #fff;
+#info_icon_minus{
+    display: none;
+}
+.info_section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+}
+.info_title{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;;
+    padding: 1rem;
+}
+.info_section .circle{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.personal_info_section{
+    height: fit-content;
+    width: auto;
+    margin: 1rem 1rem;
+}
+.personal_info_section .details_flexs{
+    display: flex;
+}
+.personal_info_section .details_flexs h3{
+  margin: 0.5em 0.5em;
+}
+/*LAB INFORMATION*/
+.lab_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 14px;
+    cursor: pointer;
+}
+.lab_dropdown span{
+    font-size: 22px;
 }
 
-.items a:hover{
-    color: #ffffff;
+#lab_icon_minus{
+    display: none;
 }
-i{
-    color: var(--white); 
-    font-size: var(--icons-size);
+.lab_section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+}
+.lab_section button{
+    padding: 1rem;
+    background-color: #000000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.lab_section button:hover{
+    padding: 1rem;
+    background:none;
+    border:1px solid #000000;
+    color: #000000;
 }
 
-i:hover{
-    color: #ffffff;
+/*RADIOLOGY INFORMATION*/
+.radiology_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 14px;
+    cursor: pointer;
+}
+.radiology_dropdown span{
+    font-size: 22px;
 }
 
-.container{
-    width:100%;
-    margin-top: 10rem;
-    height:100%;
-    background-color: #fff;
+#radiology_icon_minus{
+    display: none;
+}
+.radiology_section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+}
+.radiology_section button{
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: #000000;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+.radiology_section button:hover{
+    padding: 1rem;
+    background:none;
+    border:1px solid #000000;
+    color: #000000;
+}
+/*VITALS  INFORMATION*/
+.vitals_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 14px;
+    cursor: pointer;
+}
+.vitals_dropdown span{
+    font-size: 22px;
+}
+
+#vitals_icon_minus{
+    display: none;
+}
+.vitals_section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+}
+
+
+/*Doctor Inputs */
+
+.all_sections_input{
+    width: 100%;
+    height: auto;
+    margin: 5rem auto;
+    color: #fff;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.all_sections_input.not_show{
+    display: none;
+}
+/*Start of the complaints Section*/
+.complain_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 14px;
+    cursor: pointer;
+}
+.complain_dropdown span{
+    font-size: 22px;
+}
+
+#complaint_icon_minus{
+    display: none;
+}
+.complaint-section{
+    width: 100%;
+    height: fit-content;;
+    background-color: rgb(0, 0, 0);
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
-h1{
-    color: var(--light-green);
-}
-.flex-cards{
+form{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
     width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-
-.cards{
-    margin: 1rem 2rem;
-    width: 200px;
-    height: 100px;
-    border:none;
+.complaint_form-control{
+    width: 300px;
+    height: 150px;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.1rem;
-    transition: ease-in-out 2s;
-    background:var(--c);
-    box-shadow: 0 3rem 5rem rgba(230, 227, 227, 0.3);
-    transition: all 0.5s linear;
-    animation-name:initial;
-    animation-duration: 0.5s;
+}
+label {
+    color: black;
+    font-size: 15px;
+    margin: 1rem 0;
+}
+.complaint-input {
+    padding: 1rem;
+    border: none;
+    outline: none;
+    background:none;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    font-size: 15px;
+    border-radius: 2px;
+}
+.complaint-input:focus{
+    border: 2px solid #fff;
+}
+.btn_book_appoitment{
+    background-color: #fff;
+    border: none;
+    padding:1rem;
+    width: fit-content;
+    transition: all ease-in-out 0.5s;
     cursor: pointer;
 }
-.cards:hover{
-    transform: scale(1.2);
+.btn_book_appoitment:hover{
+    background:none;
+    border:1px solid #fff;
+    padding:1rem;
+    width: fit-content;
+    color:#ffffff;
+}
+    .complaint_form-control-appoitment{
+        width: 300px;
+        height: 150px;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+#btn{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    height: fit-content;
+    padding: 1rem;
+    border: none;
+    margin: 1rem 0;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#btn:hover{
+    background-color: rgb(255, 255, 255);;
+    color: #000000;
 }
 
-#card-icons{
-    color: var(--light-green);
-    font-size: 3rem;
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-image: url(../Images/19374.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 12;
+    top: 0;
+    left: 0;
 }
 
-h2{
-    color:var(--light-green);
+.surgical_booking{
+    position: absolute;
+    width: 530px;
+    top: 10%;
+    left: 25%;
+    padding: 1rem;
+    height: 380px;
+    background-color:rgb(42, 87, 215);
+    z-index: 13;
+    height:fit-content;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.surgical_input{
+    padding: 0.5rem;
+    border: none;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255);
+    background:none;
+    outline: none;
+    color: #fff;
+}
+.surgical_booking .surgical_input:focus{
+    background:none;
+    color: #fff;
+    outline: none;
+}
+.surgical_booking form{
+    margin: 2rem 0.5rem;
+}
+.surgical_input:focus{
+    border: 1px solid rgba(255, 255, 255);
+}
+.surgical_booking textarea{
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+.surgical_booking textarea:focus{
+    border: 1px solid rgba(255, 255, 255);
+    background-color: #fff;
+}
+.surgical_booking .form-control-precedure{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    margin: 0.2rem 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+.surgical_booking #icons{
+    position: absolute;
+    left: 5px;
+    top: 63%;
+    transform: translateY(-50%);
+  }
+#close-icon{
+    position: absolute;
+    left: 0;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 30rem;
+    color: rgba(255, 255, 255, 0.9);
+    top: 0;
+  }
+.btn{
+    width: 100%;
+    padding: 1rem 0;
+    border: none;
+    margin: 1rem 0;
+    background-color:rgb(0, 0, 0);;
+    border-radius: 4px;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: white;
+    color: #000000;
+}
+.hidden{
+    display: none;
+}
+/*End of the complaints Section*/
+
+/**Start of the System review Section*/
+.system_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 22px;
+    cursor: pointer;
+}
+ #system_icon_minus{
+    display: none;
+ }
+.system_review-section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);;
+    padding: 1rem;
+}
+.drop-down1, .drop-down2,  .drop-down3, .drop-down4, .drop-down5, .drop-down6, .drop-down7, .drop-down8, .drop-down9, .drop-down10, .drop-down11{
+    width: 100%; 
+   border-bottom: 4px solid #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.system_review-section span{
+    color: #fff;
+    font-size: 15px;
+}
+#open_id_1, #close_id_1, #open_id_2, #close_id_2, #open_id_3, #close_id_3,
+#open_id_4, #close_id_4, #open_id_5, #close_id_5,
+#open_id_6, #close_id_6, #open_id_7, #close_id_7,
+#open_id_8, #close_id_8, #open_id_9, #close_id_9,
+#open_id_10, #close_id_10, #open_id_11, #close_id_11{
+    color: #fff;
+    font-size: 20px;
+}
+#close_id_1, #close_id_2, #close_id_3, #close_id_4, #close_id_5, #close_id_6, #close_id_7, #close_id_8,#close_id_9, #close_id_10,  #close_id_11{
+    display: none;
+}
+.active{
+    display: none;
+}
+.form1, .form2, .form3, .form4, .form5,  .form6, .form7, .form8, .form9, .form10, .form11{
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.hidden{
+    display: none;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 1rem 0;
+    justify-content: center;
+    align-items: center;
+}
+label{
+    color: #fff;
+    font-size: 15px;
+}
+/*Start of the Physical Examination*/
+.physical_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 22px;
+    cursor: pointer;
+}
+.physical_examination-section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);;
+    padding: 1rem;
+}
+.physical_examination_drop-down1, .physical_examination_drop-down2, .physical_examination_drop-down3,
+.physical_examination_drop-down4,
+.physical_examination_drop-down5,
+.physical_examination_drop-down6,
+.physical_examination_drop-down7,
+.physical_examination_drop-down8,
+.physical_examination_drop-down9,
+.physical_examination_drop-down10,
+.physical_examination_drop-down11,
+.physical_examination_drop-down12,
+.physical_examination_drop-down13,
+.physical_examination_drop-down14{
+    width: 100%; 
+   border-bottom: 4px solid #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+#physical_icon_minus{
+    display: none;
+}
+.physical_examination-section span{
+    color: #fff;
+    font-size: 15px;
+}
+#physical_examination_icon_plus1, #physical_examination_icon_minus1, #physical_examination_icon_plus2, #physical_examination_icon_minus2
+#physical_examination_icon_plus3, #physical_examination_icon_minus3,
+#physical_examination_icon_plus4, #physical_examination_icon_minus4,
+#physical_examination_icon_plus5, #physical_examination_icon_minus5,
+#physical_examination_icon_plus6, #physical_examination_icon_minus6,
+#physical_examination_icon_plus7, #physical_examination_icon_minus7,
+#physical_examination_icon_plus8, #physical_examination_icon_minus8,
+#physical_examination_icon_plus9, #physical_examination_icon_minus9,
+#physical_examination_icon_plus10, #physical_examination_icon_minus10,
+#physical_examination_icon_plus11, #physical_examination_icon_minus11,
+#physical_examination_icon_plus12, #physical_examination_icon_minus12,
+#physical_examination_icon_plus13, #physical_examination_icon_minus13,
+#physical_examination_icon_plus14, #physical_examination_icon_minus14{
+    color: #fff;
+    font-size: 20px;
+}
+#physical_examination_icon_minus1, #physical_examination_icon_minus2,
+#physical_examination_icon_minus3,
+#physical_examination_icon_minus4,
+#physical_examination_icon_minus5,
+#physical_examination_icon_minus6,
+#physical_examination_icon_minus7,
+#physical_examination_icon_minus8,
+#physical_examination_icon_minus9,
+#physical_examination_icon_minus10,
+#physical_examination_icon_minus11,
+#physical_examination_icon_minus12,
+#physical_examination_icon_minus13,
+#physical_examination_icon_minus14{
+    display: none;
+}
+form{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.physical_examination_form-control{
+    width: 300px;
+    height: 150px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    color: #fff;
+    font-size: 15px;
+    margin: 1rem 0;
+}
+.physical_examination-section input {
+    padding: 1rem;
+    border: none;
+    outline: none;
+    background:none;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    font-size: 15px;
+    border-radius: 2px;
+}
+.physical_examination-section input:focus{
+    border: 2px solid #fff;
+}
+.active{
+    display: none;
+}
+.physical_examination_form1, .physical_examination_form2, .physical_examination_form3,
+.physical_examination_form4, .physical_examination_form5 .physical_examination_form6,.physical_examination_form7,
+.physical_examination_form8, .physical_examination_form9,
+.physical_examination_form10,.physical_examination_form11
+,.physical_examination_form12,
+.physical_examination_form13,
+.physical_examination_form14{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
+/*Start of the Treatment and Prescribtion*/
+.treatment_prescribtion-section{
+    width: 100%;
+    height: fit-content;;
+    background-color: rgb(0, 0, 0);;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.treatment_prescribtion_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 22px;
+    cursor: pointer;
+}
+.treatment_prescribtion_form1{
+    width: 100%;
+    background-color: rgb(0, 0, 0);;
+    border-radius: 14px;
+}
+.treatment_prescribtion_flexs{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    border-bottom: 2px solid #fff;
+    height: fit-content;
+    padding: 1rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 2rem 0;
+}
+.treatment_prescribtion_form-control{
+    width: auto;
+    margin: 0rem 0.4em;
+    display: flex;
+    flex-direction: column;
+}
+#treatment_prescribtion_minus{
+    display: none;
+}
+.treatment_prescribtion-input {
+    padding: 0.5rem;
+    color: #ffffff;
+    background:none;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #fff;
+    width: 120px;
+    font-size: 15px;
+}
+.treatment_prescribtion-input:focus{
+    border: 1px solid #fff;
+}
+.treatment_prescribtion_form-control select[option] {
+    color: #000000;
+}
+#prescribe_close{
+    position: absolute;
+    top: 22%;
+    cursor: pointer;
+    left: 96%;
+    font-size: 15px;
+}
+.treatment_prescribtion-input_change_width{
+    padding: 0.5rem;
+    background:none;
+    border: none;
+    border-bottom: 3px solid #fff;
+    color: #ffffff;
+    width: 300px;
+    outline: none;
+    font-size: 15px;
+}
+.treatment_prescribtion-input_change_width:focus{
+    border: 1px solid #fff;
+}
+#btn_prescribe{
+    width: 30%;
+    background-color: rgb(255, 255, 255); 
+    height: fit-content;
+    padding: 1rem;
+    border: none;
+    margin: 1rem auto;
+    cursor: pointer;
+    transition: 0.5s;
+  
+}
+#btn_prescribe:hover{
+    background-color: rgb(42, 87, 215);
+    color: #ffffff;
+}
+.discharged_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#discharged_icon_minus{
+    display: none;
+}
+.discharged-section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #fff;
+    align-items: left;
+    justify-content: start;
+    position: relative;
+}
+.off_on_button{
+    width: fit-content;
+    height: fit-content;
+}
+
+.discharged-section #discharge_off{
+    color: yellow;
+    font-size: 30px;
+    cursor: pointer;
+}
+.discharged-section #discharge_on{
+    color: rgb(0, 255, 0);
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+.discharge_form{
+    width: 50%;
+}
+.discharge_form form{
+    display: flex;
+    flex-direction: column;
+}
+.discharge_form form .form_control{
+    margin: 0.6rem 0;
+}
+.discharge_form form .form_control input{
+    border: none;
+  border-bottom: 2px solid #fff;
+  background: none;
+  color: #fff;
+  font-size: 18px;
+}
+.discharge_form form .form_control label{
+  font-size: 20px;
+}
+.discharge_form form .form_control textarea{
+    border: none;
+    outline: none;
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #000000;
+    font-size: 18px;
+}
+.discharge_form form #btn_save_discharge{
+    border: none;
+    outline: none;
+    width: fit-content;
+    padding: 0.5rem;
+    background:none;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    border: 2px solid #fff;
+    color: #ffffff;
+}
+.discharge_form form #btn_save_discharge:hover{
+background-color: #fff;
+color: #000000;
+}
+
+/*COMFIRMED DEATH SECTION*/
+.confirmed_death_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#confirmed_death_icon_minus{
+    display: none;
+}
+.confirmed_death-section{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+    display: flex;
+    border: 2px solid #fff;
+    flex-direction: column;
+    align-items: left;
+    justify-content: start;
+    position: relative;
+}
+
+.off_on_button{
+    width: fit-content;
+    height: fit-content;
+}
+
+.confirmed_death-section #confirmed_death_off{
+    color: yellow;
+    font-size: 30px;
+    cursor: pointer;
+}
+.confirmed_death-section #confirmed_death_on{
+    color: red;
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+.confirmed_death_form{
+    width: 50%;
+}
+.confirmed_death_form form{
+    display: flex;
+    flex-direction: column;
+}
+.confirmed_death_form form .form_control{
+    margin: 0.6rem 0;
+}
+.confirmed_death_form form .form_control input{
+    border: none;
+  border-bottom: 2px solid #fff;
+  background: none;
+  color: #fff;
+  font-size: 18px;
+}
+.confirmed_death_form form .form_control label{
+  font-size: 20px;
+}
+.confirmed_death_form form .form_control textarea{
+    border: none;
+    outline: none;
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #000000;
+    font-size: 18px;
+}
+.confirmed_death_form form #btn_save_confirmed_death{
+    border: none;
+    outline: none;
+    width: fit-content;
+    padding: 0.5rem;
+    background:none;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    border: 2px solid #fff;
+    color: #ffffff;
+}
+.confirmed_death_form form #btn_save_confirmed_death:hover{
+background-color: #fff;
+color: #000000;
+}
+
+/*DEATH FORM*/
+
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-image: url(../Images/19374.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 12;
+    top: 0;
+    left: 0;
+}
+
+.death_form_booking{
+    position: absolute;
+    width: 500px;
+    top: 3%;
+    left: 25%;
+    padding: 1rem;
+    height: 380px;
+    background-color:rgb(42, 87, 215);
+    z-index: 13;
+    height:fit-content;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.death_form_booking .form-control input{
+    padding: 0.5rem;
+    border: none;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255);
+    background:none;
+    outline: none;
+    width: 100%;
+    color: #fff;
+}
+.death_form_booking .form-control input:focus{
+    border: 1px solid rgba(255, 255, 255);
+}
+.death_form_booking .form-control label{
+    text-align: left;
+}
+.death_form_booking .form-control textarea{
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+.death_form_booking textarea:focus{
+    border: 1px solid rgba(255, 255, 255);
+    background-color: #fff;
+}
+.death_form_booking .form-control{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    justify-content: left;
+    align-items: start;
+    margin: 0.2rem 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+.death_form_booking #icons{
+    position: absolute;
+    left: 5px;
+    top: 63%;
+    transform: translateY(-50%);
+  }
+  death_form_booking #close-icon{
+    position: absolute;
+    left: 0;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-left: 30rem;
+    color: rgba(255, 255, 255, 0.9);
+    top: 0;
+  }
+  .death_form_booking .form-control textarea{
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255);
+    font-size: 15px;
+    background-color: #fff;
+    outline: none;
+    width: 100%;
+    color: #000000;
+}
+.death_form_booking .btn{
+    width: 100%;
+    padding: 1rem 0;
+    border: none;
+    margin: 1rem 0;
+    background-color:rgb(0, 0, 0);;
+    border-radius: 4px;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+}
+.death_form_booking .btn:hover{
+    background-color: white;
+    color: #000000;
+}
+
+/*appoitment section*/
+.appoitment_section{
+    width: 100%;
+    height: 100%;
+}
+
+/*VITALS*/;
+.dashboard_contents .nurse_vital_section_vital{
+    width: 100%;
+    background-color: #fff;
+    height: 100%;
+}
+
+.appoitment_container{
+    margin: 2rem auto 0 auto;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 6rem auto;
+    justify-content: start;
+}
+.appoitment_container .appoitments{
+    width: 100%;
+    height:max-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+}
+.appoitments h1{
+    padding: 1rem;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+}
+
+.cards_container{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items:  center;
+}
+.cards{
+    width: 350px;
+    height: max-content;
+    background-color: #fff;
+    animation: zoomIn 01s ease-in-out;
+    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
+    margin: 1rem 1rem;
+}
+.cards  .profile{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 100px;
+}
+.cards .profile img{
+    width: 90px;
+    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
+    height: 90px;
+
+}
+#btn_declined{
+    width: 100%;
+}
+#btn_accepted{
+    width: 100%;
+}
+#btn_pending{
+    width: 100%;
+}
+.profile .name_role{
+    display: flex;
+    color: rgb(158, 160, 166);;
+    flex-direction: column;
+}
+.profile h3{
+    color: black;
+}
+.date_time{
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    display: flex;
+    background-color:rgb(42, 87, 215) ;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    margin: 1rem 0;
+    justify-content: center;
+}
+.buttons .btn{
+    padding: 0.5em 1em;
+    background-color:rgb(42, 87, 215) ;
+    border: none;
+    cursor: pointer;
+    margin: 0 1rem;
+    color: #fff;
+}
+.doctor_roles_name{
+    width: 100%;
+    height:max-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    align-items: center;
+}
+#close_appoitment_form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    font-size: 30px;
+    box-shadow: rgba(159, 158, 158, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
+.doc_roles{
+    width: 45rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #fff;
+    animation: fadeIn 01s ease-in-out;
+}
+.doc_roles label{
+    color: rgb(42, 87, 215); 
+    animation: zoomIn 01s ease-in-out;
+}
+.doc_roles select{
+    padding: 1rem;
+    border: none;
+    border: 2px solid #fff;; 
+    background-color:rgb(42, 87, 215); 
+    animation: zoomIn 01s ease-in-out;
+    margin: 1rem 0;
+    color: rgb(255, 255, 255);;
+}
+#continue{
+    background-color: rgb(42, 87, 215);
+    padding: 1rem 1rem;
+    border: none;
+    animation: zoomIn 01s ease-in-out;
+    color:  rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+#continue:hover{
+    border: 1px solid rgb(42, 87, 215);
+    padding: 1rem 1rem;
+}
+
+.calendar{
+    width: 45rem;
+    height: 46rem;
+    background-color: rgb(42, 87, 215);
+    margin: 1rem 0;
+    box-shadow: 0,0.5rem 3rem rgba(0,0,0,0.4);
+    color: #fff;
+}
+.month{
+    width: 100%;
+    height: 6rem;
+    background-color :rgb(255, 255, 255) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+   text-align: center;
+   color: rgb(42, 87, 215);
+}
+
+.month i{
+    font: 2rem;
+    cursor: pointer;
+    animation: zoomIn 01s ease-in-out;
+}
+.month h1{
+    font-size: 1.5rem;
+    font-weight: 400;
+    animation: zoomIn 01s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.month p{
+    font-size: 1rem;
+    animation: zoomIn 01s ease-in-out;
+}
+
+
+.weekdays{
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    animation: zoomIn 01s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+.weekdays div{
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem/7  );
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.days{
+    width: 100%;
+    display: flex;
+    animation: zoomIn 01s ease-in-out;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+}
+.days div{
+    font-size: 1rem;
+    margin: 0.3rem;
+    width: calc(40.2rem/7 );
+    height: 5rem;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today){
+    background-color: rgb(0, 68, 255);
+    border:0.2rem solid #d1cece;
+    cursor: pointer;
+}
+
+.prev-date{
+    opacity: 0.5;
+}
+
+.next-date{
+    opacity: 0.5;
+}
+.content{
+    color: #db0000;
+    font-size: 2rem;
+}
+.clicked {
+    background-color: #aaffaa; /* Light green color for clicked date */
+  }
+
+.today{
+    background-color: #0044ff;
+}
+.hidden{
+
+    display: none;
+}
+
+.form_appoitment{
+    width:45rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: fit-content;
+    background: rgb(255, 255, 255);
+    color: #0044ff;
+    padding: 1rem 1rem;
+}
+
+.form_appoitment .form{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form_appoitment .form_control{
+    width: 40%;
+    animation: none;
+    height: auto;
+    margin: 1em 1em;
+}
+.form_appoitment label{
+    color: rgb(42, 87, 215);
+}
+.form_appoitment input{
+    width: 100%;
+    background-color: none;
+    padding: 1rem 1rem;
+    border: 2px solid rgb(42, 87, 215);;
+    
+}
+.form_appoitment .form_control_text_area{
+    width: 100%;
+    animation: none;
+    height: auto;
+    margin: 1em 1em;
+}
+.selected_date{
+    padding: 1rem 1rem;
+    background-color: rgb(42, 87, 215);
+    border: 2px solid rgb(42, 87, 215);;
+    color: rgb(255, 255, 255);
+}
+.form_appoitment textarea{
+    border: none;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+    width: 100%;
+}
+.btn_submit_appoitment{
+    width: 100%;
+    background-color:rgb(42, 87, 215);
+    color: #fff;
+    border: none;
+    margin: 1rem auto;
+    padding: 0.9rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+.btn_submit_appoitment:hover{
+    background-color: #fff;
+    color: black;
+    border: 1px solid rgb(42, 87, 215);;
+}
+.hidden{
+    display: none;
+}

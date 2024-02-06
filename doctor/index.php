@@ -79,8 +79,8 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Dashboard</title>
     <!-- <link rel="stylesheet" href="./dashboard.css"> -->
-    <link rel="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href='../awesome-font/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href='css/awesome-font/css/font-awesome.min.css'>
     <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -2479,7 +2479,7 @@ exit; // Terminate the script after processing the AJAX request
             <div class="cards_container">
             <div class="cards">
                 <div class="profile">
-                    <img src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
+                    <img src="images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
                     <div class="name_role">
                     <h3>Dr. Rita John</h3>
                     <h4>Gynaecologist</h4>
@@ -2563,7 +2563,7 @@ exit; // Terminate the script after processing the AJAX request
             </div>
             <div class="cards">
             <div class="profile">
-                    <img src="../Images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
+                    <img src="images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
                     <div class="name_role">
                     <h3>Dr. Kingsley Patrick</h3>
                     <h4>Gynaecologist</h4>
