@@ -389,7 +389,7 @@ case 'doctor_login': // login from index
 	?>
 				<script>
 
-					window.parent(location="../frontend/doctor/");
+					window.parent(location="../doctor/");
 				</script>
 	<?php
 		
