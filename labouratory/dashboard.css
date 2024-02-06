@@ -23,7 +23,7 @@ body{
     justify-content: space-between;
     align-items: center;;
     top: 0;
-    background-color: #0057c2;
+    background-color: #2a57d7;
     z-index: 999;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -118,7 +118,7 @@ body{
 .profile_account{
     width: 300px;
     position: absolute;
-    background-color: #0057c2;;
+    background-color: #2a57d7;
     height: fit-content;
     top: 100%;
     animation: zoomIn 01s ease-in-out;
@@ -239,12 +239,9 @@ body{
     margin: 1rem 0;
 }
 
-
-
 .contents{
     width: 100vw;
     display: flex;
-    height: 100vh;
     justify-content: space-between;
 }
 .appiontment{
@@ -306,8 +303,8 @@ body{
     color: #000000;
 }
 
-.table_container button{
-    padding: 1rem 1rem;
+.table_container #accept_button{
+    padding: 0.5rem 0.5rem;
     background-color: rgb(42, 87, 215);
     border: none;
     width: 100%;
@@ -316,8 +313,8 @@ body{
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
-.table_container button:nth-child(2){
-    padding: 1rem 1rem;
+.table_container #reject_button{
+    padding: 0.5rem 0.5rem;
     background-color: rgb(255, 0, 0);
     border: none;
     margin: 0.5em 0;
@@ -326,12 +323,12 @@ body{
     transition: all ease-in-out 0.5s;
 }
 
-.table_container button:hover{
+.table_container #accept_button:hover{
     color: #000000;
     background: none;
     border: 1px solid rgb(42, 87, 215); ;
 }
-.table_container button:hover:nth-child(2){
+.table_container #reject_button:hover{
     color: #000000;
     background: none;
     border: 1px solid  rgb(255, 0, 0);
@@ -362,7 +359,7 @@ body{
    transform: scale(0.94);
 }
 .approved_appoitment{
-    width: 790px;
+    width: 700px;
     height: fit-content;
     position: relative;
     right: 0;
@@ -382,7 +379,7 @@ body{
 
 .approved_appoitment .table_container table thead td{
     background-color: rgb(42, 87, 215);;
-    padding: 1rem;
+    padding: 1rem 1rem;
     color: #fff;
 }
 .approved_appoitment .table_container table tbody td{
@@ -390,18 +387,20 @@ body{
     cursor: pointer;
     border-bottom: 1px solid rgb(224, 221, 221);
     font-size: 20px;
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
     margin: 0.4rem 0;
     color: #000000;
 }
 .approved_appoitment #in_progress{
     background-color:rgb(42, 87, 215); ;
     position: relative;
+    padding: 0.5rem 0.5rem;
     color: #fff;
 }
 .approved_appoitment #completed{
     background-color: rgb(0, 154, 0);
     position: relative;
+    padding: 0.5rem 0.5rem;
     color: #fff;
 }
 .approved_appoitment #in_progress:hover{
@@ -414,16 +413,37 @@ body{
     border: 1px solid rgb(0, 154, 0);
     color: rgb(0, 154, 0);;
 }
-#close_appoitment{
-    position: absolute;
-    top: 0;
-    height: 15px;
-    width: 15px;
-    right: 0;
-    border-radius: 100%;
+.table_container button{
+    padding: 1rem 1rem;
+    background-color: rgb(42, 87, 215);
+    border: none;
+    width: 100%;
+    margin: 0.5em 0;
     cursor: pointer;
-    color: rgb(255, 255, 255); ;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
 }
+.table_container button{
+    padding: 1rem 1rem;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    margin: 0.5em 0;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+
+.table_container button:hover{
+    color: #000000;
+    background: none;
+    border: 1px solid rgb(42, 87, 215); ;
+}
+.table_container button:hover{
+    color: #000000;
+    background: none;
+    border: 1px solid  rgb(255, 0, 0);
+}
+
 
 
 /*LAB INPUT*/
@@ -483,7 +503,7 @@ color: #fff;
 
 .lab_container{
     width: 100%;
-    height: auto;
+    height: fit-content;
     padding: 2rem;
     border-radius: 20px;
     margin: 4rem 0 0 5rem;
@@ -501,9 +521,9 @@ color: #fff;
     align-items: center;
 }
 .img_div{
-width: 90px;
+width:120px;
 overflow: hidden;
-height: 90px;
+height:120px;
 overflow: hidden;
 position: relative;
 display: flex;

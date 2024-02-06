@@ -504,7 +504,7 @@ const lab_sec = `
 <span>PAT0002</span>
 </div>
 <div class="img_div">
-<img src ="../Images/80e729b199b61a6c183b85263d35a6ef.jpg"></img>
+<img src ="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg"></img>
 </img>
 </div>
 </div>
@@ -540,105 +540,46 @@ const landing_page_section = `
   </div>
 </div>
 <div class="table_container">
-<table>
+<table id="appoitment_table">
   <thead>
-    <td>Patient Name</td>
-    <td>Patient Id</td>
-    <td>Date</td>
-    <td>Time</td>
+    <td>Number</td>
+    <td>Patient Name/Patient Id</td>
+    <td>Date/Time</td>
     <td>Request Type</td>
-    <td>Accept/Reject</td>
+    <td>Accept</td>
+    <td>Reject</td>
   </thead>
   <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button onClick="click_labouratory_examination()">Accept</button>
-      <button>Reject</button>
-    </td>
-  </tbody>
-  <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button>Accept</button>
-      <button>Reject</button>
-    </td>
-  </tbody>
-  <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button>Accept</button>
-      <button>Reject</button>
-    </td>
-  </tbody>
-  <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button>Accept</button>
-      <button>Reject</button>
-    </td>
-  </tbody>
-  <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button>Accept</button>
-      <button>Reject</button>
-    </td>
+  
   </tbody>
 </table>
 </div>
 <div class="lab_pagination">
         <div class="flexs">
-            <p id="prevPen">Prev List</p>
-            <p id="nextPen">Next List</p>
+            <p id="prev_appoitment">Prev List</p>
+            <p id="next_appoitment">Next List</p>
         </div>
 </div>
 </div>
 <div class="approved_appoitment">
 <div class="table_container">
-<table>
+<table id="approved_table">
   <thead>
     <td>Patient Name</td>
     <td>Patient Id</td>
     <td>Status</td>
   </thead>
   <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>
-      <button id="in_progress">In Progress
-      <i class="fa fa-times" id="close_appoitment"></i>
-      </button>
-    </td>
+
   </tbody>
-  <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>
-      <button id="completed">Completed
-      <i class="fa fa-times" id="close_appoitment"></i>
-      </button>
-    </td>
-  </tbody>
+  </table>
+</div>
+<div class="lab_pagination">
+        <div class="flexs">
+            <p id="prev_approved_appoitment">Prev List</p>
+            <p id="next_approved_appoitment">Next List</p>
+        </div>
+</div>
 </div>
 </div>
 `
