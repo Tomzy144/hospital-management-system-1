@@ -103,7 +103,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         }
     </script>
     <!---SIDEBAR AND NAVBAR-->
-    <div class="navbar">
+    <div class="navbar" >
         <div class="section1">
         <i class="fa fa-long-arrow-left hide " id="back-arrow" onclick="backWardArrow()"></i>
         <button class="hide" id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
@@ -144,7 +144,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <i class="fa fa-users" id="icon"onClick="show_appoitment_list_section()"></i>
                 <i class="fa fa-user" id="icon"></i>
                 <i class="fa fa-sign-out"  id="icon" onclick="document.getElementById('logoutform').submit();"></i>
-                <form method="post" action="<?php $website_url ?>config/code.php" id="logoutform">
+                <form method="post" action="<?php echo $website_url ?>/config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
                 </form>
                 <!--<i class="fa fa-sign-out" id="icon"></i> -->
@@ -153,7 +153,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
    <!---Script for dashboard-->
       <div class="container">
-    <div class="contents">
+    <div class="contents" >
         <div class="head-sec">
             <span style="color:black;">Appoitment Details</span>
             <div class="appoitment_input_control">
@@ -161,7 +161,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <input type="text" placeholder="Search here" class="appoitment_input">
             </div>
         </div>
-        <div class="body_sec">
+        <div class="body_sec" id="appointmentDetailsContainer">
         <?php
 $sql = "SELECT * FROM appointment_tab WHERE doctor_id ='$s_doctor_id'";
 $result = $conn->query($sql);
@@ -241,6 +241,8 @@ $result = $conn->query($sql);
 
 
         </div>
+        
+<!-- <div id="patientDetailsContainer"></div> -->
 
 <!-- ?php
 // Check if the button is clicked and the patient_id is set in the POST request
@@ -290,10 +292,10 @@ if (isset($_POST['patientId'])) {
 
 
 
-
 <?php
 // Check if the button is clicked and the patient_id is set in the POST request
-if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
+if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isset($_POST['page']) && $_POST['page'] == "patient") {
+
     // Retrieve the patient_id from the POST request
     $patient_id = $_POST['patient_id'];
 
@@ -323,11 +325,7 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
         $kphonenumber = $patient_profile_array['kphonenumber'];
         $krelationship = $patient_profile_array['krelationship'];
         $kaddress = $patient_profile_array['kaddress'];
-    
-    
-    
-    
-    
+
         $occupation = $patient_profile_array['occupation'];
         $past_obsterics = $patient_profile_array['past_obsterics'];
         $medical_history = $patient_profile_array['medical_history'];
@@ -335,21 +333,33 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
         $past_disease = $patient_profile_array['past_disease'];
         $family_disease = $patient_profile_array['family_disease'];
         $past_surgery = $patient_profile_array['past_surgery'];
-        
-       
-   
 
+        // Prepare the HTML content to be sent back as the response
+        $html_response = '<div class="all_sections_input">';
+        // Construct HTML content with patient details
+        // ...
+        $html_response .= '</div>';
+
+        // Send the HTML response back to the client
+        echo $html_response;
+    } else {
+        // Send an error message back if patient details not found
+        echo '<p>Error: Patient details not found</p>';
+    }
+    exit; // Terminate the script after processing the AJAX request
+}
 ?>
 
 
-<div id="patientDetailsContainer"></div>
+
 
      <!----Start from here-->
    <div class="all_sections_input hide">
     <!---PATIENT PERSONAL INFO-->
    <div class="info_dropdown"    onClick="personal_info_section()">
     <span>Personal Information</span>
-    <i class="fa fa-plus" id="info_icon_plus"></i>
+    
+        <i class="fa fa-plus" id="info_icon_plus"></i>
     <i class="fa fa-minus" id="info_icon_minus"></i>
    </div>
    <div class="info_section hide">
@@ -367,7 +377,7 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
     <div class="personal_info_section">
         <div class="details_flexs">
         <h3>Name: <?php echo $patient_id ?> </h3>
-        <h3><?php echo $patient_name?> </h3>
+        <h3><?php echo $patient_name ?> </h3>
         </div>
         <div class="details_flexs">
         <h3>Gender:</h3>
@@ -2365,16 +2375,7 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
     </div>
     <button id="btn" class="save">Enter</button>
    </div>
-   <?php 
-   
-   
-} else {
-    // Handle the case where the patient details were not found
-    echo '<p>Error: Patient details not found</p>';
-}
-exit; // Terminate the script after processing the AJAX request
-}
-?>
+
    </div>
    </div>
    </div>

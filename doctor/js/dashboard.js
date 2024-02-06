@@ -19,15 +19,21 @@ document.querySelector("#back-arrow").style.display="none";
 
 
 //PERSONAL INFORMATION SECTION AS READ ONLY
-const personal_info_section = ()=>{
-    document.querySelector(".info_section").classList.toggle("hide");
-    document.querySelector("#info_icon_plus").style.display="none";
-    document.querySelector("#info_icon_minus").style.display="block";
-    if(document.querySelector(".info_section").classList.contains("hide")){
-        document.querySelector("#info_icon_plus").style.display="block";
-        document.querySelector("#info_icon_minus").style.display="none";
-    }
-}
+// const personal_info_section = ()=>{
+//     document.querySelector(".info_section").classList.toggle("hide");
+//     document.querySelector("#info_icon_plus").style.display="none";
+
+//     document.querySelector("#info_icon_minus").style.display="block";
+//     if(document.querySelector(".info_section").classList.contains("hide")){
+//         document.querySelector("#info_icon_plus").style.display="block";
+//         document.querySelector("#info_icon_minus").style.display="none";
+//     }
+// }
+
+
+
+
+
 
 //LAB SECTION AS READ ONLY
 const lab_section = ()=>{
@@ -672,7 +678,7 @@ confirmed_death_dropdown.addEventListener("click", function(){
 //DISPLAY INPUT
 const display_input = () => {
     document.querySelector(".all_sections_input").classList.remove("hide");
-    document.querySelector(".body_sec").style.display = "none";
+    document.querySelector(".appointmentDetailsContainer").style.display = "none";
 }
 
 
@@ -711,6 +717,7 @@ const display_input = () => {
 document.querySelector('[data-patient-id]').addEventListener('click', function() {
     // Get the patient ID from the data attribute of the clicked element
     var patientId = this.getAttribute('data-patient-id');
+    // display_input();
 
     // Call the loadPatientProfile function with the retrieved patient ID
     // loadPatientProfile(patientId);
@@ -722,25 +729,29 @@ document.querySelector('[data-patient-id]').addEventListener('click', function()
 function loadPatientProfile(patient_id) {
     // Make an asynchronous request to fetch patient details using AJAX
     alert(patient_id);
+    
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'index.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // Update the patientDetailsContainer with the received HTML
-         
-            var container = document.getElementById('patientDetailsContainer');
+
+            var container = document.getElementById('appointmentDetailsContainer');
+            var hidden = document.querySelector(".all_sections_input");
             if (container) {
                 container.innerHTML = xhr.responseText;
+                container.style.display = "none"; // Hide container
+                hidden.classList.remove("hide"); // Remove the "hide" class from hide element
+                // display_input();
             } else {
-                console.error("Element with ID 'patientDetailsContainer' not found");
+                console.error("Element with ID 'appointmentDetailsContainer' not found");
             }
-            
-            
         }
     };
-    // Send the patient_id to the PHP script
-    xhr.send('load_patient_profile=1&patient_id=' + encodeURIComponent(patient_id));
+   
+    // Send the patient_id and page parameters to the PHP script
+    xhr.send('load_patient_profile=1&patient_id=' + encodeURIComponent(patient_id) + '&page=patient');
 }
 
 
