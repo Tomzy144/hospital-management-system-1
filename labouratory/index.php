@@ -19,7 +19,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <div class="navbar">
         <div class="section1">
         <i class="fa fa-long-arrow-left" id="back-arrow" onclick="backWardArrow()"></i>
-        <i class="fa fa-long-arrow-left" id="back-arrow_to_home" onclick="back_arrow_to_home()"></i>
+        <!-- <i class="fa fa-long-arrow-left" id="back-arrow_to_home" onclick="back_arrow_to_home()"></i> -->
         </div>
         <div class="section2">
             <div class="icons">
@@ -58,7 +58,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             </div>
         </div>
 
-       <div id="diagnosis_section-container"></div>
        <div id="lab_section-container"></div>
        <div id="landing_page_content_section-container"></div>
 

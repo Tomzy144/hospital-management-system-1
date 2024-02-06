@@ -462,7 +462,6 @@ table{
 .personal_total_transaction_section p{
     font-size: 20px;
     padding: 0 0.5em;
-    font-weight: bold;
     color: rgb(42, 87, 215);;
 }
 #confirmed_amount{
@@ -474,7 +473,7 @@ table{
     height: 100%;
 }
 .check_cash_pos{
-    width: 500px;
+    width: 300px;
     position: absolute;
     height: fit-content;
     top: 50%;
@@ -506,7 +505,7 @@ table{
     height: 100%;
     border: none;
     font-size: 20px;
-    padding: 1rem;
+    padding: 0.5rem;
     color: #fff;
     transition: all ease-in-out 0.5s;
     background-color: #0057c2;
@@ -517,7 +516,7 @@ table{
     color: #000000;
 }
 .receipt_printing{
-    width: 600px;
+    width: 500px;
     position: absolute;
     height: fit-content;
     top: 50%;
@@ -532,22 +531,21 @@ table{
 }
 .receipt_printing .container{
     width: 100%;
-    height: 100px;
+    height: fit-content;
     justify-content: space-between;
     align-items: center;
     display: flex;
     position: relative;
-    margin: 0.5em 0;
     background-color: #000000;
    border: 2px solid black;
 }
-.receipt_printing img{
+#print_close{
+    color: #000000;
+    font-size: 25px;
     position: absolute;
-    top: 22%;
-    right: 10%;
-    width: 100px;
-    height: 100px;
-    opacity: 12%;
+    right: 0;
+    top: 0 ;
+    cursor: pointer;
 }
 .receipt_printing .container .name{
    text-align: left;
@@ -557,8 +555,12 @@ table{
 }
 .receipt_printing .container p{
    color: #ffffff;
-   font-size: 22px;
+   font-size: 16px;
    padding: 0 1em;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
 }
 .description_and_amount{
     border: 1px solid black;
@@ -583,6 +585,7 @@ table{
     color: #000000;
     box-shadow: none;
     padding: 1rem 1rem;
+    font-size: 18px;
     margin: 0.5em 3em;
 }
 #totalling{

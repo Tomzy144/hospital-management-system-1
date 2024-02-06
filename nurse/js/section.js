@@ -261,7 +261,103 @@ const landing_page = `
   </td>
 </tr>
 </tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>
+      <div class="image">
+      <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
+      </div>
+  </td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>22-02-2024</td>
+  <td>2:30PM</td>
+  <td>
+  <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  <button class="reject-btn">Reject</button>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>
+      <div class="image">
+      <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
+      </div>
+  </td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>22-02-2024</td>
+  <td>2:30PM</td>
+  <td>
+  <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  <button class="reject-btn">Reject</button>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>
+      <div class="image">
+      <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
+      </div>
+  </td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>22-02-2024</td>
+  <td>2:30PM</td>
+  <td>
+  <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  <button class="reject-btn">Reject</button>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>
+      <div class="image">
+      <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
+      </div>
+  </td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>22-02-2024</td>
+  <td>2:30PM</td>
+  <td>
+  <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  <button class="reject-btn">Reject</button>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>
+      <div class="image">
+      <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
+      </div>
+  </td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>22-02-2024</td>
+  <td>2:30PM</td>
+  <td>
+  <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  <button class="reject-btn">Reject</button>
+  </td>
+</tr>
+</tbody>
 </table>
+<div class="pending_transaction_list_pagination">
+        <div class="flexs">
+            <p id="prevPen">Prev List</p>
+            <p id="nextPen">Next List</p>
+        </div>
+</div>
 </div>
 </div>
 </div>

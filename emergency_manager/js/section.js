@@ -41,16 +41,44 @@ const Navbar = `
          </div>
       <div class="sidebar_icons">
           <i class="fa fa-envelope" id="icon"></i>
-          <i class="fa fa-hospital-o" id="icon"onClick="click_appoitment_button()"></i>
+          <i class="fa fa-user-md" id="icon"></i>
+          <i class="fa fa-hospital-o" id="icon"onClick="show_emergency_patient_list()"></i>
           <i class="fa fa-sign-out" id="icon"></i>
       </div>
   </div>
 `
 
-AllSection('navbar', Navbar)
+AllSection('navbar', Navbar);
+
+   //PROFILE IMAGE
+   const profile_container  =  document.querySelector(".profile_account");
+   const click_icon_for_profile = ()=>{
+       profile_container.classList.toggle("hide");
+   };
+const show_emergency_patient_list = ()=>{
+    document.querySelector(".patient_list_section").classList.remove("hide");
+    document.querySelector(".emergency_form_container").style.display="none"
+}
+
+
+const landing_page = `
+<div class="landing_page">
+<div class="landing_section">
+<button onClick="view_emergency_form()">EMERGENCY FORM</button>
+<button onClick="view_emergency_form()">DOCTOR</button>
+<button onClick="view_emergency_form()">NURSE</button>
+<button onClick="view_emergency_form()">RADIOLOGY</button>
+<button onClick="view_emergency_form()">LABOURATORY</button>
+<button onClick="view_emergency_form()">SURGICAL SUITE</button>
+<button onClick="view_emergency_form()">ICU</button>
+<button onClick="view_emergency_form()">MORGUE</button>
+</div>
+</div>
+`
+AllSection("landing_page", landing_page)
 
 const emergency_form = `
-<div class="emergency_form_container">
+<div class="emergency_form_container hide">
 <form action="">
 <h1>EMERGENCY FORM</h1>
     <h2>Fill in the neccesary information</h2> 
@@ -114,3 +142,102 @@ const emergency_form = `
 </div>
 `
 AllSection('emergency_form', emergency_form)
+
+const view_emergency_form = ()=>{
+  document.querySelector(".emergency_form_container").classList.remove("hide");
+  document.querySelector(".landing_page").style.display = "none";
+}
+
+
+const patient_list_page = `
+<!----APPOITMENT SECTION-->
+<div class="patient_list_section hide">
+<div class="container">
+<div class="contents">
+<div class="head-sec">
+  <span style="color:black;">Patient Lists</span>
+  <div class="appoitment_input_control">
+  <i class="fa fa-search" id="search-icon"></i>
+      <input type="text" placeholder="Search here" class="appoitment_input">
+  </div>
+</div>
+<div class="body_sec">
+<table>
+<thead>
+<tr>
+  <td>#</td>
+  <td>Patient Name</td>
+  <td>Patient ID</td>
+  <td>Phone Number</td>
+  <td>Cause of the Incident</td>
+  <td>Status</td>
+  <td>Responses</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>0903278232</td>
+  <td>Accident</td>
+  <td>
+    <div class="green"></div>
+  </td>
+  <td>
+  <button class="switch_plan">Switch to plan</button>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>0903278232</td>
+  <td>Accident</td>
+  <td>
+  <div class="red"></div>
+  </td>
+  <td>
+<button class="transfer">Transfer to Morgue</button>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>0903278232</td>
+  <td>Accident</td>
+  <td>
+  <div class="yellow"></div>
+  </td>
+  <td>
+  <button class="transfer">Transfer to Surgical Unit</button>
+  </td>
+</tr>
+</tbody>
+</table>
+<div class="emergency_patient_list_pagination">
+<div class="flexs">
+    <p id="prevPen">Prev List</p>
+    <p id="nextPen">Next List</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div>
+`
+AllSection('patient_list_page', patient_list_page);
+
+const doctors = `
+<div class="doctor_container hide">
+
+</div>
+`
+AllSection('doctor', doctors);
+
+

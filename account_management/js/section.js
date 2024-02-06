@@ -89,7 +89,7 @@ const pending_transation_section = `
     <p>Comfirmed Transactions</p>
     <p>Cash at hand:0.00</p>
     <p>POS:0.00</p>
-    <p id="confirmed_amount"> Total: 0.00</p>
+    <p> Total: 0.00</p>
 </div>
 </div>
 <!---SUCCESSFUL DAILY TRANSFER SECTION-->
@@ -149,12 +149,13 @@ allSection('pending_transactions' ,pending_transation_section) ;
 const printing_receipt_section = `
 <div class="check_cash_pos hide">
 <i class="fa fa-times" id="close_pos_cash" onClick="close_check_cash_or_pos()"></i>
-<button onClick="show_print_receipt()">Cash</button>
+<button onClick="show_print_receipt()" id="print_cash">Cash</button>
     <h1>OR</h1>
-<button onClick="show_print_receipt()">POS</button>
+<button onClick="show_print_receipt()" id="print_pos">POS</button>
 </div>
 </div>
 <div class="receipt_printing hide">
+<i class="fa fa-times" id="print_close" onClick="close_print_div()"></i>
     <!-- <img id="img" src="../Images/Mount_Tech_Logo-removebg-preview.png" alt=""> -->
     <h1>RECEIPT</h1>
     <div class="container">
@@ -168,36 +169,19 @@ const printing_receipt_section = `
         </div>
     </div>
     <div class="description_and_amount">
-        <table>
+        <table id="tableReceipt">
             <thead>
                 <td>Description</td>
                 <td>Amount</td>
             </thead>
             <tbody>
-                <td>Maleria Test</td>
-                <td>2,300.00</td>
-            </tbody>
-            <tbody>
-                <td>Maleria Test</td>
-                <td>2,300.00</td>
-            </tbody>
-            <tbody>
-                <td>Maleria Test</td>
-                <td>2,300.00</td>
-            </tbody>
-            <tbody>
-                <td>Maleria Test</td>
-                <td>2,300.00</td>
-            </tbody>
-            <tbody>
-                <td>Maleria Test</td>
-                <td>2,300.00</td>
-            </tbody>
-            <tbody>
-                <td id="totalling" style="backgr">Total</td>
-                <td id="totalling">13,300.00</td>
+             
             </tbody>
         </table>
+        <div class="total">
+        <h1>Total:</h1>
+        <h1 id="total_transaction">230,000</h1>
+        </div>
         <div class="payment_method">
             <div class="section1">
         <h3>Payment Method</h3>
@@ -208,10 +192,13 @@ const printing_receipt_section = `
             <h3>Administrator</h3>
         </div>
         </div>
-        <button onClick="printDivContent()">Print</button>
+        <button>Print</button>
     </div>
 </div>`
 allSection('printing_receipt', printing_receipt_section);
+
+
+
 
 const successful_transaction_section = `
 <!-----SUCCESSFUL TRANSACTION HISTORY--->
@@ -270,4 +257,5 @@ const successful_transaction_section = `
 </div>
 </div>
 </div>`
-allSection('successful_transaction', successful_transaction_section)
+allSection('successful_transaction', successful_transaction_section);
+
