@@ -22,7 +22,7 @@ body{
     justify-content: space-between;
     align-items: center;;
     top: 0;
-    background-color: #0057c2;
+    background-color: #2a57d7;
     z-index: 999;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -42,7 +42,7 @@ body{
     cursor: pointer;
 }
 .section2{
-    width: 600px;
+    width: 700px;;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -120,6 +120,7 @@ body{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
+    background-color: #2a57d7;
     align-items: center;
 }
 
@@ -228,17 +229,18 @@ body{
     cursor: pointer;
     margin: 1rem 0;
 }
+
 .contents{
-    width: 90vw;
+    width: 100vw;
     display: flex;
-    margin: 0 auto;
-    height: 90vh;
+    justify-content: space-between;
 }
 .appiontment_booking_container{
-    width: 90%;
+    width: 100%;
     height: fit-content;
-    margin: 4.5rem auto;
+    margin: 4.5rem  0 0 5rem ;
 }
+
 .head_sec{
     width: 100%;
     height: 50px;
@@ -284,43 +286,42 @@ body{
     padding: 1rem;
     color: #fff;
 }
-.table_container table tbody{
-    margin: 1rem 0;
-}
 .table_container table tbody td{
     background-color: rgb(255, 255, 255);;
-    padding: 2rem;
+    padding: 0.4rem;
     border-bottom: 1px solid rgb(224, 221, 221);
     font-size: 20px;
-    margin: 1rem 0;
+    margin: 0.4rem 0;
     color: #000000;
 }
 
-.table_container button{
-    padding: 0.5rem 1rem;
+.table_container #accept_button{
+    padding: 0.5rem 0.5rem;
     background-color: rgb(42, 87, 215);
     border: none;
-    margin: 0 1rem;
+    width: 100%;
+    margin: 0.5em 0;
     cursor: pointer;
-    border-radius: 20px;
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
-.table_container button:nth-child(2){
-    padding: 0.5rem 1rem;
+.table_container #reject_button{
+    padding: 0.5rem 0.5rem;
     background-color: rgb(255, 0, 0);
     border: none;
+    margin: 0.5em 0;
+    width: 100%;
     cursor: pointer;
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
 
-.table_container button:hover{
+.table_container #accept_button:hover{
     color: #000000;
     background: none;
     border: 1px solid rgb(42, 87, 215); ;
 }
-.table_container button:hover:nth-child(2){
+.table_container #reject_button:hover{
     color: #000000;
     background: none;
     border: 1px solid  rgb(255, 0, 0);
@@ -352,18 +353,221 @@ body{
    transform: scale(0.94);
 }
 
+.approved_appoitment{
+    width: 700px;
+    height: fit-content;
+    position: relative;
+    right: 0;
+    padding: 1rem 0;
+    margin: 3.7rem 0 0 1rem;
+}
+
+.approved_appoitment .table_container{
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+}
+.approved_appoitment .table_container table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.approved_appoitment .table_container table thead td{
+    background-color: rgb(42, 87, 215);;
+    padding: 1rem 1rem;
+    color: #fff;
+}
+.approved_appoitment .table_container table tbody td{
+    background-color: rgb(255, 255, 255);;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(224, 221, 221);
+    font-size: 20px;
+    padding: 1.5rem 1rem;
+    margin: 0.4rem 0;
+    color: #000000;
+}
+.approved_appoitment #in_progress{
+    background-color:rgb(42, 87, 215); ;
+    position: relative;
+    padding: 0.5rem 0.5rem;
+    color: #fff;
+}
+.approved_appoitment #completed{
+    background-color: rgb(0, 154, 0);
+    position: relative;
+    padding: 0.5rem 0.5rem;
+    color: #fff;
+}
+.approved_appoitment #in_progress:hover{
+    background:none;
+    border: 1px solid rgb(42, 87, 215); 
+    color: rgb(42, 87, 215); ;
+}
+.approved_appoitment #completed:hover{
+    background:none;
+    border: 1px solid rgb(0, 154, 0);
+    color: rgb(0, 154, 0);;
+}
+.radiology_pagination{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 8px ;
+    border-bottom-right-radius: 8px ;
+    height: 50px;
+}
+.radiology_pagination .flexs{
+    display: flex;;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.radiology_pagination .flexs p{
+    background-color: rgb(42, 87, 215);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out  0.5s
+}
+.radiology_pagination .flexs p:hover{
+   transform: scale(0.94);
+}
+.table_container button{
+    padding: 1rem 1rem;
+    background-color: rgb(42, 87, 215);
+    border: none;
+    width: 100%;
+    margin: 0.5em 0;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.table_container button{
+    padding: 1rem 1rem;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    margin: 0.5em 0;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+
+.table_container button:hover{
+    color: #000000;
+    background: none;
+    border: 1px solid rgb(42, 87, 215); ;
+}
+.table_container button:hover{
+    color: #000000;
+    background: none;
+    border: 1px solid  rgb(255, 0, 0);
+}
 
 /*RADIOLOGY SECTION*/
 
 .radiology_input{
-    width: 80vh;
+    width: 100%;
     display: flex;
-   margin: 0 auto;
+    justify-content: space-between;
+}
+
+.radiology_input .result{
+    width: 790px;
+  height: fit-content;
+  position: relative;
+  right: 0;
+  background-color: rgb(42, 87, 215);;
+  padding: 1rem 1rem;
+  box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
+  margin: 4.6rem 0 0 1rem;
+}
+.radiology_input .result span{
+color: #fff;
+}
+.radiology_input .result h1{
+color: #fff;
+}
+.radiology_input .result .patient_profile{
+    width: 100%;
+    height: 100px;
+    color: #fff;
+}
+.result_for_dia_complaint_upload{
+    background-color: #fff;
+    height: fit-content;
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.result_for_dia_complaint_upload .flex_control{
+    display: flex;
+    flex-direction: column;
+
+}
+.result_for_dia_complaint_upload label{
+color: #000000;
+}
+.result_for_dia_complaint_upload input{
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px solid rgb(42, 87, 215);;
+    outline: none;
+}
+.result_for_dia_complaint_upload textarea{
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px solid rgb(42, 87, 215);;
+    outline: none;
+}
+
+.lab_container{
+    width: 100%;
+    height: fit-content;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
+    background-color: rgb(42, 87, 215);;
+}
+.profile_name{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+.profile_div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.img_div{
+width:120px;
+overflow: hidden;
+height:120px;
+overflow: hidden;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 100%;
+background-color: rgb(42, 87, 215);;
+}
+.img_div img{
+    position: absolute;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+}
+span{
+    font-size: 20px;
 }
 .radiology_container {
     width: 100%;
-    height: auto;
+    height: fit-content;
     padding: 2rem;
+    border-radius: 20px;
+    margin: 4rem 0 0 5rem;
     box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
     background-color: rgb(42, 87, 215);
 }
@@ -371,7 +575,6 @@ body{
 .radiography{
   width: 100%;
   color: #fff;
-  margin: 3rem 0 0 0;
   background-color: rgb(42, 87, 215);
   padding: 0.5rem 0.5rem;
   display: flex;
@@ -801,6 +1004,22 @@ label{
     color: #fff;
     font-size: 18px;
 }
+#btn{
+    width: 100%;
+  background-color: rgb(255, 255, 255);
+  height: fit-content;
+  padding: 1rem;
+  border: none;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#btn:hover{
+    background:none;
+    border: 1px solid rgb(255, 255, 255);
+    color: #ffffff;
+}
+
 .hide{
     display: none;
 }

@@ -48,6 +48,11 @@ const Navbar = `
   </div>
 `
 allSection('navbar', Navbar);
+   //PROFILE IMAGE
+   const profile_container  =  document.querySelector(".profile_account");
+   const click_icon_for_profile = ()=>{
+       profile_container.classList.toggle("hide");
+   };
 const landingPageContainer  = `
 <div class="contents">
 <div class="appiontment_booking_container">
@@ -60,14 +65,14 @@ const landingPageContainer  = `
   </div>
 </div>
 <div class="table_container">
-<table>
+<table id="appoitment_table">
   <thead>
-    <td>Patient Name</td>
-    <td>Patient Id</td>
-    <td>Date</td>
-    <td>Time</td>
+    <td>Number</td>
+    <td>Patient Name/Patient Id</td>
+    <td>Date/Time</td>
     <td>Request Type</td>
-    <td>Accept/Reject</td>
+    <td>Accept</td>
+    <td>Reject</td>
   </thead>
   <tbody>
     <td>Princess Precious</td>
@@ -81,68 +86,36 @@ const landingPageContainer  = `
     </td>
   </tbody>
   <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button>Accept</button>
-      <button>Reject</button>
-    </td>
-  </tbody>
-  <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button>Accept</button>
-      <button>Reject</button>
-    </td>
-  </tbody>
-  <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button>Accept</button>
-      <button>Reject</button>
-    </td>
-  </tbody>
-  <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button>Accept</button>
-      <button>Reject</button>
-    </td>
-  </tbody>
-  <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button>Accept</button>
-      <button>Reject</button>
-    </td>
-  </tbody>
+   
 </table>
 </div>
 <div class="pending_transaction_list_pagination">
         <div class="flexs">
-            <p id="prevPen">Prev List</p>
-            <p id="nextPen">Next List</p>
+            <p id="prev_appoitment">Prev List</p>
+            <p id="next_appoitment">Next List</p>
         </div>
 </div>
+</div>
+</div>
+
+<div class="approved_appoitment">
+<div class="table_container">
+<table id="approved_table">
+  <thead>
+    <td>Patient Name</td>
+    <td>Patient Id</td>
+    <td>Status</td>
+  </thead>
+  <tbody>
+
+  </tbody>
+  </table>
+</div>
+<div class="radiology_pagination">
+        <div class="flexs">
+            <p id="prev_approved_appoitment">Prev List</p>
+            <p id="next_approved_appoitment">Next List</p>
+        </div>
 </div>
 </div>
 </div>
@@ -908,6 +881,33 @@ const  radiology_test_input_container = `
           <input type="file" value="1500" class="checkbox_cal">
         </div>
       </form>
+      <button id="btn" class="save" onClick="show_test_booking()">Enter</button>
+</div>
+<div class="result">
+<h1>RADIOLOGY RESULT</h1>
+<div class="profile_div">
+<div class="profile_name">
+<span>Princess Esther</span>
+<span>PAT0002</span>
+</div>
+<div class="img_div">
+<img src ="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg"></img>
+</img>
+</div>
+</div>
+<div class="result_for_dia_complaint_upload">
+        <div class="flex_control">
+        <label>Diagnosis</label>
+        <input type= "text"></input>
+        </div>
+        <div class="flex_control">
+        <label>Complaints</label>
+        <textarea col="10" row="10"></textarea>
+        </div>
+        <div class="flex_control">
+        <label>Upload Test Result</label>
+        <input type= "file"></input>
+        </div>
 </div>
 </div>
 </div>

@@ -231,61 +231,41 @@ body{
 }
 .landing_page{
     width: 100vw;
-    height: 100vh;
+    display: flex;
+}
+.flexs{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;;
+    width: 100%;
+    padding: 1em;
+    margin: 4.5em 0 0 5em;
 }
-.landing_section{
-    display: flex;
-    width: 1000px;
-    height: 600px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.landing_page button{
-    background-color: white;
-    border: 2px solid #fff;
-    padding: 2rem;
-    font-size: 26px;
-    cursor: pointer;
-    color: #0057c2;
-    margin: 0.5rem;
-    transition: all ease-in-out 0.5s;
-}
-.landing_page button:hover{
-    background:none;
-    border: 2px solid #fff;
-    padding: 2rem;
-    margin: 0.5rem;
-    font-size: 22px;
-    cursor: pointer;
-    color: #ffffff;
-}
-
 
 .emergency_form_container{
-    width: 1200px;
+    width: 650px;
     height: fit-content;
     padding:2rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #fff;
     overflow: hidden;
+    margin: 0;
     color: rgb(42, 87, 215);
     animation: fadeIn 1s ease-in-out;
+}
+.emergency_form_container h1{
+    font-weight: bold;
 }
 
 form{
     width: 100%;
     color: rgb(42, 87, 215);;
-    margin: 4.2rem auto 0;
     display: flex;
     flex-direction: column;
 }
 form span{
     text-align: left;
-    font-size: 18px;
+    font-size: 14px;
     color: rgb(42, 87, 215);
     letter-spacing: 4px;
     animation: slideInLeft 1s ease-in-out;
@@ -306,6 +286,7 @@ form span{
     border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
     width: 100%;
+    color: #0057c2;
 
 }
 .emergency_form_container .form_control input:focus{
@@ -329,7 +310,108 @@ form span{
     color:rgb(42, 87, 215);
     border: 1px solid rgb(42, 87, 215);
 }
+.nurse_doc_section_flex{
+    width: fit-content;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 1em;
+    color: rgb(42, 87, 215);
+    animation: fadeIn 1s ease-in-out;
+}
+.nurse_section{
+    width: 100%;
+    padding: 0.5em;
+    height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow-y: auto;
+    background-color: rgb(255, 255, 255);
+}
+.nurse_section button{
+    width: 100%;
+    padding: 0.5em;
+    background-color:rgb(42, 87, 215);
+    border: none;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+.nurse_section button:hover{
+    width: 100%;
+    padding: 0.5em;
+    background:none;
+    border: 1px solid rgb(42, 87, 215);;
+    color: rgb(42, 87, 215);
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+.nurse_section h1{
+    font-weight: bold;
+}
+.nurse_section form{
+    width:530px;
+    display: flex;
+    flex-direction: column;
+}
+.nurse_section form .form_control_flexs{
+    display: flex;
+}
+.nurse_section form .form_control{
+    width: 250px;
+}
+.nurse_section form .form_control input{
+    padding: 0.5rem;
+    border: none;
+    color: rgb(42, 87, 215);;
+    border-bottom: 1px solid rgb(42, 87, 215);
+}
 
+.doc_section{
+    width: 100%;
+    height: fit-content;
+    padding: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 1em 0;
+    background-color: rgb(255, 255, 255);
+}
+.doc_section button{
+    width: 100%;
+    padding: 0.5em;
+    background-color:rgb(42, 87, 215);
+    border: none;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+.doc_section button:hover{
+    width: 100%;
+    padding: 0.5em;
+    background:none;
+    border: 1px solid rgb(42, 87, 215);;
+    color: rgb(42, 87, 215);
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+.doc_section h1{
+    font-weight: bold;
+}
+.doc_section #select_doc{
+    width: 100%;
+    background-color: #fff;
+    font-size: 16px;
+    padding: 0.5em;
+    cursor: pointer;
+    border: 1px solid rgb(42, 87, 215);
+    color:rgb(42, 87, 215);
+}
+.doc_section #select_doc #opt{
+    color: rgb(42, 87, 215);
+    background: white;
+    border: none;
+    padding: 1rem;
+
+}
 
 /*APPOITMENT SECTION*/
 .patient_list_section{
