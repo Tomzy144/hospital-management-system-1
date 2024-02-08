@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include '../backend/config/connection.php' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http: //www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabDoc Dashboard</title>
-    <link rel="stylesheet" href="./dashboard.css">
-    <link rel="stylesheet" href='awesome-font/css/font-awesome.min.css'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <?php include 'meta.php'?>
+    <title><?php echo $thename?>  | LabDoc Dashboard</title>
+    <meta name="keywords" content="Admin - <?php echo $thename?>" />
+    <meta name="description" content="Administrative Login <?php echo $thename?>"/>
+    
 </head>
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+
 <body>
          <!---SIDEBAR AND NAVBAR-->
     <div class="navbar">
@@ -32,13 +29,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           </div>
           <div class="profile">
             <div class="profile_account hide">
-            <img id="image_profile_account" src="../Images/usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="">
+            <img id="image_profile_account" src="<?php echo $website_url?>/Images/usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="">
             <h4>Immaculater Odu</h4>
             <button class="btn_submit">Upload Image</button>
             <span>change password</span>
         </div>
             <div class="image">
-            <img src="../Images/usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="">
+            <img src="<?php echo $website_url?>/Images/usman-yousaf-pTrhfmj2jDA-unsplash.jpg" alt="">
             <div class="active_on"></div>
             </div>
         </img>  
@@ -49,19 +46,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     </div>
         <div class="sidebar">
                <div class="sidebar_contents">
-                <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
+                <img width="80px" height="80px" src="<?php echo $website_url?>/Images/Mount Tech Logo.jpg" alt="logo">
                </div>
             <div class="sidebar_icons">
-                <i class="fa fa-envelope" id="icon"></i>
-                <i class="fa fa-hospital-o" id="icon"onClick="click_appoitment_button()"></i>
-                <i class="fa fa-sign-out" id="icon"></i>
+                <i class="bi bi-envelope" id="icon"></i>
+                <i class="bi-hospital-o" id="icon"onClick="click_appoitment_button()"></i>
+                <i class="bi-sign-out" id="icon"></i>
             </div>
         </div>
 
        <div id="lab_section-container"></div>
        <div id="landing_page_content_section-container"></div>
 
-       <script src="js/section.js"></script>
-    <script src="js/script.js"></script>
+
+      
 </body>
 </html>
