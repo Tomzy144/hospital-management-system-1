@@ -75,13 +75,13 @@ function close_doctor_login_form (){
 
 
 //Nurse Login
-const open_nurse_login_form = function() {
+function open_nurse_login_form() {
     const nurse_login = document.querySelector(".nurse-login");
     const dark_background = document.querySelector(".overlay");
     nurse_login.classList.remove("hidden");
     dark_background.classList.remove("hidden");
 };
-const close_nurse_login_form = function(){
+function close_nurse_login_form (){
     const nurse_login = document.querySelector(".nurse-login");
     const dark_background = document.querySelector(".overlay")
     nurse_login.classList.add("hidden");
@@ -174,73 +174,73 @@ const isRadiologist_active = ()=>{
 }
 
 //Receptionist Login;
-const open_recep_login_form = function(){
+function open_recep_login_form (){
     const recep_login = document.querySelector(".recep-login");
     const dark_background = document.querySelector(".overlay");
     recep_login.classList.remove("hidden");
     dark_background.classList.remove("hidden");
 };
-const close_recep_login_form = function(){
+ function close_recep_login_form (){
     const recep_login = document.querySelector(".recep-login");
     const dark_background = document.querySelector(".overlay");
     recep_login.classList.add("hidden");
     dark_background.classList.add("hidden");
 }
 
-const recep_login_form = `
+// const recep_login_form = `
 
 
-<?php include '../backend/config/connection.php'?>
+// <?php include '../backend/config/connection.php'?>
 
 
-<?php
-if ($s_staff_id != '') {
-?>
-    <script>
-        window.location.href = "<?php echo $website_url?>/frontend/receptionist";
-    </script>
-<?php
+// <?php
+// if ($s_staff_id != '') {
+// ?>
+//     <script>
+//         window.location.href = "<?php echo $website_url?>/frontend/receptionist";
+//     </script>
+// <?php
 
-}
-?>
-
-
-
+// }
+// ?>
 
 
 
-<div class="recep-login hidden">
-<i class="fa fa-times-circle" id='close-icon-recep'></i>
-    <h1 class="login-form-h1">Login (Health Records and Information)</h1>
-    <form action="config/code.php" id="loginform" enctype="multipart/form-data" method="post">
-        <div class="form-control">
-        <label for='email'>Email</label>
-        <i class="fa fa-address-book"></i>
-        <input type='email' id="email" name="email" autoComplete='off'/>
-        </div>
 
-        <div class="form-control">
-        <label for='number'>Your ID</label>
-        <i class="fa fa-key"></i>
-        <input type="text" id= "user_id" name="user_id" autoComplete='off'/> 
-        </div>
 
-        <div class="form-control">
-        <label for='password'>Password</label>
-        <i class="fa fa-lock"></i>
-        <input type="password" id="password" name="spass" autocomplete="off">
-        </div>
 
-        <input name="action" value="login" type="hidden" />
-        <button type="button" class="btn" id="login_btn" title="Login" onclick="_sign_in();">Login</button>  
-    <form>
-</div>
+// <div class="recep-login hidden">
+// <i class="fa fa-times-circle" id='close-icon-recep'></i>
+//     <h1 class="login-form-h1">Login (Health Records and Information)</h1>
+//     <form action="config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+//         <div class="form-control">
+//         <label for='email'>Email</label>
+//         <i class="fa fa-address-book"></i>
+//         <input type='email' id="email" name="email" autoComplete='off'/>
+//         </div>
+
+//         <div class="form-control">
+//         <label for='number'>Your ID</label>
+//         <i class="fa fa-key"></i>
+//         <input type="text" id= "user_id" name="user_id" autoComplete='off'/> 
+//         </div>
+
+//         <div class="form-control">
+//         <label for='password'>Password</label>
+//         <i class="fa fa-lock"></i>
+//         <input type="password" id="password" name="spass" autocomplete="off">
+//         </div>
+
+//         <input name="action" value="login" type="hidden" />
+//         <button type="button" class="btn" id="login_btn" title="Login" onclick="_sign_in();">Login</button>  
+//     <form>
+// </div>
 
     
-`
+// `
 
 
-log_inAll('recep', recep_login_form);
+// log_inAll('recep', recep_login_form);
 
 //Lab Login
 const open_lab_login_form = function(){
