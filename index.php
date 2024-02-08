@@ -135,6 +135,8 @@
            <div id="morgue_manager-container"></div>
         <div class="overlay hidden"></div>
     </div>
+
+    <?php include "config/page-content.php"?>
 <!--Animation-->
     <div class="loading-overlay"></div>
       </div>

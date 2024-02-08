@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 //using this function to pass into all the section login
 const log_inAll = function(roles, formHtml){
@@ -7,66 +7,66 @@ const log_inAll = function(roles, formHtml){
 }
 
 //Doctor Login
-const open_doctor_login_form = function(){
-    const doctor_login = document.querySelector(".doctor-login");
-    const dark_background = document.querySelector(".overlay")
+function open_doctor_login_form(){
+    var doctor_login = document.querySelector(".doctor-login");
+    var dark_background = document.querySelector(".overlay")
     doctor_login.classList.remove("hidden");
     dark_background.classList.remove("hidden");
-};
+}
 
-const close_doctor_login_form = function(){
+function close_doctor_login_form (){
     const doctor_login = document.querySelector(".doctor-login");
     const dark_background = document.querySelector(".overlay")
     doctor_login.classList.add("hidden");
     dark_background.classList.add("hidden");
 }
 
-const doctor_login_form = `
+// const doctor_login_form = `
 
 
-<?php include '../backend/config/connection.php'?>
+// <?php include '../backend/config/connection.php'?>
 
 
 
-<?php
-if ($s_staff_id != '') {
-?>
-    <script>
-        window.location.href = "<?php echo $website_url?>/frontend/doctor";
-    </script>
-<?php
+// <?php
+// if ($s_staff_id != '') {
+// ?>
+//     <script>
+//         window.location.href = "<?php echo $website_url?>/frontend/doctor";
+//     </script>
+// <?php
 
-}
-?>
+// }
+// ?>
 
 
-    <div class="doctor-login hidden">
-    <i class="fa fa-times-circle" id='close-icon-doctor'></i>
-        <h1 class="login-form-h1">Login (Doctor)</h1>
-        <form action="config/code.php" id="doctor_loginform" enctype="multipart/form-data" method="post">
-            <div class="form-control">
-            <label for='email'>Email</label>
-            <i class="fa fa-address-book"></i>
-            <input type="email" id="doctor_email" name="email" autoComplete='off'/> 
-            </div>
+//     <div class="doctor-login hidden">
+//     <i class="fa fa-times-circle" id='close-icon-doctor'></i>
+//         <h1 class="login-form-h1">Login (Doctor)</h1>
+//         <form action="config/code.php" id="doctor_loginform" enctype="multipart/form-data" method="post">
+//             <div class="form-control">
+//             <label for='email'>Email</label>
+//             <i class="fa fa-address-book"></i>
+//             <input type="email" id="doctor_email" name="email" autoComplete='off'/> 
+//             </div>
 
-            <div class="form-control">
-            <label for='number'>Your ID</label>
-            <i class="fa fa-key"></i>
-            <input type="text" id="doctor_id"  name="number" autoComplete='off'/> 
-            </div>
+//             <div class="form-control">
+//             <label for='number'>Your ID</label>
+//             <i class="fa fa-key"></i>
+//             <input type="text" id="doctor_id"  name="number" autoComplete='off'/> 
+//             </div>
 
-            <div class="form-control">
-            <label for='password'>Password</label>
-            <i class="fa fa-lock"></i>
-            <input type="password" id="doctor_password" name="password" autoComplete='off'/> 
-            </div>
-            <input name="action" value="doctor_login" type="hidden" />
-            <button type="button" class="btn" id="doctor_login_btn"title="Login" onclick="_doctor_sign_in();">Login</button>
-        <form>
-    </div>
-`
-log_inAll('doctor', doctor_login_form);
+//             <div class="form-control">
+//             <label for='password'>Password</label>
+//             <i class="fa fa-lock"></i>
+//             <input type="password" id="doctor_password" name="password" autoComplete='off'/> 
+//             </div>
+//             <input name="action" value="doctor_login" type="hidden" />
+//             <button type="button" class="btn" id="doctor_login_btn"title="Login" onclick="_doctor_sign_in();">Login</button>
+//         <form>
+//     </div>
+// `
+// log_inAll('doctor', doctor_login_form);
 
 // const if_details_correct_login = function(){
 //     let url = 'Frontend/doctor/index.php';

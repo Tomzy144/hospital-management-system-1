@@ -17,7 +17,7 @@
 
 <script src="<?php echo $website_url?>/js/jquery-v3.6.1.min.js"></script>
 <script src="<?php echo $website_url?>/js/aos.js"></script> 
-<script src="<?php echo $website_url?>/js/script.js"></script> 
+<script src="<?php echo $website_url?>/js/scripts.js"></script> 
 <script src="<?php echo $website_url?>/js/index_landingpage.js"></script> 
 
 
