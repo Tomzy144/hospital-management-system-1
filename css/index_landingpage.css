@@ -76,7 +76,7 @@ body {
   }
 
 .navbar{
-    display: flex;
+    display: block;
     width: 100%;
     justify-content: space-around;
     align-items: center;
@@ -85,6 +85,7 @@ body {
     z-index: 999;
     padding: 0.5rem;
     flex-direction: row;
+    text-align: center;
 } 
 h1{
     color: #fff;
@@ -181,6 +182,7 @@ main{
   padding: 10px 0px;
   height: auto;
   width: 95%;
+  margin: auto;
 }
 .flexs-container{
 width: 100%;
