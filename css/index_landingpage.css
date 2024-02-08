@@ -96,6 +96,7 @@ main{
   padding: 5px;
   animation:zoomIn 1.2s ease-in-out 1.3s;
   margin: auto;
+  height: auto;
 
 }
 .btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab, .btn-staff_manager, .btn-martanity, .btn-radiography, .btn-surgical_suite, .btn-account_manager, .btn-emergency_manager, .btn-pharmacist,  .btn-morgue_manager {
@@ -183,6 +184,9 @@ main{
   height: auto;
   width: 95%;
   margin: auto;
+  max-width: 1200px;
+  min-height: 70px;
+  
 }
 .flexs-container{
 width: 100%;

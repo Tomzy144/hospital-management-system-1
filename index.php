@@ -140,6 +140,6 @@
       </div>
   
         <!--Script-->
-        <script src="js/index_landingpage.js"></script>
+        <!-- <script src="js/index_landingpage.js"></script> -->
 </body>
 </html>
