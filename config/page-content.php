@@ -42,7 +42,7 @@ if ($s_staff_id != '') {
 
     <!-- /////////////////////////////////////////////////// -->
 
-
+<!-- 
 
     <div class="recep-login hidden">
 <i class="fa fa-times-circle" id='close-icon-recep'></i>
@@ -73,7 +73,7 @@ if ($s_staff_id != '') {
 
 
 
-<!-- lab -->
+<!-- lab -
 
 <div class="lab-login hidden">
 <i class="fa fa-times-circle" id='close-icon-lab'></i>
@@ -101,7 +101,7 @@ if ($s_staff_id != '') {
 </div>
 
 
-<!-- staff Manager -->
+<!-- staff Manager -
 
 
 <div class="staff_manager-login hidden">
@@ -132,7 +132,7 @@ if ($s_staff_id != '') {
 
 
 
-<!-- martanity -->
+<!-- martanity -
 
 
 <div class="martanity-login hidden">
@@ -161,7 +161,7 @@ if ($s_staff_id != '') {
 </div>
 
 
-<!-- account_manager  -->
+<!-- account_manager  -
 
 
 
@@ -191,7 +191,7 @@ if ($s_staff_id != '') {
 </div>
 
 
-<!-- surgical_suite_manager  -->
+<!-- surgical_suite_manager  -
 
 
 <div class="surgical_suite_manager-login hidden">
@@ -220,7 +220,7 @@ if ($s_staff_id != '') {
 </div>
 
 
-<!-- emergency_manager -->
+<!-- emergency_manager --
 
 
 <div class="emergency_manager-login hidden">
@@ -249,7 +249,7 @@ if ($s_staff_id != '') {
 </div>
 
 
-<!-- pharmacist -->
+<!-- pharmacist --
 
 
 <div class="pharmacist-login hidden">
@@ -277,7 +277,7 @@ if ($s_staff_id != '') {
     <form>
 </div>
 
-<!-- morgue_manager -->
+<!-- morgue_manager --
 
 <div class="morgue_manager-login hidden">
 <i class="fa fa-times-circle" id='close-icon-morgue_manager'></i>
@@ -305,7 +305,7 @@ if ($s_staff_id != '') {
 </div>
 
 
-<!-- radiologist -->
+<!-- radiologist --
 
 
 <div class="radiologist-login hidden">
@@ -334,7 +334,7 @@ if ($s_staff_id != '') {
 </div>
 
 
-<!-- nurse -->
+<!-- nurse --
 
 
 <div class="nurse-login hidden">
@@ -360,4 +360,4 @@ if ($s_staff_id != '') {
     </div>
     <button type="button" class="btn" onClick="isNurse_active()">Login</button>
     <form>
-</div>
+</div> -->

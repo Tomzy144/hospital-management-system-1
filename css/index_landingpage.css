@@ -37,7 +37,7 @@ body {
   padding:0px;
   margin :0px;
   font-size: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   word-wrap: break-word;
   overflow-wrap:break-word ;
 
