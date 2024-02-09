@@ -56,7 +56,7 @@
 		?>
 					<script>
 
-						window.parent(location="../frontend/receptionist/");
+						window.parent(location="../Health_Records_and_Information/");
 					</script>
 		<?php
 			
@@ -347,7 +347,7 @@
 
 
   
-case 'doctor_login_check': // for user login
+case 'doctor_login_check': // for doctor login
 	$doctor_email=trim($_POST['doctor_email']);
 ///	$temp_password=trim(($_POST['password']));
 	$doctor_password=trim(($_POST['doctor_password']));
