@@ -6,11 +6,71 @@ const click_icon_for_profile = ()=>{
 };
 
 document.addEventListener("DOMContentLoaded", ()=>{
+const pending_appoitment = [
+    {number:"1", imageUrl:'../images/0ba77c2878729044df4c28ba1830bbad.jpg',patients_name_id: {name:"Precious Bassey", id:"PAT0002"}, date_time:{date:"22-09-2023", time:"00:00:00"}, request_type:"Checkup"},
+    {number:"1", imageUrl:'../images/0ba77c2878729044df4c28ba1830bbad.jpg',patients_name_id: {name:"Precious Bassey", id:"PAT0002"}, date_time:{date:"22-09-2023", time:"00:00:00"}, request_type:"Checkup"},
+    {number:"1", imageUrl:'../images/0ba77c2878729044df4c28ba1830bbad.jpg',patients_name_id: {name:"Precious Bassey", id:"PAT0002"}, date_time:{date:"22-09-2023", time:"00:00:00"}, request_type:"Checkup"},
+    {number:"1", imageUrl:'../images/0ba77c2878729044df4c28ba1830bbad.jpg',patients_name_id: {name:"Precious Bassey", id:"PAT0002"}, date_time:{date:"22-09-2023", time:"00:00:00"}, request_type:"Checkup"},
+    {number:"1", imageUrl:'../images/0ba77c2878729044df4c28ba1830bbad.jpg',patients_name_id: {name:"Precious Bassey", id:"PAT0002"}, date_time:{date:"22-09-2023", time:"00:00:00"}, request_type:"Checkup"},
+    {number:"1", imageUrl:'../images/0ba77c2878729044df4c28ba1830bbad.jpg',patients_name_id: {name:"Precious Bassey", id:"PAT0002"}, date_time:{date:"22-09-2023", time:"00:00:00"}, request_type:"Checkup"},
+    {number:"1", imageUrl:'../images/0ba77c2878729044df4c28ba1830bbad.jpg',patients_name_id: {name:"Precious Bassey", id:"PAT0002"}, date_time:{date:"22-09-2023", time:"00:00:00"}, request_type:"Checkup"},
+    {number:"1", imageUrl:'../images/0ba77c2878729044df4c28ba1830bbad.jpg',patients_name_id: {name:"Precious Bassey", id:"PAT0002"}, date_time:{date:"22-09-2023", time:"00:00:00"}, request_type:"Checkup"},
+
+   
+
+
+
+]
+let currentIndex = 0;
+const appoitmentTable = document.querySelector("#appoitment_table tbody");
+const next_appoitmentTable = document.querySelector("#next");
+const prev_appoitmentTable = document.querySelector("#prev");
+
+const update_appoitmentTable = function(){
+    appoitmentTable.innerHTML = "";
+    const endIndex = Math.min(currentIndex + 5, pending_appoitment.length);
+    for(let i = currentIndex; i < endIndex; i++){
+        const row = appoitmentTable.insertRow();
+        const cell0 = row.insertCell(0);
+        const cell1 = row.insertCell(1);
+        const cell2 = row.insertCell(2);
+        const cell3 = row.insertCell(3);
+        const cell4 = row.insertCell(4);
+        const cell5 = row.insertCell(5);
+
+
+        cell0.innerHTML = `${pending_appoitment[i].number}`;
+        let imageElement = document.createElement('img');
+        imageElement.src = `${pending_appoitment[i].imageUrl}`;
+        cell1.appendChild(imageElement);
+        cell2.innerHTML = `${pending_appoitment[i].patients_name_id.name} <br/> ${pending_appoitment[i].patients_name_id.id}`;
+        cell3.innerHTML = `${pending_appoitment[i].date_time.date} <br/> ${pending_appoitment[i].date_time.time}`;
+        cell4.innerHTML = `${pending_appoitment[i].request_type}`;
+        let buttonAccept = document.createElement('button');
+        buttonAccept.innerHTML ="Accept";
+        buttonAccept.className = "accept_button"
     
+
+        let buttonReject = document.createElement('button');
+        buttonReject.innerHTML ="Reject";
+        buttonReject.className = "button_reject";
+        `${cell5.appendChild(buttonAccept)} <br/> ${cell5.appendChild(buttonReject)}`
+
+    }
+}
+update_appoitmentTable()
+prev_appoitmentTable.addEventListener('click', ()=>{
+    currentIndex = Math.max(currentIndex - 5, 0)
+    update_appoitmentTable()
 })
-
-
-
+next_appoitmentTable.addEventListener('click', ()=>{
+    currentIndex += 5;
+    if(currentIndex >= pending_appoitment.length){
+        currentIndex = 0;
+    }
+    update_appoitmentTable()
+})
+});
 
 
 

@@ -253,7 +253,7 @@ body{
     margin: 1rem 0;
 }
 .container{
-    width: 85%;
+    width: 65%;
     margin: 0 auto;
 }
 
@@ -312,6 +312,11 @@ table{
     border-collapse: collapse;
     overflow-y: hidden;
 }
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
  table thead td{
     background-color: rgb(42, 87, 215);;
     padding: 0.5em;
@@ -324,11 +329,11 @@ table{
  table tbody td{
     background-color: rgb(255, 255, 255);;
     padding: 0.5em;
-    font-size: 15px;
-    margin: 1rem 0;
+    font-size: 18px;
+    /* margin: 1rem 0; */
     color: #000000;
 }
-.body_sec button{
+ .accept_button{
     padding: 0.5rem 0.5rem;
     background-color: rgb(42, 87, 215);
     border: none;
@@ -338,7 +343,7 @@ table{
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
-.body_sec button:nth-child(2){
+.body_sec .button_reject{
     padding: 0.5rem 0.5rem;
     background-color: rgb(255, 0, 0);
     border: none;
@@ -348,13 +353,13 @@ table{
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
-.body_sec button:hover{
+ .accept_button:hover{
     color: #000000;
  padding: 0.5rem 0.5rem;
     border: 1px solid rgb(42, 87, 215);
     background: none
 }
-.body_sec button:hover:nth-child(2){
+.body_sec .button_reject:hover{
     color: #000000;
  padding: 0.5rem 0.5rem;
     border: 1px solid rgb(255, 0, 0);

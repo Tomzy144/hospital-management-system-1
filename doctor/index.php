@@ -176,16 +176,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 $sql = "SELECT * FROM appointment_tab WHERE doctor_id ='$s_doctor_id'";
 $result = $conn->query($sql);
 ?>
-<table>
+<table id="appoitment_table">
 
     <thead>
         <tr>
             <td>#</td>
-            <td>PASSPORT IMAGE</td>
-            <td>Patient Name</td>
-            <td>Patient ID</td>
-            <td>Date</td>
-            <td>Time</td>
+            <td>PASSPORT</td>
+            <td>Patient Name & Patient ID</td>
+            <td>Date & Time</td>
             <td>Request Type</td>
             <td>Accept/Reject</td>
         </tr>
@@ -220,8 +218,8 @@ $result = $conn->query($sql);
 </table>
 <div class="pending_appoitment_list_pagination">
         <div class="flexs">
-            <p id="prevPen">Prev List</p>
-            <p id="nextPen">Next List</p>
+            <p id="prev">Prev List</p>
+            <p id="next">Next List</p>
         </div>
 </div>
 
