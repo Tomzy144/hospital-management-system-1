@@ -8,14 +8,7 @@
 }
 body{
     width: 100%;
-    min-height:100vh;
-    background-image: url(../Images/19374.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height:100%;
     }
 .navbar{
     width: 100%;
@@ -26,7 +19,7 @@ body{
     align-items: center;;
     top: 0;
     z-index: 999;
-    background-color: #0057c2;
+    background-color: #2a57d7;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -63,7 +56,20 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-.icons{
+.section2 .icon{
+    margin: 0 1rem;
+    cursor: pointer;
+    cursor: pointer;
+    position: relative;
+}
+.sidebar_icons .icon{
+    color: #fff;
+    font-size: 30px;
+    margin: 1em 0;
+    position: relative;
+    cursor: pointer;
+}
+.icons{ 
     color: #fff;
     font-size: 30px;
     width: 150px;
@@ -128,6 +134,7 @@ body{
 .profile_account{
     width: 300px;
     position: absolute;
+    background-color: #2a57d7;;
     height: fit-content;
     top: 100%;
     animation: zoomIn 01s ease-in-out;
@@ -213,6 +220,7 @@ body{
 .sidebar{
     width: 75px;
     height: fit-content;
+    background-color: rgb(42, 87, 215);;
     overflow: hidden;
     position: fixed;
     left: 0;
@@ -245,13 +253,14 @@ body{
     margin: 1rem 0;
 }
 .container{
-    width: 65%;
-    margin: 5rem auto;
+    width: 85%;
+    margin: 0 auto;
 }
 
 .contents{
     width:100%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(232, 223, 223, 0.35) 0px 5px 15px;
+    margin: 5rem 0 0 0;
 }
 .head-sec{
     display: flex;
@@ -265,10 +274,11 @@ body{
 }
 
 .head-sec span{
-    font-size: 17px;
+    font-size: 20px;
 }
 .appoitment_input_control{
     position: relative;
+    width: 400px;
 }
 .appoitment_input{
     padding: 0.5rem 0.3rem;
@@ -276,6 +286,7 @@ body{
     border: none;
     font-size: 16px;
     outline: none;
+    width: 100%;
 }
 .appoitment_input input{
     background-color: rgb(0, 0, 0);;
@@ -293,59 +304,86 @@ input:focus{
 .body_sec{
     width: 100%;
     background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(232, 223, 223, 0.35) 0px 5px 15px;
     height: auto;
 }
 table{
     width: 100%;
-    height: 200px;
     border-collapse: collapse;
     overflow-y: hidden;
 }
  table thead td{
     background-color: rgb(42, 87, 215);;
-    padding: 1rem;
+    padding: 0.5em;
     color: #fff;
-    font-size: 21px;
+    font-size: 18px;
 }
  table tbody{
     margin: 1rem 0;
 }
  table tbody td{
     background-color: rgb(255, 255, 255);;
-    padding: 1rem;
-    font-size: 20px;
+    padding: 0.5em;
+    font-size: 15px;
     margin: 1rem 0;
     color: #000000;
 }
 .body_sec button{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     background-color: rgb(42, 87, 215);
     border: none;
     cursor: pointer;
-    border-radius: 20px;
+    width: 100%;
+    margin: 0.5em 0;
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
 .body_sec button:nth-child(2){
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     background-color: rgb(255, 0, 0);
     border: none;
+    width: 100%;
+    margin: 0.5em 0;
     cursor: pointer;
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
 .body_sec button:hover{
     color: #000000;
-    padding: 0.5rem 1rem;
+ padding: 0.5rem 0.5rem;
     border: 1px solid rgb(42, 87, 215);
     background: none
 }
 .body_sec button:hover:nth-child(2){
     color: #000000;
-    padding: 0.5rem 1rem;
+ padding: 0.5rem 0.5rem;
     border: 1px solid rgb(255, 0, 0);
     background: none
+}
+.pending_appoitment_list_pagination{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 8px ;
+    border-bottom-right-radius: 8px ;
+    height: 50px;
+    margin: 0 auto;
+}
+.pending_appoitment_list_pagination .flexs{
+    display: flex;;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.pending_appoitment_list_pagination .flexs p{
+    background-color: rgb(42, 87, 215);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out  0.5s
+}
+.pending_appoitment_list_pagination .flexs p:hover{
+   transform: scale(0.94);
 }
 .hide{
     display: none;;
@@ -356,13 +394,13 @@ table{
     display: flex;
     padding:1rem;
     flex-direction: row;
+    font-size: 18px;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);;
-    font-size: 14px;
+    background-color: #2a57d7;
     cursor: pointer;
 }
 .info_dropdown span{
-    font-size: 22px;
+    font-size: 18px;
 }
 
 #info_icon_minus{
@@ -407,13 +445,13 @@ table{
     display: flex;
     padding:1rem;
     flex-direction: row;
+    font-size: 18px;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);;
-    font-size: 14px;
+    background-color: #2a57d7;
     cursor: pointer;
 }
 .lab_dropdown span{
-    font-size: 22px;
+    font-size: 18px;
 }
 
 #lab_icon_minus{
@@ -425,19 +463,26 @@ table{
     background-color: rgb(0, 0, 0);
     padding: 1rem;
 }
+
+.lab_section table thead td{
+    font-size: 17px;
+}
+.lab_section table tbody td{
+    font-size: 14px;
+    padding: 0.5em;
+}
 .lab_section button{
-    padding: 1rem;
-    background-color: #000000;
+    padding: 0.8rem;
+    background-color: #2a57d7;
     border: none;
-    border-radius: 20px;
     cursor: pointer;
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
 .lab_section button:hover{
-    padding: 1rem;
+    padding: 0.8rem;
     background:none;
-    border:1px solid #000000;
+    border:1px solid #2a57d7;
     color: #000000;
 }
 
@@ -447,13 +492,13 @@ table{
     display: flex;
     padding:1rem;
     flex-direction: row;
+    font-size: 18px;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);;
-    font-size: 14px;
+    background-color: #2a57d7;
     cursor: pointer;
 }
 .radiology_dropdown span{
-    font-size: 22px;
+    font-size: 18px;
 }
 
 #radiology_icon_minus{
@@ -465,19 +510,24 @@ table{
     background-color: rgb(0, 0, 0);
     padding: 1rem;
 }
+.radiology_section table tbody td{
+    font-size: 14px;
+}
+.radiology_section table thead td{
+    font-size: 17px;
+}
 .radiology_section button{
-    padding: 1rem;
-    border-radius: 20px;
-    background-color: #000000;
+    padding: 0.8rem;
+    background-color: #2a57d7;
     border: none;
     color: #fff;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
 }
 .radiology_section button:hover{
-    padding: 1rem;
+    padding: 0.5rem;
     background:none;
-    border:1px solid #000000;
+    border:1px solid #2a57d7;
     color: #000000;
 }
 /*VITALS  INFORMATION*/
@@ -485,14 +535,14 @@ table{
     width: 100%;
     display: flex;
     padding:1rem;
+    font-size: 18px;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);;
-    font-size: 14px;
+    background-color: #2a57d7;
     cursor: pointer;
 }
 .vitals_dropdown span{
-    font-size: 22px;
+    font-size: 18px;
 }
 
 #vitals_icon_minus{
@@ -503,6 +553,13 @@ table{
     height: fit-content;
     background-color: rgb(0, 0, 0);
     padding: 1rem;
+}
+
+.vitals_section table thead td{
+    font-size: 17px;
+}
+.vitals_section table tbody td{
+    font-size: 14px;
 }
 
 
@@ -526,14 +583,14 @@ table{
     width: 100%;
     display: flex;
     padding:1rem;
+    font-size: 18px;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);;
-    font-size: 14px;
+    background-color: #2a57d7;
     cursor: pointer;
 }
 .complain_dropdown span{
-    font-size: 22px;
+    font-size: 18px;
 }
 
 #complaint_icon_minus{
@@ -606,8 +663,8 @@ label {
         flex-direction: column;
     }
 #btn{
-    width: 100%;
-    background-color: rgb(0, 0, 0);
+    width: 10%;
+    background-color: #2a57d7;
     height: fit-content;
     padding: 1rem;
     border: none;
@@ -617,109 +674,11 @@ label {
     transition: 0.5s;
 }
 #btn:hover{
-    background-color: rgb(255, 255, 255);;
+    border: 1px solid #2a57d7;;
     color: #000000;
+    background:none;
 }
 
-.overlay{
-    width: 100%;
-    height: 100%;
-    background-image: url(../Images/19374.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    z-index: 12;
-    top: 0;
-    left: 0;
-}
-
-.surgical_booking{
-    position: absolute;
-    width: 530px;
-    top: 10%;
-    left: 25%;
-    padding: 1rem;
-    height: 380px;
-    background-color:rgb(42, 87, 215);
-    z-index: 13;
-    height:fit-content;
-    display: flex;
-    flex-direction: row;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.surgical_input{
-    padding: 0.5rem;
-    border: none;
-    font-size: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255);
-    background:none;
-    outline: none;
-    color: #fff;
-}
-.surgical_booking .surgical_input:focus{
-    background:none;
-    color: #fff;
-    outline: none;
-}
-.surgical_booking form{
-    margin: 2rem 0.5rem;
-}
-.surgical_input:focus{
-    border: 1px solid rgba(255, 255, 255);
-}
-.surgical_booking textarea{
-    border: none;
-    outline: none;
-    background-color: #fff;
-}
-.surgical_booking textarea:focus{
-    border: 1px solid rgba(255, 255, 255);
-    background-color: #fff;
-}
-.surgical_booking .form-control-precedure{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: relative;
-    margin: 0.2rem 0;
-    color: rgba(255, 255, 255, 0.9);
-}
-.surgical_booking #icons{
-    position: absolute;
-    left: 5px;
-    top: 63%;
-    transform: translateY(-50%);
-  }
-#close-icon{
-    position: absolute;
-    left: 0;
-    margin-top: 1rem;
-    cursor: pointer;
-    font-size: 20px;
-    margin-left: 30rem;
-    color: rgba(255, 255, 255, 0.9);
-    top: 0;
-  }
-.btn{
-    width: 100%;
-    padding: 1rem 0;
-    border: none;
-    margin: 1rem 0;
-    background-color:rgb(0, 0, 0);;
-    border-radius: 4px;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
-}
-.btn:hover{
-    background-color: white;
-    color: #000000;
-}
-.hidden{
-    display: none;
-}
 /*End of the complaints Section*/
 
 /**Start of the System review Section*/
@@ -729,10 +688,11 @@ label {
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);;
-    font-size: 22px;
+    background-color: #2a57d7;
+    font-size: 18px;
     cursor: pointer;
 }
+
  #system_icon_minus{
     display: none;
  }
@@ -798,8 +758,8 @@ label{
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);;
-    font-size: 22px;
+    background-color: #2a57d7;
+    font-size: 18px;
     cursor: pointer;
 }
 .physical_examination-section{
@@ -913,11 +873,323 @@ label {
     flex-wrap: wrap;
 }
 
+/*Start of diagnosis_dropdown*/
+.diagnosis_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:#2a57d7;
+    font-size: 18px;
+    cursor: pointer;
+}
+#diagnosis_icon_minus{
+    display: none;
+}
+.diagnosis-section{
+    width: 100%;
+    height: fit-content;;
+    background-color: rgb(0, 0, 0);;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.diagnosis_form_control{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em 1em;
+}
+.diagnosis_form_control input{
+    padding: 0.5rem;
+    color: #ffffff;
+    background: none;
+    border: none;
+      border-bottom-width: medium;
+      border-bottom-style: none;
+      border-bottom-color: currentcolor;
+    outline: none;
+    border-bottom: 3px solid #fff;
+    font-size: 15px;
+}
+
+/*Start of Refer to Doctor*/
+.refer_doc_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #2a57d7;
+    font-size: 18px;
+    cursor: pointer;
+}
+#refer_doc_icon_minus{
+    display: none;
+}
+.refer_doc-section{
+    width: 100%;
+    height: fit-content;;
+    background-color: rgb(0, 0, 0);;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.refer_doc_form_control{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em 1em;
+}
+.refer_doc_form{
+    width: 400px;
+    height: auto;
+    padding: 1em;
+    background-color: rgb(42, 87, 215);
+    position: absolute;
+    top: 15%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    left: 37%;
+    z-index: 5;
+}
+.refer_doc_form .close_icon{
+    cursor: pointer;
+   position: absolute;
+   right:3%;
+}
+
+.refer_doc_form form .form_control{
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+.refer_doc_form form .form_control select{
+    padding: 1em;
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+.refer_doc_form button{
+    width: 100%;
+    margin: 1em 0;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+}
+/*Start of Advice*/
+.advice_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #2a57d7;
+    font-size: 18px;
+    cursor: pointer;
+}
+#advice_icon_minus{
+    display: none;
+}
+.advice-section{
+    width: 100%;
+    height: fit-content;;
+    background-color: rgb(0, 0, 0);;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+}
+.advice-section span{
+   padding: 1em;
+}
+
+.surgical_booking{
+    position: absolute;
+    width: 450px;
+    top: 10%;
+    left: 37%;
+    padding: 1rem;
+    height: 380px;
+    background-color:rgb(42, 87, 215);
+    z-index: 13;
+    height:fit-content;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.surgical_booking .close_icon{
+    position: absolute;
+    right: 3%;
+    cursor: pointer;
+}
+.surgical_input{
+    padding: 1rem;
+    border: none;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255);
+    background:none;
+    outline: none;
+    color: #fff;
+}
+.surgical_booking .surgical_input:focus{
+    background:none;
+    color: #fff;
+    outline: none;
+}
+.surgical_booking form{
+    margin: 2rem 0.5rem;
+}
+.surgical_input:focus{
+    border: 1px solid rgba(255, 255, 255);
+}
+.surgical_booking textarea{
+    border: none;
+    outline: none;
+    background-color: #fff;
+    height: 50px;
+}
+.surgical_booking textarea:focus{
+    border: 1px solid rgba(255, 255, 255);
+    background-color: #fff;
+}
+.surgical_booking .form-control-precedure{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    margin: 0.2rem 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+.surgical_booking #icons{
+    position: absolute;
+    left: 5px;
+    top: 63%;
+    transform: translateY(-50%);
+  }
+#close-icon{
+    position: absolute;
+    left: 0;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 30rem;
+    color: rgba(255, 255, 255, 0.9);
+    top: 0;
+  }
+.surgical_booking .btn{
+    width: 100%;
+    padding: 1rem 0;
+    border: none;
+    margin: 1rem 0;
+    background-color:rgb(255, 255, 255);;
+    border-radius: 4px;
+    color: #000000;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+}
+.surgical_booking .btn:hover{
+    background:none;
+    border: 1px solid rgba(255, 255, 255,);
+    color: #ffffff;
+}
+.hidden{
+    display: none;
+}
+/*Start of Investigation and Procdure*/
+.investigation_dropdown{
+    width: 100%;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #2a57d7;
+    font-size: 18px;
+    cursor: pointer;
+}
+#investigation_icon_minus{
+    display: none;
+}
+.investigation-section{
+    width: 100%;
+    height: fit-content;;
+    background-color: rgb(0, 0, 0);;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+}
+ .investigation_form{
+    width: 400px;
+    height: auto;
+    padding: 1em;
+    background-color: rgb(42, 87, 215);
+    position: absolute;
+    top: 15%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    left: 37%;
+    z-index: 5;
+}
+
+.investigation_form .close_icon{
+    cursor: pointer;
+    position: absolute;
+    right: 3%;
+}
+
+.investigation_form form .form_control{
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+.investigation_form form .form_control input{
+    padding: 1em;
+}
+.investigation_form button{
+    width: 100%;
+    margin: 1em 0;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.investigation_form textarea{
+    width: 100%;
+    height: 100px;
+}
+.overlay_popup{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 4;
+    background-color: rgb(0, 0, 0);
+    opacity: 90%;
+}
+
+
 /*Start of the Treatment and Prescribtion*/
 .treatment_prescribtion-section{
     width: 100%;
     height: fit-content;;
-    background-color: rgb(0, 0, 0);;
+    background-color: #000000;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -932,8 +1204,8 @@ label {
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);;
-    font-size: 22px;
+    background-color: #2a57d7;
+    font-size: 18px;
     cursor: pointer;
 }
 .treatment_prescribtion_form1{
@@ -972,19 +1244,19 @@ label {
     font-size: 15px;
 }
 .treatment_prescribtion-input:focus{
-    border: 1px solid #fff;
+    border:none;
 }
 .treatment_prescribtion_form-control select[option] {
     color: #000000;
 }
 #prescribe_close{
     position: absolute;
-    top: 22%;
+    top: 55%;
     cursor: pointer;
     left: 96%;
-    font-size: 15px;
+    font-size: 18px;
 }
-.treatment_prescribtion-input_change_width{
+/* .treatment_prescribtion-input_change_width{
     padding: 0.5rem;
     background:none;
     border: none;
@@ -992,11 +1264,11 @@ label {
     color: #ffffff;
     width: 300px;
     outline: none;
-    font-size: 15px;
+    font-size: 18px;
 }
 .treatment_prescribtion-input_change_width:focus{
     border: 1px solid #fff;
-}
+} */
 #btn_prescribe{
     width: 30%;
     background-color: rgb(255, 255, 255); 
@@ -1018,8 +1290,8 @@ label {
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);;
-    font-size: 22px;
+    background-color: #2a57d7;
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -1073,7 +1345,7 @@ label {
   font-size: 18px;
 }
 .discharge_form form .form_control label{
-  font-size: 20px;
+    font-size: 18px;
 }
 .discharge_form form .form_control textarea{
     border: none;
@@ -1106,8 +1378,8 @@ color: #000000;
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);;
-    font-size: 22px;
+    background-color: #2a57d7;
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -1190,25 +1462,11 @@ color: #000000;
 
 /*DEATH FORM*/
 
-
-.overlay{
-    width: 100%;
-    height: 100%;
-    background-image: url(../Images/19374.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    z-index: 12;
-    top: 0;
-    left: 0;
-}
-
 .death_form_booking{
     position: absolute;
     width: 500px;
-    top: 3%;
-    left: 25%;
+    top: 25%;
+    left: 28%;
     padding: 1rem;
     height: 380px;
     background-color:rgb(42, 87, 215);
@@ -1238,6 +1496,7 @@ color: #000000;
 .death_form_booking .form-control textarea{
     border: none;
     outline: none;
+    height: 50px;
     background-color: #fff;
 }
 .death_form_booking textarea:focus{
@@ -1294,6 +1553,8 @@ color: #000000;
     background-color: white;
     color: #000000;
 }
+
+
 
 /*appoitment section*/
 .appoitment_section{

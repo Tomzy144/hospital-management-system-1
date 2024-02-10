@@ -5,6 +5,15 @@ const click_icon_for_profile = ()=>{
     profile_container.classList.toggle("hide");
 };
 
+document.addEventListener("DOMContentLoaded", ()=>{
+    
+})
+
+
+
+
+
+
 //BACK ARROW
 const backWardArrow = ()=>{
 document.querySelector(".head-sec").style.display="flex";
@@ -13,7 +22,6 @@ document.querySelector(".all_sections_input").classList.toggle("hide");
 document.querySelector("#back-arrow").style.display="none";
 }
 
-  
 //hide backarrow
 document.querySelector("#back-arrow").style.display="none";
 
@@ -110,12 +118,12 @@ check_2.addEventListener("change", handle_change);
 
 const open_procedure_form = function(){
     document.querySelector(".surgical_booking").classList.remove("hidden");
-    document.querySelector(".overlay").classList.remove("hidden");
+    document.querySelector(".overlay_popup").classList.remove("hidden");
     document.querySelector("#back-arrow").style.display = "none";
 }
 const close_procedure_form = function(){
     document.querySelector(".surgical_booking").classList.add("hidden");
-    document.querySelector(".overlay").classList.add("hidden");
+    document.querySelector(".overlay_popup").classList.add("hidden");
     document.querySelector("#back-arrow").style.display = "block";
 };
 
@@ -569,8 +577,6 @@ const treatment_prescribtion_section = document.querySelector(".treatment_prescr
 const treatment_prescribtion_icon_plus = document.querySelector("#treatment_prescribtion_icon_plus");
 const treatment_prescribtion_icon_minus = document.querySelector("#treatment_prescribtion_minus");
 
-
-
 treatment_prescribtion_dropdown.addEventListener("click", function(){
 treatment_prescribtion_section.classList.toggle("hidden");
 treatment_prescribtion_icon_plus.style.display = "none";
@@ -579,7 +585,98 @@ if(treatment_prescribtion_section.classList.contains("hidden")){
     treatment_prescribtion_icon_plus.style.display = "block";
     treatment_prescribtion_icon_minus.style.display = "none";
 }
-}) 
+}) ;
+
+//DIAGNOSIS
+const diagnosis_dropdown = document.querySelector(".diagnosis_dropdown");
+const diagnosis_section = document.querySelector(".diagnosis-section");
+const diagnosis_section_icon_plus = document.querySelector("#diagnosis_icon_plus");
+const diagnosis_section_icon_minus = document.querySelector("#diagnosis_icon_minus");
+
+diagnosis_dropdown.addEventListener("click", function(){
+    diagnosis_section.classList.toggle("hidden");
+    diagnosis_icon_plus.style.display = "none";
+    diagnosis_icon_minus.style.display = "block";
+    if(diagnosis_section.classList.contains("hidden")){
+        diagnosis_icon_plus.style.display = "block";
+        diagnosis_icon_minus.style.display = "none";
+    }
+    }) ;
+//ADVICE
+const advice_dropdown = document.querySelector(".advice_dropdown");
+const advice_section = document.querySelector(".advice-section");
+const advice_section_icon_plus = document.querySelector("#advice_icon_plus");
+const advice_section_icon_minus = document.querySelector("#advice_icon_minus");
+
+advice_dropdown.addEventListener("click", function(){
+    advice_section.classList.toggle("hidden");
+    advice_icon_plus.style.display = "none";
+    advice_icon_minus.style.display = "block";
+    if(advice_section.classList.contains("hidden")){
+        advice_icon_plus.style.display = "block";
+        advice_icon_minus.style.display = "none";
+    }
+    }) ;
+    //INVESTIGATION AND PROCEDURE
+const investigation_dropdown = document.querySelector(".investigation_dropdown");
+const investigation_section = document.querySelector(".investigation-section");
+const investigation_section_icon_plus = document.querySelector("#investigation_icon_plus");
+const investigation_section_icon_minus = document.querySelector("#investigation_icon_minus");
+
+investigation_dropdown.addEventListener("click", function(){
+    investigation_section.classList.toggle("hidden");
+    investigation_icon_plus.style.display = "none";
+    investigation_icon_minus.style.display = "block";
+    if(investigation_section.classList.contains("hidden")){
+        investigation_icon_plus.style.display = "block";
+        investigation_icon_minus.style.display = "none";
+    }
+    }) ;
+    //TRANFER TO LABORATORY
+     function tranfer_patient_lab(){
+        document.querySelector(".investigation_form").classList.remove("hide");
+        document.querySelector(".overlay_popup").classList.remove("hidden");
+    }
+     function close_tranfer_patient_lab(){
+        document.querySelector(".investigation_form").classList.add("hide");
+        document.querySelector(".overlay_popup").classList.add("hidden");
+    }
+    //TRANSFER TO RADIOLOGY
+    function tranfer_patient_rad(){
+        document.querySelector(".investigation_form").classList.remove("hide");
+        document.querySelector(".overlay_popup").classList.remove("hidden");
+    }
+    //  function close_tranfer_patient_rad(){
+    //     document.querySelector(".investigation_form").classList.add("hide");
+    //     document.querySelector(".overlay_popup").classList.add("hidden");
+    // }
+
+    //TRANSFER TO OTHERS DOCTORS AVAILABLE
+const refer_doc_dropdown = document.querySelector(".refer_doc_dropdown");
+const refer_doc_section = document.querySelector(".refer_doc-section");
+const refer_doc_section_icon_plus = document.querySelector("#refer_doc_icon_plus");
+const refer_doc_section_icon_minus = document.querySelector("#refer_doc_icon_minus");
+
+refer_doc_dropdown.addEventListener("click", function(){
+    refer_doc_section.classList.toggle("hidden");
+    refer_doc_icon_plus.style.display = "none";
+    refer_doc_icon_minus.style.display = "block";
+    if(refer_doc_section.classList.contains("hidden")){
+        refer_doc_icon_plus.style.display = "block";
+        refer_doc_icon_minus.style.display = "none";
+    }
+    }) ;
+    //TRANFER TO OTHERS DOC
+     function tranfer_patient_doc(){
+        document.querySelector(".refer_doc_form").classList.remove("hidden");
+        document.querySelector(".overlay_popup").classList.remove("hidden");
+    }
+     function close_tranfer_patient_doc(){
+        document.querySelector(".refer_doc_form").classList.add("hidden");
+        document.querySelector(".overlay_popup").classList.add("hidden");
+    }
+
+
 
 //SHOW LIST OF APPOITMENT 
 const show_appoitment_list_section = ()=>{
@@ -659,13 +756,13 @@ confirmed_death_dropdown.addEventListener("click", function(){
 
     const show_death_form = ()=>{
         document.querySelector(".death_form_booking").classList.remove("hidden");
-        document.querySelector(".overlay").classList.remove("hidden");
+        document.querySelector(".overlay_popup").classList.remove("hidden");
         document.querySelector("#back-arrow").style.display="none";
     }
 
     const close_death_form = ()=>{
         document.querySelector(".death_form_booking").classList.add("hidden");
-        document.querySelector(".overlay").classList.add("hidden");
+        document.querySelector(".overlay_popup").classList.add("hidden");
         document.querySelector("#back-arrow").style.display="block";
     }
     ///END OF DEATH FORM

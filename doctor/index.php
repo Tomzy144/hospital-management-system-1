@@ -106,16 +106,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <div class="navbar" >
         <div class="section1">
         <i class="fa fa-long-arrow-left hide " id="back-arrow" onclick="backWardArrow()"></i>
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+</svg> -->
         <button class="hide" id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
         </div>
         <div class="section2">
             <div class="icons">
-          <i class="fa fa-user" id="icon">
-            <div class="notification1">9</div>
-          </i>
-          <i class="fa fa-bell" id="icon">
+          <!-- <i class="fa fa-user" id="icon"> -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bell icon" viewBox="0 0 16 16">
+  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+            <!-- <div class="notification1">9</div> -->
+            </svg>
+          <!-- <i class="fa fa-bell" id="icon">
           <div class="notification2">15</div>
-          </i>
+          </i> -->
           </div>
           <div class="profile">
             <div class="profile_account hide">
@@ -139,15 +144,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <img width="80px" height="80px" src="images/Mount Tech Logo.jpg" alt="logo">
                </div>
             <div class="sidebar_icons">
-                <i class="fa fa-envelope" id="icon"></i>
-                <!-- <i class="fa fa-hospital-o" id="icon"onClick="show_appoitment_section()"></i> -->
-                <i class="fa fa-users" id="icon"onClick="show_appoitment_list_section()"></i>
-                <i class="fa fa-user" id="icon"></i>
-                <i class="fa fa-sign-out"  id="icon" onclick="document.getElementById('logoutform').submit();"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat-left-text-fill icon" viewBox="0 0 16 16">
+  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+</svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar-date icon"  viewBox="0 0 16 16">
+  <path d="M6.445 11.688V6.354h-.633A13 13 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23"/>
+  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+</svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right icon" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" onclick="document.getElementById('logoutform').submit();"/>
+  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+</svg>
                 <form method="post" action="<?php echo $website_url ?>/config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
                 </form>
-                <!--<i class="fa fa-sign-out" id="icon"></i> -->
             </div>
         </div>
 
@@ -208,6 +218,12 @@ $result = $conn->query($sql);
     ?>
 </tbody>
 </table>
+<div class="pending_appoitment_list_pagination">
+        <div class="flexs">
+            <p id="prevPen">Prev List</p>
+            <p id="nextPen">Next List</p>
+        </div>
+</div>
 
 
 <script>
@@ -514,7 +530,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                         <p> Rheumatoid Factor (RF) Test</p>
                     </td>
                     <td>
-                        <button>Click Here to Download Test Result</button>
+                        <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+</svg></button>
                     </td>
                 </tbody>
                 <tbody>
@@ -528,7 +547,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                         <p> Rheumatoid Factor (RF) Test</p>
                     </td>
                     <td>
-                        <button>Click Here to Download Test Result</button>
+                        <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+</svg></button>
                     </td>
                 </tbody>
             </table>
@@ -561,7 +583,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                         <p> Cervical Spine X-ray</p>
                     </td>
                     <td>
-                        <button>Click Here to Download Scan Result</button>
+                        <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+</svg></button>
                     </td>
                 </tbody>
             </table>
@@ -658,57 +683,8 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <label for="past_sugical_medical_history">Past Surgical/Medical History</label>
             <input type="text"  class="complaint-input" id="past_sugical_medical_history">
             </div>
-            <div class="complaint_form-control">
-            <label for="major_complaints">Recommend patient for Surgery</label>
-            <div class="checkbox">
-            <input type="checkbox" name="surgery" id="check1">
-            <label for="surgery">Yes</label>
-            <input type="checkbox" name="surgery" id="check2">
-            <label for="surgery">No</label>
-            </div>
-    </div>
-            <div class="complaint_form-control-appoitment">
-            <button type="button" class="btn_book_appoitment" onClick="show_appoitment_section()">Transfer Patient</button>
-    </div>
         </form>
    </div>
-   <div class="surgical_booking hidden">
-    
-
-<link href='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.css' rel="stylesheet">
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-<script src='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.js'></script>
-
-        <!-- <input type="text" id="procedure" placeholder="Procedure"> -->
-        <i class="fa fa-times-circle" id='close-icon' onClick="close_procedure_form()"></i>
-        <h1 class="login-form-h1">Surgical Procedure</h1>
-        <form>
-            <div class="form-control-precedure">
-            <label for='procedure'>Procedure</label>
-            <input type="text" name="procedures" autoComplete='off' class="surgical_input" id="procedure"/> 
-            </div>
-            <div class="form-control-precedure">
-            <label for='phone_number'>Phone Number</label>
-            <input type="text" name="phone_number" autoComplete='off' class="surgical_input" id="phone_number"/> 
-            </div>
-            <div class="form-control-precedure">
-            <label for='pass_surgery'>Past Surgery</label>
-            <input type="text" name="pass_surgery" autoComplete='off' class="surgical_input" id="pass_surgery"/> 
-            </div>
-            <div class="form-control-precedure">
-            <label for='message'>Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            </div>
-            <button type="button" class="btn" onClick="if_details_correct_login()">Transfer</button>
-            <!-- <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button> -->
-        </form>
-
-        
-<script>
-    new Def.Autocompleter.Search('procedure', 'https://clinicaltables.nlm.nih.gov/api/procedures/v3/search');
-              
-</script>
-    </div>
 
            <!--End of the complaint section--->
          
@@ -2169,8 +2145,15 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
         <form action="" class="treatment_prescribtion_form1">
         <div class="treatment_prescribtion_flexs">
             <div class="treatment_prescribtion_form-control">
-            <label for="drugs">Drugs</label>
-            <input type="text" class="treatment_prescribtion-input_change_width" id="drugs">
+            <label for="medicine">Store</label>
+        <select name="" id="" class="treatment_prescribtion-input" >
+            <option value="">Pharmacy 1</option>
+            <option value="">Pharmacy 2</option>
+        </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="medicine">Medicine</label>
+            <input type="text" class="treatment_prescribtion-input" id="drugs">
             </div>
             <div class="treatment_prescribtion_form-control">
             <label for="strength">Strength</label>
@@ -2184,13 +2167,6 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             </select>
             </div>
             <div class="treatment_prescribtion_form-control">
-            <label for="administration">Administration</label>
-            <select name="administration" id="administration" class="treatment_prescribtion-input">
-                <option value="im">IM</option>
-                <option value="others">Others</option>
-            </select>
-            </div>
-            <div class="treatment_prescribtion_form-control">
             <label for="dos">Dos</label>
             <input type="text" class="treatment_prescribtion-input" id="dos"> 
             </div>
@@ -2200,7 +2176,7 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 <option value=""></option>
                 <option value=""></option>
             </select>
-            </div>
+        </div>
             <div class="treatment_prescribtion_form-control">
             <label for="frequency">Frequency</label>
             <select name="frequency" id="frequency" class="treatment_prescribtion-input">
@@ -2210,77 +2186,194 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             </div>
             <div class="treatment_prescribtion_form-control">
             <label for="duration">Duration</label>
-            <input type="text" class="treatment_prescribtion-input">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="remark">Remark</label>
-            <input type="text" class="treatment_prescribtion-input">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="qty">Qty</label>
-            <input type="text" class="treatment_prescribtion-input">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="cost">Cost</label>
             <input type="text" class="treatment_prescribtion-input">
             </div>
             <i class="fa fa-plus" id="prescribe_close"></i>
         </div>
-            <!---Second Sec--->
-            <div class="treatment_prescribtion_flexs">
-            <div class="treatment_prescribtion_form-control">
-            <label for="drugs">Drugs</label>
-            <input type="text" class="treatment_prescribtion-input_change_width">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="strength">Strength</label>
-            <input type="text" class="treatment_prescribtion-input">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="mode">Mode</label>
-            <select name="mode" id="mode" class="treatment_prescribtion-input">
-                <option value="injection">Injection</option>
-                <option value="capsule">Capsule</option>
-            </select>
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="dos">Dos</label>
-            <input type="text" class="treatment_prescribtion-input">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="unit">Unit</label>
-            <select name="unit" id="unit" class="treatment_prescribtion-input">
-                <option value=""></option>
-                <option value=""></option>
-            </select>
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="frequency">Frequency</label>
-            <select name="frequency" id="frequency" class="treatment_prescribtion-input">
-                <option value="hours">24 hourly</option>
-                <option value="others">others</option>
-            </select>
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="duration">Duration</label>
-            <input type="text" class="treatment_prescribtion-input" id="duration">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="remark">Remark</label>
-            <input type="text" class="treatment_prescribtion-input" id="remark">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="qty">Qty</label>
-            <input type="text" class="treatment_prescribtion-input" id="qty">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="cost">Cost</label>
-            <input type="text" class="treatment_prescribtion-input" id="cost">
-            </div>
-            </div>
-            <button id="btn_prescribe">Prescribe</button>      
-        </div>
+    </div>
         </form>
+                <!--Investigation and procedure-->
+                <div class=" investigation_dropdown">
+    <span>Investigation and Procedure</span>
+    <i class="fa fa-plus" id="investigation_icon_plus"></i>
+    <i class="fa fa-minus" id="investigation_icon_minus"></i>
+   </div>
+      <div class="investigation-section hidden">
+      <div class="advice_form_control_appoitment ">
+            <button type="button" class="btn_book_appoitment" onClick="tranfer_patient_lab()">Transfer to Lab</button>
+            <button type="button" class="btn_book_appoitment" onClick="tranfer_patient_rad()">Transfer to Radiology</button>
+    </div>
+</div>
+    <div class="investigation_form hide">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill close_icon" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708" onClick ="close_tranfer_patient_lab()"/>
+</svg>
+        <form action="">
+            <div class="form_control">
+            <label for="">Patient Name</label>
+            <input type="text" name="" id="">
+            </div>
+            <div class="form_control">
+            <label for="">Patient ID</label>
+            <input type="text" name="" id="">
+            </div>
+            <div class="form_control">
+            <label for="">Message</label>
+            <textarea name="" id=""></textarea>
+            </div>
+            <button type="button">SUBMIT</button>
+        </form>
+    </div>
+<div class="overlay_popup hidden"></div>
+                <!--Advice-->
+                <div class="advice_dropdown ">
+        <span>Advice</span>
+        <i class="fa fa-plus" id="advice_icon_plus"></i>
+        <i class="fa fa-minus" id="advice_icon_minus"></i>
+   </div>
+   <div class="advice-section hidden">
+            <form action="">
+            <div class="complaint_form-control">
+            <label for="major_complaints">Recommend patient for Surgery</label>
+            <div class="checkbox">
+            <input type="checkbox" name="surgery" id="check1">
+            <label for="surgery">Yes</label>
+            <input type="checkbox" name="surgery" id="check2">
+            <label for="surgery">No</label>
+            </div>
+    </div>
+            <div class="complaint_form-control">
+            <label for="major_complaints">Refer to admission</label>
+            <div class="checkbox">
+            <input type="checkbox" name="surgery" id="check1">
+            <label for="surgery">Yes</label
+            <input type="checkbox" name="surgery" id="check2">
+            <label for="surgery">No</label>
+            </div>
+    </div>
+            </form>
+        </div>
+        <div class="surgical_booking hidden">
+<link href='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.css' rel="stylesheet">
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.js'></script>
+
+        <!-- <input type="text" id="procedure" placeholder="Procedure"> -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill close_icon" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708" onClick="close_procedure_form()"/>
+</svg>
+        <form>
+            <div class="form-control-precedure">
+            <label for='procedure'>Procedure</label>
+            <input type="text" name="procedures" autoComplete='off' class="surgical_input" id="procedure"/> 
+            </div>
+            <div class="form-control-precedure">
+            <label for='phone_number'>Phone Number</label>
+            <input type="text" name="phone_number" autoComplete='off' class="surgical_input" id="phone_number"/> 
+            </div>
+            <div class="form-control-precedure">
+            <label for='pass_surgery'>Past Surgery</label>
+            <input type="text" name="pass_surgery" autoComplete='off' class="surgical_input" id="pass_surgery"/> 
+            </div>
+            <div class="form-control-precedure">
+            <label for='message'>Message</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+            <button type="button" class="btn" onClick="if_details_correct_login()">Transfer</button>
+            <!-- <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button> -->
+        </form>
+
+        
+<script>
+    new Def.Autocompleter.Search('procedure', 'https://clinicaltables.nlm.nih.gov/api/procedures/v3/search');
+              
+</script>
+    </div>
+        <!--Diagnosis-->
+        <div class="diagnosis_dropdown">
+    <span>Diagnosis</span>
+    <i class="fa fa-plus" id="diagnosis_icon_plus"></i>
+    <i class="fa fa-minus" id="diagnosis_icon_minus"></i>
+   </div>
+      <div class="diagnosis-section hidden">
+        <form action="">
+            <div class="diagnosis_form_control">
+            <label for="">Attendance</label>
+            <input type="text" name="" id="">
+            </div>
+            <div class="diagnosis_form_control">
+            <label for="">Type</label>
+            <input type="text" name="" id="">
+            </div>
+            <div class="diagnosis_form_control">
+            <label for="">Categories</label>
+            <input type="text" name="" id="">
+            </div>
+            <div class="diagnosis_form_control">
+            <label for="">Diagnosis</label>
+            <input type="text" name="" id="" placeholder="api insert">
+            </div>
+        </form>
+        </div>
+        <!--Refer to doctor-->
+        <div class="refer_doc_dropdown">
+    <span>Refer to Doctor</span>
+    <i class="fa fa-plus" id="refer_doc_icon_plus"></i>
+    <i class="fa fa-minus" id="refer_doc_icon_minus"></i>
+   </div>
+      <div class="refer_doc-section hidden">
+      <button type="button" class="btn_book_appoitment" onClick="tranfer_patient_doc()">Transfer to Doctor</button>
+        </div>
+        <div class="refer_doc_form hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill close_icon" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708" id="close_icon" onClick="close_tranfer_patient_doc()"/>
+</svg>
+        <form action="">
+            <div class="form_control">
+            <label for="">Specialties</label>
+            <select name="" id="">
+            <option value="cardiologist">Cardiologist</option>
+    <option value="dermatologist">Dermatologist</option>
+    <option value="surgeon">Surgeon</option>
+    <option value="psychiatrist">Psychiatrist:</option>
+    <option value="family_medicine">Family Medicine</option>
+    <option value="dermatologist">Dermatologist</option>
+    <option value="anaesthesiology">Anaesthesiology</option>
+    <option value="rheumatologist">Rheumatologist</option>
+    <option value="endocrinologist">Endocrinologist</option>
+    <option value="nephrologist">Nephrologist</option>
+    <option value="neurologist">Neurologist</option>
+    <option value="pediatrician">Pediatrician</option>                
+    <option value="urologist">Urologist</option>
+    <option value="radiologist">Radiologist</option>
+    <option value="dentist">Dentist</option>
+    <option value="pulmonologist">Pulmonologist</option>
+    <option value="podiatristian">Podiatristian</option>
+    <option value="emergency_physician">Emergency Physician</option>
+    <option value="anaesthesiologist">Anaesthesiologist</option>
+    <option value="cardiologist">Cardiologist</option>
+    <option value="oncologist">Oncologist</option>
+    <option value="gastroenterologist">Gastroenterologist</option>
+    <option value="ophthanlmologist">Ophthanlmologist</option>
+    <option value="cardology">Cardology</option>
+    <option value="allergist">Allergist</option>
+    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
+            </select>
+            </div>
+            <div class="form_control">
+            <label for="">Name</label>
+            <select name="" id="">
+                <option value="">Kingsley</option>
+                <option value="">Prince</option>
+            </select>
+            </div>
+            <div class="form_control">
+            <label for="">Remark</label>
+            <textarea name="" id=""></textarea>
+            </div>
+            <button>SUBMIT</button>
+        </form>
+    </div>
         <!--Discharge Section--->
         <div class="discharged_dropdown">
     <span>Discharged</span>
@@ -2340,10 +2433,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
         </div>
     </div>
     <div class="death_form_booking hidden">
-    <i class="fa fa-times-circle" id='close-icon' onClick="close_death_form()"></i>
-        <h1 class="login-form-h1">Morgue Tranfer</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708" onClick="close_death_form()"/>
+</svg>
         <form>
-
         <div class="form-control">
         <label for=''>Date of Death</label>
         <input type="date" name="procedures" autoComplete='off' id="death_of_death

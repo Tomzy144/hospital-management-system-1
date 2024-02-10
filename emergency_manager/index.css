@@ -8,7 +8,7 @@
 }
 body{
     width: 100%;
-    min-height:100vh;
+    max-height:100vh;
     background-image: url(../Images/19374.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -229,27 +229,61 @@ body{
     cursor: pointer;
     margin: 1rem 0;
 }
+
 .landing_page{
-    width: 100vw;
-    display: flex;
-}
-.flexs{
-    display: flex;
-    justify-content: center;
-    align-items: center;;
     width: 100%;
-    padding: 1em;
-    margin: 4.5em 0 0 5em;
+    display: flex;
+    /* background-color: red; */
+    height: 100vh;
+    justify-content: space-between;
+    /* overflow-y: auto; */
+}
+.sections_div{
+    width: 100%;
+    height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+.boxes{
+    width: 100%;
+    margin: 3.8em 0 0 4em;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
+.flex_two_box{
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    margin: 1em 1em;
+    flex-direction: row;
+}
+.box{
+    height: fit-content;
+    width: 50%;
+    margin: 0 1em;
+}
+.list_div{
+    width: 760px;
+    height: 100px;
+    position: relative;
+    padding: 1rem 0;
+    margin: 0 0 0 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow-y: auto;
+    background-color: rgb(255, 255, 255);
+}
 .emergency_form_container{
     width: 650px;
     height: fit-content;
     padding:2rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #fff;
     overflow: hidden;
     margin: 0;
+    padding: 1em;
+    border: 1px solid rgb(218, 215, 215);
     color: rgb(42, 87, 215);
     animation: fadeIn 1s ease-in-out;
 }
@@ -313,16 +347,16 @@ form span{
 .nurse_doc_section_flex{
     width: fit-content;
     height: 100%;
+    border: 1px solid rgb(218, 215, 215);
     overflow: hidden;
     margin: 0 1em;
     color: rgb(42, 87, 215);
     animation: fadeIn 1s ease-in-out;
 }
 .nurse_section{
-    width: 100%;
+    width: 600px;
     padding: 0.5em;
     height: fit-content;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow-y: auto;
     background-color: rgb(255, 255, 255);
 }
@@ -367,10 +401,9 @@ form span{
 }
 
 .doc_section{
-    width: 100%;
+    width: 600px;
     height: fit-content;
     padding: 0.5em;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 1em 0;
     background-color: rgb(255, 255, 255);
 }
@@ -400,6 +433,7 @@ form span{
     width: 100%;
     background-color: #fff;
     font-size: 16px;
+    margin: 0.5rem 0;
     padding: 0.5em;
     cursor: pointer;
     border: 1px solid rgb(42, 87, 215);
@@ -410,7 +444,103 @@ form span{
     background: white;
     border: none;
     padding: 1rem;
+}
 
+
+.lab_setion{
+    width: 600px;
+    padding: 0.5em;
+    height: fit-content;
+    overflow-y: auto;
+    background-color: rgb(255, 255, 255);
+}
+.lab_setion button{
+    width: 100%;
+    padding: 0.5em;
+    background-color:rgb(42, 87, 215);
+    border: none;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+.lab_setion button:hover{
+    width: 100%;
+    padding: 0.5em;
+    background:none;
+    border: 1px solid rgb(42, 87, 215);;
+    color: rgb(42, 87, 215);
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+.lab_setion h1{
+    font-weight: bold;
+    color: rgb(42, 87, 215);
+}
+.lab_setion form{
+    width:530px;
+    display: flex;
+    flex-direction: column;
+}
+.lab_setion form .form_control_flexs{
+    display: flex;
+}
+.lab_setion form .form_control{
+    width: 250px;
+}
+.lab_setion form .form_control input{
+    padding: 0.5rem;
+    border: none;
+    color: rgb(42, 87, 215);;
+    border-bottom: 1px solid rgb(42, 87, 215);
+}
+
+.rad_setion{
+    width: 600px;
+    padding: 0.5em;
+    height: fit-content;
+    overflow-y: auto;
+    background-color: rgb(255, 255, 255);
+}
+.rad_setion button{
+    width: 100%;
+    padding: 0.5em;
+    background-color:rgb(42, 87, 215);
+    border: none;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+.rad_setion button:hover{
+    width: 100%;
+    padding: 0.5em;
+    background:none;
+    border: 1px solid rgb(42, 87, 215);;
+    color: rgb(42, 87, 215);
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+.rad_setion h1{
+    font-weight: bold;
+    color: rgb(42, 87, 215);
+}
+.rad_setion form{
+    width:530px;
+    display: flex;
+    flex-direction: column;
+}
+.rad_setion form .form_control_flexs{
+    display: flex;
+}
+.rad_setion form .form_control{
+    width: 250px;
+}
+.rad_setion form .form_control input{
+    padding: 0.5rem;
+    border: none;
+    color: rgb(42, 87, 215);;
+    border-bottom: 1px solid rgb(42, 87, 215);
 }
 
 /*APPOITMENT SECTION*/
