@@ -18,8 +18,14 @@ function _get_page(page){
 
 
 function _next_page(next_id) {
-$('.login-div').hide();
-$('#'+next_id).fadeIn(1000);
+    $('.overlay').css('display', 'block'); // Display overlay
+    $('.login-div').hide(); // Hide elements with class 'login-div'
+    $('#'+next_id).fadeIn(1000); // Fade in element with specified ID
+}
+
+function cancel(){
+    $('.overlay').css('display', 'none'); // Display overlay
+    $('.login-div').hide(); // Hide elements with class 'login-div'
 }
 
 

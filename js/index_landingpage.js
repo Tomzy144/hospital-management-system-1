@@ -17,8 +17,8 @@ function open_doctor_login_form(){
 function close_doctor_login_form (){
     const doctor_login = document.querySelector(".doctor-login");
     const dark_background = document.querySelector(".overlay")
-    doctor_login.classList.add("hidden");
-    dark_background.classList.add("hidden");
+    doctor_login.style.display="none";
+    dark_background.style.display="none";
 }
 
 // const doctor_login_form = `
