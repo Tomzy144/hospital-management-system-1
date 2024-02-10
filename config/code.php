@@ -11,6 +11,11 @@
 	$page=$_POST['page'];
 	include 'index.php';
 	break;
+	
+
+	case  'logins':
+		
+		break;
 
 
 	  
@@ -45,7 +50,7 @@
 	break;
 
 
-	case 'login': // login from index
+	case 'record_login': // login from index
 		$userquery = mysqli_query ($conn,"SELECT * FROM `staff_tab` WHERE email = '$email' AND `password` = '$spass' AND status_id=1") ;
 				$usersel=mysqli_fetch_array($userquery);
 				$staff_id=$usersel['staff_id'];
@@ -392,6 +397,12 @@ case 'doctor_login': // login from index
 					window.parent(location="../doctor/");
 				</script>
 	<?php
+
+
+
+
+// <!-- for checking action and page  -->
+
 		
 		
 break;

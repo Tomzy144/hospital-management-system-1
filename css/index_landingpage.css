@@ -86,19 +86,42 @@ body {
     padding: 0.5rem;
     flex-direction: row;
     text-align: center;
-} 
+ 
+}
+
 h1{
     color: #fff;
     font-size: 2rem; 
 }
-main{
+
+/* tomiwa's */
+.login-section{
   width: 100%;
-  padding: 5px;
+  /* padding: 5px; */
   animation:zoomIn 1.2s ease-in-out 1.3s;
   margin: auto;
   height: auto;
 
 }
+
+   /*  tomiwa's  */
+    
+   .login-section .fill-form-div{
+    width: 100%;
+  }
+  
+  .login-section .fill-form-div .login-div{
+    display: none;
+  }
+  
+  .login-section .fill-form-div #next_1{
+     display: block;
+  
+  } 
+      
+
+
+
 .btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab, .btn-staff_manager, .btn-martanity, .btn-radiography, .btn-surgical_suite, .btn-account_manager, .btn-emergency_manager, .btn-pharmacist,  .btn-morgue_manager {
    background:none;
     border: 4px solid  #fff;
@@ -172,6 +195,7 @@ main{
     background-color:#081f31;;
     z-index: 5;
     opacity: 88%;
+    display: none;
 }
 .login-container{
    width: 100%;
@@ -413,9 +437,10 @@ h2, p{
 
 
 
-.hidden{
+/* .hidden{
     display: none;
-}
+} */
+
 #close-icon-doctor{
   position: absolute;
   left: 0;
