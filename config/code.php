@@ -19,7 +19,7 @@
 
 
 	  
- 	case 'login_check': // for user login
+ 	case 'record_check': // for user login
 		$email=trim($_POST['email']);
 	///	$temp_password=trim(($_POST['password']));
 		$password=trim(($_POST['password']));

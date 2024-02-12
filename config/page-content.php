@@ -1,5 +1,5 @@
 
-<?php if($page== $logins){?>
+<!-- ?php if($page == 'logins'){?> -->
     <div class="login-container ">
         <div class="flexs-container">
             <div class="sections-container">
@@ -105,7 +105,7 @@
 
 // doctor starts here 
  
- if($page=='doctor_login');
+ ($page =='doctor_login');
 
 
 if($s_staff_id != '') {
@@ -146,7 +146,7 @@ if($s_staff_id != '') {
     
 
     <!-- record -->
-    <?php if ($page=='record_login') ?>
+    <?php if ($page=='record_login') { ?>
     
     <div class="fill-form-div login-div" id="next_3">
         <div class="recep-login ">
