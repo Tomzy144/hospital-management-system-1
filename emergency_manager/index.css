@@ -8,11 +8,7 @@
 }
 body{
     width: 100%;
-    max-height:100vh;
-    background-image: url(../Images/19374.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height:100%;
 }
 .navbar{
     width: 100%;
@@ -22,7 +18,7 @@ body{
     justify-content: space-between;
     align-items: center;;
     top: 0;
-    background-color: #0057c2;
+    background-color: rgb(42, 87, 215);
     z-index: 999;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -200,6 +196,7 @@ body{
     height: fit-content;
     overflow: hidden;
     position: fixed;
+    background-color: rgb(42, 87, 215);;
     left: 0;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -229,62 +226,124 @@ body{
     cursor: pointer;
     margin: 1rem 0;
 }
-
-.landing_page{
+.landing_page_section{
     width: 100%;
+    height: 100%;
     display: flex;
-    /* background-color: red; */
-    height: 100vh;
-    justify-content: space-between;
-    /* overflow-y: auto; */
 }
-.sections_div{
+.landing_page_section  .section1{
     width: 100%;
-    height: 900px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1rem;
-}
-.boxes{
-    width: 100%;
-    margin: 3.8em 0 0 4em;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    overflow-y: auto;
+    margin: 0 0 0 5em;
 }
-
-.flex_two_box{
-    display: flex;
+.sections{
     height: fit-content;
     width: 100%;
-    margin: 1em 1em;
-    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(209, 207, 207, 0.35) 0px 5px 15px;
 }
-.box{
+.sections .buttons{
+    width: 30%;
     height: fit-content;
-    width: 50%;
-    margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
-.list_div{
-    width: 760px;
-    height: 100px;
-    position: relative;
-    padding: 1rem 0;
-    margin: 0 0 0 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.sections .buttons button{
+    width: 100%;
+    padding: 1em;
+    background-color: rgb(42, 87, 215);;
+    border: none;
+    margin: 1em 0.5em;
+    color: #fff;
+    cursor: pointer;
+}
+.landing_page_section .section2{
+    width: 1500px;
+    height: 100vh;
     overflow-y: auto;
+}
+.landing_page_section .section2 .table_container{
+    width: 100%;
+    height: 100%;
+}
+.landing_page_section .section2 .table_container .head_sec{
+    margin: 4.5em 0 0 0;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(255, 255, 255);
+    color: rgb(42, 87, 215);;
+}
+.landing_page_section .section2 .table_container .head_sec input{
+padding: 0.4em 0;
+color: rgb(42, 87, 215);;
+width: 300px;
+border: 1px solid rgb(42, 87, 215);;
+outline: none;
+}
+.landing_page_section .table_container .color{
+    color: rgb(42, 87, 215);;
+    cursor: pointer;
+}
+.landing_page_section .table_container tbody td{
+    color: rgb(42, 87, 215);;;
+}
+.landing_page_section .table_container .ward_sec{
+    width: fit-content;
+    position: relative;
+    height: fit-content;
+    padding: 1em;
+}
+.landing_page_section .table_container .ward_sec .sections{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 300px;
+  left: -100%;
+  cursor: pointer;
+  padding: 1.4em;
+  top: 100%;
+  position: absolute;
+}
+.landing_page_section .table_container .ward_sec .sections, .section{
+    margin: 0.1em 0;
+    cursor: pointer;
+}
+.landing_page_section .table_container .ward_sec .section_ward_bed{
+ margin: 0.5em 0;
+ cursor: pointer;
+}
+
+.ward1_beds, .ward2_beds, .ward3_beds{
+    background-color: #fff;
+    border: 1px solid  rgb(42, 87, 215);;;
+    padding: 0.5em;
+    color: rgb(42, 87, 215);;;;
+    width: 100%;
+}
+
+.landing_page_section .section .table_container_sec{
+    height: 400px;
+    width: 400px;
+    background-color: red;
 }
 .emergency_form_container{
-    width: 650px;
+    width: 100%;
+    padding: 0.5em;
     height: fit-content;
-    padding:2rem;
-    background-color: #fff;
-    overflow: hidden;
-    margin: 0;
-    padding: 1em;
-    border: 1px solid rgb(218, 215, 215);
-    color: rgb(42, 87, 215);
+    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
+    overflow-y: auto;
+    margin: 1em 1em;
+    background-color: rgb(255, 255, 255);
+    margin: 5em 0 1em 0;
     animation: fadeIn 1s ease-in-out;
 }
 .emergency_form_container h1{
@@ -344,21 +403,19 @@ form span{
     color:rgb(42, 87, 215);
     border: 1px solid rgb(42, 87, 215);
 }
-.nurse_doc_section_flex{
-    width: fit-content;
-    height: 100%;
-    border: 1px solid rgb(218, 215, 215);
-    overflow: hidden;
-    margin: 0 1em;
-    color: rgb(42, 87, 215);
-    animation: fadeIn 1s ease-in-out;
-}
 .nurse_section{
-    width: 600px;
-    padding: 0.5em;
+    width: 500px;
+    padding: 1em;
     height: fit-content;
-    overflow-y: auto;
+    margin: 1em 1em;
+    overflow: hidden;
+    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
     background-color: rgb(255, 255, 255);
+}
+.nurse_section textarea{
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);;
+    outline: none;
 }
 .nurse_section button{
     width: 100%;
@@ -368,44 +425,64 @@ form span{
     color: #fff;
     transition: all ease-in-out 0.5s;
     cursor: pointer;
-    margin: 0.5em 0;
+    margin: 0.5em 0.5em;
 }
 .nurse_section button:hover{
     width: 100%;
-    padding: 0.5em;
     background:none;
     border: 1px solid rgb(42, 87, 215);;
     color: rgb(42, 87, 215);
     cursor: pointer;
-    margin: 0.5em 0;
+    margin: 0.5em 0.5em;
 }
 .nurse_section h1{
     font-weight: bold;
+    color: rgb(42, 87, 215);
 }
 .nurse_section form{
-    width:530px;
+    width:100%;
     display: flex;
     flex-direction: column;
 }
-.nurse_section form .form_control_flexs{
-    display: flex;
-}
 .nurse_section form .form_control{
-    width: 250px;
+    width: 100%;
 }
 .nurse_section form .form_control input{
     padding: 0.5rem;
     border: none;
+    width: 100%;
     color: rgb(42, 87, 215);;
     border-bottom: 1px solid rgb(42, 87, 215);
 }
 
 .doc_section{
-    width: 600px;
+    width: 500px;
+    overflow: hidden;
     height: fit-content;
-    padding: 0.5em;
-    margin: 1em 0;
+    padding: 1em;
+    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
+    margin: 1em 1em;
     background-color: rgb(255, 255, 255);
+}
+.doc_section .form_control{
+    margin: 0;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+.doc_section .form_control input{
+    padding: 0.5em;
+    border: 1px solid rgb(42, 87, 215);;
+    color: rgb(42, 87, 215);;
+}
+.doc_section textarea{
+     width: 100%;
+    background-color: #fff;
+    font-size: 16px;
+    margin: 0.5rem 0;
+    padding: 0.5em;
+    cursor: pointer;
+    border: 1px solid rgb(42, 87, 215);
+    color:rgb(42, 87, 215);
 }
 .doc_section button{
     width: 100%;
@@ -415,7 +492,10 @@ form span{
     color: #fff;
     transition: all ease-in-out 0.5s;
     cursor: pointer;
-    margin: 0.5em 0;
+    margin: 0.5em 0.5em;
+}
+.doc_section label{
+    color: rgb(42, 87, 215);;
 }
 .doc_section button:hover{
     width: 100%;
@@ -424,10 +504,11 @@ form span{
     border: 1px solid rgb(42, 87, 215);;
     color: rgb(42, 87, 215);
     cursor: pointer;
-    margin: 0.5em 0;
+    margin: 0.5em 0.5em;
 }
 .doc_section h1{
     font-weight: bold;
+    color: rgb(42, 87, 215);;
 }
 .doc_section #select_doc{
     width: 100%;
@@ -445,14 +526,19 @@ form span{
     border: none;
     padding: 1rem;
 }
-
-
 .lab_setion{
-    width: 600px;
-    padding: 0.5em;
+    width: 500px;
+    padding:1em;
     height: fit-content;
-    overflow-y: auto;
+    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    margin: 1em 1em;
     background-color: rgb(255, 255, 255);
+}
+.lab_setion textarea{
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);;
+    outline: none;
 }
 .lab_setion button{
     width: 100%;
@@ -462,7 +548,7 @@ form span{
     color: #fff;
     transition: all ease-in-out 0.5s;
     cursor: pointer;
-    margin: 0.5em 0;
+ margin: 0.5em 0.5em;
 }
 .lab_setion button:hover{
     width: 100%;
@@ -471,36 +557,43 @@ form span{
     border: 1px solid rgb(42, 87, 215);;
     color: rgb(42, 87, 215);
     cursor: pointer;
-    margin: 0.5em 0;
+ margin: 0.5em 0.5em;
 }
 .lab_setion h1{
     font-weight: bold;
     color: rgb(42, 87, 215);
 }
 .lab_setion form{
-    width:530px;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
-.lab_setion form .form_control_flexs{
-    display: flex;
-}
+
 .lab_setion form .form_control{
-    width: 250px;
+    width:100%;
 }
 .lab_setion form .form_control input{
     padding: 0.5rem;
     border: none;
+    width: 100%;
     color: rgb(42, 87, 215);;
     border-bottom: 1px solid rgb(42, 87, 215);
 }
 
 .rad_setion{
-    width: 600px;
-    padding: 0.5em;
+    width: 500px;
+    padding: 1em;
     height: fit-content;
+    overflow: hidden;
+    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
     overflow-y: auto;
+    margin: 1em 1em;
     background-color: rgb(255, 255, 255);
+}
+.rad_setion textarea{
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);;
+    outline: none;
 }
 .rad_setion button{
     width: 100%;
@@ -510,7 +603,7 @@ form span{
     color: #fff;
     transition: all ease-in-out 0.5s;
     cursor: pointer;
-    margin: 0.5em 0;
+    margin: 0.5em 0.5em;
 }
 .rad_setion button:hover{
     width: 100%;
@@ -519,29 +612,189 @@ form span{
     border: 1px solid rgb(42, 87, 215);;
     color: rgb(42, 87, 215);
     cursor: pointer;
-    margin: 0.5em 0;
+    margin: 0.5em 0.5em;
 }
 .rad_setion h1{
     font-weight: bold;
     color: rgb(42, 87, 215);
 }
 .rad_setion form{
-    width:530px;
+    width:100%;
     display: flex;
     flex-direction: column;
 }
-.rad_setion form .form_control_flexs{
-    display: flex;
-}
 .rad_setion form .form_control{
-    width: 250px;
+    width: 100%;
 }
 .rad_setion form .form_control input{
     padding: 0.5rem;
     border: none;
+    width: 100%;
     color: rgb(42, 87, 215);;
     border-bottom: 1px solid rgb(42, 87, 215);
 }
+
+.surgical_suite_section{
+    width: 500px;
+    padding: 1em;
+    height: fit-content;
+    overflow: hidden;
+    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
+    overflow-y: auto;
+    margin: 1em 1em;
+    background-color: rgb(255, 255, 255);
+}
+.surgical_suite_section textarea{
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);;
+    outline: none;
+}
+.surgical_suite_section button{
+    width: 100%;
+    padding: 0.5em;
+    background-color:rgb(42, 87, 215);
+    border: none;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+  margin: 0.5em 0.5em;
+}
+.surgical_suite_section button:hover{
+    width: 100%;
+    padding: 0.5em;
+    background:none;
+    border: 1px solid rgb(42, 87, 215);;
+    color: rgb(42, 87, 215);
+    cursor: pointer;
+  margin: 0.5em 0.5em;
+}
+.surgical_suite_section h1{
+    font-weight: bold;
+    color: rgb(42, 87, 215);
+}
+.surgical_suite_section form{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+.surgical_suite_section form .form_control{
+    width: 100%;
+}
+.surgical_suite_section form .form_control input{
+    padding: 0.5rem;
+    border: none;
+    width: 100%;
+    color: rgb(42, 87, 215);;
+    border-bottom: 1px solid rgb(42, 87, 215);
+}
+.icu_section{
+    width: 500px;
+    padding: 1em;
+    height: fit-content;
+    overflow: hidden;
+    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
+    overflow-y: auto;
+    margin: 1em 1em;
+    background-color: rgb(255, 255, 255);
+}
+.icu_section textarea{
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);;
+    outline: none;
+}
+.icu_section button{
+    width: 100%;
+    padding: 0.5em;
+    background-color:rgb(42, 87, 215);
+    border: none;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+    margin: 0.5em 0.5em;
+}
+.icu_section button:hover{
+    width: 100%;
+    padding: 0.5em;
+    background:none;
+    border: 1px solid rgb(42, 87, 215);;
+    color: rgb(42, 87, 215);
+    cursor: pointer;
+    margin: 0.5em 0.5em;
+}
+.icu_section h1{
+    font-weight: bold;
+    color: rgb(42, 87, 215);
+}
+.icu_section form{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+.icu_section form .form_control{
+    width: 100%;
+}
+.icu_section form .form_control input{
+    padding: 0.5rem;
+    border: none;
+    width: 100%;
+    color: rgb(42, 87, 215);;
+    border-bottom: 1px solid rgb(42, 87, 215);
+}
+.morgue_section{
+    width: 500px;
+    padding: 1em;
+    height: fit-content;
+    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
+    overflow-y: auto;
+    margin: 1em 1em;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+.morgue_section textarea{
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);;
+    outline: none;
+}
+.morgue_section button{
+    width: 100%;
+    padding: 0.5em;
+    background-color:rgb(42, 87, 215);
+    border: none;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+    margin: 0.5em 0.5em;
+}
+.morgue_section button:hover{
+    width: 100%;
+    padding: 0.5em;
+    background:none;
+    border: 1px solid rgb(42, 87, 215);;
+    color: rgb(42, 87, 215);
+    cursor: pointer;
+    margin: 0.5em 0.5em;
+}
+.morgue_section h1{
+    font-weight: bold;
+    color: rgb(42, 87, 215);
+}
+.morgue_section form{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+.morgue_section form .form_control{
+    width: 100%;
+}
+.morgue_section form .form_control input{
+    padding: 0.5rem;
+    border: none;
+    width: 100%;
+    color: rgb(42, 87, 215);;
+    border-bottom: 1px solid rgb(42, 87, 215);
+}
+
+
 
 /*APPOITMENT SECTION*/
 .patient_list_section{
@@ -697,5 +950,8 @@ table{
     background-color: red;
 }
 .hide{
+    display: none; ;
+}
+.hidden{
     display: none; ;
 }
