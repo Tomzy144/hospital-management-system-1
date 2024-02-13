@@ -17,19 +17,19 @@
 
 
 
-<?php $page == 'logins';?>
+    <?php $page = 'logins';?>
 
 
 
-<!-- normal index starts here -->
+    <!-- normal index starts here -->
 
-  
+    
     <div class="navbar">
             <div class="logo">
             <!-- <img width="200px" height="200px" src="Frontend/Images/Mount_Tech_Logo-removebg-preview.png" alt=""> -->
             </div>
         </div>
-         
+        
     <section class="login-section">
         <div class="fill-form-div" id="more-info">
             <?php include "config/page-content.php"?>

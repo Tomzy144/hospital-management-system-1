@@ -66,7 +66,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <?php include 'meta.php'?>
-<title><?php echo $thename?> |Receptionist Dashboard</title>
+<title><?php echo $thename?> | Health Records and Information Dashboard</title>
 <meta name="keywords" content="Admin - <?php echo $thename?>" />
 <meta name="description" content="Administrative Login <?php echo $thename?>"/>
 </head>

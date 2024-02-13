@@ -46,7 +46,7 @@ function _sign_in(){
 
 ///////////////////// user login ///////////////////////////////////////////
 function user_login(email,password,user_id){
-    var action='login_check';
+    var action='record_login_check';
     
    //////////////// get btn text ////////////////
    var btn_text=$('#login_btn').html();
@@ -395,7 +395,7 @@ function _add_patient() {
           var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+'&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory + '&bed='+ bed+'&ward='+ ward;
           $.ajax({
           type: "POST",
-          url: "../../config/code.php",
+          url: "config/code.php",
           data: dataString,
           cache: false,
           dataType: 'json',
@@ -451,7 +451,7 @@ setTimeout(function() {
   
     $.ajax({
       type: "POST",
-      url: "../../config/code.php",
+      url: "config/code.php",
       data: data, // Pass the data object directly
       cache: false,
       dataType: 'json',
@@ -500,7 +500,7 @@ setTimeout(function() {
   
     $.ajax({
       type: 'POST',
-      url: "../../config/code.php",
+      url: "config/code.php",
       data: dataString,
       cache: false,
       dataType: 'json',
@@ -585,6 +585,8 @@ function doctor_login(doctor_email,doctor_password,doctor_id){
     $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
     $('#doctor_loginform').submit();
     window.alert("Welcome Back");
+    // window.parent("location=doctor/");
+    
     
    }else if(scheck==2){
     window.alert("Account does not exists")
