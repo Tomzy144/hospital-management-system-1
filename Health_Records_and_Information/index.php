@@ -123,7 +123,7 @@
                 <i class="fa fa-edit (alias)" id="icon" onClick="click_vital_button()" ></i>
                 <!-- <i class="fa fa-sign-out" id="icon"></i> -->
                 <i class="fa fa-sign-out"  id="icon" onclick="document.getElementById('logoutform').submit();"></i>
-                <form method="post" action="../../config/code.php" id="logoutform">
+                <form method="post" action="../config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
                 </form>
             </div>
