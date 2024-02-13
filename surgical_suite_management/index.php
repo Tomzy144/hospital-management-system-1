@@ -6,6 +6,7 @@
     <title>Surgica Suite Management</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="awesome-font/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/icons-1.10.2/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -51,78 +52,134 @@
                 <i class="fa fa-sign-out" id="icon"></i>
             </div>
         </div> 
-    <div class="contents">
-          <div class="appiontment_booking_container">
-        <div class="appiontment">
-        <div class="head_sec">
-            <span>Appoitment Details</span>
-            <div class="appoitment_input_control">
-            <i class="fa fa-search" id="search_icon"></i>
-                <input type="text" placeholder="Search here" class="appoitment_input">
-            </div>
+        <div class="contents">
+<div class="appiontment_booking_container">
+<div class="appiontment">
+<div class="head_sec">
+  <span>Appoitment Details</span>
+  <div class="appoitment_input_control">
+  <i class="fa fa-search" id="search_icon"></i>
+      <input type="text" placeholder="Search here" class="appoitment_input">
+  </div>
+</div>
+<div class="table_container">
+<table id="appoitment_table">
+  <thead>
+    <td>Number</td>
+    <td>Patient Name/Patient Id</td>
+    <td>Date/Time</td>
+    <td>Request Type</td>
+    <td>Accept</td>
+    <td>Reject</td>
+  </thead>
+  <tbody>
+    <td>Princess Precious</td>
+    <td>Pat001</td>
+    <td>22-02-2024</td>
+    <td>2:30PM</td>
+    <td>Medical Test</td>
+    <td>
+      <button onClick="show_radiology_input()">Accept</button>
+      <button>Reject</button>
+    </td>
+  </tbody>
+  <tbody>
+   
+</table>
+</div>
+<div class="pending_transaction_list_pagination">
+        <div class="flexs">
+            <p id="prev_appoitment">Prev List</p>
+            <p id="next_appoitment">Next List</p>
         </div>
-        <div class="table_container">
-          <table>
-            <thead>
-              <td>Patient Name</td>
-              <td>Patient Id</td>
-              <td>Doctor Name</td>
-              <td>Procedure</td>
-              <td>Phone Number</td>
-              <td>Accept/Reject</td>
-            </thead>
-            <tbody>
-              <td>Princess Precious</td>
-              <td>Pat001</td>
-              <td>Doc. John</td>
-              <td>Head Surgery</td>
-              <td>0816973232</td>
-              <td>
-                <button onClick="booking_section()">Accept</button>
-                <button>Reject</button>
-              </td>
-            </tbody>
-            <tbody>
-            <td>Princess Precious</td>
-              <td>Pat001</td>
-              <td>Doc. John</td>
-              <td>Head Surgery</td>
-              <td>0816973232</td>
-              <td>
-                <button>Accept</button>
-                <button>Reject</button>
-              </td>
-            </tbody>
-            <tbody>
-            <td>Princess Precious</td>
-              <td>Pat001</td>
-              <td>Doc. John</td>
-              <td>Head Surgery</td>
-              <td>0816973232</td>
-              <td>
-                <button>Accept</button>
-                <button>Reject</button>
-              </td>
-            </tbody>
-            <tbody>
-            <td>Princess Precious</td>
-              <td>Pat001</td>
-              <td>Doc. John</td>
-              <td>Head Surgery</td>
-              <td>0816973232</td>
-              <td>
-                <button>Accept</button>
-                <button>Reject</button>
-              </td>
-            </tbody>
-          </table>
+</div>
+</div>
+</div>
+
+<div class="approved_appoitment">
+<div class="table_container">
+<table id="approved_table">
+  <thead>
+    <td>Number</td>
+    <td>Patient Name</td>
+    <td>Patient Id</td>
+    <td> Type of Surgery</td>
+    <td> Date </td>
+  </thead>
+  <tbody>
+    <div class="hideselect">
+      <ul class="selectWard hide">
+        <li id="ward">Ward 1
+        <select name="" id="selectBed">
+      <option value="">Bed 1</option>
+      <option value="">Bed 2</option>
+      <option value="">Bed 3</option>
+      <option value="">Bed 4</option>
+      <option value="">Bed 5</option>
+    </select>
+        </li>
+        <li id="ward">Ward 2
+        <select name="" id="selectBed">
+      <option value="">Bed 1</option>
+      <option value="">Bed 2</option>
+      <option value="">Bed 3</option>
+      <option value="">Bed 4</option>
+      <option value="">Bed 5</option>
+    </select>
+        </li>
+        <li id="ward">Ward 3
+        <select name="" id="selectBed">
+      <option value="">Bed 1</option>
+      <option value="">Bed 2</option>
+      <option value="">Bed 3</option>
+      <option value="">Bed 4</option>
+      <option value="">Bed 5</option>
+    </select>
+        </li>
+        <li id="ward">Ward 4
+        <select name="" id="selectBed">
+      <option value="">Bed 1</option>
+      <option value="">Bed 2</option>
+      <option value="">Bed 3</option>
+      <option value="">Bed 4</option>
+      <option value="">Bed 5</option>
+    </select>
+        </li>
+        <li id="ward">Ward 5
+        <select name="" id="selectBed">
+      <option value="">Bed 1</option>
+      <option value="">Bed 2</option>
+      <option value="">Bed 3</option>
+      <option value="">Bed 4</option>
+      <option value="">Bed 5</option>
+    </select>
+        </li>
+      </ul>
+    <select name="" id="selectBed">
+      <option value="">Bed 1</option>
+      <option value="">Bed 2</option>
+      <option value="">Bed 3</option>
+      <option value="">Bed 4</option>
+      <option value="">Bed 5</option>
+    </select>
+    </div>
+
+  </tbody>
+  </table>
+
+</div>
+
+<div class="surgical_pagination">
+        <div class="flexs">
+            <p id="prev_approved_appoitment">Prev List</p>
+            <p id="next_approved_appoitment">Next List</p>
         </div>
-        </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
         <div class="booking_section hide">
             <div class="booking_container">
-                <span>PRINCESS PRECIOUS</span>
+                <span>PAT0001</span>
                 <form action="">
                     <div class="form_control_group">
                     <div class="form_control">
@@ -197,6 +254,7 @@
             </div>
           </div>
           <div class="conscent_container hide">
+          <div class="all_patient_container">
           <div class="search-container">
     <div class="search-bar">
         <div id="select">
@@ -235,6 +293,49 @@
           </div>
           </div>
 
+    <div class="patient_container">
+        <div class="flex_container">
+            <div class="each_container">
+                <div class="number_container">
+                    2.
+                </div>
+                <div class="patient_info">
+                    <span>Esther Patrick Joseph</span>
+                    <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
+                    <button class= "btn_upload">Upload</button>
+           </div>
+          </div>
+          </div>
+          </div>
+    <div class="patient_container">
+        <div class="flex_container">
+            <div class="each_container">
+                <div class="number_container">
+                    3.
+                </div>
+                <div class="patient_info">
+                    <span>Aniekan Joseph</span>
+                    <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
+                    <button class= "btn_upload">Upload</button>
+           </div>
+          </div>
+          </div>
+          </div>
+    <div class="patient_container">
+        <div class="flex_container">
+            <div class="each_container">
+                <div class="number_container">
+                    4.
+                </div>
+                <div class="patient_info">
+                    <span>Asuquo Eyo Joseph</span>
+                    <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
+                    <button class= "btn_upload">Upload</button>
+           </div>
+          </div>
+          </div>
+          </div>
+          </div>
           <div class="upload_document_page hide">
             <h1>Upload Files & Documents</h1>
           <div class="flex_upload_div">
@@ -247,8 +348,100 @@
           </div>
           </div>
           </div>
-          <div class="vital_section">
-           
+          <div class="vital_section hide">
+            <div class="vital_input">
+            <form action="">
+                    <div class="form_control">
+          <label for="temperature">Temperature</label>
+          <input type="text">
+          </div>
+                
+                    <div class="form_control">
+          <label for="b/p">B/P(mm/HG)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="pulse">Pulse(bp/m)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="respiratory">Respiratory(cm)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="weight">Weight(kg)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="height">Height(cm)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="intake">Intake(m/s)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="output">Output(m/s)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="spo2">SPO2(%)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="bmi">BMI</label>
+          <input type="text">
+          </div>
+             <div class="form_control">
+          <label for="body_fat">Body fat(%)</label>
+          <input type="text">
+          </div>
+          <div class="form_control">
+          <label for="muscle_mass">Muscle mass</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="musc">MUAC</label>
+          <input type="text">
+          </div>
+          <div class="form_control">
+          <label for="resting_metabolism">Restinng metabolism</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="body_age">Body age</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="bmi_for_age">BMI for age</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="visceral_fat">Visceral fat</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="head_circumference">Head circumference</label>
+          <input type="text">
+          </div>
+          <div class="form_control">
+          <label for="wfa">WFA</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="waist_circumference">Waist Circumference</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="hip_circumference">Hip Circumference</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="w_hr">W-HR</label>
+          <input type="text">
+          </form>
+        </div>
+        <button id="btn_submit">Submit</button>
           </div>
         
         <script src="index.js"></script>

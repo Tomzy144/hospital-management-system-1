@@ -10,14 +10,6 @@
 body{
     width: 100%;
     min-height:100vh;
-    background-image: url(../Images/19374.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-  justify-content: center;
-    flex-direction: column;
-  align-items: center;
 }
 .navbar{
     width: 100%;
@@ -115,6 +107,7 @@ body{
     height: fit-content;
     top: 100%;
     animation: zoomIn 01s ease-in-out;
+    background-color: #0057c2;;
     right: 2%;
     padding: 1rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -199,6 +192,7 @@ body{
     height: fit-content;
     overflow: hidden;
     position: fixed;
+    background-color: #0057c2;;
     left: 0;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -228,17 +222,17 @@ body{
     cursor: pointer;
     margin: 1rem 0;
 }
-/*APPOITMENT BOOKING SECTION*/
 .contents{
     width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: space-between;
 }
-/*APPOITMENT BOOKING SECTION*/
 .appiontment_booking_container{
-    width: 60%;
+    width: 100%;
     height: fit-content;
-    margin: 6rem auto;
+    margin: 4.5rem  0 0 5rem ;
 }
+
 .head_sec{
     width: 100%;
     height: 50px;
@@ -256,6 +250,7 @@ body{
 .appoitment_input{
     padding: 0.5rem 0.5rem;
     outline: none;
+    width: 100%;
     border: none;
     background-color: #fff;
 }
@@ -283,51 +278,244 @@ body{
     padding: 1rem;
     color: #fff;
 }
-.table_container table tbody{
-    margin: 1rem 0;
-}
 .table_container table tbody td{
-    background-color: rgb(0, 0, 0);;
-    padding: 1rem;
-    margin: 1rem 0;
-    color: #fff;
+    background-color: rgb(255, 255, 255);;
+    padding: 0.4rem;
+    border-bottom: 1px solid rgb(224, 221, 221);
+    font-size: 20px;
+    margin: 0.4rem 0;
+    color: #000000;
 }
 
-.table_container button{
+.table_container #accept_button{
     padding: 0.5rem 0.5rem;
-    background-color: #fff;
+    background-color: rgb(42, 87, 215);
     border: none;
+    width: 100%;
+    margin: 0.5em 0;
     cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.table_container #reject_button{
+    padding: 0.5rem 0.5rem;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    margin: 0.5em 0;
+    width: 100%;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+
+.table_container #accept_button:hover{
+    color: #000000;
+    background: none;
+    border: 1px solid rgb(42, 87, 215); ;
+}
+.table_container #reject_button:hover{
+    color: #000000;
+    background: none;
+    border: 1px solid  rgb(255, 0, 0);
+}
+
+.pending_transaction_list_pagination{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 8px ;
+    border-bottom-right-radius: 8px ;
+    height: 50px;
+    margin: 0 auto;
+}
+.pending_transaction_list_pagination .flexs{
+    display: flex;;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.pending_transaction_list_pagination .flexs p{
+    background-color: rgb(42, 87, 215);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out  0.5s
+}
+.pending_transaction_list_pagination .flexs p:hover{
+   transform: scale(0.94);
+}
+
+.approved_appoitment{
+    width: 1300px;
+    height: fit-content;
+    position: relative;
+    right: 0;
+    padding: 1rem 0;
+    margin: 3.7rem 0 0 1rem;
+}
+
+.approved_appoitment .table_container{
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+}
+.approved_appoitment .table_container table{
+    width: 100%;
+    border-collapse: collapse;
+    position: relative;
+}
+
+.approved_appoitment .table_container table thead td{
+    background-color: rgb(42, 87, 215);;
+    padding: 1rem 1rem;
+    color: #fff;
+}
+.approved_appoitment .table_container table tbody td{
+    background-color: rgb(255, 255, 255);;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(224, 221, 221);
+    font-size: 20px;
+    padding: 1.5rem 1rem;
+    margin: 0.4rem 0;
+    color: #000000;
+}
+
+.dropdown{
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    position: absolute;
+    list-style: none;
+    box-shadow: rgba(185, 182, 182, 0.35) 0px 5px 15px;
+}
+.dropdown li{
+    padding: 1em;
+    border-bottom: 1px solid rgb(237, 233, 233);
+}
+
+ .selectWard{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 0.5em;
+    box-shadow: rgba(189, 188, 188, 0.35) 0px 5px 15px;
+    color: #000000;
+    border: none;
+}
+ #selectBed{
+    width: 100%;
+    background-color:rgb(42, 87, 215); ;
+    padding: 0.5em;
+    /* box-shadow: rgba(189, 188, 188, 0.35) 0px 5px 15px; */
+    color: #ffffff;
+    border: none;
+}
+.hideselect{
+    display: none;
+}
+.selectWard #ward{
+    padding: 0.3em;
+    list-style: none;
+    border-bottom: 1px solid rgb(237, 233, 233);
+}
+.approved_appoitment #in_progress{
+    background-color:rgb(42, 87, 215); ;
+    position: relative;
+    padding: 0.5rem 0.5rem;
+    color: #fff;
+}
+.approved_appoitment #completed{
+    background-color: rgb(0, 154, 0);
+    position: relative;
+    padding: 0.5rem 0.5rem;
+    color: #fff;
+}
+.approved_appoitment #in_progress:hover{
+    background:none;
+    border: 1px solid rgb(42, 87, 215); 
+    color: rgb(42, 87, 215); ;
+}
+.approved_appoitment #completed:hover{
+    background:none;
+    border: 1px solid rgb(0, 154, 0);
+    color: rgb(0, 154, 0);;
+}
+.surgical_pagination{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 8px ;
+    border-bottom-right-radius: 8px ;
+    height: 50px;
+}
+.surgical_pagination .flexs{
+    display: flex;;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.surgical_pagination .flexs p{
+    background-color: rgb(42, 87, 215);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out  0.5s
+}
+.surgical_pagination .flexs p:hover{
+   transform: scale(0.94);
+}
+.table_container button{
+    padding: 1rem 1rem;
+    background-color: rgb(42, 87, 215);
+    border: none;
+    width: 100%;
+    margin: 0.5em 0;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.table_container button{
+    padding: 1rem 1rem;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    margin: 0.5em 0;
+    cursor: pointer;
+    color: #fff;
     transition: all ease-in-out 0.5s;
 }
 
 .table_container button:hover{
-    color: #fff;
+    color: #000000;
     background: none;
+    border: 1px solid rgb(42, 87, 215); ;
 }
+.table_container button:hover{
+    color: #000000;
+    background: none;
+    border: 1px solid  rgb(255, 0, 0);
+}
+
 /*BOOKING FORM*/
 .booking_section{
 width: 100%;
-height: 100vh;
 display: flex;
+background-color: rgb(0, 87, 194);;
 flex-direction: column;
 justify-content: center;
+padding: 1em 0;
 align-items: center;
 }
 .booking_container{
-    width: 700px;
+    width: fit-content;
     height: auto;
-    background-color: #000000;
+    background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: 5rem auto;
-    border-radius: 12px;
     text-align: center;
+    margin: 4em 0 0 0;
     padding: 1rem 1rem;
 }
 .booking_container span{
     font-size: 25px;
     font-weight: bold;
-    color: rgb(255, 255, 255);;
+    color: rgb(0, 0, 0);;
 }
 .booking_container form{
     text-align: left;
@@ -349,23 +537,22 @@ align-items: center;
 }
 .booking_container .form_control_group .form_control label{
     font-size: 18px;
-    color: rgb(255, 255, 255);;;
-    font-weight: bold ;
+    color: rgb(0, 0, 0);;;
 }
 .booking_container .form_control_group .form_control input{
     padding: 0.5rem;
     border: none;
     background: none;
-    border-bottom: 1px solid rgb(255, 255, 255);;
+    border-bottom: 1px solid rgb(0, 0, 0);;
     font-size: 18px;
-     color: rgb(255, 255, 255);;
+     color: rgb(0, 0, 0);;
      outline: none;
 }
 
 .booking_container .form_control_group .form_control input:focus{
     padding: 0.5rem;
     border: none;
-    border: 2px solid #fff;
+    border: 2px solid #000000;
     border-bottom: none;
     font-size: 18px;
 }
@@ -373,17 +560,17 @@ align-items: center;
     padding: 0.5rem;
     border: none;
     background:none;
-    color: #fff;
-    border-bottom: 1px solid rgb(255, 255, 255);;
+    color: #000000;
+    border-bottom: 1px solid rgb(0, 0, 0);;
     font-size: 18px;
 }
 .booking_container button{
     padding: 1rem 2rem;
     border: none;
     cursor: pointer;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin: 0 1rem;
-    background-color: rgb(255, 255, 255);;;
+    background-color: rgb(0, 0, 0);;;
     transition: all ease-in-out 0.5s;
     border-radius: 7px;
 }
@@ -391,9 +578,9 @@ align-items: center;
     padding: 1rem 2rem;
     border: none;
     cursor: pointer;
-    color: #fff;
+    color: #000000;
     background:none;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
 }
 .conscent_container{
     width: 100%;
@@ -472,6 +659,10 @@ align-items: center;
     color:rgb(42, 87, 215);
     cursor: pointer;
 }
+.all_patient_container{
+    width: 100%;
+    height: 100%;
+}
 
 .patient_container{
     width: 80%;
@@ -534,14 +725,13 @@ cursor: pointer;
     color: rgb(42, 87, 215);
 }
 .upload_document_page{
-    width: fit-content;
-    background-color: rgb(0, 0, 0);
+    width: 100%;
+    background-color: rgb(0, 87, 194);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: 6rem auto 0;
+    margin: 4rem auto 0;
     height: fit-content;
     padding: 2rem;
     text-align: center;
-    border-radius: 10px;
 }
 .upload_document_page h1{
     color:rgb(255, 255, 255); 
@@ -556,6 +746,7 @@ cursor: pointer;
     display: flex;
     width: 100%;
     height: 100%;
+    justify-content: center;
     height: fit-content;
 }
 .upload_container{
@@ -587,9 +778,43 @@ cursor: pointer;
     cursor: pointer;
 }
 .vital_section{
+    width: 100%;;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+}
+
+.vital_input{
+    width: 80%;
+    height: fit-content;
+    color: #fff;
+    background-color: #0057c2;
+}
+.vital_input form{
+    display: flex;
+    margin: 5em 0 0 0;
     width: 100%;
-    height: 100vh;
-    background-color: red;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.vital_input form .form_control{
+    width: 300px;
+    height: fit-content;
+}
+.vital_input form .form_control input{
+  padding: 1em;
+  color: #000000;
+}
+.vital_input #btn_submit
+{
+    padding: 0.5em;
+    border: none;
+    font-size: 20px;
+    margin: 1em 1em;
+    cursor: pointer;
+    background-color: #fff;
 }
 .hide{
     display: none;

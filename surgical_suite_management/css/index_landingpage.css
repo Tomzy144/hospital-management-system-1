@@ -1,0 +1,626 @@
+
+
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: body-font;
+    src: url(SEGOEUI.TTF);
+}
+@font-face {
+    font-family:title-font;
+    src: url(berlin-regular.TTF);
+}
+
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+} */
+body {
+  color: #ffffff;
+  width: 100%;
+  height: auto;
+  background-color: #081f31;;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  
+/* tomiwa css */
+  padding:0px;
+  margin :0px;
+  font-size: 15px;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  word-wrap: break-word;
+  overflow-wrap:break-word ;
+
+
+  }
+  .preloader_background{
+     width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1200;
+  }
+  #preloader{
+    background: url(../Frontend/Images/logo\ gif.gif)no-repeat center center;
+    transform: rotate(360);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    z-index: 1300;
+    animation: rotateAnimation 4s linear infinite;
+  }
+
+  
+  @keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.navbar{
+    display: block;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    padding: 0.5rem;
+    flex-direction: row;
+    text-align: center;
+ 
+}
+
+h1{
+    color: #fff;
+    font-size: 2rem; 
+}
+
+/* tomiwa's */
+.login-section{
+  width: 100%;
+  /* padding: 5px; */
+  animation:zoomIn 1.2s ease-in-out 1.3s;
+  margin: auto;
+  height: auto;
+
+}
+
+   /*  tomiwa's  */
+    
+   .login-section .fill-form-div{
+    width: 100%;
+  }
+  
+  .login-section .fill-form-div .login-div{
+    display: none;
+  }
+  
+  .login-section .fill-form-div #next_1{
+     display: block;
+  
+  } 
+      
+
+
+
+.btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab, .btn-staff_manager, .btn-martanity, .btn-radiography, .btn-surgical_suite, .btn-account_manager, .btn-emergency_manager, .btn-pharmacist,  .btn-morgue_manager {
+   background:none;
+    border: 4px solid  #fff;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    padding: 0.6rem;
+    cursor: pointer;
+    margin: 1rem 0;
+    transition:all ease-in-out 0.5s;
+}
+
+.btn-doctor:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-nurse:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-receptionist:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-lab:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-staff_manager:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-martanity:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-radiography:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-surgical_suite:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-account_manager:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-account_manager:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-emergency_manager:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-pharmacist:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.btn-morgue_manager:hover{
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+}
+.overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color:#081f31;;
+    z-index: 5;
+    opacity: 88%;
+    display: none;
+}
+.login-container{
+   width: 100%;
+   margin-top: 2rem;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+     /*  tomiwa css */
+  padding: 10px 0px;
+  height: auto;
+  width: 95%;
+  margin: auto;
+  max-width: 1200px;
+  min-height: 70px;
+  
+}
+.flexs-container{
+width: 100%;
+}
+.sections-container{
+    display: flex !important;
+    flex-direction: column;
+    margin: 0.5rem 1rem;
+}
+h2, p{
+    color: #fff;
+    font-size: 16px;
+}
+/*Doctor Login*/
+.doctor-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+/*Nurse Login*/
+.nurse-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+/*Radiologist*/
+.radiologist-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+
+/*Receptioninst Login*/
+.recep-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;  
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+/*Lab Login*/
+.lab-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+/*Staff Manager Login*/
+.staff_manager-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+/*Martanity Login*/
+.martanity-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+/*Account Manager Login*/
+.account_manager-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+/*Surgical Suite Manager Login*/
+.surgical_suite_manager-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+/*Emergency Manager Login*/
+.emergency_manager-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+/*Pharmacist Login*/
+.pharmacist-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+/*Morgue Manager Login*/
+.morgue_manager-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+
+
+/* .hidden{
+    display: none;
+} */
+
+#close-icon-doctor{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-lab{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-nurse{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-recep{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-radiologist{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-staff_manager{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-martanity{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-radiography{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-account_manager{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-surgical_suite_manager{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-emergency_manager{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-pharmacist{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+#close-icon-morgue_manager{
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-left: 20rem;
+  color: #081f31;;
+  top: 0;
+}
+.login-form-h1{
+    color: #081f31;;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    text-align: center;
+    font-weight:bolder;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    margin: 1rem 0;
+    color: #081f31;;
+}
+  i{
+    position: absolute;
+    left: 5px;
+    top: 63%;
+    transform: translateY(-50%);
+  }
+.form-control input{
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #081f31;;
+    text-indent: 25px;
+    font-size:1.1rem;
+    outline: none;
+}
+.form-control input:focus{
+    padding: 12px 0;
+    text-indent: 25px;
+    font-size:1.1rem;
+    border-color: #081f31;;
+}
+.btn{
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    background-color:#081f31;;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+.btn:active{
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    background-color: #00000000;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.btn:hover{
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    background-color:#081f31;;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: ease-in-out;
+    transition: 0.5s;
+}
