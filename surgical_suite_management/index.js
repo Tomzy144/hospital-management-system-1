@@ -36,6 +36,10 @@ const vital_section = ()=>{
     document.querySelector(".vital_section").classList.remove("hide");
 }
 
+const show_vital_container = ()=> {
+    document.querySelector(".nurse_vital").classList.remove("hide");
+}
+
 //Search Bar
 const select =  document.getElementById("select");
 const list = document.getElementById("list");
@@ -184,35 +188,60 @@ document.addEventListener("DOMContentLoaded",()=>{
             icon.classList.add("bi",  "bi-three-dots");
             // icon.style.position = "relative";
             icon.addEventListener("click",() =>{
+   
+                    //VITAL SECTION
+                    const  call_nurse_for_vital = document.getElementById("form_nurse_vital");
+
+
                     const list1  = document.createElement("li");
                     list1.textContent = "Vitals"
-                    list1.onclick = vital_section;
+                    list1.onclick = show_vital_container;
+                    list1.style.position = "relative";
+                    cell1.appendChild(call_nurse_for_vital);
+                    //CONSENT FORM
                     const list2 = document.createElement("li");
                     list2.textContent = "Consent Form"
                     list2.onclick = consent_container;
-                    const selectWard  =document.getElementsByClassName("selectWard");
-              
+
+
+                    //SELECTING WARD SECTION
+                    const closeIcon = document.createElement('i');
+                    closeIcon.classList.add("bi", "bi-x-lg");
+                    closeIcon.style.position = "absolute";
+                    closeIcon.style.top = "3%";
+                    closeIcon.style.right = "10%";
+                    closeIcon.addEventListener("click",() =>{
+                        //Work on you later //TOM DONT TOUCH
+                        // `${icon.removeChild(ul)}`
+                        // const list3 = document.createElement("li");
+                        // list3.textContent = "Surgical Ward";
+                        // list3.removeChild(selectWard);
+                    })
+                    const selectWard  =document.getElementById("selectWard");
                     const list3 = document.createElement("li");
                     list3.textContent = "Surgical Ward";
                     list3.appendChild(selectWard);
-                    // selectWard.style.display = "none";
-                
+                    list3.addEventListener("click",() =>{
+                        const selectWard  =document.getElementById("selectWard");
+                        selectWard.classList.remove("hide");
+                    });
                     const list4 = document.createElement("li");
                     list4.textContent = "Transfer to threatre"
-                   
                     const ul = document.createElement('ul');
                     ul.className = "dropdown";
                     ul.style.position = "absolute";
                     ul.style.left = "50%";
                     ul.style.height = "max-content";
+                    ul.appendChild(closeIcon);
                     ul.appendChild(list1);
                     ul.appendChild(list2);
                     ul.appendChild(list3);
                     ul.appendChild(list4);
-                    icon.appendChild(ul);
-              
+                  `${icon.appendChild(ul)}`
+                    
             })
             cell5.appendChild(icon);
+            //END OF SELECTING WARD AND ALSO THE DROPDOWN
             
         }
     }

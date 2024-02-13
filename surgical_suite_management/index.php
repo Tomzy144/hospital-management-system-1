@@ -107,8 +107,29 @@
     <td> Date </td>
   </thead>
   <tbody>
-    <div class="hideselect">
-      <ul class="selectWard hide">
+
+  </tbody>
+
+  </table>
+  <div class="nurse_vital hide">
+  <form action="" id="form_nurse_vital">
+      <div class="form_control">
+        <label for="">Patient Name</label>
+        <input type="text" name="" id="">
+      </div>
+      <div class="form_control">
+        <label for="">Patient Id</label>
+        <input type="text" name="" id="">
+      </div>
+      <div class="form_control">
+        <label for="">Date </label>
+        <input type="text" name="" id="">
+      </div>
+  </form>
+
+  </div>
+  <div class="hideselect">
+      <ul class="hide" id="selectWard">
         <li id="ward">Ward 1
         <select name="" id="selectBed">
       <option value="">Bed 1</option>
@@ -163,10 +184,6 @@
       <option value="">Bed 5</option>
     </select>
     </div>
-
-  </tbody>
-  </table>
-
 </div>
 
 <div class="surgical_pagination">

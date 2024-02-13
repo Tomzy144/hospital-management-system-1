@@ -385,14 +385,14 @@ body{
     width: 300px;
     position: absolute;
     list-style: none;
-    box-shadow: rgba(185, 182, 182, 0.35) 0px 5px 15px;
+    box-shadow: rgba(221, 220, 220, 0.35) 0px 5px 15px;
 }
 .dropdown li{
     padding: 1em;
     border-bottom: 1px solid rgb(237, 233, 233);
 }
 
- .selectWard{
+ #selectWard{
     width: 100%;
     background-color: rgb(255, 255, 255);
     padding: 0.5em;
@@ -404,17 +404,27 @@ body{
     width: 100%;
     background-color:rgb(42, 87, 215); ;
     padding: 0.5em;
-    /* box-shadow: rgba(189, 188, 188, 0.35) 0px 5px 15px; */
     color: #ffffff;
     border: none;
 }
 .hideselect{
     display: none;
 }
-.selectWard #ward{
+#selectWard #ward{
     padding: 0.3em;
     list-style: none;
     border-bottom: 1px solid rgb(237, 233, 233);
+}
+
+.nurse_vital{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    left:15%;
+    top: 30%;
+    background-color: #fff;
+    z-index: 999;
+    box-shadow: rgba(189, 188, 188, 0.35) 0px 5px 15px;
 }
 .approved_appoitment #in_progress{
     background-color:rgb(42, 87, 215); ;
