@@ -1,5 +1,5 @@
 
-<!-- ?php if($page == 'logins'){?> -->
+<?php if($page == 'logins') { ?>
     <div class="login-container ">
         <div class="flexs-container">
             <div class="sections-container">
@@ -116,65 +116,77 @@ if($s_staff_id != '') {
  <?php } ?>
 
     <div class="fill-form-div login-div" id="next_2">
-
-        <div class="doctor-login ">
+        <div class="doctor-login">
+            <!-- Close icon for the login form -->
             <i class="bi bi-x-circle" id='close-icon-doctor' onclick="cancel();"></i>
+            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Doctor)</h1>
+            <!-- Doctor login form -->
             <form action="config/code.php" id="doctor_loginform" enctype="multipart/form-data" method="post">
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type="email" id="doctor_email" name="email" autoComplete='off'/> 
+                    <label for='email'>Email</label>
+                    <i class="bi-envelope"></i>
+                    <input type="email" id="doctor_email" name="email" autoComplete='off'/>
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="text" id="doctor_id"  name="number" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="bi-key"></i>
+                    <input type="text" id="doctor_id" name="number" autoComplete='off'/>
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" id="doctor_password" name="password" autoComplete='off'/> 
+                    <label for='password'>Password</label>
+                    <i class="bi-lock"></i>
+                    <input type="password" id="doctor_password" name="password" autoComplete='off'/>
                 </div>
-                <input name="action" value="doctor_login" type="hidden" />
-                <button type="button" class="btn" id="doctor_login_btn"title="Login" onclick="_doctor_sign_in();">Login</button>
-            <form>
+                <!-- Hidden input for the action -->
+                <input name="action" value="doctor_login" type="hidden"/>
+                <!-- Login button -->
+                <button type="button" class="btn" id="doctor_login_btn" title="Login" onclick="_doctor_sign_in();">Login</button>
+            </form>
         </div>
+
     </div>
     
 
     <!-- record -->
-    <?php if ($page=='record_login') { ?>
+    <?php  ($page=='record_login')  ?>
     
     <div class="fill-form-div login-div" id="next_3">
-        <div class="recep-login ">
-        <i class="bi bi-x-circle" id='close-icon-recep' onclick="cancel();"></i>
+            <div class="recep-login">
+            <!-- Close icon for the login form -->
+            <i class="bi bi-x-circle" id='close-icon-recep' onclick="cancel();"></i>
+            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Health Records and Information)</h1>
+            <!-- Receptionist login form -->
             <form action="config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type='email' id="email" name="email" autoComplete='off'/>
+                    <label for='email'>Email</label>
+                    <i class="fa fa-address-book"></i>
+                    <input type='email' id="email" name="email" autoComplete='off'/>
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="text" id= "user_id" name="user_id" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="fa fa-key"></i>
+                    <input type="text" id="user_id" name="user_id" autoComplete='off'/>
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" id="password" name="spass" autocomplete="off">
+                    <label for='password'>Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="password" name="spass" autocomplete="off">
                 </div>
-
-                <input name="action" value="login" type="hidden" />
+                <!-- Hidden input for the action -->
+                <input name="action" value="record_login" type="hidden" />
+                <!-- Login button -->
                 <button type="button" class="btn" id="login_btn" title="Login" onclick="_sign_in();">Login</button>  
-            <form>
-         </div>
+            </form>
+        </div>
+
     </div>
 
 
@@ -184,29 +196,35 @@ if($s_staff_id != '') {
     <?php if ($page=='lab_login') ?>
     <div class="fill-form-div login-div" id="next_4">
         <div class="lab-login">
+            <!-- Close icon for the login form -->
             <i class="bi bi-x-circle" id='close-icon-lab' onclick="cancel();"></i>
+            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Lab Scientist)</h1>
+            <!-- Lab scientist login form -->
             <form action="../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type='email' id="email" name="email" autoComplete='off'/>
+                    <label for='email'>Email</label>
+                    <i class="fa fa-address-book"></i>
+                    <input type='email' id="email" name="email" autoComplete='off'/>
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="text" name="number" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="fa fa-key"></i>
+                    <input type="text" name="number" autoComplete='off'/> 
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" id="password" name="spass" autocomplete="off">
+                    <label for='password'>Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="password" name="spass" autocomplete="off">
                 </div>
-                <button type="button" id="login_btn" title="Login" onclick="isLabDoc_active()"  class="btn">Login</button>
-            <form>
+                <!-- Login button -->
+                <button type="button" id="login_btn" title="Login" onclick="isLabDoc_active()" class="btn">Login</button>
+            </form>
         </div>
+
     </div>
 
 
@@ -216,30 +234,36 @@ if($s_staff_id != '') {
         <?php if ($page=='staffM_login') ?>
         <div class="fill-form-div login-div" id="next_5">
             <div class="staff_manager-login hidden">
+            <!-- Close icon for the login form -->
             <i class="bi bi-x-circle" id='close-icon-staff_manager' onclick="cancel();"></i>
             <i class="fa fa-times-circle"></i>
+            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Staff Manager)</h1>
+            <!-- Staff manager login form -->
             <form action="../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type='email' id="email" name="email" autoComplete='off'/>
+                    <label for='email'>Email</label>
+                    <i class="fa fa-address-book"></i>
+                    <input type='email' id="semail" name="email" autoComplete='off'/>
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="text" name="number" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="fa fa-key"></i>
+                    <input type="text" name="number" autoComplete='off'/> 
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" id="password" name="spass" autocomplete="off">
+                    <label for='password'>Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="password" name="spass" autocomplete="off">
                 </div>
-                <button type="button" id="login_btn" title="Login" onclick="isStaff_manager_active()"  class="btn">Login</button>
-            <form>
+                <!-- Login button -->
+                <button type="button" id="login_btn" title="Login" onclick="isStaff_manager_active()" class="btn">Login</button>
+            </form>
         </div>
+
     </div>
 
 
@@ -250,30 +274,36 @@ if($s_staff_id != '') {
 
     <?php if ($page=='martanity_login') ?>
     <div class="fill-form-div login-div" id="next_6">
-            <div class="martanity-login hidden">
-            <i class="bi bi-x-circle" id='close-icon-martanity' onclick="cancel();"></i>
-            <h1 class="login-form-h1">Login (Martanity)</h1>
+        <div class="martanity-login hidden">
+        <!-- Close icon for the login form -->
+        <i class="bi bi-x-circle" id='close-icon-martanity' onclick="cancel();"></i>
+        <!-- Title for the login form -->
+        <h1 class="login-form-h1">Login (Martanity)</h1>
+        <!-- Martanity login form -->
             <form action="../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type='email' id="email" name="email" autoComplete='off'/>
+                    <label for='email'>Email</label>
+                    <i class="fa fa-address-book"></i>
+                    <input type='email' id="email" name="email" autoComplete='off'/>
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="text" name="number" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="fa fa-key"></i>
+                    <input type="text" name="number" autoComplete='off'/> 
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" id="password" name="spass" autocomplete="off">
+                    <label for='password'>Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="password" name="spass" autocomplete="off">
                 </div>
-                <button type="button" id="login_btn" title="Login" onclick="isMartinity_active()"  class="btn">Login</button>
-            <form>
+                <!-- Login button -->
+                <button type="button" id="login_btn" title="Login" onclick="isMartinity_active()" class="btn">Login</button>
+            </form>
         </div>
+
     </div>
 
 
@@ -316,31 +346,37 @@ if($s_staff_id != '') {
 
     <?php if ($page=='surgical_suite_manager_login') ?>
     <div class="fill-form-div login-div" id="next_8">
-        <div class="surgical_suite_manager-login hidden">
-            <i class="bi bi-x-circle"  id='close-icon-surgical_suite_manager' onclick="cancel();"></i>
+            <div class="surgical_suite_manager-login hidden">
+            <!-- Close icons for the login form -->
+            <i class="bi bi-x-circle" id='close-icon-surgical_suite_manager' onclick="cancel();"></i>
             <i class="fa fa-times-circle" id='close-icon-surgical_suite_manager'></i>
+            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Surgical Suite Manager)</h1>
+            <!-- Surgical Suite Manager login form -->
             <form>
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type="email" name="email" autoComplete='off'/> 
+                    <label for='email'>Email</label>
+                    <i class="fa fa-address-book"></i>
+                    <input type="email" name="email" autoComplete='off'/> 
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="number" name="number" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="fa fa-key"></i>
+                    <input type="number" name="number" autoComplete='off'/> 
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" name="password" autoComplete='off'/> 
+                    <label for='password'>Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" autoComplete='off'/> 
                 </div>
+                <!-- Login button -->
                 <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
-            <form>
+            </form>
         </div>
+
     </div>
 
 
@@ -349,30 +385,36 @@ if($s_staff_id != '') {
 
     <?php if ($page=='emergency_manager_login') ?>
     <div class="fill-form-div login-div" id="next_9">
-        <div class="emergency_manager-login hidden">
+            <div class="emergency_manager-login hidden">
+            <!-- Close icon for the login form -->
             <i class="bi bi-x-circle" id='close-icon-emergency_manager' onclick="cancel();"></i>
+            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Emergency Manager)</h1>
+            <!-- Emergency Manager login form -->
             <form>
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type="email" name="email" autoComplete='off'/> 
+                    <label for='email'>Email</label>
+                    <i class="fa fa-address-book"></i>
+                    <input type="email" name="email" autoComplete='off'/> 
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="number" name="number" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="fa fa-key"></i>
+                    <input type="number" name="number" autoComplete='off'/> 
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" name="password" autoComplete='off'/> 
+                    <label for='password'>Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" autoComplete='off'/> 
                 </div>
+                <!-- Login button -->
                 <button type="button" class="btn" onClick="isEmergency_manager_active()">Login</button>
-            <form>
+            </form>
         </div>
+
     </div>
 
 
@@ -380,30 +422,36 @@ if($s_staff_id != '') {
 
     <?php if ($page=='pharmacist_login') ?>
     <div class="fill-form-div login-div" id="next_10">
-        <div class="pharmacist-login hidden">
-        <i class="bi bi-x-circle" id='close-icon-pharmacist' onclick="cancel();"></i>
+            <div class="pharmacist-login hidden">
+            <!-- Close icon for the login form -->
+            <i class="bi bi-x-circle" id='close-icon-pharmacist' onclick="cancel();"></i>
+            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Pharmacist)</h1>
+            <!-- Pharmacist login form -->
             <form>
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type="email" name="email" autoComplete='off'/> 
+                    <label for='email'>Email</label>
+                    <i class="fa fa-address-book"></i>
+                    <input type="email" name="email" autoComplete='off'/> 
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="number" name="number" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="fa fa-key"></i>
+                    <input type="number" name="number" autoComplete='off'/> 
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" name="password" autoComplete='off'/> 
+                    <label for='password'>Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" autoComplete='off'/> 
                 </div>
+                <!-- Login button -->
                 <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
-            <form>
+            </form>
         </div>
+
     </div>
 
 
@@ -412,30 +460,36 @@ if($s_staff_id != '') {
 
     <?php if ($page=='morgue_manager_login') ?>
     <div class="fill-form-div login-div" id="next_11">
-        <div class="morgue_manager-login hidden">
+            <div class="morgue_manager-login hidden">
+            <!-- Close icon for the login form -->
             <i class="bi bi-x-circle" id='close-icon-morgue_manager' onclick="cancel();"></i>
+            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Morgue Manager)</h1>
+            <!-- Morgue Manager login form -->
             <form>
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type="email" name="email" autoComplete='off'/> 
+                    <label for='email'>Email</label>
+                    <i class="fa fa-address-book"></i>
+                    <input type="email" name="email" autoComplete='off'/> 
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="number" name="number" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="fa fa-key"></i>
+                    <input type="number" name="number" autoComplete='off'/> 
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" name="password" autoComplete='off'/> 
+                    <label for='password'>Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" autoComplete='off'/> 
                 </div>
+                <!-- Login button -->
                 <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
-            <form>
+            </form>
         </div>
+
     </div>
 
 
@@ -444,30 +498,36 @@ if($s_staff_id != '') {
 
     <?php if ($page=='radiologist_login') ?>
     <div class="fill-form-div login-div" id="next_12">
-        <div class="radiologist-login hidden">
-        <i class="bi bi-x-circle" id='close-icon-radiologist' onclick="cancel();"></i>
+            <div class="radiologist-login hidden">
+            <!-- Close icon for the login form -->
+            <i class="bi bi-x-circle" id='close-icon-radiologist' onclick="cancel();"></i>
+            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Radiologist)</h1>
+            <!-- Radiologist login form -->
             <form>
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type="email" name="email" autoComplete='off'/> 
+                    <label for='email'>Email</label>
+                    <i class="fa fa-address-book"></i>
+                    <input type="email" name="email" autoComplete='off'/> 
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="number" name="number" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="fa fa-key"></i>
+                    <input type="number" name="number" autoComplete='off'/> 
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" name="password" autoComplete='off'/> 
+                    <label for='password'>Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" autoComplete='off'/> 
                 </div>
+                <!-- Login button -->
                 <button type="button" class="btn" onClick="isRadiologist_active()">Login</button>
-            <form>
+            </form>
         </div>
+
     </div>
 
 
@@ -476,30 +536,36 @@ if($s_staff_id != '') {
 
     <?php if ($page=='nurse_login') ?>
     <div class="fill-form-div login-div" id="next_13">
-        <div class="nurse-login hidden">
-        <i class="bi bi-x-circle"  id='close-icon-nurse' onclick="cancel();"></i>
+            <div class="nurse-login hidden">
+            <!-- Close icon for the login form -->
+            <i class="bi bi-x-circle" id='close-icon-nurse' onclick="cancel();"></i>
+            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Nurse)</h1>
+            <!-- Nurse login form -->
             <form>
+                <!-- Email field -->
                 <div class="form-control">
-                <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
-                <input type="email" name="email" autoComplete='off'/> 
+                    <label for='email'>Email</label>
+                    <i class="fa fa-address-book"></i>
+                    <input type="email" name="email" autoComplete='off'/> 
                 </div>
-
+                <!-- ID field -->
                 <div class="form-control">
-                <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
-                <input type="number" name="number" autoComplete='off'/> 
+                    <label for='number'>Your ID</label>
+                    <i class="fa fa-key"></i>
+                    <input type="number" name="number" autoComplete='off'/> 
                 </div>
-
+                <!-- Password field -->
                 <div class="form-control">
-                <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
-                <input type="password" name="password" autoComplete='off'/> 
+                    <label for='password'>Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" autoComplete='off'/> 
                 </div>
+                <!-- Login button -->
                 <button type="button" class="btn" onClick="isNurse_active()">Login</button>
-            <form>
-        </div> 
+            </form>
+        </div>
+
     </div>
 
-<?php }?>
+<?php } ?>

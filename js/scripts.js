@@ -46,7 +46,7 @@ function _sign_in(){
 
 ///////////////////// user login ///////////////////////////////////////////
 function user_login(email,password,user_id){
-    var action='login_check';
+    var action='record_login_check';
     
    //////////////// get btn text ////////////////
    var btn_text=$('#login_btn').html();
