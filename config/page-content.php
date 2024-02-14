@@ -486,7 +486,7 @@ if($s_staff_id != '') {
                     <input type="password" name="password" autoComplete='off'/> 
                 </div>
                 <!-- Login button -->
-                <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
+                <button type="button" class="btn" onClick="open_morgue_page()">Login</button>
             </form>
         </div>
 
