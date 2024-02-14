@@ -175,8 +175,10 @@ $result = $conn->query($sql);
         <tr>
             <td>#</td>
             <td>PASSPORT</td>
-            <td>Patient Name & Patient ID</td>
-            <td>Date & Time</td>
+            <td>Patient Name</td> 
+            <td>Patient ID</td>
+            <td>Date</td>
+            <td> Time</td>
             <td>Request Type</td>
             <td>Accept/Reject</td>
         </tr>
@@ -187,8 +189,8 @@ $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>" . $row["number"] . "</td>";
-            echo "<td>" . $row["number"] . "</td>";
+            echo "<td>" . $row["sn"] . "</td>";
+            echo "<td>" . $row["patient_passport"]."passport" . "</td>";
             echo "<td>" . $row["patient_name"] . "</td>";
             echo "<td>" . $row["patient_id"] . "</td>";
             echo "<td>" . $row["appointment_date"] . "</td>";
@@ -197,8 +199,8 @@ $result = $conn->query($sql);
             echo "<td>";
             // Pass $row["patient_id"] to the JavaScript functions
             ?>
-            <button class="accept-btn" type="button" data-patient-id="<?php echo $row["patient_id"]; ?>">Accept</button>
-            <button class="reject-btn" data-patient-id="<?php echo $row["patient_id"]; ?>">Reject</button>
+            <button class="accept_button" type="button" data-patient-id="<?php echo $row["patient_id"]; ?>" onClick="accept()">Accept</button>
+            <button class="button_reject" data-patient-id="<?php echo $row["patient_id"]; ?>">Reject</button>
             <?php
             echo "</td>";
             echo "</tr>";
@@ -219,24 +221,26 @@ $result = $conn->query($sql);
 
 <script>
     // Use event listeners to handle button clicks
-    document.querySelectorAll('.accept-btn').forEach(function (button) {
-        button.addEventListener('click', function () {
-            var patientId = this.getAttribute('data-patient-id');
-            display_input();
+        function accept() {
+        document.querySelectorAll('.accept-btn').forEach(function(button) {
+            var patientId = button.getAttribute('data-patient-id');
+            // display_input();
             loadPatientProfile(patientId);
             
             const hideHeadSec = document.querySelector(".head-sec");
-            hideHeadSec.style.display ="none";
-            document.querySelector("#back-arrow").style.display="block";
+            hideHeadSec.style.display = "none";
+            document.querySelector("#back-arrow").style.display = "block";
         });
-    });
+    }
 
-    document.querySelectorAll('.reject-btn').forEach(function (button) {
-        button.addEventListener('click', function () {
-            var patientId = this.getAttribute('data-patient-id');
+
+   
+        function reject() {
+        document.querySelectorAll('.reject-btn').forEach(function(button) {
+            var patientId = button.getAttribute('data-patient-id');
             delete_input(patientId);
         });
-    });
+    }
 
 
 
@@ -2679,7 +2683,7 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             </div>
         </div>
   <div class="overlay hidden"></div>
-  <script src="js/dashboard.js"> </script>
+
 </body>
 </html>
 
