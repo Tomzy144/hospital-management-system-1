@@ -280,21 +280,21 @@ body{
     justify-content: space-between;
     align-items: center;
     background-color: rgb(255, 255, 255);
-    color: rgb(42, 87, 215);;
+    color: rgb(0, 0, 0);;
 }
 .landing_page_section .section2 .table_container .head_sec input{
 padding: 0.4em 0;
-color: rgb(42, 87, 215);;
+color: rgb(0, 0, 0);;
 width: 300px;
-border: 1px solid rgb(42, 87, 215);;
+border: 1px solid rgb(0, 0, 0);;
 outline: none;
 }
 .landing_page_section .table_container .color{
-    color: rgb(42, 87, 215);;
+    color: rgb(0, 0, 0);;
     cursor: pointer;
 }
 .landing_page_section .table_container tbody td{
-    color: rgb(42, 87, 215);;;
+    color: rgb(0, 0, 0);;;
 }
 .landing_page_section .table_container .ward_sec{
     width: fit-content;
@@ -324,9 +324,9 @@ outline: none;
 
 .ward1_beds, .ward2_beds, .ward3_beds{
     background-color: #fff;
-    border: 1px solid  rgb(42, 87, 215);;;
+    border: 1px solid  rgb(0, 0, 0);;;
     padding: 0.5em;
-    color: rgb(42, 87, 215);;;;
+    color: rgb(0, 0, 0);;;;
     width: 100%;
 }
 
@@ -352,15 +352,14 @@ outline: none;
 
 form{
     width: 100%;
-    color: rgb(42, 87, 215);;
+    color: rgb(0, 0, 0);;
     display: flex;
     flex-direction: column;
 }
 form span{
     text-align: left;
-    font-size: 14px;
-    color: rgb(42, 87, 215);
-    letter-spacing: 4px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
     animation: slideInLeft 1s ease-in-out;
 }
 .form_control_group{
@@ -376,14 +375,14 @@ form span{
 .emergency_form_container .form_control input{
     padding: 0.6rem;
     border: none;
-    border-bottom: 1px solid rgb(42, 87, 215);
+    border-bottom: 1px solid rgb(0, 0, 0);
     outline: none;
     width: 100%;
-    color: #0057c2;
+    color: #000000;
 
 }
 .emergency_form_container .form_control input:focus{
-    border: 1px solid rgb(42, 87, 215);
+    border: 1px solid rgb(0, 0, 0);
 }
 
 .btn_submit{
@@ -400,8 +399,8 @@ form span{
 .btn_submit:hover{
     transform: scale(0.98);
     background-color: #fff;
-    color:rgb(42, 87, 215);
-    border: 1px solid rgb(42, 87, 215);
+    color:rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
 }
 .nurse_section{
     width: 500px;
@@ -413,8 +412,8 @@ form span{
     background-color: rgb(255, 255, 255);
 }
 .nurse_section textarea{
-    border: 1px solid rgb(42, 87, 215);
-    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);;
     outline: none;
 }
 .nurse_section button{
@@ -430,14 +429,14 @@ form span{
 .nurse_section button:hover{
     width: 100%;
     background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(42, 87, 215);
+    border: 1px solid rgb(0, 0, 0);;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     margin: 0.5em 0.5em;
 }
 .nurse_section h1{
     font-weight: bold;
-    color: rgb(42, 87, 215);
+    color: rgb(0, 0, 0);
 }
 .nurse_section form{
     width:100%;
@@ -451,8 +450,8 @@ form span{
     padding: 0.5rem;
     border: none;
     width: 100%;
-    color: rgb(42, 87, 215);;
-    border-bottom: 1px solid rgb(42, 87, 215);
+    color: rgb(0, 0, 0);;
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .doc_section{
@@ -471,8 +470,8 @@ form span{
 }
 .doc_section .form_control input{
     padding: 0.5em;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(0, 0, 0);;
+    color: rgb(0, 0, 0);;
 }
 .doc_section textarea{
      width: 100%;
@@ -481,13 +480,13 @@ form span{
     margin: 0.5rem 0;
     padding: 0.5em;
     cursor: pointer;
-    border: 1px solid rgb(42, 87, 215);
-    color:rgb(42, 87, 215);
+    border: 1px solid rgb(0, 0, 0);
+    color:rgb(0, 0, 0);
 }
 .doc_section button{
     width: 100%;
     padding: 0.5em;
-    background-color:rgb(42, 87, 215);
+    background-color:rgb(0, 0, 0);
     border: none;
     color: #fff;
     transition: all ease-in-out 0.5s;
@@ -495,20 +494,20 @@ form span{
     margin: 0.5em 0.5em;
 }
 .doc_section label{
-    color: rgb(42, 87, 215);;
+    color: rgb(0, 0, 0);;
 }
 .doc_section button:hover{
     width: 100%;
     padding: 0.5em;
     background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(42, 87, 215);
+    border: 1px solid rgb(0, 0, 0);;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     margin: 0.5em 0.5em;
 }
 .doc_section h1{
     font-weight: bold;
-    color: rgb(42, 87, 215);;
+    color: rgb(0, 0, 0);;
 }
 .doc_section #select_doc{
     width: 100%;
@@ -517,11 +516,11 @@ form span{
     margin: 0.5rem 0;
     padding: 0.5em;
     cursor: pointer;
-    border: 1px solid rgb(42, 87, 215);
-    color:rgb(42, 87, 215);
+    border: 1px solid rgb(0, 0, 0);
+    color:rgb(0, 0, 0);
 }
 .doc_section #select_doc #opt{
-    color: rgb(42, 87, 215);
+    color: rgb(0, 0, 0);
     background: white;
     border: none;
     padding: 1rem;
@@ -536,14 +535,14 @@ form span{
     background-color: rgb(255, 255, 255);
 }
 .lab_setion textarea{
-    border: 1px solid rgb(42, 87, 215);
-    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);;
     outline: none;
 }
 .lab_setion button{
     width: 100%;
     padding: 0.5em;
-    background-color:rgb(42, 87, 215);
+    background-color:rgb(0, 0, 0);
     border: none;
     color: #fff;
     transition: all ease-in-out 0.5s;
@@ -554,14 +553,14 @@ form span{
     width: 100%;
     padding: 0.5em;
     background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(42, 87, 215);
+    border: 1px solid rgb(0, 0, 0);;
+    color: rgb(0, 0, 0);
     cursor: pointer;
  margin: 0.5em 0.5em;
 }
 .lab_setion h1{
     font-weight: bold;
-    color: rgb(42, 87, 215);
+    color: rgb(0, 0, 0);
 }
 .lab_setion form{
     width: 100%;
@@ -576,8 +575,8 @@ form span{
     padding: 0.5rem;
     border: none;
     width: 100%;
-    color: rgb(42, 87, 215);;
-    border-bottom: 1px solid rgb(42, 87, 215);
+    color: rgb(0, 0, 0);;
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .rad_setion{
@@ -591,14 +590,14 @@ form span{
     background-color: rgb(255, 255, 255);
 }
 .rad_setion textarea{
-    border: 1px solid rgb(42, 87, 215);
-    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);;
     outline: none;
 }
 .rad_setion button{
     width: 100%;
     padding: 0.5em;
-    background-color:rgb(42, 87, 215);
+    background-color:rgb(0, 0, 0);
     border: none;
     color: #fff;
     transition: all ease-in-out 0.5s;
@@ -610,13 +609,13 @@ form span{
     padding: 0.5em;
     background:none;
     border: 1px solid rgb(42, 87, 215);;
-    color: rgb(42, 87, 215);
+    color: rgb(0, 0, 0);
     cursor: pointer;
     margin: 0.5em 0.5em;
 }
 .rad_setion h1{
     font-weight: bold;
-    color: rgb(42, 87, 215);
+    color: rgb(0, 0, 0);
 }
 .rad_setion form{
     width:100%;
@@ -630,8 +629,8 @@ form span{
     padding: 0.5rem;
     border: none;
     width: 100%;
-    color: rgb(42, 87, 215);;
-    border-bottom: 1px solid rgb(42, 87, 215);
+    color: rgb(0, 0, 0);;
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .surgical_suite_section{
@@ -645,14 +644,14 @@ form span{
     background-color: rgb(255, 255, 255);
 }
 .surgical_suite_section textarea{
-    border: 1px solid rgb(42, 87, 215);
-    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);;
     outline: none;
 }
 .surgical_suite_section button{
     width: 100%;
     padding: 0.5em;
-    background-color:rgb(42, 87, 215);
+    background-color:rgb(0, 0, 0);
     border: none;
     color: #fff;
     transition: all ease-in-out 0.5s;
@@ -663,14 +662,14 @@ form span{
     width: 100%;
     padding: 0.5em;
     background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(42, 87, 215);
+    border: 1px solid rgb(0, 0, 0);;
+    color: rgb(0, 0, 0);
     cursor: pointer;
   margin: 0.5em 0.5em;
 }
 .surgical_suite_section h1{
     font-weight: bold;
-    color: rgb(42, 87, 215);
+    color: rgba(0, 0, 0, 0);
 }
 .surgical_suite_section form{
     width:100%;
@@ -684,8 +683,8 @@ form span{
     padding: 0.5rem;
     border: none;
     width: 100%;
-    color: rgb(42, 87, 215);;
-    border-bottom: 1px solid rgb(42, 87, 215);
+    color: rgb(0, 0, 0);;
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 .icu_section{
     width: 500px;
@@ -698,14 +697,14 @@ form span{
     background-color: rgb(255, 255, 255);
 }
 .icu_section textarea{
-    border: 1px solid rgb(42, 87, 215);
-    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);;
     outline: none;
 }
 .icu_section button{
     width: 100%;
     padding: 0.5em;
-    background-color:rgb(42, 87, 215);
+    background-color:rgb(0, 0, 0);
     border: none;
     color: #fff;
     transition: all ease-in-out 0.5s;
@@ -716,14 +715,14 @@ form span{
     width: 100%;
     padding: 0.5em;
     background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(42, 87, 215);
+    border: 1px solid rgb(0, 0, 0);;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     margin: 0.5em 0.5em;
 }
 .icu_section h1{
     font-weight: bold;
-    color: rgb(42, 87, 215);
+    color: rgb(0, 0, 0);
 }
 .icu_section form{
     width:100%;
@@ -737,8 +736,8 @@ form span{
     padding: 0.5rem;
     border: none;
     width: 100%;
-    color: rgb(42, 87, 215);;
-    border-bottom: 1px solid rgb(42, 87, 215);
+    color: rgb(0, 0, 0);;
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 .morgue_section{
     width: 500px;
@@ -751,14 +750,14 @@ form span{
     overflow: hidden;
 }
 .morgue_section textarea{
-    border: 1px solid rgb(42, 87, 215);
-    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);;
     outline: none;
 }
 .morgue_section button{
     width: 100%;
     padding: 0.5em;
-    background-color:rgb(42, 87, 215);
+    background-color:rgb(0, 0, 0);
     border: none;
     color: #fff;
     transition: all ease-in-out 0.5s;
@@ -769,14 +768,14 @@ form span{
     width: 100%;
     padding: 0.5em;
     background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(42, 87, 215);
+    border: 1px solid rgb(0, 0, 0);;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     margin: 0.5em 0.5em;
 }
 .morgue_section h1{
     font-weight: bold;
-    color: rgb(42, 87, 215);
+    color: rgb(0, 0, 0);
 }
 .morgue_section form{
     width:100%;
@@ -790,8 +789,8 @@ form span{
     padding: 0.5rem;
     border: none;
     width: 100%;
-    color: rgb(42, 87, 215);;
-    border-bottom: 1px solid rgb(42, 87, 215);
+    color: rgb(0, 0, 0);;
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 
@@ -864,8 +863,8 @@ table{
  table thead td{
     background-color: rgb(42, 87, 215);;
     color: #fff;
-    padding: 1rem;
-    font-size: 21px;
+    padding: 0.5rem;
+    font-size: 18px;
 }
  table tbody{
     margin: 1rem 0;

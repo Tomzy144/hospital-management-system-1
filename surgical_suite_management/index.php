@@ -109,25 +109,7 @@
   <tbody>
 
   </tbody>
-
   </table>
-  <div class="nurse_vital hide">
-  <form action="" id="form_nurse_vital">
-      <div class="form_control">
-        <label for="">Patient Name</label>
-        <input type="text" name="" id="">
-      </div>
-      <div class="form_control">
-        <label for="">Patient Id</label>
-        <input type="text" name="" id="">
-      </div>
-      <div class="form_control">
-        <label for="">Date </label>
-        <input type="text" name="" id="">
-      </div>
-  </form>
-
-  </div>
   <div class="hideselect">
       <ul class="hide" id="selectWard">
         <li id="ward">Ward 1
@@ -185,7 +167,59 @@
     </select>
     </div>
 </div>
+      <div class="vital_form hide">
+      <i class="bi bi-x-lg" id="close_icon" onClick="close_show_vital_container()"></i>
+      <span>Call in Nurse</span>
+        <form action="">
+            <div class="form_control">
+              <label for="">Patient Name</label>
+              <input type="text" name="" id="">
+            </div>
+            <div class="form_control">
+              <label for="">Patient Id</label>
+              <input type="text" name="" id="">
+            </div>
+            <div class="form_control">
+              <label for="">Date</label>
+              <input type="date" name="" id="">
+            </div>
+            <div class="form_control">
+              <label for="">Time</label>
+              <input type="time" name="" id="">
+            </div>
+            <div class="form_control">
+              <label for="">Message</label>
+              <textarea name="" id="" cols="10" rows="10"></textarea>
+            </div>
+        </form>
+      </div>
 
+      <div class="threatre hide">
+      <i class="bi bi-x-lg" id="close_icon" onClick="close_show_threatre_container()"></i>
+      <span>Transfer to Threatre</span>
+        <form action="">
+            <div class="form_control">
+              <label for="">Patient Name</label>
+              <input type="text" name="" id="">
+            </div>
+            <div class="form_control">
+              <label for="">Patient Id</label>
+              <input type="text" name="" id="">
+            </div>
+            <div class="form_control">
+              <label for="">Date</label>
+              <input type="date" name="" id="">
+            </div>
+            <div class="form_control">
+              <label for="">Time</label>
+              <input type="time" name="" id="">
+            </div>
+            <div class="form_control">
+              <label for="">Message</label>
+              <textarea name="" id="" cols="10" rows="10"></textarea>
+            </div>
+        </form>
+      </div>
 <div class="surgical_pagination">
         <div class="flexs">
             <p id="prev_approved_appoitment">Prev List</p>
@@ -193,6 +227,7 @@
         </div>
 </div>
 </div>
+
 </div>
         <div class="booking_section hide">
             <div class="booking_container">
@@ -352,6 +387,12 @@
           </div>
           </div>
           </div>
+          <div class="patient_container_pagination">
+        <div class="flexs">
+            <p id="prev_approved_appoitment">Prev List</p>
+            <p id="next_approved_appoitment">Next List</p>
+        </div>
+</div>
           </div>
           <div class="upload_document_page hide">
             <h1>Upload Files & Documents</h1>

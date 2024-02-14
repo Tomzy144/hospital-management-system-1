@@ -607,6 +607,11 @@ const close_morgue_manager_login_form = function(){
     morgue_manager_login.classList.add("hidden");
     dark_background.classList.add("hidden");
 }
+function open_morgue_page(){
+    let url = "morgue/index.php";
+    window.parent(location = (url))
+}
+
 
 // const morgue_manager_login_form = `
 // <script src="../../backend/js/scripts.js"></script>
