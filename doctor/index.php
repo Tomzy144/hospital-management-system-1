@@ -79,7 +79,7 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Dashboard</title>
     <!-- <link rel="stylesheet" href="./dashboard.css"> -->
-    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href='css/awesome-font/css/font-awesome.min.css'>
     <link
 rel="stylesheet"
@@ -87,7 +87,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
 <?php include 'meta.php'?>
 </head>
 <body>
@@ -124,13 +124,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           </div>
           <div class="profile">
             <div class="profile_account hide">
-            <img id="image_profile_account" src="images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
+            <img id="image_profile_account" src="<?php echo $website_url ?>/doctor/images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
             <h4><?php echo $fullname ?></h4>
             <button class="btn_submit">Upload Image</button>
             <span>change password</span>
         </div>
             <div class="image">
-            <img src="images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
+            <img src="<?php echo $website_url ?>/doctor/images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
             <div class="active_on"></div>
             </div>
         </img>  
@@ -141,7 +141,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     </div>
         <div class="sidebar">
                <div class="sidebar_contents">
-                <img width="80px" height="80px" src="images/Mount Tech Logo.jpg" alt="logo">
+                <img width="80px" height="80px" src="<?php echo $website_url ?>/doctor/images/Mount Tech Logo.jpg" alt="logo">
                </div>
             <div class="sidebar_icons">
             <i class="bi bi-chat-dots-fill icons"></i>
@@ -222,7 +222,7 @@ $result = $conn->query($sql);
     document.querySelectorAll('.accept-btn').forEach(function (button) {
         button.addEventListener('click', function () {
             var patientId = this.getAttribute('data-patient-id');
-            // display_input();
+            display_input();
             loadPatientProfile(patientId);
             
             const hideHeadSec = document.querySelector(".head-sec");
