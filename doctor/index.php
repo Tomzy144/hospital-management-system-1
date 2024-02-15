@@ -115,9 +115,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <div class="section2">
             <div class="icons">
           <!-- <i class="fa fa-user" id="icon"> -->
-          <i class="bi bi-bell-fill"></i>
-            <!-- <div class="notification1">9</div> -->
-            </svg>
+          <i class="bi bi-bell-fill" id="icon">
+            <div class="notification1">9</div>
+            </i>
+        
           <!-- <i class="fa fa-bell" id="icon">
           <div class="notification2">15</div>
           </i> -->
@@ -135,7 +136,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             </div>
         </img>  
             <span><?php echo $fullname ?></span>
-            <i class="fa fa-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
+            <!-- <i class="fa fa-caret-down"></i> -->
+            <i class="bi bi-caret-down-fill"  id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>
     </div>
@@ -186,9 +188,9 @@ $result = $conn->query($sql);
         <?php
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . $row["sn"] . "</td>";
-                echo "<td>" . $row["patient_passport"] . "passport" . "</td>";
+                echo "<tr id=\"table_row\">";
+                echo "<td id=\"sn\">" . $row["sn"] . "</td>";
+                echo "<td>" . $row["patient_passport"] . "</td>";
                 echo "<td>" . $row["patient_name"] . "</td>";
                 echo "<td>" . $row["patient_id"] . "</td>";
                 echo "<td>" . $row["appointment_date"] . "</td>";
@@ -203,11 +205,12 @@ $result = $conn->query($sql);
                 echo "</tr>";
             }
         } else {
-            echo "<tr><td colspan='5'>No records found</td></tr>";
+            echo "<tr><td colspan='8'>No records found</td></tr>";
         }
         ?>
     </tbody>
 </table>
+
 <div class="pending_appoitment_list_pagination">
         <div class="flexs">
             <p id="prev">Prev List</p>

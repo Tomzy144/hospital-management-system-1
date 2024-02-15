@@ -1,8 +1,3 @@
-const allSection = function(section, show_container){
-    let container = document.getElementById(section + '-container');
-    container.innerHTML = show_container;
-}
-
 
 const Navbar = `
 <!---SIDEBAR AND NAVBAR-->
@@ -48,11 +43,7 @@ const Navbar = `
   </div>
 `
 allSection('navbar', Navbar);
-   //PROFILE IMAGE
-   const profile_container  =  document.querySelector(".profile_account");
-   const click_icon_for_profile = ()=>{
-       profile_container.classList.toggle("hide");
-   };
+
 const landingPageContainer  = `
 <div class="contents">
 <div class="appiontment_booking_container">

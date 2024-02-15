@@ -237,7 +237,52 @@
             </div>
         </div>
 </div>
+<div class="outgoing_list_section hide">
+<div class="appoitment_section">
+<div class="appiontment_booking_container">
+<div class="appiontment">
+<div class="head_sec">
+  <span>Outgoing Deceassed</span>
+  <div class="appoitment_input_control">
+  <i class="fa fa-search" id="search_icon"></i>
+      <input type="text" placeholder="Search here" class="appoitment_input">
+  </div>
 </div>
+<div class="table_container">
+<table id="outgoing_table">
+  <thead>
+    <td>Number</td>
+    <td>Deceased Name/Deceased Id</td>
+    <td>Date/Time</td>
+    <td>Relative Name/Relative Id</td>
+    <td>Status</td>
+  </thead>
+  <tbody>
+    <td>Princess Precious</td>
+    <td>Pat001</td>
+    <td>22-02-2024</td>
+    <td>2:30PM</td>
+    <td>Medical Test</td>
+    <td>
+      <button onClick="show_radiology_input()">Accept</button>
+      <button>Reject</button>
+    </td>
+  </tbody>
+  <tbody>
+   
+</table>
+</div>
+<div class="pending_transaction_list_pagination">
+        <div class="flexs">
+            <p id="prev_outgoing">Prev List</p>
+            <p id="next_outgoing">Next List</p>
+        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 
 <script src="js/sections.js"></script>
     <script src="js/index.js"></script>
