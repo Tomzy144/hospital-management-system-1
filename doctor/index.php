@@ -186,10 +186,12 @@ $result = $conn->query($sql);
     </thead>
     <tbody>
         <?php
+        $appointmentCount = 0; // Initialize appointment count
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<tr id=\"table_row\">";
-                echo "<td id=\"sn\">" . $row["sn"] . "</td>";
+                $appointmentCount++; // Increment appointment count for each row
+                echo "<tr>";
+                echo "<td id=\"appointment_count\">" . $appointmentCount . "</td>"; // Display appointment count
                 echo "<td>" . $row["patient_passport"] . "</td>";
                 echo "<td>" . $row["patient_name"] . "</td>";
                 echo "<td>" . $row["patient_id"] . "</td>";
@@ -210,6 +212,8 @@ $result = $conn->query($sql);
         ?>
     </tbody>
 </table>
+
+
 
 <div class="pending_appoitment_list_pagination">
         <div class="flexs">

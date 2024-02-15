@@ -75,17 +75,17 @@ next_appoitmentTable.addEventListener('click', ()=>{
 
 
 
-function appoitmentCountin() {
+function appointmentCountin() {
     // Counting the number of appointments based on the number of rows in the table
     const count = $('#appointment_table tbody tr').length;
-    $('#sn').html(count); // Setting the count as the HTML content of the element with id 'sn'
+    $('#appointment_count').html(count); // Setting the count as the HTML content of the element with id 'appointment_count'
 }
 
 // Assuming appointments are already listed in the table, so no need for additional numbering function
 
 $(document).ready(function() {
     // Call the appointment counting function when the document is ready
-    appoitmentCountin();
+    appointmentCountin();
 });
 
 
