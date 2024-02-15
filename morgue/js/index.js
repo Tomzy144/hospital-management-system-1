@@ -200,5 +200,90 @@ document.addEventListener("DOMContentLoaded",()=>{
         }
         updateApprovedTransaction()
     })
-    })
+    });
+
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+        const outgoingAppoitmet = [
+            {number:1, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:2, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:3, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:4, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:5, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:6, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:7, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:8, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:9, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:10, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:11, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:12, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:13, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:14, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:15, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:16, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:18, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:19, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}}
     
+        ];
+    
+        let currentIndexOut = 0;
+        const outgoing_table = document.querySelector("#outgoing_table tbody");
+        const prev_outgoing = document.querySelector("#prev_outgoing");
+        const next_outgoing = document.querySelector("#next_outgoing");
+        
+        const updateOutgoingTable = ()=>{
+            //set table to blank;
+            outgoing_table.innerHTML = ""
+    
+            const endIndexOut  = Math.min(currentIndexOut + 8, outgoingAppoitmet.length);
+            for(let i = currentIndexOut; i < endIndexOut; i++) {
+                const row = outgoing_table.insertRow();
+                let cell0 = row.insertCell(0);
+                let cell1 = row.insertCell(1);
+                let cell2 = row.insertCell(2);
+                let cell3 = row.insertCell(3);
+                let cell4 = row.insertCell(4);
+                let cell5 =row.insertCell(5);
+        
+    
+                cell0.innerHTML = `${outgoingAppoitmet[i].number}`;
+                cell1.innerHTML = `${outgoingAppoitmet[i].patient_name_id.name} ${outgoingAppoitmet[i].patient_name_id.id}`;
+                cell2.innerHTML = `${outgoingAppoitmet[i].date_time.date} ${outgoingAppoitmet[i].date_time.time}`;
+                cell3.innerHTML = `${outgoingAppoitmet[i].relative_name_id.name} ${outgoingAppoitmet[i].relative_name_id.id}`;
+                cell4.innerHTML = "Successful"
+            //     //accept button
+            //     const accept_appoitment_button = document.createElement('button');
+            //     accept_appoitment_button.id = "accept_button";
+            //     accept_appoitment_button.innerHTML = "Accept" ;
+            //     // accept_appoitment_button.onclick = show_radiology_input;
+            //    cell4.appendChild(accept_appoitment_button);
+            //     //reject button
+            //     const reject_appoitment_button = document.createElement('button');
+            //     reject_appoitment_button.id = "reject_button";
+            //     reject_appoitment_button.innerHTML = "Reject";
+            //     cell5.appendChild(reject_appoitment_button);
+            }
+        }
+    updateOutgoingTable()
+    
+    prev_outgoing.addEventListener("click", ()=>{
+            currentIndexOut = Math.max(currentIndexOut - 8, 0);
+            updateOutgoingTable();
+        })
+        next_outgoing.addEventListener("click", ()=>{
+            currentIndexOut += 4
+            if(currentIndexOut >= outgoingAppoitmet.length){
+                currentIndexOut = 0;
+            }
+            updateOutgoingTable()
+        })
+    })
+
+
+    //SHOW OUTGOING LIST
+    const outgoingList = ()=>{
+        document.querySelector(".outgoing_list_section").classList.remove("hide")
+        document.querySelector(".admission_form_container").classList.add("hide");
+        document.querySelector(".appoitment_section").style.display = "none";
+    }
