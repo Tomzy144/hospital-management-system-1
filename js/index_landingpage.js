@@ -593,7 +593,10 @@ const close_pharmacist_login_form = function(){
 //     let url="Frontend/surgical_suite_management/index.php"
 //     window.parent(location =(url))
 // }
-
+function open_pharmacy_login_form() {
+let url = 'pharmacy/index.php';
+window.parent(location =(url));
+};
 //Morgue Manager Login
 const open_morgue_manager_login_form = function() {
     const morgue_manager_login = document.querySelector(".morgue_manager-login");
