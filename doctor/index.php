@@ -169,47 +169,44 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 $sql = "SELECT * FROM appointment_tab WHERE doctor_id ='$s_doctor_id'";
 $result = $conn->query($sql);
 ?>
-<table id="appoitment_table">
-
+<table id="appointment_table">
     <thead>
         <tr>
             <td>#</td>
             <td>PASSPORT</td>
-            <td>Patient Name</td> 
+            <td>Patient Name</td>
             <td>Patient ID</td>
             <td>Date</td>
-            <td> Time</td>
+            <td>Time</td>
             <td>Request Type</td>
             <td>Accept/Reject</td>
         </tr>
     </thead>
-
-   <tbody>
-    <?php
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["sn"] . "</td>";
-            echo "<td>" . $row["patient_passport"]."passport" . "</td>";
-            echo "<td>" . $row["patient_name"] . "</td>";
-            echo "<td>" . $row["patient_id"] . "</td>";
-            echo "<td>" . $row["appointment_date"] . "</td>";
-            echo "<td>" . $row["time"] . "</td>";
-            echo "<td>" . $row["reason"] . "</td>";
-            echo "<td>";
-            // Pass $row["patient_id"] to the JavaScript functions
-            ?>
-            <button class="accept_button" type="button" data-patient-id="<?php echo $row["patient_id"]; ?>" onClick="accept()">Accept</button>
-            <button class="button_reject" data-patient-id="<?php echo $row["patient_id"]; ?>">Reject</button>
-            <?php
-            echo "</td>";
-            echo "</tr>";
+    <tbody>
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row["sn"] . "</td>";
+                echo "<td>" . $row["patient_passport"] . "passport" . "</td>";
+                echo "<td>" . $row["patient_name"] . "</td>";
+                echo "<td>" . $row["patient_id"] . "</td>";
+                echo "<td>" . $row["appointment_date"] . "</td>";
+                echo "<td>" . $row["time"] . "</td>";
+                echo "<td>" . $row["reason"] . "</td>";
+                echo "<td>";
+                ?>
+                <button class="accept_button" type="button" data-patient-id="<?php echo $row["patient_id"]; ?>" onClick="accept()">Accept</button>
+                <button class="button_reject" data-patient-id="<?php echo $row["patient_id"]; ?>">Reject</button>
+                <?php
+                echo "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>No records found</td></tr>";
         }
-    } else {
-        echo "<tr><td colspan='5'>No records found</td></tr>";
-    }
-    ?>
-</tbody>
+        ?>
+    </tbody>
 </table>
 <div class="pending_appoitment_list_pagination">
         <div class="flexs">
@@ -218,33 +215,29 @@ $result = $conn->query($sql);
         </div>
 </div>
 
-
 <script>
-    // Use event listeners to handle button clicks
-        function accept() {
-        document.querySelectorAll('.accept-btn').forEach(function(button) {
-            var patientId = button.getAttribute('data-patient-id');
-            // display_input();
-            loadPatientProfile(patientId);
-            
-            const hideHeadSec = document.querySelector(".head-sec");
-            hideHeadSec.style.display = "none";
-            document.querySelector("#back-arrow").style.display = "block";
-        });
+    function accept() {
+        var patientId = this.getAttribute('data-patient-id');
+        loadPatientProfile(patientId);
+        alert("Accepted patient with ID: " + patientId);
+        const hideHeadSec = document.querySelector(".head-sec");
+        hideHeadSec.style.display = "none";
+        document.querySelector("#back-arrow").style.display = "block";
     }
 
-
-   
-        function reject() {
-        document.querySelectorAll('.reject-btn').forEach(function(button) {
-            var patientId = button.getAttribute('data-patient-id');
-            delete_input(patientId);
-        });
+    function reject() {
+        var patientId = this.getAttribute('data-patient-id');
+        delete_input(patientId);
+        alert("Rejected patient with ID: " + patientId);
     }
 
+    document.querySelectorAll('.accept_button').forEach(function(button) {
+        button.addEventListener('click', accept);
+    });
 
-
-
+    document.querySelectorAll('.button_reject').forEach(function(button) {
+        button.addEventListener('click', reject);
+    });
 </script>
 
       
