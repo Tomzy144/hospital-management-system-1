@@ -1,9 +1,10 @@
 
 //PROFILE IMAGE
-const profile_container  =  document.querySelector(".profile_account");
-const click_icon_for_profile = ()=>{
+
+function click_icon_for_profile(){
+    const profile_container  =  document.querySelector(".profile_account");
     profile_container.classList.toggle("hide");
-};
+}
 
 document.addEventListener("DOMContentLoaded", ()=>{
 const pending_appoitment = [
@@ -16,11 +17,8 @@ const pending_appoitment = [
     {number:"1", imageUrl:'../images/0ba77c2878729044df4c28ba1830bbad.jpg',patients_name_id: {name:"Precious Bassey", id:"PAT0002"}, date_time:{date:"22-09-2023", time:"00:00:00"}, request_type:"Checkup"},
     {number:"1", imageUrl:'../images/0ba77c2878729044df4c28ba1830bbad.jpg',patients_name_id: {name:"Precious Bassey", id:"PAT0002"}, date_time:{date:"22-09-2023", time:"00:00:00"}, request_type:"Checkup"},
 
-   
-
-
-
 ]
+
 let currentIndex = 0;
 const appoitmentTable = document.querySelector("#appoitment_table tbody");
 const next_appoitmentTable = document.querySelector("#next");
