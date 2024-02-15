@@ -215,12 +215,12 @@ $result = $conn->query($sql);
 
 
 
-<div class="pending_appoitment_list_pagination">
+<!-- <div class="pending_appoitment_list_pagination">
         <div class="flexs">
             <p id="prev">Prev List</p>
             <p id="next">Next List</p>
         </div>
-</div>
+</div> -->
 
 <script>
     function accept() {

@@ -183,6 +183,13 @@ document.addEventListener("DOMContentLoaded",()=>{
             dropdown.appendChild(closeIcon);
             dropdown.appendChild(list1);
             dropdown.appendChild(list2);
+            const beds = document.createElement("select");
+            beds.className = "beds";
+            beds.innerHTML = "Beds"
+            list1.appendChild(beds);
+            const listBed1 = document.createElement("option");
+            listBed1.innerHTML = "Bed 1"
+            beds.appendChild(listBed1)
             icon.appendChild(dropdown);
            ` ${cell3.appendChild(icon)}`
             

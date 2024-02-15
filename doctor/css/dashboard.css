@@ -252,17 +252,18 @@ body{
     cursor: pointer;
     margin: 1rem 0;
 }
-.container{
+.container {
     width: 70%;
     margin: 0 auto;
 }
 
-.contents{
-    width:100%;
+.contents {
+    width: 100%;
     box-shadow: rgba(232, 223, 223, 0.35) 0px 5px 15px;
     margin: 5rem 0 0 0;
 }
-.head-sec{
+
+.head-sec {
     display: flex;
     width: 100%;
     height: 50px;
@@ -273,14 +274,16 @@ body{
     justify-content: space-between;
 }
 
-.head-sec span{
+.head-sec span {
     font-size: 20px;
 }
-.appoitment_input_control{
+
+.appoitment_input_control {
     position: relative;
     width: 400px;
 }
-.appoitment_input{
+
+.appoitment_input {
     padding: 0.5rem 0.3rem;
     margin-right: 1rem;
     border: none;
@@ -288,51 +291,50 @@ body{
     outline: none;
     width: 100%;
 }
-.appoitment_input input{
-    background-color: rgb(0, 0, 0);;
+
+input:focus {
+    border: 1px solid rgb(42, 87, 215);
 }
-input:focus{
-    border:1px solid rgb(42, 87, 215) 
-}
-#search-icon{
+
+#search-icon {
     position: absolute;
     top: 32%;
     right: 15%;
     color: #000000;
     cursor: pointer;
 }
-.body_sec{
+
+.body_sec {
     width: 100%;
     background-color: #fff;
     box-shadow: rgba(232, 223, 223, 0.35) 0px 5px 15px;
-    height: auto;
+    height: 500px; /* Set a fixed height for the container */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
-table{
+
+table {
     width: 100%;
     border-collapse: collapse;
-    overflow-y: hidden;
 }
-img{
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-}
- table thead td{
-    background-color: rgb(42, 87, 215);;
+
+table thead td {
+    background-color: rgb(42, 87, 215);
     padding: 0.5em;
     color: #fff;
     font-size: 18px;
 }
- table tbody{
+
+table tbody {
     margin: 1rem 0;
 }
- table tbody td{
-    background-color: rgb(255, 255, 255);;
+
+table tbody td {
+    background-color: rgb(255, 255, 255);
     padding: 0.5em;
     font-size: 18px;
-    /* margin: 1rem 0; */
     color: #000000;
 }
+
  .accept_button{
     padding: 0.5rem 0.5rem;
     background-color: rgb(42, 87, 215);

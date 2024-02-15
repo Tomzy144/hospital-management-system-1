@@ -48,12 +48,6 @@
    
 </table>
 </div>
-<div class="pending_transaction_list_pagination">
-        <div class="flexs">
-            <p id="prev_appoitment">Prev List</p>
-            <p id="next_appoitment">Next List</p>
-        </div>
-</div>
 </div>
 </div>
 
@@ -78,12 +72,6 @@
   </table>
 </div>
 
-<div class="radiology_pagination">
-        <div class="flexs">
-            <p id="prev_approved_appoitment">Prev List</p>
-            <p id="next_approved_appoitment">Next List</p>
-        </div>
-</div>
 </div>
 </div>
 <div class="admission_form_container hide">
@@ -271,12 +259,6 @@
   <tbody>
    
 </table>
-</div>
-<div class="pending_transaction_list_pagination">
-        <div class="flexs">
-            <p id="prev_outgoing">Prev List</p>
-            <p id="next_outgoing">Next List</p>
-        </div>
 </div>
 </div>
 </div>
