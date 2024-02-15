@@ -64,11 +64,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http: //www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<?php include 'meta.php'?>
-<title><?php echo $thename?> | Health Records and Information Dashboard</title>
-<meta name="keywords" content="Admin - <?php echo $thename?>" />
-<meta name="description" content="Administrative Login <?php echo $thename?>"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><?php echo $thename?> | Health Records and Information Dashboard</title>
+    <meta name="keywords" content="Admin - <?php echo $thename?>" />
+    <meta name="description" content="Administrative Login <?php echo $thename?>"/>
+    <?php include 'meta.php'?>
 </head>
 
 <body onload="getWards()">
@@ -97,13 +97,13 @@
           </div>
           <div class="profile">
             <div class="profile_account hide">
-            <img id="image_profile_account" src="../Images/imaculater.jpg" alt="">
+            <img id="image_profile_account" src="<?php echo $website_url ?>/Images/imaculater.jpg" alt="">
             <h4>Immaculater Odu</h4>
             <button class="btn_submit">Upload Image</button>
             <span>change password</span>
         </div>
             <div class="image">
-            <img src="../Images/imaculater.jpg" alt="">
+            <img src="<?php echo $website_url ?>/Images/imaculater.jpg" alt="">
             <div class="active"></div>
             </div>
         </img>  
@@ -114,7 +114,7 @@
     </div>
         <div class="sidebar">
                <div class="sidebar_contents" onClick="homepage_section()">
-                <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
+                <img width="80px" height="80px" src="<?php echo $website_url ?>/Images/Mount Tech Logo.jpg" alt="logo">
                </div>
             <div class="sidebar_icons">
                 <i class="fa fa-envelope" id="icon"></i>
@@ -238,7 +238,7 @@
                 </tbody>
             <tbody>
                     <td>Doc. Esther Udo</td>
-                    <td>Doc.0001 <img src=../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt=""></img></td>
+                    <td>Doc.0001 <img src="<?php echo $website_url ?>/Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt=""></img></td>
                     <td>Gift John</td>
                     <td>Doc.002</td>
                     <td>12-02-2023</td>
@@ -743,10 +743,8 @@
         </div>
     </div>
     </div>
-    <!-- <script src="receptionist.js"></script> -->
-    <script>
-       
-    </script>
+   
+    
 </body>
 </html>
 
