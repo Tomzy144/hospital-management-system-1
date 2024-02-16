@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded",()=>{
                     // });
                     // ul.appendChild(closeIcon);
 
-                                      //TRANSFER TO THREATER
+                                      //TRANSFER TO THREATERgi
                const list4 = document.createElement("li");
                 list4.textContent = "Transfer to threatre"
                 list4.onclick = show_threatre_container
