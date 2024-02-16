@@ -51,7 +51,7 @@
                 const accept_appoitment_button = document.createElement('button');
                 accept_appoitment_button.id = "accept_button";
                 accept_appoitment_button.innerHTML = "Accept" ;
-                // accept_appoitment_button.onclick = show_radiology_input;
+                accept_appoitment_button.onclick = showPrescriptionForm;
                cell6.appendChild(accept_appoitment_button);
                 //reject button
                 const reject_appoitment_button = document.createElement('button');
@@ -78,18 +78,19 @@
     
     document.addEventListener("DOMContentLoaded",()=>{
         const approved_appoitment = [
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:2, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:3, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:4, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:5, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:6, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-            {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
+            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
         ];
         let currentIndexApproved = 0;
         const approved_table = document.querySelector("#approved_table tbody");
@@ -109,6 +110,7 @@
                 cell0.innerHTML = `${approved_appoitment[n].number}`    
                 cell1.innerHTML = `${ approved_appoitment[n].patient_name}`;
                 cell2.innerHTML = `${ approved_appoitment[n].patient_id}`;
+                cell3.innerHTML = `${ approved_appoitment[n].drug_purchased}`;
                 
             }
         }
@@ -127,5 +129,11 @@
         });
 
         function showPrescriptionForm(){
+            document.querySelector(".prescription_form_section").classList.remove("hide")
+            document.querySelector(".appoitment_section").style.display = "none";
+        }   
 
-        }
+        function showAppoitmentSection(){
+            document.querySelector(".prescription_form_section").classList.add("hide")
+            document.querySelector(".appoitment_section").style.display = "flex";
+        }   

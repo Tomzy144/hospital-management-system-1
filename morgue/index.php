@@ -27,22 +27,16 @@
 <table id="appoitment_table">
   <thead>
     <td>Number</td>
-    <td>Patient Name/Patient Id</td>
-    <td>Date/Time</td>
+    <td>Deceased Name</td>
+    <td>Deceased Id</td>
+    <td>Date</td>
+    <td>Time</td>
     <td>Request Type</td>
     <td>Accept</td>
     <td>Reject</td>
   </thead>
   <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button onClick="show_radiology_input()">Accept</button>
-      <button>Reject</button>
-    </td>
+    
   </tbody>
   <tbody>
    
@@ -63,8 +57,8 @@
 <table id="approved_table">
   <thead>
     <td>Number</td>
-    <td>Patient Name</td>
-    <td>Patient Id</td>
+    <td>Deceased Name</td>
+    <td>Deceased Id</td>
   </thead>
   <tbody>
 

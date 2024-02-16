@@ -48,6 +48,7 @@
                </div>
             <div class="sidebar_icons">
             <i class="bi bi-chat-dots-fill" id="icon"></i>
+            <i class="bi bi-calendar-date-fill" id="icon" onClick="showAppoitmentSection()"></i>
                 <i class="bi bi-box-arrow-right" id="icon"></i>
             </div>
         </div>
@@ -98,12 +99,204 @@
     <td>Number</td>
     <td>Patient Name</td>
     <td>Patient Id</td>
+    <td>Drug Purchased</td>
   </thead>
   <tbody>
 
   </tbody>
   </table>
 </div>
+</div>
+</div>
+<div class="prescription_form_section hide">
+    <div class="prescription_section">
+      <span>Drug Prescription</span>
+      <div class="form_container">
+        <form action="">
+          <div class="form_section1">
+          <div class="form_control">
+            <label for="">Patient Name</label>
+            <input type="text" name="" id="">
+          </div>
+          <div class="form_control">
+            <label for="">Patient Id</label>
+            <input type="text" name="" id="">
+          </div>
+          <div class="form_control">
+            <label for="">Select Drugs</label>
+            <input type="text" name="" id="" placeholder="Paracetamol">
+          </div>
+          <div class="form_control">
+            <label for="">Strength</label>
+            <input type="text" name="" id="">
+          </div>
+          <div class="form_control">
+            <label for="">Dose</label>
+            <input type="text" name="" id="">
+          </div>
+          <div class="form_control">
+            <label for="">Quantity</label>
+            <input type="text" name="" id="">
+          </div>
+          <!-- <i class="bi bi-plus-square-dotted" id="add_icon"></i> -->
+          <!-- <i class="bi bi-plus-square-fill"  id="add_icon"></i> -->
+          </div>
+          <button>Book</button>
+        </form>
+        </div>
+    </div>
+    <div class="available_stocks_section">
+      
+<div class="available_stocks">
+<div class="head_sec">
+  <span>Available Stocks</span>
+  <div class="appoitment_input_control">
+  <i class="fa fa-search" id="search_icon"></i>
+      <input type="text" placeholder="Search here" class="appoitment_input">
+  </div>
+</div>
+<div class="table_container">
+<table>
+  <thead>
+    <td>S/N</td>
+    <td>Name</td>
+    <td>Category</td>
+    <td>Description</td>
+    <td>Availability</td>
+    <td>Status</td>
+  </thead>
+  <tbody>
+  <td>1</td>
+  <td>Paracetamol</td>
+  <td>Tablet</td>
+  <td>PainKiller</td>
+  <td>30 Packet</td>
+  <td>Available</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Flagi</td>
+  <td>syrup </td>
+  <td>Cough</td>
+  <td>12 bottles</td>
+  <td>Available</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Actal</td>
+  <td>Tablet</td>
+  <td>Mental Reducer</td>
+  <td>1 packed</td>
+  <td>Low</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Naproxen</td>
+  <td>Syrup</td>
+  <td>Wound Healer</td>
+  <td>12 bottles</td>
+  <td>Low</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Paracetamol</td>
+  <td>Tablet</td>
+  <td>PainKiller</td>
+  <td>30 Packet</td>
+  <td>Available</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Flagi</td>
+  <td>syrup </td>
+  <td>Cough</td>
+  <td>12 bottles</td>
+  <td>Available</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Actal</td>
+  <td>Tablet</td>
+  <td>Mental Reducer</td>
+  <td>1 packed</td>
+  <td>Low</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Naproxen</td>
+  <td>Syrup</td>
+  <td>Wound Healer</td>
+  <td>12 bottles</td>
+  <td>Low</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Paracetamol</td>
+  <td>Tablet</td>
+  <td>PainKiller</td>
+  <td>30 Packet</td>
+  <td>Available</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Flagi</td>
+  <td>syrup </td>
+  <td>Cough</td>
+  <td>12 bottles</td>
+  <td>Available</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Actal</td>
+  <td>Tablet</td>
+  <td>Mental Reducer</td>
+  <td>0</td>
+  <td>Out of stock</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Naproxen</td>
+  <td>Syrup</td>
+  <td>Wound Healer</td>
+  <td>12 bottles</td>
+  <td>Low</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Paracetamol</td>
+  <td>Tablet</td>
+  <td>PainKiller</td>
+  <td>30 Packet</td>
+  <td>Available</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Flagi</td>
+  <td>syrup </td>
+  <td>Cough</td>
+  <td>12 bottles</td>
+  <td>Available</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Actal</td>
+  <td>Tablet</td>
+  <td>Mental Reducer</td>
+  <td>0</td>
+  <td>Out of stock</td>
+  </tbody>
+  <tbody>
+  <td>1</td>
+  <td>Naproxen</td>
+  <td>Syrup</td>
+  <td>Wound Healer</td>
+  <td>12 bottles</td>
+  <td>Low</td>
+  </tbody>
+  </table>
+</div>
+</div>
+    </div>
 </div>
 </div>
         <script src="js/index.js"></script>

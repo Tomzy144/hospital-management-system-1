@@ -501,6 +501,59 @@ body{
     background: none;
     border: 1px solid  rgb(255, 0, 0);
 }
+.prescription_form_section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.prescription_section{
+    width: 50%;
+    box-shadow: rgba(218, 216, 216, 0.35) 0px 5px 15px;
+    height: 100%;
+    margin:5em 0 0 5em;
+    padding: 1em 1em;
+}
+.prescription_section .form_container{
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+}
+.prescription_section .form_container .form_section1{
+    width: 100%;
+    /* height: 130px; */
+    display: flex;
+    /* overflow: auto; */
+    flex-wrap: wrap;
+    padding: 1em 0;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #dbd7d7;
+}
+.prescription_section .form_container .form_section1 #add_icon{
+    position: absolute;
+    right: 2%;
+    font-size: 23px;
+    cursor: pointer;
+}
+.prescription_section .form_container .form_section1 .form_control{
+ display: flex;
+ flex-direction: column;
+ width: 190px;
+ margin: 0.4em 0.4em;
+}
+
+.available_stocks_section{
+    width: 48%;
+    margin: 5em 0 0 1em;
+    box-shadow: rgba(215, 215, 215, 0.35) 0px 5px 15px;
+}
+.available_stocks_section .table_container{
+        width: 100%;
+        background-color: #fff;
+        /* box-shadow: rgba(232, 223, 223, 0.35) 0px 5px 15px; */
+        height: 400px; /* Set a fixed height for the container */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
 .hide{
     display: none;
 }

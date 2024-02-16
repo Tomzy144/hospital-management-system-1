@@ -61,36 +61,27 @@ arr_no.addEventListener("change", arrMessage);
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const pending_appoitment = [
-        {number:1, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:2, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:3, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:4, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:5, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:6, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:7, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:8, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:9, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:10, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:11, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:12, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:13, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:14, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:15, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:16, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:18, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:19, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
+        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
 
     ];
 
@@ -112,23 +103,27 @@ document.addEventListener("DOMContentLoaded", ()=>{
             let cell3 = row.insertCell(3);
             let cell4 = row.insertCell(4);
             let cell5 =row.insertCell(5);
+            let cell6 =row.insertCell(6);
+            let cell7 =row.insertCell(7);
     
 
             cell0.innerHTML = `${pending_appoitment[i].number}`;
-            cell1.innerHTML = `${pending_appoitment[i].patient_name_id.name} ${pending_appoitment[i].patient_name_id.id}`;
-            cell2.innerHTML = `${pending_appoitment[i].date_time.date} ${pending_appoitment[i].date_time.time}`;
-            cell3.innerHTML = `${pending_appoitment[i].request_type}`;
+            cell1.innerHTML = `${pending_appoitment[i].deceased_name}`;
+            cell2.innerHTML = `${pending_appoitment[i].deceased_id}`;
+            cell3.innerHTML = `${pending_appoitment[i].date}`;
+            cell4.innerHTML = `${pending_appoitment[i].time}`;
+            cell5.innerHTML = `${pending_appoitment[i].request_type}`;
             //accept button
             const accept_appoitment_button = document.createElement('button');
             accept_appoitment_button.id = "accept_button";
             accept_appoitment_button.innerHTML = "Accept" ;
-            // accept_appoitment_button.onclick = show_radiology_input;
-           cell4.appendChild(accept_appoitment_button);
+            accept_appoitment_button.onclick = open_admission_form_section;
+           cell6.appendChild(accept_appoitment_button);
             //reject button
             const reject_appoitment_button = document.createElement('button');
             reject_appoitment_button.id = "reject_button";
             reject_appoitment_button.innerHTML = "Reject";
-            cell5.appendChild(reject_appoitment_button);
+            cell7.appendChild(reject_appoitment_button);
         }
     }
 updateAppoitmentTable()
