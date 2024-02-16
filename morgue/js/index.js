@@ -1,9 +1,21 @@
 "use strict";
+      //PROFILE IMAGE
+      function click_icon_for_profile (){
+        const profile_container  =  document.querySelector(".profile_account");
+        profile_container.classList.toggle("hide");
+      };
 
-const open_admission_form_section = ()=>{
+function open_admission_form_section (){
     document.querySelector(".admission_form_container").classList.remove("hide");
     document.querySelector(".appoitment_section").style.display = "none";
+    document.querySelector(".outgoing_list_section").classList.add("hide")
 }
+function open_incoming_deceased_section (){
+    document.querySelector(".admission_form_container").classList.add("hide");
+    document.querySelector(".appoitment_section").style.display = "flex";
+    document.querySelector(".outgoing_list_section").classList.add("hide")
+}
+
 const autopsy_yes =   document.querySelector("#autopsy_yes")
 const autopsy_no =   document.querySelector("#autopsy_no")
 const checkAutopsy = ()=>{
@@ -67,7 +79,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
         {number:16, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
         {number:18, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
         {number:19, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
-        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"}
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
+        {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, request_type:"Medical test"},
 
     ];
 
@@ -80,7 +103,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         //set table to blank;
         appoitment_table.innerHTML = ""
 
-        const endIndex  = Math.min(currentIndex + 8, pending_appoitment.length);
+        const endIndex  = Math.min(currentIndex + 12, pending_appoitment.length);
         for(let i = currentIndex; i < endIndex; i++) {
             const row = appoitment_table.insertRow();
             let cell0 = row.insertCell(0);
@@ -111,11 +134,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
 updateAppoitmentTable()
 
     prev_appoitment.addEventListener("click", ()=>{
-        currentIndex = Math.max(currentIndex - 8, 0);
+        currentIndex = Math.max(currentIndex - 12, 0);
         updateAppoitmentTable();
     })
     next_appoitment.addEventListener("click", ()=>{
-        currentIndex += 4
+        currentIndex += 8
         if(currentIndex >= pending_appoitment.length){
             currentIndex = 0;
         }
@@ -133,6 +156,11 @@ document.addEventListener("DOMContentLoaded",()=>{
         {number:5, patient_name: "John Smith", patient_id:"PAT0001"},
         {number:6, patient_name: "John Smith", patient_id:"PAT0001"},
         {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
+        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
+        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
+        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
+        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
+        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
     ];
     let currentIndexApproved = 0;
     const approved_table = document.querySelector("#approved_table tbody");
@@ -142,7 +170,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     const updateApprovedTransaction = ()=>{
         //set table to blank
         approved_table.innerHTML = '';
-        const endIndexApproved = Math.min(currentIndexApproved + 4, approved_appoitment.length)
+        const endIndexApproved = Math.min(currentIndexApproved + 9, approved_appoitment.length)
         for(let n = currentIndexApproved; n < endIndexApproved; n++) {
             const row = approved_table.insertRow();
             let cell0 = row.insertCell(0);
@@ -230,7 +258,12 @@ document.addEventListener("DOMContentLoaded",()=>{
             {number:16, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
             {number:18, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
             {number:19, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}}
+            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
+            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
     
         ];
     
@@ -243,7 +276,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             //set table to blank;
             outgoing_table.innerHTML = ""
     
-            const endIndexOut  = Math.min(currentIndexOut + 8, outgoingAppoitmet.length);
+            const endIndexOut  = Math.min(currentIndexOut + 15, outgoingAppoitmet.length);
             for(let i = currentIndexOut; i < endIndexOut; i++) {
                 const row = outgoing_table.insertRow();
                 let cell0 = row.insertCell(0);

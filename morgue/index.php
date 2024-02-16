@@ -226,14 +226,12 @@
         </div>
 </div>
 <div class="outgoing_list_section hide">
-<div class="appoitment_section">
-<div class="appiontment_booking_container">
-<div class="appiontment">
+<div class="outgoing_list_section_container">
 <div class="head_sec">
   <span>Outgoing Deceassed</span>
-  <div class="appoitment_input_control">
+  <div class="outgoing_list_input_control">
   <i class="fa fa-search" id="search_icon"></i>
-      <input type="text" placeholder="Search here" class="appoitment_input">
+      <input type="text" placeholder="Search here" class="outgoing_list_input">
   </div>
 </div>
 <div class="table_container">
@@ -259,8 +257,6 @@
   <tbody>
    
 </table>
-</div>
-</div>
 </div>
 </div>
 </div>
