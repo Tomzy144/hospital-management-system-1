@@ -37,10 +37,11 @@ const patient_list = ()=>{
 }
 
 //PROFILE IMAGE
-const profile_container  =  document.querySelector(".profile_account");
-const click_icon_for_profile = ()=>{
+
+function click_icon_for_profile (){
+  const profile_container  =  document.querySelector(".profile_account");
 profile_container.classList.toggle("hide");
-};
+}
 
 
 
@@ -525,7 +526,7 @@ function stopCamera() {
   
   
   //BOOK AN APPOINTMENT
-  const appoitment_booking = ()=>{
+  function appoitment_booking() {
       const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
       form_doctor_roles_name.classList.remove("hide");
   
