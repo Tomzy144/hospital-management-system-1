@@ -15,7 +15,10 @@
 <meta property="og:site_name" content="<?php echo $thename?>">
 <meta property="og:url" content="<?php echo $website_address?>" />
 
-
+<script src="<?php echo $website_url?>/Health_Records_and_Information/js/jquery-v3.6.1.min.js"></script>
+<script src="<?php echo $website_url?>/Health_Records_and_Information/js/aos.js"></script> 
+<script src="<?php echo $website_url?>/js/scripts.js"></script> 
+<script src="<?php echo $website_url?>/Health_Records_and_Information/js/receptionist.js"></script>
 
 
 
