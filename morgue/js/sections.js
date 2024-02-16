@@ -11,7 +11,7 @@ const AllSection = function(section,show_container ){
       </div>
       <div class="section2">
           <div class="icons">
-          <i class="bi bi-person-rolodex" id="icon">
+          <i class="bi bi-person-fill" id="icon">
           <div class="notification1">9</div>
         </i>
         <i class="bi bi-bell-fill" id="icon">
@@ -41,6 +41,7 @@ const AllSection = function(section,show_container ){
              </div>
           <div class="sidebar_icons">
           <i class="bi bi-chat-dots-fill" id="icon"></i>
+          <i class="bi bi-person-fill-exclamation"  id="icon" onClick="open_incoming_deceased_section()"></i>
           <i class="bi bi-person" id="icon" onClick="open_admission_form_section()"></i>
           <i class="bi bi-person-check-fill" id="icon" onClick="outgoingList()"></i>
               <i class=" bi-box-arrow-right" id="icon"></i
@@ -49,8 +50,3 @@ const AllSection = function(section,show_container ){
     `
 
     AllSection('navbar', Navbar);
-       //PROFILE IMAGE
-       let profile_container  =  document.querySelector(".profile_account");
-       const click_icon_for_profile = ()=>{
-           profile_container.classList.toggle("hide");
-       };

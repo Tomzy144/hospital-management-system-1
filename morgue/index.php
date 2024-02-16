@@ -48,12 +48,6 @@
    
 </table>
 </div>
-<div class="pending_transaction_list_pagination">
-        <div class="flexs">
-            <p id="prev_appoitment">Prev List</p>
-            <p id="next_appoitment">Next List</p>
-        </div>
-</div>
 </div>
 </div>
 
@@ -78,12 +72,6 @@
   </table>
 </div>
 
-<div class="radiology_pagination">
-        <div class="flexs">
-            <p id="prev_approved_appoitment">Prev List</p>
-            <p id="next_approved_appoitment">Next List</p>
-        </div>
-</div>
 </div>
 </div>
 <div class="admission_form_container hide">
@@ -238,14 +226,12 @@
         </div>
 </div>
 <div class="outgoing_list_section hide">
-<div class="appoitment_section">
-<div class="appiontment_booking_container">
-<div class="appiontment">
+<div class="outgoing_list_section_container">
 <div class="head_sec">
   <span>Outgoing Deceassed</span>
-  <div class="appoitment_input_control">
+  <div class="outgoing_list_input_control">
   <i class="fa fa-search" id="search_icon"></i>
-      <input type="text" placeholder="Search here" class="appoitment_input">
+      <input type="text" placeholder="Search here" class="outgoing_list_input">
   </div>
 </div>
 <div class="table_container">
@@ -271,14 +257,6 @@
   <tbody>
    
 </table>
-</div>
-<div class="pending_transaction_list_pagination">
-        <div class="flexs">
-            <p id="prev_outgoing">Prev List</p>
-            <p id="next_outgoing">Next List</p>
-        </div>
-</div>
-</div>
 </div>
 </div>
 </div>
