@@ -40,7 +40,7 @@
             </div>
         </img>  
             <span>Doctor Kingsley Etete Effiong</span>
-            <i class="fa fa-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
+            <i class="bi-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
                 <img width="80px" height="80px" src="<?php echo $website_url?>/Images/Mount Tech Logo.jpg" alt="logo">
                </div>
             <div class="sidebar_icons">
-                <i class="bi bi-envelope" id="icon"></i>
+                <i class="bi-envelope" id="icon"></i>
                 <i class="bi-hospital-o" id="icon"onClick="click_appoitment_button()"></i>
                 <i class="bi-sign-out" id="icon"></i>
             </div>
