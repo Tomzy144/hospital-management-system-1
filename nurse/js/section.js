@@ -12,10 +12,10 @@ const Navbar =`
 </div>
 <div class="section2">
     <div class="icons">
-  <i class="fa fa-user" id="icon">
+  <i class="bi bi-person-fill" id="icon">
     <div class="notification1">9</div>
   </i>
-  <i class="fa fa-bell" id="icon">
+  <i class="bi bi-bell-fill" id="icon">
   <div class="notification2">15</div>
   </i>
   </div>
@@ -32,7 +32,7 @@ const Navbar =`
     </div>
 </img>  
     <span>Esther John Ronald</span>
-    <i class="fa fa-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
+    <i class="bi bi-caret-down-fill" id="icon-drop" onClick="click_icon_for_profile()"></i>
   </div>
 </div>
 </div>
@@ -41,10 +41,10 @@ const Navbar =`
         <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
        </div>
     <div class="sidebar_icons">
-        <i class="fa fa-envelope" id="icon"></i>
-        <i class="fa fa-edit (alias)" id="icon" onClick="click_vital_button()" ></i>
-        <i class="fa fa-h-square" id="icon" onClick="show_profile_list()" ></i>
-        <i class="fa fa-sign-out" id="icon"></i>
+        <i class="bi bi-chat-dots-fill icons"></i>
+        <i class="bi bi-calendar-date-fill icons"></i>
+        <i class="bi bi-pencil-square icons"  onClick="show_profile_list()" ></i>
+        <i class=" bi-box-arrow-right icons"></i>
     </div>
 </div>
 `
@@ -58,9 +58,7 @@ AllSection('navbar', Navbar);
 const personal_profile = `
 <!--PERSONAL PROFILE VITAL AFTER CLICKING ON THE ACCEPT BUTTON--->
 <div class="personal_profile_vital hide">
-<div class="patient_container">
-<div class="flex_container">
-  <div class="each_container">
+  <div class="patient_container">
       <div class="patient_info">
           <span>Precious Joseph</span>
           <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
@@ -189,8 +187,6 @@ const personal_profile = `
 </div>
 </div>
 </div>
-  </div>
-</div>
 `
 AllSection('personal_patient', personal_profile);
 
@@ -240,7 +236,8 @@ const landing_page = `
   <td>Patient ID</td>
   <td>Date</td>
   <td>Time</td>
-  <td>Accept/Reject</td>
+  <td>Accept</td>
+  <td>Reject</td>
 </tr>
 </thead>
 <tbody>
@@ -257,6 +254,8 @@ const landing_page = `
   <td>2:30PM</td>
   <td>
   <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  </td>
+  <td>
   <button class="reject-btn">Reject</button>
   </td>
 </tr>
@@ -275,6 +274,8 @@ const landing_page = `
   <td>2:30PM</td>
   <td>
   <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  </td>
+  <td>
   <button class="reject-btn">Reject</button>
   </td>
 </tr>
@@ -293,6 +294,8 @@ const landing_page = `
   <td>2:30PM</td>
   <td>
   <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  </td>
+  <td>
   <button class="reject-btn">Reject</button>
   </td>
 </tr>
@@ -311,6 +314,8 @@ const landing_page = `
   <td>2:30PM</td>
   <td>
   <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  </td>
+  <td>
   <button class="reject-btn">Reject</button>
   </td>
 </tr>
@@ -329,6 +334,8 @@ const landing_page = `
   <td>2:30PM</td>
   <td>
   <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  </td>
+  <td>
   <button class="reject-btn">Reject</button>
   </td>
 </tr>
@@ -347,17 +354,73 @@ const landing_page = `
   <td>2:30PM</td>
   <td>
   <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  </td>
+  <td>
+  <button class="reject-btn">Reject</button>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>
+      <div class="image">
+      <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
+      </div>
+  </td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>22-02-2024</td>
+  <td>2:30PM</td>
+  <td>
+  <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  </td>
+  <td>
+  <button class="reject-btn">Reject</button>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>
+      <div class="image">
+      <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
+      </div>
+  </td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>22-02-2024</td>
+  <td>2:30PM</td>
+  <td>
+  <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  </td>
+  <td>
+  <button class="reject-btn">Reject</button>
+  </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>
+      <div class="image">
+      <img width="70px" height="70px" src="../Images/imaculater.jpg" alt="">
+      </div>
+  </td>
+  <td>Precious Bassey</td>
+  <td>001</td>
+  <td>22-02-2024</td>
+  <td>2:30PM</td>
+  <td>
+  <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+  </td>
+  <td>
   <button class="reject-btn">Reject</button>
   </td>
 </tr>
 </tbody>
 </table>
-<div class="pending_transaction_list_pagination">
-        <div class="flexs">
-            <p id="prevPen">Prev List</p>
-            <p id="nextPen">Next List</p>
-        </div>
-</div>
 </div>
 </div>
 </div>

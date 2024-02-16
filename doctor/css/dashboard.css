@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
     font-weight: 300;
+    font-family: "Poppins", sans-serif;
     font-style: normal;
 }
 body{
@@ -64,14 +64,14 @@ body{
 }
 .sidebar_icons .icons{
     color: #fff;
-    font-size: 30px;
+    font-size: 25px;
     margin: 1em 0;
     position: relative;
     cursor: pointer;
 }
 .icons{ 
     color: #fff;
-    font-size: 30px;
+    font-size: 25px;
     width: 150px;
     display: flex;
     justify-content: center;;
@@ -308,26 +308,27 @@ input:focus {
     width: 100%;
     background-color: #fff;
     box-shadow: rgba(232, 223, 223, 0.35) 0px 5px 15px;
-    height: 500px; /* Set a fixed height for the container */
+    height: 300px; /* Set a fixed height for the container */
     overflow: auto; /* Enable vertical scrolling */
 }
 
-table {
+ table {
     width: 100%;
     border-collapse: collapse;
 }
 
-table thead td {
+ table thead td {
     background-color: rgb(42, 87, 215);
     padding: 1em;
     color: #fff;
     font-size: 18px;
 }
 
-table tbody td {
+ table tbody td {
     background-color: rgb(255, 255, 255);
-    padding: 1em;
-    font-size: 18px;
+    padding: 0.5em;
+    font-size: 15px;
+    border-bottom: 1px solid rgb(227, 224, 224);;
     color: #000000;
 }
 

@@ -9,11 +9,7 @@
 
 body{
     width: 100%;
-    min-height:100vh;
-    background-image: url(../Images/19374.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height:100vh;
 }
 .navbar{
     width: 100%;
@@ -22,7 +18,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;;
-    background-color: #0057c2;
+    background-color: rgb(42, 87, 215);
     top: 0;
     z-index: 999;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -46,9 +42,16 @@ body{
     justify-content: space-around;
     align-items: center;
 }
+.sidebar_icons .icons{
+    color: #fff;
+    font-size: 25px;
+    margin: 1em 0;
+    position: relative;
+    cursor: pointer;
+}
 .icons{
     color: #fff;
-    font-size: 30px;
+    font-size: 25px;
     width: 150px;
     display: flex;
     justify-content: center;;
@@ -110,6 +113,7 @@ body{
     position: absolute;
     height: fit-content;
     top: 100%;
+    background-color: rgb(42, 87, 215);;
     animation: zoomIn 01s ease-in-out;
     right: 2%;
     padding: 1rem 1rem;
@@ -128,19 +132,20 @@ body{
 .profile_account .btn_submit{
     width: 100%;
     background-color: #fff;
-    padding: 0.7rem;
+    /* padding: 0.5rem; */
     border: none;
     color: rgb(42, 87, 215);
     border-radius: 5px;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
+    font-size: 16px;
     margin: 1rem 0;
 }
 .profile_account  .btn_submit:hover{
     transform: scale(0.98);
     background: none;
     color:rgb(255, 255, 255);
-    border: 2px solid #fff;
+    border: 1px solid #fff;
 }
 .profile_account span{
     text-align: left;
@@ -195,6 +200,7 @@ body{
     height: fit-content;
     overflow: hidden;
     position: fixed;
+    background-color: rgb(42, 87, 215);;
     left: 0;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -236,7 +242,9 @@ body{
 }
 .contents{
     width:100%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(231, 230, 230, 0.35) 0px 5px 15px;
+    height: 700px;
+    overflow: auto;
 }
 .head-sec{
     display: flex;
@@ -254,6 +262,7 @@ body{
 }
 .appoitment_input_control{
     position: relative;
+    width: 260px;
 }
 .appoitment_input{
     padding: 0.5rem 0.3rem;
@@ -267,7 +276,7 @@ body{
     background-color: rgb(0, 0, 0);;
 }
 input:focus{
-    border:1px solid rgb(42, 87, 215) 
+    border:1px solid rgb(0, 0, 0) 
 }
 #search-icon{
     position: absolute;
@@ -286,49 +295,52 @@ table{
     width: 100%;
     height: auto;
     border-collapse: collapse;
-    overflow-y: hidden;
+    overflow: hidden;
 }
  table thead td{
     background-color: rgb(42, 87, 215);;
     color: #fff;
     padding: 1rem;
-    font-size: 21px;
+    font-size: 18px;
 }
  table tbody{
     margin: 1rem 0;
 }
  table tbody td{
     background-color: rgb(255, 255, 255);;
-    font-size: 20px;
+    font-size: 15px;
     margin: 1rem 0;
     padding: 1rem;
     border-bottom: 1px solid #d7d2d2;
     color: #000000;
 }
-.body_sec button{
+.body_sec .accept-btn{
     padding: 0.5rem 1rem;
     background-color: rgb(42, 87, 215);
     border: none;
     cursor: pointer;
-    border-radius: 20px;
+    width: 100%;
+    margin: 0.3em 0;
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
-.body_sec button:nth-child(2){
+.body_sec .reject-btn{
     padding: 0.5rem 1rem;
     background-color: rgb(255, 0, 0);
     border: none;
     cursor: pointer;
     color: #fff;
+    width: 100%;
+    margin: 0.3em 0;
     transition: all ease-in-out 0.5s;
 }
-.body_sec button:hover{
+.body_sec .accept-btn:hover{
     color: #000000;
     padding: 0.5rem 1rem;
     border: 1px solid rgb(42, 87, 215);
     background: none
 }
-.body_sec button:hover:nth-child(2){
+.body_sec .reject-btn:hover{
     color: #000000;
     padding: 0.5rem 1rem;
     border: 1px solid rgb(255, 0, 0);
@@ -457,7 +469,8 @@ display: flex;
 
 .patient_container{
     width: 80%;
-    height: auto;
+    height: 500px;
+    overflow: auto;
     margin: 5rem auto;
 }
 .flex_container{

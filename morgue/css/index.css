@@ -232,8 +232,8 @@ body{
     margin: 1rem 0;
 }
 #all_section_container{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 .appoitment_section{

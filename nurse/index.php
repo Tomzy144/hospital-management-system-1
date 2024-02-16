@@ -9,10 +9,7 @@
     <title>Nurse Dashboard</title>
     <link rel="stylesheet" href="./dashboard.css">
     <link rel="stylesheet" href='awesome-font/css/font-awesome.min.css'>
-    <link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+    <link rel="stylesheet" href="css/icons-1.10.2/font/bootstrap-icons.css">
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

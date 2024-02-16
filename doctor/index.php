@@ -84,10 +84,10 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
     <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+/> -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
 <?php include 'meta.php'?>
 </head>
 <body>
@@ -180,7 +180,8 @@ $result = $conn->query($sql);
             <td>Date</td>
             <td>Time</td>
             <td>Request Type</td>
-            <td>Accept/Reject</td>
+            <td>Accept</td>
+            <td>Reject</td>
         </tr>
     </thead>
     <tbody>
@@ -200,7 +201,11 @@ $result = $conn->query($sql);
                 echo "<td>";
                 ?>
                 <button class="accept_button" type="button" data-patient-id="<?php echo $row["patient_id"]; ?>" onClick="accept()">Accept</button>
-                <button class="button_reject" data-patient-id="<?php echo $row["patient_id"]; ?>">Reject</button>
+                <?php
+                echo "</td>";
+                echo "<td>";
+                ?>
+              <button class="button_reject" data-patient-id="<?php echo $row["patient_id"]; ?>">Reject</button>
                 <?php
                 echo "</td>";
                 echo "</tr>";

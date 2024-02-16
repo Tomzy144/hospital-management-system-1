@@ -51,6 +51,61 @@
                 <i class="bi bi-box-arrow-right" id="icon"></i>
             </div>
         </div>
+        
+<div id="all_section_container">
+<div class="appoitment_section">
+<div class="appiontment_booking_container">
+<div class="appiontment">
+<div class="head_sec">
+  <span>Incoming Prescriptions</span>
+  <div class="appoitment_input_control">
+  <i class="fa fa-search" id="search_icon"></i>
+      <input type="text" placeholder="Search here" class="appoitment_input">
+  </div>
+</div>
+<div class="table_container">
+<table id="appoitment_table">
+  <thead>
+    <td>Number</td>
+    <td>Doc Name</td>
+    <td>Patient Name</td>
+    <td>Patient Id</td>
+    <td>Date</td>
+    <td>Time</td>
+    <td>Accept</td>
+    <td>Reject</td>
+  </thead>
+  <tbody>
+  </tbody>
+  <tbody>
+   
+</table>
+</div>
+</div>
+</div>
+
+<div class="approved_appoitment">
+<div class="head_sec">
+  <span>Confirmed  Purchases</span>
+  <div class="appoitment_input_control">
+  <i class="fa fa-search" id="search_icon"></i>
+      <input type="text" placeholder="Search here" class="appoitment_input">
+  </div>
+</div>
+<div class="table_container">
+<table id="approved_table">
+  <thead>
+    <td>Number</td>
+    <td>Patient Name</td>
+    <td>Patient Id</td>
+  </thead>
+  <tbody>
+
+  </tbody>
+  </table>
+</div>
+</div>
+</div>
         <script src="js/index.js"></script>
 </body>
 </html>
