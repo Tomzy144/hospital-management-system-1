@@ -135,7 +135,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             </div>
         </img>  
             <span><?php echo $fullname ?></span>
-            <!-- <i class="fa fa-caret-down"></i> -->
             <i class="bi bi-caret-down-fill"  id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>

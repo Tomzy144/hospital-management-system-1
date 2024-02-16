@@ -1,5 +1,5 @@
 //SHOWING PATIENT FORM 
-const open_patient_form = ()=>{
+function open_patient_form(){
     const hide_content_landing_page = document.querySelector('.contents');
     const open_patient_forms = document.querySelector('.patients_form_container');
 
@@ -10,11 +10,11 @@ const open_patient_form = ()=>{
 
 
 //CONTENT PAGE LINKS TO DIFFERENT SECTION
-const patientForm = function(){
+function patientForm(){
     let url = 'patient-registration-form/';
     window.parent(location = (url));
 }
-const appoimentBooking = function(){
+function appoimentBooking(){
   const hide_content_page  = document.querySelector(".contents");
   hide_content_page.style.display="none";
 
@@ -23,7 +23,7 @@ const appoimentBooking = function(){
   document.querySelector("#btn_appoitment").style.display = "block";
 }
 
-const surgicalChemistry = function(){
+function surgicalChemistry(){
     const hide_content_page  = document.querySelector(".contents");
     hide_content_page.style.display="none";
 
@@ -31,7 +31,7 @@ const surgicalChemistry = function(){
     show_surgical_chemistry_page.classList.remove("hide");
 }
 
-const patient_list = ()=>{
+function patient_list(){
     let url = "page/patients-lists.php";
     window.parent(location = (url));
 }
@@ -141,7 +141,7 @@ const family_check_true = document.querySelector("#family_check_true");
 const family_check_false = document.querySelector("#family_check_false");
 const check_input_family_id_number = document.querySelector(".input_family_id_number")
 
-const handleCheckboxFamiilyChange = ()=>{
+function handleCheckboxFamiilyChange(){
     if(family_check_true.checked){
       family_check_false.disabled = true;
       check_input_family_id_number.classList.remove("hide");
@@ -451,7 +451,7 @@ function stopCamera() {
    //This help show the current date and time zone of today
    const date =  new Date()
   
-   const renderCalendar = ()=>{
+   function renderCalendar(){
       date.setDate(1)
       // console.log(date.getDay());
        //this help shows the current month we are in and its 0 based "which means its counts from 0 throgh the months"
@@ -549,7 +549,7 @@ function stopCamera() {
  
 
 //WALKIN PATIENT FORM
-const walkin_patient_form = ()=>{
+function walkin_patient_form(){
   document.querySelector(".contents").style.display = "none";
   document.querySelector(".surgical_booking").classList.add("hide");
   document.querySelector(".appoitment_section").classList.add("hide");
@@ -654,7 +654,7 @@ walkinin_check2.addEventListener('change', handleCheckboxChangeWalkin);
 
 
 //BACK TO HOMEPAGE 
-const homepage_section = ()=>{
+function homepage_section(){
   document.querySelector(".contents").style.display = "flex";
   document.querySelector(".surgical_booking").classList.add("hide");
   document.querySelector(".appoitment_section").classList.add("hide");
@@ -664,7 +664,7 @@ const homepage_section = ()=>{
   document.querySelector(".checkup_section").classList.add("hide");
 }
 //CHECKUP SECTION
-const checkup_page = ()=>{
+function checkup_page(){
   document.querySelector(".contents").style.display = "none";
   document.querySelector(".surgical_booking").classList.add("hide");
   document.querySelector(".appoitment_section").classList.add("hide");

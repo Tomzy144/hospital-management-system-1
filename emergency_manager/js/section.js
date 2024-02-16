@@ -11,10 +11,10 @@ const Navbar = `
   </div>
   <div class="section2">
       <div class="icons">
-    <i class="fa fa-user" id="icon">
+      <i class="bi bi-person-fill" id="icon">
       <div class="notification1">9</div>
     </i>
-    <i class="fa fa-bell" id="icon">
+    <i class="bi bi-bell-fill" id="icon">
     <div class="notification2">15</div>
     </i>
     </div>
@@ -31,7 +31,7 @@ const Navbar = `
       </div>
   </img>  
       <span>Peace Emmanuel Christopher</span>
-      <i class="fa fa-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
+      <i class="bi bi-caret-down-fill" id="icon-drop" onClick="click_icon_for_profile()"></i>
     </div>
   </div>
 </div>
@@ -40,10 +40,9 @@ const Navbar = `
           <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
          </div>
       <div class="sidebar_icons">
-          <i class="fa fa-envelope" id="icon"></i>
-          <i class="fa fa-user-md" id="icon"></i>
-          <i class="fa fa-hospital-o" id="icon"onClick="show_emergency_patient_list()"></i>
-          <i class="fa fa-sign-out" id="icon"></i>
+      <i class="bi bi-chat-dots-fill icons"></i>
+      <i class="bi bi-calendar-date-fill icons" onClick="show_emergency_patient_list()"></i>
+             <i class=" bi-box-arrow-right icons"></i>
       </div>
   </div>
 `
@@ -72,7 +71,7 @@ const landing_page = `
   <div class="form_control_group">
 <div class="form_control">
   <label for="">Full name</label>
-  <input type="text">
+  <input type="text" placeholder="John Smith">
   </div>
   <div class="form_control">
   <label for="">Date of Birth</label>
@@ -80,23 +79,23 @@ const landing_page = `
   </div>
   <div class="form_control">
   <label for="">Address</label>
-  <input type="text">
+  <input type="text" placeholder="23 Marian Road">
   </div>
   </div>
   <span>Emergency Contact</span>
   <div class="form_control_group">
   <div class="form_control">
   <label for="">Full Name</label>
-  <input type="text">
+  <input type="text" placeholder="John Smith">
  </div>
 
  <div class="form_control">
   <label for="">Contact Number</label>
-  <input type="text">
+  <input type="text" placeholder="+234 434 432 422">
   </div>
   <div class="form_control">
   <label for="">Relatonship</label>
-  <input type="text">
+  <input type="text" placeholder="Brother">
   </div>
 
   </div>
@@ -113,7 +112,7 @@ const landing_page = `
   </div>
  <div class="form_control">
   <label for="">Cause of the Incident</label>
-  <input type="text">
+  <input type="text" placeholder="Car accident">
   </div>
   </div>
   <button class="btn_submit" type="button" id="btn_submit"> Submit</button>
@@ -135,11 +134,11 @@ const landing_page = `
   <form>
   <div class="form_control">
   <label>Patient Name</label>
-  <input type="text" name="patient_name"/>
+  <input type="text" name="patient_name" placeholder="John Smith"/>
   </div>
   <div class="form_control">
   <label>Patient Id</label>
-  <input type="text" name="patient_name"/>
+  <input type="text" name="patient_name" placeholder="PAT0003"/>
   </div>
   <div class="form_control">
   <label>Selected date</label>
@@ -151,7 +150,7 @@ const landing_page = `
   </div>
   <div class="form_control">
   <label>Comment</label>
- <textarea></textarea>
+ <textarea placeholder="message"></textarea>
   </div>
   </form>
   <button>Submit</button>
@@ -180,14 +179,14 @@ const landing_page = `
 </select>
 <div class="form_control">
 <label>Patient Name</label>
-<input type="text" name="patient_name"/>
+<input type="text" name="patient_name" placeholder="John Smith"/>
 </div>
 <div class="form_control">
 <label>Patient Id</label>
-<input type="text" name="patient_name"/>
+<input type="text" name="patient_name" placeholder="PAT0003"/>
 </div>
 <label>Comment</label>
-<textarea></textarea>
+<textarea placeholder="message"></textarea>
 <button>Call in</button>
 </div>
 
@@ -196,11 +195,11 @@ const landing_page = `
 <form>
 <div class="form_control">
 <label>Patient Name</label>
-<input type="text" name="patient_name"/>
+<input type="text" name="patient_name" placeholder="John Smith"/>
 </div>
 <div class="form_control">
 <label>Patient Id</label>
-<input type="text" name="patient_name"/>
+<input type="text" name="" placeholder="PAT0003"/>
 </div>
 <div class="form_control">
 <label>Selected date</label>
@@ -212,7 +211,7 @@ const landing_page = `
 </div>
 <div class="form_control">
 <label>Comment</label>
-<textarea></textarea>
+<textarea placeholder="message"></textarea>
 </div>
 </form>
 <button>Submit</button>
@@ -223,11 +222,11 @@ const landing_page = `
   <form>
   <div class="form_control">
   <label>Patient Name</label>
-  <input type="text" name="patient_name"/>
+  <input type="text" name="patient_name" placeholder="John Smith"/>
   </div>
   <div class="form_control">
   <label>Patient Id</label>
-  <input type="text" name="patient_name"/>
+  <input type="text" name="patient_name" placeholder="PAT0003"/>
   </div>
 
   <div class="form_control">
@@ -240,7 +239,7 @@ const landing_page = `
   </div>
   <div class="form_control">
   <label>Comment</label>
- <textarea></textarea>
+ <textarea placeholder="message"></textarea>
   </div>
   </form>
   <button>Submit</button>
@@ -251,23 +250,23 @@ const landing_page = `
 <form>
 <div class="form_control">
 <label>Patient Name</label>
-<input type="text" name="patient_name"/>
+<input type="text" name="patient_name" placeholder="John Smith"/>
 </div>
 <div class="form_control">
 <label>Patient Id</label>
-<input type="text" name="patient_name"/>
+<input type="text" name="" placeholder="PAT0003"/>
 </div>
 <div class="form_control">
 <label>Selected date</label>
-<input type="date" name="patient_name"/>
+<input type="date" name=""/>
 </div>
 <div class="form_control">
 <label>Selected time</label>
-<input type="time" name="patient_name"/>
+<input type="time" name=""/>
 </div>
 <div class="form_control">
 <label>Comment</label>
-<textarea></textarea>
+<textarea placeholder="message"></textarea>
 </div>
 </form>
 <button>Submit</button>
@@ -278,23 +277,23 @@ const landing_page = `
 <form>
 <div class="form_control">
 <label>Patient Name</label>
-<input type="text" name="patient_name"/>
+<input type="text" name="patient_name" placeholder="John Smith"/>
 </div>
 <div class="form_control">
 <label>Patient Id</label>
-<input type="text" name="patient_name"/>
+<input type="text" name="" placeholder="PAT0003"/>
 </div>
 <div class="form_control">
 <label>Selected date</label>
-<input type="date" name="patient_name"/>
+<input type="date" name=""/>
 </div>
 <div class="form_control">
 <label>Selected time</label>
-<input type="time" name="patient_name"/>
+<input type="time" name=""/>
 </div>
 <div class="form_control">
 <label>Comment</label>
-<textarea></textarea>
+<textarea placeholder="message"></textarea>
 </div>
 </form>
 <button>Submit</button>
@@ -305,23 +304,23 @@ const landing_page = `
 <form>
 <div class="form_control">
 <label>Deceased Name</label>
-<input type="text" name="patient_name"/>
+<input type="text" name="patient_name" placeholder="John Smith"/>
 </div>
 <div class="form_control">
 <label>Deceased Id</label>
-<input type="text" name="patient_name"/>
+<input type="text" name="" placeholder="PAT0003"/>
 </div>
 <div class="form_control">
 <label>Selected date</label>
-<input type="date" name="patient_name"/>
+<input type="date" name=""/>
 </div>
 <div class="form_control">
 <label>Selected time</label>
-<input type="time" name="patient_name"/>
+<input type="time" name=""/>
 </div>
 <div class="form_control">
 <label>Cause of Death</label>
-<textarea></textarea>
+<textarea placeholder="message"></textarea>
 </div>
 </form>
 <button>Transfer</button>

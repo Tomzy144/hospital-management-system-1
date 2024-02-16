@@ -68,10 +68,10 @@
         </div>
         <div class="section2">
             <div class="icons">
-          <i class="fa fa-user" id="icon">
+            <i class="bi bi-person-fill" id="icon">
             <div class="notification1">9</div>
           </i>
-          <i class="fa fa-bell" id="icon">
+          <i class="bi bi-bell-fill" id="icon">
           <div class="notification2">15</div>
           </i>
           </div>
@@ -88,7 +88,7 @@
             </div>
         </img>  
             <span>Immaculater Odu Peter</span>
-            <i class="bi-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
+            <i class="bi bi-caret-down-fill" id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>
     </div>
@@ -97,12 +97,9 @@
                 <img width="80px" height="80px" src="<?php echo $website_url ?>/Images/Mount Tech Logo.jpg" alt="logo">
                </div>
             <div class="sidebar_icons">
-                <i class="fa fa-envelope" id="icon"></i>
-                <i class="fa fa-file" id="icon"></i>
-                <i class="fa fa-hospital-o" id="icon"></i>
-                <i class="fa fa-edit (alias)" id="icon" onClick="click_vital_button()" ></i>
-                <!-- <i class="fa fa-sign-out" id="icon"></i> -->
-                <i class="fa fa-sign-out"  id="icon" onclick="document.getElementById('logoutform').submit();"></i>
+                <i class="bi bi-chat-dots-fill" id="icon"></i>
+            <i class="bi bi-calendar-date-fill" id="icon"></i>
+                <i class="bi bi-box-arrow-right"  id="icon" onclick="document.getElementById('logoutform').submit();"></i>
                 <form method="post" action="../config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
                 </form>

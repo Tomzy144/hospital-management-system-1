@@ -109,12 +109,12 @@ body{
     position: absolute;
     top: 0;
     right: 0;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
+    font-size: 12px;
     text-align: center;
     border-radius: 100%;
     background:rgb(0, 158, 251);;
@@ -238,6 +238,11 @@ body{
    text-align: center;
    border-bottom: 2px solid rgba(255, 255, 255);
 }
+.sidebar_contents  img{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
 .sidebar_icons{
     width: 100%;
     animation: zoomIn 01s ease-in-out;
@@ -319,17 +324,19 @@ input:focus {
 
  table thead td {
     background-color: rgb(42, 87, 215);
-    padding: 1em;
+    padding: 0.5em 0.7em;
+    animation: zoomIn 01s ease-in-out;
     color: #fff;
     font-size: 18px;
 }
 
  table tbody td {
     background-color: rgb(255, 255, 255);
-    padding: 0.5em;
     font-size: 15px;
+    animation: zoomIn 01s ease-in-out;
     border-bottom: 1px solid rgb(227, 224, 224);;
     color: #000000;
+    padding: 0 1em;
 }
 
  .accept_button{
@@ -338,7 +345,7 @@ input:focus {
     border: none;
     cursor: pointer;
     width: 100%;
-    margin: 0.5em 0;
+    margin: 0.5em 0.5em;
     color: #fff;
     transition: all ease-in-out 0.5s;
 }
@@ -346,6 +353,7 @@ input:focus {
     padding: 0.5rem 0.5rem;
     background-color: rgb(255, 0, 0);
     border: none;
+    margin: 0.5em 0.5em;
     width: 100%;
     margin: 0.5em 0;
     cursor: pointer;
