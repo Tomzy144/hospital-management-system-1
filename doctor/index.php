@@ -373,8 +373,8 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
    <div class="info_dropdown"    onClick="personal_info_section()">
     <span>Personal Information</span>
     
-        <i class="fa fa-plus" id="info_icon_plus"></i>
-    <i class="fa fa-minus" id="info_icon_minus"></i>
+        <i class="bi bi-plus-lg" id="info_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="info_icon_minus"></i>
    </div>
    <div class="info_section hide">
    <div class="info_title">
@@ -505,8 +505,8 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
    <!---LABOURATORY INFORMATIONS--->
    <div class="lab_dropdown" onClick="lab_section()">
     <span>Labouratory Information</span>
-    <i class="fa fa-plus" id="lab_icon_plus"></i>
-    <i class="fa fa-minus" id="lab_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="lab_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="lab_icon_minus"></i>
     </div>
     <div class="lab_section hide">
             <table>
@@ -558,8 +558,8 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
    <!---RADIOLOGY INFORMATIONS--->
    <div class="radiology_dropdown" onClick="radiology_section()">
     <span>Radiology Information</span>
-    <i class="fa fa-plus" id="radiology_icon_plus"></i>
-    <i class="fa fa-minus" id="radiology_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="radiology_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="radiology_icon_minus"></i>
     </div>
     <div class="radiology_section hide">
     <table>
@@ -592,8 +592,8 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
    <!---NURSES VITAL INFORMATIONS--->
    <div class="vitals_dropdown" onClick="vitals_section()">
     <span>Vitals Information</span>
-    <i class="fa fa-plus" id="vitals_icon_plus"></i>
-    <i class="fa fa-minus" id="vitals_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="vitals_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="vitals_icon_minus"></i>
     </div>
     <div class="vitals_section hide">
                 <table>
@@ -658,10 +658,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
     </div>
   
     <!--Start of the complaint section--->
-   <div class="complain_dropdown">
+   <div class="complain_dropdown" onClick="complain_section()">
     <span>Complaints</span>
-    <i class="fa fa-plus" id="complaint_icon_plus"></i>
-    <i class="fa fa-minus" id="complaint_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="complaint_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="complaint_icon_minus"></i>
    </div>
    <div class="complaint-section hidden">
         <form action="">
@@ -684,21 +684,19 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
         </form>
    </div>
 
-           <!--End of the complaint section--->
-         
-         
+            <!--End of the complaint section--->
 
-               <!--Start of the System & Review section--->
-               <div class="system_dropdown">
+             <!--Start of the System & Review section--->
+               <div class="system_dropdown" onClick="system_review_section()">
     <span>System Review and Symptom</span>
-    <i class="fa fa-plus" id="system_icon_plus"></i>
-    <i class="fa fa-minus" id="system_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="system_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="system_icon_minus"></i>
    </div>
                <div class="system_review-section hidden">
-        <div class="drop-down1">
+        <div class="drop-down1" onClick="showForm1()">
             <span>General</span>
-            <i class="fa fa-minus" id="close_id_1"></i>
-            <i class="fa fa-plus" id="open_id_1"></i>
+            <i class="bi bi-dash-lg" id="close_id_1"></i>
+            <i class="bi bi-plus-lg" id="open_id_1"></i>
         </div>
             <form action="" class="form1 hidden">
                 <div class="form-control">
@@ -756,10 +754,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 </div>
   </div>
   </form>
-  <div class="drop-down2">
+  <div class="drop-down2" onClick="showForm2()">
             <span>Skin</span>
-            <i class="fa fa-minus" id="close_id_2"></i>
-            <i class="fa fa-plus" id="open_id_2"></i>
+            <i class="bi bi-dash-lg" id="close_id_2"></i>
+            <i class="bi bi-plus-lg" id="open_id_2"></i>
         </div>
         <form action="" class="form2 hidden">
                 <div class="form-control">
@@ -808,10 +806,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 </div>
   </div>
   </form>
-  <div class="drop-down3">
+  <div class="drop-down3" onClick="showForm3()">
             <span>Endocrine</span>
-            <i class="fa fa-minus" id="close_id_3"></i>
-            <i class="fa fa-plus" id="open_id_3"></i>
+            <i class="bi bi-dash-lg" id="close_id_3"></i>
+            <i class="bi bi-plus-lg" id="open_id_3"></i>
         </div>
         <form action="" class="form3 hidden">
                 <div class="form-control">
@@ -923,10 +921,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 </div>
   </div>
   </form>
-  <div class="drop-down4">
+  <div class="drop-down4" onClick="showForm4()">
             <span>Hematopoietic</span>
-            <i class="fa fa-minus" id="close_id_4"></i>
-            <i class="fa fa-plus" id="open_id_4"></i>
+            <i class="bi bi-dash-lg" id="close_id_4"></i>
+            <i class="bi bi-plus-lg" id="open_id_4"></i>
         </div>
         <form action="" class="form4 hidden">
                 <div class="form-control">
@@ -1029,10 +1027,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 </div>
   </div>
   </form>
-  <div class="drop-down5">
+  <div class="drop-down5" onClick="showForm5()">
             <span>Muscoskeletal</span>
-            <i class="fa fa-minus" id="close_id_5"></i>
-            <i class="fa fa-plus" id="open_id_5"></i>
+            <i class="bi bi-dash-lg" id="close_id_5"></i>
+            <i class="bi bi-plus-lg" id="open_id_5"></i>
         </div>
         <form action="" class="form5 hidden">
                 <div class="form-control">
@@ -1117,10 +1115,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 </div>
   </div>
   </form>
-  <div class="drop-down6">
+  <div class="drop-down6" onClick="showForm6()">
             <span>Head & Neck</span>
-            <i class="fa fa-minus" id="close_id_6"></i>
-            <i class="fa fa-plus" id="open_id_6"></i>
+            <i class="bi bi-dash-lg" id="close_id_6"></i>
+            <i class="bi bi-plus-lg" id="open_id_6"></i>
         </div>
         <form action="" class="form6 hidden">
                 <div class="form-control">
@@ -1214,10 +1212,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 </div>
   </div>
   </form>
-  <div class="drop-down7">
+  <div class="drop-down7" onClick="showForm7()">
             <span>Ears, Nose, Sinuses, Mouth & Throat</span>
-            <i class="fa fa-minus" id="close_id_7"></i>
-            <i class="fa fa-plus" id="open_id_7"></i>
+            <i class="bi bi-dash-lg" id="close_id_7"></i>
+            <i class="bi bi-plus-lg" id="open_id_7"></i>
         </div>
         <form action="" class="form7 hidden">
                 <div class="form-control">
@@ -1392,10 +1390,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 </div>
   </div>
   </form>
-  <div class="drop-down8">
+  <div class="drop-down8" onClick="showForm8()">
             <span>Breast</span>
-            <i class="fa fa-minus" id="close_id_8"></i>
-            <i class="fa fa-plus" id="open_id_8"></i>
+            <i class="bi bi-dash-lg" id="close_id_8"></i>
+            <i class="bi bi-plus-lg" id="open_id_8"></i>
         </div>
         <form action="" class="form8 hidden">
                 <div class="form-control">
@@ -1471,10 +1469,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 </div>
   </div>
   </form>
-  <div class="drop-down9">
+  <div class="drop-down9" onClick="showForm9()">
             <span>Respiratory</span>
-            <i class="fa fa-minus" id="close_id_9"></i>
-            <i class="fa fa-plus" id="open_id_9"></i>
+            <i class="bi bi-dash-lg" id="close_id_9"></i>
+            <i class="bi bi-plus-lg" id="open_id_9"></i>
         </div>
         <form action="" class="form9 hidden">
                 <div class="form-control">
@@ -1586,10 +1584,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 </div>
   </div>
   </form>
-  <div class="drop-down10">
+  <div class="drop-down10" onClick="showForm10()">
             <span>Cardiovascular</span>
-            <i class="fa fa-minus" id="close_id_10"></i>
-            <i class="fa fa-plus" id="open_id_10"></i>
+            <i class="bi bi-dash-lg" id="close_id_10"></i>
+            <i class="bi bi-plus-lg" id="open_id_10"></i>
         </div>
         <form action="" class="form10 hidden">
                 <div class="form-control">
@@ -1674,10 +1672,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
                 </div>
   </div>
   </form>
-  <div class="drop-down11">
+  <div class="drop-down11" onClick="showForm11()">
             <span>Gastrointestinal</span>
-            <i class="fa fa-minus" id="close_id_11"></i>
-            <i class="fa fa-plus" id="open_id_11"></i>
+            <i class="bi bi-dash-lg" id="close_id_11"></i>
+            <i class="bi bi-plus-lg" id="open_id_11"></i>
 </div>
 <form action="" class="form11 hidden">
                 <div class="form-control">
@@ -1730,16 +1728,16 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
         <!--End of the System & Review section--->
 
   <!--Start of Physica, Examination-->
-  <div class="physical_dropdown">
+  <div class="physical_dropdown"onClick="physical_section()">
     <span>Physical Examination</span>
-    <i class="fa fa-plus" id="physical_icon_plus"></i>
-    <i class="fa fa-minus" id="physical_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="physical_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="physical_icon_minus"></i>
    </div>
   <div class="physical_examination-section hidden">
-        <div class="physical_examination_drop-down1">
+        <div class="physical_examination_drop-down1" onClick="physical_showForm1()">
             <span>General</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus1"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus1"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus1"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus1"></i>
         </div>
         <form action="" class="physical_examination_form1 hidden">
             <div class="physical_examination_form-control">
@@ -1747,10 +1745,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="physical_examination">
 </div>
         </form>
-        <div class="physical_examination_drop-down2">
+        <div class="physical_examination_drop-down2" onClick="physical_showForm2()">
             <span>Neurological</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus2"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus2"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus2"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus2"></i>
         </div>
         <form action="" class="physical_examination_form2 hidden">
             <div class="physical_examination_form-control">
@@ -1834,10 +1832,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
 </div>
         
         </form>
-        <div class="physical_examination_drop-down3">
+        <div class="physical_examination_drop-down3" onClick="physical_showForm3()">
             <span>Vital Sign</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus3"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus3"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus3"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus3"></i>
         </div>
         <form action="" class="physical_examination_form3 hidden">
             <div class="physical_examination_form-control">
@@ -1861,10 +1859,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="oxygen_saturation">
             </div>
 </form>
-<div class="physical_examination_drop-down4">
+<div class="physical_examination_drop-down4" onClick="physical_showForm4()">
             <span>General Apperance</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus4"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus4"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus4"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus4"></i>
         </div>
         <form action="" class="physical_examination_form4 hidden">
             <div class="physical_examination_form-control">
@@ -1884,10 +1882,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="body_habitus">
             </div>
 </form>
-<div class="physical_examination_drop-down5">
+<div class="physical_examination_drop-down5"onClick="physical_showForm5()" >
             <span>Skin Examination</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus5"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus5"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus5"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus5"></i>
         </div>
         <form action="" class="physical_examination_form5 hidden">
             <div class="physical_examination_form-control">
@@ -1911,10 +1909,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="scars">
             </div>
 </form>
-<div class="physical_examination_drop-down6">
+<div class="physical_examination_drop-down6" onClick="physical_showForm6()">
             <span>Head and Neck</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus6"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus6"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus6"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus6"></i>
         </div>
         <form action="" class="physical_examination_form6 hidden">
             <div class="physical_examination_form-control">
@@ -1942,10 +1940,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="presence_of_Bruits">
             </div>
 </form>
-<div class="physical_examination_drop-down7">
+<div class="physical_examination_drop-down7" onClick="physical_showForm7()">
             <span>Cardiovascular Examination</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus7"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus7"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus7"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus7"></i>
         </div>
         <form action="" class="physical_examination_form7 hidden">
             <div class="physical_examination_form-control">
@@ -1969,10 +1967,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="capillary_refill_time">
 </div>
 </form>
-<div class="physical_examination_drop-down8">
+<div class="physical_examination_drop-down8" onClick="physical_showForm8()">
             <span>Respiratory Examination</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus8"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus8"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus8"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus8"></i>
         </div>
            <form action="" class="physical_examination_form8 hidden">
             <div class="physical_examination_form-control">
@@ -1992,10 +1990,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="cough_sputum_assessment">
             </div>
 </form>
-<div class="physical_examination_drop-down9">
+<div class="physical_examination_drop-down9" onClick="physical_showForm9()">
             <span>Abdominal Examination</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus9"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus9"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus9"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus9"></i>
         </div>
         <form action="" class="physical_examination_form9 hidden">
             <div class="physical_examination_form-control">
@@ -2007,10 +2005,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="bowel_sounds_assessment_sounds">
             </div>
 </form>
-<div class="physical_examination_drop-down10">
+<div class="physical_examination_drop-down10" onClick="physical_showForm10()">
             <span>Genitourinary Examination</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus10"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus10"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus10"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus10"></i>
         </div>
         <form action="" class="physical_examination_form10 hidden">
             <div class="physical_examination_form-control">
@@ -2030,10 +2028,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="prostate_examination">
             </div>
 </form>
-<div class="physical_examination_drop-down11">
+<div class="physical_examination_drop-down11" onClick="physical_showForm11()">
             <span>Musculoskeletal Examination</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus11"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus11"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus11"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus11"></i>
         </div>
         <form action="" class="physical_examination_form11 hidden">
             <div class="physical_examination_form-control">
@@ -2053,10 +2051,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="pine_examination">
             </div>
 </form>
-<div class="physical_examination_drop-down12">
+<div class="physical_examination_drop-down12" onClick="physical_showForm12()">
             <span>Neurological Examination</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus12"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus12"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus12"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus12"></i>
         </div>
         <form action="" class="physical_examination_form12 hidden">
             <div class="physical_examination_form-control">
@@ -2080,10 +2078,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="coordination_balance_assessment">
             </div>
 </form>
-<div class="physical_examination_drop-down13">
+<div class="physical_examination_drop-down13" onClick="physical_showForm13()">
             <span>Review of Systems (ROS)</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus13"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus13"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus13"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus13"></i>
         </div>
         <form action="" class="physical_examination_form13 hidden">
             <div class="physical_examination_form-control">
@@ -2107,10 +2105,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <input type="text" id="neurological_system">
             </div>
 </form>
-<div class="physical_examination_drop-down14">
+<div class="physical_examination_drop-down14" onClick="physical_showForm14()">
             <span>Social and Family History</span>
-            <i class="fa fa-minus" id="physical_examination_icon_minus14"></i>
-            <i class="fa fa-plus" id="physical_examination_icon_plus14"></i>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus14"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus14"></i>
         </div>
         <form action="" class="physical_examination_form14 hidden">
             <div class="physical_examination_form-control">
@@ -2134,10 +2132,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
       <!--End of Physica, Examination-->
 
     <!--Start for Treatment and Prescribtion--->
-    <div class="treatment_prescribtion_dropdown">
+    <div class="treatment_prescribtion_dropdown" onClick="treatment_prescribtion_section()">
     <span>Treatment & Prescription</span>
-    <i class="fa fa-plus" id="treatment_prescribtion_icon_plus"></i>
-    <i class="fa fa-minus" id="treatment_prescribtion_minus"></i>
+    <i class="bi bi-plus-lg" id="treatment_prescribtion_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="treatment_prescribtion_minus"></i>
    </div>
    <div class="treatment_prescribtion-section hidden">
         <form action="" class="treatment_prescribtion_form1">
@@ -2191,10 +2189,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
     </div>
         </form>
                 <!--Investigation and procedure-->
-                <div class=" investigation_dropdown">
+                <div class=" investigation_dropdown" onClick="investigation_section()">
     <span>Investigation and Procedure</span>
-    <i class="fa fa-plus" id="investigation_icon_plus"></i>
-    <i class="fa fa-minus" id="investigation_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="investigation_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="investigation_icon_minus"></i>
    </div>
       <div class="investigation-section hidden">
       <div class="advice_form_control_appoitment ">
@@ -2203,9 +2201,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
     </div>
 </div>
     <div class="investigation_form hide">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill close_icon" viewBox="0 0 16 16">
+    <i class="bi bi-x-square"onClick ="close_tranfer_patient_lab()"></i>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill close_icon" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708" onClick ="close_tranfer_patient_lab()"/>
-</svg>
+</svg> -->
         <form action="">
             <div class="form_control">
             <label for="">Patient Name</label>
@@ -2222,19 +2221,19 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             <button type="button">SUBMIT</button>
         </form>
     </div>
-<div class="overlay_popup hidden"></div>
+    <div class="overlay_popup hidden"></div>
                 <!--Advice-->
-                <div class="advice_dropdown ">
+                <div class="advice_dropdown" onClick="advice_section()">
         <span>Advice</span>
-        <i class="fa fa-plus" id="advice_icon_plus"></i>
-        <i class="fa fa-minus" id="advice_icon_minus"></i>
+        <i class="bi bi-plus-lg" id="advice_icon_plus"></i>
+        <i class="bi bi-dash-lg" id="advice_icon_minus"></i>
    </div>
    <div class="advice-section hidden">
             <form action="">
             <div class="complaint_form-control">
             <label for="major_complaints">Recommend patient for Surgery</label>
             <div class="checkbox">
-            <input type="checkbox" name="surgery" id="check1">
+            <input type="checkbox" name="surgery" id="check1" onChange="open_procedure_form()">
             <label for="surgery">Yes</label>
             <input type="checkbox" name="surgery" id="check2">
             <label for="surgery">No</label>
@@ -2257,9 +2256,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
 <script src='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.js'></script>
 
         <!-- <input type="text" id="procedure" placeholder="Procedure"> -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill close_icon" viewBox="0 0 16 16">
+        <i class="bi bi-x-square" onClick="close_procedure_form()"></i>
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill close_icon" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708" onClick="close_procedure_form()"/>
-</svg>
+</svg> -->
         <form>
             <div class="form-control-precedure">
             <label for='procedure'>Procedure</label>
@@ -2288,10 +2288,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
 </script>
     </div>
         <!--Diagnosis-->
-        <div class="diagnosis_dropdown">
+        <div class="diagnosis_dropdown" onClick="diagnosis_section()">
     <span>Diagnosis</span>
-    <i class="fa fa-plus" id="diagnosis_icon_plus"></i>
-    <i class="fa fa-minus" id="diagnosis_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="diagnosis_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="diagnosis_icon_minus"></i>
    </div>
       <div class="diagnosis-section hidden">
         <form action="">
@@ -2314,18 +2314,19 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
         </form>
         </div>
         <!--Refer to doctor-->
-        <div class="refer_doc_dropdown">
+        <div class="refer_doc_dropdown" onClick="refer_doc_section()">
     <span>Refer to Doctor</span>
-    <i class="fa fa-plus" id="refer_doc_icon_plus"></i>
-    <i class="fa fa-minus" id="refer_doc_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="refer_doc_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="refer_doc_icon_minus"></i>
    </div>
       <div class="refer_doc-section hidden">
       <button type="button" class="btn_book_appoitment" onClick="tranfer_patient_doc()">Transfer to Doctor</button>
         </div>
         <div class="refer_doc_form hidden">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill close_icon" viewBox="0 0 16 16">
+        <i class="bi bi-x-square" onClick="close_tranfer_patient_doc()"></i>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill close_icon" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708" id="close_icon" onClick="close_tranfer_patient_doc()"/>
-</svg>
+</svg> -->
         <form action="">
             <div class="form_control">
             <label for="">Specialties</label>
@@ -2373,15 +2374,15 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
         </form>
     </div>
         <!--Discharge Section--->
-        <div class="discharged_dropdown">
+        <div class="discharged_dropdown" onClick="discharged_section()">
     <span>Discharged</span>
-    <i class="fa fa-plus" id="discharged_icon_plus"></i>
-    <i class="fa fa-minus" id="discharged_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="discharged_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="discharged_icon_minus"></i>
    </div>
    <div class="discharged-section hidden">
     <div class="off_on_button ">
-        <i class="fa fa-toggle-off" id="discharge_off" onClick="toogle_on_discharged()"></i>
-        <i class="fa fa-toggle-on" id="discharge_on" onClick="toogle_off_discharged()"></i>
+        <i class="bi bi-toggle-off" id="discharge_off" onClick="toogle_on_discharged()"></i>
+        <i class="bi bi-toggle-on" id="discharge_on" onClick="toogle_off_discharged()"></i>
         </div>
             <div class="discharge_form hidden">
         <form action="">
@@ -2402,15 +2403,15 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
         </div>
    </div>
         <!--Discharge Section--->
-        <div class="confirmed_death_dropdown">
+        <div class="confirmed_death_dropdown" onClick="confirmed_death_section()">
     <span>Confirmed Death</span>
-    <i class="fa fa-plus" id="confirmed_death_icon_plus"></i>
-    <i class="fa fa-minus" id="confirmed_death_icon_minus"></i>
+    <i class="bi bi-plus-lg" id="confirmed_death_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="confirmed_death_icon_minus"></i>
    </div>
    <div class="confirmed_death-section hidden">
    <div class="off_on_button ">
-        <i class="fa fa-toggle-off" id="confirmed_death_off" onClick="toogle_on_confirmed_death()"></i>
-        <i class="fa fa-toggle-on" id="confirmed_death_on" onClick="toogle_off_confirmed_death()"></i>
+        <i class="bi bi-toggle-off" id="confirmed_death_off" onClick="toogle_on_confirmed_death()"></i>
+        <i class="bi bi-toggle-on" id="confirmed_death_on" onClick="toogle_off_confirmed_death()"></i>
         </div>
             <div class="confirmed_death_form hidden">
         <form action="">
@@ -2431,9 +2432,10 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
         </div>
     </div>
     <div class="death_form_booking hidden">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+    <i class="bi bi-x-square" onClick="close_death_form()"></i>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708" onClick="close_death_form()"/>
-</svg>
+</svg> -->
         <form>
         <div class="form-control">
         <label for=''>Date of Death</label>
