@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             const icon = document.createElement('i');
             const dropdown = document.createElement('ul');
             const closeIcon = document.createElement('i');
-            closeIcon.classList.add("bi", "bi-x-lg");
+            closeIcon.classList.add("bi","bi-x-lg");
             closeIcon.style.position = "absolute";
             closeIcon.style.top = "3%";
             closeIcon.style.right = "10%";

@@ -2,15 +2,20 @@
 @charset "utf-8";
 /* CSS Document */
 
-@font-face {
+/* @font-face {
     font-family: body-font;
     src: url(SEGOEUI.TTF);
 }
 @font-face {
     font-family:title-font;
     src: url(berlin-regular.TTF);
-}
-
+} */
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Regular.ttf') format('truetype'); /* Adjust the path if necessary */
+    font-weight: normal; /* Specify the weight if needed */
+    font-style: normal; /* Specify the style if needed */
+  }
 *{
     margin: 0;
     padding: 0;
@@ -224,6 +229,7 @@ body{
     position: fixed;
     left: 0;
     top: 0;
+    background-color: #2a57d7;;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 1000;
 }
@@ -236,6 +242,18 @@ body{
    cursor: pointer;
    text-align: center;
    border-bottom: 2px solid rgba(255, 255, 255);
+}
+.sidebar_contents img{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+}
+.sidebar_icons .icons{
+    color: #fff;
+    font-size: 25px;
+    margin: 1em 0;
+    position: relative;
+    cursor: pointer;
 }
 .sidebar_icons{
     width: 100%;
@@ -274,7 +292,7 @@ body{
 }
 .appoitment_input_control{
     position: relative;
-    width: 200px;
+    width: 260px;
 }
 .appoitment_input{
     padding: 0.5rem 0.5rem;
@@ -284,7 +302,7 @@ body{
     background-color: #fff;
 }
 .appoitment_input:focus{
-    border: 2px solid rgb(42, 87, 215);
+    border: 1px solid rgb(0, 0, 0);
 }
 #search_icon{
     position: absolute;
@@ -294,8 +312,9 @@ body{
 .table_container{
     width: 100%;
     background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    height: auto;
+    box-shadow: rgba(218, 217, 217, 0.35) 0px 5px 15px;
+    height: 500px;
+    overflow: auto;
 }
 .table_container table{
     width: 100%;
@@ -304,14 +323,15 @@ body{
 
 .table_container table thead td{
     background-color: rgb(42, 87, 215);;
-    padding: 1rem;
+    padding: 1em 0.4em;
+    font-size: 20px;
     color: #fff;
 }
 .table_container table tbody td{
     background-color: rgb(255, 255, 255);;
     padding: 0.4rem;
     border-bottom: 1px solid rgb(224, 221, 221);
-    font-size: 20px;
+    font-size: 18px;
     margin: 0.4rem 0;
     color: #000000;
 }
@@ -376,13 +396,15 @@ body{
     height: fit-content;
     position: relative;
     right: 0;
+    box-shadow: rgba(218, 217, 217, 0.35) 0px 5px 15px;
     padding: 1rem 0;
     margin: 3.7rem 0 0 1rem;
 }
 
 .approved_appoitment .table_container{
     width: 100%;
-    height: auto;
+    height: 500px;
+    overflow: auto;
     box-shadow: none;
 }
 .approved_appoitment .table_container table{
@@ -393,13 +415,14 @@ body{
 .approved_appoitment .table_container table thead td{
     background-color: rgb(42, 87, 215);;
     padding: 1rem 1rem;
+    font-size: 18px;
     color: #fff;
 }
 .approved_appoitment .table_container table tbody td{
     background-color: rgb(255, 255, 255);;
     cursor: pointer;
     border-bottom: 1px solid rgb(224, 221, 221);
-    font-size: 20px;
+    font-size: 15px;
     padding: 1.5rem 1rem;
     margin: 0.4rem 0;
     color: #000000;
@@ -465,6 +488,9 @@ body{
     display: flex;
     justify-content: space-between;
 }
+.lab_input span{
+    font-size: 18px;
+}
 .lab_input .result{
     width: 790px;
   height: fit-content;
@@ -480,6 +506,7 @@ color: #fff;
 }
 .lab_input .result h1{
 color: #fff;
+font-size: 20px;
 }
 .lab_input .result .patient_profile{
     width: 100%;
@@ -504,21 +531,22 @@ color: #fff;
 .result_for_dia_complaint_upload input{
     padding: 1rem;
     margin: 1rem 0;
-    border: 2px solid rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);;
     outline: none;
 }
 .result_for_dia_complaint_upload textarea{
     padding: 1rem;
     margin: 1rem 0;
-    border: 2px solid rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);;
     outline: none;
 }
 
 .lab_container{
     width: 100%;
-    height: fit-content;
+    height: 525px;
+    overflow: auto;
     padding: 2rem;
-    border-radius: 20px;
+    position: relative;
     margin: 4rem 0 0 5rem;
     box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
     background-color: rgb(42, 87, 215);;
@@ -533,17 +561,18 @@ color: #fff;
     justify-content: space-around;
     align-items: center;
 }
+
 .img_div{
-width:120px;
+width:100px;
 overflow: hidden;
-height:120px;
+height:100px;
 overflow: hidden;
 position: relative;
 display: flex;
 justify-content: center;
 align-items: center;
+border: 2px solid #fff;
 border-radius: 100%;
-background-color: rgb(42, 87, 215);;
 }
 .img_div img{
     position: absolute;
@@ -552,7 +581,7 @@ background-color: rgb(42, 87, 215);;
     height: 200px;
 }
 span{
-    font-size: 20px;
+    font-size: 15px;
 }
 .clinical_chemistry, .immunoassay,.thyroid, .tumor, .blood, .food, .microbiology,.histopathology,.haematology{
     width: 100%;
@@ -590,7 +619,7 @@ span{
 .form_control{
     width: 300px;
     color: #fff;
-    font-size: 18px;
+    font-size: 15px;
     padding: 0.4rem 1rem;
     margin: 0.5rem 0;
 }
@@ -598,11 +627,11 @@ span{
     width: 100%;
     background-color: rgb(255, 255, 255);
     height: fit-content;
-    padding: 1rem;
+    padding: 0.5rem;
     border: none;
     margin: 1rem 0;
     cursor: pointer;
-    transition: 0.5s;
+    transition: all ease-in-out 0.5s;
 }
 #btn:hover{
     background:none;
@@ -636,16 +665,15 @@ span{
     width: 500px;
     height: fit-content;
     background-color: #fff;
-    position: fixed;
+    position: absolute;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
+    left: 35%;
     flex-direction: column;
-    left: 50%;
-    top: 50%;
     z-index: 11;
     margin: 5rem auto;
     padding: 1rem 1rem;
-    transform: translate(-50%, -50%);
 }
 #close{
     font-size: 30px;
@@ -665,10 +693,9 @@ span{
 .test_booking h1{
     font-size: 27px;
     text-align: center;
-    color: #fff;
+    color: rgb(42, 87, 215);
     margin: 1em auto;
     padding: 0.5rem;
-    background-color: rgb(42, 87, 215);
 }
 .test_booking table{
     width: 100%;
@@ -697,6 +724,7 @@ span{
     margin: 1rem 0;
     color: #fff;
     border: none;
+    cursor: pointer;
     transition: all ease-in-out 0.5s;
 }
 .test_booking .btn:hover{
@@ -708,12 +736,10 @@ span{
 .overlay{
     width: 100%;
     height: 100%;
-    background-image: url(../Images/19374.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #000000;
     position: fixed;
     top: 0;
+    opacity: 40%;
     left: 0;
     z-index: 10;
 }

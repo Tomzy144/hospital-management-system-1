@@ -31,7 +31,7 @@
 <!-- <script src="?php echo $website_url?>/js/jquery-v3.6.1.min.js"></script>
 <script src="?php echo $website_url?>/js/aos.js"></script>  -->
 
-<script src="<?php echo $website_url?>/labouratory/js/section.js"></script> 
-    <script src="<?php echo $website_url?>/labouratory/js/script.js"></script> 
+<script src="<?php echo $website_url?>js/section.js"></script> 
+    <script src="<?php echo $website_url?>js/script.js"></script> 
        
 
