@@ -122,7 +122,7 @@ body{
     padding: 1rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
-    background-color: #0057c2;
+    background-color: rgb(42, 87, 215);
     flex-direction: column;
     align-items: center;
 }
@@ -284,19 +284,25 @@ body{
 .landing_page_section .section2 .table_container .head_sec{
     margin: 4.5em 0 0 0;
     width: 100%;
-    padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);;
+    font-size: 20px;
 }
+
 .landing_page_section .section2 .table_container .head_sec input{
-padding: 0.4em 0;
+padding: 0.4em 0.4em;
 color: rgb(0, 0, 0);;
 width: 300px;
-border: 1px solid rgb(0, 0, 0);;
+border: none;
+height: 40px;
+margin: 0.4em 0.4em;
 outline: none;
+}
+.landing_page_section .section2 .table_container .head_sec input:focus{
+    border: 1px solid rgb(0, 0, 0);
 }
 .landing_page_section .table_container .color{
     color: rgb(0, 0, 0);;
@@ -304,12 +310,37 @@ outline: none;
 }
 .landing_page_section .table_container tbody td{
     color: rgb(0, 0, 0);;;
+    position: relative;
 }
 .landing_page_section .table_container .ward_sec{
     width: fit-content;
-    position: relative;
+    /* position: relative; */
     height: fit-content;
     padding: 1em;
+}
+.landing_page_section .table_container .ward_sec .section_list{
+  position: absolute;
+  padding: 1em;
+  top: 30%;
+  list-style: none;
+  width: 300px;
+  left: -250%;
+  box-shadow: rgba(209, 207, 207, 0.35) 0px 5px 15px;
+  background-color: rgb(255, 255, 255);
+}
+.landing_page_section .table_container .ward_sec .section_list .section{
+padding: 0.5em;
+border-bottom: 1px solid rgb(211, 206, 206);;
+}
+.landing_page_section .table_container .ward_sec .section_list  #close_icon{
+    position: absolute;
+    right: 0;
+    padding: 0 0.5em;
+    cursor: pointer;
+ }
+.landing_page_section .table_container .ward_sec .section_list .section .ward li{
+padding: 0.5em;
+list-style: none;
 }
 .landing_page_section .table_container .ward_sec .sections{
   display: flex;
@@ -326,8 +357,9 @@ outline: none;
     margin: 0.1em 0;
     cursor: pointer;
 }
+
 .landing_page_section .table_container .ward_sec .section_ward_bed{
- margin: 0.5em 0;
+ margin: 0.1em 0;
  cursor: pointer;
 }
 
@@ -406,7 +438,7 @@ form span{
 .btn_submit:hover{
     background-color: #fff;
     color:rgb(0, 0, 0);
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(42, 87, 215);
 }
 .nurse_section{
     width: 500px;
@@ -881,7 +913,7 @@ table{
  table thead td{
     background-color: rgb(42, 87, 215);;
     color: #fff;
-    padding: 0.5rem;
+    padding: 1em 0.7em;
     font-size: 18px;
 }
  table tbody{

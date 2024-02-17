@@ -48,73 +48,73 @@ profile_container.classList.toggle("hide");
 
 
 
-const activeSection = document.querySelector(".current-section");
-const inactiveSection = document.querySelector(".form-section");
-const section1 = document.querySelector("#section1");
-const section2 = document.querySelector("#section2");
-const section3 = document.querySelector("#section3");
-const btnNext = document.querySelector(".btn-next");
-const btnNextNext = document.querySelector(".btn-next_next");
-const btnBack = document.querySelector(".btn-back");
-const btnBackBack = document.querySelector(".btn-back_back");
+// const activeSection = document.querySelector(".current-section");
+// const inactiveSection = document.querySelector(".form-section");
+// const section1 = document.querySelector("#section1");
+// const section2 = document.querySelector("#section2");
+// const section3 = document.querySelector("#section3");
+// const btnNext = document.querySelector(".btn-next");
+// const btnNextNext = document.querySelector(".btn-next_next");
+// const btnBack = document.querySelector(".btn-back");
+// const btnBackBack = document.querySelector(".btn-back_back");
 
-//Current section
- section1.classList.add("current-section");
- section2.classList.remove("current-section");
- section3.classList.remove("current-section")
+// //Current section
+//  section1.classList.add("current-section");
+//  section2.classList.remove("current-section");
+//  section3.classList.remove("current-section")
 
- btnNext.style.display = "block";
- btnNextNext.style.display = "block";
- btnBack.style.display = "block";
+//  btnNext.style.display = "block";
+//  btnNextNext.style.display = "block";
+//  btnBack.style.display = "block";
 
-const nextForm =  btnNext.addEventListener("click", function(){
-     section1.classList.remove("current-section");
-     section3.classList.add("current-section");
-     btnNext.style.display = "block";
-     let upload_image = document.querySelector(".upload_image");
-     upload_image.style.display = "none";
-     const showClickButton = document.querySelector(".btn_capture")
-     showClickButton.classList.add("hide");
+// const nextForm =  btnNext.addEventListener("click", function(){
+//      section1.classList.remove("current-section");
+//      section3.classList.add("current-section");
+//      btnNext.style.display = "block";
+//      let upload_image = document.querySelector(".upload_image");
+//      upload_image.style.display = "none";
+//      const showClickButton = document.querySelector(".btn_capture")
+//      showClickButton.classList.add("hide");
  
-     const showClickButtonForRecapture = document.querySelector(".btn_re_capture")
-     showClickButtonForRecapture.classList.add("hide")
+//      const showClickButtonForRecapture = document.querySelector(".btn_re_capture")
+//      showClickButtonForRecapture.classList.add("hide")
   
- });
-const nextNextForm =  btnNextNext.addEventListener("click", function(){
-     section3.classList.remove("current-section");
-     section2.classList.add("current-section");
-     btnNextNext.style.display = "block";
-     let upload_image = document.querySelector(".upload_image");
-     upload_image.style.display = "none";
+//  });
+// const nextNextForm =  btnNextNext.addEventListener("click", function(){
+//      section3.classList.remove("current-section");
+//      section2.classList.add("current-section");
+//      btnNextNext.style.display = "block";
+//      let upload_image = document.querySelector(".upload_image");
+//      upload_image.style.display = "none";
 
-     const showClickButton = document.querySelector(".btn_capture")
-     showClickButton.classList.add("hide");
+//      const showClickButton = document.querySelector(".btn_capture")
+//      showClickButton.classList.add("hide");
  
-     const showClickButtonForRecapture = document.querySelector(".btn_re_capture")
-     showClickButtonForRecapture.classList.add("hide")
+//      const showClickButtonForRecapture = document.querySelector(".btn_re_capture")
+//      showClickButtonForRecapture.classList.add("hide")
   
- });
+//  });
 
 
- const backForm = btnBack.addEventListener("click", function(){
-     section3.classList.add("current-section");
-     section2.classList.remove("current-section");
-     btnNext.style.display = "block";
-     const showClickButton = document.querySelector(".btn_capture")
-     showClickButton.classList.add("hide");
+//  const backForm = btnBack.addEventListener("click", function(){
+//      section3.classList.add("current-section");
+//      section2.classList.remove("current-section");
+//      btnNext.style.display = "block";
+//      const showClickButton = document.querySelector(".btn_capture")
+//      showClickButton.classList.add("hide");
  
-     const showClickButtonForRecapture = document.querySelector(".btn_re_capture")
-     showClickButtonForRecapture.classList.add("hide")
+//      const showClickButtonForRecapture = document.querySelector(".btn_re_capture")
+//      showClickButtonForRecapture.classList.add("hide")
      
- })
- const backBackForm = btnBackBack.addEventListener("click", function(){
-     section1.classList.add("current-section");
-     section3.classList.remove("current-section");
-     btnNextNext.style.display = "block";
-     let upload_image = document.querySelector(".upload_image");
-     upload_image.style.display = "block";
+//  })
+//  const backBackForm = btnBackBack.addEventListener("click", function(){
+//      section1.classList.add("current-section");
+//      section3.classList.remove("current-section");
+//      btnNextNext.style.display = "block";
+//      let upload_image = document.querySelector(".upload_image");
+//      upload_image.style.display = "block";
      
- })
+//  })
 
 
  //dashboardPage link

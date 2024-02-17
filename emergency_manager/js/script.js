@@ -1,3 +1,14 @@
+    //PROFILE IMAGE
+    let profile_container  =  document.querySelector(".profile_account");
+    function click_icon_for_profile (){
+        profile_container.classList.toggle("hide");
+    };
+
+    function show_emergency_patient_list(){
+        document.querySelector(".patient_list_section").classList.remove("hide");
+        document.querySelector(".emergency_form_container").style.display="none"
+    }
+
 const click_on_nurse_button = ()=>{
     document.querySelector(".nurse_section").classList.toggle("hide")
 }
@@ -20,8 +31,10 @@ const click_on_morgue_button = ()=>{
     document.querySelector(".morgue_section").classList.toggle("hide")
 }
 const show_list = ()=>{
-    document.querySelector(".section_list").classList.toggle("hidden")
-
+    document.querySelector(".section_list").classList.remove("hidden")
+}
+const close_list = ()=>{
+    document.querySelector(".section_list").classList.add("hidden")
 }
 
 const show_wards = ()=>{
