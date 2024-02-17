@@ -292,17 +292,29 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id'])) {
 
 <?php
 // Assuming you have a function getPatientProfile that takes a patient ID and returns the profile
-function getPatientProfile($patientId) {
-    // Fetch the patient profile from your database
-    // Return the profile as a string
+function getPatientProfile($patientId, $conn) {
+    // Prepare SQL statement to select patient profile
+    $sql = "SELECT * FROM patients WHERE patient_id = $patientId";
+    $result = $conn->query($sql);
+
+    // Check if any rows were returned
+    if ($result->num_rows > 0) {
+        // Fetch patient profile as an associative array
+        $row = $result->fetch_assoc();
+        // Return the profile as JSON (you can format it as needed)
+        return json_encode($row);
+    } else {
+        return "Patient profile not found";
+    }
 }
 
+// Check if patientId is set in the POST request
 if (isset($_POST['patientId'])) {
-    echo getPatientProfile($_POST['patientId']);
+    // Assuming $conn is the existing database connection
+    echo getPatientProfile($_POST['patientId'], $conn);
     exit;
 }
 ?>
-
 
 
 
