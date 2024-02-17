@@ -1,6 +1,6 @@
 <?php include '../backend/config/connection.php' ?>
 <?php include 'config/lab_scientist-session-validation.php';?>
-<?php include '../backend/config/user-validation.php';?>
+
 
 
 <?php
@@ -13,7 +13,7 @@
 
     $fetch_lab_scientist_profile = $callclass->_get_lab_scientist_details($conn, $s_lab_scientist_id);
     $lab_scientist_profile_array = json_decode($fetch_lab_scientist_profile, true);
-    $fullname = $lab_scientist_profile_array[0]['fullname'];
+    $fullname = $lab_scientist_profile_array[0]['lab_scientist_name'];
     $email = $lab_scientist_profile_array[0]['email'];
     $phonenumber = $lab_scientist_profile_array[0]['phonenumber'];
     // $role_id= $lab_scientist_profile_array[0]['role_id'];
@@ -27,7 +27,7 @@
 ?>
 
 <?php 
-    $page = "lab_scientist_dash"; // Assign the value "lab_scientist_dash" to the $page variable
+    $page == "lab_scientist_dash"; // Assign the value "lab_scientist_dash" to the $page variable
 ?>
 
 
@@ -123,7 +123,7 @@
             <div class="active_on"></div>
             </div>
         </img>  
-            <span>Doctor Kingsley Etete Effiong</span>
+            <span><?php echo $fullname ?></span>
             <i class="bi-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>

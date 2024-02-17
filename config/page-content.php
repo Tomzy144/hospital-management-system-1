@@ -195,12 +195,7 @@ if($s_staff_id != '') {
 
             <?php if ($page=='lab_login') 
             
-        if($s_staff_id != '') {
-        ?>
-            <script>
-                window.location.href = "<?php echo $website_url?>/labouratory";
-            </script>
-        <?php } ?>
+       ?>
 
     <div class="fill-form-div login-div" id="next_4">
         <div class="lab-login">

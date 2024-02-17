@@ -434,8 +434,8 @@
 				$userquery = mysqli_query ($conn,"SELECT * FROM `lab_scientist_tab` WHERE email = '$lab_scientist_email' AND `password` = '$lab_scientist_password' AND status_id=1") ;
 						$usersel=mysqli_fetch_array($userquery);
 						$lab_scientist_id=$usersel['lab_scientist_id'];
-						$_SESSION['lab_id'] = $lab_scientist_id;
-						$s_lab_scientist_id=$_SESSION['lab_id'];
+						$_SESSION['lab_scientist_id'] = $lab_scientist_id;
+						$s_lab_scientist_id=$_SESSION['lab_scientist_id'];
 						mysqli_query($conn,"UPDATE `lab_scientist_tab` SET last_login=NOW() WHERE lab_scientist_id='$s_lab_scientist_id'") or die("cannot update") ; //// update last login
 									
 				?>
