@@ -72,6 +72,32 @@ if ($_POST && !empty($_POST['doctor_email'])) {
 
 
 
+<?php 
+//////for lab
+
+// session variables//
+    $s_lab_scientist_id=$_SESSION['lab_scientist_id']; 
+
+
+
+////////// login session
+if ($_POST && !empty($_POST['lab_scientist_email'])) {
+    $_SESSION['lab_scientist_email'] = $_POST['lab_scientist_email'];
+    }
+    $doctor_email=$_SESSION['lab_scientist_email'];
+    if ($_POST && !empty($_POST['lab_scientist_password'])) {
+    $_SESSION['lab_scientist_password'] = $_POST['lab_scientist_password'];
+    
+    }
+    $lab_password=($_SESSION['lab_scientist_password']);
+
+
+?>
+
+
+
+
+
 
 
 
@@ -379,6 +405,25 @@ function search_patient($conn, $total_patient) {
 
     return '[{"totalp":"'.$total_patient.'"}]';
 }
+
+
+function _get_lab_scientist_details($conn, $s_lab_scientist_id){
+    $query=mysqli_query($conn, "SELECT * FROM lab_scientist_tab WHERE lab_scientist_id='$s_lab_scientist_id'");    
+    $fetch=mysqli_fetch_array($query);
+    $lab_scientist_id=$fetch['lab_scientist_id'];
+    $fullname=$fetch['fullname'];
+    $email=$fetch['email'];
+    $phonenumber=$fetch['phonenumber'];
+    $role_id=$fetch['role_id'];
+    $status_id=$fetch['status_id'];
+    $passport=$fetch['passport'];
+    $date=$fetch['date'];
+    $last_login=$fetch['last_login'];
+
+    return '[{"lab_scientist_id":"'.$lab_scientist_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
+}
+	
+
 
 
 
