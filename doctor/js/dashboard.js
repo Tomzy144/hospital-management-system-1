@@ -1,6 +1,10 @@
 
 //PROFILE IMAGE
+   //PROFILE IMAGE
 
+   function click_icon_for_profile(){
+    document.querySelector(".profile_account").classList.toggle("hide");
+   };
 
 
 function appointmentCountin() {
