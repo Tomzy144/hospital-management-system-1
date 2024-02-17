@@ -397,6 +397,54 @@
 							</script>
 				<?php
 
+			/////////////labs
+				
+			case 'lab_login_check': // for doctor login
+				$lab_scientist_email=trim($_POST['lab_scientist_email']);
+			///	$temp_password=trim(($_POST['password']));
+				$lab_scientist_password=trim(($_POST['lab_scientist_password']));
+				$lab_scientist_id=trim(($_POST['lab_scientist_id']));
+
+					$query=mysqli_query($conn,"SELECT * FROM lab_scientist_tab WHERE `email`='$lab_scientist_email' AND `password`='$lab_scientist_password' AND `lab_scientist_id` = '$lab_scientist_id'");
+					$usercount = mysqli_num_rows($query);
+					if ($usercount>0){
+						$usersel=mysqli_fetch_array($query);
+						$lab_scientist_id=$usersel['lab_scientist_id'];
+						$status_id=$usersel['status_id'];
+						
+							if ($status_id==1){
+								$check=1; ///// account is active
+
+								
+							}else if($status_id==2){
+								$check=2; ///// account is suspended
+								
+							}else {
+								$check=0;
+							}
+					}else{
+						$check=0;
+					}
+									
+					echo json_encode(array("check" => $check, )); 
+			break;
+
+
+			case 'lab_login': // login from index
+				$userquery = mysqli_query ($conn,"SELECT * FROM `lab_scientist_tab` WHERE email = '$lab_scientist_email' AND `password` = '$lab_scientist_password' AND status_id=1") ;
+						$usersel=mysqli_fetch_array($userquery);
+						$lab_scientist_id=$usersel['lab_scientist_id'];
+						$_SESSION['lab_id'] = $lab_scientist_id;
+						$s_lab_scientist_id=$_SESSION['lab_id'];
+						mysqli_query($conn,"UPDATE `lab_scientist_tab` SET last_login=NOW() WHERE lab_scientist_id='$s_lab_scientist_id'") or die("cannot update") ; //// update last login
+									
+				?>
+							<script>
+
+								window.parent(location="../labouratory/");
+							</script>
+				<?php
+
 
 
 

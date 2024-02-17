@@ -603,3 +603,67 @@ function doctor_login(doctor_email,doctor_password,doctor_id){
 }
 
 
+
+/////lab login
+
+
+
+function lab_sign_in(){ 
+    var lab_scientist_email = $('#lab_scientist_email').val();
+    var lab_scientist_password = $('#lab_scientist_password').val();
+    var lab_scientist_id = $('#lab_scientist_id').val();
+    if((lab_scientist_email!='')&&(lab_scientist_password!='')&&(lab_scientist_id!='')){
+        lab_login(lab_scientist_email,lab_scientist_password,lab_scientist_id);
+    }else{
+        $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
+        window.alert("Fill the neccessary field")
+    }
+};
+
+
+
+
+///////////////////// doctor login ///////////////////////////////////////////
+function lab_login(lab_scientist_email,lab_scientist_password,lab_scientist_id){
+    var action='lab_login_check';
+    
+   //////////////// get btn text ////////////////
+   var btn_text=$('#lab_login_btn').html();
+   $('#lab_login_btn').html('Authenticating...');
+   document.getElementById('lab_login_btn').disabled=true;
+   ////////////////////////////////////////////////	
+    
+    var dataString ='action='+ action+'&lab_scientist_email='+ lab_scientist_email + '&lab_scientist_password='+ lab_scientist_password + '&lab_scientist_id='+ lab_scientist_id;
+   
+   $.ajax({
+   type: "POST",
+   url: "config/code.php",
+   data: dataString,
+   dataType: 'json',
+   cache: false,
+   success: function(data){
+    var scheck = data.check;
+
+   if(scheck==1){
+    $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
+    $('#lab_loginform').submit();
+    window.alert("Welcome Back");
+    // window.parent("location=doctor/");
+    
+    
+   }else if(scheck==2){
+    window.alert("Account does not exists")
+           $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
+    }else{
+    $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid Email or Password</span>').fadeIn(500).delay(5000).fadeOut(100);
+    window.alert("Invalid Login Details")
+    }
+    $('#lab_login_btn').html(btn_text);
+    document.getElementById('lab_login_btn').disabled=false;
+       $('#lab_login_btn').html('<i class="fa fa-sign-in"></i> Log-In');
+   }
+   });
+}
+
+
+

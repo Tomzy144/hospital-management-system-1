@@ -1,4 +1,76 @@
 <?php include '../backend/config/connection.php' ?>
+<?php include 'config/lab_scientist-session-validation.php';?>
+<?php include '../backend/config/user-validation.php';?>
+
+
+<?php
+    $lab_scientist_id = $_POST['lab_scientist_id'];
+?>
+
+    
+
+<?php    
+
+    $fetch_lab_scientist_profile = $callclass->_get_lab_scientist_details($conn, $s_lab_scientist_id);
+    $lab_scientist_profile_array = json_decode($fetch_lab_scientist_profile, true);
+    $fullname = $lab_scientist_profile_array[0]['fullname'];
+    $email = $lab_scientist_profile_array[0]['email'];
+    $phonenumber = $lab_scientist_profile_array[0]['phonenumber'];
+    // $role_id= $lab_scientist_profile_array[0]['role_id'];
+    $status_id = $lab_scientist_profile_array[0]['status_id'];
+    $date = $lab_scientist_profile_array[0]['date'];
+    $last_login = $lab_scientist_profile_array[0]['last_login'];
+    $passport = $lab_scientist_profile_array[0]["passport"]; 
+    $fetch_status = $callclass->_get_status_details($conn, $status_id);
+    $status_array = json_decode($fetch_status, true);
+    $status_name = $status_array[0]['status_name'];
+?>
+
+<?php 
+    $page = "lab_scientist_dash"; // Assign the value "lab_scientist_dash" to the $page variable
+?>
+
+
+
+<?php 
+    
+
+
+    $fetch_status = $callclass->_get_status_details($conn, $status_id);
+    $status_array = json_decode($fetch_status, true);
+    
+    ?>
+
+
+
+<?php
+    $fetch_appointment = $callclass->_get_appointment_details($conn, $s_lab_scientist_id);
+    $lab_scientist_appointment_array = json_decode($fetch_appointment, true);
+
+    // Check if decoding was successful
+    if ($lab_scientist_appointment_array !== null) {
+        // Access values from the decoded array
+        $apatient_name = $lab_scientist_appointment_array[0]['patient_name'];
+        $email = $lab_scientist_appointment_array[0]['email'];
+        $phonenumber = $lab_scientist_appointment_array[0]['phonenumber'];
+        $role_id = $lab_scientist_appointment_array[0]['role_id'];
+        $status_id = $lab_scientist_appointment_array[0]['status_id'];
+        $passport = $lab_scientist_appointment_array[0]['passport'];
+        $appointment_date = $lab_scientist_appointment_array[0]['appointment_date'];
+        $appointment_reason = $lab_scientist_appointment_array[0]['reason'];
+
+        // Now you can use these variables as needed in your code
+    } else {
+        // Handle the case where decoding failed
+        echo "Failed to decode JSON";
+    }
+
+?>
+
+
+
+
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http: //www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -12,6 +84,18 @@
 </head>
 
 <body>
+
+
+
+<script>
+       if (window.history && window.history.pushState) {
+            window.history.pushState('forward', null,);
+            window.onpopstate = function () {
+                window.history.pushState('forward', null);
+            };
+        }
+    </script>
+
          <!---SIDEBAR AND NAVBAR-->
     <div class="navbar">
         <div class="section1">

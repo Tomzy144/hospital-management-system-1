@@ -193,7 +193,15 @@ if($s_staff_id != '') {
     <!-- lab - -->
 
 
-    <?php if ($page=='lab_login') ?>
+            <?php if ($page=='lab_login') 
+            
+        if($s_staff_id != '') {
+        ?>
+            <script>
+                window.location.href = "<?php echo $website_url?>/labouratory";
+            </script>
+        <?php } ?>
+
     <div class="fill-form-div login-div" id="next_4">
         <div class="lab-login">
             <!-- Close icon for the login form -->
@@ -201,27 +209,28 @@ if($s_staff_id != '') {
             <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Lab Scientist)</h1>
             <!-- Lab scientist login form -->
-            <form action="../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
+            <form action="config/code.php" id="lab_loginform" enctype="multipart/form-data" method="post">
                 <!-- Email field -->
                 <div class="form-control">
                     <label for='email'>Email</label>
                     <i class="fa fa-address-book"></i>
-                    <input type='email' id="email" name="email" autoComplete='off'/>
+                    <input type='email' id="lab_scientist_email" name="email" autoComplete='off'/>
                 </div>
                 <!-- ID field -->
                 <div class="form-control">
                     <label for='number'>Your ID</label>
                     <i class="fa fa-key"></i>
-                    <input type="text" name="number" autoComplete='off'/> 
+                    <input type="text" name="number" id="lab_scientist_id" autoComplete='off'/> 
                 </div>
                 <!-- Password field -->
                 <div class="form-control">
                     <label for='password'>Password</label>
                     <i class="fa fa-lock"></i>
-                    <input type="password" id="password" name="spass" autocomplete="off">
+                    <input type="password" id="lab_scientist_password" name="spass" autocomplete="off">
                 </div>
+                <input name="action" value="lab_login" type="hidden" />
                 <!-- Login button -->
-                <button type="button" id="login_btn" title="Login" onclick="isLabDoc_active()" class="btn">Login</button>
+                <button type="button" id="lab_login_btn" title="Login" onclick="lab_sign_in()" class="btn">Login</button>
             </form>
         </div>
 
