@@ -1,3 +1,11 @@
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Light.ttf') format('truetype'); /* Adjust the path if necessary */
+    font-weight: normal; /* Specify the weight if needed */
+    font-style: normal; /* Specify the style if needed */
+  }
+
 *{
     margin: 0;
     padding: 0;

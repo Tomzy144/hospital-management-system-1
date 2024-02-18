@@ -331,7 +331,7 @@ body{
     background-color: rgb(255, 255, 255);;
     padding: 0.4rem;
     border-bottom: 1px solid rgb(224, 221, 221);
-    font-size: 18px;
+    font-size: 15px;
     margin: 0.4rem 0;
     color: #000000;
 }
@@ -402,7 +402,7 @@ body{
 }
 
 .approved_appoitment .table_container{
-    width: 100%;
+    width: 500px;
     height: 500px;
     overflow: auto;
     box-shadow: none;
