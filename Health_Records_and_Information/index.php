@@ -123,7 +123,7 @@
         <h1>WalkIn Admission Form</h1>
         <div class="walkin_in_section_upload_image">
              <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
-            <i class="fa fa-plus" id="walkin_in_section_capture_image" onclick="walkin_patient_openCamera()"></i>
+            <i class="bi bi-plus" id="walkin_in_section_capture_image" onclick="walkin_patient_openCamera()"></i>
             <canvas id="walkin_in_section_canvasElement" style="display: none;"></canvas>
             <img id="walkin_in_section_capturedImage" style="display: none;">
         </div>
@@ -262,7 +262,7 @@
                 <label for="roles">Doctor Role:</label>
 <select id="roles" >
 <option  onclick="getDoctors()">Select</option>
-    <!-- <option value="cardiologist">Cardiologist</option>
+    <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
     <option value="psychiatrist">Psychiatrist:</option>
@@ -287,7 +287,7 @@
     <option value="ophthanlmologist">Ophthanlmologist</option>
     <option value="cardology">Cardology</option>
     <option value="allergist">Allergist</option>
-    <option value="orthopedic_surgoen">Orthopedic Surgoen</option>  -->
+    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
     <!-- Add more role options as needed-->
 </select>
 <label for="doctors">Select Doctor:</label>
@@ -471,7 +471,7 @@
         <h1>Patient Admission Form</h1>
         <div class="upload_image">
              <video id="videoElement" width="400" height="300" autoplay></video>
-            <i class="fa fa-plus" id="capture_image" onclick="openCamera()"></i>
+            <i class="bi bi-plus" id="capture_image" onclick="openCamera()"></i>
             <canvas id="canvasElement" style="display: none;"></canvas>
             <img id="capturedImage" style="display: none;">
         </div>
@@ -511,7 +511,7 @@
             </div>
         <div class="form-control">
         <label for="hmo">Hospital Plans</label>
-            <select name="" id="select_box">
+            <select name="" id="select_box" onClick="ChooseSelectBox()">
                 <option value=""></option>
                 <option value="family_plan" onClick="family_plan()">Family Plan</option>
                 <option value="">Personal</option>
@@ -569,36 +569,6 @@
         Female
       </label>
     </div>
-    <!-- <label>What kind  of patient Category are you?</label>
-<div class="form-display2">
-<label for="radio">
-    <input type="checkbox" id="category1" name="gender" value="Inpatients"  class='check_category1'>
-    Inpatients
-  </label>
-<label for="radio">
-    <input type="checkbox" id="category2" name="gender" value="Outpatients"  class='check_category2'>
-    Outpatients
-  </label>
-<label for="radio">
-    <input type="checkbox" id="category3" name="gender" value="Waiting_List"  class='check_category3'>
-    Waiting List
-  </label>
-</div> -->
-<!-- 
-<div class="form-display2">
-<label for="radio">
-    <input type="checkbox"  id="category4"name="gender" value="Appointment"  class='check_category4'>
-    Appointment
-  </label>
-<label for="radio">
-    <input type="checkbox" id="category5" name="gender" value="Test"  class='check_category5'>
-    Test
-  </label>
-<label for="radio">
-    <input type="checkbox" id="category6" name="gender" value="ANC"  class='check_category6'>
-    ANC
-  </label>
-</div> -->
 <div class="ward hidden">
         <select id="wards" onclick="getBeds();">
     <option>Choose a Ward</option>
@@ -661,10 +631,7 @@
     <input type="checkbox"  id="kgender2" name="gender" value="Male"  class='check3'>
     Male
   </label>
-
 </div>
-
-
         <button type="button" class="btn-back_back">Back</button>
 <button type="button" class="btn-next_next">Next</button>
     </div>

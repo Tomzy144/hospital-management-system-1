@@ -4,14 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morgue</title>
-        <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/icons-1.10.2/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="style/index.css">
+        <link rel="stylesheet" href="style/icons-1.10.2/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="navbar-container"></div>
+
+<div class="navbar">
+      <div class="section1">
+      <!-- <i class="fa fa-long-arrow-left " id="back-arrow" onclick="backWardArrow()"></i> -->
+      </div>
+      <div class="section2">
+          <div class="icons">
+          <i class="bi bi-person-fill" id="icon">
+          <div class="notification1">9</div>
+        </i>
+        <i class="bi bi-bell-fill" id="icon">
+        <div class="notification2">15</div></i>
+        </i>
+        </div>
+        <div class="profile">
+          <div class="profile_account hide">
+          <img id="image_profile_account" src="../Images/medium-shot-health-worker-with-equipment.jpg" alt="">
+          <h4>Peace Emmanuel Christopher</h4>
+          <button class="btn_submit">Upload Image</button>
+          <span>change password</span>
+      </div>
+          <div class="image">
+          <img src="../Images/medium-shot-health-worker-with-equipment.jpg" alt="">
+          <div class="active_on"></div>
+          </div>
+      </img>  
+          <span>Peace Emmanuel Christopher</span>
+          <i class="bi bi-caret-down-fill"  id="icon-drop" onClick="click_icon_for_profile()"></i>
+        </div>
+      </div>
+    </div>
+      <div class="sidebar">
+             <div class="sidebar_contents">
+              <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
+             </div>
+          <div class="sidebar_icons">
+          <i class="bi bi-chat-dots-fill" id="icon"></i>
+          <i class="bi bi-person-fill-exclamation"  id="icon" onClick="open_incoming_deceased_section()"></i>
+          <i class="bi bi-person" id="icon" onClick="open_admission_form_section()"></i>
+          <i class="bi bi-person-check-fill" id="icon" onClick="outgoingList()"></i>
+              <i class=" bi-box-arrow-right" id="icon"></i>
+          </div>
+      </div>
 <div id="all_section_container">
 <div class="appoitment_section">
 <div class="appiontment_booking_container">
@@ -36,7 +78,7 @@
     <td>Reject</td>
   </thead>
   <tbody>
-    
+
   </tbody>
   <tbody>
    
@@ -75,7 +117,7 @@
                 <form action="">
                     <div class="form_control">
                         <label for="">Deceased Name</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="" placeholder ="John mike">
                     </div>
                     <div class="form_control">
                         <label for="">Date of Birth</label>
@@ -91,7 +133,7 @@
                     </div>
                     <div class="form_control">
                         <label for="">Age at time of Death</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="" placeholder ="53 years">
                     </div>
                     <div class="form_control">
                         <label for="">Gender</label>
@@ -104,7 +146,7 @@
                     </div>
                     <div class="form_control">
                     <label for="">Place of Death</label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="" placeholder ="Calabar">
                     </div>
                     <div class="form_control">
                         <label for="">Was an autopsy perfomed</label>
@@ -116,20 +158,20 @@
                     </div>
                     <div class="autopsy_message hide">
                         <label for="">Message</label>
-                  <textarea class=" " name="" id="" cols="30" rows="10"></textarea>
+                  <textarea class=" " name="" id="" cols="30" rows="10" placeholder ="type in"></textarea>
                   </div>
                     </div>
                     <div class="form_control">
                     <label for="">Cause of death</label>
-                       <textarea name="" id="" cols="30" rows="10"></textarea>
+                       <textarea name="" id="" cols="30" rows="10" placeholder ="type in"></textarea>
                     </div>
                     <div class="form_control">
                     <label for="">Duration of Illness</label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="" placeholder ="type in">
                     </div>
                     <div class="form_control">
                     <label for="">Deposit</label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="" placeholder ="amount">
                     </div>
                     <div class="form_control">
                     <label for="">Morgue Plan</label>
@@ -157,23 +199,23 @@
                 <form action="">
                     <div class="form_control">
                         <label for="">Relative Name</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="" placeholder ="John mike">
                     </div>
                     <div class="form_control">
                         <label for="">Relationship with deceased</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="" placeholder ="brother">
                     </div>
                     <div class="form_control">
                         <label for="">Phone Number</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="" placeholder ="+234 9832 8323 33">
                     </div>
                     <div class="form_control">
                         <label for="">Mental Status</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="" placeholder ="type in">
                     </div>
                     <div class="form_control">
                         <label for="">Occupation</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="" placeholder ="type in">
                     </div>
                     <div class="form_control">
                         <label for="">Gender</label>
@@ -186,11 +228,11 @@
                     </div>
                     <div class="form_control">
                     <label for="">Religion</label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="" placeholder ="type in">
                     </div>
                     <div class="form_control">
                     <label for="">Deceased ID</label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="" placeholder ="PAT00032">
                     </div>
                     <div class="form_control">
                     <label for="">Upload ID</label>
@@ -205,7 +247,7 @@
                     <input type="checkbox" name="" id="arr_no">
                     <div class="arr_message hide">
                         <label for="">Message</label>
-                  <textarea class=" " name="" id="" cols="30" rows="10"></textarea>
+                  <textarea class=" " name="" id="" cols="30" rows="10" placeholder ="type in"></textarea>
                   </div>
                     </div>
                     </div>

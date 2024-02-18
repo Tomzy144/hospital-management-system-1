@@ -58,7 +58,7 @@ profile_container.classList.toggle("hide");
 // const btnBack = document.querySelector(".btn-back");
 // const btnBackBack = document.querySelector(".btn-back_back");
 
-// //Current section
+//Current section
 //  section1.classList.add("current-section");
 //  section2.classList.remove("current-section");
 //  section3.classList.remove("current-section")
@@ -118,212 +118,13 @@ profile_container.classList.toggle("hide");
 
 
  //dashboardPage link
- const dashboard = ()=>{
+ function dashboard(){
      let url = "../index.php";
      window.parent(location=(url))
  }
 
 
 //FAMILY PLAN
-const selectBox  = document.querySelector("#select_box");
-const family_plan = document.querySelector(".family_plan")
-
-selectBox.addEventListener("change", function(){
-  if(selectBox.value === "family_plan"){
-    family_plan.classList.remove("hide");
-  }else{
-    family_plan.classList.add("hide");
-    check_input_family_id_number.classList.add("hide");
-  }
-});
-
-const family_check_true = document.querySelector("#family_check_true");
-const family_check_false = document.querySelector("#family_check_false");
-const check_input_family_id_number = document.querySelector(".input_family_id_number")
-
-function handleCheckboxFamiilyChange(){
-    if(family_check_true.checked){
-      family_check_false.disabled = true;
-      check_input_family_id_number.classList.remove("hide");
-      family_plan.classList.add("hide");
-    }else{
-      family_check_false.disabled = false;
-    }
-
-    if(family_check_false.checked){
-      family_check_true.disabled = true;
-      check_input_family_id_number.classList.add("hide");
-      family_plan.classList.add("hide");
-    }else{
-      family_check_true.disabled = false;
-    }
-}
-
-family_check_true.addEventListener("change", handleCheckboxFamiilyChange);
-family_check_false.addEventListener("change", handleCheckboxFamiilyChange);
-
-
-
-
-//GENDER
- const checked1 =  document.querySelector(".check1")
- const checked2 =  document.querySelector(".check2")
- const checked3 =  document.querySelector(".check3")
- const checked4 =  document.querySelector(".check4")
-
- function handleCheckboxChange() {
-     //checked1
-   if (checked1.checked) {
-     checked2.disabled = true;
-   } else {
-     checked2.disabled = false;
-   }
-   
-   if (checked2.checked) {
-     checked1.disabled = true;
-   } else {
-     checked1.disabled = false;
-   }
-   //checked2
-   if (checked3.checked) {
-     checked4.disabled = true;
-   } else {
-     checked4.disabled = false;
-   }
-   
-   if (checked4.checked) {
-     checked3.disabled = true;
-   } else {
-     checked3.disabled = false;
-   }
- }
-
- // Attach the event listener to both checkboxes
- checked1.addEventListener('change', handleCheckboxChange);
- checked2.addEventListener('change', handleCheckboxChange);
- checked3.addEventListener('change', handleCheckboxChange);
- checked4.addEventListener('change', handleCheckboxChange);
-
-
- //kind of category
-//  const check_category1 = document.querySelector(".check_category1")
-//  const check_category2= document.querySelector(".check_category2")
-//  const check_category3 = document.querySelector(".check_category3")
-//  const check_category4 = document.querySelector(".check_category4")
-//  const check_category5 = document.querySelector(".check_category5")
-//  const check_category6 = document.querySelector(".check_category6")
-
-
-// const handleCheckboxCategoryChange1 = ()=>{
- //checked 1
-    //  if(check_category1.checked){
-    //      check_category2.disabled = true;
-    //      check_category3.disabled = true;
-    //      check_category4.disabled = true;
-    //      check_category5.disabled = true;
-    //      check_category6.disabled = true;
-    //   document.querySelector(".ward").classList.remove("hidden")
-    //  }else{
-    //      check_category2.disabled = false;
-    //      check_category3.disabled = false;
-    //      check_category4.disabled = false;
-    //      check_category5.disabled = false;
-    //      check_category6.disabled = false;
-    //      document.querySelector(".ward").classList.add("hidden")
-    //  }
-   
-    //  }
-
-
-//for checked2
-//      const handleCheckboxCategoryChange2 = ()=>{
-
-//      if(check_category2.checked){
-//          check_category1.disabled = true;
-//          check_category3.disabled = true;
-//          check_category4.disabled = true;
-//          check_category5.disabled = true;
-//          check_category6.disabled = true;
-//      }else{
-//          check_category1.disabled = false;
-//          check_category3.disabled = false;
-//          check_category4.disabled = false;
-//          check_category5.disabled = false;
-//          check_category6.disabled = false;
-//      }
-//  }
-
-     //for checked 3
-//      const handleCheckboxCategoryChange3 = ()=>{
-//      if(check_category3.checked){
-//          check_category1.disabled = true;
-//          check_category2.disabled = true;
-//          check_category4.disabled = true;
-//          check_category5.disabled = true;
-//          check_category6.disabled = true;
-//      }else{
-//          check_category1.disabled = false;
-//          check_category2.disabled = false;
-//          check_category4.disabled = false;
-//          check_category5.disabled = false;
-//          check_category6.disabled = false;
-//      }
-//  }
-     //for checked 4
-//      const handleCheckboxCategoryChange4 = ()=>{
-//      if(check_category4.checked){
-//          check_category1.disabled = true;
-//          check_category2.disabled = true;
-//          check_category3.disabled = true;
-//          check_category5.disabled = true;
-//          check_category6.disabled = true;
-//      }else{
-//          check_category1.disabled = false;
-//          check_category2.disabled = false;
-//          check_category3.disabled = false;
-//          check_category5.disabled = false;
-//          check_category6.disabled = false;
-//      }
-//  }
-     //for checked 5
-//      const handleCheckboxCategoryChange5 = ()=>{
-//      if(check_category5.checked){
-//          check_category1.disabled = true;
-//          check_category2.disabled = true;
-//          check_category3.disabled = true;
-//          check_category4.disabled = true;
-//          check_category6.disabled = true;
-//      }else{
-//          check_category1.disabled = false;
-//          check_category2.disabled = false;
-//          check_category3.disabled = false;
-//          check_category4.disabled = false;
-//          check_category6.disabled = false;
-//      }
-//  }
-     //for checked 6
-//      const handleCheckboxCategoryChange6 = ()=>{
-//      if(check_category6.checked){
-//          check_category1.disabled = true;
-//          check_category2.disabled = true;
-//          check_category3.disabled = true;
-//          check_category4.disabled = true;
-//          check_category5.disabled = true;
-//      }else{
-//          check_category1.disabled = false;
-//          check_category2.disabled = false;
-//          check_category3.disabled = false;
-//          check_category4.disabled = false;
-//          check_category5.disabled = false;
-//      }
-//  }
-
-// check_category1.addEventListener('change', handleCheckboxCategoryChange1);
-// check_category2.addEventListener('change', handleCheckboxCategoryChange2);
-// check_category3.addEventListener('change', handleCheckboxCategoryChange3);
-// check_category4.addEventListener('change', handleCheckboxCategoryChange4);
-// check_category5.addEventListener('change', handleCheckboxCategoryChange5);
-// check_category6.addEventListener('change', handleCheckboxCategoryChange6);
 
 
 
@@ -398,7 +199,7 @@ function stopCamera() {
 
 ///APPOITMENT
 
-//DOCTOR
+// // DOCTOR
 // const doctorsData = {
 //     cardiologist: ['Dr. Tomiwa', 'Dr. Johnson'],
 //     dermatologist: ['Dr. Kingsley', 'Dr. White'],
@@ -428,101 +229,101 @@ function stopCamera() {
 //     orthopedic_surgoen:['Dr.Lookman', 'Dr. Chelsea'],
 //   };
   
-  function getDoctors() {
-    const selectedRole = document.getElementById('roles').value;
-    const doctorsSelect = document.getElementById('doctors');
-    doctorsSelect.innerHTML = ''; // Clear previous options
+//   function getDoctors() {
+//     const selectedRole = document.getElementById('roles').value;
+//     const doctorsSelect = document.getElementById('doctors');
+//     doctorsSelect.innerHTML = ''; // Clear previous options
   
-    // Populate the doctors select box based on the selected role
-    // doctorsData[selectedRole].forEach(doctor => {
-    //     const option = document.createElement('option');
-    //     option.value = doctor;
-    //     option.text = doctor;
-    //     doctorsSelect.appendChild(option);
-    // });
-  }
+//     // Populate the doctors select box based on the selected role
+//     doctorsData[selectedRole].forEach(doctor => {
+//         const option = document.createElement('option');
+//         option.value = doctor;
+//         option.text = doctor;
+//         doctorsSelect.appendChild(option);
+//     });
+//   }
   
-  // Initial population of doctors based on the default selected role
-  getDoctors();
+//   // Initial population of doctors based on the default selected role
+//   getDoctors();
   
   
   
-  //CALENDAR
-   //This help show the current date and time zone of today
-   const date =  new Date()
+//   //CALENDAR
+//    //This help show the current date and time zone of today
+//    const date =  new Date()
   
-   function renderCalendar(){
-      date.setDate(1)
-      // console.log(date.getDay());
-       //this help shows the current month we are in and its 0 based "which means its counts from 0 throgh the months"
-      //  const month  = date.getMonth()
-       const monthDays = document.querySelector(".days")
-      const lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0).getDate()
+//    function renderCalendar(){
+//       date.setDate(1)
+//       // console.log(date.getDay());
+//        //this help shows the current month we are in and its 0 based "which means its counts from 0 throgh the months"
+//       //  const month  = date.getMonth()
+//        const monthDays = document.querySelector(".days")
+//       const lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0).getDate()
       
-      const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate()
+//       const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate()
       
-      const firstDayIndex = date.getDay() 
+//       const firstDayIndex = date.getDay() 
       
-      const  lastDayIndex = new Date(date.getFullYear(), date.getMonth() +1, 0).getDay()
-      const nextDays = 7 - lastDayIndex -1
-      //this is the month array of all the selected month
-      const months = [
-          "January", 
-          "February",
-           "March",
-            "April", 
-            "May", 
-            "June", 
-            "July", 
-            "August", 
-            "September",
-             "October", 
-             "November",
-             "December" 
-      ] ; 
+//       const  lastDayIndex = new Date(date.getFullYear(), date.getMonth() +1, 0).getDay()
+//       const nextDays = 7 - lastDayIndex -1
+//       //this is the month array of all the selected month
+//       const months = [
+//           "January", 
+//           "February",
+//            "March",
+//             "April", 
+//             "May", 
+//             "June", 
+//             "July", 
+//             "August", 
+//             "September",
+//              "October", 
+//              "November",
+//              "December" 
+//       ] ; 
       
-      document.querySelector(".date h1").innerHTML = months[date.getMonth()];
-      document.querySelector(".date p").innerHTML = new Date().toDateString();
-      // const showDate =  document.querySelector(".content");
+//       document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+//       document.querySelector(".date p").innerHTML = new Date().toDateString();
+//       // const showDate =  document.querySelector(".content");
       
-      let days = "";
+//       let days = "";
       
-      for(let x =  firstDayIndex; x>0; x--){
-          days += `<div class ="prev-date">${prevLastDay - x +1}</div>`;
-      }
+//       for(let x =  firstDayIndex; x>0; x--){
+//           days += `<div class ="prev-date">${prevLastDay - x +1}</div>`;
+//       }
       
-      for(let i = 1; i <=lastDay; i++) {
-          if(i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
+//       for(let i = 1; i <=lastDay; i++) {
+//           if(i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
               
-              days +=`
-              <div class="calendar-date today" onclick="updateClickedDate(${i})">${i}</div>`;
-          }else{
+//               days +=`
+//               <div class="calendar-date today" onclick="updateClickedDate(${i})">${i}</div>`;
+//           }else{
               
-              days +=`
-              <div class="calendar-date" onclick="updateClickedDate(${i})">${i}</div> `;
-          }
-      }
+//               days +=`
+//               <div class="calendar-date" onclick="updateClickedDate(${i})">${i}</div> `;
+//           }
+//       }
       
-      for(let j =1; j<=nextDays; j++){
-          days += `<div class="next-date">${j}</div>`;
-          monthDays.innerHTML = days;
-      }
-   }
-   function updateClickedDate(clickedDay) {
-      document.querySelector(".selected_date").textContent = `${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
-      document.getElementById('date').value=`${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
-    }
+//       for(let j =1; j<=nextDays; j++){
+//           days += `<div class="next-date">${j}</div>`;
+//           monthDays.innerHTML = days;
+//       }
+//    }
+//    function updateClickedDate(clickedDay) {
+//       document.querySelector(".selected_date").textContent = `${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
+//       document.getElementById('date').value=`${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
+//     }
    
    
-   document.querySelector(".prev").addEventListener("click", function(){
-      date.setMonth(date.getMonth() -1)
-      renderCalendar()
-   })
-   document.querySelector(".next").addEventListener("click", function(){
-      date.setMonth(date.getMonth()+ 1)
-      renderCalendar()
-   })
-   renderCalendar()
+//    document.querySelector(".prev").addEventListener("click", function(){
+//       date.setMonth(date.getMonth() -1)
+//       renderCalendar()
+//    })
+//    document.querySelector(".next").addEventListener("click", function(){
+//       date.setMonth(date.getMonth()+ 1)
+//       renderCalendar()
+//    })
+//    renderCalendar()
   
   
   //BOOK AN APPOINTMENT
@@ -531,17 +332,17 @@ function stopCamera() {
       form_doctor_roles_name.classList.remove("hide");
   
   }
-  const close_appoitment_form = ()=>{
+  function close_appoitment_form(){
     const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
     form_doctor_roles_name.classList.add("hide");
 }
 
   
   //dont show appoitment booking button
-  document.querySelector("#btn_appoitment").style.display = "none";
+  // document.querySelector("#btn_appoitment").style.display = "none";
   
   
-  const submitRoles = ()=>{
+  function submitRoles(){
       const appoitment_form = document.querySelector(".appoitment_form");
       appoitment_form.classList.remove("hidden");
   }

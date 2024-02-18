@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const prev_appoitment = document.querySelector("#prev_appoitment")
     const next_appoitment = document.querySelector("#next_appoitment")
     
-    const updateAppoitmentTable = ()=>{
+    function updateAppoitmentTable(){
         //set table to blank;
         appoitment_table.innerHTML = ""
 
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     const prev_approved_appoitment = document.querySelector("#prev_approved_appoitment")
         const next_approved_appoitment = document.querySelector("#next_approved_appoitment")
     
-    const updateApprovedTransaction = ()=>{
+    function updateApprovedTransaction(){
         //set table to blank
         approved_table.innerHTML = '';
         const endIndexApproved = Math.min(currentIndexApproved + 9, approved_appoitment.length)
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         const prev_outgoing = document.querySelector("#prev_outgoing");
         const next_outgoing = document.querySelector("#next_outgoing");
         
-        const updateOutgoingTable = ()=>{
+        function updateOutgoingTable(){
             //set table to blank;
             outgoing_table.innerHTML = ""
     
@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
     //SHOW OUTGOING LIST
-    const outgoingList = ()=>{
+    function outgoingList(){
         document.querySelector(".outgoing_list_section").classList.remove("hide")
         document.querySelector(".admission_form_container").classList.add("hide");
         document.querySelector(".appoitment_section").style.display = "none";
