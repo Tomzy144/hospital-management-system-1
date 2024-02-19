@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Light.ttf') format('truetype'); /* Adjust the path if necessary */
+    font-weight: normal; /* Specify the weight if needed */
+    font-style: normal; /* Specify the style if needed */
+  }
+
 *{
     margin: 0;
     padding: 0;
@@ -237,7 +244,7 @@ body{
 }
 
 .container{
-    width: 65%;
+    width: 85%;
     margin: 5rem auto;
 }
 .contents{
@@ -315,7 +322,7 @@ table{
     color: #000000;
 }
 .body_sec .accept-btn{
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
     background-color: rgb(42, 87, 215);
     border: none;
     cursor: pointer;
@@ -325,7 +332,7 @@ table{
     transition: all ease-in-out 0.5s;
 }
 .body_sec .reject-btn{
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
     background-color: rgb(255, 0, 0);
     border: none;
     cursor: pointer;
@@ -336,13 +343,13 @@ table{
 }
 .body_sec .accept-btn:hover{
     color: #000000;
-    padding: 0.5rem 1rem;
+        padding: 1rem 1rem;
     border: 1px solid rgb(42, 87, 215);
     background: none
 }
 .body_sec .reject-btn:hover{
     color: #000000;
-    padding: 0.5rem 1rem;
+        padding: 1rem 1rem;
     border: 1px solid rgb(255, 0, 0);
     background: none
 }
@@ -387,7 +394,22 @@ table{
 margin: 0 auto;
 display: flex;
 }
-
+ .patient_profile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ .patient_profile .patient_name_id{
+    display: flex;
+  flex-direction: column;
+    align-items: start;
+}
+ .patient_profile img{
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    border: 3px solid rgb(42, 87, 215);
+}
 /*VITALS SECTIONS*/
 .new_vital{
     width: 100%;
@@ -408,7 +430,7 @@ display: flex;
 }
 .search-bar{
     background-color: #ffffff; 
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(194, 187, 187, 0.35) 0px 5px 15px;
     width: 100%;
     max-width: 800px;
     display: flex;
@@ -426,9 +448,10 @@ display: flex;
     justify-content: space-between;
     color: #fff;
     width: 300px;
-    padding: 19px 20px;
+  padding: 14px 20px;
     cursor: pointer;
     position: relative;
+    height: 50px;
     border-radius: 4px ;
 }
 
@@ -468,10 +491,9 @@ display: flex;
 }
 
 .patient_container{
-    width: 80%;
-    height: 500px;
-    overflow: auto;
-    margin: 5rem auto;
+    width: 100%;
+    display: flex;
+    justify-content:center;
 }
 .flex_container{
     display: flex;
@@ -494,21 +516,22 @@ display: flex;
     display: flex;
     color: rgb(42, 87, 215);
     font-size: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(196, 183, 183, 0.35) 0px 5px 15px;
     justify-content: center;
     align-items: center;
 }
 .patient_info{
-    width: 700px;
-    height: fit-content;
+    width: 800px;
     animation: zoomIn 01s ease-in-out;
     background-color: rgb(255, 255, 255);
     display: flex;
     color: rgb(42, 87, 215);
     padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 800px;
+    overflow: auto;
+    margin: 6rem 0 0 0;
+    box-shadow: rgba(208, 207, 207, 0.35) 0px 5px 15px;
     flex-direction: column;
-    margin: 0 1rem;
 }
 .patient_info span{
     font-size: 20px;
@@ -592,7 +615,7 @@ display: flex;
     width: 100%;
     font-size: 20px;
     background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(183, 175, 175, 0.35) 0px 5px 15px;
     padding: 1rem 1rem;
 }
 .ward_container label{
@@ -600,12 +623,12 @@ display: flex;
     font-size: 20px;
 }
 #ward{
-    padding: 1rem 1rem;
+    padding: 0.5em 0.5em;
     background-color: rgb(42, 87, 215);
     width: 100%;
     border: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
 }
 #ward option{
     background-color: rgb(42, 87, 215);
@@ -616,12 +639,12 @@ display: flex;
 .bed_container{
     width: 100%;
     background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    font-size: 20px;
+    box-shadow: rgba(183, 175, 175, 0.35) 0px 5px 15px;
+    font-size: 18px;
     padding: 1rem 1rem;
 }
 #bed{
-    padding: 1rem 1rem;
+    padding: 0.5em 0.5em;
     background-color: rgb(42, 87, 215);
     width: 100%;
     border: none;
@@ -630,9 +653,9 @@ display: flex;
 .ward_round_container{
     width: 100%;
     background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(183, 175, 175, 0.35) 0px 5px 15px;
     padding: 1rem 1rem;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 #stage{
@@ -641,11 +664,11 @@ display: flex;
     width: 100%;
     border: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
 }
 .ward_round_container label{
    margin-top: 1rem;
-   font-size: 20px;
+   font-size: 18px;
 }
 .ward_round_container textarea{
     width: 100%;
@@ -658,8 +681,9 @@ display: flex;
     width: 100%;
     background-color:rgb(42, 87, 215);
     padding: 1rem;
-    font-size: 20px;
+    font-size: 18px;
     height: fit-content;
+    margin: 0.5em 0;
 }
 .vitals_input form{
     width: 100%;
@@ -679,12 +703,123 @@ display: flex;
 
 .vitals_input input{
     width: 100%;
-    border: 2px solid rgb(42, 87, 215);
+    border: 1px solid rgb(42, 87, 215);
     padding: 1rem;
-    font-size: 18px;
+    font-size: 15px;
 }
 .btn_submit{
-    background-color: #0057c2;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+all_patient_container{
+    width: 1000px;
+    display: flex;
+    justify-content:center;
+}
+.all_patient_container .flex_container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.all_patient_container .patient_profile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.all_patient_container .patient_profile .patient_name_id{
+    display: flex;
+  flex-direction: column;
+    align-items: start;
+}
+.all_patient_container .patient_profile img{
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    border: 3px solid rgb(42, 87, 215);
+}
+
+all_patient_container .each_container{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0 ;
+}
+all_patient_container .number_container{
+    width: 100px;
+    animation: zoomIn 01s ease-in-out;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    color: rgb(42, 87, 215);
+    font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    justify-content: center;
+    align-items: center;
+}
+.all_patient_container .patient_info{
+    width: 800px;
+    height: 800px;
+    overflow: auto;
+    animation: zoomIn 01s ease-in-out;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    margin: 0 1em;
+    box-shadow: rgba(208, 207, 207, 0.35) 0px 5px 15px;
+    flex-direction: column;
+}
+.all_patient_container .patient_info span{
+    font-size: 20px;
+    animation:slideInDown 01s ease-in-out;
+    color: rgb(42, 87, 215);
+}
+
+.all_patient_vitals_input{
+    width: 100%;
+    padding: 1rem;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    background-color: rgb(42, 87, 215);
+}
+.all_patient_vitals_input form{
+    width: 100%;
+    height: 100%;
+    display: flex;;
+    flex-wrap: wrap;
+}
+.all_patient_vitals_input form input{
+    width: 100%;
+    padding: 1em;
+    margin: 1em 1em;
+}
+.all_patient_vitals_input .form_control{
+    width: 300px;
+    display: flex;
+    margin: 1em 0.5em;
+    flex-direction: column;
+}
+.all_patient_ward_round_container label{
+    color: rgb(42, 87, 215);
+}
+.all_patient_ward_round_container textarea{
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    background-color: rgb(42, 87, 215);
+    border: none;
+}
+.btn_submit{
+    background-color: rgb(42, 87, 215);
     padding: 0.5rem;
     color: #fff;
     border: none;
@@ -706,21 +841,21 @@ display: flex;
 }
 
 .appoitment_container{
-    margin: 2rem auto 0 auto;
-    height: 100%;
-    width: 90%;
+    height: 900px;
+    overflow: auto;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    margin: 6rem auto;
     justify-content: start;
 }
 .appoitment_container .appoitments{
     width: 100%;
     height:max-content;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     margin: 0 1rem;
     display: flex;
     flex-direction: column;
+    margin: 6rem auto;
     align-items:  center;
 }
 .appoitments h1{
@@ -802,10 +937,11 @@ display: flex;
 .doctor_roles_name{
     width: 100%;
     height:max-content;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     display: flex;
     justify-content: center;
     padding: 2rem;
+    margin: 6rem auto;
     position: relative;
     align-items: center;
 }
@@ -813,7 +949,7 @@ display: flex;
     position: absolute;
     top: 0;
     right: 0;
-    color: #ffffff;
+    color: #ff0000;
     font-size: 30px;
     box-shadow: rgba(159, 158, 158, 0.35) 0px 5px 15px;
     cursor: pointer;
@@ -967,7 +1103,7 @@ display: flex;
 
 .form_appoitment{
     width:45rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     height: fit-content;
     background: rgb(255, 255, 255);
     color: #0044ff;
