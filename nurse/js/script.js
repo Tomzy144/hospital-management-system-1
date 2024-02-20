@@ -23,31 +23,89 @@
 //Patient Ward Round
 function ward_round(){
    document.querySelector(".ward_round_container").classList.toggle("hidden")
+   const overflowContainer = document.querySelector(".patient_info");
+   if(!document.querySelector(".ward_round_container").classList.contains("hidden")){
+      overflowContainer.style.height = "800px";
+      overflowContainer.style.overflow = "auto";
+   }
+   else{
+      overflowContainer.style.height = "auto";
+      overflowContainer.style.overflow = "none";
+   }
+
 };
 
 //Patient Ward
 function ward(){
-   document.querySelector(".ward_container").classList.toggle("hidden")
+   document.querySelector(".ward_container").classList.toggle("hidden");
+   const overflowContainer = document.querySelector(".patient_info");
+   if(!document.querySelector(".ward_container").classList.contains("hidden") && !document.querySelector(".vitals_input").classList.contains("hidden") ){
+      overflowContainer.style.height = "800px";
+      overflowContainer.style.overflow = "auto";
+   }else if(!document.querySelector(".vitals_input").classList.contains("hidden")){
+      overflowContainer.style.height = "800px";
+      overflowContainer.style.overflow = "auto";
+   }else{
+      overflowContainer.style.height = "auto";
+      overflowContainer.style.overflow = "none";
+   }
 };
 
 //Patient Vital
 function patientVital(){
    document.querySelector(".vitals_input").classList.toggle("hidden")
+   const overflowContainer = document.querySelector(".patient_info");
+   if(!document.querySelector(".vitals_input").classList.contains("hidden")){
+      overflowContainer.style.height = "800px";
+      overflowContainer.style.overflow = "auto";
+   }else{
+      overflowContainer.style.height = "auto";
+      overflowContainer.style.overflow = "none";
+   }
+ 
 };
    //FOR ALL SECTION PATIENT
 //Patient Ward Round
 function ward_round_all_section(){
    document.querySelector(".all_patient_ward_round_container").classList.toggle("hidden")
+   const overflowContainer = document.querySelector(".all_patient_info");
+   if(!document.querySelector(".all_patient_ward_round_container").classList.contains("hidden")){
+      overflowContainer.style.height = "700px";
+      overflowContainer.style.overflow = "auto";
+   }
+   else{
+      overflowContainer.style.height = "auto";
+      overflowContainer.style.overflow = "none";
+   }
 };
 
 //Patient Ward
 function ward_all_section(){
    document.querySelector(".all_patient_ward_container").classList.toggle("hidden")
+   const overflowContainer = document.querySelector(".all_patient_info");
+   if(!document.querySelector(".all_patient_ward_container").classList.contains("hidden") && !document.querySelector(".vitals_input").classList.contains("hidden") ){
+      overflowContainer.style.height = "700px";
+      overflowContainer.style.overflow = "auto";
+   }else if(!document.querySelector(".all_patient_vitals_input").classList.contains("hidden")){
+      overflowContainer.style.height = "700px";
+      overflowContainer.style.overflow = "auto";
+   }else{
+      overflowContainer.style.height = "auto";
+      overflowContainer.style.overflow = "none";
+   }
 };
 
 //Patient Vital
 function patientVital_all_section(){
    document.querySelector(".all_patient_vitals_input").classList.toggle("hidden")
+   const overflowContainer = document.querySelector(".all_patient_info");
+   if(!document.querySelector(".all_patient_vitals_input").classList.contains("hidden")){
+      overflowContainer.style.height = "700px";
+      overflowContainer.style.overflow = "auto";
+   }else{
+      overflowContainer.style.height = "auto";
+      overflowContainer.style.overflow = "none";
+   }
 };
 
 
@@ -74,4 +132,12 @@ function patientVital_all_section(){
  function close_appoitment_form(){
    const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
    form_doctor_roles_name.classList.add("hide");
+ }
+
+ function back_to_appoitment_list(){
+   document.querySelector(".personal_profile_vital").classList.add("hide");
+   document.querySelector(".appoitment_section").style.display="flex";
+   document.querySelector("#btn_appoitment").style.display = "none";
+   document.querySelector(".new_vital").classList.add("hide");
+   document.querySelector(".appoitment_container").classList.add("hide");
  }

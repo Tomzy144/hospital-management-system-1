@@ -244,8 +244,8 @@ body{
 }
 
 .container{
-    width: 85%;
-    margin: 5rem auto;
+    width: 100%;
+    margin: 5rem 0 0 5em;
 }
 .contents{
     width:100%;
@@ -527,7 +527,7 @@ display: flex;
     display: flex;
     color: rgb(42, 87, 215);
     padding: 1rem;
-    height: 800px;
+    height: fit-content;
     overflow: auto;
     margin: 6rem 0 0 0;
     box-shadow: rgba(208, 207, 207, 0.35) 0px 5px 15px;
@@ -716,9 +716,11 @@ display: flex;
     font-size: 20px;
 }
 
-all_patient_container{
+.all_patient_container{
     width: 1000px;
     display: flex;
+    height: 750px;
+    overflow: auto;
     justify-content:center;
 }
 .all_patient_container .flex_container{
@@ -726,7 +728,7 @@ all_patient_container{
     width: 100%;
     height: 100%;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 .all_patient_container .patient_profile{
@@ -763,9 +765,9 @@ all_patient_container .number_container{
     justify-content: center;
     align-items: center;
 }
-.all_patient_container .patient_info{
+.all_patient_container .all_patient_info{
     width: 800px;
-    height: 800px;
+    height: auto;
     overflow: auto;
     animation: zoomIn 01s ease-in-out;
     background-color: rgb(255, 255, 255);
@@ -776,7 +778,7 @@ all_patient_container .number_container{
     box-shadow: rgba(208, 207, 207, 0.35) 0px 5px 15px;
     flex-direction: column;
 }
-.all_patient_container .patient_info span{
+.all_patient_container .all_patient_info span{
     font-size: 20px;
     animation:slideInDown 01s ease-in-out;
     color: rgb(42, 87, 215);
@@ -824,6 +826,7 @@ all_patient_container .number_container{
     color: #fff;
     border: none;
     cursor: pointer;
+    margin: 1rem 0;
     font-size: 20px;
 }
 
@@ -855,7 +858,7 @@ all_patient_container .number_container{
     margin: 0 1rem;
     display: flex;
     flex-direction: column;
-    margin: 6rem auto;
+    margin: 6rem 0 0 5em;
     align-items:  center;
 }
 .appoitments h1{
@@ -868,7 +871,7 @@ all_patient_container .number_container{
     display: flex;
     width: 100%;
     height: max-content;
-    justify-content: center;
+    justify-content: start;
     flex-wrap: wrap;
     align-items:  center;
 }
@@ -941,7 +944,7 @@ all_patient_container .number_container{
     display: flex;
     justify-content: center;
     padding: 2rem;
-    margin: 6rem auto;
+    margin: 6rem 0 0 5em;
     position: relative;
     align-items: center;
 }

@@ -42,7 +42,7 @@ const Navbar =`
        </div>
     <div class="sidebar_icons">
         <i class="bi bi-chat-dots-fill icons"></i>
-        <i class="bi bi-calendar-date-fill icons"></i>
+        <i class="bi bi-calendar-date-fill icons" onClick="back_to_appoitment_list()"></i>
         <i class="bi bi-pencil-square icons"  onClick="show_profile_list()" ></i>
         <i class=" bi-box-arrow-right icons"></i>
     </div>
@@ -182,8 +182,8 @@ const personal_profile = `
     <input type="text">
     </form>
 </div>
-<button class="btn_submit">Save</button>
 </div>
+<button class="btn_submit">Save All</button>
 <button class="btn_submit" onClick="show_appoitment_section()">Transfer</button>
 </div>
 </div>
@@ -431,7 +431,7 @@ const patients_list = `
             <div class="number_container">
                 1.
             </div>
-            <div class="patient_info">
+            <div class="all_patient_info">
             <div class="patient_profile">
             <img src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="" />
             <div class="patient_name_id">
@@ -558,9 +558,145 @@ const patients_list = `
           <label for="w_hr">W-HR</label>
           <input type="text">
           </div>
-          <button class="btn_submit">Save</button>
           </form>
 </div>
+<button class="btn_submit">Save All</button>
+</div>
+</div>
+        <div class="each_container">
+            <div class="number_container">
+                2.
+            </div>
+            <div class="all_patient_info">
+            <div class="patient_profile">
+            <img src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="" />
+            <div class="patient_name_id">
+                <span>Esther Patrick Joseph</span>
+                <span>  PATOOO2</span>
+                </div>
+                </div>
+                <button class= "btn_ward" onClick="ward_all_section()">Ward</button>
+                    <!--Wards--->
+                    <div class="all_patient_ward_container hidden">
+                    <label for="ward">Change Ward</label>
+                    <select name="ward" id="ward">
+                        <option value="ward_select"></option>
+                        <option value="ward_1">Ward 1</option>
+                        <option value="ward_2">Ward 2</option>
+                        <option value="ward_3">Ward 3</option>
+                        <option value="ward_4">Ward 4</option>
+                        <option value="ward_5">Ward 5</option>
+                        <option value="ward_6">Ward 6</option>
+                    </select>
+                </div>
+
+                <button class= "btn_ward_round" onClick="ward_round_all_section()">Ward Round</button>
+                <div class="all_patient_ward_round_container hidden">
+                    <label for="stage">Stage</label>
+                    <select name="stage" id="stage">
+                        <option value="no_selection"></option>
+                        <option value="am">Am</option>
+                        <option value="am">Pm</option>
+                    </select>
+                    <label for="note">WR Note</label>
+                    <textarea name="note" id="note" cols="30" rows="10"></textarea>
+                </div>
+
+                <button class= "btn_vital" onClick="patientVital_all_section()">Vital Input</button>
+                <div class="all_patient_vitals_input hidden">
+                <form action="">
+                    <div class="form_control">
+          <label for="temperature">Temperature</label>
+          <input type="text">
+          </div>
+                
+                    <div class="form_control">
+          <label for="b/p">B/P(mm/HG)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="pulse">Pulse(bp/m)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="respiratory">Respiratory(cm)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="weight">Weight(kg)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="height">Height(cm)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="intake">Intake(m/s)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="output">Output(m/s)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="spo2">SPO2(%)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="bmi">BMI</label>
+          <input type="text">
+          </div>
+                 <div class="form_control">
+          <lacenter; for="body_fat">Body fat(%)</label>
+          <input type="text">
+          </div>
+          <div class="form_control">
+          <label for="muscle_mass">Muscle mass</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="musc">MUAC</label>
+          <input type="text">
+          </div>
+          <div class="form_control">
+          <label for="resting_metabolism">Restinng metabolism</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="body_age">Body age</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="bmi_for_age">BMI for age</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="visceral_fat">Visceral fat</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="head_circumference">Head circumference</label>
+          <input type="text">
+          </div>
+          <div class="form_control">
+          <label for="wfa">WFA</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="waist_circumference">Waist Circumference</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="hip_circumference">Hip Circumference</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="w_hr">W-HR</label>
+          <input type="text">
+          </div>
+          </form>
+</div>
+<button class="btn_submit">Save All</button>
 </div>
 </div>
 </div>
