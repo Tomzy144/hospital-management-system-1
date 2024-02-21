@@ -64,7 +64,7 @@
   <!--START OF SIDEBAR AND NAVBAR -->
    <div class="navbar">
         <div class="section1">
-        <!-- <button id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button> -->
+        <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button>
         </div>
         <div class="section2">
             <div class="icons">
@@ -337,7 +337,6 @@
   <!--START OF ADMITTED PATIENTS FOR LIST1-->
   <div class="all_patient_list hide">
     <div class="patient_list_div">
-        <div class="table_container">
             <div class="search_bar_container">
                 <span>Patient Admission List</span>
                 <input type="text" name="" id="" placeholder="Search">
@@ -359,9 +358,17 @@
                     </td>
                     <td>22-09-2023</td>
                 </tbody>
+                <tbody>
+                    <td>2</td>
+                    <td>Mercy Patrick</td>
+                    <td>PAT0002</td>
+                    <td>
+                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
+                    </td>
+                    <td>22-09-2023</td>
+                </tbody>
             </table>
         </div>
-    </div>
       <!--END OF ADMITTED PATIENTS FOR LIST1-->
 
 
@@ -390,11 +397,11 @@
                     <td>22-09-2023</td>
                 </tbody>
                 <tbody>
-                    <td>1</td>
-                    <td>Esther Patrick</td>
-                    <td>PAT0001</td>
+                    <td>2</td>
+                    <td>Mercy Patrick</td>
+                    <td>PAT0002</td>
                     <td>
-                        <img src="images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
                     </td>
                     <td>22-09-2023</td>
                 </tbody>
@@ -425,12 +432,33 @@
         </div>
         <!---END OF CHECKUP SECTION--->
 
+        <!-----START ALREADY EXISTING PROFILE-->
+            <div class="patient_already_existing_profile">
+                <div class="profile_container">
+                <i class="bi bi-x-lg close_icon" onclick="close_profile()"></i>
+                    <div class="div1">
+                    <span>Date of Birth : 23-09-2023</span>
+                        <span>Address: 23 Enebong Street Calabar</span>
+                        <span>Phone Number: 090232322</span>
+                    </div>
+                    <div class="div2">
+                        <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+                        <span>Juliet Patrick</span>
+                        <span>PAT0003</span>
+                        <span>Female</span>
+                        <span>Active</span>
+                        <button onclick="appoitment_booking()">Book an Appoitment</button>
+                    </div>
+                </div>
+            </div>
+        <!-----END ALREADY EXISTING PROFILE-->
+
 
           <!---APPOITMENT SECTION -->
         <div class="appoitment_section hide">
             <div class="appoitment_container">
                 <section class="doctor_roles_name hide">
-                    <i class="fa fa-times" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
+                    <i class="bi bi-x-lg" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
                 <div class="appoitment-calender">
                     <div class="doc_roles">
                 <label for="roles">Doctor Role:</label>

@@ -15,6 +15,7 @@
 body{
     width: 100%;
     height:100%;
+    overflow: hidden; /* Disable scrolling */
 }
 .navbar{
     width: 100%;
@@ -473,19 +474,14 @@ h1, h3{
   .patient_list_div {
     width: 50%;
     margin: 4em 0 0 4.6em;
-    box-shadow: rgba(206, 193, 193, 0.35) 0px 5px 15px;
-    background-color: rgb(0, 87, 194);
+    background-color: rgb(255, 255, 255);
     color: #fff;
     position: relative;
-    height: fit-content;
+    height: 800px;
+    overflow: auto;
 }
 
-.table_container {
-width: 100%;
-height: 100%;
-}
-
-.table_container .search_bar_container {
+ .search_bar_container {
     background-color: #fff;
     color: rgb(0, 87, 194);
     padding: 0.5em;
@@ -498,64 +494,137 @@ height: 100%;
     padding: 0.5em;
 }
 
-.table_container table {
+ table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.table_container table thead {
+ table thead {
     background-color: #fff; /* Add a background color to the header */
     position: sticky; /* Make the thead sticky */
     top: 0; /* Position the thead at the top */
     z-index: 1; /* Ensure the thead is above the tbody */
     background-color: #fff; /* Add a background color to the header */
 }
-.table_container table tbody td img{
+ table tbody td img{
     width: 70px;
     height: 70px;
     border-radius: 100%;
 }
-.table_container table  thead td {
+ table  thead td {
     padding: 1em;
     color: rgb(0, 87, 194);
-    border-bottom: 1px solid #ddd; /* Add a bottom border to separate cells */
 }
-.table_container table tbody td {
+ table tbody td {
     padding: 1em;
     color: rgb(255, 255, 255);
+    background-color: rgb(0, 87, 194);
     border-bottom: 1px solid #ddd; /* Add a bottom border to separate cells */
 }
 
 .walkin_patient_list_div{
     width: 50%;
     margin: 4em 0 0 1em;
-    height: fit-content;
-    box-shadow: rgba(206, 193, 193, 0.35) 0px 5px 15px;
-    background-color: rgb(0, 87, 194);
+    height: 800px;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
 }
 
-
-/*APPOITMENT BOOKING*/
+.patient_already_existing_profile{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    opacity: 100%;
+    z-index: 999;
+    background-color: rgb(0, 87, 194);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.profile_container{
+    width: 800px;
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgb(0, 87, 194);
+    margin: 4.6em auto;
+    display: flex;
+    position: relative;
+}
+.profile_container .close_icon{
+    position: absolute;
+    font-size: 25px;
+    color: #fff;
+    right: 3%;
+    cursor: pointer;
+    top: 2%;
+}
+.div1{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: start;;
+    justify-content: center;
+    padding: 1em;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+}
+.div1 span{
+    color: rgb(0, 87, 194);
+    font-size: 20px;
+}
+.div2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;;
+    flex-direction: column;
+    background-color: rgb(0, 87, 194);
+}
+.div2 button{
+    margin: 2em 0;
+    color: rgb(0, 87, 194);;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    padding: 0.5em;
+}
+.div2 button:hover{
+    background: none;
+    border: 1px solid rgb(255, 255, 255);
+    color: #fff;
+}
+.div2 span{
+    color: #fff;
+    font-size: 20px;
+}
+.div2 img{
+    width: 170px;
+    height: 170px;
+    margin: 1em 0;
+    border-radius: 100%;
+}
+/*appoitment section*/
 .appoitment_section{
     width: 100%;
     height: 100%;
 }
 .appoitment_container{
-    margin: 2rem auto 0 auto;
-    height: 100%;
-    width: 90%;
+    height: 900px;
+    overflow: auto;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    margin: 6rem auto;
     justify-content: start;
 }
 .appoitment_container .appoitments{
     width: 100%;
     height:max-content;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     margin: 0 1rem;
     display: flex;
     flex-direction: column;
+    margin: 6rem 0 0 5em;
     align-items:  center;
 }
 .appoitments h1{
@@ -568,12 +637,12 @@ height: 100%;
     display: flex;
     width: 100%;
     height: max-content;
+    justify-content: start;
     flex-wrap: wrap;
-    justify-content: center;
     align-items:  center;
 }
 .cards{
-    width:350px;
+    width: 350px;
     height: max-content;
     background-color: #fff;
     animation: zoomIn 01s ease-in-out;
@@ -593,6 +662,15 @@ height: 100%;
     box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
     height: 90px;
 
+}
+#btn_declined{
+    width: 100%;
+}
+#btn_accepted{
+    width: 100%;
+}
+#btn_pending{
+    width: 100%;
 }
 .profile .name_role{
     display: flex;
@@ -617,30 +695,22 @@ height: 100%;
     margin: 1rem 0;
     justify-content: center;
 }
-.cards_container .buttons .btn{
+.buttons .btn{
     padding: 0.5em 1em;
     background-color:rgb(42, 87, 215) ;
     border: none;
-    margin: 0 1rem;
     cursor: pointer;
+    margin: 0 1rem;
     color: #fff;
-}
-#btn_declined{
-    width: 100%;
-}
-#btn_accepted{
-    width: 100%;
-}
-#btn_pending{
-    width: 100%;
 }
 .doctor_roles_name{
     width: 100%;
     height:max-content;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     display: flex;
     justify-content: center;
     padding: 2rem;
+    margin: 6rem 0 0 5em;
     position: relative;
     align-items: center;
 }
@@ -648,13 +718,15 @@ height: 100%;
     position: absolute;
     top: 0;
     right: 0;
-    color: #ffffff;
+    color: #ff0000;
     font-size: 30px;
     box-shadow: rgba(159, 158, 158, 0.35) 0px 5px 15px;
     cursor: pointer;
 }
 
-
+.hide{
+    display: none;
+}
 .doc_roles{
     width: 45rem;
     height: fit-content;
@@ -679,14 +751,12 @@ height: 100%;
     margin: 1rem 0;
     color: rgb(255, 255, 255);;
 }
-.doctor_roles_name #continue{
+#continue{
     background-color: rgb(42, 87, 215);
     padding: 1rem 1rem;
     border: none;
     animation: zoomIn 01s ease-in-out;
     color:  rgb(255, 255, 255);
-    margin: none;
-    border-radius: none;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
 }
@@ -802,10 +872,10 @@ height: 100%;
 
 .form_appoitment{
     width:45rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     height: fit-content;
     background: rgb(255, 255, 255);
-    color: rgb(42, 87, 215);
+    color: #2a57d7;
     padding: 1rem 1rem;
 }
 
@@ -814,8 +884,6 @@ height: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
-    align-items: start;
-    justify-content: start;
     flex-wrap: wrap;
 }
 
@@ -858,7 +926,7 @@ height: 100%;
     background-color:rgb(42, 87, 215);
     color: #fff;
     border: none;
-    margin: 1em auto;
+    margin: 1rem auto;
     padding: 0.9rem;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
@@ -866,9 +934,8 @@ height: 100%;
 .btn_submit_appoitment:hover{
     background-color: #fff;
     color: black;
-    border: 2px solid rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);;
 }
-
 /*WALKIN PATIENTS */
 .walkin_admission_form{
     width: 40%;
@@ -955,12 +1022,10 @@ height: 100%;
     height: 300px;
     display: grid;
     place-items: center;
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(0, 87, 194);
     position: absolute;
-    opacity: 90%;
     top: 0;
     left: 0;
-    box-shadow: rgba(223, 222, 222, 0.35) 0px 5px 15px;
 }
 .finger_print_div button{
     background-color: #fff;

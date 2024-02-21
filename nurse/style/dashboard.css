@@ -16,7 +16,8 @@
 
 body{
     width: 100%;
-    height:100vh;
+    height:100%;
+    overflow: hidden; /* Disable scrolling */
 }
 .navbar{
     width: 100%;
@@ -322,7 +323,7 @@ table{
     color: #000000;
 }
 .body_sec .accept-btn{
-    padding: 1rem 1rem;
+    padding: 0.5rem 0.5rem;
     background-color: rgb(42, 87, 215);
     border: none;
     cursor: pointer;
@@ -332,7 +333,7 @@ table{
     transition: all ease-in-out 0.5s;
 }
 .body_sec .reject-btn{
-    padding: 1rem 1rem;
+    padding: 0.5rem 0.5rem;
     background-color: rgb(255, 0, 0);
     border: none;
     cursor: pointer;
@@ -343,13 +344,13 @@ table{
 }
 .body_sec .accept-btn:hover{
     color: #000000;
-        padding: 1rem 1rem;
+         padding: 0.5rem 0.5rem;
     border: 1px solid rgb(42, 87, 215);
     background: none
 }
 .body_sec .reject-btn:hover{
     color: #000000;
-        padding: 1rem 1rem;
+         padding: 0.5rem 0.5rem;
     border: 1px solid rgb(255, 0, 0);
     background: none
 }
@@ -835,14 +836,6 @@ all_patient_container .number_container{
     width: 100%;
     height: 100%;
 }
-
-/*VITALS*/;
-.dashboard_contents .nurse_vital_section_vital{
-    width: 100%;
-    background-color: #fff;
-    height: 100%;
-}
-
 .appoitment_container{
     height: 900px;
     overflow: auto;
