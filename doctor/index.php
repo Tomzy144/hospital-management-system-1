@@ -216,15 +216,6 @@ $result = $conn->query($sql);
     </tbody>
 </table>
 
-
-
-<!-- <div class="pending_appoitment_list_pagination">
-        <div class="flexs">
-            <p id="prev">Prev List</p>
-            <p id="next">Next List</p>
-        </div>
-</div> -->
-
 <script>
     function accept() {
         var patientId = this.getAttribute('data-patient-id');
@@ -249,11 +240,6 @@ $result = $conn->query($sql);
         button.addEventListener('click', reject);
     });
 </script>
-
-      
-
-
-
         </div>
         
 <!-- <div id="patientDetailsContainer"></div> -->
@@ -687,7 +673,7 @@ if (isset($_POST['load_patient_profile']) && isset($_POST['patient_id']) && isse
             </div>
             <div class="complaint_form-control">
             <label for="family_social_history">Family & Social History</label>
-            <input type="text" class="complaint-input" id="family_social_history">
+         ]   <input type="text" class="complaint-input" id="family_social_history">
             </div>
             <div class="complaint_form-control">
             <label for="past_sugical_medical_history">Past Surgical/Medical History</label>

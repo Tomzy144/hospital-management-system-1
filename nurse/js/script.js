@@ -58,7 +58,11 @@ function patientVital(){
    if(!document.querySelector(".vitals_input").classList.contains("hidden")){
       overflowContainer.style.height = "800px";
       overflowContainer.style.overflow = "auto";
-   }else{
+   }  else  if(!document.querySelector(".ward_round_container").classList.contains("hidden")){
+      overflowContainer.style.height = "700px";
+      overflowContainer.style.overflow = "auto";
+   }
+   else{
       overflowContainer.style.height = "auto";
       overflowContainer.style.overflow = "none";
    }
