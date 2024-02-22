@@ -22,7 +22,7 @@ body{
     height: 75px;
     position: fixed;
     display: flex;
-    background-color: #0057c2;
+    background-color: rgb(42, 87, 215);
     justify-content: space-between;
     align-items: center;
     top: 0;
@@ -112,7 +112,7 @@ body{
     position: absolute;
     height: fit-content;
     top: 100%;
-    background-color: #0057c2;;
+    background-color: rgb(42, 87, 215);
     animation: zoomIn 01s ease-in-out;
     right: 2%;
     padding: 1rem 1rem;
@@ -200,7 +200,7 @@ body{
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #0057c2;;
+    background-color: rgb(42, 87, 215);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 1000;
 }
@@ -473,9 +473,8 @@ h1, h3{
   }
   .patient_list_div {
     width: 50%;
-    margin: 4em 0 0 4.6em;
-    background-color: rgb(255, 255, 255);
-    color: #fff;
+    height: fit-content;
+    margin: 4.5rem 0 0 5rem;
     position: relative;
     height: 800px;
     overflow: auto;
@@ -483,15 +482,20 @@ h1, h3{
 
  .search_bar_container {
     background-color: #fff;
-    color: rgb(0, 87, 194);
+    color:rgb(42, 87, 215);
     padding: 0.5em;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0.4em 0 0 0;
 }
 
 .search_bar_container input {
     padding: 0.5em;
+}
+.search_bar_container input:focus {
+    padding: 0.5em;
+    outline:auto;
 }
 
  table {
@@ -500,11 +504,11 @@ h1, h3{
 }
 
  table thead {
-    background-color: #fff; /* Add a background color to the header */
-    position: sticky; /* Make the thead sticky */
-    top: 0; /* Position the thead at the top */
-    z-index: 1; /* Ensure the thead is above the tbody */
-    background-color: #fff; /* Add a background color to the header */
+    background-color: #fff; 
+    position: sticky; 
+    top: 0;
+    z-index: 1; 
+    background-color: #fff; 
 }
  table tbody td img{
     width: 70px;
@@ -513,21 +517,22 @@ h1, h3{
 }
  table  thead td {
     padding: 1em;
-    color: rgb(0, 87, 194);
+    color: rgb(42, 87, 215);
 }
  table tbody td {
     padding: 1em;
     color: rgb(255, 255, 255);
-    background-color: rgb(0, 87, 194);
+    background-color: rgb(42, 87, 215);
     border-bottom: 1px solid #ddd; /* Add a bottom border to separate cells */
 }
 
 .walkin_patient_list_div{
     width: 50%;
-    margin: 4em 0 0 1em;
+    height: fit-content;
+    margin: 4.5rem 0 0 1rem;
+    position: relative;
     height: 800px;
-    overflow: auto;
-    background-color: rgb(255, 255, 255);
+    overflow: auto;;
 }
 
 .patient_already_existing_profile{
@@ -536,7 +541,7 @@ h1, h3{
     margin: 0 auto;
     opacity: 100%;
     z-index: 999;
-    background-color: rgb(0, 87, 194);
+    background-color: rgb(42, 87, 215);
     position: absolute;
     top: 0;
     left: 0;
@@ -545,7 +550,7 @@ h1, h3{
     width: 800px;
     height: 400px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: rgb(0, 87, 194);
+    background-color: rgb(42, 87, 215);
     margin: 4.6em auto;
     display: flex;
     position: relative;
@@ -569,7 +574,7 @@ h1, h3{
     background-color: rgb(255, 255, 255);
 }
 .div1 span{
-    color: rgb(0, 87, 194);
+    color: rgb(42, 87, 215);
     font-size: 20px;
 }
 .div2{
@@ -578,11 +583,11 @@ h1, h3{
     display: flex;
     align-items: center;;
     flex-direction: column;
-    background-color: rgb(0, 87, 194);
+    background-color: rgb(42, 87, 215);
 }
 .div2 button{
     margin: 2em 0;
-    color: rgb(0, 87, 194);;
+    color: rgb(42, 87, 215);;
     border: none;
     background-color: #fff;
     cursor: pointer;
@@ -1022,7 +1027,7 @@ h1, h3{
     height: 300px;
     display: grid;
     place-items: center;
-    background-color: rgb(0, 87, 194);
+    background-color: rgb(42, 87, 215);
     position: absolute;
     top: 0;
     left: 0;

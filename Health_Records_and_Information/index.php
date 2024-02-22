@@ -367,6 +367,15 @@
                     </td>
                     <td>22-09-2023</td>
                 </tbody>
+                <tbody>
+                    <td>2</td>
+                    <td>Mercy Patrick</td>
+                    <td>PAT0002</td>
+                    <td>
+                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
+                    </td>
+                    <td>22-09-2023</td>
+                </tbody>
             </table>
         </div>
       <!--END OF ADMITTED PATIENTS FOR LIST1-->

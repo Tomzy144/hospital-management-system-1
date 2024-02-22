@@ -137,20 +137,17 @@
         <i class=" bi-box-arrow-right icons"></i>
             </div>
         </div>
-
-        <div class="contents">
-<div class="appiontment">
-<div class="head_sec">
+        
+        <div class="appoitment_section">
+<div class="available_appoitment">
+<div class="search_bar_container">
   <span>Appoitment Details</span>
-  <div class="appoitment_input_control">
-  <i class="fa fa-search" id="search_icon"></i>
-      <input type="text" placeholder="Search here" class="appoitment_input">
+      <input type="text" placeholder="Search here">
   </div>
-</div>
 <div class="table_container">
 <table id="appoitment_table">
   <thead>
-    <td>Number</td>
+    <td>S/N</td>
     <td>Patient Name</td>
     <td>Patient Id</td>
     <td>Date</td>
@@ -164,25 +161,17 @@
   </tbody>
 </table>
 </div>
-<!-- <div class="lab_pagination">
-        <div class="flexs">
-            <p id="prev_appoitment">Prev List</p>
-            <p id="next_appoitment">Next List</p>
-        </div>
-</div> -->
 </div>
 
 <div class="approved_appoitment">
-<div class="head_sec">
+<div class="search_bar_container">
   <span>Available Appoitment</span>
-  <div class="appoitment_input_control">
-  <i class="fa fa-search" id="search_icon"></i>
-      <input type="text" placeholder="Search here" class="appoitment_input">
-  </div>
+      <input type="text" placeholder="Search here">
 </div>
 <div class="table_container">
 <table id="approved_table">
   <thead>
+    <td>S/N</td>
     <td>Patient Name</td>
     <td>Patient Id</td>
     <td>Status</td>
@@ -192,12 +181,6 @@
   </tbody>
   </table>
 </div>
-<!-- <div class="lab_pagination">
-        <div class="flexs">
-            <p id="prev_approved_appoitment">Prev List</p>
-            <p id="next_approved_appoitment">Next List</p>
-        </div>
-</div> -->
 </div>
 </div>
 

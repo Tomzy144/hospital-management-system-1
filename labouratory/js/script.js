@@ -1,5 +1,5 @@
 function backWardArrow(){
-    document.querySelector(".contents").style.display = "flex";
+    document.querySelector(".appoitment_section").style.display = "flex";
     document.querySelector(".lab_input").classList.add("hide");
     document.querySelector("#back-arrow").style.display = "none";
 }
@@ -68,17 +68,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
 updateAppoitmentTable()
 
-    prev_appoitment.addEventListener("click", ()=>{
-        currentIndex = Math.max(currentIndex - 8, 0);
-        updateAppoitmentTable();
-    })
-    next_appoitment.addEventListener("click", ()=>{
-        currentIndex += 4
-        if(currentIndex >= pending_appoitment.length){
-            currentIndex = 0;
-        }
-        updateAppoitmentTable()
-    })
+    // prev_appoitment.addEventListener("click", ()=>{
+    //     currentIndex = Math.max(currentIndex - 8, 0);
+    //     updateAppoitmentTable();
+    // })
+    // next_appoitment.addEventListener("click", ()=>{
+    //     currentIndex += 4
+    //     if(currentIndex >= pending_appoitment.length){
+    //         currentIndex = 0;
+    //     }
+    //     updateAppoitmentTable()
+    // })
 })
 
 
@@ -106,8 +106,10 @@ function updateApprovedTransaction(){
         let cell0 = row.insertCell(0);
         let cell1 = row.insertCell(1);
         let cell2 = row.insertCell(2);
+        let cell3 = row.insertCell(3);
         cell0.innerHTML = `${approved_appoitment[n].number}`    
         cell1.innerHTML = `${ approved_appoitment[n].patient_name}`;
+        cell2.innerHTML = `${ approved_appoitment[n].patient_id}`;
         const button = document.createElement('button');
         const button2 = document.createElement('button');
 
@@ -150,7 +152,7 @@ function updateApprovedTransaction(){
         button2.appendChild(close_appoitment_completed);
 
         //append the two buttons //
-        `${cell2.appendChild(button)} <br/> ${cell2.appendChild(button2)}`
+        `${cell3.appendChild(button)} <br/> ${cell3.appendChild(button2)}`
     }
 }
 updateApprovedTransaction()
@@ -237,7 +239,7 @@ function click_icon_for_profile(){
 };
 
 function click_labouratory_examination(){
-    document.querySelector(".contents").style.display = "none";
+    document.querySelector(".appoitment_section").style.display = "none";
     document.querySelector(".lab_input ").classList.remove("hide");
     document.querySelector("#back-arrow").style.display = "flex";
 }
