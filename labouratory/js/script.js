@@ -1,4 +1,4 @@
-function backWardArrow(){
+function appoitment_list_section(){
     document.querySelector(".appoitment_section").style.display = "flex";
     document.querySelector(".lab_input").classList.add("hide");
     document.querySelector("#back-arrow").style.display = "none";
@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
         {number:15, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
         {number:16, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
         {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
+        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
+        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
+        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
+        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
+        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
 
     ];
 
@@ -34,7 +39,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         //set table to blank;
         appoitment_table.innerHTML = ""
 
-        const endIndex  = Math.min(currentIndex + 8, pending_appoitment.length);
+        const endIndex  = Math.min(currentIndex + 15, pending_appoitment.length);
         for(let i = currentIndex; i < endIndex; i++) {
             const row = appoitment_table.insertRow();
             let cell0 = row.insertCell(0);
@@ -67,18 +72,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
     }
 updateAppoitmentTable()
-
-    // prev_appoitment.addEventListener("click", ()=>{
-    //     currentIndex = Math.max(currentIndex - 8, 0);
-    //     updateAppoitmentTable();
-    // })
-    // next_appoitment.addEventListener("click", ()=>{
-    //     currentIndex += 4
-    //     if(currentIndex >= pending_appoitment.length){
-    //         currentIndex = 0;
-    //     }
-    //     updateAppoitmentTable()
-    // })
 })
 
 
@@ -113,26 +106,10 @@ function updateApprovedTransaction(){
         const button = document.createElement('button');
         const button2 = document.createElement('button');
 
-        //close appoitment for in progress appoitment
-        const close_appoitment_in_progress = document.createElement("close_appoitment_in_progress");
-        close_appoitment_in_progress.className = "bi bi-x-lg";
-        close_appoitment_in_progress.style.position = "absolute";
-        close_appoitment_in_progress.style.top = "-10%";
-        close_appoitment_in_progress.style.right = "-1%";
-        close_appoitment_in_progress.style.backgroundColor ="#fff";
-        close_appoitment_in_progress.style.height ="17px";
-        close_appoitment_in_progress.style.width ="17px";
-        close_appoitment_in_progress.style.justifyContent ="center";
-        close_appoitment_in_progress.style.alignItems ="center";
-        close_appoitment_in_progress.style.display ="flex";
-        close_appoitment_in_progress.style.cursor ="pointer";
-        close_appoitment_in_progress.style.color ="red";
-        close_appoitment_in_progress.style.borderRadius ="100%";
         button.id = "in_progress";
         button2.id = "completed";
         button.innerHTML = `In Progress`
         button2.innerHTML = `Completed`
-        button.appendChild(close_appoitment_in_progress);
 
         //close appoitment for completed appoitment
         const close_appoitment_completed = document.createElement("close_appoitment_completed");
@@ -169,9 +146,6 @@ next_approved_appoitment.addEventListener("click", ()=>{
 })
 })
 
-
-
-
         //ADD THE AMOUNT ON WHICH CLICKED TO THE LIST OF RECEIPT
         const checkboxes = document.querySelectorAll(".checkbox");
         checkboxes.forEach(function(checkbox){
@@ -200,7 +174,7 @@ next_approved_appoitment.addEventListener("click", ()=>{
 //SUM ALL THE LAB TEST PRICES
 window.onload = function() {
         const checkboxs = document.querySelectorAll(".checkbox");
-        const updateSum = ()=>{
+        function updateSum(){
                 let sum = 0;
         checkboxs.forEach(function(checkbox){
                       if(checkbox.checked){
@@ -230,7 +204,6 @@ function hide_test_booking(){
         checkboxs.forEach(function(checkbox){
               checkbox.checked = false;
                 })
-
 }
    
      //PROFILE IMAGE

@@ -96,10 +96,9 @@
         }
     </script>
 
-         <!---SIDEBAR AND NAVBAR-->
+         <!--- START OF SIDEBAR AND NAVBAR-->
     <div class="navbar">
         <div class="section1">
-        <i class="bi bi-arrow-left-short" id="back-arrow" onclick="backWardArrow()"></i>
         </div>
         <div class="section2">
             <div class="icons">
@@ -133,11 +132,13 @@
                </div>
             <div class="sidebar_icons">
             <i class="bi bi-chat-dots-fill icons"></i>
-        <i class="bi bi-calendar-date-fill icons" onClick="click_appoitment_button()"></i>
+        <i class="bi bi-calendar-date-fill icons" onclick="appoitment_list_section()""></i>
         <i class=" bi-box-arrow-right icons"></i>
             </div>
         </div>
-        
+                 <!--- END OF SIDEBAR AND NAVBAR-->
+
+                 <!--- START OF AVAILABLE APPOITMENT AND APPROVED APPOITMENT SECTION-->
         <div class="appoitment_section">
 <div class="available_appoitment">
 <div class="search_bar_container">
@@ -183,9 +184,12 @@
 </div>
 </div>
 </div>
+   <!--- END OF AVAILABLE APPOITMENT AND APPROVED APPOITMENT SECTION-->
 
+           <!--- START OF LABOURATORY INPUT-->
         <div class="lab_input hide">
 <div class="lab_container">
+                 <!--- INPUT 1-->
 <div class="immunoassay" onClick="form1()">
 <span>Immunoassay Single Tests</span>
 <i class="bi bi-plus-lg" id="open_id_1"></i>
@@ -194,23 +198,23 @@
 <form action="" class="form1 hidden">
 <div class="form_control">
         <input type="checkbox" value="3000" class="checkbox">
-        <label for="">Pregnancy Test (hCG) (#3,000)</label>
+        <label for="">Pregnancy Test (hCG)</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">HIV Test (#2,000)</label>
+        <label for="">HIV Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="1000" class="checkbox">
-        <label for="">Hepatitis B Surface Antigen (HBsAg) (#1,000)</label>
+        <label for="">Hepatitis B Surface Antigen (HBsAg)</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Thyroid Stimulating Hormone (TSH) Test (#2,000)</label>
+        <label for="">Thyroid Stimulating Hormone (TSH) Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Troponin Test (#2,000)</label>
+        <label for="">Troponin Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -218,7 +222,7 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="5000" class="checkbox">
-        <label for="">Anti-Nuclear Antibody (ANA) Test(#5,000)</label>
+        <label for="">Anti-Nuclear Antibody (ANA) Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -226,11 +230,11 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">C-reactive Protein (CRP) Test (#6,000)</label>
+        <label for="">C-reactive Protein (CRP) Test </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Rheumatoid Factor (RF) Test (#6,000)</label>
+        <label for="">Rheumatoid Factor (RF) Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -250,6 +254,7 @@
 </div>
 </form>
 
+                 <!--- INPUT 2-->
 <div class="clinical_chemistry" onClick="form2()">
 <span>Clinical Chemistry</span>
 <i class="bi bi-plus-lg" id="open_id_2"></i>
@@ -258,7 +263,7 @@
 <form action="" class="form2 hidden">
 <div class="form_control">
         <input type="checkbox" value="3000" class="checkbox">
-        <label for="">Full electrolytes (#3,000)</label>
+        <label for="">Full electrolytes</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -266,15 +271,15 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="1000" class="checkbox">
-        <label for="">Potassium (#1,000)</label>
+        <label for="">Potassium</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Bicarbonate (#2,000)</label>
+        <label for="">Bicarbonate</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Chloride (#2,000)</label>
+        <label for="">Chloride</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -282,7 +287,7 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="5000" class="checkbox">
-        <label for="">Electrolytes & urea (e & u) (#5,000)</label>
+        <label for="">Electrolytes & urea (e & u)</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -290,11 +295,11 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Diabetes screening (#6,000)</label>
+        <label for="">Diabetes screening</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Hba 1c (#6,000)</label>
+        <label for="">Hba 1c</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -314,7 +319,7 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Kidney function test (#2,000)</label>
+        <label for="">Kidney function test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -330,9 +335,11 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Renal Function Test (#6,000)</label>
+        <label for="">Renal Function Test</label>
 </div>
 </form>
+
+                <!--- INPUT 3-->
 <div class="thyroid" onClick="form3()">
 <span>Thyroid function test</span>
 <i class="bi bi-plus-lg" id="open_id_3"></i>
@@ -341,7 +348,7 @@
 <form action="" class="form3 hidden">
 <div class="form_control">
         <input type="checkbox" value="3000" class="checkbox">
-        <label for="">Thyroid Stimulating Hormone (TSH) Test (#3,000)</label>
+        <label for="">Thyroid Stimulating Hormone (TSH) Test </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -349,15 +356,15 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="1000" class="checkbox">
-        <label for="">Total Thyroxine (T4) Test (#1,000)</label>
+        <label for="">Total Thyroxine (T4) Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Free Triiodothyronine (FT3) Test (#2,000)</label>
+        <label for="">Free Triiodothyronine (FT3) Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Total Triiodothyronine (T3) Test (#2,000)</label>
+        <label for="">Total Triiodothyronine (T3) Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -365,9 +372,10 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="5000" class="checkbox">
-        <label for="">Thyroglobulin Antibodies (TgAb) Test(#5,000)</label>
+        <label for="">Thyroglobulin Antibodies (TgAb) Test</label>
 </div>
 </form>
+                         <!--- INPUT 4-->
 <div class="tumor" onClick="form4()">
 <span>Tumor markers</span>
 <i class="bi bi-plus-lg" id="open_id_4"></i>
@@ -376,7 +384,7 @@
 <form action="" class="form4 hidden">
 <div class="form_control">
         <input type="checkbox" value="3000" class="checkbox">
-        <label for="">Prostate-Specific Antigen (PSA) Test (#3,000)</label>
+        <label for="">Prostate-Specific Antigen (PSA) Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -384,15 +392,15 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="1000" class="checkbox">
-        <label for="">Alpha-Fetoprotein (AFP) Test (#1,000)</label>
+        <label for="">Alpha-Fetoprotein (AFP) Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">CA 125 Test (#2,000)</label>
+        <label for="">CA 125 Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">CA 19-9 Test (#2,000)</label>
+        <label for="">CA 19-9 Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -400,7 +408,7 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="5000" class="checkbox">
-        <label for="">Beta-2 Microglobulin (B2M) Test (#5,000)</label>
+        <label for="">Beta-2 Microglobulin (B2M) Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -408,13 +416,14 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Thyroglobulin Test (#6,000)</label>
+        <label for="">Thyroglobulin Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Neuron-Specific Enolase (NSE) Test(#6,000)</label>
+        <label for="">Neuron-Specific Enolase (NSE) Test</label>
 </div>
 </form>
+                        <!--- INPUT 5-->
 <div class="blood" onClick="form5()">
 <span>Blood banking</span>
 <i class="bi bi-plus-lg" id="open_id_5"></i>
@@ -423,7 +432,7 @@
 <form action="" class="form5 hidden">
 <div class="form_control">
         <input type="checkbox" value="3000" class="checkbox">
-        <label for="">Blood Typing (ABO and Rh) (#3,000)</label>
+        <label for="">Blood Typing (ABO and Rh)</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -431,15 +440,15 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="1000" class="checkbox">
-        <label for="">Direct Antiglobulin Test (DAT) (#1,000)</label>
+        <label for="">Direct Antiglobulin Test (DAT)</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Indirect Antiglobulin Test (IAT) (#2,000)</label>
+        <label for="">Indirect Antiglobulin Test (IAT) </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Antibody Screen (#2,000)</label>
+        <label for="">Antibody Screen</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -447,7 +456,7 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="5000" class="checkbox">
-        <label for="">Blood Component Separation (#5,000)</label>
+        <label for="">Blood Component Separation </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -455,13 +464,14 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Coagulation Factor Assays (#6,000)</label>
+        <label for="">Coagulation Factor Assays /label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Hemoglobin Electrophoresis (#6,000)</label>
+        <label for="">Hemoglobin Electrophoresis</label>
 </div>
 </form>
+                        <!--- INPUT 6-->
 <div class="food" onClick="form6()">
 <span>Food handler test</span>
 <i class="bi bi-plus-lg" id="open_id_6"></i>
@@ -470,7 +480,7 @@
 <form action="" class="form6 hidden">
 <div class="form_control">
         <input type="checkbox" value="3000" class="checkbox">
-        <label for="">Fecal Coliform Test (#3,000)</label>
+        <label for="">Fecal Coliform Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -478,15 +488,15 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="1000" class="checkbox">
-        <label for="">Staphylococcus aureus Test (#1,000)</label>
+        <label for="">Staphylococcus aureus Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Escherichia coli (E. coli) Test (#2,000)</label>
+        <label for="">Escherichia coli (E. coli) Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Hepatitis A Test (#2,000)</label>
+        <label for="">Hepatitis A Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -494,7 +504,7 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="5000" class="checkbox">
-        <label for="">Listeria Test (#5,000)</label>
+        <label for="">Listeria Test </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -502,13 +512,15 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Campylobacter Test (#6,000)</label>
+        <label for="">Campylobacter Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">otal Plate Count (TPC) Test (#6,000)</label>
+        <label for="">otal Plate Count (TPC) Test</label>
 </div>
 </form>
+
+                         <!--- INPUT 7-->
 <div class="microbiology" onClick="form7()">
 <span>Microbiology and parasitology</span>
 <i class="bi bi-plus-lg" id="open_id_7"></i>
@@ -517,7 +529,7 @@
 <form action="" class="form7 hidden">
 <div class="form_control">
         <input type="checkbox" value="3000" class="checkbox">
-        <label for="">Gram Stain (#3,000)</label>
+        <label for="">Gram Stain</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -525,15 +537,15 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="1000" class="checkbox">
-        <label for="">Culture and Sensitivity (C&S) (#1,000)</label>
+        <label for="">Culture and Sensitivity (C&S)</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Blood Culture (#2,000)</label>
+        <label for="">Blood Culture </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Urine Culture (#2,000)</label>
+        <label for="">Urine Culture </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -541,7 +553,7 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="5000" class="checkbox">
-        <label for="">Parasitological Examination (#5,000)</label>
+        <label for="">Parasitological Examination</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -549,13 +561,15 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Rapid Strep Test (#6,000)</label>
+        <label for="">Rapid Strep Test</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Giemsa Stain (#6,000)</label>
+        <label for="">Giemsa Stain </label>
 </div>
 </form>
+
+                        <!--- INPUT 8-->
 <div class="histopathology" onClick="form8()">
 <span>Histopathology</span>
 <i class="bi bi-plus-lg" id="open_id_8"></i>
@@ -564,7 +578,7 @@
 <form action="" class="form8 hidden">
 <div class="form_control">
         <input type="checkbox" value="3000" class="checkbox">
-        <label for="">Biopsy (#3,000)</label>
+        <label for="">Biopsy</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -572,15 +586,15 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="1000" class="checkbox">
-        <label for="">Fine Needle Aspiration (FNA) (#1,000)</label>
+        <label for="">Fine Needle Aspiration (FNA)</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Immunohistochemistry (IHC) (#2,000)</label>
+        <label for="">Immunohistochemistry (IHC) </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Hematoxylin and Eosin (H&E) Stain (#2,000)</label>
+        <label for="">Hematoxylin and Eosin (H&E) Stain </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -588,7 +602,7 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="5000" class="checkbox">
-        <label for="">Immunofluorescence (#5,000)</label>
+        <label for="">Immunofluorescence /label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -596,13 +610,14 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Tumor Grading (#6,000)</label>
+        <label for="">Tumor Grading </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="6000" class="checkbox">
-        <label for="">Tumor Markers in Histopathology (#6,000)</label>
+        <label for="">Tumor Markers in Histopathology</label>
 </div>
 </form>
+                        <!--- INPUT 10-->
 <div class="haematology" onClick="form9()">
 <span>Haematology</span>
 <i class="bi bi-plus-lg" id="open_id_9"></i>
@@ -611,7 +626,7 @@
 <form action="" class="form9 hidden">
 <div class="form_control">
         <input type="checkbox" value="3000" class="checkbox">
-        <label for="">Complete Blood Count (CBC) (#3,000)</label>
+        <label for="">Complete Blood Count (CBC) </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -619,15 +634,15 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="1000" class="checkbox">
-        <label for="">Erythrocyte Sedimentation Rate (ESR) (#1,000)</label>
+        <label for="">Erythrocyte Sedimentation Rate (ESR) </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="2000" class="checkbox">
-        <label for="">Coagulation Studies (#2,000)</label>
+        <label for="">Coagulation Studies </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value ="2000" class="checkbox">
-        <label for="">Peripheral Blood Smear (#2,000)</label>
+        <label for="">Peripheral Blood Smear </label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="0" class="checkbox">
@@ -635,32 +650,33 @@
 </div>
 <div class="form_control">
         <input type="checkbox" value="5000" class="checkbox">
-        <label for="">Blood Film Examination (#5,000)</label>
+        <label for="">Blood Film Examination </label>
 </div>
 <div class="form_control">
-  
         <input type="checkbox" value="8000" class="checkbox">
-        <label for="">Bone Marrow Aspiration 8,000</label>
+        <label for="">Bone Marrow Aspiration </label>
 </div>
 <div class="form_control">
-       
         <input type="checkbox" id="platelet" value="6000" class="checkbox"
         <label for="">Platelet Count (#6,000)</label>
 </div>
 <div class="form_control">
         <input type="checkbox" value="12000" class="checkbox">
-        <label for="">Bleeding Time and Clotting Time (#12,000)</label>
+        <label for="">Bleeding Time and Clotting Time</label>
 </div>
 </form>
-<button id="btn" class="save" onClick="show_test_booking()">Enter</button>
+<button id="btn" class="save" onClick="show_test_booking()">Book</button>
 </div>
+<!--- END OF LABOURATORY INPUT-->
+
+<!--- START OF TEST BOOKING SECTION-->
 <div class="test_booking hide">
 <i class="bi bi-x-lg" id="close" onClick="hide_test_booking()"></i>
 <h1>Test Booking</h1>
 <table id="dataTable">
         <thead>
-                <td>Amount </td>
-                <td>Tests</td>
+                <td>Test </td>
+                <td>Amount</td>
         </thead>
         <tbody>
         </tbody>
@@ -672,6 +688,9 @@
 <button class="btn">Book Now</button>
 </div>
 <div class="overlay hide"></div>
+<!--- END OF TEST BOOKING SECTION-->
+
+<!--- START OF TEST RESULT UPLOAD-->
 <div class="result">
 <h1>LABORATORY RESULT</h1>
 <div class="profile_div">
@@ -684,7 +703,8 @@
 </img>
 </div>
 </div>
-<div class="result_for_dia_complaint_upload">
+<div class="result_for_diagnosis_and_complaint_upload">
+        <form action="">
         <div class="flex_control">
         <label>Diagnosis</label>
         <input type= "text"></input>
@@ -697,7 +717,10 @@
         <label>Upload Test Result</label>
         <input type= "file"></input>
         </div>
+        </form>
 </div>
+<button>Submit</button>
+<!--- END OF TEST RESULT UPLOAD-->
 </div>             
 <script src="js/script.js"></script>
 </body>

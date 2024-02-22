@@ -136,12 +136,20 @@ function stopCamera2() {
     videoElement2.srcObject = null;
   }
 }
-
+function display_profile(){
+  document.querySelector('.all_patient_list').classList.add("hide")
+  document.querySelector('.appoitment_section').classList.add("hide")
+  document.querySelector('.profile_container').style.display = 'flex';
+  document.querySelector('.overlay').classList.remove("hide")
+  document.querySelector("#btn_appoitment").style.display = "none"
+}
 function patient_list(){
   document.querySelector('.form_sections').style.display = 'none';
   document.querySelector('.checkup_section').style.display = 'none';
   document.querySelector('.all_patient_list').classList.remove("hide")
   document.querySelector('.appoitment_section').classList.add("hide")
+  document.querySelector("#btn_appoitment").style.display = "none"
+  document.querySelector('.profile_container').style.display = 'none';
 }
 
 function form_section(){
@@ -149,6 +157,8 @@ function form_section(){
   document.querySelector('.all_patient_list').classList.add("hide")
   document.querySelector('.checkup_section').style.display = 'block';
   document.querySelector('.appoitment_section').classList.add("hide")
+  document.querySelector("#btn_appoitment").style.display = "none"
+  document.querySelector('.profile_container').style.display = 'none';
 };
 
 function familyPlanSection(){
@@ -168,7 +178,9 @@ function close_profile(){
   document.querySelector('.all_patient_list').classList.add("hide")
   document.querySelector('.appoitment_section').classList.add("hide")
   document.querySelector('.checkup_section').style.display = 'block';
-  document.querySelector('.patient_already_existing_profile').style.display = 'none';
+  document.querySelector('.profile_container').style.display = 'none';
+  document.querySelector('.overlay').classList.add("hide")
+  document.querySelector("#btn_appoitment").style.display = "none"
 }
 document.querySelector("#btn_appoitment").style.display = "none"
 function appoitment_booking(){
@@ -177,7 +189,8 @@ function appoitment_booking(){
   document.querySelector('.appoitment_section').classList.remove("hide")
   document.querySelector("#btn_appoitment").style.display = "block"
   document.querySelector('.checkup_section').style.display = 'none';
-  document.querySelector('.patient_already_existing_profile').style.display = 'none';
+  document.querySelector('.profile_container').style.display = 'none';
+  document.querySelector('.overlay').classList.add("hide")
 }
 function book_appoitment(){
   const form_doctor_roles_name = document.querySelector(".doctor_roles_name");

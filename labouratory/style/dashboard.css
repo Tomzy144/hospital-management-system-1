@@ -73,7 +73,7 @@ body{
 }
 .icons{
     color: #fff;
-    font-size: 30px;
+    font-size: 25px;
     width: 150px;
     display: flex;
     justify-content: center;;
@@ -440,7 +440,6 @@ table {
   right: 0;
   background-color: rgb(42, 87, 215);;
   padding: 1rem 1rem;
-  box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
   margin: 4.6rem 0 0 1rem;
 }
 .lab_input .result span{
@@ -455,7 +454,21 @@ font-size: 20px;
     height: 100px;
     color: #fff;
 }
-.result_for_dia_complaint_upload{
+.result button{
+    width: 100%;
+    border: none;
+    background-color: #fff;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    color: rgb(42, 87, 215);;
+}
+.result button:hover{
+    background:none;
+    border: 1px solid #fff;
+    color: #ffffff;;
+}
+.result_for_diagnosis_and_complaint_upload{
     background-color: #fff;
     height: fit-content;
     margin: 1rem 0;
@@ -465,18 +478,18 @@ font-size: 20px;
     justify-content: flex-start;
     flex-direction: column;
 }
-.result_for_dia_complaint_upload .flex_control{
+.result_for_diagnosis_and_complaint_upload .flex_control{
     display: flex;
     flex-direction: column;
 
 }
-.result_for_dia_complaint_upload input{
+.result_for_diagnosis_and_complaint_upload input{
     padding: 1rem;
     margin: 1rem 0;
     border: 1px solid rgb(42, 87, 215);;
     outline: none;
 }
-.result_for_dia_complaint_upload textarea{
+.result_for_diagnosis_and_complaint_upload textarea{
     padding: 1rem;
     margin: 1rem 0;
     border: 1px solid rgb(42, 87, 215);;
@@ -490,7 +503,6 @@ font-size: 20px;
     padding: 2rem;
     position: relative;
     margin: 4rem 0 0 5rem;
-    box-shadow: rgba(55, 54, 54, 0.35) 0px 5px 15px;
     background-color: rgb(42, 87, 215);;
 }
 .profile_name{

@@ -50,7 +50,7 @@ body{
 }
 .icons{
     color: #fff;
-    font-size: 30px;
+    font-size: 25px;
     width: 150px;
     display: flex;
     justify-content: center;
@@ -214,6 +214,11 @@ body{
    text-align: center;
    border-bottom: 2px solid rgba(255, 255, 255);
 }
+.sidebar_contents img {
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+  }
 .sidebar_icons{
     width: 100%;
     animation: zoomIn 01s ease-in-out;
@@ -227,42 +232,6 @@ body{
     font-size: 25px;
     cursor: pointer;
     margin: 1rem 0;
-}
-
-.contents{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.button_container{
-    width: 80%;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.button_container button{
-    background: none;
-    border: 4px solid #fff;
-    color: #000000;
-    border-radius: 5px;
-    font-size: 20px;
-    padding: 0.6rem;
-    cursor: pointer;
-    margin: 1rem 1rem;
-    transition: all ease-in-out 0.5s;
-    animation: zoomIn 01s ease-in-out;
-}
-.button_container button:hover{
-    background-color:  rgb(42, 87, 215);
-    border: 4px solid #fff;
-    color: rgb(255, 255, 255);
-    transition: all ease-in-out 0.5s; 
-   
 }
 
 /*PATIENT FORM*/
@@ -517,7 +486,7 @@ h1, h3{
 }
  table  thead td {
     padding: 1em;
-    color: rgb(42, 87, 215);
+    color: rgb(0, 87, 194);
 }
  table tbody td {
     padding: 1em;
@@ -535,13 +504,12 @@ h1, h3{
     overflow: auto;;
 }
 
-.patient_already_existing_profile{
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    opacity: 100%;
-    z-index: 999;
-    background-color: rgb(42, 87, 215);
+.overlay{
+    opacity: 40%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: rgb(0, 0, 0);
     position: absolute;
     top: 0;
     left: 0;
@@ -550,10 +518,13 @@ h1, h3{
     width: 800px;
     height: 400px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: rgb(42, 87, 215);
-    margin: 4.6em auto;
+    background-color: rgb(0, 87, 194);
+    margin: 4.6em 0 0 0;
     display: flex;
-    position: relative;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 27%;
 }
 .profile_container .close_icon{
     position: absolute;
@@ -574,7 +545,7 @@ h1, h3{
     background-color: rgb(255, 255, 255);
 }
 .div1 span{
-    color: rgb(42, 87, 215);
+    color: rgb(0, 87, 194);
     font-size: 20px;
 }
 .div2{
@@ -583,11 +554,11 @@ h1, h3{
     display: flex;
     align-items: center;;
     flex-direction: column;
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(0, 87, 194);
 }
 .div2 button{
     margin: 2em 0;
-    color: rgb(42, 87, 215);;
+    color: rgb(0, 87, 194);;
     border: none;
     background-color: #fff;
     cursor: pointer;
@@ -633,9 +604,10 @@ h1, h3{
     align-items:  center;
 }
 .appoitments h1{
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: rgb(42, 87, 215);
     color: #fff;
+    border-radius: 6px;
 }
 
 .cards_container{
@@ -1027,7 +999,7 @@ h1, h3{
     height: 300px;
     display: grid;
     place-items: center;
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(0, 87, 194);
     position: absolute;
     top: 0;
     left: 0;

@@ -435,15 +435,14 @@
             <button class ="btn-submit" onclick="activateFingerPrint()">Fingerprint authentication</button>
             <div class="finger_print_div hide">
             <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i>
-            <i class="bi bi-fingerprint print_icon"></i>
+            <i class="bi bi-fingerprint print_icon" onclick="display_profile()"></i>
             <i class="bi bi-arrow-clockwise authenticate" id=""></i>
             </div> 
         </div>
         <!---END OF CHECKUP SECTION--->
 
         <!-----START ALREADY EXISTING PROFILE-->
-            <div class="patient_already_existing_profile">
-                <div class="profile_container">
+                <div class="profile_container hide">
                 <i class="bi bi-x-lg close_icon" onclick="close_profile()"></i>
                     <div class="div1">
                     <span>Date of Birth : 23-09-2023</span>
@@ -459,7 +458,7 @@
                         <button onclick="appoitment_booking()">Book an Appoitment</button>
                     </div>
                 </div>
-            </div>
+                <div class="overlay hide"></div>
         <!-----END ALREADY EXISTING PROFILE-->
 
 
