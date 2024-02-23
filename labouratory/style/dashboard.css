@@ -1,15 +1,5 @@
 
 @charset "utf-8";
-/* CSS Document */
-
-/* @font-face {
-    font-family: body-font;
-    src: url(SEGOEUI.TTF);
-}
-@font-face {
-    font-family:title-font;
-    src: url(berlin-regular.TTF);
-} */
 @font-face {
     font-family: 'Poppins';
     src: url('Poppins-Light.ttf') format('truetype'); /* Adjust the path if necessary */

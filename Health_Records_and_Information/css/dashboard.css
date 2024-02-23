@@ -271,9 +271,8 @@ h1, h3{
     cursor: pointer;
     border-radius: 100%;
     padding: 0.5rem;
-    width: max-content;
     position: absolute;
-    right:9%;
+    right:12%;
     bottom: 14%;
     background-color: rgb(42, 87, 215);
 }

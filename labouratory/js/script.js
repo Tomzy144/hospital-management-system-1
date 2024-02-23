@@ -1,3 +1,9 @@
+     //PROFILE IMAGE
+     function click_icon_for_profile(){
+        document.querySelector(".profile_account").classList.toggle("hide");
+    };
+
+    
 function appoitment_list_section(){
     document.querySelector(".appoitment_section").style.display = "flex";
     document.querySelector(".lab_input").classList.add("hide");
@@ -206,10 +212,7 @@ function hide_test_booking(){
                 })
 }
    
-     //PROFILE IMAGE
-function click_icon_for_profile(){
-    document.querySelector(".profile_account").classList.toggle("hide");
-};
+
 
 function click_labouratory_examination(){
     document.querySelector(".appoitment_section").style.display = "none";

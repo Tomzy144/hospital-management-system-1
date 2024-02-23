@@ -183,7 +183,7 @@ const personal_profile = `
     </form>
 </div>
 </div>
-<button class="btn_submit">Save All</button>
+<button class="btn_submit">Save all</button>
 <button class="btn_submit" onClick="show_appoitment_section()">Transfer</button>
 </div>
 </div>

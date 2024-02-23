@@ -27,6 +27,9 @@ function ward_round(){
    if(!document.querySelector(".ward_round_container").classList.contains("hidden")){
       overflowContainer.style.height = "800px";
       overflowContainer.style.overflow = "auto";
+   }else if(!document.querySelector(".vitals_input").classList.contains("hidden")){
+      overflowContainer.style.height = "800px";
+      overflowContainer.style.overflow = "auto";
    }
    else{
       overflowContainer.style.height = "auto";

@@ -1,0 +1,1114 @@
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Light.ttf') format('truetype'); /* Adjust the path if necessary */
+    font-weight: normal; /* Specify the weight if needed */
+    font-style: normal; /* Specify the style if needed */
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+}
+.navbar{
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
+    background-color: #2a57d7;
+    top: 0;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.section1{
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: zoomIn 1s ease-in-out;
+    align-items: center;
+}
+.section2{
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    animation: zoomIn 1s ease-in-out;
+    justify-content: space-around;
+    align-items: center;
+}
+.icons{
+    color: #fff;
+    font-size: 25px;
+    width: 150px;
+    display: flex;
+    justify-content: center;;
+    align-items: center;
+    height: 100%;
+}
+#icon{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
+#icon-drop{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
+.notification1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
+    border: 2px solid #fff;
+}
+.notification2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
+    border: 2px solid #fff;
+}
+.profile{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;;
+}
+.profile_account{
+    width: 300px;
+    position: absolute;
+    height: fit-content;
+    top: 100%;
+    background-color: #2a57d7;
+    animation: zoomIn 01s ease-in-out;
+    right: 2%;
+    padding: 1rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#image_profile_account{
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
+}
+.profile_account .btn_submit{
+    width: 100%;
+    background-color: #fff;
+    padding: 0.7rem;
+    border: none;
+    color: rgb(42, 87, 215);
+    border-radius: 5px;
+    transition: all  ease-in-out 0.6s;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+.profile_account  .btn_submit:hover{
+    transform: scale(0.98);
+    background: none;
+    color:rgb(255, 255, 255);
+    border: 2px solid #fff;
+}
+.profile_account span{
+    text-align: left;
+    cursor: pointer;
+}
+.profile_account h3{
+    color: rgb(255, 255, 255);
+}
+
+.profile img{
+    width: 50px;
+    margin: 0 0.8rem;
+    border: 3px solid #fff;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.image{
+    position: relative;
+}
+.active{
+    position: absolute;
+    bottom: 5%;
+    right: 15%;
+    background-color: rgb(0, 193, 65);
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+}
+#btn_appoitment{
+    padding: 0.7rem 1rem;
+    border: none;
+    background-color: #fff;
+    margin: 0 7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(42, 87, 215);
+    font-size: 12px;
+    transition: all ease-in-out 0.6s;
+}
+#btn_appoitment:hover{
+    padding: 0.7rem 1rem;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    transform: scale(0.98);
+}
+
+
+.sidebar{
+    width: 75px;
+    height: fit-content;
+    overflow: hidden;
+    position: fixed;
+    background-color: #2a57d7;
+    left: 0;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1000;
+}
+.sidebar_contents{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+   color: #fff;
+   height: 75px;
+   cursor: pointer;
+   text-align: center;
+   border-bottom: 2px solid rgba(255, 255, 255);
+}
+.sidebar_icons{
+    width: 100%;
+    animation: zoomIn 01s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.sidebar_icons #icon{
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+.antenal_section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+h1{
+    animation: slideInLeft 1s ease-in-out;
+    margin: 1rem 0;
+    letter-spacing: 3px;
+}
+.form_container_for_antenatal{
+    width: 60%;
+    height: 800px;
+    padding: 2rem;
+    box-shadow: rgba(228, 227, 227, 0.35) 0px 5px 15px;
+    background-color: #fff;
+    margin: 4.2rem 0 0 4em;
+    overflow: auto;
+    color: rgb(42, 87, 215);
+    animation: fadeIn 1s ease-in-out;
+}
+.sections{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+form span{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(42, 87, 215);
+    letter-spacing: 4px;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.form_control{
+    width: 300px;
+    display: flex;
+    animation: slideInLeft 1s ease-in-out;
+    margin: 0.8rem 0.5rem;
+    flex-direction: column;
+}
+.form_container_for_antenatal .form_control input{
+    padding: 0.6rem;
+    border: none;
+    border: 1px solid rgb(42, 87, 215);
+    outline: none;
+    font-weight: bold;
+    width: 100%;
+
+}
+
+
+.upload_image_antenatal{
+    width: 350px;
+    height: 250px;
+    box-shadow: rgba(187, 186, 186, 0.35) 0px 5px 15px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    text-align: center;
+}
+.upload_image_antenatal h1{
+    padding: 2rem;
+    font-size: 30px;
+    position: absolute;
+}
+.upload_image_antenatal #capture_image_antenatal{
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 9%;
+    bottom: 14%;
+    background-color: rgb(42, 87, 215);
+}
+#capturedImage_antenatal{
+    position: absolute;
+}
+.btn_capture2{
+    width: 200px;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0.5rem 0.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.btn_re_capture2{
+    width: 200px;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0.5rem 0.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.btn_re_capture2:hover{
+    background:none;
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
+}
+.btn_capture2:hover{
+    background:none;
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
+}
+
+.btn_submit{
+    width: 100%;
+    background-color: rgb(42, 87, 215);
+    padding: 0.7rem;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    transition: all  ease-in-out 0.6s;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+.btn_submit:hover{
+    transform: scale(0.98);
+    background-color: #fff;
+    color:rgb(42, 87, 215);
+    border: 1px solid rgb(42, 87, 215);
+}
+.anternal_list {
+    width: 800px;
+    height: fit-content;
+    margin: 4.5rem 0 0 1rem;
+    position: relative;
+    height: 800px;
+    overflow: auto;
+}
+
+ .search_bar_container {
+    background-color: #fff;
+    color:rgb(42, 87, 215);
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.4em 0 0 0;
+}
+
+.search_bar_container input {
+    padding: 0.5em;
+}
+.search_bar_container input:focus {
+    padding: 0.5em;
+    outline:auto;
+}
+input{
+    padding: 0.6rem;
+    border: 1px solid rgb(42, 87, 215);
+    outline: none;
+    color: rgb(42, 87, 215);
+  }
+
+ table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+ table thead {
+    background-color: #fff; 
+    position: sticky; 
+    top: 0;
+    z-index: 1; 
+    background-color: #fff; 
+}
+ table tbody td img{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+}
+ table  thead td {
+    padding: 1em;
+    color: rgb(0, 87, 194);
+}
+ table tbody td {
+    padding: 1em;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgb(42, 87, 215);
+    border-bottom: 1px solid #ddd; /* Add a bottom border to separate cells */
+}
+
+
+
+/*POSTNATAL*/
+.postnal_section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.form_container_for_postnatal{
+    width: 60%;
+    height: 800px;
+    padding: 1rem;
+    box-shadow: rgba(222, 221, 221, 0.35) 0px 5px 15px;
+    background-color: #fff;
+    overflow: auto;
+    scrollbar-color: red;
+    margin: 4.2rem 0 0 5em;
+    color:rgb(42, 87, 215);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.form_container_for_postnatal .form_control input{
+    padding: 0.6rem;
+    border: none;
+    border: 1px solid rgb(42, 87, 215);
+    outline: none;
+    width: 100%;
+}
+
+.upload_image_postnatal{
+    width: 350px;
+    height: 250px;
+    box-shadow: rgba(222, 220, 220, 0.35) 0px 5px 15px;
+    margin: 1rem auto;
+    overflow: hidden;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);;
+    position: relative;
+    text-align: center;
+}
+.upload_image_postnatal h1{
+    padding: 2rem;
+    font-size: 30px;
+    position: absolute;
+}
+#capture_image_postnatal{
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 9%;
+    bottom: 14%;
+    background-color: rgb(42, 87, 215);
+}
+#capturedImage_postnatal{
+    position: absolute;
+}
+.flex_capture_div{
+    display: flex;
+    margin: 0 auto;
+}
+.btn_capture1{
+    width: 200px;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0.5rem 0.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.btn_re_capture1{
+    width: 200px;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0.5rem 0.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+.btn_re_capture1:hover{
+    background:none;
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
+}
+.btn_capture1:hover{
+    background:none;
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
+}
+
+.postnatal_list{
+    width: 800px;
+    height: fit-content;
+    margin: 4.5rem 0 0 1rem;
+    position: relative;
+    height: 800px;
+    overflow: auto;
+}
+
+
+
+
+/*appoitment section*/
+.appoitment_section{
+    width: 100%;
+    height: 100%;
+}
+
+.appoitment_container{
+    margin: 2rem auto 0 auto;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 6rem auto;
+    justify-content: start;
+}
+.appoitment_container .appoitments{
+    width: 100%;
+    height:max-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+}
+.appoitments h1{
+    padding: 1rem;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+}
+
+.cards_container{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items:  center;
+}
+.cards{
+    width: 350px;
+    height: max-content;
+    background-color: #fff;
+    animation: zoomIn 01s ease-in-out;
+    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
+    margin: 1rem 1rem;
+}
+.cards  .profile{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 100px;
+}
+.cards .profile img{
+    width: 90px;
+    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
+    height: 90px;
+
+}
+#btn_declined{
+    width: 100%;
+}
+#btn_accepted{
+    width: 100%;
+}
+#btn_pending{
+    width: 100%;
+}
+.profile .name_role{
+    display: flex;
+    color: rgb(158, 160, 166);;
+    flex-direction: column;
+}
+.profile h3{
+    color: black;
+}
+.date_time{
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    display: flex;
+    background-color:rgb(42, 87, 215) ;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    margin: 1rem 0;
+    justify-content: center;
+}
+.buttons .btn{
+    padding: 0.5em 1em;
+    background-color:rgb(42, 87, 215) ;
+    border: none;
+    cursor: pointer;
+    margin: 0 1rem;
+    color: #fff;
+}
+.doctor_roles_name{
+    width: 100%;
+    height:max-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    align-items: center;
+}
+#close_appoitment_form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    font-size: 30px;
+    box-shadow: rgba(159, 158, 158, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
+.doc_roles{
+    width: 45rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #fff;
+    animation: fadeIn 01s ease-in-out;
+}
+.doc_roles label{
+    color: rgb(42, 87, 215); 
+    animation: zoomIn 01s ease-in-out;
+}
+.doc_roles select{
+    padding: 1rem;
+    border: none;
+    border: 2px solid #fff;; 
+    background-color:rgb(42, 87, 215); 
+    animation: zoomIn 01s ease-in-out;
+    margin: 1rem 0;
+    color: rgb(255, 255, 255);;
+}
+#continue{
+    background-color: rgb(42, 87, 215);
+    padding: 1rem 1rem;
+    border: none;
+    animation: zoomIn 01s ease-in-out;
+    color:  rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+#continue:hover{
+    border: 1px solid rgb(42, 87, 215);
+    padding: 1rem 1rem;
+}
+
+.calendar{
+    width: 45rem;
+    height: 46rem;
+    background-color: rgb(42, 87, 215);
+    margin: 1rem 0;
+    box-shadow: 0,0.5rem 3rem rgba(0,0,0,0.4);
+    color: #fff;
+}
+.month{
+    width: 100%;
+    height: 6rem;
+    background-color :rgb(255, 255, 255) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+   text-align: center;
+   color: rgb(42, 87, 215);
+}
+
+.month i{
+    font: 2rem;
+    cursor: pointer;
+    animation: zoomIn 01s ease-in-out;
+}
+.month h1{
+    font-size: 1.5rem;
+    font-weight: 400;
+    animation: zoomIn 01s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.month p{
+    font-size: 1rem;
+    animation: zoomIn 01s ease-in-out;
+}
+
+
+.weekdays{
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    animation: zoomIn 01s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+.weekdays div{
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem/7  );
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.days{
+    width: 100%;
+    display: flex;
+    animation: zoomIn 01s ease-in-out;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+}
+.days div{
+    font-size: 1rem;
+    margin: 0.3rem;
+    width: calc(40.2rem/7 );
+    height: 5rem;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today){
+    background-color: rgb(0, 68, 255);
+    border:0.2rem solid #d1cece;
+    cursor: pointer;
+}
+
+.prev-date{
+    opacity: 0.5;
+}
+
+.next-date{
+    opacity: 0.5;
+}
+.content{
+    color: #db0000;
+    font-size: 2rem;
+}
+.clicked {
+    background-color: #aaffaa; /* Light green color for clicked date */
+  }
+
+.today{
+    background-color: #0044ff;
+}
+.hidden{
+
+    display: none;
+}
+
+.form_appoitment{
+    width:45rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: fit-content;
+    background: rgb(255, 255, 255);
+    color: #0044ff;
+    padding: 1rem 1rem;
+}
+
+.form_appoitment .form{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form_appoitment .form_control{
+    width: 40%;
+    animation: none;
+    height: auto;
+    margin: 1em 1em;
+}
+.form_appoitment label{
+    color: rgb(42, 87, 215);
+}
+.form_appoitment input{
+    width: 100%;
+    background-color: none;
+    padding: 1rem 1rem;
+    border: 1px solid rgb(42, 87, 215);;
+    
+}
+.form_appoitment .form_control_text_area{
+    width: 100%;
+    animation: none;
+    height: auto;
+    margin: 1em 1em;
+}
+.selected_date{
+    padding: 1rem 1rem;
+    background-color: rgb(42, 87, 215);
+    border: 2px solid rgb(42, 87, 215);;
+    color: rgb(255, 255, 255);
+}
+.form_appoitment textarea{
+    border: none;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+    width: 100%;
+}
+.btn_submit_appoitment{
+    width: 100%;
+    background-color:rgb(42, 87, 215);
+    color: #fff;
+    border: none;
+    margin: 1rem auto;
+    padding: 0.9rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+.btn_submit_appoitment:hover{
+    background-color: #fff;
+    color: black;
+    border: 1px solid rgb(42, 87, 215);;
+}
+
+.search-container{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar{
+    background-color: #ffffff; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    animation: zoomIn 01s ease-in-out;
+    padding: 2px;
+    align-items: center;
+    height: 60px;
+    border-radius: 4px;
+}
+
+#select{
+    background-color:  rgb(42, 87, 215);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 300px;
+    padding: 19px 20px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px ;
+}
+
+#select ul{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color:rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius:4px ;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+#select ul li{
+    padding: 10px 20px; 
+    cursor: pointer;
+    list-style: none;
+}
+.patient_profile input{
+    padding: 10px 25px;
+    border: none;
+    width: 50%;
+    outline: none;
+    font-size: 18px;
+} 
+#select ul.open{
+    max-height: 400px;
+}
+#submit-input{
+    font-size: 1.3rem;
+    color:rgb(42, 87, 215);
+    cursor: pointer;
+}
+
+.patient_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.patient_info{
+    width: 1400px;
+    height: fit-content;
+    animation: zoomIn 01s ease-in-out;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    color: rgb(42, 87, 215);
+    padding: 1rem;
+    box-shadow: rgba(206, 204, 204, 0.35) 0px 5px 15px;
+    flex-direction: column;
+    margin: 5em 0 0 5em;
+}
+ .patient_profile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ .patient_profile .patient_name_id{
+    display: flex;
+  flex-direction: column;
+    align-items: start;
+}
+ .patient_profile img{
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+}
+.patient_info span{
+    font-size: 17px;
+    animation:slideInDown 01s ease-in-out;
+    color: rgb(42, 87, 215);
+}
+
+.postal_accessment_form{
+    width: 100%;
+    display: flex;
+    padding: 1em;
+    flex-wrap: wrap;
+    background-color: rgb(42, 87, 215);
+}
+.btn{
+    width: 100%;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5em 0.5em;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin: 1rem 0;
+    transition: all ease-in-out 0.5s
+}
+.btn:hover{
+    background: none;
+    border: 1px solid rgb(42, 87, 215);
+    color: rgb(42, 87, 215);
+}
+
+.patient_info form{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+.postal_accessment_form span{
+    color: #fff;
+}
+.patient_info form .form_control{
+    width: 300px;
+    margin: 2rem 1rem;
+}
+
+form .form_control input{
+width: 100%;
+}
+
+
+.neonatal_assessmen_form{
+    width: 100%;
+    display: flex;
+    padding: 1em;
+    flex-wrap: wrap;
+    background-color: rgb(42, 87, 215);
+}
+.neonatal_assessmen_form span{
+    color: #fff;
+}
+.treatment_plan_form{
+    width: 100%;
+    display: flex;
+    padding: 1em;
+    flex-wrap: wrap;
+    background-color: rgb(42, 87, 215);
+}
+.treatment_plan_form span{
+    color: #fff;
+}
+
+/*Treatment and Prescribtion */
+.treatment_prescribtion_container .flex_contain{
+    width:100%;
+    height: fit-content;
+    margin: 6rem auto;
+    display: flex;
+    flex-direction:column ;
+}
+.treatment_prescribtion_container .form_container{
+    width:500px;
+    height:fit-content;
+    background-color: rgb(42, 87, 215);
+    overflow: hidden;
+    margin:2em auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* padding: 2rem; */
+}
+.calpsule{
+    padding:0.5rem;
+    background-color: #fff;
+    color: rgb(42, 87, 215);;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    animation: zoomIn 1s ease-in-out;
+    font-size: 24px;
+}
+.prescribtion_form{
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.prescribtion_form .form_control{
+    display: flex;
+    width: 300px;
+    margin: 1rem 1rem;
+    flex-direction: column;
+}
+
+.form_container input{
+    width: 100%;
+    padding: 0.5rem;
+    background-color: rgb(255, 255, 255);
+}
+.form_container label{
+    color: #fff;
+    font-size: 15px;
+}
+
+.form_container select{
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+.hidden{
+    display: none;
+}

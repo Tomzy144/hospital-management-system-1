@@ -23,8 +23,6 @@
          <div id="book_appoitment-container"></div>
    
 
-
-            
     <script src="js/script.js"></script>
     <script src="js/section.js"></script>
 </body>

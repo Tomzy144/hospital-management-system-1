@@ -1,175 +1,77 @@
-const click_antenal_button = ()=>{
-    const body_change_background = document.querySelector('.contents');
-    body_change_background.classList.add("hide");
-    const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
-    show_antenatal_form.classList.remove("hide")
+     //PROFILE IMAGE
+     function click_icon_for_profile(){
+      document.querySelector(".profile_account").classList.toggle("hide");
+  };
 
 
-    const show_postnatal_form = document.querySelector(".form_container_for_postnatal");
-    show_postnatal_form.classList.add("hide")
-
-//APPOITMENT
-    const show_appoitment_form = document.querySelector(".appoitment_section");
-    show_appoitment_form.classList.add("hide");
-
-    //TREATMENT
-
-    const treatment_prescribtion_form = document.querySelector(".treatment_prescribtion_container");
-    treatment_prescribtion_form.classList.add("hidden");
-
-    //VITAL
-    const show_vital_form = document.querySelector(".new_vital");
-    show_vital_form.classList.add("hidden");
-
+function postnalSection(){
+  document.querySelector(".antenal_section").style.display = "none";
+  document.querySelector(".postnal_section").classList.remove("hide");
+  document.querySelector(".patient_profile").classList.add("hide");
+}
+function antenatalSection(){
+  document.querySelector(".antenal_section").style.display = "flex";
+  document.querySelector(".postnal_section").classList.add("hide");
+  document.querySelector(".patient_profile").classList.add("hide");
+}
+function paitentProfile(){
+  document.querySelector(".patient_profile").classList.remove("hidden");
+  document.querySelector(".antenal_section").style.display = "none";
+  document.querySelector(".postnal_section").classList.add("hide");
 }
 
-
-
-const activeSection = document.querySelector(".current_section");
-const inActiveSection = document.querySelector(".form_section");
-const section1 = document.querySelector("#section1")
-const section2 = document.querySelector("#section2");
-const section3 = document.querySelector("#section3");
-const next_btn1 = document.querySelector(".btn_next1");
-const next_btn2 = document.querySelector(".btn_next2");
-const back_btn2 = document.querySelector(".btn_back2");
-
-
-section1.classList.add("current_section");
-section2.classList.remove("current_section");
-section3.classList.remove("current_section");
-
-
-const nextForm1 = ()=>{
-    section1.classList.remove("current_section");
-    section2.classList.add("current_section");
-    next_btn1.style.display = "none";
-}   
-const nextForm2 = ()=>{
-    section1.classList.remove("current_section");
-    section2.classList.remove("current_section");
-    section3.classList.add("current_section");
-}   
-
-const backFrom2 = ()=>{
-    section1.classList.add("current_section");
-    section2.classList.remove("current_section");
-    section3.classList.remove("current_section");
-    next_btn1.style.display = "block";
-}
-
-const backFrom3 = ()=>{
-    section1.classList.remove("current_section");
-    section2.classList.add("current_section");
-    section3.classList.remove("current_section");
-    next_btn2.style.display = "block";
-    back_btn2.style.display = "block";
-    
-}
-
-//POSTNATAL FORM
-
-const click_postnatal_button = ()=>{
-    const body_change_background = document.querySelector('.contents');
-    const show_postnatal_form = document.querySelector(".form_container_for_postnatal");
-    show_postnatal_form.classList.remove("hide")
-    body_change_background.classList.add("hide");
-
-//APPOITMENT
-    const show_appoitment_form = document.querySelector(".appoitment_section");
-    show_appoitment_form.classList.add("hide");
-
-    //TREATMENT
-
-    const treatment_prescribtion_form = document.querySelector(".treatment_prescribtion_container");
-    treatment_prescribtion_form.classList.add("hidden");
-
-    //VITAL
-    const show_vital_form = document.querySelector(".new_vital");
-    show_vital_form.classList.add("hidden");
-
-
-    //ANTINATAL
-    const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
-    show_antenatal_form.classList.add("hide")
-}
-
-
-const section1Pos = document.querySelector("#section1_pos")
-const section2Pos = document.querySelector("#section2_pos");
-const section3Pos = document.querySelector("#section3_pos");
-const next_btn1Pos = document.querySelector(".btn_next1_pos");
-const next_btn2Pos = document.querySelector(".btn_next2_pos");
-const back_btn2Pos = document.querySelector(".btn_back2_pos");
-
-
-
-section1Pos.classList.add("current_section");
-section2Pos.classList.remove("current_section");
-section3Pos.classList.remove("current_section");
-
-
-const nextForm1Pos = ()=>{
-    section1Pos.classList.remove("current_section");
-    section2Pos.classList.add("current_section");
-    next_btn1Pos.style.display = "none";
-}   
-const nextForm2Pos = ()=>{
-    section1Pos.classList.remove("current_section");
-    section2Pos.classList.remove("current_section");
-    section3Pos.classList.add("current_section");
-}   
-
-const backFrom2Pos = ()=>{
-    section1Pos.classList.add("current_section");
-    section2Pos.classList.remove("current_section");
-    section3Pos.classList.remove("current_section");
-    next_btn1Pos.style.display = "block";
-}
-
-const backFrom3Pos = ()=>{
-    section1Pos.classList.remove("current_section");
-    section2Pos.classList.add("current_section");
-    section3Pos.classList.remove("current_section");
-    next_btn2Pos.style.display = "block";
-    back_btn2Pos.style.display = "block";
-    
-}
-
-
-//PROFILE IMAGE
-const profile_container  =  document.querySelector(".profile_account");
-const click_icon_for_profile = ()=>{
-    profile_container.classList.toggle("hide");
+function dispalyPostalAccessmentForm(){
+  document.querySelector(".postal_accessment_form").classList.toggle("hidden");
+    const overflowContainer = document.querySelector(".patient_info");
+    if(!document.querySelector(".postal_accessment_form").classList.contains("hidden")){
+      overflowContainer.style.height = "800px";
+      overflowContainer.style.overflow = "auto";
+    }else if(!document.querySelector(".neonatal_assessmen_form").classList.contains("hidden")){
+      overflowContainer.style.height = "800px";
+      overflowContainer.style.overflow = "auto";
+    }else if(!document.querySelector(".treatment_plan_form").classList.contains("hidden")){
+      overflowContainer.style.height = "800px";
+      overflowContainer.style.overflow = "auto";
+    }else{
+      overflowContainer.style.height = "fit-content";
+      overflowContainer.style.overflow = "none";
+    }
 };
 
 
-const click_appoitment_button = ()=>{
-    const body_change_background = document.querySelector('.contents');
-    body_change_background.classList.add("hide");
-    const show_appoitment_form = document.querySelector(".appoitment_section");
-    show_appoitment_form.classList.remove("hide");
-    document.querySelector("#btn_appoitment").style.display = "block";
-
-    //TREATMENT
-
-    const treatment_prescribtion_form = document.querySelector(".treatment_prescribtion_container");
-    treatment_prescribtion_form.classList.add("hidden");
-
-    //VITAL
-    const show_vital_form = document.querySelector(".new_vital");
-    show_vital_form.classList.add("hidden");
-
-
-    
-    //POSTNATAL
-
-    const show_postnatal_form = document.querySelector(".form_container_for_postnatal");
-    show_postnatal_form.classList.add("hide")
-
-    //ANTINATAL
-    const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
-    show_antenatal_form.classList.add("hide")
+function dispalyNeonatalAccessmentForm(){
+  const overflowContainer = document.querySelector(".patient_info");
+  document.querySelector(".neonatal_assessmen_form").classList.toggle("hidden");
+  if(!document.querySelector(".neonatal_assessmen_form").classList.contains("hidden")){
+    overflowContainer.style.height = "800px";
+    overflowContainer.style.overflow = "auto";
+  }else if(!document.querySelector(".postal_accessment_form").classList.contains("hidden")){
+    overflowContainer.style.height = "800px";
+    overflowContainer.style.overflow = "auto";
+  }else if(!document.querySelector(".treatment_plan_form").classList.contains("hidden")){
+    overflowContainer.style.height = "800px";
+    overflowContainer.style.overflow = "auto";
+  }else{
+    overflowContainer.style.height = "fit-content";
+    overflowContainer.style.overflow = "none";
+  }
+}
+function dispalyTreatmentPlanForm(){
+  const overflowContainer = document.querySelector(".patient_info");
+  document.querySelector(".treatment_plan_form").classList.toggle("hidden");
+  if(!document.querySelector(".treatment_plan_form").classList.contains("hidden")){
+    overflowContainer.style.height = "fit-content";
+    overflowContainer.style.overflow = "none";
+  }else if(!document.querySelector(".neonatal_assessmen_form").classList.contains("hidden")){
+    overflowContainer.style.height = "800px";
+    overflowContainer.style.overflow = "auto";
+  }else if(!document.querySelector(".postal_accessment_form").classList.contains("hidden")){
+    overflowContainer.style.height = "800px";
+    overflowContainer.style.overflow = "auto";
+  }else{
+    overflowContainer.style.height = "fit-content";
+    overflowContainer.style.overflow = "none";
+  }
 }
 
 
@@ -302,7 +204,7 @@ getDoctors();
 
 
 //BOOK AN APPOINTMENT
-const appoitment_booking = ()=>{
+function appoitment_booking(){
     const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
     form_doctor_roles_name.classList.remove("hide");
 }
@@ -311,45 +213,14 @@ const appoitment_booking = ()=>{
 document.querySelector("#btn_appoitment").style.display = "none";
 
 
-const submitRoles = ()=>{
+function submitRoles(){
     const appoitment_form = document.querySelector(".appoitment_form");
     appoitment_form.classList.remove("hidden");
 }
 
-const close_appoitment_form = ()=>{
+function close_appoitment_form(){
     const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
     form_doctor_roles_name.classList.add("hide");
-}
-
-
-//VITALS
-const click_vital_button = ()=>{
-    const body_change_background = document.querySelector('.contents');
-    body_change_background.classList.add("hide");
-    const show_vital_form = document.querySelector(".new_vital");
-    show_vital_form.classList.remove("hidden");
-
-
-
-    //TREATMENT
-    const treatment_prescribtion_form = document.querySelector(".treatment_prescribtion_container");
-    treatment_prescribtion_form.classList.add("hidden");
-
-
-    //APPOINTMENT
-    const show_appoitment_form = document.querySelector(".appoitment_section");
-    show_appoitment_form.classList.add("hide");
-    
-    //POSTNATAL
-
-    const show_postnatal_form = document.querySelector(".form_container_for_postnatal");
-    show_postnatal_form.classList.add("hide")
-
-    //ANTINATAL
-    const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
-    show_antenatal_form.classList.add("hide")
-
-
 }
 
 //Search Bar
@@ -376,41 +247,6 @@ for(option of options){
         inputfield.placeholder = 'Search In ' + selectText.innerHTML
     })
 }
-
-
-//show vitals
-const showVitals = function(){
-    const vital_container = document.querySelector(".vitals_input");
-    vital_container.classList.toggle("hidden")
-}
-
-
-///TREATMENT AND PRESCRITION
-
-const click_prescribtion_button = ()=>{
-    const body_change_background = document.querySelector('.contents');
-    body_change_background.classList.add("hide");
-    const treatment_prescribtion_form = document.querySelector(".treatment_prescribtion_container");
-    treatment_prescribtion_form.classList.remove("hidden");
-
-    //VITAL
-    const show_vital_form = document.querySelector(".new_vital");
-    show_vital_form.classList.add("hidden");
-
-    //APPOINTMENT
-    const show_appoitment_form = document.querySelector(".appoitment_section");
-    show_appoitment_form.classList.add("hide");
-    
-    //POSTNATAL
-
-    const show_postnatal_form = document.querySelector(".form_container_for_postnatal");
-    show_postnatal_form.classList.add("hide")
-
-    //ANTINATAL
-    const show_antenatal_form = document.querySelector(".form_container_for_antenatal");
-    show_antenatal_form.classList.add("hide")
-}
-
 
 
 //camera for postnatal

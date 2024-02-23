@@ -409,7 +409,6 @@ display: flex;
     width: 90px;
     height: 90px;
     border-radius: 100%;
-    border: 3px solid rgb(42, 87, 215);
 }
 /*VITALS SECTIONS*/
 .new_vital{
@@ -522,7 +521,7 @@ display: flex;
     align-items: center;
 }
 .patient_info{
-    width: 800px;
+    width: 1400px;
     animation: zoomIn 01s ease-in-out;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -555,7 +554,6 @@ display: flex;
     padding: 0.5em 0.2em;
     border: none;
     color: #fff;
-    font-size: 20px;
     cursor: pointer;
     margin: 1rem 0;
     transition: all ease-in-out 0.5s
@@ -629,7 +627,6 @@ display: flex;
     width: 100%;
     border: none;
     color: #fff;
-    font-size: 18px;
 }
 #ward option{
     background-color: rgb(42, 87, 215);
@@ -660,12 +657,11 @@ display: flex;
 }
 
 #stage{
-    padding: 1rem 1rem;
+    padding: 0.5em 0.5em;
     background-color: rgb(42, 87, 215);
     width: 100%;
     border: none;
     color: #fff;
-    font-size: 18px;
 }
 .ward_round_container label{
    margin-top: 1rem;
@@ -714,7 +710,6 @@ display: flex;
     color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 20px;
 }
 
 .all_patient_container{
@@ -746,7 +741,6 @@ display: flex;
     width: 90px;
     height: 90px;
     border-radius: 100%;
-    border: 3px solid rgb(42, 87, 215);
 }
 
 all_patient_container .each_container{
@@ -828,7 +822,6 @@ all_patient_container .number_container{
     border: none;
     cursor: pointer;
     margin: 1rem 0;
-    font-size: 20px;
 }
 
 /*appoitment section*/

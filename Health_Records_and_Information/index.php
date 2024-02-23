@@ -436,7 +436,7 @@
             <div class="finger_print_div hide">
             <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i>
             <i class="bi bi-fingerprint print_icon" onclick="display_profile()"></i>
-            <i class="bi bi-arrow-clockwise authenticate" id=""></i>
+            <i class="fa-solid fa-rotate authenticate"></i>
             </div> 
         </div>
         <!---END OF CHECKUP SECTION--->
