@@ -3,7 +3,7 @@
 
 
 
-$patient_id = $_POST['patientId'];
+$patient_id = $_POST['patient_Id'];
 
  
 
@@ -42,14 +42,14 @@ $patient_id = $_POST['patientId'];
         $family_disease = $patient_profile_array['family_disease'];
         $past_surgery = $patient_profile_array['past_surgery'];
 
-        // Prepare the HTML content to be sent back as the response
-        $html_response = '<div class="all_sections_input">';
-        // Construct HTML content with patient details
-        // ...
-        $html_response .= '</div>';
+        // // Prepare the HTML content to be sent back as the response
+        // $html_response = '<div class="all_sections_input">';
+        // // Construct HTML content with patient details
+        // // ...
+        // $html_response .= '</div>';
 
-        // Send the HTML response back to the client
-        echo $html_response;
+        // // Send the HTML response back to the client
+        // echo $html_response;
     } else {
         // Send an error message back if patient details not found
         echo '<p>Error: Patient details not found</p>';
@@ -96,11 +96,11 @@ $patient_id = $_POST['patientId'];
         </div>
         <div class="details_flexs">
         <h3>Home Address:</h3>
-        <h3>23 Enebong Street Calabar</h3>
+        <h3><?php echo $address ?></h3>
         </div>
         <div class="details_flexs">
         <h3>Phone Number:</h3>
-        <h3>09078932923</h3>
+        <h3><?php echo $phonenumber ?></h3>
         </div>
     </div>
     <div class="info_title">
@@ -110,23 +110,23 @@ $patient_id = $_POST['patientId'];
     <div class="personal_info_section">
         <div class="details_flexs">
         <h3>Name:</h3>
-        <h3>Princess Happiness</h3>
+        <h3><?php echo $kname ?></h3>
         </div>
         <div class="details_flexs">
         <h3>Gender:</h3>
-        <h3>Female</h3>
+        <h3><?php echo $kgender ?></h3>
         </div>
         <div class="details_flexs">
         <h3>Home Address:</h3>
-        <h3>23 Enebong Street Calabar</h3>
+        <h3><?php echo $kaddress ?></h3>
         </div>
         <div class="details_flexs">
         <h3>Phone Number:</h3>
-        <h3>09078932923</h3>
+        <h3><?php echo $kphonenumber ?></h3>
         </div>
         <div class="details_flexs">
         <h3>Relationship:</h3>
-        <h3>Brother</h3>
+        <h3><?php echo $krelationship ?></h3>
         </div>
     </div>
     <div class="info_title">
@@ -136,7 +136,7 @@ $patient_id = $_POST['patientId'];
     <div class="personal_info_section">
         <div class="details_flexs">
         <h3>Occupation:</h3>
-        <h3>Developer</h3>
+        <h3><?php echo $occupation ?></h3>
         </div>
         </div>
         <div class="info_title">
@@ -145,7 +145,7 @@ $patient_id = $_POST['patientId'];
     </div>
     <div class="personal_info_section">
         <div class="details_flexs">
-        <h3>None</h3>
+        <h3><?php echo $past_obsterics ?></h3>
         </div>
         </div>
         <div class="info_title">
@@ -154,7 +154,7 @@ $patient_id = $_POST['patientId'];
     </div>
     <div class="personal_info_section">
         <div class="details_flexs">
-        <h3>None</h3>
+        <h3><?php echo $medical_history ?></h3>
         </div>
         </div>
         <div class="info_title">
@@ -163,7 +163,7 @@ $patient_id = $_POST['patientId'];
     </div>
     <div class="personal_info_section">
         <div class="details_flexs">
-        <h3>None</h3>
+        <h3><?php echo $sexual_history ?></h3>
         </div>
         </div>
         <div class="info_title">
@@ -172,7 +172,7 @@ $patient_id = $_POST['patientId'];
     </div>
     <div class="personal_info_section">
         <div class="details_flexs">
-        <h3>None</h3>
+        <h3><?php echo $past_disease ?></h3>
         </div>
         </div>
         <div class="info_title">
@@ -181,7 +181,7 @@ $patient_id = $_POST['patientId'];
     </div>
     <div class="personal_info_section">
         <div class="details_flexs">
-        <h3>None</h3>
+        <h3><?php echo $family_disease ?></h3>
         </div>
         </div>
         <div class="info_title">
@@ -190,7 +190,7 @@ $patient_id = $_POST['patientId'];
     </div>
     <div class="personal_info_section">
         <div class="details_flexs">
-        <h3>None</h3>
+        <h3><?php echo $past_surgery ?></h3>
         </div>
         </div>
    </div>
@@ -1936,7 +1936,7 @@ $patient_id = $_POST['patientId'];
             <label for="major_complaints">Refer to admission</label>
             <div class="checkbox">
             <input type="checkbox" name="surgery" id="check1">
-            <label for="surgery">Yes</label
+            <label for="surgery">Yes</label>
             <input type="checkbox" name="surgery" id="check2">
             <label for="surgery">No</label>
             </div>

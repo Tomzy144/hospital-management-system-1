@@ -30,7 +30,7 @@ document.querySelector("#back-arrow").style.display="none";
 }
 
 //hide backarrow
-document.querySelector("#back-arrow").style.display="none";
+// document.querySelector("#back-arrow").style.display="none";
 
 
 //PERSONAL INFORMATION SECTION AS READ ONLY

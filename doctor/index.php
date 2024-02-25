@@ -234,12 +234,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 
 
                 <script>
-              function accept(patientId) {
+              function accept(patient_Id) {
                 // Fade in elements with class 'all_sections_input'
                 $('.all_sections_input').fadeIn(500);
 
                 // Construct data string to send in the AJAX request
-                var dataString = 'patientId=' + patientId;
+                var dataString = 'patient_Id=' + patient_Id;
 
                 // Perform AJAX request
                 $.ajax({
@@ -269,45 +269,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
 
 
-                    // function accept(patientId){
-                    //     var xmlHttp = new XMLHttpRequest();
-                    //     xmlHttp.open("GET", "config/display.php",true);
-                    //     xmlHttp.send(null);
-                    //     var element =document.querySelector(".all_sections_input");
-                    //     element.innerHTML =xmlHttp.responseText;
-
-                    //     var container = document.getElementById('appointmentDetailsContainer');
-                    //         container.style.display = "none"; // Hide container with ID 'appointmentDetailsContainer'
-                    //         var hidden = document.querySelector(".all_sections_input");
-                    //         hidden.classList.remove("hide"); // Remove 'hide' class from elements with class 'all_sections_input'
-                        
-                    //  }
-                    // function show(patient_Id) {
-                    //     var xmlHttp = new XMLHttpRequest();
-                    //     xmlHttp.onreadystatechange = function() {
-                    //         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                    //             var element = document.querySelector(".overlay-div");
-                    //             element.innerHTML = xmlHttp.responseText;
-                    //         }
-                    //     };
-                    //     xmlHttp.open("GET", "config/display.php", true);
-                    //     xmlHttp.send(null);
-                    // }
-
-
-                    function reject() {
-                        var patientId = this.getAttribute('data-patient-id');
-                        delete_input(patientId);
-                        alert("Rejected patient with ID: " + patientId);
+                    function reject(patient_Id) {
+                        // delete_input(patient_Id);
+                        alert("Rejected patient with ID: " + patient_Id);
                     }
 
-                    document.querySelectorAll('.accept_button').forEach(function(button) {
-                        button.addEventListener('click', accept);
-                    });
-
-                    document.querySelectorAll('.button_reject').forEach(function(button) {
-                        button.addEventListener('click', reject);
-                    });
+                   
                 </script>   
 
 
