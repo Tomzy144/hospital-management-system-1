@@ -280,13 +280,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
             </div>
             
-
+            <div class="all_sections_input hidden"></div>
 
                 <!----Start from here-->
                
                
-                <div class="all_sections_input hidden"></div>
+         
         </div>
+       
+    </div>
     </div>
   
     <div class="appoitment_section hidden">
