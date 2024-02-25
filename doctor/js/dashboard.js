@@ -30,7 +30,7 @@ document.querySelector("#back-arrow").style.display="none";
 }
 
 //hide backarrow
-document.querySelector("#back-arrow").style.display="none";
+// document.querySelector("#back-arrow").style.display="none";
 
 
 //PERSONAL INFORMATION SECTION AS READ ONLY
@@ -634,129 +634,6 @@ function display_input () {
     document.querySelector(".all_sections_input").classList.remove("hide");
     document.querySelector(".appointmentDetailsContainer").style.display = "none";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-////tomzy's script 
-
-
-document.querySelector('[data-patient-id]').addEventListener('click', function() {
-    // Get the patient ID from the data attribute of the clicked element
-    var patientId = this.getAttribute('data-patient-id');
-    // display_input();
-
-    // Call the loadPatientProfile function with the retrieved patient ID
-    // loadPatientProfile(patientId);
-  
-
-});
-
-
-function loadPatientProfile(patient_id) {
-    // Make an asynchronous request to fetch patient details using AJAX
-    alert(patient_id);
-    
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'index.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Update the patientDetailsContainer with the received HTML
-
-            var container = document.getElementById('appointmentDetailsContainer');
-            var hidden = document.querySelector(".all_sections_input");
-            if (container) {
-                container.innerHTML = xhr.responseText;
-                container.style.display = "none"; // Hide container
-                hidden.classList.remove("hide"); // Remove the "hide" class from hide element
-                // display_input();
-            } else {
-                console.error("Element with ID 'appointmentDetailsContainer' not found");
-            }
-        }
-    };
-   
-    // Send the patient_id and page parameters to the PHP script
-    xhr.send('load_patient_profile=1&patient_id=' + encodeURIComponent(patient_id) + '&page=patient');
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
