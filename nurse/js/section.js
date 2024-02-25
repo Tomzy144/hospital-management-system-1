@@ -42,27 +42,27 @@ const Navbar =`
        </div>
     <div class="sidebar_icons">
         <i class="bi bi-chat-dots-fill icons"></i>
-        <i class="bi bi-calendar-date-fill icons"></i>
+        <i class="bi bi-calendar-date-fill icons" onClick="back_to_appoitment_list()"></i>
         <i class="bi bi-pencil-square icons"  onClick="show_profile_list()" ></i>
         <i class=" bi-box-arrow-right icons"></i>
     </div>
 </div>
 `
 AllSection('navbar', Navbar);
-   //PROFILE IMAGE
-   const profile_container  =  document.querySelector(".profile_account");
-   const click_icon_for_profile = ()=>{
-       profile_container.classList.toggle("hide");
-   };
 
 const personal_profile = `
 <!--PERSONAL PROFILE VITAL AFTER CLICKING ON THE ACCEPT BUTTON--->
 <div class="personal_profile_vital hide">
   <div class="patient_container">
       <div class="patient_info">
+      <div class="patient_profile">
+      <img src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="" />
+      <div class="patient_name_id">
           <span>Precious Joseph</span>
-          <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
-          <button class= "btn_ward">Ward</button>
+          <span>  PATOOO1</span>
+          </div>
+          </div>
+          <button class= "btn_ward" onClick="ward()">Ward</button>
               <!--Wards--->
               <div class="ward_container hidden">
               <label for="ward">Change Ward</label>
@@ -77,7 +77,7 @@ const personal_profile = `
               </select>
           </div>
 
-          <button class= "btn_ward_round">Ward Round</button>
+          <button class= "btn_ward_round" onClick="ward_round()">Ward Round</button>
           <div class="ward_round_container hidden">
               <label for="stage">Stage</label>
               <select name="stage" id="stage">
@@ -89,7 +89,7 @@ const personal_profile = `
               <textarea name="note" id="note" cols="30" rows="10"></textarea>
           </div>
 
-          <button class= "btn_vital">Vital Input</button>
+          <button class= "btn_vital" onClick="patientVital()">Vital Input</button>
           <div class="vitals_input hidden">
           <form action="">
               <div class="form_control">
@@ -183,6 +183,7 @@ const personal_profile = `
     </form>
 </div>
 </div>
+<button class="btn_submit">Save All</button>
 <button class="btn_submit" onClick="show_appoitment_section()">Transfer</button>
 </div>
 </div>
@@ -190,30 +191,6 @@ const personal_profile = `
 `
 AllSection('personal_patient', personal_profile);
 
-//Patient Ward Round
-const btn_ward_round = document.querySelector(".btn_ward_round");
-const ward_round_container = document.querySelector(".ward_round_container");
-
-btn_ward_round.addEventListener("click",()=>{
-    ward_round_container.classList.toggle("hidden")
-});
-
-//Patient Ward
-const btn_ward = document.querySelector(".btn_ward");
-const ward_container = document.querySelector(".ward_container");
-
-btn_ward.addEventListener("click",()=>{
-    ward_container.classList.toggle("hidden")
-});
-
-
-//Patient Vital
-const btn_impatient_vital = document.querySelector(".btn_vital");
-const impatient_container = document.querySelector(".vitals_input");
-
-btn_impatient_vital.addEventListener("click",()=>{
-    impatient_container.classList.toggle("hidden")
-});
 const landing_page = `
 <!----APPOITMENT SECTION-->
 <div class="appoitment_section">
@@ -432,7 +409,7 @@ const patients_list = `
 <div class="new_vital hide">
 <div class="search-container">
 <div class="search-bar">
-    <div id="select">
+    <div id="select" onClick="select()">
         <p id="selectText"></p>
         <i class="fa fa-sort-desc"></i>
         
@@ -440,10 +417,6 @@ const patients_list = `
     <li class="options" id="0" onclick="showTable('All')">All</li>
     <li class="options" id="1" onclick="showTable('Inpatients')">Inpatients</li>
     <li class="options" id="2" onclick="showTable('Outpatients')">Outpatients</li>
-    <li class="options" id="3" onclick="showTable('Waitinglist')">Waiting List</li>
-    <li class="options" id="4" onclick="showTable('Appointment')">Appointment</li>
-    <li class="options" id="5"  onclick="showTable('Test')">Test</li>
-    <li class="options" id="6"  onclick="showTable('ANC')">ANC</li>
     <li class="options" id="7"  onclick="showTable('Todayinputs')">Today inputs</li>
     <!-- Add more options here -->
 </ul>
@@ -452,18 +425,23 @@ const patients_list = `
         <i class="fa fa-search"  id="submit-input"></i>
 </div> 
 </div>
-<div class="patient_container">
+<div class="all_patient_container">
     <div class="flex_container">
         <div class="each_container">
             <div class="number_container">
                 1.
             </div>
-            <div class="patient_info">
+            <div class="all_patient_info">
+            <div class="patient_profile">
+            <img src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="" />
+            <div class="patient_name_id">
                 <span>Precious Joseph</span>
-                <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
-                <button class= "btn_ward">Ward</button>
+                <span>  PATOOO1</span>
+                </div>
+                </div>
+                <button class= "btn_ward" onClick="ward_all_section()">Ward</button>
                     <!--Wards--->
-                    <div class="ward_container hidden">
+                    <div class="all_patient_ward_container hidden">
                     <label for="ward">Change Ward</label>
                     <select name="ward" id="ward">
                         <option value="ward_select"></option>
@@ -476,8 +454,8 @@ const patients_list = `
                     </select>
                 </div>
 
-                <button class= "btn_ward_round">Ward Round</button>
-                <div class="ward_round_container hidden">
+                <button class= "btn_ward_round" onClick="ward_round_all_section()">Ward Round</button>
+                <div class="all_patient_ward_round_container hidden">
                     <label for="stage">Stage</label>
                     <select name="stage" id="stage">
                         <option value="no_selection"></option>
@@ -488,8 +466,8 @@ const patients_list = `
                     <textarea name="note" id="note" cols="30" rows="10"></textarea>
                 </div>
 
-                <button class= "btn_vital">Vital Input</button>
-                <div class="vitals_input hidden">
+                <button class= "btn_vital" onClick="patientVital_all_section()">Vital Input</button>
+                <div class="all_patient_vitals_input hidden">
                 <form action="">
                     <div class="form_control">
           <label for="temperature">Temperature</label>
@@ -579,10 +557,147 @@ const patients_list = `
                     <div class="form_control">
           <label for="w_hr">W-HR</label>
           <input type="text">
+          </div>
           </form>
 </div>
+<button class="btn_submit">Save All</button>
 </div>
-<button class="btn_submit">Save</button>
+</div>
+        <div class="each_container">
+            <div class="number_container">
+                2.
+            </div>
+            <div class="all_patient_info">
+            <div class="patient_profile">
+            <img src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="" />
+            <div class="patient_name_id">
+                <span>Esther Patrick Joseph</span>
+                <span>  PATOOO2</span>
+                </div>
+                </div>
+                <button class= "btn_ward" onClick="ward_all_section()">Ward</button>
+                    <!--Wards--->
+                    <div class="all_patient_ward_container hidden">
+                    <label for="ward">Change Ward</label>
+                    <select name="ward" id="ward">
+                        <option value="ward_select"></option>
+                        <option value="ward_1">Ward 1</option>
+                        <option value="ward_2">Ward 2</option>
+                        <option value="ward_3">Ward 3</option>
+                        <option value="ward_4">Ward 4</option>
+                        <option value="ward_5">Ward 5</option>
+                        <option value="ward_6">Ward 6</option>
+                    </select>
+                </div>
+
+                <button class= "btn_ward_round" onClick="ward_round_all_section()">Ward Round</button>
+                <div class="all_patient_ward_round_container hidden">
+                    <label for="stage">Stage</label>
+                    <select name="stage" id="stage">
+                        <option value="no_selection"></option>
+                        <option value="am">Am</option>
+                        <option value="am">Pm</option>
+                    </select>
+                    <label for="note">WR Note</label>
+                    <textarea name="note" id="note" cols="30" rows="10"></textarea>
+                </div>
+
+                <button class= "btn_vital" onClick="patientVital_all_section()">Vital Input</button>
+                <div class="all_patient_vitals_input hidden">
+                <form action="">
+                    <div class="form_control">
+          <label for="temperature">Temperature</label>
+          <input type="text">
+          </div>
+                
+                    <div class="form_control">
+          <label for="b/p">B/P(mm/HG)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="pulse">Pulse(bp/m)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="respiratory">Respiratory(cm)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="weight">Weight(kg)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="height">Height(cm)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="intake">Intake(m/s)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="output">Output(m/s)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="spo2">SPO2(%)</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="bmi">BMI</label>
+          <input type="text">
+          </div>
+                 <div class="form_control">
+          <lacenter; for="body_fat">Body fat(%)</label>
+          <input type="text">
+          </div>
+          <div class="form_control">
+          <label for="muscle_mass">Muscle mass</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="musc">MUAC</label>
+          <input type="text">
+          </div>
+          <div class="form_control">
+          <label for="resting_metabolism">Restinng metabolism</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="body_age">Body age</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="bmi_for_age">BMI for age</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="visceral_fat">Visceral fat</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="head_circumference">Head circumference</label>
+          <input type="text">
+          </div>
+          <div class="form_control">
+          <label for="wfa">WFA</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="waist_circumference">Waist Circumference</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="hip_circumference">Hip Circumference</label>
+          <input type="text">
+          </div>
+                    <div class="form_control">
+          <label for="w_hr">W-HR</label>
+          <input type="text">
+          </div>
+          </form>
+</div>
+<button class="btn_submit">Save All</button>
+</div>
 </div>
 </div>
 </div>
@@ -591,18 +706,15 @@ const patients_list = `
 `
 AllSection('patient_list', patients_list)
    //Search Bar
-   const select =  document.getElementById("select");
    const list = document.getElementById("list");
    const selectText = document.getElementById("selectText");
    const options = document.getElementsByClassName("options");
    const inputfield = document.getElementById("inputfield");
    const submitInput = document.getElementById("submit-input");
    const id = document.getElementById("id");
-   
-   select.addEventListener("click", function(){
-       list.classList.toggle("open");
-   })
-   
+   function select(){
+    list.classList.toggle("open");
+   }   
    const user_select = 1;
    submitInput.addEventListener("load", function(){
        submitInput.innerHTML = user_select.toString();
@@ -620,7 +732,7 @@ AllSection('patient_list', patients_list)
 const book_appoitment = `
 <div class="appoitment_container hide">
                 <section class="doctor_roles_name hide">
-                    <i class="fa fa-times" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
+                    <i  class="bi bi-x-lg" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
                 <div class="appoitment-calender">
                     <div class="doc_roles">
                 <label for="roles">Specialist</label>
@@ -957,31 +1069,4 @@ getDoctors();
     date.setMonth(date.getMonth()+ 1)
     renderCalendar()
  })
- renderCalendar()
-
-
- //SHOW APPOITMENT SECTION FOR TRANSFERING PATIENTS TO DOCTOR
- const show_appoitment_section =()=>{
-  document.querySelector(".personal_profile_vital").classList.add("hide");
-  document.querySelector(".appoitment_section").style.display="none";
-  document.querySelector("#btn_appoitment").style.display = "block";
-  document.querySelector(".new_vital").classList.add("hide");
-  document.querySelector(".appoitment_container").classList.remove("hide");
-
- }
- const appoitment_booking = ()=>{
-  const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
-  form_doctor_roles_name.classList.remove("hide");
-}
-
-//dont show appoitment booking button
-// document.querySelector("#btn_appoitment").style.display = "none";
-const submitRoles = ()=>{
-  const appoitment_form = document.querySelector(".appoitment_form");
-  appoitment_form.classList.remove("hidden");
-}
-
-const close_appoitment_form = ()=>{
-  const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
-  form_doctor_roles_name.classList.add("hide");
-}
+ renderCalendar();

@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nurse Dashboard</title>
-    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="style/dashboard.css">
     <link rel="stylesheet" href='awesome-font/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="css/icons-1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style/icons-1.10.2/font/bootstrap-icons.css">
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

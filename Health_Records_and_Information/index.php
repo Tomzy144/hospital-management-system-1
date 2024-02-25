@@ -61,10 +61,10 @@
             };
         }
     </script>
-    <!----SIDEBAR AND  NAVBAR-->
+  <!--START OF SIDEBAR AND NAVBAR -->
    <div class="navbar">
         <div class="section1">
-        <button id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
+        <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button>
         </div>
         <div class="section2">
             <div class="icons">
@@ -98,165 +98,375 @@
                </div>
             <div class="sidebar_icons">
                 <i class="bi bi-chat-dots-fill" id="icon"></i>
-            <i class="bi bi-calendar-date-fill" id="icon"></i>
+                <i class="bi bi-journal-album"  id="icon" onclick="form_section()"></i>
+            <i class="bi bi-person-fill"  id="icon" onclick="patient_list()"></i>
                 <i class="bi bi-box-arrow-right"  id="icon" onclick="document.getElementById('logoutform').submit();"></i>
                 <form method="post" action="../config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
                 </form>
             </div>
         </div>
-        <!----LANDING PAGE OF THIS SECTION--->
-   <div class="contents">
-    <div class="button_container">
-        <button onclick="open_patient_form()">PATIENT ADMISSION FORM</button>
-        <!-- <button onclick="appoimentBooking()">CHECKUP</button> -->
-        <button onclick="checkup_page()">CHECKUP </button>
-        <!-- <button onclick="surgicalChemistry()">PROCEDURE LIST</button> -->
-        <button onclick="walkin_patient_form()">WALK-IN PATIENT BOOKING</button>
-        </div>
-    </div>
-            <div class="checkup_section hide">
+         <!--END OF SIDEBAR AND NAVBAR-->
 
-            </div>
-            <div class="walkin_patient_section hide">
-            <div class="form-container">
-        <h1>WalkIn Admission Form</h1>
-        <div class="walkin_in_section_upload_image">
-             <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
-            <i class="bi bi-plus" id="walkin_in_section_capture_image" onclick="walkin_patient_openCamera()"></i>
-            <canvas id="walkin_in_section_canvasElement" style="display: none;"></canvas>
-            <img id="walkin_in_section_capturedImage" style="display: none;">
+        
+ <!--START OF ADMISSION FORM1-->
+    <div class="form_sections">
+    <div class="new_intake_admission_form">
+    <div class="form-container">
+        <h2>Patient Admission Form</h2>
+        <div class="upload_image">
+             <video id="videoElement" width="400" height="300" autoplay></video>
+            <i class="bi bi-plus" id="capture_image" onclick="openCamera()"></i>
+            <canvas id="canvasElement" style="display: none;"></canvas>
+            <img id="capturedImage" style="display: none;">
         </div>
         <div class="flex_capture_div">
-        <div class="walkin_in_section_btn_re_capture hide"  onclick="walkin_patient_retakePicture()">Recapture</div>
-        <div class="walkin_in_section_btn_capture hide" onClick="walkin_patient_takePicture()">Capture</div>
+        <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
+        <div class="btn_capture hide" onClick="takePicture()">Capture</div>
         </div>
-        <form action="">
-            <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
-            <div class="form_control_group">
+        <form action="" id="form">
+            <h3>Personal Details</h3>
+            <div class="sections">
             <div class="form-control">
             <label for="full_name">Full Name</label>
-            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
+            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off" placeholder="John Smith">
         </div>
-
             <div class="form-control">
             <label for="date_of_birth">Date of Birth</label>
             <input type="date" id="dob">
         </div>
         <div class="form-control">
             <label for="home_address">Home Address</label>
-            <input type="text" id="address" autocomplete="off">
+            <input type="text" id="address" autocomplete="off" placeholder="Calabar">
+        </div>
+            <div class="form-control">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" id="phonenumber" placeholder="+234 738 832 23">
+        </div>
+        <div class="form-control2">
+        <label for="">Gender</label>
+        <div class="wrap">
+        <input type="checkbox" name="" id="">
+                Male
+        </input>
+        <input type="checkbox" name="" id="">
+                Female
+        </input>
+        </div>
+        </div>
+        <div class="form-control">
+        <label for="hmo">Hospital Plans</label>
+            <select name="" id="select_box" onclick="ChooseSelectBox()">
+                <option value=""></option>
+                <option value="family_plan" onclick="checkIfFamilyPlan()">Family Plan</option>
+                <option value="">Personal</option>
+                <option value="">Hygeia</option>
+                <option value="">Novo Africa Healthcare</option>
+                <option value="">NHIS</option>
+                <option value="">Biz Ben School</option>
+                <option value="">Novo Health Africa</option>
+                <option value="">Online Clinic</option>
+                <option value="">Roding</option>
+                <option value="">Clearline</option>
+                <option value="">United Health</option>
+                <option value="">Infinity</option>
+                <option value="">KnownTech</option>
+                <option value="">Sterling</option>
+                <option value="">Avon</option>
+                <option value="">Wellness</option>
+                <option value="">Scan</option>
+                <option value="">Reliance</option>
+                <option value="">Lab Patients</option>
+                <option value="">Scan</option>
+                <option value="">Axiom</option>
+                <option value="">Clearline HMO</option>
+                <option value="">Century Medicaid</option>
+            </select>
+    </div>
+        <!--Check if any existing family plan--->
+    <div class="form-control2 hide" id="existing_plan_or_not">
+        <label for="">Any existing family plan?</label>
+        <div class="wrap">
+        <input type="checkbox" name="yes" id="" onchange="familyPlanSection()">
+                Yes
+        </input>
+        <input type="checkbox" name="no" id="">
+                No
+        </input>
+        </div>
+        </div>
+            <!--Family plan authentication--->
+    <div class="family_plan_section hide">
+            <label for="">Insert your Family Id</label>
+            <input type="text" name="" id="">
+            <button>Check</button>
+            </div>
+        </div>
+    <h3>Next of Kins</h3>
+    <div class="sections">
+        <div class="form-control">
+        <label for="full_name" class="form_icon">Full Name</label>
+        <input type="text"  id="kname" autocapitalize="off" autocomplete="off" placeholder="John Smith">
+    </div>
+        <div class="form-control">
+        <label for="relationship">RelationShip</label>
+        <input type="text"  id="krelationship" placeholder="Brother">
+    </div>
+    <div class="form-control2">
+        <label for="">Gender</label>
+        <div class="wrap">
+        <input type="checkbox" name="" id="">
+                Male
+        </input>
+        <input type="checkbox" name="" id="">
+                Female
+        </input>
+        </div>
+        </div>
+        <div class="form-control">
+        <label for="home_address">Home Address</label>
+        <input type="text"  id="kaddress"  autocomplete="off" placeholder="Calabar">
+    </div>
+        <div class="form-control">
+        <label for="phone_number">Phone Number</label>
+        <input type="text"  id="kphonenumber" placeholder="+234 878 832 23">
+    </div>
+    </div>
+
+<h3>Social History</h3>
+<div class="sections">
+    <div class="form-control">
+    <label for="Occupation">Occupation</label>
+    <input type="text" id="occupation"  autocapitalize="off" placeholder="Fill in">
+</div>
+
+    <div class="form-control">
+    <label for="Occupation">Past Obsterics</label>
+    <input type="text" id="past_obsterics" autocapitalize="off" autocomplete="off"placeholder="Fill in">
+</div>
+
+    <div class="form-control">
+    <label for="Occupation">Medical History</label>
+    <input type="text" id="medical_history" autocapitalize="off" autocomplete="off" placeholder="Fill in" >
+</div>
+    <div class="form-control">
+    <label for="Occupation">Sexual History</label>
+    <input type="text" id="sexual_history" autocapitalize="off" autocomplete="off" placeholder="Fill in">
+</div>
+
+    <div class="form-control">
+    <label for="Occupation">Past Disease</label>
+    <input type="text" id="past_disease" autocapitalize="off" autocomplete="off" placeholder="Fill in">
+</div>
+
+    <div class="form-control">
+    <label for="Occupation">Family Disease</label>
+    <input type="text" id="family_disease" autocapitalize="off" autocomplete="off" placeholder="Fill in">
+</div>
+    <div class="form-control">
+    <label for="Occupation">Past Surgery</label>
+    <input type="text" id="past_surgery" autocapitalize="off" autocomplete="off" placeholder="Fill in">
+</div>
+    <div class="form-control">
+    <label for="Occupation">Health History</label>
+    <input type="text" id="past_surgery" autocapitalize="off" autocomplete="off" placeholder="Fill in">
+</div>
+</div>
+<button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Book</button>
+        </form>
+        </div>
+        </div>
+             <!--END OF ADMISSION FORM1-->
+
+        <!--START OF WALKIN ADMISSION FORM2-->
+            <div class="walkin_admission_form">
+            <div class="form-container">
+        <h2>WalkIn Admission Form</h2>
+        <div class="walkin_in_section_upload_image">
+             <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
+            <i class="bi bi-plus" id="walkin_in_section_capture_image" onclick="openCamera2()"></i>
+            <canvas id="walkin_in_section_canvasElement" style="display: none;"></canvas>
+            <img id="walkin_in_section_capturedImage" style="display: none;">
+        </div>
+        <div class="flex_capture_div">
+        <div class="walkin_in_section_btn_re_capture hide"  onclick="retakePicture2()">Recapture</div>
+        <div class="walkin_in_section_btn_capture hide" onclick="takePicture2()">Capture</div>
+        </div>
+        <form action="">
+            <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
+            <div class="sections">
+            <div class="form-control">
+            <label for="full_name">Full Name</label>
+            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off" placeholder="John Smith">
+        </div>
+            <div class="form-control">
+            <label for="date_of_birth">Date of Birth</label>
+            <input type="date" id="dob">
+        </div>
+        <div class="form-control2">
+        <label for="">Gender</label>
+        <div class="wrap">
+        <input type="checkbox" name="" id="">
+                Male
+        </input>
+        <input type="checkbox" name="" id="">
+                Female
+        </input>
+        </div>
+        </div>
+        <div class="form-control">
+            <label for="home_address">Home Address</label>
+            <input type="text" id="address" autocomplete="off" placeholder="Calabar">
         </div>
         <div class="form-control">
             <label for="phone_number">Phone Number</label>
-            <input type="text" id="phonenumber">
+            <input type="text" id="phonenumber" placeholder="+234 823 383 232">
         </div>
-        </div>
-
-    <label>Gender</label>
-    <div class="form-display2">
-    <label for="checkbox">
-        <input type="checkbox" class="walkinin_check1"  name="gender" value="Male">
-        Male
-      </label>
-      <label for="checkbox">
-        <input type="checkbox" class="walkinin_check2"  name="gender" value="Female">
-        Female
-      </label>
     </div>
-    <h3 style="text-align: left; margin-top: 1rem;">Emergency Details</h3>
-    <div class="form_control_group">
-            <div class="form-control">
-            <label for="full_name">Full Name</label>
-            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
-        </div>
-
-            <div class="form-control">
-            <label for="date_of_birth">RelationShip</label>
-            <input type="text" id="relationship">
-        </div>
-        <div class="form-control">
-            <label for="home_address">Phone Number</label>
-            <input type="text" id="address" autocomplete="off">
-        </div>
-        </div>
-
     <button type="button" class="btn-submit">Submit</button>
     </form>
     </div>
+    </div>
+    </div>
+    </div>
+<!--END OF WALKIN ADMISSION FORM2-->
+
+
+  <!---START OF ALL PATIENT LISTS SECTION -->
+
+  <!--START OF ADMITTED PATIENTS FOR LIST1-->
+  <div class="all_patient_list hide">
+    <div class="patient_list_div">
+            <div class="search_bar_container">
+                <span>Patient Admission List</span>
+                <input type="text" name="" id="" placeholder="Search">
             </div>
-    <!----SURGICAL BOOKING BASE ON THE DOCTOR INPUT--->
-  <div class="surgical_booking hide">
+            <table id="table1">
+                <thead>
+                    <td>S/N</td>
+                    <td>Patient Name</td>
+                    <td>Patient ID</td>
+                    <td>Patient Profile</td>
+                    <td>Date of Admission</td>
+                </thead>
+                <tbody>
+                    <td>1</td>
+                    <td>Esther Patrick</td>
+                    <td>PAT0001</td>
+                    <td>
+                        <img src="images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+                    </td>
+                    <td>22-09-2023</td>
+                </tbody>
+                <tbody>
+                    <td>2</td>
+                    <td>Mercy Patrick</td>
+                    <td>PAT0002</td>
+                    <td>
+                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
+                    </td>
+                    <td>22-09-2023</td>
+                </tbody>
+                <tbody>
+                    <td>2</td>
+                    <td>Mercy Patrick</td>
+                    <td>PAT0002</td>
+                    <td>
+                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
+                    </td>
+                    <td>22-09-2023</td>
+                </tbody>
+            </table>
+        </div>
+      <!--END OF ADMITTED PATIENTS FOR LIST1-->
+
+
+        <!--START OF WALKIN PATIENTS FOR LIST2-->
+    <div class="walkin_patient_list_div">
     <div class="table_container">
-        <table>
-            <thead>
-                       <th>Doctor Name</th>
-                        <th>Doctor ID & Profile</th>
-                        <th>Patient Name</th>
-                        <th>Patient ID & Profile</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Procedure</th>
-                        <th>Phone Number</th>
-                        <th>Cost</th>
-                        <th>Status</th>
-            </thead>
-            <tbody>
-                    <td>Doc. Esther Udo</td>
-                    <td>Doc.0001</td>
-                    <td>Gift John</td>
-                    <td>Doc.002</td>
-                    <td>12-02-2023</td>
-                    <td>5.00</td>
-                    <td><span>Head Surgery</span></td>
-                    <td>08177829333</td>
-                    <td>#20,000.00</td>
-                    <td><div class="circle_red"></div></td>
+            <div class="search_bar_container">
+                <span>Walkin Patient Admission List</span>
+                <input type="text" name="" id="" placeholder="Search">
+            </div>
+            <table>
+                <thead>
+                    <td>S/N</td>
+                    <td>Patient Name</td>
+                    <td>Patient ID</td>
+                    <td>Patient Profile</td>
+                    <td>Date of Admission</td>
+                </thead>
+                <tbody>
+                    <td>1</td>
+                    <td>Esther Patrick</td>
+                    <td>PAT0001</td>
+                    <td>
+                        <img src="images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+                    </td>
+                    <td>22-09-2023</td>
                 </tbody>
-            <tbody>
-                    <td>Doc. Esther Udo</td>
-                    <td>Doc.0001 <img src="<?php echo $website_url ?>/Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt=""></img></td>
-                    <td>Gift John</td>
-                    <td>Doc.002</td>
-                    <td>12-02-2023</td>
-                    <td>5.00</td>
-                    <td><span>Head Surgery</span></td>
-                    <td>08177829333</td>
-                    <td>#20,000.00</td>
-                    <td><div class="circle_yellow"></div></td>
+                <tbody>
+                    <td>2</td>
+                    <td>Mercy Patrick</td>
+                    <td>PAT0002</td>
+                    <td>
+                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
+                    </td>
+                    <td>22-09-2023</td>
                 </tbody>
-            <tbody>
-                    <td>Doc. Esther Udo</td>
-                    <td>Doc.0001</td>
-                    <td>Gift John</td>
-                    <td>Doc.002</td>
-                    <td>12-02-2023</td>
-                    <td>5.00</td>
-                    <td><span>Head Surgery</span></td>
-                    <td>08177829333</td>
-                    <td>#20,000.00</td>
-                    <td><div class="circle_green"></div></td>
-                </tbody>
-            <tbody>
-                    <td>Doc. Esther Udo</td>
-                    <td>Doc.0001</td>
-                    <td>Gift John</td>
-                    <td>Doc.002</td>
-                    <td>12-02-2023</td>
-                    <td>5.00</td>
-                    <td><span>Head Surgery</span></td>
-                    <td>08177829333</td>
-                    <td>#20,000.00</td>
-                    <td><div class="circle_red"></div></td>
-                </tbody>
-        </table>
+            </table>
+        </div>
     </div>
   </div>
-  <!---APPOITMENT SECTION -->
-<div class="appoitment_section hide">
+    <!--END OF WALKIN PATIENTS FOR LIST2-->
+
+
+        <!----START OF CHECKUP SECTION-->
+        <div class="checkup_section">
+            <h3>Check Up</h3>
+            <div class="form-control">
+                <label for="">Patient Name</label>
+                <input type="text" name="" id="">
+            </div>
+            <div class="form-control">
+            <label for="">Patient Id</label>
+                <input type="text" name="" id="">
+            </div>
+            <button class ="btn-submit" onclick="activateFingerPrint()">Fingerprint authentication</button>
+            <div class="finger_print_div hide">
+            <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i>
+            <i class="bi bi-fingerprint print_icon" onclick="display_profile()"></i>
+            <i class="bi bi-arrow-clockwise authenticate" id=""></i>
+            </div> 
+        </div>
+        <!---END OF CHECKUP SECTION--->
+
+        <!-----START ALREADY EXISTING PROFILE-->
+                <div class="profile_container hide">
+                <i class="bi bi-x-lg close_icon" onclick="close_profile()"></i>
+                    <div class="div1">
+                    <span>Date of Birth : 23-09-2023</span>
+                        <span>Address: 23 Enebong Street Calabar</span>
+                        <span>Phone Number: 090232322</span>
+                    </div>
+                    <div class="div2">
+                        <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+                        <span>Juliet Patrick</span>
+                        <span>PAT0003</span>
+                        <span>Female</span>
+                        <span>Active</span>
+                        <button onclick="appoitment_booking()">Book an Appoitment</button>
+                    </div>
+                </div>
+                <div class="overlay hide"></div>
+        <!-----END ALREADY EXISTING PROFILE-->
+
+
+          <!---APPOITMENT SECTION -->
+        <div class="appoitment_section hide">
             <div class="appoitment_container">
                 <section class="doctor_roles_name hide">
-                    <i class="fa fa-times" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
+                    <i class="bi bi-x-lg" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
                 <div class="appoitment-calender">
                     <div class="doc_roles">
                 <label for="roles">Doctor Role:</label>
@@ -464,231 +674,8 @@
             </section>
             </div>
         </div>
-      >
-<!----PATIENT FORM -->
-    <div class="patients_form_container hide">
-    <div class="form-container">
-        <h1>Patient Admission Form</h1>
-        <div class="upload_image">
-             <video id="videoElement" width="400" height="300" autoplay></video>
-            <i class="bi bi-plus" id="capture_image" onclick="openCamera()"></i>
-            <canvas id="canvasElement" style="display: none;"></canvas>
-            <img id="capturedImage" style="display: none;">
-        </div>
-        <div class="flex_capture_div">
-        <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
-        <div class="btn_capture hide" onClick="takePicture()">Capture</div>
-        </div>
-        <form action="">
-            <!-- <h2>Fill in the neccesary information</h2> -->
-            <div class="form-section current-section" id="section1">
-            <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
-            <div class="form_control_group">
-            <div class="form-control">
-            <label for="full_name">Full Name</label>
-            <!-- <i class="fa fa-user" class="form_icon"></i> -->
-            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
-        </div>
-
-            <div class="form-control">
-            <label for="date_of_birth">Date of Birth</label>
-            <!-- <i class="fa fa-calendar" class="form_icon"></i> -->
-            <input type="date" id="dob">
-        </div>
-        </div>
-        <div class="form_control_group">
-        <div class="form-control">
-                <!-- <i class="fa fa-home" class="form_icon"></i> -->
-            <label for="home_address">Home Address</label>
-            <input type="text" id="address" autocomplete="off">
-        </div>
-
-            <div class="form-control">
-            <label for="phone_number">Phone Number</label>
-            <!-- <i class="fa fa-phone" class="form_icon"></i> -->
-            <input type="text" id="phonenumber">
-        </div>
-            </div>
-        <div class="form-control">
-        <label for="hmo">Hospital Plans</label>
-            <select name="" id="select_box" onClick="ChooseSelectBox()">
-                <option value=""></option>
-                <option value="family_plan" onClick="family_plan()">Family Plan</option>
-                <option value="">Personal</option>
-                <option value="">Hygeia</option>
-                <option value="">Novo Africa Healthcare</option>
-                <option value="">NHIS</option>
-                <option value="">Biz Ben School</option>
-                <option value="">Novo Health Africa</option>
-                <option value="">Online Clinic</option>
-                <option value="">Roding</option>
-                <option value="">Clearline</option>
-                <option value="">United Health</option>
-                <option value="">Infinity</option>
-                <option value="">KnownTech</option>
-                <option value="">Sterling</option>
-                <option value="">Avon</option>
-                <option value="">Wellness</option>
-                <option value="">Scan</option>
-                <option value="">Reliance</option>
-                <option value="">Lab Patients</option>
-                <option value="">Scan</option>
-                <option value="">Axiom</option>
-                <option value="">Clearline HMO</option>
-                <option value="">Century Medicaid</option>
-            </select>
-        </div>
-        <div class="family_plan hide">
-        <label for="">Do you have any Registered Family Member?</label>
-        <div class="form-display2">
-        <label for="checkbox">
-        <input type="checkbox" name="yes" value="Yes" id="family_check_true">
-            Yes
-        </label>
-        <label for="checkbox">
-        <input type="checkbox" name="no" value="No" id="family_check_false">
-            No
-        </label>
-        </div>
-        </div>
-        <div class="input_family_id_number hide">
-            <label for="">Insert Id number for Verification</label>
-            <input type="text">
-            <button type="button" class="btn_verify">Verify</button>
-        </div>
-
-    <label>Gender</label>
-    <div class="form-display2">
-       
-    <label for="checkbox">
-        <input type="checkbox" id="gender1" name="gender" value="Male" class='check1'>
-        Male
-      </label>
-      <label for="checkbox">
-        <input type="checkbox" id="gender2" name="gender" value="Female" class='check2'>
-        Female
-      </label>
-    </div>
-<div class="ward hidden">
-        <select id="wards" onclick="getBeds();">
-    <option>Choose a Ward</option>
-    <!-- <option value="ward1">Ward 1</option>
-    <option value="ward2">Ward 2</option>
-    <option value="ward3">Ward 3</option>     ///coming from database now 
-    <option value="ward4">Ward 4</option>
-    <option value="ward5">Ward 5</option>
-    <option value="ward6">Ward 6</option>
-    <option value="ward7">Ward 7</option> -->
-</select>
-        <select id="beds">
-    <!-- <option>Choose a Bed</option> -->
-    <!-- <option value="bed1">Bed1</option>
-    <option value="bed2">Bed 2</option>
-    <option value="bed3">Bed 3</option>           ////////same
-    <option value="bed4">Bed 4</option>
-    <option value="bed5">Bed 5</option>
-    <option value="bed6">Bed 6</option>
-    <option value="bed7">Bed 7</option> -->
-</select>
-        </div>
-    <button type="button" class="btn-next">Next</button>
-    </div>
-    <div class="form-section current-section" id="section3">
-    <h3 style="text-align: left; margin-top: 1rem;">Next of Kins</h3>
-    <div class="form_control_group">
-        <div class="form-control">
-        <label for="full_name" class="form_icon">Full Name</label>
-        <!-- <i class="fa fa-user"></i> -->
-        <input type="text"  id="kname" autocapitalize="off" autocomplete="off">
-    </div>
-
-        <div class="form-control">
-        <label for="relationship">RelationShip</label>
-        <!-- <i class="fa fa-users" class="form_icon"></i> -->
-        <input type="text"  id="krelationship">
-    </div>
-    </div>
-    <div class="form_control_group">
-        <div class="form-control">
-            <!-- <i class="fa fa-home" class="form_icon"></i> -->
-        <label for="home_address">Home Address</label>
-        <input type="text"  id="kaddress"  autocomplete="off">
-    </div>
-
-        <div class="form-control">
-        <label for="phone_number">Phone Number</label>
-        <!-- <i class="fa fa-phone" class="form_icon"></i> -->
-        <input type="text"  id="kphonenumber">
-    </div>
-    </div>
-<label>Gender</label>
-<div class="form-display2">
-<label for="radio">
-    <input type="checkbox" id="kgender1" name="gender" value="Female"  class='check4'>
-    Female
-  </label>
-<label for="radio">
-    <input type="checkbox"  id="kgender2" name="gender" value="Male"  class='check3'>
-    Male
-  </label>
-</div>
-        <button type="button" class="btn-back_back">Back</button>
-<button type="button" class="btn-next_next">Next</button>
-    </div>
- <!--Section 2-->
- <div class="form-section current-section" id="section2">
-<h3 style="text-align: left; margin-top: 1rem;">Social History</h3>
-<div class="form_control_group">
-    <div class="form-control">
-    <label for="Occupation">Occupation</label>
-    <input type="text" id="occupation"  autocapitalize="off" autofocus autocomplete="off">
-</div>
-
-    <div class="form-control">
-    <label for="Occupation">Past Obsterics</label>
-    <input type="text" id="past_obsterics" autocapitalize="off" autofocus autocomplete="off">
-</div>
-
-    <div class="form-control">
-    <label for="Occupation">Medical History</label>
-    <input type="text" id="medical_history" autocapitalize="off" autofocus autocomplete="off">
-</div>
-    </div>
-    <div class="form_control_group">
-    <div class="form-control">
-    <label for="Occupation">Sexual History</label>
-    <input type="text" id="sexual_history" autocapitalize="off" autofocus autocomplete="off">
-</div>
-
-    <div class="form-control">
-    <label for="Occupation">Past Disease</label>
-    <input type="text" id="past_disease" autocapitalize="off" autofocus autocomplete="off">
-</div>
-
-    <div class="form-control">
-    <label for="Occupation">Family Disease</label>
-    <input type="text" id="family_disease" autocapitalize="off" autofocus autocomplete="off">
-</div>
-    </div>
-    <div class="form_control_group">
-    <div class="form-control">
-    <label for="Occupation">Past Surgery</label>
-    <input type="text" id="past_surgery" autocapitalize="off" autofocus autocomplete="off">
-</div>
-    <div class="form-control">
-    <label for="Occupation">Health History</label>
-    <input type="text" id="past_surgery" autocapitalize="off" autofocus autocomplete="off">
-</div>
-    </div>
-<button type="button" class="btn-back">Back</button>
-<button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Submit</button>
- </div>
-        </form>
-        </div>
-    </div>
-    </div>
-   
-    
+        <!----END OF APPOITMENT SECTION-->
+        <script src="js/receptionist.js"></script>
 </body>
 </html>
 
