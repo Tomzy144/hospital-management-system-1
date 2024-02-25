@@ -84,8 +84,7 @@ $patient_id = $_POST['patientId'];
     </div>
     <div class="personal_info_section">
         <div class="details_flexs">
-        <h3>Name: <?php echo $patient_id ?> </h3>
-        <h3><?php echo $patient_name ?> </h3>
+        <h3>Name: <?php echo $patient_name ?> </h3>
         </div>
         <div class="details_flexs">
         <h3>Gender:</h3>
