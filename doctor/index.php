@@ -112,9 +112,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
         <div class="section1">
         <i class="fa fa-long-arrow-left hide " id="back-arrow" onclick="backWardArrow()"></i>
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
-<path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
-</svg> -->
         <button class="hide" id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
         </div>
         <div class="section2">
@@ -165,7 +162,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <div class="head-sec">
                 <span style="color:black;">Appoitment Details</span>
                         <div class="appoitment_input_control">
-                            <i class="fa fa-search" id="search-icon"></i>
                             <input type="text" placeholder="Search here" class="appoitment_input">
                         </div>
             </div>
@@ -223,16 +219,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     </table>
 
 
-
-                <!-- <div class="pending_appoitment_list_pagination">
-                        <div class="flexs">
-                            <p id="prev">Prev List</p>
-                            <p id="next">Next List</p>
-                        </div>
-                </div> -->
-
-                
-
                 <script>
               function accept(patient_Id) {
                 // Fade in elements with class 'all_sections_input'
@@ -284,8 +270,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                 <!----Start from here-->
                
-               
-         
         </div>
        
     </div>
@@ -503,8 +487,6 @@ Doctors for the selected role will be dynamically added here
         </div>
     </div>
 
-
-  <!-- <div class="overlay hidden"></div> -->
 
 </body>
 </html>

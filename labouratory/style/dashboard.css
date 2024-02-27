@@ -167,6 +167,8 @@ body{
 }
 .profile_account h3{
     color: rgb(255, 255, 255);
+    font-weight:500;
+    line-height:36px;
 }
 
 .profile img{
@@ -244,7 +246,7 @@ body{
 }
 .sidebar_icons{
     width: 100%;
-    animation: zoomIn 01s ease-in-out;
+    animation: zoomInDown 01s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
