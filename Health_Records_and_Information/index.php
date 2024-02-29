@@ -78,7 +78,7 @@
           <div class="profile">
             <div class="profile_account hide">
             <img id="image_profile_account" src="<?php echo $website_url ?>/Images/imaculater.jpg" alt="">
-            <h4>Immaculater Odu</h4>
+            <h4><?php echo $fullname ?> </h4>
             <button class="btn_submit">Upload Image</button>
             <span>change password</span>
         </div>
@@ -87,7 +87,7 @@
             <div class="active"></div>
             </div>
         </img>  
-            <span>Immaculater Odu Peter</span>
+            <span><?php echo $fullname?> </span>
             <i class="bi bi-caret-down-fill" id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>
@@ -141,15 +141,15 @@
         </div>
             <div class="form-control">
             <label for="phone_number">Phone Number</label>
-            <input type="text" id="phonenumber" placeholder="+234 738 832 23">
+            <input type="text" id="phonenumber" placeholder="Enter Patient Phone Number">
         </div>
         <div class="form-control2">
         <label for="">Gender</label>
         <div class="wrap">
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="gender" value="male">
                 Male
         </input>
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="gender" value="female">
                 Female
         </input>
         </div>
@@ -188,10 +188,10 @@
         <label for="">Any existing family plan?</label>
         <div class="wrap">
         <input type="checkbox" name="yes" id="" onchange="familyPlanSection()">
-                Yes
+            Yes
         </input>
         <input type="checkbox" name="no" id="">
-                No
+            No
         </input>
         </div>
         </div>
@@ -215,10 +215,10 @@
     <div class="form-control2">
         <label for="">Gender</label>
         <div class="wrap">
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="kgender" value="male">
                 Male
         </input>
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="kgender" value="female">
                 Female
         </input>
         </div>
