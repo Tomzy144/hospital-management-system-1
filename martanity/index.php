@@ -60,7 +60,12 @@
 
 
 
-
+    <!-- <div class="_div_landing">
+        <div class="_div1">
+            <img src="Images/5120172.jpg" alt="">
+        </div>
+        <div class="_div2"></div>
+    </div> -->
 
 
 
@@ -510,47 +515,47 @@
           <div class="_btn" id="_vital_1">Vitals/Data (8:30pm 13-09-2023)</div>
           <div class="_data hide" id="_data_1">
                     <div class="form_control">
-                        <label for="">Height of Fundus</label>
+                        <h4>Height of Fundus</h4>
                         <span>78.00</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Presentation and Position</label>
+                        <h4>Presentation and Position</h4>
                         <span>23.033</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Relation of presenting part to brim</label>
+                        <h4>Relation of presenting part to brim</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Fostal Heart</label>
+                        <h4>Fostal Heart</h4>
                         <span>323</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Urine</label>
+                        <h4>Urine</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">B.P</label>
+                        <h4>B.P</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Weight</label>
+                        <h4>Weight</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Weight</label>
+                        <h4>Weight</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">P.C.V</label>
+                        <h4>P.C.V</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Oedema</label>
+                        <h4>Oedema</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Remark</label>
+                        <h4>Remark</h4>
                         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi dolorem magni eligendi autem eveniet ipsam dicta incidunt veniam sed? Ut ab maiores adipisci! Placeat repellendus, eveniet culpa non quis natus?</span>
                     </div>
           </div>
@@ -613,19 +618,46 @@
         </tbody>
     </table>
     <div class="_btn_info" onclick="_antenatal_successfull_screening()">Screnning Examination</div>
-    <div class="_screening_div hide"  id="screening_div">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est beatae, ipsam doloribus amet molestias nemo atque ducimus, eum eaque veritatis praesentium, debitis dignissimos eius. Accusantium iure quisquam libero quae fugit?
-        Vitae corporis, totam doloremque ducimus iusto veritatis nam doloribus laudantium, officiis delectus fugiat nobis in tenetur commodi libero veniam animi soluta culpa iure. Ipsam nostrum et, laborum perspiciatis voluptate cupiditate.
-        Ab dolorum et, voluptates aperiam delectus ea a. Provident harum alias omnis pariatur quia corporis odio, reiciendis aliquid qui sunt sequi officia quis incidunt debitis? Illum cupiditate corporis laboriosam vero!
-        Fuga, id. Voluptatem aperiam a ratione sit fuga non cumque id laboriosam, recusandae veniam qui pariatur quisquam amet obcaecati odio ad aliquam quaerat, autem inventore provident! Impedit suscipit unde totam.
-        Soluta, deleniti totam cupiditate distinctio a dolores aliquam dignissimos fugiat hic quae rem! Aperiam, dolorem corporis impedit recusandae eos laborum molestias sint iste eum quos? Dolorem saepe accusamus dignissimos fugit?
-        Nihil totam natus tempore, voluptatem repellendus hic autem odit? Maxime, repellendus? Ducimus eaque aut reiciendis minima pariatur odio. Autem odit facilis molestiae reprehenderit omnis accusantium rem quae ducimus, cum quis!
-        Alias nesciunt distinctio ad laborum suscipit quos voluptatibus quod beatae enim autem, officia maiores commodi consequuntur totam repellat nisi magnam natus nihil, molestias nobis accusantium sed quis ab quidem. Voluptatibus?
-        Quam temporibus harum ipsa consequuntur at. Ducimus consequuntur iusto eligendi similique tempora! Dicta, at similique sit, quam possimus nesciunt ab vero libero consequuntur, quae repudiandae minima repellat repellendus ut animi!
-        Quia aliquam porro dolor, mollitia architecto aliquid veniam accusantium animi molestiae obcaecati aspernatur laboriosam id cum incidunt commodi harum? Vero perferendis atque earum commodi nesciunt. Officiis ducimus facere vitae quas!
-        Repellat eius omnis consequatur nam numquam architecto commodi ipsam! Ut rerum corrupti ipsa possimus odit tempora commodi perferendis neque iure quasi itaque dolores illo, architecto dignissimos, dolorum blanditiis incidunt. Necessitatibus.
-        Consequatur sunt excepturi modi voluptas fugit eum quasi possimus maiores earum repellendus illo veniam officiis doloremque doloribus illum molestias iure, blanditiis suscipit expedita totam? Voluptatum magnam sit accusamus necessitatibus eveniet.
-        Esse similique corporis animi itaque quas reiciendis enim asperiores adipisci beatae ullam vero odio ratione optio perspiciatis odit, modi labore explicabo nesciunt nisi quo cum omnis repellendus quod porro? Libero.
+    <div class="_data hide"  id="screening_div">
+    <div class="form_control">
+                        <h4>Genetic Screening and Testing</h4>
+                        <span>78.00</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Group B Streptococcus (GBS) Screening</h4>
+                        <span>23.033</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Fetal Monitoring</h4>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Gestational Age assement</h4>
+                        <span>323</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Cervical Screening</h4>
+                        <span>Input</span>
+                    </div>
+                    <h3>Screnning for Infection</h3>
+                    <table>
+                        <thead>
+                            <td>Hiv  Test</td>
+                            <td>Syphilis Test</td>
+                            <td>Hepatitis B Surface Antigen Test</td>
+                            <td>Rubella Immunity Test</td>
+                            <td>Rubella Immunity Test</td>
+                            <td>Gonorrhea and Chlamydia Test</td>
+                        </thead>
+                        <tbody>
+                            <td>Negative</td>
+                            <td>Positive</td>
+                            <td>Positive</td>
+                            <td>Negative</td>
+                            <td>Negative</td>
+                            <td>Negative</td>
+                        </tbody>
+                    </table>
     </div>
     </div>
 </div>
@@ -862,7 +894,6 @@
    <div class="postnatal_ward hide">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
             <span>Postnatal Ward</span>
-            <form action="">
                 <div class="form_control">
                     <label for="">Ward  1</label>
                     <select name="" id="">
@@ -900,7 +931,6 @@
                     </select>
                 </div>
                 <button class="btn_app">Request</button>
-            </form>
             </div>
 
 
@@ -1097,62 +1127,62 @@
         <div class="_btn_info" id="_postnatal_assessment_input">Postnatal Assessment</div>
           <div class="_data hide" id="_postnatal_assessment_data_1">
                     <div class="form_control">
-                        <label for="">Temperature (C)</label>
+                        <h4>Temperature (C)</h4>
                         <span>78.00</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Blood Pressure (mmHg)</label>
+                        <h4>Blood Pressure (mmHg)</h4>
                         <span>23.033</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Pulse (bpm)</label>
+                        <h4>Pulse (bpm)</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Respiratory Rate (breaths/min)</label>
+                        <h4>Respiratory Rate (breaths/min)</h4>
                         <span>323</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Assessment of Uterine Involution</label>
+                        <h4>Assessment of Uterine Involution</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Assessment of Perineal/Abdominal Wounds</label>
+                        <h4>Assessment of Perineal/Abdominal Wounds</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Assessment of Breastfeeding</label>
+                        <h4>Assessment of Breastfeeding</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Immediate Concerns/Complications</label>
+                        <h4>Immediate Concerns/Complications</h4>
                         <span>Input</span>
                     </div>
           </div>
         <div class="_btn_info" id="_neonatal_assessment_input">Neonatal Assessment</div>
           <div class="_data hide" id="_neonatal_assessment_data_1">
                     <div class="form_control">
-                        <label for="">Feeding</label>
+                        <h4>Feeding</h4>
                         <span>78.00</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Urination</label>
+                        <h4>Urination</h4>
                         <span>23.033</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Bowel Movements</label>
+                        <h4>Bowel Movements</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Signs of Jaundice or other concerns</label>
+                        <h4>Signs of Jaundice or other concerns</h4>
                         <span>323</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Medications/Treatments Administered</label>
+                        <h4>Medications/Treatments Administered</h4>
                         <span>Input</span>
                     </div>
                     <div class="form_control">
-                        <label for="">Laboratory and Diagnostic Tests</label>
+                        <h4>Laboratory and Diagnostic Tests</h4>
                         <span>Input</span>
                     </div>
           </div>
@@ -1213,19 +1243,8 @@
         </tbody>
     </table>
     <div class="_btn_info" onclick="_postnatal_successfull_screening()">Screnning Examination</div>
-    <div class="_screening_div hide" id="screening_div2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est beatae, ipsam doloribus amet molestias nemo atque ducimus, eum eaque veritatis praesentium, debitis dignissimos eius. Accusantium iure quisquam libero quae fugit?
-        Vitae corporis, totam doloremque ducimus iusto veritatis nam doloribus laudantium, officiis delectus fugiat nobis in tenetur commodi libero veniam animi soluta culpa iure. Ipsam nostrum et, laborum perspiciatis voluptate cupiditate.
-        Ab dolorum et, voluptates aperiam delectus ea a. Provident harum alias omnis pariatur quia corporis odio, reiciendis aliquid qui sunt sequi officia quis incidunt debitis? Illum cupiditate corporis laboriosam vero!
-        Fuga, id. Voluptatem aperiam a ratione sit fuga non cumque id laboriosam, recusandae veniam qui pariatur quisquam amet obcaecati odio ad aliquam quaerat, autem inventore provident! Impedit suscipit unde totam.
-        Soluta, deleniti totam cupiditate distinctio a dolores aliquam dignissimos fugiat hic quae rem! Aperiam, dolorem corporis impedit recusandae eos laborum molestias sint iste eum quos? Dolorem saepe accusamus dignissimos fugit?
-        Nihil totam natus tempore, voluptatem repellendus hic autem odit? Maxime, repellendus? Ducimus eaque aut reiciendis minima pariatur odio. Autem odit facilis molestiae reprehenderit omnis accusantium rem quae ducimus, cum quis!
-        Alias nesciunt distinctio ad laborum suscipit quos voluptatibus quod beatae enim autem, officia maiores commodi consequuntur totam repellat nisi magnam natus nihil, molestias nobis accusantium sed quis ab quidem. Voluptatibus?
-        Quam temporibus harum ipsa consequuntur at. Ducimus consequuntur iusto eligendi similique tempora! Dicta, at similique sit, quam possimus nesciunt ab vero libero consequuntur, quae repudiandae minima repellat repellendus ut animi!
-        Quia aliquam porro dolor, mollitia architecto aliquid veniam accusantium animi molestiae obcaecati aspernatur laboriosam id cum incidunt commodi harum? Vero perferendis atque earum commodi nesciunt. Officiis ducimus facere vitae quas!
-        Repellat eius omnis consequatur nam numquam architecto commodi ipsam! Ut rerum corrupti ipsa possimus odit tempora commodi perferendis neque iure quasi itaque dolores illo, architecto dignissimos, dolorum blanditiis incidunt. Necessitatibus.
-        Consequatur sunt excepturi modi voluptas fugit eum quasi possimus maiores earum repellendus illo veniam officiis doloremque doloribus illum molestias iure, blanditiis suscipit expedita totam? Voluptatum magnam sit accusamus necessitatibus eveniet.
-        Esse similique corporis animi itaque quas reiciendis enim asperiores adipisci beatae ullam vero odio ratione optio perspiciatis odit, modi labore explicabo nesciunt nisi quo cum omnis repellendus quod porro? Libero.
+    <div class="_data hide" id="screening_div2">
+ 
     </div>
     </div>
 </div>
@@ -1490,21 +1509,43 @@
                         <div class="labour_ward_appoitment hide">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
             <span>Labour Ward Unit</span>
-            <form action="">
-                <div class="form_control">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
+            <div class="form_control">
+                    <label for="">Ward  1</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
                 </div>
                 <div class="form_control">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
+                    <label for="">Ward  2</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
                 </div>
                 <div class="form_control">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <label for="">Ward  3</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
                 </div>
                 <button class="btn_app">Request</button>
-            </form>
             </div>
 
                         <!-----LABOURATORY APPOITMENT--->
@@ -1753,7 +1794,6 @@
         <div class="_btn_info" id="_labour_vital_input">Vitals</div>
           <div class="_data hide" id="labour_vital">
 
-
             <h3>Blood Pressure</h3>
             <div class="flexs">
                     <div class="form_control">
@@ -1892,19 +1932,27 @@
         </tbody>
     </table>
     <div class="_btn_info" onclick="_labour_successfull_screening()">Screnning Examination</div>
-    <div class="_screening_div hide" id="screening_div3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est beatae, ipsam doloribus amet molestias nemo atque ducimus, eum eaque veritatis praesentium, debitis dignissimos eius. Accusantium iure quisquam libero quae fugit?
-        Vitae corporis, totam doloremque ducimus iusto veritatis nam doloribus laudantium, officiis delectus fugiat nobis in tenetur commodi libero veniam animi soluta culpa iure. Ipsam nostrum et, laborum perspiciatis voluptate cupiditate.
-        Ab dolorum et, voluptates aperiam delectus ea a. Provident harum alias omnis pariatur quia corporis odio, reiciendis aliquid qui sunt sequi officia quis incidunt debitis? Illum cupiditate corporis laboriosam vero!
-        Fuga, id. Voluptatem aperiam a ratione sit fuga non cumque id laboriosam, recusandae veniam qui pariatur quisquam amet obcaecati odio ad aliquam quaerat, autem inventore provident! Impedit suscipit unde totam.
-        Soluta, deleniti totam cupiditate distinctio a dolores aliquam dignissimos fugiat hic quae rem! Aperiam, dolorem corporis impedit recusandae eos laborum molestias sint iste eum quos? Dolorem saepe accusamus dignissimos fugit?
-        Nihil totam natus tempore, voluptatem repellendus hic autem odit? Maxime, repellendus? Ducimus eaque aut reiciendis minima pariatur odio. Autem odit facilis molestiae reprehenderit omnis accusantium rem quae ducimus, cum quis!
-        Alias nesciunt distinctio ad laborum suscipit quos voluptatibus quod beatae enim autem, officia maiores commodi consequuntur totam repellat nisi magnam natus nihil, molestias nobis accusantium sed quis ab quidem. Voluptatibus?
-        Quam temporibus harum ipsa consequuntur at. Ducimus consequuntur iusto eligendi similique tempora! Dicta, at similique sit, quam possimus nesciunt ab vero libero consequuntur, quae repudiandae minima repellat repellendus ut animi!
-        Quia aliquam porro dolor, mollitia architecto aliquid veniam accusantium animi molestiae obcaecati aspernatur laboriosam id cum incidunt commodi harum? Vero perferendis atque earum commodi nesciunt. Officiis ducimus facere vitae quas!
-        Repellat eius omnis consequatur nam numquam architecto commodi ipsam! Ut rerum corrupti ipsa possimus odit tempora commodi perferendis neque iure quasi itaque dolores illo, architecto dignissimos, dolorum blanditiis incidunt. Necessitatibus.
-        Consequatur sunt excepturi modi voluptas fugit eum quasi possimus maiores earum repellendus illo veniam officiis doloremque doloribus illum molestias iure, blanditiis suscipit expedita totam? Voluptatum magnam sit accusamus necessitatibus eveniet.
-        Esse similique corporis animi itaque quas reiciendis enim asperiores adipisci beatae ullam vero odio ratione optio perspiciatis odit, modi labore explicabo nesciunt nisi quo cum omnis repellendus quod porro? Libero.
+    <div class="_data hide" id="screening_div3">
+    <div class="form_control">
+                        <h4>Continous Fetal Monitoring</h4>
+                        <span>78.00</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Cervical Dilatation Assessment</h4>
+                        <span>23.033</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Vaginal Examination</h4>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Group B Streptococcus (GBS) Status Check</h4>
+                        <span>323</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Blood Pressure Monitoring</h4>
+                        <span>Input</span>
+                    </div>
     </div>
     </div>
 </div>
