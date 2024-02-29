@@ -244,17 +244,19 @@ h1{
 .form_container_for_antenatal{
     width: 60%;
     height: 800px;
-    padding: 2rem;
-    box-shadow: rgba(228, 227, 227, 0.35) 0px 5px 15px;
+    padding: 1rem;
     background-color: #fff;
     margin: 4.2rem 0 0 4em;
     overflow: auto;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    position: relative;
     animation: fadeIn 1s ease-in-out;
 }
 .sections{
     width: 100%;
     display: flex;
+    border: 1px solid #fff;
+    margin: 1em 0;
     flex-wrap: wrap;
 }
 
@@ -262,6 +264,8 @@ form{
     width: 100%;
     display: flex;
     flex-direction: column;
+    background: rgb(42, 87, 215);
+  padding: 0.5em;
 }
 form span{
     font-size: 18px;
@@ -281,9 +285,8 @@ form span{
 .form_container_for_antenatal .form_control input{
     padding: 0.6rem;
     border: none;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(42, 87, 215);
     outline: none;
-    font-weight: bold;
     width: 100%;
 
 }
@@ -330,8 +333,8 @@ form span{
     margin: 0.5rem 0.5rem;
     border: none;
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color:rgb(42, 87, 215);;
     transition: all ease-in-out 0.5s;
 }
 .btn_re_capture2{
@@ -341,36 +344,36 @@ form span{
     margin: 0.5rem 0.5rem;
     border: none;
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: rgb(42, 87, 215);
     transition: all ease-in-out 0.5s;
 }
 .btn_re_capture2:hover{
     background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
 }
 .btn_capture2:hover{
     background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
 }
 
 .btn_submit{
     width: 100%;
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(255, 255, 255);
     padding: 0.7rem;
     border: none;
-    color: #fff;
+    color: rgb(42, 87, 215);;
     border-radius: 5px;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
     margin: 1rem 0;
 }
 .btn_submit:hover{
-    background-color: #fff;
-    color:rgb(42, 87, 215);
-    border: 1px solid rgb(42, 87, 215);
+    background:none;
+    color:rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
 }
 .anternal_list {
     width: 800px;
@@ -380,7 +383,114 @@ form span{
     height: 800px;
     overflow: auto;
 }
+.anternal_list .doctor_appoitment3{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    padding:1em;
+    top: 10%;
+    left:30%;
+    z-index:10
+}
+.anternal_list .postnatal_ward{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    padding:1em;
+    top: 10%;
+    left:30%;
+    z-index:10
+}
+.anternal_list .labour_ward_appoitment3{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    padding:1em;
+    top: 10%;
+    left:30%;
+    z-index:10
+}
+.anternal_list .lab_appoitment3{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    padding:1em;
+    top: 10%;
+    left:30%;
+    z-index:10
+}
+.anternal_list .radiology_appoitment3{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    padding:1em;
+    top: 10%;
+    left:30%;
+    z-index:10
+}
+.anternal_list form{
+    background-color: #fff;
+}
+.anternal_list span{
+    color: rgb(0, 0, 0); ;
+}
+.anternal_list select{
+    padding: 0.6em;
+    background-color: #fff;
+}
+.anternal_list .form_control{
+    width: 100%;
+    margin: 1em 0;
+}
+.anternal_list textarea{
+    width:100%;
+    height:60px;
+    outline:none;
+    padding:0.5em;
+}
+.anternal_list .tranfer_box1{
+    width: 300px;
+    height: auto;
+    padding: 1em;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 9;
+    background-color: #ffffff;
+}
 
+.anternal_list .tranfer_box1 ul{
+    list-style: none;
+}
+.anternal_list .tranfer_box1 ul li{
+    margin: 1em 0;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    color: rgb(42, 87, 215);;
+}
+.anternal_list .tranfer_box1 ul li:hover{
+    color: rgb(255, 0, 0);;
+    /* border-bottom: 1px solid rgb(255, 0, 0);;; */
+}
+.background_opacity3{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 26, 97); 
+    opacity: 30%;
+    z-index: 8;
+    position: absolute;
+}
  .search_bar_container {
     background-color: #fff;
     color:rgb(42, 87, 215);
@@ -401,7 +511,6 @@ form span{
 }
 input{
     padding: 0.6rem;
-    border: 1px solid rgb(255, 5, 5);
     outline: none;
     color: rgb(0, 0, 0);
   }
@@ -424,7 +533,6 @@ input{
     border-radius: 100%;
 }
  table  thead td {
-    padding: 1em;
     color: rgb(0, 87, 194);
 }
  table tbody td {
@@ -447,19 +555,26 @@ input{
     width: 60%;
     height: 800px;
     padding: 1rem;
-    box-shadow: rgba(222, 221, 221, 0.35) 0px 5px 15px;
     background-color: #fff;
     overflow: auto;
     scrollbar-color: red;
-    margin: 4.2rem 0 0 5em;
-    color:rgb(0, 0, 0);
+    position: relative;
+    margin: 4.2rem 0 0 4em;
+    color:rgb(255, 255, 255);
     animation: fadeIn 1s ease-in-out;
+}
+.form_container_for_postnatal .white{
+    position: absolute;
+    right: 3%;
+    font-size: 25px;
+    cursor: pointer;
+    top: 5%;
 }
 
 .form_container_for_postnatal .form_control input{
     padding: 0.6rem;
     border: none;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(42, 87, 215);
     outline: none;
     width: 100%;
 }
@@ -467,7 +582,6 @@ input{
 .upload_image_postnatal{
     width: 350px;
     height: 250px;
-    box-shadow: rgba(222, 220, 220, 0.35) 0px 5px 15px;
     margin: 1rem auto;
     overflow: hidden;;
     display: flex;
@@ -509,8 +623,8 @@ input{
     margin: 0.5rem 0.5rem;
     border: none;
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: rgb(42, 87, 215);
     transition: all ease-in-out 0.5s;
 }
 .btn_re_capture1{
@@ -520,19 +634,19 @@ input{
     margin: 0.5rem 0.5rem;
     border: none;
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: rgb(42, 87, 215);;
     transition: all ease-in-out 0.5s;
 }
 .btn_re_capture1:hover{
     background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
 }
 .btn_capture1:hover{
     background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
 }
 .btn_app{
     width: 100%;
@@ -550,11 +664,95 @@ input{
     height: 800px;
     overflow: auto;
 }
+.postnatal_list .nurse_appoitment2{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    padding:1em;
+    top: 10%;
+    left:30%;
+    z-index:10
+}
+.postnatal_list .doctor_appoitment2{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    padding:1em;
+    top: 10%;
+    left:30%;
+    z-index:10
+}
+.postnatal_list .postnatal_ward{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    padding:1em;
+    top: 10%;
+    left:30%;
+    z-index:10
+}
+.postnatal_list .lab_appoitment2{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    padding:1em;
+    top: 10%;
+    left:30%;
+    z-index:10
+}
+.postnatal_list .radiology_appoitment2{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    padding:1em;
+    top: 10%;
+    left:30%;
+    z-index:10
+}
+.postnatal_list span{
+    color: rgb(0, 0, 0); ;
+}
+.postnatal_list select{
+    padding: 0.6em;
+    background-color: #fff;
+}
+.postnatal_list form{
+    background-color: #fff;
+}
+.postnatal_list .form_control{
+    width: 100%;
+    margin: 1em 0;
+}
+.postnatal_list textarea{
+    width:100%;
+    height:60px;
+    outline:none;
+    padding:0.5em;
+}
+.background_opacity2{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 26, 97); 
+    opacity: 30%;
+    z-index: 8;
+    position: absolute;
+}
 .labour_section{
     width: 100%;
     height: 100%;
     display: flex;
 }
+
 .background_opacity{
     width: 100%;
     height: 100%;
@@ -567,18 +765,23 @@ input{
     width: 60%;
     height: 800px;
     padding: 1rem;
-    box-shadow: rgba(222, 221, 221, 0.35) 0px 5px 15px;
     background-color: #fff;
     overflow: auto;
     margin: 4.2rem 0 0 5em;
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     animation: fadeIn 1s ease-in-out;
 }
-
+.form_container_for_labor .white{
+    position: absolute;
+    right: 3%;
+    font-size: 25px;
+    cursor: pointer;
+    top: 5%;
+}
 .form_container_for_labor .form_control input{
     padding: 0.6rem;
     border: none;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(42, 87, 215); 
     outline: none;
     width: 100%;
 }
@@ -586,7 +789,6 @@ input{
 .upload_image_labor{
     width: 350px;
     height: 250px;
-    box-shadow: rgba(222, 220, 220, 0.35) 0px 5px 15px;
     margin: 1rem auto;
     overflow: hidden;;
     display: flex;
@@ -628,8 +830,8 @@ input{
     margin: 0.5rem 0.5rem;
     border: none;
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: rgb(42, 87, 215); 
     transition: all ease-in-out 0.5s;
 }
 .btn_re_capture3{
@@ -639,19 +841,19 @@ input{
     margin: 0.5rem 0.5rem;
     border: none;
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: rgb(42, 87, 215); 
     transition: all ease-in-out 0.5s;
 }
 .btn_re_capture3:hover{
     background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
 }
 .btn_capture3:hover{
     background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
 }
 .labor_list{
     width: 800px;
@@ -706,6 +908,12 @@ input{
     left:30%;
     z-index:10
 }
+.labor_list form{
+    background-color: #fff;
+}
+.labor_list span{
+    color: rgb(0, 0, 0); ;
+}
 .labor_list .doctor_appoitment{
     width:400px;
     height:auto;
@@ -716,6 +924,10 @@ input{
     top: 10%;
     left:30%;
     z-index:10
+}
+.labour_section select{
+    padding: 0.6em;
+    background-color: #fff;
 }
 .labor_list .surgical_suite_appoitment{
     width:400px;
@@ -781,7 +993,30 @@ input{
     height:60px;
     outline:none;
     padding:0.5em;
-    border: 1px solid rgb(0, 0, 0);
+}
+.postnatal_list .tranfer_box2{
+    width: 300px;
+    height: auto;
+    padding: 1em;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 9;
+    background-color: #ffffff;
+}
+.postnatal_list .tranfer_box2 ul{
+    list-style: none;
+}
+.postnatal_list .tranfer_box2 ul li{
+    margin: 1em 0;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    color: rgb(42, 87, 215);;
+}
+.postnatal_list .tranfer_box2 ul li:hover{
+    color: rgb(255, 0, 0);;
+    /* border-bottom: 1px solid rgb(255, 0, 0);;; */
 }
 .antenatal_patients_profile{
     width: 100%;
@@ -790,11 +1025,123 @@ input{
     justify-content: center;
 }
 .patient_container{
-    width: 1000px;
+    width: 50%;
     height: 800px;
     overflow: auto;
-    margin: 4.6em 0 0 0;
+    margin: 4.6em 0 0 5em;
     background-color: rgb(255, 255, 255);
+}
+.patient_container2{
+    width: 50%;
+    height: 800px;
+    overflow: auto;
+    margin: 4.6em 0 0 1em;
+    background-color: rgb(255, 255, 255);
+    padding: 1em;
+}
+.patient_container2 h1{
+    font-size: 20px;
+    color: rgb(42, 87, 215);;
+    font-weight: bold;
+}
+.all_info{
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    background-color:rgb(255, 255, 255);;
+}
+.all_info .patient_personal_info{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    color:rgb(42, 87, 215);;
+    margin: 0 0 1em 0;
+    border-bottom: 1px solid rgb(42, 87, 215);
+}
+.all_info .patient_inputs{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    height: 400px;
+    overflow: auto;
+    margin: 0 0 1em 0;
+}
+._vital_info{
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+._btn_info{
+    width: 100%;
+    background-color: rgb(42, 87, 215);
+    padding: 0.5em;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+}
+._btn_flexs{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+._btn{
+    width: 100%;
+    padding: 0.5em;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #000000;
+    border: none;
+    transition: all ease-in-out 0.5s;
+}
+
+._data{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #000000;
+}
+._data h3{
+color: #fff;
+}
+#labour_vital .flexs{
+    display: flex;
+    flex-direction: row;
+}
+._data .form_control{
+    width: 260px;
+    color: #fff;
+}
+
+._data span{
+    border: 1px solid #db0000;
+    width: 230px;
+    padding: 0.4em;
+}
+.all_info  h3{
+    text-align: center;
+}
+.patient_inputs thead td{
+    padding: 1em;
+}
+.patient_inputs tbody td{
+    padding: 1em;
+}
+
+.patient_container form{
+    background-color: #000000;
+}
+._screening_div{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    color: #fff;
+    flex-wrap: wrap;
+    background-color: #000000;
 }
 .patient_profile{
 width: 100%;
@@ -811,6 +1158,11 @@ border-bottom: 1px solid rgb(42, 87, 215);
     height: 100px;
     border-radius: 100%;
 }
+.patient_container h1{
+    font-size: 20px;
+    color: rgb(42, 87, 215);;
+    font-weight: bold;
+}
 .div_text{
     color: rgb(42, 87, 215);
     display: flex;
@@ -819,11 +1171,15 @@ border-bottom: 1px solid rgb(42, 87, 215);
 }
 .btn_patients_profile{
     width: 100%;
-    padding:1em;
+    padding: 0.5em;
     color: #fff;
     border: none;
+    text-align: center;
     cursor: pointer;
     background-color: rgb(42, 87, 215);
+}
+select{
+    border: 1px solid black;
 }
 .antenatal_patients_profile .vitals_input{
     width: 100%;
@@ -839,22 +1195,29 @@ border-bottom: 1px solid rgb(42, 87, 215);
     flex-wrap: wrap;
     width: 100%;
     display: flex;
+    margin: 0.5em 0;
   flex-direction: row;
+  border: 2px solid rgb(255, 255, 255);
 }
 .patient_container label{
     color: #fff;
 }
+.patient_container .form_control{
+    width: 250px;
+}
 .patient_container input{
     color: black;
+    border: 1px solid rgb(255, 255, 255);
 }
 .patient_container textarea{
     width: 100%;
     height: 100px;
+    border: 1px solid rgb(255, 255, 255);
 }
 .patient_container select{
     padding: 0.6rem;
     border: none;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
     outline: none;
     width: 100%;
 }
@@ -871,7 +1234,6 @@ border-bottom: 1px solid rgb(42, 87, 215);
     margin: 0.5em 0;
   flex-direction: row;
   position: relative;
-  border-bottom: 1px solid #fff;
 }
 .drug_prescribtion .btn_white{
     background-color: #fff;
@@ -940,6 +1302,7 @@ margin: 1em 1em;
     display: flex;
     justify-content: center;
 }
+
 .postnatal_patients_profile .postnatal_accessment_form{
     width: 100%;
     background-color: black;
@@ -962,11 +1325,20 @@ margin: 1em 1em;
     width: 100%;
     background-color: black;
     padding: 1em;
+    position: relative;
     height: auto;
 }
 .drug_prescribtion2 .btn_white{
     background-color: #fff;
     color:  rgb(42, 87, 215);;
+}
+.drug_prescribtion2 .div_flexs .add_icon{
+    color: #fff;
+    font-size: 30px;
+    top: 50%;
+    right: 3%;
+    cursor: pointer;
+    position: absolute;
 }
 
 
@@ -1015,11 +1387,20 @@ margin: 1em 1em;
     width: 100%;
     background-color: black;
     padding: 1em;
+    position: relative;
     height: auto;
 }
 .drug_prescribtion3 .btn_white{
     background-color: #fff;
     color:  rgb(42, 87, 215);;
+}
+.drug_prescribtion3 .div_flexs .add_icon{
+    color: #fff;
+    font-size: 30px;
+    top: 50%;
+    right: 3%;
+    cursor: pointer;
+    position: absolute;
 }
 
 .drugs_booking{
@@ -1102,10 +1483,6 @@ margin: 1em 1em;
 
 
 
-
-
-
- 
 
 
 
@@ -1782,7 +2159,6 @@ margin: 1em 1em;
     color: black;
     border: 1px solid rgb(42, 87, 215);;
 }
-
 
 .hidden{
     display: none;

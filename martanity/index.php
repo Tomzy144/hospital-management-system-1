@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="style/martanity.css">
 </head>
 <body>
+
+
+
     <!----START OF NAVBAR AND SIDEBAR-->
     <div class="navbar">
         <div class="section1">
-            <button id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
         </div>
         <div class="section2">
             <div class="icons">
@@ -50,12 +52,17 @@
                 <i class="fa-solid fa-person-pregnant" id="icon" onclick="antenatalSection()"></i>
                 <i class="fa-solid fa-baby" id="icon" onclick="postnalSection()"></i>
                 <i class="fa-solid fa-person-breastfeeding" id="icon" onclick="labourSection()"></i>
-                <i class="bi bi-calendar-date-fill icons" id="icon"onclick="_display_appoitment_section()"></i>
-                <i class="bi bi-pencil-square" id="icon" onClick="click_vital_button()" ></i>
                 <i class="bi bi-box-arrow-right" id="icon"></i>
             </div>
         </div>
           <!----END OF NAVBAR AND SIDEBAR-->
+
+
+
+
+
+
+
 
 
                <!----START OF THE ANTERNATAL FORM-->
@@ -88,10 +95,6 @@
         <input type="text" placeholder="Calabar">
         </div>
         <div class="form_control">
-        <label for="">Emergency Contact</label>
-        <input type="text" placeholder="+234 832 323 32">
-        </div>
-        <div class="form_control">
         <label for="">Contact Number</label>
         <input type="text" placeholder="+234 732 332 33">
         </div>
@@ -105,18 +108,6 @@
        <div class="form_control">
         <label for="">Contact Number</label>
         <input type="text" placeholder="+234 732 323 23">
-        </div>
-        </div>
-
-        <span>Insurance Information</span>
-        <div class="sections">
-        <div class="form_control">
-        <label for="">Insurance Provider</label>
-        <input type="text" placeholder="Mtn Ltd">
-        </div>
-        <div class="form_control">
-        <label for="">Policy Number</label>
-        <input type="text" placeholder="32312">
         </div>
         </div>
 
@@ -136,25 +127,6 @@
         </div>
         </div>
 
-        <span>Antenatal Care Information</span>
-        <div class="sections">
-        <div class="form_control">
-        <label for="">Date of first prenatal visit</label>
-        <input type="date">
-    </div>
-    <div class="form_control">
-        <label for="">Curent Gestational Age</label>
-        <input type="text" placeholder="input">
-    </div>
-    <div class="form_control">
-        <label for="">Prenatal visit</label>
-        <input type="text" placeholder="input">
-    </div>
-    <div class="form_control">
-        <label for="">Recent Ultrasound details</label>
-        <input type="text" placeholder="input">
-    </div>
-    </div>
 
         <span>Health Status</span>
         <div class="sections">
@@ -171,6 +143,8 @@
         </form>
         </div>
            <!----END OF THE ANTERNATAL FORM-->
+
+
 
         <!----START OF THE ANTERNATAL LIST-->
            <div class="anternal_list">
@@ -195,8 +169,11 @@
                     <td>Esther Patrick</td>
                     <td>PAT0001</td>
                     <td>22-09-2023</td>
+                    <td>
+                        <i class="bi bi-three-dots" id="_transfer_icon3" onclick="_transfer_dropdowns3()"></i>
+                    </td>
                 </tbody>
-                <tbody>
+                <tbody  onclick="anternal_patient_profile_section()">
                     <td>2</td>
                     <td>
                         <img src="../images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
@@ -204,24 +181,135 @@
                     <td>Mercy Patrick</td>
                     <td>PAT0002</td>
                     <td>22-09-2023</td>
+                    <td>
+                        <i class="bi bi-three-dots" id="_transfer_icon3" onclick="_transfer_dropdowns3()"></i>
+                    </td>
                 </tbody>
-            </table>
-        </div>
+                <div class="tranfer_box1 hide">
+                    <i class="bi bi-x-lg red" onclick="_close_transfer_dropdowns3()"></i>
+                <ul>
+                    <li onclick="_doc_transfer_from_antenatal()">Doctor Appoitment</li>
+                    <li onclick="_transfer_patient_from_antenatal_to_labour()">Transfer to Labour Ward</li>
+                    <li onclick="_lab_transfer_from_antenatal()">Transfer to Labouratory</li>
+                    <li onclick="_radiology_transfer_from_antenatal()">Transfer to Radiology</li>
+                </ul>
+            </div>
+        </table>
+                 <!-----DOCTOR APPOITMENT--->
+                 <div class="doctor_appoitment3 hide">
+            <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
+            <span>Doctor Appoitment</span>
+            <form action="">
+                <div class="form_control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Available Doctors </label>
+                    <select name="" id="">
+                        <option value="">Doc. Patrick(Gynaecologist)</option>
+                        <option value="">Doc. Miracle(Surgeon)</option>
+                        <option value="">Doc. Moses(Medical Personel)</option>
+                    </select>
+                </div>
+                <div class="form_control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+
+                   <!-----LABOUR WARD APPOITMENT--->
+                   <div class="labour_ward_appoitment3 hide">
+            <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
+            <span>Labour Ward Unit</span>
+            <form action="">
+                <div class="form_control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+
+              <!-----LABOURATORY APPOITMENT--->
+              <div class="lab_appoitment3 hide">
+            <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
+            <span>Labouratory Unit</span>
+            <form action="">
+                <div class="form_control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+
+                      <!-----RADIOLOGY APPOITMENT--->
+                      <div class="radiology_appoitment3 hide">
+            <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
+            <span>Radiology Unit</span>
+            <form action="">
+                <div class="form_control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
     </div>
+</div>
+<div class="background_opacity3 hide"></div>
   </div>
+  </div>
+   <!----END OF ANTENATAL LIST -->
 
         <!----START OF THE ANTENATAL PATIENT PROFILE -->
         <div class="antenatal_patients_profile hide">
         <div class="patient_container">
             <div class="patient_profile">
-                <img src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+                <img src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
                 <div class="div_text">
                     <span>Esther Patrick Samuel</span>
                     <span>PAT0003</span>
                 </div>
             </div>
+            <h1>Medical Inputs</h1>
             <!---Vital Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <button class="btn_patients_profile" id="vital_button">Vitals</button>
+            <div class="btn_patients_profile" id="vital_button">Vitals</div>
             <div class="vitals_input hide">
                 <form action="" class="_inputs">
                     <div class="div_flexs">
@@ -270,7 +358,7 @@
             </div>
 
                           <!---Prescribtion Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <button class="btn_patients_profile" id="drug_prescription_button">Drug Prescription</button>
+            <div class="btn_patients_profile" id="drug_prescription_button">Drug Prescription</div>
             <div class="drug_prescribtion hide">
             <form action="" class="_inputs">
             <div class="div_flexs">
@@ -306,51 +394,8 @@
                   </form>
             </div>
 
-                  <!---Lab Examination Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <button class="btn_patients_profile" id="lab_button">Labouratory Examination</button>
-            <div class="lab_input hide">
-                <form action="" class="_inputs">
-                <div class="div_flexs">
-                    <div class="form_control">
-                        <label for="">Blood Test</label>
-                        <input type="file" name="" id="">
-                    </div>
-                    <div class="form_control">
-                        <label for="">Urine Test</label>
-                        <input type="file" name="" id="">
-                    </div>
-                </div>
-                </form>
-            </div>
-
-                  <!---Radiology Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <button class="btn_patients_profile" id="radiology_button">Radiology Examination</button>
-            <div class="radiology_input hide">
-                <form action="" class="_inputs">
-                    <span>Ultrasound Scan</span>
-                <div class="div_flexs">
-                    <div class="form_control">
-                        <label for="">Dating Scan</label>
-                        <input type="file" name="" id="">
-                    </div>
-                    <div class="form_control">
-                        <label for="">Anomally Scan</label>
-                        <input type="file" name="" id="">
-                    </div>
-                    <div class="form_control">
-                        <label for="">Growth Scan</label>
-                        <input type="file" name="" id="">
-                    </div>
-                    <div class="form_control">
-                        <label for="">Doppler Ultrasound Scan</label>
-                        <input type="file" name="" id="">
-                    </div>
-                </div>
-                </form>
-            </div>
-
-                  <!---Screening Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <button class="btn_patients_profile" id="screening_button">Screening</button>
+                  <!---Screening Examination Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
+            <div class="btn_patients_profile" id="screening_button">Screening Examination</div>
             <div class="screening_input hide">
                 <form action="" class="_inputs">
                 <div class="div_flexs">
@@ -441,13 +486,170 @@
         </div>
         <button class="btn_patients_profile">Save all</button>
   </div>
+
+
+<!----ANTENATAL PATIENT HOSPITAL RECORD INFORMATION-->
+<div class="patient_container2">
+    <h1>Patient Hospital Records</h1>
+<div class="all_info">
+    <div class="patient_personal_info">
+        <h3>Personal Information</h3>
+        <span>Full Name: Moses Patrick Samuel</span>
+        <span>Date of Birth: 7-03-2023</span>
+        <span>Address: 23 Enebong Street Calabar</span>
+        <span>Contact Number: 090328922</span>
+
+        <h3>Spouse/Partner Information</h3>
+        <span>Full Name: Esther Asuquo Etim</span>
+        <span>Contact Number: 0907832832</span>
+    </div>
+    <div class="patient_inputs">
+        <div class="_vital_info">
+        <div class="_btn_info" id="antenatal_successful_vital">Vitals</div>
+        <div class="_btn_flexs hide">
+          <div class="_btn" id="_vital_1">Vitals/Data (8:30pm 13-09-2023)</div>
+          <div class="_data hide" id="_data_1">
+                    <div class="form_control">
+                        <label for="">Height of Fundus</label>
+                        <span>78.00</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Presentation and Position</label>
+                        <span>23.033</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Relation of presenting part to brim</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Fostal Heart</label>
+                        <span>323</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Urine</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">B.P</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Weight</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Weight</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">P.C.V</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Oedema</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Remark</label>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi dolorem magni eligendi autem eveniet ipsam dicta incidunt veniam sed? Ut ab maiores adipisci! Placeat repellendus, eveniet culpa non quis natus?</span>
+                    </div>
+          </div>
+          <div class="_btn">Vitals/Data (8:30pm 13-09-2023)</div>
+          </div>
+    </div>
+    <div class="_btn_info" onclick="_antenatal_successfull_drug_prescription()">Drug Prescriptions</div>
+    <table class="drug_prescription hide">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Drugs</td>
+            <td>Strength</td>
+            <td>Mode</td>
+            <td>Frequency</td>
+            <td>Quantity</td>
+        </thead>
+        <tbody>
+            <td>23-09-2023</td>
+            <td>21:19pm</td>
+            <td>Maleria Drugs</td>
+            <td>2 dose</td>
+            <td>Tablet</td>
+            <td>24/7</td>
+            <td>2</td>
+        </tbody>
+    </table>
+    <div class="_btn_info" onclick="_antenatal_successfull_lab()">Labouratory Examination</div>
+    <table class="lab hide">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Kind of Test</td>
+            <td>Test Specific</td>
+            <td>Test Result</td>
+        </thead>
+        <tbody>
+            <td> 22-09-2023</td>
+            <td>2:40pm</td>
+            <td>Immunoassay Single Tests</td>
+            <td>Drug Screening Test</td>
+            <td><i class="bi bi-download"></i></td>
+        </tbody>
+    </table>
+    <div class="_btn_info" onclick="_antenatal_successfull_rad()">Radiology Examination</div>
+    <table class="rad hide">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Kind of Test</td>
+            <td>Test Specific</td>
+            <td>Test Result</td>
+        </thead>
+        <tbody>
+            <td> 22-09-2023</td>
+            <td>2:40pm</td>
+            <td> 	X-ray (Radiography)</td>
+            <td>Cervical Spine X-ray</td>
+            <td><i class="bi bi-download"></i></td>
+        </tbody>
+    </table>
+    <div class="_btn_info" onclick="_antenatal_successfull_screening()">Screnning Examination</div>
+    <div class="_screening_div hide"  id="screening_div">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est beatae, ipsam doloribus amet molestias nemo atque ducimus, eum eaque veritatis praesentium, debitis dignissimos eius. Accusantium iure quisquam libero quae fugit?
+        Vitae corporis, totam doloremque ducimus iusto veritatis nam doloribus laudantium, officiis delectus fugiat nobis in tenetur commodi libero veniam animi soluta culpa iure. Ipsam nostrum et, laborum perspiciatis voluptate cupiditate.
+        Ab dolorum et, voluptates aperiam delectus ea a. Provident harum alias omnis pariatur quia corporis odio, reiciendis aliquid qui sunt sequi officia quis incidunt debitis? Illum cupiditate corporis laboriosam vero!
+        Fuga, id. Voluptatem aperiam a ratione sit fuga non cumque id laboriosam, recusandae veniam qui pariatur quisquam amet obcaecati odio ad aliquam quaerat, autem inventore provident! Impedit suscipit unde totam.
+        Soluta, deleniti totam cupiditate distinctio a dolores aliquam dignissimos fugiat hic quae rem! Aperiam, dolorem corporis impedit recusandae eos laborum molestias sint iste eum quos? Dolorem saepe accusamus dignissimos fugit?
+        Nihil totam natus tempore, voluptatem repellendus hic autem odit? Maxime, repellendus? Ducimus eaque aut reiciendis minima pariatur odio. Autem odit facilis molestiae reprehenderit omnis accusantium rem quae ducimus, cum quis!
+        Alias nesciunt distinctio ad laborum suscipit quos voluptatibus quod beatae enim autem, officia maiores commodi consequuntur totam repellat nisi magnam natus nihil, molestias nobis accusantium sed quis ab quidem. Voluptatibus?
+        Quam temporibus harum ipsa consequuntur at. Ducimus consequuntur iusto eligendi similique tempora! Dicta, at similique sit, quam possimus nesciunt ab vero libero consequuntur, quae repudiandae minima repellat repellendus ut animi!
+        Quia aliquam porro dolor, mollitia architecto aliquid veniam accusantium animi molestiae obcaecati aspernatur laboriosam id cum incidunt commodi harum? Vero perferendis atque earum commodi nesciunt. Officiis ducimus facere vitae quas!
+        Repellat eius omnis consequatur nam numquam architecto commodi ipsam! Ut rerum corrupti ipsa possimus odit tempora commodi perferendis neque iure quasi itaque dolores illo, architecto dignissimos, dolorum blanditiis incidunt. Necessitatibus.
+        Consequatur sunt excepturi modi voluptas fugit eum quasi possimus maiores earum repellendus illo veniam officiis doloremque doloribus illum molestias iure, blanditiis suscipit expedita totam? Voluptatum magnam sit accusamus necessitatibus eveniet.
+        Esse similique corporis animi itaque quas reiciendis enim asperiores adipisci beatae ullam vero odio ratione optio perspiciatis odit, modi labore explicabo nesciunt nisi quo cum omnis repellendus quod porro? Libero.
+    </div>
+    </div>
+</div>
+</div>
   </div>
      <!----END OF THE ANTERNATAL -->
+
+
+
+
+
+
+
+
+
+
+
+
 
             <!----START OF THE POSTNATAL FORM-->
             <div class="postnal_section hide">
            <div class="form_container_for_postnatal">
-        <form action="">
+               <form action="">
+            <i class="bi bi-x-lg white"  id="close_postnatal" onclick="_close_transfer_patient_from_labour_to_postnatal()"></i>
         <h2>Postnatal Registration Form</h2>
         <div class="upload_image_postnatal">
              <video id="videoElement_postnatal" width="400" height="300" autoplay></video>
@@ -552,6 +754,7 @@
           <!----END OF THE POSTNATAL FORM-->
 
           
+
                 <!----START OF THE POSTNATAL LIST-->
                 <div class="postnatal_list">
     <div class="table_container">
@@ -576,7 +779,7 @@
                     <td>PAT0001</td>
                     <td>22-09-2023</td>
                     <td>
-                        <i class="bi bi-three-dots"></i>
+                        <i class="bi bi-three-dots" id="_transfer_icon2" onclick="_transfer_dropdowns2()"></i>
                     </td>
                 </tbody>
                 <tbody>
@@ -588,12 +791,164 @@
                     <td>PAT0002</td>
                     <td>22-09-2023</td>
                     <td>
-                        <i class="bi bi-three-dots"></i>
+                        <i class="bi bi-three-dots" id="_transfer_icon2" onclick="_transfer_dropdowns2()"></i>
                     </td>
                 </tbody>
+                <div class="tranfer_box2 hide">
+                    <i class="bi bi-x-lg red"  onclick="_close_transfer_dropdowns2()"></i>
+                <ul>
+                    <li onclick="_nurse_transfer_from_postnatal()">Call in Nurse Station</li>
+                    <li onclick="_doc_transfer_from_postnatal()">Doctor Appoitment</li>
+                    <li onclick="postnatal_ward()">Transfer to Postnatal Ward</li>
+                    <li onclick="_lab_transfer_from_postnatal()">Transfer to Labouratory</li>
+                    <li onclick="_radiology_transfer_from_postnatal()">Transfer to Radiology</li>
+                </ul>
+            </div>
             </table>
+            
+             <!-----NURSE APPOITMENT--->
+             <div class="nurse_appoitment2 hide">
+            <i class="bi bi-x-lg red" onclick="_close_all_appoitment2()"></i>
+                <span>Nurse Station</span>
+                <form action="" id="">
+                <div class="form_control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+                </form>
+            </div>
+
+
+              <!-----DOCTOR APPOITMENT--->
+              <div class="doctor_appoitment2 hide">
+            <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
+            <span>Doctor Appoitment</span>
+            <form action="">
+                <div class="form_control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Available Doctors </label>
+                    <select name="" id="">
+                        <option value="">Doc. Patrick(Gynaecologist)</option>
+                        <option value="">Doc. Miracle(Surgeon)</option>
+                        <option value="">Doc. Moses(Medical Personel)</option>
+                    </select>
+                </div>
+                <div class="form_control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+          
+   <!-----POSTNATAL WARD--->
+   <div class="postnatal_ward hide">
+            <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
+            <span>Postnatal Ward</span>
+            <form action="">
+                <div class="form_control">
+                    <label for="">Ward  1</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
+                </div>
+                <div class="form_control">
+                    <label for="">Ward  2</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
+                </div>
+                <div class="form_control">
+                    <label for="">Ward  3</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+
+           <!-----LABOURATORY APPOITMENT--->
+           <div class="lab_appoitment2 hide">
+            <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
+            <span>Labouratory Unit</span>
+            <form action="">
+                <div class="form_control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+    <!-----RADIOLOGY APPOITMENT--->
+    <div class="radiology_appoitment2 hide">
+            <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
+            <span>Radiology Unit</span>
+            <form action="">
+                <div class="form_control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form_control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
         </div>
     </div>
+    <div class="background_opacity2 hide"></div>
   </div>
    <!----END OF THE POSTNATAL LIST-->
 
@@ -607,12 +962,13 @@
                     <span>PAT0003</span>
                 </div>
             </div>
+            <h1>Medical Inputs</h1>
                               <!---Pastnatal accessment Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-                    <button class= "btn_patients_profile" id="postnatal_assessment_button"> Postnatal Assessment</button>
+                    <div class= "btn_patients_profile" id="postnatal_assessment_button"> Postnatal Assessment</div>
                     <div class="postnatal_accessment_form hide">
                         <form action="">
                         <span>Mother's Vital Sign:</span>
-                            <div class="sections">
+                            <div class="div_flexs">
                                 <div class="form_control">
                                     <label for="">Temperature (C)</label>
                                     <input type="text" name="" id="" >
@@ -650,11 +1006,11 @@
                     </div>
 
                                       <!---Neonatal assessment Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-                    <button class= "btn_patients_profile" id="neonatal_assessment_button"> Neonatal Assessment</button>
+                    <div class= "btn_patients_profile" id="neonatal_assessment_button"> Neonatal Assessment</div>
                     <div class="neonatal_assessmen_form hide">
                         <form action="">
                         <span>Baby's Condition:</span>
-                            <div class="sections">
+                            <div class="div_flexs">
                                 <div class="form_control">
                                     <label for="">Feeding</label>
                                     <input type="text" name="" id="" >
@@ -682,29 +1038,8 @@
                             </div>
                         </form>
                         </div>
-                                          <!---Lab and Diagnotic Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-                        <button class= "btn_patients_profile" id="lab_diagnostic_button">Laboratory and Diagnostic Tests</button>
-                        <div class="labouratory_diagnostic_test_form hide">
-                        <form action="">
-                        <span>Laboratory and Diagnostic Tests</span>
-                            <div class="sections">
-                                <div class="form_control">
-                                    <label for="">Blood Tests</label>
-                                    <input type="file" name="" id="">
-                                </div>
-                                <div class="form_control">
-                                    <label for="">Urine Tests</label>
-                                    <input type="file" name="" id="">
-                                </div>
-                                <div class="form_control">
-                                    <label for="">Imaging Studies</label>
-                                    <input type="file" name="" id="">
-                                </div>
-                                </div>
-                        </form>
-                        </div>
                                           <!---Drug Prescription Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-                        <button class= "btn_patients_profile" id="drug_prescription_button2"> Drug Prescription</button>
+                        <div class= "btn_patients_profile" id="drug_prescription_button2"> Drug Prescription</div>
                         <div class="drug_prescribtion2 hide">
                         <form action="">
                         <span>Drug Prescribion</span>
@@ -742,15 +1077,182 @@
                         </div>
                         <button class="btn_patients_profile">Save all</button>
                     </div>
+                   <!----POSTNATAL PATIENT HOSPITAL RECORD INFORMATION----->
+<div class="patient_container2">
+    <h1>Patient Hospital Records</h1>
+<div class="all_info">
+    <div class="patient_personal_info">
+        <h3>Personal Information</h3>
+        <span>Full Name: Moses Patrick Samuel</span>
+        <span>Date of Birth: 7-03-2023</span>
+        <span>Address: 23 Enebong Street Calabar</span>
+        <span>Contact Number: 090328922</span>
+
+        <h3>Spouse/Partner Information</h3>
+        <span>Full Name: Esther Asuquo Etim</span>
+        <span>Contact Number: 0907832832</span>
+    </div>
+    <div class="patient_inputs">
+        <div class="_vital_info">
+        <div class="_btn_info" id="_postnatal_assessment_input">Postnatal Assessment</div>
+          <div class="_data hide" id="_postnatal_assessment_data_1">
+                    <div class="form_control">
+                        <label for="">Temperature (C)</label>
+                        <span>78.00</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Blood Pressure (mmHg)</label>
+                        <span>23.033</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Pulse (bpm)</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Respiratory Rate (breaths/min)</label>
+                        <span>323</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Assessment of Uterine Involution</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Assessment of Perineal/Abdominal Wounds</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Assessment of Breastfeeding</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Immediate Concerns/Complications</label>
+                        <span>Input</span>
+                    </div>
+          </div>
+        <div class="_btn_info" id="_neonatal_assessment_input">Neonatal Assessment</div>
+          <div class="_data hide" id="_neonatal_assessment_data_1">
+                    <div class="form_control">
+                        <label for="">Feeding</label>
+                        <span>78.00</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Urination</label>
+                        <span>23.033</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Bowel Movements</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Signs of Jaundice or other concerns</label>
+                        <span>323</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Medications/Treatments Administered</label>
+                        <span>Input</span>
+                    </div>
+                    <div class="form_control">
+                        <label for="">Laboratory and Diagnostic Tests</label>
+                        <span>Input</span>
+                    </div>
+          </div>
+    </div>
+    <div class="_btn_info" onclick="_postnatal_successfull_drug_prescription()">Drug Prescriptions</div>
+    <table class="drug_prescription2 hide">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Drugs</td>
+            <td>Strength</td>
+            <td>Mode</td>
+            <td>Frequency</td>
+            <td>Quantity</td>
+        </thead>
+        <tbody>
+            <td>23-09-2023</td>
+            <td>21:19pm</td>
+            <td>Maleria Drugs</td>
+            <td>2 dose</td>
+            <td>Tablet</td>
+            <td>24/7</td>
+            <td>2</td>
+        </tbody>
+    </table>
+    <div class="_btn_info" onclick="_postnatal_successfull_lab()">Labouratory Examination</div>
+    <table class="lab2 hide">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Kind of Test</td>
+            <td>Test Specific</td>
+            <td>Test Result</td>
+        </thead>
+        <tbody>
+            <td> 22-09-2023</td>
+            <td>2:40pm</td>
+            <td>Immunoassay Single Tests</td>
+            <td>Drug Screening Test</td>
+            <td><i class="bi bi-download"></i></td>
+        </tbody>
+    </table>
+    <div class="_btn_info" onclick="_postnatal_successfull_rad()">Radiology Examination</div>
+    <table class="rad2 hide">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Kind of Test</td>
+            <td>Test Specific</td>
+            <td>Test Result</td>
+        </thead>
+        <tbody>
+            <td> 22-09-2023</td>
+            <td>2:40pm</td>
+            <td> 	X-ray (Radiography)</td>
+            <td>Cervical Spine X-ray</td>
+            <td><i class="bi bi-download"></i></td>
+        </tbody>
+    </table>
+    <div class="_btn_info" onclick="_postnatal_successfull_screening()">Screnning Examination</div>
+    <div class="_screening_div hide" id="screening_div2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est beatae, ipsam doloribus amet molestias nemo atque ducimus, eum eaque veritatis praesentium, debitis dignissimos eius. Accusantium iure quisquam libero quae fugit?
+        Vitae corporis, totam doloremque ducimus iusto veritatis nam doloribus laudantium, officiis delectus fugiat nobis in tenetur commodi libero veniam animi soluta culpa iure. Ipsam nostrum et, laborum perspiciatis voluptate cupiditate.
+        Ab dolorum et, voluptates aperiam delectus ea a. Provident harum alias omnis pariatur quia corporis odio, reiciendis aliquid qui sunt sequi officia quis incidunt debitis? Illum cupiditate corporis laboriosam vero!
+        Fuga, id. Voluptatem aperiam a ratione sit fuga non cumque id laboriosam, recusandae veniam qui pariatur quisquam amet obcaecati odio ad aliquam quaerat, autem inventore provident! Impedit suscipit unde totam.
+        Soluta, deleniti totam cupiditate distinctio a dolores aliquam dignissimos fugiat hic quae rem! Aperiam, dolorem corporis impedit recusandae eos laborum molestias sint iste eum quos? Dolorem saepe accusamus dignissimos fugit?
+        Nihil totam natus tempore, voluptatem repellendus hic autem odit? Maxime, repellendus? Ducimus eaque aut reiciendis minima pariatur odio. Autem odit facilis molestiae reprehenderit omnis accusantium rem quae ducimus, cum quis!
+        Alias nesciunt distinctio ad laborum suscipit quos voluptatibus quod beatae enim autem, officia maiores commodi consequuntur totam repellat nisi magnam natus nihil, molestias nobis accusantium sed quis ab quidem. Voluptatibus?
+        Quam temporibus harum ipsa consequuntur at. Ducimus consequuntur iusto eligendi similique tempora! Dicta, at similique sit, quam possimus nesciunt ab vero libero consequuntur, quae repudiandae minima repellat repellendus ut animi!
+        Quia aliquam porro dolor, mollitia architecto aliquid veniam accusantium animi molestiae obcaecati aspernatur laboriosam id cum incidunt commodi harum? Vero perferendis atque earum commodi nesciunt. Officiis ducimus facere vitae quas!
+        Repellat eius omnis consequatur nam numquam architecto commodi ipsam! Ut rerum corrupti ipsa possimus odit tempora commodi perferendis neque iure quasi itaque dolores illo, architecto dignissimos, dolorum blanditiis incidunt. Necessitatibus.
+        Consequatur sunt excepturi modi voluptas fugit eum quasi possimus maiores earum repellendus illo veniam officiis doloremque doloribus illum molestias iure, blanditiis suscipit expedita totam? Voluptatum magnam sit accusamus necessitatibus eveniet.
+        Esse similique corporis animi itaque quas reiciendis enim asperiores adipisci beatae ullam vero odio ratione optio perspiciatis odit, modi labore explicabo nesciunt nisi quo cum omnis repellendus quod porro? Libero.
+    </div>
+    </div>
+</div>
+</div>
                 </div>
                     </div>
-                       <!----END OF THE POSTNATAL PATIENT PROFILE -->
+                       <!----END OF THE POSTNATAL -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
    <!----START OF THE LABOUR FORM-->
    <div class="labour_section hide">
            <div class="form_container_for_labor">
         <form action="">
+        <i class="bi bi-x-lg white"  id="close_labor" onclick="_close_transfer_patient_from_antenatal_to_labour()"></i>
         <h2>Labour Registration Form</h2>
         <div class="upload_image_labor">
              <video id="videoElement_labor" width="400" height="300" autoplay></video>
@@ -908,13 +1410,15 @@
                     <li onclick="_lab_transfer_from_labour()">Transfer to Labouratory</li>
                     <li onclick="_radiology_transfer_from_labour()">Transfer to Radiology</li>
                     <li onclick="_icu_transfer_from_labour()">Transfer to I.C.U</li>
+                    <li onclick="_transfer_patient_from_labour_to_postnatal()">Transfer to Postnatal Unit</li>
                 </ul>
             </div>
-            <!-----NURSE APPOITMENT--->
-            <div class="nurse_appoitment hide">
+            </table>
+             <!-----NURSE APPOITMENT--->
+             <div class="nurse_appoitment hide">
             <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
-            <form action="">
                 <span>Nurse Station</span>
+                <form action="" id="">
                 <div class="form_control">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
@@ -928,13 +1432,15 @@
                     <textarea name="" id="" cols="20" rows="10"></textarea>
                 </div>
                 <button class="btn_app">Request</button>
-            </form>
+                </form>
             </div>
+
+
             <!-----DOCTOR APPOITMENT--->
             <div class="doctor_appoitment hide">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
+            <span>Doctor Appoitment</span>
             <form action="">
-                <span>Doctor Appoitment</span>
                 <div class="form_control">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
@@ -962,8 +1468,8 @@
                     <!-----SURGICAL SUITE APPOITMENT--->
                     <div class="surgical_suite_appoitment hide">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
+            <span>Surgical Suite Unit</span>
             <form action="">
-                <span>Surgical Suite Unit</span>
                 <div class="form_control">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
@@ -983,8 +1489,8 @@
                         <!-----LABOUR WARD APPOITMENT--->
                         <div class="labour_ward_appoitment hide">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
+            <span>Labour Ward Unit</span>
             <form action="">
-                <span>Labour Ward Unit</span>
                 <div class="form_control">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
@@ -1004,8 +1510,8 @@
                         <!-----LABOURATORY APPOITMENT--->
                         <div class="lab_appoitment hide">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
+            <span>Labouratory Unit</span>
             <form action="">
-                <span>Labouratory Unit</span>
                 <div class="form_control">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
@@ -1025,8 +1531,8 @@
                         <!-----RADIOLOGY APPOITMENT--->
                         <div class="radiology_appoitment hide">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
+            <span>Radiology Unit</span>
             <form action="">
-                <span>Radiology Unit</span>
                 <div class="form_control">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
@@ -1046,8 +1552,8 @@
                         <!-----I.C.U APPOITMENT--->
             <div class="icu_appoitment hide">
             <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
+            <span>I.C.U Unit</span>
             <form action="">
-                <span>I.C.U Unit</span>
                 <div class="form_control">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
@@ -1063,14 +1569,13 @@
                 <button class="btn_app">Request</button>
             </form>
             </div>
-
-            <div class="background_opacity hide"></div>
-            </table>
         </div>
     </div>
+    <div class="background_opacity hide"></div>
   </div>
    </div>
 
+   <!----START OF THE LABOUR PROFILE-->
            <div class="labour_patients_profile hide">
         <div class="patient_container">
             <div class="patient_profile">
@@ -1080,8 +1585,9 @@
                     <span>PAT0003</span>
                 </div>
             </div>
+            <h1>Medical Inputs</h1>
             <!---Vital Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <button class="btn_patients_profile" id="vital_button2">Vitals</button>
+            <div class="btn_patients_profile" id="vital_button2">Vitals</div>
             <div class="vitals_input2 hide">
                 <form action="" class="_inputs"> 
                 <span>Blood Pressure</span>
@@ -1163,7 +1669,7 @@
             </div>
 
                           <!---Prescribtion Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <button class="btn_patients_profile" id="drug_prescription_button3">Drug Prescription</button>
+            <div class="btn_patients_profile" id="drug_prescription_button3">Drug Prescription</div>
             <div class="drug_prescribtion3 hide">
             <form action="" class="_inputs">
             <div class="div_flexs">
@@ -1199,59 +1705,8 @@
                   </form>
             </div>
 
-                  <!---Lab Examination Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <button class="btn_patients_profile" id="lab_button2">Labouratory Examination</button>
-            <div class="lab_input2 hide">
-                <form action="" class="_inputs">
-                <div class="div_flexs">
-                    <div class="form_control">
-                        <label for="">Blood Test</label>
-                        <input type="file" name="" id="">
-                    </div>
-                    <div class="form_control">
-                        <label for="">Urine Test</label>
-                        <input type="file" name="" id="">
-                    </div>
-                    <div class="form_control">
-                        <label for="">Fluid Analysis</label>
-                        <input type="file" name="" id="">
-                    </div>
-                    <div class="form_control">
-                        <label for="">Cord Blood Sampling</label>
-                        <input type="file" name="" id="">
-                    </div>
-                </div>
-                </form>
-            </div>
-
-                  <!---Radiology Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <button class="btn_patients_profile" id="radiology_button2">Radiology Examination</button>
-            <div class="radiology_input2 hide">
-                <form action="" class="_inputs">
-                    <span>Ultrasound Scan</span>
-                <div class="div_flexs">
-                    <div class="form_control">
-                        <label for="">Dating Scan</label>
-                        <input type="file" name="" id="">
-                    </div>
-                    <div class="form_control">
-                        <label for="">Anomally Scan</label>
-                        <input type="file" name="" id="">
-                    </div>
-                    <div class="form_control">
-                        <label for="">Growth Scan</label>
-                        <input type="file" name="" id="">
-                    </div>
-                    <div class="form_control">
-                        <label for="">Doppler Ultrasound Scan</label>
-                        <input type="file" name="" id="">
-                    </div>
-                </div>
-                </form>
-            </div>
-
                   <!---Screening Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <button class="btn_patients_profile" id="screening_button2">Screening</button>
+            <div class="btn_patients_profile" id="screening_button2">Screening Examination</div>
             <div class="screening_input2 hide">
                 <form action="" class="_inputs">
                 <div class="div_flexs">
@@ -1280,9 +1735,183 @@
             </div>
             <button class="btn_patients_profile">Save all</button>
         </div>
-  </div>
+             <!----POSTNATAL PATIENT HOSPITAL RECORD INFORMATION----->
+<div class="patient_container2">
+    <h1>Patient Hospital Records</h1>
+<div class="all_info">
+    <div class="patient_personal_info">
+        <h3>Personal Information</h3>
+        <span>Full Name: Moses Patrick Samuel</span>
+        <span>Date of Birth: 7-03-2023</span>
+        <span>Address: 23 Enebong Street Calabar</span>
+        <span>Contact Number: 090328922</span>
+
+        <h3>Spouse/Partner Information</h3>
+        <span>Full Name: Esther Asuquo Etim</span>
+        <span>Contact Number: 0907832832</span>
+    </div>
+        <div class="_btn_info" id="_labour_vital_input">Vitals</div>
+          <div class="_data hide" id="labour_vital">
+
+
+            <h3>Blood Pressure</h3>
+            <div class="flexs">
+                    <div class="form_control">
+                        <h4>Pre-Labor Baseline</h4>
+                        <h4>Systolic (mmHG)</h4>
+                        <span>78.00</span>
+                        <h4>Diastolic (mmHG)</h4>
+                        <span>78.00</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>During Labour</h4>
+                        <h4>Time</h4>
+                        <span>23:33</span>
+                        <h4>Systolic (mmHG)</h4>
+                        <span>78.00</span>
+                        <h4>Diastolic (mmHG)</h4>
+                        <span>78.00</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Post Delivery</h4>
+                        <h4>Systolic (mmHG)</h4>
+                        <span>78.00</span>
+                        <h4>Diastolic (mmHG)</h4>
+                        <span>78.00</span>
+                    </div>
+                    </div>
+
+
+                    <h3>Pulse Rate</h3>
+                    <div class="flexs">
+                    <div class="form_control">
+                        <h4>Pre-Labor Baseline (bpm)</h4>
+                        <span>323</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>During Labor (bpm)</h4>
+                        <h4>Time</h4>
+                        <span>22:20</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Post Delivery (bpm)</h4>
+                        <span>832</span>
+                    </div>
+                    </div>
+
+
+                    <h3>Respiratory Rate</h3>
+                    <div class="flexs">
+                    <div class="form_control">
+                        <h4>Pre-Labor Baseline (breaths/min)</h4>
+                        <span>323</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>During Labor (breaths/min)</h4>
+                        <h4>Time</h4>
+                        <span>22:20</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Post Delivery</h4>
+                        <span>832</span>
+                    </div>
+                    </div>
+
+
+                    <h3>Temperature</h3>
+                    <div class="flexs">
+                    <div class="form_control">
+                        <h4>Pre-Labor Baseline (C/F)</h4>
+                        <span>323</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>During Labor (C/F)</h4>
+                        <span>22:20</span>
+                    </div>
+                    <div class="form_control">
+                        <h4>Post Delivery (C/F)</h4>
+                        <span>832</span>
+                    </div>
+                    </div>
+          </div>
+
+
+    <div class="_btn_info" onclick="_labour_successfull_drug_prescription()">Drug Prescriptions</div>
+    <table class="drug_prescription3 hide">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Drugs</td>
+            <td>Strength</td>
+            <td>Mode</td>
+            <td>Frequency</td>
+            <td>Quantity</td>
+        </thead>
+        <tbody>
+            <td>23-09-2023</td>
+            <td>21:19pm</td>
+            <td>Maleria Drugs</td>
+            <td>2 dose</td>
+            <td>Tablet</td>
+            <td>24/7</td>
+            <td>2</td>
+        </tbody>
+    </table>
+    <div class="_btn_info" onclick="_labour_successfull_lab()">Labouratory Examination</div>
+    <table class="lab3 hide">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Kind of Test</td>
+            <td>Test Specific</td>
+            <td>Test Result</td>
+        </thead>
+        <tbody>
+            <td> 22-09-2023</td>
+            <td>2:40pm</td>
+            <td>Immunoassay Single Tests</td>
+            <td>Drug Screening Test</td>
+            <td><i class="bi bi-download"></i></td>
+        </tbody>
+    </table>
+    <div class="_btn_info" onclick="_labour_successfull_rad()">Radiology Examination</div>
+    <table class="rad3 hide">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Kind of Test</td>
+            <td>Test Specific</td>
+            <td>Test Result</td>
+        </thead>
+        <tbody>
+            <td> 22-09-2023</td>
+            <td>2:40pm</td>
+            <td> 	X-ray (Radiography)</td>
+            <td>Cervical Spine X-ray</td>
+            <td><i class="bi bi-download"></i></td>
+        </tbody>
+    </table>
+    <div class="_btn_info" onclick="_labour_successfull_screening()">Screnning Examination</div>
+    <div class="_screening_div hide" id="screening_div3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est beatae, ipsam doloribus amet molestias nemo atque ducimus, eum eaque veritatis praesentium, debitis dignissimos eius. Accusantium iure quisquam libero quae fugit?
+        Vitae corporis, totam doloremque ducimus iusto veritatis nam doloribus laudantium, officiis delectus fugiat nobis in tenetur commodi libero veniam animi soluta culpa iure. Ipsam nostrum et, laborum perspiciatis voluptate cupiditate.
+        Ab dolorum et, voluptates aperiam delectus ea a. Provident harum alias omnis pariatur quia corporis odio, reiciendis aliquid qui sunt sequi officia quis incidunt debitis? Illum cupiditate corporis laboriosam vero!
+        Fuga, id. Voluptatem aperiam a ratione sit fuga non cumque id laboriosam, recusandae veniam qui pariatur quisquam amet obcaecati odio ad aliquam quaerat, autem inventore provident! Impedit suscipit unde totam.
+        Soluta, deleniti totam cupiditate distinctio a dolores aliquam dignissimos fugiat hic quae rem! Aperiam, dolorem corporis impedit recusandae eos laborum molestias sint iste eum quos? Dolorem saepe accusamus dignissimos fugit?
+        Nihil totam natus tempore, voluptatem repellendus hic autem odit? Maxime, repellendus? Ducimus eaque aut reiciendis minima pariatur odio. Autem odit facilis molestiae reprehenderit omnis accusantium rem quae ducimus, cum quis!
+        Alias nesciunt distinctio ad laborum suscipit quos voluptatibus quod beatae enim autem, officia maiores commodi consequuntur totam repellat nisi magnam natus nihil, molestias nobis accusantium sed quis ab quidem. Voluptatibus?
+        Quam temporibus harum ipsa consequuntur at. Ducimus consequuntur iusto eligendi similique tempora! Dicta, at similique sit, quam possimus nesciunt ab vero libero consequuntur, quae repudiandae minima repellat repellendus ut animi!
+        Quia aliquam porro dolor, mollitia architecto aliquid veniam accusantium animi molestiae obcaecati aspernatur laboriosam id cum incidunt commodi harum? Vero perferendis atque earum commodi nesciunt. Officiis ducimus facere vitae quas!
+        Repellat eius omnis consequatur nam numquam architecto commodi ipsam! Ut rerum corrupti ipsa possimus odit tempora commodi perferendis neque iure quasi itaque dolores illo, architecto dignissimos, dolorum blanditiis incidunt. Necessitatibus.
+        Consequatur sunt excepturi modi voluptas fugit eum quasi possimus maiores earum repellendus illo veniam officiis doloremque doloribus illum molestias iure, blanditiis suscipit expedita totam? Voluptatum magnam sit accusamus necessitatibus eveniet.
+        Esse similique corporis animi itaque quas reiciendis enim asperiores adipisci beatae ullam vero odio ratione optio perspiciatis odit, modi labore explicabo nesciunt nisi quo cum omnis repellendus quod porro? Libero.
+    </div>
+    </div>
+</div>
+</div>
+
   <div class="drugs_booking hide">
-  <i class="bi bi-x-lg" id="close" onClick="hide_test_booking()"></i>
+  <i class="bi bi-x-lg" id="close" onclick="_close_bookDrugs()"></i>
     <h1>Drug Booking</h1>
     <table id="dataTable3">
         <thead>
@@ -1301,232 +1930,11 @@
   </div>
 
   <div class="overlay hide"></div>
-       <!----END OF THE ADMISSION SECTION-->
+     <!----END OF LABOUR-->
 
 
+<!---END OF THE CODE WRITTEN BY KING--->
 
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="appoitment_section hide">
-            <div class="appoitment_container">
-                <section class="doctor_roles_name hide">
-                    <i class="fa fa-times" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
-                <div class="appoitment-calender">
-                    <div class="doc_roles">
-                <label for="roles">Doctor Role:</label>
-<select id="roles"  onclick="getDoctors()">
-<option>Select</option>
-    <option value="cardiologist">Cardiologist</option>
-    <option value="dermatologist">Dermatologist</option>
-    <option value="surgeon">Surgeon</option>
-    <option value="psychiatrist">Psychiatrist:</option>
-    <option value="family_medicine">Family Medicine</option>
-    <option value="dermatologist">Dermatologist</option>
-    <option value="anaesthesiology">Anaesthesiology</option>
-    <option value="rheumatologist">Rheumatologist</option>
-    <option value="endocrinologist">Endocrinologist</option>
-    <option value="nephrologist">Nephrologist</option>
-    <option value="neurologist">Neurologist</option>
-    <option value="pediatrician">Pediatrician</option>                
-    <option value="urologist">Urologist</option>
-    <option value="radiologist">Radiologist</option>
-    <option value="dentist">Dentist</option>
-    <option value="pulmonologist">Pulmonologist</option>
-    <option value="podiatristian">Podiatristian</option>
-    <option value="emergency_physician">Emergency Physician</option>
-    <option value="anaesthesiologist">Anaesthesiologist</option>
-    <option value="cardiologist">Cardiologist</option>
-    <option value="oncologist">Oncologist</option>
-    <option value="gastroenterologist">Gastroenterologist</option>
-    <option value="ophthanlmologist">Ophthanlmologist</option>
-    <option value="cardology">Cardology</option>
-    <option value="allergist">Allergist</option>
-    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
-    <!-- Add more role options as needed-->
-</select>
-<label for="doctors">Select Doctor:</label>
-<select id="doctors">
-    Doctors for the selected role will be dynamically added here
-</select>
-<button id="continue" type="submit" onClick="submitRoles()" >Continue</button>
-</div>
-    <div class="appoitment_form hidden">
-<div class="calendar">
-            <div class="month">
-                <i class="fa fa-angle-left prev"></i>
-                <div class="date">
-                    <h1></h1>
-                    <p></p>
-                </div>
-                <i class="fa fa-angle-right next"></i>
-            </div>
-            <div class="weekdays">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-            </div>
-            <div class="days"> </div>
-        </div>
-        <div class="form_appoitment">
-            <h3>Fill in the neccessary Information</h3>
-            <form action="" class="form">
-                <div class="form_control">
-                    <label for="">Patient Name</label>
-                    <input type="text" placeholder="john">
-                </div>
-                <div class="form_control">
-                    <label for="">Patient Id</label>
-                    <input type="text" placeholder="id001">
-                </div>
-                <div class="form_control">
-                    <label for="">Selected Date</label>
-                    <div class="selected_date">03-01-2024</div>
-                </div>
-                <div class="form_control">
-                    <label for="">Selected Time</label>
-                    <input type="time">
-                </div>
-                <div class="form_control_text_area">
-                    <label for="">Request Type</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <button class="btn_submit_appoitment">Submit</button>
-                </div>
-            </form>
-        </div>
-        </div>
-                </section>
-            <section class="appoitments">
-            <h1>Appoitments</h1>
-            <div class="cards_container">
-            <div class="cards">
-                <div class="profile">
-                    <img src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
-                    <div class="name_role">
-                    <h3>Dr. Rita John</h3>
-                    <h4>Gynaecologist</h4>
-                    </div>
-                </div>
-                <div class="date_time">
-                    <div class="date">
-                        <i class="fa fa-calendar"></i>
-                        <span>2/03/2024</span>
-                    </div>
-                    <div class="time">
-                    <i class="fa fa-clock-o"></i>
-                    <span>2.30pm</span>
-                    </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_pending">Pending</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_accepted">Accepted</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_declined">Declined</button>
-                    </div>
-            </div>
-            <div class="cards">
-                <div class="profile">
-                    <img src="../Images/513d2ccb77e948b687079bc2d6f42661.jpg" alt="">
-                    <div class="name_role">
-                    <h3>Dr. Mary Asuquo</h3>
-                    <h4>Gynaecologist</h4>
-                    </div>
-                </div>
-                <div class="date_time">
-                    <div class="date">
-                        <i class="fa fa-calendar"></i>
-                        <span>2/03/2024</span>
-                    </div>
-                    <div class="time">
-                    <i class="fa fa-clock-o"></i>
-                    <span>2.30pm</span>
-                    </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_pending">Pending</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_accepted">Accepted</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_declined">Declined</button>
-                    </div>
-            </div>
-            <div class="cards">
-            <div class="profile">
-                    <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
-                    <div class="name_role">
-                    <h3>Dr. Patience Emmanuel</h3>
-                    <h4>Gynaecologist</h4>
-                    </div>
-                </div>
-                <div class="date_time">
-                    <div class="date">
-                        <i class="fa fa-calendar"></i>
-                        <span>2/03/2024</span>
-                    </div>
-                    <div class="time">
-                    <i class="fa fa-clock-o"></i>
-                    <span>2.30pm</span>
-                    </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_pending">Pending</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_accepted">Accepted</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_declined">Declined</button>
-                    </div>
-            </div>
-            <div class="cards">
-            <div class="profile">
-                    <img src="../Images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
-                    <div class="name_role">
-                    <h3>Dr. Kingsley Patrick</h3>
-                    <h4>Gynaecologist</h4>
-                    </div>
-                </div>
-                <div class="date_time">
-                    <div class="date">
-                        <i class="fa fa-calendar"></i>
-                        <span>2/03/2024</span>
-                    </div>
-                    <div class="time">
-                    <i class="fa fa-clock-o"></i>
-                    <span>2.30pm</span>
-                    </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_pending">Pending</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_accepted">Accepted</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_declined">Declined</button>
-                    </div>
-            </div>
-            </div>
-            </section>
-            </div>
-        </div>
         <script src="js/jquery-3.7.1.js"></script>
 <script src="js/martanity.js"></script>
 </body>

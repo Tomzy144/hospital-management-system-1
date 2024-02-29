@@ -12,6 +12,8 @@ function postnalSection(){
   document.querySelector(".postnal_section").classList.remove("hide");
   document.querySelector(".labour_section").classList.add("hide");
   document.querySelector(".antenatal_patients_profile").classList.add("hide");
+  document.querySelector(".postnatal_patients_profile").classList.add("hide");
+  document.querySelector(".form_container_for_postnatal").classList.remove("pop_up");
   document.querySelector(".labour_patients_profile").classList.add("hide");
 }
 function antenatalSection(){
@@ -56,6 +58,95 @@ function labour_patient_profile_section(){
 }
 
 
+
+
+$('#close_postnatal').css({
+  display: 'none',
+})
+
+//TRANSFER FROM LABOUR UNIT TO POSTNATAL UNIT
+function _transfer_patient_from_labour_to_postnatal(){
+  document.querySelector(".form_container_for_postnatal").classList.remove("hide");
+  $('.form_container_for_postnatal').css({
+    position:'absolute',
+    zIndex: '13',
+    left:'18%'
+});
+$('#close_postnatal').css({
+  display: 'block',
+})
+  document.querySelector(".postnatal_list").classList.add("hide");
+  document.querySelector(".postnal_section").classList.remove("hide");
+  document.querySelector(".overlay").classList.remove("hide");
+};
+
+function _close_transfer_patient_from_labour_to_postnatal(){
+  document.querySelector(".form_container_for_postnatal").classList.remove("hide");
+  $('.form_container_for_postnatal').css({
+    position:'relative',
+    zIndex: '0',
+    left:'0%'
+});
+$('#close_postnatal').css({
+  display: 'none',
+})
+  document.querySelector(".postnatal_list").classList.remove("hide");
+  document.querySelector(".postnal_section").classList.add("hide");
+  document.querySelector(".overlay").classList.add("hide");
+};
+
+$('#close_labor').css({
+  display: 'none',
+})
+
+//TRANSFER FROM ANTENATAL UNIT TO LABOUR UNIT
+function _transfer_patient_from_antenatal_to_labour(){
+  document.querySelector(".form_container_for_labor").classList.remove("hide");
+  $('.form_container_for_labor').css({
+    position:'absolute',
+    zIndex: '13',
+    left:'18%',
+    top:'0',
+});
+$('#close_labor').css({
+  display: 'block',
+})
+  document.querySelector(".labor_list").classList.add("hide");
+  document.querySelector(".labour_section").classList.remove("hide");
+  document.querySelector(".overlay").classList.remove("hide");
+};
+
+function _close_transfer_patient_from_antenatal_to_labour(){
+  document.querySelector(".form_container_for_labor").classList.remove("hide");
+  $('.form_container_for_labor').css({
+    position:'relative',
+    zIndex: '0',
+    left:'0%'
+});
+$('#close_labor').css({
+  display: 'none',
+})
+  document.querySelector(".labor_list").classList.remove("hide");
+  document.querySelector(".labour_section").classList.add("hide");
+  document.querySelector(".overlay").classList.add("hide");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //ANTERNATAL PATIENT PROFILE INPUTS
 function _display_anternal_vital_input(){
   $('#vital_button').on('click', function(){
@@ -92,6 +183,113 @@ _display_anternal_radiology_input();
 
 
 
+
+////TRANSFER TO DIFFERENT SECTION FOR ANTENATAL
+
+//DOCTOR
+function _doc_transfer_from_antenatal(){
+  $('.doctor_appoitment3').removeClass('hide');
+  $('.background_opacity3').removeClass('hide');
+  $('.tranfer_box3').addClass('hide');
+};
+
+//POSTNATAL WARD
+function _labour_transfer_from_antenal(){
+  $('.labour_ward_appoitment3').removeClass('hide');
+  $('.background_opacity3').removeClass('hide');
+  $('.tranfer_box3').addClass('hide');
+};
+
+
+//LABOURATORY
+function  _lab_transfer_from_antenatal(){
+  $('.lab_appoitment3').removeClass('hide');
+  $('.background_opacity3').removeClass('hide');
+  $('.tranfer_box3').addClass('hide');
+};
+
+//RADIOLOGY
+function _radiology_transfer_from_antenatal(){
+  $('.radiology_appoitment3').removeClass('hide');
+  $('.background_opacity3').removeClass('hide');
+  $('.tranfer_box3').addClass('hide');
+};
+
+
+//CLOSE ALL APPOITMENT
+function _close_all_appoitment3(){;
+    $('.doctor_appoitment3').addClass('hide');
+    $('.labour_ward_appoitment3').addClass('hide');
+    $('.lab_appoitment3').addClass('hide');
+    $('.radiology_appoitment3').addClass('hide');
+    $('.background_opacity3').removeClass('hide');
+}
+
+
+
+//ANTENATAL PATIENT INPUTS
+function _antenatal_successfull_vitals(){
+  $('#antenatal_successful_vital').on('click', function(){
+      $('._btn_flexs').toggleClass('hide')
+  })
+}
+_antenatal_successfull_vitals();
+
+function _antenatal_successfull_vital_data(){
+    $('#_vital_1').on('click', function(){
+      $('#_data_1').toggleClass("hide");
+    })
+}
+_antenatal_successfull_vital_data()
+
+function _antenatal_successfull_drug_prescription(){
+  $('.drug_prescription').toggleClass('hide');
+}
+function _antenatal_successfull_lab(){
+  $('.lab').toggleClass('hide');
+}
+function _antenatal_successfull_rad(){
+  $('.rad').toggleClass('hide');
+}
+function _antenatal_successfull_screening(){
+  $('#screening_div').toggleClass('hide');
+}
+
+
+//POSTNATAL PATIENT INPUTS
+function _postnatal_successfull_assessment(){
+  $('#_postnatal_assessment_input').on('click', function(){
+      $('#_postnatal_assessment_data_1').toggleClass('hide')
+  })
+}
+_postnatal_successfull_assessment()
+
+function _neonatal_successfull_assessment(){
+  $('#_neonatal_assessment_input').on('click', function(){
+      $('#_neonatal_assessment_data_1').toggleClass('hide')
+  })
+}
+_neonatal_successfull_assessment()
+
+function _postnatal_successfull_drug_prescription(){
+  $('.drug_prescription2').toggleClass('hide');
+}
+
+function _postnatal_successfull_lab(){
+  $('.lab2').toggleClass('hide');
+}
+function _postnatal_successfull_rad(){
+  $('.rad2').toggleClass('hide');
+}
+function _postnatal_successfull_screening(){
+  $('#screening_div2').toggleClass('hide');
+}
+
+
+
+
+
+
 //POSTNATAL PATIENT PROFILE INPUTS
 function _display_postnatal_accessment_input(){
   $('#postnatal_assessment_button').on('click', function(){
@@ -118,10 +316,87 @@ _labouratory_diagnostic_test_input();
 _display_neonatal_assessmen_input();
 _display_postnatal_accessment_input();
 
+
+
+
+////TRANSFER TO DIFFERENT SECTION FOR POSTNATAL
+//NURSE
+function _nurse_transfer_from_postnatal(){
+  $('.nurse_appoitment2').removeClass('hide');
+  $('.background_opacity2').removeClass('hide');
+  $('.tranfer_box2').addClass('hide');
+};
+
+//DOCTOR
+function _doc_transfer_from_postnatal(){
+  $('.doctor_appoitment2').removeClass('hide');
+  $('.background_opacity2').removeClass('hide');
+  $('.tranfer_box2').addClass('hide');
+};
+
+//SURGICAL SUITES
+function postnatal_ward(){
+  $('.postnatal_ward').removeClass('hide');
+  $('.background_opacity2').removeClass('hide');
+  $('.tranfer_box2').addClass('hide');
+};
+
+
+//LABOURATORY
+function  _lab_transfer_from_postnatal(){
+  $('.lab_appoitment2').removeClass('hide');
+  $('.background_opacity2').removeClass('hide');
+  $('.tranfer_box2').addClass('hide');
+};
+
+//RADIOLOGY
+function _radiology_transfer_from_postnatal(){
+  $('.radiology_appoitment2').removeClass('hide');
+  $('.background_opacity2').removeClass('hide');
+  $('.tranfer_box2').addClass('hide');
+};
+
+
+//CLOSE ALL APPOITMENT
+function _close_all_appoitment2(){
+    $('.radiology_appoitment2').addClass('hide');
+    $('.lab_appoitment2').addClass('hide');
+    $('.labour_ward_appoitment2').addClass('hide');
+    $('.doctor_appoitment2').addClass('hide');
+    $('.nurse_appoitment2').addClass('hide');
+    $('.postnatal_ward').addClass('hide');
+    $('.background_opacity2').removeClass('hide');
+    $('.tranfer_box2').removeClass('hide');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //BOOK DRUG PRESCRIPTION
 function _bookDrugs(){
   $('.overlay').removeClass('hide');
   $('.drugs_booking').removeClass('hide');
+}
+function _close_bookDrugs(){
+  $('.overlay').addClass('hide');
+  $('.drugs_booking').addClass('hide');
 }
 
 function  _drug_prescribtion_tableData(){
@@ -169,6 +444,62 @@ window.onload = function() {
                 })
         })
 }
+
+
+
+
+//ANTERNATAL  DROPDOWN
+function _transfer_dropdowns3(){
+  $('#_transfer_icon3').on('click', function(ev){
+    ev.stopPropagation();
+    $('.tranfer_box1').removeClass('hide');
+    $('.background_opacity3').removeClass('hide');
+  })
+}
+_transfer_dropdowns3();
+
+function _close_transfer_dropdowns3(){
+  $('.tranfer_box1').addClass('hide');
+  $('.background_opacity3').addClass('hide');
+}
+
+
+
+//POSTNATAL DROPDOWN
+function _transfer_dropdowns2(){
+  $('#_transfer_icon2').on('click',function(e){
+    e.stopPropagation();
+    $('.tranfer_box2').removeClass('hide');
+    $('.background_opacity2').removeClass('hide');
+  })
+  }
+  _transfer_dropdowns2();
+  
+  function _close_transfer_dropdowns2(){
+    $('.tranfer_box2').addClass('hide');
+    $('.background_opacity2').addClass('hide');
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//LABOR
 //LABOR DROPDOWN
 function _transfer_dropdowns(){
 $('#_transfer_icon').on('click',function(event){
@@ -186,7 +517,7 @@ function _close_transfer_dropdowns(){
 
 
 
-////TRANSFER TO DIFFERENT SECTION
+////TRANSFER TO DIFFERENT SECTION FOR LABOR
 //NURSE
 function _nurse_transfer_from_labour(){
   $('.nurse_appoitment').removeClass('hide');
@@ -271,227 +602,76 @@ function _close_all_appoitment(){
 
 
 ////LABOR PATIENT PROFILE INPUTS
-function _display_anternal_vital_input2(){
+function _display_labour_vital_input(){
   $('#vital_button2').on('click', function(){
     $('.vitals_input2').toggleClass('hide');
   });
 }
-function _display_anternal_drug_prescribtion_input3(){
+function _display_labour_drug_prescribtion_input(){
   $('#drug_prescription_button3').on('click', function(){
     $('.drug_prescribtion3').toggleClass('hide')
   })
 }
 
-function _display_anternal_lab_input2(){
+function _display_labour_lab_input(){
 $('#lab_button2').on('click', function(){
   $('.lab_input2').toggleClass('hide')
 })
 }
-function  _display_anternal_radiology_input2(){
+function  _display_labour_radiology_input(){
 $('#radiology_button2').on('click', function(){
   $('.radiology_input2').toggleClass('hide')
 })
 }
-function _display_anternal_screening_input2(){
+function _display_labour_screening_input(){
 $('#screening_button2').on('click', function(){
   $('.screening_input2').toggleClass('hide')
 })
 }
 
-_display_anternal_drug_prescribtion_input3();
-_display_anternal_screening_input2();
-_display_anternal_vital_input2();
-_display_anternal_lab_input2();
-_display_anternal_radiology_input2();
+_display_labour_drug_prescribtion_input();
+_display_labour_screening_input();
+_display_labour_vital_input();
+_display_labour_lab_input();
+_display_labour_radiology_input();
 
+//LABOUR INPUTS
 
+function _labour_vital_input(){
+  $('#_labour_vital_input').on('click', function(){
+      $('#labour_vital').toggleClass('hide')
+  })
+}
+_labour_vital_input()
 
-//APPOITMENT SECTION
-function _display_appoitment_section(){
-  document.querySelector(".antenal_section").style.display = "none";
-  document.querySelector(".postnal_section").classList.add("hide");
-  document.querySelector(".labour_section").classList.add("hide");
-  document.querySelector(".antenatal_patients_profile").classList.add("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-  document.querySelector(".appoitment_section").classList.remove("hide");
+function _labour_successfull_drug_prescription(){
+  $('.drug_prescription3').toggleClass('hide');
+}
+function _labour_successfull_lab(){
+  $('.lab3').toggleClass('hide');
+}
+function _labour_successfull_rad(){
+  $('.rad3').toggleClass('hide');
+}
+function _labour_successfull_screening(){
+  $('#screening_div3').toggleClass('hide');
 }
 
-//DOCTOR
-const doctorsData = {
-  cardiologist: ['Dr. Tomiwa', 'Dr. Johnson'],
-  dermatologist: ['Dr. Kingsley', 'Dr. White'],
-  surgeon:['Dr. Priceless', 'Dr John'],
-  psychiatrist:['Dr. Towa', 'Dr Paul'],
-  family_medicine:['Dr. Praise', 'Dr Trinity'],
-  dermatologist: ['Dr.Tom', 'Dr Ruth' ],
-  anaesthesiology:['Dr. Drake', 'Dr. Drake'],
-  rheumatologist:['Dr. Peace', 'Dr Jude'],
-  endocrinologist:['Dr. Grace', 'Dr. Houston'],
-  nephrologist:['Dr. Goodness', 'Dr Goodnews'],
-  neurologist:['Dr. Goodness', 'Dr.Peace'],
-  pediatrician:['Dr. Fooad', 'Dr. Fooad'],
-  urologist:['Dr. Uro', 'Dr. Fooad'],
-  radiologist:['Dr. Fooad', 'Dr. Fooad'],
-  dentist:['Dr. Gofade', 'Dr. Fooad'],
-  pulmonologist:['Dr. Foatt', 'Dr. Fooad'],
-  podiatristian:['Dr. Foatt', 'Dr. Fogad'],
-  emergency_physician:['Dr. Good', 'Dr. Tom'],
-  anaesthesiologist:['Dr. Green', 'Dr. Green'],
-  cardiologist:['Dr Ben', 'Dr. White'],
-  oncologist:['Dr. Bemson', 'Dr. Green'],
-  gastroenterologist:['Dr. Houston', 'Dr. Green'],
-  ophthanlmologist:['Dr. Jous', 'Dr. King'],
-  cardology:['Dr. Funke', 'Dr Roseline'],
-  allergist:['Dr. Postel', 'Dr.Houston'],
-  orthopedic_surgoen:['Dr.Lookman', 'Dr. Chelsea'],
-};
-
-function getDoctors() {
-  const selectedRole = document.getElementById('roles').value;
-  const doctorsSelect = document.getElementById('doctors');
-  doctorsSelect.innerHTML = ''; // Clear previous options
-
-  // Populate the doctors select box based on the selected role
-//   doctorsData[selectedRole].forEach(doctor => {
-//       const option = document.createElement('option');
-//       option.value = doctor;
-//       option.text = doctor;
-//       doctorsSelect.appendChild(option);
-//   });
-}
-
-// Initial population of doctors based on the default selected role
-getDoctors();
 
 
 
-//CALENDAR
- //This help show the current date and time zone of today
- const date =  new Date()
-
- const renderCalendar = ()=>{
-    date.setDate(1)
-    // console.log(date.getDay());
-     //this help shows the current month we are in and its 0 based "which means its counts from 0 throgh the months"
-    //  const month  = date.getMonth()
-     const monthDays = document.querySelector(".days")
-    const lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0).getDate()
-    
-    const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate()
-    
-    const firstDayIndex = date.getDay() 
-    
-    const  lastDayIndex = new Date(date.getFullYear(), date.getMonth() +1, 0).getDay()
-    const nextDays = 7 - lastDayIndex -1
-    //this is the month array of all the selected month
-    const months = [
-        "January", 
-        "February",
-         "March",
-          "April", 
-          "May", 
-          "June", 
-          "July", 
-          "August", 
-          "September",
-           "October", 
-           "November",
-           "December" 
-    ] ; 
-    
-    document.querySelector(".date h1").innerHTML = months[date.getMonth()];
-    document.querySelector(".date p").innerHTML = new Date().toDateString();
-    // const showDate =  document.querySelector(".content");
-    
-    let days = "";
-    
-    for(let x =  firstDayIndex; x>0; x--){
-        days += `<div class ="prev-date">${prevLastDay - x +1}</div>`;
-    }
-    
-    for(let i = 1; i <=lastDay; i++) {
-        if(i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
-            
-            days +=`
-            <div class="calendar-date today" onclick="updateClickedDate(${i})">${i}</div>`;
-        }else{
-            
-            days +=`
-            <div class="calendar-date" onclick="updateClickedDate(${i})">${i}</div> `;
-        }
-    }
-    
-    for(let j =1; j<=nextDays; j++){
-        days += `<div class="next-date">${j}</div>`;
-        monthDays.innerHTML = days;
-    }
- }
- function updateClickedDate(clickedDay) {
-    document.querySelector(".selected_date").textContent = `${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
-    document.getElementById('date').value=`${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
-  }
- 
- 
- document.querySelector(".prev").addEventListener("click", function(){
-    date.setMonth(date.getMonth() -1)
-    renderCalendar()
- })
- document.querySelector(".next").addEventListener("click", function(){
-    date.setMonth(date.getMonth()+ 1)
-    renderCalendar()
- })
- renderCalendar()
 
 
- //SHOW APPOITMENT SECTION FOR TRANSFERING PATIENTS TO DOCTOR
- function appoitment_booking(){
-  const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
-  form_doctor_roles_name.classList.remove("hide");
-}
 
-function submitRoles(){
-  const appoitment_form = document.querySelector(".appoitment_form");
-  appoitment_form.classList.remove("hidden");
-}
 
-function close_appoitment_form(){
-  const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
-  form_doctor_roles_name.classList.add("hide");
-}
 
-function back_to_appoitment_list(){
-  document.querySelector(".personal_profile_vital").classList.add("hide");
-  document.querySelector(".appoitment_section").style.display="flex";
-  document.querySelector("#btn_appoitment").style.display = "none";
-  document.querySelector(".new_vital").classList.add("hide");
-  document.querySelector(".appoitment_container").classList.add("hide");
-}
 
-//Search Bar
-// const select =  document.getElementById("select");
-// const list = document.getElementById("list");
-// const selectText = document.getElementById("selectText");
-// const options = document.getElementsByClassName("options");
-// const inputfield = document.getElementById("inputfield");
-// const submitInput = document.getElementById("submit-input");
-// const id = document.getElementById("id");
 
-// select.addEventListener("click", function(){
-//     list.classList.toggle("open");
-// })
 
-// const user_select = 1;
-// submitInput.addEventListener("load", function(){
-//     submitInput.innerHTML = user_select.toString();
-// })
 
-// for(option of options){
-//     option.addEventListener("click", function(){
-//         selectText.innerHTML = this.innerHTML,id;
-//         inputfield.placeholder = 'Search In ' + selectText.innerHTML
-//     })
-// }
+
+
+
 
 
 //camera for postnatal
