@@ -601,6 +601,7 @@
         <div class="form_appoitment">
             <h3>Fill in the neccessary Information</h3>
             <form action="" class="form">
+                <div class="_flexs">
                 <div class="form_control">
                     <label for="">Patient Name</label>
                     <input type="text" placeholder="john">
@@ -617,17 +618,18 @@
                     <label for="">Selected Time</label>
                     <input type="time">
                 </div>
-                <div class="form_control_text_area">
+                <div class="form_control">
                     <label for="">Request Type</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <button class="btn_submit_appoitment">Submit</button>
+                    <input type="text">
                 </div>
+                </div>
+            </div>
+            <button class="btn_submit_appoitment">Submit</button>
             </form>
         </div>
         </div>
                 </section>
             <section class="appoitments">
-            <h1>Appoitments</h1>
             <div class="cards_container">
             <div class="cards">
                 <div class="profile">

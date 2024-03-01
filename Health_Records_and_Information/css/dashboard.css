@@ -178,6 +178,7 @@ body{
     background-color: #fff;
     margin: 0 7rem;
     border-radius: 5px;
+    border: none;
     cursor: pointer;
     color: rgb(42, 87, 215);
     font-size: 12px;
@@ -482,7 +483,6 @@ h1, h3{
     border-radius: 100%;
 }
  table  thead td {
-    padding: 1em;
     color: rgb(0, 87, 194);
 }
  table tbody td {
@@ -626,6 +626,7 @@ h1, h3{
     margin: 2em 0;
     color: rgb(0, 87, 194);;
     background-color: #fff;
+    border: none;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
     padding: 0.5em;
@@ -707,12 +708,15 @@ h1, h3{
 }
 #btn_declined{
     width: 100%;
+    border: none;
 }
 #btn_accepted{
     width: 100%;
+    border: none;
 }
 #btn_pending{
     width: 100%;
+    border: none;
 }
 .profile .name_role{
     display: flex;
@@ -735,6 +739,7 @@ h1, h3{
 .buttons{
     display: flex;
     margin: 1rem 0;
+    border: none;
     justify-content: center;
 }
 .buttons .btn{
@@ -795,6 +800,7 @@ h1, h3{
     background-color: rgb(42, 87, 215);
     padding: 1rem 1rem;
     animation: zoomIn 01s ease-in-out;
+    border: none;
     color:  rgb(255, 255, 255);
     cursor: pointer;
     transition: all ease-in-out 0.5s;
@@ -911,10 +917,9 @@ h1, h3{
 
 .form_appoitment{
     width:45rem;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     height: fit-content;
-    background: rgb(255, 255, 255);
-    color: #2a57d7;
+    background: rgb(42, 87, 215);
+    color: #ffffff;
     padding: 1rem 1rem;
 }
 
@@ -925,52 +930,57 @@ h1, h3{
     flex-direction: row;
     flex-wrap: wrap;
 }
-
+._flexs{
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+}
 .form_appoitment .form_control{
-    width: 40%;
+    width: 300px;
     animation: none;
     height: auto;
-    margin: 1em 1em;
+    margin: 0 0.5em;
 }
 .form_appoitment label{
-    color: rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
 }
 .form_appoitment input{
     width: 100%;
     background-color: none;
-    padding: 1rem 1rem;
-    border: 2px solid rgb(42, 87, 215);;
-    
 }
 .form_appoitment .form_control_text_area{
-    width: 100%;
+    width: 92%;
+    height: 40px;
     animation: none;
     height: auto;
-    margin: 1em 1em;
+    margin: 0 0.5em;
 }
 .selected_date{
-    padding: 1rem 1rem;
-    background-color: rgb(42, 87, 215);
-    border: 2px solid rgb(42, 87, 215);;
-    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);;
+    color: rgb(42, 87, 215);
+    padding: 0.5em;
 }
 .form_appoitment textarea{
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(255, 255, 255);
     color: #fff;
+    height: 50px;
+    border: none;
     width: 100%;
 }
 .btn_submit_appoitment{
     width: 100%;
-    background-color:rgb(42, 87, 215);
-    color: #fff;
-    margin: 1rem auto;
-    padding: 0.9rem;
+    background-color:rgb(42, 87, 215);;
+    color:rgb(255, 255, 255);;
+    margin: 1rem 0;
+    padding: 0.5em;
+    border: none;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
 }
 .btn_submit_appoitment:hover{
-    background-color: #fff;
-    color: black;
+    background:none;
+    color: rgb(42, 87, 215);;
     border: 1px solid rgb(42, 87, 215);;
 }
 /*WALKIN PATIENTS */
