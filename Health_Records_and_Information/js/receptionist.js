@@ -185,40 +185,54 @@ function close_profile(){
 
 
 function _show_book_popup() {
-  $('._box_popup').removeClass('hide');
+  $('#walkin_popup').removeClass('hide');
   $('.overlay').removeClass('hide');
 }
 function close_show_book_popup() {
-  $('._box_popup').addClass('hide');
+  $('#walkin_popup').addClass('hide');
   $('.overlay').addClass('hide');
   };
 
 function lab_appoitment(){
   $('#lab_appoitment').removeClass('hide');
-  $('._box_popup').addClass('hide');
+  $('#walkin_popup').addClass('hide');
   $('.overlay').removeClass('hide');
 }
 function rad_appoitment(){
   $('#rad_appoitment').removeClass('hide');
-  $('._box_popup').addClass('hide');
+  $('#walkin_popup').addClass('hide');
   $('.overlay').removeClass('hide');
 }
-function nurse_appoitment(){
-  $('#nurse_appoitment').removeClass('hide');
-  $('._box_popup').addClass('hide');
-  $('.overlay').removeClass('hide');
-}
+
 
 function _close_all_appoitment(){
   $('#lab_appoitment').addClass('hide');
   $('#rad_appoitment').addClass('hide');
-  $('#nurse_appoitment').addClass('hide');
-  $('._box_popup').removeClass('hide');
+  $('#walkin_popup').removeClass('hide');
   $('.overlay').removeClass('hide');
 }
 
 
+function nurse_appoitment(){
+  $('#nurse_appoitment').removeClass('hide');
+  $('#patient_popup').addClass('hide');
+  $('.overlay').removeClass('hide');
+}
+function _close_all_patient_appoitments() {
+  $('#patient_popup').removeClass('hide');
+  $('#nurse_appoitment').addClass('hide');
+  $('.overlay').removeClass('hide');
+}
 
+
+function _show_patient_transfer_popup() {
+  $('#patient_popup').removeClass('hide');
+  $('.overlay').removeClass('hide');
+}
+function close_show_patient_transfer_popup() {
+  $('#patient_popup').addClass('hide');
+  $('.overlay').addClass('hide');
+  };
 
 
 

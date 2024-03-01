@@ -111,6 +111,24 @@
         
  <!--START OF ADMISSION FORM1-->
     <div class="form_sections">
+               <!----START OF CHECKUP SECTION-->
+               <div class="checkup_section">
+            <h2>Check Up</h2>
+            <div class="form-control">
+                <label for="">Patient Name</label>
+                <input type="text" name="" id="">
+            </div>
+            <div class="form-control">
+            <label for="">Patient Id</label>
+                <input type="text" name="" id="">
+            </div>
+            <button class ="btn-submit" onclick="activateFingerPrint()">Fingerprint authentication</button>
+            <div class="finger_print_div hide">
+            <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i>
+            <i class="bi bi-fingerprint print_icon" onclick="display_profile()"></i>
+            </div> 
+        </div>
+        <!---END OF CHECKUP SECTION--->
     <div class="new_intake_admission_form">
     <div class="form-container">
         <h2>Patient Admission Form</h2>
@@ -129,7 +147,7 @@
             <div class="sections">
             <div class="form-control">
             <label for="full_name">Full Name</label>
-            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off" placeholder="John Smith">
+            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
         </div>
             <div class="form-control">
             <label for="date_of_birth">Date of Birth</label>
@@ -137,11 +155,11 @@
         </div>
         <div class="form-control">
             <label for="home_address">Home Address</label>
-            <input type="text" id="address" autocomplete="off" placeholder="Calabar">
+            <input type="text" id="address" autocomplete="off">
         </div>
             <div class="form-control">
             <label for="phone_number">Phone Number</label>
-            <input type="text" id="phonenumber" placeholder="Enter Patient Phone Number">
+            <input type="text" id="phonenumber">
         </div>
         <div class="form-control2">
         <label for="">Gender</label>
@@ -206,11 +224,11 @@
     <div class="sections">
         <div class="form-control">
         <label for="full_name" class="form_icon">Full Name</label>
-        <input type="text"  id="kname" autocapitalize="off" autocomplete="off" placeholder="John Smith">
+        <input type="text"  id="kname" autocapitalize="off" autocomplete="off">
     </div>
         <div class="form-control">
         <label for="relationship">RelationShip</label>
-        <input type="text"  id="krelationship" placeholder="Brother">
+        <input type="text"  id="krelationship">
     </div>
     <div class="form-control2">
         <label for="">Gender</label>
@@ -225,11 +243,11 @@
         </div>
         <div class="form-control">
         <label for="home_address">Home Address</label>
-        <input type="text"  id="kaddress"  autocomplete="off" placeholder="Calabar">
+        <input type="text"  id="kaddress"  autocomplete="off">
     </div>
         <div class="form-control">
         <label for="phone_number">Phone Number</label>
-        <input type="text"  id="kphonenumber" placeholder="+234 878 832 23">
+        <input type="text"  id="kphonenumber">
     </div>
     </div>
 
@@ -237,39 +255,39 @@
 <div class="sections">
     <div class="form-control">
     <label for="Occupation">Occupation</label>
-    <input type="text" id="occupation"  autocapitalize="off" placeholder="Fill in">
+    <input type="text" id="occupation"  autocapitalize="off">
 </div>
 
     <div class="form-control">
     <label for="Occupation">Past Obsterics</label>
-    <input type="text" id="past_obsterics" autocapitalize="off" autocomplete="off"placeholder="Fill in">
+    <input type="text" id="past_obsterics" autocapitalize="off" autocomplete="off">
 </div>
 
     <div class="form-control">
     <label for="Occupation">Medical History</label>
-    <input type="text" id="medical_history" autocapitalize="off" autocomplete="off" placeholder="Fill in" >
+    <input type="text" id="medical_history" autocapitalize="off" autocomplete="off" >
 </div>
     <div class="form-control">
     <label for="Occupation">Sexual History</label>
-    <input type="text" id="sexual_history" autocapitalize="off" autocomplete="off" placeholder="Fill in">
+    <input type="text" id="sexual_history" autocapitalize="off" autocomplete="off">
 </div>
 
     <div class="form-control">
     <label for="Occupation">Past Disease</label>
-    <input type="text" id="past_disease" autocapitalize="off" autocomplete="off" placeholder="Fill in">
+    <input type="text" id="past_disease" autocapitalize="off" autocomplete="off">
 </div>
 
     <div class="form-control">
     <label for="Occupation">Family Disease</label>
-    <input type="text" id="family_disease" autocapitalize="off" autocomplete="off" placeholder="Fill in">
+    <input type="text" id="family_disease" autocapitalize="off" autocomplete="off">
 </div>
     <div class="form-control">
     <label for="Occupation">Past Surgery</label>
-    <input type="text" id="past_surgery" autocapitalize="off" autocomplete="off" placeholder="Fill in">
+    <input type="text" id="past_surgery" autocapitalize="off" autocomplete="off">
 </div>
     <div class="form-control">
     <label for="Occupation">Health History</label>
-    <input type="text" id="past_surgery" autocapitalize="off" autocomplete="off" placeholder="Fill in">
+    <input type="text" id="past_surgery" autocapitalize="off" autocomplete="off">
 </div>
 </div>
 <button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Book</button>
@@ -297,7 +315,7 @@
             <div class="sections">
             <div class="form-control">
             <label for="full_name">Full Name</label>
-            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off" placeholder="John Smith">
+            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
         </div>
             <div class="form-control">
             <label for="date_of_birth">Date of Birth</label>
@@ -316,11 +334,11 @@
         </div>
         <div class="form-control">
             <label for="home_address">Home Address</label>
-            <input type="text" id="address" autocomplete="off" placeholder="Calabar">
+            <input type="text" id="address" autocomplete="off">
         </div>
         <div class="form-control">
             <label for="phone_number">Phone Number</label>
-            <input type="text" id="phonenumber" placeholder="+234 823 383 232">
+            <input type="text" id="phonenumber">
         </div>
     </div>
     <button type="button" class="btn-submit">Submit</button>
@@ -332,8 +350,18 @@
 <!--END OF WALKIN ADMISSION FORM2-->
 
 
-  <!---START OF ALL PATIENT LISTS SECTION -->
 
+
+
+
+
+
+
+
+
+
+
+  <!---START OF ALL PATIENT LISTS SECTION -->
   <!--START OF ADMITTED PATIENTS FOR LIST1-->
   <div class="all_patient_list hide">
     <div class="patient_list_div">
@@ -357,6 +385,7 @@
                         <img src="images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
                     </td>
                     <td>22-09-2023</td>
+                    <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
                 </tbody>
                 <tbody>
                     <td>2</td>
@@ -366,6 +395,7 @@
                         <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
                     </td>
                     <td>22-09-2023</td>
+                    <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
                 </tbody>
                 <tbody>
                     <td>2</td>
@@ -375,8 +405,35 @@
                         <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
                     </td>
                     <td>22-09-2023</td>
+                    <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
                 </tbody>
             </table>
+            <div class="_box_popup hide" id="patient_popup">
+        <i class="bi bi-x-lg red" onclick="close_show_patient_transfer_popup()"></i>
+        <ul>
+        <li onclick="nurse_appoitment()">Transfer to Nurse Unit</li>
+        </ul>
+        </div>
+            <!----NURSE APPOITMENT-->
+<div class="appoitment hide" id="nurse_appoitment">
+            <i class="bi bi-x-lg red" onclick="_close_all_patient_appoitments()"></i>
+                <span>Nurse Unit</span>
+                <form action="" id="">
+                <div class="form-control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button>Request</button>
+                </form>
+            </div>
         </div>
       <!--END OF ADMITTED PATIENTS FOR LIST1-->
 
@@ -418,12 +475,11 @@
                 </tbody>
             </table>
         </div>
-        <div class="_box_popup hide">
+        <div class="_box_popup hide" id="walkin_popup">
         <i class="bi bi-x-lg red" onclick="close_show_book_popup()"></i>
         <ul>
             <li onclick="lab_appoitment()">Transfer to Labouratory Unit</li>
             <li onclick="rad_appoitment()">Transfer to Radiology Unit</li>
-            <li onclick="nurse_appoitment()">Transfer to Nurse Unit</li>
         </ul>
 </div>
 <!----LAB APPOITMENT---->
@@ -467,50 +523,13 @@
                 </form>
             </div>
     </div>
-    <!----NURSE APPOITMENT-->
-<div class="appoitment hide" id="nurse_appoitment">
-            <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
-                <span>Nurse Unit</span>
-                <form action="" id="">
-                <div class="form-control">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
-                </div>
-                <button>Request</button>
-                </form>
-            </div>
     </div>
   </div>
     <!--END OF WALKIN PATIENTS FOR LIST2-->
 
 
 
-        <!----START OF CHECKUP SECTION-->
-        <div class="checkup_section">
-            <h3>Check Up</h3>
-            <div class="form-control">
-                <label for="">Patient Name</label>
-                <input type="text" name="" id="">
-            </div>
-            <div class="form-control">
-            <label for="">Patient Id</label>
-                <input type="text" name="" id="">
-            </div>
-            <button class ="btn-submit" onclick="activateFingerPrint()">Fingerprint authentication</button>
-            <div class="finger_print_div hide">
-            <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i>
-            <i class="bi bi-fingerprint print_icon" onclick="display_profile()"></i>
-            </div> 
-        </div>
-        <!---END OF CHECKUP SECTION--->
+ 
 
         <!-----START ALREADY EXISTING PROFILE-->
                 <div class="profile_container hide">
