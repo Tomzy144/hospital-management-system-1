@@ -44,6 +44,11 @@ function takePicture() {
     capturedImageElement.src = imageDataURL;
     capturedImageElement.style.display = 'block';
 
+    var submit_btn = document.getElementById('uploadButton');
+    submit_btn.style.display = "block";
+    
+    
+
     // Stop the camera stream
     stopCamera();
   }
@@ -393,3 +398,183 @@ getDoctors();
     renderCalendar()
  })
  renderCalendar();
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ //////////////////////////////
+
+
+
+
+
+ // function fetch_patient(patient_id){
+//     var action='fetch_patient';
+//     // $('#next_2').html('<div class="ajax-loader">loading...<br><img src="all-images/images/ajax-loader.gif"/></div>').fadeIn(500);
+//     var dataString ='action='+ action+'&patient_id='+ patient_id;
+//     $.ajax({
+//     type: "POST",
+//     url: "config/search.php",
+//     data: dataString,
+//     cache: false,
+//     success: function(html){$('#next_2').html(html);}
+//     });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Add 'fade-in' class to the body after the DOM content is loaded
+//     document.body.classList.add('loaded');
+// })
+
+
+function _add_patient() {
+  var fullname = $('#fullname').val();
+  var phonenumber = $('#phonenumber').val();
+  var dob = $('#dob').val();
+  var gender1 = $('#gender1').is(':checked');
+  var gender2 = $('#gender2').is(':checked');
+  var address = $('#address').val();
+  var kname = $('#kname').val();
+  var krelationship = $('#krelationship').val();
+  var kaddress = $('#kaddress').val();
+  var kphonenumber = $('#kphonenumber').val();
+  var kgender1 = $('#kgender1').is(':checked');
+  var kgender2 = $('#kgender2').is(':checked');
+  var occupation = $('#occupation').val();
+  var past_obsterics = $('#past_obsterics').val();
+  var medical_history = $('#medical_history').val();
+  var sexual_history = $('#sexual_history').val();
+  var past_disease = $('#past_disease').val();
+  var family_disease = $('#family_disease').val();
+  var past_surgery = $('#past_surgery').val();
+  var category1 = $('#category1').is(':checked');
+  var category2 = $('#category2').is(':checked');
+  var category3 = $('#category3').is(':checked');
+  var category4 = $('#category4').is(':checked');
+  var category5 = $('#category5').is(':checked');
+  var category6 = $('#category6').is(':checked');
+  var category7 = $('#category7').is(':checked');
+ 
+  var vgender;
+  var vkgender;
+
+  if (gender1) {
+      vgender = 'Male';
+  } else if (gender2) {
+      vgender = 'Female';
+  }
+
+  if (kgender1) {
+      vkgender = 'Female';
+  } else if (kgender2) {
+      vkgender = 'Male';
+  }
+/////for category
+  var vcategory;
+
+  if (category1) {
+      vcategory = "1";
+  } else if (category2) {
+      vcategory = "2";
+  } else if (category3) {
+      vcategory = "3";
+  } else if (category4) {
+      vcategory = "4";
+  } else if (category5) {
+      vcategory = "5";
+  } else if (category6) {
+      vcategory = "6";
+  } else if (category7) {
+      vcategory = "7";
+  }
+
+  // if(wards.selectedIndex && beds.selectedIndex){
+  //     var ward= `${wards.value}`;
+  //     var bed =  `${beds.value}`;
+  // }else{
+  //     alert("Please select Ward And Bed")
+  // }
+
+  var bed = $('#beds option:selected').val();
+  var ward = $('#wards option:selected').val();
+
+  
+
+if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='') ||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')||(vcategory=='')){
+  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
+      window.alert("Fill All fields");
+  }else{
+   //////////////// get btn text ////////////////
+       $('#proceed-btn').html('PROCESSING...');
+       document.getElementById('proceed-btn').disabled=true;
+////////////////////////////////////////////////	
+  
+    var action = 'add_patient';		 
+        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+'&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory + '&bed='+ bed+'&ward='+ ward;
+        $.ajax({
+        type: "POST",
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        cache: false,
+        success: function(data){
+                var scheck = data.check;
+                var  fpatient_id = data.patient_id;
+                var phonenumber = data.phonenumber;
+                
+                if(scheck==0){ //user Active
+                  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
+                  window.alert("Patient's phonenumber is already registered");
+              }else{ //user suspended
+        $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+                  // _get_page('active-staff','active-staff');
+                  // alert_close();
+                  window.alert("Registration Successful");
+                  window.alert("This patient's ID is "+ fpatient_id );
+                  location.reload(true);
+              }
+              $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
+              document.getElementById('proceed-btn').disabled=false;
+          } 
+      });
+}
+}	
+
+
+
+
+ 
+function _upload_profile_pix(){
+  var action = 'update_profile_pix';
+      var file_data = $('#capturedImage').val();
+  if (file_data==''){}else{ 
+      var form_data = new FormData();                  
+      form_data.append('capturedImage', file_data);
+      form_data.append('action', action);
+      $.ajax({
+          url: "config/code.php",
+          type: "POST",
+          data: form_data,
+          contentType: false,
+          cache: false,
+          processData:false,
+          success: function(html){
+      $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+          $('#capturedImage').val('');
+          $('Submitted');
+    }
+      });
+  }
+}
+
+
+
