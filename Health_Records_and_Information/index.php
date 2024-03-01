@@ -404,6 +404,7 @@
                         <img src="images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
                     </td>
                     <td>22-09-2023</td>
+                    <td><i class="bi bi-three-dots _action" onclick="_show_book_popup()"></i></td>
                 </tbody>
                 <tbody>
                     <td>2</td>
@@ -413,12 +414,83 @@
                         <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
                     </td>
                     <td>22-09-2023</td>
+                    <td><i class="bi bi-three-dots _action"></i></td>
                 </tbody>
             </table>
         </div>
+        <div class="_box_popup hide">
+        <i class="bi bi-x-lg red" onclick="close_show_book_popup()"></i>
+        <ul>
+            <li onclick="lab_appoitment()">Transfer to Labouratory Unit</li>
+            <li onclick="rad_appoitment()">Transfer to Radiology Unit</li>
+            <li onclick="nurse_appoitment()">Transfer to Nurse Unit</li>
+        </ul>
+</div>
+<!----LAB APPOITMENT---->
+<div class="appoitment hide" id="lab_appoitment">
+            <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
+                <span>Labouratory Unit</span>
+                <form action="" id="">
+                <div class="form-control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button>Request</button>
+                </form>
+            </div>
+            <!-----RADIOLOGY APPOITMENT-->
+<div class="appoitment hide" id="rad_appoitment">
+            <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
+                <span>Radiology Unit</span>
+                <form action="" id="">
+                <div class="form-control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button>Request</button>
+                </form>
+            </div>
+    </div>
+    <!----NURSE APPOITMENT-->
+<div class="appoitment hide" id="nurse_appoitment">
+            <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
+                <span>Nurse Unit</span>
+                <form action="" id="">
+                <div class="form-control">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
+                <button>Request</button>
+                </form>
+            </div>
     </div>
   </div>
     <!--END OF WALKIN PATIENTS FOR LIST2-->
+
 
 
         <!----START OF CHECKUP SECTION-->
@@ -436,7 +508,6 @@
             <div class="finger_print_div hide">
             <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i>
             <i class="bi bi-fingerprint print_icon" onclick="display_profile()"></i>
-            <i class="fa-solid fa-rotate authenticate"></i>
             </div> 
         </div>
         <!---END OF CHECKUP SECTION--->

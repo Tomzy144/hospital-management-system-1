@@ -132,8 +132,8 @@ body{
     width: 100%;
     background-color: #fff;
     padding: 0.7rem;
-    border: none;
     color: rgb(42, 87, 215);
+    border: none;
     border-radius: 5px;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
@@ -175,7 +175,6 @@ body{
 }
 #btn_appoitment{
     padding: 0.7rem 1rem;
-    border: none;
     background-color: #fff;
     margin: 0 7rem;
     border-radius: 5px;
@@ -246,7 +245,7 @@ h1, h3{
 .new_intake_admission_form{
     width: 60%;
     box-shadow: rgba(223, 222, 222, 0.35) 0px 5px 15px;
-    height:600px ;
+    height:500px ;
     display: flex;
     flex-direction: column;
     margin: 0 0 0 5em;
@@ -288,11 +287,10 @@ h1, h3{
     padding: 0.5rem;
     text-align: center;
     margin: 0.5rem 0.5rem;
-    border: none;
     /* border-radius: 20px; */
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color:  rgb(42, 87, 215);
     transition: all  ease-in-out 0.5s; 
 }
 .btn_re_capture{
@@ -300,22 +298,21 @@ h1, h3{
     padding: 0.5rem;
     text-align: center;
     margin: 0.5rem 0.5rem;
-    border: none;
     /* border-radius: 20px; */
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: rgb(42, 87, 215);
     transition: all  ease-in-out 0.5s; 
 }
 .btn_capture:hover{
     background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
 }
 .btn_re_capture:hover{
     background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
 }
 .form{
     width: 100%;
@@ -328,8 +325,8 @@ h1, h3{
   }
   .form-container{
       width:100%;
-      background-color: rgb(255, 255, 255);
-      color: rgb(42, 87, 215);
+      background-color: rgb(42, 87, 215);
+      color: rgb(255, 255, 255);
       position: relative;
       flex-wrap: wrap;
       padding: 1rem;
@@ -338,6 +335,7 @@ h1, h3{
   .form-container .sections{
     display: flex;
     width: 100%;
+    border: 1px solid #fff;
   padding: 1em;
     flex-wrap: wrap;
   }
@@ -359,7 +357,7 @@ h1, h3{
     flex-direction: column;
     width: 300px;
     position: relative;
-    color: rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
   }
   .form-control2 input{
     width: fit-content;
@@ -371,10 +369,10 @@ h1, h3{
 }
 .family_plan_section button{
     margin: 0.4em 0;
-    border: none;
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(255, 255, 255);
     width: 100%;
-    color: #fff;
+    border: none;
+    color:  rgb(42, 87, 215);
     cursor: pointer;
     padding: 0.5em;
 }
@@ -383,9 +381,9 @@ h1, h3{
 }
   .form-control select{
     padding: 0.6rem;
-    border: 1px solid rgb(42, 87, 215);
+   border: none;
     outline: none;
-    color: rgb(42, 87, 215);
+    color: rgb(0, 0, 0);
   }
   .form-display2{
       display: flex;
@@ -394,13 +392,12 @@ h1, h3{
   }
   label{
       font-size: 18px;
-      color: rgb(42, 87, 215);
+      color: rgb(255, 255, 255);
   }
   input{
     padding: 0.6rem;
-    border: 1px solid rgb(42, 87, 215);
     outline: none;
-    color: rgb(42, 87, 215);
+    color: rgb(0, 0, 0);
   }
 
   .form-control i{
@@ -411,9 +408,10 @@ h1, h3{
       transform: translateY(-50%);
     }
    .btn-submit{
-      background-color: rgb(42, 87, 215);
-      color: rgb(255, 255, 255);
+      background-color: rgb(255, 255, 255);
+      color: rgb(42, 87, 215);
       border: none;
+
       margin: 0.5rem 0;
       width: 100%;
       cursor: pointer;
@@ -422,12 +420,12 @@ h1, h3{
     }
     .btn-submit:hover{
       background:none;
-      border: 1px solid rgb(42, 87, 215);
-      color: rgb(42, 87, 215);
+      border: 1px solid rgb(255, 255, 255);
+      color: rgb(255, 255, 255);
     }
     select{
       padding: 1rem;
-      border: none;
+
       width: 100%;
       margin: 1rem 0;
       background-color: #fff;
@@ -479,8 +477,8 @@ h1, h3{
     background-color: #fff; 
 }
  table tbody td img{
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
 }
  table  thead td {
@@ -498,11 +496,80 @@ h1, h3{
     width: 50%;
     height: fit-content;
     margin: 4.5rem 0 0 1rem;
-    position: relative;
     height: 800px;
     overflow: auto;;
 }
-
+._action{
+    cursor: pointer;
+}
+._box_popup{
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    top: 40%;
+    left: 40%;
+    z-index: 6;
+}
+._box_popup .red{
+    color: red;
+    position: absolute;
+    right: 3%;
+    cursor: pointer;
+    top: 3%;
+}
+._box_popup ul{
+    list-style: none;
+    padding: 1em;
+}
+._box_popup li{
+    margin: 1em 0;
+    cursor: pointer;
+    color:  rgb(42, 87, 215);
+    font-size: 20px;
+}
+._box_popup li:hover{
+    color: red;
+}
+ .appoitment{
+    width:400px;
+    height:auto;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    color: black ;
+    padding:1em;
+    top: 35%;
+    left:40%;
+    z-index:10
+}
+.appoitment button{
+    width: 100%;
+    background-color:rgb(42, 87, 215); 
+    padding: 0.5em;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.red{
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    cursor: pointer;
+    color: #db0000;
+}
+.appoitment .form-control{
+    width: 100%;
+    margin: 1em 0;
+}
+.appoitment label {
+    color: black;
+}
+.appoitment textarea{
+    width: 100%;
+    height: 50px;
+}
 .overlay{
     opacity: 40%;
     width: 100vw;
@@ -558,7 +625,6 @@ h1, h3{
 .div2 button{
     margin: 2em 0;
     color: rgb(0, 87, 194);;
-    border: none;
     background-color: #fff;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
@@ -674,7 +740,6 @@ h1, h3{
 .buttons .btn{
     padding: 0.5em 1em;
     background-color:rgb(42, 87, 215) ;
-    border: none;
     cursor: pointer;
     margin: 0 1rem;
     color: #fff;
@@ -720,7 +785,6 @@ h1, h3{
 }
 .doc_roles select{
     padding: 1rem;
-    border: none;
     border: 2px solid #fff;; 
     background-color:rgb(42, 87, 215); 
     animation: zoomIn 01s ease-in-out;
@@ -730,7 +794,6 @@ h1, h3{
 #continue{
     background-color: rgb(42, 87, 215);
     padding: 1rem 1rem;
-    border: none;
     animation: zoomIn 01s ease-in-out;
     color:  rgb(255, 255, 255);
     cursor: pointer;
@@ -892,7 +955,6 @@ h1, h3{
     color: rgb(255, 255, 255);
 }
 .form_appoitment textarea{
-    border: none;
     background-color: rgb(42, 87, 215);
     color: #fff;
     width: 100%;
@@ -901,7 +963,6 @@ h1, h3{
     width: 100%;
     background-color:rgb(42, 87, 215);
     color: #fff;
-    border: none;
     margin: 1rem auto;
     padding: 0.9rem;
     cursor: pointer;
@@ -915,7 +976,7 @@ h1, h3{
 /*WALKIN PATIENTS */
 .walkin_admission_form{
     width: 40%;
-    height: 600px;
+    height: 500px;
     box-shadow: rgba(223, 222, 222, 0.35) 0px 5px 15px;
     overflow: auto;
     margin: 0 0 0 1em;
@@ -956,10 +1017,9 @@ h1, h3{
     padding: 0.5rem;
     text-align: center;
     margin: 0.5rem 0.5rem;
-    border: none;
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color:  rgb(42, 87, 215);;
     transition: all ease-in-out 0.5s;
 }
 .walkin_in_section_btn_re_capture{
@@ -967,45 +1027,55 @@ h1, h3{
     padding: 0.5rem;
     text-align: center;
     margin: 0.5rem 0.5rem;
-    border: none;
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color:  rgb(42, 87, 215);
     transition: all ease-in-out 0.5s;
 }
 .walkin_in_section_btn_capture:hover{
     background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
 }
 .walkin_in_section_btn_re_capture:hover{
     background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
 }
 .checkup_section{
-    height: 300px;
-    color: rgb(42, 87, 215);
+    height: auto;
+    color: rgb(255, 255, 255);
     margin: 1em 0 0 5em;
-    width: 500px;
+    width: 350px;
+    padding: 1em;
     overflow: auto;
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(42, 87, 215);
     box-shadow: rgba(223, 222, 222, 0.35) 0px 5px 15px;
     position: relative;
+}
+
+.checkup_section label{
+    color:  rgb(255, 255, 255);;
+}
+.checkup_section .form-control{
+    width: 100%;
+    margin: 1em 0;
+}
+.checkup_section input{
+    outline: 1px solid rgb(255, 255, 255);
 }
 .finger_print_div{
     width: 100%;
     height: 300px;
     display: grid;
     place-items: center;
-    background-color: rgb(0, 87, 194);
+    background-color: rgb(42, 87, 215);
     position: absolute;
     top: 0;
     left: 0;
 }
 .finger_print_div button{
     background-color: #fff;
-    border: none;
     padding: 0.5em;
 }
 .finger_print_div .print_icon{

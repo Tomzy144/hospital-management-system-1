@@ -60,15 +60,6 @@
 
 
 
-    <!-- <div class="_div_landing">
-        <div class="_div1">
-            <img src="Images/5120172.jpg" alt="">
-        </div>
-        <div class="_div2"></div>
-    </div> -->
-
-
-
 
                <!----START OF THE ANTERNATAL FORM-->
                <div class="antenal_section">

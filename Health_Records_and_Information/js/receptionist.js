@@ -182,6 +182,53 @@ function close_profile(){
   document.querySelector('.overlay').classList.add("hide")
   document.querySelector("#btn_appoitment").style.display = "none"
 }
+
+
+function _show_book_popup() {
+  $('._box_popup').removeClass('hide');
+  $('.overlay').removeClass('hide');
+}
+function close_show_book_popup() {
+  $('._box_popup').addClass('hide');
+  $('.overlay').addClass('hide');
+  };
+
+function lab_appoitment(){
+  $('#lab_appoitment').removeClass('hide');
+  $('._box_popup').addClass('hide');
+  $('.overlay').removeClass('hide');
+}
+function rad_appoitment(){
+  $('#rad_appoitment').removeClass('hide');
+  $('._box_popup').addClass('hide');
+  $('.overlay').removeClass('hide');
+}
+function nurse_appoitment(){
+  $('#nurse_appoitment').removeClass('hide');
+  $('._box_popup').addClass('hide');
+  $('.overlay').removeClass('hide');
+}
+
+function _close_all_appoitment(){
+  $('#lab_appoitment').addClass('hide');
+  $('#rad_appoitment').addClass('hide');
+  $('#nurse_appoitment').addClass('hide');
+  $('._box_popup').removeClass('hide');
+  $('.overlay').removeClass('hide');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.querySelector("#btn_appoitment").style.display = "none"
 function appoitment_booking(){
   document.querySelector('.form_sections').style.display = 'none';
