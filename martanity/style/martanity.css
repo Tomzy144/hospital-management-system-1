@@ -39,7 +39,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    animation: zoomIn 1s ease-in-out;
+    animation: zoomIn 0.5s ease-in-out;
     align-items: center;
 }
 .section2{
@@ -47,7 +47,7 @@ body{
     height: 100%;
     display: flex;
     flex-direction: row;
-    animation: zoomIn 1s ease-in-out;
+    animation: zoomIn 0.5s ease-in-out;
     justify-content: space-around;
     align-items: center;
 }
@@ -219,7 +219,7 @@ body{
 }
 .sidebar_icons{
     width: 100%;
-    animation: zoomIn 01s ease-in-out;
+    animation: zoomIn 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -231,39 +231,32 @@ body{
     cursor: pointer;
     margin: 1rem 0;
 }
-._div_landing{
-    width: 100%;
-    height: 100%;
-    background-image: url('../../Images/5120172.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.antenal_section{
+
+
+.container{
     width: 100%;
     height: 100%;
     display: flex;
 }
-h1{
-    animation: slideInLeft 1s ease-in-out;
-    margin: 1rem 0;
-    letter-spacing: 3px;
-}
-.form_container_for_antenatal{
+
+.form_container{
     width: 60%;
     height: 800px;
     padding: 1rem;
     background-color: #fff;
     margin: 4.2rem 0 0 4em;
     overflow: auto;
-    color: rgb(255, 255, 255);
+    color:rgb(42, 87, 215);
     position: relative;
-    animation: fadeIn 1s ease-in-out;
 }
-.sections{
+h1{
+    animation: slideInLeft 1s ease-in-out;
+    margin: 1rem 0;
+    letter-spacing: 3px;
+}
+.flex_form{
     width: 100%;
     display: flex;
-    border: 1px solid #fff;
     margin: 1em 0;
     flex-wrap: wrap;
 }
@@ -272,40 +265,30 @@ form{
     width: 100%;
     display: flex;
     flex-direction: column;
-    background: rgb(42, 87, 215);
+    background: rgb(255, 255, 255);
   padding: 0.5em;
-}
-form span{
-    font-size: 18px;
-    font-weight: bold;
-    color: rgb(42, 87, 215);
-    letter-spacing: 4px;
-    animation: slideInLeft 1s ease-in-out;
+  box-shadow: rgba(174, 164, 164, 0.35) 0px 5px 15px;
 }
 
 .form_control{
     width: 300px;
     display: flex;
-    animation: slideInLeft 1s ease-in-out;
+    animation: zoomIn 0.5s ease-in-out;
     margin: 0.8rem 0.5rem;
     flex-direction: column;
 }
-.form_container_for_antenatal .form_control input{
-    padding: 0.6rem;
-    border: none;
-    border: 1px solid rgb(42, 87, 215);
-    outline: none;
+.large{
     width: 100%;
-
+    margin: 1em 0;
 }
 
-
-.upload_image_antenatal{
+.upload_div{
     width: 350px;
     height: 250px;
     box-shadow: rgba(187, 186, 186, 0.35) 0px 5px 15px;
     margin: 0 auto;
     overflow: hidden;
+    animation: zoomIn 0.5s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -313,12 +296,7 @@ form span{
     position: relative;
     text-align: center;
 }
-.upload_image_antenatal h1{
-    padding: 2rem;
-    font-size: 30px;
-    position: absolute;
-}
-.upload_image_antenatal #capture_image_antenatal{
+ .capture_image_icon{
     font-size: 18px;
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -331,48 +309,51 @@ form span{
     bottom: 14%;
     background-color: rgb(42, 87, 215);
 }
-#capturedImage_antenatal{
+.capturedImage{
     position: absolute;
 }
-.btn_capture2{
-    width: 200px;
+.div_flex{
+    display: flex;
+    margin: 0 auto;
+}
+.btn_capture{
+    width: 100px;
     padding: 0.5rem;
     text-align: center;
     margin: 0.5rem 0.5rem;
-    border: none;
     cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color:rgb(42, 87, 215);;
-    transition: all ease-in-out 0.5s;
+    background-color: rgb(42, 87, 215);
+    color:  rgb(255, 255, 255);
+    transition: all  ease-in-out 0.5s; 
 }
-.btn_re_capture2{
-    width: 200px;
-    padding: 0.5rem;
-    text-align: center;
-    margin: 0.5rem 0.5rem;
-    border: none;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color: rgb(42, 87, 215);
-    transition: all ease-in-out 0.5s;
-}
-.btn_re_capture2:hover{
+.btn_capture:hover{
     background:none;
-    color: rgb(255, 255, 255);;
-    border: 1px solid rgb(255, 255, 255);
-}
-.btn_capture2:hover{
-    background:none;
-    color: rgb(255, 255, 255);;
-    border: 1px solid rgb(255, 255, 255);
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
 }
 
+.btn_recapture{
+    width: 100px;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0.5rem 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
+}
+.btn_recapture:hover{
+    background:none;
+    color: rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);
+}
 .btn_submit{
-    width: 100%;
-    background-color: rgb(255, 255, 255);
+    width: 25%;
+    background-color: rgb(42, 87, 215);;
     padding: 0.7rem;
     border: none;
-    color: rgb(42, 87, 215);;
+    color: rgb(255, 255, 255);;
     border-radius: 5px;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
@@ -380,10 +361,12 @@ form span{
 }
 .btn_submit:hover{
     background:none;
-    color:rgb(255, 255, 255);
-    border: 1px solid rgb(255, 255, 255);
+    color:rgb(42, 87, 215);;
+    border: 1px solid rgb(42, 87, 215);;
 }
-.anternal_list {
+
+
+.list_div {
     width: 800px;
     height: fit-content;
     margin: 4.5rem 0 0 1rem;
@@ -391,7 +374,7 @@ form span{
     height: 800px;
     overflow: auto;
 }
-.anternal_list .doctor_appoitment3{
+ .appoitments_div{
     width:400px;
     height:auto;
     background-color:#fff;
@@ -402,71 +385,8 @@ form span{
     left:30%;
     z-index:10
 }
-.anternal_list .postnatal_ward{
-    width:400px;
-    height:auto;
-    background-color:#fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    position:absolute;
-    padding:1em;
-    top: 10%;
-    left:30%;
-    z-index:10
-}
-.anternal_list .labour_ward_appoitment3{
-    width:400px;
-    height:auto;
-    background-color:#fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    position:absolute;
-    padding:1em;
-    top: 10%;
-    left:30%;
-    z-index:10
-}
-.anternal_list .lab_appoitment3{
-    width:400px;
-    height:auto;
-    background-color:#fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    position:absolute;
-    padding:1em;
-    top: 10%;
-    left:30%;
-    z-index:10
-}
-.anternal_list .radiology_appoitment3{
-    width:400px;
-    height:auto;
-    background-color:#fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    position:absolute;
-    padding:1em;
-    top: 10%;
-    left:30%;
-    z-index:10
-}
-.anternal_list form{
-    background-color: #fff;
-}
-.anternal_list span{
-    color: rgb(0, 0, 0); ;
-}
-.anternal_list select{
-    padding: 0.6em;
-    background-color: #fff;
-}
-.anternal_list .form_control{
-    width: 100%;
-    margin: 1em 0;
-}
-.anternal_list textarea{
-    width:100%;
-    height:60px;
-    outline:none;
-    padding:0.5em;
-}
-.anternal_list .tranfer_box1{
+
+ .tranfer_div{
     width: 300px;
     height: auto;
     padding: 1em;
@@ -475,21 +395,20 @@ form span{
     left: 40%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 9;
-    background-color: #ffffff;
+    background-color: rgb(42, 87, 215);;
 }
 
-.anternal_list .tranfer_box1 ul{
+ .tranfer_div ul{
     list-style: none;
 }
-.anternal_list .tranfer_box1 ul li{
+ .tranfer_div ul li{
     margin: 1em 0;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
-    color: rgb(42, 87, 215);;
+    color: rgb(255, 255, 255);;
 }
-.anternal_list .tranfer_box1 ul li:hover{
+ .tranfer_div ul li:hover{
     color: rgb(255, 0, 0);;
-    /* border-bottom: 1px solid rgb(255, 0, 0);;; */
 }
 .background_opacity3{
     width: 100%;
@@ -503,6 +422,7 @@ form span{
     background-color: #fff;
     color:rgb(42, 87, 215);
     padding: 0.5em;
+    animation: zoomIn 0.5s ease-in-out;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -520,9 +440,12 @@ form span{
 input{
     padding: 0.6rem;
     outline: none;
-    color: rgb(0, 0, 0);
+    color: rgb(42, 87, 215);
   }
-
+h3{
+    font-weight: bold;
+    animation: zoomIn 0.5s ease-in-out;
+}
  table {
     width: 100%;
     border-collapse: collapse;
@@ -532,6 +455,7 @@ input{
     background-color: #fff; 
     position: sticky; 
     top: 0;
+    animation: zoomIn 0.5s ease-in-out;
     z-index: 1; 
     background-color: #fff; 
 }
@@ -542,6 +466,9 @@ input{
 }
  table  thead td {
     color: rgb(0, 87, 194);
+}
+table tbody{
+    animation: zoomIn 0.5s ease-in-out;
 }
  table tbody td {
     padding: 1em;
@@ -554,38 +481,7 @@ input{
 
 
 /*POSTNATAL*/
-.postnal_section{
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-.form_container_for_postnatal{
-    width: 60%;
-    height: 800px;
-    padding: 1rem;
-    background-color: #fff;
-    overflow: auto;
-    scrollbar-color: red;
-    position: relative;
-    margin: 4.2rem 0 0 4em;
-    color:rgb(255, 255, 255);
-    animation: fadeIn 1s ease-in-out;
-}
-.form_container_for_postnatal .white{
-    position: absolute;
-    right: 3%;
-    font-size: 25px;
-    cursor: pointer;
-    top: 5%;
-}
 
-.form_container_for_postnatal .form_control input{
-    padding: 0.6rem;
-    border: none;
-    border: 1px solid rgb(42, 87, 215);
-    outline: none;
-    width: 100%;
-}
 
 .upload_image_postnatal{
     width: 350px;
@@ -604,58 +500,8 @@ input{
     font-size: 30px;
     position: absolute;
 }
-#capture_image_postnatal{
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    border-radius: 100%;
-    padding: 0.5rem;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    right: 9%;
-    bottom: 14%;
-    background-color: rgb(42, 87, 215);
-}
-#capturedImage_postnatal{
-    position: absolute;
-}
-.flex_capture_div{
-    display: flex;
-    margin: 0 auto;
-}
-.btn_capture1{
-    width: 200px;
-    padding: 0.5rem;
-    text-align: center;
-    margin: 0.5rem 0.5rem;
-    border: none;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color: rgb(42, 87, 215);
-    transition: all ease-in-out 0.5s;
-}
-.btn_re_capture1{
-    width: 200px;
-    padding: 0.5rem;
-    text-align: center;
-    margin: 0.5rem 0.5rem;
-    border: none;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color: rgb(42, 87, 215);;
-    transition: all ease-in-out 0.5s;
-}
-.btn_re_capture1:hover{
-    background:none;
-    color: rgb(255, 255, 255);;
-    border: 1px solid rgb(255, 255, 255);
-}
-.btn_capture1:hover{
-    background:none;
-    color: rgb(255, 255, 255);;
-    border: 1px solid rgb(255, 255, 255);
-}
+
+
 .btn_app{
     width: 100%;
     padding: 0.5em;
@@ -727,26 +573,7 @@ input{
     left:30%;
     z-index:10
 }
-.postnatal_list span{
-    color: rgb(0, 0, 0); ;
-}
-.postnatal_list select{
-    padding: 0.6em;
-    background-color: #fff;
-}
-.postnatal_list form{
-    background-color: #fff;
-}
-.postnatal_list .form_control{
-    width: 100%;
-    margin: 1em 0;
-}
-.postnatal_list textarea{
-    width:100%;
-    height:60px;
-    outline:none;
-    padding:0.5em;
-}
+
 .background_opacity2{
     width: 100%;
     height: 100%;
@@ -754,11 +581,6 @@ input{
     opacity: 30%;
     z-index: 8;
     position: absolute;
-}
-.labour_section{
-    width: 100%;
-    height: 100%;
-    display: flex;
 }
 
 .background_opacity{
@@ -769,100 +591,10 @@ input{
     z-index: 8;
     position: absolute;
 }
-.form_container_for_labor{
-    width: 60%;
-    height: 800px;
-    padding: 1rem;
-    background-color: #fff;
-    overflow: auto;
-    margin: 4.2rem 0 0 5em;
-    color:rgb(255, 255, 255);
-    animation: fadeIn 1s ease-in-out;
-}
-.form_container_for_labor .white{
-    position: absolute;
-    right: 3%;
-    font-size: 25px;
-    cursor: pointer;
-    top: 5%;
-}
-.form_container_for_labor .form_control input{
-    padding: 0.6rem;
-    border: none;
-    border: 1px solid rgb(42, 87, 215); 
-    outline: none;
-    width: 100%;
-}
 
-.upload_image_labor{
-    width: 350px;
-    height: 250px;
-    margin: 1rem auto;
-    overflow: hidden;;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);;
-    position: relative;
-    text-align: center;
-}
-.upload_image_labor h1{
-    padding: 2rem;
-    font-size: 30px;
-    position: absolute;
-}
-#capture_image_labor{
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    border-radius: 100%;
-    padding: 0.5rem;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    right: 9%;
-    bottom: 14%;
-    background-color: rgb(42, 87, 215);
-}
-#capturedImage_labor{
-    position: absolute;
-}
-.flex_capture_div{
-    display: flex;
-    margin: 0 auto;
-}
-.btn_capture3{
-    width: 200px;
-    padding: 0.5rem;
-    text-align: center;
-    margin: 0.5rem 0.5rem;
-    border: none;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color: rgb(42, 87, 215); 
-    transition: all ease-in-out 0.5s;
-}
-.btn_re_capture3{
-    width: 200px;
-    padding: 0.5rem;
-    text-align: center;
-    margin: 0.5rem 0.5rem;
-    border: none;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color: rgb(42, 87, 215); 
-    transition: all ease-in-out 0.5s;
-}
-.btn_re_capture3:hover{
-    background:none;
-    color: rgb(255, 255, 255);;
-    border: 1px solid rgb(255, 255, 255);
-}
-.btn_capture3:hover{
-    background:none;
-    color: rgb(255, 255, 255);;
-    border: 1px solid rgb(255, 255, 255);
-}
+
+
+
 .labor_list{
     width: 800px;
     height: fit-content;
@@ -880,17 +612,19 @@ input{
     padding: 1em;
     position: absolute;
     top: 20%;
-    left: 40%;
+    right: 3%;
+    animation: bounceIn 1s ease-in-out ;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 9;
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);;
 }
 .red{
     position: absolute;
     right: 3%;
     top: 1%;
+    font-size: 25px;
     cursor: pointer;
-    color: #db0000;
+    color: #ff0000;
 }
 .labor_list .tranfer_box ul{
     list-style: none;
@@ -900,6 +634,7 @@ input{
     cursor: pointer;
     transition: all ease-in-out 0.5s;
     color: rgb(42, 87, 215);;
+    font-size: 20px;
 }
 .labor_list .tranfer_box ul li:hover{
     color: rgb(255, 0, 0);;
@@ -992,16 +727,7 @@ input{
     left:30%;
     z-index:10
 }
-.labor_list .form_control{
-    width: 100%;
-    margin: 1em 0;
-}
-.labor_list textarea{
-    width:100%;
-    height:60px;
-    outline:none;
-    padding:0.5em;
-}
+
 .postnatal_list .tranfer_box2{
     width: 300px;
     height: auto;
@@ -1011,7 +737,7 @@ input{
     left: 40%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 9;
-    background-color: #ffffff;
+    background-color: rgb(42, 87, 215);;
 }
 .postnatal_list .tranfer_box2 ul{
     list-style: none;
@@ -1020,11 +746,10 @@ input{
     margin: 1em 0;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
-    color: rgb(42, 87, 215);;
+    color: rgb(255, 255, 255);;
 }
 .postnatal_list .tranfer_box2 ul li:hover{
     color: rgb(255, 0, 0);;
-    /* border-bottom: 1px solid rgb(255, 0, 0);;; */
 }
 .antenatal_patients_profile{
     width: 100%;
@@ -1134,7 +859,7 @@ color: #fff;
     text-align: center;
 }
 .patient_inputs thead td{
-    padding: 1em;
+    padding: none;
 }
 .patient_inputs tbody td{
     padding: 1em;
@@ -1278,7 +1003,7 @@ select{
     height: 100px;
 }
  form span{
-    color: #fff;
+    color: rgb(42, 87, 215);
 }
 .screening_input .div_flexs{
     flex-wrap: wrap;
@@ -1397,6 +1122,35 @@ margin: 1em 1em;
     padding: 1em;
     position: relative;
     height: auto;
+}
+.dynamic_popup{
+    width: 500px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 15;
+    display: flex;;
+    flex-direction: column;
+    justify-content: center;
+    animation: headShake 1s ease-in-out ;
+    padding: 0.5em;
+    text-align: center;
+    height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color:rgb(255, 0, 0);; ;
+}
+.dynamic_popup span{
+    color: #fff;
+    margin: 0.5em;
+    font-size: 18px;
+}
+.div_switch{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.div_switch span{
+    cursor: pointer;
 }
 .drug_prescribtion3 .btn_white{
     background-color: #fff;

@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="style/icons-1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style/martanity.css">
+    <link rel="stylesheet" href="style/animate.css">
+
 </head>
 <body>
-
-
 
     <!----START OF NAVBAR AND SIDEBAR-->
     <div class="navbar">
@@ -50,7 +50,7 @@
             <div class="sidebar_icons">
                 <i class="bi bi-chat-dots-fill" id="icon"></i>
                 <i class="fa-solid fa-person-pregnant" id="icon" onclick="antenatalSection()"></i>
-                <i class="fa-solid fa-baby" id="icon" onclick="postnalSection()"></i>
+                <i class="fa-solid fa-baby" id="icon" onclick="postnatalSection()"></i>
                 <i class="fa-solid fa-person-breastfeeding" id="icon" onclick="labourSection()"></i>
                 <i class="bi bi-box-arrow-right" id="icon"></i>
             </div>
@@ -62,25 +62,25 @@
 
 
                <!----START OF THE ANTERNATAL FORM-->
-               <div class="antenal_section">
-          <div class="form_container_for_antenatal">
+               <div class="container" id="antenatal_section">
+          <div class="form_container">
     <form action="">
-        <h2>Antenatal Registration Form</h2>
-        <div class="upload_image_antenatal">
-             <video id="videoElement_antenatal" width="400" height="300" autoplay></video>
-            <i class="bi bi-plus" id="capture_image_antenatal" onclick="openCamera2()"></i>
+        <h3>Antenatal Registration Form</h3>
+        <div class="upload_div">
+             <video  id="videoElement_antenatal" width="400" height="300" autoplay></video>
+            <i class="bi bi-plus capture_image_icon" id="capture_image_antenatal" onclick="openCamera2()"></i>
             <canvas id="canvasElement_antenatal" style="display: none;"></canvas>
-            <img id="capturedImage_antenatal" style="display: none;">
+            <img class="capturedImage" id="capturedImage_antenatal" style="display: none;">
         </div>
-        <div class="flex_capture_div">
-        <div class="btn_re_capture2 hide"  onclick="retakePicture2()">Recapture</div>
-        <div class="btn_capture2 hide" onClick="takePicture2()">Capture</div>
+        <div class="div_flex">
+            <div class="btn_capture hide" id="capture_patient1" onclick="takePicture2()">Capture</div>
+        <div class="btn_recapture hide" id="recapture_patient1"  onclick="retakePicture2()">Recapture</div>
         </div>
-        <span>Patient Info</span>
-        <div class="sections">
+        <h3>Patient Info</h3>
+        <div class="flex_form">
     <div class="form_control">
         <label for="">Full name</label>
-        <input type="text" placeholder="John Smith">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Date of Birth</label>
@@ -88,51 +88,51 @@
         </div>
         <div class="form_control">
         <label for="">Address</label>
-        <input type="text" placeholder="Calabar">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Contact Number</label>
-        <input type="text" placeholder="+234 732 332 33">
+        <input type="text">
         </div>
         </div>
-        <span>Spouse/Partner Information</span>
-        <div class="sections">
+        <h3>Spouse/Partner Information</h3>
+        <div class="flex_form">
         <div class="form_control">
         <label for="">Full Name</label>
-        <input type="text" placeholder="John Smith">
+        <input type="text">
        </div>
        <div class="form_control">
         <label for="">Contact Number</label>
-        <input type="text" placeholder="+234 732 323 23">
+        <input type="text">
         </div>
         </div>
 
-        <span>Medical History</span>
-        <div class="sections">
+        <h3>Medical History</h3>
+        <div class="flex_form">
     <div class="form_control">
         <label for="">Previous Pregnacies</label>
-        <input type="text" placeholder="input">
+        <input type="text">
        </div>
        <div class="form_control">
         <label for="">Chronic Condition</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Alergies</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
         </div>
 
 
-        <span>Health Status</span>
-        <div class="sections">
+        <h3>Health Status</h3>
+        <div class="flex_form">
     <div class="form_control">
         <label for="">Current Medications</label>
-        <input type="text" placeholder="input">
+        <input type="text">
       </div>
       <div class="form_control">
         <label for="">Vital Signs</label>
-        <input type="text" placeholder="input">
+        <input type="text">
       </div>
         </div>
         <button class="btn_submit" type="button">Book</button>
@@ -143,10 +143,10 @@
 
 
         <!----START OF THE ANTERNATAL LIST-->
-           <div class="anternal_list">
+           <div class="list_div">
     <div class="table_container">
             <div class="search_bar_container">
-                <h2>Anternal Patient Admission List</h2>
+                <h3>Anternal Patient Admission List</h3>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
             <table>
@@ -181,7 +181,7 @@
                         <i class="bi bi-three-dots" id="_transfer_icon3" onclick="_transfer_dropdowns3()"></i>
                     </td>
                 </tbody>
-                <div class="tranfer_box1 hide">
+                <div class="tranfer_div hide" id="tranfer_box1">
                     <i class="bi bi-x-lg red" onclick="_close_transfer_dropdowns3()"></i>
                 <ul>
                     <li onclick="_doc_transfer_from_antenatal()">Doctor Appoitment</li>
@@ -192,19 +192,19 @@
             </div>
         </table>
                  <!-----DOCTOR APPOITMENT--->
-                 <div class="doctor_appoitment3 hide">
+                 <div class="appoitments_div hide" id="doctor_appoitment3">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
             <span>Doctor Appoitment</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Available Doctors </label>
                     <select name="" id="">
                         <option value="">Doc. Patrick(Gynaecologist)</option>
@@ -212,9 +212,9 @@
                         <option value="">Doc. Moses(Medical Personel)</option>
                     </select>
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -222,21 +222,21 @@
 
 
                    <!-----LABOUR WARD APPOITMENT--->
-                   <div class="labour_ward_appoitment3 hide">
+                   <div class="appoitments_div hide" id="labour_ward_appoitment3">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
             <span>Labour Ward Unit</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -244,21 +244,21 @@
 
 
               <!-----LABOURATORY APPOITMENT--->
-              <div class="lab_appoitment3 hide">
+              <div class="appoitments_div hide" id="lab_appoitment3">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
             <span>Labouratory Unit</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -266,21 +266,21 @@
 
 
                       <!-----RADIOLOGY APPOITMENT--->
-                      <div class="radiology_appoitment3 hide">
+                      <div class="appoitments_div hide" id="radiology_appoitment3">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
             <span>Radiology Unit</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -356,37 +356,37 @@
                           <!---Prescribtion Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
             <div class="btn_patients_profile" id="drug_prescription_button">Drug Prescription</div>
             <div class="drug_prescribtion hide">
-            <form action="" class="_inputs">
+            <form action="" id="_inputs">
             <div class="div_flexs">
                                 <div class="form_control">
                                     <label for="">Drugs</label>
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="" id="drug">
                                 </div>
                                 <div class="form_control">
                                     <label for="">Strength</label>
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="" id="drug_strength">
                                 </div>
                                 <div class="form_control">
                                     <label for="">Mode</label>
-                                    <select name="" id="">
+                                    <select name="" id="drug_mode">
                             <option value="">Tablet</option>
                             <option value="">Capsule</option>
                    </select>
                   </div>
                 <div class="form_control">
                     <label for="">Frequency</label>
-                    <select name="" id="">
+                    <select name="" id="drug_freq">
                     <option value="">2 Days</option>
                     <option value="">24 Hours</option>
                    </select>
                 </div>
                 <div class="form_control">
                     <label for="">Qty</label>
-                    <input type="text">
+                  <input type="text" name="" id="drug_qty">
                 </div>
-                <i class="fa-solid fa-prescription-bottle-medical add_icon" ></i>
+                <i class="fa-solid fa-prescription-bottle-medical add_icon"id="add_icon" ></i>
                 </div>
-                <button class="btn_patients_profile btn_white">Book Drugs</button>
+                <button type="button" class="btn_patients_profile btn_white" onclick="_bookDrugs()">Book Drugs</button>
                   </form>
             </div>
 
@@ -652,6 +652,23 @@
     </div>
     </div>
 </div>
+<div class="drugs_booking hide" id="antenatal_drugs_booking">
+  <i class="bi bi-x-lg" id="close" onclick="_close_bookDrugs()"></i>
+    <h1>Drug Booking</h1>
+    <table id="dataTable">
+        <thead>
+            <td>Drugs Name</td>
+            <td>Strength </td>
+            <td>Mode </td>
+            <td>Frequency </td>
+            <td>Quantity </td>
+        </thead>
+        <tbody>
+          
+        </tbody>
+    </table>
+    <button>Book now</button>
+    </div>   
 </div>
   </div>
      <!----END OF THE ANTERNATAL -->
@@ -669,26 +686,25 @@
 
 
             <!----START OF THE POSTNATAL FORM-->
-            <div class="postnal_section hide">
-           <div class="form_container_for_postnatal">
+            <div class="container hide" id="postnatal_section">
+           <div class="form_container">
                <form action="">
-            <i class="bi bi-x-lg white"  id="close_postnatal" onclick="_close_transfer_patient_from_labour_to_postnatal()"></i>
         <h2>Postnatal Registration Form</h2>
-        <div class="upload_image_postnatal">
+        <div class="upload_div">
              <video id="videoElement_postnatal" width="400" height="300" autoplay></video>
-            <i class="bi bi-plus" id="capture_image_postnatal" onclick="openCamera1()"></i>
+            <i class="bi bi-plus capture_image_icon" id="capture_image_postnatal" onclick="openCamera1()"></i>
             <canvas id="canvasElement_postnatal" style="display: none;"></canvas>
-            <img id="capturedImage_postnatal" style="display: none;">
+            <img class="capturedImage" id="capturedImage_postnatal" style="display: none;">
         </div>
-        <div class="flex_capture_div">
-        <div class="btn_re_capture1 hide"  onclick="retakePicture1()">Recapture</div>
-        <div class="btn_capture1 hide" onClick="takePicture1()">Capture</div>
+        <div class="div_flex">
+            <div class="btn_capture hide" id="capture_patient2"onClick="takePicture1()">Capture</div>
+        <div class="btn_recapture hide"  id="recapture_patient2" onclick="retakePicture1()">Recapture</div>
     </div>
         <span>Patient Info</span>
-        <div class="sections">
+        <div class="flex_form">
     <div class="form_control">
         <label for="">Full name</label>
-        <input type="text" placeholder="John Smith">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Date of Birth</label>
@@ -696,56 +712,56 @@
         </div>
         <div class="form_control">
         <label for="">Address</label>
-        <input type="text" placeholder="Calabar">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Contact Number</label>
-        <input type="text" placeholder="+234 238 323 33">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Occupation</label>
-        <input type="text" placeholder="Banker">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Next of Kin</label>
-        <input type="text" placeholder="John Smith">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Relationship to Patient</label>
-        <input type="text" placeholder="Relation">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Next of Kin's Phone Number</label>
-        <input type="text" placeholder="+234 323 323 22">
+        <input type="text">
         </div>
         </div>
 
         <span>Medical History</span>
-        <div class="sections">
+        <div class="flex_form">
         <div class="form_control">
         <label for="">Gestational Age</label>
-        <input type="text" placeholder="input">
+        <input type="text">
        </div>
        <div class="form_control">
         <label for="">Complications during Pregnacy</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
        <div class="form_control">
         <label for="">Medical Conditions/Allergies</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
        <div class="form_control">
         <label for="">Previous Pregnacies/Births</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
        <div class="form_control">
         <label for="">Medications/Supplements during Pregnacy</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
         </div>
 
         <span>Delivery Details</span>
-        <div class="sections">
+        <div class="flex_form">
         <div class="form_control">
         <label for="">Date of Delivery</label>
         <input type="date">
@@ -756,19 +772,19 @@
         </div>
         <div class="form_control">
         <label for="">Mode of Delivery</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Birth Weight of Baby</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Apgar Scores</label>
-        <input type="text" placeholder="input"> 
+        <input type="text"> 
         </div>
         <div class="form_control">
         <label for="">Complications During Delivery</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
         </div>
         <button class="btn_submit" type="button">Book</button>
@@ -834,17 +850,17 @@
             <i class="bi bi-x-lg red" onclick="_close_all_appoitment2()"></i>
                 <span>Nurse Station</span>
                 <form action="" id="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
                 </form>
@@ -856,15 +872,15 @@
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
             <span>Doctor Appoitment</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Available Doctors </label>
                     <select name="" id="">
                         <option value="">Doc. Patrick(Gynaecologist)</option>
@@ -872,9 +888,9 @@
                         <option value="">Doc. Moses(Medical Personel)</option>
                     </select>
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -885,7 +901,7 @@
    <div class="postnatal_ward hide">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
             <span>Postnatal Ward</span>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Ward  1</label>
                     <select name="" id="">
                         <option value="">Bed 1</option>
@@ -897,7 +913,7 @@
                         <option value="">Bed 7</option>
                     </select>
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Ward  2</label>
                     <select name="" id="">
                         <option value="">Bed 1</option>
@@ -909,7 +925,7 @@
                         <option value="">Bed 7</option>
                     </select>
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Ward  3</label>
                     <select name="" id="">
                         <option value="">Bed 1</option>
@@ -930,17 +946,17 @@
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
             <span>Labouratory Unit</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -951,17 +967,17 @@
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
             <span>Radiology Unit</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -1062,38 +1078,38 @@
                                           <!---Drug Prescription Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
                         <div class= "btn_patients_profile" id="drug_prescription_button2"> Drug Prescription</div>
                         <div class="drug_prescribtion2 hide">
-                        <form action="">
+                        <form action="" id="_inputs2">
                         <span>Drug Prescribion</span>
                         <div class="div_flexs">
                                 <div class="form_control">
                                     <label for="">Drugs</label>
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="" id="drug2">
                                 </div>
                                 <div class="form_control">
                                     <label for="">Strength</label>
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="" id="drug_strength2">
                                 </div>
                                 <div class="form_control">
                                     <label for="">Mode</label>
-                                    <select name="" id="">
+                                    <select name="" id="drug_mode2">
                             <option value="">Tablet</option>
                             <option value="">Capsule</option>
                    </select>
                                 </div>
                 <div class="form_control">
                     <label for="">Frequency</label>
-                    <select name="" id="">
+                    <select name="" id="drug_freq2">
                     <option value="">2 Days</option>
                     <option value="">24 Hours</option>
                    </select>
                 </div>
                 <div class="form_control">
                     <label for="">Qty</label>
-                    <input type="text">
+                    <input type="text" name="" id="drug_qty2">
                 </div>
-                <i class="fa-solid fa-prescription-bottle-medical add_icon" ></i>
+                <i class="fa-solid fa-prescription-bottle-medical add_icon"  id="add_icon2"></i>
                 </div>
-                <button class="btn_patients_profile btn_white">Book Drugs</button>
+                <button type = "button" class="btn_patients_profile btn_white" onclick="_bookDrugs2()">Book Drugs</button>
                         </form>
                         </div>
                         <button class="btn_patients_profile">Save all</button>
@@ -1241,7 +1257,29 @@
 </div>
 </div>
                 </div>
+                    <div class="drugs_booking hide" id="postnatal_drugs_booking">
+  <i class="bi bi-x-lg" id="close" onclick="_close_bookDrugs2()"></i>
+    <h1>Drug Booking</h1>
+    <table id="dataTable2">
+        <thead>
+            <td>Drugs Name</td>
+            <td>Strength </td>
+            <td>Mode </td>
+            <td>Frequency </td>
+            <td>Quantity </td>
+        </thead>
+        <tbody>
+          
+        </tbody>
+    </table>
+    <button>Book now</button>
+    </div>   
                     </div>
+
+
+
+
+                    
                        <!----END OF THE POSTNATAL -->
 
 
@@ -1255,30 +1293,26 @@
 
 
 
-
-
-
    <!----START OF THE LABOUR FORM-->
-   <div class="labour_section hide">
-           <div class="form_container_for_labor">
+   <div class="container hide" id="labour_section">
+           <div class="form_container">
         <form action="">
-        <i class="bi bi-x-lg white"  id="close_labor" onclick="_close_transfer_patient_from_antenatal_to_labour()"></i>
         <h2>Labour Registration Form</h2>
-        <div class="upload_image_labor">
+        <div class="upload_div">
              <video id="videoElement_labor" width="400" height="300" autoplay></video>
-            <i class="bi bi-plus" id="capture_image_labor" onclick="openCamera3()"></i>
+            <i class="bi bi-plus capture_image_icon" id="capture_image_labor" onclick="openCamera3()"></i>
             <canvas id="canvasElement_labor" style="display: none;"></canvas>
-            <img id="capturedImage_labor" style="display: none;">
+            <img class="capturedImage" id="capturedImage_labor" style="display: none;">
         </div>
-        <div class="flex_capture_div">
-        <div class="btn_re_capture3 hide"  onclick="retakePicture3()">Recapture</div>
-        <div class="btn_capture3 hide" onClick="takePicture3()">Capture</div>
+        <div class="div_flex">
+            <div class="btn_capture hide" id="capture_patient3" onClick="takePicture3()">Capture</div>
+        <div class="btn_recapture hide" id="recapture_patient3"  onclick="retakePicture3()">Recapture</div>
     </div>
         <span>Patient Info</span>
-        <div class="sections">
+        <div class="flex_form">
     <div class="form_control">
         <label for="">Full name</label>
-        <input type="text" placeholder="John Smith">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Date of Birth</label>
@@ -1286,60 +1320,60 @@
         </div>
         <div class="form_control">
         <label for="">Address</label>
-        <input type="text" placeholder="Calabar">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Contact Number</label>
-        <input type="text" placeholder="+234 238 323 33">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Occupation</label>
-        <input type="text" placeholder="Banker">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Next of Kin</label>
-        <input type="text" placeholder="John Smith">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Next of Kin's Phone Number</label>
-        <input type="text" placeholder="+234 323 323 22">
+        <input type="text">
         </div>
         </div>
 
         <span>Medical History</span>
-        <div class="sections">
+        <div class="flex_form">
         <div class="form_control">
         <label for="">Antenatal  Clinic Attended</label>
-        <input type="text" placeholder="input">
+        <input type="text">
        </div>
        <div class="form_control">
         <label for="">Expected Due date of Delivery</label>
-        <input type="date" placeholder="input">
+        <input type="date">
         </div>
        <div class="form_control">
         <label for="">Number of Pregnacies and Live Births</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
        <div class="form_control">
         <label for="">Blood Group</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
        <div class="form_control">
         <label for="">Rhesus Factor</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
        <div class="form_control">
         <label for="">Hiv Status</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
        <div class="form_control">
         <label for="">Medical Condition</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
         </div>
 
         <span>Labour Details</span>
-        <div class="sections">
+        <div class="flex_form">
         <div class="form_control">
         <label for="">Date of Onset of Labor</label>
         <input type="date">
@@ -1350,19 +1384,19 @@
         </div>
         <div class="form_control">
         <label for="">Duration of Labor</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Constration</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
         <div class="form_control">
         <label for="">Fetal Movements</label>
-        <input type="text" placeholder="input"> 
+        <input type="text"> 
         </div>
         <div class="form_control">
         <label for="">Pain Level</label>
-        <input type="text" placeholder="input">
+        <input type="text">
         </div>
         </div>
         <button class="btn_submit" type="button">Book</button>
@@ -1420,7 +1454,7 @@
                     <li onclick="_lab_transfer_from_labour()">Transfer to Labouratory</li>
                     <li onclick="_radiology_transfer_from_labour()">Transfer to Radiology</li>
                     <li onclick="_icu_transfer_from_labour()">Transfer to I.C.U</li>
-                    <li onclick="_transfer_patient_from_labour_to_postnatal()">Transfer to Postnatal Unit</li>
+                    <li onclick="_switch_to_postnatal_labour()">Transfer to Postnatal Unit</li>
                 </ul>
             </div>
             </table>
@@ -1429,17 +1463,17 @@
             <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
                 <span>Nurse Station</span>
                 <form action="" id="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
                 </form>
@@ -1451,15 +1485,15 @@
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
             <span>Doctor Appoitment</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Available Doctors </label>
                     <select name="" id="">
                         <option value="">Doc. Patrick(Gynaecologist)</option>
@@ -1467,9 +1501,9 @@
                         <option value="">Doc. Moses(Medical Personel)</option>
                     </select>
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -1480,17 +1514,17 @@
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
             <span>Surgical Suite Unit</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -1500,7 +1534,7 @@
                         <div class="labour_ward_appoitment hide">
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
             <span>Labour Ward Unit</span>
-            <div class="form_control">
+            <div class="form_control large">
                     <label for="">Ward  1</label>
                     <select name="" id="">
                         <option value="">Bed 1</option>
@@ -1512,7 +1546,7 @@
                         <option value="">Bed 7</option>
                     </select>
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Ward  2</label>
                     <select name="" id="">
                         <option value="">Bed 1</option>
@@ -1524,7 +1558,7 @@
                         <option value="">Bed 7</option>
                     </select>
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Ward  3</label>
                     <select name="" id="">
                         <option value="">Bed 1</option>
@@ -1544,17 +1578,17 @@
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
             <span>Labouratory Unit</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -1565,17 +1599,17 @@
             <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
             <span>Radiology Unit</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
@@ -1586,20 +1620,27 @@
             <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
             <span>I.C.U Unit</span>
             <form action="">
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Patient Id</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="form_control">
+                <div class="form_control large">
                     <label for="">Reasons for Booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 <button class="btn_app">Request</button>
             </form>
+            </div>
+        </div>
+        <div class="dynamic_popup hide" id="switch_to_postnatal">
+            <span>Are you sure you want to Postnatal Unit</span>
+            <div class="div_switch">
+                <span>Yes</span>
+                <span>No</span>
             </div>
         </div>
     </div>
@@ -1703,37 +1744,37 @@
                           <!---Prescribtion Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
             <div class="btn_patients_profile" id="drug_prescription_button3">Drug Prescription</div>
             <div class="drug_prescribtion3 hide">
-            <form action="" class="_inputs">
+            <form action="" id="_inputs3">
             <div class="div_flexs">
                                 <div class="form_control">
                                     <label for="">Drugs</label>
-                                    <input type="text" name="" id="drugs">
+                                    <input type="text" name="" id="drug3">
                                 </div>
                                 <div class="form_control">
                                     <label for="">Strength</label>
-                                    <input type="text" name="" id="drugs_strength">
+                                    <input type="text" name="" id="drug_strength3">
                                 </div>
                                 <div class="form_control">
                                     <label for="">Mode</label>
-                                    <select name="" id="drug_mode">
+                                    <select name="" id="drug_mode3">
                             <option value="">Tablet</option>
                             <option value="">Capsule</option>
                    </select>
                   </div>
                 <div class="form_control">
                     <label for="">Frequency</label>
-                    <select name="" id="drug_freq">
+                    <select name="" id="drug_freq3">
                     <option value="">2 Days</option>
                     <option value="">24 Hours</option>
                    </select>
                 </div>
                 <div class="form_control">
                     <label for="">Qty</label>
-                    <input type="text" name="" id="drug_qty">
+                    <input type="text" name="" id="drug_qty3">
                 </div>
-                <i class="fa-solid fa-prescription-bottle-medical add_icon" ></i>
+                <i class="fa-solid fa-prescription-bottle-medical add_icon" id="add_icon3"></i>
                 </div>
-                <button type="button" class="btn_patients_profile btn_white" onclick="_bookDrugs()">Book Drugs</button>
+                <button type="button" class="btn_patients_profile btn_white" onclick="_bookDrugs3()">Book Drugs</button>
                   </form>
             </div>
 
@@ -1949,8 +1990,8 @@
 </div>
 </div>
 
-  <div class="drugs_booking hide">
-  <i class="bi bi-x-lg" id="close" onclick="_close_bookDrugs()"></i>
+  <div class="drugs_booking hide" id="labour_drugs_booking">
+  <i class="bi bi-x-lg" id="close" onclick="_close_bookDrugs3()"></i>
     <h1>Drug Booking</h1>
     <table id="dataTable3">
         <thead>

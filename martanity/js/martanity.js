@@ -7,51 +7,52 @@
   
 
 //DIFFERENT SECTIONS 
-function postnalSection(){
-  document.querySelector(".antenal_section").style.display = "none";
-  document.querySelector(".postnal_section").classList.remove("hide");
-  document.querySelector(".labour_section").classList.add("hide");
+function antenatalSection(){
+  document.querySelector("#antenatal_section").style.display = "flex";
+  document.querySelector("#postnatal_section").classList.add("hide");
+  document.querySelector("#labour_section").classList.add("hide");
+  document.querySelector(".antenatal_patients_profile").classList.add("hide");
+  document.querySelector(".postnatal_patients_profile").classList.add("hide");
+  document.querySelector(".labour_patients_profile").classList.add("hide");
+}
+function postnatalSection(){
+  document.querySelector("#antenatal_section").style.display = "none";
+  document.querySelector("#postnatal_section").classList.remove("hide");
+  document.querySelector("#labour_section").classList.add("hide");
   document.querySelector(".antenatal_patients_profile").classList.add("hide");
   document.querySelector(".postnatal_patients_profile").classList.add("hide");
   document.querySelector(".form_container_for_postnatal").classList.remove("pop_up");
   document.querySelector(".labour_patients_profile").classList.add("hide");
 }
-function antenatalSection(){
-  document.querySelector(".antenal_section").style.display = "flex";
-  document.querySelector(".postnal_section").classList.add("hide");
-  document.querySelector(".labour_section").classList.add("hide");
-  document.querySelector(".antenatal_patients_profile").classList.add("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-}
+
 function labourSection(){
-  document.querySelector(".antenal_section").style.display = "none";
-  document.querySelector(".postnal_section").classList.add("hide");
-  document.querySelector(".labour_section").classList.remove("hide");
+  document.querySelector("#antenatal_section").style.display = "none";
+  document.querySelector("#postnatal_section").classList.add("hide");
+  document.querySelector("#labour_section").classList.remove("hide");
   document.querySelector(".antenatal_patients_profile").classList.add("hide");
   document.querySelector(".postnatal_patients_profile").classList.add("hide");
   document.querySelector(".labour_patients_profile").classList.add("hide");
 }
 function anternal_patient_profile_section(){
-  document.querySelector(".antenal_section").style.display = "none";
-  document.querySelector(".postnal_section").classList.add("hide");
-  document.querySelector(".labour_section").classList.add("hide");
+  document.querySelector("#antenatal_section").style.display = "none";
+  document.querySelector("#postnatal_section").classList.add("hide");
+  document.querySelector("#labour_section").classList.add("hide");
   document.querySelector(".antenatal_patients_profile").classList.remove("hide");
   document.querySelector(".postnatal_patients_profile").classList.add("hide");
   document.querySelector(".labour_patients_profile").classList.add("hide");
 }
 function postnatal_patient_profile_section(){
-  document.querySelector(".antenal_section").style.display = "none";
-  document.querySelector(".postnal_section").classList.add("hide");
-  document.querySelector(".labour_section").classList.add("hide");
+  document.querySelector("#antenatal_section").style.display = "none";
+  document.querySelector("#postnatal_section").classList.add("hide");
+  document.querySelector("#labour_section").classList.add("hide");
   document.querySelector(".antenatal_patients_profile").classList.add("hide");
   document.querySelector(".postnatal_patients_profile").classList.remove("hide");
   document.querySelector(".labour_patients_profile").classList.add("hide");
 }
 function labour_patient_profile_section(){
-  document.querySelector(".antenal_section").style.display = "none";
-  document.querySelector(".postnal_section").classList.add("hide");
-  document.querySelector(".labour_section").classList.add("hide");
+  document.querySelector("#antenatal_section").style.display = "none";
+  document.querySelector("#postnatal_section").classList.add("hide");
+  document.querySelector("#labour_section").classList.add("hide");
   document.querySelector(".antenatal_patients_profile").classList.add("hide");
   document.querySelector(".postnatal_patients_profile").classList.add("hide");
   document.querySelector(".labour_patients_profile").classList.remove("hide");
@@ -60,76 +61,7 @@ function labour_patient_profile_section(){
 
 
 
-$('#close_postnatal').css({
-  display: 'none',
-})
 
-//TRANSFER FROM LABOUR UNIT TO POSTNATAL UNIT
-function _transfer_patient_from_labour_to_postnatal(){
-  document.querySelector(".form_container_for_postnatal").classList.remove("hide");
-  $('.form_container_for_postnatal').css({
-    position:'absolute',
-    zIndex: '13',
-    left:'18%'
-});
-$('#close_postnatal').css({
-  display: 'block',
-})
-  document.querySelector(".postnatal_list").classList.add("hide");
-  document.querySelector(".postnal_section").classList.remove("hide");
-  document.querySelector(".overlay").classList.remove("hide");
-};
-
-function _close_transfer_patient_from_labour_to_postnatal(){
-  document.querySelector(".form_container_for_postnatal").classList.remove("hide");
-  $('.form_container_for_postnatal').css({
-    position:'relative',
-    zIndex: '0',
-    left:'0%'
-});
-$('#close_postnatal').css({
-  display: 'none',
-})
-  document.querySelector(".postnatal_list").classList.remove("hide");
-  document.querySelector(".postnal_section").classList.add("hide");
-  document.querySelector(".overlay").classList.add("hide");
-};
-
-$('#close_labor').css({
-  display: 'none',
-})
-
-//TRANSFER FROM ANTENATAL UNIT TO LABOUR UNIT
-function _transfer_patient_from_antenatal_to_labour(){
-  document.querySelector(".form_container_for_labor").classList.remove("hide");
-  $('.form_container_for_labor').css({
-    position:'absolute',
-    zIndex: '13',
-    left:'18%',
-    top:'0',
-});
-$('#close_labor').css({
-  display: 'block',
-})
-  document.querySelector(".labor_list").classList.add("hide");
-  document.querySelector(".labour_section").classList.remove("hide");
-  document.querySelector(".overlay").classList.remove("hide");
-};
-
-function _close_transfer_patient_from_antenatal_to_labour(){
-  document.querySelector(".form_container_for_labor").classList.remove("hide");
-  $('.form_container_for_labor').css({
-    position:'relative',
-    zIndex: '0',
-    left:'0%'
-});
-$('#close_labor').css({
-  display: 'none',
-})
-  document.querySelector(".labor_list").classList.remove("hide");
-  document.querySelector(".labour_section").classList.add("hide");
-  document.querySelector(".overlay").classList.add("hide");
-}
 
 
 
@@ -188,14 +120,14 @@ _display_anternal_radiology_input();
 
 //DOCTOR
 function _doc_transfer_from_antenatal(){
-  $('.doctor_appoitment3').removeClass('hide');
+  $('#doctor_appoitment3').removeClass('hide');
   $('.background_opacity3').removeClass('hide');
   $('.tranfer_box3').addClass('hide');
 };
 
 //POSTNATAL WARD
 function _labour_transfer_from_antenal(){
-  $('.labour_ward_appoitment3').removeClass('hide');
+  $('#labour_ward_appoitment3').removeClass('hide');
   $('.background_opacity3').removeClass('hide');
   $('.tranfer_box3').addClass('hide');
 };
@@ -203,14 +135,14 @@ function _labour_transfer_from_antenal(){
 
 //LABOURATORY
 function  _lab_transfer_from_antenatal(){
-  $('.lab_appoitment3').removeClass('hide');
+  $('#lab_appoitment3').removeClass('hide');
   $('.background_opacity3').removeClass('hide');
   $('.tranfer_box3').addClass('hide');
 };
 
 //RADIOLOGY
 function _radiology_transfer_from_antenatal(){
-  $('.radiology_appoitment3').removeClass('hide');
+  $('#radiology_appoitment3').removeClass('hide');
   $('.background_opacity3').removeClass('hide');
   $('.tranfer_box3').addClass('hide');
 };
@@ -218,10 +150,10 @@ function _radiology_transfer_from_antenatal(){
 
 //CLOSE ALL APPOITMENT
 function _close_all_appoitment3(){;
-    $('.doctor_appoitment3').addClass('hide');
-    $('.labour_ward_appoitment3').addClass('hide');
-    $('.lab_appoitment3').addClass('hide');
-    $('.radiology_appoitment3').addClass('hide');
+    $('#doctor_appoitment3').addClass('hide');
+    $('#labour_ward_appoitment3').addClass('hide');
+    $('#lab_appoitment3').addClass('hide');
+    $('#radiology_appoitment3').addClass('hide');
     $('.background_opacity3').removeClass('hide');
 }
 
@@ -389,61 +321,231 @@ function _close_all_appoitment2(){
 
 
 
-//BOOK DRUG PRESCRIPTION
+//LABOUR PRESCRIPTION DRUGS BOOKING
+
+function _bookDrugs3(){
+  $('.overlay').removeClass('hide');
+  $('#labour_drugs_booking').removeClass('hide');
+}
+function _close_bookDrugs3(){
+  $('.overlay').addClass('hide');
+  $('#labour_drugs_booking').addClass('hide');
+}
+function addRow3() {
+  var form3 = document.querySelector('.drug_prescribtion3 #_inputs3');
+
+  var drugsInput3 = form3.querySelector('#drug3').value;
+  var drugsStrengthInput3 = form3.querySelector('#drug_strength3').value;
+  var drugModeSelect3 = form3.querySelector('#drug_mode3');
+  var drugFreqSelect3 = form3.querySelector('#drug_freq3');
+  var drugQtyInput3 = form3.querySelector('#drug_qty3').value;
+
+  // Get the selected option text for mode and frequency
+  var drugModeSelectedText3 = drugModeSelect3.options[drugModeSelect3.selectedIndex].text;
+  var drugFreqSelectedText3 = drugFreqSelect3.options[drugFreqSelect3.selectedIndex].text;
+
+  var table = document.getElementById("dataTable3").getElementsByTagName('tbody')[0];
+  var newRow = table.insertRow(table.rows.length);
+  var cells = [];
+  for (var i = 0; i < 5; i++) {
+      cells.push(newRow.insertCell(i));
+  }
+  cells[0].innerHTML = drugsInput3;
+  cells[1].innerHTML = drugsStrengthInput3;
+  cells[2].innerHTML = drugModeSelectedText3; // Insert selected option text for mode
+  cells[3].innerHTML = drugFreqSelectedText3; // Insert selected option text for frequency
+  cells[4].innerHTML = drugQtyInput3;
+
+  // Clear input fields
+  form3.querySelector('#drug3').value = '';
+  form3.querySelector('#drug_strength3').value = '';
+  form3.querySelector('#drug_mode3').selectedIndex = 0;
+  form3.querySelector('#drug_freq3').selectedIndex = 0;
+  form3.querySelector('#drug_qty3').value = '';
+}
+
+// Function to add drugs when the add icon is clicked
+function add_drugs3(){
+$('#add_icon3').on('click', function(){
+  addRow3();
+});
+}
+
+// Call the function to add drugs
+add_drugs3();
+
+///////////////////////////
+
+
+
+
+
+//ANTENATAL PRESCRIPTION DRUGS BOOKING
 function _bookDrugs(){
   $('.overlay').removeClass('hide');
-  $('.drugs_booking').removeClass('hide');
+  $('#antenatal_drugs_booking').removeClass('hide');
 }
 function _close_bookDrugs(){
   $('.overlay').addClass('hide');
-  $('.drugs_booking').addClass('hide');
+  $('#antenatal_drugs_booking').addClass('hide');
+}
+function addRow() {
+  var form = document.querySelector('.drug_prescribtion #_inputs');
+
+  var drugsInput = form.querySelector('#drug').value;
+  var drugsStrengthInput = form.querySelector('#drug_strength').value;
+  var drugModeSelect = form.querySelector('#drug_mode');
+  var drugFreqSelect = form.querySelector('#drug_freq');
+  var drugQtyInput = form.querySelector('#drug_qty').value;
+
+  // Get the selected option text for mode and frequency
+  var drugModeSelectedText = drugModeSelect.options[drugModeSelect.selectedIndex].text;
+  var drugFreqSelectedText = drugFreqSelect.options[drugFreqSelect.selectedIndex].text;
+
+  var table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
+  var newRow = table.insertRow(table.rows.length);
+  var cells = [];
+  for (var i = 0; i < 5; i++) {
+      cells.push(newRow.insertCell(i));
+  }
+  cells[0].innerHTML = drugsInput;
+  cells[1].innerHTML = drugsStrengthInput;
+  cells[2].innerHTML = drugModeSelectedText; // Insert selected option text for mode
+  cells[3].innerHTML = drugFreqSelectedText; // Insert selected option text for frequency
+  cells[4].innerHTML = drugQtyInput;
+
+  // Clear input fields
+  form.querySelector('#drug').value = '';
+  form.querySelector('#drug_strength').value = '';
+  form.querySelector('#drug_mode').selectedIndex = 0;
+  form.querySelector('#drug_freq').selectedIndex = 0;
+  form.querySelector('#drug_qty').value = '';
 }
 
-function  _drug_prescribtion_tableData(){
-        //ADD THE AMOUNT ON WHICH CLICKED TO THE LIST OF RECEIPTon update_table(){
-                const tableBody = document.getElementById('dataTable3').getElementsByTagName('tbody')[0];
-                
-                tableBody.innerHTML = "";
-                const drug = document.querySelectorAll("#drugs")
-                drug.forEach(function(drug){
-                    console.log(drug.value);
-
-                    const newRow = tableBody.insertRow();
-                    let cell0 = newRow.insertCell(0);
-                    cell0.textContent = drug.value;
-                })
-
-                // const strength = document.querySelectorAll("#drugs_strength")
-                // strength.forEach(function(drug_strength){
-                //   const newRow = tableBody.insertRow();
-                //   let cell1 = newRow.insertCell(1);
-                //   cell1.textContent = drug_strength.value;
-                // })
-
-              }
-
-              _drug_prescribtion_tableData()
-
-//SUM ALL THE LAB TEST PRICES
-window.onload = function() {
-        const checkboxs = document.querySelectorAll(".checkbox");
-        function updateSum(){
-                let sum = 0;
-        checkboxs.forEach(function(checkbox){
-                      if(checkbox.checked){
-                        sum += parseInt(checkbox.value, 10);
-                      }
-                      let testSum = document.querySelector("#total");
-                    testSum.textContent = sum
-        })
-        }
-        checkboxs.forEach(function(checkbox){
-                checkbox.addEventListener('change', ()=>{
-                        update_table();
-                        updateSum();
-                })
-        })
+// Function to add drugs when the add icon is clicked
+function add_drugs(){
+$('#add_icon').on('click', function(){
+  addRow();
+});
 }
+
+// Call the function to add drugs
+add_drugs();
+
+///////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//POSTINATAL PRESCRIPTION DRUGS BOOKING
+function _bookDrugs2(){
+  $('.overlay').removeClass('hide');
+  $('#postnatal_drugs_booking').removeClass('hide');
+}
+function _close_bookDrugs2(){
+  $('.overlay').addClass('hide');
+  $('#postnatal_drugs_booking').addClass('hide');
+}
+function addRow2() {
+  var form2 = document.querySelector('.drug_prescribtion2 #_inputs2');
+
+  var drugsInput2 = form2.querySelector('#drug2').value;
+  var drugsStrengthInput2 = form2.querySelector('#drug_strength2').value;
+  var drugModeSelect2 = form2.querySelector('#drug_mode2');
+  var drugFreqSelect2 = form2.querySelector('#drug_freq2');
+  var drugQtyInput2 = form2.querySelector('#drug_qty2').value;
+
+  // Get the selected option text for mode and frequency
+  var drugModeSelectedText2 = drugModeSelect2.options[drugModeSelect2.selectedIndex].text;
+  var drugFreqSelectedText2 = drugFreqSelect2.options[drugFreqSelect2.selectedIndex].text;
+
+  var table = document.getElementById("dataTable2").getElementsByTagName('tbody')[0];
+  var newRow = table.insertRow(table.rows.length);
+  var cells = [];
+  for (var i = 0; i < 5; i++) {
+      cells.push(newRow.insertCell(i));
+  }
+  cells[0].innerHTML = drugsInput2;
+  cells[1].innerHTML = drugsStrengthInput2;
+  cells[2].innerHTML = drugModeSelectedText2; // Insert selected option text for mode
+  cells[3].innerHTML = drugFreqSelectedText2; // Insert selected option text for frequency
+  cells[4].innerHTML = drugQtyInput2;
+
+  // Clear input fields
+  form2.querySelector('#drug2').value = '';
+  form2.querySelector('#drug_strength2').value = '';
+  form2.querySelector('#drug_mode2').selectedIndex = 0;
+  form2.querySelector('#drug_freq2').selectedIndex = 0;
+  form2.querySelector('#drug_qty2').value = '';
+}
+
+// Function to add drugs when the add icon is clicked
+function add_drugs2(){
+$('#add_icon2').on('click', function(){
+  addRow2();
+});
+}
+
+// Call the function to add drugs
+add_drugs2();
+
+//////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -452,14 +554,14 @@ window.onload = function() {
 function _transfer_dropdowns3(){
   $('#_transfer_icon3').on('click', function(ev){
     ev.stopPropagation();
-    $('.tranfer_box1').removeClass('hide');
+    $('#tranfer_box1').removeClass('hide');
     $('.background_opacity3').removeClass('hide');
   })
 }
 _transfer_dropdowns3();
 
 function _close_transfer_dropdowns3(){
-  $('.tranfer_box1').addClass('hide');
+  $('#tranfer_box1').addClass('hide');
   $('.background_opacity3').addClass('hide');
 }
 
@@ -563,6 +665,12 @@ function _radiology_transfer_from_labour(){
 // ICU
 function _icu_transfer_from_labour(){
   $('.icu_appoitment').removeClass('hide');
+  $('.background_opacity').removeClass('hide');
+  $('.tranfer_box').addClass('hide');
+}
+// SWITCH TO POSTNATAL UNIT
+function _switch_to_postnatal_labour(){
+  $('#switch_to_postnatal').removeClass('hide');
   $('.background_opacity').removeClass('hide');
   $('.tranfer_box').addClass('hide');
 }
@@ -670,7 +778,7 @@ function _labour_successfull_screening(){
 
 
 
-
+//////////////////////////////////////////////CAMERA//////////////////////////////////////////////////
 
 
 
@@ -693,10 +801,10 @@ function openCamera1() {
     const capture_image = document.querySelector('#capture_image_postnatal');
     capture_image.style.display="none"
 
-    const showClickButton = document.querySelector(".btn_capture1")
+    const showClickButton = document.querySelector("#capture_patient2")
     showClickButton.classList.remove("hide");
 
-    const showClickButtonForRecapture = document.querySelector(".btn_re_capture1")
+    const showClickButtonForRecapture = document.querySelector("#recapture_patient2")
     showClickButtonForRecapture.classList.remove("hide")
 }
 
@@ -761,10 +869,10 @@ function openCamera2() {
     const capture_image = document.querySelector('#capture_image_antenatal');
     capture_image.style.display="none"
 
-    const showClickButton = document.querySelector(".btn_capture2")
+    const showClickButton = document.querySelector("#capture_patient1")
     showClickButton.classList.remove("hide");
 
-    const showClickButtonForRecapture = document.querySelector(".btn_re_capture2")
+    const showClickButtonForRecapture = document.querySelector("#recapture_patient1")
     showClickButtonForRecapture.classList.remove("hide")
 }
 
@@ -808,7 +916,7 @@ function stopCamera2() {
   }
 }
 
-//camera for antenatal
+//camera for labour
 let videoElement3 = document.getElementById('videoElement_labor');
 let canvasElement3 = document.getElementById('canvasElement_labor');
 let capturedImageElement3 = document.getElementById('capturedImage_labor');
@@ -827,10 +935,10 @@ function openCamera3() {
     const capture_image = document.querySelector('#capture_image_labor');
     capture_image.style.display="none"
 
-    const showClickButton = document.querySelector(".btn_capture3")
+    const showClickButton = document.querySelector("#capture_patient3")
     showClickButton.classList.remove("hide");
 
-    const showClickButtonForRecapture = document.querySelector(".btn_re_capture3")
+    const showClickButtonForRecapture = document.querySelector("#recapture_patient3")
     showClickButtonForRecapture.classList.remove("hide")
 }
 

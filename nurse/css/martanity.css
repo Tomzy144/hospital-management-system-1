@@ -225,71 +225,13 @@ body{
     cursor: pointer;
     margin: 1rem 0;
 }
-.contents{
-    width: 100%;
-    height: 100vh;
-    background-image: url(../Images/19374.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.button_container{
-    width:80%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-#btn_sections{
-    background: none;
-    border: 4px solid #fff;
-    color: #ffffff;
-    border-radius: 5px;
-    font-size: 20px;
-    padding: 0.6rem;
-    cursor: pointer;
-    margin: 1rem 1rem;
-    transition: all ease-in-out 0.5s;
-    animation: zoomIn 01s ease-in-out;
-}
-#btn_sections:hover{
-    background-color: rgb(0, 158, 251);
-    padding: 0.6rem;
-    cursor: pointer;
-    margin: 1rem 1rem;
-    transform: translate(1.3);
-    color: #fff;
-}
 
-.form_section{
-    display: none;
-  }
-  .current_section{
-    display: block;
-    animation: zoomIn 1s ease-in-out;
-  }
 h1{
     font-size: 25px;
     text-align: center;
     animation: slideInLeft 1s ease-in-out;
     margin: 1rem 0;
     letter-spacing: 3px;
-}
-.form_container_for_antenatal{
-    width: 1000px;
-    height: fit-content;
-    padding: 2rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: #fff;
-    margin: 4.2rem auto 0;
-    overflow: hidden;
-    color: rgb(42, 87, 215);
-    animation: fadeIn 1s ease-in-out;
 }
 
 form{
@@ -305,9 +247,7 @@ form span{
     letter-spacing: 4px;
     animation: slideInLeft 1s ease-in-out;
 }
-.form_control_group{
-    display: flex;
-  }
+
 .form_control{
     width: 100%;
     display: flex;
@@ -315,7 +255,7 @@ form span{
     margin: 0.8rem 0.5rem;
     flex-direction: column;
 }
-.form_container_for_antenatal .form_control input{
+ .form_control input{
     padding: 0.6rem;
     border: none;
     border-bottom: 1px solid rgb(42, 87, 215);
@@ -323,123 +263,14 @@ form span{
     width: 100%;
 
 }
-.form_container_for_antenatal .form_control input:focus{
+ .form_control input:focus{
     border: 2px solid rgb(42, 87, 215);
 }
+ textarea{
+    width: 100%;
+    height: 40px;
+}
 
-.upload_image_antenatal{
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;
-    box-shadow: rgba(207, 205, 205, 0.35) 0px 5px 15px;
-    margin: 1rem auto;
-    overflow: hidden;;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);;
-    position: relative;
-    text-align: center;
-}
-.upload_image_antenatal h1{
-    padding: 2rem;
-    font-size: 30px;
-    position: absolute;
-}
-#capture_image_antenatal{
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    border-radius: 100%;
-    padding: 0.5rem;
-    width: max-content;
-    position: absolute;
-    right:9%;
-    bottom: 14%;
-    background-color: rgb(42, 87, 215);
-}
-#capturedImage_antenatal{
-    position: absolute;
-}
-.btn_capture2{
-    width: 100%;
-    padding: 0.5rem;
-    border: none;
-    margin: 0.5rem 0.5rem;
-    text-align: center;
-    border-radius: 20px;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-}
-.btn_re_capture2{
-    width: 100%;
-    padding: 0.5rem;
-    text-align: center;
-    margin: 0.5rem 0.5rem;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-}
-.btn_re_capture2:hover{
-    background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
-}
-.btn_capture2:hover{
-    background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
-}
-.btn_next1, .btn_next2, .btn_next3{
-    width: 100%;
-    background-color: rgb(42, 87, 215);
-    padding: 0.7rem;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    transition: all  ease-in-out 0.6s;
-    cursor: pointer;
-    margin: 1rem 0;
-}
-.btn_back2{
-    width: 100%;
-    background-color: rgb(42, 87, 215);
-    padding: 0.7rem;
-    border: none;
-    color: #fff;
-    border-radius: 5px;
-    transition: all  ease-in-out 0.6s;
-    cursor: pointer;
-    margin: 1rem 0;
-}
-.btn_back2:hover{
-    transform: scale(0.98);
-    background-color: #fff;
-    color:rgb(42, 87, 215);
-    border: 1px solid rgb(42, 87, 215);
-}
-.btn_back3{
-    width: 100%;
-    background-color: rgb(42, 87, 215);
-    padding: 0.7rem;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    transition: all  ease-in-out 0.6s;
-    cursor: pointer;
-    margin: 1rem 0;
-}
-.btn_back3:hover{
-    transform: scale(0.98);
-    background-color: #fff;
-    color:rgb(42, 87, 215);
-    border: 1px solid rgb(42, 87, 215);
-}
 .btn_submit{
     width: 100%;
     background-color: rgb(42, 87, 215);
@@ -458,120 +289,7 @@ form span{
     border: 1px solid rgb(42, 87, 215);
 }
 
-.btn_next1:hover{
-    transform: scale(0.98);
-    background-color: #fff;
-    color:rgb(42, 87, 215);
-    border:1px solid rgb(42, 87, 215);
-}
-.btn_next2:hover{
-    transform: scale(0.98);
-    background-color: #fff;
-    color:rgb(42, 87, 215);
-    border: 1px solid rgb(42, 87, 215);
-}
-.btn_next3:hover{
-    transform: scale(0.98);
-    background-color: #fff;
-    color:rgb(42, 87, 215);
-    border: 1px solid rgb(42, 87, 215);
-}
 
-
-/*POSTNATAL*/
-.form_container_for_postnatal{
-    width: 1000px;
-    height: fit-content;
-    padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: #fff;
-    overflow: hidden;
-    margin: 4.2rem auto 0;
-    color:rgb(42, 87, 215);
-    animation: fadeIn 1s ease-in-out;
-}
-
-.form_container_for_postnatal .form_control input{
-    padding: 0.6rem;
-    border: none;
-    border-bottom: 1px solid rgb(42, 87, 215);
-    outline: none;
-    width: 100%;
-}
-.form_container_for_postnatal .form_control input:focus{
-    border: 2px solid rgb(42, 87, 215);
-}
-.upload_image_postnatal{
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;
-    box-shadow: rgba(207, 205, 205, 0.35) 0px 5px 15px;
-    margin: 1rem auto;
-    overflow: hidden;;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);;
-    position: relative;
-    text-align: center;
-}
-.upload_image_postnatal h1{
-    padding: 2rem;
-    font-size: 30px;
-    position: absolute;
-}
-#capture_image_postnatal{
-    font-size: 22px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    border-radius: 100%;
-    padding: 0.5rem;
-    width: max-content;
-    position: absolute;
-    right:9%;
-    bottom: 14%;
-    background-color: rgb(42, 87, 215);
-}
-#capturedImage_postnatal{
-    position: absolute;
-}
-.flex_capture_div{
-    display: flex;
-}
-.btn_capture1{
-    width: 100%;
-    padding: 0.5rem;
-    border: none;
-    margin: 0.5rem 0.5rem;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 20px;
-    background-color: rgb(42, 87, 215);
-    transition: all ease-in-out 0.5s;
-    color: #fff;
-}
-.btn_re_capture1{
-    width: 100%;
-    padding: 0.5rem;
-    text-align: center;
-    margin: 0.5rem 0.5rem;
-    border: none;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-    border-radius: 20px;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-}
-.btn_re_capture1:hover{
-    background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
-}
-.btn_capture1:hover{
-    background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
-}
 
 
 /*appoitment section*/
@@ -864,7 +582,7 @@ form span{
     flex-wrap: wrap;
 }
 
-.form_appoitment .form_control{
+.form_appoitment {
     width: 40%;
     animation: none;
     height: auto;
@@ -880,23 +598,11 @@ form span{
     border: 2px solid rgb(42, 87, 215);;
     
 }
-.form_appoitment .form_control_text_area{
-    width: 100%;
-    animation: none;
-    height: auto;
-    margin: 1em 1em;
-}
 .selected_date{
     padding: 1rem 1rem;
     background-color: rgb(42, 87, 215);
     border: 2px solid rgb(42, 87, 215);;
     color: rgb(255, 255, 255);
-}
-.form_appoitment textarea{
-    border: none;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-    width: 100%;
 }
 .btn_submit_appoitment{
     width: 100%;
@@ -912,83 +618,6 @@ form span{
     background-color: #fff;
     color: black;
     border: 1px solid rgb(42, 87, 215);;
-}
-
-/*VITALS*/
-
-.new_vital{
-    width: 100%;
-    margin: 2rem auto;
-    height: 100%;
-}
-
-.search-container{
-    width: 100%;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.search-bar{
-    background-color: #ffffff; 
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 100%;
-    max-width: 800px;
-    display: flex;
-    animation: zoomIn 01s ease-in-out;
-    padding: 2px;
-    align-items: center;
-    height: 60px;
-    border-radius: 4px;
-}
-
-#select{
-    background-color:  rgb(42, 87, 215);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #fff;
-    width: 300px;
-    padding: 19px 20px;
-    cursor: pointer;
-    position: relative;
-    border-radius: 4px ;
-}
-
-#select ul{
-    position: absolute;
-    top: 80px;
-    left: 0;
-    background-color:rgb(42, 87, 215);
-    color: rgb(255, 255, 255);
-    width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius:4px ;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s;
-}
-
-#select ul li{
-    padding: 10px 20px; 
-    cursor: pointer;
-    list-style: none;
-}
-input{
-    padding: 10px 25px;
-    border: none;
-    width: 50%;
-    outline: none;
-    font-size: 18px;
-} 
-#select ul.open{
-    max-height: 400px;
-}
-#submit-input{
-    font-size: 1.3rem;
-    color:rgb(42, 87, 215);
-    cursor: pointer;
 }
 
 .patient_container{
@@ -1074,24 +703,6 @@ input{
     padding: 1.5rem 0;
     color: #fff;
 }
-.vitals_input .vital_form .form_control{
-    width: auto;
-    margin: 1rem 1rem;
-    height: 100px;
-}
-.vital_form .form_control label{
-    width: fit-content;
-}
-.vital_form .form_control input{
-    width: 300px;
-    padding:1rem;
-}
-.vital_form .form_control textarea
-{
-    width: 500px;
-    height: 100px;
-    border: none;
-}
 /*Treatment and Prescribtion */
 
 
@@ -1129,7 +740,7 @@ input{
     flex-wrap: wrap;
 }
 
-.prescribtion_form .form_control{
+.prescribtion_form {
     display: flex;
     width: 300px;
     margin: 1rem 1rem;

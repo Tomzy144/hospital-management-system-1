@@ -237,7 +237,7 @@ body{
 /*PATIENT FORM*/
 .form_sections{
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     justify-content: space-around;
 }
@@ -293,6 +293,11 @@ h1, h3{
     color:  rgb(42, 87, 215);
     transition: all  ease-in-out 0.5s; 
 }
+.btn_capture:hover{
+    background:none;
+    color: rgb(255, 255, 255);;
+    border: 1px solid rgb(255, 255, 255);
+}
 .btn_re_capture{
     width: 100px;
     padding: 0.5rem;
@@ -303,11 +308,7 @@ h1, h3{
     color: rgb(42, 87, 215);
     transition: all  ease-in-out 0.5s; 
 }
-.btn_capture:hover{
-    background:none;
-    color: rgb(255, 255, 255);;
-    border: 1px solid rgb(255, 255, 255);
-}
+
 .btn_re_capture:hover{
     background:none;
     color: rgb(255, 255, 255);;
