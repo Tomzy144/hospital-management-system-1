@@ -578,3 +578,60 @@ function _upload_profile_pix(){
 
 
 
+
+function ChooseSelectBox() {
+  var action = 'get_hospital_plan';
+  var dataString = 'action=' + action;
+  
+  $.ajax({
+      type: "POST",
+      url: "config/code.php",
+      data: dataString,
+      cache: false,
+      dataType: 'json',
+      success: function(data) {
+          // Assuming the returned data is an array of hospital plan names
+          var plans = data;
+
+          // Get the dropdown element
+          var selectBox = document.getElementById("select_box");
+
+          // Clear existing options
+          selectBox.innerHTML = "";
+
+          // Populate the select box with fetched data
+          plans.forEach(function(plan) {
+              var option = document.createElement("option");
+              option.text = plan;
+              option.value = plan;
+              selectBox.appendChild(option);
+          });
+      },
+      error: function(xhr, status, error) {
+          console.error("Error fetching hospital plan data:", error);
+      }
+  });
+}
+
+
+
+
+
+
+
+// function getDoctors() {
+//   const selectedRole = document.getElementById('roles').value;
+//   const doctorsSelect = document.getElementById('doctors');
+//   doctorsSelect.innerHTML = ''; // Clear previous options
+
+//   // Populate the doctors select box based on the selected role
+//   doctorsData[selectedRole].forEach(doctor => {
+//       const option = document.createElement('option');
+//       option.value = doctor;
+//       option.text = doctor;
+//       doctorsSelect.appendChild(option);
+//   });
+// }
+
+// // Initial population of doctors based on the default selected role
+// getDoctors();

@@ -1,7 +1,7 @@
 
 <?php include '../../backend/config/connection.php';?>
 
-<?php require_once('session-validation.php');?>
+
 
 <?php 
 	$action=$_POST['action'];
@@ -48,4 +48,27 @@ case 'update_profile_pix': // Upload Profile Pix for first time login
 
 	break;
 
+    case 'get_hospital_plan':
+        $sql = "SELECT Hospital_plan_cat_name FROM hospital_plan_tab";
+        $result = $conn->query($sql);
+        
+        // Store the fetched data in an array
+        $data = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row['Hospital_plan_cat_name'];
+            }
+        }
+        // Encode the data as JSON
+        $json_data = json_encode($data);
+        
+        // Output the JSON data
+        echo $json_data;
+        break;
+    
     } ?>
+
+
+
+
+	

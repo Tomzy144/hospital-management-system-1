@@ -51,9 +51,9 @@
     <?php include 'meta.php'?>
 </head>
 
-<body onload="getWards()">
+<body onload="getWards(),ChooseSelectBox()">
 
-<script>
+    <script>
        if (window.history && window.history.pushState) {
             window.history.pushState('forward', null,);
             window.onpopstate = function () {
@@ -61,6 +61,7 @@
             };
         }
     </script>
+    
   <!--START OF SIDEBAR AND NAVBAR -->
    <div class="navbar">
         <div class="section1">
@@ -187,32 +188,9 @@
         </div>
         </div>
         <div class="form-control">
-        <label for="hmo">Hospital Plans</label>
-            <select name="" id="select_box" onclick="ChooseSelectBox()">
-                <option value=""></option>
-                <option value="family_plan" onclick="checkIfFamilyPlan()">Family Plan</option>
-                <option value="">Personal</option>
-                <option value="">Hygeia</option>
-                <option value="">Novo Africa Healthcare</option>
-                <option value="">NHIS</option>
-                <option value="">Biz Ben School</option>
-                <option value="">Novo Health Africa</option>
-                <option value="">Online Clinic</option>
-                <option value="">Roding</option>
-                <option value="">Clearline</option>
-                <option value="">United Health</option>
-                <option value="">Infinity</option>
-                <option value="">KnownTech</option>
-                <option value="">Sterling</option>
-                <option value="">Avon</option>
-                <option value="">Wellness</option>
-                <option value="">Scan</option>
-                <option value="">Reliance</option>
-                <option value="">Lab Patients</option>
-                <option value="">Scan</option>
-                <option value="">Axiom</option>
-                <option value="">Clearline HMO</option>
-                <option value="">Century Medicaid</option>
+        <label for="hmo" id ="hospital_plan">Hospital Plans</label>
+            <select name="" id="select_box" >
+                <option value="">Loading...</option>
             </select>
     </div>
         <!--Check if any existing family plan--->
@@ -576,7 +554,7 @@
                 <label for="roles">Doctor Role:</label>
 <select id="roles" >
 <option  onclick="getDoctors()">Select</option>
-    <option value="cardiologist">Cardiologist</option>
+    <!-- <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
     <option value="psychiatrist">Psychiatrist:</option>
@@ -602,7 +580,7 @@
     <option value="cardology">Cardology</option>
     <option value="allergist">Allergist</option>
     <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
-    <!-- Add more role options as needed-->
+    Add more role options as needed -->
 </select>
 <label for="doctors">Select Doctor:</label>
 <select id="doctors">
