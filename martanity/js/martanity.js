@@ -21,7 +21,6 @@ function postnatalSection(){
   document.querySelector("#labour_section").classList.add("hide");
   document.querySelector(".antenatal_patients_profile").classList.add("hide");
   document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".form_container_for_postnatal").classList.remove("pop_up");
   document.querySelector(".labour_patients_profile").classList.add("hide");
 }
 
@@ -121,14 +120,14 @@ _display_anternal_radiology_input();
 //DOCTOR
 function _doc_transfer_from_antenatal(){
   $('#doctor_appoitment3').removeClass('hide');
-  $('.background_opacity3').removeClass('hide');
+  $('#background_opacity3').removeClass('hide');
   $('.tranfer_box3').addClass('hide');
 };
 
 //POSTNATAL WARD
 function _labour_transfer_from_antenal(){
   $('#labour_ward_appoitment3').removeClass('hide');
-  $('.background_opacity3').removeClass('hide');
+  $('#background_opacity3').removeClass('hide');
   $('.tranfer_box3').addClass('hide');
 };
 
@@ -136,14 +135,14 @@ function _labour_transfer_from_antenal(){
 //LABOURATORY
 function  _lab_transfer_from_antenatal(){
   $('#lab_appoitment3').removeClass('hide');
-  $('.background_opacity3').removeClass('hide');
+  $('#background_opacity3').removeClass('hide');
   $('.tranfer_box3').addClass('hide');
 };
 
 //RADIOLOGY
 function _radiology_transfer_from_antenatal(){
   $('#radiology_appoitment3').removeClass('hide');
-  $('.background_opacity3').removeClass('hide');
+  $('#background_opacity3').removeClass('hide');
   $('.tranfer_box3').addClass('hide');
 };
 
@@ -154,7 +153,7 @@ function _close_all_appoitment3(){;
     $('#labour_ward_appoitment3').addClass('hide');
     $('#lab_appoitment3').addClass('hide');
     $('#radiology_appoitment3').addClass('hide');
-    $('.background_opacity3').removeClass('hide');
+    $('#background_opacity3').removeClass('hide');
 }
 
 
@@ -254,51 +253,51 @@ _display_postnatal_accessment_input();
 ////TRANSFER TO DIFFERENT SECTION FOR POSTNATAL
 //NURSE
 function _nurse_transfer_from_postnatal(){
-  $('.nurse_appoitment2').removeClass('hide');
-  $('.background_opacity2').removeClass('hide');
-  $('.tranfer_box2').addClass('hide');
+  $('#nurse_appoitment2').removeClass('hide');
+  $('#background_opacity2').removeClass('hide');
+  $('#tranfer_box2').addClass('hide');
 };
 
 //DOCTOR
 function _doc_transfer_from_postnatal(){
-  $('.doctor_appoitment2').removeClass('hide');
-  $('.background_opacity2').removeClass('hide');
-  $('.tranfer_box2').addClass('hide');
+  $('#doctor_appoitment2').removeClass('hide');
+  $('#background_opacity2').removeClass('hide');
+  $('#tranfer_box2').addClass('hide');
 };
 
 //SURGICAL SUITES
 function postnatal_ward(){
-  $('.postnatal_ward').removeClass('hide');
-  $('.background_opacity2').removeClass('hide');
-  $('.tranfer_box2').addClass('hide');
+  $('.#postnatal_ward').removeClass('hide');
+  $('#background_opacity2').removeClass('hide');
+  $('#tranfer_box2').addClass('hide');
 };
 
 
 //LABOURATORY
 function  _lab_transfer_from_postnatal(){
-  $('.lab_appoitment2').removeClass('hide');
-  $('.background_opacity2').removeClass('hide');
-  $('.tranfer_box2').addClass('hide');
+  $('#lab_appoitment2').removeClass('hide');
+  $('#background_opacity2').removeClass('hide');
+  $('#tranfer_box2').addClass('hide');
 };
 
 //RADIOLOGY
 function _radiology_transfer_from_postnatal(){
-  $('.radiology_appoitment2').removeClass('hide');
-  $('.background_opacity2').removeClass('hide');
-  $('.tranfer_box2').addClass('hide');
+  $('#radiology_appoitment2').removeClass('hide');
+  $('#background_opacity2').removeClass('hide');
+  $('#tranfer_box2').addClass('hide');
 };
 
 
 //CLOSE ALL APPOITMENT
 function _close_all_appoitment2(){
-    $('.radiology_appoitment2').addClass('hide');
-    $('.lab_appoitment2').addClass('hide');
+    $('#radiology_appoitment2').addClass('hide');
+    $('#lab_appoitment2').addClass('hide');
     $('.labour_ward_appoitment2').addClass('hide');
-    $('.doctor_appoitment2').addClass('hide');
-    $('.nurse_appoitment2').addClass('hide');
-    $('.postnatal_ward').addClass('hide');
-    $('.background_opacity2').removeClass('hide');
-    $('.tranfer_box2').removeClass('hide');
+    $('#doctor_appoitment2').addClass('hide');
+    $('#nurse_appoitment2').addClass('hide');
+    $('#postnatal_ward').addClass('hide');
+    $('#background_opacity2').removeClass('hide');
+    $('#tranfer_box2').removeClass('hide');
 }
 
 
@@ -555,14 +554,14 @@ function _transfer_dropdowns3(){
   $('#_transfer_icon3').on('click', function(ev){
     ev.stopPropagation();
     $('#tranfer_box1').removeClass('hide');
-    $('.background_opacity3').removeClass('hide');
+    $('#background_opacity3').removeClass('hide');
   })
 }
 _transfer_dropdowns3();
 
 function _close_transfer_dropdowns3(){
   $('#tranfer_box1').addClass('hide');
-  $('.background_opacity3').addClass('hide');
+  $('#background_opacity3').addClass('hide');
 }
 
 
@@ -571,15 +570,15 @@ function _close_transfer_dropdowns3(){
 function _transfer_dropdowns2(){
   $('#_transfer_icon2').on('click',function(e){
     e.stopPropagation();
-    $('.tranfer_box2').removeClass('hide');
-    $('.background_opacity2').removeClass('hide');
+    $('#tranfer_box2').removeClass('hide');
+    $('#background_opacity2').removeClass('hide');
   })
   }
   _transfer_dropdowns2();
   
   function _close_transfer_dropdowns2(){
-    $('.tranfer_box2').addClass('hide');
-    $('.background_opacity2').addClass('hide');
+    $('#tranfer_box2').addClass('hide');
+    $('#background_opacity2').addClass('hide');
   }
   
 
@@ -606,15 +605,15 @@ function _transfer_dropdowns2(){
 function _transfer_dropdowns(){
 $('#_transfer_icon').on('click',function(event){
   event.stopPropagation();
-  $('.tranfer_box').removeClass('hide');
-  $('.background_opacity').removeClass('hide');
+  $('#tranfer_box').removeClass('hide');
+  $('#background_opacity').removeClass('hide');
 })
 }
 _transfer_dropdowns();
 
 function _close_transfer_dropdowns(){
-  $('.tranfer_box').addClass('hide');
-  $('.background_opacity').addClass('hide');
+  $('#tranfer_box').addClass('hide');
+  $('#background_opacity').addClass('hide');
 }
 
 
@@ -622,71 +621,71 @@ function _close_transfer_dropdowns(){
 ////TRANSFER TO DIFFERENT SECTION FOR LABOR
 //NURSE
 function _nurse_transfer_from_labour(){
-  $('.nurse_appoitment').removeClass('hide');
-  $('.background_opacity').removeClass('hide');
-  $('.tranfer_box').addClass('hide');
+  $('#nurse_appoitment').removeClass('hide');
+  $('#background_opacity').removeClass('hide');
+  $('#tranfer_box').addClass('hide');
 };
 
 //DOCTOR
 function _doc_transfer_from_labour(){
-  $('.doctor_appoitment').removeClass('hide');
-  $('.background_opacity').removeClass('hide');
-  $('.tranfer_box').addClass('hide');
+  $('#doctor_appoitment').removeClass('hide');
+  $('#background_opacity').removeClass('hide');
+  $('#tranfer_box').addClass('hide');
 };
 
 //SURGICAL SUITES
 function _surgical_suite_transfer_from_labour(){
-  $('.surgical_suite_appoitment').removeClass('hide');
-  $('.background_opacity').removeClass('hide');
-  $('.tranfer_box').addClass('hide');
+  $('#surgical_suite_appoitment').removeClass('hide');
+  $('#background_opacity').removeClass('hide');
+  $('#tranfer_box').addClass('hide');
 };
 
 //LABOUR
 function _labour_transfer_from_labour(){
-  $('.labour_ward_appoitment').removeClass('hide');
-  $('.background_opacity').removeClass('hide');
-  $('.tranfer_box').addClass('hide');
+  $('#labour_ward_appoitment').removeClass('hide');
+  $('#background_opacity').removeClass('hide');
+  $('#tranfer_box').addClass('hide');
 };
 
 //LABOURATORY
 function  _lab_transfer_from_labour(){
-  $('.lab_appoitment').removeClass('hide');
-  $('.background_opacity').removeClass('hide');
-  $('.tranfer_box').addClass('hide');
+  $('#lab_appoitment').removeClass('hide');
+  $('#background_opacity').removeClass('hide');
+  $('#tranfer_box').addClass('hide');
 };
 
 //RADIOLOGY
 function _radiology_transfer_from_labour(){
-  $('.radiology_appoitment').removeClass('hide');
-  $('.background_opacity').removeClass('hide');
-  $('.tranfer_box').addClass('hide');
+  $('#radiology_appoitment').removeClass('hide');
+  $('#background_opacity').removeClass('hide');
+  $('#tranfer_box').addClass('hide');
 };
 
 // ICU
 function _icu_transfer_from_labour(){
-  $('.icu_appoitment').removeClass('hide');
-  $('.background_opacity').removeClass('hide');
-  $('.tranfer_box').addClass('hide');
+  $('#icu_appoitment').removeClass('hide');
+  $('#background_opacity').removeClass('hide');
+  $('#tranfer_box').addClass('hide');
 }
 // SWITCH TO POSTNATAL UNIT
 function _switch_to_postnatal_labour(){
   $('#switch_to_postnatal').removeClass('hide');
-  $('.background_opacity').removeClass('hide');
-  $('.tranfer_box').addClass('hide');
+  $('#background_opacity').removeClass('hide');
+  $('#tranfer_box').addClass('hide');
 }
 
 
 //CLOSE ALL APPOITMENT
 function _close_all_appoitment(){
-    $('.icu_appoitment').addClass('hide');
-    $('.radiology_appoitment').addClass('hide');
-    $('.lab_appoitment').addClass('hide');
-    $('.labour_ward_appoitment').addClass('hide');
-    $('.doctor_appoitment').addClass('hide');
-    $('.nurse_appoitment').addClass('hide');
-    $('.surgical_suite_appoitment').addClass('hide');
-    $('.background_opacity').removeClass('hide');
-    $('.tranfer_box').removeClass('hide');
+    $('#icu_appoitment').addClass('hide');
+    $('#radiology_appoitment').addClass('hide');
+    $('#lab_appoitment').addClass('hide');
+    $('#labour_ward_appoitment').addClass('hide');
+    $('#doctor_appoitment').addClass('hide');
+    $('#nurse_appoitment').addClass('hide');
+    $('#surgical_suite_appoitment').addClass('hide');
+    $('#background_opacity').removeClass('hide');
+    $('#tranfer_box').removeClass('hide');
 }
 
 

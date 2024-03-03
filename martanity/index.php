@@ -182,7 +182,7 @@
                     </td>
                 </tbody>
                 <div class="tranfer_div hide" id="tranfer_box1">
-                    <i class="bi bi-x-lg red" onclick="_close_transfer_dropdowns3()"></i>
+                    <i class="bi bi-x-lg close_icon" onclick="_close_transfer_dropdowns3()"></i>
                 <ul>
                     <li onclick="_doc_transfer_from_antenatal()">Doctor Appoitment</li>
                     <li onclick="_transfer_patient_from_antenatal_to_labour()">Transfer to Labour Ward</li>
@@ -193,7 +193,7 @@
         </table>
                  <!-----DOCTOR APPOITMENT--->
                  <div class="appoitments_div hide" id="doctor_appoitment3">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment3()"></i>
             <span>Doctor Appoitment</span>
             <form action="">
                 <div class="form_control large">
@@ -223,7 +223,7 @@
 
                    <!-----LABOUR WARD APPOITMENT--->
                    <div class="appoitments_div hide" id="labour_ward_appoitment3">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment3()"></i>
             <span>Labour Ward Unit</span>
             <form action="">
                 <div class="form_control large">
@@ -245,7 +245,7 @@
 
               <!-----LABOURATORY APPOITMENT--->
               <div class="appoitments_div hide" id="lab_appoitment3">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment3()"></i>
             <span>Labouratory Unit</span>
             <form action="">
                 <div class="form_control large">
@@ -267,7 +267,7 @@
 
                       <!-----RADIOLOGY APPOITMENT--->
                       <div class="appoitments_div hide" id="radiology_appoitment3">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment3()"></i>
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment3()"></i>
             <span>Radiology Unit</span>
             <form action="">
                 <div class="form_control large">
@@ -288,7 +288,7 @@
 
     </div>
 </div>
-<div class="background_opacity3 hide"></div>
+<div class="background_opacity hide" id="background_opacity3"></div>
   </div>
   </div>
    <!----END OF ANTENATAL LIST -->
@@ -795,7 +795,7 @@
           
 
                 <!----START OF THE POSTNATAL LIST-->
-                <div class="postnatal_list">
+                <div class="list_div">
     <div class="table_container">
             <div class="search_bar_container">
                 <h2>Postnatal Patient Admission List</h2>
@@ -833,8 +833,8 @@
                         <i class="bi bi-three-dots" id="_transfer_icon2" onclick="_transfer_dropdowns2()"></i>
                     </td>
                 </tbody>
-                <div class="tranfer_box2 hide">
-                    <i class="bi bi-x-lg red"  onclick="_close_transfer_dropdowns2()"></i>
+                <div class="tranfer_div hide" id="tranfer_box2">
+                    <i class="bi bi-x-lg close_icon"  onclick="_close_transfer_dropdowns2()"></i>
                 <ul>
                     <li onclick="_nurse_transfer_from_postnatal()">Call in Nurse Station</li>
                     <li onclick="_doc_transfer_from_postnatal()">Doctor Appoitment</li>
@@ -846,8 +846,8 @@
             </table>
             
              <!-----NURSE APPOITMENT--->
-             <div class="nurse_appoitment2 hide">
-            <i class="bi bi-x-lg red" onclick="_close_all_appoitment2()"></i>
+             <div class="appoitments_div hide" id="nurse_appoitment2">
+            <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment2()"></i>
                 <span>Nurse Station</span>
                 <form action="" id="">
                 <div class="form_control large">
@@ -868,8 +868,8 @@
 
 
               <!-----DOCTOR APPOITMENT--->
-              <div class="doctor_appoitment2 hide">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
+              <div class="appoitments_div hide" id="doctor_appoitment2">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
             <span>Doctor Appoitment</span>
             <form action="">
                 <div class="form_control large">
@@ -898,8 +898,8 @@
 
           
    <!-----POSTNATAL WARD--->
-   <div class="postnatal_ward hide">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
+   <div class="appoitments_div hide" id="postnatal_ward">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
             <span>Postnatal Ward</span>
                 <div class="form_control large">
                     <label for="">Ward  1</label>
@@ -942,8 +942,8 @@
 
 
            <!-----LABOURATORY APPOITMENT--->
-           <div class="lab_appoitment2 hide">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
+           <div class="appoitments_div hide" id="lab_appoitment2">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
             <span>Labouratory Unit</span>
             <form action="">
                 <div class="form_control large">
@@ -963,8 +963,8 @@
             </div>
 
     <!-----RADIOLOGY APPOITMENT--->
-    <div class="radiology_appoitment2 hide">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment2()"></i>
+    <div class="appoitments_div hide" id="radiology_appoitment2">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
             <span>Radiology Unit</span>
             <form action="">
                 <div class="form_control large">
@@ -985,7 +985,7 @@
 
         </div>
     </div>
-    <div class="background_opacity2 hide"></div>
+    <div class="background_opacity hide" id="background_opacity2"></div>
   </div>
    <!----END OF THE POSTNATAL LIST-->
 
@@ -1406,7 +1406,7 @@
 
           
                 <!----START OF THE LABOUR LIST-->
-                <div class="labor_list">
+                <div class="list_div">
     <div class="table_container">
             <div class="search_bar_container">
                 <h2>Labour Patient Admission List</h2>
@@ -1444,8 +1444,8 @@
                         <i class="bi bi-three-dots" id="_transfer_icon"></i>
                     </td>
                 </tbody>
-                <div class="tranfer_box hide">
-                    <i class="bi bi-x-lg red"  onclick="_close_transfer_dropdowns()"></i>
+                <div class="tranfer_div hide" id="tranfer_box">
+                    <i class="bi bi-x-lg close_icon"  onclick="_close_transfer_dropdowns()"></i>
                 <ul>
                     <li onclick="_nurse_transfer_from_labour()">Call in Nurse Station</li>
                     <li onclick="_doc_transfer_from_labour()">Doctor Appoitment</li>
@@ -1459,8 +1459,8 @@
             </div>
             </table>
              <!-----NURSE APPOITMENT--->
-             <div class="nurse_appoitment hide">
-            <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
+             <div class="appoitments_div hide" id="nurse_appoitment">
+            <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment()"></i>
                 <span>Nurse Station</span>
                 <form action="" id="">
                 <div class="form_control large">
@@ -1481,8 +1481,8 @@
 
 
             <!-----DOCTOR APPOITMENT--->
-            <div class="doctor_appoitment hide">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
+            <div class="appoitments_div hide" id="doctor_appoitment">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
             <span>Doctor Appoitment</span>
             <form action="">
                 <div class="form_control large">
@@ -1510,8 +1510,8 @@
             </div>
 
                     <!-----SURGICAL SUITE APPOITMENT--->
-                    <div class="surgical_suite_appoitment hide">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
+                    <div class="appoitments_div hide" id="surgical_suite_appoitment">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
             <span>Surgical Suite Unit</span>
             <form action="">
                 <div class="form_control large">
@@ -1531,8 +1531,8 @@
             </div>
 
                         <!-----LABOUR WARD APPOITMENT--->
-                        <div class="labour_ward_appoitment hide">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
+                        <div class="appoitments_div hide" id="labour_ward_appoitment">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
             <span>Labour Ward Unit</span>
             <div class="form_control large">
                     <label for="">Ward  1</label>
@@ -1574,8 +1574,8 @@
             </div>
 
                         <!-----LABOURATORY APPOITMENT--->
-                        <div class="lab_appoitment hide">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
+                        <div class="appoitments_div hide" id="lab_appoitment">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
             <span>Labouratory Unit</span>
             <form action="">
                 <div class="form_control large">
@@ -1595,8 +1595,8 @@
             </div>
 
                         <!-----RADIOLOGY APPOITMENT--->
-                        <div class="radiology_appoitment hide">
-            <i class="bi bi-x-lg red"onclick="_close_all_appoitment()"></i>
+                        <div class="appoitments_div hide" id="radiology_appoitment">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
             <span>Radiology Unit</span>
             <form action="">
                 <div class="form_control large">
@@ -1616,8 +1616,8 @@
             </div>
 
                         <!-----I.C.U APPOITMENT--->
-            <div class="icu_appoitment hide">
-            <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
+            <div class="appoitments_div hide" id="icu_appoitment">
+            <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment()"></i>
             <span>I.C.U Unit</span>
             <form action="">
                 <div class="form_control large">
@@ -1644,7 +1644,7 @@
             </div>
         </div>
     </div>
-    <div class="background_opacity hide"></div>
+    <div class="background_opacity hide" id="background_opacity"></div>
   </div>
    </div>
 
