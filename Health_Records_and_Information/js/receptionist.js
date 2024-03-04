@@ -166,12 +166,8 @@ function form_section(){
   document.querySelector('.profile_container').style.display = 'none';
 };
 
-function familyPlanSection(){
-  document.querySelector('.family_plan_section').classList.toggle("hide");
-}
-function checkIfFamilyPlan(){
-  document.querySelector('#existing_plan_or_not').classList.toggle("hide");
-}
+
+
 function activateFingerPrint(){
   document.querySelector('.finger_print_div').classList.remove("hide");
 }
@@ -462,6 +458,8 @@ function _add_patient() {
   var category5 = $('#category5').is(':checked');
   var category6 = $('#category6').is(':checked');
   var category7 = $('#category7').is(':checked');
+
+  var capturedImage = $().val();
  
   var vgender;
   var vkgender;
@@ -478,37 +476,34 @@ function _add_patient() {
       vkgender = 'Male';
   }
 /////for category
-  var vcategory;
+  // var vcategory;
 
-  if (category1) {
-      vcategory = "1";
-  } else if (category2) {
-      vcategory = "2";
-  } else if (category3) {
-      vcategory = "3";
-  } else if (category4) {
-      vcategory = "4";
-  } else if (category5) {
-      vcategory = "5";
-  } else if (category6) {
-      vcategory = "6";
-  } else if (category7) {
-      vcategory = "7";
-  }
-
-  // if(wards.selectedIndex && beds.selectedIndex){
-  //     var ward= `${wards.value}`;
-  //     var bed =  `${beds.value}`;
-  // }else{
-  //     alert("Please select Ward And Bed")
+  // if (category1) {
+  //     vcategory = "1";
+  // } else if (category2) {
+  //     vcategory = "2";
+  // } else if (category3) {
+  //     vcategory = "3";
+  // } else if (category4) {
+  //     vcategory = "4";
+  // } else if (category5) {
+  //     vcategory = "5";
+  // } else if (category6) {
+  //     vcategory = "6";
+  // } else if (category7) {
+  //     vcategory = "7";
   // }
 
-  var bed = $('#beds option:selected').val();
-  var ward = $('#wards option:selected').val();
+var hospital_plan= $('option').val();
+
+  // var bed = $('#beds option:selected').val();
+  // var ward = $('#wards option:selected').val();
 
   
 
-if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='') ||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')||(vcategory=='')){
+if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') 
+||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')
+ ||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')|| (hospital_plan ="")){
   $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
       window.alert("Fill All fields");
   }else{
@@ -518,7 +513,12 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
 ////////////////////////////////////////////////	
   
     var action = 'add_patient';		 
-        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+'&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory + '&bed='+ bed+'&ward='+ ward;
+        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+
+        '&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+
+        '&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics
+        +'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+
+        '&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory +
+        '&hospital_plan='+ hospital_plan;
         $.ajax({
         type: "POST",
         url: "config/code.php",
@@ -575,14 +575,10 @@ function _upload_profile_pix(){
       });
   }
 }
-
-
-
-
 function ChooseSelectBox() {
   var action = 'get_hospital_plan';
   var dataString = 'action=' + action;
-  
+
   $.ajax({
       type: "POST",
       url: "config/code.php",
@@ -604,6 +600,7 @@ function ChooseSelectBox() {
               var option = document.createElement("option");
               option.text = plan;
               option.value = plan;
+              option.id = plan; // Set the ID to the value
               selectBox.appendChild(option);
           });
       },
@@ -611,9 +608,30 @@ function ChooseSelectBox() {
           console.error("Error fetching hospital plan data:", error);
       }
   });
+
+  // Add an event listener to the select box
+  var selectBox = document.getElementById("select_box");
+  selectBox.addEventListener("change", function() {
+      var selectedOption = this.value;
+      if (selectedOption === "Family Card") {
+          // Call a function or perform an action specific to family plan
+          checkIfFamilyPlan();
+      } else {
+          // If the selected option is not "Family Card", remove the "hide" class
+          document.querySelector('#existing_plan_or_not').classList.add("hide");
+      }
+  });
+}
+
+function checkIfFamilyPlan() {
+  document.querySelector('#existing_plan_or_not').classList.toggle("hide");
 }
 
 
+
+function familyPlanSection(){
+  document.querySelector('.family_plan_section').classList.toggle("hide");
+}
 
 
 

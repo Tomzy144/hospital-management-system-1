@@ -51,7 +51,7 @@
     <?php include 'meta.php'?>
 </head>
 
-<body onload="getWards(),ChooseSelectBox()">
+<body onload="ChooseSelectBox()">
 
     <script>
        if (window.history && window.history.pushState) {
@@ -179,10 +179,10 @@
         <div class="form-control2">
         <label for="">Gender</label>
         <div class="wrap">
-        <input type="checkbox" name="" id="gender" value="male">
+        <input type="checkbox" name="" id="gender1" value="male">
                 Male
         </input>
-        <input type="checkbox" name="" id="gender" value="female">
+        <input type="checkbox" name="" id="gender2" value="female">
                 Female
         </input>
         </div>
@@ -192,6 +192,7 @@
             <select name="" id="select_box" >
                 <option value="">Loading...</option>
             </select>
+             
     </div>
         <!--Check if any existing family plan--->
     <div class="form-control2 hide" id="existing_plan_or_not">
@@ -208,7 +209,7 @@
             <!--Family plan authentication--->
     <div class="family_plan_section hide">
             <label for="">Insert your Family Id</label>
-            <input type="text" name="" id="">
+            <input type="text" name="" id="family_card_id">
             <button>Check</button>
             </div>
         </div>
@@ -225,10 +226,10 @@
     <div class="form-control2">
         <label for="">Gender</label>
         <div class="wrap">
-        <input type="checkbox" name="" id="kgender" value="male">
+        <input type="checkbox" name="" id="kgender1" value="male">
                 Male
         </input>
-        <input type="checkbox" name="" id="kgender" value="female">
+        <input type="checkbox" name="" id="kgender2" value="female">
                 Female
         </input>
         </div>
