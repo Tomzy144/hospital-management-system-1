@@ -48,25 +48,29 @@ case 'update_profile_pix': // Upload Profile Pix for first time login
 
 	break;
 
-    case 'get_hospital_plan':
-        $sql = "SELECT Hospital_plan_cat_name FROM hospital_plan_tab";
-        $result = $conn->query($sql);
-        
-        // Store the fetched data in an array
-        $data = array();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $data[] = $row['Hospital_plan_cat_name'];
-            }
-        }
-        // Encode the data as JSON
-        $json_data = json_encode($data);
-        
-        // Output the JSON data
-        echo $json_data;
-        break;
-
-
+	case 'get_hospital_plan':
+		$sql = "SELECT Hospital_plan_cat_name, hospital_plan_cat_id FROM hospital_plan_tab";
+		$result = $conn->query($sql);
+		
+		// Store the fetched data in an array of objects
+		$data = array();
+		if ($result->num_rows > 0) {
+			while ($row = $result->fetch_assoc()) {
+				// Create an object with plan name and ID
+				$plan = array(
+					'name' => $row['Hospital_plan_cat_name'],
+					'id' => $row['hospital_plan_cat_id']
+				);
+				$data[] = $plan;
+			}
+		}
+		// Encode the data as JSON
+		$json_data = json_encode($data);
+		
+		// Output the JSON data
+		echo $json_data;
+		break;
+	
 
 		
 
@@ -113,7 +117,7 @@ case 'update_profile_pix': // Upload Profile Pix for first time login
 			$patient_id = 'pat' . $no;
 	
 			mysqli_query($conn,"INSERT INTO `patient_tab`
-			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`category_id`,`hospital_plan`) VALUES 
+			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`hospital_card_id`) VALUES 
 			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW(),'$hospital_plan')") or die (mysqli_error($conn));
 		}
 	

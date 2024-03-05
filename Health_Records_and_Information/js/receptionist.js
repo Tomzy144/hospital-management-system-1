@@ -451,15 +451,7 @@ function _add_patient() {
   var past_disease = $('#past_disease').val();
   var family_disease = $('#family_disease').val();
   var past_surgery = $('#past_surgery').val();
-  var category1 = $('#category1').is(':checked');
-  var category2 = $('#category2').is(':checked');
-  var category3 = $('#category3').is(':checked');
-  var category4 = $('#category4').is(':checked');
-  var category5 = $('#category5').is(':checked');
-  var category6 = $('#category6').is(':checked');
-  var category7 = $('#category7').is(':checked');
 
-  var capturedImage = $().val();
  
   var vgender;
   var vkgender;
@@ -475,35 +467,15 @@ function _add_patient() {
   } else if (kgender2) {
       vkgender = 'Male';
   }
-/////for category
-  // var vcategory;
 
-  // if (category1) {
-  //     vcategory = "1";
-  // } else if (category2) {
-  //     vcategory = "2";
-  // } else if (category3) {
-  //     vcategory = "3";
-  // } else if (category4) {
-  //     vcategory = "4";
-  // } else if (category5) {
-  //     vcategory = "5";
-  // } else if (category6) {
-  //     vcategory = "6";
-  // } else if (category7) {
-  //     vcategory = "7";
-  // }
 
-var hospital_plan= $('option').val();
+  var hospital_plan = $('#select_box').val();
 
-  // var bed = $('#beds option:selected').val();
-  // var ward = $('#wards option:selected').val();
+
 
   
 
-if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') 
-||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')
- ||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')|| (hospital_plan ="")){
+if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')|| (hospital_plan =="")){
   $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
       window.alert("Fill All fields");
   }else{
@@ -513,12 +485,7 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
 ////////////////////////////////////////////////	
   
     var action = 'add_patient';		 
-        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+
-        '&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+
-        '&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics
-        +'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+
-        '&past_surgery='+ past_surgery+'&medical_history='+ medical_history+ '&category='+ vcategory +
-        '&hospital_plan='+ hospital_plan;
+        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+ '&past_surgery='+ past_surgery+'&medical_history='+ medical_history +'&hospital_plan='+ hospital_plan;
         $.ajax({
         type: "POST",
         url: "config/code.php",
@@ -535,12 +502,12 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
                   $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
                   window.alert("Patient's phonenumber is already registered");
               }else{ //user suspended
-        $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
-                  // _get_page('active-staff','active-staff');
-                  // alert_close();
-                  window.alert("Registration Successful");
-                  window.alert("This patient's ID is "+ fpatient_id );
-                  location.reload(true);
+                    $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+                    // _get_page('active-staff','active-staff');
+                    // alert_close();
+                    window.alert("Registration Successful");
+                    window.alert("This patient's ID is "+ fpatient_id );
+                    location.reload(true);
               }
               $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
               document.getElementById('proceed-btn').disabled=false;
@@ -575,6 +542,8 @@ function _upload_profile_pix(){
       });
   }
 }
+
+
 function ChooseSelectBox() {
   var action = 'get_hospital_plan';
   var dataString = 'action=' + action;
@@ -586,21 +555,13 @@ function ChooseSelectBox() {
       cache: false,
       dataType: 'json',
       success: function(data) {
-          // Assuming the returned data is an array of hospital plan names
           var plans = data;
-
-          // Get the dropdown element
           var selectBox = document.getElementById("select_box");
-
-          // Clear existing options
           selectBox.innerHTML = "";
-
-          // Populate the select box with fetched data
           plans.forEach(function(plan) {
               var option = document.createElement("option");
-              option.text = plan;
-              option.value = plan;
-              option.id = plan; // Set the ID to the value
+              option.text = plan.name; // Use plan name
+              option.value = plan.id; // Use plan ID
               selectBox.appendChild(option);
           });
       },
@@ -609,15 +570,16 @@ function ChooseSelectBox() {
       }
   });
 
-  // Add an event listener to the select box
   var selectBox = document.getElementById("select_box");
   selectBox.addEventListener("change", function() {
       var selectedOption = this.value;
-      if (selectedOption === "Family Card") {
-          // Call a function or perform an action specific to family plan
+      // Get the selected option element
+      var selectedOptionElement = this.options[this.selectedIndex];
+      // Set the ID attribute of the selected option
+      selectedOptionElement.id = selectedOption;
+      if (selectedOption === "ph0002") {
           checkIfFamilyPlan();
       } else {
-          // If the selected option is not "Family Card", remove the "hide" class
           document.querySelector('#existing_plan_or_not').classList.add("hide");
       }
   });
@@ -626,6 +588,7 @@ function ChooseSelectBox() {
 function checkIfFamilyPlan() {
   document.querySelector('#existing_plan_or_not').classList.toggle("hide");
 }
+
 
 
 

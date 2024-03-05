@@ -157,7 +157,7 @@
             </div>
         </form>
 
-        <form action="" id="form">
+        <form action="" id="registeration_form" enctype="multipart/form-data" method="post">
             <h3>Personal Details</h3>
             <div class="sections">
             <div class="form-control">
@@ -189,9 +189,11 @@
         </div>
         <div class="form-control">
         <label for="hmo" id ="hospital_plan">Hospital Plans</label>
-            <select name="" id="select_box" >
-                <option value="">Loading...</option>
-            </select>
+        <select name="" id="select_box">
+            <option id="option" value="">Loading...</option>
+        </select>
+
+          
              
     </div>
         <!--Check if any existing family plan--->
@@ -204,6 +206,7 @@
         <input type="checkbox" name="no" id="">
             No
         </input>
+       
         </div>
         </div>
             <!--Family plan authentication--->
@@ -273,6 +276,7 @@
     <div class="form-control">
     <label for="Occupation">Family Disease</label>
     <input type="text" id="family_disease" autocapitalize="off" autocomplete="off">
+  
 </div>
     <div class="form-control">
     <label for="Occupation">Past Surgery</label>
@@ -283,7 +287,7 @@
     <input type="text" id="past_surgery" autocapitalize="off" autocomplete="off">
 </div>
 </div>
-<button type="button" id ="proceed-btn" onclick="_add_patient(),_upload_profile_pix();" class="btn-submit">Book</button>
+<button type="button" id ="proceed-btn" onclick="_add_patient();_upload_profile_pix();" class="btn-submit">Book</button>
         </form>
         </div>
         </div>
