@@ -44,6 +44,11 @@ function takePicture() {
     capturedImageElement.src = imageDataURL;
     capturedImageElement.style.display = 'block';
 
+    var submit_btn = document.getElementById('uploadButton');
+    submit_btn.style.display = "block";
+    
+    
+
     // Stop the camera stream
     stopCamera();
   }
@@ -161,12 +166,8 @@ function form_section(){
   document.querySelector('.profile_container').style.display = 'none';
 };
 
-function familyPlanSection(){
-  document.querySelector('.family_plan_section').classList.toggle("hide");
-}
-function checkIfFamilyPlan(){
-  document.querySelector('#existing_plan_or_not').classList.toggle("hide");
-}
+
+
 function activateFingerPrint(){
   document.querySelector('.finger_print_div').classList.remove("hide");
 }
@@ -393,3 +394,227 @@ getDoctors();
     renderCalendar()
  })
  renderCalendar();
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ //////////////////////////////
+
+
+
+
+
+ // function fetch_patient(patient_id){
+//     var action='fetch_patient';
+//     // $('#next_2').html('<div class="ajax-loader">loading...<br><img src="all-images/images/ajax-loader.gif"/></div>').fadeIn(500);
+//     var dataString ='action='+ action+'&patient_id='+ patient_id;
+//     $.ajax({
+//     type: "POST",
+//     url: "config/search.php",
+//     data: dataString,
+//     cache: false,
+//     success: function(html){$('#next_2').html(html);}
+//     });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Add 'fade-in' class to the body after the DOM content is loaded
+//     document.body.classList.add('loaded');
+// })
+
+
+function _add_patient() {
+  var fullname = $('#fullname').val();
+  var phonenumber = $('#phonenumber').val();
+  var dob = $('#dob').val();
+  var gender1 = $('#gender1').is(':checked');
+  var gender2 = $('#gender2').is(':checked');
+  var address = $('#address').val();
+  var kname = $('#kname').val();
+  var krelationship = $('#krelationship').val();
+  var kaddress = $('#kaddress').val();
+  var kphonenumber = $('#kphonenumber').val();
+  var kgender1 = $('#kgender1').is(':checked');
+  var kgender2 = $('#kgender2').is(':checked');
+  var occupation = $('#occupation').val();
+  var past_obsterics = $('#past_obsterics').val();
+  var medical_history = $('#medical_history').val();
+  var sexual_history = $('#sexual_history').val();
+  var past_disease = $('#past_disease').val();
+  var family_disease = $('#family_disease').val();
+  var past_surgery = $('#past_surgery').val();
+
+ 
+  var vgender;
+  var vkgender;
+
+  if (gender1) {
+      vgender = 'Male';
+  } else if (gender2) {
+      vgender = 'Female';
+  }
+
+  if (kgender1) {
+      vkgender = 'Female';
+  } else if (kgender2) {
+      vkgender = 'Male';
+  }
+
+
+  var hospital_plan = $('#select_box').val();
+
+
+
+  
+
+if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')|| (hospital_plan =="")){
+  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
+      window.alert("Fill All fields");
+  }else{
+   //////////////// get btn text ////////////////
+       $('#proceed-btn').html('PROCESSING...');
+       document.getElementById('proceed-btn').disabled=true;
+////////////////////////////////////////////////	
+  
+    var action = 'add_patient';		 
+        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+ '&past_surgery='+ past_surgery+'&medical_history='+ medical_history +'&hospital_plan='+ hospital_plan;
+        $.ajax({
+        type: "POST",
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        cache: false,
+        success: function(data){
+                var scheck = data.check;
+                var  fpatient_id = data.patient_id;
+                var phonenumber = data.phonenumber;
+                
+                if(scheck==0){ //user Active
+                  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
+                  window.alert("Patient's phonenumber is already registered");
+              }else{ //user suspended
+                    $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+                    // _get_page('active-staff','active-staff');
+                    // alert_close();
+                    window.alert("Registration Successful");
+                    window.alert("This patient's ID is "+ fpatient_id );
+                    location.reload(true);
+              }
+              $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
+              document.getElementById('proceed-btn').disabled=false;
+          } 
+      });
+}
+}	
+
+
+
+
+ 
+function _upload_profile_pix(){
+  var action = 'update_profile_pix';
+  var id = "pat004";
+      var file_data = $('#capturedImage').attr('src');
+  if (file_data==''){}else{ 
+      var form_data = new FormData();                  
+      form_data.append('capturedImage', file_data);
+      form_data.append('action', action);
+      form_data.append('id', id);
+      $.ajax({
+          url: "config/code.php",
+          type: "POST",
+          data: form_data,
+          contentType: false,
+          cache: false,
+          processData:false,
+          success: function(html){
+      $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+          $('#capturedImage').val('');
+          $('Submitted');
+    }
+      });
+  }
+}
+
+
+function ChooseSelectBox() {
+  var action = 'get_hospital_plan';
+  var dataString = 'action=' + action;
+
+  $.ajax({
+      type: "POST",
+      url: "config/code.php",
+      data: dataString,
+      cache: false,
+      dataType: 'json',
+      success: function(data) {
+          var plans = data;
+          var selectBox = document.getElementById("select_box");
+          selectBox.innerHTML = "";
+          plans.forEach(function(plan) {
+              var option = document.createElement("option");
+              option.text = plan.name; // Use plan name
+              option.value = plan.id; // Use plan ID
+              selectBox.appendChild(option);
+          });
+      },
+      error: function(xhr, status, error) {
+          console.error("Error fetching hospital plan data:", error);
+      }
+  });
+
+  var selectBox = document.getElementById("select_box");
+  selectBox.addEventListener("change", function() {
+      var selectedOption = this.value;
+      // Get the selected option element
+      var selectedOptionElement = this.options[this.selectedIndex];
+      // Set the ID attribute of the selected option
+      selectedOptionElement.id = selectedOption;
+      if (selectedOption === "ph0002") {
+          checkIfFamilyPlan();
+      } else {
+          document.querySelector('#existing_plan_or_not').classList.add("hide");
+      }
+  });
+}
+
+function checkIfFamilyPlan() {
+  document.querySelector('#existing_plan_or_not').classList.toggle("hide");
+}
+
+
+
+
+function familyPlanSection(){
+  document.querySelector('.family_plan_section').classList.toggle("hide");
+}
+
+
+
+
+
+// function getDoctors() {
+//   const selectedRole = document.getElementById('roles').value;
+//   const doctorsSelect = document.getElementById('doctors');
+//   doctorsSelect.innerHTML = ''; // Clear previous options
+
+//   // Populate the doctors select box based on the selected role
+//   doctorsData[selectedRole].forEach(doctor => {
+//       const option = document.createElement('option');
+//       option.value = doctor;
+//       option.text = doctor;
+//       doctorsSelect.appendChild(option);
+//   });
+// }
+
+// // Initial population of doctors based on the default selected role
+// getDoctors();

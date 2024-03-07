@@ -226,67 +226,6 @@
 	
 
 
-
-	
-	case 'add_patient': 
-		$fullname = trim(strtoupper($_POST['fullname']));
-		// $email = $_POST['email'];
-		$phonenumber = $_POST['phonenumber'];
-		$dateofbirth = $_POST['dob'];
-		$address = $_POST['address'];
-		$gender = $_POST['gender'];
-		$kname = $_POST['kname'];
-		$krelationship = $_POST['krelationship'];
-		$kaddress = $_POST['kaddress'];
-		$kphonenumber = $_POST['kphonenumber'];
-		$kgender = $_POST['kgender'];
-		$occupation = $_POST['occupation'];
-		$past_obsterics = $_POST['past_obsterics'];
-		$sexual_history = $_POST['sexual_history'];
-		$past_disease = $_POST['past_disease'];
-		$family_disease = $_POST['family_disease'];
-		$past_surgery = $_POST['past_surgery'];
-		$medical_history = $_POST['medical_history'];
-		$status_id= '1';
-		$category = $_POST['category'];
-		$bed = $_POST['bed'];
-		$ward = $_POST['ward'];
-
-		
-		$phonenumber_query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE `phonenumber`='$phonenumber'");
-		$check_query_count = mysqli_num_rows($phonenumber_query);
-	
-		if ($check_query_count > 0) {	
-			$check = 0; // invalid phonenumber.
-		} else {
-			$check = 1;
-	
-			// get sequence
-			$sequence = $callclass->_get_sequence_count($conn, 'pat');
-			$array = json_decode($sequence, true);
-			$no = $array[0]['no'];
-			$patient_id = 'pat' . $no;
-	
-			mysqli_query($conn,"INSERT INTO `patient_tab`
-			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`category_id`,`bed`,`ward`) VALUES 
-			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW(),'$category','$bed','$ward')") or die (mysqli_error($conn));
-		}
-	
-		echo json_encode(array("check" => $check, "patient_id" => $patient_id));
-		break;
-	
-
-
-
-
-
-
-
-
-
-
-
-
 		case 'getWards': 
 
             try {

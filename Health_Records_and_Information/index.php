@@ -51,9 +51,9 @@
     <?php include 'meta.php'?>
 </head>
 
-<body onload="getWards()">
+<body onload="ChooseSelectBox()">
 
-<script>
+    <script>
        if (window.history && window.history.pushState) {
             window.history.pushState('forward', null,);
             window.onpopstate = function () {
@@ -61,6 +61,7 @@
             };
         }
     </script>
+    
   <!--START OF SIDEBAR AND NAVBAR -->
    <div class="navbar">
         <div class="section1">
@@ -132,17 +133,31 @@
     <div class="new_intake_admission_form">
     <div class="form-container">
         <h2>Patient Admission Form</h2>
-        <div class="upload_image">
-             <video id="videoElement" width="400" height="300" autoplay></video>
-            <i class="bi bi-plus" id="capture_image" onclick="openCamera()"></i>
-            <canvas id="canvasElement" style="display: none;"></canvas>
-            <img id="capturedImage" style="display: none;">
-        </div>
-        <div class="flex_capture_div">
-        <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
-        <div class="btn_capture hide" onClick="takePicture()">Capture</div>
-        </div>
-        <form action="" id="form">
+        <form action="config/code.php?update_profile_pix" id="add_patient_pic" enctype="multipart/form-data" method="post">
+            <div class="upload_image" action ="config/code?=update_profile_pix" title="update profile picture">
+                <video id="videoElement" width="400" height="300" autoplay></video>
+                <i class="bi bi-plus" id="capture_image" onclick="openCamera()"></i>
+                <canvas id="canvasElement" style="display: none;"></canvas>
+
+                <?php if ($passport==''){?>
+                    <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/patient/19374.jpg" id="capturedImage" style="display: none;" alt="profile picture"/>
+                    <!-- <input type="file" id="passport" style="display:none"  accept=".jpg,.png" onchange="Test.UpdatePreview(this);"/>  -->
+                <?php } else {?>
+
+                <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/<?php echo $passport; ?>" id="my_passport" alt="profile picture"/>
+                <!-- <input type="file" id="passport" style="display:none" accept=".jpg,.png" onchange="Test.UpdatePreview(this);"/>  -->
+                <?php } ?>
+               
+            </div>
+       
+            <div class="flex_capture_div">
+                <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
+                <div class="btn_capture hide" onClick="takePicture()">Capture</div>
+                <button class="btn_re_capture" style="display:none" type="button" id="uploadButton" title="Submit"  onclick="_upload_profile_pix();"> Submit PASSPORT <i class="bi-check"></i></button>
+            </div>
+        </form>
+
+        <form action="" id="registeration_form" enctype="multipart/form-data" method="post">
             <h3>Personal Details</h3>
             <div class="sections">
             <div class="form-control">
@@ -164,42 +179,22 @@
         <div class="form-control2">
         <label for="">Gender</label>
         <div class="wrap">
-        <input type="checkbox" name="" id="gender" value="male">
+        <input type="checkbox" name="" id="gender1" value="male">
                 Male
         </input>
-        <input type="checkbox" name="" id="gender" value="female">
+        <input type="checkbox" name="" id="gender2" value="female">
                 Female
         </input>
         </div>
         </div>
         <div class="form-control">
-        <label for="hmo">Hospital Plans</label>
-            <select name="" id="select_box" onclick="ChooseSelectBox()">
-                <option value=""></option>
-                <option value="family_plan" onclick="checkIfFamilyPlan()">Family Plan</option>
-                <option value="">Personal</option>
-                <option value="">Hygeia</option>
-                <option value="">Novo Africa Healthcare</option>
-                <option value="">NHIS</option>
-                <option value="">Biz Ben School</option>
-                <option value="">Novo Health Africa</option>
-                <option value="">Online Clinic</option>
-                <option value="">Roding</option>
-                <option value="">Clearline</option>
-                <option value="">United Health</option>
-                <option value="">Infinity</option>
-                <option value="">KnownTech</option>
-                <option value="">Sterling</option>
-                <option value="">Avon</option>
-                <option value="">Wellness</option>
-                <option value="">Scan</option>
-                <option value="">Reliance</option>
-                <option value="">Lab Patients</option>
-                <option value="">Scan</option>
-                <option value="">Axiom</option>
-                <option value="">Clearline HMO</option>
-                <option value="">Century Medicaid</option>
-            </select>
+        <label for="hmo" id ="hospital_plan">Hospital Plans</label>
+        <select name="" id="select_box">
+            <option id="option" value="">Loading...</option>
+        </select>
+
+          
+             
     </div>
         <!--Check if any existing family plan--->
     <div class="form-control2 hide" id="existing_plan_or_not">
@@ -211,12 +206,13 @@
         <input type="checkbox" name="no" id="">
             No
         </input>
+       
         </div>
         </div>
             <!--Family plan authentication--->
     <div class="family_plan_section hide">
             <label for="">Insert your Family Id</label>
-            <input type="text" name="" id="">
+            <input type="text" name="" id="family_card_id">
             <button>Check</button>
             </div>
         </div>
@@ -233,10 +229,10 @@
     <div class="form-control2">
         <label for="">Gender</label>
         <div class="wrap">
-        <input type="checkbox" name="" id="kgender" value="male">
+        <input type="checkbox" name="" id="kgender1" value="male">
                 Male
         </input>
-        <input type="checkbox" name="" id="kgender" value="female">
+        <input type="checkbox" name="" id="kgender2" value="female">
                 Female
         </input>
         </div>
@@ -280,6 +276,7 @@
     <div class="form-control">
     <label for="Occupation">Family Disease</label>
     <input type="text" id="family_disease" autocapitalize="off" autocomplete="off">
+  
 </div>
     <div class="form-control">
     <label for="Occupation">Past Surgery</label>
@@ -562,7 +559,7 @@
                 <label for="roles">Doctor Role:</label>
 <select id="roles" >
 <option  onclick="getDoctors()">Select</option>
-    <option value="cardiologist">Cardiologist</option>
+    <!-- <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
     <option value="psychiatrist">Psychiatrist:</option>
@@ -588,7 +585,7 @@
     <option value="cardology">Cardology</option>
     <option value="allergist">Allergist</option>
     <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
-    <!-- Add more role options as needed-->
+    Add more role options as needed -->
 </select>
 <label for="doctors">Select Doctor:</label>
 <select id="doctors">
