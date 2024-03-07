@@ -20,33 +20,33 @@
 
 
 
-
-case 'update_profile_pix': // Upload Profile Pix for first time login
-		$passport=$_FILES['capturedImage']['name'];
-		$datetime=date("Ymdhi");
-		
-		$allowedExts = array("jpg", "jpeg", "JPEG", "JPG", "gif", "png","PNG","GIF");
-		$extension = pathinfo($_FILES['passport']['name'], PATHINFO_EXTENSION);
-		
-		if (in_array($extension, $allowedExts)){
-			
-			$user_array=$callclass->_get_staff_details($conn, $s_staff_id);
+	case 'update_profile_pix':
+		$passport = $_FILES['capturedImage']['name'];
+		$datetime = date("Ymdhi");
+		$patient_id = $_POST['fpatient_id']; // Corrected variable name
+	
+		$allowedExts = array("jpg", "jpeg", "JPEG", "JPG", "gif", "png", "PNG", "GIF");
+		$extension = pathinfo($passport, PATHINFO_EXTENSION); // Use $passport instead of $_FILES['passport']['name']
+	
+		if (in_array($extension, $allowedExts)) {
+			$user_array = $callclass->_get_patient_details($conn, $s_patient_id); // Assuming $s_patient_id contains the staff ID
 			$u_array = json_decode($user_array, true);
-			$db_passport= $u_array[0]['patient_passport'];
-			if($db_passport==''){
-				//// do nothing;
-			}else{
-				unlink("../uploaded_files/profile_pix/" .$db_passport);
-			}
+			$db_passport = $u_array[0]['patient_passport'];
 			
-		$passport = $datetime.'_'.$passport;
-		move_uploaded_file($_FILES["capturedImage"]["tmp_name"],"../uploaded_files/profile_pix/" .$passport);
-
+			if ($db_passport != '') {
+				unlink("../../uploaded_files/profile_pix/" . $db_passport);
+			}
+	
+			$passport = $datetime . '_' . $passport;
+			move_uploaded_file($_FILES["capturedImage"]["tmp_name"], "../../uploaded_files/profile_pix/patient" . $passport);
+			
+			mysqli_query($conn, "UPDATE patient_tab SET patient_passport='$passport' WHERE patient_id='$patient_id'") or die ("cannot update patient_tab");
+		} else {
+			echo "Invalid file format";
 		}
-		
-		mysqli_query($conn,"UPDATE pateint_tab SET patient_passport='$passport' WHERE patient_id='$pateint_id'") or die ("cannot update pateint_tab");
-
 	break;
+
+	
 
 	case 'get_hospital_plan':
 		$sql = "SELECT Hospital_plan_cat_name, hospital_plan_cat_id FROM hospital_plan_tab";
@@ -69,7 +69,7 @@ case 'update_profile_pix': // Upload Profile Pix for first time login
 		
 		// Output the JSON data
 		echo $json_data;
-		break;
+	break;
 	
 
 		

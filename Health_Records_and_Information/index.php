@@ -133,14 +133,14 @@
     <div class="new_intake_admission_form">
     <div class="form-container">
         <h2>Patient Admission Form</h2>
-        <form action="config/code.php?action=update_user_profile&update_profile_pix" id="dashboard" enctype="multipart/form-data" method="post">
+        <form action="config/code.php?update_profile_pix" id="add_patient_pic" enctype="multipart/form-data" method="post">
             <div class="upload_image" action ="config/code?=update_profile_pix" title="update profile picture">
                 <video id="videoElement" width="400" height="300" autoplay></video>
                 <i class="bi bi-plus" id="capture_image" onclick="openCamera()"></i>
                 <canvas id="canvasElement" style="display: none;"></canvas>
 
                 <?php if ($passport==''){?>
-                    <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/19374.jpg" id="capturedImage" style="display: none;" alt="profile picture"/>
+                    <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/patient/19374.jpg" id="capturedImage" style="display: none;" alt="profile picture"/>
                     <!-- <input type="file" id="passport" style="display:none"  accept=".jpg,.png" onchange="Test.UpdatePreview(this);"/>  -->
                 <?php } else {?>
 
@@ -153,7 +153,7 @@
             <div class="flex_capture_div">
                 <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
                 <div class="btn_capture hide" onClick="takePicture()">Capture</div>
-                <button class="btn_re_capture" style="display:none" type="button" id="uploadButton" title="Submit"  onclick="_upload_profile_pix('<?php echo $s_staff_id; ?>');"> Submit PASSPORT <i class="bi-check"></i></button>
+                <button class="btn_re_capture" style="display:none" type="button" id="uploadButton" title="Submit"  onclick="_upload_profile_pix();"> Submit PASSPORT <i class="bi-check"></i></button>
             </div>
         </form>
 
@@ -287,7 +287,7 @@
     <input type="text" id="past_surgery" autocapitalize="off" autocomplete="off">
 </div>
 </div>
-<button type="button" id ="proceed-btn" onclick="_add_patient();_upload_profile_pix();" class="btn-submit">Book</button>
+<button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Book</button>
         </form>
         </div>
         </div>

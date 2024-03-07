@@ -522,11 +522,13 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
  
 function _upload_profile_pix(){
   var action = 'update_profile_pix';
-      var file_data = $('#capturedImage').val();
+  var id = "pat004";
+      var file_data = $('#capturedImage').attr('src');
   if (file_data==''){}else{ 
       var form_data = new FormData();                  
       form_data.append('capturedImage', file_data);
       form_data.append('action', action);
+      form_data.append('id', id);
       $.ajax({
           url: "config/code.php",
           type: "POST",
