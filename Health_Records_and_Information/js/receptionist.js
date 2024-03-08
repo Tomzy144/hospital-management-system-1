@@ -30,6 +30,7 @@ function openCamera() {
     showClickButtonForRecapture.classList.remove("hide")
 }
 
+
 function takePicture() {
   if (stream) {
     let context = canvasElement.getContext('2d');
@@ -40,19 +41,60 @@ function takePicture() {
     // Convert the canvas content to a data URL representing a PNG image
     let imageDataURL = canvasElement.toDataURL('image/png');
 
-    // Display the captured image
-    capturedImageElement.src = imageDataURL;
-    capturedImageElement.style.display = 'block';
 
-    var submit_btn = document.getElementById('uploadButton');
-    submit_btn.style.display = "block";
-    
-    
 
-    // Stop the camera stream
-    stopCamera();
+      // Display the captured image
+      capturedImageElement.src = imageDataURL;
+      capturedImageElement.style.display = 'block';
+  
+      var submit_btn = document.getElementById('uploadButton');
+      submit_btn.style.display = "block";
+       
+       
+   
+       // Stop the camera stream
+       stopCamera();
+
+    // Send the image data to the PHP script to handle moving it to the folder
+    sendImageData(imageDataURL);
   }
 }
+
+
+function sendImageData(imageDataURL) {
+  // Prepare the image data to be sent to the server
+  let formData = new FormData();
+  formData.append('image', imageDataURL);
+
+  // Send the image data to the server via AJAX
+  fetch('config/upload_image.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to move image');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Handle the server response if needed
+    console.log('Image moved successfully');
+    // Assuming server responds with the path where the image is stored
+    // Display the captured image (optional)
+    capturedImageElement.src = data.path; // Adjust 'path' to the key where the server sends the path
+    capturedImageElement.style.display = 'block';
+    // Show the upload button (optional)
+    var submit_btn = document.getElementById('uploadButton');
+    submit_btn.style.display = "block";
+  })
+  .catch(error => {
+    console.error('Error moving image:', error);
+  });
+}
+
+
+
 function retakePicture() {
     // Hide the captured image
     capturedImageElement.style.display = 'none';
@@ -109,7 +151,7 @@ function takePicture2() {
     context.drawImage(videoElement2, 0, 0, canvasElement2.width, canvasElement2.height);
 
     // Convert the canvas content to a data URL representing a PNG image
-    let imageDataURL = canvasElement2.toDataURL('image/png');
+    let imageDataURL = canvasElement2.toDataURL('../../uploaded_files_profile_pix/patient/');
 
     // Display the captured image
     capturedImageElement2.src = imageDataURL;
