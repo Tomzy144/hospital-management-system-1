@@ -6,7 +6,7 @@ $imageDataURL = $_POST['image'];
 $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $imageDataURL));
 
 // Specify the folder where you want to save the image
-$folder = '../../uploaded_files/profile_pix/patient/';
+$folder = $website_url/'uploaded_files/profile_pix/patient/';
 
 // Generate a unique filename for the image
 $filename = uniqid() . '.png';

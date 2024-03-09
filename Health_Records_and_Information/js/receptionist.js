@@ -57,6 +57,7 @@ function takePicture() {
 
     // Send the image data to the PHP script to handle moving it to the folder
     sendImageData(imageDataURL);
+    _upload_profile_pix(imageDataURL);
   }
 }
 
@@ -80,6 +81,7 @@ function sendImageData(imageDataURL) {
   .then(data => {
     // Handle the server response if needed
     console.log('Image moved successfully');
+  
     // Assuming server responds with the path where the image is stored
     // Display the captured image (optional)
     capturedImageElement.src = data.path; // Adjust 'path' to the key where the server sends the path
@@ -87,6 +89,7 @@ function sendImageData(imageDataURL) {
     // Show the upload button (optional)
     var submit_btn = document.getElementById('uploadButton');
     submit_btn.style.display = "block";
+    
   })
   .catch(error => {
     console.error('Error moving image:', error);
@@ -558,34 +561,92 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
 }
 }	
 
+// function _upload_profile_pix(imageDataURL) {
+//     var action = 'update_profile_pix';
+//     var id = "pat004";
+
+//     // Create FormData object and append data
+//     var form_data = new FormData();
+//     form_data.append('capturedImage', imageDataURL);
+//     form_data.append('action', action);
+//     form_data.append('id', id);
+
+//     // Send AJAX request
+//     $.ajax({
+//         url: "config/code.php",
+//         type: "POST",
+//         data: form_data,
+//         contentType: false,
+//         cache: false,
+//         processData: false,
+//         success: function(html) {
+//             $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+//         },
+//         error: function(xhr, status, error) {
+//             console.error("Error uploading image:", error);
+//         }
+//     });
+// }
 
 
-
- 
-function _upload_profile_pix(){
+function _upload_profile_pix(imageDataURL) {
   var action = 'update_profile_pix';
   var id = "pat004";
-      var file_data = $('#capturedImage').attr('src');
-  if (file_data==''){}else{ 
-      var form_data = new FormData();                  
-      form_data.append('capturedImage', file_data);
-      form_data.append('action', action);
-      form_data.append('id', id);
-      $.ajax({
-          url: "config/code.php",
-          type: "POST",
-          data: form_data,
-          contentType: false,
-          cache: false,
-          processData:false,
-          success: function(html){
-      $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
-          $('#capturedImage').val('');
-          $('Submitted');
-    }
-      });
+
+  if (!imageDataURL) {
+      console.error("No file selected.");
+      return;
   }
+
+  var form_data = new FormData();
+  form_data.append('capturedImage', imageDataURL);
+  form_data.append('action', action);
+  form_data.append('id', id);
+
+  $.ajax({
+      url: "config/code.php",
+      type: "POST",
+      data: form_data,
+      contentType: false,
+      cache: false,
+      processData: false,
+      success: function(html) {
+          $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+          $('#passport').val('');
+      },
+      error: function(xhr, status, error) {
+          console.error("Error uploading image:", error);
+      }
+  });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function ChooseSelectBox() {
