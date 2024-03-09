@@ -229,8 +229,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
 
                     echo "<td>" . $row["sn"] . "</td>";
+                    // echo "<td>" . $row["passport"] . "</td>";
                     echo "<td>". $row["patient_id"] . "</td>";
-                    echo "<td>". $row["image"] . "</td>";
+                    echo "<td><img src='" . $website_url . "/health_records_and_information/config/" . $row["patient_passport"] . "' alt='Profile Picture'/></td>";
+
                     echo "<td>" . $row["fullname"] . "</td>";
                     echo "<td>" . $row["phonenumber"] . "</td>";
                     echo "<td>" . $row["date"] . "</td>";

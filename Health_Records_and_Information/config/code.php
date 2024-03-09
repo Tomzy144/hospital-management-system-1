@@ -15,37 +15,34 @@
 
 
 
-
-
-
-
-
 	case 'update_profile_pix':
-		$passport = $_FILES['capturedImage']['name'];
+		$passport = $_POST['capturedImage'];
 		$datetime = date("Ymdhi");
-		$patient_id = $_POST['fpatient_id']; // Corrected variable name
+		$patient_id = $_POST['id']; // Corrected variable name
 	
 		$allowedExts = array("jpg", "jpeg", "JPEG", "JPG", "gif", "png", "PNG", "GIF");
-		$extension = pathinfo($passport, PATHINFO_EXTENSION); // Use $passport instead of $_FILES['passport']['name']
+		$extension = pathinfo($passport, PATHINFO_EXTENSION);
 	
 		if (in_array($extension, $allowedExts)) {
-			$user_array = $callclass->_get_patient_details($conn, $s_patient_id); // Assuming $s_patient_id contains the staff ID
+			$user_array = $callclass->_get_patient_details($conn, $patient_id);
 			$u_array = json_decode($user_array, true);
 			$db_passport = $u_array[0]['patient_passport'];
-			
+	
 			if ($db_passport != '') {
 				unlink("../../uploaded_files/profile_pix/" . $db_passport);
 			}
 	
-			$passport = $datetime . '_' . $passport;
+			$temp_file_basename = basename($_FILES["capturedImage"]["tmp_name"]);
+	
+			// $passport = $datetime . '_' . $passport;
 			move_uploaded_file($_FILES["capturedImage"]["tmp_name"], "../../uploaded_files/profile_pix/patient" . $passport);
-			
+	
 			mysqli_query($conn, "UPDATE patient_tab SET patient_passport='$passport' WHERE patient_id='$patient_id'") or die ("cannot update patient_tab");
 		} else {
 			echo "Invalid file format";
 		}
-	break;
-
+		break;
+	
 	
 
 	case 'get_hospital_plan':
