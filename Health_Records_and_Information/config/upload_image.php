@@ -1,4 +1,6 @@
 <?php
+include '../../backend/config/connection.php';
+
 // Get the image data from the POST request
 $imageDataURL = $_POST['image'];
 
@@ -6,7 +8,7 @@ $imageDataURL = $_POST['image'];
 $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $imageDataURL));
 
 // Specify the folder where you want to save the image
-$folder = $website_url/'uploaded_files/profile_pix/patient/';
+$folder = '../../uploaded_files/profile_pix/patient/';
 
 // Generate a unique filename for the image
 $filename = uniqid() . '.png';
@@ -15,6 +17,6 @@ $filename = uniqid() . '.png';
 file_put_contents($folder . $filename, $imageData);
 
 // Respond with the path where the image is stored
-$response = ['path' => $folder . $filename];
+$response =   $filename;
 echo json_encode($response);
 ?>

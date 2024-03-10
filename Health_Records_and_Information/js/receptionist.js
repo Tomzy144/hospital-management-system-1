@@ -57,43 +57,8 @@ function takePicture() {
 
     // Send the image data to the PHP script to handle moving it to the folder
     sendImageData(imageDataURL);
-    _upload_profile_pix(imageDataURL);
+    // _upload_profile_pix(imageDataURL);
   }
-}
-
-
-function sendImageData(imageDataURL) {
-  // Prepare the image data to be sent to the server
-  let formData = new FormData();
-  formData.append('image', imageDataURL);
-
-  // Send the image data to the server via AJAX
-  fetch('config/upload_image.php', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Failed to move image');
-    }
-    return response.json();
-  })
-  .then(data => {
-    // Handle the server response if needed
-    console.log('Image moved successfully');
-  
-    // Assuming server responds with the path where the image is stored
-    // Display the captured image (optional)
-    capturedImageElement.src = data.path; // Adjust 'path' to the key where the server sends the path
-    capturedImageElement.style.display = 'block';
-    // Show the upload button (optional)
-    var submit_btn = document.getElementById('uploadButton');
-    submit_btn.style.display = "block";
-    
-  })
-  .catch(error => {
-    console.error('Error moving image:', error);
-  });
 }
 
 
@@ -561,45 +526,55 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
 }
 }	
 
-// function _upload_profile_pix(imageDataURL) {
-//     var action = 'update_profile_pix';
-//     var id = "pat004";
-
-//     // Create FormData object and append data
-//     var form_data = new FormData();
-//     form_data.append('capturedImage', imageDataURL);
-//     form_data.append('action', action);
-//     form_data.append('id', id);
-
-//     // Send AJAX request
-//     $.ajax({
-//         url: "config/code.php",
-//         type: "POST",
-//         data: form_data,
-//         contentType: false,
-//         cache: false,
-//         processData: false,
-//         success: function(html) {
-//             $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
-//         },
-//         error: function(xhr, status, error) {
-//             console.error("Error uploading image:", error);
-//         }
-//     });
-// }
 
 
-function _upload_profile_pix(imageDataURL) {
+
+function sendImageData(imageDataURL) {
+  // Prepare the image data to be sent to the server
+  let formData = new FormData();
+  formData.append('image', imageDataURL);
+
+  // Send the image data to the server via AJAX
+  fetch('config/upload_image.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to move image');
+    }
+    return response.json(); // Return the JSON data
+  })
+  .then(data => {
+    // Handle the server response
+    console.log('Image moved successfully:', data);
+    // Alert the result received from the server
+    var result = data ; // Convert object to string and then alert it
+    // Update UI or perform other actions
+    _upload_profile_pix(result);
+
+  })
+  .catch(error => {
+    console.error('Error moving image:', error);
+    // Handle error appropriately
+  });
+}
+
+
+
+
+function _upload_profile_pix(result) {
   var action = 'update_profile_pix';
   var id = "pat004";
+  alert(result);
 
-  if (!imageDataURL) {
+  if (!result) {
       console.error("No file selected.");
       return;
   }
 
   var form_data = new FormData();
-  form_data.append('capturedImage', imageDataURL);
+  form_data.append('capturedImage', result);
   form_data.append('action', action);
   form_data.append('id', id);
 
