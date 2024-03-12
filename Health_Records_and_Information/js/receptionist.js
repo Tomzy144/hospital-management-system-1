@@ -473,9 +473,9 @@ function _add_patient() {
   }
 
   if (kgender1) {
-      vkgender = 'Female';
-  } else if (kgender2) {
       vkgender = 'Male';
+  } else if (kgender2) {
+      vkgender = 'Female';
   }
 
 
@@ -517,7 +517,8 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
                     // alert_close();
                     window.alert("Registration Successful");
                     window.alert("This patient's ID is "+ fpatient_id );
-                    location.reload(true);
+                    getLatestImage(fpatient_id);
+                   
               }
               $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
               document.getElementById('proceed-btn').disabled=false;
@@ -549,9 +550,9 @@ function sendImageData(imageDataURL) {
     // Handle the server response
     console.log('Image moved successfully:', data);
     // Alert the result received from the server
-    var result = data ; // Convert object to string and then alert it
+    // var result = data ; // Convert object to string and then alert it
     // Update UI or perform other actions
-    _upload_profile_pix(result);
+    // _upload_profile_pix(result);
 
   })
   .catch(error => {
@@ -562,19 +563,44 @@ function sendImageData(imageDataURL) {
 
 
 
+function getLatestImage(fpatient_id) {
+  $.ajax({
+    url: 'config/get_latest_image.php', // Path to your PHP script
+    type: 'GET',
+    dataType: 'json',
+    success: function(response) {
+      if (response.latest_image) {
+        var latestImage = response.latest_image;
+        var imagePath = '../../uploaded_files/profile_pix/patient/' + latestImage; // Construct the full path to the latest image
+        _upload_profile_pix(fpatient_id,latestImage);
+        // Do something with the latest image path
+        // console.log('Latest image:', imagePath);
+      } else {
+        console.log('No images found.');
+      }
+    },
+    error: function(xhr, status, error) {
+      console.error('Error retrieving latest image:', error);
+    }
+  });
+}
 
-function _upload_profile_pix(result) {
+
+
+
+
+function _upload_profile_pix(fpatient_id,latestImage) {
   var action = 'update_profile_pix';
-  var id = "pat004";
-  alert(result);
+  var id =  fpatient_id;
+  // alert(latestImage);
 
-  if (!result) {
+  if (!latestImage) {
       console.error("No file selected.");
       return;
   }
 
   var form_data = new FormData();
-  form_data.append('capturedImage', result);
+  form_data.append('capturedImage', latestImage);
   form_data.append('action', action);
   form_data.append('id', id);
 
@@ -588,13 +614,13 @@ function _upload_profile_pix(result) {
       success: function(html) {
           $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
           $('#passport').val('');
+          location.reload(true);
       },
       error: function(xhr, status, error) {
           console.error("Error uploading image:", error);
       }
   });
 }
-
 
 
 
@@ -675,6 +701,21 @@ function checkIfFamilyPlan() {
 function familyPlanSection(){
   document.querySelector('.family_plan_section').classList.toggle("hide");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -352,12 +352,6 @@
 
 
 
-
-
-
-
-
-
   <!---START OF ALL PATIENT LISTS SECTION -->
   <!--START OF ADMITTED PATIENTS FOR LIST1-->
   <div class="all_patient_list hide">
