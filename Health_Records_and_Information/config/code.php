@@ -120,6 +120,16 @@
 	
 		echo json_encode(array("check" => $check, "patient_id" => $patient_id));
 		break;
+
+
+
+		case 'create_family_card':
+
+			$family_card_id = $_POST['family_card_id'];
+
+			$create_family_card_query = mysqli_query($conn, "INSERT INTO `patient_tab`");
+
+		break;
 	
 
 

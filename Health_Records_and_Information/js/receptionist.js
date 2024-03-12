@@ -624,6 +624,34 @@ function _upload_profile_pix(fpatient_id,latestImage) {
 
 
 
+function create_family_card(){
+  var action = 'create_family_card';
+  var family_card_id;
+
+  var form_data = new FormData();
+  form_data.append('family_card_id', family_card_id);
+  form_data.append('action', action);
+  
+
+  $.ajax({
+      url: "config/code.php",
+      type: "POST",
+      data: form_data,
+      contentType: false,
+      cache: false,
+      processData: false,
+      success: function(html) {
+          $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+          $('#passport').val('');
+          location.reload(true);
+      },
+      error: function(xhr, status, error) {
+          console.error("Error uploading image:", error);
+      }
+  });
+
+}
+
 
 
 
