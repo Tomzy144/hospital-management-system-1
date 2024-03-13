@@ -424,6 +424,29 @@ function _get_lab_scientist_details($conn, $s_lab_scientist_id){
 }
 	
 
+function _get_family_card_details($conn,$s_family_card_id){
+    $query=mysqli_query($conn, "SELECT fullname FROM patient_tab WHERE family_card_id ='$s_family_card_id'");    
+    $fetch=mysqli_fetch_array($query);
+    $fullname=$fetch['patient_name'];
+    $email=$fetch['email'];
+    $phonenumber=$fetch['phonenumber'];
+    $role_id=$fetch['role_id'];
+    $status_id=$fetch['status_id'];
+    $passport=$fetch['passport'];
+    $date=$fetch['date'];
+    $last_login=$fetch['last_login'];
+
+    return '[{"lab_scientist_name":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
+}
+
+// function _check_family_card_details($conn,$s_family_card_id){
+//     $query=mysqli_query($conn, "SELECT * FROM family_card_tab WHERE family_card_id ='$s_family_card_id'");    
+//     $fetch=mysqli_fetch_array($query);
+   
+
+//     return '[{"lab_scientist_name":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
+// }
+
 
 
 

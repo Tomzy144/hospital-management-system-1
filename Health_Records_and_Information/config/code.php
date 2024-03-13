@@ -94,6 +94,7 @@
 		$status_id= '1';
 		// $category = $_POST['category'];
 		$hospital_plan = $_POST['hospital_plan'];
+		$family_card_id =$_POST['family_card_id'];
 
 		// $bed = $_POST['bed'];
 		// $ward = $_POST['ward'];
@@ -114,31 +115,43 @@
 			$patient_id = 'pat' . $no;
 	
 			mysqli_query($conn,"INSERT INTO `patient_tab`
-			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`hospital_card_id`) VALUES 
-			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW(),'$hospital_plan')") or die (mysqli_error($conn));
+			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`hospital_card_id`,`family_card_id`) VALUES 
+			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW(),'$hospital_plan','$family_card_id')") or die (mysqli_error($conn));
 		}
 	
 		echo json_encode(array("check" => $check, "patient_id" => $patient_id));
 		break;
 
-
-
 		case 'create_family_card':
-
-			$family_card_id = $_POST['family_card_id'];
-
-			$create_family_card_query = mysqli_query($conn, "INSERT INTO `patient_tab`");
-
+			$family_card_id = '';
+			for ($i = 0; $i < 6; $i++) {
+				$family_card_id .= rand(0, 9); // Concatenate a random digit between 0 and 9 to the family card ID
+			}
+			
+			// Output the generated family card ID as JSON
+			echo json_encode(array('result' => $family_card_id));
 		break;
-	
+		
 
+		
+	
+		
 
 
 
     
-    } ?>
+    } 
 
 
 
 
-	
+// function generateRandomFamilyCardID() {
+			
+// 			return $family_card_id;
+// 		}
+		
+// 		$generated_id = generateRandomFamilyCardID();
+// 		echo $generated_id; // Output the generated family card ID
+		
+
+// 	?>

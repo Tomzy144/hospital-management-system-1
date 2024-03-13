@@ -203,9 +203,11 @@
         <input type="checkbox" name="yes" id="" onchange="familyPlanSection()">
             Yes
         </input>
-        <input type="checkbox" name="no" id="">
+        <input type="checkbox" name="no" id="no_checkbox" onClick="create_family_card();">
             No
         </input>
+        <input type="hidden" id="accept" value="">
+        <div class="generating-div" id="generation_alert" style="display:block"></div>
        
         </div>
         </div>

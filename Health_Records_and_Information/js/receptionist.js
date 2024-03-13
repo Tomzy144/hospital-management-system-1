@@ -461,7 +461,7 @@ function _add_patient() {
   var past_disease = $('#past_disease').val();
   var family_disease = $('#family_disease').val();
   var past_surgery = $('#past_surgery').val();
-
+  var family_card_id =$('#accept').val();
  
   var vgender;
   var vkgender;
@@ -495,7 +495,7 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
 ////////////////////////////////////////////////	
   
     var action = 'add_patient';		 
-        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+ '&past_surgery='+ past_surgery+'&medical_history='+ medical_history +'&hospital_plan='+ hospital_plan;
+        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+ '&past_surgery='+ past_surgery+'&medical_history='+ medical_history +'&hospital_plan='+ hospital_plan + '&family_card_id=' + family_card_id;
         $.ajax({
         type: "POST",
         url: "config/code.php",
@@ -622,35 +622,46 @@ function _upload_profile_pix(fpatient_id,latestImage) {
   });
 }
 
+function create_family_card() {
+  $('#generation_alert').html('GENERATING ID...');
+  $('#no_checkbox').prop('disabled', true); // Disable the checkbox while processing
 
+  var action = 'create_family_card'; // Define the action variable
 
-function create_family_card(){
-  var action = 'create_family_card';
-  var family_card_id;
-
+  // Create a FormData object and append the action
   var form_data = new FormData();
-  form_data.append('family_card_id', family_card_id);
   form_data.append('action', action);
-  
 
+  // Make the AJAX request
   $.ajax({
-      url: "config/code.php",
-      type: "POST",
-      data: form_data,
-      contentType: false,
-      cache: false,
-      processData: false,
-      success: function(html) {
-          $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
-          $('#passport').val('');
-          location.reload(true);
-      },
-      error: function(xhr, status, error) {
-          console.error("Error uploading image:", error);
-      }
-  });
+    url: "config/code.php",
+    type: "POST",
+    data: form_data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function(response) {
+      // Parse the JSON response
+      var result = JSON.parse(response);
 
+      // Set the value of the accept input field to the generated ID
+      var accept = document.getElementById('accept');
+      
+      accept.value = result.result; // Access the 'result' property of the parsed response
+      
+      // Update UI to indicate ID generation
+      $('#generation_alert').html('ID GENERATED <i class="bi-check2"></i>');
+      $('#no_checkbox').prop('disabled', false); // Enable the checkbox
+    },
+    error: function(xhr, status, error) {
+      console.error("Error creating family card:", error);
+    }
+  });
 }
+
+
+
+
 
 
 
