@@ -117,19 +117,43 @@
 			mysqli_query($conn,"INSERT INTO `patient_tab`
 			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`hospital_card_id`,`family_card_id`) VALUES 
 			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW(),'$hospital_plan','$family_card_id')") or die (mysqli_error($conn));
+
+			mysqli_query($conn,"INSERT INTO `family_card_tab`(`family_card_id`) VALUES('$family_card_id')") or die (mysqli_error($conn));
 		}
 	
 		echo json_encode(array("check" => $check, "patient_id" => $patient_id));
 		break;
 
+
 		case 'create_family_card':
+			
 			$family_card_id = 'FAM';
+
 			for ($i = 0; $i < 6; $i++) {
 				$family_card_id .= rand(0, 9); // Concatenate a random digit between 0 and 9 to the family card ID
 			}
-			
-			// Output the generated family card ID as JSON
+
+			$check_query = mysqli_query($conn, "SELECT family_card_id FROM family_card_tab WHERE `family_card_id`='$family_card_id'");
+			$check_query_count = mysqli_num_rows($check_query);
+
+			if ($check_query_count > 0) {
+				// If the generated family card ID already exists, keep generating a new one until a unique one is found
+				do {
+					$family_card_id = 'FAM';
+					for ($i = 0; $i < 6; $i++) {
+						$family_card_id .= rand(0, 9); // Concatenate a random digit between 0 and 9 to the family card ID
+					}
+
+					$check_query = mysqli_query($conn, "SELECT family_card_id FROM family_card_tab WHERE `family_card_id`='$family_card_id'");
+					$check_query_count = mysqli_num_rows($check_query);
+				} while ($check_query_count > 0);
+			}
+
+			// Output the generated (or re-generated) family card ID as JSON
 			echo json_encode(array('result' => $family_card_id));
+
+
+
 		break;
 		
 
@@ -139,19 +163,5 @@
 
 
 
-    
-    } 
-
-
-
-
-// function generateRandomFamilyCardID() {
-			
-// 			return $family_card_id;
-// 		}
-		
-// 		$generated_id = generateRandomFamilyCardID();
-// 		echo $generated_id; // Output the generated family card ID
-		
-
-// 	?>
+		}
+ 	?>

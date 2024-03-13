@@ -702,8 +702,9 @@ function check_family_card_validity() {
 }
 
 
-
-
+function check_family_card_users(){
+  
+}
 
 
 
