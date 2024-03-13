@@ -648,7 +648,7 @@ function create_family_card() {
       var accept = document.getElementById('accept');
       
       accept.value = result.result; // Access the 'result' property of the parsed response
-      
+
       // Update UI to indicate ID generation
       $('#generation_alert').html('ID GENERATED <i class="bi-check2"></i>');
       $('#no_checkbox').prop('disabled', false); // Enable the checkbox
@@ -661,6 +661,45 @@ function create_family_card() {
 
 
 
+function check_family_card_validity() {
+  const inputField = document.getElementById('family_card_id');
+  const resultDiv = document.getElementById('result');
+
+  inputField.addEventListener('keyup', function(event) {
+      const inputData = event.target.value.trim();
+      if (inputData !== '') {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', `config/family_card_validation.php?input=${inputData}`, true);
+          xhr.onload = function() {
+              if (xhr.status === 200) {
+                  const response = JSON.parse(xhr.responseText);
+                  if (response.message === "AVAILABLE") {
+                      resultDiv.textContent = response.message;
+                      $('#proceed-btn').html('BOOK');
+                      $('#proceed-btn').prop('disabled', false);
+                  } else {
+                    resultDiv.textContent = response.message;
+                      // console.error('Family card not available.');
+                      $('#proceed-btn').html('INSERT CORRECT FAMILY CARD');
+                      $('#proceed-btn').prop('disabled', true);
+                  }
+              } else {
+                  console.error('Request failed. Status:', xhr.status);
+                  $('#proceed-btn').html('INSERT CORRECT FAMILY CARD');
+                  $('#proceed-btn').prop('disabled', true);
+              }
+          };
+          xhr.onerror = function() {
+              console.error('Request failed. Status:', xhr.status);
+              $('#proceed-btn').html('INSERT CORRECT FAMILY CARD');
+              $('#proceed-btn').prop('disabled', true);
+          };
+          xhr.send();
+      } else {
+          resultDiv.textContent = '';
+      }
+  });
+}
 
 
 

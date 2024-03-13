@@ -123,7 +123,7 @@
 		break;
 
 		case 'create_family_card':
-			$family_card_id = '';
+			$family_card_id = 'FAM';
 			for ($i = 0; $i < 6; $i++) {
 				$family_card_id .= rand(0, 9); // Concatenate a random digit between 0 and 9 to the family card ID
 			}
@@ -133,7 +133,7 @@
 		break;
 		
 
-		
+	
 	
 		
 

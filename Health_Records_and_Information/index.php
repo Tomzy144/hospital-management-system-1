@@ -214,7 +214,8 @@
             <!--Family plan authentication--->
     <div class="family_plan_section hide">
             <label for="">Insert your Family Id</label>
-            <input type="text" name="" id="family_card_id">
+            <input type="text" onkeyup="check_family_card_validity();" name="" id="family_card_id">
+            <div class="valid" id="result"></div>
             <button>Check</button>
             </div>
         </div>
