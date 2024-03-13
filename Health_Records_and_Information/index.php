@@ -203,16 +203,19 @@
         <input type="checkbox" name="yes" id="" onchange="familyPlanSection()">
             Yes
         </input>
-        <input type="checkbox" name="no" id="">
+        <input type="checkbox" name="no" id="no_checkbox" onClick="create_family_card();">
             No
         </input>
+        <input type="hidden" id="accept" value="">
+        <div class="generating-div" id="generation_alert" style="display:block"></div>
        
         </div>
         </div>
             <!--Family plan authentication--->
     <div class="family_plan_section hide">
             <label for="">Insert your Family Id</label>
-            <input type="text" name="" id="family_card_id">
+            <input type="text" onkeyup="check_family_card_validity();" name="" id="family_card_id">
+            <div class="valid" id="result"></div>
             <button>Check</button>
             </div>
         </div>
@@ -345,12 +348,6 @@
     </div>
     </div>
 <!--END OF WALKIN ADMISSION FORM2-->
-
-
-
-
-
-
 
 
 
