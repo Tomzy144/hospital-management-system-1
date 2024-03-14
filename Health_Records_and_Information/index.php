@@ -363,45 +363,47 @@
                 <span>Patient Admission List</span>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
+            <?php 
+    $sql = "SELECT * FROM patient_tab";
+    $result = $conn->query($sql);
+?>
+
             <table id="table1">
                 <thead>
-                    <td>S/N</td>
-                    <td>Patient Name</td>
-                    <td>Patient ID</td>
-                    <td>Patient Profile</td>
-                    <td>Date of Admission</td>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Patient Name</th>
+                        <th>Patient ID</th>
+                        <th>Patient Profile</th>
+                        <th>Date of Admission</th>
+                        <th>Action</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <td>1</td>
-                    <td>Esther Patrick</td>
-                    <td>PAT0001</td>
-                    <td>
-                        <img src="images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
-                    </td>
-                    <td>22-09-2023</td>
-                    <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
-                </tbody>
-                <tbody>
-                    <td>2</td>
-                    <td>Mercy Patrick</td>
-                    <td>PAT0002</td>
-                    <td>
-                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
-                    </td>
-                    <td>22-09-2023</td>
-                    <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
-                </tbody>
-                <tbody>
-                    <td>2</td>
-                    <td>Mercy Patrick</td>
-                    <td>PAT0002</td>
-                    <td>
-                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
-                    </td>
-                    <td>22-09-2023</td>
-                    <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $patient_id = $row["patient_id"];
+                ?>
+                    <tr data-patient-id="<?php echo $patient_id; ?>" onClick="next_page(this);">
+                        <td><?php echo $row["sn"]; ?></td>
+                        <td><?php echo $row["fullname"]; ?></td>
+                        <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]; ?>" alt="Profile Picture"></td>
+                        <td><img src="<?php echo $row["patient_passport"]; ?>" alt="Patient Profile"></td>
+                        <td><?php echo $row["date"]; ?></td>
+                        <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
+                    </tr>
+                <?php
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>No patients found</td></tr>";
+                }
+                ?>
                 </tbody>
             </table>
+
+
+
             <div class="_box_popup hide" id="patient_popup">
         <i class="bi bi-x-lg red" onclick="close_show_patient_transfer_popup()"></i>
         <ul>
@@ -430,6 +432,26 @@
             </div>
         </div>
       <!--END OF ADMITTED PATIENTS FOR LIST1-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <!--START OF WALKIN PATIENTS FOR LIST2-->
@@ -531,7 +553,7 @@
                     <div class="div1">
                     <span>Date of Birth : 23-09-2023</span>
                         <span>Address: 23 Enebong Street Calabar</span>
-                        <span>Phone Number: 090232322</span>
+                        <span>Phone Number: 090232325</span>
                     </div>
                     <div class="div2">
                         <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
