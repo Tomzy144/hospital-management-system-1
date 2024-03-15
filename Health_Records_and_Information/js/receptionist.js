@@ -704,8 +704,8 @@ function check_family_card_validity() {
 
 
 function check_family_card_users(){
-  $('#users_checkers').html('CHECK for Users count');
-  $('#users_checkers').prop('disabled', false);
+  $('#users_checker').html('CHECK for Users count');
+  $('#users_checker').prop('disabled', false);
   var family_card_id = $('#family_card_id').val(); // Assuming family_card_id is an input field
   
   var action = 'check_for_users'; // Define the action variable
@@ -735,20 +735,20 @@ function check_family_card_users(){
           break;
         case 1:
           alert("THREE users left.");
-          $('#users_checkers').prop('disabled', false);
+          $('#users_checker').prop('disabled', false);
           break;
         case 2:
           alert("TWO users left.");
-          $('#users_checkers').prop('disabled', false);
+          $('#users_checker').prop('disabled', false);
           break;
         case 3:
           alert("ONE user left.");
-          $('#users_checkers').prop('disabled', false);
+          $('#users_checker').prop('disabled', false);
           break;
         case 4:
           alert("This card is saturated.");
-          $('#users_checkers').html('THIS CARD IS SATURATED');
-          $('#users_checkers').prop('disabled', true);
+          $('#users_checker').html('THIS CARD IS SATURATED');
+          $('#users_checker').prop('disabled', true);
           $('#proceed-btn').html('THE FAMILY CARD USERS IS OPIMIZED');
           $('#proceed-btn').prop('disabled', true);
           break;

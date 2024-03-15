@@ -216,7 +216,7 @@
             <label for="">Insert your Family Id</label>
             <input type="text" onkeyup="check_family_card_validity();" name="" id="family_card_id">
             <div class="valid" id="result"></div>
-            <button id ="users_checkers" onclick="check_family_card_users();" type="button">Check for users</button>
+            <button id ="users_checker" onclick="check_family_card_users();" type="button">Check for users</button>
             </div>
         </div>
     <h3>Next of Kins</h3>
