@@ -702,10 +702,66 @@ function check_family_card_validity() {
 }
 
 
+
 function check_family_card_users(){
+  $('#users_checkers').html('CHECK for Users count');
+  $('#users_checkers').prop('disabled', false);
+  var family_card_id = $('#family_card_id').val(); // Assuming family_card_id is an input field
   
-  
+  var action = 'check_for_users'; // Define the action variable
+
+  // Create a FormData object and append the action
+  var form_data = new FormData();
+  form_data.append('action', action);
+  form_data.append('family_card_id', family_card_id);
+
+  // Make the AJAX request
+  $.ajax({
+    url: "config/code.php",
+    type: "POST",
+    data: form_data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function(response) {
+      // Parse the JSON response
+      var result = JSON.parse(response);
+
+      // Check the number of users returned
+      var users = result.users;
+      switch(users) {
+        case 0:
+          alert("No users associated with the family card.");
+          break;
+        case 1:
+          alert("THREE users left.");
+          $('#users_checkers').prop('disabled', false);
+          break;
+        case 2:
+          alert("TWO users left.");
+          $('#users_checkers').prop('disabled', false);
+          break;
+        case 3:
+          alert("ONE user left.");
+          $('#users_checkers').prop('disabled', false);
+          break;
+        case 4:
+          alert("This card is saturated.");
+          $('#users_checkers').html('THIS CARD IS SATURATED');
+          $('#users_checkers').prop('disabled', true);
+          $('#proceed-btn').html('THE FAMILY CARD USERS IS OPIMIZED');
+          $('#proceed-btn').prop('disabled', true);
+          break;
+        default:
+          alert("Unexpected number of users returned.");
+      }
+    },
+    error: function(xhr, status, error) {
+      console.error("Error checking card users:", error);
+    }
+  });
 }
+
 
 
 
