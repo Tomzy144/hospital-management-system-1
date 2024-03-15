@@ -704,7 +704,7 @@ function check_family_card_validity() {
 
 
 function check_family_card_users(){
-  $('#users_checker').html('CHECK for Users count');
+  $('#users_checker').html('CHECKING...');
   $('#users_checker').prop('disabled', false);
   var family_card_id = $('#family_card_id').val(); // Assuming family_card_id is an input field
   
@@ -736,14 +736,17 @@ function check_family_card_users(){
         case 1:
           alert("THREE users left.");
           $('#users_checker').prop('disabled', false);
+          $('#users_checker').html('Check for users');
           break;
         case 2:
           alert("TWO users left.");
           $('#users_checker').prop('disabled', false);
+          $('#users_checker').html('Check for users');
           break;
         case 3:
           alert("ONE user left.");
           $('#users_checker').prop('disabled', false);
+          $('#users_checker').html('Check for users');
           break;
         case 4:
           alert("This card is saturated.");

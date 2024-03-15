@@ -156,7 +156,6 @@
 
 		break;
 		
-
 		case 'check_for_users':
 			$family_card_id = $_POST['family_card_id'];
 			$check_query = mysqli_query($conn, "SELECT COUNT(*) AS user_count FROM patient_tab WHERE `family_card_id`='$family_card_id'");
@@ -169,11 +168,10 @@
 					$check = 4; // the card is saturated.
 				} elseif ($check_query_count == 3) {
 					$check = 3; // one user left.
-					echo json_encode(array('users' => $check));
 				} elseif ($check_query_count == 2) {
 					$check = 2; // 2 users left.
 				} elseif ($check_query_count == 1) {
-					$check = 1; // 3 user left.
+					$check = 1; // 1 user left.
 				} else {
 					$check = 0; // no users associated.
 				}
@@ -184,6 +182,7 @@
 			
 			echo json_encode(array('users' => $check));
 			break;
+		
 		
 		
 
