@@ -98,10 +98,10 @@
                 <img width="80px" height="80px" src="<?php echo $website_url ?>/Images/Mount Tech Logo.jpg" alt="logo">
                </div>
             <div class="sidebar_icons">
-                <i class="bi bi-chat-dots-fill" id="icon"></i>
-                <i class="bi bi-journal-album"  id="icon" onclick="form_section()"></i>
-            <i class="bi bi-person-fill"  id="icon" onclick="patient_list()"></i>
-                <i class="bi bi-box-arrow-right"  id="icon" onclick="document.getElementById('logoutform').submit();"></i>
+                <i class="bi bi-chat-dots-fill" id="icon">&nbsp;<span>Chat</span></i>
+                <i class="bi bi-journal-album"  id="icon" onclick="form_section()">&nbsp;<span>Admission Form</span></i>
+            <i class="bi bi-person-fill"  id="icon" onclick="patient_list()">&nbsp;<span>Patient List</span></i>
+                <i class="bi bi-box-arrow-right"  id="icon" onclick="document.getElementById('logoutform').submit();">&nbsp;<span>Logout</span></i>
                 <form method="post" action="../config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
                 </form>
@@ -113,7 +113,7 @@
  <!--START OF ADMISSION FORM1-->
     <div class="form_sections">
                <!----START OF CHECKUP SECTION-->
-               <div class="checkup_section">
+               <div class="checkup_section hide">
             <h2>Check Up</h2>
             <div class="form-control">
                 <label for="">Patient Name</label>
@@ -132,7 +132,7 @@
         <!---END OF CHECKUP SECTION--->
     <div class="new_intake_admission_form">
     <div class="form-container">
-        <h2>Patient Admission Form</h2>
+        <h3>Patient Admission Form</h3>
         <form action="config/code.php?update_profile_pix" id="add_patient_pic" enctype="multipart/form-data" method="post">
             <div class="upload_image" action ="config/code?=update_profile_pix" title="update profile picture">
                 <video id="videoElement" width="400" height="300" autoplay></video>
@@ -153,7 +153,7 @@
             <div class="flex_capture_div">
                 <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
                 <div class="btn_capture hide" onClick="takePicture()">Capture</div>
-                <button class="btn_re_capture" style="display:none" type="button" id="uploadButton" title="Submit"  onclick="_upload_profile_pix();"> Submit PASSPORT <i class="bi-check"></i></button>
+                <!-- <button class="btn_re_capture" style="display:none" type="button" id="uploadButton" title="Submit"  onclick="_upload_profile_pix();"> Submit PASSPORT <i class="bi-check"></i></button> -->
             </div>
         </form>
 
@@ -301,9 +301,9 @@
 
 
         <!--START OF WALKIN ADMISSION FORM2-->
-            <div class="walkin_admission_form">
+            <div class="walkin_admission_form hide">
             <div class="form-container">
-        <h2>WalkIn Admission Form</h2>
+        <h3>WalkIn Admission Form</h3>
         <div class="walkin_in_section_upload_image">
              <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
             <i class="bi bi-plus" id="walkin_in_section_capture_image" onclick="openCamera2()"></i>
@@ -402,8 +402,8 @@
                     <tr data-patient-id="<?php echo $patient_id; ?>" onClick="next_page(this);">
                         <td><?php echo $row["sn"]; ?></td>
                         <td><?php echo $row["fullname"]; ?></td>
-                        <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]; ?>" alt="Profile Picture"></td>
                         <td><img src="<?php echo $row["patient_passport"]; ?>" alt="Patient Profile"></td>
+                        <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]; ?>" alt="Profile Picture"></td>
                         <td><?php echo $row["date"]; ?></td>
                         <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
                     </tr>

@@ -16,9 +16,10 @@
 }
 
 body{
-    width: 100%;
-    height:100%;
+    width: 100vw;
+    height:100vh;
     overflow: hidden;
+    background-color: #f7f7f7;
 }
 .navbar{
     width: 100%;
@@ -29,7 +30,7 @@ body{
     align-items: center;;
     background-color: #2a57d7;
     top: 0;
-    z-index: 999;
+    z-index: 7;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -41,6 +42,20 @@ body{
     justify-content: center;
     animation: zoomIn 0.5s ease-in-out;
     align-items: center;
+}
+.section1 button{
+    padding: 0.5em;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    color: rgb(42, 87, 215);
+    border-radius: 4px;
+    transition: all ease-in-out 0.5s;
+}
+.section1 button:hover{
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
 }
 .section2{
     width: 500px;
@@ -57,6 +72,7 @@ body{
     width: 150px;
     display: flex;
     justify-content: center;;
+    cursor: pointer;
     align-items: center;
     height: 100%;
 }
@@ -205,7 +221,7 @@ body{
     left: 0;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    z-index: 1000;
+    z-index: 7;
 }
 .sidebar_contents{
     justify-content: center;
@@ -216,6 +232,11 @@ body{
    cursor: pointer;
    text-align: center;
    border-bottom: 2px solid rgba(255, 255, 255);
+}
+.sidebar_contents img{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
 }
 .sidebar_icons{
     width: 100%;
@@ -241,18 +262,22 @@ body{
 
 .form_container{
     width: 60%;
-    height: 800px;
     padding: 1rem;
-    background-color: #fff;
-    margin: 4.2rem 0 0 4em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 4.2rem 0 1em 4.6em;
     overflow: auto;
     color:rgb(42, 87, 215);
     position: relative;
 }
 h1{
-    animation: slideInLeft 1s ease-in-out;
+    animation: slideInLeft 0.5s ease-in-out;
     margin: 1rem 0;
     letter-spacing: 3px;
+}
+h3{
+    color: rgb(42, 87, 215);
+    font-weight: bold;
+    animation: zoomIn 0.5s ease-in-out;
 }
 .flex_form{
     width: 100%;
@@ -265,9 +290,8 @@ form{
     width: 100%;
     display: flex;
     flex-direction: column;
-    background: rgb(255, 255, 255);
+    background: #f7f7f7;
   padding: 0.5em;
-  box-shadow: rgba(174, 164, 164, 0.35) 0px 5px 15px;
 }
 
 .form_control{
@@ -277,23 +301,24 @@ form{
     margin: 0.8rem 0.5rem;
     flex-direction: column;
 }
-.form_control label{
+ label{
     color: rgb(42, 87, 215);;
 }
-.form_control input{
-    width: 100%;
+ input{
     padding: 0.5em;
     color: rgb(42, 87, 215);;
+    border-radius: 5px;
     font-size: 18px;
     border: 1px solid rgb(42, 87, 215);;
     outline: none;
 }
-.form_control select{
+ select{
     border: 1px solid rgb(42, 87, 215);;
     padding: 0.5em;
+    background: #fff;
     color: rgb(42, 87, 215);;;
 }
-.form_control textarea{
+ textarea{
     border: 1px solid rgb(42, 87, 215);;
     padding: 0.5em;
     color: rgb(42, 87, 215);;;
@@ -314,7 +339,7 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: #f7f7f7;
     position: relative;
     text-align: center;
 }
@@ -339,13 +364,14 @@ form{
     margin: 0 auto;
 }
 .btn_capture{
-    width: 100px;
+    width: 150px;
     padding: 0.5rem;
     text-align: center;
     margin: 0.5rem 0.5rem;
     cursor: pointer;
     background-color: rgb(42, 87, 215);
     color:  rgb(255, 255, 255);
+    border-radius: 5px;
     transition: all  ease-in-out 0.5s; 
 }
 .btn_capture:hover{
@@ -355,8 +381,9 @@ form{
 }
 
 .btn_recapture{
-    width: 100px;
+    width: 150px;
     padding: 0.5rem;
+    border-radius: 5px;
     text-align: center;
     margin: 0.5rem 0.5rem;
     border: none;
@@ -390,10 +417,7 @@ form{
 
 .list_div {
     width: 800px;
-    height: fit-content;
     margin: 4.5rem 0 0 1rem;
-    position: relative;
-    height: 800px;
     overflow: auto;
 }
  .appoitments_div{
@@ -404,8 +428,8 @@ form{
     position:absolute;
     padding:1em;
     animation: bounceIn 1s ease-in-out;
-    top: 20%;
-    right: 3%;
+    top: 10%;
+    right: 1%;
     z-index:10
 }
 
@@ -414,8 +438,8 @@ form{
     height: auto;
     padding: 1em;
     position: absolute;
-    top: 20%;
-    right: 3%;
+    top: 10%;
+    right: 1%;
     animation: bounceIn 1s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 9;
@@ -455,12 +479,49 @@ span{
     align-items: center;
     margin: 0.4em 0 0 0;
 }
-
-
-h3{
-    font-weight: bold;
-    animation: zoomIn 0.5s ease-in-out;
+.search_bar_container input{
+    width: 300px;
+    padding: 0.5em;
+    font-size: 15px;
 }
+
+.dynamic_popup{
+    width: auto;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index: 15;
+    display: flex;;
+    flex-direction: column;
+    justify-content: center;
+    animation: headShake 1s ease-in-out ;
+    padding: 0.5em;
+    text-align: center;
+    height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgb(255, 255, 255);
+}
+.dynamic_popup span{
+    margin: 0.5em;
+    font-size: 15px;
+}
+.div_switch{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.div_switch span{
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    padding: 0.5em;
+    color: rgb(42, 87, 215);
+}
+.div_switch span:hover{
+    padding: 0.5em;
+    background-color: rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
+}
+
  table {
     width: 100%;
     border-collapse: collapse;
@@ -475,19 +536,27 @@ h3{
     background-color: #fff; 
 }
  table tbody td img{
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
 }
  table  thead td {
-    color: rgb(0, 87, 194);
+    color: rgb(42, 87, 215);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    padding: 0.3em;
+    text-transform: uppercase;
 }
 table tbody{
     animation: zoomIn 0.5s ease-in-out;
 }
  table tbody td {
-    padding: 1em;
+    padding: 0.5em;
     cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
     color: rgb(255, 255, 255);
     background-color: rgb(42, 87, 215);
     border-bottom: 1px solid #ddd; /* Add a bottom border to separate cells */
@@ -513,37 +582,62 @@ table tbody{
 
 
 
+
+
+
+
+
+@media screen and (max-width: 1300px) {
+.form_control{
+    width: 245px;
+}
+.appoitments_div .form_control{
+    width: 100%;
+}
+.patient_container .div_flexs .form_control{
+    width: 230px;
+}
+}
+
+/*-------------------------PATIENT PROFILES---------------------------------------*/
+
 .antenatal_patients_profile{
     width: 100%;
     height: 100%;
+    background-color: rgb(42, 87, 215);
     display: flex;
     justify-content: center;
 }
 .patient_container{
     width: 50%;
-    height: 800px;
     overflow: auto;
-    margin: 4.6em 0 0 5em;
-    background-color: rgb(255, 255, 255);
+    margin: 4.6em 0 1em 5em;
+    border-right: 1px solid #fff;
+    padding: 0.5em;
+    background-color:rgb(42, 87, 215);
+}
+.patient_container ._inputs span{
+    color: #ffffff;
+}
+.patient_container h3{
+    color: #fff;
 }
 .patient_container2{
     width: 50%;
-    height: 800px;
     overflow: auto;
-    margin: 4.6em 0 0 1em;
-    background-color: rgb(255, 255, 255);
+    margin: 4.6em 0 1em 1em;
+    background-color: rgb(42, 87, 215);
     padding: 1em;
 }
 .patient_container2 h1{
     font-size: 20px;
-    color: rgb(42, 87, 215);;
+    color: rgb(255, 255, 255);;
     font-weight: bold;
 }
 .all_info{
     width: 100%;
     height: auto;
     overflow: auto;
-    background-color:rgb(255, 255, 255);;
 }
 .all_info .patient_personal_info{
     display: flex;
@@ -551,15 +645,26 @@ table tbody{
     padding: 0.5em;
     color:rgb(42, 87, 215);;
     margin: 0 0 1em 0;
-    border-bottom: 1px solid rgb(42, 87, 215);
+    background-color: rgb(42, 87, 215);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.patient_personal_info span{
+font-size: 18px;
+color: #fff;
+margin: 0.2em 0;
+animation: slideInLeft 0.5s ease-in-out;
 }
 .all_info .patient_inputs{
     display: flex;
     flex-direction: column;
     color: #fff;
-    height: 400px;
+    height: auto;
     overflow: auto;
     margin: 0 0 1em 0;
+}
+.patient_inputs span{
+    color: #fff;
+
 }
 ._vital_info{
     width: 100%;
@@ -571,11 +676,14 @@ table tbody{
 }
 ._btn_info{
     width: 100%;
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(255, 255, 255);
     padding: 0.5em;
     cursor: pointer;
     text-align: center;
-    color: #ffffff;
+    border-radius: 20px;
+    margin: 0.5em 0;
+    animation: zoomIn 0.5s ease-in-out;
+    color: rgb(42, 87, 215);;
     border: none;
 }
 ._btn_flexs{
@@ -598,6 +706,7 @@ table tbody{
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
+    padding: 0.5em;
     background-color: #000000;
 }
 ._data h3{
@@ -611,14 +720,22 @@ color: #fff;
     width: 260px;
     color: #fff;
 }
-
+.flex_div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 ._data span{
-    border: 1px solid #db0000;
+    border: 1px solid #2a57d7;
     width: 230px;
     padding: 0.4em;
+    color: #fff;
 }
 .all_info  h3{
     text-align: center;
+    font-size: 20px;
+    margin: 0.5em 0;
+    color: #fff;
 }
 .patient_inputs thead td{
     padding: none;
@@ -655,7 +772,7 @@ border-bottom: 1px solid rgb(42, 87, 215);
 }
 .patient_container h1{
     font-size: 20px;
-    color: rgb(42, 87, 215);;
+    color: rgb(255, 255, 255);;
     font-weight: bold;
 }
 .div_text{
@@ -667,14 +784,14 @@ border-bottom: 1px solid rgb(42, 87, 215);
 .btn_patients_profile{
     width: 100%;
     padding: 0.5em;
-    color: #fff;
+    color: rgb(42, 87, 215);;
     border: none;
+    border-radius: 20px;
+    margin: 0.5em 0;
     text-align: center;
+    animation: zoomIn 0.5s ease-in-out;
     cursor: pointer;
-    background-color: rgb(42, 87, 215);
-}
-select{
-    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
 }
 .antenatal_patients_profile .vitals_input{
     width: 100%;
@@ -714,6 +831,7 @@ select{
     border: none;
     border: 1px solid rgb(255, 255, 255);
     outline: none;
+    color: #000000;
     width: 100%;
 }
 .antenatal_patients_profile .drug_prescribtion{
@@ -738,7 +856,7 @@ select{
     color: #fff;
     font-size: 30px;
     top: 50%;
-    right: 3%;
+    right: 2%;
     cursor: pointer;
     position: absolute;
 }
@@ -764,7 +882,7 @@ select{
     width: 40%;
     height: 100px;
 }
- form span{
+ form  span{
     color: rgb(42, 87, 215);
 }
 .screening_input .div_flexs{
@@ -772,9 +890,6 @@ select{
     width: 100%;
     display: flex;
   flex-direction: column;
-}
-.screening_input .div_flexs .form_control{
-width: 98%;
 }
 .screening_input .div_flexs .form_control .div{
 margin: 1em 1em;
@@ -795,9 +910,12 @@ margin: 1em 1em;
     width: 100%;
     height: 100%;
     display: flex;
+    background-color: rgb(42, 87, 215);
     justify-content: center;
 }
-
+.patient_container span{
+    color: #fff;
+}
 .postnatal_patients_profile .postnatal_accessment_form{
     width: 100%;
     background-color: black;
@@ -841,8 +959,15 @@ margin: 1em 1em;
     width: 100%;
     height: 100%;
     display: flex;
+    background-color: rgb(42, 87, 215);
     position: relative;
     justify-content: center;
+}
+.patient_container span{
+    color: rgb(42, 87, 215);;
+}
+.patient_container ._inputs span{
+    color: rgb(255, 255, 255);
 }
 .labour_patients_profile .vitals_input2{
     width: 100%;
@@ -885,35 +1010,7 @@ margin: 1em 1em;
     position: relative;
     height: auto;
 }
-.dynamic_popup{
-    width: 500px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 15;
-    display: flex;;
-    flex-direction: column;
-    justify-content: center;
-    animation: headShake 1s ease-in-out ;
-    padding: 0.5em;
-    text-align: center;
-    height: fit-content;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color:rgb(255, 0, 0);; ;
-}
-.dynamic_popup span{
-    color: #fff;
-    margin: 0.5em;
-    font-size: 18px;
-}
-.div_switch{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
-.div_switch span{
-    cursor: pointer;
-}
+
 .drug_prescribtion3 .btn_white{
     background-color: #fff;
     color:  rgb(42, 87, 215);;
@@ -969,8 +1066,7 @@ margin: 1em 1em;
 }
 .drugs_booking table{
     width: 100%;
-    border-collapse: separate;
-    border: 1px solid black;
+    border-collapse:collapse;
 }
 .drugs_booking thead td{
 }
@@ -985,8 +1081,9 @@ margin: 1em 1em;
 .drugs_booking button{
     width: 100%;
     background-color: rgb(42, 87, 215);
-    padding: 1rem 0;
+    padding: 0.5em;
     margin: 1rem 0;
+    border-radius: 20px;
     color: #fff;
     border: none;
     cursor: pointer;

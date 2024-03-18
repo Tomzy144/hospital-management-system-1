@@ -15,6 +15,7 @@
     <!----START OF NAVBAR AND SIDEBAR-->
     <div class="navbar">
         <div class="section1">
+            <button class="hide" id="logout_patient">Log out of this patient</button>
         </div>
         <div class="section2">
             <div class="icons">
@@ -30,14 +31,14 @@
             <img id="image_profile_account" src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
             <h4>Princess Esther Asuquo</h4>
             <button class="btn_submit">Upload Image</button>
-            <span>change password</span>
+            <h4>change password</h4>
         </div>
             <div class="image">
             <img src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
             <div class="active"></div>
             </div>
         </img>  
-            <span>Princess Esther Asuquo</span>
+            <h4>Princess Esther Asuquo</h4>
             <i class="fa fa-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>
@@ -49,12 +50,44 @@
                </div>
             <div class="sidebar_icons">
                 <i class="bi bi-chat-dots-fill" id="icon"></i>
-                <i class="fa-solid fa-person-pregnant" id="icon" onclick="antenatalSection()"></i>
-                <i class="fa-solid fa-baby" id="icon" onclick="postnatalSection()"></i>
-                <i class="fa-solid fa-person-breastfeeding" id="icon" onclick="labourSection()"></i>
+                <i class="fa-solid fa-person-pregnant" id="icon" onclick="  switch_to_antenatal()"></i>
+                <i class="fa-solid fa-baby" id="icon" onclick="switch_to_postnatal()"></i>
+                <i class="fa-solid fa-person-breastfeeding" id="icon" onclick="switch_to_labour()"></i>
                 <i class="bi bi-box-arrow-right" id="icon"></i>
             </div>
         </div>
+
+        <div class="dynamic_popup hide" id="change_to_antenatal_section">
+            <span>Are you sure you want to Switch to Antenatal Unit</span>
+            <div class="div_switch">
+                <span onclick="antenatalSection()">Yes</span>
+                <span  onclick="reject_switch()">No</span>
+            </div>
+        </div>
+        <div class="dynamic_popup hide" id="dont_switch_if_active">
+        </div>
+        <div class="dynamic_popup hide" id="change_to_postnatal_section">
+            <span>Are you sure you want to Switch to Postnatal Unit</span>
+            <div class="div_switch">
+                <span onclick="postnatalSection()">Yes</span>
+                <span onclick="reject_switch()">No</span>
+            </div>
+        </div>
+        <div class="dynamic_popup hide" id="change_to_labour_section">
+            <span>Are you sure you want to Switch to Labour Unit</span>
+            <div class="div_switch">
+                <span onclick="labourSection()">Yes</span>
+                <span  onclick="reject_switch()">No</span>
+            </div>
+            </div>
+        <div class="dynamic_popup hide" id="check_if_want_to_log_out_of_patient_profile">
+            <span>Are you sure you want to Log out of Patient PAT0002</span>
+            <div class="div_switch">
+                <span id="logout_patient">Yes</span>
+                <span  onclick="reject_switch()">No</span>
+            </div>
+        </div>
+        <div class="background_opacity hide" id="background_opacity"></div>
           <!----END OF NAVBAR AND SIDEBAR-->
 
 
@@ -157,7 +190,7 @@
                     <td>Patient ID</td>
                     <td>Date of Admission</td>
                 </thead>
-                <tbody onclick="anternal_patient_profile_section()">
+                <tbody onclick="accessing_a_specific_antenatal_patients_profile()">
                     <td>1</td>
                     <td>
                         <img src="../images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
@@ -185,7 +218,7 @@
                     <i class="bi bi-x-lg close_icon" onclick="_close_transfer_dropdowns3()"></i>
                 <ul>
                     <li onclick="_doc_transfer_from_antenatal()">Doctor Appoitment</li>
-                    <li onclick="_transfer_patient_from_antenatal_to_labour()">Transfer to Labour Ward</li>
+                    <li onclick="_switch_from_antenatal_to_labour()">Transfer to Labour Ward</li>
                     <li onclick="_lab_transfer_from_antenatal()">Transfer to Labouratory</li>
                     <li onclick="_radiology_transfer_from_antenatal()">Transfer to Radiology</li>
                 </ul>
@@ -194,7 +227,7 @@
                  <!-----DOCTOR APPOITMENT--->
                  <div class="appoitments_div hide" id="doctor_appoitment3">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment3()"></i>
-            <span>Doctor Appoitment</span>
+            <h3>Doctor Appoitment</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -224,7 +257,7 @@
                    <!-----LABOUR WARD APPOITMENT--->
                    <div class="appoitments_div hide" id="labour_ward_appoitment3">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment3()"></i>
-            <span>Labour Ward Unit</span>
+            <h3>Labour Ward Unit</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -246,7 +279,7 @@
               <!-----LABOURATORY APPOITMENT--->
               <div class="appoitments_div hide" id="lab_appoitment3">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment3()"></i>
-            <span>Labouratory Unit</span>
+            <h3>Labouratory Unit</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -268,7 +301,7 @@
                       <!-----RADIOLOGY APPOITMENT--->
                       <div class="appoitments_div hide" id="radiology_appoitment3">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment3()"></i>
-            <span>Radiology Unit</span>
+            <h3>Radiology Unit</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -285,8 +318,31 @@
                 <button class="btn_app">Request</button>
             </form>
             </div>
-
     </div>
+    <div class="dynamic_popup hide" id="switch_to_labour">
+            <span>Are you sure you want to Switch to Labour Ward</span>
+            <div class="div_switch">
+                <span onclick="book_labour_section()">Yes</span>
+                <span onclick="reject_switch()">No</span>
+            </div>
+        </div>
+    <div class="dynamic_popup hide" id="book_labour_section">
+            <span>PAT0001 would be switch to labour unit,  when a  payment is made in the account unit</span>
+            <div class="div_switch">
+                <span onclick="book_labour_section_pending()">Book for payment</span>
+                <span onclick="reject_switch()">Reject</span>
+            </div>
+        </div>
+    <div class="dynamic_popup hide" id="comfirmation_labour_book">
+            <span>Please go to the account unit and make payment for transfer of your data to the Labour Unit</span>
+        </div>
+        <div class="dynamic_popup hide" id="accessing_antenatal_patient_profile">
+    <span>Accessing Patient PAT0001</span>
+            <div class="div_switch">
+                <span id="comfirmed_patient">Comfirmed</span>
+                <span onclick="reject_switch()">Reject</span>
+            </div>
+        </div>
 </div>
 <div class="background_opacity hide" id="background_opacity3"></div>
   </div>
@@ -299,8 +355,8 @@
             <div class="patient_profile">
                 <img src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
                 <div class="div_text">
-                    <span>Esther Patrick Samuel</span>
-                    <span>PAT0003</span>
+                    <h3>Esther Patrick Samuel</h3>
+                    <h3>PAT0003</h3>
                 </div>
             </div>
             <h1>Medical Inputs</h1>
@@ -416,6 +472,7 @@
                         <label for="">Cervical Screening</label>
                               <input type="text" name="" id="">
                     </div>
+                    </div>
                     <div class="form_control">
                     <span>Screening for Infection</span><br/>
                         <div class="flex_wrap">
@@ -474,13 +531,12 @@
                             </label>
                         </div>
                         </div>
-                        </div>
                     </div>
                 </div>
                 </form>
             </div>
         </div>
-        <button class="btn_patients_profile">Save all</button>
+        <button class="btn_patients_profile" onclick="savedInput()">Update data</button>
   </div>
 
 
@@ -667,9 +723,25 @@
           
         </tbody>
     </table>
-    <button>Book now</button>
+    <button onclick="_check_selected_antenatal_drugs()">Book now</button>
     </div>   
 </div>
+<div class="dynamic_popup hide" id="_check_selected_antenatal_drugs">
+            <span>Are you sure you want to Book for this drugs</span>
+            <div class="div_switch">
+                <span onclick="comfirmed_antenatal_drugs()">Yes</span>
+                <span  onclick="reject_switch()">No</span>
+            </div>
+        </div>
+        <div class="dynamic_popup hide" id="_approved_antenatal_drugs">
+            <span>Drugs is booked, go to the account unit and make payment</span>
+        </div>
+<div class="dynamic_popup hide" id="save_inputs">
+            <span>PAT0003 Data is updated</span>
+        </div>
+        <div class="dynamic_popup hide" id="add_selected_antenatal_drugs">
+            <span>Drugs Added</span>
+        </div>
   </div>
      <!----END OF THE ANTERNATAL -->
 
@@ -689,7 +761,7 @@
             <div class="container hide" id="postnatal_section">
            <div class="form_container">
                <form action="">
-        <h2>Postnatal Registration Form</h2>
+        <h3>Postnatal Registration Form</h3>
         <div class="upload_div">
              <video id="videoElement_postnatal" width="400" height="300" autoplay></video>
             <i class="bi bi-plus capture_image_icon" id="capture_image_postnatal" onclick="openCamera1()"></i>
@@ -700,7 +772,7 @@
             <div class="btn_capture hide" id="capture_patient2"onClick="takePicture1()">Capture</div>
         <div class="btn_recapture hide"  id="recapture_patient2" onclick="retakePicture1()">Recapture</div>
     </div>
-        <span>Patient Info</span>
+        <h3>Patient Info</h3>
         <div class="flex_form">
     <div class="form_control">
         <label for="">Full name</label>
@@ -736,7 +808,7 @@
         </div>
         </div>
 
-        <span>Medical History</span>
+        <h3>Medical History</h3>
         <div class="flex_form">
         <div class="form_control">
         <label for="">Gestational Age</label>
@@ -760,7 +832,7 @@
         </div>
         </div>
 
-        <span>Delivery Details</span>
+        <h3>Delivery Details</h3>
         <div class="flex_form">
         <div class="form_control">
         <label for="">Date of Delivery</label>
@@ -798,7 +870,7 @@
                 <div class="list_div">
     <div class="table_container">
             <div class="search_bar_container">
-                <h2>Postnatal Patient Admission List</h2>
+                <h3>Postnatal Patient Admission List</h3>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
             <table>
@@ -809,7 +881,7 @@
                     <td>Patient ID</td>
                     <td>Date of Admission</td>
                 </thead>
-                <tbody onclick="postnatal_patient_profile_section()">
+                <tbody onclick="accessing_a_specific_postnatal_patients_profile()">
                     <td>1</td>
                     <td>
                         <img src="../images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
@@ -838,7 +910,7 @@
                 <ul>
                     <li onclick="_nurse_transfer_from_postnatal()">Call in Nurse Station</li>
                     <li onclick="_doc_transfer_from_postnatal()">Doctor Appoitment</li>
-                    <li onclick="postnatal_ward()">Transfer to Postnatal Ward</li>
+                    <li onclick="_select_postnatal_ward()">Choose ward for Patient</li>
                     <li onclick="_lab_transfer_from_postnatal()">Transfer to Labouratory</li>
                     <li onclick="_radiology_transfer_from_postnatal()">Transfer to Radiology</li>
                 </ul>
@@ -848,7 +920,7 @@
              <!-----NURSE APPOITMENT--->
              <div class="appoitments_div hide" id="nurse_appoitment2">
             <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment2()"></i>
-                <span>Nurse Station</span>
+                <h3>Nurse Station</h3>
                 <form action="" id="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -870,7 +942,7 @@
               <!-----DOCTOR APPOITMENT--->
               <div class="appoitments_div hide" id="doctor_appoitment2">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
-            <span>Doctor Appoitment</span>
+            <h3>Doctor Appoitment</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -900,7 +972,7 @@
    <!-----POSTNATAL WARD--->
    <div class="appoitments_div hide" id="postnatal_ward">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
-            <span>Postnatal Ward</span>
+            <h3>Postnatal Ward</h3>
                 <div class="form_control large">
                     <label for="">Ward  1</label>
                     <select name="" id="">
@@ -944,7 +1016,7 @@
            <!-----LABOURATORY APPOITMENT--->
            <div class="appoitments_div hide" id="lab_appoitment2">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
-            <span>Labouratory Unit</span>
+            <h3>Labouratory Unit</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -965,7 +1037,7 @@
     <!-----RADIOLOGY APPOITMENT--->
     <div class="appoitments_div hide" id="radiology_appoitment2">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
-            <span>Radiology Unit</span>
+            <h3>Radiology Unit</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -985,6 +1057,13 @@
 
         </div>
     </div>
+    <div class="dynamic_popup hide" id="accessing_postnatal_patient_profile">
+    <span>Accessing Patient PAT0001</span>
+            <div class="div_switch">
+                <span id="comfirmed_patient">Comfirmed</span>
+                <span onclick="reject_switch()">Reject</span>
+            </div>
+        </div>
     <div class="background_opacity hide" id="background_opacity2"></div>
   </div>
    <!----END OF THE POSTNATAL LIST-->
@@ -995,8 +1074,8 @@
             <div class="patient_profile">
                 <img src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
                 <div class="div_text">
-                    <span>Esther Patrick Samuel</span>
-                    <span>PAT0003</span>
+                    <h3>Esther Patrick Samuel</h3>
+                    <h3>PAT0003</h3>
                 </div>
             </div>
             <h1>Medical Inputs</h1>
@@ -1112,7 +1191,7 @@
                 <button type = "button" class="btn_patients_profile btn_white" onclick="_bookDrugs2()">Book Drugs</button>
                         </form>
                         </div>
-                        <button class="btn_patients_profile">Save all</button>
+                        <button class="btn_patients_profile" onclick="update_postnatal_patient_data()">Update data</button>
                     </div>
                    <!----POSTNATAL PATIENT HOSPITAL RECORD INFORMATION----->
 <div class="patient_container2">
@@ -1256,7 +1335,24 @@
     </div>
 </div>
 </div>
-                </div>
+<div class="dynamic_popup hide" id="add_selected_postnatal_drugs">
+            <span>Drugs Added</span>
+        </div>
+<div class="dynamic_popup hide" id="_check_selected_postnatal_drugs">
+            <span>Are you sure you want to Book for this drugs</span>
+            <div class="div_switch">
+                <span onclick="comfirmed_postnatal_drugs()">Yes</span>
+                <span  onclick="reject_switch()">No</span>
+            </div>
+        </div>
+        <div class="dynamic_popup hide" id="_approved_postnatal_drugs">
+            <span>Drugs is booked, go to the account unit and make payment</span>
+        </div>
+        <div class="dynamic_popup hide" id="update_postnatal_data">
+            <span>PAT0003 Data is updated</span>
+        </div>
+        </div>
+  </div>
                     <div class="drugs_booking hide" id="postnatal_drugs_booking">
   <i class="bi bi-x-lg" id="close" onclick="_close_bookDrugs2()"></i>
     <h1>Drug Booking</h1>
@@ -1272,7 +1368,7 @@
           
         </tbody>
     </table>
-    <button>Book now</button>
+    <button onclick="_check_selected_postnatal_drugs()">Book now</button>
     </div>   
                     </div>
 
@@ -1297,7 +1393,7 @@
    <div class="container hide" id="labour_section">
            <div class="form_container">
         <form action="">
-        <h2>Labour Registration Form</h2>
+        <h3>Labour Registration Form</h3>
         <div class="upload_div">
              <video id="videoElement_labor" width="400" height="300" autoplay></video>
             <i class="bi bi-plus capture_image_icon" id="capture_image_labor" onclick="openCamera3()"></i>
@@ -1308,7 +1404,7 @@
             <div class="btn_capture hide" id="capture_patient3" onClick="takePicture3()">Capture</div>
         <div class="btn_recapture hide" id="recapture_patient3"  onclick="retakePicture3()">Recapture</div>
     </div>
-        <span>Patient Info</span>
+        <h3>Patient Info</h3>
         <div class="flex_form">
     <div class="form_control">
         <label for="">Full name</label>
@@ -1340,7 +1436,7 @@
         </div>
         </div>
 
-        <span>Medical History</span>
+        <h3>Medical History</h3>
         <div class="flex_form">
         <div class="form_control">
         <label for="">Antenatal  Clinic Attended</label>
@@ -1372,7 +1468,7 @@
         </div>
         </div>
 
-        <span>Labour Details</span>
+        <h3>Labour Details</h3>
         <div class="flex_form">
         <div class="form_control">
         <label for="">Date of Onset of Labor</label>
@@ -1409,7 +1505,7 @@
                 <div class="list_div">
     <div class="table_container">
             <div class="search_bar_container">
-                <h2>Labour Patient Admission List</h2>
+                <h3>Labour Patient Admission List</h3>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
             <table>
@@ -1420,7 +1516,7 @@
                     <td>Patient ID</td>
                     <td>Date of Admission</td>
                 </thead>
-                <tbody onclick="labour_patient_profile_section()">
+                <tbody onclick="accessing_a_specific_labour_patients_profile()">
                     <td>1</td>
                     <td>
                         <img src="../images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
@@ -1450,18 +1546,18 @@
                     <li onclick="_nurse_transfer_from_labour()">Call in Nurse Station</li>
                     <li onclick="_doc_transfer_from_labour()">Doctor Appoitment</li>
                     <li onclick="_surgical_suite_transfer_from_labour()">Transfer to Surgical Suite</li>
-                    <li onclick="_labour_transfer_from_labour()">Transfer to Labour Ward</li>
+                    <li onclick="_select_labour_ward()">Choose ward for Patient</li>
                     <li onclick="_lab_transfer_from_labour()">Transfer to Labouratory</li>
                     <li onclick="_radiology_transfer_from_labour()">Transfer to Radiology</li>
                     <li onclick="_icu_transfer_from_labour()">Transfer to I.C.U</li>
-                    <li onclick="_switch_to_postnatal_labour()">Transfer to Postnatal Unit</li>
+                    <li onclick="_switch_from_labour_to_postnatal()">Transfer to Postnatal Unit</li>
                 </ul>
             </div>
             </table>
              <!-----NURSE APPOITMENT--->
              <div class="appoitments_div hide" id="nurse_appoitment">
             <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment()"></i>
-                <span>Nurse Station</span>
+                <h3>Nurse Station</h3>
                 <form action="" id="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -1483,7 +1579,7 @@
             <!-----DOCTOR APPOITMENT--->
             <div class="appoitments_div hide" id="doctor_appoitment">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
-            <span>Doctor Appoitment</span>
+            <h3>Doctor Appoitment</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -1512,7 +1608,7 @@
                     <!-----SURGICAL SUITE APPOITMENT--->
                     <div class="appoitments_div hide" id="surgical_suite_appoitment">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
-            <span>Surgical Suite Unit</span>
+            <h3>Surgical Suite Unit</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -1533,7 +1629,7 @@
                         <!-----LABOUR WARD APPOITMENT--->
                         <div class="appoitments_div hide" id="labour_ward_appoitment">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
-            <span>Labour Ward Unit</span>
+            <h3>Labour Ward Unit</h3>
             <div class="form_control large">
                     <label for="">Ward  1</label>
                     <select name="" id="">
@@ -1576,7 +1672,7 @@
                         <!-----LABOURATORY APPOITMENT--->
                         <div class="appoitments_div hide" id="lab_appoitment">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
-            <span>Labouratory Unit</span>
+            <h3>Labouratory Unit</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -1597,7 +1693,7 @@
                         <!-----RADIOLOGY APPOITMENT--->
                         <div class="appoitments_div hide" id="radiology_appoitment">
             <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
-            <span>Radiology Unit</span>
+            <h3>Radiology Unit</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -1618,7 +1714,7 @@
                         <!-----I.C.U APPOITMENT--->
             <div class="appoitments_div hide" id="icu_appoitment">
             <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment()"></i>
-            <span>I.C.U Unit</span>
+            <h3>I.C.U Unit</h3>
             <form action="">
                 <div class="form_control large">
                     <label for="">Patient Name</label>
@@ -1637,12 +1733,30 @@
             </div>
         </div>
         <div class="dynamic_popup hide" id="switch_to_postnatal">
-            <span>Are you sure you want to Postnatal Unit</span>
+            <span>Are you sure you want to Switch to Postnatal Unit</span>
             <div class="div_switch">
-                <span>Yes</span>
+                <span onclick="book_postnatal_section()">Yes</span>
                 <span>No</span>
             </div>
         </div>
+    <div class="dynamic_popup hide" id="book_postnatal_section">
+            <span>PAT0001 would be switch to Postnatal unit,  when payment is made in the account unit</span>
+            <div class="div_switch">
+                <span onclick="book_postnatal_section_pending()">Book for payment</span>
+                <span onclick="reject_switch()">Reject</span>
+            </div>
+        </div>
+    <div class="dynamic_popup hide" id="comfirmation_postnatal_book">
+            <span>Please go to the account unit and make payment for transfer of your data to the Postnatal Unit</span>
+        </div>
+        <div class="dynamic_popup hide" id="accessing_labour_patient_profile">
+    <span>Accessing Patient PAT0001</span>
+            <div class="div_switch">
+                <span id="comfirmed_patient">Comfirmed</span>
+                <span onclick="reject_switch()">Reject</span>
+            </div>
+        </div>
+</div>
     </div>
     <div class="background_opacity hide" id="background_opacity"></div>
   </div>
@@ -1654,8 +1768,8 @@
             <div class="patient_profile">
                 <img src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
                 <div class="div_text">
-                    <span>Esther Patrick Samuel</span>
-                    <span>PAT0003</span>
+                    <h3>Esther Patrick Samuel</h3>
+                    <h3>PAT0003</h3>
                 </div>
             </div>
             <h1>Medical Inputs</h1>
@@ -1806,9 +1920,25 @@
                     </div>
                 </form>
             </div>
-            <button class="btn_patients_profile">Save all</button>
+            <button class="btn_patients_profile" onclick="update_patient_data()">Update data</button>
+            <div class="dynamic_popup hide" id="add_selected_drugs">
+            <span>Drugs Added</span>
         </div>
-             <!----POSTNATAL PATIENT HOSPITAL RECORD INFORMATION----->
+        <div class="dynamic_popup hide" id="_check_selected_labour_drugs">
+            <span>Are you sure you want to Book for this drugs</span>
+            <div class="div_switch">
+                <span onclick="comfirmed_labour_drugs()">Yes</span>
+                <span  onclick="reject_switch()">No</span>
+            </div>
+        </div>
+        <div class="dynamic_popup hide" id="_approved_labour_drugs">
+            <span>Drugs is booked, go to the account unit and make payment</span>
+        </div>
+        <div class="dynamic_popup hide" id="update_labour_data">
+            <span>PAT0003 Data is updated</span>
+        </div>
+        </div>
+             <!---- PATIENT HOSPITAL RECORD INFORMATION----->
 <div class="patient_container2">
     <h1>Patient Hospital Records</h1>
 <div class="all_info">
@@ -2005,7 +2135,7 @@
           
         </tbody>
     </table>
-    <button>Book now</button>
+    <button onclick="comfirmed_selected_labour__drugs()">Book now</button>
     </div>
   </div>
 
