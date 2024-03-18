@@ -955,7 +955,7 @@ function _upload_profile_pix2(fpatient_id2,latestImage) {
   }
 
   var form_data = new FormData();
-  form_data.append('capturedImage2', latestImage);
+  form_data.append('walkin_in_section_capturedImage', latestImage);
   form_data.append('action', action);
   form_data.append('id', id);
 
@@ -979,61 +979,34 @@ function _upload_profile_pix2(fpatient_id2,latestImage) {
 
 
 
-function _add_patient() {
-  var fullname = $('#fullname').val();
-  var phonenumber = $('#phonenumber').val();
-  var dob = $('#dob').val();
-  var gender1 = $('#gender1').is(':checked');
-  var gender2 = $('#gender2').is(':checked');
-  var address = $('#address').val();
-  var kname = $('#kname').val();
-  var krelationship = $('#krelationship').val();
-  var kaddress = $('#kaddress').val();
-  var kphonenumber = $('#kphonenumber').val();
-  var kgender1 = $('#kgender1').is(':checked');
-  var kgender2 = $('#kgender2').is(':checked');
-  var occupation = $('#occupation').val();
-  var past_obsterics = $('#past_obsterics').val();
-  var medical_history = $('#medical_history').val();
-  var sexual_history = $('#sexual_history').val();
-  var past_disease = $('#past_disease').val();
-  var family_disease = $('#family_disease').val();
-  var past_surgery = $('#past_surgery').val();
-  var family_card_id =$('#accept').val();
+function _add_patient2() {
+  var wpatient_name = $('#wpatient_name').val();
+  var wphonenumber = $('#wphonenumber').val();
+  var wdob = $('#wdob').val();
+  var gender1 = $('#wgender1').is(':checked');
+  var gender2 = $('#wgender2').is(':checked');
+  var waddress = $('#waddress').val();
  
   var vgender;
-  var vkgender;
 
   if (gender1) {
       vgender = 'Male';
   } else if (gender2) {
       vgender = 'Female';
   }
-
-  if (kgender1) {
-      vkgender = 'Male';
-  } else if (kgender2) {
-      vkgender = 'Female';
-  }
-
-
-  var hospital_plan = $('#select_box').val();
-
-
-
   
 
-if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')|| (hospital_plan =="")){
+if((wpatient_name=='')||(wphonenumber=='')||(wdob=='')||(waddress=='')||(vgender=='')){
   $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
       window.alert("Fill All fields");
   }else{
    //////////////// get btn text ////////////////
-       $('#proceed-btn').html('PROCESSING...');
-       document.getElementById('proceed-btn').disabled=true;
+       $('#wproceed-btn').html('PROCESSING...');
+       document.getElementById('wproceed-btn').disabled=true;
 ////////////////////////////////////////////////	
   
-    var action = 'add_patient';		 
-        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+ '&past_surgery='+ past_surgery+'&medical_history='+ medical_history +'&hospital_plan='+ hospital_plan + '&family_card_id=' + family_card_id;
+    var action = 'add_patient2';		 
+        var dataString ='action='+ action+'&wpatient_name='+ wpatient_name + '&wphonenumber='+ wphonenumber +'&wdob='+ wdob+'&waddress='+ waddress+'&gender='+ vgender;
         $.ajax({
         type: "POST",
         url: "config/code.php",
@@ -1043,8 +1016,8 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
         cache: false,
         success: function(data){
                 var scheck = data.check;
-                var  fpatient_id = data.patient_id;
-                var phonenumber = data.phonenumber;
+                var  fpatient_id2 = data.patient_id;
+                var wphonenumber = data.wphonenumber;
                 
                 if(scheck==0){ //user Active
                   $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
@@ -1054,12 +1027,12 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
                     // _get_page('active-staff','active-staff');
                     // alert_close();
                     window.alert("Registration Successful");
-                    window.alert("This patient's ID is "+ fpatient_id );
-                    getLatestImage(fpatient_id);
+                    window.alert("This patient's ID is "+ fpatient_id2 );
+                    getLatestImage2(fpatient_id2);
                    
               }
-              $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
-              document.getElementById('proceed-btn').disabled=false;
+              $('#wproceed-btn').html('<i class="bi-check2"></i> SUBMIT');
+              document.getElementById('wproceed-btn').disabled=false;
           } 
       });
 }

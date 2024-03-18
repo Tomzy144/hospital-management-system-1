@@ -353,6 +353,28 @@ function _get_patient_details($conn, $patient_id) {
 }
 
 
+function _get_walkin_patient_details($conn, $patient_id) {
+    // Query to check if the patient_id exists
+//    $patient_id = "pat0001";
+  $_POST['patient_id'] = $patient_id;
+    $checkQuery = mysqli_query($conn, "SELECT * FROM walkin_patient_tab WHERE wpatient_id='$patient_id'");
+    
+    if ($checkResult = mysqli_fetch_assoc($checkQuery)) {
+        // If a patient with the given ID exists, fetch their details
+        $query = mysqli_query($conn, "SELECT * FROM walkin_patient_tab WHERE wpatient_id='$patient_id'");
+        
+        if ($fetch = mysqli_fetch_assoc($query)) {
+            return json_encode($fetch);
+        } else {
+            return json_encode(array("error" => "Patient details not found"));
+        }
+    } else {
+        return json_encode(array("error" => "Patient not found"));
+    }
+}
+
+
+
 
 // function _get_patient_details($conn, $patient_id) {
 //     // Sanitize the input to prevent SQL injection (if not already done)
