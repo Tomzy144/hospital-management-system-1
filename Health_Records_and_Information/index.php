@@ -153,7 +153,7 @@
             <div class="flex_capture_div">
                 <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
                 <div class="btn_capture hide" onClick="takePicture()">Capture</div>
-                <button class="btn_re_capture" style="display:none" type="button" id="uploadButton" title="Submit"  onclick="_upload_profile_pix();"> Submit PASSPORT <i class="bi-check"></i></button>
+                <!-- <button class="btn_re_capture" style="display:none" type="button" id="uploadButton" title="Submit"  onclick="_upload_profile_pix();"> Submit PASSPORT <i class="bi-check"></i></button> -->
             </div>
         </form>
 

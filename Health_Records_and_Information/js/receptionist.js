@@ -47,8 +47,8 @@ function takePicture() {
       capturedImageElement.src = imageDataURL;
       capturedImageElement.style.display = 'block';
   
-      var submit_btn = document.getElementById('uploadButton');
-      submit_btn.style.display = "block";
+      // var submit_btn = document.getElementById('uploadButton');
+      // submit_btn.style.display = "block";
        
        
    
