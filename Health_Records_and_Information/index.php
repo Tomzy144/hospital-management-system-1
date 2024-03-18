@@ -402,7 +402,6 @@
                     <tr data-patient-id="<?php echo $patient_id; ?>" onClick="next_page(this);">
                         <td><?php echo $row["sn"]; ?></td>
                         <td><?php echo $row["fullname"]; ?></td>
-                        <td><img src="<?php echo $row["patient_passport"]; ?>" alt="Patient Profile"></td>
                         <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]; ?>" alt="Profile Picture"></td>
                         <td><?php echo $row["date"]; ?></td>
                         <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
@@ -475,7 +474,11 @@
                 <span>Walkin Patient Admission List</span>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
-            <table>
+            <?php 
+    $sql = "SELECT * FROM walkin_patient_tab";
+    $result = $conn->query($sql);
+?>
+               <table id="table2">
                 <thead>
                     <td>S/N</td>
                     <td>Patient Name</td>
@@ -483,25 +486,26 @@
                     <td>Patient Profile</td>
                     <td>Date of Admission</td>
                 </thead>
-                <tbody>
-                    <td>1</td>
-                    <td>Esther Patrick</td>
-                    <td>PAT0001</td>
-                    <td>
-                        <img src="images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
-                    </td>
-                    <td>22-09-2023</td>
-                    <td><i class="bi bi-three-dots _action" onclick="_show_book_popup()"></i></td>
-                </tbody>
-                <tbody>
-                    <td>2</td>
-                    <td>Mercy Patrick</td>
-                    <td>PAT0002</td>
-                    <td>
-                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
-                    </td>
-                    <td>22-09-2023</td>
-                    <td><i class="bi bi-three-dots _action"></i></td>
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $patient_id = $row["wpatient_id"];
+                ?>
+                    <tr data-patient-id="<?php echo $patient_id; ?>" onClick="next_page(this);">
+                        <td><?php echo $row["sn"]; ?></td>
+                        <td><?php echo $row["wpatient_name"]; ?></td>
+                        <td><?php echo $row["wpatient_id"]; ?></td>
+                        <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/walkin_patient/" . $row["wpassport"]; ?>" alt="Profile Picture"></td>
+                        <td><img src="<?php echo $row["walkin_patient"]; ?>" alt="Patient Profile"></td>
+                        <td><?php echo $row["date"]; ?></td>
+                        <td><i class="bi bi-three-dots _action" onclick="_show_book_popup()"></i></td>
+                    </tr>
+                <?php
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>No patients found</td></tr>";
+                }
+                ?>
                 </tbody>
             </table>
         </div>

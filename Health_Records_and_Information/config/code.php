@@ -187,11 +187,11 @@
 		
 	
 	case 'add_patient2': 
-		$fullname = trim(strtoupper($_POST['fullname']));
+		$wpatient_name = trim(strtoupper($_POST['wpatient_name']));
 		// $email = $_POST['email'];
-		$phonenumber = $_POST['phonenumber'];
-		$dateofbirth = $_POST['dob'];
-		$address = $_POST['address'];
+		$wphonenumber = $_POST['wphonenumber'];
+		$wdob = $_POST['wdob'];
+		$waddress = $_POST['waddress'];
 		$gender = $_POST['gender'];
 		
 		$status_id= '1';
@@ -199,7 +199,7 @@
 	
 
 		
-		$phonenumber_query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE `phonenumber`='$phonenumber'");
+		$phonenumber_query = mysqli_query($conn, "SELECT * FROM walkin_patient_tab WHERE `wphonenumber`='$wphonenumber'");
 		$check_query_count = mysqli_num_rows($phonenumber_query);
 	
 		if ($check_query_count > 0) {	
@@ -208,20 +208,49 @@
 			$check = 1;
 	
 			// get sequence
-			$sequence = $callclass->_get_sequence_count($conn, 'pat');
+			$sequence = $callclass->_get_sequence_count($conn, 'wpat');
 			$array = json_decode($sequence, true);
 			$no = $array[0]['no'];
-			$patient_id = 'pat' . $no;
+			$patient_id = 'wpat' . $no;
 	
-			mysqli_query($conn,"INSERT INTO `patient_tab`
-			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`hospital_card_id`,`family_card_id`) VALUES 
-			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW(),'$hospital_plan','$family_card_id')") or die (mysqli_error($conn));
+			mysqli_query($conn,"INSERT INTO `walkin_patient_tab`
+			(`wpatient_id`, `wpatient_name`,`status_id`,  `wphonenumber`, `wdob`, `waddress`,`wgender`,`date`) VALUES 
+			('$patient_id', '$wpatient_name', '$status_id', '$wphonenumber', '$wdob', '$waddress', '$gender',NOW())") or die (mysqli_error($conn));
 
-			mysqli_query($conn,"INSERT INTO `family_card_tab`(`family_card_id`) VALUES('$family_card_id')") or die (mysqli_error($conn));
+			
 		}
 	
 		echo json_encode(array("check" => $check, "patient_id" => $patient_id));
 		break;
+
+
+		case 'update_profile_pix2':
+			$passport = $_POST['walkin_in_section_capturedImage'];
+			$datetime = date("Ymdhi");
+			$patient_id = $_POST['id']; // Corrected variable name
+		
+			$allowedExts = array("jpg", "jpeg", "JPEG", "JPG", "gif", "png", "PNG", "GIF");
+			$extension = pathinfo($passport, PATHINFO_EXTENSION);
+		
+			if (in_array($extension, $allowedExts)) {
+				$user_array = $callclass->_get_walkin_patient_details($conn, $patient_id);
+				$u_array = json_decode($user_array, true);
+				$db_passport = $u_array[0]['wpassport'];
+		
+				if ($db_passport != '') {
+					unlink("../../uploaded_files/profile_pix/walkin_patient" . $db_passport);
+				}
+		
+				$temp_file_basename = basename($_FILES["walkin_in_section_capturedImage"]["tmp_name"]);
+		
+				// $passport = $datetime . '_' . $passport;
+				move_uploaded_file($_FILES["walkin_in_section_capturedImage"]["tmp_name"], "../../uploaded_files/profile_pix/walkin_patient" . $passport);
+		
+				mysqli_query($conn, "UPDATE walkin_patient_tab SET wpassport='$passport' WHERE wpatient_id='$patient_id'") or die ("cannot update patient_tab");
+			} else {
+				echo "Invalid file format";
+			}
+			break;
 
 	
 	
