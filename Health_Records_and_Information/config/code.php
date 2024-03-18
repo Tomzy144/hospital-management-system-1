@@ -185,6 +185,43 @@
 		
 		
 		
+	
+	case 'add_patient2': 
+		$fullname = trim(strtoupper($_POST['fullname']));
+		// $email = $_POST['email'];
+		$phonenumber = $_POST['phonenumber'];
+		$dateofbirth = $_POST['dob'];
+		$address = $_POST['address'];
+		$gender = $_POST['gender'];
+		
+		$status_id= '1';
+
+	
+
+		
+		$phonenumber_query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE `phonenumber`='$phonenumber'");
+		$check_query_count = mysqli_num_rows($phonenumber_query);
+	
+		if ($check_query_count > 0) {	
+			$check = 0; // invalid phonenumber.
+		} else {
+			$check = 1;
+	
+			// get sequence
+			$sequence = $callclass->_get_sequence_count($conn, 'pat');
+			$array = json_decode($sequence, true);
+			$no = $array[0]['no'];
+			$patient_id = 'pat' . $no;
+	
+			mysqli_query($conn,"INSERT INTO `patient_tab`
+			(`patient_id`, `fullname`,`status_id`,  `phonenumber`, `dateofbirth`, `address`,`gender`,`kname`,`krelationship`,`kphonenumber`,`kgender`,`kaddress`,`occupation`,`past_obsterics`,`sexual_history`,`past_disease`,`family_disease`,`past_surgery`,`medical_history`,`date`,`hospital_card_id`,`family_card_id`) VALUES 
+			('$patient_id', '$fullname', '$status_id', '$phonenumber', '$dateofbirth', '$address', '$gender', '$kname', '$krelationship', '$kphonenumber', '$kgender', '$kaddress', '$occupation', '$past_obsterics', '$sexual_history', '$past_disease', '$family_disease','$past_surgery','$medical_history', NOW(),'$hospital_plan','$family_card_id')") or die (mysqli_error($conn));
+
+			mysqli_query($conn,"INSERT INTO `family_card_tab`(`family_card_id`) VALUES('$family_card_id')") or die (mysqli_error($conn));
+		}
+	
+		echo json_encode(array("check" => $check, "patient_id" => $patient_id));
+		break;
 
 	
 	

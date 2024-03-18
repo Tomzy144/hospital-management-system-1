@@ -296,6 +296,10 @@
         </div>
              <!--END OF ADMISSION FORM1-->
 
+
+
+
+
         <!--START OF WALKIN ADMISSION FORM2-->
             <div class="walkin_admission_form">
             <div class="form-container">
@@ -304,44 +308,54 @@
              <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
             <i class="bi bi-plus" id="walkin_in_section_capture_image" onclick="openCamera2()"></i>
             <canvas id="walkin_in_section_canvasElement" style="display: none;"></canvas>
-            <img id="walkin_in_section_capturedImage" style="display: none;">
+            <!-- <img id="walkin_in_section_capturedImage" style="display: none;"> -->
+
+            <?php if ($passport==''){?>
+                    <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/walkin_patient/19374.jpg" id="walkin_in_section_capturedImage" style="display: none;" alt="profile picture"/>
+                    <!-- <input type="file" id="passport" style="display:none"  accept=".jpg,.png" onchange="Test.UpdatePreview(this);"/>  -->
+                <?php } else {?>
+
+                <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/walkin_patient<?php echo $passport; ?>" id="walkin_in_section_capturedImage" alt="profile picture"/>
+                <!-- <input type="file" id="passport" style="display:none" accept=".jpg,.png" onchange="Test.UpdatePreview(this);"/>  -->
+                <?php } ?>
+
         </div>
         <div class="flex_capture_div">
         <div class="walkin_in_section_btn_re_capture hide"  onclick="retakePicture2()">Recapture</div>
         <div class="walkin_in_section_btn_capture hide" onclick="takePicture2()">Capture</div>
         </div>
-        <form action="">
+        <form action="walkin_registration_form">
             <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
             <div class="sections">
             <div class="form-control">
             <label for="full_name">Full Name</label>
-            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
+            <input type="text"  id="wpatient_name" autocapitalize="off" autocomplete="off">
         </div>
             <div class="form-control">
             <label for="date_of_birth">Date of Birth</label>
-            <input type="date" id="dob">
+            <input type="date" id="wdob">
         </div>
         <div class="form-control2">
         <label for="">Gender</label>
         <div class="wrap">
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="wgender1" value="male">
                 Male
         </input>
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="wgender2" value="female">
                 Female
         </input>
         </div>
         </div>
         <div class="form-control">
             <label for="home_address">Home Address</label>
-            <input type="text" id="address" autocomplete="off">
+            <input type="text" id="waddress" autocomplete="off">
         </div>
         <div class="form-control">
             <label for="phone_number">Phone Number</label>
-            <input type="text" id="phonenumber">
+            <input type="text" id="wphonenumber">
         </div>
     </div>
-    <button type="button" class="btn-submit">Submit</button>
+    <button type="button" id="wproceed-btn" onclick="_add_patient2();" class="btn-submit">Submit</button>
     </form>
     </div>
     </div>
