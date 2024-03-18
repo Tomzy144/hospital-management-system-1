@@ -214,8 +214,8 @@
 			$patient_id = 'wpat' . $no;
 	
 			mysqli_query($conn,"INSERT INTO `walkin_patient_tab`
-			(`wpatient_id`, `wpatient_name`,`status_id`,  `wphonenumber`, `wdob`, `waddress`,`wgender`) VALUES 
-			('$patient_id', '$wpatient_name', '$status_id', '$wphonenumber', '$wdob', '$waddress', '$gender')") or die (mysqli_error($conn));
+			(`wpatient_id`, `wpatient_name`,`status_id`,  `wphonenumber`, `wdob`, `waddress`,`wgender`,`date`) VALUES 
+			('$patient_id', '$wpatient_name', '$status_id', '$wphonenumber', '$wdob', '$waddress', '$gender',NOW())") or die (mysqli_error($conn));
 
 			
 		}

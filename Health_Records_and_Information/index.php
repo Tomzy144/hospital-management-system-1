@@ -402,6 +402,7 @@
                     <tr data-patient-id="<?php echo $patient_id; ?>" onClick="next_page(this);">
                         <td><?php echo $row["sn"]; ?></td>
                         <td><?php echo $row["fullname"]; ?></td>
+                        <td><?php echo $row["patient_id"]; ?></td>
                         <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]; ?>" alt="Profile Picture"></td>
                         <td><img src="<?php echo $row["patient_passport"]; ?>" alt="Patient Profile"></td>
                         <td><?php echo $row["date"]; ?></td>
@@ -476,7 +477,7 @@
                 <input type="text" name="" id="" placeholder="Search">
             </div>
             <?php 
-    $sql = "SELECT * FROM patient_tab";
+    $sql = "SELECT * FROM walkin_patient_tab";
     $result = $conn->query($sql);
 ?>
                <table id="table2">
@@ -490,13 +491,14 @@
                 <?php
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        $patient_id = $row["patient_id"];
+                        $patient_id = $row["wpatient_id"];
                 ?>
                     <tr data-patient-id="<?php echo $patient_id; ?>" onClick="next_page(this);">
                         <td><?php echo $row["sn"]; ?></td>
-                        <td><?php echo $row["fullname"]; ?></td>
-                        <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]; ?>" alt="Profile Picture"></td>
-                        <td><img src="<?php echo $row["patient_passport"]; ?>" alt="Patient Profile"></td>
+                        <td><?php echo $row["wpatient_name"]; ?></td>
+                        <td><?php echo $row["wpatient_id"]; ?></td>
+                        <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/walkin_patient/" . $row["wpassport"]; ?>" alt="Profile Picture"></td>
+                        <td><img src="<?php echo $row["walkin_patient"]; ?>" alt="Patient Profile"></td>
                         <td><?php echo $row["date"]; ?></td>
                         <td><i class="bi bi-three-dots _action" onclick="_show_book_popup()"></i></td>
                     </tr>
