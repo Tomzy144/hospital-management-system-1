@@ -85,72 +85,6 @@ function stopCamera() {
   }
 }
 
-//CAMERA FOR WALKIN PATIENT
-var videoElement2 = document.getElementById('walkin_in_section_videoElement');
-var canvasElement2 = document.getElementById('walkin_in_section_canvasElement');
-var capturedImageElement2 = document.getElementById('walkin_in_section_capturedImage');
-var stream2;
-
-function openCamera2() {
-  navigator.mediaDevices.getUserMedia({ video: true })
-    .then(function (cameraStream) {
-      stream2 = cameraStream;
-      videoElement2.srcObject = cameraStream;
-    })
-    .catch(function (error) {
-      console.error('Error accessing the camera: ', error);
-    });
-
-    const walkin_in_section_capture_image = document.querySelector('#walkin_in_section_capture_image');
-    walkin_in_section_capture_image.style.display="none"
-
-    const showWalkinClickButton = document.querySelector(".walkin_in_section_btn_capture")
-    showWalkinClickButton.classList.remove("hide");
-
-    const showWalkinClickButtonForRecapture = document.querySelector(".walkin_in_section_btn_re_capture")
-    showWalkinClickButtonForRecapture.classList.remove("hide")
-};
-
-function takePicture2() {
-  if (stream2) {
-    let context = canvasElement2.getContext('2d');
-    canvasElement2.width = videoElement2.videoWidth;
-    canvasElement2.height = videoElement2.videoHeight;
-    context.drawImage(videoElement2, 0, 0, canvasElement2.width, canvasElement2.height);
-
-    // Convert the canvas content to a data URL representing a PNG image
-    let imageDataURL = canvasElement2.toDataURL('../../uploaded_files_profile_pix/patient/');
-
-    // Display the captured image
-    capturedImageElement2.src = imageDataURL;
-    capturedImageElement2.style.display = 'block';
-
-    // Stop the camera stream
-    stopCamera2();
- 
-  }
-};
-function retakePicture2() {
-    // Hide the captured image
-    capturedImageElement2.style.display = 'none';
-
-    // Stop the camera stream
-    stopCamera2();
-
-    // Reopen the camera for retake
-    openCamera2();
-  }
-function stopCamera2() {
-  if (stream2) {
-    let tracks = stream2.getTracks();
-
-    // Stop all tracks
-    tracks.forEach(track => track.stop());
-
-    // Remove the stream from the video element
-    videoElement2.srcObject = null;
-  }
-}
 function display_profile(){
   document.querySelector('.all_patient_list').classList.add("hide")
   document.querySelector('.appoitment_section').classList.add("hide")
@@ -702,10 +636,142 @@ function check_family_card_validity() {
 }
 
 
+
 function check_family_card_users(){
+  $('#users_checker').html('CHECKING...');
+  $('#users_checker').prop('disabled', false);
+  var family_card_id = $('#family_card_id').val(); // Assuming family_card_id is an input field
+  
+  var action = 'check_for_users'; // Define the action variable
+
+  // Create a FormData object and append the action
+  var form_data = new FormData();
+  form_data.append('action', action);
+  form_data.append('family_card_id', family_card_id);
+
+  // Make the AJAX request
+  $.ajax({
+    url: "config/code.php",
+    type: "POST",
+    data: form_data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function(response) {
+      // Parse the JSON response
+      var result = JSON.parse(response);
+
+      // Check the number of users returned
+      var users = result.users;
+      switch(users) {
+        case 0:
+          alert("No users associated with the family card.");
+          break;
+        case 1:
+          alert("THREE users left.");
+          $('#users_checker').prop('disabled', false);
+          $('#users_checker').html('Check for users');
+          break;
+        case 2:
+          alert("TWO users left.");
+          $('#users_checker').prop('disabled', false);
+          $('#users_checker').html('Check for users');
+          break;
+        case 3:
+          alert("ONE user left.");
+          $('#users_checker').prop('disabled', false);
+          $('#users_checker').html('Check for users');
+          break;
+        case 4:
+          alert("This card is saturated.");
+          $('#users_checker').html('THIS CARD IS SATURATED');
+          $('#users_checker').prop('disabled', true);
+          $('#proceed-btn').html('THE FAMILY CARD USERS IS OPIMIZED');
+          $('#proceed-btn').prop('disabled', true);
+          break;
+        default:
+          alert("Unexpected number of users returned.");
+      }
+    },
+    error: function(xhr, status, error) {
+      console.error("Error checking card users:", error);
+    }
+  });
+}
+
+
+
+
+
+
+////////////////////////CAMERA FOR WALKIN PATIENT
+var videoElement2 = document.getElementById('walkin_in_section_videoElement');
+var canvasElement2 = document.getElementById('walkin_in_section_canvasElement');
+var capturedImageElement2 = document.getElementById('walkin_in_section_capturedImage');
+var stream2;
+
+function openCamera2() {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (cameraStream) {
+      stream2 = cameraStream;
+      videoElement2.srcObject = cameraStream;
+    })
+    .catch(function (error) {
+      console.error('Error accessing the camera: ', error);
+    });
+
+    const walkin_in_section_capture_image = document.querySelector('#walkin_in_section_capture_image');
+    walkin_in_section_capture_image.style.display="none"
+
+    const showWalkinClickButton = document.querySelector(".walkin_in_section_btn_capture")
+    showWalkinClickButton.classList.remove("hide");
+
+    const showWalkinClickButtonForRecapture = document.querySelector(".walkin_in_section_btn_re_capture")
+    showWalkinClickButtonForRecapture.classList.remove("hide")
+};
+
+function takePicture2() {
+  if (stream2) {
+    let context = canvasElement2.getContext('2d');
+    canvasElement2.width = videoElement2.videoWidth;
+    canvasElement2.height = videoElement2.videoHeight;
+    context.drawImage(videoElement2, 0, 0, canvasElement2.width, canvasElement2.height);
+
+    // Convert the canvas content to a data URL representing a PNG image
+    let imageDataURL2 = canvasElement2.toDataURL('image/png');
+
+    // Display the captured image
+    capturedImageElement2.src = imageDataURL2;
+    capturedImageElement2.style.display = 'block';
+
+    // Stop the camera stream
+    stopCamera2();
+    sendImageData2(imageDataURL2);
+  }
   
 }
 
+function retakePicture2() {
+    // Hide the captured image
+    capturedImageElement2.style.display = 'none';
+
+    // Stop the camera stream
+    stopCamera2();
+
+    // Reopen the camera for retake
+    openCamera2();
+  }
+function stopCamera2() {
+  if (stream2) {
+    let tracks = stream2.getTracks();
+
+    // Stop all tracks
+    tracks.forEach(track => track.stop());
+
+    // Remove the stream from the video element
+    videoElement2.srcObject = null;
+  }
+}
 
 
 
@@ -816,3 +882,186 @@ function familyPlanSection(){
 
 // // Initial population of doctors based on the default selected role
 // getDoctors();
+
+
+
+
+
+
+
+function sendImageData2(imageDataURL2) {
+  // Prepare the image data to be sent to the server
+  let formData = new FormData();
+  formData.append('image', imageDataURL2);
+
+  // Send the image data to the server via AJAX
+  fetch('config/upload_image2.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to move image');
+    }
+    return response.json(); // Return the JSON data
+  })
+  .then(data => {
+    // Handle the server response
+    console.log('Image moved successfully:', data);
+    // Alert the result received from the server
+    // var result = data ; // Convert object to string and then alert it
+    // Update UI or perform other actions
+    // _upload_profile_pix(result);
+
+  })
+  .catch(error => {
+    console.error('Error moving image:', error);
+    // Handle error appropriately
+  });
+}
+
+
+function getLatestImage2(fpatient_id2) {
+  $.ajax({
+    url: 'config/get_latest_image2.php', // Path to your PHP script
+    type: 'GET',
+    dataType: 'json',
+    success: function(response) {
+      if (response.latest_image) {
+        var latestImage = response.latest_image;
+        var imagePath = '../../uploaded_files/profile_pix/walkin_patient/' + latestImage; // Construct the full path to the latest image
+        _upload_profile_pix2(fpatient_id2,latestImage);
+        // Do something with the latest image path
+        // console.log('Latest image:', imagePath);
+      } else {
+        console.log('No images found.');
+      }
+    },
+    error: function(xhr, status, error) {
+      console.error('Error retrieving latest image:', error);
+    }
+  });
+}
+
+
+function _upload_profile_pix2(fpatient_id2,latestImage) {
+  var action = 'update_profile_pix2';
+  var id =  fpatient_id2;
+  // alert(latestImage);
+
+  if (!latestImage) {
+      console.error("No file selected.");
+      return;
+  }
+
+  var form_data = new FormData();
+  form_data.append('capturedImage2', latestImage);
+  form_data.append('action', action);
+  form_data.append('id', id);
+
+  $.ajax({
+      url: "config/code.php",
+      type: "POST",
+      data: form_data,
+      contentType: false,
+      cache: false,
+      processData: false,
+      success: function(html) {
+          $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+          $('#passport').val('');
+          location.reload(true);
+      },
+      error: function(xhr, status, error) {
+          console.error("Error uploading image:", error);
+      }
+  });
+}
+
+
+
+function _add_patient() {
+  var fullname = $('#fullname').val();
+  var phonenumber = $('#phonenumber').val();
+  var dob = $('#dob').val();
+  var gender1 = $('#gender1').is(':checked');
+  var gender2 = $('#gender2').is(':checked');
+  var address = $('#address').val();
+  var kname = $('#kname').val();
+  var krelationship = $('#krelationship').val();
+  var kaddress = $('#kaddress').val();
+  var kphonenumber = $('#kphonenumber').val();
+  var kgender1 = $('#kgender1').is(':checked');
+  var kgender2 = $('#kgender2').is(':checked');
+  var occupation = $('#occupation').val();
+  var past_obsterics = $('#past_obsterics').val();
+  var medical_history = $('#medical_history').val();
+  var sexual_history = $('#sexual_history').val();
+  var past_disease = $('#past_disease').val();
+  var family_disease = $('#family_disease').val();
+  var past_surgery = $('#past_surgery').val();
+  var family_card_id =$('#accept').val();
+ 
+  var vgender;
+  var vkgender;
+
+  if (gender1) {
+      vgender = 'Male';
+  } else if (gender2) {
+      vgender = 'Female';
+  }
+
+  if (kgender1) {
+      vkgender = 'Male';
+  } else if (kgender2) {
+      vkgender = 'Female';
+  }
+
+
+  var hospital_plan = $('#select_box').val();
+
+
+
+  
+
+if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')|| (hospital_plan =="")){
+  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
+      window.alert("Fill All fields");
+  }else{
+   //////////////// get btn text ////////////////
+       $('#proceed-btn').html('PROCESSING...');
+       document.getElementById('proceed-btn').disabled=true;
+////////////////////////////////////////////////	
+  
+    var action = 'add_patient';		 
+        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+ '&past_surgery='+ past_surgery+'&medical_history='+ medical_history +'&hospital_plan='+ hospital_plan + '&family_card_id=' + family_card_id;
+        $.ajax({
+        type: "POST",
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        cache: false,
+        success: function(data){
+                var scheck = data.check;
+                var  fpatient_id = data.patient_id;
+                var phonenumber = data.phonenumber;
+                
+                if(scheck==0){ //user Active
+                  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
+                  window.alert("Patient's phonenumber is already registered");
+              }else{ //user suspended
+                    $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
+                    // _get_page('active-staff','active-staff');
+                    // alert_close();
+                    window.alert("Registration Successful");
+                    window.alert("This patient's ID is "+ fpatient_id );
+                    getLatestImage(fpatient_id);
+                   
+              }
+              $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
+              document.getElementById('proceed-btn').disabled=false;
+          } 
+      });
+}
+}	
+

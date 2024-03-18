@@ -216,7 +216,7 @@
             <label for="">Insert your Family Id</label>
             <input type="text" onkeyup="check_family_card_validity();" name="" id="family_card_id">
             <div class="valid" id="result"></div>
-            <button>Check</button>
+            <button id ="users_checker" onclick="check_family_card_users();" type="button">Check for users</button>
             </div>
         </div>
     <h3>Next of Kins</h3>
@@ -296,6 +296,10 @@
         </div>
              <!--END OF ADMISSION FORM1-->
 
+
+
+
+
         <!--START OF WALKIN ADMISSION FORM2-->
             <div class="walkin_admission_form">
             <div class="form-container">
@@ -304,44 +308,54 @@
              <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
             <i class="bi bi-plus" id="walkin_in_section_capture_image" onclick="openCamera2()"></i>
             <canvas id="walkin_in_section_canvasElement" style="display: none;"></canvas>
-            <img id="walkin_in_section_capturedImage" style="display: none;">
+            <!-- <img id="walkin_in_section_capturedImage" style="display: none;"> -->
+
+            <?php if ($passport==''){?>
+                    <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/walkin_patient/19374.jpg" id="walkin_in_section_capturedImage" style="display: none;" alt="profile picture"/>
+                    <!-- <input type="file" id="passport" style="display:none"  accept=".jpg,.png" onchange="Test.UpdatePreview(this);"/>  -->
+                <?php } else {?>
+
+                <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/walkin_patient<?php echo $passport; ?>" id="walkin_in_section_capturedImage" alt="profile picture"/>
+                <!-- <input type="file" id="passport" style="display:none" accept=".jpg,.png" onchange="Test.UpdatePreview(this);"/>  -->
+                <?php } ?>
+
         </div>
         <div class="flex_capture_div">
         <div class="walkin_in_section_btn_re_capture hide"  onclick="retakePicture2()">Recapture</div>
         <div class="walkin_in_section_btn_capture hide" onclick="takePicture2()">Capture</div>
         </div>
-        <form action="">
+        <form action="walkin_registration_form">
             <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
             <div class="sections">
             <div class="form-control">
             <label for="full_name">Full Name</label>
-            <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
+            <input type="text"  id="wpatient_name" autocapitalize="off" autocomplete="off">
         </div>
             <div class="form-control">
             <label for="date_of_birth">Date of Birth</label>
-            <input type="date" id="dob">
+            <input type="date" id="wdob">
         </div>
         <div class="form-control2">
         <label for="">Gender</label>
         <div class="wrap">
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="wgender1" value="male">
                 Male
         </input>
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="wgender2" value="female">
                 Female
         </input>
         </div>
         </div>
         <div class="form-control">
             <label for="home_address">Home Address</label>
-            <input type="text" id="address" autocomplete="off">
+            <input type="text" id="waddress" autocomplete="off">
         </div>
         <div class="form-control">
             <label for="phone_number">Phone Number</label>
-            <input type="text" id="phonenumber">
+            <input type="text" id="wphonenumber">
         </div>
     </div>
-    <button type="button" class="btn-submit">Submit</button>
+    <button type="button" id="wproceed-btn" onclick="_add_patient2();" class="btn-submit">Submit</button>
     </form>
     </div>
     </div>
@@ -363,45 +377,47 @@
                 <span>Patient Admission List</span>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
+            <?php 
+    $sql = "SELECT * FROM patient_tab";
+    $result = $conn->query($sql);
+?>
+
             <table id="table1">
                 <thead>
-                    <td>S/N</td>
-                    <td>Patient Name</td>
-                    <td>Patient ID</td>
-                    <td>Patient Profile</td>
-                    <td>Date of Admission</td>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Patient Name</th>
+                        <th>Patient ID</th>
+                        <th>Patient Profile</th>
+                        <th>Date of Admission</th>
+                        <th>Action</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <td>1</td>
-                    <td>Esther Patrick</td>
-                    <td>PAT0001</td>
-                    <td>
-                        <img src="images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
-                    </td>
-                    <td>22-09-2023</td>
-                    <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
-                </tbody>
-                <tbody>
-                    <td>2</td>
-                    <td>Mercy Patrick</td>
-                    <td>PAT0002</td>
-                    <td>
-                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
-                    </td>
-                    <td>22-09-2023</td>
-                    <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
-                </tbody>
-                <tbody>
-                    <td>2</td>
-                    <td>Mercy Patrick</td>
-                    <td>PAT0002</td>
-                    <td>
-                        <img src="images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
-                    </td>
-                    <td>22-09-2023</td>
-                    <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $patient_id = $row["patient_id"];
+                ?>
+                    <tr data-patient-id="<?php echo $patient_id; ?>" onClick="next_page(this);">
+                        <td><?php echo $row["sn"]; ?></td>
+                        <td><?php echo $row["fullname"]; ?></td>
+                        <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]; ?>" alt="Profile Picture"></td>
+                        <td><img src="<?php echo $row["patient_passport"]; ?>" alt="Patient Profile"></td>
+                        <td><?php echo $row["date"]; ?></td>
+                        <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
+                    </tr>
+                <?php
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>No patients found</td></tr>";
+                }
+                ?>
                 </tbody>
             </table>
+
+
+
             <div class="_box_popup hide" id="patient_popup">
         <i class="bi bi-x-lg red" onclick="close_show_patient_transfer_popup()"></i>
         <ul>
@@ -430,6 +446,26 @@
             </div>
         </div>
       <!--END OF ADMITTED PATIENTS FOR LIST1-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <!--START OF WALKIN PATIENTS FOR LIST2-->
@@ -531,7 +567,7 @@
                     <div class="div1">
                     <span>Date of Birth : 23-09-2023</span>
                         <span>Address: 23 Enebong Street Calabar</span>
-                        <span>Phone Number: 090232322</span>
+                        <span>Phone Number: 090232325</span>
                     </div>
                     <div class="div2">
                         <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
