@@ -5,7 +5,7 @@
             <div class="sections-container">
                 <h2>For Doctors</h2>
                 <p>Doctors can login here</p>
-                <button class="btn-doctor" onclick="_next_page('next_2');">Login as a Doctors</button>
+                <button class="btn-doctor" onclick="_next_page('next_2');">Login as a Doctor</button>
             </div>
             <div class="sections-container">
                 <h2>For Nurse</h2>
@@ -545,27 +545,31 @@ if($s_staff_id != '') {
             <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Nurse)</h1>
             <!-- Nurse login form -->
-            <form>
+            <form action="config/code.php" id="nurse_loginform" enctype="multipart/form-data" method="post">
                 <!-- Email field -->
                 <div class="form-control">
                     <label for='email'>Email</label>
                     <i class="fa fa-address-book"></i>
-                    <input type="email" name="email" autoComplete='off'/> 
+                    <input type="email" id="nurse_email"name="email" autoComplete='off'/> 
                 </div>
                 <!-- ID field -->
                 <div class="form-control">
                     <label for='number'>Your ID</label>
                     <i class="fa fa-key"></i>
-                    <input type="number" name="number" autoComplete='off'/> 
+                    <input type="text" id="nurse_id" name="number" autoComplete='off'/> 
                 </div>
                 <!-- Password field -->
                 <div class="form-control">
                     <label for='password'>Password</label>
                     <i class="fa fa-lock"></i>
-                    <input type="password" name="password" autoComplete='off'/> 
+                    <input type="password" id="nurse_password" name="password" autoComplete='off'/> 
                 </div>
+                 <!-- Hidden input for the action -->
+                 <input name="action" value="nurse_login" type="hidden"/>
                 <!-- Login button -->
-                <button type="button" class="btn" onClick="isNurse_active()">Login</button>
+                <button type="button" class="btn" id="nurse_login_btn" title="Login" onclick="_nurse_sign_in();">Login</button>
+                <!-- Login button -->
+                <!-- <button type="button" class="btn" onClick="isNurse_active()">Login</button> -->
             </form>
         </div>
 
