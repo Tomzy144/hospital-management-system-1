@@ -429,11 +429,10 @@
 						$nurse_id=$usersel['nurse_id'];
 						$_SESSION['nurse_id'] = $nurse_id;
 						$s_nurse_id=$_SESSION['nurse_id'];
-						mysqli_query($conn,"UPDATE `nurse_tab` SET last_login=NOW() WHERE nurse_id='$s_staff_id'") or die("cannot update") ; //// update last login
-									
+						mysqli_query($conn,"UPDATE `nurse_tab` SET last_login=NOW() WHERE nurse_id='$s_nurse_id'") or die("cannot update") ; //// update last login
+					// echo $s_nurse_id;				
 				?>
 							<script>
-
 								window.parent(location="../nurse/");
 							</script>
 				<?php

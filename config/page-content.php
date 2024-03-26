@@ -568,8 +568,6 @@ if($s_staff_id != '') {
                  <input name="action" value="nurse_login" type="hidden"/>
                 <!-- Login button -->
                 <button type="button" class="btn" id="nurse_login_btn" title="Login" onclick="_nurse_sign_in();">Login</button>
-                <!-- Login button -->
-                <!-- <button type="button" class="btn" onClick="isNurse_active()">Login</button> -->
             </form>
         </div>
 
