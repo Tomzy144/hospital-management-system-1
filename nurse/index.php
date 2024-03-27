@@ -1,35 +1,45 @@
 <?php include '../backend/config/connection.php';?>
 <?php include '../config/nurse-session-validation.php';?>
-<?php include '../backend/config/user-validation.php';?>
 
 
 <?php
-    $s_nurse_id = $_POST['nurse_id'];
+$nurse_id = $_POST['nurse_id'];
 ?>
 
+    
 
 <?php    
 
-    $fetch_nurse_profile = $callclass->_get_nurse_details($conn, $s_nurse_id);
-    $nurse_profile_array = json_decode($fetch_nurse_profile, true);
-    $fullname = $nurse_profile_array[0]['nurse_name'];
-    $email = $nurse_profile_array[0]['email'];
-    $phonenumber = $nurse_profile_array[0]['phonenumber'];
-    // $role_id= $nurse_profile_array[0]['role_id'];
-    $status_id = $nurse_profile_array[0]['status_id'];
-    $date = $nurse_profile_array[0]['date'];
-    $last_login = $nurse_profile_array[0]['last_login'];
-    $passport = $nurse_profile_array[0]["passport"]; 
-    $fetch_status = $callclass->_get_status_details($conn, $status_id);
-    $status_array = json_decode($fetch_status, true);
-    $status_name = $status_array[0]['status_name'];
+$fetch_nurse_profile = $callclass->_get_nurse_details($conn, $s_nurse_id);
+$nurse_profile_array = json_decode($fetch_nurse_profile, true);
+$fullname = $nurse_profile_array[0]['fullname'];
+$email = $nurse_profile_array[0]['email'];
+$phonenumber = $nurse_profile_array[0]['phonenumber'];
+// $role_id= $nurse_profile_array[0]['role_id'];
+$status_id = $nurse_profile_array[0]['status_id'];
+$date = $nurse_profile_array[0]['date'];
+$last_login = $nurse_profile_array[0]['last_login'];
+$passport = $nurse_profile_array[0]["passport"]; 
+$fetch_status = $callclass->_get_status_details($conn, $status_id);
+$status_array = json_decode($fetch_status, true);
+$status_name = $status_array[0]['status_name'];
 ?>
 
 <?php 
-    $page == "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
+$page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
 ?>
 
-  
+
+
+<?php 
+    
+
+
+    $fetch_status = $callclass->_get_status_details($conn, $status_id);
+    $status_array = json_decode($fetch_status, true);
+    
+    ?>
+
 
 
 <!-- <!DOCTYPE html>
