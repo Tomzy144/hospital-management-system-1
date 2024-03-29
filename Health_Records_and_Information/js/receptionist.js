@@ -88,27 +88,89 @@ function stopCamera() {
 function display_profile(){
   document.querySelector('.all_patient_list').classList.add("hide")
   document.querySelector('.appoitment_section').classList.add("hide")
-  document.querySelector('.profile_container').style.display = 'flex';
-  document.querySelector('.overlay').classList.remove("hide")
+  setTimeout (function(){
+    document.querySelector('.profile_container').style.display = 'flex';
+    document.querySelector('.overlay_div').classList.remove("hide")
+    document.querySelector('.checkup_section').classList.add("hide")
+  }, 2000)
   document.querySelector("#btn_appoitment").style.display = "none"
+  $('.print_icon').css({
+    color:'green'
+  })
+  $('.finger_print_div').css({
+    backgroundColor:'#fff'
+  })
 }
 function patient_list(){
   document.querySelector('.form_sections').style.display = 'none';
-  document.querySelector('.checkup_section').style.display = 'none';
+  document.querySelector('.checkup_section').classList.add("hide")
   document.querySelector('.all_patient_list').classList.remove("hide")
+  document.querySelector('.patient_list_div').classList.remove("hide")
+  document.querySelector('.walkin_patient_list_div').classList.add("hide")
+  document.querySelector('.appoitment_section').classList.add("hide")
+  document.querySelector("#btn_appoitment").style.display = "none"
+  document.querySelector('.profile_container').style.display = 'none';
+}
+function _walkin_patient_list(){
+  document.querySelector('.form_sections').style.display = 'none';
+  document.querySelector('.checkup_section').classList.add("hide")
+  document.querySelector('.all_patient_list').classList.remove("hide")
+  document.querySelector('.patient_list_div').classList.add("hide")
+  document.querySelector('.walkin_patient_list_div').classList.remove("hide")
   document.querySelector('.appoitment_section').classList.add("hide")
   document.querySelector("#btn_appoitment").style.display = "none"
   document.querySelector('.profile_container').style.display = 'none';
 }
 
-function form_section(){
+function patient_admission_form_section(){
   document.querySelector('.form_sections').style.display = 'flex';
   document.querySelector('.all_patient_list').classList.add("hide")
-  document.querySelector('.checkup_section').style.display = 'block';
+  document.querySelector('.checkup_section').classList.add("hide")
   document.querySelector('.appoitment_section').classList.add("hide")
   document.querySelector("#btn_appoitment").style.display = "none"
   document.querySelector('.profile_container').style.display = 'none';
 };
+function walkin_patient_form(){
+  $('.overlay_div').removeClass('hide');
+  document.querySelector('.form_sections').style.display = 'flex';
+  document.querySelector('.all_patient_list').classList.add("hide")
+  $('.overlay_div').css({
+    zIndex:1200,
+  })
+  $('.walkin_admission_form').removeClass('hide');
+}
+function close_walkin_patient_form(){
+  $('.overlay_div').addClass('hide');
+  $('.overlay_div').css({
+    zIndex:1000,
+  })
+  $('.walkin_admission_form').addClass('hide');
+}
+
+function checkup_form(){
+  $('.overlay_div').removeClass('hide');
+  document.querySelector('.form_sections').style.display = 'flex';
+  document.querySelector('.all_patient_list').classList.add("hide")
+  $('.checkup_section').removeClass('hide');
+  $('.overlay_div').css({
+    zIndex:1200,
+  })
+}
+function close_checkup_form(){
+  $('.overlay_div').addClass('hide');
+  $('.overlay_div').css({
+    zIndex:1000,
+  })
+  $('.checkup_section').addClass('hide');
+}
+
+// function close_walkin_patient_form(){
+//   $('.overlay_div').addClass('hide');
+//   $('.overlay_div').css({
+//     zIndex:1000,
+//   })
+//   $('.checkup_section').addClass('hide');
+// }
 
 
 
@@ -131,22 +193,22 @@ function close_profile(){
 
 function _show_book_popup() {
   $('#walkin_popup').removeClass('hide');
-  $('.overlay').removeClass('hide');
+  $('.overlay_div').removeClass('hide');
 }
 function close_show_book_popup() {
   $('#walkin_popup').addClass('hide');
-  $('.overlay').addClass('hide');
+  $('.overlay_div').addClass('hide');
   };
 
 function lab_appoitment(){
   $('#lab_appoitment').removeClass('hide');
   $('#walkin_popup').addClass('hide');
-  $('.overlay').removeClass('hide');
+   $('.overlay_div').removeClass('hide');
 }
 function rad_appoitment(){
   $('#rad_appoitment').removeClass('hide');
   $('#walkin_popup').addClass('hide');
-  $('.overlay').removeClass('hide');
+   $('.overlay_div').removeClass('hide');
 }
 
 
@@ -154,29 +216,32 @@ function _close_all_appoitment(){
   $('#lab_appoitment').addClass('hide');
   $('#rad_appoitment').addClass('hide');
   $('#walkin_popup').removeClass('hide');
-  $('.overlay').removeClass('hide');
+   $('.overlay_div').addClass('hide');
 }
 
 
 function nurse_appoitment(){
   $('#nurse_appoitment').removeClass('hide');
+  $('#nurse_appoitment').css({
+    zIndex: 1200
+  })
   $('#patient_popup').addClass('hide');
-  $('.overlay').removeClass('hide');
+  $('.overlay_div').removeClass('hide');
 }
 function _close_all_patient_appoitments() {
   $('#patient_popup').removeClass('hide');
   $('#nurse_appoitment').addClass('hide');
-  $('.overlay').removeClass('hide');
+  $('.overlay_div').addClass('hide');
 }
 
 
 function _show_patient_transfer_popup() {
   $('#patient_popup').removeClass('hide');
-  $('.overlay').removeClass('hide');
+  $('.overlay_div').removeClass('hide');
 }
 function close_show_patient_transfer_popup() {
   $('#patient_popup').addClass('hide');
-  $('.overlay').addClass('hide');
+  $('.overlay_div').addClass('hide');
   };
 
 
@@ -402,6 +467,7 @@ function _add_patient() {
 
   if (gender1) {
       vgender = 'Male';
+
   } else if (gender2) {
       vgender = 'Female';
   }
@@ -411,7 +477,12 @@ function _add_patient() {
   } else if (kgender2) {
       vkgender = 'Female';
   }
-
+  $('#yes_checkbox').prop('disabled', true)
+if($('#gender1').is(':checked')){
+  $('#gender2').prop('disabled', true); 
+}else{
+  $('#gender2').prop('disabled', false); 
+}
 
   var hospital_plan = $('#select_box').val();
 
@@ -419,9 +490,16 @@ function _add_patient() {
 
   
 
-if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')|| (hospital_plan =="")){
+if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')||(health_history=='') || (hospital_plan =="")){
   $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
-      window.alert("Fill All fields");
+      // window.alert("Fill All fields");
+      $('.alert_div').removeClass('hide');
+      $('.overlay_div').removeClass('hide');
+      $('.alert_div').text('Fill All Fields.');
+      setTimeout(function(){
+        $('.alert_div').addClass('hide');
+        $('.overlay_div').addClass('hide');
+      }, 1000)
   }else{
    //////////////// get btn text ////////////////
        $('#proceed-btn').html('PROCESSING...');
@@ -429,7 +507,7 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
 ////////////////////////////////////////////////	
   
     var action = 'add_patient';		 
-        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+ '&past_surgery='+ past_surgery+'&medical_history='+ medical_history +'&hospital_plan='+ hospital_plan + '&family_card_id=' + family_card_id;
+        var dataString ='action='+ action+'&fullname='+ fullname + '&phonenumber='+ phonenumber +'&dob='+ dob+'&address='+ address+'&gender='+ vgender+'&kname='+ kname+'&krelationship='+ krelationship+'&kaddress='+ kaddress+'&kphonenumber='+ kphonenumber+'&kgender='+ vkgender+'&occupation='+ occupation+'&past_obsterics='+ past_obsterics+'&sexual_history='+ sexual_history+'&family_disease='+ family_disease+'&past_disease='+ past_disease+ '&past_surgery='+ past_surgery+'&medical_history='+ medical_history + '&health_history' + health_history +'&hospital_plan='+ hospital_plan + '&family_card_id=' + family_card_id;
         $.ajax({
         type: "POST",
         url: "config/code.php",
@@ -449,8 +527,20 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
                     $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
                     // _get_page('active-staff','active-staff');
                     // alert_close();
-                    window.alert("Registration Successful");
-                    window.alert("This patient's ID is "+ fpatient_id );
+                    // window.alert("Registration Successful");
+                    $('#successful_registered').removeClass('hide');
+                    $('#successful_registered').text('Registration Successful');
+                    setTimeout(function() {
+                      $('#successful_registered').addClass('hide');
+                      
+                      // Show the second div for 3 seconds
+                      $('#patient_id').text("This patient's ID is "+ fpatient_id )
+                      $('#patient_id').removeClass('hide');
+                      setTimeout(function() {
+                          $('#generated_id').addClass('hide');            
+                      }, 3000);
+                  }, 3000);
+                    // window.alert("This patient's ID is "+ fpatient_id );
                     getLatestImage(fpatient_id);
                    
               }
@@ -557,7 +647,15 @@ function _upload_profile_pix(fpatient_id,latestImage) {
 }
 
 function create_family_card() {
-  $('#generation_alert').html('GENERATING ID...');
+  // $('#generation_alert').html('GENERATING ID...');
+  $('.family_plan_section').addClass('hide');
+  $('#generating_id').removeClass('hide');
+  $('.overlay_div').removeClass('hide');
+  $('#generating_id').text('GENERATING ID....');
+  setTimeout(function(){
+    $('#generating_id').addClass('hide');
+    $('.overlay_div').addClass('hide');
+  }, 3000)
   $('#no_checkbox').prop('disabled', true); // Disable the checkbox while processing
 
   var action = 'create_family_card'; // Define the action variable
@@ -584,7 +682,13 @@ function create_family_card() {
       accept.value = result.result; // Access the 'result' property of the parsed response
 
       // Update UI to indicate ID generation
-      $('#generation_alert').html('ID GENERATED <i class="bi-check2"></i>');
+  // Show the first div for 3 seconds
+  $('#generating_id').removeClass('hide');
+  $('#yes_checkbox').prop('disabled', true); 
+ 
+      // $('#generation_alert').html('ID GENERATED <i class="bi-check2"></i>');
+
+  
       $('#no_checkbox').prop('disabled', false); // Enable the checkbox
     },
     error: function(xhr, status, error) {
@@ -665,7 +769,16 @@ function check_family_card_users(){
       var users = result.users;
       switch(users) {
         case 0:
-          alert("No users associated with the family card.");
+          // alert("No users associated with the family card.");
+          $('.alert_div').removeClass('hide');
+          $('.overlay_div').removeClass('hide');
+          $('.alert_div').text('No users associated with the family card.');
+          setTimeout(function(){
+            $('.alert_div').addClass('hide');
+            $('.overlay_div').addClass('hide');
+            // $('#no_checkbox').prop('disabled', false); 
+            // $('#yes_checkbox').prop('checked', true); 
+          }, 3000)
           break;
         case 1:
           alert("THREE users left.");
@@ -845,6 +958,7 @@ function checkIfFamilyPlan() {
 
 function familyPlanSection(){
   document.querySelector('.family_plan_section').classList.toggle("hide");
+  $('#no_checkbox').prop('disabled', true); 
 }
 
 
@@ -998,7 +1112,20 @@ function _add_patient2() {
 
 if((wpatient_name=='')||(wphonenumber=='')||(wdob=='')||(waddress=='')||(vgender=='')){
   $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
-      window.alert("Fill All fields");
+      // window.alert("Fill All fields");
+      $('.alert_div').removeClass('hide');
+      $('.overlay_div').removeClass('hide');
+      $('.overlay_div').css({
+        zIndex: 1000
+      })
+      $('.alert_div').text('Fill All Fields.');
+      $('.alert_div').css({
+        zIndex: 1200
+      })
+      setTimeout(function(){
+        $('.alert_div').addClass('hide');
+        $('.overlay_div').addClass('hide');
+      }, 1000)
   }else{
    //////////////// get btn text ////////////////
        $('#wproceed-btn').html('PROCESSING...');

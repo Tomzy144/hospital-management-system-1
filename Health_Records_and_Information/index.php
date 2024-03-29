@@ -95,13 +95,17 @@
     </div>
         <div class="sidebar">
                <div class="sidebar_contents" onClick="homepage_section()">
-                <img width="80px" height="80px" src="<?php echo $website_url ?>/Images/Mount Tech Logo.jpg" alt="logo">
+                <!-- <img width="80px" height="80px" src="<?php echo $website_url ?>/Images/Mount Tech Logo.jpg" alt="logo"> -->
+                <h2>MOUNT TECH SOLUTIONS </h2>
                </div>
             <div class="sidebar_icons">
-                <i class="bi bi-chat-dots-fill" id="icon">&nbsp;<span>Chat</span></i>
-                <i class="bi bi-journal-album"  id="icon" onclick="form_section()">&nbsp;<span>Admission Form</span></i>
-            <i class="bi bi-person-fill"  id="icon" onclick="patient_list()">&nbsp;<span>Patient List</span></i>
-                <i class="bi bi-box-arrow-right"  id="icon" onclick="document.getElementById('logoutform').submit();">&nbsp;<span>Logout</span></i>
+                <!-- <i class="bi bi-chat-dots-fill" id="icon">&nbsp;<span>Chat</span></i> -->
+                <i class="fa-solid fa-bed"  id="icon" onclick="patient_admission_form_section()">&nbsp;<span>Patient Admission Form</span></i>
+                <i class="fa-solid fa-person-walking-arrow-right"  id="icon" onclick="walkin_patient_form()">&nbsp;<span>Walkin Patient Admission Form</span></i>
+                <i class="fa-solid fa-person-circle-check"  id="icon" onclick="checkup_form()">&nbsp;<span>Check Up</span></i>
+            <i class="fa-solid fa-people-group"  id="icon" onclick="patient_list()">&nbsp;<span>Patient List</span></i>
+            <i class="fa-solid fa-people-group"  id="icon" onclick="_walkin_patient_list()">&nbsp;<span>WalkIn Patient List</span></i>
+                <i class="fa-solid fa-right-from-bracket"  id="icon" onclick="document.getElementById('logoutform').submit();">&nbsp;<span>Logout</span></i>
                 <form method="post" action="../config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
                 </form>
@@ -109,12 +113,18 @@
         </div>
          <!--END OF SIDEBAR AND NAVBAR-->
 
-        
+         <!----ALERTS DIV-->
  <!--START OF ADMISSION FORM1-->
+ <div class="overlay_div hide"></div>
     <div class="form_sections">
+    <div class="alert_div hide" id='generating_id'></div>
+    <div class="alert_div hide" id='generated_id'></div>
+    <div class="alert_div hide" id='successful_registered'></div>
+    <div class="alert_div hide" id='patient_id'></div>
                <!----START OF CHECKUP SECTION-->
                <div class="checkup_section hide">
-            <h2>Check Up</h2>
+               <i class="bi bi-x-lg close_icon" onclick="close_checkup_form()" ></i>
+            <h2>Patient Check Up Form</h2>
             <div class="form-control">
                 <label for="">Patient Name</label>
                 <input type="text" name="" id="">
@@ -123,7 +133,7 @@
             <label for="">Patient Id</label>
                 <input type="text" name="" id="">
             </div>
-            <button class ="btn-submit" onclick="activateFingerPrint()">Fingerprint authentication</button>
+            <button class ="btn-submit" id="authenticate" onclick="activateFingerPrint()">Fingerprint authentication</button>
             <div class="finger_print_div hide">
             <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i>
             <i class="bi bi-fingerprint print_icon" onclick="display_profile()"></i>
@@ -200,7 +210,7 @@
     <div class="form-control2 hide" id="existing_plan_or_not">
         <label for="">Any existing family plan?</label>
         <div class="wrap">
-        <input type="checkbox" name="yes" id="" onchange="familyPlanSection()">
+        <input type="checkbox" name="yes" id="yes_checkbox" onchange="familyPlanSection()">
             Yes
         </input>
         <input type="checkbox" name="no" id="no_checkbox" onClick="create_family_card();">
@@ -287,7 +297,7 @@
 </div>
     <div class="form-control">
     <label for="Occupation">Health History</label>
-    <input type="text" id="past_surgery" autocapitalize="off" autocomplete="off">
+    <input type="text" id="health_history" autocapitalize="off" autocomplete="off">
 </div>
 </div>
 <button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Book</button>
@@ -303,6 +313,7 @@
         <!--START OF WALKIN ADMISSION FORM2-->
             <div class="walkin_admission_form hide">
             <div class="form-container">
+                <i  class="bi bi-x-lg close_icon" onclick="close_walkin_patient_form()"></i>
         <h3>WalkIn Admission Form</h3>
         <div class="walkin_in_section_upload_image">
              <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
@@ -325,7 +336,7 @@
         <div class="walkin_in_section_btn_capture hide" onclick="takePicture2()">Capture</div>
         </div>
         <form action="walkin_registration_form">
-            <h3 style="text-align: left; margin-top: 1rem;">Personal Details</h3>
+            <h3>Personal Details</h3>
             <div class="sections">
             <div class="form-control">
             <label for="full_name">Full Name</label>
@@ -346,6 +357,8 @@
         </input>
         </div>
         </div>
+        </div>
+        <div class="sections">
         <div class="form-control">
             <label for="home_address">Home Address</label>
             <input type="text" id="waddress" autocomplete="off">
@@ -353,8 +366,8 @@
         <div class="form-control">
             <label for="phone_number">Phone Number</label>
             <input type="text" id="wphonenumber">
-        </div>
-    </div>
+        </div> 
+        </div> 
     <button type="button" id="wproceed-btn" onclick="_add_patient2();" class="btn-submit">Submit</button>
     </form>
     </div>
@@ -375,6 +388,7 @@
     <div class="patient_list_div">
             <div class="search_bar_container">
                 <span>Patient Admission List</span>
+                <i class = "bi bi-search"></i>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
             <?php 
@@ -385,12 +399,12 @@
             <table id="table1">
                 <thead>
                     <tr>
-                        <th>S/N</th>
-                        <th>Patient Name</th>
-                        <th>Patient ID</th>
-                        <th>Patient Profile</th>
-                        <th>Date of Admission</th>
-                        <th>Action</th>
+                        <td>S/N</td>
+                        <td>Patient Name</td>
+                        <td>Patient ID</td>
+                        <td>Patient Profile</td>
+                        <td>Date of Admission</td>
+                        <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -426,8 +440,9 @@
             <!----NURSE APPOITMENT-->
 <div class="appoitment hide" id="nurse_appoitment">
             <i class="bi bi-x-lg red" onclick="_close_all_patient_appoitments()"></i>
-                <span>Nurse Unit</span>
+                <h3>Transfer to Nurse Unit</h3>
                 <form action="" id="">
+                    <div class="sections">
                 <div class="form-control">
                     <label for="">Patient Name</label>
                     <input type="text" name="" id="">
@@ -439,6 +454,7 @@
                 <div class="form-control">
                     <label for="">Reasons for Booking</label>
                     <textarea name="" id="" cols="20" rows="10"></textarea>
+                </div>
                 </div>
                 <button>Request</button>
                 </form>
@@ -468,10 +484,11 @@
 
 
         <!--START OF WALKIN PATIENTS FOR LIST2-->
-    <div class="walkin_patient_list_div">
+    <div class="walkin_patient_list_div hide">
     <div class="table_container">
             <div class="search_bar_container">
                 <span>Walkin Patient Admission List</span>
+                <i class="bi bi-search"></i>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
             <?php 
@@ -484,7 +501,7 @@
                     <td>Patient Name</td>
                     <td>Patient ID</td>
                     <td>Patient Profile</td>
-                    <td>Date of Admission</td>
+                    <td>date of Admission</td>
                 </thead>
                 <?php
                 if ($result->num_rows > 0) {
@@ -657,11 +674,11 @@
                 <div class="_flexs">
                 <div class="form_control">
                     <label for="">Patient Name</label>
-                    <input type="text" placeholder="john">
+                    <input type="text">
                 </div>
                 <div class="form_control">
                     <label for="">Patient Id</label>
-                    <input type="text" placeholder="id001">
+                    <input type="text">
                 </div>
                 <div class="form_control">
                     <label for="">Selected Date</label>
@@ -673,7 +690,7 @@
                 </div>
                 <div class="form_control">
                     <label for="">Request Type</label>
-                    <input type="text">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
                 </div>
                 </div>
             </div>

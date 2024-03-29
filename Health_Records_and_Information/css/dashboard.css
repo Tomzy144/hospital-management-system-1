@@ -15,6 +15,29 @@
 body{
     width: 100%;
     height:100%;
+    position: relative;
+}
+.alert_div{
+    width: 300px;
+    height: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1100;
+    color: rgb(42, 87, 215);
+    border-radius: 4px;
+    box-shadow: rgba(172, 165, 165, 0.35) 0px 5px 15px;
+    background-color: #fff;
+    padding: 1em;
+    animation: headShake 1s ease-in-out;
+}
+.overlay_div{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 26, 97);
+    opacity: 30%;
+    z-index: 1000;
+    position: absolute;
 }
 .navbar{
     width: 100%;
@@ -25,7 +48,7 @@ body{
     justify-content: space-between;
     align-items: center;
     top: 0;
-    z-index: 999;
+    z-index: 1100;
 }
 
 .section1{
@@ -34,7 +57,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    animation: zoomIn 1s ease-in-out;
+    animation: slideInDown ease-in-out 0.5s;
     align-items: center;
 }
 .section2{
@@ -42,7 +65,7 @@ body{
     height: 100%;
     display: flex;
     flex-direction: row;
-    animation: zoomIn 1s ease-in-out;
+    animation: slideInDown ease-in-out 0.5s;
     justify-content: space-around;
     align-items: center;
 }
@@ -111,10 +134,10 @@ body{
     height: fit-content;
     top: 100%;
     background-color: rgb(42, 87, 215);
-    animation: zoomIn 01s ease-in-out;
+    animation: fadeIn  ease-in-out 0.5s;
     right: 2%;
     padding: 1rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(198, 186, 186, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -150,7 +173,12 @@ body{
 .profile_account h3{
     color: rgb(255, 255, 255);
 }
-
+h3{
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 .profile img{
     width: 50px;
     margin: 0 0.8rem;
@@ -174,7 +202,7 @@ body{
 #btn_appoitment{
     padding: 0.7rem 1rem;
     background-color: #fff;
-    margin: 0 7rem;
+    margin: 0 0 0 18rem;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -192,14 +220,14 @@ body{
 
 
 .sidebar{
-    width: auto;
+    width: 300px;
     height: 100%;
     overflow: hidden;
     position: fixed;
     left: 0;
     top: 0;
     background-color: rgb(42, 87, 215);
-    z-index: 1000;
+    z-index: 1100;
 }
 .sidebar_contents{
     justify-content: center;
@@ -217,7 +245,6 @@ body{
   }
 .sidebar_icons{
     width: 100%;
-    animation: zoomIn 01s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -226,6 +253,7 @@ body{
 .sidebar_icons #icon{
     color: #fff;
     font-size: 15px;
+    animation: slideInDown  ease-in-out 0.5s;
     cursor: pointer;
     margin: 0.4rem 0.3em;
 }
@@ -244,11 +272,11 @@ h1, h3{
     display: flex;
     width: 90%;
     flex-direction: column;
-    margin: 5em 0 0 10em;
+    margin: 5em 0 0 19em;
 }
 .upload_image{
-    width: 350px;
-    height: 250px;
+    width: 450px;
+    height: 300px;
     margin: 0 auto;
     overflow: hidden;;
     display: flex;
@@ -318,21 +346,23 @@ h1, h3{
       color: rgb(42, 87, 215);
       position: relative;
       flex-wrap: wrap;
+      border-radius: 6px;
       padding: 1rem;
   }
   h3{
     color: rgb(42, 87, 215);
   font-weight: bold;
-  animation: zoomIn 0.5s ease-in-out;
+  animation: slideInDown 0.5s ease-in-out;
   }
-  .form-container .sections{
+   .sections{
     display: flex;
     width: 100%;
     border: 1px solid rgb(42, 87, 215);
   padding: 1em;
   margin: 1em 0;
-  border-radius: 20px;
-    flex-wrap: wrap;
+border-radius: 10px;
+  flex-wrap: wrap;
+  background: #2a57d7;
   }
   
   
@@ -352,9 +382,8 @@ h1, h3{
     flex-direction: column;
     width: 235px;
     position: relative;
-    color: rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
     justify-content: center;
-    align-items: center;
   }
   .form-control2 input{
     width: fit-content;
@@ -391,15 +420,20 @@ h1, h3{
   }
   label{
       font-size: 18px;
-      color: rgb(42, 87, 215);
+      animation: slideInDown  ease-in-out 0.5s;
+      color: rgb(255, 255, 255);
   }
   input{
 padding: 0.5em;
-  color: rgb(42, 87, 215);
+  color:rgb(42, 87, 215);
   border-radius: 5px;
-  font-size: 18px;
-  border: 1px solid rgb(42, 87, 215);
+  font-size: 16px;
+  border: 1px solid rgb(255, 255, 255);
   outline: none;
+  animation: fadeInUp  ease-in-out 0.5s;
+  }
+  .valid{
+    color: #fff;
   }
 
   .form-control i{
@@ -410,7 +444,7 @@ padding: 0.5em;
       transform: translateY(-50%);
     }
    .btn-submit{
-    width: 25%;
+    width: auto;
     background-color: rgb(42, 87, 215);
     padding: 0.7rem;
     border: none;
@@ -419,6 +453,15 @@ padding: 0.5em;
     transition: all ease-in-out 0.6s;
     cursor: pointer;
     margin: 1rem 0;
+    }
+    #authenticate{
+        background-color: #fff;
+        color: rgb(42, 87, 215);;
+    }
+    #authenticate:hover{
+        border: 1px solid rgba(255, 255, 255);
+        background:none;
+        color: rgb(255, 255, 255);
     }
     .btn-submit:hover{
       background:none;
@@ -435,14 +478,14 @@ padding: 0.5em;
       cursor: pointer;
   }
   .all_patient_list{
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
+    margin: 4.5rem 0 0 20rem;
   }
   .patient_list_div {
-    width: 50%;
+    width: 100%;
     height: fit-content;
-    margin: 4.5rem 0 0 5rem;
     height: 800px;
     overflow: auto;
 }
@@ -454,9 +497,20 @@ padding: 0.5em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     margin: 0.4em 0 0 0;
 }
-
+.search_bar_container span {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.search_bar_container i{
+    position: absolute;
+    right: 4%;
+    cursor: pointer;
+}
 .search_bar_container input {
     padding: 0.5em;
 }
@@ -477,25 +531,29 @@ padding: 0.5em;
     z-index: 1; 
     background-color: #fff; 
 }
+table thead  td{
+    color: rgb(42, 87, 215);
+    font-weight: bold;
+    padding: 0.5em;
+    font-size: 18px;
+    text-transform: uppercase;
+}
  table tbody td img{
     width: 50px;
     height: 50px;
     border-radius: 100%;
 }
- table  thead td {
-    color: rgb(0, 87, 194);
-}
+
  table tbody td {
-    padding: 1em;
+    padding: 0.5em;
     color: rgb(255, 255, 255);
     background-color: rgb(42, 87, 215);
     border-bottom: 1px solid #ddd; /* Add a bottom border to separate cells */
 }
 
 .walkin_patient_list_div{
-    width: 50%;
+    width: 100%;
     height: fit-content;
-    margin: 4.5rem 0 0 1rem;
     height: 800px;
     overflow: auto;;
 }
@@ -505,12 +563,16 @@ padding: 0.5em;
 ._box_popup{
     width: auto;
     height: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1100;
+    color: rgb(42, 87, 215);
+    border-radius: 4px;
+    box-shadow: rgba(172, 165, 165, 0.35) 0px 5px 15px;
     background-color: #fff;
-    position: absolute;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    top: 40%;
-    left: 40%;
-    z-index: 6;
+    padding: 1em;
+    animation: headShake 1s ease-in-out;
 }
 ._box_popup .red{
     color: red;
@@ -524,7 +586,6 @@ padding: 0.5em;
     padding: 1em;
 }
 ._box_popup li{
-    margin: 1em 0;
     cursor: pointer;
     color:  rgb(42, 87, 215);
     font-size: 20px;
@@ -540,15 +601,16 @@ padding: 0.5em;
     position:absolute;
     color: black ;
     padding:1em;
-    top: 35%;
+    top: 0;
     left:40%;
-    z-index:10
+    border-radius: 5px;
 }
 .appoitment button{
     width: 100%;
     background-color:rgb(42, 87, 215); 
     padding: 0.5em;
     border: none;
+    border-radius: 5px;
     color: #fff;
     cursor: pointer;
 }
@@ -564,11 +626,16 @@ padding: 0.5em;
     margin: 1em 0;
 }
 .appoitment label {
-    color: black;
+    color: rgb(255, 255, 255); 
 }
 .appoitment textarea{
     width: 100%;
+    border: none;
+    padding: 0.5em;
+    border-radius: 5px;
     height: 50px;
+    color: rgb(42, 87, 215); 
+    outline: none;
 }
 .overlay{
     opacity: 40%;
@@ -589,6 +656,9 @@ padding: 0.5em;
     display: flex;
     position: fixed;
     z-index: 9;
+    border-radius: 10px;
+    animation: fadeIn ease-in-out 0.5s;
+    z-index: 1200;
     top: 0;
     left: 27%;
 }
@@ -648,11 +718,10 @@ padding: 0.5em;
 }
 /*appoitment section*/
 .appoitment_section{
-    width: 100%;
     height: 100%;
+    margin: 6rem 0 0 18em;
 }
 .appoitment_container{
-    height: 900px;
     overflow: auto;
     width: 100%;
     display: flex;
@@ -666,7 +735,6 @@ padding: 0.5em;
     margin: 0 1rem;
     display: flex;
     flex-direction: column;
-    margin: 6rem 0 0 5em;
     align-items:  center;
 }
 .appoitments h1{
@@ -687,8 +755,9 @@ padding: 0.5em;
 .cards{
     width: 350px;
     height: max-content;
+    border-radius: 10px;
     background-color: #fff;
-    animation: zoomIn 01s ease-in-out;
+    animation: slideInDown  ease-in-out;
     box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
     margin: 1rem 1rem;
 }
@@ -752,11 +821,9 @@ padding: 0.5em;
 .doctor_roles_name{
     width: 100%;
     height:max-content;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     display: flex;
     justify-content: center;
     padding: 2rem;
-    margin: 6rem 0 0 5em;
     position: relative;
     align-items: center;
 }
@@ -765,8 +832,7 @@ padding: 0.5em;
     top: 0;
     right: 0;
     color: #ff0000;
-    font-size: 30px;
-    box-shadow: rgba(159, 158, 158, 0.35) 0px 5px 15px;
+  font-size: 20px;
     cursor: pointer;
 }
 
@@ -786,20 +852,21 @@ padding: 0.5em;
 }
 .doc_roles label{
     color: rgb(42, 87, 215); 
-    animation: zoomIn 01s ease-in-out;
+    animation: slideInDown 01s ease-in-out;
 }
 .doc_roles select{
     padding: 1rem;
     border: 2px solid #fff;; 
     background-color:rgb(42, 87, 215); 
-    animation: zoomIn 01s ease-in-out;
+    animation: slideInDown 01s ease-in-out;
     margin: 1rem 0;
     color: rgb(255, 255, 255);;
 }
 #continue{
     background-color: rgb(42, 87, 215);
-    padding: 1rem 1rem;
-    animation: zoomIn 01s ease-in-out;
+    padding: 1rem;
+    border-radius: 20px;
+    animation: slideInDown 01s ease-in-out;
     border: none;
     color:  rgb(255, 255, 255);
     cursor: pointer;
@@ -814,6 +881,7 @@ padding: 0.5em;
     width: 45rem;
     height: 46rem;
     background-color: rgb(42, 87, 215);
+    border-radius: 10px;
     margin: 1rem 0;
     box-shadow: 0,0.5rem 3rem rgba(0,0,0,0.4);
     color: #fff;
@@ -833,12 +901,12 @@ padding: 0.5em;
 .month i{
     font: 2rem;
     cursor: pointer;
-    animation: zoomIn 01s ease-in-out;
+    animation: slideInDown 01s ease-in-out;
 }
 .month h1{
     font-size: 1.5rem;
     font-weight: 400;
-    animation: zoomIn 01s ease-in-out;
+    animation: slideInDown 01s ease-in-out;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     margin-bottom: 1rem;
@@ -846,7 +914,7 @@ padding: 0.5em;
 
 .month p{
     font-size: 1rem;
-    animation: zoomIn 01s ease-in-out;
+    animation: slideInDown 01s ease-in-out;
 }
 
 
@@ -854,7 +922,7 @@ padding: 0.5em;
     width: 100%;
     height: 5rem;
     padding: 0 0.4rem;
-    animation: zoomIn 01s ease-in-out;
+    animation: slideInDown 01s ease-in-out;
     display: flex;
     align-items: center;
 }
@@ -871,7 +939,7 @@ padding: 0.5em;
 .days{
     width: 100%;
     display: flex;
-    animation: zoomIn 01s ease-in-out;
+    animation: slideInDown 01s ease-in-out;
     flex-wrap: wrap;
     padding: 0.2rem;
 }
@@ -917,6 +985,7 @@ padding: 0.5em;
 
 .form_appoitment{
     width:45rem;
+        border-radius: 10px;
     height: fit-content;
     background: rgb(42, 87, 215);
     color: #ffffff;
@@ -939,7 +1008,7 @@ padding: 0.5em;
     width: 300px;
     animation: none;
     height: auto;
-    margin: 0 0.5em;
+    margin: 1em 0.5em;
 }
 .form_appoitment label{
     color: rgb(255, 255, 255);
@@ -969,12 +1038,13 @@ padding: 0.5em;
     width: 100%;
 }
 .btn_submit_appoitment{
-    width: 100%;
+    width: auto;
     background-color:rgb(42, 87, 215);;
     color:rgb(255, 255, 255);;
     margin: 1rem 0;
-    padding: 0.5em;
+    padding: 1em;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
 }
@@ -985,28 +1055,39 @@ padding: 0.5em;
 }
 /*WALKIN PATIENTS */
 .walkin_admission_form{
-    width: 600px;
-    height: 100%;
-    margin: 0 1em 0 1em;
+    width: 900px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1300;
 }
-.walkin_admission_form .form-control{
-    width: 100%;
+.close_icon{
+    position: absolute;
+    right: 3%;
+    font-size: 18px;
+    top: 3%;
+    color: #db0000;
+    cursor: pointer;
 }
 .walkin_in_section_upload_image{
-    width: 300px;
-    height: 200px;
+    width: 450px;
+    height: 300px;
     margin: 0 auto;
-    overflow: hidden;;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);;
+    background-color: rgb(42, 87, 215);
     position: relative;
     text-align: center;
-}
+    border-radius: 10px;
+  }
+
 .walkin_in_section_upload_image #walkin_in_section_capture_image{
     font-size: 18px;
-    color: rgb(255, 255, 255);
+    color: rgb(42, 87, 215);
     cursor: pointer;
     border-radius: 100%;
     padding: 0.5rem;
@@ -1014,7 +1095,7 @@ padding: 0.5em;
     position: absolute;
     right:9%;
     bottom: 14%;
-    background-color: rgb(42, 87, 215);
+    background-color: rgb(255, 255, 255);
 }
 #walkin_in_section_capturedImage{
     position: absolute;
@@ -1023,45 +1104,53 @@ padding: 0.5em;
     display: flex;
 }
 .walkin_in_section_btn_capture{
-    width: 100px;
+    width: 150px;
     padding: 0.5rem;
+    border-radius: 5px;
     text-align: center;
     margin: 0.5rem 0.5rem;
+    border: none;
     cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color:  rgb(42, 87, 215);;
     transition: all ease-in-out 0.5s;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
 }
 .walkin_in_section_btn_re_capture{
-    width: 100px;
+    width: 150px;
     padding: 0.5rem;
+    border-radius: 5px;
     text-align: center;
     margin: 0.5rem 0.5rem;
+    border: none;
     cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color:  rgb(42, 87, 215);
     transition: all ease-in-out 0.5s;
+    background-color: rgb(42, 87, 215);
+    color: #fff;
 }
 .walkin_in_section_btn_capture:hover{
     background:none;
-    color: rgb(255, 255, 255);;
-    border: 1px solid rgb(255, 255, 255);
+    color:  rgb(42, 87, 215);;;
+    border: 1px solid  rgb(42, 87, 215);;
 }
 .walkin_in_section_btn_re_capture:hover{
     background:none;
-    color: rgb(255, 255, 255);;
-    border: 1px solid rgb(255, 255, 255);
+    color:  rgb(42, 87, 215);;;
+    border: 1px solid  rgb(42, 87, 215);;
 }
 .checkup_section{
-    height: fit-content;
+    height: auto;
     color: rgb(255, 255, 255);
     margin: 5em 0 0 5em;
-    width: 350px;
+    width: 500px;
+    border-radius: 10px;
     padding: 1em;
+    position: absolute;
+    top: 0;
+    z-index: 1200;
+    left: 36%;
     overflow: auto;
     background-color:rgb(42, 87, 215);
-    box-shadow: rgba(223, 222, 222, 0.35) 0px 5px 15px;
-    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .checkup_section label{
@@ -1076,7 +1165,7 @@ padding: 0.5em;
 }
 .finger_print_div{
     width: 100%;
-    height: 300px;
+    height: 100%;
     display: grid;
     place-items: center;
     background-color: rgb(42, 87, 215);
@@ -1092,7 +1181,7 @@ padding: 0.5em;
     font-size: 150px;
     color: #fff;
 }
-.finger_print_div .close_icon{
+.checkup_section .close_icon{
     position: absolute;
     right: 3%;
     top: 2%;
