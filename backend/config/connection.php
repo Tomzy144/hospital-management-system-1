@@ -94,6 +94,28 @@ if ($_POST && !empty($_POST['lab_scientist_email'])) {
 
 ?>
 
+<?php 
+//////for nurse
+
+// session variables//
+    $s_nurse_id=$_SESSION['nurse_id']; 
+
+
+
+////////// login session
+if ($_POST && !empty($_POST['nurse_email'])) {
+    $_SESSION['nurse_email'] = $_POST['nurse_email'];
+    }
+    $nurse_email=$_SESSION['nurse_email'];
+    if ($_POST && !empty($_POST['nurse_password'])) {
+    $_SESSION['nurse_password'] = $_POST['nurse_password'];
+    
+    }
+    $nurse_password=($_SESSION['nurse_password']);
+
+
+?>
+
 
 
 
@@ -205,7 +227,26 @@ function _get_doctor_details($conn, $s_doctor_id){
 
     return '[{"doctor_id":"'.$doctor_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
 }
-	
+
+
+//////////////////////////////////////////
+
+function _get_nurse_details($conn, $s_nurse_id){
+    $query=mysqli_query($conn, "SELECT * FROM nurse_tab WHERE nurse_id='$s_nurse_id'");    
+    $fetch=mysqli_fetch_array($query);
+    $nurse_id=$fetch['nurse_id'];
+    $fullname=$fetch['fullname'];
+    $email=$fetch['email'];
+    $phonenumber=$fetch['phonenumber'];
+    $role_id=$fetch['role_id'];
+    $status_id=$fetch['status_id'];
+    $passport=$fetch['passport'];
+    $date=$fetch['date'];
+    $last_login=$fetch['last_login'];
+
+    return '[{"nurse_id":"'.$nurse_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
+}
+
 
 
 

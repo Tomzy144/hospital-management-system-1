@@ -387,6 +387,57 @@
 
 
 
+
+			/////////////////////nurses
+
+
+						
+			case 'nurse_login_check': // for nurse login
+				$nurse_email=trim($_POST['nurse_email']);
+			///	$temp_password=trim(($_POST['password']));
+				$nurse_password=trim(($_POST['nurse_password']));
+				$nurse_id=trim(($_POST['nurse_id']));
+
+					$query=mysqli_query($conn,"SELECT * FROM nurse_tab WHERE `email`='$nurse_email' AND `password`='$nurse_password' AND `nurse_id` = '$nurse_id'");
+					$usercount = mysqli_num_rows($query);
+					if ($usercount>0){
+						$usersel=mysqli_fetch_array($query);
+						$nurse_id=$usersel['nurse_id'];
+						$status_id=$usersel['status_id'];
+						
+							if ($status_id==1){
+								$check=1; ///// account is active
+
+								
+							}else if($status_id==2){
+								$check=2; ///// account is suspended
+								
+							}else {
+								$check=0;
+							}
+					}else{
+						$check=0;
+					}
+									
+					echo json_encode(array("check" => $check, )); 
+			break;
+
+
+			case 'nurse_login': // login from index
+				$userquery = mysqli_query ($conn,"SELECT * FROM `nurse_tab` WHERE email = '$email' AND `password` = '$nurse_password' AND status_id=1") ;
+						$usersel=mysqli_fetch_array($userquery);
+						$nurse_id=$usersel['nurse_id'];
+						$_SESSION['nurse_id'] = $nurse_id;
+						$s_nurse_id=$_SESSION['nurse_id'];
+						mysqli_query($conn,"UPDATE `nurse_tab` SET last_login=NOW() WHERE nurse_id='$s_nurse_id'") or die("cannot update") ; //// update last login
+					// echo $s_nurse_id;				
+				?>
+							<script>
+								window.parent(location="../nurse/");
+							</script>
+				<?php
+
+
 			// <!-- for checking action and page  -->
 
 					

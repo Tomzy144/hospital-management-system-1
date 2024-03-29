@@ -533,5 +533,69 @@ function lab_login(lab_scientist_email,lab_scientist_password,lab_scientist_id){
    });
 }
 
+///////nurse login 
+
+
+
+
+
+
+
+function _nurse_sign_in(){ 
+  var nurse_email = $('#nurse_email').val();
+  var nurse_password = $('#nurse_password').val();
+  var nurse_id = $('#nurse_id').val();
+  if((nurse_email!='')&&(nurse_password!='')&&(nurse_id!='')){
+      nurse_login(nurse_email,nurse_password,nurse_id);
+  }else{
+      $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
+      window.alert("Fill the neccessary field")
+  }
+};
+
+
+
+
+///////////////////// nurse login ///////////////////////////////////////////
+function nurse_login(nurse_email,nurse_password,nurse_id){
+  var action='nurse_login_check';
+  
+ //////////////// get btn text ////////////////
+ var btn_text=$('#nurse_login_btn').html();
+ $('#nurse_login_btn').html('Authenticating...');
+ document.getElementById('nurse_login_btn').disabled=true;
+ ////////////////////////////////////////////////	
+  
+  var dataString ='action='+ action+'&nurse_email='+ nurse_email + '&nurse_password='+ nurse_password + '&nurse_id='+ nurse_id;
+ 
+ $.ajax({
+ type: "POST",
+ url: "config/code.php",
+ data: dataString,
+ dataType: 'json',
+ cache: false,
+ success: function(data){
+  var scheck = data.check;
+
+ if(scheck==1){
+  $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
+  $('#nurse_loginform').submit();
+  window.alert("Welcome Back");
+  // window.parent("location=nurse/");
+  
+  
+ }else if(scheck==2){
+  window.alert("Account does not exists")
+         $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
+  }else{
+  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid Email or Password</span>').fadeIn(500).delay(5000).fadeOut(100);
+  window.alert("Invalid Login Details")
+  }
+  $('#nurse_login_btn').html(btn_text);
+  document.getElementById('nurse_login_btn').disabled=false;
+     $('#nurse_login_btn').html('<i class="fa fa-sign-in"></i> Log-In');
+ }
+ });
+}
 
 

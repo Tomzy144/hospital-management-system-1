@@ -76,7 +76,7 @@ $patient_id = $_POST['patient_Id'];
             <h2>PATIENT PASSPORT</h2>
     </div>
     <div class="circle">
-        <img src="images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+    <img src='" . $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"] . "' alt='Profile Picture'/>
     </div>
    <div class="info_title">
              <i class="fa fa-user-circle-o"></i>

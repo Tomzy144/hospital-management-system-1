@@ -193,7 +193,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     $appointmentCount++; // Increment appointment count for each row
                                     echo "<tr>";
                                     echo "<td id=\"appointment_count\">" . $appointmentCount . "</td>"; // Display appointment count
-                                    echo "<td>" . $row["patient_passport"] . "</td>";
+                                    echo "<td><img src='" . $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"] . "' alt='Profile Picture'/></td>";
                                     echo "<td>" . $row["patient_name"] . "</td>";
                                     echo "<td>" . $row["patient_id"] . "</td>";
                                     echo "<td>" . $row["appointment_date"] . "</td>";
