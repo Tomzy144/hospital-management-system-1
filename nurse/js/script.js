@@ -143,7 +143,7 @@ function patientVital_all_section(){
 
  function back_to_appoitment_list(){
    document.querySelector(".personal_profile_vital").classList.add("hide");
-   document.querySelector(".appoitment_section").style.display="flex";
+   document.querySelector(".appoitment_section").style.display="block";
    document.querySelector("#btn_appoitment").style.display = "none";
    document.querySelector(".new_vital").classList.add("hide");
    document.querySelector(".appoitment_container").classList.add("hide");
@@ -152,7 +152,7 @@ function patientVital_all_section(){
 
 
  
-    //BEGINNING OF THE APPOITMENT 
+  //BEGINNING OF THE APPOITMENT 
 
 //DOCTOR
 const doctorsData = {
@@ -184,19 +184,19 @@ const doctorsData = {
    orthopedic_surgoen:['Dr.Lookman', 'Dr. Chelsea'],
  };
  
- function getDoctors() {
-   const selectedRole = document.getElementById('roles').value;
-   const doctorsSelect = document.getElementById('doctors');
-   doctorsSelect.innerHTML = ''; // Clear previous options
+//  function getDoctors() {
+//    const selectedRole = document.getElementById('roles').value;
+//    const doctorsSelect = document.getElementById('doctors');
+//    doctorsSelect.innerHTML = ''; // Clear previous options
  
-   // Populate the doctors select box based on the selected role
-   doctorsData[selectedRole].forEach(doctor => {
-       const option = document.createElement('option');
-       option.value = doctor;
-       option.text = doctor;
-       doctorsSelect.appendChild(option);
-   });
- }
+//    // Populate the doctors select box based on the selected role
+//    doctorsData[selectedRole].forEach(doctor => {
+//        const option = document.createElement('option');
+//        option.value = doctor;
+//        option.text = doctor;
+//        doctorsSelect.appendChild(option);
+//    });
+//  }
  
  // Initial population of doctors based on the default selected role
 //  getDoctors();
@@ -279,3 +279,11 @@ const doctorsData = {
   })
   renderCalendar();
  
+ 
+
+  function show_sidebar(){
+   document.querySelector(".responsive").classList.add("active_sidebar");
+  }
+  function close_sidebar(){
+   document.querySelector(".responsive").classList.remove("active_sidebar");
+  }

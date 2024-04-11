@@ -82,15 +82,15 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
             
         <div class="navbar">
             <div class="section1">
-            <h2>MOUNT TECH SOLUTIONS </h2>
             <button class="hide" id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
+            <i class="bi bi-justify-left" id="show_sidebar" onclick="show_sidebar()"></i>
             </div>
             <div class="section2">
-                    <div class="icons">
-                        <i class="bi bi-person-fill" id="icon">
+                    <div class="notification_div">
+                        <i class="bi bi-person-fill" id="notification_icon">
                             <div class="notification1">9</div>
                         </i>
-                        <i class="bi bi-bell-fill" id="icon">
+                        <i class="bi bi-bell-fill" id="notification_icon">
                         <div class="notification2">15</div>
                         </i>
                     </div>
@@ -110,18 +110,92 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
                 </div>
             </div>
         </div>
-        <div class="sidebar">
+        <div class="sidebar responsive">
             <div class="sidebar_contents">
-                <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
             </div>
-            <div class="sidebar_icons">
-                <i class="bi bi-chat-dots-fill icons"></i>
-                <i class="bi bi-calendar-date-fill icons" onClick="back_to_appoitment_list()"></i>
-                <i class="bi bi-pencil-square icons"  onClick="show_profile_list()" ></i>
-                <i class=" bi-box-arrow-right icons"></i>
+            <div class="flex_sidebar_icon">
+            <i class="bi bi-x-square-fill"  id="sidebar_close" onclick="close_sidebar()"></i>
+                <i class="bi bi-calendar-date-fill" id="sidebar_icon" onClick="back_to_appoitment_list()">
+                &nbsp;&nbsp;<span>Appoitments</span>
+                </i>
+                <i class="bi bi-pencil-square" id="sidebar_icon"  onClick="show_profile_list()">
+                &nbsp;&nbsp;<span>Patients Vitals</span>
+                </i>
+                <i class=" bi-box-arrow-right" id="sidebar_icon" >
+                &nbsp;&nbsp; <span>Log Out</span>
+                </i>
             </div>
         </div>
     </div>
+                 <!----APPOITMENT SECTION-->
+                 <div class="appoitment_section">
+            <div class="appoitment_contents">
+                <div class="head_section">
+                <span>APPOITMENT DETAILS</span>
+                <div class="appoitment_input_control">
+                <i class="bi bi-search" id="search-icon"></i>
+                    <input type="text" placeholder="Search here" class="appoitment_input">
+                </div>
+                </div>
+                    <div class="body_sec">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>#</td>
+                                    <td>PASSPORT</td>
+                                    <td>Patient Name</td>
+                                    <td>Patient ID</td>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Accept</td>
+                                    <td>Reject</td>
+                                </tr>
+                            </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <div class="image">
+                                            <img width="70px" height="70px" src="../Images/WHITE.jpg" alt="">
+                                            </div>
+                                        </td>
+                                        <td>Sandra Macdonald</td>
+                                        <td>PAT001</td>
+                                        <td>22-02-2024</td>
+                                        <td>2:30PM</td>
+                                        <td>
+                                            <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+                                        </td>
+                                        <td>
+                                            <button class="reject-btn">Reject</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="image">
+                                        <img width="70px" height="70px" src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
+                                        
+                                        </div>
+                                    </td>
+                                        <td>Lincoln Brown</td>
+                                        <td>PAT002</td>
+                                        <td>22-02-2024</td>
+                                        <td>2:30PM</td>
+                                    <td>
+                                        <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+                                    </td>
+                                    <td>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
 <!--PERSONAL PROFILE VITAL AFTER CLICKING ON THE ACCEPT BUTTON--->
 <div class="personal_profile_vital hide">
@@ -260,79 +334,7 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
 </div>
 </div>
 </div>
-    <div id="landing_section-container">
-              <!----APPOITMENT SECTION-->
-        <div class="appoitment_section">
-        <div class="container">
-            <div class="contents">
-                <div class="head-sec">
-                <span style="color:black;">Appoitment Details</span>
-                <div class="appoitment_input_control">
-                <i class="fa fa-search" id="search-icon"></i>
-                    <input type="text" placeholder="Search here" class="appoitment_input">
-                </div>
-                </div>
-                    <div class="body_sec">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>#</td>
-                                    <td>PASSPORT</td>
-                                    <td>Patient Name</td>
-                                    <td>Patient ID</td>
-                                    <td>Date</td>
-                                    <td>Time</td>
-                                    <td>Accept</td>
-                                    <td>Reject</td>
-                                </tr>
-                            </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <div class="image">
-                                            <img width="70px" height="70px" src="../Images/WHITE.jpg" alt="">
-                                            </div>
-                                        </td>
-                                        <td>Sandra Macdonald</td>
-                                        <td>PAT001</td>
-                                        <td>22-02-2024</td>
-                                        <td>2:30PM</td>
-                                        <td>
-                                            <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
-                                        </td>
-                                        <td>
-                                            <button class="reject-btn">Reject</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="image">
-                                        <img width="70px" height="70px" src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
-                                        
-                                        </div>
-                                    </td>
-                                        <td>Lincoln Brown</td>
-                                        <td>PAT002</td>
-                                        <td>22-02-2024</td>
-                                        <td>2:30PM</td>
-                                    <td>
-                                        <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
-                                    </td>
-                                    <td>
-                                        <button class="reject-btn">Reject</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
 
     <div id="patient_list-container">
         <div class="new_vital hide">
@@ -656,13 +658,13 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
     </div>
 
     <div class="appoitment_container hide">
-                <section class="doctor_roles_name hide">
-                    <i  class="bi bi-x-lg" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
+    <section class="doctor_roles_name hide">
+                    <i class="bi bi-x-lg" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
                 <div class="appoitment-calender">
                     <div class="doc_roles">
-                <label for="roles">Specialist</label>
-<select id="roles"  onclick="getDoctors()">
-<option>Select</option>
+                <label for="roles">Doctor Role:</label>
+<select id="roles" >
+<option  onclick="getDoctors()">Select</option>
     <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
@@ -689,11 +691,11 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
     <option value="cardology">Cardology</option>
     <option value="allergist">Allergist</option>
     <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
-    <!-- Add more role options as needed-->
+    <!-- Add more role options as needed -->
 </select>
-<label for="doctors">Roles</label>
+<label for="doctors">Select Doctor:</label>
 <select id="doctors">
-    Doctors for the selected role will be dynamically added here
+    <!-- Doctors for the selected role will be dynamically added here -->
 </select>
 <button id="continue" type="submit" onClick="submitRoles()" >Continue</button>
 </div>
@@ -721,13 +723,14 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
         <div class="form_appoitment">
             <h3>Fill in the neccessary Information</h3>
             <form action="" class="form">
+                <div class="_flexs">
                 <div class="form_control">
                     <label for="">Patient Name</label>
-                    <input type="text" placeholder="john">
+                    <input type="text">
                 </div>
                 <div class="form_control">
                     <label for="">Patient Id</label>
-                    <input type="text" placeholder="id001">
+                    <input type="text">
                 </div>
                 <div class="form_control">
                     <label for="">Selected Date</label>
@@ -737,23 +740,24 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
                     <label for="">Selected Time</label>
                     <input type="time">
                 </div>
-                <div class="form_control_text_area">
-                    <label for="">Doctor Comment</label>
+                <div class="form_control">
+                    <label for="">Request Type</label>
                     <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <button class="btn_submit_appoitment">Transfer</button>
                 </div>
+                </div>
+            </div>
+            <button class="btn_submit_appoitment">Submit</button>
             </form>
         </div>
         </div>
                 </section>
             <section class="appoitments">
-            <h1>Appoitments</h1>
             <div class="cards_container">
             <div class="cards">
                 <div class="profile">
                     <img src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Rita John</h3>
+                    <h3>Dr. Rita Glass</h3>
                     <h4>Gynaecologist</h4>
                     </div>
                 </div>
@@ -781,7 +785,7 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
                 <div class="profile">
                     <img src="../Images/513d2ccb77e948b687079bc2d6f42661.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Mary Asuquo</h3>
+                    <h3>Dr. Mary Walter</h3>
                     <h4>Gynaecologist</h4>
                     </div>
                 </div>
@@ -809,7 +813,7 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
             <div class="profile">
                     <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Patience Emmanuel</h3>
+                    <h3>Dr. Cathrine Emmanuel</h3>
                     <h4>Gynaecologist</h4>
                     </div>
                 </div>
@@ -837,7 +841,7 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
             <div class="profile">
                     <img src="../Images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Kingsley Patrick</h3>
+                    <h3>Dr. Romeo Patrick</h3>
                     <h4>Gynaecologist</h4>
                     </div>
                 </div>
