@@ -65,7 +65,7 @@
   <!--START OF SIDEBAR AND NAVBAR -->
    <div class="navbar">
         <div class="section1">
-        <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button>
+        <h2>MOUNT TECH SOLUTIONS </h2>
         </div>
         <div class="section2">
             <div class="icons">
@@ -96,7 +96,7 @@
         <div class="sidebar">
                <div class="sidebar_contents" onClick="homepage_section()">
                 <!-- <img width="80px" height="80px" src="<?php echo $website_url ?>/Images/Mount Tech Logo.jpg" alt="logo"> -->
-                <h2>MOUNT TECH SOLUTIONS </h2>
+                <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button>
                </div>
             <div class="sidebar_icons">
                 <!-- <i class="bi bi-chat-dots-fill" id="icon">&nbsp;<span>Chat</span></i> -->
@@ -587,8 +587,8 @@
                 <i class="bi bi-x-lg close_icon" onclick="close_profile()"></i>
                     <div class="div1">
                     <span>Date of Birth : 23-09-2023</span>
-                        <span>Address: 23 Enebong Street Calabar</span>
-                        <span>Phone Number: 090232325</span>
+                        <span>Address: 531 RockVale Dr, Piedmont, South Carolina.</span>
+                        <span>Phone Number: +122 3521 222</span>
                     </div>
                     <div class="div2">
                         <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
@@ -613,7 +613,7 @@
                 <label for="roles">Doctor Role:</label>
 <select id="roles" >
 <option  onclick="getDoctors()">Select</option>
-    <!-- <option value="cardiologist">Cardiologist</option>
+    <option value="cardiologist">Cardiologist</option>
     <option value="dermatologist">Dermatologist</option>
     <option value="surgeon">Surgeon</option>
     <option value="psychiatrist">Psychiatrist:</option>
@@ -639,7 +639,7 @@
     <option value="cardology">Cardology</option>
     <option value="allergist">Allergist</option>
     <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
-    Add more role options as needed -->
+    <!-- Add more role options as needed -->
 </select>
 <label for="doctors">Select Doctor:</label>
 <select id="doctors">
@@ -705,7 +705,7 @@
                 <div class="profile">
                     <img src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Rita John</h3>
+                    <h3>Dr. Rita Glass</h3>
                     <h4>Gynaecologist</h4>
                     </div>
                 </div>
@@ -733,7 +733,7 @@
                 <div class="profile">
                     <img src="../Images/513d2ccb77e948b687079bc2d6f42661.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Mary Asuquo</h3>
+                    <h3>Dr. Mary Walter</h3>
                     <h4>Gynaecologist</h4>
                     </div>
                 </div>
@@ -761,7 +761,7 @@
             <div class="profile">
                     <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Patience Emmanuel</h3>
+                    <h3>Dr. Cathrine Emmanuel</h3>
                     <h4>Gynaecologist</h4>
                     </div>
                 </div>
@@ -789,7 +789,7 @@
             <div class="profile">
                     <img src="../Images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Kingsley Patrick</h3>
+                    <h3>Dr. Romeo Patrick</h3>
                     <h4>Gynaecologist</h4>
                     </div>
                 </div>

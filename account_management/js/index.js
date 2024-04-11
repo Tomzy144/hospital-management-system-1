@@ -48,19 +48,19 @@ document.addEventListener('DOMContentLoaded', function(){
 //PENDING TRANSACTIONS
     //Created an Array that collects all the element and value, i used object to get the values for each of them // KINGSLEY CODE LINE
     const pendingTransaction = [
-        {number:"1", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
+        {number:"1", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Mary", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Maleria Drug", amount:"40,000.00"}
     },
-        {number:"2", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"HIV Test", amount:"80,000.00"}
+        {number:"2", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Mary", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"HIV Test", amount:"80,000.00"}
     },
-        {number:"3", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Eye Test", amount:"230,000.00"}
+        {number:"3", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Mary", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Eye Test", amount:"230,000.00"}
     },
-        {number:"4", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Food Test", amount:"10,000.00"}
+        {number:"4", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Mary", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Food Test", amount:"10,000.00"}
     },
-        {number:"5", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Nose Drug", amount:"90,000.00"}
+        {number:"5", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Mary", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Nose Drug", amount:"90,000.00"}
     },
-        {number:"6", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Ear Drug", amount:"620,000.00"}
+        {number:"6", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Mary", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Ear Drug", amount:"620,000.00"}
     },
-        {number:"7", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Kingsley Effiong", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Teeth Checkup", amount:"412,000.00"}
+        {number:"7", imageUrl:'../Images/imaculater.jpg', name_id:{name:"Mary", id:"PAT000932"}, date_time:{date:"20-08-2024", time:"12:30PM"}, request_type_amount:{request_type:"Teeth Checkup", amount:"412,000.00"}
     },
     ];
     //SET CURRENT INDEXT TO 0, I.e. ARRAY TO 0;

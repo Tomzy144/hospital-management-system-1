@@ -36,6 +36,12 @@ body{
     animation: zoomIn 1s ease-in-out;
     align-items: center;
 }
+.section1 h2{
+    position:absolute;
+    right:0;
+    color:#fff;
+    font-weight:bold;
+}
 .section2{
     width: 500px;
     height: 100%;

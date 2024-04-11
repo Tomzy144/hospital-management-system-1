@@ -262,6 +262,7 @@ function appoitment_booking(){
   document.querySelector('.checkup_section').style.display = 'none';
   document.querySelector('.profile_container').style.display = 'none';
   document.querySelector('.overlay').classList.add("hide")
+  document.querySelector('.overlay_div').classList.add("hide")
 }
 function book_appoitment(){
   const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
@@ -315,12 +316,12 @@ function getDoctors() {
   doctorsSelect.innerHTML = ''; // Clear previous options
 
   // Populate the doctors select box based on the selected role
-//   doctorsData[selectedRole].forEach(doctor => {
-//       const option = document.createElement('option');
-//       option.value = doctor;
-//       option.text = doctor;
-//       doctorsSelect.appendChild(option);
-//   });
+  doctorsData[selectedRole].forEach(doctor => {
+      const option = document.createElement('option');
+      option.value = doctor;
+      option.text = doctor;
+      doctorsSelect.appendChild(option);
+  });
 }
 
 // Initial population of doctors based on the default selected role

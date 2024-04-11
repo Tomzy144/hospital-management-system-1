@@ -52,13 +52,20 @@ body{
 }
 
 .section1{
-    width: 500px;
+    width: 700px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position:relative;
     animation: slideInDown ease-in-out 0.5s;
     align-items: center;
+}
+.section1 h2{
+    position:absolute;
+    right:0;
+    color:#fff;
+    font-weight:bold;
 }
 .section2{
     width: 500px;
@@ -202,7 +209,7 @@ h3{
 #btn_appoitment{
     padding: 0.7rem 1rem;
     background-color: #fff;
-    margin: 0 0 0 18rem;
+    /* margin: 0 0 0 18rem; */
     border-radius: 5px;
     border: none;
     cursor: pointer;

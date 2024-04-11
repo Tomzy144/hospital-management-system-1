@@ -29,7 +29,7 @@
           <div class="profile">
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
-            <h4>Princess Esther Asuquo</h4>
+            <h4>Princess Deam Smith</h4>
             <button class="btn_submit">Upload Image</button>
             <h4>change password</h4>
         </div>
@@ -38,7 +38,7 @@
             <div class="active"></div>
             </div>
         </img>  
-            <h4>Princess Esther Asuquo</h4>
+            <h4>Princess Deam Smith</h4>
             <i class="fa fa-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
           </div>
         </div>

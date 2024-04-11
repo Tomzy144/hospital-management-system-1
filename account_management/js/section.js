@@ -98,7 +98,7 @@ const pending_transation_section = `
         <span>Todays Transactions History</span>
         <div class="transaction_box">
             <div class="amount_item">
-                <h1>N1,300.00</h1>
+                <h1>$1,300.00</h1>
                 <h4>Purchase of Maleria Drug</4>
             </div>
             <div class="successful_date">
@@ -108,7 +108,7 @@ const pending_transation_section = `
         </div>
         <div class="transaction_box">
             <div class="amount_item">
-                <h1>N1,300.00</h1>
+                <h1>$1,300.00</h1>
                 <h4>Paid for scanning test</4>
             </div>
             <div class="successful_date">
@@ -118,7 +118,7 @@ const pending_transation_section = `
         </div>
         <div class="transaction_box">
             <div class="amount_item">
-                <h1>N1,300.00</h1>
+                <h1>$1,300.00</h1>
                 <h4>Paid for scanning test</4>
             </div>
             <div class="successful_date">
@@ -128,7 +128,7 @@ const pending_transation_section = `
         </div>
         <div class="transaction_box">
             <div class="amount_item">
-                <h1>N1,300.00</h1>
+                <h1>$1,300.00</h1>
                 <h4>Paid for scanning test</4>
             </div>
             <div class="successful_date">
@@ -161,7 +161,7 @@ const printing_receipt_section = `
     <div class="container">
         <div class="name">
         <p>receipt to:</p>
-        <p>Kingsley Effiong</p>
+        <p>Kingsley</p>
         </div>
         <div class="date_and_id">
             <p>Date: 23-09-2024</p>
