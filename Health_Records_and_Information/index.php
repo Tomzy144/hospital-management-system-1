@@ -416,6 +416,7 @@
                     <tr data-patient-id="<?php echo $patient_id; ?>" onClick="next_page(this);">
                         <td><?php echo $row["sn"]; ?></td>
                         <td><?php echo $row["fullname"]; ?></td>
+                        <td><?php echo $row["patient_id"]; ?></td>
                         <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]; ?>" alt="Profile Picture"></td>
                         <td><?php echo $row["date"]; ?></td>
                         <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
