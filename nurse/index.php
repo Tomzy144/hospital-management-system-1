@@ -82,15 +82,15 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
             
         <div class="navbar">
             <div class="section1">
-            <h2>MOUNT TECH SOLUTIONS </h2>
             <button class="hide" id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
+            <i class="bi bi-justify-left" id="show_sidebar" onclick="show_sidebar()"></i>
             </div>
             <div class="section2">
-                    <div class="icons">
-                        <i class="bi bi-person-fill" id="icon">
+                    <div class="notification_div">
+                        <i class="bi bi-person-fill" id="notification_icon">
                             <div class="notification1">9</div>
                         </i>
-                        <i class="bi bi-bell-fill" id="icon">
+                        <i class="bi bi-bell-fill" id="notification_icon">
                         <div class="notification2">15</div>
                         </i>
                     </div>
@@ -110,9 +110,8 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
                 </div>
             </div>
         </div>
-        <div class="sidebar">
+        <div class="sidebar responsive">
             <div class="sidebar_contents">
-                <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
             </div>
             <div class="sidebar_icons">
                 <i class="bi bi-chat-dots-fill icons"></i>
