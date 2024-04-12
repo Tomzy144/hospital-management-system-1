@@ -164,6 +164,7 @@
                                         while ($prow = $presult->fetch_assoc()) {
                                             $patient_passports[$prow['patient_id']] = $prow['patient_passport'];
                                         }
+                                        
                                         ?>
                                         <table>
                                             <thead>
