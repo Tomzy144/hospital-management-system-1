@@ -1,6 +1,107 @@
 
 
 
+<div id="landing_section-container">
+              <!----APPOITMENT SECTION-->
+        <div class="appoitment_section">
+            <div class="appoitment_contents">
+                <div class="head_section">
+                <span>APPOITMENT DETAILS</span>
+                <div class="appoitment_input_control">
+                <i class="bi bi-search" id="search_icon"></i>
+                    <input type="text" placeholder="Search here" class="appoitment_input">
+                </div>
+                </div>
+                    <div class="body_sec">
+                    <table>
+                                                        <?php
+                                    $sql = "SELECT * FROM nurse_appointment_tab WHERE nurse_id ='$s_nurse_id'";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                        // Fetch patient passport outside of the loop
+                                        $psql = "SELECT patient_id, patient_passport FROM patient_tab";
+                                        $presult = $conn->query($psql);
+                                        $patient_passports = [];
+                                        while ($prow = $presult->fetch_assoc()) {
+                                            $patient_passports[$prow['patient_id']] = $prow['patient_passport'];
+                                        }
+                                        
+                                        ?>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>#</td>
+                                                    <td>PASSPORT</td>
+                                                    <td>Patient Name</td>
+                                                    <td>Patient ID</td>
+                                                    <td>Date</td>
+                                                    <td>Time</td>
+                                                    <td>Accept</td>
+                                                    <td>Reject</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $appointmentCount = 0; // Initialize appointment count
+                                                while ($row = $result->fetch_assoc()) {
+                                                    $appointmentCount++; // Increment appointment count for each row
+                                                    echo "<tr>";
+                                                    echo "<td id=\"appointment_count\">" . $appointmentCount . "</td>"; // Display appointment count
+                                                    echo "<td><img src='" . $website_url . "/uploaded_files/profile_pix/patient/" . $patient_passports[$row['patient_id']] . "' alt='Profile Picture'/></td>";
+                                                    echo "<td>" . $row["patient_name"] . "</td>";
+                                                    echo "<td>" . $row["patient_id"] . "</td>";
+                                                    echo "<td>" . $row["nurse_appointment_date"] . "</td>";
+                                                    echo "<td>" . $row["time"] . "</td>";
+                                                    echo "<td>";
+                                                    ?>
+                                                    <button class="accept-btn" type="button" onClick="personal_profile_section('<?php echo $row["patient_id"]; ?>')">Accept</button>
+                                                    <?php
+                                                    echo "</td>";
+                                                    echo "<td>";
+                                                    ?>
+                                                    <button class="reject-btn" onClick="reject('<?php echo $row["patient_id"]; ?>')">Reject</button>
+                                                    <?php
+                                                    echo "</td>";
+                                                    echo "</tr>";
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                        <?php
+                                    } else {
+                                        // No nurse appointments found
+                                        echo "<p>No appointments found.</p>";
+                                    }
+                                    ?>
+
+                                </tbody>
+                                <!-- <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="image">
+                                        <img width="70px" height="70px" src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
+                                        
+                                        </div>
+                                    </td>
+                                        <td>Lincoln Brown</td>
+                                        <td>PAT002</td>
+                                        <td>22-02-2024</td>
+                                        <td>2:30PM</td>
+                                    <td>
+                                        <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
+                                    </td>
+                                    <td>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                            </tbody> -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
 <!--PERSONAL PROFILE VITAL AFTER CLICKING ON THE ACCEPT BUTTON--->
 <div class="personal_profile_vital hide">
   <div class="patient_container">
@@ -138,109 +239,6 @@
 </div>
 </div>
 </div>
-    <div id="landing_section-container">
-              <!----APPOITMENT SECTION-->
-        <div class="appoitment_section">
-        <div class="container">
-            <div class="contents">
-                <div class="head-sec">
-                <span style="color:black;">Appoitment Details</span>
-                <div class="appoitment_input_control">
-                <i class="fa fa-search" id="search-icon"></i>
-                    <input type="text" placeholder="Search here" class="appoitment_input">
-                </div>
-                </div>
-                    <div class="body_sec">
-                    <table>
-                                                        <?php
-                                    $sql = "SELECT * FROM nurse_appointment_tab WHERE nurse_id ='$s_nurse_id'";
-                                    $result = $conn->query($sql);
-
-                                    if ($result->num_rows > 0) {
-                                        // Fetch patient passport outside of the loop
-                                        $psql = "SELECT patient_id, patient_passport FROM patient_tab";
-                                        $presult = $conn->query($psql);
-                                        $patient_passports = [];
-                                        while ($prow = $presult->fetch_assoc()) {
-                                            $patient_passports[$prow['patient_id']] = $prow['patient_passport'];
-                                        }
-                                        
-                                        ?>
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <td>#</td>
-                                                    <td>PASSPORT</td>
-                                                    <td>Patient Name</td>
-                                                    <td>Patient ID</td>
-                                                    <td>Date</td>
-                                                    <td>Time</td>
-                                                    <td>Accept</td>
-                                                    <td>Reject</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                $appointmentCount = 0; // Initialize appointment count
-                                                while ($row = $result->fetch_assoc()) {
-                                                    $appointmentCount++; // Increment appointment count for each row
-                                                    echo "<tr>";
-                                                    echo "<td id=\"appointment_count\">" . $appointmentCount . "</td>"; // Display appointment count
-                                                    echo "<td><img src='" . $website_url . "/uploaded_files/profile_pix/patient/" . $patient_passports[$row['patient_id']] . "' alt='Profile Picture'/></td>";
-                                                    echo "<td>" . $row["patient_name"] . "</td>";
-                                                    echo "<td>" . $row["patient_id"] . "</td>";
-                                                    echo "<td>" . $row["nurse_appointment_date"] . "</td>";
-                                                    echo "<td>" . $row["time"] . "</td>";
-                                                    echo "<td>";
-                                                    ?>
-                                                    <button class="accept-btn" type="button" onClick="personal_profile_section('<?php echo $row["patient_id"]; ?>')">Accept</button>
-                                                    <?php
-                                                    echo "</td>";
-                                                    echo "<td>";
-                                                    ?>
-                                                    <button class="reject-btn" onClick="reject('<?php echo $row["patient_id"]; ?>')">Reject</button>
-                                                    <?php
-                                                    echo "</td>";
-                                                    echo "</tr>";
-                                                }
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                        <?php
-                                    } else {
-                                        // No nurse appointments found
-                                        echo "<p>No appointments found.</p>";
-                                    }
-                                    ?>
-
-                                </tbody>
-                                <!-- <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="image">
-                                        <img width="70px" height="70px" src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
-                                        
-                                        </div>
-                                    </td>
-                                        <td>Lincoln Brown</td>
-                                        <td>PAT002</td>
-                                        <td>22-02-2024</td>
-                                        <td>2:30PM</td>
-                                    <td>
-                                        <button class="accept-btn" type="button" onClick="personal_profile_section()">Accept</button>
-                                    </td>
-                                    <td>
-                                        <button class="reject-btn">Reject</button>
-                                    </td>
-                                </tr>
-                            </tbody> -->
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div id="patient_list-container">
         <div class="new_vital hide">

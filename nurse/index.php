@@ -114,10 +114,16 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
             <div class="sidebar_contents">
             </div>
             <div class="sidebar_icons">
-                <i class="bi bi-chat-dots-fill icons"></i>
-                <i class="bi bi-calendar-date-fill icons" onClick="back_to_appoitment_list()"></i>
-                <i class="bi bi-pencil-square icons"  onClick="show_profile_list()" ></i>
-                <i class=" bi-box-arrow-right icons"></i>
+            <i class="bi bi-x-square-fill" id="sidebar_close" onclick="close_sidebar()"></i>
+                <i class="bi bi-calendar-date-fill icons" onClick="back_to_appoitment_list()">
+                    &nbsp;<span>APPOITMENT</span>
+                </i>
+                <i class="bi bi-pencil-square icons"  onClick="show_profile_list()" >
+                &nbsp;<span>PATIENT PROFILE</span>
+                </i>
+                <i class=" bi-box-arrow-right icons">
+                &nbsp;<span>LOG OUT</span>
+                </i>
             </div>
         </div>
     </div>
