@@ -72,20 +72,15 @@ $patient_id = $_POST['patient_Id'];
           <span>  <?php echo $patient_id ?> </span>
           </div>
           </div>
-          <button class= "btn_ward" onClick="getward()">Ward</button>
+          <button class= "btn_ward" onclick="ward(),getWards();">Ward</button>
               <!--Wards--->
               <div class="ward_container hidden">
-              <label for="ward">Change Ward</label>
-              <select name="ward" id="ward">
-                  <option value="ward_select"></option>
-                  <option value="ward_1">Ward 1</option>
-                  <option value="ward_2">Ward 2</option>
-                  <option value="ward_3">Ward 3</option>
-                  <option value="ward_4">Ward 4</option>
-                  <option value="ward_5">Ward 5</option>
-                  <option value="ward_6">Ward 6</option>
-              </select>
-          </div>
+                    <label for="ward"   >Change Ward</label>
+                    <select name="ward" id= "wards">
+                    <option></option>
+                    </select>
+                </div>
+
 
           <button class= "btn_ward_round" onClick="ward_round()">Ward Round</button>
           <div class="ward_round_container hidden">
