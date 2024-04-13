@@ -287,3 +287,40 @@ const doctorsData = {
   function close_sidebar(){
    document.querySelector(".responsive").classList.remove("active_sidebar");
   }
+
+
+  ////////////////
+
+  function accept(patient_Id) {
+   // Fade in elements with class 'all_sections_input'
+   $('.personal_profile_vital').fadeIn(500);
+
+   // Construct data string to send in the AJAX request
+   var dataString = 'patient_Id=' + patient_Id;
+
+   // Perform AJAX request
+   $.ajax({
+       type: "POST", // HTTP method
+       url: 'config/profile_input.php', // URL of the PHP script
+       data: dataString, // Data to send with the request
+       cache: false, // Disable caching
+       success: function(html) {
+           // On success, update content of elements with class 'all_sections_input' with the received HTML
+           $('.personal_profile_vital').html(html);
+
+     
+           // Hide container with ID 'appointmentDetailsContainer'
+           var container = document.querySelector('.appoitment_section');
+           container.style.display = "none";
+
+           // Remove 'hide' class from elements with class 'all_sections_input'
+           var hidden = document.querySelector('.personal_profile_vital');
+           hidden.classList.remove("hide");
+       }
+   });
+                   document.addEventListener('click', function(event) {
+       console.log('Event type:', event.type); // Output the type of event
+       console.log('Event target:', event.target); // Output the target of the event
+   });
+
+}
