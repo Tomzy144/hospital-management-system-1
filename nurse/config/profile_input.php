@@ -25,7 +25,7 @@ $patient_id = $_POST['patient_Id'];
         $category_id = $patient_profile_array['category_id'];
         $date = $patient_profile_array['date'];
         $last_login = $patient_profile_array['last_login'];
-        $passport = $patient_profile_array['passport'];
+        $passport = $patient_profile_array['patient_passport'];
         ///next of kin
         $kname = $patient_profile_array['kname'];
         $kgender = $patient_profile_array['kgender'];
@@ -64,13 +64,15 @@ $patient_id = $_POST['patient_Id'];
   <div class="patient_container">
       <div class="patient_info">
       <div class="patient_profile">
-      <img src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="" />
+      <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/patient/<?php echo $passport; ?>" alt="Profile Picture" />
+
+
       <div class="patient_name_id">
-          <span>Precious Joseph</span>
-          <span>  PATOOO1</span>
+          <span><?php echo $patient_name ?></span>
+          <span>  <?php echo $patient_id ?> </span>
           </div>
           </div>
-          <button class= "btn_ward" onClick="ward()">Ward</button>
+          <button class= "btn_ward" onClick="getward()">Ward</button>
               <!--Wards--->
               <div class="ward_container hidden">
               <label for="ward">Change Ward</label>
