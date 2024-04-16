@@ -114,7 +114,6 @@ if($s_staff_id != '') {
         window.location.href = "<?php echo $website_url?>/doctor";
     </script>
  <?php } ?>
-
     <div class="fill-form-div login-div" id="next_2">
         <div class="doctor-login">
             <!-- Close icon for the login form -->

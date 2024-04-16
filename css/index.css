@@ -1,0 +1,216 @@
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Regular.ttf') format('truetype'); /* Adjust the path if necessary */
+    font-weight: normal; /* Specify the weight if needed */
+    font-style: normal; /* Specify the style if needed */
+  }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins';
+        }
+
+        ._login_section {
+            width: 100%;
+            height: 100vh; /* Using viewport height for full-screen height */
+            background-color: #2a57d7;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+        h3{
+          animation: slideInDown 0.5s ease-in-out;
+        }
+        ._staff_login{
+          height: 100%;
+          width: 50%;
+          background-color: #fff;
+          display: flex;
+          justify-content: center; 
+          animation: fadeIn 1s ease-in-out;
+          position: relative;
+          align-items: center;;
+        }
+        .staff_container{
+          width: auto;
+          height: auto;
+          padding: 1em;
+          border-radius: 5px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+        ._staff_contents{
+          width: 350px;
+          height: auto;
+          justify-content: center;
+          display: flex;
+          position: relative;
+          color: #2a57d7;;;
+          text-align: center;
+          flex-direction: column;
+        }
+        form{
+          display: flex;
+          justify-content: left;
+          align-items:flex-start;
+          text-align: left;
+          flex-direction: column;
+        }
+        ._form_control{
+          width: 90%;
+          margin: 1em 0;
+          display: flex;
+          animation: slideInDown 0.5s ease-in-out;
+          position: relative;
+          flex-direction: column;
+        }
+        ._form_control i{
+          position: absolute;
+          top: 50%;
+        }
+        ._form_control .show_password{
+          right: 0;
+          cursor: pointer;
+        }
+        ._form_control .lock_password{
+          right: 0;
+          cursor: pointer;
+        }
+        input{
+          width: 100%;
+          color: #2a57d7;
+          padding: 0.5em;
+          font-size: 18px;
+          outline: none;
+          border: none;
+         text-indent: 9px;
+          border-bottom: 1px solid #2a57d7;;;
+        }
+        ._fingerprint_authentication{
+          text-align: right;
+          width: 100%;
+          display: flex;;
+          align-items: center;
+          justify-content: right;;
+          animation: slideInDown 0.5s ease-in-out;
+          height: 30px;
+        }
+        ._fingerprint_authentication span{
+          cursor: pointer;
+          color: #2a57d7;;
+        }
+        ._fingerprint_authentication i{
+          cursor: pointer;
+          font-size: 25px;
+          color: #2a57d7;;
+        }
+        .btn{
+          width: 100%;
+          background-color: #2a57d7;
+          border: none;
+          padding: 0.8em;
+          border-radius: 3px;
+          margin: 1em 0;
+          color: #fff;
+          cursor: pointer;
+          transition: all ease-in-out 0.5s;
+          animation: slideInDown 0.5s ease-in-out;
+        }
+        .btn:hover{
+          background: none;
+          border: 1px solid #2a57d7;
+          color: #2a57d7;
+        }
+        ._alert_div{
+          width: auto;
+          height: auto;
+          max-width: 250px;
+          position: absolute;
+          right: 0.5%;
+          border-radius: 3px;
+          padding: 1em;
+          color: #fff;
+          box-shadow: rgba(218, 216, 216, 0.35) 0px 5px 15px;
+          top:0.5%;
+          background-color: #2a57d7;
+        }
+
+    
+        .admin_section{
+          height: 100%;
+          width: 50%;
+          display: flex;
+          justify-content: center; 
+          position: relative;
+          align-items: center;;
+          animation: fadeIn 1s ease-in-out;
+        }
+        .admin_container{
+          width: auto;
+          height: auto;
+          padding: 1em;
+          background-color: #fff;
+          border-radius: 5px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+        ._admin_contents{
+          width: 350px;
+          height: auto;
+          justify-content: center;
+          display: flex;
+          position: relative;
+          color: #2a57d7;;;
+          text-align: center;
+          flex-direction: column;
+        }
+        .admin_alert{
+          width: auto;
+          height: auto;
+          max-width: 250px;
+          position: absolute;
+          right: 0.5%;
+          border-radius: 3px;
+          padding: 1em;
+          color: #2a57d7;
+          box-shadow: rgba(218, 216, 216, 0.35) 0px 5px 15px;
+          top:0.5%;
+          background-color: #ffffff;
+        }
+        .vf{
+            top:7%;
+            color: #fff;
+            background-color: red;
+        }
+
+        @media screen and (max-width:1100px){
+          ._login_section {
+            width: 100%;
+            height: 100vh; /* Using viewport height for full-screen height */
+            background-color: #2a57d7;
+            display: flex;
+            justify-content: center; 
+            flex-direction: column;
+            align-items: center;
+        }
+        ._staff_login{
+          height: 100%;
+          width: 100%;
+          background-color: #fff;
+          display: flex;
+          justify-content: center; 
+          position: relative;
+          align-items: center;;
+        }
+        .admin_section{
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center; 
+          position: relative;
+          align-items: center;;
+        }
+        }
+        .hide{
+          display: none;
+        }
