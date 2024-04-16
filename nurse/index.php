@@ -122,7 +122,10 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
                 &nbsp;<span>PATIENT PROFILE</span>
                 </i>
                 <i class=" bi-box-arrow-right icons">
-                &nbsp;<span>LOG OUT</span>
+                    &nbsp;<span onclick="document.getElementById('logoutform').submit();">LOG OUT</span>
+                    <form method="post" action="../config/code.php" id="logoutform">
+                        <input type="hidden" name="action" value="logout"/>    
+                    </form>
                 </i>
             </div>
         </div>

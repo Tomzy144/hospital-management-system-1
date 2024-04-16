@@ -287,3 +287,142 @@ const doctorsData = {
   function close_sidebar(){
    document.querySelector(".responsive").classList.remove("active_sidebar");
   }
+
+
+  ////////////////
+
+  function accept(patient_Id) {
+   // Fade in elements with class 'all_sections_input'
+   $('.personal_profile_vital').fadeIn(500);
+
+   // Construct data string to send in the AJAX request
+   var dataString = 'patient_Id=' + patient_Id;
+
+   // Perform AJAX request
+   $.ajax({
+       type: "POST", // HTTP method
+       url: 'config/profile_input.php', // URL of the PHP script
+       data: dataString, // Data to send with the request
+       cache: false, // Disable caching
+       success: function(html) {
+           // On success, update content of elements with class 'all_sections_input' with the received HTML
+           $('.personal_profile_vital').html(html);
+
+     
+           // Hide container with ID 'appointmentDetailsContainer'
+           var container = document.querySelector('.appoitment_section');
+           container.style.display = "none";
+
+           // Remove 'hide' class from elements with class 'all_sections_input'
+           var hidden = document.querySelector('.personal_profile_vital');
+           hidden.classList.remove("hide");
+       }
+   });
+                   document.addEventListener('click', function(event) {
+       console.log('Event type:', event.type); // Output the type of event
+       console.log('Event target:', event.target); // Output the target of the event
+   });
+
+}
+
+
+
+
+function getWards() {
+  
+   $('#wards').html('<option>LOADING...</option>'); // Set loading message
+   $('#wards').prop('disabled', true); // Disable the dropdown
+ 
+   var action = 'getWards';
+   var data = { action: action }; // Use an object to define data
+ 
+   $.ajax({
+     type: "POST",
+     url: "config/code.php",
+     data: data, // Pass the data object directly
+     cache: false,
+     dataType: 'json',
+     success: function (data) {
+       // Check for success and populate the dropdown
+       if (data.success) {
+         populateWardsDropdown(data.wards); // Assuming 'roles' is the key for roles in your response
+       } else {
+         console.error('Error:', data.message);
+       }
+     },
+     error: function (xhr, status, error) {
+       console.error('AJAX Error:', status, error);
+     }
+   });
+ }
+ 
+ function populateWardsDropdown(wards) {
+   var wardsDropdown = document.getElementById("wards");
+ 
+   // Clear existing options
+   wardsDropdown.innerHTML = '';
+ 
+   // Add options based on the fetched data
+   for (var i = 0; i < wards.length; i++) {
+     var option = document.createElement("option");
+     option.value = wards[i].ward_id; 
+     option.textContent = wards[i].ward_number; 
+     wardsDropdown.appendChild(option);
+   }
+ 
+   // Enable the dropdown after populating options
+   $('#wards').prop('disabled', false);
+ }
+
+
+
+
+ function getBeds() {
+   $('#beds').html('<option>LOADING...</option>'); // Set loading message
+   $('#beds').prop('disabled', true); // Disable the dropdown
+ 
+   var action = 'getBeds';
+   var wards = $('#wards').val();
+   var dataString = 'action=' + action + '&wards=' + wards;
+ 
+   $.ajax({
+     type: 'POST',
+     url: "config/code.php",
+     data: dataString,
+     cache: false,
+     dataType: 'json',
+     success: function (data) {
+       // Check for success and populate the dropdown
+       if (data.success) {
+         populateBedsDropdown(data.beds); // Pass the entire array of beds
+       } else {
+         console.error('Error:', data.message);
+       }
+     },
+     error: function (xhr, status, error) {
+       console.error('AJAX Error:', status, error);
+     },
+   });
+ }
+ 
+ function populateBedsDropdown(beds) {
+   var bedsDropdown = document.getElementById('beds');
+ 
+   // Clear existing options
+   bedsDropdown.innerHTML = '';
+ 
+   // Add options based on the fetched data
+   for (var i = 0; i < beds.length; i++) {
+     var option = document.createElement('option');
+     option.value = beds[i].bed_id; // Assuming the bed object has a 'bed_id' property
+ 
+     // Concatenate bed_number and bed_status_description
+     var optionText = beds[i].bed_number + " - " + beds[i].bed_description;
+ 
+     option.textContent = optionText; 
+     bedsDropdown.appendChild(option);
+   }
+ 
+   // Enable the dropdown after populating options
+   $('#beds').prop('disabled', false);
+ }
