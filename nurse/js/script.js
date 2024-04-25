@@ -426,3 +426,13 @@ function getWards() {
    // Enable the dropdown after populating options
    $('#beds').prop('disabled', false);
  }
+
+
+
+ /////////////////////////
+ function vital_input(){
+   var btn_text=$('#btn_submit').html();
+   $('#btn_submit').html('Processing...');
+   document.getElementById('btn_submit').disabled=true;
+   
+ }
