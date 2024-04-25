@@ -21,7 +21,7 @@
 
 
 
-    
+
     <!-- normal index starts here -->
 
     <section class="login-section">
@@ -52,8 +52,8 @@
             <div class="_form_control">
               <label for="test">Password</label>
               <i class="bi bi-key"></i>
-              <i class="bi bi-eye show_password hide" id="show_admin_password"></i>
-              <i class="bi bi-eye-slash lock_password" id="lock_admin_password"></i>
+              <i class="bi bi-eye show_password hide" id="show_admin_password" onclick="show_admin_password()"></i>
+              <i class="bi bi-eye-slash lock_password" id="lock_admin_password" onclick="show_admin_password()"></i>
               <input type="password" name="password" id="admin_password">
             </div>
             <div class="_fingerprint_authentication">
