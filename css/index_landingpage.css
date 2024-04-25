@@ -1,109 +1,85 @@
 
 
-@charset "utf-8";
-/* CSS Document */
-
 @font-face {
-    font-family: body-font;
-    src: url(SEGOEUI.TTF);
+  font-family: 'Poppins';
+  src: url('Poppins-Regular.ttf') format('truetype'); /* Adjust the path if necessary */
+  font-weight: normal; /* Specify the weight if needed */
+  font-style: normal; /* Specify the style if needed */
 }
-@font-face {
-    font-family:title-font;
-    src: url(berlin-regular.TTF);
-}
+      body, html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          font-family: 'Poppins';
+      }
 
-/* *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-} */
-body {
-  color: #ffffff;
-  width: 100%;
-  height: auto;
-  background-color: #081f31;;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  
-/* tomiwa css */
-  padding:0px;
-  margin :0px;
-  font-size: 15px;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-  word-wrap: break-word;
-  overflow-wrap:break-word ;
-
-
-  }
-  .preloader_background{
-     width: 100%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    position: fixed;
-    z-index: 1200;
-  }
-  #preloader{
-    background: url(../Frontend/Images/logo\ gif.gif)no-repeat center center;
-    transform: rotate(360);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: 100%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    font-size: 40px;
-    z-index: 1300;
-    animation: rotateAnimation 4s linear infinite;
-  }
-
-  
-  @keyframes rotateAnimation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-.navbar{
-    display: block;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    padding: 0.5rem;
-    flex-direction: row;
-    text-align: center;
- 
-}
-
-h1{
-    color: #fff;
-    font-size: 2rem; 
-}
 
 /* tomiwa's */
 .login-section{
   width: 100%;
-  /* padding: 5px; */
-  animation:zoomIn 1.2s ease-in-out 1.3s;
-  margin: auto;
-  height: auto;
-
+  height: 100vh; /* Using viewport height for full-screen height */
+  background-color: #2a57d7;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
 }
-
+h3{
+  animation: slideInDown 0.5s ease-in-out;
+}
+._staff_login{
+  height: 100%;
+  width: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center; 
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+  align-items: center;;
+}
+.staff_container{
+  width: auto;
+  height: auto;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+._staff_contents{
+  width: 350px;
+  height: auto;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  color: #2a57d7;;;
+  text-align: center;
+  flex-direction: column;
+}
+.admin_section{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center; 
+  position: relative;
+  align-items: center;;
+  animation: fadeIn 1s ease-in-out;
+}
+.admin_container{
+  width: auto;
+  height: auto;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+._admin_contents{
+  width: 350px;
+  height: auto;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  color: #2a57d7;;;
+  text-align: center;
+  flex-direction: column;
+}
    /*  tomiwa's  */
     
    .login-section .fill-form-div{
@@ -118,112 +94,7 @@ h1{
      display: block;
   
   } 
-      
-
-
-
-.btn-doctor, .btn-nurse, .btn-receptionist,.btn-lab, .btn-staff_manager, .btn-martanity, .btn-radiography, .btn-surgical_suite, .btn-account_manager, .btn-emergency_manager, .btn-pharmacist,  .btn-morgue_manager {
-   background:none;
-    border: 4px solid  #fff;
-    color: #ffffff;
-    border-radius: 5px;
-    font-size: 1.4rem;
-    padding: 0.6rem;
-    cursor: pointer;
-    margin: 1rem 0;
-    transition:all ease-in-out 0.5s;
-}
-
-.btn-doctor:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-nurse:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-receptionist:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-lab:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-staff_manager:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-martanity:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-radiography:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-surgical_suite:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-account_manager:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-account_manager:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-emergency_manager:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-pharmacist:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.btn-morgue_manager:hover{
-  background-color:rgb(255, 255, 255);
-  color: #000000;
-}
-.overlay{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color:#081f31;;
-    z-index: 5;
-    opacity: 88%;
-    display: none;
-}
-.login-container{
-   width: 100%;
-   margin-top: 2rem;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-     /*  tomiwa css */
-  padding: 10px 0px;
-  height: auto;
-  width: 95%;
-  margin: auto;
-  max-width: 1200px;
-  min-height: 70px;
   
-}
-.flexs-container{
-width: 100%;
-}
-.sections-container{
-    display: flex !important;
-    flex-direction: column;
-    margin: 0.5rem 1rem;
-}
-h2, p{
-    color: #fff;
-    font-size: 16px;
-}
 /*Doctor Login*/
 .doctor-login{
     position: absolute;
@@ -437,190 +308,158 @@ h2, p{
 
 
 
-/* .hidden{
-    display: none;
-} */
-
-#close-icon-doctor{
+form{
+  display: flex;
+  justify-content: left;
+  align-items:flex-start;
+  text-align: left;
+  flex-direction: column;
+}
+._form_control{
+  width: 90%;
+  margin: 1em 0;
+  display: flex;
+  animation: slideInDown 0.5s ease-in-out;
+  position: relative;
+  flex-direction: column;
+}
+._form_control i{
   position: absolute;
-  left: 0;
-  margin-top: 1rem;
+  top: 50%;
+}
+._form_control .show_password{
+  right: 0;
   cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
 }
-#close-icon-lab{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
+._form_control .lock_password{
+  right: 0;
   cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
 }
-#close-icon-nurse{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
+input{
+  width: 100%;
+  color: #2a57d7;
+  padding: 0.5em;
+  font-size: 18px;
+  outline: none;
+  border: none;
+ text-indent: 9px;
+  border-bottom: 1px solid #2a57d7;;;
+}
+.select_staffs{
+  width: 100%;
+  height: auto;
+  background-color: #2a57d7;
+  color: #fff;
+  padding: 0.5em;
+  background: none;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: #2a57d7;
+  border-bottom: 1px solid #2a57d7;;;
   cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
 }
-#close-icon-recep{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
+._fingerprint_authentication{
+  text-align: right;
+  width: 100%;
+  display: flex;;
+  align-items: center;
+  justify-content: right;;
+  animation: slideInDown 0.5s ease-in-out;
+  height: 30px;
+}
+._fingerprint_authentication span{
   cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
+  color: #2a57d7;;
 }
-#close-icon-radiologist{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
+._fingerprint_authentication i{
   cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
-}
-#close-icon-staff_manager{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
-}
-#close-icon-martanity{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
-}
-#close-icon-radiography{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
-}
-#close-icon-account_manager{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
-}
-#close-icon-surgical_suite_manager{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
-}
-#close-icon-emergency_manager{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
-}
-#close-icon-pharmacist{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
-}
-#close-icon-morgue_manager{
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-left: 20rem;
-  color: #081f31;;
-  top: 0;
-}
-.login-form-h1{
-    color: #081f31;;
-    font-size: 1.4rem;
-    padding: 1rem 0;
-    text-align: center;
-    font-weight:bolder;
-}
-.form-control{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: relative;
-    margin: 1rem 0;
-    color: #081f31;;
-}
-  i{
-    position: absolute;
-    left: 5px;
-    top: 63%;
-    transform: translateY(-50%);
-  }
-.form-control input{
-    padding: 12px 0;
-    border: none;
-    border-bottom: 1px solid #081f31;;
-    text-indent: 25px;
-    font-size:1.1rem;
-    outline: none;
-}
-.form-control input:focus{
-    padding: 12px 0;
-    text-indent: 25px;
-    font-size:1.1rem;
-    border-color: #081f31;;
+  font-size: 25px;
+  color: #2a57d7;;
 }
 .btn{
-    width: 100%;
-    padding: 0.6rem;
-    border: none;
-    background-color:#081f31;;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
+  width: 100%;
+  background-color: #2a57d7;
+  border: none;
+  padding: 0.8em;
+  border-radius: 3px;
+  margin: 1em 0;
+  color: #fff;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+  animation: slideInDown 0.5s ease-in-out;
 }
-.btn:active{
-    width: 100%;
-    padding: 0.6rem;
-    border: none;
-    background-color: #00000000;
-    border-radius: 4px;
+.btn:hover{
+  background: none;
+  border: 1px solid #2a57d7;
+  color: #2a57d7;
+}
+._alert_div{
+  width: auto;
+  height: auto;
+  max-width: 250px;
+  position: absolute;
+  right: 0.5%;
+  border-radius: 3px;
+  padding: 1em;
+  color: #fff;
+  box-shadow: rgba(218, 216, 216, 0.35) 0px 5px 15px;
+  top:0.5%;
+  background-color: #2a57d7;
+  animation: zoomIn 0.5s ease-in-out;
+}
+.admin_alert{
+  width: auto;
+  height: auto;
+  max-width: 250px;
+  position: absolute;
+  right: 0.5%;
+  border-radius: 3px;
+  padding: 1em;
+  color: #2a57d7;
+  box-shadow: rgba(218, 216, 216, 0.35) 0px 5px 15px;
+  top:0.5%;
+  background-color: #ffffff;
+  animation: zoomIn 0.5s ease-in-out;
+}
+.vf{
+    top:7%;
     color: #fff;
-    cursor: pointer;
-    transform: scale(0.9);
+    background-color: red;
+    animation: headShake 1s ease-in-out;
 }
 
-.btn:hover{
+@media screen and (max-width:1100px){
+  .login-section {
     width: 100%;
-    padding: 0.6rem;
-    border: none;
-    background-color:#081f31;;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    transition: ease-in-out;
-    transition: 0.5s;
+    height: 100vh; /* Using viewport height for full-screen height */
+    background-color: #2a57d7;
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+}
+._staff_login{
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center; 
+  position: relative;
+  align-items: center;;
+}
+.admin_section{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  position: relative;
+  align-items: center;;
+}
+}
+.hide{
+  display: none;
+}
+.hidden{
+  display: none;
 }
