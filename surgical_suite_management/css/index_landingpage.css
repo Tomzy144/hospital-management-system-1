@@ -12,19 +12,11 @@
     src: url(berlin-regular.TTF);
 }
 
-/* *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-} */
 body {
   color: #ffffff;
   width: 100%;
   height: auto;
-  background-color: #081f31;;
+  background-color: #081f31;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -97,7 +89,6 @@ h1{
 /* tomiwa's */
 .login-section{
   width: 100%;
-  /* padding: 5px; */
   animation:zoomIn 1.2s ease-in-out 1.3s;
   margin: auto;
   height: auto;

@@ -21,29 +21,61 @@
 
 
 
+    
     <!-- normal index starts here -->
 
-    
-    <div class="navbar">
-            <div class="logo">
-            <!-- <img width="200px" height="200px" src="Frontend/Images/Mount_Tech_Logo-removebg-preview.png" alt=""> -->
-            </div>
-        </div>
-        
     <section class="login-section">
-        <div class="fill-form-div" id="more-info">
+        <div class="_staff_login">
+        <div class="_alert_div">
+            <span>Verification Successful <i class="bi bi-hand-thumbs-up-fill"></i></span>
+        </div>
+        <div class="_alert_div vf">
+            <span>Verification Failed <i class="bi bi-emoji-frown"></i></span>
+        </div>
+        <div class="staff_container">
+            <div class="_staff_contents">
+            <div class="fill-form-div" id="more-info">
             <?php include "config/page-content.php"?>
         </div>
+        </div>
+        </div>
+        <div class="admin_section">
+    <div class="admin_container">
+      <div class="_admin_contents">
+      <h3>Admin Login</h3>
+          <form action="">
+            <div class="_form_control">
+              <label for="email">Email</label>
+              <i class="bi bi-envelope-open"></i>
+              <input type="email" name="email" id="email">
+            </div>
+            <div class="_form_control">
+              <label for="test">Password</label>
+              <i class="bi bi-key"></i>
+              <i class="bi bi-eye show_password hide" id="show_admin_password"></i>
+              <i class="bi bi-eye-slash lock_password" id="lock_admin_password"></i>
+              <input type="password" name="password" id="admin_password">
+            </div>
+            <div class="_fingerprint_authentication">
+              <i class="bi bi-fingerprint"></i>
+              <span>FingerPrint Authentication</span>
+            </div>
+            <button type="button" class="btn" onclick="log_in()">Login</button>
+          </form>
+    </div>
+    <div class="admin_alert">
+        <span>Verification Successful <i class="bi bi-hand-thumbs-up-fill"></i></span>
+    </div>
+    <div class="admin_alert vf">
+      <span>Verification Failed <i class="bi bi-emoji-frown"></i></span>
+  </div>
+    </div>
+    </div>
+        </div>
+       
 
         <!--Script-->
         <!-- <script src="js/index_landingpage.js"></script> -->
     </section>
-
-
-    
-
-
-
-   
 </body>
 </html>

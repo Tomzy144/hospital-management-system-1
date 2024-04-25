@@ -306,10 +306,6 @@
         </div>
              <!--END OF ADMISSION FORM1-->
 
-
-
-
-
         <!--START OF WALKIN ADMISSION FORM2-->
             <div class="walkin_admission_form hide">
             <div class="form-container">

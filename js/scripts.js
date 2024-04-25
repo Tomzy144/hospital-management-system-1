@@ -1,3 +1,47 @@
+// 'use strict';
+//PASSWORD //KING CODE
+function show_staff_password() {
+    const staff_password = $('#staff_password');
+    const eyes = $('#show_staff_password');
+    const eye_slash = $('#lock_staff_password');
+
+    // Toggle password visibility on click
+    eye_slash.click(function() {
+        staff_password.prop('type', 'text');
+        eyes.removeClass('hide');
+        eye_slash.addClass('hide');
+    });
+
+    eyes.click(function() {
+        staff_password.prop('type', 'password');
+        eyes.addClass('hide');
+        eye_slash.removeClass('hide');
+        console.log('Hidden password');
+    });
+}
+
+function show_admin_password() {
+  const admin_password = $('#admin_password');
+  const eyes_admin = $('#show_admin_password');
+  const eyes_slash_admin = $('#lock_admin_password');
+
+  eyes_slash_admin.click(function(){
+    admin_password.prop('type', 'text');
+    eyes_admin.removeClass('hide');
+    eyes_slash_admin.addClass('hide');
+  })
+
+  eyes_admin.click(function(){
+    admin_password.prop('type', 'password');
+    eyes_admin.addClass('hide');
+    eyes_slash_admin.removeClass('hide');
+  })
+}
+
+
+show_staff_password()
+show_admin_password()
+
 
 
 function _get_page(page){
