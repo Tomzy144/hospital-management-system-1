@@ -26,10 +26,10 @@
 
     <section class="login-section">
         <div class="_staff_login">
-        <div class="_alert_div">
+        <div class="_alert_div hide" id="staff_verification">
             <span>Verification Successful <i class="bi bi-hand-thumbs-up-fill"></i></span>
         </div>
-        <div class="_alert_div vf">
+        <div class="_alert_div vf hide">
             <span>Verification Failed <i class="bi bi-emoji-frown"></i></span>
         </div>
         <div class="staff_container">

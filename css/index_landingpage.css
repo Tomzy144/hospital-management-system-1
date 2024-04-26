@@ -132,20 +132,20 @@ h3{
 
 /*Radiologist*/
 .radiologist-login{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    padding: 1rem;
-    height: fit-content;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    animation: zoomIn 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  padding: 1rem;
+  height: fit-content;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 
@@ -169,141 +169,141 @@ h3{
 
 /*Lab Login*/
 .lab-login{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    padding: 1rem;
-    height: fit-content;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    animation: zoomIn 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  padding: 1rem;
+  height: fit-content;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /*Staff Manager Login*/
 .staff_manager-login{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    padding: 1rem;
-    height: fit-content;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    animation: zoomIn 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  padding: 1rem;
+  height: fit-content;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /*Martanity Login*/
 .martanity-login{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    padding: 1rem;
-    height: fit-content;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    animation: zoomIn 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  padding: 1rem;
+  height: fit-content;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: fadeIn 1s ease-in-out;
 }
 /*Account Manager Login*/
 .account_manager-login{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    padding: 1rem;
-    height: fit-content;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    animation: zoomIn 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  padding: 1rem;
+  height: fit-content;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: fadeIn 1s ease-in-out;
 }
 /*Surgical Suite Manager Login*/
 .surgical_suite_manager-login{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    padding: 1rem;
-    height: fit-content;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    animation: zoomIn 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  padding: 1rem;
+  height: fit-content;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: fadeIn 1s ease-in-out;
 }
 /*Emergency Manager Login*/
 .emergency_manager-login{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    padding: 1rem;
-    height: fit-content;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    animation: zoomIn 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  padding: 1rem;
+  height: fit-content;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: fadeIn 1s ease-in-out;
 }
 /*Pharmacist Login*/
 .pharmacist-login{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    padding: 1rem;
-    height: fit-content;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    animation: zoomIn 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  padding: 1rem;
+  height: fit-content;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: fadeIn 1s ease-in-out;
 }
 /*Morgue Manager Login*/
 .morgue_manager-login{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    padding: 1rem;
-    height: fit-content;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    animation: zoomIn 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  padding: 1rem;
+  height: fit-content;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 
@@ -407,7 +407,7 @@ option:hover{
 ._alert_div{
   width: auto;
   height: auto;
-  max-width: 250px;
+  max-width: 350px;
   position: absolute;
   right: 0.5%;
   border-radius: 3px;
@@ -421,7 +421,7 @@ option:hover{
 .admin_alert{
   width: auto;
   height: auto;
-  max-width: 250px;
+  max-width: 350px;
   position: absolute;
   right: 0.5%;
   border-radius: 3px;
@@ -433,7 +433,6 @@ option:hover{
   animation: zoomIn 0.5s ease-in-out;
 }
 .vf{
-    top:7%;
     color: #fff;
     background-color: red;
     animation: headShake 1s ease-in-out;

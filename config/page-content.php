@@ -73,8 +73,8 @@ if($s_staff_id != '') {
                 <div class="_form_control">
                     <label for='password'>Password</label>
                     <i class="bi-lock"></i>
-                    <i class="bi bi-eye show_password hide" id="show_staff_password" onclick="show_staff_password()"></i>
-                    <i class="bi bi-eye-slash lock_password" id="lock_staff_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye show_password hide" id="_showdoc_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye-slash lock_password" id="_lock_doc_password" onclick="show_staff_password()"></i>
                     <input type="password"class="all_password" id="doctor_password" name="password" autoComplete='off'/>
                 </div>
                 <!-- Hidden input for the action -->
@@ -113,8 +113,8 @@ if($s_staff_id != '') {
                 <div class="_form_control">
                     <label for='password'>Password</label>
                     <i class="bi-lock"></i>
-                    <i class="bi bi-eye show_password hide" id="show_staff_password" onclick="show_staff_password()"></i>
-                    <i class="bi bi-eye-slash lock_password" id="lock_staff_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye show_password hide" id="_show_recep_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye-slash lock_password" id="_lock_recep_password" onclick="show_staff_password()"></i>
                     <input type="password" id="password" name="spass" autocomplete="off" class="all_password" >
                 </div>
                 <!-- Hidden input for the action -->
@@ -143,22 +143,24 @@ if($s_staff_id != '') {
             <!-- Lab scientist login form -->
             <form action="config/code.php" id="lab_loginform" enctype="multipart/form-data" method="post">
                 <!-- Email field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='email'>Email</label>
                     <i class="fa fa-address-book"></i>
                     <input type='email' id="lab_scientist_email" name="email" autoComplete='off'/>
                 </div>
                 <!-- ID field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='number'>Your ID</label>
                     <i class="fa fa-key"></i>
                     <input type="text" name="number" id="lab_scientist_id" autoComplete='off'/> 
                 </div>
                 <!-- Password field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='password'>Password</label>
                     <i class="fa fa-lock"></i>
-                    <input type="password" id="lab_scientist_password" name="spass" autocomplete="off">
+                    <i class="bi bi-eye show_password hide" id="show_staff_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye-slash lock_password" id="lock_staff_password" onclick="show_staff_password()"></i>
+                    <input type="password" id="lab_scientist_password" name="spass" autocomplete="off" class="all_password" >
                 </div>
                 <input name="action" value="lab_login" type="hidden" />
                 <!-- Login button -->
@@ -475,31 +477,33 @@ if($s_staff_id != '') {
  <!-- nurse -- -->
 
     <?php if ($page=='nurse_login') ?>
-    <div class="fill-form-div login-div" id="next_13">
-            <div class="nurse-login hidden">
+    <div class="fill-form-div login-div hidden" id="next_13">
+            <div class="nurse-login">
             <!-- Close icon for the login form -->
-            <i class="bi bi-x-circle" id='close-icon-nurse' onclick="cancel();"></i>
+            <i class="bi bi-x-square close" id='close-icon-doctor' onclick="cancel();"></i>
             <!-- Title for the login form -->
-            <h1 class="login-form-h1">Login (Nurse)</h1>
+            <h3 class="login-form-h1">Login (Nurse)</h3>
             <!-- Nurse login form -->
             <form action="config/code.php" id="nurse_loginform" enctype="multipart/form-data" method="post">
                 <!-- Email field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='email'>Email</label>
                     <i class="fa fa-address-book"></i>
                     <input type="email" id="nurse_email"name="email" autoComplete='off'/> 
                 </div>
                 <!-- ID field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='number'>Your ID</label>
                     <i class="fa fa-key"></i>
                     <input type="text" id="nurse_id" name="number" autoComplete='off'/> 
                 </div>
                 <!-- Password field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='password'>Password</label>
                     <i class="fa fa-lock"></i>
-                    <input type="password" id="nurse_password" name="password" autoComplete='off'/> 
+                    <i class="bi bi-eye show_password hide" id="_show_nurse_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye-slash lock_password" id="_lock_nurse_password" onclick="show_staff_password()"></i>
+                    <input type="password" id="nurse_password" name="password"  class="all_password" autoComplete='off'/> 
                 </div>
                  <!-- Hidden input for the action -->
                  <input name="action" value="nurse_login" type="hidden"/>
