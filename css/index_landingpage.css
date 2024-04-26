@@ -22,7 +22,42 @@
   display: flex;
   justify-content: center; 
   align-items: center;
+  position: relative;
 }
+
+.cube {
+  position: absolute;
+  font-size: 26px; /* Adjust size as necessary */
+  color: #2a57d7;; /* Change color as desired */
+  transform-origin: center;
+ text-shadow:#2a57d7;
+  animation: swing 7s linear infinite;
+}
+
+.cube:nth-child(1) { left: 45vw; top: 80vh; }
+.cube:nth-child(2) { left: 25vw; top: 40vh; }
+.cube:nth-child(3) { left: 5vw; top: 2vh; }
+.cube:nth-child(4) { left: 40vw; top: 10vh; }
+.cube:nth-child(5) { left: 10vw; top: 85vh; }
+
+@keyframes rotate {
+  from { transform: rotate(0deg) translate(-50%, -50%); }
+  to { transform: rotate(360deg) translate(-50%, -50%); }
+}
+.cube_admin {
+  position: absolute;
+  font-size: 26px; /* Adjust size as necessary */
+  color: #ffffff;; /* Change color as desired */
+  transform-origin: center;
+ text-shadow:#2a57d7;
+  animation: fadeIn 6s linear infinite;
+}
+.cube_admin:nth-child(1) { left: 45vw; top: 80vh; }
+.cube_admin:nth-child(2) { left: 25vw; top: 40vh; }
+.cube_admin:nth-child(3) { left: 5vw; top: 2vh; }
+.cube_admin:nth-child(4) { left: 40vw; top: 10vh; }
+.cube_admin:nth-child(5) { left: 10vw; top: 85vh; }
+
 h3{
   animation: slideInDown 0.5s ease-in-out;
 }
@@ -416,6 +451,7 @@ option:hover{
   box-shadow: rgba(218, 216, 216, 0.35) 0px 5px 15px;
   top:0.5%;
   background-color: #2a57d7;
+  z-index: 20;
   animation: zoomIn 0.5s ease-in-out;
 }
 .admin_alert{
@@ -465,6 +501,23 @@ option:hover{
   position: relative;
   align-items: center;;
 }
+.cube:nth-child(1) { left: 60vw; top: 20vh; }
+.cube:nth-child(2) { left: 13vw; top: 30vh; }
+.cube:nth-child(3) { left: 85vw; top: 45vh; }
+.cube:nth-child(4) { left:30vw; top: 41vh; }
+.cube:nth-child(5) { left: 33vw; top: 5vh; }
+
+@keyframes rotate {
+  from { transform: rotate(0deg) translate(-50%, -50%); }
+  to { transform: rotate(360deg) translate(-50%, -50%); }
+}
+
+.cube_admin:nth-child(1) { left: 60vw; top: 20vh; }
+.cube_admin:nth-child(2) { left: 13vw; top: 30vh; }
+.cube_admin:nth-child(3) { left: 85vw; top: 45vh; }
+.cube_admin:nth-child(4) { left:30vw; top: 41vh; }
+.cube_admin:nth-child(5) { left: 33vw; top: 5vh; }
+
 }
 .hide{
   display: none;

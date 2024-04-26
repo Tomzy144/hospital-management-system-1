@@ -5,16 +5,20 @@ function show_staff_password() {
     const _showdoc_password = $('#_showdoc_password');
     const _show_nurse_password = $('#_show_nurse_password');
     const _show_recep_password = $('#_show_recep_password');
+    const _show_lab_password = $('#_show_lab_password');
     const _lock_doc_password = $('#_lock_doc_password');
+    const _lock_lab_password = $('#_lock_lab_password');
     const _lock_recep_password = $('#_lock_recep_password');
     const _lock_nurse_password = $('#_lock_nurse_password');
 
-    if (!_lock_doc_password.hasClass('hide') || !_lock_recep_password.hasClass('hide') || !_lock_nurse_password.hasClass('hide')) {
+    if (!_lock_doc_password.hasClass('hide') || !_lock_recep_password.hasClass('hide') || !_lock_nurse_password.hasClass('hide')|| !_lock_lab_password.hasClass('hide')) {
         staff_password.prop('type', 'text');
         _showdoc_password.removeClass('hide');
         _show_recep_password.removeClass('hide');
         _show_nurse_password.removeClass('hide');
+        _show_lab_password.removeClass('hide');
         _lock_doc_password.addClass('hide');
+        _lock_lab_password.addClass('hide');
         _lock_recep_password.addClass('hide');
         _lock_nurse_password.addClass('hide');
         console.log('Shown password');
@@ -23,7 +27,9 @@ function show_staff_password() {
         _showdoc_password.addClass('hide');
         _show_recep_password.addClass('hide');
         _show_nurse_password.addClass('hide');
+        _show_lab_password.addClass('hide');
         _lock_doc_password.removeClass('hide');
+        _lock_lab_password.removeClass('hide');
         _lock_recep_password.removeClass('hide');
         _lock_nurse_password.removeClass('hide');
         console.log('Hidden password');
@@ -93,8 +99,10 @@ function _sign_in(){
     if((email!='')&&(password!='')&&(user_id!='')){
         user_login(email,password,user_id);
     }else{
-        $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
-        window.alert("Fill the neccessary field")
+        $('#staff_verification').removeClass('hide');
+        $('#staff_verification').addClass('vf');
+        $('#staff_verification').html(`Field in the neccessary field <i class="bi-exclamation-triangle"></i></i>`)
+        $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
     }
 };
 
@@ -123,16 +131,21 @@ function user_login(email,password,user_id){
     var scheck = data.check;
 
    if(scheck==1){
-    $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
+    $('#staff_verification').removeClass('hide');
+    $('#staff_verification').removeClass('vf');
+    $('#staff_verification').html('<div>LOGIN SUCCESSFUL! <i class="bi bi-hand-thumbs-up-fill"></i></div> ').fadeIn(100).fadeOut(1000);
     $('#loginform').submit();
-    window.alert("Welcome Back");
     
    }else if(scheck==2){
-    window.alert("Account does not exists")
-           $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
+    $('#staff_verification').html(`Account does not exist <i class="bi-exclamation-triangle"></i>`)
+    $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
+    $('#staff_verification').removeClass('hide');
+    $('#staff_verification').addClass('vf');
+           $('#staff_verification').html('<div></div> Account Suspended<br /><span>Contact the admin for help</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
     }else{
-    $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid Email or Password</span>').fadeIn(500).delay(5000).fadeOut(100);
-    window.alert("Invalid Login Details")
+        $('#staff_verification').removeClass('hide');
+        $('#staff_verification').addClass('vf');
+    $('#staff_verification').html('<div></div> Login Error!<br /><span>Invalid Login Details</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
     }
     $('#login_btn').html(btn_text);
     document.getElementById('login_btn').disabled=false;
@@ -450,8 +463,10 @@ function lab_sign_in(){
     if((lab_scientist_email!='')&&(lab_scientist_password!='')&&(lab_scientist_id!='')){
         lab_login(lab_scientist_email,lab_scientist_password,lab_scientist_id);
     }else{
-        $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
-        window.alert("Fill the neccessary field")
+        $('#staff_verification').removeClass('hide');
+        $('#staff_verification').addClass('vf');
+        $('#staff_verification').html(`Field in the neccessary field <i class="bi-exclamation-triangle"></i></i>`)
+        $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
     }
 };
 
@@ -480,18 +495,23 @@ function lab_login(lab_scientist_email,lab_scientist_password,lab_scientist_id){
     var scheck = data.check;
 
    if(scheck==1){
-    $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
+    $('#staff_verification').removeClass('hide');
+    $('#staff_verification').removeClass('vf');
+    $('#staff_verification').html('<div>LOGIN SUCCESSFUL! <i class="bi bi-hand-thumbs-up-fill"></i></div> ').fadeIn(100).fadeOut(1000);
     $('#lab_loginform').submit();
-    window.alert("Welcome Back");
     // window.parent("location=doctor/");
     
     
    }else if(scheck==2){
-    window.alert("Account does not exists")
-           $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
+    $('#staff_verification').html(`Account does not exist <i class="bi-exclamation-triangle"></i>`)
+    $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
+    $('#staff_verification').removeClass('hide');
+    $('#staff_verification').addClass('vf');
+           $('#staff_verification').html('<div></div> Account Suspended<br /><span>Contact the admin for help</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
     }else{
-    $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid Email or Password</span>').fadeIn(500).delay(5000).fadeOut(100);
-    window.alert("Invalid Login Details")
+        $('#staff_verification').removeClass('hide');
+        $('#staff_verification').addClass('vf');
+    $('#staff_verification').html('<div></div> Login Error!<br /><span>Invalid Login Details</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
     }
     $('#lab_login_btn').html(btn_text);
     document.getElementById('lab_login_btn').disabled=false;

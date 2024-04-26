@@ -137,7 +137,7 @@ if($s_staff_id != '') {
     <div class="fill-form-div login-div hidden" id="next_4">
         <div class="lab-login">
             <!-- Close icon for the login form -->
-            <i class="bi bi-x-circle" id='close-icon-lab' onclick="cancel();"></i>
+            <i class="bi bi-x-square close" id='close-icon-lab' onclick="cancel();"></i>
             <!-- Title for the login form -->
             <h3 class="login-form-h1">Login (Lab Scientist)</h3>
             <!-- Lab scientist login form -->
@@ -145,21 +145,21 @@ if($s_staff_id != '') {
                 <!-- Email field -->
                 <div class="_form_control">
                     <label for='email'>Email</label>
-                    <i class="fa fa-address-book"></i>
+                    <i class="bi-envelope"></i>
                     <input type='email' id="lab_scientist_email" name="email" autoComplete='off'/>
                 </div>
                 <!-- ID field -->
                 <div class="_form_control">
                     <label for='number'>Your ID</label>
-                    <i class="fa fa-key"></i>
+                    <i class="bi-key"></i>
                     <input type="text" name="number" id="lab_scientist_id" autoComplete='off'/> 
                 </div>
                 <!-- Password field -->
                 <div class="_form_control">
                     <label for='password'>Password</label>
-                    <i class="fa fa-lock"></i>
-                    <i class="bi bi-eye show_password hide" id="show_staff_password" onclick="show_staff_password()"></i>
-                    <i class="bi bi-eye-slash lock_password" id="lock_staff_password" onclick="show_staff_password()"></i>
+                    <i class="bi-lock"></i>
+                    <i class="bi bi-eye show_password hide" id="_show_lab_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye-slash lock_password" id="_lock_lab_password" onclick="show_staff_password()"></i>
                     <input type="password" id="lab_scientist_password" name="spass" autocomplete="off" class="all_password" >
                 </div>
                 <input name="action" value="lab_login" type="hidden" />

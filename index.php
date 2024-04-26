@@ -26,6 +26,11 @@
 
     <section class="login-section">
         <div class="_staff_login">
+        <i class="cube bi bi-hospital"></i>
+        <i class="cube bi bi-hospital"></i>
+        <i class="cube bi bi-hospital"></i>
+        <i class="cube bi bi-hospital"></i>
+        <i class="cube bi bi-hospital"></i>
         <div class="_alert_div hide" id="staff_verification">
             <span>Verification Successful <i class="bi bi-hand-thumbs-up-fill"></i></span>
         </div>
@@ -40,6 +45,11 @@
         </div>
         </div>
         <div class="admin_section">
+        <i class="cube_admin bi bi-hospital"></i>
+        <i class="cube_admin bi bi-hospital"></i>
+        <i class="cube_admin bi bi-hospital"></i>
+        <i class="cube_admin bi bi-hospital"></i>
+        <i class="cube_admin bi bi-hospital"></i>
     <div class="admin_container">
       <div class="_admin_contents">
       <h3>Admin Login</h3>
@@ -63,10 +73,10 @@
             <button type="button" class="btn" onclick="log_in()">Login</button>
           </form>
     </div>
-    <div class="admin_alert">
+    <div class="admin_alert hide">
         <span>Verification Successful <i class="bi bi-hand-thumbs-up-fill"></i></span>
     </div>
-    <div class="admin_alert vf">
+    <div class="admin_alert vf hide">
       <span>Verification Failed <i class="bi bi-emoji-frown"></i></span>
   </div>
     </div>
