@@ -145,6 +145,7 @@ function patientVital_all_section(){
 
  function back_to_appoitment_list(){
    document.querySelector(".personal_profile_vital").classList.add("hide");
+   document.querySelector(".personal_profile_vital").style.display="none";
    document.querySelector(".appoitment_section").style.display="block";
    document.querySelector("#btn_appoitment").style.display = "none";
    document.querySelector(".new_vital").classList.add("hide");
