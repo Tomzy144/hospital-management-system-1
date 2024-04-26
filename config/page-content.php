@@ -2,20 +2,20 @@
 <?php if($page == 'logins') { ?>
     <select name="logins" id="logins" class="select_staffs">
         <option value="all">Select your Role</option>
-        <option value="doctor" onclick="_next_page('next_2');">Doctor Login</option>
-        <option value="health_record" onclick="_next_page('next_3');">Health Record & Infomation Manager Login</option>
-        <option value="nurse" onclick="_next_page('next_13');">Nurse Login</option>
-        <option value="matanity" onclick="_next_page('next_6');">Matanity Manager Login</option>
-        <option value="emergency" onclick="_next_page('next_9');">Emergency Manager Login</option>
-        <option value="radiology" onclick="_next_page('next_12');">Radiologist Login</option>
-        <option value="labouratory" onclick="_next_page('next_4');">labouratory Login</option>
-        <option value="intensive_care" onclick="_next_page('next_15');">Intensive Care Manager Login</option>
-        <option value="staff_manager" onclick="_next_page('next_5');">Staff Manager Login</option>
-        <option value="surgical_suite" onclick="_next_page('next_8');">Surgical Suite Manager Login</option>
-        <option value="account_manager" onclick="_next_page('next_7');">Account Manager Login</option>
-        <option value="morgue_manager" onclick="_next_page('next_11');">Morgue Manager Login</option>
-        <option value="phamacist" onclick="_next_page('next_10');">Pharmacist Manager Login</option>
-        <option value="post_anesthesia_unit" onclick="_next_page('next_14');">Post Anesthesia Unit Manager Login</option>
+        <option value="doctor" onclick="_next_page('next_2');">Doctor</option>
+        <option value="health_record" onclick="_next_page('next_3');">Health Record & Infomation Manager</option>
+        <option value="nurse" onclick="_next_page('next_13');">Nurse</option>
+        <option value="matanity" onclick="_next_page('next_6');">Matanity Manager</option>
+        <option value="emergency" onclick="_next_page('next_9');">Emergency Manager</option>
+        <option value="radiology" onclick="_next_page('next_12');">Radiologist</option>
+        <option value="labouratory" onclick="_next_page('next_4');">labouratory</option>
+        <option value="intensive_care" onclick="_next_page('next_15');">Intensive Care Manager</option>
+        <option value="staff_manager" onclick="_next_page('next_5');">Staff Manager</option>
+        <option value="surgical_suite" onclick="_next_page('next_8');">Surgical Suite Manager</option>
+        <option value="account_manager" onclick="_next_page('next_7');">Account Manager</option>
+        <option value="morgue_manager" onclick="_next_page('next_11');">Morgue Manager</option>
+        <option value="phamacist" onclick="_next_page('next_10');">Pharmacist Manager</option>
+        <option value="post_anesthesia_unit" onclick="_next_page('next_14');">Post Anesthesia Unit Manager</option>
     </select>
     </div>
 
