@@ -14,6 +14,7 @@
    function show_profile_list(){
     document.querySelector(".appoitment_section").style.display="none";
     document.querySelector(".personal_profile_vital").classList.add("hide");
+    document.querySelector(".patient_info").classList.add("hide");
     document.querySelector(".new_vital").classList.remove("hide");
     document.querySelector(".appoitment_container").classList.add("hide");
     document.querySelector("#btn_appoitment").style.display = "none";
@@ -119,7 +120,8 @@ function patientVital_all_section(){
 
  //SHOW APPOITMENT SECTION FOR TRANSFERING PATIENTS TO DOCTOR
  function show_appoitment_section(){
-   document.querySelector(".personal_profile_vital").classList.add("hide");
+   document.querySelector(".personal_profile_vital").classList.add("hide"); 
+   document.querySelector(".patient_info").classList.add("hide"); 
    document.querySelector(".appoitment_section").style.display="none";
    document.querySelector("#btn_appoitment").style.display = "block";
    document.querySelector(".new_vital").classList.add("hide");

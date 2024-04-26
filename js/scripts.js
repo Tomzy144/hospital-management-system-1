@@ -427,7 +427,7 @@ function doctor_login(doctor_email,doctor_password,doctor_id){
     }else{
         $('#staff_verification').removeClass('hide');
         $('#staff_verification').addClass('vf');
-    $('#staff_verification').html('<div></div> Login Error!<br /><span>Invalid Email or Password or even ID</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
+    $('#staff_verification').html('<div></div> Login Error!<br /><span>Invalid Login Details</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
     // window.alert("Invalid Login Details")
     }
     $('#doctor_login_btn').html(btn_text);
@@ -515,8 +515,10 @@ function _nurse_sign_in(){
   if((nurse_email!='')&&(nurse_password!='')&&(nurse_id!='')){
       nurse_login(nurse_email,nurse_password,nurse_id);
   }else{
-      $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
-      window.alert("Fill the neccessary field")
+    $('#staff_verification').removeClass('hide');
+        $('#staff_verification').addClass('vf');
+        $('#staff_verification').html(`Field in the neccessary field <i class="bi-exclamation-triangle"></i></i>`)
+        $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
   }
 };
 
@@ -545,18 +547,23 @@ function nurse_login(nurse_email,nurse_password,nurse_id){
   var scheck = data.check;
 
  if(scheck==1){
-  $('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
+    $('#staff_verification').removeClass('hide');
+    $('#staff_verification').removeClass('vf');
+    $('#staff_verification').html('<div>LOGIN SUCCESSFUL! <i class="bi bi-hand-thumbs-up-fill"></i></div> ').fadeIn(100).fadeOut(1000);
   $('#nurse_loginform').submit();
-  window.alert("Welcome Back");
   // window.parent("location=nurse/");
   
   
  }else if(scheck==2){
-  window.alert("Account does not exists")
-         $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
+    $('#staff_verification').html(`Account does not exist <i class="bi-exclamation-triangle"></i>`)
+    $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
+    $('#staff_verification').removeClass('hide');
+    $('#staff_verification').addClass('vf');
+           $('#staff_verification').html('<div></div> Account Suspended<br /><span>Contact the admin for help</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
   }else{
-  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid Email or Password</span>').fadeIn(500).delay(5000).fadeOut(100);
-  window.alert("Invalid Login Details")
+    $('#staff_verification').removeClass('hide');
+        $('#staff_verification').addClass('vf');
+    $('#staff_verification').html('<div></div> Login Error!<br /><span>Invalid Login Details</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
   }
   $('#nurse_login_btn').html(btn_text);
   document.getElementById('nurse_login_btn').disabled=false;
