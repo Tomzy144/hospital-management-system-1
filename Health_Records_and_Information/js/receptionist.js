@@ -1,4 +1,10 @@
 'use strict';
+//Sidebat responsiveness
+
+
+
+
+
 //PROFILE IMAGE
 function click_icon_for_profile (){
   document.querySelector(".profile_account").classList.toggle("hide");
@@ -492,15 +498,8 @@ if($('#gender1').is(':checked')){
   
 
 if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')||(health_history=='') || (hospital_plan =="")){
-  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
-      // window.alert("Fill All fields");
-      $('.alert_div').removeClass('hide');
-      $('.overlay_div').removeClass('hide');
-      $('.alert_div').text('Fill All Fields.');
-      setTimeout(function(){
-        $('.alert_div').addClass('hide');
-        $('.overlay_div').addClass('hide');
-      }, 1000)
+  $('.alert_div').removeClass('hide');
+  $('.alert_div').html('<div></div> USER ERROR! <i class="bi-exclamation-triangle"></i><br /><span>Fill All Fields.</span>').fadeIn(500).delay(5000).fadeOut(500);
   }else{
    //////////////// get btn text ////////////////
        $('#proceed-btn').html('PROCESSING...');
@@ -522,7 +521,8 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
                 var phonenumber = data.phonenumber;
                 
                 if(scheck==0){ //user Active
-                  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
+                  $('.alert_div').removeClass('hide');
+                  $('alert_div').html('<div></div> REGISTRATION ERROR! <i class="bi-exclamation-triangle"></i><br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(500);
                   window.alert("Patient's phonenumber is already registered");
               }else{ //user suspended
                     $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
@@ -651,13 +651,14 @@ function create_family_card() {
   // $('#generation_alert').html('GENERATING ID...');
   $('.family_plan_section').addClass('hide');
   $('#generating_id').removeClass('hide');
-  $('.overlay_div').removeClass('hide');
+  $('#generating_id').addClass('pending');
   $('#generating_id').text('GENERATING ID....');
   setTimeout(function(){
     $('#generating_id').addClass('hide');
-    $('.overlay_div').addClass('hide');
-  }, 3000)
-  $('#no_checkbox').prop('disabled', true); // Disable the checkbox while processing
+    $('#generating_id').removeClass('hide');
+    $('#generating_id').addClass('successful');
+    $('#generating_id').html('GENERATED ID<i class="bi-check"></i>').fadeIn(500).delay(5000).fadeOut(100);
+  }, 3000);
 
   var action = 'create_family_card'; // Define the action variable
 
@@ -685,12 +686,10 @@ function create_family_card() {
       // Update UI to indicate ID generation
   // Show the first div for 3 seconds
   $('#generating_id').removeClass('hide');
-  $('#yes_checkbox').prop('disabled', true); 
  
       // $('#generation_alert').html('ID GENERATED <i class="bi-check2"></i>');
 
   
-      $('#no_checkbox').prop('disabled', false); // Enable the checkbox
     },
     error: function(xhr, status, error) {
       console.error("Error creating family card:", error);
@@ -773,7 +772,7 @@ function check_family_card_users(){
           // alert("No users associated with the family card.");
           $('.alert_div').removeClass('hide');
           $('.overlay_div').removeClass('hide');
-          $('.alert_div').text('No users associated with the family card.');
+          $('.alert_div').text('No users associated with this family card.');
           setTimeout(function(){
             $('.alert_div').addClass('hide');
             $('.overlay_div').addClass('hide');
@@ -959,7 +958,6 @@ function checkIfFamilyPlan() {
 
 function familyPlanSection(){
   document.querySelector('.family_plan_section').classList.toggle("hide");
-  $('#no_checkbox').prop('disabled', true); 
 }
 
 

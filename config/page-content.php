@@ -488,19 +488,19 @@ if($s_staff_id != '') {
                 <!-- Email field -->
                 <div class="_form_control">
                     <label for='email'>Email</label>
-                    <i class="fa fa-address-book"></i>
+                    <i class="bi-envelope"></i>
                     <input type="email" id="nurse_email"name="email" autoComplete='off'/> 
                 </div>
                 <!-- ID field -->
                 <div class="_form_control">
                     <label for='number'>Your ID</label>
-                    <i class="fa fa-key"></i>
+                    <i class="bi-key"></i>
                     <input type="text" id="nurse_id" name="number" autoComplete='off'/> 
                 </div>
                 <!-- Password field -->
                 <div class="_form_control">
                     <label for='password'>Password</label>
-                    <i class="fa fa-lock"></i>
+                    <i class="bi-lock"></i>
                     <i class="bi bi-eye show_password hide" id="_show_nurse_password" onclick="show_staff_password()"></i>
                     <i class="bi bi-eye-slash lock_password" id="_lock_nurse_password" onclick="show_staff_password()"></i>
                     <input type="password" id="nurse_password" name="password"  class="all_password" autoComplete='off'/> 

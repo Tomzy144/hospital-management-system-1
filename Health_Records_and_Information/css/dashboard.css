@@ -1,44 +1,39 @@
+
 @font-face {
     font-family: 'Poppins';
-    src: url('Poppins-Light.ttf') format('truetype'); /* Adjust the path if necessary */
+    src: url('Poppins-Regular.ttf') format('truetype'); /* Adjust the path if necessary */
     font-weight: normal; /* Specify the weight if needed */
     font-style: normal; /* Specify the style if needed */
   }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
-body{
-    width: 100%;
-    height:100%;
-    position: relative;
-}
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins';
+            animation: fadeIn 0.5s ease-in-out;
+        }
+  
 .alert_div{
-    width: 300px;
+    width: auto;
     height: auto;
+    max-width: 350px;
     position: fixed;
-    top: 0;
-    right: 0;
+    top:0%;
+    right: 0%;
     z-index: 1100;
-    color: rgb(42, 87, 215);
-    border-radius: 4px;
-    box-shadow: rgba(172, 165, 165, 0.35) 0px 5px 15px;
-    background-color: #fff;
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+    background-color: red;
     padding: 1em;
     animation: headShake 1s ease-in-out;
 }
-.overlay_div{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 26, 97);
-    opacity: 30%;
-    z-index: 1000;
-    position: absolute;
+.alert_div.pending{
+    background-color:blue;
 }
+.alert_div.successful{
+    background-color: green;
+}
+
 .navbar{
     width: 100%;
     height: 75px;
@@ -58,75 +53,30 @@ body{
     flex-direction: column;
     justify-content: center;
     position:relative;
-    animation: slideInDown ease-in-out 0.5s;
     align-items: center;
 }
-.section1 h2{
-    position:absolute;
-    right:0;
-    color:#fff;
-    font-weight:bold;
-}
+
 .section2{
     width: 500px;
     height: 100%;
     display: flex;
     flex-direction: row;
-    animation: slideInDown ease-in-out 0.5s;
     justify-content: space-around;
     align-items: center;
 }
-.icons{
+._toggle_icon{
     color: #fff;
-    font-size: 25px;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    font-size: 30px;
 }
-#icon{
+
+._profile_arrow_icon{
     margin: 0 1rem;
     cursor: pointer;
     padding: 0.5rem 0.5rem;
     position: relative;
 }
-#icon-drop{
-    margin: 0 1rem;
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;
-    position: relative;
-}
-.notification1{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 20px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 100%;
-    background:rgb(0, 158, 251);;
-    border: 2px solid #fff;
-}
-.notification2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 25px;
-    width: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 100%;
-    background:rgb(0, 158, 251);
-    border: 2px solid #fff;
-}
+
+
 .profile{
     width: 50%;
     height: 100%;
@@ -148,6 +98,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 #image_profile_account{
@@ -181,10 +133,11 @@ body{
     color: rgb(255, 255, 255);
 }
 h3{
-    font-weight: bold;
+    font-weight:normal;
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: rgb(42, 87, 215);
 }
 .profile img{
     width: 50px;
@@ -225,18 +178,20 @@ h3{
     transform: scale(0.98);
 }
 
-
 .sidebar{
-    width: 300px;
+    width: auto;
+    max-width: 300px;
     height: 100%;
-    overflow: hidden;
     position: fixed;
+    overflow: hidden;
     left: 0;
     top: 0;
     background-color: rgb(42, 87, 215);
     z-index: 1100;
 }
-.sidebar_contents{
+
+
+._sidebar_contents{
     justify-content: center;
     display: flex;
     align-items: center;
@@ -245,26 +200,33 @@ h3{
    cursor: pointer;
    text-align: center;
 }
-.sidebar_contents img {
-    border-radius: 100%;
-    height: 50px;
-    width: 50px;
-  }
-.sidebar_icons{
+._sidebar_links{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: left;
     height: 100%;
-}
-.sidebar_icons #icon{
-    color: #fff;
-    font-size: 15px;
-    animation: slideInDown  ease-in-out 0.5s;
-    cursor: pointer;
-    margin: 0.4rem 0.3em;
+    padding: 1em;
 }
 
+._links{
+    color: #fff;
+    font-size: 18px;
+    margin: 0.5em 0;
+    text-transform: uppercase;
+    cursor: pointer;
+   border: 2px solid rgb(255, 255, 255);
+    padding: 0.5em;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    transition: all ease-in-out 0.5s;
+    position: relative;
+}
+
+._links:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(42, 87, 215);
+}
 /*PATIENT FORM*/
 .form_sections{
     width: 100%;
@@ -272,13 +234,13 @@ h3{
     display: flex;
     justify-content: space-between;
 }
-h1, h3{
-    font-weight:bold;
-}
 .new_intake_admission_form{
     display: flex;
-    width: 90%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
     flex-direction: column;
+    padding: 1em;
     margin: 5em 0 0 19em;
 }
 .upload_image{
@@ -348,30 +310,22 @@ h1, h3{
     border: 1px solid rgb(42, 87, 215);
 }
   .form-container{
-      width:fit-content;
-      background-color: rgb(255, 255, 255);
-      color: rgb(42, 87, 215);
+      width:auto;
       position: relative;
       flex-wrap: wrap;
-      border-radius: 6px;
-      padding: 1rem;
   }
-  h3{
-    color: rgb(42, 87, 215);
-  font-weight: bold;
-  animation: slideInDown 0.5s ease-in-out;
-  }
-   .sections{
+ 
+  .sections {
     display: flex;
     width: 100%;
     border: 1px solid rgb(42, 87, 215);
-  padding: 1em;
-  margin: 1em 0;
-border-radius: 10px;
-  flex-wrap: wrap;
-  background: #2a57d7;
+    margin: 1em 0;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    background: #2a57d7;
+    justify-content: space-around;
   }
-  
+
   
   .form-control{
       margin: 1rem 0.5rem;
@@ -387,10 +341,11 @@ border-radius: 10px;
     display: flex;
     text-align: left;
     flex-direction: column;
-    width: 235px;
+    width: 350px;
     position: relative;
+    text-align: center;
     color: rgb(255, 255, 255);
-    justify-content: center;
+    justify-content: start;
   }
   .form-control2 input{
     width: fit-content;
@@ -399,21 +354,29 @@ border-radius: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 1em;
 }
+
 .family_plan_section button{
     margin: 0.4em 0;
     background-color: rgb(255, 255, 255);
     width: 100%;
     border: none;
+    border-radius: 5px;
     color:  rgb(42, 87, 215);
     cursor: pointer;
-    padding: 0.5em;
+    padding: 1em;
+}
+.family_plan_section button:hover{
+   background:none;
+   border: 1px solid rgb(42, 87, 215);
+   color: #fff;
 }
 .form-control_check input{
     margin: 0 1em;
 }
-  .form-control select{
-    padding: 0.5em;
+.form-control select {
+    padding: 0.8em;
     color: rgb(42, 87, 215);
     border-radius: 5px;
     font-size: 18px;
@@ -426,18 +389,16 @@ border-radius: 10px;
       margin: 0.5rem 0;
   }
   label{
-      font-size: 18px;
-      animation: slideInDown  ease-in-out 0.5s;
+      font-size: 20px;
       color: rgb(255, 255, 255);
   }
-  input{
-padding: 0.5em;
-  color:rgb(42, 87, 215);
-  border-radius: 5px;
-  font-size: 16px;
-  border: 1px solid rgb(255, 255, 255);
-  outline: none;
-  animation: fadeInUp  ease-in-out 0.5s;
+  input {
+    padding: 0.8em;
+    color: rgb(42, 87, 215);
+    border-radius: 5px;
+    font-size: 18px;
+    border: 1px solid rgb(255, 255, 255);
+    outline: none;
   }
   .valid{
     color: #fff;
@@ -581,7 +542,6 @@ table thead  td{
     background-color: #ffffff;
     font-weight: bold;
     z-index: 1000;
-    animation: headShake 1s ease-in-out;
 }
 ._box_popup .red{
     color: red;
@@ -664,7 +624,6 @@ table thead  td{
     position: fixed;
     z-index: 9;
     border-radius: 10px;
-    animation: fadeIn ease-in-out 0.5s;
     z-index: 1200;
     top: 0;
     left: 27%;
@@ -764,7 +723,6 @@ table thead  td{
     height: max-content;
     border-radius: 10px;
     background-color: #fff;
-    animation: slideInDown  ease-in-out;
     box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
     margin: 1rem 1rem;
 }
@@ -855,17 +813,14 @@ table thead  td{
     padding: 1rem;
     margin: 1rem 0;
     background: #fff;
-    animation: fadeIn 01s ease-in-out;
 }
 .doc_roles label{
     color: rgb(42, 87, 215); 
-    animation: slideInDown 01s ease-in-out;
 }
 .doc_roles select{
     padding: 1rem;
     border: 2px solid #fff;; 
     background-color:rgb(42, 87, 215); 
-    animation: slideInDown 01s ease-in-out;
     margin: 1rem 0;
     color: rgb(255, 255, 255);;
 }
@@ -873,7 +828,6 @@ table thead  td{
     background-color: rgb(42, 87, 215);
     padding: 1rem;
     border-radius: 20px;
-    animation: slideInDown 01s ease-in-out;
     border: none;
     color:  rgb(255, 255, 255);
     cursor: pointer;
@@ -908,12 +862,10 @@ table thead  td{
 .month i{
     font: 2rem;
     cursor: pointer;
-    animation: slideInDown 01s ease-in-out;
 }
 .month h1{
     font-size: 1.5rem;
     font-weight: 400;
-    animation: slideInDown 01s ease-in-out;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     margin-bottom: 1rem;
@@ -921,7 +873,6 @@ table thead  td{
 
 .month p{
     font-size: 1rem;
-    animation: slideInDown 01s ease-in-out;
 }
 
 
@@ -929,7 +880,6 @@ table thead  td{
     width: 100%;
     height: 5rem;
     padding: 0 0.4rem;
-    animation: slideInDown 01s ease-in-out;
     display: flex;
     align-items: center;
 }
@@ -946,7 +896,6 @@ table thead  td{
 .days{
     width: 100%;
     display: flex;
-    animation: slideInDown 01s ease-in-out;
     flex-wrap: wrap;
     padding: 0.2rem;
 }
@@ -1062,11 +1011,14 @@ table thead  td{
 }
 /*WALKIN PATIENTS */
 .walkin_admission_form{
-    width: 900px;
-    height: auto;
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: fixed;
     top: 0;
-    left: 30%;
+    left: 0;
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 1300;
 }
@@ -1074,7 +1026,7 @@ table thead  td{
     position: absolute;
     right: 3%;
     font-size: 18px;
-    top: 3%;
+    top: 1%;
     color: #2a57d7;
     cursor: pointer;
 }
@@ -1208,6 +1160,159 @@ table thead  td{
     }
     to {
         transform: rotate(360deg); /* End rotation at 360 degrees */
+    }
+}
+
+@media screen and (max-width:1150px) {
+ #rm{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    white-space: nowrap;
+    background-color: rgb(42, 87, 215);
+    padding: 5px; /* Some padding */
+    border-radius: 5px; /* Rounded corners for popup */
+    top: 0;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    color: #fff;
+
+ }
+ ._links:hover #rm{
+    opacity: 1;
+    visibility: visible;
+    z-index: 1400;
+    animation: slideInLeft 0.5s ease-in-out;
+ }
+ .new_intake_admission_form{
+    margin: 5em 0 0 5em;
+    width: 90%;
+ }
+ .sidebar{
+    overflow:visible;
+ }
+}
+@media screen and (max-width:856px) {
+    .form-control {
+        margin: 1rem 0.5rem;
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        width: 300px;
+        position: relative;
+        color: rgb(42, 87, 215);
+      }
+      .upload_image {
+        width: 380px;
+        height: 250px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(42, 87, 215);
+        position: relative;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .walkin_in_section_upload_image{
+        width: 380px;
+        height: 250px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(42, 87, 215);
+        position: relative;
+        text-align: center;
+        border-radius: 10px;
+      }
+}
+@media screen and (max-width:650px) {
+    .form-control {
+        margin: 1rem 0.5rem;
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        width: 300px;
+        position: relative;
+        color: rgb(42, 87, 215);
+      }
+      .upload_image {
+        width: 310px;
+        height: 230px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(42, 87, 215);
+        position: relative;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .walkin_in_section_upload_image{
+        width: 310px;
+        height: 230px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(42, 87, 215);
+        position: relative;
+        text-align: center;
+        border-radius: 10px;
+      }
+}
+@media screen and (max-width:550px) {
+    .form-control {
+        margin: 1rem 0.5rem;
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        width: 300px;
+        position: relative;
+        color: rgb(42, 87, 215);
+      }
+      .upload_image {
+        width: 260px;
+        height: 190px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(42, 87, 215);
+        position: relative;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .walkin_in_section_upload_image{
+        width: 290px;
+        height: 190px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(42, 87, 215);
+        position: relative;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .walkin_admission_form{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: auto;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        padding: 2em;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        z-index: 1300;
     }
 }
 .hide{

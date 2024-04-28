@@ -65,16 +65,9 @@
   <!--START OF SIDEBAR AND NAVBAR -->
    <div class="navbar">
         <div class="section1">
-        <h2>MOUNT TECH SOLUTIONS </h2>
         </div>
         <div class="section2">
-            <div class="icons">
-            <i class="bi bi-person-fill" id="icon">
-            <div class="notification1">9</div>
-          </i>
-          <i class="bi bi-bell-fill" id="icon">
-          <div class="notification2">15</div>
-          </i>
+        
           </div>
           <div class="profile">
             <div class="profile_account hide">
@@ -89,23 +82,36 @@
             </div>
         </img>  
             <span><?php echo $fullname?> </span>
-            <i class="bi bi-caret-down-fill" id="icon-drop" onClick="click_icon_for_profile()"></i>
+            <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
           </div>
         </div>
     </div>
+
+    <!------Sidebar built by kingsley-->
         <div class="sidebar">
-               <div class="sidebar_contents" onClick="homepage_section()">
-                <!-- <img width="80px" height="80px" src="<?php echo $website_url ?>/Images/Mount Tech Logo.jpg" alt="logo"> -->
+        <!-- onclick="homepage_section()" -->
+               <div class="_sidebar_contents">
                 <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button>
                </div>
-            <div class="sidebar_icons">
-                <!-- <i class="bi bi-chat-dots-fill" id="icon">&nbsp;<span>Chat</span></i> -->
-                <i class="fa-solid fa-bed"  id="icon" onclick="patient_admission_form_section()">&nbsp;<span>Patient Admission Form</span></i>
-                <i class="fa-solid fa-person-walking-arrow-right"  id="icon" onclick="walkin_patient_form()">&nbsp;<span>Walkin Patient Admission Form</span></i>
-                <i class="fa-solid fa-person-circle-check"  id="icon" onclick="checkup_form()">&nbsp;<span>Check Up</span></i>
-            <i class="fa-solid fa-people-group"  id="icon" onclick="patient_list()">&nbsp;<span>Patient List</span></i>
-            <i class="fa-solid fa-people-group"  id="icon" onclick="_walkin_patient_list()">&nbsp;<span>WalkIn Patient List</span></i>
-                <i class="fa-solid fa-right-from-bracket"  id="icon" onclick="document.getElementById('logoutform').submit();">&nbsp;<span>Logout</span></i>
+            <div class="_sidebar_links">
+                <div class="_links" onclick="patient_admission_form_section()">
+                <i class="fa-solid fa-bed"></i> <span id="rm">Patient Admission Form</span>
+                </div>
+                <div class="_links" onclick="walkin_patient_form()">
+                <i class="fa-solid fa-person-walking-arrow-right"></i> <span id="rm">Walkin Patient Admission Form</span>
+                </div>
+                <div class="_links" onclick="checkup_form()">
+                <i class="fa-solid fa-person-circle-check"></i> <span id="rm">Check Up</span>
+                </div>
+                <div class="_links" onclick="patient_list()">
+            <i class="fa-solid fa-people-group"></i> <span id="rm">Patient List</span>
+                </div>
+                <div class="_links" onclick="_walkin_patient_list()">
+            <i class="fa-solid fa-people-group"></i> <span id="rm">WalkIn Patient List</span>
+                </div>
+                <div class="_links" onclick="document.getElementById('logoutform').submit();">
+                <i class="fa-solid fa-right-from-bracket"> </i> <span id="rm">Logout</span>
+                </div>
                 <form method="post" action="../config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
                 </form>
@@ -208,12 +214,12 @@
     </div>
         <!--Check if any existing family plan--->
     <div class="form-control2 hide" id="existing_plan_or_not">
-        <label for="">Any existing family plan?</label>
+        <label for="">Any Existing Family Plan?</label>
         <div class="wrap">
-        <input type="checkbox" name="yes" id="yes_checkbox" onchange="familyPlanSection()">
+        <input type="checkbox" name="yes" id="_family_plan" onchange="familyPlanSection()">
             Yes
         </input>
-        <input type="checkbox" name="no" id="no_checkbox" onClick="create_family_card();">
+        <input type="checkbox" name="no" id="_create_card" onchange="create_family_card()">
             No
         </input>
         <input type="hidden" id="accept" value="">
@@ -224,9 +230,9 @@
             <!--Family plan authentication--->
     <div class="family_plan_section hide">
             <label for="">Insert your Family Id</label>
-            <input type="text" onkeyup="check_family_card_validity();" name="" id="family_card_id">
+            <input type="text" onkeyup="check_family_card_validity()" name="" id="family_card_id">
             <div class="valid" id="result"></div>
-            <button id ="users_checker" onclick="check_family_card_users();" type="button">Check for users</button>
+            <button class="btn" id ="users_checker" onclick="check_family_card_users();" type="button">Check for users</button>
             </div>
         </div>
     <h3>Next of Kins</h3>
@@ -239,6 +245,14 @@
         <label for="relationship">RelationShip</label>
         <input type="text"  id="krelationship">
     </div>
+        <div class="form-control">
+        <label for="home_address">Home Address</label>
+        <input type="text"  id="kaddress"  autocomplete="off">
+    </div>
+        <div class="form-control">
+        <label for="phone_number">Phone Number</label>
+        <input type="text"  id="kphonenumber">
+    </div>
     <div class="form-control2">
         <label for="">Gender</label>
         <div class="wrap">
@@ -250,14 +264,6 @@
         </input>
         </div>
         </div>
-        <div class="form-control">
-        <label for="home_address">Home Address</label>
-        <input type="text"  id="kaddress"  autocomplete="off">
-    </div>
-        <div class="form-control">
-        <label for="phone_number">Phone Number</label>
-        <input type="text"  id="kphonenumber">
-    </div>
     </div>
 
 <h3>Social History</h3>
@@ -342,6 +348,14 @@
             <label for="date_of_birth">Date of Birth</label>
             <input type="date" id="wdob">
         </div>
+        <div class="form-control">
+            <label for="home_address">Home Address</label>
+            <input type="text" id="waddress" autocomplete="off">
+        </div>
+        <div class="form-control">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" id="wphonenumber">
+        </div> 
         <div class="form-control2">
         <label for="">Gender</label>
         <div class="wrap">
@@ -353,17 +367,7 @@
         </input>
         </div>
         </div>
-        </div>
-        <div class="sections">
-        <div class="form-control">
-            <label for="home_address">Home Address</label>
-            <input type="text" id="waddress" autocomplete="off">
-        </div>
-        <div class="form-control">
-            <label for="phone_number">Phone Number</label>
-            <input type="text" id="wphonenumber">
-        </div> 
-        </div> 
+                </div>
     <button type="button" id="wproceed-btn" onclick="_add_patient2();" class="btn-submit">Submit</button>
     </form>
     </div>

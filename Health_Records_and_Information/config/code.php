@@ -126,12 +126,14 @@
 
 
 		case 'create_family_card':
-			
+		
 			$family_card_id = 'FAM';
 
 			for ($i = 0; $i < 6; $i++) {
 				$family_card_id .= rand(0, 9); // Concatenate a random digit between 0 and 9 to the family card ID
+			
 			}
+		
 
 			$check_query = mysqli_query($conn, "SELECT family_card_id FROM family_card_tab WHERE `family_card_id`='$family_card_id'");
 			$check_query_count = mysqli_num_rows($check_query);
