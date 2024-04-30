@@ -357,17 +357,37 @@
             <input type="text" id="wphonenumber">
         </div> 
         <div class="form-control2">
-        <label for="">Gender</label>
-        <div class="wrap">
-        <input type="checkbox" name="" id="wgender1" value="male">
-                Male
-        </input>
-        <input type="checkbox" name="" id="wgender2" value="female">
-                Female
-        </input>
+    <label>Gender</label>
+    <div class="wrap">
+        <!-- Checkbox for Male -->
+        <div class="checkbox-wrapper-46">
+            <input class="inp-cbx" id="wgender1" type="checkbox" style="display: none;" />
+            <label class="cbx" for="wgender1">
+                <span>
+                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                </span>
+                <span>Male</span>
+            </label>
         </div>
+
+        <!-- Checkbox for Female -->
+        <div class="checkbox-wrapper-46">
+            <input class="inp-cbx" id="wgender2" type="checkbox" style="display: none;" />
+            <label class="cbx" for="wgender2">
+                <span>
+                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                </span>
+                <span>Female</span>
+            </label>
         </div>
-                </div>
+    </div>
+</div>
+</div>
+
     <button type="button" id="wproceed-btn" onclick="_add_patient2();" class="btn-submit">Submit</button>
     </form>
     </div>

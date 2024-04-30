@@ -1110,21 +1110,9 @@ function _add_patient2() {
   
 
 if((wpatient_name=='')||(wphonenumber=='')||(wdob=='')||(waddress=='')||(vgender=='')){
-  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> USER ERROR!<br /><span>Fields cannot be empty</span>').fadeIn(500).delay(5000).fadeOut(100);
-      // window.alert("Fill All fields");
-      $('.alert_div').removeClass('hide');
-      $('.overlay_div').removeClass('hide');
-      $('.overlay_div').css({
-        zIndex: 1000
-      })
-      $('.alert_div').text('Fill All Fields.');
-      $('.alert_div').css({
-        zIndex: 1200
-      })
-      setTimeout(function(){
-        $('.alert_div').addClass('hide');
-        $('.overlay_div').addClass('hide');
-      }, 1000)
+  $('.alert_div').removeClass('hide');
+  $('#alert_div').html('<div></div> USER ERROR!<br /><span>Fill All fields</span><i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(5000).fadeOut(100);
+
   }else{
    //////////////// get btn text ////////////////
        $('#wproceed-btn').html('PROCESSING...');

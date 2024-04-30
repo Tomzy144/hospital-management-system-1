@@ -20,7 +20,7 @@
     position: fixed;
     top:0%;
     right: 0%;
-    z-index: 1100;
+    z-index: 2000;
     color: rgb(255, 255, 255);
     border-radius: 3px;
     background-color: red;
@@ -244,7 +244,7 @@ h3{
     margin: 5em 0 0 19em;
 }
 .upload_image{
-    width: 450px;
+    width: 300px;
     height: 300px;
     margin: 0 auto;
     overflow: hidden;;
@@ -254,7 +254,7 @@ h3{
     background-color: rgb(42, 87, 215);
     position: relative;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 100%;
 }
 .upload_image #capture_image{
     font-size: 18px;
@@ -318,11 +318,9 @@ h3{
   .sections {
     display: flex;
     width: 100%;
-    border: 1px solid rgb(42, 87, 215);
     margin: 1em 0;
     border-radius: 10px;
     flex-wrap: wrap;
-    background: #2a57d7;
     justify-content: space-around;
   }
 
@@ -344,7 +342,7 @@ h3{
     width: 350px;
     position: relative;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(42, 87, 215);
     justify-content: start;
   }
   .form-control2 input{
@@ -376,11 +374,11 @@ h3{
     margin: 0 1em;
 }
 .form-control select {
-    padding: 0.8em;
+    padding: 0.5em;
     color: rgb(42, 87, 215);
-    border-radius: 5px;
     font-size: 18px;
-    border: 1px solid rgb(42, 87, 215);
+  border: none;
+  border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
   }
   .form-display2{
@@ -390,18 +388,18 @@ h3{
   }
   label{
       font-size: 20px;
-      color: rgb(255, 255, 255);
+      color: rgb(42, 87, 215);
   }
   input {
-    padding: 0.8em;
+    padding: 0.5em;
     color: rgb(42, 87, 215);
-    border-radius: 5px;
     font-size: 18px;
-    border: 1px solid rgb(255, 255, 255);
+  border: none;
+  border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
   }
   .valid{
-    color: #fff;
+    color: rgb(42, 87, 215);
   }
 
   .form-control i{
@@ -1018,9 +1016,8 @@ table thead  td{
     left: 0;
     background-color: #fff;
     padding: 1em;
-    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    z-index: 1300;
+    z-index: 1000;
 }
 .close_icon{
     position: absolute;
@@ -1031,17 +1028,17 @@ table thead  td{
     cursor: pointer;
 }
 .walkin_in_section_upload_image{
-    width: 450px;
+    width: 300px;
     height: 300px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: hidden;;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(42, 87, 215);
     position: relative;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 100%;
   }
 
 .walkin_in_section_upload_image #walkin_in_section_capture_image{
@@ -1202,7 +1199,7 @@ table thead  td{
         color: rgb(42, 87, 215);
       }
       .upload_image {
-        width: 380px;
+        width: 250px;
         height: 250px;
         margin: 0 auto;
         overflow: hidden;
@@ -1212,10 +1209,10 @@ table thead  td{
         background-color: rgb(42, 87, 215);
         position: relative;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 100%;
       }
       .walkin_in_section_upload_image{
-        width: 380px;
+        width: 250px;
         height: 250px;
         margin: 0 auto;
         overflow: hidden;
@@ -1225,7 +1222,7 @@ table thead  td{
         background-color: rgb(42, 87, 215);
         position: relative;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 100%;
       }
 }
 @media screen and (max-width:650px) {
@@ -1239,7 +1236,7 @@ table thead  td{
         color: rgb(42, 87, 215);
       }
       .upload_image {
-        width: 310px;
+        width: 230px;
         height: 230px;
         margin: 0 auto;
         overflow: hidden;
@@ -1249,10 +1246,10 @@ table thead  td{
         background-color: rgb(42, 87, 215);
         position: relative;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 100%;
       }
       .walkin_in_section_upload_image{
-        width: 310px;
+        width: 230px;
         height: 230px;
         margin: 0 auto;
         overflow: hidden;
@@ -1262,7 +1259,7 @@ table thead  td{
         background-color: rgb(42, 87, 215);
         position: relative;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 100%;
       }
 }
 @media screen and (max-width:550px) {
@@ -1276,7 +1273,7 @@ table thead  td{
         color: rgb(42, 87, 215);
       }
       .upload_image {
-        width: 260px;
+        width: 190px;
         height: 190px;
         margin: 0 auto;
         overflow: hidden;
@@ -1286,10 +1283,10 @@ table thead  td{
         background-color: rgb(42, 87, 215);
         position: relative;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 100%;
       }
       .walkin_in_section_upload_image{
-        width: 290px;
+        width: 190px;
         height: 190px;
         margin: 0 auto;
         overflow: hidden;
@@ -1299,7 +1296,7 @@ table thead  td{
         background-color: rgb(42, 87, 215);
         position: relative;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 100%;
       }
       .walkin_admission_form{
         width: 100%;
@@ -1310,11 +1307,91 @@ table thead  td{
         left: 0;
         background-color: #fff;
         padding: 2em;
-        border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        z-index: 1300;
+        z-index: 1000;
     }
 }
+
+/* Style for hidden checkboxes */
+.checkbox-wrapper-46 input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+
+/* General style for labels acting as checkbox */
+.checkbox-wrapper-46 .cbx {
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Center the label text with the custom checkbox */
+}
+
+/* Styling for the custom checkbox appearance */
+.checkbox-wrapper-46 .cbx span:first-child {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 1px solid #9098A9;
+    transition: all 0.2s ease;
+    margin-right: 8px; /* Space between the checkbox and the label text */
+}
+
+/* SVG inside the custom checkbox */
+.checkbox-wrapper-46 .cbx span:first-child svg {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+}
+
+/* Hover effect for the custom checkbox */
+.checkbox-wrapper-46 .cbx:hover span:first-child {
+    border-color: #506EEC;
+}
+
+/* Style changes when the checkbox is checked */
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
+    background: #506EEC;
+    border-color: #506EEC;
+    animation: wave-46 0.4s ease;
+}
+
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #506EEC;
+    display: block;
+    transform: scale(3.5);
+    opacity: 0;
+    border-radius: 50%;
+    transition: all 0.6s ease;
+}
+
+/* Animation effect for the checkbox background */
+@keyframes wave-46 {
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+
 .hide{
     display: none;
 }
