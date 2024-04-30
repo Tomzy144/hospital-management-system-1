@@ -67,7 +67,7 @@
         <div class="section1">
         </div>
         <div class="section2">
-        
+        <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button>
           </div>
           <div class="profile">
             <div class="profile_account hide">
@@ -91,7 +91,6 @@
         <div class="sidebar">
         <!-- onclick="homepage_section()" -->
                <div class="_sidebar_contents">
-                <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button>
                </div>
             <div class="_sidebar_links">
                 <div class="_links" onclick="patient_admission_form_section()">
@@ -130,7 +129,6 @@
                <!----START OF CHECKUP SECTION-->
                <div class="checkup_section hide">
                <i class="bi bi-x-lg close_icon" onclick="close_checkup_form()" ></i>
-            <h2>Patient Check Up Form</h2>
             <div class="form-control">
                 <label for="">Patient Name</label>
                 <input type="text" name="" id="">
@@ -141,7 +139,7 @@
             </div>
             <button class ="btn-submit" id="authenticate" onclick="activateFingerPrint()">Fingerprint authentication</button>
             <div class="finger_print_div hide">
-            <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i>
+            <!-- <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i> -->
             <i class="bi bi-fingerprint print_icon" onclick="display_profile()"></i>
             </div> 
         </div>
@@ -193,16 +191,35 @@
             <input type="text" id="phonenumber">
         </div>
         <div class="form-control2">
-        <label for="">Gender</label>
-        <div class="wrap">
-        <input type="checkbox" name="" id="gender1" value="male">
-                Male
-        </input>
-        <input type="checkbox" name="" id="gender2" value="female">
-                Female
-        </input>
+    <label>Gender</label>
+    <div class="wrap">
+        <!-- Checkbox for Male -->
+        <div class="checkbox-wrapper-46">
+            <input class="inp-cbx" id="gender1" type="checkbox" style="display: none;" />
+            <label class="cbx" for="gender1">
+                <span>
+                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                </span>
+                <span>Male</span>
+            </label>
         </div>
+
+        <!-- Checkbox for Female -->
+        <div class="checkbox-wrapper-46">
+            <input class="inp-cbx" id="gender2" type="checkbox" style="display: none;" />
+            <label class="cbx" for="gender2">
+                <span>
+                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                </span>
+                <span>Female</span>
+            </label>
         </div>
+    </div>
+</div>
         <div class="form-control">
         <label for="hmo" id ="hospital_plan">Hospital Plans</label>
         <select name="" id="select_box">
@@ -213,20 +230,39 @@
              
     </div>
         <!--Check if any existing family plan--->
-    <div class="form-control2 hide" id="existing_plan_or_not">
+        <div class="form-control2 hide" id="existing_plan_or_not"">
         <label for="">Any Existing Family Plan?</label>
-        <div class="wrap">
-        <input type="checkbox" name="yes" id="_family_plan" onchange="familyPlanSection()">
-            Yes
-        </input>
-        <input type="checkbox" name="no" id="_create_card" onchange="create_family_card()">
-            No
-        </input>
-        <input type="hidden" id="accept" value="">
+    <div class="wrap">
+        <!-- Checkbox for Male -->
+        <div class="checkbox-wrapper-46">
+        <input class="inp-cbx" type="checkbox" name="yes" id="_family_plan" onchange="familyPlanSection()" style="display: none;">
+            <label class="cbx" for="_family_plan">
+                <span>
+                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                </span>
+                <span>Yes</span>
+            </label>
+        </div>
+
+        <!-- Checkbox for Female -->
+        <div class="checkbox-wrapper-46">
+            <input class="inp-cbx" type="checkbox" id="_create_card" onchange="create_family_card()" style="display: none;" />
+          
+            <label class="cbx" for="_create_card">
+                <span>
+                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                </span>
+                <span>No</span>
+            </label>
+            <input type="hidden" id="accept" value="">
         <div class="generating-div" id="generation_alert" style="display:block"></div>
-       
         </div>
-        </div>
+    </div>
+</div>
             <!--Family plan authentication--->
     <div class="family_plan_section hide">
             <label for="">Insert your Family Id</label>
@@ -253,17 +289,37 @@
         <label for="phone_number">Phone Number</label>
         <input type="text"  id="kphonenumber">
     </div>
-    <div class="form-control2">
-        <label for="">Gender</label>
-        <div class="wrap">
-        <input type="checkbox" name="" id="kgender1" value="male">
-                Male
-        </input>
-        <input type="checkbox" name="" id="kgender2" value="female">
-                Female
-        </input>
+   <div class="form-control2">
+    <label>Gender</label>
+    <div class="wrap">
+        <!-- Checkbox for Male -->
+        <div class="checkbox-wrapper-46">
+            <input class="inp-cbx" id="kgender1" type="checkbox" style="display: none;" />
+            <label class="cbx" for="kgender1">
+                <span>
+                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                </span>
+                <span>Male</span>
+            </label>
         </div>
+
+        <!-- Checkbox for Female -->
+        <div class="checkbox-wrapper-46">
+            <input class="inp-cbx" id="kgender2" type="checkbox" style="display: none;" />
+            <label class="cbx" for="kgender2">
+                <span>
+                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                </span>
+                <span>Female</span>
+            </label>
         </div>
+    </div>
+</div>
+
     </div>
 
 <h3>Social History</h3>
@@ -626,108 +682,13 @@
 
           <!---APPOITMENT SECTION -->
         <div class="appoitment_section hide">
-            <div class="appoitment_container">
-                <section class="doctor_roles_name hide">
-                    <i class="bi bi-x-lg" id="close_appoitment_form" onClick="close_appoitment_form()"></i>
-                <div class="appoitment-calender">
-                    <div class="doc_roles">
-                <label for="roles">Doctor Role:</label>
-<select id="roles" >
-<option  onclick="getDoctors()">Select</option>
-    <option value="cardiologist">Cardiologist</option>
-    <option value="dermatologist">Dermatologist</option>
-    <option value="surgeon">Surgeon</option>
-    <option value="psychiatrist">Psychiatrist:</option>
-    <option value="family_medicine">Family Medicine</option>
-    <option value="dermatologist">Dermatologist</option>
-    <option value="anaesthesiology">Anaesthesiology</option>
-    <option value="rheumatologist">Rheumatologist</option>
-    <option value="endocrinologist">Endocrinologist</option>
-    <option value="nephrologist">Nephrologist</option>
-    <option value="neurologist">Neurologist</option>
-    <option value="pediatrician">Pediatrician</option>                
-    <option value="urologist">Urologist</option>
-    <option value="radiologist">Radiologist</option>
-    <option value="dentist">Dentist</option>
-    <option value="pulmonologist">Pulmonologist</option>
-    <option value="podiatristian">Podiatristian</option>
-    <option value="emergency_physician">Emergency Physician</option>
-    <option value="anaesthesiologist">Anaesthesiologist</option>
-    <option value="cardiologist">Cardiologist</option>
-    <option value="oncologist">Oncologist</option>
-    <option value="gastroenterologist">Gastroenterologist</option>
-    <option value="ophthanlmologist">Ophthanlmologist</option>
-    <option value="cardology">Cardology</option>
-    <option value="allergist">Allergist</option>
-    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
-    <!-- Add more role options as needed -->
-</select>
-<label for="doctors">Select Doctor:</label>
-<select id="doctors">
-    <!-- Doctors for the selected role will be dynamically added here -->
-</select>
-<button id="continue" type="submit" onClick="submitRoles()" >Continue</button>
-</div>
-    <div class="appoitment_form hidden">
-<div class="calendar">
-            <div class="month">
-                <i class="fa fa-angle-left prev"></i>
-                <div class="date">
-                    <h1></h1>
-                    <p></p>
-                </div>
-                <i class="fa fa-angle-right next"></i>
-            </div>
-            <div class="weekdays">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-            </div>
-            <div class="days"> </div>
-        </div>
-        <div class="form_appoitment">
-            <h3>Fill in the neccessary Information</h3>
-            <form action="" class="form">
-                <div class="_flexs">
-                <div class="form_control">
-                    <label for="">Patient Name</label>
-                    <input type="text">
-                </div>
-                <div class="form_control">
-                    <label for="">Patient Id</label>
-                    <input type="text">
-                </div>
-                <div class="form_control">
-                    <label for="">Selected Date</label>
-                    <div class="selected_date">03-01-2024</div>
-                </div>
-                <div class="form_control">
-                    <label for="">Selected Time</label>
-                    <input type="time">
-                </div>
-                <div class="form_control">
-                    <label for="">Request Type</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                </div>
-                </div>
-            </div>
-            <button class="btn_submit_appoitment">Submit</button>
-            </form>
-        </div>
-        </div>
-                </section>
-            <section class="appoitments">
             <div class="cards_container">
             <div class="cards">
                 <div class="profile">
                     <img src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Rita Glass</h3>
-                    <h4>Gynaecologist</h4>
+                    <span>Dr. Rita Glass</span>
+                    <span>Gynaecologist</span>
                     </div>
                 </div>
                 <div class="date_time">
@@ -754,8 +715,8 @@
                 <div class="profile">
                     <img src="../Images/513d2ccb77e948b687079bc2d6f42661.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Mary Walter</h3>
-                    <h4>Gynaecologist</h4>
+                    <span>Dr. Mary Walter</span>
+                    <span>Gynaecologist</span>
                     </div>
                 </div>
                 <div class="date_time">
@@ -782,8 +743,8 @@
             <div class="profile">
                     <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Cathrine Emmanuel</h3>
-                    <h4>Gynaecologist</h4>
+                    <span>Dr. Cathrine Emmanuel</span>
+                    <span>Gynaecologist</span>
                     </div>
                 </div>
                 <div class="date_time">
@@ -810,8 +771,8 @@
             <div class="profile">
                     <img src="../Images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
                     <div class="name_role">
-                    <h3>Dr. Romeo Patrick</h3>
-                    <h4>Gynaecologist</h4>
+                    <span>Dr. Romeo Patrick</span>
+                    <span>Gynaecologist</span>
                     </div>
                 </div>
                 <div class="date_time">
@@ -834,8 +795,6 @@
                         <button class="btn" id="btn_declined">Declined</button>
                     </div>
             </div>
-            </div>
-            </section>
             </div>
         </div>
         <!----END OF APPOITMENT SECTION-->

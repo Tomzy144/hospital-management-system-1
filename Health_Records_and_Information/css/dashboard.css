@@ -357,18 +357,19 @@ h3{
 
 .family_plan_section button{
     margin: 0.4em 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(42, 87, 215);
     width: 100%;
     border: none;
     border-radius: 5px;
-    color:  rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     padding: 1em;
+    transition: all ease-in-out 0.5s;
 }
 .family_plan_section button:hover{
    background:none;
    border: 1px solid rgb(42, 87, 215);
-   color: #fff;
+   color: rgb(42, 87, 215);
 }
 .form-control_check input{
     margin: 0 1em;
@@ -420,15 +421,7 @@ h3{
     cursor: pointer;
     margin: 1rem 0;
     }
-    #authenticate{
-        background-color: #fff;
-        color: rgb(42, 87, 215);;
-    }
-    #authenticate:hover{
-        border: 1px solid rgba(255, 255, 255);
-        background:none;
-        color: rgb(255, 255, 255);
-    }
+ 
     .btn-submit:hover{
       background:none;
       border: 1px solid rgb(42, 87, 215);
@@ -444,15 +437,11 @@ h3{
       cursor: pointer;
   }
   .all_patient_list{
-    width: 80%;
-    height: 100%;
     display: flex;
-    margin: 4.5rem 0 0 20rem;
+    margin: 4.5rem 0 0 19rem;
   }
   .patient_list_div {
     width: 100%;
-    height: fit-content;
-    height: 800px;
     overflow: auto;
 }
 
@@ -469,9 +458,8 @@ h3{
 .search_bar_container span {
     font-size: 20px;
     text-transform: uppercase;
-    font-weight: bold;
     letter-spacing: 3px;
-}
+  }
 .search_bar_container i{
     position: absolute;
     right: 4%;
@@ -499,9 +487,9 @@ h3{
 }
 table thead  td{
     color: rgb(42, 87, 215);
-    font-weight: bold;
     padding: 0.5em;
     font-size: 18px;
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
  table tbody td img{
@@ -512,6 +500,8 @@ table thead  td{
 
  table tbody td {
     padding: 0.5em;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     color: rgb(255, 255, 255);
     background-color: rgb(42, 87, 215);
     border-bottom: 1px solid #ddd; /* Add a bottom border to separate cells */
@@ -612,20 +602,18 @@ table thead  td{
     top: 0;
     left: 0;
 }
-.profile_container{
-    width: 800px;
-    height: 400px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: rgb(0, 87, 194);
-    margin: 4.6em 0 0 0;
+.profile_container {
+    width: auto;
+    height: auto;
+    box-shadow: rgba(183, 181, 181, 0.35) 0px 5px 15px;
+    background-color: rgb(42, 87, 215);
     display: flex;
     position: fixed;
     z-index: 9;
-    border-radius: 10px;
     z-index: 1200;
     top: 0;
-    left: 27%;
-}
+    right: 0;
+  }
 .profile_container .close_icon{
     position: absolute;
     font-size: 25px;
@@ -685,37 +673,17 @@ table thead  td{
     height: 100%;
     margin: 6rem 0 0 18em;
 }
-.appoitment_container{
-    overflow: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-}
-.appoitment_container .appoitments{
-    width: 100%;
-    height:max-content;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    margin: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items:  center;
-}
-.appoitments h1{
-    padding: 0.5rem;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-    border-radius: 6px;
-}
 
-.cards_container{
+
+.cards_container {
     display: flex;
     width: 100%;
     height: max-content;
     justify-content: start;
     flex-wrap: wrap;
-    align-items:  center;
-}
+    align-items: center;
+    justify-content: center;
+  }
 .cards{
     width: 350px;
     height: max-content;
@@ -759,7 +727,6 @@ table thead  td{
     color: black;
 }
 .date_time{
-    width: 100%;
     height: 100px;
     color: #fff;
     display: flex;
@@ -781,232 +748,9 @@ table thead  td{
     margin: 0 1rem;
     color: #fff;
 }
-.doctor_roles_name{
-    width: 100%;
-    height:max-content;
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    position: relative;
-    align-items: center;
-}
-#close_appoitment_form{
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #ff0000;
-  font-size: 20px;
-    cursor: pointer;
-}
-
-.hide{
-    display: none;
-}
-.doc_roles{
-    width: 45rem;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    padding: 1rem;
-    margin: 1rem 0;
-    background: #fff;
-}
-.doc_roles label{
-    color: rgb(42, 87, 215); 
-}
-.doc_roles select{
-    padding: 1rem;
-    border: 2px solid #fff;; 
-    background-color:rgb(42, 87, 215); 
-    margin: 1rem 0;
-    color: rgb(255, 255, 255);;
-}
-#continue{
-    background-color: rgb(42, 87, 215);
-    padding: 1rem;
-    border-radius: 20px;
-    border: none;
-    color:  rgb(255, 255, 255);
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-}
-#continue:hover{
-    border: 1px solid rgb(42, 87, 215);
-    padding: 1rem 1rem;
-}
-
-.calendar{
-    width: 45rem;
-    height: 46rem;
-    background-color: rgb(42, 87, 215);
-    border-radius: 10px;
-    margin: 1rem 0;
-    box-shadow: 0,0.5rem 3rem rgba(0,0,0,0.4);
-    color: #fff;
-}
-.month{
-    width: 100%;
-    height: 6rem;
-    background-color :rgb(255, 255, 255) ;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-   text-align: center;
-   color: rgb(42, 87, 215);
-}
-
-.month i{
-    font: 2rem;
-    cursor: pointer;
-}
-.month h1{
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
-}
-
-.month p{
-    font-size: 1rem;
-}
 
 
-.weekdays{
-    width: 100%;
-    height: 5rem;
-    padding: 0 0.4rem;
-    display: flex;
-    align-items: center;
-}
-.weekdays div{
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    width: calc(44.2rem/7  );
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
 
-.days{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.2rem;
-}
-.days div{
-    font-size: 1rem;
-    margin: 0.3rem;
-    width: calc(40.2rem/7 );
-    height: 5rem;
-    display: flex;;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.2s;
-}
-
-.days div:hover:not(.today){
-    background-color: rgb(0, 68, 255);
-    border:0.2rem solid #d1cece;
-    cursor: pointer;
-}
-
-.prev-date{
-    opacity: 0.5;
-}
-
-.next-date{
-    opacity: 0.5;
-}
-.content{
-    color: #db0000;
-    font-size: 2rem;
-}
-.clicked {
-    background-color: #aaffaa; /* Light green color for clicked date */
-  }
-
-.today{
-    background-color: #0044ff;
-}
-.hidden{
-
-    display: none;
-}
-
-.form_appoitment{
-    width:45rem;
-        border-radius: 10px;
-    height: fit-content;
-    background: rgb(42, 87, 215);
-    color: #ffffff;
-    padding: 1rem 1rem;
-}
-
-.form_appoitment .form{
-    width:100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-._flexs{
-    width: 100%;
-    flex-wrap: wrap;
-    display: flex;
-}
-.form_appoitment .form_control{
-    width: 300px;
-    animation: none;
-    height: auto;
-    margin: 1em 0.5em;
-}
-.form_appoitment label{
-    color: rgb(255, 255, 255);
-}
-.form_appoitment input{
-    width: 100%;
-    background-color: none;
-}
-.form_appoitment .form_control_text_area{
-    width: 92%;
-    height: 40px;
-    animation: none;
-    height: auto;
-    margin: 0 0.5em;
-}
-.selected_date{
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(255, 255, 255);;
-    color: rgb(42, 87, 215);
-    padding: 0.5em;
-}
-.form_appoitment textarea{
-    background-color: rgb(255, 255, 255);
-    color: #fff;
-    height: 50px;
-    border: none;
-    width: 100%;
-}
-.btn_submit_appoitment{
-    width: auto;
-    background-color:rgb(42, 87, 215);;
-    color:rgb(255, 255, 255);;
-    margin: 1rem 0;
-    padding: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-}
-.btn_submit_appoitment:hover{
-    background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);;
-}
 /*WALKIN PATIENTS */
 .walkin_admission_form{
     width: 100%;
@@ -1017,13 +761,13 @@ table thead  td{
     background-color: #fff;
     padding: 1em;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    z-index: 1000;
+    z-index: 1100;
 }
 .close_icon{
     position: absolute;
-    right: 3%;
+    right: 6%;
     font-size: 18px;
-    top: 1%;
+    top: 0%;
     color: #2a57d7;
     cursor: pointer;
 }
@@ -1095,29 +839,35 @@ table thead  td{
 }
 .checkup_section{
     height: auto;
-    color: rgb(255, 255, 255);
-    margin: 5em 0 0 5em;
-    width: 500px;
-    border-radius: 10px;
+    color: rgb(42, 87, 215);
     padding: 1em;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 1200;
-    left: 36%;
+    right: 0;
     overflow: auto;
-    background-color:rgb(42, 87, 215);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(185, 181, 181, 0.35) 0px 5px 15px;
 }
 
 .checkup_section label{
-    color:  rgb(255, 255, 255);;
+    color:  rgb(42, 87, 215);
 }
 .checkup_section .form-control{
     width: 100%;
     margin: 1em 0;
 }
+#authenticate{
+    background-color: #2a57d7;
+    color: rgb(255, 255, 255);
+}
+#authenticate:hover{
+    border: 1px solid  #2a57d7;
+    background:none;
+    color:  #2a57d7;
+}
 .checkup_section input{
-    outline: 1px solid rgb(255, 255, 255);
+    outline: none;
 }
 .finger_print_div{
     width: 100%;
@@ -1174,6 +924,13 @@ table thead  td{
     color: #fff;
 
  }
+ .all_patient_list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 4.5rem 0 0 5.3rem;
+  }
+
  ._links:hover #rm{
     opacity: 1;
     visibility: visible;
@@ -1184,9 +941,13 @@ table thead  td{
     margin: 5em 0 0 5em;
     width: 90%;
  }
- .sidebar{
-    overflow:visible;
- }
+ .appoitment_section {
+    height: 100%;
+    margin: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 8em;
+  }
 }
 @media screen and (max-width:856px) {
     .form-control {
@@ -1198,6 +959,11 @@ table thead  td{
         position: relative;
         color: rgb(42, 87, 215);
       }
+      .appoitment_section {
+        height: 100%;
+        margin: 6rem 0 0 8em;
+      }
+      
       .upload_image {
         width: 250px;
         height: 250px;
@@ -1285,6 +1051,11 @@ table thead  td{
         text-align: center;
         border-radius: 100%;
       }
+      .appoitment_section {
+        height: 100%;
+        margin: 6rem 0 0 5em;
+      }
+    }
       .walkin_in_section_upload_image{
         width: 190px;
         height: 190px;
@@ -1308,10 +1079,15 @@ table thead  td{
         background-color: #fff;
         padding: 2em;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        z-index: 1000;
+        z-index: 1100;
     }
-}
 
+.wrap{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
 /* Style for hidden checkboxes */
 .checkbox-wrapper-46 input[type="checkbox"] {
     display: none;

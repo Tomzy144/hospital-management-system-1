@@ -1,9 +1,7 @@
 'use strict';
 //Sidebat responsiveness
 
-
-
-
+//Convert all input to capital letter
 
 //PROFILE IMAGE
 function click_icon_for_profile (){
@@ -659,6 +657,21 @@ function create_family_card() {
     $('#generating_id').addClass('successful');
     $('#generating_id').html('GENERATED ID<i class="bi-check"></i>').fadeIn(500).delay(5000).fadeOut(100);
   }, 3000);
+
+
+    $('#_create_card').click(function(event) {
+        // Prevent the default action to manage it manually
+        event.preventDefault();
+
+        // Check if the checkbox was not already checked
+        if (!$(this).is(':checked')) {
+            // Manually check the checkbox
+            $(this).prop('checked', true);
+
+            // Call your function that handles the ID generation
+            // create_family_card();
+        }
+    });
 
   var action = 'create_family_card'; // Define the action variable
 
