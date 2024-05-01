@@ -67,7 +67,7 @@
         <div class="section1">
         </div>
         <div class="section2">
-        <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button>
+        <!-- <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button> -->
           </div>
           <div class="profile">
             <div class="profile_account hide">
@@ -137,7 +137,8 @@
             <label for="">Patient Id</label>
                 <input type="text" name="" id="">
             </div>
-            <button class ="btn-submit" id="authenticate" onclick="activateFingerPrint()">Fingerprint authentication</button>
+            <div class ="btn-submit" id="authenticate" onclick="activateFingerPrint()">
+            <i class="bi bi-fingerprint"></i> Fingerprint authentication</div>
             <div class="finger_print_div hide">
             <!-- <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i> -->
             <i class="bi bi-fingerprint print_icon" onclick="display_profile()"></i>
@@ -370,8 +371,8 @@
 
         <!--START OF WALKIN ADMISSION FORM2-->
             <div class="walkin_admission_form hide">
+            <i  class="bi bi-x-lg close_icon" onclick="close_walkin_patient_form()"></i>
             <div class="form-container">
-                <i  class="bi bi-x-lg close_icon" onclick="close_walkin_patient_form()"></i>
         <h3>WalkIn Admission Form</h3>
         <div class="walkin_in_section_upload_image">
              <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
@@ -510,9 +511,9 @@
 
             <div class="_box_popup hide" id="patient_popup">
         <i class="bi bi-x-lg red" onclick="close_show_patient_transfer_popup()"></i>
-        <ul>
-        <li onclick="nurse_appoitment()">Transfer to Nurse Unit</li>
-        </ul>
+        <div>
+            <h5 onclick="nurse_appoitment()">Transfer to Nurse Unit</h5>
+        </div>
         </div>
             <!----NURSE APPOITMENT-->
 <div class="appoitment hide" id="nurse_appoitment">
@@ -533,7 +534,7 @@
                     <textarea name="" id="" cols="20" rows="10"></textarea>
                 </div>
                 </div>
-                <button>Request</button>
+                <button class="btn-submit">Request</button>
                 </form>
             </div>
         </div>
@@ -579,6 +580,7 @@
                     <td>Patient ID</td>
                     <td>Patient Profile</td>
                     <td>date of Admission</td>
+                    <td>action</td>
                 </thead>
                 <?php
                 if ($result->num_rows > 0) {
@@ -590,7 +592,6 @@
                         <td><?php echo $row["wpatient_name"]; ?></td>
                         <td><?php echo $row["wpatient_id"]; ?></td>
                         <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/walkin_patient/" . $row["wpassport"]; ?>" alt="Profile Picture"></td>
-                        <td><img src="<?php echo $row["walkin_patient"]; ?>" alt="Patient Profile"></td>
                         <td><?php echo $row["date"]; ?></td>
                         <td><i class="bi bi-three-dots _action" onclick="_show_book_popup()"></i></td>
                     </tr>
@@ -605,15 +606,16 @@
         </div>
         <div class="_box_popup hide" id="walkin_popup">
         <i class="bi bi-x-lg red" onclick="close_show_book_popup()"></i>
-        <ul>
-            <li onclick="lab_appoitment()">Transfer to Labouratory Unit</li>
-            <li onclick="rad_appoitment()">Transfer to Radiology Unit</li>
-        </ul>
+        <div>
+            <h5 onclick="lab_appoitment()">Transfer to Labouratory Unit</h5>
+
+            <h5 onclick="rad_appoitment()">Transfer to Radiology Unit</h5>
+            </div>
 </div>
 <!----LAB APPOITMENT---->
 <div class="appoitment hide" id="lab_appoitment">
             <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
-                <span>Labouratory Unit</span>
+                <h3>Labouratory Unit</h3>
                 <form action="" id="">
                 <div class="form-control">
                     <label for="">Patient Name</label>
@@ -627,13 +629,13 @@
                     <label for="">Reasons for Booking</label>
                     <textarea name="" id="" cols="20" rows="10"></textarea>
                 </div>
-                <button>Request</button>
+                <button class="btn-submit">Request</button>
                 </form>
             </div>
             <!-----RADIOLOGY APPOITMENT-->
 <div class="appoitment hide" id="rad_appoitment">
             <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
-                <span>Radiology Unit</span>
+                <h3>Radiology Unit</h3>
                 <form action="" id="">
                 <div class="form-control">
                     <label for="">Patient Name</label>
@@ -647,7 +649,7 @@
                     <label for="">Reasons for Booking</label>
                     <textarea name="" id="" cols="20" rows="10"></textarea>
                 </div>
-                <button>Request</button>
+                <button class="btn-submit">Request</button>
                 </form>
             </div>
     </div>
@@ -663,17 +665,17 @@
                 <div class="profile_container hide">
                 <i class="bi bi-x-lg close_icon" onclick="close_profile()"></i>
                     <div class="div1">
-                    <span>Date of Birth : 23-09-2023</span>
-                        <span>Address: 531 RockVale Dr, Piedmont, South Carolina.</span>
-                        <span>Phone Number: +122 3521 222</span>
+                    <h3>Date of Birth : 23-09-2023</h3>
+                        <h3>Address: 531 RockVale Dr, Piedmont, South Carolina.</h3>
+                        <h3>Phone Number: +122 3521 222</h3>
                     </div>
                     <div class="div2">
                         <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
-                        <span>Juliet Patrick</span>
-                        <span>PAT0003</span>
-                        <span>Female</span>
-                        <span>Active</span>
-                        <button onclick="appoitment_booking()">Book an Appoitment</button>
+                        <h3>Juliet Patrick</h3>
+                        <h3>PAT0003</h3>
+                        <h3>Female</h3>
+                        <h3>Active</h3>
+                        <button class="btn-submit" onclick="appoitment_booking()">Book an Appoitment</button>
                     </div>
                 </div>
                 <div class="overlay hide"></div>

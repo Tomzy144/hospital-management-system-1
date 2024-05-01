@@ -78,29 +78,28 @@
 
 
 .profile{
-    width: 50%;
     height: 100%;
     display: flex;
     color: #fff;
     justify-content: center;
     align-items: center;;
 }
-.profile_account{
-    width: 300px;
+.profile_account {
+    width: 200px;
     position: absolute;
-    height: fit-content;
+    height: auto;
     top: 100%;
     background-color: rgb(42, 87, 215);
-    animation: fadeIn  ease-in-out 0.5s;
-    right: 2%;
+    animation: fadeIn ease-in-out 0.5s;
+    right: 0;
     padding: 1rem 1rem;
-    box-shadow: rgba(198, 186, 186, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
+    border-bottom-right-radius: 5px;
+  }
 
 #image_profile_account{
     width: 140px;
@@ -134,7 +133,7 @@
 }
 h3{
     font-weight:normal;
-    font-size: 20px;
+    font-size: 1.3rem;;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: rgb(42, 87, 215);
@@ -211,7 +210,7 @@ h3{
 
 ._links{
     color: #fff;
-    font-size: 18px;
+    font-size: 1em;
     margin: 0.5em 0;
     text-transform: uppercase;
     cursor: pointer;
@@ -249,23 +248,23 @@ h3{
     margin: 0 auto;
     overflow: hidden;;
     display: flex;
+    box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
     justify-content: center;
     align-items: center;
-    background-color: rgb(42, 87, 215);
     position: relative;
     text-align: center;
     border-radius: 100%;
 }
 .upload_image #capture_image{
     font-size: 18px;
-    color: rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     border-radius: 100%;
     padding: 0.5rem;
     position: absolute;
     right:12%;
     bottom: 14%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(42, 87, 215);
 }
 #capturedImage{
     position: absolute;
@@ -358,7 +357,7 @@ h3{
 .family_plan_section button{
     margin: 0.4em 0;
     background-color: rgb(42, 87, 215);
-    width: 100%;
+    width: fit-content;
     border: none;
     border-radius: 5px;
     color: rgb(255, 255, 255);
@@ -377,10 +376,11 @@ h3{
 .form-control select {
     padding: 0.5em;
     color: rgb(42, 87, 215);
-    font-size: 18px;
+    font-size: 1rem;
   border: none;
   border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
+    text-transform: uppercase;
   }
   .form-display2{
       display: flex;
@@ -388,16 +388,18 @@ h3{
       margin: 0.5rem 0;
   }
   label{
-      font-size: 20px;
+      font-size: 1rem;
       color: rgb(42, 87, 215);
+      text-transform: uppercase;
   }
   input {
     padding: 0.5em;
     color: rgb(42, 87, 215);
-    font-size: 18px;
+    font-size: 1rem;
   border: none;
   border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
+    text-transform: uppercase;
   }
   .valid{
     color: rgb(42, 87, 215);
@@ -462,15 +464,11 @@ h3{
   }
 .search_bar_container i{
     position: absolute;
-    right: 4%;
+    right: 1%;
     cursor: pointer;
 }
 .search_bar_container input {
     padding: 0.5em;
-}
-.search_bar_container input:focus {
-    padding: 0.5em;
-    outline:auto;
 }
 
  table {
@@ -484,13 +482,23 @@ h3{
     top: 0;
     z-index: 1; 
     background-color: #fff; 
+    font-size: 1em;
+    text-align: center;
 }
 table thead  td{
     color: rgb(42, 87, 215);
     padding: 0.5em;
-    font-size: 18px;
+    font-size: 1em;
     letter-spacing: 3px;
     text-transform: uppercase;
+    text-align: center;
+    padding: .77em .58em .74em .58em;
+    padding-right: 0.58em;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    vertical-align: top;
+    line-height: 1.2;
 }
  table tbody td img{
     width: 50px;
@@ -502,9 +510,17 @@ table thead  td{
     padding: 0.5em;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    text-align: center;
     color: rgb(255, 255, 255);
     background-color: rgb(42, 87, 215);
-    border-bottom: 1px solid #ddd; /* Add a bottom border to separate cells */
+    padding: .77em .58em .74em .58em;
+    padding-right: 0.58em;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    font-size: 0.95rem;
+    vertical-align: top;
+    line-height: 1.2;
 }
 
 .walkin_patient_list_div{
@@ -516,54 +532,54 @@ table thead  td{
 ._action{
     cursor: pointer;
 }
-._box_popup{
+._box_popup {
     width: auto;
     height: auto;
     max-width: 300px;
-    position: absolute;
-    right: 0.5%;
-    border-radius: 3px;
-    padding: 1em;
+    position: fixed;
+    right: 0;
     color: #2a57d7;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    top: 0.5%;
+    top: 0;
     background-color: #ffffff;
-    font-weight: bold;
-    z-index: 1000;
-}
+    z-index: 1100;
+    padding: 0.5em;
+  }
 ._box_popup .red{
-    color: red;
+    color: #2a57d7;
     position: absolute;
     right: 3%;
+    font-size: 1rem;
     cursor: pointer;
+    padding: 0.5em;
     top: 3%;
 }
-._box_popup ul{
-    list-style: none;
-    padding: 1em;
+._box_popup h5{
+ font-size: 1em;
+ text-transform: uppercase;
+ font-weight: normal;
+ margin: none;
+cursor: pointer;
 }
-._box_popup li{
-    cursor: pointer;
-    color:  rgb(42, 87, 215);
-    font-size: 20px;
-    font-weight: bold;
+h3{
+    font-size: 1rem;
+    text-transform: uppercase;
 }
+
  .appoitment{
     width:400px;
     height:auto;
     background-color:#fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    position:absolute;
+    position:fixed;
     color: black ;
     padding:1em;
     top: 0;
-    left:40%;
-    border-radius: 5px;
+    right:0;
+    z-index: 1100;
 }
 .appoitment button{
-    width: 100%;
     background-color:rgb(42, 87, 215); 
-    padding: 0.5em;
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -573,24 +589,27 @@ table thead  td{
     position: absolute;
     right: 3%;
     top: 3%;
+    font-size: 1rem;
     cursor: pointer;
-    color: #db0000;
+    color: rgb(42, 87, 215); 
 }
 .appoitment .form-control{
     width: 100%;
     margin: 1em 0;
 }
 .appoitment label {
-    color: rgb(255, 255, 255); 
+    color: rgb(42, 87, 215); 
 }
 .appoitment textarea{
     width: 100%;
     border: none;
-    padding: 0.5em;
     border-radius: 5px;
+    font-size: 1rem;
     height: 50px;
     color: rgb(42, 87, 215); 
+    border: 1px solid rgb(42, 87, 215); ;
     outline: none;
+    text-transform: uppercase;
 }
 .overlay{
     opacity: 40%;
@@ -643,6 +662,9 @@ table thead  td{
     align-items: center;;
     flex-direction: column;
     background-color: rgb(42, 87, 215);
+}
+.div2 h3{
+    color: #fff;
 }
 .div2 button{
     margin: 2em 0;
@@ -760,14 +782,16 @@ table thead  td{
     left: 0;
     background-color: #fff;
     padding: 1em;
+    overflow-x:hidden;
+    overflow-y: visible;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 1100;
 }
 .close_icon{
     position: absolute;
     right: 6%;
-    font-size: 18px;
-    top: 0%;
+    font-size: 1rem;
+    top: 2%;
     color: #2a57d7;
     cursor: pointer;
 }
@@ -779,7 +803,7 @@ table thead  td{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(42, 87, 215);
+    box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
     position: relative;
     text-align: center;
     border-radius: 100%;
@@ -787,7 +811,7 @@ table thead  td{
 
 .walkin_in_section_upload_image #walkin_in_section_capture_image{
     font-size: 18px;
-    color: rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     border-radius: 100%;
     padding: 0.5rem;
@@ -795,7 +819,7 @@ table thead  td{
     position: absolute;
     right:9%;
     bottom: 14%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(42, 87, 215);
 }
 #walkin_in_section_capturedImage{
     position: absolute;
@@ -860,6 +884,7 @@ table thead  td{
 #authenticate{
     background-color: #2a57d7;
     color: rgb(255, 255, 255);
+    text-transform: uppercase;
 }
 #authenticate:hover{
     border: 1px solid  #2a57d7;
@@ -892,8 +917,8 @@ table thead  td{
     right: 3%;
     top: 2%;
     cursor: pointer;
-    font-size: 25px;
-    color: #fff;
+    font-size: 1rem;
+    color: #2a57d7;
 }
 .finger_print_div .authenticate{
     transform: rotate(360deg);
@@ -972,7 +997,7 @@ table thead  td{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(42, 87, 215);
+        box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
         position: relative;
         text-align: center;
         border-radius: 100%;
@@ -985,7 +1010,7 @@ table thead  td{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(42, 87, 215);
+        box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
         position: relative;
         text-align: center;
         border-radius: 100%;
@@ -1009,7 +1034,7 @@ table thead  td{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(42, 87, 215);
+     box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
         position: relative;
         text-align: center;
         border-radius: 100%;
@@ -1022,7 +1047,7 @@ table thead  td{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(42, 87, 215);
+     box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
         position: relative;
         text-align: center;
         border-radius: 100%;
@@ -1038,15 +1063,32 @@ table thead  td{
         position: relative;
         color: rgb(42, 87, 215);
       }
+      .search_bar_container i {
+        position: absolute;
+        right: 28%;
+        cursor: pointer;
+        top: 60%;
+      }
+      .search_bar_container {
+        background-color: #fff;
+        color: rgb(42, 87, 215);
+        padding: 0.5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        margin: 0.4em 0 0 0;
+        flex-direction: column;
+      }
       .upload_image {
-        width: 190px;
-        height: 190px;
+        width: 240px;
+         height: 240px;
         margin: 0 auto;
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(42, 87, 215);
+      box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
         position: relative;
         text-align: center;
         border-radius: 100%;
@@ -1055,21 +1097,21 @@ table thead  td{
         height: 100%;
         margin: 6rem 0 0 5em;
       }
-    }
       .walkin_in_section_upload_image{
-        width: 190px;
-        height: 190px;
+        width: 240px;
+        height: 240px;
         margin: 0 auto;
-        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(42, 87, 215);
+      box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
         position: relative;
         text-align: center;
         border-radius: 100%;
       }
-      .walkin_admission_form{
+    }
+
+      /* .walkin_admission_form{
         width: 100%;
         height: 100%;
         position: absolute;
@@ -1080,7 +1122,7 @@ table thead  td{
         padding: 2em;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         z-index: 1100;
-    }
+    } */
 
 .wrap{
     display: flex;
@@ -1110,7 +1152,7 @@ table thead  td{
     width: 18px;
     height: 18px;
     border-radius: 3px;
-    border: 1px solid #9098A9;
+    border: 1px solid #2a57d7;;
     transition: all 0.2s ease;
     margin-right: 8px; /* Space between the checkbox and the label text */
 }
