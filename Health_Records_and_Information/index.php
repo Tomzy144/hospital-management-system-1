@@ -67,7 +67,7 @@
         <div class="section1">
         </div>
         <div class="section2">
-        <!-- <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button> -->
+        <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button>
           </div>
           <div class="profile">
             <div class="profile_account hide">
@@ -464,7 +464,7 @@
   <div class="all_patient_list hide">
     <div class="patient_list_div">
             <div class="search_bar_container">
-                <span>Patient Admission List</span>
+                <h3>Patient Admission List</h3>
                 <i class = "bi bi-search"></i>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
@@ -565,7 +565,7 @@
     <div class="walkin_patient_list_div hide">
     <div class="table_container">
             <div class="search_bar_container">
-                <span>Walkin Patient Admission List</span>
+                <h3>Walkin Patient Admission List</h3>
                 <i class="bi bi-search"></i>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
@@ -678,12 +678,49 @@
                         <button class="btn-submit" onclick="appoitment_booking()">Book an Appoitment</button>
                     </div>
                 </div>
-                <div class="overlay hide"></div>
         <!-----END ALREADY EXISTING PROFILE-->
+        <div class="avalable_doctor hide">
+            <div class="appoitment" id="doctor_appoitment">
+                <form action="">
+                <div class="form-control">
+                    <label for="roles">Doctor Roles</label>
+                <select name="roles" id="">
+                    <option value="">Surgeon</option>
+                    <option value="">Health Practitioner</option>
+                    <option value="">Dentist</option>
+                    <option value="">Heart Doctor</option>
+                </select>
+                </div>
+                <div class="form-control">
+                    <label for="doctors">Available doctors</label>
+                    <select name="doctors" id="">
+                        <option value="">Dr Patrick John</option>
+                        <option value="">Dr Tomiwa John</option>
+                        <option value="">Dr Kingsley John</option>
+                    </select>
+                </div>
+                </form>
 
+                <form action="">
+                    <div class="form-control">
+                        <label for="">Patient Name</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="form-control">
+                        <label for="">Patient ID</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="form-control">
+                        <label for="">Reason for appoitment</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <button class="btn-submit">Book</button>
+                </form>
+            </div>
+            </div>
 
-          <!---APPOITMENT SECTION -->
-        <div class="appoitment_section hide">
+          <!-- -APPOITMENT SECTION -->
+        <!-- <div class="appoitment_section hide">
             <div class="cards_container">
             <div class="cards">
                 <div class="profile">
@@ -798,7 +835,7 @@
                     </div>
             </div>
             </div>
-        </div>
+        </div> -->
         <!----END OF APPOITMENT SECTION-->
         <script src="js/receptionist.js"></script>
 </body>

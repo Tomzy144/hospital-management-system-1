@@ -152,29 +152,14 @@ function close_walkin_patient_form(){
 }
 
 function checkup_form(){
-  $('.overlay_div').removeClass('hide');
   document.querySelector('.form_sections').style.display = 'flex';
   document.querySelector('.all_patient_list').classList.add("hide")
   $('.checkup_section').removeClass('hide');
-  $('.overlay_div').css({
-    zIndex:1200,
-  })
 }
 function close_checkup_form(){
-  $('.overlay_div').addClass('hide');
-  $('.overlay_div').css({
-    zIndex:1000,
-  })
   $('.checkup_section').addClass('hide');
 }
 
-// function close_walkin_patient_form(){
-//   $('.overlay_div').addClass('hide');
-//   $('.overlay_div').css({
-//     zIndex:1000,
-//   })
-//   $('.checkup_section').addClass('hide');
-// }
 
 
 
@@ -255,32 +240,6 @@ function close_show_patient_transfer_popup() {
 
 
 
-
-
-document.querySelector("#btn_appoitment").style.display = "none"
-function appoitment_booking(){
-  document.querySelector('.form_sections').style.display = 'none';
-  document.querySelector('.all_patient_list').classList.add("hide")
-  document.querySelector('.appoitment_section').classList.remove("hide")
-  document.querySelector("#btn_appoitment").style.display = "block"
-  document.querySelector('.checkup_section').style.display = 'none';
-  document.querySelector('.profile_container').style.display = 'none';
-  document.querySelector('.overlay').classList.add("hide")
-  document.querySelector('.overlay_div').classList.add("hide")
-}
-function book_appoitment(){
-  const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
-  form_doctor_roles_name.classList.remove("hide");
-}
-function submitRoles(){
-  const appoitment_form = document.querySelector(".appoitment_form");
-  appoitment_form.classList.remove("hidden");
-}
-
-function close_appoitment_form(){
-  const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
-  form_doctor_roles_name.classList.add("hide");
-}
 
 
 
@@ -386,25 +345,14 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
                 if(scheck==0){ //user Active
                   $('.alert_div').removeClass('hide');
                   $('alert_div').html('<div></div> REGISTRATION ERROR! <i class="bi-exclamation-triangle"></i><br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(500);
-                  window.alert("Patient's phonenumber is already registered");
+
+                  $('.alert_div').removeClass('hide');
+                  $('.alert_div').html(`<div>PATIENT PHONE NUMBER IS ALREADY REGISTERED <i class="bi-exclamation-triangle"></i></div>`).fadeIn(500).delay(5000).fadeOut(100);
               }else{ //user suspended
                     $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
-                    // _get_page('active-staff','active-staff');
-                    // alert_close();
-                    // window.alert("Registration Successful");
-                    $('#successful_registered').removeClass('hide');
-                    $('#successful_registered').text('Registration Successful');
-                    setTimeout(function() {
-                      $('#successful_registered').addClass('hide');
-                      
-                      // Show the second div for 3 seconds
-                      $('#patient_id').text("This patient's ID is "+ fpatient_id )
-                      $('#patient_id').removeClass('hide');
-                      setTimeout(function() {
-                          $('#generated_id').addClass('hide');            
-                      }, 3000);
-                  }, 3000);
-                    // window.alert("This patient's ID is "+ fpatient_id );
+                  $('.alert_div').removeClass('hide');
+                  $('.alert_div').addClass('successful');
+                  $('.alert_div').html(`<div>Registration Successful </div> <br/> This patient's ID is  ${fpatient_id} `).fadeIn(500).delay(5000).fadeOut(100);
                     getLatestImage(fpatient_id);
                    
               }
