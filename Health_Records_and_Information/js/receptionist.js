@@ -1,7 +1,30 @@
 'use strict';
 //Sidebat responsiveness
 
-//Convert all input to capital letter
+//BOOK APPOITMENT WITH AVAILABLE DOCTOR
+
+const roles = {
+    surgeon: ['Dr. Patrick John', 'Dr. Amanda Smith'],
+    healthPractitioner: ['Dr. Isreal Clarke', 'Dr. Issac Newton'],
+    dentist: ['Dr. Tomiwa John', 'Dr. Kingsley John', 'Dr. Emmanuel Stone'],
+    heartDoctor: ['Dr. Heartbeat', 'Dr. Ventricle', 'Dr. Aorta']
+};
+
+function updateDoctors() {
+    const roleSelect = document.getElementById('av-roles');
+    const doctorSelect = document.getElementById('av-doctors');
+    const selectedRole = roleSelect.value;
+
+    doctorSelect.innerHTML = ''; // Clear existing options
+    roles[selectedRole].forEach(doctor => {
+        const option = document.createElement('option');
+        option.textContent = doctor;
+        option.value = doctor.toLowerCase().replace(/ /g, '-'); // Convert name to a slug-like value
+        doctorSelect.appendChild(option);
+    });
+}
+
+
 
 //PROFILE IMAGE
 function click_icon_for_profile (){
@@ -91,13 +114,10 @@ function stopCamera() {
 
 function display_profile(){
   document.querySelector('.all_patient_list').classList.add("hide")
-  document.querySelector('.appoitment_section').classList.add("hide")
   setTimeout (function(){
-    document.querySelector('.profile_container').style.display = 'flex';
-    document.querySelector('.overlay_div').classList.remove("hide")
+    document.querySelector('.profile_container').classList.remove("hide")
     document.querySelector('.checkup_section').classList.add("hide")
   }, 2000)
-  document.querySelector("#btn_appoitment").style.display = "none"
   $('.print_icon').css({
     color:'green'
   })
@@ -105,55 +125,54 @@ function display_profile(){
     backgroundColor:'#fff'
   })
 }
+
+  function appoitment_booking(){
+    $('.appoitment').removeClass('hide')
+    $('.av_doctor_role').removeClass('hide')
+    document.querySelector('.profile_container').classList.add("hide")
+  }
+  function bookPatient(){
+    $('.appoitment').removeClass('hide')
+    $('.av_doctor_role').addClass('hide')
+    $('.book_patient').removeClass('hide')
+  }
+
 function patient_list(){
   document.querySelector('.form_sections').style.display = 'none';
-  document.querySelector('.checkup_section').classList.add("hide")
   document.querySelector('.all_patient_list').classList.remove("hide")
   document.querySelector('.patient_list_div').classList.remove("hide")
   document.querySelector('.walkin_patient_list_div').classList.add("hide")
-  document.querySelector('.appoitment_section').classList.add("hide")
-  document.querySelector("#btn_appoitment").style.display = "none"
   document.querySelector('.profile_container').style.display = 'none';
 }
 function _walkin_patient_list(){
   document.querySelector('.form_sections').style.display = 'none';
-  document.querySelector('.checkup_section').classList.add("hide")
   document.querySelector('.all_patient_list').classList.remove("hide")
   document.querySelector('.patient_list_div').classList.add("hide")
   document.querySelector('.walkin_patient_list_div').classList.remove("hide")
-  document.querySelector('.appoitment_section').classList.add("hide")
-  document.querySelector("#btn_appoitment").style.display = "none"
-  document.querySelector('.profile_container').style.display = 'none';
+  document.querySelector('.profile_container').classList.add("hide")
+  document.querySelector('.checkup_section').classList.add("hide")
 }
 
 function patient_admission_form_section(){
   document.querySelector('.form_sections').style.display = 'flex';
   document.querySelector('.all_patient_list').classList.add("hide")
-  document.querySelector('.checkup_section').classList.add("hide")
   document.querySelector('.appoitment_section').classList.add("hide")
   document.querySelector("#btn_appoitment").style.display = "none"
   document.querySelector('.profile_container').style.display = 'none';
 };
+
 function walkin_patient_form(){
   $('.overlay_div').removeClass('hide');
   document.querySelector('.form_sections').style.display = 'flex';
   document.querySelector('.all_patient_list').classList.add("hide")
-  $('.overlay_div').css({
-    zIndex:1200,
-  })
+  document.querySelector('.checkup_section').classList.add("hide")
   $('.walkin_admission_form').removeClass('hide');
 }
 function close_walkin_patient_form(){
-  $('.overlay_div').addClass('hide');
-  $('.overlay_div').css({
-    zIndex:1000,
-  })
   $('.walkin_admission_form').addClass('hide');
 }
 
 function checkup_form(){
-  document.querySelector('.form_sections').style.display = 'flex';
-  document.querySelector('.all_patient_list').classList.add("hide")
   $('.checkup_section').removeClass('hide');
 }
 function close_checkup_form(){
@@ -170,13 +189,14 @@ function deactivateFingerPrint(){
   document.querySelector('.finger_print_div').classList.add("hide");
 }
 function close_profile(){
-  document.querySelector('.form_sections').style.display = 'flex';
-  document.querySelector('.all_patient_list').classList.add("hide")
-  document.querySelector('.appoitment_section').classList.add("hide")
-  document.querySelector('.checkup_section').style.display = 'block';
-  document.querySelector('.profile_container').style.display = 'none';
-  document.querySelector('.overlay').classList.add("hide")
-  document.querySelector("#btn_appoitment").style.display = "none"
+  document.querySelector('.checkup_section').classList.add("hide");
+  document.querySelector('.profile_container').classList.add('hide');
+  $('.print_icon').css({
+    color:'#fff'
+  })
+  $('.finger_print_div').css({
+    backgroundColor:'rgb(42, 87, 215)'
+  })
 }
 
 

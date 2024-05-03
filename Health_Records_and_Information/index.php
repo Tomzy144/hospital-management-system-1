@@ -67,7 +67,6 @@
         <div class="section1">
         </div>
         <div class="section2">
-        <button id="btn_appoitment" onclick="book_appoitment()">Make an Appoitment</button>
           </div>
           <div class="profile">
             <div class="profile_account hide">
@@ -128,16 +127,15 @@
     <div class="alert_div hide" id='patient_id'></div>
                <!----START OF CHECKUP SECTION-->
                <div class="checkup_section hide">
-               <i class="bi bi-x-lg close_icon" onclick="close_checkup_form()" ></i>
-            <div class="form-control">
+            <!-- <div class="form-control">
                 <label for="">Patient Name</label>
                 <input type="text" name="" id="">
             </div>
             <div class="form-control">
             <label for="">Patient Id</label>
                 <input type="text" name="" id="">
-            </div>
-            <div class ="btn-submit" id="authenticate" onclick="activateFingerPrint()">
+            </div> -->
+            <div  id="authenticate" onclick="activateFingerPrint()">
             <i class="bi bi-fingerprint"></i> Fingerprint authentication</div>
             <div class="finger_print_div hide">
             <!-- <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i> -->
@@ -663,7 +661,7 @@
 
         <!-----START ALREADY EXISTING PROFILE-->
                 <div class="profile_container hide">
-                <i class="bi bi-x-lg close_icon" onclick="close_profile()"></i>
+                <!-- <i class="bi bi-x-lg close_icon" onclick="close_profile()"></i> -->
                     <div class="div1">
                     <h3>Date of Birth : 23-09-2023</h3>
                         <h3>Address: 531 RockVale Dr, Piedmont, South Carolina.</h3>
@@ -675,33 +673,35 @@
                         <h3>PAT0003</h3>
                         <h3>Female</h3>
                         <h3>Active</h3>
-                        <button class="btn-submit" onclick="appoitment_booking()">Book an Appoitment</button>
+                        <div>
+                            <button class="btn-submit" onclick="close_profile()">Cancle</button>
+                            <button class="btn-submit" onclick="appoitment_booking()">Book an Appoitment</button>
+                        </div>
                     </div>
                 </div>
         <!-----END ALREADY EXISTING PROFILE-->
-        <div class="avalable_doctor hide">
-            <div class="appoitment" id="doctor_appoitment">
-                <form action="">
-                <div class="form-control">
-                    <label for="roles">Doctor Roles</label>
-                <select name="roles" id="">
-                    <option value="">Surgeon</option>
-                    <option value="">Health Practitioner</option>
-                    <option value="">Dentist</option>
-                    <option value="">Heart Doctor</option>
-                </select>
-                </div>
-                <div class="form-control">
-                    <label for="doctors">Available doctors</label>
-                    <select name="doctors" id="">
-                        <option value="">Dr Patrick John</option>
-                        <option value="">Dr Tomiwa John</option>
-                        <option value="">Dr Kingsley John</option>
-                    </select>
-                </div>
-                </form>
-
-                <form action="">
+        <div class="avalable_doctor">
+            <div class="appoitment hide">
+            <form action="" class="av_doctor_role hide">
+    <div class="form-control">
+        <label for="av-roles">Doctor Roles</label>
+        <select name="roles" id="av-roles" onchange="updateDoctors()">
+            <option value="select">Select</option> 
+            <option value="surgeon">Surgeon</option> 
+            <option value="healthPractitioner">Health Practitioner</option>
+            <option value="dentist">Dentist</option>
+            <option value="heartDoctor">Heart Doctor</option>
+        </select>
+    </div>
+    <div class="form-control">
+        <label for="av-doctors">Available Doctors</label>
+        <select name="doctors" id="av-doctors">
+            <!-- Options will be dynamically filled based on role selection -->
+        </select>
+    </div>
+    <button type="button" class="btn-submit" onclick="bookPatient()">BOOK PATIENT</button>
+</form>
+                <form action="" class="book_patient hide">
                     <div class="form-control">
                         <label for="">Patient Name</label>
                         <input type="text" name="" id="">
@@ -709,6 +709,14 @@
                     <div class="form-control">
                         <label for="">Patient ID</label>
                         <input type="text" name="" id="">
+                    </div>
+                    <div class="form-control">
+                        <label for="">DATE</label>
+                        <input type="date" name="" id="">
+                    </div>
+                    <div class="form-control">
+                        <label for="">TIME</label>
+                        <input type="time" name="" id="">
                     </div>
                     <div class="form-control">
                         <label for="">Reason for appoitment</label>
