@@ -144,6 +144,7 @@ function patient_list(){
   document.querySelector('.walkin_patient_list_div').classList.add("hide")
   document.querySelector('.profile_container').style.display = 'none';
 }
+
 function _walkin_patient_list(){
   document.querySelector('.form_sections').style.display = 'none';
   document.querySelector('.all_patient_list').classList.remove("hide")

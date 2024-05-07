@@ -1,8 +1,8 @@
 
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('Poppins-Regular.ttf') format('truetype'); /* Adjust the path if necessary */
+  font-family: 'SEGOEUI';
+  src: url('SEGOEUI.TTF') format('truetype'); /* Adjust the path if necessary */
   font-weight: normal; /* Specify the weight if needed */
   font-style: normal; /* Specify the style if needed */
 }
@@ -10,10 +10,11 @@
           margin: 0;
           padding: 0;
           height: 100%;
-          font-family: 'Poppins';
+          font-family: 'SEGOEUI';
       }
 
 
+      
 /* tomiwa's */
 .login-section{
   width: 100%;

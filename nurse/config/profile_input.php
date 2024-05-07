@@ -60,30 +60,25 @@ $patient_id = $_POST['patient_Id'];
 
 
 <!--PERSONAL PROFILE VITAL AFTER CLICKING ON THE ACCEPT BUTTON--->
-<div class="personal_profile_vital">
-  <div class="patient_container">
-      <div class="patient_info">
-      <div class="patient_profile">
+<div class="patient-personal-detail">
+
+</div>
+<div class="patient-profile">
+      <div class="patient-info">
       <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/patient/<?php echo $passport; ?>" alt="Profile Picture" />
-
-
       <div class="patient_name_id">
-          <span><?php echo $patient_name ?></span>
+          <span><?php echo $patient_name ?></span> -----------
           <span>  <?php echo $patient_id ?> </span>
           </div>
           </div>
-          <button class= "btn_ward" onclick="ward(),getWards();">Ward</button>
-              <!--Wards--->
-              <div class="ward_container hidden">
+                <div class="flex-div">
+              <div class="ward-div">
                     <label for="ward"   >Change Ward</label>
-                    <select name="ward" id= "wards">
+                    <select name="ward" id= "wards" onclick="ward(),getWards();">
                     <option></option>
                     </select>
-                </div>
-
-
-          <button class= "btn_ward_round" onClick="ward_round()">Ward Round</button>
-          <div class="ward_round_container hidden">
+            </div>
+          <div class="ward-div">
               <label for="stage">Stage</label>
               <select name="stage" id="stage">
                   <option value="no_selection"></option>
@@ -93,9 +88,9 @@ $patient_id = $_POST['patient_Id'];
               <label for="note">WR Note</label>
               <textarea name="note" id="note" cols="30" rows="10"></textarea>
           </div>
+          </div>
 
-          <button class= "btn_vital" onClick="patientVital()">Vital Input</button>
-          <div class="vitals_input hidden">
+          <div class="ward-div">
           <form action="">
               <div class="form_control">
     <label for="temperature">Temperature</label>
@@ -188,8 +183,8 @@ $patient_id = $_POST['patient_Id'];
     </form>
 </div>
 </div>
+<div class="flex">
 <button class="btn_submit" id="btn_submit" onclick="vital_input()">Save all</button>
 <button class="btn_submit" onClick="show_appoitment_section()">Transfer</button>
-</div>
 </div>
 </div>

@@ -8,6 +8,7 @@ $nurse_id = $_POST['nurse_id'];
 
     
 
+
 <?php    
 
 $fetch_nurse_profile = $callclass->_get_nurse_details($conn, $s_nurse_id);
@@ -82,19 +83,12 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
             
         <div class="navbar">
             <div class="section1">
-            <button class="hide" id="btn_appoitment" onClick="appoitment_booking()">Make an Appoitment</button>
-            <i class="bi bi-justify-left" id="show_sidebar" onclick="show_sidebar()"></i>
+                
             </div>
             <div class="section2">
-                    <div class="notification_div">
-                        <i class="bi bi-person-fill" id="notification_icon">
-                            <div class="notification1">9</div>
-                        </i>
-                        <i class="bi bi-bell-fill" id="notification_icon">
-                        <div class="notification2">15</div>
-                        </i>
-                    </div>
-                <div class="profile">
+                
+            </div>
+            <div class="profile">
                     <div class="profile_account hide">
                         <img id="image_profile_account" src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
                         <h4><?php echo $fullname ?></h4>
@@ -106,30 +100,30 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
                         <div class="active"></div>
                     </div> 
                     <span><?php echo $fullname ?></span>
-                    <i class="bi bi-caret-down-fill" id="icon-drop" onClick="click_icon_for_profile()"></i>
+                    <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
                 </div>
+        </div>
+      <!------Sidebar built by kingsley-->
+      <div class="sidebar">
+        <!-- onclick="homepage_section()" -->
+               <div class="_sidebar_contents">
+               </div>
+            <div class="_sidebar_links">
+            <div class="_links" onclick="appoitmentSection()">
+                <i class="bi bi-calendar2-plus"></i> <span id="rm">Appoitments</span>
+                </div>
+                <div class="_links" onclick="availablePatientList()">
+                <i class="fa-solid fa-people-group"></i> <span id="rm">Patient List</span>
+                </div>
+                <div class="_links" onclick="document.getElementById('logoutform').submit();">
+                <i class="fa-solid fa-right-from-bracket"> </i> <span id="rm">Logout</span>
+                </div>
+                <form method="post" action="../config/code.php" id="logoutform">
+                    <input type="hidden" name="action" value="logout"/>    
+                </form>
             </div>
         </div>
-        <div class="sidebar responsive">
-            <div class="sidebar_contents">
-            </div>
-            <div class="sidebar_icons">
-            <i class="bi bi-x-square-fill" id="sidebar_close" onclick="close_sidebar()"></i>
-                <i class="bi bi-calendar-date-fill icons" onClick="back_to_appoitment_list()">
-                    &nbsp;<span>APPOITMENT</span>
-                </i>
-                <i class="bi bi-pencil-square icons"  onClick="show_profile_list()" >
-                &nbsp;<span>PATIENT PROFILE</span>
-                </i>
-                <i class=" bi-box-arrow-right icons">
-                    &nbsp;<span onclick="document.getElementById('logoutform').submit();">LOG OUT</span>
-                    <form method="post" action="../config/code.php" id="logoutform">
-                        <input type="hidden" name="action" value="logout"/>    
-                    </form>
-                </i>
-            </div>
-        </div>
-    </div>
+         <!--END OF SIDEBAR AND NAVBAR-->
 <?php include 'config/page-content.php'?>
     <script src="js/script.js"></script>
     <!-- <script src="js/section.js"></script> -->

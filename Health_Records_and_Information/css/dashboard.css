@@ -1,7 +1,7 @@
 
 @font-face {
-    font-family: 'Poppins';
-    src: url('Poppins-Regular.ttf') format('truetype'); 
+    font-family: 'SEGOEUI';
+    src: url('SEGOEUI.TTF') format('truetype'); 
     font-weight: normal; /* Specify the weight if needed */
     font-style: normal; /* Specify the style if needed */
   }
@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'Poppins';
+            font-family: 'SEGOEUI';
             animation: fadeIn 0.5s ease-in-out;
         }
   
@@ -224,6 +224,7 @@ h3{
     background-color: rgb(42, 87, 215);
     color: rgb(255, 255, 255);
 }
+
 /*PATIENT FORM*/
 .form_sections{
     width: 100%;
@@ -386,14 +387,14 @@ h3{
       margin: 0.5rem 0;
   }
   label{
-      font-size: 1rem;
+    font-size: 1.2rem;
       color: rgb(42, 87, 215);
       text-transform: uppercase;
   }
   input {
     padding: 0.5em;
     color: rgb(42, 87, 215);
-    font-size: 1rem;
+    font-size: 1.1rem;
   border: none;
   border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
@@ -438,12 +439,12 @@ h3{
   }
   .all_patient_list{
     display: flex;
-    margin: 5.5rem 0 0 19rem;
   }
   .patient_list_div {
     width: 100%;
-    overflow: auto;
+    margin: 5.5rem 0 0 19rem;
 }
+
 
  .search_bar_container {
     background-color: #fff;
@@ -480,7 +481,7 @@ h3{
     top: 0;
     z-index: 1; 
     background-color: #fff; 
-    font-size: 1em;
+    font-size: 1.3em;
     text-align: center;
 }
 table thead  td{
@@ -501,6 +502,7 @@ table thead  td{
  table tbody td img{
     width: 50px;
     height: 50px;
+    font-size: 1rem;
     border-radius: 100%;
 }
 
@@ -517,16 +519,15 @@ table thead  td{
     white-space: nowrap;
     position: relative;
     font-size: 0.95rem;
-    vertical-align: top;
+    vertical-align: center;
+    font-size: 1rem;
     line-height: 1.2;
     border-bottom: 1px solid #fff;
 }
 
 .walkin_patient_list_div{
+    margin: 5.5rem 0 0 19rem;
     width: 100%;
-    height: fit-content;
-    height: 800px;
-    overflow: auto;;
 }
 ._action{
     cursor: pointer;
@@ -537,14 +538,14 @@ table thead  td{
     max-width: 300px;
     position: fixed;
     right: 0;
-    color: #fff;
-    bottom: 0;
-    background-color: #2a57d7;
+    color: #2a57d7;
+    top: 0;
+    background-color: #ffffff;
     z-index: 1100;
     padding: 0.9em;
   }
 ._box_popup .red{
-    color: #ffffff;
+    color: #2a57d7;
     position: absolute;
     right: 3%;
     font-size: 1rem;
@@ -561,7 +562,7 @@ table thead  td{
 cursor: pointer;
 }
 h3{
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
 }
 
@@ -939,8 +940,15 @@ h3{
     width: 100%;
     height: 100%;
     display: flex;
-    margin: 5.5rem 0 0 7.6rem;
   }
+  .patient_list_div {
+    width: 100%;
+    margin: 5.5rem 0 0 7.6rem;
+}
+  .walkin_patient_list_div {
+    width: 100%;
+    margin: 5.5rem 0 0 7.6rem;
+}
 
  .new_intake_admission_form{
     margin: 5em 0 0 7em;

@@ -10,6 +10,7 @@
 <link href="<?php echo $website_url?>/nurse/style/animate.css" type="text/css" rel="stylesheet" media="all">
 <link href="<?php echo $website_url?>/nurse/style/aos.css" type="text/css" rel="stylesheet" />
 <link href="<?php echo $website_url?>/nurse/style/dashboard.css" type="text/css" rel="stylesheet" />
+<link href="<?php echo $website_url?>/nurse/style/fontawesome/css/all.min.css" type="text/css" rel="stylesheet" />
 
 <meta property="og:type" content="Website" />
 <meta property="og:site_name" content="<?php echo $thename?>">
@@ -18,5 +19,6 @@
 <script src="<?php echo $website_url?>/nurse/js/jquery-v3.6.1.min.js"></script>
 <script src="<?php echo $website_url?>/nurse/js/aos.js"></script> 
 <script src="<?php echo $website_url?>/nurse/js/script.js"></script>
+
 
 

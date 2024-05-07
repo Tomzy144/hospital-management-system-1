@@ -247,7 +247,7 @@
 
         <!-- Checkbox for Female -->
         <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" type="checkbox" id="_create_card" onchange="create_family_card()" style="display: none;" />
+            <input class="inp-cbx" type="checkbox" id="_create_card"  name = "no" onchange="create_family_card()" style="display: none;" />
           
             <label class="cbx" for="_create_card">
                 <span>
@@ -369,7 +369,7 @@
 
         <!--START OF WALKIN ADMISSION FORM2-->
             <div class="walkin_admission_form hide">
-            <i  class="bi bi-x-lg close_icon" onclick="close_walkin_patient_form()"></i>
+            <i  class="bi bi-x-square close_icon" onclick="close_walkin_patient_form()"></i>
             <div class="form-container">
         <h3>WalkIn Admission Form</h3>
         <div class="walkin_in_section_upload_image">
@@ -508,14 +508,14 @@
 
 
             <div class="_box_popup hide" id="patient_popup">
-        <i class="bi bi-x-lg red" onclick="close_show_patient_transfer_popup()"></i>
+        <i class="bi bi-x-square red" onclick="close_show_patient_transfer_popup()"></i>
         <div>
             <h5 onclick="nurse_appoitment()">Transfer to Nurse Unit</h5>
         </div>
         </div>
             <!----NURSE APPOITMENT-->
 <div class="appoitment hide" id="nurse_appoitment">
-            <i class="bi bi-x-lg red" onclick="_close_all_patient_appoitments()"></i>
+            <i class="bi bi-x-square red" onclick="_close_all_patient_appoitments()"></i>
                 <h3>Transfer to Nurse Unit</h3>
                 <form action="" id="">
                     <div class="sections">
@@ -561,7 +561,6 @@
 
         <!--START OF WALKIN PATIENTS FOR LIST2-->
     <div class="walkin_patient_list_div hide">
-    <div class="table_container">
             <div class="search_bar_container">
                 <h3>Walkin Patient Admission List</h3>
                 <i class="bi bi-search"></i>
@@ -601,9 +600,9 @@
                 ?>
                 </tbody>
             </table>
-        </div>
+            
         <div class="_box_popup hide" id="walkin_popup">
-        <i class="bi bi-x-lg red" onclick="close_show_book_popup()"></i>
+        <i class="bi bi-x-square red" onclick="close_show_book_popup()"></i>
         <div>
             <h5 onclick="lab_appoitment()">Transfer to Labouratory Unit</h5>
 
@@ -612,7 +611,7 @@
 </div>
 <!----LAB APPOITMENT---->
 <div class="appoitment hide" id="lab_appoitment">
-            <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
+            <i class="bi bi-x-square red" onclick="_close_all_appoitment()"></i>
                 <h3>Labouratory Unit</h3>
                 <form action="" id="">
                 <div class="form-control">
@@ -632,7 +631,7 @@
             </div>
             <!-----RADIOLOGY APPOITMENT-->
 <div class="appoitment hide" id="rad_appoitment">
-            <i class="bi bi-x-lg red" onclick="_close_all_appoitment()"></i>
+            <i class="bi bi-x-square red" onclick="_close_all_appoitment()"></i>
                 <h3>Radiology Unit</h3>
                 <form action="" id="">
                 <div class="form-control">
