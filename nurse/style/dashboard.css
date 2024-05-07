@@ -224,9 +224,14 @@
         }
         
 /*APPOITMENT SECTION*/
+#landing_section-container{
+    width: 100%;
+    display: flex;
+}
 .appoitment_section{
     display: flex;
 }
+.
 
 .appoitment_section.hide{
     display: none;
@@ -401,6 +406,7 @@ table thead  td{
 }
 label{
     padding: 0.5em;
+    margin: 0 0.5rem;
 }
 .ward-div select{
     padding: 0.5rem;
@@ -410,6 +416,7 @@ label{
     color:  rgb(42, 87, 215);
     cursor: pointer;
     font-size: 1.3rem;
+    margin: 0 1rem;
     text-transform: uppercase;
 }
 .ward-div textarea{
@@ -419,6 +426,7 @@ label{
     outline: none;
     color:  rgb(42, 87, 215);
     font-size: 1.3rem;
+    margin: 0 1rem;
     text-transform: uppercase;
 }
 form{
@@ -496,8 +504,8 @@ input{
     }
     .patient-profile{
         height: auto;
-        display: flex;
         flex-direction: column;
-        margin: 5rem 0 0 8rem ;
+        margin: 5rem 0 0 7.8rem ;
+        width: 100%;
     }
     }
