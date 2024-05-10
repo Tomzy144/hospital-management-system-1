@@ -113,7 +113,7 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
                 <i class="bi bi-calendar2-plus"></i> <span id="rm">Appoitments</span>
                 </div>
                 <div class="_links" onclick="availablePatientList()">
-                <i class="fa-solid fa-people-group"></i> <span id="rm">Patient List</span>
+                <i class="fa-solid fa-people-group"></i> <span id="rm">Patient list</span>
                 </div>
                 <div class="_links" onclick="document.getElementById('logoutform').submit();">
                 <i class="fa-solid fa-right-from-bracket"> </i> <span id="rm">Logout</span>

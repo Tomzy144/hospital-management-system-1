@@ -6,7 +6,7 @@
         <div class="appoitment_section">
             <div class="patient_list_div">
             <div class="search_bar_container">
-                <h3>APPOITMENT DETAILS</h3>
+                <h3>Appoitment details</h3>
                 <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
@@ -88,7 +88,7 @@
     <div class="available-patient-list hide">
     <div class="patient_list_div">
             <div class="search_bar_container">
-                <h3>AVAILABLE PATIENTS</h3>
+                <h3>Available patients</h3>
                 <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
@@ -111,11 +111,356 @@
                             <td>KINGSLEY EFFIONG</td>
                             <td>PAT0001</td>
                             <td>
-                                <i class="bi bi-three-dots _action"></i>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>KINGSLEY EFFIONG</td>
+                            <td>PAT0001</td>
+                            <td>
+                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 </div>
     </div>
+
+    <div class="avalable_doctor hide">
+            <div class="appoitment">
+            <form action="" class="av_doctor_role hide">
+    <div class="form-control">
+        <label for="av-roles">Doctor Roles</label>
+        <select name="roles" id="av-roles" onchange="updateDoctors()">
+            <option value="select">Select</option> 
+            <option value="surgeon">Surgeon</option> 
+            <option value="healthPractitioner">Health Practitioner</option>
+            <option value="dentist">Dentist</option>
+            <option value="heartDoctor">Heart Doctor</option>
+        </select>
+    </div>
+    <div class="form-control">
+        <label for="av-doctors">Available Doctors</label>
+        <select name="doctors" id="av-doctors">
+            <!-- Options will be dynamically filled based on role selection -->
+        </select>
+    </div>
+    <button type="button" class="btn-submit" onclick="bookPatient()">Book patient</button>
+</form>
+                <form action="" class="book_patient hide">
+                    <div class="form-control">
+                        <label for="">Patient name</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="form-control">
+                        <label for="">Patient id</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="form-control">
+                        <label for="">Date</label>
+                        <input type="date" name="" id="">
+                        <label for="">Time</label>
+                        <input type="time" name="" id="">
+                    </div>
+                    <div class="form-control">
+                        <label for="">Reason for appoitment</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <button class="btn-submit">Book</button>
+                </form>
+            </div>
+            </div>
+
     

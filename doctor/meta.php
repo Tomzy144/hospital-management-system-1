@@ -10,6 +10,7 @@
 <link href="<?php echo $website_url?>/doctor/css/animate.css" type="text/css" rel="stylesheet" media="all">
 <link href="<?php echo $website_url?>/doctor/css/aos.css" type="text/css" rel="stylesheet" />
 <link href="<?php echo $website_url?>/doctor/css/dashboard.css" type="text/css" rel="stylesheet" />
+<link href="<?php echo $website_url?>/doctor/css/fontawesome/css/all.min.css" type="text/css" rel="stylesheet" />
 
 <meta property="og:type" content="Website" />
 <meta property="og:site_name" content="<?php echo $thename?>">

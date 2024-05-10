@@ -185,6 +185,6 @@ $patient_id = $_POST['patient_Id'];
 </div>
 <div class="flex">
 <button class="btn_submit" id="btn_submit" onclick="vital_input()">Save all</button>
-<button class="btn_submit" onClick="show_appoitment_section()">Transfer</button>
+<button class="btn_submit" onclick="selectDoc()">Transfer patient</button>
 </div>
 </div>

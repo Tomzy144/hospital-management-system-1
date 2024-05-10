@@ -62,6 +62,7 @@
         }
     </script>
     
+    
   <!--START OF SIDEBAR AND NAVBAR -->
    <div class="navbar">
         <div class="section1">
@@ -93,22 +94,28 @@
                </div>
             <div class="_sidebar_links">
                 <div class="_links" onclick="patient_admission_form_section()">
-                <i class="fa-solid fa-bed"></i> <span id="rm">Patient Admission Form</span>
+                <i class="fa-solid fa-bed"></i> 
+                <span id="rm">Patient admission form</span>
                 </div>
                 <div class="_links" onclick="walkin_patient_form()">
-                <i class="fa-solid fa-person-walking-arrow-right"></i> <span id="rm">Walkin Patient Admission Form</span>
+                <i class="fa-solid fa-person-walking-arrow-right"></i> 
+                <span id="rm">Walkin patient admission Form</span>
                 </div>
                 <div class="_links" onclick="checkup_form()">
-                <i class="fa-solid fa-person-circle-check"></i> <span id="rm">Check Up</span>
+                <i class="fa-solid fa-person-circle-check"></i> 
+                <span id="rm">Check up</span>
                 </div>
                 <div class="_links" onclick="patient_list()">
-            <i class="fa-solid fa-people-group"></i> <span id="rm">Patient List</span>
+            <i class="fa-solid fa-people-group"></i> 
+            <span id="rm">Patient list</span>
                 </div>
                 <div class="_links" onclick="_walkin_patient_list()">
-            <i class="fa-solid fa-people-group"></i> <span id="rm">WalkIn Patient List</span>
+            <i class="fa-solid fa-people-group"></i> 
+            <span id="rm">Walkin patient list</span>
                 </div>
                 <div class="_links" onclick="document.getElementById('logoutform').submit();">
-                <i class="fa-solid fa-right-from-bracket"> </i> <span id="rm">Logout</span>
+                <i class="fa-solid fa-right-from-bracket"> </i> 
+                <span id="rm">Logout</span>
                 </div>
                 <form method="post" action="../config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
@@ -145,7 +152,7 @@
         <!---END OF CHECKUP SECTION--->
     <div class="new_intake_admission_form">
     <div class="form-container">
-        <h3>Patient Admission Form</h3>
+        <h3>Patient admission form</h3>
         <form action="config/code.php?update_profile_pix" id="add_patient_pic" enctype="multipart/form-data" method="post">
             <div class="upload_image" action ="config/code?=update_profile_pix" title="update profile picture">
                 <video id="videoElement" width="400" height="300" autoplay></video>
@@ -171,22 +178,22 @@
         </form>
 
         <form action="" id="registeration_form" enctype="multipart/form-data" method="post">
-            <h3>Personal Details</h3>
+            <h3>Personal details</h3>
             <div class="sections">
             <div class="form-control">
-            <label for="full_name">Full Name</label>
+            <label for="full_name">Full name</label>
             <input type="text"  id="fullname" autocapitalize="off" autocomplete="off">
         </div>
             <div class="form-control">
-            <label for="date_of_birth">Date of Birth</label>
+            <label for="date_of_birth">Date of birth</label>
             <input type="date" id="dob">
         </div>
         <div class="form-control">
-            <label for="home_address">Home Address</label>
+            <label for="home_address">Home address</label>
             <input type="text" id="address" autocomplete="off">
         </div>
             <div class="form-control">
-            <label for="phone_number">Phone Number</label>
+            <label for="phone_number">Phone number</label>
             <input type="text" id="phonenumber">
         </div>
         <div class="form-control2">
@@ -220,7 +227,7 @@
     </div>
 </div>
         <div class="form-control">
-        <label for="hmo" id ="hospital_plan">Hospital Plans</label>
+        <label for="hmo" id ="hospital_plan">Hospital plans</label>
         <select name="" id="select_box">
             <option id="option" value="">Loading...</option>
         </select>
@@ -230,7 +237,7 @@
     </div>
         <!--Check if any existing family plan--->
         <div class="form-control2 hide" id="existing_plan_or_not"">
-        <label for="">Any Existing Family Plan?</label>
+        <label for="">Any existing family plan?</label>
     <div class="wrap">
         <!-- Checkbox for Male -->
         <div class="checkbox-wrapper-46">
@@ -264,16 +271,16 @@
 </div>
             <!--Family plan authentication--->
     <div class="family_plan_section hide">
-            <label for="">Insert your Family Id</label>
+            <label for="">Insert your family id</label>
             <input type="text" onkeyup="check_family_card_validity()" name="" id="family_card_id">
             <div class="valid" id="result"></div>
             <button class="btn" id ="users_checker" onclick="check_family_card_users();" type="button">Check for users</button>
             </div>
         </div>
-    <h3>Next of Kins</h3>
+    <h3>Next of kins</h3>
     <div class="sections">
         <div class="form-control">
-        <label for="full_name" class="form_icon">Full Name</label>
+        <label for="full_name" class="form_icon">Full name</label>
         <input type="text"  id="kname" autocapitalize="off" autocomplete="off">
     </div>
         <div class="form-control">
@@ -281,11 +288,11 @@
         <input type="text"  id="krelationship">
     </div>
         <div class="form-control">
-        <label for="home_address">Home Address</label>
+        <label for="home_address">Home address</label>
         <input type="text"  id="kaddress"  autocomplete="off">
     </div>
         <div class="form-control">
-        <label for="phone_number">Phone Number</label>
+        <label for="phone_number">Phone number</label>
         <input type="text"  id="kphonenumber">
     </div>
    <div class="form-control2">
@@ -321,7 +328,7 @@
 
     </div>
 
-<h3>Social History</h3>
+<h3>Social history</h3>
 <div class="sections">
     <div class="form-control">
     <label for="Occupation">Occupation</label>
@@ -329,35 +336,35 @@
 </div>
 
     <div class="form-control">
-    <label for="Occupation">Past Obsterics</label>
+    <label for="Occupation">Past obsterics</label>
     <input type="text" id="past_obsterics" autocapitalize="off" autocomplete="off">
 </div>
 
     <div class="form-control">
-    <label for="Occupation">Medical History</label>
+    <label for="Occupation">Medical history</label>
     <input type="text" id="medical_history" autocapitalize="off" autocomplete="off" >
 </div>
     <div class="form-control">
-    <label for="Occupation">Sexual History</label>
+    <label for="Occupation">Sexual history</label>
     <input type="text" id="sexual_history" autocapitalize="off" autocomplete="off">
 </div>
 
     <div class="form-control">
-    <label for="Occupation">Past Disease</label>
+    <label for="Occupation">Past disease</label>
     <input type="text" id="past_disease" autocapitalize="off" autocomplete="off">
 </div>
 
     <div class="form-control">
-    <label for="Occupation">Family Disease</label>
+    <label for="Occupation">Family disease</label>
     <input type="text" id="family_disease" autocapitalize="off" autocomplete="off">
   
 </div>
     <div class="form-control">
-    <label for="Occupation">Past Surgery</label>
+    <label for="Occupation">Past surgery</label>
     <input type="text" id="past_surgery" autocapitalize="off" autocomplete="off">
 </div>
     <div class="form-control">
-    <label for="Occupation">Health History</label>
+    <label for="Occupation">Health history</label>
     <input type="text" id="health_history" autocapitalize="off" autocomplete="off">
 </div>
 </div>
@@ -371,7 +378,7 @@
             <div class="walkin_admission_form hide">
             <i  class="bi bi-x-square close_icon" onclick="close_walkin_patient_form()"></i>
             <div class="form-container">
-        <h3>WalkIn Admission Form</h3>
+        <h3>WalkIn admission form</h3>
         <div class="walkin_in_section_upload_image">
              <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
             <i class="bi bi-plus" id="walkin_in_section_capture_image" onclick="openCamera2()"></i>
@@ -393,22 +400,22 @@
         <div class="walkin_in_section_btn_capture hide" onclick="takePicture2()">Capture</div>
         </div>
         <form action="walkin_registration_form">
-            <h3>Personal Details</h3>
+            <h3>Personal details</h3>
             <div class="sections">
             <div class="form-control">
-            <label for="full_name">Full Name</label>
+            <label for="full_name">Full name</label>
             <input type="text"  id="wpatient_name" autocapitalize="off" autocomplete="off">
         </div>
             <div class="form-control">
-            <label for="date_of_birth">Date of Birth</label>
+            <label for="date_of_birth">Date of birth</label>
             <input type="date" id="wdob">
         </div>
         <div class="form-control">
-            <label for="home_address">Home Address</label>
+            <label for="home_address">Home address</label>
             <input type="text" id="waddress" autocomplete="off">
         </div>
         <div class="form-control">
-            <label for="phone_number">Phone Number</label>
+            <label for="phone_number">Phone number</label>
             <input type="text" id="wphonenumber">
         </div> 
         <div class="form-control2">
@@ -462,7 +469,7 @@
   <div class="all_patient_list hide">
     <div class="patient_list_div">
             <div class="search_bar_container">
-                <h3>Patient Admission List</h3>
+                <h3>Patient admission list</h3>
                 <i class = "bi bi-search"></i>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
@@ -510,25 +517,25 @@
             <div class="_box_popup hide" id="patient_popup">
         <i class="bi bi-x-square red" onclick="close_show_patient_transfer_popup()"></i>
         <div>
-            <h5 onclick="nurse_appoitment()">Transfer to Nurse Unit</h5>
+            <h5 onclick="nurse_appoitment()">Transfer to nurse unit</h5>
         </div>
         </div>
             <!----NURSE APPOITMENT-->
 <div class="appoitment hide" id="nurse_appoitment">
             <i class="bi bi-x-square red" onclick="_close_all_patient_appoitments()"></i>
-                <h3>Transfer to Nurse Unit</h3>
+                <h3>Transfer to nurse unit</h3>
                 <form action="" id="">
                     <div class="sections">
                 <div class="form-control">
-                    <label for="">Patient Name</label>
+                    <label for="">Patient name</label>
                     <input type="text" name="" id="">
                 </div>
                 <div class="form-control">
-                    <label for="">Patient Id</label>
+                    <label for="">Patient id</label>
                     <input type="text" name="" id="">
                 </div>
                 <div class="form-control">
-                    <label for="">Reasons for Booking</label>
+                    <label for="">Reasons for booking</label>
                     <textarea name="" id="" cols="20" rows="10"></textarea>
                 </div>
                 </div>
@@ -562,7 +569,7 @@
         <!--START OF WALKIN PATIENTS FOR LIST2-->
     <div class="walkin_patient_list_div hide">
             <div class="search_bar_container">
-                <h3>Walkin Patient Admission List</h3>
+                <h3>Walkin patient admission list</h3>
                 <i class="bi bi-search"></i>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
@@ -604,26 +611,26 @@
         <div class="_box_popup hide" id="walkin_popup">
         <i class="bi bi-x-square red" onclick="close_show_book_popup()"></i>
         <div>
-            <h5 onclick="lab_appoitment()">Transfer to Labouratory Unit</h5>
+            <h5 onclick="lab_appoitment()">Transfer to labouratory unit</h5>
 
-            <h5 onclick="rad_appoitment()">Transfer to Radiology Unit</h5>
+            <h5 onclick="rad_appoitment()">Transfer to radiology unit</h5>
             </div>
 </div>
 <!----LAB APPOITMENT---->
 <div class="appoitment hide" id="lab_appoitment">
             <i class="bi bi-x-square red" onclick="_close_all_appoitment()"></i>
-                <h3>Labouratory Unit</h3>
+                <h3>Labouratory unit</h3>
                 <form action="" id="">
                 <div class="form-control">
-                    <label for="">Patient Name</label>
+                    <label for="">Patient name</label>
                     <input type="text" name="" id="">
                 </div>
                 <div class="form-control">
-                    <label for="">Patient Id</label>
+                    <label for="">Patient id</label>
                     <input type="text" name="" id="">
                 </div>
                 <div class="form-control">
-                    <label for="">Reasons for Booking</label>
+                    <label for="">Reasons for booking</label>
                     <textarea name="" id="" cols="20" rows="10"></textarea>
                 </div>
                 <button class="btn-submit">Request</button>
@@ -632,18 +639,18 @@
             <!-----RADIOLOGY APPOITMENT-->
 <div class="appoitment hide" id="rad_appoitment">
             <i class="bi bi-x-square red" onclick="_close_all_appoitment()"></i>
-                <h3>Radiology Unit</h3>
+                <h3>Radiology unit</h3>
                 <form action="" id="">
                 <div class="form-control">
-                    <label for="">Patient Name</label>
+                    <label for="">Patient name</label>
                     <input type="text" name="" id="">
                 </div>
                 <div class="form-control">
-                    <label for="">Patient Id</label>
+                    <label for="">Patient id</label>
                     <input type="text" name="" id="">
                 </div>
                 <div class="form-control">
-                    <label for="">Reasons for Booking</label>
+                    <label for="">Reasons for booking</label>
                     <textarea name="" id="" cols="20" rows="10"></textarea>
                 </div>
                 <button class="btn-submit">Request</button>
@@ -662,9 +669,9 @@
                 <div class="profile_container hide">
                 <!-- <i class="bi bi-x-lg close_icon" onclick="close_profile()"></i> -->
                     <div class="div1">
-                    <h3>Date of Birth : 23-09-2023</h3>
+                    <h3>Date of birth : 23-09-2023</h3>
                         <h3>Address: 531 RockVale Dr, Piedmont, South Carolina.</h3>
-                        <h3>Phone Number: +122 3521 222</h3>
+                        <h3>Phone number: +122 3521 222</h3>
                     </div>
                     <div class="div2">
                         <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
@@ -683,7 +690,7 @@
             <div class="appoitment hide">
             <form action="" class="av_doctor_role hide">
     <div class="form-control">
-        <label for="av-roles">Doctor Roles</label>
+        <label for="av-roles">Doctor roles</label>
         <select name="roles" id="av-roles" onchange="updateDoctors()">
             <option value="select">Select</option> 
             <option value="surgeon">Surgeon</option> 
@@ -693,7 +700,7 @@
         </select>
     </div>
     <div class="form-control">
-        <label for="av-doctors">Available Doctors</label>
+        <label for="av-doctors">Available doctors</label>
         <select name="doctors" id="av-doctors">
             <!-- Options will be dynamically filled based on role selection -->
         </select>
@@ -702,19 +709,19 @@
 </form>
                 <form action="" class="book_patient hide">
                     <div class="form-control">
-                        <label for="">Patient Name</label>
+                        <label for="">Patient name</label>
                         <input type="text" name="" id="">
                     </div>
                     <div class="form-control">
-                        <label for="">Patient ID</label>
+                        <label for="">Patient id</label>
                         <input type="text" name="" id="">
                     </div>
                     <div class="form-control">
-                        <label for="">DATE</label>
+                        <label for="">Date</label>
                         <input type="date" name="" id="">
                     </div>
                     <div class="form-control">
-                        <label for="">TIME</label>
+                        <label for="">Time</label>
                         <input type="time" name="" id="">
                     </div>
                     <div class="form-control">
@@ -726,125 +733,6 @@
             </div>
             </div>
 
-          <!-- -APPOITMENT SECTION -->
-        <!-- <div class="appoitment_section hide">
-            <div class="cards_container">
-            <div class="cards">
-                <div class="profile">
-                    <img src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
-                    <div class="name_role">
-                    <span>Dr. Rita Glass</span>
-                    <span>Gynaecologist</span>
-                    </div>
-                </div>
-                <div class="date_time">
-                    <div class="date">
-                        <i class="fa fa-calendar"></i>
-                        <span>2/03/2024</span>
-                    </div>
-                    <div class="time">
-                    <i class="fa fa-clock-o"></i>
-                    <span>2.30pm</span>
-                    </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_pending">Pending</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_accepted">Accepted</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_declined">Declined</button>
-                    </div>
-            </div>
-            <div class="cards">
-                <div class="profile">
-                    <img src="../Images/513d2ccb77e948b687079bc2d6f42661.jpg" alt="">
-                    <div class="name_role">
-                    <span>Dr. Mary Walter</span>
-                    <span>Gynaecologist</span>
-                    </div>
-                </div>
-                <div class="date_time">
-                    <div class="date">
-                        <i class="fa fa-calendar"></i>
-                        <span>2/03/2024</span>
-                    </div>
-                    <div class="time">
-                    <i class="fa fa-clock-o"></i>
-                    <span>2.30pm</span>
-                    </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_pending">Pending</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_accepted">Accepted</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_declined">Declined</button>
-                    </div>
-            </div>
-            <div class="cards">
-            <div class="profile">
-                    <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
-                    <div class="name_role">
-                    <span>Dr. Cathrine Emmanuel</span>
-                    <span>Gynaecologist</span>
-                    </div>
-                </div>
-                <div class="date_time">
-                    <div class="date">
-                        <i class="fa fa-calendar"></i>
-                        <span>2/03/2024</span>
-                    </div>
-                    <div class="time">
-                    <i class="fa fa-clock-o"></i>
-                    <span>2.30pm</span>
-                    </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_pending">Pending</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_accepted">Accepted</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_declined">Declined</button>
-                    </div>
-            </div>
-            <div class="cards">
-            <div class="profile">
-                    <img src="../Images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
-                    <div class="name_role">
-                    <span>Dr. Romeo Patrick</span>
-                    <span>Gynaecologist</span>
-                    </div>
-                </div>
-                <div class="date_time">
-                    <div class="date">
-                        <i class="fa fa-calendar"></i>
-                        <span>2/03/2024</span>
-                    </div>
-                    <div class="time">
-                    <i class="fa fa-clock-o"></i>
-                    <span>2.30pm</span>
-                    </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_pending">Pending</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_accepted">Accepted</button>
-                    </div>
-                    <div class="buttons">
-                        <button class="btn" id="btn_declined">Declined</button>
-                    </div>
-            </div>
-            </div>
-        </div> -->
-        <!----END OF APPOITMENT SECTION-->
         <script src="js/receptionist.js"></script>
 </body>
 </html>
-

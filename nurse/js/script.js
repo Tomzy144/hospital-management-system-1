@@ -21,6 +21,39 @@ function appoitmentSection(){
    document.querySelector(".patient-profile").classList.add("hide");
 }
 
+function selectDoc(){
+  $('.avalable_doctor').removeClass('hide')
+  $('.av_doctor_role').removeClass('hide')
+}
+function bookPatient(){
+  $('.av_doctor_role').addClass('hide')
+  $('.book_patient').removeClass('hide')
+}
+
+const roles = {
+  surgeon: ['Dr. Patrick John', 'Dr. Amanda Smith'],
+  healthPractitioner: ['Dr. Isreal Clarke', 'Dr. Issac Newton'],
+  dentist: ['Dr. Tomiwa John', 'Dr. Kingsley John', 'Dr. Emmanuel Stone'],
+  heartDoctor: ['Dr. Heartbeat', 'Dr. Ventricle', 'Dr. Aorta']
+};
+
+function updateDoctors() {
+  const roleSelect = document.getElementById('av-roles');
+  const doctorSelect = document.getElementById('av-doctors');
+  const selectedRole = roleSelect.value;
+
+  doctorSelect.innerHTML = ''; // Clear existing options
+  roles[selectedRole].forEach(doctor => {
+      const option = document.createElement('option');
+      option.textContent = doctor;
+      option.value = doctor.toLowerCase().replace(/ /g, '-'); // Convert name to a slug-like value
+      doctorSelect.appendChild(option);
+  });
+}
+
+
+
+
   ////////////////
 
   function accept(patient_Id) {

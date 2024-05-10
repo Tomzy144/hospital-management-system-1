@@ -6,7 +6,6 @@
     document.querySelector(".profile_account").classList.toggle("hide");
    };
 
-
 function appointmentCountin() {
     // Counting the number of appointments based on the number of rows in the table
     const count = $('#appointment_table tbody tr').length;
@@ -21,23 +20,11 @@ $(document).ready(function() {
 });
 
 
-//BACK ARROW
-function backWardArrow(){
-document.querySelector(".head-sec").style.display="flex";
-document.querySelector(".body_sec").style.display="block";
-document.querySelector(".all_sections_input").classList.toggle("hide");
-document.querySelector("#back-arrow").style.display="none";
-}
-
-//hide backarrow
-// document.querySelector("#back-arrow").style.display="none";
-
 
 //PERSONAL INFORMATION SECTION AS READ ONLY
 function personal_info_section(){
     document.querySelector(".info_section").classList.toggle("hide");
     document.querySelector("#info_icon_plus").style.display="none";
-
     document.querySelector("#info_icon_minus").style.display="block";
     if(document.querySelector(".info_section").classList.contains("hide")){
         document.querySelector("#info_icon_plus").style.display="block";
@@ -476,14 +463,11 @@ if(check_2.checked){
 }
 function open_procedure_form(){
     document.querySelector(".surgical_booking").classList.remove("hidden");
-    document.querySelector(".overlay_popup").classList.remove("hidden");
-    document.querySelector("#back-arrow").style.display = "none";
 };
 
 function close_procedure_form(){
     document.querySelector(".surgical_booking").classList.add("hidden");
     document.querySelector(".overlay_popup").classList.add("hidden");
-    document.querySelector("#back-arrow").style.display = "block";
 };
 
 check_1.addEventListener("change", handle_change);
@@ -505,7 +489,7 @@ function investigation_section(){
     //TRANFER TO LABORATORY
      function tranfer_patient_lab(){
         document.querySelector(".investigation_form").classList.remove("hide");
-        document.querySelector(".overlay_popup").classList.remove("hidden");
+
     }
      function close_tranfer_patient_lab(){
         document.querySelector(".investigation_form").classList.add("hide");
@@ -514,7 +498,7 @@ function investigation_section(){
     //TRANSFER TO RADIOLOGY
     function tranfer_patient_rad(){
         document.querySelector(".investigation_form").classList.remove("hide");
-        document.querySelector(".overlay_popup").classList.remove("hidden");
+
     }
     //  function close_tranfer_patient_rad(){
     //     document.querySelector(".investigation_form").classList.add("hide");
@@ -535,7 +519,7 @@ function refer_doc_section(){
     //TRANFER TO OTHERS DOC
      function tranfer_patient_doc(){
         document.querySelector(".refer_doc_form").classList.remove("hidden");
-        document.querySelector(".overlay_popup").classList.remove("hidden");
+
     }
      function close_tranfer_patient_doc(){
         document.querySelector(".refer_doc_form").classList.add("hidden");
@@ -614,7 +598,7 @@ function confirmed_death_section(){
 
     function show_death_form(){
         document.querySelector(".death_form_booking").classList.remove("hidden");
-        document.querySelector(".overlay_popup").classList.remove("hidden");
+
         document.querySelector("#back-arrow").style.display="none";
     }
 
@@ -637,159 +621,6 @@ function display_input () {
 
 
 
-
-
-    //BEGINNING OF THE APPOITMENT 
-
-//DOCTOR
-const doctorsData = {
-    cardiologist: ['Dr. Tomiwa', 'Dr. Johnson'],
-    dermatologist: ['Dr. Kingsley', 'Dr. White'],
-    surgeon:['Dr. Priceless', 'Dr John'],
-    psychiatrist:['Dr. Towa', 'Dr Paul'],
-    family_medicine:['Dr. Praise', 'Dr Trinity'],
-    dermatologist: ['Dr.Tom', 'Dr Ruth' ],
-    anaesthesiology:['Dr. Drake', 'Dr. Drake'],
-    rheumatologist:['Dr. Peace', 'Dr Jude'],
-    endocrinologist:['Dr. Grace', 'Dr. Houston'],
-    nephrologist:['Dr. Goodness', 'Dr Goodnews'],
-    neurologist:['Dr. Goodness', 'Dr.Peace'],
-    pediatrician:['Dr. Fooad', 'Dr. Fooad'],
-    urologist:['Dr. Uro', 'Dr. Fooad'],
-    radiologist:['Dr. Fooad', 'Dr. Fooad'],
-    dentist:['Dr. Gofade', 'Dr. Fooad'],
-    pulmonologist:['Dr. Foatt', 'Dr. Fooad'],
-    podiatristian:['Dr. Foatt', 'Dr. Fogad'],
-    emergency_physician:['Dr. Good', 'Dr. Tom'],
-    anaesthesiologist:['Dr. Green', 'Dr. Green'],
-    cardiologist:['Dr Ben', 'Dr. White'],
-    oncologist:['Dr. Bemson', 'Dr. Green'],
-    gastroenterologist:['Dr. Houston', 'Dr. Green'],
-    ophthanlmologist:['Dr. Jous', 'Dr. King'],
-    cardology:['Dr. Funke', 'Dr Roseline'],
-    allergist:['Dr. Postel', 'Dr.Houston'],
-    orthopedic_surgoen:['Dr.Lookman', 'Dr. Chelsea'],
-  };
-  
-  function getDoctors() {
-    const selectedRole = document.getElementById('roles').value;
-    const doctorsSelect = document.getElementById('doctors');
-    doctorsSelect.innerHTML = ''; // Clear previous options
-  
-    // Populate the doctors select box based on the selected role
-  //   doctorsData[selectedRole].forEach(doctor => {
-  //       const option = document.createElement('option');
-  //       option.value = doctor;
-  //       option.text = doctor;
-  //       doctorsSelect.appendChild(option);
-  //   });
-  }
-  
-  // Initial population of doctors based on the default selected role
-  getDoctors();
-  
-  
-  //CALENDAR
-   //This help show the current date and time zone of today
-   const date =  new Date()
-  
-   const renderCalendar = ()=>{
-      date.setDate(1)
-      // console.log(date.getDay());
-       //this help shows the current month we are in and its 0 based "which means its counts from 0 throgh the months"
-      //  const month  = date.getMonth()
-       const monthDays = document.querySelector(".days")
-      const lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0).getDate()
-      
-      const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate()
-      
-      const firstDayIndex = date.getDay() 
-      
-      const  lastDayIndex = new Date(date.getFullYear(), date.getMonth() +1, 0).getDay()
-      const nextDays = 7 - lastDayIndex -1
-      //this is the month array of all the selected month
-      const months = [
-          "January", 
-          "February",
-           "March",
-            "April", 
-            "May", 
-            "June", 
-            "July", 
-            "August", 
-            "September",
-             "October", 
-             "November",
-             "December" 
-      ] ; 
-      
-      document.querySelector(".date h1").innerHTML = months[date.getMonth()];
-      document.querySelector(".date p").innerHTML = new Date().toDateString();
-      // const showDate =  document.querySelector(".content");
-      
-      let days = "";
-      
-      for(let x =  firstDayIndex; x>0; x--){
-          days += `<div class ="prev-date">${prevLastDay - x +1}</div>`;
-      }
-      
-      for(let i = 1; i <=lastDay; i++) {
-          if(i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
-              
-              days +=`
-              <div class="calendar-date today" onclick="updateClickedDate(${i})">${i}</div>`;
-          }else{
-              
-              days +=`
-              <div class="calendar-date" onclick="updateClickedDate(${i})">${i}</div> `;
-          }
-      }
-      
-      for(let j =1; j<=nextDays; j++){
-          days += `<div class="next-date">${j}</div>`;
-          monthDays.innerHTML = days;
-      }
-   }
-   function updateClickedDate(clickedDay) {
-      document.querySelector(".selected_date").textContent = `${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
-      document.getElementById('date').value=`${clickedDay}-${date.getMonth() + 1}-${date.getFullYear()}`;
-    }
-   
-   
-   document.querySelector(".prev").addEventListener("click", function(){
-      date.setMonth(date.getMonth() -1)
-      renderCalendar()
-   })
-   document.querySelector(".next").addEventListener("click", function(){
-      date.setMonth(date.getMonth()+ 1)
-      renderCalendar()
-   })
-   renderCalendar()
-
-//SHOW APPOITMENT SECTION
-const show_appoitment_section = ()=>{
-    document.querySelector(".container").style.display="none";
-    document.querySelector(".appoitment_section").classList.remove("hidden");
-    document.querySelector("#btn_appoitment").style.display = "block";
-    document.querySelector("#back-arrow").style.display="none";
-}
-
-const appoitment_booking = ()=>{
-    const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
-    form_doctor_roles_name.classList.remove("hide");
-}
-
-//dont show appoitment booking button
-document.querySelector("#btn_appoitment").style.display = "none";
-const submitRoles = ()=>{
-    const appoitment_form = document.querySelector(".appoitment_form");
-    appoitment_form.classList.remove("hidden");
-}
-
-const close_appoitment_form = ()=>{
-    const form_doctor_roles_name = document.querySelector(".doctor_roles_name");
-    form_doctor_roles_name.classList.add("hide");
-}
 
 
 
