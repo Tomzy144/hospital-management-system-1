@@ -116,13 +116,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
             <div class="profile">
                 <div class="profile_account hide">
-                <img id="image_profile_account" src="<?php echo $website_url ?>/doctor/images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
+                <img id="image_profile_account" src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="">
                 <h4><?php echo $fullname ?></h4>
                 <button class="btn_submit">Upload Image</button>
                 <span>change password</span>
             </div>
                 <div class="image">
-                <img src="<?php echo $website_url ?>/doctor/images/486bb8db10b50c178cc502e861e64daf.jpg" alt="">
+                <img src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="">
                 <div class="active_on"></div>
                 </div> 
                 <span><?php echo $fullname ?></span>

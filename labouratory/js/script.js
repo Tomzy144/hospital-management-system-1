@@ -5,152 +5,17 @@
 
     
 function appoitment_list_section(){
-    document.querySelector(".appoitment_section").style.display = "flex";
-    document.querySelector(".lab_input").classList.add("hide");
-    document.querySelector("#back-arrow").style.display = "none";
+    $(".appoitment_section").removeClass('hide')
+    $(".lab_input").addClass("hide");
+    $('.approved_appoitment').addClass('hide')
 }
-document.addEventListener("DOMContentLoaded", ()=>{
-    const pending_appoitment = [
-        {number:1, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:2, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:3, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:4, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:5, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:6, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:7, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:8, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:9, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:10, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:11, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:12, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:13, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:14, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:15, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:16, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-        {number:17, patient_name:"John Obi", id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Medical test"},
-
-    ];
-
-    let currentIndex = 0;
-    const appoitment_table = document.querySelector("#appoitment_table tbody");
-    const prev_appoitment = document.querySelector("#prev_appoitment")
-    const next_appoitment = document.querySelector("#next_appoitment")
-    
-    function updateAppoitmentTable(){
-        //set table to blank;
-        appoitment_table.innerHTML = ""
-
-        const endIndex  = Math.min(currentIndex + 15, pending_appoitment.length);
-        for(let i = currentIndex; i < endIndex; i++) {
-            const row = appoitment_table.insertRow();
-            let cell0 = row.insertCell(0);
-            let cell1 = row.insertCell(1);
-            let cell2 = row.insertCell(2);
-            let cell3 = row.insertCell(3);
-            let cell4 = row.insertCell(4);
-            let cell5 =row.insertCell(5);
-            let cell6 =row.insertCell(6);
-            let cell7 =row.insertCell(7);
-    
-
-            cell0.innerHTML = `${pending_appoitment[i].number}`;
-            cell1.innerHTML = `${pending_appoitment[i].patient_name}`;
-            cell2.innerHTML = `${pending_appoitment[i].id}`;
-            cell3.innerHTML = `${pending_appoitment[i].date}`;
-            cell4.innerHTML = `${pending_appoitment[i].time}`;
-            cell5.innerHTML = `${pending_appoitment[i].request_type}`;
-            //accept button
-            const accept_appoitment_button = document.createElement('button');
-            accept_appoitment_button.id = "accept_button";
-            accept_appoitment_button.innerHTML = "Accept" ;
-            accept_appoitment_button.onclick = click_labouratory_examination;
-           cell6.appendChild(accept_appoitment_button);
-            //reject button
-            const reject_appoitment_button = document.createElement('button');
-            reject_appoitment_button.id = "reject_button";
-            reject_appoitment_button.innerHTML = "Reject";
-            cell7.appendChild(reject_appoitment_button);
-        }
-    }
-updateAppoitmentTable()
-})
-
-
-document.addEventListener("DOMContentLoaded",()=>{
-const approved_appoitment = [
-    {number:1, patient_name: "John Smith", patient_id:"PAT0001"},
-    {number:2, patient_name: "John Smith", patient_id:"PAT0001"},
-    {number:3, patient_name: "John Smith", patient_id:"PAT0001"},
-    {number:4, patient_name: "John Smith", patient_id:"PAT0001"},
-    {number:5, patient_name: "John Smith", patient_id:"PAT0001"},
-    {number:6, patient_name: "John Smith", patient_id:"PAT0001"},
-    {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-];
-let currentIndexApproved = 0;
-const approved_table = document.querySelector("#approved_table tbody");
-const prev_approved_appoitment = document.querySelector("#prev_approved_appoitment")
-    const next_approved_appoitment = document.querySelector("#next_approved_appoitment")
-
-function updateApprovedTransaction(){
-    //set table to blank
-    approved_table.innerHTML = '';
-    const endIndexApproved = Math.min(currentIndexApproved + 4, approved_appoitment.length)
-    for(let n = currentIndexApproved; n < endIndexApproved; n++) {
-        const row = approved_table.insertRow();
-        let cell0 = row.insertCell(0);
-        let cell1 = row.insertCell(1);
-        let cell2 = row.insertCell(2);
-        let cell3 = row.insertCell(3);
-        cell0.innerHTML = `${approved_appoitment[n].number}`    
-        cell1.innerHTML = `${ approved_appoitment[n].patient_name}`;
-        cell2.innerHTML = `${ approved_appoitment[n].patient_id}`;
-        const button = document.createElement('button');
-        const button2 = document.createElement('button');
-
-        button.id = "in_progress";
-        button2.id = "completed";
-        button.innerHTML = `In Progress`
-        button2.innerHTML = `Completed`
-
-        //close appoitment for completed appoitment
-        const close_appoitment_completed = document.createElement("close_appoitment_completed");
-        close_appoitment_completed.className = "bi bi-x-lg";
-        close_appoitment_completed.style.position = "absolute";
-        close_appoitment_completed.style.top = "-10%";
-        close_appoitment_completed.style.right = "-1%";
-        close_appoitment_completed.style.backgroundColor ="#fff";
-        close_appoitment_completed.style.height ="17px";
-        close_appoitment_completed.style.width ="17px";
-        close_appoitment_completed.style.justifyContent ="center";
-        close_appoitment_completed.style.alignItems ="center";
-        close_appoitment_completed.style.display ="flex";
-        close_appoitment_completed.style.cursor ="pointer";
-        close_appoitment_completed.style.color ="red";
-        close_appoitment_completed.style.borderRadius ="100%";
-        button2.appendChild(close_appoitment_completed);
-
-        //append the two buttons //
-        `${cell3.appendChild(button)} <br/> ${cell3.appendChild(button2)}`
-    }
+function approved_appoitment__section(){
+    $('.approved_appoitment').removeClass('hide')
+    $('.appoitment_section').addClass('hide')
+    $('.lab_input').addClass('hide')
 }
-updateApprovedTransaction()
-prev_approved_appoitment.addEventListener("click", ()=>{
-    currentIndexApproved = Math.max(currentIndexApproved - 8, 0);
-    updateApprovedTransaction();
-})
-next_approved_appoitment.addEventListener("click", ()=>{
-    currentIndexApproved += 4
-    if(currentIndexApproved >= approved_appoitment.length){
-        currentIndexApproved = 0;
-    }
-    updateApprovedTransaction()
-})
-})
+
+
 
         //ADD THE AMOUNT ON WHICH CLICKED TO THE LIST OF RECEIPT
         const checkboxes = document.querySelectorAll(".checkbox");
@@ -187,7 +52,7 @@ window.onload = function() {
                         sum += parseInt(checkbox.value, 10);
                       }
                       let testSum = document.querySelector("#total");
-                    testSum.textContent = sum
+                    testSum.textContent = `$${sum}.00` 
         })
         }
         checkboxs.forEach(function(checkbox){
@@ -215,11 +80,10 @@ function hide_test_booking(){
 
 
 function click_labouratory_examination(){
-    document.querySelector(".appoitment_section").style.display = "none";
-    document.querySelector(".lab_input ").classList.remove("hide");
-    document.querySelector("#back-arrow").style.display = "flex";
+    $(".appoitment_section").addClass("hide");
+    $(".lab_input ").removeClass("hide");
+    $('.approved_appoitment').addClass('hide')
 }
-document.querySelector("#back-arrow").style.display = "none";
 
 
 

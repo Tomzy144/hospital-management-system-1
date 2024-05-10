@@ -1,144 +1,104 @@
-
-@charset "utf-8";
 @font-face {
-    font-family: 'Poppins';
-    src: url('Poppins-Light.ttf') format('truetype'); /* Adjust the path if necessary */
+    font-family: 'SEGOEUI';
+    src: url('SEGOEUI.TTF') format('truetype'); 
     font-weight: normal; /* Specify the weight if needed */
     font-style: normal; /* Specify the style if needed */
   }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+  
+.alert_div{
+    width: auto;
+    height: auto;
+    max-width: 350px;
+    position: fixed;
+    top:0%;
+    right: 0%;
+    z-index: 2000;
+    color: rgb(255, 255, 255);;
+    background-color: red;
+    padding: 1em;
+    animation: headShake 1s ease-in-out;
+}
+.alert_div.pending{
+    background-color:blue;
+}
+.alert_div.successful{
+    background-color: green;
 }
 
-body{
-    width: 100%;
-    overflow: hidden;
-    height:100%;
-}
 .navbar{
     width: 100%;
-    height: 75px;
+    height: 103px;
     position: fixed;
     display: flex;
+    background-color: rgb(42, 87, 215);
     justify-content: space-between;
-    align-items: center;;
+    align-items: center;
     top: 0;
-    background-color: #2a57d7;
-    z-index: 999;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1100;
 }
 
+
 .section1{
+    width: 700px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position:relative;
+    align-items: center;
+}
+
+.section2{
     width: 500px;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    animation: zoomIn 1s ease-in-out;
-    align-items: center;
-}
-#back-arrow{
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-}
-#back-arrow_to_home{
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-}
-.section2{
-    width: 600px;
-    height: 100%;
-    display: flex;
     flex-direction: row;
-    animation: zoomIn 1s ease-in-out;
     justify-content: space-around;
     align-items: center;
 }
-.icons{
-    color: #fff;
-    font-size: 25px;
-    width: 150px;
-    display: flex;
-    justify-content: center;;
-    align-items: center;
-    height: 100%;
-}
-#icon{
-    margin: 0 1rem;
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;
-    position: relative;
-}
-#icon-drop{
-    margin: 0 1rem;
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;
-    position: relative;
-}
-.notification1{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 20px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 100%;
-    background:rgb(0, 158, 251);;
-    border: 2px solid #fff;
-}
-.notification2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 25px;
-    width: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 100%;
-    background:rgb(0, 158, 251);;
-    border: 2px solid #fff;
-}
+
 .profile{
-    width: 50%;
     height: 100%;
     display: flex;
     color: #fff;
     justify-content: center;
     align-items: center;;
 }
-.profile_account{
+._toggle_icon{
+    color: #fff;
+    font-size: 30px;
+}
+
+._profile_arrow_icon{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
+.profile_account {
     width: 300px;
     position: absolute;
-    background-color: #2a57d7;
-    height: fit-content;
+    height: auto;
     top: 100%;
-    animation: zoomIn 01s ease-in-out;
-    right: 2%;
+    background-color: rgb(42, 87, 215);
+    animation: fadeIn ease-in-out 0.5s;
+    right: 0;
     padding: 1rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.profile span{
-    font-size: 17px;
-}
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 
-#image_profile_account{
+  #image_profile_account{
     width: 140px;
     height: 140px;
     border-radius: 100%;
@@ -148,8 +108,8 @@ body{
     width: 100%;
     background-color: #fff;
     padding: 0.7rem;
-    border: none;
     color: rgb(42, 87, 215);
+    border: none;
     border-radius: 5px;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
@@ -159,7 +119,7 @@ body{
     transform: scale(0.98);
     background: none;
     color:rgb(255, 255, 255);
-    border: 2px solid #fff;
+    border: 1px solid #fff;
 }
 .profile_account span{
     text-align: left;
@@ -167,10 +127,13 @@ body{
 }
 .profile_account h3{
     color: rgb(255, 255, 255);
-    font-weight:500;
-    line-height:36px;
 }
-
+h3{
+    font-weight:normal;
+    font-size: 1.3rem;;
+    letter-spacing: 2px;
+    color: rgb(42, 87, 215);
+}
 .profile img{
     width: 50px;
     margin: 0 0.8rem;
@@ -182,7 +145,7 @@ body{
 .image{
     position: relative;
 }
-.profile .active_on{
+.active{
     position: absolute;
     bottom: 5%;
     right: 15%;
@@ -193,10 +156,10 @@ body{
 }
 #btn_appoitment{
     padding: 0.7rem 1rem;
-    border: none;
     background-color: #fff;
-    margin: 0 7rem;
+    /* margin: 0 0 0 18rem; */
     border-radius: 5px;
+    border: none;
     cursor: pointer;
     color: rgb(42, 87, 215);
     font-size: 12px;
@@ -212,17 +175,18 @@ body{
 
 
 .sidebar{
-    width: 75px;
-    height: fit-content;
-    overflow: hidden;
+    width: auto;
+    max-width: 300px;
+    height: 100%;
     position: fixed;
+    overflow: hidden;
     left: 0;
     top: 0;
-    background-color: #2a57d7;;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    z-index: 1000;
+    background-color: rgb(42, 87, 215);
+    z-index: 1100;
 }
-.sidebar_contents{
+
+._sidebar_contents{
     justify-content: center;
     display: flex;
     align-items: center;
@@ -230,191 +194,174 @@ body{
    height: 75px;
    cursor: pointer;
    text-align: center;
-   border-bottom: 2px solid rgba(255, 255, 255);
 }
-.sidebar_contents img{
-    border-radius: 100%;
-    height: 50px;
-    width: 50px;
-}
-.sidebar_icons .icons{
-    color: #fff;
-    font-size: 25px;
-    margin: 1em 0;
-    position: relative;
-    cursor: pointer;
-}
-.sidebar_icons{
+._sidebar_links{
     width: 100%;
-    animation: zoomInDown 01s ease-in-out;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     height: 100%;
+    padding: 1em;
 }
-.sidebar_icons #icon{
-    color: #fff;
-    font-size: 25px;
+
+._links{
+    color: rgb(42, 87, 215);
+    font-size: 1.5em;
+    margin: 0.5em 0;
     cursor: pointer;
-    margin: 1rem 0;
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    transition: all ease-in-out 0.5s;
+    position: relative;
+}
+
+._links:hover{
+    background-color: rgb(42, 87, 215);
+    color: rgb(255, 255, 255);
 }
 
 .appoitment_section{
-    width: 100%;
     display: flex;
-    justify-content: space-between;
-}
-.available_appoitment{
     width: 100%;
-    height: fit-content;
-    margin: 4.5rem  0 0 5rem ;
-    position: relative;
-    height: 800px;
-    overflow: auto;
 }
-.search_bar_container{
+.approved_appoitment{
+    display: flex;
+    width: 100%;
+}
+
+.appoitment_section.hide{
+    display: none;
+}
+
+  .patient_list_div {
+    width: 100%;
+    margin: 5.5rem 0 0 19rem;
+}
+
+ .search_bar_container {
     background-color: #fff;
-    color: rgb(42, 87, 215);
+    color:rgb(42, 87, 215);
     padding: 0.5em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     margin: 0.4em 0 0 0;
 }
+.search_bar_container h3 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+  }
+.search_bar_container i{
+    position: absolute;
+    right: 1%;
+    cursor: pointer;
+}
+.search_bar_container input {
+        padding: 0.5em;
+        color: rgb(42, 87, 215);
+        font-size: 1.1rem;
+         border: none;
+          border-bottom: 1px solid rgb(42, 87, 215);
+        outline: none;
+}
 
-.search_bar_container input{
-    padding: 0.5em;
-    color: rgb(42, 87, 215);
-    border: 1px solid rgb(42, 87, 215);
-}
-.search_bar_container input:focus{
-    border: 1px solid rgb(42, 87, 215);
-    outline:auto;
-}
-.table_container{
-    width: 100%;
-    background-color: #fff;
-}
-table {
+ table {
     width: 100%;
     border-collapse: collapse;
 }
 
  table thead {
-    background-color: #fff; /* Add a background color to the header */
-    position: sticky; /* Make the thead sticky */
-    top: 0; /* Position the thead at the top */
-    z-index: 1; /* Ensure the thead is above the tbody */
-    background-color: #fff; /* Add a background color to the header */
+    background-color: #fff; 
+    position: sticky; 
+    top: 0;
+    z-index: 1; 
+    background-color: #fff; 
+    font-size: 1em;
+    text-align: center;
+}
+table thead  td{
+    color: rgb(42, 87, 215);
+    padding: 0.5em;
+    font-size: 1em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .77em .58em .74em .58em;
+    padding-right: 0.58em;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    vertical-align: top;
+    line-height: 1.2;
+}
+ table tbody td img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
 }
 
- table thead td{
-    padding: 1em;
-    color: rgb(42, 87, 215);
-}
-.table_container table tbody td{
-    padding: 1em;
+ table tbody td {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
     color: rgb(255, 255, 255);
     background-color: rgb(42, 87, 215);
-    border-bottom: 1px solid #ddd;
+    padding: .77em .58em .74em .58em;
+    padding-right: 0.58em;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    font-size: 1rem;
+    vertical-align: center;
+    line-height: 1.2;
+    border-bottom: 1px solid #fff;
 }
-
-.table_container #accept_button{
-    padding: 0.5rem 0.5rem;
+.accept-btn{
+    padding: 0.5rem;
     background-color: rgb(255, 255, 255);
     border: none;
-    width: 100%;
-    margin: 0.5em 0;
     cursor: pointer;
+    width: 100%;
+    margin: 0.3em 0;
     color: rgb(42, 87, 215);
+    border-radius: 4px;
+    font-size: 1rem;
     transition: all ease-in-out 0.5s;
 }
-.table_container #reject_button{
-    padding: 0.5rem 0.5rem;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    margin: 0.5em 0;
-    cursor: pointer;
-    color: rgb(255, 0, 0);
-    transition: all ease-in-out 0.5s;
-}
-
-.table_container #accept_button:hover{
-    color: #ffffff;
-    background: none;
-    border: 1px solid rgb(255, 255, 255); ;
-}
-.table_container #reject_button:hover{
-    color: #ffffff;
-    background: none;
-    border: 1px solid  rgb(255, 255, 255);
-}
-
-.approved_appoitment{
-    width: 900px;
-    height: fit-content;
-    margin: 3.7rem 0 0 1rem;
-    position: relative;
-    cursor: pointer;
-    height: 800px;
-    overflow: auto;
-    padding: 1rem 0;
-}
-
-.approved_appoitment #in_progress{
-    background-color:rgb(255, 255, 255); ;
-    position: relative;
-    padding: 0.5rem 0.5rem;
-    color: rgb(42, 87, 215); ;
-}
-.approved_appoitment #completed{
-    background-color: rgb(255, 255, 255);
-    position: relative;
-    padding: 0.5rem 0.5rem;
-    color: rgb(0, 154, 0);
-}
-.approved_appoitment #in_progress:hover{
-    background:none;
-    border: 1px solid rgb(255, 255, 255); 
-    color: rgb(255, 255, 255); ;
-}
-.approved_appoitment #completed:hover{
-    background:none;
-    border: 1px solid rgb(255, 255, 255);
-    color: rgb(255, 255, 255);;
-}
-.table_container button{
-    padding: 1rem 1rem;
-    background-color: rgb(42, 87, 215);
-    border: none;
-    width: 100%;
-    margin: 0.5em 0;
-    cursor: pointer;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-}
-.table_container button{
-    padding: 1rem 1rem;
+.reject-btn{
     background-color: rgb(255, 0, 0);
+    padding: 0.5rem;
     border: none;
-    margin: 0.5em 0;
     cursor: pointer;
     color: #fff;
+    width: 100%;
+    border-radius: 4px;
+    margin: 0.3em 0;
+    font-size: 1rem;
     transition: all ease-in-out 0.5s;
+} 
+.accept-btn:hover{
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    background: none
+} 
+.reject-btn:hover{
+    color:  rgb(255, 255, 255);
+    border: 1px solid rgb(255, 0, 0);
+    background: none
 }
-
-.table_container button:hover{
-    color: #000000;
-    background: none;
-    border: 1px solid rgb(42, 87, 215); ;
+ .image{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.table_container button:hover{
-    color: #000000;
-    background: none;
-    border: 1px solid  rgb(255, 0, 0);
-}
-
-
 
 /*LAB INPUT*/
 .lab_input{
@@ -490,12 +437,80 @@ font-size: 20px;
 
 .lab_container{
     width: 100%;
-    height: 525px;
-    overflow: auto;
+    height: auto;
     padding: 2rem;
     position: relative;
-    margin: 4rem 0 0 5rem;
+    margin: 5.5rem 0 0 19rem;
     background-color: rgb(42, 87, 215);;
+}
+.lab_container h3{
+    color: #fff;
+}
+
+h3{
+    font-size: 1.3rem;
+}
+h4{
+    font-size: 1.2rem;
+}
+.form_control{
+    width: auto;
+    display: flex;
+    margin: 0.5rem;
+}
+input{
+    padding: 0.5em;
+    font-size: 1.1rem;
+    border: none;
+    width: auto;
+      border-bottom-width: medium;
+      border-bottom-style: none;
+      border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+    outline: none;
+    background: none;
+    color: rgb(42, 87, 215);;
+    border-bottom: 1px solid rgb(42, 87, 215);;
+}
+select{
+    padding: 0.5em;
+    font-size: 1.1rem;
+    border: none;
+    width: auto;
+      border-bottom-width: medium;
+      border-bottom-style: none;
+      border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+    outline: none;
+    background: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+textarea{
+    padding: 0.5em;
+    font-size: 1.1rem;
+    width: auto;
+    border: none;
+      border-bottom-width: medium;
+      border-bottom-style: none;
+      border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+    outline: none;
+    background: none;
+    color: #fff;
+    height: 45px;
+    border: 1px solid #fff;
+}
+label {
+    color: rgb(42, 87, 215);;
+    font-size: 1.3rem;
+    margin: 1rem 0;
 }
 .profile_name{
     display: flex;
@@ -526,9 +541,7 @@ border-radius: 100%;
     width: 200px;
     height: 200px;
 }
-span{
-    font-size: 15px;
-}
+
 .clinical_chemistry, .immunoassay,.thyroid, .tumor, .blood, .food, .microbiology,.histopathology,.haematology{
     width: 100%;
     color: #fff;
@@ -556,27 +569,20 @@ span{
 }
 .form1,.form2, .form3, .form4, .form5, .form6,.form7,.form8,.form9{
     width: 100%;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
-    animation: fadeInUp 0.5s ease-in-out;
 }
-.form_control{
-    width: 300px;
-    color: #fff;
-    font-size: 15px;
-    padding: 0.4rem 1rem;
-    margin: 0.5rem 0;
-}
+
 #btn{
-    width: 100%;
     background-color: rgb(255, 255, 255);
     height: fit-content;
     padding: 0.5rem;
     border: none;
     margin: 1rem 0;
     cursor: pointer;
+    border-radius: 8px;
     transition: all ease-in-out 0.5s;
 }
 #btn:hover{
@@ -609,86 +615,60 @@ span{
 /*TEST BOOKING*/
 .test_booking{
     width: 500px;
-    height: fit-content;
+    height:auto;
     background-color: #fff;
-    position: absolute;
+    position: fixed;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
-    left: 35%;
-    flex-direction: column;
-    z-index: 11;
-    margin: 5rem auto;
-    padding: 1rem 1rem;
-}
-#close{
-    font-size: 30px;
-    color: rgb(42, 87, 215);
-    position: absolute;
     right: 0;
-    cursor: pointer;
     top: 0;
-}
-.booking_hospital_logo{
-    opacity: 6%;
-    top: 10%;
-    position: absolute;
-    width: 400px;
-    height: 400px;
-}
-.test_booking h1{
-    font-size: 27px;
-    text-align: center;
-    color: rgb(42, 87, 215);
-    margin: 1em auto;
-    padding: 0.5rem;
+    flex-direction: column;
+    z-index: 2001;
+    padding: 1.7rem;
 }
 .test_booking table{
-    width: 100%;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
-.test_booking table thead td{
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #bdbaba;
-    color: #000000;
+.test_booking table  tbody td{
+    text-align: left;
 }
-.test_booking table tbody td{
-    padding: 0.5rem 2rem;
+.bi-x-square{
+    font-size: 1rem;
+    color: rgb(42, 87, 215);
+    position: absolute;
+    right: 3%;
+    cursor: pointer;
+    top: 3%;
 }
 .total{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 6rem;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
+  display: flex;
+  justify-content: space-around;
+  color: #2a57d7;
+  margin: 2rem 0;
+  font-size: 2rem;
 }
-.test_booking .btn{
+
+@media screen and (max-width:1150px) {
+    #rm{
+       opacity: 0;
+       visibility: hidden;
+       position: absolute;
+       white-space: nowrap;
+       background-color: rgb(42, 87, 215);
+       padding: 5px; /* Some padding */
+       border-radius: 5px; /* Rounded corners for popup */
+       top: 0;
+       /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+       color: #fff;
+    }
+
+  .patient_list_div {
     width: 100%;
-    background-color: rgb(42, 87, 215);
-    padding: 1rem 0;
-    margin: 1rem 0;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
+    margin: 5.5rem 0 0 7.9rem;
 }
-.test_booking .btn:hover{
-    background: none;
-    border: 1px solid rgb(42, 87, 215);
-    cursor: pointer;
-    color: #000000;
-}
-.overlay{
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    position: fixed;
-    top: 0;
-    opacity: 40%;
-    left: 0;
-    z-index: 10;
-}
+   }
 .hide{
     display: none;
 }

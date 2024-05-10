@@ -101,13 +101,7 @@
         <div class="section1">
         </div>
         <div class="section2">
-            <div class="icons">
-            <i class="bi bi-person-fill" id="icon">
-            <div class="notification1">9</div>
-          </i>
-          <i class="bi bi-bell-fill" id="icon">
-          <div class="notification2">15</div>
-          </i>
+
           </div>
           <div class="profile">
             <div class="profile_account hide">
@@ -122,68 +116,125 @@
             </div>
         </img>  
             <span><?php echo $fullname ?></span>
-            <i class="bi bi-caret-down-fill"  id="icon-drop" onClick="click_icon_for_profile()"></i>
+            <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
           </div>
         </div>
     </div>
         <div class="sidebar">
-               <div class="sidebar_contents">
-                <img width="80px" height="80px" src="<?php echo $website_url?>/Images/Mount Tech Logo.jpg" alt="logo">
+               <div class="_sidebar_contents">
+          
                </div>
-            <div class="sidebar_icons">
-            <i class="bi bi-chat-dots-fill icons"></i>
-        <i class="bi bi-calendar-date-fill icons" onclick="appoitment_list_section()""></i>
-        <i class=" bi-box-arrow-right icons"></i>
+            <div class="_sidebar_links">
+            <div class="_links" onclick="appoitment_list_section()">
+                <i class="bi bi-calendar-date-fill"></i> 
+                <span id="rm">Available appoitments</span>
+                </div>
+            <div class="_links" onclick="approved_appoitment__section()">
+                <i class="bi bi-calendar-check-fill"></i> 
+                <span id="rm">Accepted appoitments</span>
+                </div>
+                <div class="_links" onclick="document.getElementById('logoutform').submit();">
+                <i class="fa-solid fa-right-from-bracket"> </i> 
+                <span id="rm">Logout</span>
+                </div>
+                <form method="post" action="../config/code.php" id="logoutform">
+                    <input type="hidden" name="action" value="logout"/>    
+                </form>
             </div>
         </div>
                  <!--- END OF SIDEBAR AND NAVBAR-->
 
                  <!--- START OF AVAILABLE APPOITMENT AND APPROVED APPOITMENT SECTION-->
-        <div class="appoitment_section">
-<div class="available_appoitment">
-<div class="search_bar_container">
-  <span>Appoitment Details</span>
-      <input type="text" placeholder="Search here">
-  </div>
-<div class="table_container">
-<table id="appoitment_table">
-  <thead>
-    <td>S/N</td>
-    <td>Patient Name</td>
-    <td>Patient Id</td>
-    <td>Date</td>
-    <td>Time</td>
-    <td>Request Type</td>
-    <td>Accept</td>
-    <td>Reject</td>
-  </thead>
-  <tbody>
-  
-  </tbody>
-</table>
-</div>
-</div>
+                 <div class="appoitment_section">
+            <div class="patient_list_div">
+            <div class="search_bar_container">
+                <h3>Appoitment details</h3>
+                <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search here">
+                </div>
+                    <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>S/N</td>
+                                                    <td>PASSPORT</td>
+                                                    <td>Patient Name</td>
+                                                    <td>Patient ID</td>
+                                                    <td>Date</td>
+                                                    <td>Time</td>
+                                                    <td>Accept</td>
+                                                    <td>Reject</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>1</td>
+                                                <td>
+                                                        <img src="" alt="">
+                                                </td>
+                                                <td>Kingsley effiong</td>
+                                                <td>PAT0001</td>
+                                                <td>23/09/2000</td>
+                                                <td>23:00</td>
+                                              <td>
+                                              <button class="accept-btn" type="button" onclick="click_labouratory_examination()">Accept</button>
+                                              </td>
+                                              <td>
+                                              <button class="reject-btn">Reject</button>
+                                              </td>
+                                              </tr>
+                                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
 
-<div class="approved_appoitment">
-<div class="search_bar_container">
-  <span>Available Appoitment</span>
-      <input type="text" placeholder="Search here">
-</div>
-<div class="table_container">
-<table id="approved_table">
-  <thead>
-    <td>S/N</td>
-    <td>Patient Name</td>
-    <td>Patient Id</td>
-    <td>Status</td>
-  </thead>
-  <tbody>
 
-  </tbody>
-  </table>
-</div>
-</div>
-</div>
+<div class="approved_appoitment hide">
+<div class="patient_list_div">
+            <div class="search_bar_container">
+                <h3>Approved appoitments</h3>
+                <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search here">
+                </div>
+                <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>S/N</td>
+                                                    <td>PASSPORT</td>
+                                                    <td>Patient Name</td>
+                                                    <td>Patient ID</td>
+                                                    <td>Date</td>
+                                                    <td>Time</td>
+                                                    <td>Accept</td>
+                                                    <td>Reject</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>1</td>
+                                                <td>
+                                                        <img src="" alt="">
+                                                </td>
+                                                <td>Kingsley effiong</td>
+                                                <td>PAT0001</td>
+                                                <td>23/09/2000</td>
+                                                <td>23:00</td>
+                                              <td>
+                                              <button class="accept-btn" type="button" onclick="click_labouratory_examination()">Accept</button>
+                                              </td>
+                                              <td>
+                                              <button class="reject-btn">Reject</button>
+                                              </td>
+                                              </tr>
+                                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
    <!--- END OF AVAILABLE APPOITMENT AND APPROVED APPOITMENT SECTION-->
 
            <!--- START OF LABOURATORY INPUT-->
@@ -191,7 +242,7 @@
 <div class="lab_container">
                  <!--- INPUT 1-->
 <div class="immunoassay" onClick="form1()">
-<span>Immunoassay Single Tests</span>
+<h3>Immunoassay Single Tests</h3>
 <i class="bi bi-plus-lg" id="open_id_1"></i>
 <i class="bi bi-dash-lg" id="close_id_1"></i>
 </div>
@@ -256,7 +307,7 @@
 
                  <!--- INPUT 2-->
 <div class="clinical_chemistry" onClick="form2()">
-<span>Clinical Chemistry</span>
+<h3>Clinical Chemistry</h3>
 <i class="bi bi-plus-lg" id="open_id_2"></i>
 <i class="bi bi-dash-lg" id="close_id_2"></i>
 </div>
@@ -341,7 +392,7 @@
 
                 <!--- INPUT 3-->
 <div class="thyroid" onClick="form3()">
-<span>Thyroid function test</span>
+<h3>Thyroid function test</h3>
 <i class="bi bi-plus-lg" id="open_id_3"></i>
 <i class="bi bi-dash-lg" id="close_id_3"></i>
 </div>
@@ -377,7 +428,7 @@
 </form>
                          <!--- INPUT 4-->
 <div class="tumor" onClick="form4()">
-<span>Tumor markers</span>
+<h3>Tumor markers</h3>
 <i class="bi bi-plus-lg" id="open_id_4"></i>
 <i class="bi bi-dash-lg" id="close_id_4"></i>
 </div>
@@ -425,7 +476,7 @@
 </form>
                         <!--- INPUT 5-->
 <div class="blood" onClick="form5()">
-<span>Blood banking</span>
+<h3>Blood banking</h3>
 <i class="bi bi-plus-lg" id="open_id_5"></i>
 <i class="bi bi-dash-lg" id="close_id_5"></i>
 </div>
@@ -473,7 +524,7 @@
 </form>
                         <!--- INPUT 6-->
 <div class="food" onClick="form6()">
-<span>Food handler test</span>
+<h3>Food handler test</h3>
 <i class="bi bi-plus-lg" id="open_id_6"></i>
 <i class="bi bi-dash-lg" id="close_id_6"></i>
 </div>
@@ -522,7 +573,7 @@
 
                          <!--- INPUT 7-->
 <div class="microbiology" onClick="form7()">
-<span>Microbiology and parasitology</span>
+<h3>Microbiology and parasitology</h3>
 <i class="bi bi-plus-lg" id="open_id_7"></i>
 <i class="bi bi-dash-lg" id="close_id_7"></i>
 </div>
@@ -571,7 +622,7 @@
 
                         <!--- INPUT 8-->
 <div class="histopathology" onClick="form8()">
-<span>Histopathology</span>
+<h3>Histopathology</h3>
 <i class="bi bi-plus-lg" id="open_id_8"></i>
 <i class="bi bi-dash-lg" id="close_id_8"></i>
 </div>
@@ -619,7 +670,7 @@
 </form>
                         <!--- INPUT 10-->
 <div class="haematology" onClick="form9()">
-<span>Haematology</span>
+<h3>Haematology</h3>
 <i class="bi bi-plus-lg" id="open_id_9"></i>
 <i class="bi bi-dash-lg" id="close_id_9"></i>
 </div>
@@ -671,8 +722,7 @@
 
 <!--- START OF TEST BOOKING SECTION-->
 <div class="test_booking hide">
-<i class="bi bi-x-lg" id="close" onClick="hide_test_booking()"></i>
-<h1>Test Booking</h1>
+<i class="bi bi-x-square" onclick="hide_test_booking()"></i>
 <table id="dataTable">
         <thead>
                 <td>Test </td>
@@ -683,7 +733,7 @@
 </table>
 <div class="total">
         <p>Total</p>
-        <p id="total">0.000.00</p>
+        <p id="total">$0.000.00</p>
 </div>
 <button class="btn">Book Now</button>
 </div>
@@ -691,7 +741,7 @@
 <!--- END OF TEST BOOKING SECTION-->
 
 <!--- START OF TEST RESULT UPLOAD-->
-<div class="result">
+<div class="result hide">
 <h1>LABORATORY RESULT</h1>
 <div class="profile_div">
 <div class="profile_name">
@@ -723,5 +773,6 @@
 <!--- END OF TEST RESULT UPLOAD-->
 </div>             
 <script src="js/script.js"></script>
+<script src="js/jquery-v3.6.1.min.js"></script>
 </body>
 </html>
