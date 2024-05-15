@@ -6,19 +6,27 @@ function show_staff_password() {
     const _show_nurse_password = $('#_show_nurse_password');
     const _show_recep_password = $('#_show_recep_password');
     const _show_lab_password = $('#_show_lab_password');
+    const _show_matanity_password = $('#_show_matanity_password');
+    const _show_rad_password = $('#_show_rad_password');
     const _lock_doc_password = $('#_lock_doc_password');
+    const _lock_matanity_password = $('#_lock_matanity_password');
     const _lock_lab_password = $('#_lock_lab_password');
+    const _lock_rad_password = $('#_lock_rad_password');
     const _lock_recep_password = $('#_lock_recep_password');
     const _lock_nurse_password = $('#_lock_nurse_password');
 
-    if (!_lock_doc_password.hasClass('hide') || !_lock_recep_password.hasClass('hide') || !_lock_nurse_password.hasClass('hide')|| !_lock_lab_password.hasClass('hide')) {
+    if (!_lock_doc_password.hasClass('hide') || !_lock_recep_password.hasClass('hide') || !_lock_nurse_password.hasClass('hide')|| !_lock_lab_password.hasClass('hide') || !_lock_rad_password.hasClass('hide') || !_lock_matanity_password.hasClass('hide')) {
         staff_password.prop('type', 'text');
         _showdoc_password.removeClass('hide');
         _show_recep_password.removeClass('hide');
         _show_nurse_password.removeClass('hide');
         _show_lab_password.removeClass('hide');
-        _lock_doc_password.addClass('hide');
+        _show_rad_password.removeClass('hide');
+        _show_matanity_password.removeClass('hide');
+        _lock_doc_password.addClass('hide'); 
         _lock_lab_password.addClass('hide');
+        _lock_matanity_password.addClass('hide');
+        _lock_rad_password.addClass('hide');
         _lock_recep_password.addClass('hide');
         _lock_nurse_password.addClass('hide');
         console.log('Shown password');
@@ -27,10 +35,14 @@ function show_staff_password() {
         _showdoc_password.addClass('hide');
         _show_recep_password.addClass('hide');
         _show_nurse_password.addClass('hide');
+        _show_matanity_password.addClass('hide');
         _show_lab_password.addClass('hide');
+        _show_rad_password.addClass('hide');
         _lock_doc_password.removeClass('hide');
+        _lock_matanity_password.removeClass('hide');
         _lock_lab_password.removeClass('hide');
         _lock_recep_password.removeClass('hide');
+        _lock_rad_password.removeClass('hide');
         _lock_nurse_password.removeClass('hide');
         console.log('Hidden password');
     }

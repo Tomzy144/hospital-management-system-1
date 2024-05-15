@@ -48,7 +48,7 @@ const Navbar = `
     </div>
 </div>
 `
-allSection('navbar', Navbar);
+// allSection('navbar', Navbar);
 
 const pending_transation_section = `
 <!----PENDIND TRANSFER & SUCCESSFUL TRANSACTION -->
@@ -144,6 +144,127 @@ const pending_transation_section = `
 </div>
 </div>
 `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="navbar">
+<div class="section1">
+</div>
+<div class="section2">
+
+  </div>
+  <div class="profile">
+    <div class="profile_account hide">
+    <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+    <h4>Immaculater Odu</h4>
+    <button class="btn_submit">Upload Image</button>
+    <h4>change password</h4>
+</div>
+    <div class="image">
+    <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+    <div class="active_on"></div>
+    </div>
+</img>  
+    <span>Precious Effiom</span>
+    <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
+  </div>
+</div>
+</div>
+<div class="sidebar">
+    <!-- <div class="sidebar-header">
+            <div>
+                <i class="bi bi-cloud-arrow-down-fill"></i>
+                <span>cloudcash</span>
+            </div>
+    </div> -->
+    <div class="sidebar-body">
+        <ul>
+            <li>
+                <i class="bi bi-calendar2-plus"></i>
+                <span>Appoitment</span>
+            </li>
+            <li>
+                <i class="bi bi-cash-coin"></i>
+                <span>Approved transactions</span>
+            </li>
+            <li>
+                <i class="bi bi-credit-card"></i>
+                <span>Successful transactions</span>
+            </li>
+            <li onclick="document.getElementById('logoutform').submit();">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+                <form method="post" action="../config/code.php" id="logoutform">
+                    <input type="hidden" name="action" value="logout"/>    
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar-footer">
+            <div>
+            <i class="bi bi-person"></i><span>USER0001</span>
+            </div>
+            <span>Cash: $0.00</span>
+            <span>P0S:$0.00</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 allSection('pending_transactions' ,pending_transation_section) ;
 
 const printing_receipt_section = `

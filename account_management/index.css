@@ -1,126 +1,135 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+@font-face {
+    font-family: 'SEGOEUI';
+    src: url('SEGOEUI.TTF') format('truetype'); 
+    font-weight: normal; /* Specify the weight if needed */
+    font-style: normal; /* Specify the style if needed */
+  }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: fadeIn 2s ease-in-out;
+        }
+        :root{
+            --bg-color:#fff;
+            --dg-color:#000000;
+            --extra-small-font:0.70rem;
+            ---small-font:0.80rem;
+            --medium-font:1.2rem;
+            --large-font:1.8rem;
+            --extra-large-font:3.5rem;
+            --font-color:rgb(42, 87, 215);
+            --navbar-icon-color:#c4bdbd;
+        }
+        
+        p, h3, h4, span, li {
+            font-size: var(--medium-font);
+            color: var(--font-color);
+        }
+        h5, h6{
+            font-size: var(--extra-small-font);
+        }
+        h1, h2{
+            font-size: var(--large-font);
+            color: var(--font-color);
+        }
+        span{
+            padding: 0.3rem;
+        }
+.alert_div{
+    width: auto;
+    height: auto;
+    max-width: 350px;
+    position: fixed;
+    top:0%;
+    right: 0%;
+    z-index: 2000;
+    color: rgb(255, 255, 255);;
+    background-color: red;
+    padding: 1em;
+    animation: headShake 1s ease-in-out;
+}
+.alert_div.pending{
+    background-color:blue;
+}
+.alert_div.successful{
+    background-color: green;
 }
 
-body{
-    width: 100%;
-    min-height:100vh;
-    background-image: url(../Images/19374.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .navbar{
     width: 100%;
-    height: 75px;
+    height: auto;
     position: fixed;
     display: flex;
+    background-color: rgb(42, 87, 215);
     justify-content: space-between;
-    background-color: #0057c2;
-    align-items: center;;
+    align-items: center;
     top: 0;
-    z-index: 999;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1100;
 }
 
+
 .section1{
-    width: 500px;
+    width: 700px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    animation: zoomIn 1s ease-in-out;
+    position:relative;
     align-items: center;
 }
+
 .section2{
     width: 500px;
     height: 100%;
     display: flex;
     flex-direction: row;
-    animation: zoomIn 1s ease-in-out;
     justify-content: space-around;
     align-items: center;
 }
-.icons{
-    color: #fff;
-    font-size: 30px;
-    width: 150px;
-    display: flex;
-    justify-content: center;;
-    align-items: center;
-    height: 100%;
-}
-#icon{
-    margin: 0 1rem;
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;
-    position: relative;
-}
-#icon-drop{
-    margin: 0 1rem;
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;
-    position: relative;
-}
-.notification1{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 20px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 100%;
-    background:rgb(0, 158, 251);;
-    border: 2px solid #fff;
-}
-.notification2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 25px;
-    width: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 100%;
-    background:rgb(0, 158, 251);;
-    border: 2px solid #fff;
-}
+
 .profile{
-    width: 50%;
     height: 100%;
     display: flex;
     color: #fff;
     justify-content: center;
     align-items: center;;
 }
-.profile_account{
+.profile span{
+    color: #ffffff;
+}
+.profile h4{
+    color: #ffffff;
+}
+._toggle_icon{
+    color: #fff;
+    font-size: 30px;
+}
+
+._profile_arrow_icon{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
+.profile_account {
     width: 300px;
     position: absolute;
-    height: fit-content;
+    height: auto;
     top: 100%;
-    animation: zoomIn 01s ease-in-out;
-    right: 2%;
+    background-color: rgb(42, 87, 215);
+    animation: fadeIn ease-in-out 0.5s;
+    right: 0;
     padding: 1rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #0057c2;
-}
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 
-#image_profile_account{
+  #image_profile_account{
     width: 140px;
     height: 140px;
     border-radius: 100%;
@@ -130,8 +139,8 @@ body{
     width: 100%;
     background-color: #fff;
     padding: 0.7rem;
-    border: none;
     color: rgb(42, 87, 215);
+    border: none;
     border-radius: 5px;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
@@ -141,7 +150,7 @@ body{
     transform: scale(0.98);
     background: none;
     color:rgb(255, 255, 255);
-    border: 2px solid #fff;
+    border: 1px solid #fff;
 }
 .profile_account span{
     text-align: left;
@@ -150,10 +159,14 @@ body{
 .profile_account h3{
     color: rgb(255, 255, 255);
 }
-
+h3{
+    font-weight:normal;
+    font-size: 1.3rem;;
+    letter-spacing: 2px;
+    color: rgb(42, 87, 215);
+}
 .profile img{
     width: 50px;
-    margin: 0 0.8rem;
     border: 3px solid #fff;
     height: 50px;
     cursor: pointer;
@@ -162,7 +175,7 @@ body{
 .image{
     position: relative;
 }
-.active{
+.active_on{
     position: absolute;
     bottom: 5%;
     right: 15%;
@@ -173,10 +186,10 @@ body{
 }
 #btn_appoitment{
     padding: 0.7rem 1rem;
-    border: none;
     background-color: #fff;
-    margin: 0 7rem;
+    /* margin: 0 0 0 18rem; */
     border-radius: 5px;
+    border: none;
     cursor: pointer;
     color: rgb(42, 87, 215);
     font-size: 12px;
@@ -192,162 +205,236 @@ body{
 
 
 .sidebar{
-    width: 75px;
-    height: fit-content;
+    width: 100%;
+    width: 300px;
+    height: 100%;
     overflow: hidden;
     position: fixed;
-    left: 0;
     top: 0;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    z-index: 1000;
-}
-.sidebar_contents{
-    justify-content: center;
+    left: 0;
+    border-right: 1px solid rgb(234, 232, 232);
     display: flex;
-    align-items: center;
-   color: #fff;
-   height: 75px;
-   cursor: pointer;
-   text-align: center;
-   border-bottom: 2px solid rgba(255, 255, 255);
-}
-.sidebar_icons{
-    width: 100%;
-    animation: zoomIn 01s ease-in-out;
-    display: flex;
+    background: #fff;
     flex-direction: column;
-    align-items: center;
-    height: 100%;
+    justify-content: space-around;
+    z-index: 2;
 }
-.sidebar_icons #icon{
-    color: #fff;
-    font-size: 25px;
+.sidebar-header{
+width: 100%;
+display: flex;
+padding: 0.5rem;
+color: rgb(42, 87, 215);
+font-size: var(--extra-large-font);
+justify-content: space-evenly;
+align-items: center;
+}
+.sidebar-body{
+width: 100%;
+display: flex;
+padding: 0.5rem;
+color:rgb(42, 87, 215);
+align-items: center;
+}
+.sidebar-body ul{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+.sidebar-body ul li{
+margin: 0.3rem 0;
+padding: 0.9rem;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.sidebar-body ul li.active{
+margin: 0.3rem 0;
+padding: 0.9rem;
+background-color: #f0f7ff;
+width: 100%;
+border-radius: 4px;
+cursor: pointer;
+}
+.sidebar-body ul li{
+margin: 0.3rem 0;
+padding: 0.9rem;
+background: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.sidebar-footer{
+ width: 300px;
+display: flex;
+padding: 0.5rem 0;
+color:rgb(255, 255, 255);
+justify-content:left;
+height: auto !important;
+flex-direction: column;
+position: fixed;
+bottom: 0;
+background-color: rgb(42, 87, 215);;
+align-items: left;
+justify-content: center;
+}
+.sidebar-footer  .bi-person{
+    font-size: var(--medium-font);
+    color: var(--bg-color);
+}
+.sidebar-footer span{
+    font-size: var(--medium-font);
+    color: var(--bg-color);
+}
+ button{
+    background-color: #ffc145;
+    border: none;
+    padding: 0.7rem;
     cursor: pointer;
-    margin: 1rem 0;
+    border-radius: 10px;
 }
 
-/*TRANSACTION SECTION*/
-.transaction_Section{
-    width: 100vw;
-    height:100vh;
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.pending_transaction_section{
-    width: 100%;
-    display: flex;
-    margin: 0 0 0 6rem;
-    flex-wrap: wrap;
-    height:fit-content ;
-    justify-content: center;
-}
-.head-sec{
+.pending__transactions{
     display: flex;
     width: 100%;
-    height: 70px;
-    flex-direction: row;
-    align-items: center;
-    background-color: #fff;
-    padding: 0 1rem;
-    justify-content: space-between;
-    margin: 4rem 0 0 0;
-    color: #000000;
 }
-
-.head-sec span{
-    font-size: 26px;
-    color: #000000;
+.successful__transactions{
+    display: flex;
+    width: 100%;
 }
-.pending_transaction_input_control{
+.overall__transactions{
+    display: flex;
+    width: 100%;
     position: relative;
 }
-.pending_transaction_input{
-    padding: 0.5rem 0.3rem;
-    margin-right: 1rem;
-    border: none;
-    font-size: 18px;
+.overall_amount{
+    width: auto;;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(42, 87, 215);;
+}
+.overall_amount h3{
+    color: #fff;
+    padding: 0.5rem;
+}
+
+
+  .patient_list_div {
     width: 100%;
-    outline: none;
+    margin: 5.5rem 0 0 19rem;
 }
-.pending_transaction_input input{
-    background-color: rgb(0, 0, 0);;
+
+ .search_bar_container {
+    background-color: #fff;
+    color:rgb(42, 87, 215);
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0.4em 0 0 0;
 }
-input:focus{
-    border:1px solid rgb(42, 87, 215) 
-}
-#search-icon{
+.search_bar_container h3 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+  }
+.search_bar_container i{
     position: absolute;
-    top: 32%;
-    right: 7%;
-    color: #afabab;
+    right: 1%;
     cursor: pointer;
 }
-.body_sec{
-    width: 100%;
+.search_bar_container input {
+        padding: 0.5em;
+        color: rgb(42, 87, 215);
+        font-size: 1.1rem;
+         border: none;
+          border-bottom: 1px solid rgb(42, 87, 215);
+        outline: none;
 }
-table{
+
+ table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    flex-wrap: wrap;
-    height: max-content;
+    animation: fadeIn 1.2s ease-in-out;
 }
- table thead td{
-    background-color: rgb(42, 87, 215);;
-    color: #fff;
-    padding: 1rem;
-    font-size: 21px;
+
+ table thead {
+    background-color: #fff; 
+    position: sticky; 
+    top: 0;
+    z-index: 1; 
+    background-color: #fff; 
+    font-size: 1em;
+    text-align: center;
 }
- table tbody{
-    margin: 1rem 0;
+table thead  td{
+    color: rgb(42, 87, 215);
+    padding: 0.5em;
+    font-size: 1em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .77em .58em .74em .58em;
+    padding-right: 0.58em;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    vertical-align: top;
+    line-height: 1.2;
 }
- table tbody td{
-    background-color: rgb(255, 255, 255);;
-    font-size: 20px;
-    padding: 0 1rem;
-    margin: 1rem 1rem;
-    border-bottom: 2px solid rgb(232, 229, 229);
-    color: #000000;
+ table tbody td img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
 }
-#accept_button{
-    padding: 0.7rem 0;
+
+ table tbody td {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(255, 255, 255);
     background-color: rgb(42, 87, 215);
+    padding: .77em .58em .74em .58em;
+    padding-right: 0.58em;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    font-size: 1rem;
+    vertical-align: center;
+    line-height: 1.2;
+    border-bottom: 1px solid #fff;
+}
+.accept-btn{
+    padding: 0.5rem;
+    background-color: rgb(255, 255, 255);
     border: none;
-    width: 80%;
     cursor: pointer;
-    margin: 1rem 1rem;
-    border-radius: 5px;
-    color: #fff;
+    color: rgb(42, 87, 215);
+    border-radius: 4px;
     transition: all ease-in-out 0.5s;
 }
-#reject_button{
-    padding: 0.7rem 0;
+.reject-btn{
     background-color: rgb(255, 0, 0);
+    padding: 0.5rem;
     border: none;
-    width: 80%;
     cursor: pointer;
-    border-radius: 5px;
     color: #fff;
-    margin: 1rem 1rem;
+    border-radius: 4px;
     transition: all ease-in-out 0.5s;
-}
-#accept_button:hover{
-    color: #000000;
-    padding: 0.7rem 0;
-    border: 1px solid rgb(42, 87, 215);
+} 
+.accept-btn:hover{
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
     background: none
-}
-#reject_button:hover{
-    color: #000000;
-    padding: 0.7rem 0;
+} 
+.reject-btn:hover{
+    color:  rgb(255, 255, 255);
     border: 1px solid rgb(255, 0, 0);
     background: none
 }
-
-
-.body_sec .image{
+ .image{
     width: 70px;
     height: 70px;
     border-radius: 100%;
@@ -356,325 +443,9 @@ table{
     justify-content: center;
     align-items: center;
 }
-.pending_transaction_list_pagination{
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    border-bottom-left-radius: 8px ;
-    border-bottom-right-radius: 8px ;
-    height: 50px;
-    margin: 0 auto;
-}
-.pending_transaction_list_pagination .flexs{
-    display: flex;;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-}
-.pending_transaction_list_pagination .flexs p{
-    background-color: rgb(42, 87, 215);
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #fff;
-    transition: all ease-in-out  0.5s
-}
-.pending_transaction_list_pagination .flexs p:hover{
-   transform: scale(0.94);
-}
-.successful_transaction{
-    width: 430px;
-    height: fit-content;
-    position: relative;
-    right: 0;
-    padding: 1rem 0;
-    height: 100vh;
-    margin: 0 0 0 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    overflow-y: auto;
-    background-color: rgb(255, 255, 255);
-}
-.flex_container{
-    margin: 5rem 0rem 10em 0;
-}
-.successful_transaction span{
-    font-size: 20px;
-    padding: 0 0.5em;
 
-}
-.transaction_box{
-    width: 320px;
-    height: fit-content;
-    padding: 0.5em 0.5em ;
-    background-color:  rgb(42, 87, 215);
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    align-items: center;;
-    color: #fff;
-    margin: 1rem auto;
-    transition: all ease-in-out 0.5s;
-}
-.transaction_box:hover{
-    transform: scale(0.89);
-    background:none;
-    color: rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);
-}
-.transaction_box h1{
-    font-size: 20px;
-}
-.transaction_box .amount_item{
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    width: fit-content;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-.total_trasaction{
-    width: 320px;
-    padding: 1em 1em;
-    background-color: rgb(255, 0, 0);
-    display: flex;
-    overflow-y: auto;
-    justify-content: space-between;
-    cursor: pointer;
-    align-items: center;
-    color: #fff;
-    margin: 1rem auto;
-    transition: all ease-in-out 0.5s;
-}
-.total_trasaction:hover{
-    background: none;
-    border: 1px solid rgb(255, 0, 0);
-    color: rgb(255, 0, 0);;
-}
-.personal_total_transaction_section{
-    width: 350px;
-    height: fit-content;
-    background-color: #ffffff; 
-    position: fixed;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    left: 0;
-    bottom: 0;;
-    border-top-right-radius: 10px;
-}
-.personal_total_transaction_section p{
-    font-size: 20px;
-    padding: 0 0.5em;
-    color: rgb(42, 87, 215);;
-}
-#confirmed_amount{
-    padding: 1rem;
-    background-color: rgb(255, 3, 3);
-    width: 100%;
-    font-size: 20px;
-    color: #fff;
-    height: 100%;
-}
-.check_cash_pos{
-    width: 300px;
-    position: absolute;
-    height: fit-content;
-    top: 50%;
-    left:50%;
-    padding: 1rem;
-    border-radius: 10px;
-    z-index: 11;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-#close_pos_cash{
-    color: #0057c2;
-    font-size: 27px;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-    top: 0;
-}
-.check_cash_pos h1{
-    color: #0057c2;
-    padding: 1rem 0;
-}
-.check_cash_pos button{
-    width: 100%;
-    border-radius: 20px;
-    cursor: pointer;
-    height: 100%;
-    border: none;
-    font-size: 20px;
-    padding: 0.5rem;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-    background-color: #0057c2;
-}
-.check_cash_pos button:hover{
-    background: none;
-    border: 1px solid #0057c2;
-    color: #000000;
-}
-.receipt_printing{
-    width: 500px;
-    position: absolute;
-    height: fit-content;
-    top: 50%;
-    left:50%;
-    padding: 1rem;
-    border-radius: 10px;
-    z-index: 11;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.receipt_printing .container{
-    width: 100%;
-    height: fit-content;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    position: relative;
-    background-color: #000000;
-   border: 2px solid black;
-}
-#print_close{
-    color: #000000;
-    font-size: 25px;
-    position: absolute;
-    right: 0;
-    top: 0 ;
-    cursor: pointer;
-}
-.receipt_printing .container .name{
-   text-align: left;
-}
-.receipt_printing .container .date_and_id{
-   text-align: left;
-}
-.receipt_printing .container p{
-   color: #ffffff;
-   font-size: 16px;
-   padding: 0 1em;
-}
-.total{
-    display: flex;
-    justify-content: space-between;
-}
-.description_and_amount{
-    border: 1px solid black;
-    padding: 1rem;
-    height: fit-content;
-    width: 100%;
-}
-.description_and_amount table{
-    border-collapse: collapse;
-    box-shadow: none
-}
 
-.description_and_amount table thead td {
-    background: none;
-    color: #000000;
-    padding: 1rem 1rem;
-    margin: 0.5em 0.5em;
-}
-.description_and_amount table tbody td {
-    background: none;
-    border: 1px solid black;
-    color: #000000;
-    box-shadow: none;
-    padding: 1rem 1rem;
-    font-size: 18px;
-    margin: 0.5em 3em;
-}
-#totalling{
-    background-color: #000000;
-    color: #fff;
-}
-.payment_method{
-    width: 100%;
-    height: fit-content;
-    margin-top: 1rem;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;;
-}
-.payment_method .section1{
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: left;
-    text-align: left;
-}
-.payment_method .section2{
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: left;
-    text-align: left;
-}
-/*HISTORY OF TRANSACTIONS*/
-.successful_transaction_history{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-}
-.successfull_transaction_section{
-    width: 80%;
-    margin: 0 auto;
-}
-.successfull_transaction_section .body_sec {
-    margin: 0 0 0 0;
-}
-img {
-    width: 50px;  /* Set the maximum width for the images */
-    height: 50px;
-    border-radius: 100%;
-}
-.successfull_transaction_section .body_sec table tbody td{
-  background-color: rgb(255, 255, 255);
-  font-size: 20px;
-  padding: 1rem 1rem;
-  margin: 1rem 1rem;
-  border-bottom: 2px solid rgb(232, 229, 229);
-  color: #000000;
-}
- #button_successful{
-    padding: 0.7rem 0;
-    background-color:  #009d00; 
-    border: none;
-    width: 80%;
-    cursor: pointer;
-    margin: 1rem 1rem;
-    border-radius: 5px;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-}
- #button_successful:hover{
-    color: #000000;
-    padding: 0.7rem 0;
-    border: 1px solid #009d00; 
-    background: none
-}
-.{
-    width: 100%;
-    height: 100%;
-    background-image: url(../Images/19374.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
+
 .hide{
     display: none;
 }

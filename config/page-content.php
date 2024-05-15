@@ -216,31 +216,31 @@ if($s_staff_id != '') {
 
 
     <?php if ($page=='martanity_login') ?>
-    <div class="fill-form-div login-div" id="next_6">
-        <div class="martanity-login hidden">
-        <!-- Close icon for the login form -->
+    <div class="fill-form-div login-div hidden" id="next_6">
+        <div class="martanity-login">
         <i class="bi bi-x-circle" id='close-icon-martanity' onclick="cancel();"></i>
-        <!-- Title for the login form -->
         <h1 class="login-form-h1">Login (Martanity)</h1>
-        <!-- Martanity login form -->
+
             <form action="../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
                 <!-- Email field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='email'>Email</label>
-                    <i class="fa fa-address-book"></i>
+                    <i class="bi-envelope"></i>
                     <input type='email' id="email" name="email" autoComplete='off'/>
                 </div>
                 <!-- ID field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='number'>Your ID</label>
-                    <i class="fa fa-key"></i>
+                    <i class="bi-key"></i>
                     <input type="text" name="number" autoComplete='off'/> 
                 </div>
                 <!-- Password field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='password'>Password</label>
-                    <i class="fa fa-lock"></i>
-                    <input type="password" id="password" name="spass" autocomplete="off">
+                    <i class="bi-lock"></i>
+                    <i class="bi bi-eye show_password hide" id="_show_matanity_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye-slash lock_password" id="_lock_matanity_password" onclick="show_staff_password()"></i>
+                    <input type="password" id="password" name="spass" class="all_password" autocomplete="off">
                 </div>
                 <!-- Login button -->
                 <button type="button" id="login_btn" title="Login" onclick="isMartinity_active()" class="btn">Login</button>
@@ -256,26 +256,28 @@ if($s_staff_id != '') {
 
 
     <?php if ($page=='account_manager_login') ?>
-    <div class="fill-form-div login-div" id="next_7">
-        <div class="account_manager-login hidden">
+    <div class="fill-form-div login-div hidden" id="next_7">
+        <div class="account_manager-login">
         <i class="bi bi-x-circle"  id='close-icon-account_manager' onclick="cancel();"></i>
         <h1 class="login-form-h1">Login (Account Manager)</h1>
             <form>
-                <div class="form-control">
+                <div class="_form_control">
                 <label for='email'>Email</label>
-                <i class="fa fa-address-book"></i>
+                <i class="bi-envelope"></i>
                 <input type="email" name="email" autoComplete='off'/> 
                 </div>
 
-                <div class="form-control">
+                <div class="_form_control">
                 <label for='number'>Your ID</label>
-                <i class="fa fa-key"></i>
+                <i class="bi-key"></i>
                 <input type="number" name="number" autoComplete='off'/> 
                 </div>
 
-                <div class="form-control">
+                <div class="_form_control">
                 <label for='password'>Password</label>
-                <i class="fa fa-lock"></i>
+                <i class="bi-lock"></i>
+                    <i class="bi bi-eye show_password hide" id="_show_nurse_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye-slash lock_password" id="_lock_nurse_password" onclick="show_staff_password()"></i>
                 <input type="password" name="password" autoComplete='off'/> 
                 </div>
                 <button type="button" class="btn" onClick="isAccount_manager_active()">Login</button>
@@ -439,8 +441,8 @@ if($s_staff_id != '') {
 <!-- - radiologist -- -->
 
     <?php if ($page=='radiologist_login') ?>
-    <div class="fill-form-div login-div" id="next_12">
-            <div class="radiologist-login hidden">
+    <div class="fill-form-div login-div hidden" id="next_12">
+            <div class="radiologist-login">
             <!-- Close icon for the login form -->
             <i class="bi bi-x-circle" id='close-icon-radiologist' onclick="cancel();"></i>
             <!-- Title for the login form -->
@@ -448,28 +450,29 @@ if($s_staff_id != '') {
             <!-- Radiologist login form -->
             <form>
                 <!-- Email field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='email'>Email</label>
-                    <i class="fa fa-address-book"></i>
+                    <i class="bi-envelope"></i>
                     <input type="email" name="email" autoComplete='off'/> 
                 </div>
                 <!-- ID field -->
-                <div class="form-control">
-                    <label for='number'>Your ID</label>
-                    <i class="fa fa-key"></i>
-                    <input type="number" name="number" autoComplete='off'/> 
+                <div class="_form_control">
+                    <label for='text'>Your ID</label>
+                    <i class="bi-key"></i>
+                    <input type="text" name="text" autoComplete='off'/> 
                 </div>
                 <!-- Password field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='password'>Password</label>
-                    <i class="fa fa-lock"></i>
-                    <input type="password" name="password" autoComplete='off'/> 
+                    <i class="bi-lock"></i>
+                    <i class="bi bi-eye show_password hide" id="_show_rad_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye-slash lock_password" id="_lock_rad_password" onclick="show_staff_password()"></i>
+                    <input type="password" name="password" autoComplete='off' class="all_password"/> 
                 </div>
                 <!-- Login button -->
-                <button type="button" class="btn" onClick="isRadiologist_active()">Login</button>
+                <button type="button" class="btn" onclick="isRadiologist_active()">Login</button>
             </form>
         </div>
-
     </div>
 
 

@@ -131,22 +131,36 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
 
         <div class="sidebar">
-        <!-- onclick="homepage_section()" -->
-               <div class="_sidebar_contents">
-               </div>
-               <div class="_sidebar_links">
-                <div class="_links" onclick="alertHome()">
-                <i class="bi bi-calendar2-plus"></i> <span id="rm">Appoitment</span>
-                </div>
-                <div class="_links" onclick="document.getElementById('logoutform').submit();">
-                <i class="fa-solid fa-right-from-bracket"> </i> <span id="rm">Logout</span>
-                </div>
+    <!-- <div class="sidebar-header">
+            <div>
+                <i class="bi bi-cloud-arrow-down-fill"></i>
+                <span>cloudcash</span>
+            </div>
+    </div> -->
+    <div class="sidebar-body">
+        <ul>
+            <li>
+                <i class="bi bi-calendar2-plus"></i>
+                <span>Appoitments</span>
+            </li>
+            <li onclick="document.getElementById('logoutform').submit();">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
                 <form method="post" action="../config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
                 </form>
+            </li>
+        </ul>
+    </div>
+    <!-- <div class="sidebar-footer">
+            <div>
+            <i class="bi bi-person"></i><span>USER0001</span>
             </div>
-            </div>
-        </div>
+            <span>Cash: $0.00</span>
+            <span>P0S:$0.00</span>
+        </div> -->
+    </div>
+</div>
          <!--END OF SIDEBAR AND NAVBAR-->
 
     <div class="appoitment_section">

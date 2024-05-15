@@ -18,92 +18,151 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         
 <!--- START OF SIDEBAR AND NAVBAR-->
 <div class="navbar">
-  <div class="section1">
-  </div>
-  <div class="section2">
-            <div class="icons">
-            <i class="bi bi-person-fill" id="icon">
-            <div class="notification1">9</div>
-          </i>
-          <i class="bi bi-bell-fill" id="icon">
-          <div class="notification2">15</div>
-          </i>
+        <div class="section1">
+        </div>
+        <div class="section2">
+
           </div>
-    <div class="profile">
-      <div class="profile_account hide">
-      <img id="image_profile_account" src="../Images/medium-shot-health-worker-with-equipment.jpg" alt="">
-      <h4>Peace Emmanuel Christopher</h4>
-      <button class="btn_submit">Upload Image</button>
-      <span>change password</span>
-  </div>
-      <div class="image">
-      <img src="../Images/medium-shot-health-worker-with-equipment.jpg" alt="">
-      <div class="active_on"></div>
-      </div>
-  </img>  
-      <span>Peace Emmanuel Christopher</span>
-      <i class="bi bi-caret-down-fill"  id="icon-drop" onClick="click_icon_for_profile()"></i>
+          <div class="profile">
+            <div class="profile_account hide">
+            <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <h4>Immaculater Odu</h4>
+            <button class="btn_submit">Upload Image</button>
+            <h4>change password</h4>
+        </div>
+            <div class="image">
+            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <div class="active_on"></div>
+            </div>
+        </img>  
+            <span>Precious Effiom</span>
+            <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
+          </div>
+        </div>
     </div>
-  </div>
-</div>
-  <div class="sidebar">
-         <div class="sidebar_contents">
-          <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
-         </div>
-      <div class="sidebar_icons">
-      <i class="bi bi-chat-dots-fill icons"></i>
-        <i class="bi bi-calendar-date-fill icons" onclick="appoitment_list_section()""></i>
-        <i class=" bi-box-arrow-right icons"></i>
-      </div>
-  </div>
-  <!--- START OF SIDEBAR AND NAVBAR-->
- 
-      <!--- START OF AVAILABLE APPOITMENT AND APPROVED APPOITMENT SECTION-->
-  <div class="appoitment_section">
-<div class="available_appoitment">
-<div class="search_bar_container">
-  <span>Appoitment Details</span>
-      <input type="text" placeholder="Search here">
-  </div>
-<div class="table_container">
-<table id="appoitment_table">
-  <thead>
-    <td>S/N</td>
-    <td>Patient Name</td>
-    <td>Patient Id</td>
-    <td>Date</td>
-    <td>Time</td>
-    <td>Request Type</td>
-    <td>Accept</td>
-    <td>Reject</td>
-  </thead>
-  <tbody>
-  
-  </tbody>
-</table>
-</div>
-</div>
+        <div class="sidebar">
+               <div class="_sidebar_contents">
+          
+               </div>
+            <div class="_sidebar_links">
+            <div class="_links" onclick="appoitment_list_section()">
+                <i class="bi bi-calendar-date-fill"></i> 
+                <span id="rm">Available appoitments</span>
+                </div>
+            <div class="_links" onclick="approved_appoitment__section()">
+                <i class="bi bi-calendar-check-fill"></i> 
+                <span id="rm">Accepted appoitments</span>
+                </div>
+                <div class="_links" onclick="document.getElementById('logoutform').submit();">
+                <i class="fa-solid fa-right-from-bracket"> </i> 
+                <span id="rm">Logout</span>
+                </div>
+                <form method="post" action="../config/code.php" id="logoutform">
+                    <input type="hidden" name="action" value="logout"/>    
+                </form>
+            </div>
+        </div>
+                 <!--- END OF SIDEBAR AND NAVBAR-->
 
-<div class="approved_appoitment">
-<div class="search_bar_container">
-  <span>Available Appoitment</span>
-      <input type="text" placeholder="Search here">
-</div>
-<div class="table_container">
-<table id="approved_table">
-  <thead>
-    <td>S/N</td>
-    <td>Patient Name</td>
-    <td>Patient Id</td>
-    <td>Status</td>
-  </thead>
-  <tbody>
+                 <!--- START OF AVAILABLE APPOITMENT AND APPROVED APPOITMENT SECTION-->
+                 <div class="appoitment_section">
+            <div class="patient_list_div">
+            <div class="search_bar_container">
+                <h3>Appoitment details</h3>
+                <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search here">
+                </div>
+                    <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>S/N</td>
+                                                    <td>PASSPORT</td>
+                                                    <td>Patient Name</td>
+                                                    <td>Patient ID</td>
+                                                    <td>Date</td>
+                                                    <td>Time</td>
+                                                    <td>Accept</td>
+                                                    <td>Reject</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>1</td>
+                                                <td>
+                                                        <img src="" alt="">
+                                                </td>
+                                                <td>Kingsley effiong</td>
+                                                <td>PAT0001</td>
+                                                <td>23/09/2000</td>
+                                                <td>23:00</td>
+                                              <td>
+                                              <button class="accept-btn" type="button" onclick="show_radiology_input()">Accept</button>
+                                              </td>
+                                              <td>
+                                              <button class="reject-btn">Reject</button>
+                                              </td>
+                                              </tr>
+                                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
 
-  </tbody>
-  </table>
-</div>
-</div>
-</div>
+
+<div class="approved_appoitment hide">  
+<div class="patient_list_div">
+            <div class="search_bar_container">
+                <h3>Approved appoitments</h3>
+                <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search here">
+                </div>
+                <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>S/N</td>
+                                                    <td>PASSPORT</td>
+                                                    <td>Patient Name</td>
+                                                    <td>patient id</td>
+                                                    <td>Status</td>
+                                                    <td>Delete Patient</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>1</td>
+                                                <td>
+                                                        <img src="" alt="">
+                                                </td>
+                                                <td>Kingsley effiong</td>
+                                                <td>PAT0001</td>
+                                                <td>Pending transaction</td>
+                                        <td><i class="bi bi-x-square"></i></td>
+                                              </tr>
+                                            </tbody>
+                                            <tbody>
+                                              <tr>
+                                                <td>1</td>
+                                                <td>
+                                                        <img src="" alt="">
+                                                </td>
+                                                <td>Kingsley effiong</td>
+                                                <td>PAT0001</td>
+                                                <td>
+                                                        <button class="accept-btn" onclick="uploadResult()">Upload test result</button>
+                                                </td>
+                                        <td>
+                                                <i class="bi bi-x-square"></i>
+                                        </td>
+                                              </tr>
+                                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
    <!--- END OF AVAILABLE APPOITMENT AND APPROVED APPOITMENT SECTION-->
 
                        <!--- START OF RADILOGY INPUT-->
@@ -111,7 +170,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <div class="radiology_container">
                  <!--- INPUT 1-->
       <div class="radiography" onClick="show_radiography_form()">
-        <span>X-ray (Radiography)</span>
+        <h3>X-ray (Radiography)</h3>
         <i class="bi bi-plus-lg" id="radiography_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="radiography_minus_icon"></i>
       </div>
@@ -188,7 +247,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
               <!--- INPUT 2-->
       <div class="tomography_scan" onClick="show_tomography_scan_form()">
-        <span>Computed Tomography (CT) Scan</span>
+        <h3>Computed Tomography (CT) Scan</h3>
         <i class="bi bi-plus-lg" id="tomography_scan_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="tomography_scan_minus_icon"></i>
       </div>
@@ -221,7 +280,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
               <!--- INPUT 3-->
       <div class="magnetic" onClick="show_magnetic_form()">
-        <span>Magnetic Resonance Imaging (MRI)</span>
+        <h3>Magnetic Resonance Imaging (MRI)</h3>
         <i class="bi bi-plus-lg" id="magnetic_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="magnetic_minus_icon"></i>
     </div>
@@ -278,7 +337,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                                 <!--- INPUT 4-->
       <div class="ultrasound" onClick="show_ultrasound_form()">
-        <span>Ultrasound (Sonography)</span>
+        <h3>Ultrasound (Sonography)</h3>
         <i class="bi bi-plus-lg" id="ultrasound_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="ultrasound_minus_icon"></i>
     </div>
@@ -355,7 +414,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                                 <!--- INPUT 5-->
       <div class="nuclear" onClick="show_nuclear_form()">
-        <span>Nuclear Medicine Imaging</span>
+        <h3>Nuclear Medicine Imaging</h3>
         <i class="bi bi-plus-lg" id="nuclear_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="nuclear_minus_icon"></i>
     </div>
@@ -384,7 +443,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                           <!--- INPUT 6-->
       <div class="fluoroscopy" onClick="show_fluoroscopy_form()">
-        <span>Fluoroscopy</span>
+        <h3>Fluoroscopy</h3>
         <i class="bi bi-plus-lg" id="fluoroscopy_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="fluoroscopy_minus_icon"></i>
     </div>
@@ -453,7 +512,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                                       <!--- INPUT 7-->
       <div class="mammography" onClick="show_mammography_form()">
-        <span>Mammography</span>
+        <h3>Mammography</h3>
         <i class="bi bi-plus-lg" id="mammography_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="mammography_minus_icon"></i>
     </div>
@@ -468,7 +527,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
       </form>
       <div class="interventional_radiology" onClick="show_interventional_radiology_form()">
-        <span>Interventional Radiology Procedures</span>
+        <h3>Interventional Radiology Procedures</h3>
         <i class="bi bi-plus-lg" id="interventional_radiology_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="interventional_radiology_minus_icon"></i>
     </div>
@@ -497,7 +556,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                                       <!--- INPUT 8-->
       <div class="magnetic_resonance" onClick="show_magnetic_resonance_form()">
-        <span>Magnetic Resonance Angiography (MRA)</span>
+        <h3>Magnetic Resonance Angiography (MRA)</h3>
         <i class="bi bi-plus-lg" id="magnetic_resonance_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="magnetic_resonance_minus_icon"></i>
     </div>
@@ -518,7 +577,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                                 <!--- INPUT 9-->
       <div class="dual_energy" onClick="show_dual_energy_form()">
-        <span>Dual-Energy X-ray Absorptiometry (DEXA or DXA) Scan</span>
+        <h3>Dual-Energy X-ray Absorptiometry (DEXA or DXA) Scan</h3>
         <i class="bi bi-plus-lg" id="dual_energy_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="dual_energy_minus_icon"></i>
     </div>
@@ -529,7 +588,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
       </form>
       <div class="chest_x_ray" onClick="show_chest_x_ray_form()">
-        <span>Chest X-ray</span>
+        <h3>Chest X-ray</h3>
         <i class="bi bi-plus-lg" id="chest_x_ray_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="chest_x_ray_minus_icon"></i>
     </div>
@@ -546,7 +605,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                     <!--- INPUT 10-->
       <div class="myelography" onClick="show_myelography_form()">
-        <span>Myelography</span>
+        <h3>Myelography</h3>
         <i class="bi bi-plus-lg" id="myelography_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="myelography_minus_icon"></i>
     </div>
@@ -575,7 +634,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                           <!--- INPUT 11-->
       <div class="arthrography" onClick="show_arthrography_form()">
-        <span>Arthrography</span>
+        <h3>Arthrography</h3>
         <i class="bi bi-plus-lg" id="arthrography_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="arthrography_minus_icon"></i>
     </div>
@@ -616,7 +675,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                           <!--- INPUT 12-->
       <div class="hysterosalpingography" onClick="show_hysterosalpingography_form()">
-        <span>Hysterosalpingography (HSG)</span>
+        <h3>Hysterosalpingography (HSG)</h3>
         <i class="bi bi-plus-lg" id="hysterosalpingography_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="hysterosalpingography_minus_icon"></i>
     </div>
@@ -641,7 +700,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                                 <!--- INPUT 13-->
       <div class="cholangiography" onClick="show_cholangiography_form()">
-        <span>Cholangiography</span>
+        <h3>Cholangiography</h3>
         <i class="bi bi-plus-lg" id="cholangiography_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="cholangiography_minus_icon"></i>
     </div>
@@ -662,7 +721,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                                 <!--- INPUT 14-->
       <div class="angiography" onClick="show_angiography_form()">
-        <span>CT Angiography (CTA)</span>
+        <h3>CT Angiography (CTA)</h3>
         <i class="bi bi-plus-lg" id="angiography_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="angiography_minus_icon"></i>
     </div>
@@ -687,7 +746,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                           <!--- INPUT 15-->
       <div class="functional_mri" onClick="show_functional_mri_form()">
-        <span>Functional MRI (fMRI)</span>
+        <h3>Functional MRI (fMRI)</h3>
         <i class="bi bi-plus-lg" id="functional_mri_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="functional_mri_minus_icon"></i>
     </div>
@@ -756,7 +815,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
                                 <!--- INPUT 16-->
       <div class="cardiac_imaging" onClick="show_cardiac_imaging_form()">
-        <span>Cardiac Imaging</span>
+        <h3>Cardiac Imaging</h3>
         <i class="bi bi-plus-lg" id="cardiac_imaging_plus_icon"></i>
         <i class="bi bi-dash-lg"  id="cardiac_imaging_minus_icon"></i>
     </div>
@@ -828,8 +887,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
 <!--- START OF TEST BOOKING SECTION-->
 <div class="test_booking hide">
-<i class="bi bi-x-lg" id="close" onClick="hide_test_booking()"></i>
-<h1>Test Booking</h1>
+<i class="bi bi-x-square" onclick="hide_test_booking()"></i>
+<h3>Test Booking</h3>
 <table id="dataTable">
         <thead>
                 <td>Test </td>
@@ -849,12 +908,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
 
 <!--- START OF TEST RESULT UPLOAD-->
-<div class="result">
-<h1>RADIOLOGY RESULT</h1>
+<div class="result hide">
+<i class="bi bi-x-square" onclick="closeResult()"></i>
+<h3>RADIOLOGY RESULT</h3>
 <div class="profile_div">
 <div class="profile_name">
-<span>Princess Esther</span>
-<span>PAT0002</span>
+<h3>Princess Esther</h3>
+<h3>PAT0002</h3>
 </div>
 <div class="img_div">
 <img src ="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg"></img>
@@ -881,6 +941,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 </div>
   <!---SCRIPTS-->
         <script src="js/script.js"></script>
-        <script src="js/section.js"></script>
+        <script src="js/jquery-v3.6.1.min.js"></script>
 </body>
 </html>

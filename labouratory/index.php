@@ -191,7 +191,7 @@
         </div>
 
 
-<div class="approved_appoitment hide">
+<div class="approved_appoitment hide">  
 <div class="patient_list_div">
             <div class="search_bar_container">
                 <h3>Approved appoitments</h3>
@@ -204,11 +204,9 @@
                                                     <td>S/N</td>
                                                     <td>PASSPORT</td>
                                                     <td>Patient Name</td>
-                                                    <td>Patient ID</td>
-                                                    <td>Date</td>
-                                                    <td>Time</td>
-                                                    <td>Accept</td>
-                                                    <td>Reject</td>
+                                                    <td>patient id</td>
+                                                    <td>Status</td>
+                                                    <td>Delete Patient</td>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -219,14 +217,24 @@
                                                 </td>
                                                 <td>Kingsley effiong</td>
                                                 <td>PAT0001</td>
-                                                <td>23/09/2000</td>
-                                                <td>23:00</td>
-                                              <td>
-                                              <button class="accept-btn" type="button" onclick="click_labouratory_examination()">Accept</button>
-                                              </td>
-                                              <td>
-                                              <button class="reject-btn">Reject</button>
-                                              </td>
+                                                <td>Pending transaction</td>
+                                        <td><i class="bi bi-x-square"></i></td>
+                                              </tr>
+                                            </tbody>
+                                            <tbody>
+                                              <tr>
+                                                <td>1</td>
+                                                <td>
+                                                        <img src="" alt="">
+                                                </td>
+                                                <td>Kingsley effiong</td>
+                                                <td>PAT0001</td>
+                                                <td>
+                                                        <button class="accept-btn" onclick="uploadResult()">Upload test result</button>
+                                                </td>
+                                        <td>
+                                                <i class="bi bi-x-square"></i>
+                                        </td>
                                               </tr>
                                             </tbody>
                         </table>
@@ -735,18 +743,20 @@
         <p>Total</p>
         <p id="total">$0.000.00</p>
 </div>
-<button class="btn">Book Now</button>
+<button>Book Now</button>
 </div>
-<div class="overlay hide"></div>
 <!--- END OF TEST BOOKING SECTION-->
+
+
 
 <!--- START OF TEST RESULT UPLOAD-->
 <div class="result hide">
-<h1>LABORATORY RESULT</h1>
+<i class="bi bi-x-square" onclick="closeResult()"></i>
+<h3>LABORATORY RESULT</h3>
 <div class="profile_div">
 <div class="profile_name">
-<span>Kingsley Effiong</span>
-<span>PAT0002</span>
+<h3>Kingsley Effiong</h3>
+<h3>PAT0002</h3>
 </div>
 <div class="img_div">
 <img src ="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg"></img>

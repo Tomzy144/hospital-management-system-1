@@ -64,64 +64,64 @@
     
     
   <!--START OF SIDEBAR AND NAVBAR -->
-   <div class="navbar">
+  <div class="navbar">
         <div class="section1">
         </div>
         <div class="section2">
+
           </div>
           <div class="profile">
             <div class="profile_account hide">
-            <img id="image_profile_account" src="<?php echo $website_url ?>/Images/imaculater.jpg" alt="">
-            <h4><?php echo $fullname ?> </h4>
+            <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <h4>Doc. Henculus White</h4>
             <button class="btn_submit">Upload Image</button>
-            <span>change password</span>
+            <!-- <h4>change password</h4> -->
         </div>
             <div class="image">
-            <img src="<?php echo $website_url ?>/Images/imaculater.jpg" alt="">
-            <div class="active"></div>
+            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <div class="active_on"></div>
             </div>
         </img>  
-            <span><?php echo $fullname?> </span>
+            <span>Doc. Henculus White</span>
             <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
           </div>
         </div>
     </div>
 
-    <!------Sidebar built by kingsley-->
-        <div class="sidebar">
-        <!-- onclick="homepage_section()" -->
-               <div class="_sidebar_contents">
-               </div>
-            <div class="_sidebar_links">
-                <div class="_links" onclick="patient_admission_form_section()">
-                <i class="fa-solid fa-bed"></i> 
-                <span id="rm">Patient admission form</span>
-                </div>
-                <div class="_links" onclick="walkin_patient_form()">
-                <i class="fa-solid fa-person-walking-arrow-right"></i> 
-                <span id="rm">Walkin patient admission Form</span>
-                </div>
-                <div class="_links" onclick="checkup_form()">
-                <i class="fa-solid fa-person-circle-check"></i> 
-                <span id="rm">Check up</span>
-                </div>
-                <div class="_links" onclick="patient_list()">
-            <i class="fa-solid fa-people-group"></i> 
-            <span id="rm">Patient list</span>
-                </div>
-                <div class="_links" onclick="_walkin_patient_list()">
-            <i class="fa-solid fa-people-group"></i> 
-            <span id="rm">Walkin patient list</span>
-                </div>
-                <div class="_links" onclick="document.getElementById('logoutform').submit();">
-                <i class="fa-solid fa-right-from-bracket"> </i> 
-                <span id="rm">Logout</span>
-                </div>
-                <form method="post" action="../config/code.php" id="logoutform">
+    <div class="sidebar">
+            <div class="sidebar-body">
+                <ul>
+                    <li onclick="patient_admission_form_section()" id="links" class="active">
+                        <i class="fa-solid fa-bed"></i>
+                        <span>Patient admission form</span>
+                    </li>
+                    <li onclick="walkin_patient_form()" id="links">
+                        <i class="fa-solid fa-baby"></i>
+                        <span>Walkin patient admission Form</span>
+                    </li>
+                    <li onclick="checkup_form()" id="links">
+                        <i class="fa-solid fa-person-circle-check"></i>
+                        <span>Check up</span>
+                    </li>
+                    <li onclick="patient_list()" id="links">
+                        <i class="fa-solid fa-people-group"></i>
+                        <span>Patient list</span>
+                    </li>
+                    <li onclick="_walkin_patient_list()" id="links">
+                        <i class="fa-solid fa-people-group"></i>
+                        <span>Walkin patient list</span>
+                    </li>
+                    <li onclick="document.getElementById('logoutform').submit();" id="links">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                        <form method="post" action="../config/code.php" id="logoutform">
                     <input type="hidden" name="action" value="logout"/>    
                 </form>
+                    </li>
+                </ul>
             </div>
         </div>
+
          <!--END OF SIDEBAR AND NAVBAR-->
 
          <!----ALERTS DIV-->

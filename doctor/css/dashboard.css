@@ -12,6 +12,32 @@
             animation: fadeIn 0.5s ease-in-out;
         }
 
+        :root{
+            --bg-color:#fff;
+            --dg-color:#000000;
+            --extra-small-font:0.70rem;
+            ---small-font:0.80rem;
+            --medium-font:1.2rem;
+            --large-font:1.8rem;
+            --extra-large-font:3.5rem;
+            --font-color:rgb(42, 87, 215);
+            --navbar-icon-color:#c4bdbd;
+        }
+        p, h3, h4, span, li {
+            font-size: var(--medium-font);
+            /* color: var(--font-color); */
+        }
+        h5, h6{
+            font-size: var(--extra-small-font);
+        }
+        h1, h2{
+            font-size: var(--large-font);
+            color: var(--font-color);
+        }
+        span{
+            padding: 0.3rem;
+        }
+
         .alert_div{
             width: auto;
             height: auto;
@@ -166,52 +192,84 @@
 
 
 .sidebar{
-    width: auto;
-    max-width: 300px;
-    height: 100%;
-    position: fixed;
-    overflow: hidden;
-    left: 0;
-    top: 0;
-    background-color: rgb(42, 87, 215);
-    z-index: 1100;
-}
-
-
-._sidebar_contents{
-    justify-content: center;
-    display: flex;
-    align-items: center;
-   color: #fff;
-   height: 75px;
-   cursor: pointer;
-   text-align: center;
-}
-._sidebar_links{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+    width: 300px;
     height: 100%;
-    padding: 1em;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1px solid rgb(234, 232, 232);
+    display: flex;
+    background: #fff;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 2;
 }
-
-._links{
-    color: rgb(42, 87, 215);
-    font-size: 1.5em;
-    margin: 0.5em 0;
+.sidebar-header{
+width: 100%;
+display: flex;
+padding: 0.5rem;
+color: rgb(42, 87, 215);
+font-size: var(--extra-large-font);
+justify-content: space-evenly;
+align-items: center;
+}
+.sidebar-body{
+width: 100%;
+display: flex;
+padding: 0.5rem;
+color:rgb(42, 87, 215);
+align-items: center;
+}
+.sidebar-body ul{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+.sidebar-body ul li{
+margin: 0.3rem 0;
+padding: 0.9rem;
+border-radius: 4px;
+cursor: pointer;
+}
+.sidebar-body ul li:nth-child(1){
+margin: 0.3rem 0;
+padding: 0.9rem;
+background-color: #f0f7ff;
+border-radius: 4px;
+cursor: pointer;
+}
+.sidebar-footer{
+ width: 300px;
+display: flex;
+padding: 0.5rem 0;
+color:rgb(255, 255, 255);
+justify-content:left;
+height: auto !important;
+flex-direction: column;
+position: fixed;
+bottom: 0;
+background-color: rgb(42, 87, 215);;
+align-items: left;
+justify-content: center;
+}
+.sidebar-footer  .bi-person{
+    font-size: var(--medium-font);
+    color: var(--bg-color);
+}
+.sidebar-footer span{
+    font-size: var(--medium-font);
+    color: var(--bg-color);
+}
+ button{
+    background-color: #ffc145;
+    border: none;
+    padding: 0.7rem;
     cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    padding: 2rem;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    transition: all ease-in-out 0.5s;
-    position: relative;
-}
-
-._links:hover{
-    background-color: rgb(42, 87, 215);
-    color: rgb(255, 255, 255);
+    border-radius: 10px;
 }
 
 .appoitment_section{
@@ -225,7 +283,7 @@
 
   .patient_list_div {
     width: 100%;
-    margin: 5.5rem 0 0 15.9rem;
+    margin: 5.5rem 0 0 19rem;
 }
 .search_bar_container {
     background-color: #fff;

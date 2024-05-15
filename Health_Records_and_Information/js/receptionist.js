@@ -1,4 +1,16 @@
 'use strict';
+
+const links =  document.querySelectorAll('#links');
+function toggleSidebarLinks(clickedLink){
+    links.forEach(link => link.classList.remove('active'));
+    clickedLink.classList.add('active');
+}
+links.forEach(link => {
+    link.addEventListener('click', function() {
+        toggleSidebarLinks(this);
+    });
+});
+
 //Sidebat responsiveness
 
 //BOOK APPOITMENT WITH AVAILABLE DOCTOR

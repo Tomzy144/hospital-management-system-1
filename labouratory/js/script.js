@@ -15,8 +15,16 @@ function approved_appoitment__section(){
     $('.lab_input').addClass('hide')
 }
 
-
-
+function uploadResult(){
+$('.result').removeClass('hide')
+$('.lab_input').removeClass('hide')
+$('.lab_container').addClass('hide')
+}
+function closeResult(){
+    $('.result').addClass('hide')
+$('.lab_input').addClass('hide')
+$('.lab_container').addClass('hide')
+}
         //ADD THE AMOUNT ON WHICH CLICKED TO THE LIST OF RECEIPT
         const checkboxes = document.querySelectorAll(".checkbox");
         checkboxes.forEach(function(checkbox){
@@ -65,11 +73,9 @@ window.onload = function() {
 
 //TEST  BOOKING
 function show_test_booking(){
-        document.querySelector(".overlay").classList.remove("hide");
         document.querySelector(".test_booking").classList.remove("hide");
 }
 function hide_test_booking(){
-        document.querySelector(".overlay").classList.add("hide");
         document.querySelector(".test_booking").classList.add("hide");
         const checkboxs = document.querySelectorAll(".checkbox");
         checkboxs.forEach(function(checkbox){

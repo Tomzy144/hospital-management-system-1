@@ -1,147 +1,136 @@
 
 @font-face {
-    font-family: 'Poppins';
-    src: url('Poppins-Light.ttf') format('truetype'); /* Adjust the path if necessary */
+    font-family: 'SEGOEUI';
+    src: url('SEGOEUI.TTF') format('truetype'); 
     font-weight: normal; /* Specify the weight if needed */
     font-style: normal; /* Specify the style if needed */
   }
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: fadeIn 2s ease-in-out;
+        }
+        :root{
+            --bg-color:#fff;
+            --dg-color:#000000;
+            --extra-small-font:0.70rem;
+            ---small-font:0.80rem;
+            --medium-font:1.2rem;
+            --large-font:1.8rem;
+            --extra-large-font:3.5rem;
+            --font-color:rgb(42, 87, 215);
+            --navbar-icon-color:#c4bdbd;
+        }
+        
+        p, h3, h4, span, li {
+            font-size: var(--medium-font);
+            color: var(--font-color);
+        }
+        h5, h6{
+            font-size: var(--extra-small-font);
+        }
+        h1, h2{
+            font-size: var(--large-font);
+            color: var(--font-color);
+        }
+        span{
+            padding: 0.3rem;
+        }
+.alert_div{
+    width: auto;
+    height: auto;
+    max-width: 350px;
+    position: fixed;
+    top:0%;
+    right: 0%;
+    z-index: 2000;
+    color: rgb(255, 255, 255);;
+    background-color: red;
+    padding: 1em;
+    animation: headShake 1s ease-in-out;
+}
+.alert_div.pending{
+    background-color:blue;
+}
+.alert_div.successful{
+    background-color: green;
 }
 
-body{
-    width: 100vw;
-    height:100vh;
-    overflow: hidden;
-    background-color: #f7f7f7;
-}
 .navbar{
     width: 100%;
-    height: 75px;
+    height: auto;
     position: fixed;
     display: flex;
+    background-color: rgb(42, 87, 215);
     justify-content: space-between;
-    align-items: center;;
-    background-color: #2a57d7;
+    align-items: center;
     top: 0;
-    z-index: 7;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 0.5rem;
+    z-index: 1100;
 }
 
-.section1{
-    width: 500px;
+
+.display__date{
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    animation: zoomIn 0.5s ease-in-out;
+    position:relative;
+    color: var(--bg-color);
+    font-size: var(--medium-font);
     align-items: center;
 }
-.section1 button{
-    padding: 0.5em;
-    background-color: #fff;
-    border: none;
-    cursor: pointer;
-    color: rgb(42, 87, 215);
-    border-radius: 4px;
-    transition: all ease-in-out 0.5s;
-}
-.section1 button:hover{
-    background: none;
-    color: #fff;
-    border: 1px solid #fff;
-}
+
 .section2{
-    width: 500px;
     height: 100%;
     display: flex;
     flex-direction: row;
-    animation: zoomIn 0.5s ease-in-out;
     justify-content: space-around;
     align-items: center;
 }
-.icons{
-    color: #fff;
-    font-size: 25px;
-    width: 150px;
-    display: flex;
-    justify-content: center;;
-    cursor: pointer;
-    align-items: center;
-    height: 100%;
-}
-#icon{
-    margin: 0 1rem;
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;
-    position: relative;
-}
-#icon-drop{
-    margin: 0 1rem;
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;
-    position: relative;
-}
-.notification1{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 20px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 100%;
-    background:rgb(0, 158, 251);;
-    border: 2px solid #fff;
-}
-.notification2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 25px;
-    width: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 100%;
-    background:rgb(0, 158, 251);;
-    border: 2px solid #fff;
-}
+
 .profile{
-    width: 50%;
-    height: 100%;
     display: flex;
     color: #fff;
     justify-content: center;
     align-items: center;;
 }
-.profile_account{
+.profile span{
+    color: #ffffff;
+}
+.profile h4{
+    color: #ffffff;
+}
+._toggle_icon{
+    color: #fff;
+    font-size: 30px;
+}
+
+._profile_arrow_icon{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
+.profile_account {
     width: 300px;
     position: absolute;
-    height: fit-content;
+    height: auto;
     top: 100%;
-    background-color: #2a57d7;
-    animation: zoomIn 01s ease-in-out;
-    right: 2%;
+    background-color: rgb(42, 87, 215);
+    animation: fadeIn ease-in-out 0.5s;
+    right: 0;
     padding: 1rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 
-#image_profile_account{
+  #image_profile_account{
     width: 140px;
     height: 140px;
     border-radius: 100%;
@@ -151,8 +140,8 @@ body{
     width: 100%;
     background-color: #fff;
     padding: 0.7rem;
-    border: none;
     color: rgb(42, 87, 215);
+    border: none;
     border-radius: 5px;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
@@ -162,7 +151,7 @@ body{
     transform: scale(0.98);
     background: none;
     color:rgb(255, 255, 255);
-    border: 2px solid #fff;
+    border: 1px solid #fff;
 }
 .profile_account span{
     text-align: left;
@@ -171,10 +160,14 @@ body{
 .profile_account h3{
     color: rgb(255, 255, 255);
 }
-
+h3{
+    font-weight:normal;
+    font-size: 1.3rem;;
+    letter-spacing: 2px;
+    color: rgb(42, 87, 215);
+}
 .profile img{
     width: 50px;
-    margin: 0 0.8rem;
     border: 3px solid #fff;
     height: 50px;
     cursor: pointer;
@@ -183,7 +176,7 @@ body{
 .image{
     position: relative;
 }
-.active{
+.active_on{
     position: absolute;
     bottom: 5%;
     right: 15%;
@@ -194,10 +187,10 @@ body{
 }
 #btn_appoitment{
     padding: 0.7rem 1rem;
-    border: none;
     background-color: #fff;
-    margin: 0 7rem;
+    /* margin: 0 0 0 18rem; */
     border-radius: 5px;
+    border: none;
     cursor: pointer;
     color: rgb(42, 87, 215);
     font-size: 12px;
@@ -212,154 +205,117 @@ body{
 }
 
 
+
 .sidebar{
-    width: 75px;
-    height: fit-content;
+    width: 100%;
+    width: 300px;
+    height: 100%;
     overflow: hidden;
     position: fixed;
-    background-color: #2a57d7;
-    left: 0;
     top: 0;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    z-index: 7;
-}
-.sidebar_contents{
-    justify-content: center;
+    left: 0;
+    border-right: 1px solid rgb(234, 232, 232);
     display: flex;
-    align-items: center;
-   color: #fff;
-   height: 75px;
-   cursor: pointer;
-   text-align: center;
-   border-bottom: 2px solid rgba(255, 255, 255);
-}
-.sidebar_contents img{
-    border-radius: 100%;
-    height: 50px;
-    width: 50px;
-}
-.sidebar_icons{
-    width: 100%;
-    animation: zoomIn 0.5s ease-in-out;
-    display: flex;
+    background: #fff;
     flex-direction: column;
-    align-items: center;
-    height: 100%;
+    justify-content: space-around;
+    z-index: 2;
 }
-.sidebar_icons #icon{
-    color: #fff;
-    font-size: 25px;
-    cursor: pointer;
-    margin: 1rem 0;
+.sidebar-header{
+width: 100%;
+display: flex;
+padding: 0.5rem;
+color: rgb(42, 87, 215);
+font-size: var(--extra-large-font);
+justify-content: space-evenly;
+align-items: center;
 }
+.sidebar-body{
+width: 100%;
+display: flex;
+padding: 0.5rem;
+color:rgb(42, 87, 215);
+align-items: center;
+}
+.sidebar-body ul{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+.sidebar-body ul li{
+margin: 0.3rem 0;
+padding: 0.9rem;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.sidebar-body ul li.active{
+margin: 0.3rem 0;
+padding: 0.9rem;
+background-color: #f0f7ff;
+width: 100%;
+border-radius: 4px;
+cursor: pointer;
+}
+.sidebar-body ul li{
+margin: 0.3rem 0;
+padding: 0.9rem;
+background: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.sidebar-footer{
+
+}
+
 
 
 .container{
     width: 100%;
     height: 100%;
-    display: flex;
+}
+
+#antenatal_section.hide{
+    display: none;
 }
 
 .form_container{
-    width: 60%;
     padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: 4.2rem 0 1em 4.6em;
-    overflow: auto;
-    color:rgb(42, 87, 215);
-    position: relative;
-}
-h1{
-    animation: slideInLeft 0.5s ease-in-out;
-    margin: 1rem 0;
-    letter-spacing: 3px;
-}
-h3{
+    margin: 4.2rem 0 0 19em;
     color: rgb(42, 87, 215);
-    font-weight: bold;
-    animation: zoomIn 0.5s ease-in-out;
-}
-.flex_form{
-    width: 100%;
-    display: flex;
-    margin: 1em 0;
-    flex-wrap: wrap;
-}
-
-form{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background: #f7f7f7;
-  padding: 0.5em;
-}
-
-.form_control{
-    width: 300px;
-    display: flex;
-    animation: zoomIn 0.5s ease-in-out;
-    margin: 0.8rem 0.5rem;
-    flex-direction: column;
-}
- label{
-    color: rgb(42, 87, 215);;
-}
- input{
-    padding: 0.5em;
-    color: rgb(42, 87, 215);;
-    border-radius: 5px;
-    font-size: 18px;
-    border: 1px solid rgb(42, 87, 215);;
-    outline: none;
-}
- select{
-    border: 1px solid rgb(42, 87, 215);;
-    padding: 0.5em;
-    background: #fff;
-    color: rgb(42, 87, 215);;;
-}
- textarea{
-    border: 1px solid rgb(42, 87, 215);;
-    padding: 0.5em;
-    color: rgb(42, 87, 215);;;
-    outline: none;
-}
-.large{
-    width: 100%;
-    margin: 1em 0;
+    position: relative;
 }
 
 .upload_div{
-    width: 350px;
-    height: 250px;
-    box-shadow: rgba(187, 186, 186, 0.35) 0px 5px 15px;
+    width: 300px;
+    height: 300px;
     margin: 0 auto;
     overflow: hidden;
-    animation: zoomIn 0.5s ease-in-out;
     display: flex;
+    box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
     justify-content: center;
     align-items: center;
-    background-color: #f7f7f7;
     position: relative;
+    text-align: center;
+    border-radius: 100%;
     text-align: center;
 }
  .capture_image_icon{
-    font-size: 18px;
     color: rgb(255, 255, 255);
     cursor: pointer;
     border-radius: 100%;
     padding: 0.5rem;
-    width: 40px;
-    height: 40px;
     position: absolute;
-    right: 9%;
-    bottom: 14%;
+    right: 12%;
+    bottom: 17%;
     background-color: rgb(42, 87, 215);
 }
 .capturedImage{
     position: absolute;
 }
-.div_flex{
+.flex_capture_button{
     display: flex;
     margin: 0 auto;
 }
@@ -397,129 +353,100 @@ form{
     color: rgb(42, 87, 215);;
     border: 1px solid rgb(42, 87, 215);
 }
-.btn_submit{
-    width: 25%;
-    background-color: rgb(42, 87, 215);;
+.each_sections {
+    display: flex;
+    width: 100%;
+    margin: 1em 0;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .form-control{
+      margin: 1rem 0.5rem;
+      display: flex;
+      text-align: left;
+      flex-direction: column;
+      width: 350px;
+      position: relative;
+      color: rgb(42, 87, 215);
+  }
+  label{
+    font-size: 1.2rem;
+      color: rgb(42, 87, 215);
+  }
+  input {
+    padding: 0.5rem 0;
+    color: rgb(42, 87, 215);
+    font-size: 1.1rem;
+    border: none;
+      border-bottom-width: medium;
+      border-bottom-style: none;
+      border-bottom-color: currentcolor;
+    border-bottom: 1px solid rgb(42, 87, 215);
+    outline: none;
+  }
+  select {
+    padding: 0.5em;
+    color: rgb(42, 87, 215);
+    font-size: 1rem;
+     border: none;
+    border-bottom: 1px solid rgb(42, 87, 215);
+    outline: none;
+    text-transform: uppercase;
+  }
+
+   .btn_submit{
+    width: auto;
+    background-color: rgb(42, 87, 215);
     padding: 0.7rem;
     border: none;
-    color: rgb(255, 255, 255);;
+    color: rgb(255, 255, 255);
     border-radius: 5px;
-    transition: all  ease-in-out 0.6s;
+    transition: all ease-in-out 0.6s;
     cursor: pointer;
     margin: 1rem 0;
-}
-.btn_submit:hover{
-    background:none;
-    color:rgb(42, 87, 215);;
-    border: 1px solid rgb(42, 87, 215);;
-}
+    }
+ 
+    .btn_submit:hover{
+      background:none;
+      border: 1px solid rgb(42, 87, 215);
+      color: rgb(42, 87, 215);
+    }
 
 
-.list_div {
-    width: 800px;
-    margin: 4.5rem 0 0 1rem;
-    overflow: auto;
-}
- .appoitments_div{
-    width:400px;
-    height:auto;
-    background-color:#fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    position:absolute;
-    padding:1em;
-    animation: bounceIn 1s ease-in-out;
-    top: 10%;
-    right: 1%;
-    z-index:10
-}
 
- .tranfer_div{
-    width: 300px;
-    height: auto;
-    padding: 1em;
-    position: absolute;
-    top: 10%;
-    right: 1%;
-    animation: bounceIn 1s ease-in-out;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    z-index: 9;
-    background-color: rgb(255, 255, 255);
-}
-span{
-    color: rgb(42, 87, 215);;
-}
 
- .tranfer_div ul{
-    list-style: none;
-}
- .tranfer_div ul li{
-    margin: 1em 0;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-    color:rgb(42, 87, 215);
-}
- .tranfer_div ul li:hover{
-    color: rgb(255, 0, 0);;
-}
-.background_opacity{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 26, 97); 
-    opacity: 30%;
-    z-index: 8;
-    position: absolute;
+
+
+
+
+
+  .list_div {
+    margin: 5.5rem 0 0 19rem;
 }
  .search_bar_container {
     background-color: #fff;
     color:rgb(42, 87, 215);
     padding: 0.5em;
-    animation: zoomIn 0.5s ease-in-out;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     margin: 0.4em 0 0 0;
 }
-.search_bar_container input{
-    width: 300px;
-    padding: 0.5em;
-    font-size: 15px;
-}
-
-.dynamic_popup{
-    width: auto;
+.search_bar_container span {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+.search_bar_container i{
     position: absolute;
-    top: 0%;
-    right: 0%;
-    z-index: 15;
-    display: flex;;
-    flex-direction: column;
-    justify-content: center;
-    animation: headShake 1s ease-in-out ;
-    padding: 0.5em;
-    text-align: center;
-    height: fit-content;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: rgb(255, 255, 255);
-}
-.dynamic_popup span{
-    margin: 0.5em;
-    font-size: 15px;
-}
-.div_switch{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
-.div_switch span{
+    right: 1%;
     cursor: pointer;
-    transition: all ease-in-out 0.5s;
-    padding: 0.5em;
-    color: rgb(42, 87, 215);
 }
-.div_switch span:hover{
+.search_bar_container input {
     padding: 0.5em;
-    background-color: rgb(42, 87, 215);
-    color: rgb(255, 255, 255);
 }
 
  table {
@@ -531,1256 +458,185 @@ span{
     background-color: #fff; 
     position: sticky; 
     top: 0;
-    animation: zoomIn 0.5s ease-in-out;
     z-index: 1; 
     background-color: #fff; 
+    font-size: 1.3em;
+    text-align: center;
+}
+table thead  td{
+    color: rgb(42, 87, 215);
+    padding: 0.5em;
+    font-size: 0.8em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .77em .58em .74em .58em;
+      padding-right: 0.58em;
+    padding-right: 0.58em;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    vertical-align: top;
+    line-height: 1.2;
 }
  table tbody td img{
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
     border-radius: 100%;
 }
- table  thead td {
-    color: rgb(42, 87, 215);
-    font-weight: bold;
-    font-size: 16px;
-    text-align: center;
-    padding: 0.3em;
-    text-transform: uppercase;
-}
-table tbody{
-    animation: zoomIn 0.5s ease-in-out;
-}
+
  table tbody td {
     padding: 0.5em;
-    cursor: pointer;
-    font-size: 15px;
-    text-align: center;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+    text-align: center;
     color: rgb(255, 255, 255);
     background-color: rgb(42, 87, 215);
-    border-bottom: 1px solid #ddd; /* Add a bottom border to separate cells */
+    padding: .77em .58em .74em .58em;
+    padding-right: 0.58em;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    font-size: 0.95rem;
+    vertical-align: center;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    border-bottom: 1px solid #fff;
 }
-
-.btn_app{
-    width: 100%;
-    padding: 0.5em;
-    background-color:rgb(42, 87, 215); 
-    border: none;
-    color: #fff;
+.bi-three-dots{
     cursor: pointer;
 }
 
-.close_icon{
-    position: absolute;
-    right: 3%;
-    top: 1%;
-    font-size: 25px;
-    cursor: pointer;
-    color: #ff0000;
-}
 
-
-
-
-
-
-
-
-@media screen and (max-width: 1300px) {
-.form_control{
-    width: 245px;
-}
-.appoitments_div .form_control{
-    width: 100%;
-}
-.patient_container .div_flexs .form_control{
-    width: 230px;
-}
-}
 
 /*-------------------------PATIENT PROFILES---------------------------------------*/
-
 .antenatal_patients_profile{
-    width: 100%;
-    height: 100%;
+    height: auto;
     background-color: rgb(42, 87, 215);
     display: flex;
+    margin: 4.5rem 0 0 19rem;
     justify-content: center;
 }
+
 .patient_container{
-    width: 50%;
-    overflow: auto;
-    margin: 4.6em 0 1em 5em;
-    border-right: 1px solid #fff;
+    width: 100%;
     padding: 0.5em;
     background-color:rgb(42, 87, 215);
 }
-.patient_container ._inputs span{
-    color: #ffffff;
-}
-.patient_container h3{
-    color: #fff;
-}
-.patient_container2{
-    width: 50%;
-    overflow: auto;
-    margin: 4.6em 0 1em 1em;
-    background-color: rgb(42, 87, 215);
-    padding: 1em;
-}
-.patient_container2 h1{
-    font-size: 20px;
-    color: rgb(255, 255, 255);;
-    font-weight: bold;
-}
-.all_info{
-    width: 100%;
-    height: auto;
-    overflow: auto;
-}
-.all_info .patient_personal_info{
-    display: flex;
-    flex-direction: column;
-    padding: 0.5em;
-    color:rgb(42, 87, 215);;
-    margin: 0 0 1em 0;
-    background-color: rgb(42, 87, 215);
-    border-bottom: 1px solid rgb(255, 255, 255);
-}
-.patient_personal_info span{
-font-size: 18px;
-color: #fff;
-margin: 0.2em 0;
-animation: slideInLeft 0.5s ease-in-out;
-}
-.all_info .patient_inputs{
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-    height: auto;
-    overflow: auto;
-    margin: 0 0 1em 0;
-}
-.patient_inputs span{
-    color: #fff;
 
-}
-._vital_info{
-    width: 100%;
-    height: fit-content;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-._btn_info{
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    padding: 0.5em;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 20px;
-    margin: 0.5em 0;
-    animation: zoomIn 0.5s ease-in-out;
-    color: rgb(42, 87, 215);;
-    border: none;
-}
-._btn_flexs{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-._btn{
-    width: 100%;
-    padding: 0.5em;
-    background-color: #ffffff;
-    cursor: pointer;
-    color: #000000;
-    border: none;
-    transition: all ease-in-out 0.5s;
-}
-
-._data{
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.5em;
-    background-color: #000000;
-}
-._data h3{
-color: #fff;
-}
-#labour_vital .flexs{
-    display: flex;
-    flex-direction: row;
-}
-._data .form_control{
-    width: 260px;
-    color: #fff;
-}
-.flex_div{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-._data span{
-    border: 1px solid #2a57d7;
-    width: 230px;
-    padding: 0.4em;
-    color: #fff;
-}
-.all_info  h3{
-    text-align: center;
-    font-size: 20px;
-    margin: 0.5em 0;
-    color: #fff;
-}
-.patient_inputs thead td{
-    padding: none;
-}
-.patient_inputs tbody td{
-    padding: 1em;
-}
-
-.patient_container form{
-    background-color: #000000;
-}
-._screening_div{
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    color: #fff;
-    flex-wrap: wrap;
-    background-color: #000000;
-}
 .patient_profile{
-width: 100%;
-height: auto;
-margin: 2em 0;
-display: flex;
-padding: 1em;
-justify-content: space-around;
-align-items: center;
-border-bottom: 1px solid rgb(42, 87, 215);
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+    border-bottom: 1px solid #fff;
+    height: auto;
 }
 .patient_profile img{
     width: 100px;
     height: 100px;
     border-radius: 100%;
 }
-.patient_container h1{
-    font-size: 20px;
-    color: rgb(255, 255, 255);;
-    font-weight: bold;
-}
-.div_text{
-    color: rgb(42, 87, 215);
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-}
-.btn_patients_profile{
-    width: 100%;
-    padding: 0.5em;
-    color: rgb(42, 87, 215);;
-    border: none;
-    border-radius: 20px;
-    margin: 0.5em 0;
-    text-align: center;
-    animation: zoomIn 0.5s ease-in-out;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-}
-.antenatal_patients_profile .vitals_input{
-    width: 100%;
-    background-color: black;
-    height: auto;
-    padding: 1em;
-    color: #fff;
-}
- ._inputs{
-    width: 100%;
-}
-.div_flexs{
-    flex-wrap: wrap;
-    width: 100%;
-    display: flex;
-    margin: 0.5em 0;
-  flex-direction: row;
-  border: 2px solid rgb(255, 255, 255);
-}
 .patient_container label{
     color: #fff;
 }
-.patient_container .form_control{
-    width: 250px;
-}
-.patient_container input{
-    color: black;
-    border: 1px solid rgb(255, 255, 255);
-}
-.patient_container textarea{
-    width: 100%;
-    height: 100px;
-    border: 1px solid rgb(255, 255, 255);
-}
-.patient_container select{
-    padding: 0.6rem;
-    border: none;
-    border: 1px solid rgb(255, 255, 255);
-    outline: none;
-    color: #000000;
-    width: 100%;
-}
-.antenatal_patients_profile .drug_prescribtion{
-    width: 100%;
-    padding: 1em;
-    background-color: black;
-    height: auto;
-}
-.drug_prescribtion .div_flexs{
-    flex-wrap: wrap;
-    width: 100%;
-    display: flex;
-    margin: 0.5em 0;
-  flex-direction: row;
-  position: relative;
-}
-.drug_prescribtion .btn_white{
-    background-color: #fff;
-    color:  rgb(42, 87, 215);;
-}
-.drug_prescribtion .div_flexs .add_icon{
+.patient_profile h3{
     color: #fff;
-    font-size: 30px;
-    top: 50%;
-    right: 2%;
-    cursor: pointer;
-    position: absolute;
 }
-.antenatal_patients_profile .lab_input{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    height: auto;
+
+.vitals_input{
+    border-bottom: 1px solid #fff;
 }
-.antenatal_patients_profile .radiology_input{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    height: auto;
+
+.patient_container h1{
+color: var(--bg-color);
 }
-.antenatal_patients_profile .screening_input{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    height: auto;
+.patient_container h3{
+color: var(--bg-color);
 }
-.screening_input textarea{
-    width: 40%;
-    height: 100px;
-}
- form  span{
+  
+.form-control{
+    margin: 1rem 0.5rem;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    width: 350px;
+    position: relative;
     color: rgb(42, 87, 215);
 }
-.screening_input .div_flexs{
-    flex-wrap: wrap;
-    width: 100%;
-    display: flex;
-  flex-direction: column;
-}
-.screening_input .div_flexs .form_control .div{
-margin: 1em 1em;
-}
-.flex_wrap{
-    display: flex;
-    flex-wrap: wrap;
-}
- .flex_form_control{
-    display: flex;
-    background-color: red;
-    width: 100%;
-    height: auto;
-    flex-wrap: wrap;
-}
-
-.postnatal_patients_profile{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background-color: rgb(42, 87, 215);
-    justify-content: center;
-}
-.patient_container span{
-    color: #fff;
-}
-.postnatal_patients_profile .postnatal_accessment_form{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    height: auto;
-}
-.postnatal_patients_profile .neonatal_assessmen_form{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    height: auto;
-}
-.postnatal_patients_profile .labouratory_diagnostic_test_form{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    height: auto;
-}
-.postnatal_patients_profile .drug_prescribtion2{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    position: relative;
-    height: auto;
-}
-.drug_prescribtion2 .btn_white{
-    background-color: #fff;
-    color:  rgb(42, 87, 215);;
-}
-.drug_prescribtion2 .div_flexs .add_icon{
-    color: #fff;
-    font-size: 30px;
-    top: 50%;
-    right: 6%;
-    cursor: pointer;
-    position: absolute;
-}
-
-
-.labour_patients_profile{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background-color: rgb(42, 87, 215);
-    position: relative;
-    justify-content: center;
-}
-.patient_container span{
-    color: rgb(42, 87, 215);;
-}
-.patient_container ._inputs span{
+.patient_container label{
+    font-size: 1.2rem;
+      color: rgb(255, 255, 255);
+  }
+  .patient_container input {
+    padding: 0.5em;
     color: rgb(255, 255, 255);
-}
-.labour_patients_profile .vitals_input2{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    height: auto;
-    color: #fff;
-}
-.labour_patients_profile .lab_input2{
-    width: 100%;
-    padding: 1em;
-    background-color: black;
-    height: auto;
-}
-.labour_patients_profile .radiology_input2{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    height: auto;
-}
-.labour_patients_profile .screening_input2{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    height: auto;
-}
-.labour_patients_profile .screening_input2 .div_flexs .form_control{
-    width: 300px;
-    }
-  .labour_patients_profile  .screening_input2 .div_flexs{
-        flex-wrap: wrap;
-        width: 100%;
-        display: flex;
-      flex-direction: row;
-    }    
-.labour_patients_profile .drug_prescribtion3{
-    width: 100%;
-    background-color: black;
-    padding: 1em;
-    position: relative;
-    height: auto;
-}
+    font-size: 1.1rem;
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    outline: none;
+    background: none;
+  }
 
-.drug_prescribtion3 .btn_white{
-    background-color: #fff;
-    color:  rgb(42, 87, 215);;
+  .patient_container select{
+    padding: 0.5em;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    border: none;
+    max-height: 70px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    outline: none;
+    background: none;
 }
-.drug_prescribtion3 .div_flexs .add_icon{
-    color: #fff;
-    font-size: 30px;
-    top: 50%;
-    right: 6%;
+  .patient_container textarea{
+    padding: 0.5em;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    border: none;
+    max-height: 70px;
+    border: 1px solid rgb(255, 255, 255);
+    outline: none;
+    background: none;
+}
+.drug_prescription{
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.screening_input{
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.btn{
+    padding: 0.5rem;
+    background-color: #fff;
+    font-size: 0.98rem;
+    border: none;
+    color: rgb(42, 87, 215);;
+    border-radius: 8px;
     cursor: pointer;
-    position: absolute;
+    margin: 0.5rem;
 }
 
 .drugs_booking{
-    width: 700px;
+    width: auto;
     height: auto;
-    background-color: #fff;
-    position: absolute;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    display: flex;
-    top: 0;
-    left: 30%;
-    flex-direction: column;
-    z-index: 11;
-    margin: 5rem auto;
-    padding: 1rem 1rem;
-}
-.overlay{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 26, 97); 
+    max-height: 1000px;
+    overflow-y: auto;
     position: fixed;
+    right: 0;
     top: 0;
-    opacity: 40%;
-    left: 0;
-    z-index: 10;
+    z-index: 1200;
+    background-color: white;
+    padding: 0.5rem
 }
-#close{
-    font-size: 30px;
+.bi-x-square{
     color: rgb(42, 87, 215);
     position: absolute;
-    right: 0;
+    right: 3%;
     cursor: pointer;
-    top: 0;
-}
-.drugs_booking h1{
-    font-size: 27px;
-    text-align: center;
-    color: rgb(42, 87, 215);
-    margin: 1em auto;
-    padding: 0.5rem;
+    top: 2%;
 }
 .drugs_booking table{
-    width: 100%;
-    border-collapse:collapse;
+    margin: 2rem 0;
 }
-.drugs_booking thead td{
-}
-.total{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 6rem;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-}
-.drugs_booking button{
-    width: 100%;
-    background-color: rgb(42, 87, 215);
-    padding: 0.5em;
-    margin: 1rem 0;
-    border-radius: 20px;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-}
-.drugs_booking button:hover{
-    background: none;
-    border: 1px solid rgb(42, 87, 215);
-    cursor: pointer;
-    color: #000000;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*appoitment section*/
-.appoitment_section{
-    width: 100%;
-    height: 100%;
-}
-
-/*VITALS*/;
-.dashboard_contents .nurse_vital_section_vital{
-    width: 100%;
-    background-color: #fff;
-    height: 100%;
-}
-
-.appoitment_container{
-    margin: 2rem auto 0 auto;
-    height: 100%;
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    margin: 6rem auto;
-    justify-content: start;
-}
-.appoitment_container .appoitments{
-    width: 100%;
-    height:max-content;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items:  center;
-}
-.appoitments h1{
-    padding: 1rem;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-}
-
-.cards_container{
-    display: flex;
-    width: 100%;
-    height: max-content;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items:  center;
-}
-.cards{
-    width: 350px;
-    height: max-content;
-    background-color: #fff;
-    animation: zoomIn 01s ease-in-out;
-    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
-    margin: 1rem 1rem;
-}
-.cards  .profile{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    height: 100px;
-}
-.cards .profile img{
-    width: 90px;
-    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
-    height: 90px;
-
-}
-#btn_declined{
-    width: 100%;
-}
-#btn_accepted{
-    width: 100%;
-}
-#btn_pending{
-    width: 100%;
-}
-.profile .name_role{
-    display: flex;
-    color: rgb(158, 160, 166);;
-    flex-direction: column;
-}
-.profile h3{
-    color: black;
-}
-.date_time{
-    width: 100%;
-    height: 100px;
-    color: #fff;
-    display: flex;
-    background-color:rgb(42, 87, 215) ;
-    justify-content: space-between;
-    padding: 0 1rem;
-    align-items: center;
-}
-.buttons{
-    display: flex;
-    margin: 1rem 0;
-    justify-content: center;
-}
-.buttons .btn{
-    padding: 0.5em 1em;
-    background-color:rgb(42, 87, 215) ;
-    border: none;
-    cursor: pointer;
-    margin: 0 1rem;
-    color: #fff;
-}
-.doctor_roles_name{
-    width: 100%;
-    height:max-content;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    position: relative;
-    align-items: center;
-}
-#close_appoitment_form{
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #ffffff;
-    font-size: 30px;
-    box-shadow: rgba(159, 158, 158, 0.35) 0px 5px 15px;
-    cursor: pointer;
-}
-
-.hide{
-    display: none;
-}
-.doc_roles{
-    width: 45rem;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    padding: 1rem;
-    margin: 1rem 0;
-    background: #fff;
-    animation: fadeIn 01s ease-in-out;
-}
-.doc_roles label{
-    color: rgb(42, 87, 215); 
-    animation: zoomIn 01s ease-in-out;
-}
-.doc_roles select{
-    padding: 1rem;
-    border: none;
-    border: 2px solid #fff;; 
-    background-color:rgb(42, 87, 215); 
-    animation: zoomIn 01s ease-in-out;
-    margin: 1rem 0;
-    color: rgb(255, 255, 255);;
-}
-#continue{
-    background-color: rgb(42, 87, 215);
-    padding: 1rem 1rem;
-    border: none;
-    animation: zoomIn 01s ease-in-out;
-    color:  rgb(255, 255, 255);
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-}
-#continue:hover{
-    border: 1px solid rgb(42, 87, 215);
-    padding: 1rem 1rem;
-}
-
-.calendar{
-    width: 45rem;
-    height: 46rem;
-    background-color: rgb(42, 87, 215);
-    margin: 1rem 0;
-    box-shadow: 0,0.5rem 3rem rgba(0,0,0,0.4);
-    color: #fff;
-}
-.month{
-    width: 100%;
-    height: 6rem;
-    background-color :rgb(255, 255, 255) ;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-   text-align: center;
-   color: rgb(42, 87, 215);
-}
-
-.month i{
-    font: 2rem;
-    cursor: pointer;
-    animation: zoomIn 01s ease-in-out;
-}
-.month h1{
-    font-size: 1.5rem;
-    font-weight: 400;
-    animation: zoomIn 01s ease-in-out;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
-}
-
-.month p{
-    font-size: 1rem;
-    animation: zoomIn 01s ease-in-out;
-}
-
-
-.weekdays{
-    width: 100%;
-    height: 5rem;
-    padding: 0 0.4rem;
-    animation: zoomIn 01s ease-in-out;
-    display: flex;
-    align-items: center;
-}
-.weekdays div{
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    width: calc(44.2rem/7  );
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
-
-.days{
-    width: 100%;
-    display: flex;
-    animation: zoomIn 01s ease-in-out;
-    flex-wrap: wrap;
-    padding: 0.2rem;
-}
-.days div{
-    font-size: 1rem;
-    margin: 0.3rem;
-    width: calc(40.2rem/7 );
-    height: 5rem;
-    display: flex;;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.2s;
-}
-
-.days div:hover:not(.today){
-    background-color: rgb(0, 68, 255);
-    border:0.2rem solid #d1cece;
-    cursor: pointer;
-}
-
-.prev-date{
-    opacity: 0.5;
-}
-
-.next-date{
-    opacity: 0.5;
-}
-.content{
-    color: #db0000;
-    font-size: 2rem;
-}
-.clicked {
-    background-color: #aaffaa; /* Light green color for clicked date */
-  }
-
-.today{
-    background-color: #0044ff;
-}
-.hidden{
-
-    display: none;
-}
-
-.form_appoitment{
-    width:45rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    height: fit-content;
-    background: rgb(255, 255, 255);
-    color: #0044ff;
-    padding: 1rem 1rem;
-}
-
-.form_appoitment .form{
-    width:100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.form_appoitment .form_control{
-    width: 40%;
-    animation: none;
-    height: auto;
-    margin: 1em 1em;
-}
-.form_appoitment label{
-    color: rgb(42, 87, 215);
-}
-.form_appoitment input{
-    width: 100%;
-    background-color: none;
-    padding: 1rem 1rem;
-    border: 2px solid rgb(42, 87, 215);;
-    
-}
-.form_appoitment .form_control_text_area{
-    width: 100%;
-    animation: none;
-    height: auto;
-    margin: 1em 1em;
-}
-.selected_date{
-    padding: 1rem 1rem;
-    background-color: rgb(42, 87, 215);
-    border: 2px solid rgb(42, 87, 215);;
-    color: rgb(255, 255, 255);
-}
-.form_appoitment textarea{
-    border: none;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-    width: 100%;
-}
-.btn_submit_appoitment{
-    width: 100%;
-    background-color:rgb(42, 87, 215);
-    color: #fff;
-    border: none;
-    margin: 1rem auto;
-    padding: 0.9rem;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-}
-.btn_submit_appoitment:hover{
-    background-color: #fff;
-    color: black;
-    border: 1px solid rgb(42, 87, 215);;
-}
-
-/*appoitment section*/
-.appoitment_section{
-    width: 100%;
-    height: 100%;
-}
-.appoitment_container{
-    height: 900px;
-    overflow: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-}
-.appoitment_container .appoitments{
-    width: 100%;
-    height:max-content;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    margin: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    margin: 6rem 0 0 5em;
-    align-items:  center;
-}
-.appoitments h1{
-    padding: 1rem;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-}
-
-.cards_container{
-    display: flex;
-    width: 100%;
-    height: max-content;
-    justify-content: start;
-    flex-wrap: wrap;
-    align-items:  center;
-}
-.cards{
-    width: 350px;
-    height: max-content;
-    background-color: #fff;
-    animation: zoomIn 01s ease-in-out;
-    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
-    margin: 1rem 1rem;
-}
-.cards  .profile{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    height: 100px;
-}
-.cards .profile img{
-    width: 90px;
-    box-shadow: rgba(167, 166, 166, 0.35) 0px 5px 15px;
-    height: 90px;
-
-}
-#btn_declined{
-    width: 100%;
-}
-#btn_accepted{
-    width: 100%;
-}
-#btn_pending{
-    width: 100%;
-}
-.profile .name_role{
-    display: flex;
-    color: rgb(158, 160, 166);;
-    flex-direction: column;
-}
-.profile h3{
-    color: black;
-}
-.date_time{
-    width: 100%;
-    height: 100px;
-    color: #fff;
-    display: flex;
-    background-color:rgb(42, 87, 215) ;
-    justify-content: space-between;
-    padding: 0 1rem;
-    align-items: center;
-}
-.buttons{
-    display: flex;
-    margin: 1rem 0;
-    justify-content: center;
-}
-.buttons .btn{
-    padding: 0.5em 1em;
-    background-color:rgb(42, 87, 215) ;
-    border: none;
-    cursor: pointer;
-    margin: 0 1rem;
-    color: #fff;
-}
-.doctor_roles_name{
-    width: 100%;
-    height:max-content;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    margin: 6rem 0 0 5em;
-    position: relative;
-    align-items: center;
-}
-#close_appoitment_form{
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #ff0000;
-    font-size: 30px;
-    box-shadow: rgba(159, 158, 158, 0.35) 0px 5px 15px;
-    cursor: pointer;
-}
-
-.hide{
-    display: none;
-}
-.doc_roles{
-    width: 45rem;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    padding: 1rem;
-    margin: 1rem 0;
-    background: #fff;
-    animation: fadeIn 01s ease-in-out;
-}
-.doc_roles label{
-    color: rgb(42, 87, 215); 
-    animation: zoomIn 01s ease-in-out;
-}
-.doc_roles select{
-    padding: 1rem;
-    border: none;
-    border: 2px solid #fff;; 
-    background-color:rgb(42, 87, 215); 
-    animation: zoomIn 01s ease-in-out;
-    margin: 1rem 0;
-    color: rgb(255, 255, 255);;
-}
-#continue{
-    background-color: rgb(42, 87, 215);
-    padding: 1rem 1rem;
-    border: none;
-    animation: zoomIn 01s ease-in-out;
-    color:  rgb(255, 255, 255);
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-}
-#continue:hover{
-    border: 1px solid rgb(42, 87, 215);
-    padding: 1rem 1rem;
-}
-
-.calendar{
-    width: 45rem;
-    height: 46rem;
-    background-color: rgb(42, 87, 215);
-    margin: 1rem 0;
-    box-shadow: 0,0.5rem 3rem rgba(0,0,0,0.4);
-    color: #fff;
-}
-.month{
-    width: 100%;
-    height: 6rem;
-    background-color :rgb(255, 255, 255) ;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-   text-align: center;
-   color: rgb(42, 87, 215);
-}
-
-.month i{
-    font: 2rem;
-    cursor: pointer;
-    animation: zoomIn 01s ease-in-out;
-}
-.month h1{
-    font-size: 1.5rem;
-    font-weight: 400;
-    animation: zoomIn 01s ease-in-out;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
-}
-
-.month p{
-    font-size: 1rem;
-    animation: zoomIn 01s ease-in-out;
-}
-
-
-.weekdays{
-    width: 100%;
-    height: 5rem;
-    padding: 0 0.4rem;
-    animation: zoomIn 01s ease-in-out;
-    display: flex;
-    align-items: center;
-}
-.weekdays div{
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    width: calc(44.2rem/7  );
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
-
-.days{
-    width: 100%;
-    display: flex;
-    animation: zoomIn 01s ease-in-out;
-    flex-wrap: wrap;
-    padding: 0.2rem;
-}
-.days div{
-    font-size: 1rem;
-    margin: 0.3rem;
-    width: calc(40.2rem/7 );
-    height: 5rem;
-    display: flex;;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.2s;
-}
-
-.days div:hover:not(.today){
-    background-color: rgb(0, 68, 255);
-    border:0.2rem solid #d1cece;
-    cursor: pointer;
-}
-
-.prev-date{
-    opacity: 0.5;
-}
-
-.next-date{
-    opacity: 0.5;
-}
-.content{
-    color: #db0000;
-    font-size: 2rem;
-}
-.clicked {
-    background-color: #aaffaa; /* Light green color for clicked date */
-  }
-
-.today{
-    background-color: #0044ff;
-}
-.hidden{
-
-    display: none;
-}
-
-.form_appoitment{
-    width:45rem;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    height: fit-content;
-    background: rgb(255, 255, 255);
-    color: #0044ff;
-    padding: 1rem 1rem;
-}
-
-.form_appoitment .form{
-    width:100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.form_appoitment .form_control{
-    width: 40%;
-    animation: none;
-    height: auto;
-    margin: 1em 1em;
-}
-.form_appoitment label{
-    color: rgb(42, 87, 215);
-}
-.form_appoitment input{
-    width: 100%;
-    background-color: none;
-    padding: 1rem 1rem;
-    border: 2px solid rgb(42, 87, 215);;
-    
-}
-.form_appoitment .form_control_text_area{
-    width: 100%;
-    animation: none;
-    height: auto;
-    margin: 1em 1em;
-}
-.selected_date{
-    padding: 1rem 1rem;
-    background-color: rgb(42, 87, 215);
-    border: 2px solid rgb(42, 87, 215);;
-    color: rgb(255, 255, 255);
-}
-.form_appoitment textarea{
-    border: none;
-    background-color: rgb(42, 87, 215);
-    color: #fff;
-    width: 100%;
-}
-.btn_submit_appoitment{
-    width: 100%;
-    background-color:rgb(42, 87, 215);
-    color: #fff;
-    border: none;
-    margin: 1rem auto;
-    padding: 0.9rem;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-}
-.btn_submit_appoitment:hover{
-    background-color: #fff;
-    color: black;
-    border: 1px solid rgb(42, 87, 215);;
-}
-
 .hidden{
     display: none;
 }
