@@ -69,7 +69,7 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
     <?php include 'meta.php'?>
 </head> 
 
-<body>
+<body >
 
 
     <script>

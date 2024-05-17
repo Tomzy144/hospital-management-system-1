@@ -52,7 +52,7 @@
                                                     echo "<td>" . $row["time"] . "</td>";
                                                     echo "<td>";
                                                     ?>
-                                                    <button class="accept-btn" type="button" onClick="accept('<?php echo $row["patient_id"]; ?>')">Accept</button>
+                                                    <button class="accept-btn" type="button" onClick="accept('<?php echo $row["patient_id"]; ?>'),getWards();">Accept</button>
                                                     <?php
                                                     echo "</td>";
                                                     echo "<td>";

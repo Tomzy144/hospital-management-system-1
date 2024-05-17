@@ -60,7 +60,7 @@ $patient_id = $_POST['patient_Id'];
 
 
 <!--PERSONAL PROFILE VITAL AFTER CLICKING ON THE ACCEPT BUTTON--->
-<div class="patient-personal-detail">
+<div class="patient-personal-detail" >
 
 </div>
 <div class="patient-profile">
@@ -73,9 +73,9 @@ $patient_id = $_POST['patient_Id'];
           </div>
                 <div class="flex-div">
               <div class="ward-div">
-                    <label for="ward"   >Change Ward</label>
-                    <select name="ward" id= "wards" onclick="ward(),getWards();">
-                    <option></option>
+                    <label for="ward">Change Ward</label>
+                    <select name="ward"  id= "wards" >
+                    <option  ></option>
                     </select>
             </div>
           <div class="ward-div">
