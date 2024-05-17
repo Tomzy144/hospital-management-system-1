@@ -18,15 +18,19 @@ links.forEach(link => {
 
 function createDate(){
  const now = new Date();
- const  day = now.getDate();
- const month = now.getMonth();
- const year = now.getFullYear()
- const hour = `${now.getHours()}`.padStart(2,0);
- const min = `${now.getMinutes()}`.padStart(2,0);
- document.querySelector('.display__date').textContent = `${day}/${month}/${year}, ${hour}:${min}`
+const options = {
+  day:'numeric',
+  month:'numeric',
+  year:'numeric',
+  // weekday:'long',
+  hour:'numeric',
+  minute:'numeric',
+  second:'numeric',
 }
-
-createDate()
+const dateTime = new Intl.DateTimeFormat(navigator.language, options).format(now)
+ document.querySelector('.display__date').textContent = dateTime
+}
+setInterval(() => createDate())
   
 //DIFFERENT SECTIONS 
 function antenatalSection(){

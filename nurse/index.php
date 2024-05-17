@@ -105,24 +105,35 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
         </div>
       <!------Sidebar built by kingsley-->
       <div class="sidebar">
-        <!-- onclick="homepage_section()" -->
-               <div class="_sidebar_contents">
-               </div>
-            <div class="_sidebar_links">
-            <div class="_links" onclick="appoitmentSection()">
-                <i class="bi bi-calendar2-plus"></i> <span id="rm">Appoitments</span>
-                </div>
-                <div class="_links" onclick="availablePatientList()">
-                <i class="fa-solid fa-people-group"></i> <span id="rm">Patient list</span>
-                </div>
-                <div class="_links" onclick="document.getElementById('logoutform').submit();">
-                <i class="fa-solid fa-right-from-bracket"> </i> <span id="rm">Logout</span>
-                </div>
-                <form method="post" action="../config/code.php" id="logoutform">
-                    <input type="hidden" name="action" value="logout"/>    
-                </form>
-            </div>
+<div class="sidebar-body">
+    <ul>
+        <li onclick="appoitmentSection()" id="links" class="active">
+            <i class="bi bi-calendar2-plus"></i>
+            <span>Appoitments</span>
+        </li>
+        <li onclick="availablePatientList()" id="links">
+            <i class="fa-solid fa-people-group"></i>
+            <span>Patient list</span>
+        </li>
+        <li onclick="document.getElementById('logoutform').submit();" id="links">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+            <form method="post" action="../config/code.php" id="logoutform">
+        <input type="hidden" name="action" value="logout"/>    
+    </form>
+        </li>
+    </ul>
+</div>
+<!-- <div class="sidebar-footer">
+        <div>
+        <i class="bi bi-person"></i>
+        <span>USER0001</span>
         </div>
+        <span>Cash: $0.00</span>
+        <span>P0S:$0.00</span>
+    </div> -->
+</div>
+</div>
          <!--END OF SIDEBAR AND NAVBAR-->
 <?php include 'config/page-content.php'?>
     <script src="js/script.js"></script>

@@ -8,7 +8,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family:"Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
             animation: fadeIn 2s ease-in-out;
         }
         :root{
@@ -24,8 +24,10 @@
         }
         
         p, h3, h4, span, li {
-            font-size: var(--medium-font);
-            color: var(--font-color);
+            font-size: .995rem;
+            white-space: nowrap;
+            color: #2a57d7;
+            line-height: 20px;
         }
         h5, h6{
             font-size: var(--extra-small-font);
@@ -33,9 +35,6 @@
         h1, h2{
             font-size: var(--large-font);
             color: var(--font-color);
-        }
-        span{
-            padding: 0.3rem;
         }
 .alert_div{
     width: auto;
@@ -71,13 +70,15 @@
 }
 
 
-.section1{
-    width: 700px;
+.display__date{
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position:relative;
+    color: var(--bg-color);
+    font-weight: 700;
+    font-size: var(--medium-font);
     align-items: center;
 }
 
@@ -161,10 +162,8 @@
     color: rgb(255, 255, 255);
 }
 h3{
-    font-weight:normal;
-    font-size: 1.3rem;;
-    letter-spacing: 2px;
     color: rgb(42, 87, 215);
+    font-weight: normal;
 }
 .profile img{
     width: 50px;
@@ -387,7 +386,6 @@ justify-content: center;
     margin: 1em 0;
     border-radius: 10px;
     flex-wrap: wrap;
-    justify-content: space-around;
   }
 
   
@@ -396,7 +394,6 @@ justify-content: center;
       display: flex;
       text-align: left;
       flex-direction: column;
-      width: 350px;
       position: relative;
       color: rgb(42, 87, 215);
   }
@@ -441,13 +438,12 @@ justify-content: center;
     margin: 0 1em;
 }
 .form-control select {
-    padding: 0.5em;
+    padding: 0.5em 0;
     color: rgb(42, 87, 215);
-    font-size: 1rem;
+    font-size: .995rem;
   border: none;
   border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
-    text-transform: uppercase;
   }
   .form-display2{
       display: flex;
@@ -455,15 +451,18 @@ justify-content: center;
       margin: 0.5rem 0;
   }
   label{
-    font-size: 1.2rem;
-      color: rgb(42, 87, 215);
+    font-size: .995rem;
+    color: rgb(42, 87, 215);
+    font-weight: normal;
   }
   input {
-    padding: 0.5em;
+    padding: 0.5em 0;
     color: rgb(42, 87, 215);
-    font-size: 1.1rem;
-  border: none;
-  border-bottom: 1px solid rgb(42, 87, 215);
+    font-size: .995rem;
+     border: none;
+     width: 300px;
+     font-weight: normal ;
+    border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
   }
   .valid{
@@ -495,11 +494,11 @@ justify-content: center;
       color: rgb(42, 87, 215);
     }
     select{
-      padding: 1rem;
+      padding: 0.5rem 0;
       width: 100%;
       margin: 1rem 0;
       background-color: #fff;
-      font: 15px;
+      font-size: .995rem;
       cursor: pointer;
   }
   .all_patient_list{
@@ -551,12 +550,11 @@ justify-content: center;
 }
 table thead  td{
     color: rgb(42, 87, 215);
-    padding: 0.5em;
-    font-size: 1em;
-    letter-spacing: 3px;
+    font-size: .995rem;
     text-transform: uppercase;
     text-align: center;
     padding: .77em .58em .74em .58em;
+      padding-right: 0.58em;
     padding-right: 0.58em;
     overflow: hidden;
     white-space: nowrap;
@@ -572,8 +570,6 @@ table thead  td{
 }
 
  table tbody td {
-    padding: 0.5em;
-    letter-spacing: 1.5px;
     text-transform: uppercase;
     text-align: center;
     color: rgb(255, 255, 255);
@@ -585,7 +581,7 @@ table thead  td{
     position: relative;
     font-size: 0.95rem;
     vertical-align: center;
-    font-size: 1rem;
+    font-size: .995rem;
     line-height: 1.2;
     border-bottom: 1px solid #fff;
 }
@@ -627,7 +623,7 @@ table thead  td{
 cursor: pointer;
 }
 h3{
-    font-size: 1.5rem;
+    font-size: .999rem;
 }
 
  .appoitment{
@@ -1119,8 +1115,9 @@ h3{
 /* Styling for the custom checkbox appearance */
 .checkbox-wrapper-46 .cbx span:first-child {
     position: relative;
-    width: 18px;
-    height: 18px;
+    width: 0.45rem;
+    height: 0.45rem;
+    padding: 0.29rem;
     border-radius: 3px;
     border: 1px solid #2a57d7;;
     transition: all 0.2s ease;
