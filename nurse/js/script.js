@@ -196,8 +196,66 @@ function getWards() {
 
  /////////////////////////
  function vital_input(){
-   var btn_text=$('#btn_submit').html();
+
+  var patient_id = $('patient_id').val();
+  var ward = $('ward').val();
+  var stage =$('stage').val();
+  var bed =$('bed').val();
+  var note=$('note').val();
+  var temperature =$('temperature').val();
+  var bp =$('bp').val();
+  var pulse =$('pulse').val();
+  var respiratory =$('respiratory').val();
+  var weight =$('weight').val();
+  var height =$('height').val();
+  var intake =$('intake').val();
+  var output =$('output').val();
+  var spo2 =$('spo2').val();
+  var bmi =$('bmi').val();
+  var body_fat =$('body_fat').val();
+  var muscle_mass =$('muscle_mass').val(); 
+  var musc =$('musc').val(); 
+  var resting_metabolism =$('resting_metabolism').val();
+  var body_age =$('body_age').val();
+  var bmi_for_age =$('bmi_for_age').val();
+  var visceral_fat =$('visceral_fat').val();
+  var head_circumference =$('head_circumference').val();
+  var waist_circumference =$('waist_circumference').val();
+  var hip_circumference =$('hip_circumference').val();
+  var w_hr =$('w_hr').val();
+ 
+  var action = "vital_input"; 
+
+  var dataString = 'action=' + action + '&patient_id=' + patient_id + '&ward=' + ward + '&stage=' + stage + '&bed=' + bed + '&note=' + note + 
+  '&temperature=' + temperature + '&bp=' + bp + '&pulse=' + pulse + '&respiratory=' + respiratory + '&weight=' + weight + '&height=' + height +
+  '&intake=' + intake + '&output=' + output + '&spo2=' + spo2 + '&bmi=' + bmi + '&body_fat=' + body_fat + '&muscle_mass='  + muscle_mass + 
+  '&musc=' + musc + '&resting_metabolism=' + resting_metabolism + '&body_age=' + body_age + '&bmi_for_age=' + bmi_for_age + '&visceral_fat='
+  + visceral_fat + '&head_circumference=' + head_circumference + '&waist_circumference=' + waist_circumference + '&hip_circumference=' + hip_circumference +
+  '&w_hr=' + w_hr;
+
+  
+   var btn_text= $('#btn_submit').html();
    $('#btn_submit').html('Processing...');
    document.getElementById('btn_submit').disabled=true;
+
+
+   $.ajax({
+    type: 'POST',
+    url: "config/code.php",
+    data: dataString,
+    cache: false,
+    dataType: 'json',
+    success: function (data) {
+      // Check for success and populate the dropdown
+      if (data.success) {
+        populateBedsDropdown(data.beds); // Pass the entire array of beds
+      } else {
+        console.error('Error:', data.message);
+      }
+    },
+    error: function (xhr, status, error) {
+      console.error('AJAX Error:', status, error);
+    },
+  });
    
  }

@@ -99,87 +99,87 @@ $patient_id = $_POST['patient_Id'];
           
               <div class="form_control">
     <label for="b/p">B/P(mm/HG)</label>
-    <input type="text">
+    <input type="text" id="bp">
     </div>
               <div class="form_control">
     <label for="pulse">Pulse(bp/m)</label>
-    <input type="text">
+    <input type="text" id="pulse">
     </div>
               <div class="form_control">
     <label for="respiratory">Respiratory(cm)</label>
-    <input type="text">
+    <input type="text" id="respiratory">
     </div>
               <div class="form_control">
     <label for="weight">Weight(kg)</label>
-    <input type="text">
+    <input type="text" id="weight">
     </div>
               <div class="form_control">
     <label for="height">Height(cm)</label>
-    <input type="text">
+    <input type="text" id="height">
     </div>
               <div class="form_control">
     <label for="intake">Intake(m/s)</label>
-    <input type="text">
+    <input type="text" id="intake">
     </div>
               <div class="form_control">
     <label for="output">Output(m/s)</label>
-    <input type="text">
+    <input type="text" id="output">
     </div>
               <div class="form_control">
     <label for="spo2">SPO2(%)</label>
-    <input type="text">
+    <input type="text"id ="spo2">
     </div>
               <div class="form_control">
     <label for="bmi">BMI</label>
-    <input type="text">
+    <input type="text" id="bmi">
     </div>
            <div class="form_control">
     <label for="body_fat">Body fat(%)</label>
-    <input type="text">
+    <input type="text" id="body_fat">
     </div>
     <div class="form_control">
     <label for="muscle_mass">Muscle mass</label>
-    <input type="text">
+    <input type="text"id="muscle_mass">
     </div>
               <div class="form_control">
     <label for="musc">MUAC</label>
-    <input type="text">
+    <input type="text"id="musc">
     </div>
     <div class="form_control">
     <label for="resting_metabolism">Restinng metabolism</label>
-    <input type="text">
+    <input type="text" id="resting_metabolism">
     </div>
               <div class="form_control">
     <label for="body_age">Body age</label>
-    <input type="text">
+    <input type="text"id="body_age">
     </div>
               <div class="form_control">
     <label for="bmi_for_age">BMI for age</label>
-    <input type="text">
+    <input type="text" id="bmi_for_age">
     </div>
               <div class="form_control">
     <label for="visceral_fat">Visceral fat</label>
-    <input type="text">
+    <input type="text"id="visceral_fat">
     </div>
               <div class="form_control">
     <label for="head_circumference">Head circumference</label>
-    <input type="text">
+    <input type="text"id="head_circumference">
     </div>
     <div class="form_control">
     <label for="wfa">WFA</label>
-    <input type="text">
+    <input type="text"id="wfa">
     </div>
               <div class="form_control">
     <label for="waist_circumference">Waist Circumference</label>
-    <input type="text">
+    <input type="text"id="waist_circumference">
     </div>
               <div class="form_control">
     <label for="hip_circumference">Hip Circumference</label>
-    <input type="text">
+    <input type="text"id="hip_circumference">
     </div>
               <div class="form_control">
     <label for="w_hr">W-HR</label>
-    <input type="text">
+    <input type="text"id="w_hr">
     </form>
 </div>
 </div>
