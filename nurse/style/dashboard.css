@@ -9,218 +9,291 @@
             padding: 0;
             height: 100%;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            animation: fadeIn 0.5s ease-in-out;
+            animation: fadeIn 2s ease-in-out;
         }
-  
-        .alert_div{
-            width: auto;
-            height: auto;
-            max-width: 350px;
-            position: fixed;
-            top:0%;
-            right: 0%;
-            z-index: 2000;
-            color: rgb(255, 255, 255);;
-            background-color: red;
-            padding: 1em;
-            animation: headShake 1s ease-in-out;
-        }
-        .alert_div.pending{
-            background-color:blue;
-        }
-        .alert_div.successful{
-            background-color: green;
+        :root{
+            --bg-color:#fff;
+            --dg-color:#000000;
+            --extra-small-font:0.70rem;
+            ---small-font:0.80rem;
+            --medium-font:1.2rem;
+            --large-font:1.8rem;
+            --extra-large-font:3.5rem;
+            --font-color:rgb(42, 87, 215);
+            --navbar-icon-color:#c4bdbd;
         }
         
-        .navbar{
-            width: 100%;
-            height: 103px;
-            position: fixed;
-            display: flex;
-            background-color: rgb(42, 87, 215);
-            justify-content: space-between;
-            align-items: center;
-            top: 0;
-            z-index: 1100;
+        p, h3, h4, span, li {
+            font-size: var(--medium-font);
+            color: var(--font-color);
         }
-        
-        .section1{
-            width: 700px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position:relative;
-            align-items: center;
+        h5, h6{
+            font-size: var(--extra-small-font);
         }
-        
-        .section2{
-            width: 500px;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
+        h1, h2{
+            font-size: var(--large-font);
+            color: var(--font-color);
         }
-        ._toggle_icon{
-            color: #fff;
-            font-size: 30px;
+        span{
+            padding: 0.3rem;
         }
-        
-        ._profile_arrow_icon{
-            margin: 0 1rem;
-            cursor: pointer;
-            padding: 0.5rem 0.5rem;
-            position: relative;
-        }
-        
-        
-        .profile{
-            height: 100%;
-            display: flex;
-            color: #fff;
-            justify-content: center;
-            align-items: center;
-        }
-        .profile_account {
-            width: 300px;
-            position: absolute;
-            height: auto;
-            top: 100%;
-            background-color: rgb(42, 87, 215);
-            animation: fadeIn ease-in-out 0.5s;
-            right: 0;
-            padding: 1rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-          }
-        
-        #image_profile_account{
-            width: 140px;
-            height: 140px;
-            border-radius: 100%;
-            background:rgb(0, 158, 251);;
-        }
-        .profile_account .btn_submit{
-            width: 100%;
-            background-color: #fff;
-            padding: 0.7rem;
-            color: rgb(42, 87, 215);
-            border: none;
-            border-radius: 5px;
-            transition: all  ease-in-out 0.6s;
-            cursor: pointer;
-            margin: 1rem 0;
-        }
-        .profile_account  .btn_submit:hover{
-            transform: scale(0.98);
-            background: none;
-            color:rgb(255, 255, 255);
-            border: 1px solid #fff;
-        }
-        .profile_account span{
-            text-align: left;
-            cursor: pointer;
-        }
-        .profile_account h3{
-            color: rgb(255, 255, 255);
-        }
-        h3{
-            font-weight:normal;
-            font-size: 1.3rem;;
-            letter-spacing: 2px;
-            color: rgb(42, 87, 215);
-        }
-        .profile img{
-            width: 50px;
-            border: 3px solid #fff;
-            height: 50px;
-            cursor: pointer;
-            border-radius: 100%;
-        }
-        .image{
-            position: relative;
-        }
-        .active{
-            position: absolute;
-            bottom: 5%;
-            right: 15%;
-            background-color: rgb(0, 193, 65);
-            width: 15px;
-            height: 15px;
-            border-radius: 100%;
-        }
-        #btn_appoitment{
-            padding: 0.7rem 1rem;
-            background-color: #fff;
-            /* margin: 0 0 0 18rem; */
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            color: rgb(42, 87, 215);
-            font-size: 12px;
-            transition: all ease-in-out 0.6s;
-        }
-        #btn_appoitment:hover{
-            padding: 0.7rem 1rem;
-            border: 1px solid #fff;
-            background: none;
-            color: #fff;
-            transform: scale(0.98);
-        }
-        
-        .sidebar{
-            width: auto;
-            max-width: 300px;
-            height: 100%;
-            position: fixed;
-            overflow: hidden;
-            left: 0;
-            top: 0;
-            background-color: rgb(42, 87, 215);
-            z-index: 1100;
-        }
-        
-        
-        ._sidebar_contents{
-            justify-content: center;
-            display: flex;
-            align-items: center;
-           color: #fff;
-           height: 75px;
-           cursor: pointer;
-           text-align: center;
-        }
-        ._sidebar_links{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            height: 100%;
-            padding: 1em;
-        }
-        
-        ._links{
-            color: rgb(42, 87, 215);
-            font-size: 1.5em;
-            margin: 0.5em 0;
-            cursor: pointer;
-            background-color: rgb(255, 255, 255);
-            padding: 2rem;
-            border-top-left-radius: 12px;
-            border-bottom-left-radius: 12px;
-            transition: all ease-in-out 0.5s;
-            position: relative;
-        }
-        
-        ._links:hover{
-            background-color: rgb(42, 87, 215);
-            color: rgb(255, 255, 255);
-        }
-        
+.alert_div{
+    width: auto;
+    height: auto;
+    max-width: 350px;
+    position: fixed;
+    top:0%;
+    right: 0%;
+    z-index: 2000;
+    color: rgb(255, 255, 255);;
+    background-color: red;
+    padding: 1em;
+    animation: headShake 1s ease-in-out;
+}
+.alert_div.pending{
+    background-color:blue;
+}
+.alert_div.successful{
+    background-color: green;
+}
+
+.navbar{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    display: flex;
+    background-color: rgb(42, 87, 215);
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    z-index: 1100;
+}
+
+
+.section1{
+    width: 700px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position:relative;
+    align-items: center;
+}
+
+.section2{
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile{
+    height: 100%;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;;
+}
+.profile span{
+    color: #ffffff;
+}
+.profile h4{
+    color: #ffffff;
+}
+._toggle_icon{
+    color: #fff;
+    font-size: 30px;
+}
+
+._profile_arrow_icon{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
+.profile_account {
+    width: 300px;
+    position: absolute;
+    height: auto;
+    top: 100%;
+    background-color: rgb(42, 87, 215);
+    animation: fadeIn ease-in-out 0.5s;
+    right: 0;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  #image_profile_account{
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    background:rgb(0, 158, 251);;
+}
+.profile_account .btn_submit{
+    width: 100%;
+    background-color: #fff;
+    padding: 0.7rem;
+    color: rgb(42, 87, 215);
+    border: none;
+    border-radius: 5px;
+    transition: all  ease-in-out 0.6s;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+.profile_account  .btn_submit:hover{
+    transform: scale(0.98);
+    background: none;
+    color:rgb(255, 255, 255);
+    border: 1px solid #fff;
+}
+.profile_account span{
+    text-align: left;
+    cursor: pointer;
+}
+.profile_account h3{
+    color: rgb(255, 255, 255);
+}
+h3{
+    font-weight:normal;
+    font-size: 1.3rem;;
+    letter-spacing: 2px;
+    color: rgb(42, 87, 215);
+}
+.profile img{
+    width: 50px;
+    border: 3px solid #fff;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.image{
+    position: relative;
+}
+.active_on{
+    position: absolute;
+    bottom: 5%;
+    right: 15%;
+    background-color: rgb(0, 193, 65);
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+}
+#btn_appoitment{
+    padding: 0.7rem 1rem;
+    background-color: #fff;
+    /* margin: 0 0 0 18rem; */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: rgb(42, 87, 215);
+    font-size: 12px;
+    transition: all ease-in-out 0.6s;
+}
+#btn_appoitment:hover{
+    padding: 0.7rem 1rem;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    transform: scale(0.98);
+}
+
+
+.sidebar{
+    width: 100%;
+    width: 300px;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1px solid rgb(234, 232, 232);
+    display: flex;
+    background: #fff;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 2;
+}
+.sidebar-header{
+width: 100%;
+display: flex;
+padding: 0.5rem;
+color: rgb(42, 87, 215);
+font-size: var(--extra-large-font);
+justify-content: space-evenly;
+align-items: center;
+}
+.sidebar-body{
+width: 100%;
+display: flex;
+padding: 0.5rem;
+color:rgb(42, 87, 215);
+align-items: center;
+}
+.sidebar-body ul{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+.sidebar-body ul li{
+margin: 0.3rem 0;
+padding: 0.9rem;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.sidebar-body ul li.active{
+margin: 0.3rem 0;
+padding: 0.9rem;
+background-color: #f0f7ff;
+width: 100%;
+border-radius: 4px;
+cursor: pointer;
+}
+.sidebar-body ul li{
+margin: 0.3rem 0;
+padding: 0.9rem;
+background: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.sidebar-footer{
+ width: 300px;
+display: flex;
+padding: 0.5rem 0;
+color:rgb(255, 255, 255);
+justify-content:left;
+height: auto !important;
+flex-direction: column;
+position: fixed;
+bottom: 0;
+background-color: rgb(42, 87, 215);;
+align-items: left;
+justify-content: center;
+}
+.sidebar-footer  .bi-person{
+    font-size: var(--medium-font);
+    color: var(--bg-color);
+}
+.sidebar-footer span{
+    font-size: var(--medium-font);
+    color: var(--bg-color);
+}
+ button{
+    background-color: #ffc145;
+    border: none;
+    padding: 0.7rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
 /*APPOITMENT SECTION*/
 
 .appoitment_section{
@@ -234,7 +307,7 @@
 
   .patient_list_div {
     width: 100%;
-    margin: 5.5rem 0 0 16.5rem;
+    margin: 5.5rem 0 0 19rem;
 }
 
  .search_bar_container {
@@ -368,7 +441,7 @@ table thead  td{
     display: flex;
     background-color: rgb(42, 87, 215); ;
     flex-direction: column;
-    margin: 5rem 0 0 17rem ;
+    margin: 5.5rem 0 0 19rem;
 }
 .patient-info{
     display: flex;
@@ -587,16 +660,5 @@ padding: 0;
        top: 0;
        /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
        color: #fff;
-    }
-
-    .patient_list_div {
-        width: 100%;
-        margin: 5.5rem 0 0 8rem;
-    }
-    .patient-profile{
-        height: auto;
-        flex-direction: column;
-        margin: 5rem 0 0 7.8rem ;
-        width: 100%;
     }
     }

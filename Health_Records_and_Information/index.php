@@ -65,7 +65,7 @@
     
   <!--START OF SIDEBAR AND NAVBAR -->
   <div class="navbar">
-        <div class="section1">
+        <div class="display__date">
         </div>
         <div class="section2">
 
@@ -93,7 +93,7 @@
                 <ul>
                     <li onclick="patient_admission_form_section()" id="links" class="active">
                         <i class="fa-solid fa-bed"></i>
-                        <span>Patient admission form</span>
+                       Patient admission form
                     </li>
                     <li onclick="walkin_patient_form()" id="links">
                         <i class="fa-solid fa-baby"></i>

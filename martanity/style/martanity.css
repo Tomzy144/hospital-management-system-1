@@ -79,6 +79,7 @@
     justify-content: center;
     position:relative;
     color: var(--bg-color);
+    font-weight: 700;
     font-size: var(--medium-font);
     align-items: center;
 }
@@ -266,9 +267,10 @@ background: none;
 border-radius: 4px;
 cursor: pointer;
 }
-.sidebar-footer{
+/* .sidebar-footer{
 
-}
+} */
+
 
 
 
@@ -359,7 +361,6 @@ cursor: pointer;
     margin: 1em 0;
     border-radius: 10px;
     flex-wrap: wrap;
-    justify-content: space-around;
   }
 
   .form-control{
@@ -367,7 +368,6 @@ cursor: pointer;
       display: flex;
       text-align: left;
       flex-direction: column;
-      width: 350px;
       position: relative;
       color: rgb(42, 87, 215);
   }
@@ -381,6 +381,7 @@ cursor: pointer;
     font-size: 1.1rem;
     border: none;
       border-bottom-width: medium;
+      width:300px;
       border-bottom-style: none;
       border-bottom-color: currentcolor;
     border-bottom: 1px solid rgb(42, 87, 215);

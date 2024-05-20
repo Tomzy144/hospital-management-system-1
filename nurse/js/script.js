@@ -3,6 +3,9 @@
       document.querySelector(".profile_account").classList.toggle("hide");
    };
 
+
+
+   
    //PERONAL PROFILE SECTION
    function personal_profile_section(){
     document.querySelector(".appoitment_section").classList.add("hide");
@@ -259,3 +262,19 @@ function getWards() {
   });
    
  }
+
+
+
+//dont touch i would fix this later, good night😎
+
+//  const links =  document.querySelectorAll('#links');
+//  function toggleSidebarLinks(clickedLink){
+//      links.forEach(link => link.classList.remove('active'));
+//      clickedLink.classList.add('active');
+//  }
+ 
+//  links.forEach(link => {
+//      link.addEventListener('click', function() {
+//          toggleSidebarLinks(this);
+//      });
+//  });

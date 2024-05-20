@@ -11,7 +11,22 @@ links.forEach(link => {
     });
 });
 
-//Sidebat responsiveness
+function timeDate(){
+  const now  = new Date();
+  const options = {
+    day: 'numeric',
+    month:'numeric',
+    year:'numeric',
+    hour:'numeric',
+    minute:'numeric',
+    second:'numeric',
+  }
+
+  const date = new Intl.DateTimeFormat(navigator.language, options).format(now);
+  document.querySelector('.display__date').textContent = date
+}
+setInterval(()=> timeDate())
+
 
 //BOOK APPOITMENT WITH AVAILABLE DOCTOR
 
