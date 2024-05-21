@@ -111,18 +111,9 @@ case 'getBeds':
         ('$patient_id', '$ward', '$stage', '$bed', '$note', '$temperature', '$bp', '$pulse', '$respiratory', '$weight', '$height', '$intake', '$output', '$spo2', '$bmi', '$body_fat', '$muscle_mass','$musc','$resting_metabolism','$body_age','$bmi_for_age','$visceral_fat,'$head_circumference','$waist_circumference','$hip_circumference','$w_hr')") or die (mysqli_error($conn));
 
 
-        if ($query) {
-            $beds = array();
-
-            // Fetch the data from the result set
-            while ($row = mysqli_fetch_assoc($query)) {
-                $beds[] = $row;
-            }
-
-            echo json_encode(array("success" => true, "beds" => $beds));
-        } else {
-            echo json_encode(array("success" => false, "message" => "Error executing the query"));
-        }
+        
+            echo json_encode(array("successs"));
+       
         break;
 
 
