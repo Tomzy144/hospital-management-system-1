@@ -75,13 +75,13 @@ $patient_id = $_POST['patient_Id'];
               <div class="ward-div">
                     <label for="ward">Change Ward</label>
                     <select name="ward"  id= "wards" >
-                    <option  >Loading...</option>
+                    <option  >SELECT WARD</option>
                     </select>
             </div>
               <div class="ward-div bed" >            
                     <label for="ward">Change Bed</label>
                     <select name="bed"  id= "beds" >
-                    <option>Loading...</option>
+                    <option>SELECT BED</option>
                     <!-- <option>bed 2</option>
                     <option>bed 3</option>
                     <option>bed 4</option>
