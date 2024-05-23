@@ -54,6 +54,7 @@ case 'getBeds':
     FROM bed_tab
     JOIN bed_status_tab ON bed_tab.bed_status_id = bed_status_tab.bed_status_id
     JOIN ward_tab ON bed_tab.ward_id = ward_tab.ward_id
+    JOIN patient_vital_tab ON bed_tab.ward_id = ward_tab.ward_id
     WHERE ward_tab.ward_id = '$wards'");
 
     // Debugging: Output the role to see if it's received correctly
@@ -74,4 +75,70 @@ case 'getBeds':
     break;
 
 
-      } ?>
+
+
+   
+
+    case 'vital_input':
+        // Sanitize and validate inputs if necessary
+        $patient_id = $_POST['patient_id'];
+        $ward = $_POST['ward'];
+        $stage = $_POST['stage'];
+        $bed = $_POST['bed'];
+        $note = $_POST['note'];
+        $temperature = $_POST['temperature'];
+        $bp = $_POST['bp'];
+        $pulse = $_POST['pulse'];
+        $respiratory = $_POST['respiratory'];
+        $weight = $_POST['weight'];
+        $height = $_POST['height'];
+        $intake = $_POST['intake'];
+        $output = $_POST['output']; 
+        $spo2 = $_POST['spo2'];
+        $bmi = $_POST['bmi'];
+        $body_fat = $_POST['body_fat'];
+        $muscle_mass = $_POST['muscle_mass'];
+        $musc = $_POST['musc'];
+        $resting_metabolism = $_POST['resting_metabolism'];
+        $body_age = $_POST['body_age'];
+        $bmi_for_age = $_POST['bmi_for_age'];
+        $visceral_fat = $_POST['visceral_fat'];
+        $head_circumference = $_POST['head_circumference'];
+        $waist_circumference = $_POST['waist_circumference'];
+        $hip_circumference = $_POST['hip_circumference'];
+        $w_hr = $_POST['w_hr'];
+
+        // Use prepared statements to prevent SQL injection
+        $stmt = $conn->prepare("
+            INSERT INTO patient_vital_tab
+            (patient_id, ward, stage, bed, note, temperature, bp, pulse, respiratory, weight, height, intake, output, spo2, bmi, body_fat, muscle_mass, musc, resting_metabolism, body_age, bmi_for_age, visceral_fat, head_circumference, waist_circumference, hip_circumference, w_hr)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ");
+
+        if ($stmt) {
+            $stmt->bind_param(
+                "ssssssssssssssssssssssssss",
+                $patient_id, $ward, $stage, $bed, $note, $temperature, $bp, $pulse, $respiratory, $weight, $height, $intake, $output, $spo2, $bmi, $body_fat, $muscle_mass, $musc, $resting_metabolism, $body_age, $bmi_for_age, $visceral_fat, $head_circumference, $waist_circumference, $hip_circumference, $w_hr
+            );
+
+            if ($stmt->execute()) {
+                echo json_encode(array("success" => true));
+            } else {
+                echo json_encode(array("success" => false, "message" => "Error executing query: " . $stmt->error));
+            }
+
+            mysqli_query($conn,"UPDATE bed_tab 
+            SET bed_status_id = 1
+            WHERE bed_id = 'bed2'");
+
+            $stmt->close();
+        } else {
+            echo json_encode(array("success" => false, "message" => "Error preparing query: " . $conn->error));
+        }
+        echo json_encode(array("success" => false, "message" => "Invalid action"));
+
+        break;
+       
+    }
+    
+   
