@@ -16,32 +16,23 @@
     <div class="navbar">
         <div class="display__date">
         </div>
-        <div class="section2">
-
-          </div>
           <div class="profile">
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
-            <h4>Doc. Henculus White</h4>
+            <span>Doc. Henculus White</span>
             <button class="btn_submit">Upload Image</button>
-            <!-- <h4>change password</h4> -->
-        </div>
+           </div>
+
             <div class="image">
-            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
             <div class="active_on"></div>
             </div>
-        </img>  
             <span>Doc. Henculus White</span>
-            <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
-          </div>
-        </div>
-    </div>
-
-
-
-
-
+            <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
+                 </div>
+                </div>
       <!--------------------------------------START OF SIDEBAR------------------------------------------------------>
+
       <div class="sidebar">
         <div class="sidebar__header">
      
@@ -60,9 +51,17 @@
                         <i class="fa-solid fa-baby"></i>
                         <span>Postnatal unit</span>
                     </li>
+                    <li onclick="postnatalPatientList()" id="links">
+                        <i class="fa-solid fa-baby"></i>
+                        <span>Postnatal patient list</span>
+                    </li>
                     <li onclick="labourSection()" id="links">
                         <i class="fa-solid fa-person-breastfeeding"></i>
                         <span>Labour unit</span>
+                    </li>
+                    <li onclick="labourPatientList()" id="links">
+                        <i class="fa-solid fa-person-breastfeeding"></i>
+                        <span>Labour patient list</span>
                     </li>
                     <li onclick="document.getElementById('logoutform').submit();" id="links">
                         <i class="fa-solid fa-right-from-bracket"></i>
@@ -81,135 +80,90 @@
 
 
                <!----------------------------------START OF THE ANTERNATAL FORM-------------------------------------->
-               <div class="container">
-          <div class="form_container" id="antenatal_section">
-    <form action="">
-        <h3>Antenatal Registration Form</h3>
+    <div class="container">
+     <div class="form_container" id="antenatal_section">
+         <form action="">
+            <h3>Antenatal Registration Form</h3>
         <div class="upload_div">
              <video  id="videoElement_antenatal" width="400" height="300" autoplay></video>
             <i class="bi bi-plus capture_image_icon" id="capture_image_antenatal" onclick="openCamera2()"></i>
-            <canvas id="canvasElement_antenatal" style="display: none;"></canvas>
-            <img class="capturedImage" id="capturedImage_antenatal" style="display: none;">
+            <canvas id="canvasElement_antenatal" style="display: none"></canvas>
+            <img class="capturedImage" id="capturedImage_antenatal" style="display: none">
         </div>
         <div class="flex_capture_button">
             <div class="btn_capture hide" id="capture_patient1" onclick="takePicture2()">Capture</div>
-        <div class="btn_recapture hide" id="recapture_patient1"  onclick="retakePicture2()">Recapture</div>
+             <div class="btn_recapture hide" id="recapture_patient1"  onclick="retakePicture2()">Recapture</div>
         </div>
 
         <h3>Patient Info</h3>
-        <div class="each_sections">
-    <div class="form-control">
-        <label for="">Full name</label>
-        <input type="text">
+     <div class="each_sections">
+        <div class="form-control">
+             <label for="anternatal__patient__name">Full name</label>
+            <input type="text" name="anternatal__patient__name" id="anternatal__patient__name" autofocus = "true">
         </div>
         <div class="form-control">
-        <label for="">Date of Birth</label>
-        <input type="date">
+            <label for="anternatal__patient__dob">Date of Birth</label>
+            <input type="date" name="anternatal__patient__dob" id="anternatal__patient__dob">
         </div>
         <div class="form-control">
-        <label for="">Address</label>
-        <input type="text">
+            <label for="anternatal__patient__address">Address</label>
+            <input type="text" name="anternatal__patient__address" id="anternatal__patient__address">
         </div>
         <div class="form-control">
-        <label for="">Contact Number</label>
-        <input type="text">
+                <label for="anternatal__patient__phoneNumber">Contact Number</label>
+                <input type="text" name="anternatal__patient__phoneNumber" id="anternatal__patient__phoneNumber">
         </div>
-        </div>
+    </div>
 
         <h3>Spouse/Partner Information</h3>
-        <div class="each_sections">
-        <div class="form-control">
-        <label for="">Full Name</label>
-        <input type="text">
-       </div>
-       <div class="form-control">
-        <label for="">Contact Number</label>
-        <input type="text">
-        </div>
-        </div>
+ <div class="each_sections">
+     <div class="form-control">
+             <label for="anternatal__patient__partner__name">Full Name</label>
+             <input type="text" name="anternatal__patient__partner__name" id="anternatal__patient__partner__name">
+         </div>
+     <div class="form-control">
+            <label for="anternatal__patient__partner__phoneNumber">Contact Number</label>
+            <input type="text" name="anternatal__patient__partner__phoneNumber" id="anternatal__patient__partner__phoneNumber">
+    </div>
+    </div>
 
         <h3>Medical History</h3>
-        <div class="each_sections">
+    <div class="each_sections">
     <div class="form-control">
-        <label for="">Previous Pregnacies</label>
-        <input type="text">
-       </div>
-       <div class="form-control">
-        <label for="">Chronic Condition</label>
-        <input type="text">
-        </div>
-        <div class="form-control">
-        <label for="">Alergies</label>
-        <input type="text">
-        </div>
-        </div>
+            <label for="anternatal__patient__previousPregnacies">Previous Pregnacies</label>
+             <input type="text" name="anternatal__patient__previousPregnacies" id="anternatal__patient__previousPregnacies">
+    </div>
+    <div class="form-control">
+             <label for="anternatal__patient__chronicCondition">Chronic Condition</label>
+             <input type="text" name="anternatal__patient__chronicCondition" id="anternatal__patient__chronicCondition">
+     </div>
+    <div class="form-control">
+                <label for="anternatal__patient__alergies">Alergies</label>
+                <input type="text" name="anternatal__patient__alergies" id="anternatal__patient__alergies">
+    </div>
+    </div>
 
         <h3>Health Status</h3>
-        <div class="each_sections">
+    <div class="each_sections">
     <div class="form-control">
-        <label for="">Current Medications</label>
-        <input type="text">
-      </div>
-      <div class="form-control">
-        <label for="">Vital Signs</label>
-        <input type="text">
-      </div>
-        </div>
-        <button class="btn_submit" type="button">Book</button>
-        </form>
-        </div>
-        <!---------------------------------------------------------------------------------->
+            <label for="anternatal__patient__currentMedication">Current Medications</label>
+            <input type="text" name="anternatal__patient__currentMedication" id="anternatal__patient__currentMedication">
+    </div>
+    <div class="form-control">
+            <label for="anternatal__patient__vitalSign">Vital Signs</label>
+            <input type="text" name="anternatal__patient__vitalSign" id="anternatal__patient__vitalSign">
+    </div>
+    </div>
+        <button class="btn_submit" type="submit" id="submitAnternatalForm">Book</button>
+    </form>
+    </div>
 
-
-           <div class="list_div hide" id="anternatal_patient__list">
-    <div class="table_container">
-            <div class="search_bar_container">
-                <h3>Anternal Patient Admission List</h3>
-                <input type="text" name="" id="" placeholder="Search">
-            </div>
-            <table>
-                <thead>
-                    <td>S/N</td>
-                    <td>Patient Profile</td>
-                    <td>Patient Name</td>
-                    <td>Patient ID</td>
-                    <td>Date of Admission</td>
-                </thead>
-                <tbody onclick="anternatalPatientProfile()">
-                    <td>1</td>
-                    <td>
-                        <img src="../images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
-                    </td>
-                    <td>Esther Patrick</td>
-                    <td>PAT0001</td>
-                    <td>22-09-2023</td>
-                    <td>
-                        <i class="bi bi-three-dots"></i>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>2</td>
-                    <td>
-                        <img src="../images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
-                    </td>
-                    <td>Mercy Patrick</td>
-                    <td>PAT0002</td>
-                    <td>22-09-2023</td>
-                    <td>
-                        <i class="bi bi-three-dots"></i>
-                    </td>
-                </tbody>
-        </table>
-  </div>
-  </div>
-   <!-----------------------------END OF ANTENATAL SECTION --------------------------------->
-
-
+   <!----------------------------- --------------------------------->
 
 
         <!----START OF THE ANTENATAL PATIENT PROFILE -->
         <div class="antenatal_patients_profile hide">
-        <div class="patient_container">
+        <div class="patient_container hide" id="patient__input">
             <div class="patient_profile">
                 <img src="../Images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
                 <div class="div_text">
@@ -296,9 +250,8 @@
                     <label for="">Qty</label>
                   <input type="text" name="" id="drug_qty">
                 </div>
-                <i class="fa-solid fa-prescription-bottle-medical add_icon"id="add_icon" ></i>
                 </div>
-                <button type="button" class="btn add__drug" onclick="_bookDrugs()">Add Drugs</button>
+                <button type="button" class="btn add__drug">Add Drugs</button>
                 <button type="button" class="btn" onclick="_bookDrugs()">Book Drugs</button>
                   </form>
             </div>
@@ -394,9 +347,10 @@
             </div>
         </div>
         <button class="btn">Update data</button>
+        <button class="btn" onclick="anternal_patient_hospital_record()">Check patient hospital record</button>
   </div>
   <!---------anternal drug booking------------------>
-  <div class="drugs_booking" id="antenatal_drugs_booking">
+  <div class="drugs_booking hide" id="antenatal_drugs_booking">
   <i class="bi bi-x-square" onclick="_close_bookDrugs()"></i>
     <table id="dataTable">
         <thead>
@@ -410,31 +364,32 @@
           
         </tbody>
     </table>
-    <button>Book now</button>
+    <button class="btn_submit">Book now</button>
     </div>   
 </div>
 
 <!----ANTENATAL PATIENT HOSPITAL RECORD INFORMATION-->
-<div class="patient_container2 hide">
+<div class="patient_container hide" id="patient_hospital_record">
     <h1>Patient Hospital Records</h1>
 <div class="all_info">
     <div class="patient_personal_info">
-        <h3>Personal Information</h3>
-        <span>Full Name: Moses Patrick Samuel</span>
-        <span>Date of Birth: 7-03-2023</span>
-        <span>Address: 23 Enebong Street Calabar</span>
-        <span>Contact Number: 090328922</span>
-
+    <h3>Personal Information</h3>
+        <ol>
+            <li>Full Name: Moses Patrick Samuel</li>
+            <li>Date of Birth: 7-03-2023</li>
+            <li>Address: 23 Enebong Street Calabar</li>
+            <li>Contact Number: 090328922</li>
+        </ol>
+ 
         <h3>Spouse/Partner Information</h3>
-        <span>Full Name: Esther Asuquo Etim</span>
-        <span>Contact Number: 0907832832</span>
+        <ol>
+            <li>Full Name: Esther Asuquo Etim</li>
+            <li>Contact Number: 0907832832</li>
+        </ol>
     </div>
     <div class="patient_inputs">
-        <div class="_vital_info">
-        <div class="_btn_info" id="antenatal_successful_vital">Vitals</div>
-        <div class="_btn_flexs hide">
           <div class="_btn" id="_vital_1">Vitals/Data (8:30pm 13-09-2023)</div>
-          <div class="_data hide" id="_data_1">
+          <div class="_data" id="_data_1">
                     <div class="form-control">
                         <h4>Height of Fundus</h4>
                         <span>78.00</span>
@@ -479,12 +434,9 @@
                         <h4>Remark</h4>
                         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi dolorem magni eligendi autem eveniet ipsam dicta incidunt veniam sed? Ut ab maiores adipisci! Placeat repellendus, eveniet culpa non quis natus?</span>
                     </div>
-          </div>
-          <div class="_btn">Vitals/Data (8:30pm 13-09-2023)</div>
-          </div>
     </div>
     <div class="_btn_info" onclick="_antenatal_successfull_drug_prescription()">Drug Prescriptions</div>
-    <table class="drug_prescription hide">
+    <table class="drug_prescription">
         <thead>
             <td>Date</td>
             <td>Time</td>
@@ -505,7 +457,7 @@
         </tbody>
     </table>
     <div class="_btn_info" onclick="_antenatal_successfull_lab()">Labouratory Examination</div>
-    <table class="lab hide">
+    <table class="lab">
         <thead>
             <td>Date</td>
             <td>Time</td>
@@ -522,7 +474,7 @@
         </tbody>
     </table>
     <div class="_btn_info" onclick="_antenatal_successfull_rad()">Radiology Examination</div>
-    <table class="rad hide">
+    <table class="rad">
         <thead>
             <td>Date</td>
             <td>Time</td>
@@ -539,7 +491,7 @@
         </tbody>
     </table>
     <div class="_btn_info" onclick="_antenatal_successfull_screening()">Screnning Examination</div>
-    <div class="_data hide"  id="screening_div">
+    <div class="_data"  id="screening_div">
     <div class="form-control">
                         <h4>Genetic Screening and Testing</h4>
                         <span>78.00</span>
@@ -583,6 +535,58 @@
     </div>
 </div>
   </div>
+</div>
+
+<div class="list_div hide" id="anternatal_patient__list">
+    <div class="table_container">
+            <div class="search_bar_container">
+                <h3>Anternal Patient Admission List</h3>
+                <input type="text" name="" id="" placeholder="Search">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>S/N</td>
+                        <td>Patient Profile</td>
+                        <td>Patient Name</td>
+                        <td>Patient ID</td>
+                        <td>Date of Admission</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr onclick="anternatalPatientProfile()" id="patientProfile">
+                    <td>1</td>
+                    <td>
+                        <img src="../images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+                    </td>
+                    <td>Esther Patrick</td>
+                    <td>PAT0001</td>
+                    <td>22-09-2023</td>
+                    <td>
+                        <i class="bi bi-three-dots" id="bookPatient"></i>
+                    </td>
+                </tr>
+                </tbody>
+                <tbody>
+                    <tr id="patientProfile">
+                        <td>2</td>
+                        <td>
+                            <img src="../images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
+                        </td>
+                        <td>Mercy Patrick</td>
+                        <td>PAT0002</td>
+                        <td>22-09-2023</td>
+                        <td>
+                            <i class="bi bi-three-dots" id="bookPatient"></i>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+  </div>
+  </div>
+
+ 
+  
   
      <!----END OF THE ANTERNATAL -->
 
@@ -697,208 +701,7 @@
 
           
 
-                <!----START OF THE POSTNATAL LIST-->
-                <div class="list_div hide">
-                <div class="table_container">
-            <div class="search_bar_container">
-                <h3>Postnatal Patient Admission List</h3>
-                <input type="text" name="" id="" placeholder="Search">
-            </div>
-            <table>
-                <thead>
-                    <td>S/N</td>
-                    <td>Patient Profile</td>
-                    <td>Patient Name</td>
-                    <td>Patient ID</td>
-                    <td>Date of Admission</td>
-                </thead>
-                <tbody onclick="accessing_a_specific_postnatal_patients_profile()">
-                    <td>1</td>
-                    <td>
-                        <img src="../images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
-                    </td>
-                    <td>Esther Patrick</td>
-                    <td>PAT0001</td>
-                    <td>22-09-2023</td>
-                    <td>
-                        <i class="bi bi-three-dots" id="_transfer_icon2" onclick="_transfer_dropdowns2()"></i>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>2</td>
-                    <td>
-                        <img src="../images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
-                    </td>
-                    <td>Mercy Patrick</td>
-                    <td>PAT0002</td>
-                    <td>22-09-2023</td>
-                    <td>
-                        <i class="bi bi-three-dots" id="_transfer_icon2" onclick="_transfer_dropdowns2()"></i>
-                    </td>
-                </tbody>
-                <div class="tranfer_div hide" id="tranfer_box2">
-                    <i class="bi bi-x-lg close_icon"  onclick="_close_transfer_dropdowns2()"></i>
-                <ul>
-                    <li onclick="_nurse_transfer_from_postnatal()">Call in Nurse Station</li>
-                    <li onclick="_doc_transfer_from_postnatal()">Doctor Appoitment</li>
-                    <li onclick="_select_postnatal_ward()">Choose ward for Patient</li>
-                    <li onclick="_lab_transfer_from_postnatal()">Transfer to Labouratory</li>
-                    <li onclick="_radiology_transfer_from_postnatal()">Transfer to Radiology</li>
-                </ul>
-            </div>
-            </table>
-            
-             <!-----NURSE APPOITMENT--->
-             <div class="appoitments_div hide" id="nurse_appoitment2">
-            <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment2()"></i>
-                <h3>Nurse Station</h3>
-                <form action="" id="">
-                <div class="form-control large">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <button class="btn_app">Request</button>
-                </form>
-            </div>
-
-
-              <!-----DOCTOR APPOITMENT--->
-              <div class="appoitments_div hide" id="doctor_appoitment2">
-            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
-            <h3>Doctor Appoitment</h3>
-            <form action="">
-                <div class="form-control large">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Available Doctors </label>
-                    <select name="" id="">
-                        <option value="">Doc. Patrick(Gynaecologist)</option>
-                        <option value="">Doc. Miracle(Surgeon)</option>
-                        <option value="">Doc. Moses(Medical Personel)</option>
-                    </select>
-                </div>
-                <div class="form-control large">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <button class="btn_app">Request</button>
-            </form>
-            </div>
-
-          
-   <!-----POSTNATAL WARD--->
-   <div class="appoitments_div hide" id="postnatal_ward">
-            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
-            <h3>Postnatal Ward</h3>
-                <div class="form-control large">
-                    <label for="">Ward  1</label>
-                    <select name="" id="">
-                        <option value="">Bed 1</option>
-                        <option value="">Bed 2</option>
-                        <option value="">Bed 3</option>
-                        <option value="">Bed 4</option>
-                        <option value="">Bed 5</option>
-                        <option value="">Bed 6</option>
-                        <option value="">Bed 7</option>
-                    </select>
-                </div>
-                <div class="form-control large">
-                    <label for="">Ward  2</label>
-                    <select name="" id="">
-                        <option value="">Bed 1</option>
-                        <option value="">Bed 2</option>
-                        <option value="">Bed 3</option>
-                        <option value="">Bed 4</option>
-                        <option value="">Bed 5</option>
-                        <option value="">Bed 6</option>
-                        <option value="">Bed 7</option>
-                    </select>
-                </div>
-                <div class="form-control large">
-                    <label for="">Ward  3</label>
-                    <select name="" id="">
-                        <option value="">Bed 1</option>
-                        <option value="">Bed 2</option>
-                        <option value="">Bed 3</option>
-                        <option value="">Bed 4</option>
-                        <option value="">Bed 5</option>
-                        <option value="">Bed 6</option>
-                        <option value="">Bed 7</option>
-                    </select>
-                </div>
-                <button class="btn_app">Request</button>
-            </div>
-
-
-           <!-----LABOURATORY APPOITMENT--->
-           <div class="appoitments_div hide" id="lab_appoitment2">
-            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
-            <h3>Labouratory Unit</h3>
-            <form action="">
-                <div class="form-control large">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <button class="btn_app">Request</button>
-            </form>
-            </div>
-
-    <!-----RADIOLOGY APPOITMENT--->
-    <div class="appoitments_div hide" id="radiology_appoitment2">
-            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
-            <h3>Radiology Unit</h3>
-            <form action="">
-                <div class="form-control large">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <button class="btn_app">Request</button>
-            </form>
-            </div>
-
-        </div>
-    </div>
-    <div class="dynamic_popup hide" id="accessing_postnatal_patient_profile">
-    <span>Accessing Patient PAT0001</span>
-            <div class="div_switch">
-                <span id="comfirmed_patient">Comfirmed</span>
-                <span onclick="reject_switch()">Reject</span>
-            </div>
-        </div>
-    <div class="background_opacity hide" id="background_opacity2"></div>
-  </div>
-   <!----END OF THE POSTNATAL LIST-->
-
+              
       <!----START OF THE POSTNATAL PATIENT PROFILE -->
       <div class="postnatal_patients_profile hide">
         <div class="patient_container">
@@ -1166,25 +969,7 @@
     </div>
 </div>
 </div>
-<div class="dynamic_popup hide" id="add_selected_postnatal_drugs">
-            <span>Drugs Added</span>
-        </div>
-<div class="dynamic_popup hide" id="_check_selected_postnatal_drugs">
-            <span>Are you sure you want to Book for this drugs</span>
-            <div class="div_switch">
-                <span onclick="comfirmed_postnatal_drugs()">Yes</span>
-                <span  onclick="reject_switch()">No</span>
-            </div>
-        </div>
-        <div class="dynamic_popup hide" id="_approved_postnatal_drugs">
-            <span>Drugs is booked, go to the account unit and make payment</span>
-        </div>
-        <div class="dynamic_popup hide" id="update_postnatal_data">
-            <span>PAT0003 Data is updated</span>
-        </div>
-        </div>
-  </div>
-                    <div class="drugs_booking hide" id="postnatal_drugs_booking">
+<div class="drugs_booking hide" id="postnatal_drugs_booking">
   <i class="bi bi-x-lg" id="close" onclick="_close_bookDrugs2()"></i>
     <h1>Drug Booking</h1>
     <table id="dataTable2">
@@ -1202,6 +987,210 @@
     <button onclick="_check_selected_postnatal_drugs()">Book now</button>
     </div>   
                     </div>
+
+
+                      <!----START OF THE POSTNATAL LIST-->
+                <div class="list_div hide" id="postnatal_patient__list">
+                <div class="table_container">
+            <div class="search_bar_container">
+                <h3>Postnatal Patient Admission List</h3>
+                <input type="text" name="" id="" placeholder="Search">
+            </div>
+            <table>
+                <thead>
+                    <td>S/N</td>
+                    <td>Patient Profile</td>
+                    <td>Patient Name</td>
+                    <td>Patient ID</td>
+                    <td>Date of Admission</td>
+                </thead>
+                <tbody onclick="accessing_a_specific_postnatal_patients_profile()">
+                    <td>1</td>
+                    <td>
+                        <img src="../images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+                    </td>
+                    <td>Esther Patrick</td>
+                    <td>PAT0001</td>
+                    <td>22-09-2023</td>
+                    <td>
+                        <i class="bi bi-three-dots" id="_transfer_icon2" onclick="_transfer_dropdowns2()"></i>
+                    </td>
+                </tbody>
+                <tbody>
+                    <td>2</td>
+                    <td>
+                        <img src="../images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
+                    </td>
+                    <td>Mercy Patrick</td>
+                    <td>PAT0002</td>
+                    <td>22-09-2023</td>
+                    <td>
+                        <i class="bi bi-three-dots" id="_transfer_icon2" onclick="_transfer_dropdowns2()"></i>
+                    </td>
+                </tbody>
+                <div class="tranfer_div hide" id="tranfer_box2">
+                    <i class="bi bi-x-lg close_icon"  onclick="_close_transfer_dropdowns2()"></i>
+                <ul>
+                    <li onclick="_nurse_transfer_from_postnatal()">Call in Nurse Station</li>
+                    <li onclick="_doc_transfer_from_postnatal()">Doctor Appoitment</li>
+                    <li onclick="_select_postnatal_ward()">Choose ward for Patient</li>
+                    <li onclick="_lab_transfer_from_postnatal()">Transfer to Labouratory</li>
+                    <li onclick="_radiology_transfer_from_postnatal()">Transfer to Radiology</li>
+                </ul>
+            </div>
+            </table>
+            
+             <!-----NURSE APPOITMENT--->
+             <div class="appoitments_div hide" id="nurse_appoitment2">
+            <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment2()"></i>
+                <h3>Nurse Station</h3>
+                <form action="" id="">
+                <div class="form-control large">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+                </form>
+            </div>
+
+
+              <!-----DOCTOR APPOITMENT--->
+              <div class="appoitments_div hide" id="doctor_appoitment2">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
+            <h3>Doctor Appoitment</h3>
+            <form action="">
+                <div class="form-control large">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Available Doctors </label>
+                    <select name="" id="">
+                        <option value="">Doc. Patrick(Gynaecologist)</option>
+                        <option value="">Doc. Miracle(Surgeon)</option>
+                        <option value="">Doc. Moses(Medical Personel)</option>
+                    </select>
+                </div>
+                <div class="form-control large">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+          
+   <!-----POSTNATAL WARD--->
+   <div class="appoitments_div hide" id="postnatal_ward">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
+            <h3>Postnatal Ward</h3>
+                <div class="form-control large">
+                    <label for="">Ward  1</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
+                </div>
+                <div class="form-control large">
+                    <label for="">Ward  2</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
+                </div>
+                <div class="form-control large">
+                    <label for="">Ward  3</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
+                </div>
+                <button class="btn_app">Request</button>
+            </div>
+
+
+           <!-----LABOURATORY APPOITMENT--->
+           <div class="appoitments_div hide" id="lab_appoitment2">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
+            <h3>Labouratory Unit</h3>
+            <form action="">
+                <div class="form-control large">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+    <!-----RADIOLOGY APPOITMENT--->
+    <div class="appoitments_div hide" id="radiology_appoitment2">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment2()"></i>
+            <h3>Radiology Unit</h3>
+            <form action="">
+                <div class="form-control large">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="dynamic_popup hide" id="accessing_postnatal_patient_profile">
+    <span>Accessing Patient PAT0001</span>
+            <div class="div_switch">
+                <span id="comfirmed_patient">Comfirmed</span>
+                <span onclick="reject_switch()">Reject</span>
+            </div>
+        </div>
+    <div class="background_opacity hide" id="background_opacity2"></div>
+  </div>
+   <!----END OF THE POSTNATAL LIST-->
+
 
 
 
@@ -1231,8 +1220,8 @@
             <canvas id="canvasElement_labor" style="display: none;"></canvas>
             <img class="capturedImage" id="capturedImage_labor" style="display: none;">
         </div>
-        <div class="div_flex">
-            <div class="btn_capture hide" id="capture_patient3" onClick="takePicture3()">Capture</div>
+        <div class="flex_capture_button">
+            <div class="btn_capture hide" id="capture_patient3" onclick="takePicture3()">Capture</div>
         <div class="btn_recapture hide" id="recapture_patient3"  onclick="retakePicture3()">Recapture</div>
     </div>
         <h3>Patient Info</h3>
@@ -1330,267 +1319,6 @@
         </form>
         </div>
           <!----END OF THE LABOUR FORM-->
-
-          
-                <!----START OF THE LABOUR LIST-->
-                <div class="list_div hide">
-    <div class="table_container">
-            <div class="search_bar_container">
-                <h3>Labour Patient Admission List</h3>
-                <input type="text" name="" id="" placeholder="Search">
-            </div>
-            <table>
-                <thead>
-                    <td>S/N</td>
-                    <td>Patient Profile</td>
-                    <td>Patient Name</td>
-                    <td>Patient ID</td>
-                    <td>Date of Admission</td>
-                </thead>
-                <tbody onclick="accessing_a_specific_labour_patients_profile()">
-                    <td>1</td>
-                    <td>
-                        <img src="../images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
-                    </td>
-                    <td>Esther Patrick</td>
-                    <td>PAT0001</td>
-                    <td>22-09-2023</td>
-                    <td>
-                        <i class="bi bi-three-dots" id="_transfer_icon"></i>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>2</td>
-                    <td>
-                        <img src="../images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
-                    </td>
-                    <td>Mercy Patrick</td>
-                    <td>PAT0002</td>
-                    <td>22-09-2023</td>
-                    <td>
-                        <i class="bi bi-three-dots" id="_transfer_icon"></i>
-                    </td>
-                </tbody>
-                <div class="tranfer_div hide" id="tranfer_box">
-                    <i class="bi bi-x-lg close_icon"  onclick="_close_transfer_dropdowns()"></i>
-                <ul>
-                    <li onclick="_nurse_transfer_from_labour()">Call in Nurse Station</li>
-                    <li onclick="_doc_transfer_from_labour()">Doctor Appoitment</li>
-                    <li onclick="_surgical_suite_transfer_from_labour()">Transfer to Surgical Suite</li>
-                    <li onclick="_select_labour_ward()">Choose ward for Patient</li>
-                    <li onclick="_lab_transfer_from_labour()">Transfer to Labouratory</li>
-                    <li onclick="_radiology_transfer_from_labour()">Transfer to Radiology</li>
-                    <li onclick="_icu_transfer_from_labour()">Transfer to I.C.U</li>
-                    <li onclick="_switch_from_labour_to_postnatal()">Transfer to Postnatal Unit</li>
-                </ul>
-            </div>
-            </table>
-             <!-----NURSE APPOITMENT--->
-             <div class="appoitments_div hide" id="nurse_appoitment">
-            <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment()"></i>
-                <h3>Nurse Station</h3>
-                <form action="" id="">
-                <div class="form-control large">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <button class="btn_app">Request</button>
-                </form>
-            </div>
-
-
-            <!-----DOCTOR APPOITMENT--->
-            <div class="appoitments_div hide" id="doctor_appoitment">
-            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
-            <h3>Doctor Appoitment</h3>
-            <form action="">
-                <div class="form-control large">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Available Doctors </label>
-                    <select name="" id="">
-                        <option value="">Doc. Patrick(Gynaecologist)</option>
-                        <option value="">Doc. Miracle(Surgeon)</option>
-                        <option value="">Doc. Moses(Medical Personel)</option>
-                    </select>
-                </div>
-                <div class="form-control large">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <button class="btn_app">Request</button>
-            </form>
-            </div>
-
-                    <!-----SURGICAL SUITE APPOITMENT--->
-                    <div class="appoitments_div hide" id="surgical_suite_appoitment">
-            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
-            <h3>Surgical Suite Unit</h3>
-            <form action="">
-                <div class="form-control large">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <button class="btn_app">Request</button>
-            </form>
-            </div>
-
-                        <!-----LABOUR WARD APPOITMENT--->
-                        <div class="appoitments_div hide" id="labour_ward_appoitment">
-            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
-            <h3>Labour Ward Unit</h3>
-            <div class="form-control large">
-                    <label for="">Ward  1</label>
-                    <select name="" id="">
-                        <option value="">Bed 1</option>
-                        <option value="">Bed 2</option>
-                        <option value="">Bed 3</option>
-                        <option value="">Bed 4</option>
-                        <option value="">Bed 5</option>
-                        <option value="">Bed 6</option>
-                        <option value="">Bed 7</option>
-                    </select>
-                </div>
-                <div class="form-control large">
-                    <label for="">Ward  2</label>
-                    <select name="" id="">
-                        <option value="">Bed 1</option>
-                        <option value="">Bed 2</option>
-                        <option value="">Bed 3</option>
-                        <option value="">Bed 4</option>
-                        <option value="">Bed 5</option>
-                        <option value="">Bed 6</option>
-                        <option value="">Bed 7</option>
-                    </select>
-                </div>
-                <div class="form-control large">
-                    <label for="">Ward  3</label>
-                    <select name="" id="">
-                        <option value="">Bed 1</option>
-                        <option value="">Bed 2</option>
-                        <option value="">Bed 3</option>
-                        <option value="">Bed 4</option>
-                        <option value="">Bed 5</option>
-                        <option value="">Bed 6</option>
-                        <option value="">Bed 7</option>
-                    </select>
-                </div>
-                <button class="btn_app">Request</button>
-            </div>
-
-                        <!-----LABOURATORY APPOITMENT--->
-                        <div class="appoitments_div hide" id="lab_appoitment">
-            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
-            <h3>Labouratory Unit</h3>
-            <form action="">
-                <div class="form-control large">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <button class="btn_app">Request</button>
-            </form>
-            </div>
-
-                        <!-----RADIOLOGY APPOITMENT--->
-                        <div class="appoitments_div hide" id="radiology_appoitment">
-            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
-            <h3>Radiology Unit</h3>
-            <form action="">
-                <div class="form-control large">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <button class="btn_app">Request</button>
-            </form>
-            </div>
-
-                        <!-----I.C.U APPOITMENT--->
-            <div class="appoitments_div hide" id="icu_appoitment">
-            <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment()"></i>
-            <h3>I.C.U Unit</h3>
-            <form action="">
-                <div class="form-control large">
-                    <label for="">Patient Name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Patient Id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control large">
-                    <label for="">Reasons for Booking</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <button class="btn_app">Request</button>
-            </form>
-            </div>
-        </div>
-        <div class="dynamic_popup hide" id="switch_to_postnatal">
-            <span>Are you sure you want to Switch to Postnatal Unit</span>
-            <div class="div_switch">
-                <span onclick="book_postnatal_section()">Yes</span>
-                <span>No</span>
-            </div>
-        </div>
-    <div class="dynamic_popup hide" id="book_postnatal_section">
-            <span>PAT0001 would be switch to Postnatal unit,  when payment is made in the account unit</span>
-            <div class="div_switch">
-                <span onclick="book_postnatal_section_pending()">Book for payment</span>
-                <span onclick="reject_switch()">Reject</span>
-            </div>
-        </div>
-    <div class="dynamic_popup hide" id="comfirmation_postnatal_book">
-            <span>Please go to the account unit and make payment for transfer of your data to the Postnatal Unit</span>
-        </div>
-        <div class="dynamic_popup hide" id="accessing_labour_patient_profile">
-    <span>Accessing Patient PAT0001</span>
-            <div class="div_switch">
-                <span id="comfirmed_patient">Comfirmed</span>
-                <span onclick="reject_switch()">Reject</span>
-            </div>
-        </div>
-</div>
-    </div>
-    <div class="background_opacity hide" id="background_opacity"></div>
-  </div>
    </div>
 
    <!----START OF THE LABOUR PROFILE-->
@@ -1686,8 +1414,7 @@
                 </form>
             </div>
 
-                          <!---Prescribtion Input-----> <!---THIS WOULD BE SAVED TO THE DB-->
-            <div class="btn_patients_profile" id="drug_prescription_button3">Drug Prescription</div>
+                          <!---Prescribtion Input----->             <div class="btn_patients_profile" id="drug_prescription_button3">Drug Prescription</div>
             <div class="drug_prescribtion3 hide">
             <form action="" id="_inputs3">
             <div class="each_sections">
@@ -1969,8 +1696,237 @@
     <button onclick="comfirmed_selected_labour__drugs()">Book now</button>
     </div>
   </div>
+  <!----START OF THE LABOUR LIST-->
+  <div class="list_div hide" id="labour_patient__list">
+    <div class="table_container">
+            <div class="search_bar_container">
+                <h3>Labour Patient Admission List</h3>
+                <input type="text" name="" id="" placeholder="Search">
+            </div>
+            <table>
+                <thead>
+                    <td>S/N</td>
+                    <td>Patient Profile</td>
+                    <td>Patient Name</td>
+                    <td>Patient ID</td>
+                    <td>Date of Admission</td>
+                </thead>
+                <tbody onclick="accessing_a_specific_labour_patients_profile()">
+                    <td>1</td>
+                    <td>
+                        <img src="../images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+                    </td>
+                    <td>Esther Patrick</td>
+                    <td>PAT0001</td>
+                    <td>22-09-2023</td>
+                    <td>
+                        <i class="bi bi-three-dots" id="_transfer_icon"></i>
+                    </td>
+                </tbody>
+                <tbody>
+                    <td>2</td>
+                    <td>
+                        <img src="../images/0ba77c2878729044df4c28ba1830bbad.jpg" alt="">
+                    </td>
+                    <td>Mercy Patrick</td>
+                    <td>PAT0002</td>
+                    <td>22-09-2023</td>
+                    <td>
+                        <i class="bi bi-three-dots" id="_transfer_icon"></i>
+                    </td>
+                </tbody>
+                <div class="tranfer_div hide" id="tranfer_box">
+                    <i class="bi bi-x-lg close_icon"  onclick="_close_transfer_dropdowns()"></i>
+                <ul>
+                    <li onclick="_nurse_transfer_from_labour()">Call in Nurse Station</li>
+                    <li onclick="_doc_transfer_from_labour()">Doctor Appoitment</li>
+                    <li onclick="_surgical_suite_transfer_from_labour()">Transfer to Surgical Suite</li>
+                    <li onclick="_select_labour_ward()">Choose ward for Patient</li>
+                    <li onclick="_lab_transfer_from_labour()">Transfer to Labouratory</li>
+                    <li onclick="_radiology_transfer_from_labour()">Transfer to Radiology</li>
+                    <li onclick="_icu_transfer_from_labour()">Transfer to I.C.U</li>
+                    <li onclick="_switch_from_labour_to_postnatal()">Transfer to Postnatal Unit</li>
+                </ul>
+            </div>
+            </table>
+             <!-----NURSE APPOITMENT--->
+             <div class="appoitments_div hide" id="nurse_appoitment">
+            <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment()"></i>
+                <h3>Nurse Station</h3>
+                <form action="" id="">
+                <div class="form-control large">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+                </form>
+            </div>
 
-  <div class="overlay hide"></div>
+
+            <!-----DOCTOR APPOITMENT--->
+            <div class="appoitments_div hide" id="doctor_appoitment">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
+            <h3>Doctor Appoitment</h3>
+            <form action="">
+                <div class="form-control large">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Available Doctors </label>
+                    <select name="" id="">
+                        <option value="">Doc. Patrick(Gynaecologist)</option>
+                        <option value="">Doc. Miracle(Surgeon)</option>
+                        <option value="">Doc. Moses(Medical Personel)</option>
+                    </select>
+                </div>
+                <div class="form-control large">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+                    <!-----SURGICAL SUITE APPOITMENT--->
+                    <div class="appoitments_div hide" id="surgical_suite_appoitment">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
+            <h3>Surgical Suite Unit</h3>
+            <form action="">
+                <div class="form-control large">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+                        <!-----LABOUR WARD APPOITMENT--->
+                        <div class="appoitments_div hide" id="labour_ward_appoitment">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
+            <h3>Labour Ward Unit</h3>
+            <div class="form-control large">
+                    <label for="">Ward  1</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
+                </div>
+                <div class="form-control large">
+                    <label for="">Ward  2</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
+                </div>
+                <div class="form-control large">
+                    <label for="">Ward  3</label>
+                    <select name="" id="">
+                        <option value="">Bed 1</option>
+                        <option value="">Bed 2</option>
+                        <option value="">Bed 3</option>
+                        <option value="">Bed 4</option>
+                        <option value="">Bed 5</option>
+                        <option value="">Bed 6</option>
+                        <option value="">Bed 7</option>
+                    </select>
+                </div>
+                <button class="btn_app">Request</button>
+            </div>
+
+                        <!-----LABOURATORY APPOITMENT--->
+                        <div class="appoitments_div hide" id="lab_appoitment">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
+            <h3>Labouratory Unit</h3>
+            <form action="">
+                <div class="form-control large">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+                        <!-----RADIOLOGY APPOITMENT--->
+                        <div class="appoitments_div hide" id="radiology_appoitment">
+            <i class="bi bi-x-lg close_icon"onclick="_close_all_appoitment()"></i>
+            <h3>Radiology Unit</h3>
+            <form action="">
+                <div class="form-control large">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+
+                        <!-----I.C.U APPOITMENT--->
+            <div class="appoitments_div hide" id="icu_appoitment">
+            <i class="bi bi-x-lg close_icon" onclick="_close_all_appoitment()"></i>
+            <h3>I.C.U Unit</h3>
+            <form action="">
+                <div class="form-control large">
+                    <label for="">Patient Name</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Patient Id</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form-control large">
+                    <label for="">Reasons for Booking</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn_app">Request</button>
+            </form>
+            </div>
+        </div>
      <!----END OF LABOUR-->
 
 

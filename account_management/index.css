@@ -346,7 +346,7 @@ justify-content: center;
     cursor: pointer;
 }
 .search_bar_container input {
-        padding: 0.5em;
+        padding: 0.5em 0;
         color: rgb(42, 87, 215);
         font-size: 1.1rem;
          border: none;
