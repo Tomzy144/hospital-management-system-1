@@ -132,6 +132,7 @@ function populateWardsDropdown(wards) {
   for (var i = 0; i < wards.length; i++) {
     var option = document.createElement("option");
     option.value = wards[i].ward_id;
+    option.id= wards[i].ward_id;
     option.textContent = wards[i].ward_number;
     wardsDropdown.appendChild(option);
   }
@@ -181,6 +182,7 @@ function populateBedsDropdown(beds) {
   for (var i = 0; i < beds.length; i++) {
     var option = document.createElement('option');
     option.value = beds[i].bed_id; // Assuming the bed object has a 'bed_id' property
+    option.id= beds[i].bed_id;
 
     // Concatenate bed_number and bed_status_description
     var optionText = beds[i].bed_number + " - " + beds[i].bed_description;
@@ -195,76 +197,70 @@ function populateBedsDropdown(beds) {
 
 
 
- /////////////////////////
- function vital_input(){
+function vital_input() {
+  // Collect input values
+  var patientData = {
+    action: "vital_input",
+    patient_id: $('#patient_id').val(),
+    ward: $('#wards').val(),
+    stage: $('#stage').val(),
+    bed: $('#beds').val(),
+    note: $('#note').val(),
+    temperature: $('#temperature').val(),
+    bp: $('#bp').val(),
+    pulse: $('#pulse').val(),
+    respiratory: $('#respiratory').val(),
+    weight: $('#weight').val(),
+    height: $('#height').val(),
+    intake: $('#intake').val(),
+    output: $('#output').val(),
+    spo2: $('#spo2').val(),
+    bmi: $('#bmi').val(),
+    body_fat: $('#body_fat').val(),
+    muscle_mass: $('#muscle_mass').val(),
+    musc: $('#musc').val(), // Consider renaming this for clarity
+    resting_metabolism: $('#resting_metabolism').val(),
+    body_age: $('#body_age').val(),
+    bmi_for_age: $('#bmi_for_age').val(),
+    visceral_fat: $('#visceral_fat').val(),
+    head_circumference: $('#head_circumference').val(),
+    waist_circumference: $('#waist_circumference').val(),
+    hip_circumference: $('#hip_circumference').val(),
+    w_hr: $('#w_hr').val()
+  };
 
-  var patient_id = $('patient_id').val();
-  var ward = $('ward').val();
-  var stage =$('stage').val();
-  var bed =$('bed').val();
-  var note=$('note').val();
-  var temperature =$('temperature').val();
-  var bp =$('bp').val();
-  var pulse =$('pulse').val();
-  var respiratory =$('respiratory').val();
-  var weight =$('weight').val();
-  var height =$('height').val();
-  var intake =$('intake').val();
-  var output =$('output').val();
-  var spo2 =$('spo2').val();
-  var bmi =$('bmi').val();
-  var body_fat =$('body_fat').val();
-  var muscle_mass =$('muscle_mass').val(); 
-  var musc =$('musc').val(); 
-  var resting_metabolism =$('resting_metabolism').val();
-  var body_age =$('body_age').val();
-  var bmi_for_age =$('bmi_for_age').val();
-  var visceral_fat =$('visceral_fat').val();
-  var head_circumference =$('head_circumference').val();
-  var waist_circumference =$('waist_circumference').val();
-  var hip_circumference =$('hip_circumference').val();
-  var w_hr =$('w_hr').val();
- 
-  var action = "vital_input"; 
+  // Disable the submit button and change text
+  var $btnSubmit = $('#btn_submit');
+  var btnText = $btnSubmit.html();
+  $btnSubmit.html('Processing...');
+  $btnSubmit.prop('disabled', true);
 
-  var dataString = 'action=' + action + '&patient_id=' + patient_id + '&ward=' + ward + '&stage=' + stage + '&bed=' + bed + '&note=' + note + 
-  '&temperature=' + temperature + '&bp=' + bp + '&pulse=' + pulse + '&respiratory=' + respiratory + '&weight=' + weight + '&height=' + height +
-  '&intake=' + intake + '&output=' + output + '&spo2=' + spo2 + '&bmi=' + bmi + '&body_fat=' + body_fat + '&muscle_mass='  + muscle_mass + 
-  '&musc=' + musc + '&resting_metabolism=' + resting_metabolism + '&body_age=' + body_age + '&bmi_for_age=' + bmi_for_age + '&visceral_fat='
-  + visceral_fat + '&head_circumference=' + head_circumference + '&waist_circumference=' + waist_circumference + '&hip_circumference=' + hip_circumference +
-  '&w_hr=' + w_hr;
-
-  
-   var btn_text= $('#btn_submit').html();
-   $('#btn_submit').html('Processing...');
-   document.getElementById('btn_submit').disabled=true;
-
-
-   $.ajax({
+  // Send AJAX request
+  $.ajax({
     type: 'POST',
     url: "config/code.php",
-    data: dataString,
+    data: patientData,
     cache: false,
     dataType: 'json',
     success: function (data) {
-      // Check for success and populate the dropdown
       if (data.success) {
-      
 
-        var btn_text= $('#btn_submit').html();
-        $('#btn_submit').html('Save All...');
-        document.getElementById('btn_submit').disabled=true;
+        alert("Patient Vital has been updated successfully")
+        $btnSubmit.html('Save All...');
+        $btnSubmit.prop('disabled', true);
       } else {
         console.error('Error:', data.message);
+        $btnSubmit.html(btnText);
+        $btnSubmit.prop('disabled', false);
       }
     },
     error: function (xhr, status, error) {
       console.error('AJAX Error:', status, error);
-    },
+      $btnSubmit.html(btnText);
+      $btnSubmit.prop('disabled', false);
+    }
   });
-   
- 
- }
+}
 
 
 
