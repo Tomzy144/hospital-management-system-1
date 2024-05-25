@@ -255,6 +255,7 @@ cursor: pointer;
 }
 
 .container{
+    height: 100%;
     width: 100%;
     display: flex;
 }
@@ -268,6 +269,7 @@ cursor: pointer;
     margin: 4.2rem 0 0 19em;
     color: rgb(42, 87, 215);
     position: relative;
+    width: 100%;
 }
 
 .upload_div{
@@ -409,6 +411,7 @@ cursor: pointer;
 
   .list_div {
     margin: 5.5rem 0 0 19rem;
+    width: 100%;
 }
  .search_bar_container {
     background-color: #fff;
@@ -484,6 +487,7 @@ table thead  td{
     white-space: nowrap;
     position: relative;
     font-size: 0.95rem;
+    cursor: pointer;
     vertical-align: center;
     font-size: 0.8rem;
     line-height: 1.2;
@@ -528,6 +532,16 @@ table thead  td{
     padding: 0.5rem;
     transition: all ease-in-out 0.5s;
 }
+.allProfiles{
+    margin: 5rem 0 0 19rem;
+    width: 100%;
+}
+.displayPatientNameIdContainer{
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+
 
 /*-------------------------PATIENT PROFILES---------------------------------------*/
 .antenatal_patients_profile{
@@ -539,7 +553,6 @@ table thead  td{
 }
 
 .patient_container{
-    width: 100%;
     padding: 0.5em;
     background-color:rgb(42, 87, 215);
 }

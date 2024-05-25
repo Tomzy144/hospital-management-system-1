@@ -2,18 +2,43 @@
      function displayUserProfile(){
       document.querySelector(".profile_account").classList.toggle("hide");
   };
-
-
-  const links =  document.querySelectorAll('#links');
-function toggleSidebarLinks(clickedLink){
-    links.forEach(link => link.classList.remove('active'));
-    clickedLink.classList.add('active');
-}
-links.forEach(link => {
-    link.addEventListener('click', function() {
-        toggleSidebarLinks(this);
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.section');
+    const links = document.querySelectorAll('.sidebar-body ul li');
+  
+  function toggleSidebarLinks(clickedLink){
+      links.forEach(link => link.classList.remove('active'));
+      clickedLink.classList.add('active');
+  }
+  links.forEach(link => {
+      link.addEventListener('click', function() {
+          toggleSidebarLinks(this);
+      });
+  });
+  
+    function hideAllSections() {
+      sections.forEach(section => section.classList.add('hide'));
+    }
+  
+    function showSection(sectionId) {
+      document.getElementById(sectionId).classList.remove('hide');
+    }
+  
+    function deactivateAllLinks() {
+      links.forEach(link => link.classList.remove('active'));
+    }
+  
+    links.forEach(link => {
+      link.addEventListener('click', function() {
+        deactivateAllLinks();
+        this.classList.add('active');
+        hideAllSections();
+        showSection(this.id.replace('_link', '_section'));
+      });
     });
-});
+  });
+  
+
 
 
 
@@ -70,10 +95,18 @@ anternatalForm();
 
 const hospitalRoleForBookingPatient = ['Nurse', 'Doctor', 'Lab', 'Radiology'];
 const differentMatanitySection = ['Anternatal Unit', 'Postnatal Unit', 'Labour Unit']
+const callInRole = ['iCU', 'Surgical Suite'];
 
-console.log(hospitalRoleForBookingPatient);
-
-function createMessage() {
+function booking() {
+  const sections = document.querySelectorAll('.section');
+  console.log(sections);
+  const children = Array.from(sections)
+  let grandchildren = [];
+  children.forEach(child => {
+      grandchildren.push(...Array.from(child.children));
+  });
+  
+  console.log(grandchildren);
   const message = document.createElement('div');
   message.className = 'alert_div';
   message.innerHTML = `
@@ -81,13 +114,16 @@ function createMessage() {
       <ul class="unorderlist">
         <li class="lists" id="doc">Doctor Booking</li>
         <li class="lists" id="lab">Laboratory Booking</li>
-        <li class="lists" id="rad">Radiology Booking</li>
+        <li class="lists" id="rad">Radiology Booking</li> 
         <li class="lists" id="transferTo${differentMatanitySection[2]}">Transfer to ${differentMatanitySection[2]}</li>
       </ul>
     </div>`;
   message.style.backgroundColor = '#fff';
   message.style.color = 'rgb(42, 87, 215)';
   return message;
+
+
+  
 }
 
 function createAppointmentForm(role) {
@@ -165,7 +201,7 @@ function bookPatient() {
       const patientId = rows[3].textContent;
       console.log(patientName);
 
-      const message = createMessage();
+      const message = booking();
       document.body.prepend(message);
 
       hospitalRoleForBookingPatient.forEach(role => {
@@ -183,7 +219,7 @@ function bookPatient() {
         transfer.className = 'transfer'
         transfer.style.display = 'block';
         document.body.prepend(transfer);
-        createMessage(message.style.display = 'none');
+        booking(message.style.display = 'none');
 
         document.querySelectorAll('#transferTrue').forEach(function(button){
           button.addEventListener('click', function(e){
@@ -227,189 +263,77 @@ function bookPatient() {
 bookPatient();
 
 
+function openPatientProfile() {
+  const allProfiles = document.querySelectorAll('.allProfiles');
+  const displayPatientNameId = document.querySelectorAll('.displayPatientNameIdContainer');
 
-function openPatientProfile(){
-  const eachPatientRows = document.querySelectorAll('#patientProfile');
-  eachPatientRows.forEach(function(patientRow){
-    console.log(patientRow.children[1].innerHTML);
-  })
-}
-openPatientProfile()
+  document.querySelectorAll('#patientProfile').forEach(function(patientRow) {
+    patientRow.addEventListener('click', function() {
+      const rowType = patientRow.parentElement.parentElement.parentElement.children[0].children[0].innerHTML.split(' ')[0];
+      displayPatientNameId.forEach(function(nameId) {
+        nameId.innerHTML = `<div>${patientRow.children[2].innerHTML}</div> <br/> <div>${patientRow.children[3].innerHTML}</div>`;
+        console.log(`${patientRow.children[2]}`);
+      });
 
+      allProfiles.forEach(function(section) {
+        const sections = document.querySelectorAll('.section');
+        const sectionId = rowType.toLowerCase() + 'Input';
+        console.log(sectionId);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//DIFFERENT SECTIONS 
-function antenatalSection(){
-  document.querySelector("#antenatal_section").classList.remove('hide');
-  document.querySelector("#anternatal_patient__list").classList.add('hide');
-  document.querySelector("#postnatal_section").classList.add("hide");
-  document.querySelector("#labour_section").classList.add("hide");
-  document.querySelector("#labour_patient__list").classList.add('hide');
-  document.querySelector(".antenatal_patients_profile").classList.add("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-  $('#change_to_antenatal_section').addClass('hide');
+        if (section.id === sectionId) {
+          section.classList.remove('hide');
+        } else {
+          section.classList.add('hide');
+          sections.forEach(section => section.classList.add('hide'));
+        }
+      });
+    });
+  });
 }
 
-
-function anternatalPatientList(){
-  document.querySelector("#antenatal_section").classList.add('hide');
-  document.querySelector("#anternatal_patient__list").classList.remove('hide');
-  document.querySelector("#postnatal_patient__list").classList.add('hide');
-  document.querySelector("#postnatal_section").classList.add("hide");
-  document.querySelector("#labour_section").classList.add("hide");
-  document.querySelector("#labour_patient__list").classList.add('hide');
-  document.querySelector(".antenatal_patients_profile").classList.add("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-  $('#change_to_antenatal_section').addClass('hide');
-}
-
-function postnatalSection(){
-  document.querySelector("#antenatal_section").classList.add('hide');
-  document.querySelector("#postnatal_section").classList.remove("hide");
-  document.querySelector("#labour_section").classList.add("hide");
-  document.querySelector("#anternatal_patient__list").classList.add('hide');
-  document.querySelector("#labour_patient__list").classList.add('hide');
-  document.querySelector("#postnatal_patient__list").classList.add('hide');
-  document.querySelector(".antenatal_patients_profile").classList.add("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-  $('#change_to_postnatal_section').addClass('hide');
-}
-
-function postnatalPatientList(){
-  document.querySelector("#antenatal_section").classList.add('hide');
-  document.querySelector("#anternatal_patient__list").classList.add('hide');
-  document.querySelector("#postnatal_patient__list").classList.remove('hide');
-  document.querySelector("#postnatal_section").classList.add("hide");
-  document.querySelector("#labour_section").classList.add("hide");
-  document.querySelector("#labour_patient__list").classList.add('hide');
-  document.querySelector(".antenatal_patients_profile").classList.add("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-  $('#change_to_antenatal_section').addClass('hide');
-}
-
-function labourSection(){
-  document.querySelector("#antenatal_section").classList.add('hide');
-  document.querySelector("#postnatal_section").classList.add("hide");
-  document.querySelector("#labour_section").classList.remove("hide");
-  document.querySelector("#anternatal_patient__list").classList.add('hide');
-  document.querySelector("#postnatal_patient__list").classList.add('hide');
-  document.querySelector("#labour_patient__list").classList.add('hide');
-  document.querySelector(".antenatal_patients_profile").classList.add("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-}
-
-function labourPatientList(){
-  document.querySelector("#antenatal_section").classList.add('hide');
-  document.querySelector("#anternatal_patient__list").classList.add('hide');
-  document.querySelector("#postnatal_patient__list").classList.add('hide');
-  document.querySelector("#labour_patient__list").classList.remove('hide');
-  document.querySelector("#postnatal_section").classList.add("hide");
-  document.querySelector("#labour_section").classList.add("hide");
-  document.querySelector(".antenatal_patients_profile").classList.add("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-  $('#change_to_antenatal_section').addClass('hide');
-}
-
-////////////////////////////////////////////////////////////////////////////
-
-function anternatalPatientProfile(){
-  document.querySelector("#antenatal_section").classList.add('hide');
-  document.querySelector("#anternatal_patient__list").classList.add('hide');
-  document.querySelector("#postnatal_section").classList.add("hide");
-  document.querySelector("#labour_section").classList.add("hide");
-  document.querySelector(".antenatal_patients_profile").classList.remove("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector("#patient__input").classList.remove("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-}
+openPatientProfile();
 
 
 
-// function anternal_patient_profile_section(){
-//   document.querySelector("#antenatal_section").classList.add('hide');
-//   document.querySelector("#postnatal_section").classList.add("hide");
-//   document.querySelector("#labour_section").classList.add("hide");
-//   document.querySelector(".antenatal_patients_profile").classList.remove("hide");
-//   document.querySelector(".postnatal_patients_profile").classList.add("hide");
-//   document.querySelector(".labour_patients_profile").classList.add("hide");
+
+//different sections
+
+// function allSection(){
+//   const anternatal_form = document.getElementById('anternatal_form');
+//   const anternatal_patient__list = document.getElementById('anternatal_patient__list');
+//   const anternatalInput = document.getElementById('anternatalInput');
+//   const postnatal_form = document.getElementById('postnatal_form');
+//   const postnatal_patient__list = document.getElementById('postnatal_patient__list');
+//   const postnatalInput = document.getElementById('postnatalInput');
+//   const labour_form = document.getElementById('labour_form');
+//   const labour_patient__list = document.getElementById('labour_patient__list');
+//   const labourInput = document.getElementById('labourInput');
 // }
-function anternal_patient_hospital_record(){
-  document.querySelector("#antenatal_section").classList.add('hide');
-  document.querySelector("#postnatal_section").classList.add("hide");
-  document.querySelector("#labour_section").classList.add("hide");
-  document.querySelector("#patient__input").classList.add("hide");
-  document.querySelector("#patient_hospital_record").classList.remove("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-}
-
-function accessing_a_specific_postnatal_patients_profile(){
-  $('#accessing_postnatal_patient_profile').removeClass('hide');
-  $('#background_opacity2').removeClass('hide');
-  if(!$('#postnatal_section').hasClass('hide')){
-    $('#accessing_postnatal_patient_profile #comfirmed_patient').on('click', function(){
-      postnatal_patient_profile_section()
-    })
-  }
-  }
 
 
-function postnatal_patient_profile_section(){
-  document.querySelector("#antenatal_section").classList.add('hide');
-  document.querySelector("#postnatal_section").classList.add("hide");
-  document.querySelector("#labour_section").classList.add("hide");
-  document.querySelector(".antenatal_patients_profile").classList.add("hide");
-  document.querySelector(".postnatal_patients_profile").classList.remove("hide");
-  document.querySelector(".labour_patients_profile").classList.add("hide");
-  document.querySelector("#logout_patient").classList.remove("hide");
-  $('#accessing_postnatal_patient_profile').addClass('hide');
-}
 
-function accessing_a_specific_labour_patients_profile(){
-  $('#accessing_labour_patient_profile').removeClass('hide');
-  $('#background_opacity').removeClass('hide');
-  if(!$('#labour_section').hasClass('hide')){
-    $('#accessing_labour_patient_profile #comfirmed_patient').on('click', function(){
-      labour_patient_profile_section()
-    })
-  }
-  }
-function labour_patient_profile_section(){
-  document.querySelector("#antenatal_section").classList.add('hide');
-  document.querySelector("#postnatal_section").classList.add("hide");
-  document.querySelector("#labour_section").classList.add("hide");
-  document.querySelector(".antenatal_patients_profile").classList.add("hide");
-  document.querySelector(".postnatal_patients_profile").classList.add("hide");
-  document.querySelector(".labour_patients_profile").classList.remove("hide");
-  $('#accessing_labour_patient_profile').addClass('hide');
-  $('#background_opacity').addClass('hide');
-  document.querySelector("#logout_patient").classList.remove("hide");
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -463,25 +387,6 @@ $('.add__drug').on('click', function(){
 
 // Call the function to add drugs
 add_drugs();
-
-function savedInput(){
-  $('#save_inputs').removeClass('hide');
-  setTimeout(function(){
-    $('#save_inputs').addClass('hide');
-  }, timeInterval)
-}
-function _check_selected_antenatal_drugs(){
-  $('#_check_selected_antenatal_drugs').removeClass('hide')
-  $('#antenatal_drugs_booking').addClass('hide');
-}
-function comfirmed_antenatal_drugs(){
-  $('#_approved_antenatal_drugs').removeClass('hide');
-  $('#_check_selected_antenatal_drugs').addClass('hide');
-  setTimeout(function(){
-    $('#_approved_antenatal_drugs').addClass('hide');
-    $('.overlay').addClass('hide');
-  }, timeInterval)
-}
 ////////////////////////////////////////////////////////////
 
 
