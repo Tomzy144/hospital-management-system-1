@@ -8,7 +8,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family:"Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             animation: fadeIn 2s ease-in-out;
         }
         :root{
@@ -24,10 +24,8 @@
         }
         
         p, h3, h4, span, li {
-            font-size: .995rem;
-            white-space: nowrap;
-            color: #2a57d7;
-            line-height: 20px;
+            font-size: var(--medium-font);
+            color: var(--font-color);
         }
         h5, h6{
             font-size: var(--extra-small-font);
@@ -35,6 +33,9 @@
         h1, h2{
             font-size: var(--large-font);
             color: var(--font-color);
+        }
+        span{
+            padding: 0.3rem;
         }
 .alert_div{
     width: auto;
@@ -162,8 +163,10 @@
     color: rgb(255, 255, 255);
 }
 h3{
+    font-weight:normal;
+    font-size: 1.3rem;;
+    letter-spacing: normal;
     color: rgb(42, 87, 215);
-    font-weight: normal;
 }
 .profile img{
     width: 50px;
@@ -202,6 +205,8 @@ h3{
     color: #fff;
     transform: scale(0.98);
 }
+
+
 .sidebar{
     width: 100%;
     width: 300px;
@@ -229,7 +234,6 @@ align-items: center;
 .sidebar-body{
 width: 100%;
 display: flex;
-padding: 0.5rem;
 color:rgb(42, 87, 215);
 align-items: center;
 }
@@ -241,26 +245,19 @@ align-items: center;
     flex-direction: column;
 }
 .sidebar-body ul li{
-margin: 0.3rem 0;
-padding: 0.9rem;
+margin: 1rem 0;
 border-radius: 4px;
+padding: 0.3rem;
 cursor: pointer;
 }
 
 .sidebar-body ul li.active{
-margin: 0.3rem 0;
-padding: 0.9rem;
+margin: 1rem 0;
 background-color: #f0f7ff;
 width: 100%;
-border-radius: 4px;
+border-radius: 7px;
 cursor: pointer;
-}
-.sidebar-body ul li{
-margin: 0.3rem 0;
-padding: 0.9rem;
-background: none;
-border-radius: 4px;
-cursor: pointer;
+padding: 1rem;
 }
 .sidebar-footer{
  width: 300px;
@@ -291,7 +288,6 @@ justify-content: center;
     cursor: pointer;
     border-radius: 10px;
 }
-
 /*PATIENT FORM*/
 .form_sections{
     width: 100%;
@@ -440,7 +436,7 @@ justify-content: center;
 .form-control select {
     padding: 0.5em 0;
     color: rgb(42, 87, 215);
-    font-size: .995rem;
+    font-size: 1.1rem;
   border: none;
   border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
@@ -451,14 +447,14 @@ justify-content: center;
       margin: 0.5rem 0;
   }
   label{
-    font-size: .995rem;
+    font-size: 1.2rem;
     color: rgb(42, 87, 215);
     font-weight: normal;
   }
   input {
     padding: 0.5em 0;
     color: rgb(42, 87, 215);
-    font-size: .995rem;
+    font-size: 1.1rem;
      border: none;
      width: 300px;
      font-weight: normal ;
@@ -505,7 +501,7 @@ justify-content: center;
     display: flex;
   }
   .patient_list_div {
-    width: 100%;
+    width: auto;
     margin: 5.5rem 0 0 19rem;
 }
 
@@ -588,15 +584,19 @@ table thead  td{
 
 .walkin_patient_list_div{
     margin: 5.5rem 0 0 19rem;
-    width: 100%;
+    width: auto;
 }
 ._action{
     cursor: pointer;
+}
+.appoitment input{
+    width: 100%;
 }
 ._box_popup {
     width: auto;
     height: fit-content;
     max-width: 300px;
+    box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
     position: fixed;
     right: 0;
     color: #2a57d7;
@@ -622,9 +622,6 @@ table thead  td{
  margin: none;
 cursor: pointer;
 }
-h3{
-    font-size: .999rem;
-}
 
  .appoitment{
     width:400px;
@@ -637,6 +634,12 @@ h3{
     top: 0;
     right:0;
     z-index: 1100;
+}
+.avalable_doctor input{
+    width: 100%;
+}
+.avalable_doctor select{
+    width: 100%;
 }
 .appoitment button{
     background-color:rgb(42, 87, 215); 
@@ -835,6 +838,7 @@ h3{
     top: 0;
     z-index: 1200;
     right: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow: auto;
     background-color: rgb(255, 255, 255);
 }
@@ -861,7 +865,7 @@ h3{
 }
 .finger_print_div{
     width: 100%;
-    height: auto;
+    height: 100%;
     display: grid;
     place-items: center;
     background-color: rgb(42, 87, 215);
@@ -920,11 +924,11 @@ h3{
     display: flex;
   }
   .patient_list_div {
-    width: 100%;
+    width: auto;
     margin: 5em 0 0 19em;
 }
   .walkin_patient_list_div {
-    width: 100%;
+    width: auto;
     margin: 5em 0 0 19em;
 }
 
@@ -1030,23 +1034,7 @@ h3{
         position: relative;
         color: rgb(42, 87, 215);
       }
-      .search_bar_container i {
-        position: absolute;
-        right: 24%;
-        cursor: pointer;
-        top: 70%;
-      }
-      .search_bar_container {
-        background-color: #fff;
-        color: rgb(42, 87, 215);
-        padding: 0.5em;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        margin: 0.4em 0 0 0;
-        flex-direction: column;
-      }
+
       .upload_image {
         width: 240px;
          height: 240px;
@@ -1080,7 +1068,6 @@ h3{
       .walkin_admission_form{
         width: 100%;
         height: 100%;
-        position: absolute;
         overflow: auto;
         top: 0;
         left: 0;
