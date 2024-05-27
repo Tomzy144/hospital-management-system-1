@@ -229,37 +229,50 @@ function vital_input() {
     w_hr: $('#w_hr').val()
   };
 
-  // Disable the submit button and change text
-  var $btnSubmit = $('#btn_submit');
-  var btnText = $btnSubmit.html();
-  $btnSubmit.html('Processing...');
-  $btnSubmit.prop('disabled', true);
+  if (!patientData.patient_id || !patientData.ward || !patientData.stage || 
+    !patientData.temperature || !patientData.bp || !patientData.pulse || 
+    !patientData.respiratory || !patientData.weight || !patientData.height || 
+    !patientData.intake || !patientData.output || !patientData.spo2 || 
+    !patientData.bmi || !patientData.body_fat || !patientData.muscle_mass || 
+    !patientData.musc || !patientData.resting_metabolism || !patientData.body_age || 
+    !patientData.bmi_for_age || !patientData.visceral_fat || !patientData.head_circumference || 
+    !patientData.waist_circumference || !patientData.hip_circumference || !patientData.w_hr) {
+  alert("Please fill in all required fields.");
+  }
+  else{
 
-  // Send AJAX request
-  $.ajax({
-    type: 'POST',
-    url: "config/code.php",
-    data: patientData,
-    cache: false,
-    dataType: 'json',
-    success: function (data) {
-      if (data.success) {
+      // Disable the submit button and change text
+      var $btnSubmit = $('#btn_submit');
+      var btnText = $btnSubmit.html();
+      $btnSubmit.html('Processing...');
+      $btnSubmit.prop('disabled', true);
 
-        alert("Patient Vital has been updated successfully");
-        $btnSubmit.html('Save All...');
-        $btnSubmit.prop('disabled', true);
-      } else {
-        console.error('Error:', data.message);
-        $btnSubmit.html(btnText);
-        $btnSubmit.prop('disabled', false);
-      }
-    },
-    error: function (xhr, status, error) {
-      console.error('AJAX Error:', status, error);
-      $btnSubmit.html(btnText);
-      $btnSubmit.prop('disabled', false);
-    }
-  });
+      // Send AJAX request
+      $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: patientData,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+          if (data.success) {
+
+            alert("Patient Vital has been updated successfully");
+            $btnSubmit.html('Save All...');
+            $btnSubmit.prop('disabled', true);
+          } else {
+            console.error('Error:', data.message);
+            $btnSubmit.html(btnText);
+            $btnSubmit.prop('disabled', false);
+          }
+        },
+        error: function (xhr, status, error) {
+          console.error('AJAX Error:', status, error);
+          $btnSubmit.html(btnText);
+          $btnSubmit.prop('disabled', false);
+        }
+      });
+  }
 }
 
 
