@@ -260,6 +260,7 @@ function vital_input() {
             alert("Patient Vital has been updated successfully");
             $btnSubmit.html('Save All...');
             $btnSubmit.prop('disabled', true);
+            window.location.reload();
           } else {
             console.error('Error:', data.message);
             $btnSubmit.html(btnText);
@@ -274,6 +275,113 @@ function vital_input() {
       });
   }
 }
+
+function getDoctorsRoles() {
+
+  $('#roles').html('<option>LOADING...</option>'); // Set loading message
+  $('#roles').prop('disabled', true); // Disable the dropdown
+
+  var action = 'getDoctorsRoles';
+  var wards = $('#roles').val();
+  var data = { action: action, roles: roles };
+
+  $.ajax({
+    type: 'POST',
+    url: "config/code.php",
+    data: data,
+    cache: false,
+    dataType: 'json',
+    success: function (data) {
+      // Check for success and populate the dropdown
+      if (data.success) {
+        populaterolesDropdown(data.doctorRoles); // Pass the entire array of roles
+      } else {
+        console.error('Error:', data.message);
+      }
+    },
+    error: function (xhr, status, error) {
+      console.error('AJAX Error:', status, error);
+    },
+  });
+}
+
+function populaterolesDropdown(doctorRoles) {
+  var rolesDropdown = document.getElementById('roles');
+
+  // Clear existing options
+  rolesDropdown.innerHTML = '';
+
+  // Add options based on the fetched data
+  for (var i = 0; i < doctorRoles.length; i++) {
+    var option = document.createElement('option');
+    option.value = doctorRoles[i].doctor_role_id; // Assuming the bed object has a 'bed_id' property
+    option.id= doctorRoles[i].doctor_role_id;
+
+    // Concatenate bed_number and bed_status_description
+    var optionText = doctorRoles[i].doctor_role_name;
+
+    option.textContent = optionText;
+    
+    rolesDropdown.appendChild(option);
+  }
+
+  // Enable the dropdown after populating options
+  $('#roles').prop('disabled', false);
+}
+
+// function getDoctors() {
+//   const selectedRole = document.getElementById('roles').value;
+//   const doctorsSelect = document.getElementById('doctors');
+//   doctorsSelect.innerHTML = ''; // Clear previous options
+
+//   // Populate the doctors select box based on the selected role
+//   doctorsData[selectedRole].forEach(doctor => {
+//       const option = document.createElement('option');
+//       option.value = doctor;
+//       option.text = doctor;
+//       doctorsSelect.appendChild(option);
+//   });
+// }
+
+// // Initial population of doctors based on the default selected role
+// getDoctors();
+
+
+
+
+function updateDoctors() {
+  const roleSelect = document.getElementById('av-roles');
+  const doctorSelect = document.getElementById('av-doctors');
+  const selectedRole = roleSelect.value;
+
+  doctorSelect.innerHTML = ''; // Clear existing options
+  roles[selectedRole].forEach(doctor => {
+      const option = document.createElement('option');
+      option.textContent = doctor;
+      option.value = doctor.toLowerCase().replace(/ /g, '-'); // Convert name to a slug-like value
+      doctorSelect.appendChild(option);
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

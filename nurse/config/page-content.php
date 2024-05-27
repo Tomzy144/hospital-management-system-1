@@ -124,13 +124,11 @@
             <form action="" class="av_doctor_role hide">
     <div class="form-control">
         <label for="av-roles">Doctor Roles</label>
-        <select name="roles" id="av-roles" onchange="updateDoctors()">
-            <option value="select">Select</option> 
-            <option value="surgeon">Surgeon</option> 
-            <option value="healthPractitioner">Health Practitioner</option>
-            <option value="dentist">Dentist</option>
-            <option value="heartDoctor">Heart Doctor</option>
+        <select name="roles" id="roles" >
+            <option value="">Select</option>
         </select>
+
+
     </div>
     <div class="form-control">
         <label for="av-doctors">Available Doctors</label>

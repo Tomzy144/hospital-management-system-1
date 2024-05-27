@@ -139,9 +139,32 @@ case 'getBeds':
         } else {
             echo json_encode(array("success" => false, "message" => "Error preparing query: " . $conn->error));
         }
-   
-
         break;
+   
+        case 'getDoctorsRoles':
+            // Execute the query to fetch all doctor roles
+            $query = mysqli_query($conn, "SELECT * FROM doctor_role_tab");
+    
+            // Check if the query executed successfully
+            if ($query) {
+                $doctorRoles = array();
+    
+                // Fetch the data from the result set
+                while ($row = mysqli_fetch_assoc($query)) {
+                    $doctorRoles[] = $row;
+                }
+    
+                // Return the data as JSON
+                echo json_encode(array("success" => true, "doctorRoles" => $doctorRoles));
+            } else {
+                // Return an error message if the query failed
+                echo json_encode(array("success" => false, "message" => "Error executing the query"));
+            }
+            break;
+        
+        
+
+        
        
     }
     
