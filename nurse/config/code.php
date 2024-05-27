@@ -122,20 +122,24 @@ case 'getBeds':
             );
 
             if ($stmt->execute()) {
+                mysqli_query($conn,"UPDATE bed_tab 
+                SET bed_status_id = 1
+                WHERE bed_id = 'bed2'");
+
                 echo json_encode(array("success" => true));
             } else {
                 echo json_encode(array("success" => false, "message" => "Error executing query: " . $stmt->error));
             }
 
-            mysqli_query($conn,"UPDATE bed_tab 
-            SET bed_status_id = 1
-            WHERE bed_id = 'bed2'");
+            // mysqli_query($conn,"UPDATE bed_tab 
+            // SET bed_status_id = 1
+            // WHERE bed_id = 'bed2'");
 
             $stmt->close();
         } else {
             echo json_encode(array("success" => false, "message" => "Error preparing query: " . $conn->error));
         }
-        echo json_encode(array("success" => false, "message" => "Invalid action"));
+   
 
         break;
        

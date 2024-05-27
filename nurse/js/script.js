@@ -245,7 +245,7 @@ function vital_input() {
     success: function (data) {
       if (data.success) {
 
-        alert("Patient Vital has been updated successfully")
+        alert("Patient Vital has been updated successfully");
         $btnSubmit.html('Save All...');
         $btnSubmit.prop('disabled', true);
       } else {
