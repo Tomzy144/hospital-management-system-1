@@ -1,6 +1,5 @@
 
 
-
 <div id="landing_section-container">
               <!----APPOITMENT SECTION-->
         <div class="appoitment_section">
@@ -119,47 +118,6 @@
                 </div>
     </div>
 
-    <div class="avalable_doctor hide">
-            <div class="appoitment">
-            <form action="" class="av_doctor_role hide">
-    <div class="form-control">
-        <label for="av-roles">Doctor Roles</label>
-        <select name="roles" id="roles" >
-            <option value="">Select</option>
-        </select>
-
-
-    </div>
-    <div class="form-control">
-        <label for="av-doctors">Available Doctors</label>
-        <select name="doctors" id ="doctor" >
-            <!-- Options will be dynamically filled based on role selection -->
-        </select>
-    </div>
-    <button type="button" class="btn-submit" onclick="bookPatient()">Book patient</button>
-</form>
-                <form action="" class="book_patient hide">
-                    <div class="form-control">
-                        <label for="">Patient name</label>
-                        <input type="text" name="" id="">
-                    </div>
-                    <div class="form-control">
-                        <label for="">Patient id</label>
-                        <input type="text" name="" id="">
-                    </div>
-                    <div class="form-control">
-                        <label for="">Date</label>
-                        <input type="date" name="" id="">
-                        <label for="">Time</label>
-                        <input type="time" name="" id="">
-                    </div>
-                    <div class="form-control">
-                        <label for="">Reason for appoitment</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    <button class="btn-submit">Book</button>
-                </form>
-            </div>
-            </div>
+    
 
     
