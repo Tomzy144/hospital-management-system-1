@@ -282,7 +282,7 @@ function getDoctorsRoles() {
   $('#roles').prop('disabled', true); // Disable the dropdown
 
   var action = 'getDoctorsRoles';
-  var wards = $('#roles').val();
+  // var wards = $('#roles').val();
   var data = { action: action, roles: roles };
 
   $.ajax({
@@ -321,30 +321,80 @@ function populaterolesDropdown(doctorRoles) {
     var optionText = doctorRoles[i].doctor_role_name;
 
     option.textContent = optionText;
-    
+
     rolesDropdown.appendChild(option);
+     
   }
 
   // Enable the dropdown after populating options
+  $('#roles').on('change', getDoctors);
   $('#roles').prop('disabled', false);
 }
 
-// function getDoctors() {
-//   const selectedRole = document.getElementById('roles').value;
-//   const doctorsSelect = document.getElementById('doctors');
-//   doctorsSelect.innerHTML = ''; // Clear previous options
 
-//   // Populate the doctors select box based on the selected role
-//   doctorsData[selectedRole].forEach(doctor => {
-//       const option = document.createElement('option');
-//       option.value = doctor;
-//       option.text = doctor;
-//       doctorsSelect.appendChild(option);
-//   });
-// }
 
-// // Initial population of doctors based on the default selected role
-// getDoctors();
+
+
+
+function getDoctors() {
+  $('#doctors').html('<option>LOADING...</option>'); // Set loading message
+  $('#doctors').prop('disabled', true); // Disable the dropdown
+
+  var action = 'getDoctors';
+  var roles = $('#roles').val();
+  var data = { action: action, roles: roles };
+
+  $.ajax({
+    type: 'POST',
+    url: "config/code.php",
+    data: data,
+    cache: false,
+    dataType: 'json',
+    success: function (data) {
+      // Check for success and populate the dropdown
+      if (data.success) {
+        populatedoctorDropdown(data.doctor); // Pass the entire array of beds
+      } else {
+        console.error('Error:', data.message);
+      }
+    },
+    error: function (xhr, status, error) {
+      console.error('AJAX Error:', status, error);
+    },
+  });
+}
+
+function populatedoctorDropdown(doctor) {
+  var doctorDropdown = document.getElementById('doctor');
+
+  // Clear existing options
+  doctorDropdown.innerHTML = '';
+
+  // Add options based on the fetched data
+  for (var i = 0; i < doctor.length; i++) {
+    var option = document.createElement('option');
+    option.value = doctor[i].doctor_id; // Assuming the bed object has a 'bed_id' property
+    option.id= doctor[i].bed_id;
+
+    // Concatenate bed_number and bed_status_description
+    var optionText = doctor[i].fullname;
+
+    option.textContent = optionText;
+    doctorDropdown.appendChild(option);
+  }
+
+  // Enable the dropdown after populating options
+  $('#doctor').prop('disabled', false);
+}
+
+
+
+
+
+
+
+
+
 
 
 

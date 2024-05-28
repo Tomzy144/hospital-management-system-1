@@ -132,7 +132,7 @@
     </div>
     <div class="form-control">
         <label for="av-doctors">Available Doctors</label>
-        <select name="doctors" id="av-doctors">
+        <select name="doctors" id ="doctor" >
             <!-- Options will be dynamically filled based on role selection -->
         </select>
     </div>

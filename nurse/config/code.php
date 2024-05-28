@@ -161,6 +161,32 @@ case 'getBeds':
                 echo json_encode(array("success" => false, "message" => "Error executing the query"));
             }
             break;
+
+
+            case 'getDoctors':
+                $role = $_POST['roles'];
+
+                // Execute the query to fetch all doctor roles
+                $query = mysqli_query($conn, "SELECT doctor_tab.fullname FROM doctor_tab
+                 JOIN doctor_role_tab ON doctor_role_tab.doctor_role_id = doctor_tab.doctor_role_id 
+                 WHERE doctor_tab.doctor_role_id ='$role'");
+        
+                // Check if the query executed successfully
+                if ($query) {
+                    $doctor = array();
+        
+                    // Fetch the data from the result set
+                    while ($row = mysqli_fetch_assoc($query)) {
+                        $doctor[] = $row;
+                    }
+        
+                    // Return the data as JSON
+                    echo json_encode(array("success" => true, "doctor" => $doctor));
+                } else {
+                    // Return an error message if the query failed
+                    echo json_encode(array("success" => false, "message" => "Error executing the query"));
+                }
+                break;
         
         
 
