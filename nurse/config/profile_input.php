@@ -189,7 +189,53 @@ $patient_id = $_POST['patient_Id'];
   </div>
   <div class="flex">
   <button class="btn_submit" id="btn_submit" onclick="vital_input()">Save all</button>
-  <button class="btn_submit" onclick="selectDoc()">Transfer patient</button>
+  <button class="btn_submit" onclick="selectDoc(),getDoctorsRoles()">Transfer patient</button>
 </div>
 </div>
+
+
+<div class="avalable_doctor hide">
+            <div class="appoitment">
+            <form action="" class="av_doctor_role hide">
+    <div class="form-control">
+        <label for="av-roles">Doctor Roles</label>
+        <select name="roles" id="roles" >
+            <option value="">Select</option>
+        </select>
+      </div>
+        
+<!-- /////////    transfer patient   //////////////// -->
+
+   
+    <div class="form-control">
+        <label for="av-doctors">Available Doctors</label>
+        <select name="doctors" id ="doctor" >
+            <!-- Options will be dynamically filled based on role selection -->
+        </select>
+    </div>
+    <button type="button" class="btn-submit" onclick="bookPatient()">Book patient</button>
+</form>
+                <form action="" class="book_patient hide">
+                    <div class="form-control">
+                        <label for="">Patient name</label>
+                        <input type="text" name="" id="patient_name"  value="<?php echo $patient_name ?>">
+                    </div>
+                    <div class="form-control">
+                        <label for="">Patient id</label>
+                        <input type="text" name="" id="patient_id"  value="<?php echo $patient_id ?>">
+                    </div>
+                    <div class="form-control">
+                        <label for="">Date</label>
+                        <input type="date" name="" id="date">
+                        <label for="">Time</label>
+                        <input type="time" name="" id="time">
+                    </div>
+                    <div class="form-control">
+                        <label for="">Reason for appoitment</label>
+                        <textarea name="" id="reason" cols="30" rows="10"></textarea>
+                    </div>
+                    <button class="btn-submit">Book</button>
+                </form>
+            </div>
+            </div>
 

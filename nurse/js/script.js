@@ -207,11 +207,83 @@ function getWards() {
 
 
 
- /////////////////////////
- function vital_input(){
-   var btn_text=$('#btn_submit').html();
-   $('#btn_submit').html('Processing...');
-   document.getElementById('btn_submit').disabled=true;
-   
- }
+function vital_input() {
+  // Collect input values
+  var patientData = {
+    action: "vital_input",
+    patient_id: $('#patient_id').val(),
+    ward: $('#wards').val(),
+    stage: $('#stage').val(),
+    bed: $('#beds').val(),
+    note: $('#note').val(),
+    temperature: $('#temperature').val(),
+    bp: $('#bp').val(),
+    pulse: $('#pulse').val(),
+    respiratory: $('#respiratory').val(),
+    weight: $('#weight').val(),
+    height: $('#height').val(),
+    intake: $('#intake').val(),
+    output: $('#output').val(),
+    spo2: $('#spo2').val(),
+    bmi: $('#bmi').val(),
+    body_fat: $('#body_fat').val(),
+    muscle_mass: $('#muscle_mass').val(),
+    musc: $('#musc').val(), // Consider renaming this for clarity
+    resting_metabolism: $('#resting_metabolism').val(),
+    body_age: $('#body_age').val(),
+    bmi_for_age: $('#bmi_for_age').val(),
+    visceral_fat: $('#visceral_fat').val(),
+    head_circumference: $('#head_circumference').val(),
+    waist_circumference: $('#waist_circumference').val(),
+    hip_circumference: $('#hip_circumference').val(),
+    w_hr: $('#w_hr').val()
+  };
 
+  // Disable the submit button and change text
+  var $btnSubmit = $('#btn_submit');
+  var btnText = $btnSubmit.html();
+  $btnSubmit.html('Processing...');
+  $btnSubmit.prop('disabled', true);
+
+  // Send AJAX request
+  $.ajax({
+    type: 'POST',
+    url: "config/code.php",
+    data: patientData,
+    cache: false,
+    dataType: 'json',
+    success: function (data) {
+      if (data.success) {
+
+        alert("Patient Vital has been updated successfully")
+        $btnSubmit.html('Save All...');
+        $btnSubmit.prop('disabled', true);
+      } else {
+        console.error('Error:', data.message);
+        $btnSubmit.html(btnText);
+        $btnSubmit.prop('disabled', false);
+      }
+    },
+    error: function (xhr, status, error) {
+      console.error('AJAX Error:', status, error);
+      $btnSubmit.html(btnText);
+      $btnSubmit.prop('disabled', false);
+    }
+  });
+}
+
+
+
+//dont touch i would fix this later, good night😎
+
+//  const links =  document.querySelectorAll('#links');
+//  function toggleSidebarLinks(clickedLink){
+//      links.forEach(link => link.classList.remove('active'));
+//      clickedLink.classList.add('active');
+//  }
+ 
+//  links.forEach(link => {
+//      link.addEventListener('click', function() {
+//          toggleSidebarLinks(this);
+//      });
+//  });

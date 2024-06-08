@@ -122,22 +122,75 @@ case 'getBeds':
             );
 
             if ($stmt->execute()) {
+                mysqli_query($conn,"UPDATE bed_tab 
+                SET bed_status_id = 1
+                WHERE bed_id = 'bed2'");
+
                 echo json_encode(array("success" => true));
             } else {
                 echo json_encode(array("success" => false, "message" => "Error executing query: " . $stmt->error));
             }
 
-            mysqli_query($conn,"UPDATE bed_tab 
-            SET bed_status_id = 1
-            WHERE bed_id = 'bed2'");
+            // mysqli_query($conn,"UPDATE bed_tab 
+            // SET bed_status_id = 1
+            // WHERE bed_id = 'bed2'");
 
             $stmt->close();
         } else {
             echo json_encode(array("success" => false, "message" => "Error preparing query: " . $conn->error));
         }
-        echo json_encode(array("success" => false, "message" => "Invalid action"));
-
         break;
+   
+        case 'getDoctorsRoles':
+            // Execute the query to fetch all doctor roles
+            $query = mysqli_query($conn, "SELECT * FROM doctor_role_tab");
+    
+            // Check if the query executed successfully
+            if ($query) {
+                $doctorRoles = array();
+    
+                // Fetch the data from the result set
+                while ($row = mysqli_fetch_assoc($query)) {
+                    $doctorRoles[] = $row;
+                }
+    
+                // Return the data as JSON
+                echo json_encode(array("success" => true, "doctorRoles" => $doctorRoles));
+            } else {
+                // Return an error message if the query failed
+                echo json_encode(array("success" => false, "message" => "Error executing the query"));
+            }
+            break;
+
+
+            case 'getDoctors':
+                $role = $_POST['roles'];
+
+                // Execute the query to fetch all doctor roles
+                $query = mysqli_query($conn, "SELECT doctor_tab.fullname FROM doctor_tab
+                 JOIN doctor_role_tab ON doctor_role_tab.doctor_role_id = doctor_tab.doctor_role_id 
+                 WHERE doctor_tab.doctor_role_id ='$role'");
+        
+                // Check if the query executed successfully
+                if ($query) {
+                    $doctor = array();
+        
+                    // Fetch the data from the result set
+                    while ($row = mysqli_fetch_assoc($query)) {
+                        $doctor[] = $row;
+                    }
+        
+                    // Return the data as JSON
+                    echo json_encode(array("success" => true, "doctor" => $doctor));
+                } else {
+                    // Return an error message if the query failed
+                    echo json_encode(array("success" => false, "message" => "Error executing the query"));
+                }
+                break;
+        
+        
+
+        
        
     }
     
