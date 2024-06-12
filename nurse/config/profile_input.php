@@ -234,7 +234,7 @@ $patient_id = $_POST['patient_Id'];
                         <label for="">Reason for appoitment</label>
                         <textarea name="" id="reason" cols="30" rows="10"></textarea>
                     </div>
-                    <button class="btn-submit">Book</button>
+                    <button class="btn-submit"> Book</button>
                 </form>
             </div>
             </div>
