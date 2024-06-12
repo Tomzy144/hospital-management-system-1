@@ -95,7 +95,7 @@
      <div class="each_sections">
         <div class="form-control">
              <label for="anternatal__patient__name">Full name</label>
-            <input type="text" name="anternatal__patient__name" id="anternatal__patient__name" autofocus = "true">
+            <input type="text" class="anternatalInput" name="anternatal__patient__name" id="anternatal__patient__name" autofocus = "true">
         </div>
         <div class="form-control">
             <label for="anternatal__patient__dob">Date of Birth</label>
@@ -103,11 +103,11 @@
         </div>
         <div class="form-control">
             <label for="anternatal__patient__address">Address</label>
-            <input type="text" name="anternatal__patient__address" id="anternatal__patient__address">
+            <input type="text" class="anternatalInput" name="anternatal__patient__address" id="anternatal__patient__address">
         </div>
         <div class="form-control">
                 <label for="anternatal__patient__phoneNumber">Contact Number</label>
-                <input type="text" name="anternatal__patient__phoneNumber" id="anternatal__patient__phoneNumber">
+                <input type="text" class="anternatalInput" name="anternatal__patient__phoneNumber" id="anternatal__patient__phoneNumber">
         </div>
     </div>
 
@@ -115,11 +115,11 @@
  <div class="each_sections">
      <div class="form-control">
              <label for="anternatal__patient__partner__name">Full Name</label>
-             <input type="text" name="anternatal__patient__partner__name" id="anternatal__patient__partner__name">
+             <input type="text" class="anternatalInput" name="anternatal__patient__partner__name" id="anternatal__patient__partner__name">
          </div>
      <div class="form-control">
             <label for="anternatal__patient__partner__phoneNumber">Contact Number</label>
-            <input type="text" name="anternatal__patient__partner__phoneNumber" id="anternatal__patient__partner__phoneNumber">
+            <input type="text" class="anternatalInput" name="anternatal__patient__partner__phoneNumber" id="anternatal__patient__partner__phoneNumber">
     </div>
     </div>
 
@@ -127,15 +127,15 @@
     <div class="each_sections">
     <div class="form-control">
             <label for="anternatal__patient__previousPregnacies">Previous Pregnacies</label>
-             <input type="text" name="anternatal__patient__previousPregnacies" id="anternatal__patient__previousPregnacies">
+             <input type="text" class="anternatalInput" name="anternatal__patient__previousPregnacies" id="anternatal__patient__previousPregnacies">
     </div>
     <div class="form-control">
              <label for="anternatal__patient__chronicCondition">Chronic Condition</label>
-             <input type="text" name="anternatal__patient__chronicCondition" id="anternatal__patient__chronicCondition">
+             <input type="text" class="anternatalInput" name="anternatal__patient__chronicCondition" id="anternatal__patient__chronicCondition">
      </div>
     <div class="form-control">
                 <label for="anternatal__patient__alergies">Alergies</label>
-                <input type="text" name="anternatal__patient__alergies" id="anternatal__patient__alergies">
+                <input type="text" class="anternatalInput" name="anternatal__patient__alergies" id="anternatal__patient__alergies">
     </div>
     </div>
 
@@ -143,11 +143,11 @@
     <div class="each_sections">
     <div class="form-control">
             <label for="anternatal__patient__currentMedication">Current Medications</label>
-            <input type="text" name="anternatal__patient__currentMedication" id="anternatal__patient__currentMedication">
+            <input type="text" class="anternatalInput" name="anternatal__patient__currentMedication" id="anternatal__patient__currentMedication">
     </div>
     <div class="form-control">
             <label for="anternatal__patient__vitalSign">Vital Signs</label>
-            <input type="text" name="anternatal__patient__vitalSign" id="anternatal__patient__vitalSign">
+            <input type="text" class="anternatalInput" name="anternatal__patient__vitalSign" id="anternatal__patient__vitalSign">
     </div>
     </div>
         <button class="btn_submit" type="submit" id="submitAnternatalForm">Book</button>
@@ -170,6 +170,7 @@
                         <td>Patient Name</td>
                         <td>Patient ID</td>
                         <td>Date of Admission</td>
+                        <td>Transfer Patient to Labour Unit</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -181,6 +182,9 @@
                     <td>Esther Patrick</td>
                     <td>PAT0001</td>
                     <td>22-09-2023</td>
+                    <td>
+                        <button type="button" class="btn" id="transferPatient">Transfer</button>
+                    </td>
                     <td>
                         <i class="bi bi-three-dots" id="bookPatient"></i>
                     </td>
@@ -195,6 +199,9 @@
                         <td>Mercy Patrick</td>
                         <td>PAT0002</td>
                         <td>22-09-2023</td>
+                        <td>
+                        <button type="button" class="btn" id="transferPatient">Transfer</button>
+                    </td>
                         <td>
                             <i class="bi bi-three-dots" id="bookPatient"></i>
                         </td>
@@ -215,200 +222,193 @@
                 </div>
             </div>
                 <div class="vitals_input">
-                    <form action="">
+                    <form action="" id="patientAnternatalVitalInput">
                     <h1>Medical inputs</h1>
                     <div class="each_sections">
                     <div class="form-control">
-                        <label for="">Height of Fundus</label>
-                        <input type="text" name="" id="">
+                        <label for="heightOfFundus">Height of Fundus</label>
+                        <input type="text" class="_input"   name="heightOfFundus" id="heightOfFundus">
                     </div>
                     <div class="form-control">
-                        <label for="">Presentation and Position</label>
-                        <input type="text" name="" id="">
+                        <label for="presentation&Position">Presentation and Position</label>
+                        <input type="text" class="_input"   name="presentation&Position" id="presentation&Position">
                     </div>
                     <div class="form-control">
-                        <label for="">Relation of presenting part to brim</label>
-                        <input type="text" name="" id="">
+                        <label for="relationOfPresentingPartToBrim">Relation of presenting part to brim</label>
+                        <input type="text" class="_input"   name="relationOfPresentingPartToBrim" id="relationOfPresentingPartToBrim">
                     </div>
                     <div class="form-control">
-                        <label for="">Fostal Heart</label>
-                        <input type="text" name="" id="">
+                        <label for="fostalHeart">Fostal Heart</label>
+                        <input type="text" class="_input"   name="fostalHeart" id="fostalHeart">
                     </div>
                     <div class="form-control">
-                        <label for="">Urine</label>
-                        <input type="text" name="" id="">
+                        <label for="urine">Urine</label>
+                        <input type="text" class="_input"   name="urine" id="urine">
                     </div>
                     <div class="form-control">
-                        <label for="">B.P</label>
-                        <input type="text" name="" id="">
+                        <label for="bp">B.P</label>
+                        <input type="text" class="_input"   name="bp" id="bp">
                     </div>
                     <div class="form-control">
-                        <label for="">Weight</label>
-                        <input type="text" name="" id="">
+                        <label for="weight">Weight</label>
+                        <input type="text" class="_input"   name="weight" id="weight">
                     </div>
                     <div class="form-control">
-                        <label for="">P.C.V</label>
-                        <input type="text" name="" id="">
+                        <label for="pcv">P.C.V</label>
+                        <input type="text" class="_input"   name="pcv" id="pcv">
                     </div>
                     <div class="form-control">
-                        <label for="">Oedema</label>
-                        <input type="text" name="" id="">
+                        <label for="oedema">Oedema</label>
+                        <input type="text" class="_input"   name="oedema" id="oedema">
                     </div>
                     <div class="form-control">
-                        <label for="">Remark</label>
-                     <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <label for="remark">Remark</label>
+                     <textarea name="remark" id=remark"" class="_input"  cols="30" rows="10"></textarea>
                     </div>
                     </div>
                 </form>
-            </div>
-
-                
-            <div class="drug_prescription">
-            <form action="" id="_inputs">
-            <h1>Drugs prescription</h1>
-            <div class="each_sections">
-                                <div class="form-control">
-                                    <label for="">Drugs</label>
-                                    <input type="text" name="" id="drug">
-                                </div>
-                                <div class="form-control">
-                                    <label for="">Strength</label>
-                                    <input type="text" name="" id="drug_strength">
-                                </div>
-                                <div class="form-control">
-                                    <label for="">Mode</label>
-                                    <select name="" id="drug_mode">
-                            <option value="">Tablet</option>
-                            <option value="">Capsule</option>
-                   </select>
-                  </div>
-                <div class="form-control">
-                    <label for="">Frequency</label>
-                    <select name="" id="drug_freq">
-                    <option value="">2 Days</option>
-                    <option value="">24 Hours</option>
-                   </select>
-                </div>
-                <div class="form-control">
-                    <label for="">Qty</label>
-                  <input type="text" name="" id="drug_qty">
-                </div>
-                </div>
-                <button type="button" class="btn add__drug">Add Drugs</button>
-                <button type="button" class="btn" onclick="_bookDrugs()">Book Drugs</button>
-                  </form>
             </div>
 
         
             <div class="screening_input">
             <h1>Screening inputs</h1>
-                <form action="">
+                <form action="" id="patientAnternatalVitalInput">
                 <div class="each_sections">
                 <div class="each_sections">
                     <div class="form-control">
-                        <label for="">Genetic Screening and Testing</label>
-                              <input type="text" name="" id="">
+                        <label for="geneticScreeningTesting">Genetic Screening and Testing</label>
+                              <input type="text"  class="_input"  name="geneticScreeningTesting" id="geneticScreeningTesting">
                     </div>
                     <div class="form-control">
-                        <label for="">Group B Streptococcus (GBS) Screening</label>
-                              <input type="text" name="" id="">
+                        <label for="groupBStreptococcus">Group B Streptococcus (GBS) Screening</label>
+                              <input type="text"  class="_input"  name="groupBStreptococcus" id="groupBStreptococcus">
                     </div>
                     <div class="form-control">
                         <label for="">Fetal Monitoring</label>
-                              <input type="text" name="" id="">
+                              <input type="text" name="" id="" class="_input" >
                     </div>
                     <div class="form-control">
-                        <label for="">Gestational Age assement</label>
-                              <input type="text" name="" id="">
+                        <label for="gestationalAgeAssesment">Gestational Age assement</label>
+                              <input type="text" name="gestationalAgeAssesment"  class="_input" id="gestationalAgeAssesment">
                     </div>
                     <div class="form-control">
-                        <label for="">Cervical Screening</label>
-                              <input type="text" name="" id="">
+                        <label for="cervicalScreening">Cervical Screening</label>
+                              <input type="text"  class="_input" name="cervicalScreening" id="cervicalScreening">
                     </div>
                     <div class="form-control">
-                    <h3>Screening for Infection</h3><br/>
-                        <div class="flex_wrap">
-                        <div class="div">
-                        <label for="">Hiv Test</label>
-                        <div class="checkbox">
-                            <label for="">Positive
-                                <input type="checkbox" name="" id="">
-                            </label>
-                            <label for="">Negative
-                                <input type="checkbox" name="" id="">
-                            </label>
-                        </div>
-                        </div>
-                        <div class="div">
-                        <label for="">Syphilis Test</label>
-                        <div class="checkbox">
-                            <label for="">Positive
-                                <input type="checkbox" name="" id="">
-                            </label>
-                            <label for="">Negative
-                                <input type="checkbox" name="" id="">
-                            </label>
-                        </div>
-                        </div>
-                        <div class="div">
-                        <label for="">Hepatitis B Surface Antigen Test</label>
-                        <div class="checkbox">
-                            <label for="">Positive
-                                <input type="checkbox" name="" id="">
-                            </label>
-                            <label for="">Negative
-                                <input type="checkbox" name="" id="">
-                            </label>
-                        </div>
-                        </div>
-                        <div class="div">
-                        <label for="">Rubella Immunity Test</label>
-                        <div class="checkbox">
-                            <label for="">Positive
-                                <input type="checkbox" name="" id="">
-                            </label>
-                            <label for="">Negative
-                                <input type="checkbox" name="" id="">
-                            </label>
-                        </div>
-                        </div>
-                        <div class="div">
-                        <label for="">Gonorrhea and Chlamydia Test</label>
-                        <div class="checkbox">
-                            <label for="">Positive
-                                <input type="checkbox" name="" id="">
-                            </label>
-                            <label for="">Negative
-                                <input type="checkbox" name="" id="">
-                            </label>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
+  <h3>Screening for Infection</h3><br/>
+  <div class="flex_wrap">
+    <div class="div">
+      <label for="hivTest">HIV Test</label>
+      <div class="checkbox">
+        <label for="hivPositive">Positive
+          <input type="radio" class="_input" name="hivTest" id="hivPositive">
+        </label>
+        <label for="hivNegative">Negative
+          <input type="radio" class="_input" name="hivTest" id="hivNegative">
+        </label>
+      </div>
+    </div>
+    <div class="div">
+      <label for="syphilisTest">Syphilis Test</label>
+      <div class="checkbox">
+        <label for="syphilisPositive">Positive
+          <input type="radio" class="_input" name="syphilisTest" id="syphilisPositive">
+        </label>
+        <label for="syphilisNegative">Negative
+          <input type="radio" class="_input" name="syphilisTest" id="syphilisNegative">
+        </label>
+      </div>
+    </div>
+    <div class="div">
+      <label for="hepatitisTest">Hepatitis B Surface Antigen Test</label>
+      <div class="checkbox">
+        <label for="hepatitisPositive">Positive
+          <input type="radio" class="_input" name="hepatitisTest" id="hepatitisPositive">
+        </label>
+        <label for="hepatitisNegative">Negative
+          <input type="radio" class="_input" name="hepatitisTest" id="hepatitisNegative">
+        </label>
+      </div>
+    </div>
+    <div class="div">
+      <label for="rubellaTest">Rubella Immunity Test</label>
+      <div class="checkbox">
+        <label for="rubellaPositive">Positive
+          <input type="radio" class="_input" name="rubellaTest" id="rubellaPositive">
+        </label>
+        <label for="rubellaNegative">Negative
+          <input type="radio" class="_input" name="rubellaTest" id="rubellaNegative">
+        </label>
+      </div>
+    </div>
+    <div class="div">
+      <label for="gonorrheaTest">Gonorrhea and Chlamydia Test</label>
+      <div class="checkbox">
+        <label for="gonorrheaPositive">Positive
+          <input type="radio" class="_input" name="gonorrheaTest" id="gonorrheaPositive">
+        </label>
+        <label for="gonorrheaNegative">Negative
+          <input type="radio" class="_input" name="gonorrheaTest" id="gonorrheaNegative">
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
                 </div>
                 </form>
+                <div class="drug_prescription" id="section1">
+  <form action="">
+    <h1>Drugs Prescription</h1>
+    <div class="each_sections">
+      <div class="form-control">
+        <label for="drug1">Drugs</label>
+        <input type="text" name="" id="drug1">
+      </div>
+      <div class="form-control">
+        <label for="drug_strength1">Strength</label>
+        <input type="text" name="" id="drug_strength1">
+      </div>
+      <div class="form-control">
+        <label for="drug_mode1">Mode</label>
+        <select name="" id="drug_mode1">
+          <option value="tablet">Tablet</option>
+          <option value="capsule">Capsule</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label for="drug_freq1">Frequency</label>
+        <select name="" id="drug_freq1">
+          <option value="2_days">2 Days</option>
+          <option value="24_hours">24 Hours</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label for="drug_qty1">Qty</label>
+        <input type="text" name="" id="drug_qty1">
+      </div>
+    </div>
+    <button type="button" class="btn add__drug" data-section="section1">Add Drugs</button>
+    <button type="button" class="btn" onclick="_bookDrugs()">Book Drugs</button>
+  </form>
+  <table id="dataTable1">
+    <thead>
+        <tr>
+            <td>Drugs</td>
+            <td>Strength</td>
+            <td>Mode</td>
+            <td>Frequency</td>
+            <td>Quantity</td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
             </div>
         </div>
-        <button class="btn">Update data</button>
-        <button class="btn" onclick="anternal_patient_hospital_record()">Check patient hospital record</button>
+        <button class="btn" id="updateAnternatalPatientData">Update data</button>
+        <button class="btn" >Check patient hospital record</button>
   </div>
-  <!---------anternal drug booking------------------>
-  <div class="drugs_booking hide" id="antenatal_drugs_booking">
-  <i class="bi bi-x-square" onclick="_close_bookDrugs()"></i>
-    <table id="dataTable">
-        <thead>
-            <td>Drugs Name</td>
-            <td>Strength </td>
-            <td>Mode </td>
-            <td>Frequency </td>
-            <td>Quantity </td>
-        </thead>
-        <tbody>
-          
-        </tbody>
-    </table>
-    <button class="btn_submit">Book now</button>
-    </div>   
 </div>
 
 
@@ -427,98 +427,98 @@
             <canvas id="canvasElement_postnatal" style="display: none;"></canvas>
             <img class="capturedImage" id="capturedImage_postnatal" style="display: none;">
         </div>
-        <div class="div_flex">
+        <div class="flex_capture_button">
             <div class="btn_capture hide" id="capture_patient2"onClick="takePicture1()">Capture</div>
         <div class="btn_recapture hide"  id="recapture_patient2" onclick="retakePicture1()">Recapture</div>
     </div>
         <h3>Patient Info</h3>
         <div class="each_sections">
     <div class="form-control">
-        <label for="">Full name</label>
-        <input type="text">
+        <label for="postnatal_patient_name">Full name</label>
+        <input type="text" class="postnalInput" name= "postnatal_patient_name" id="postnatal_patient_name">
         </div>
         <div class="form-control">
-        <label for="">Date of Birth</label>
-        <input type="date">
+        <label for="postnatal_patient_dob">Date of Birth</label>
+        <input type="date" name="postnatal_patient_dob" id="postnatal_patient_dob">
         </div>
         <div class="form-control">
-        <label for="">Address</label>
-        <input type="text">
+        <label for="postnatal_patient_address">Address</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_address" id="postnatal_patient_address">
         </div>
         <div class="form-control">
-        <label for="">Contact Number</label>
-        <input type="text">
+        <label for="postnatal_patient_contactNumber">Contact Number</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_contactNumber" id="postnatal_patient_contactNumber">
         </div>
         <div class="form-control">
-        <label for="">Occupation</label>
-        <input type="text">
+        <label for="postnatal_patient_occupation">Occupation</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_occupation" id="postnatal_patient_occupation">
         </div>
         <div class="form-control">
-        <label for="">Next of Kin</label>
-        <input type="text">
+        <label for="postnatal_patient_nextOfKin">Next of Kin</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_nextOfKin" id="postnatal_patient_nextOfKin">
         </div>
         <div class="form-control">
-        <label for="">Relationship to Patient</label>
-        <input type="text">
+        <label for="postnatal_patient_relationship">Relationship to Patient</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_relationship" id="postnatal_patient_relationship">
         </div>
         <div class="form-control">
-        <label for="">Next of Kin's Phone Number</label>
-        <input type="text">
+        <label for="postnatal_patient_nextOfKinPhoneNumber">Next of Kin's Phone Number</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_nextOfKinPhoneNumber" id="postnatal_patient_nextOfKinPhoneNumber">
         </div>
         </div>
 
         <h3>Medical History</h3>
         <div class="each_sections">
         <div class="form-control">
-        <label for="">Gestational Age</label>
-        <input type="text">
+        <label for="postnatal_patient_gestationAge">Gestational Age</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_gestationAge" id="postnatal_patient_gestationAge">
        </div>
        <div class="form-control">
-        <label for="">Complications during Pregnacy</label>
-        <input type="text">
+        <label for="postnatal_patient_complicationDuringPregnacy">Complications during Pregnacy</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_complicationDuringPregnacy" id="postnatal_patient_complicationDuringPregnacy">
         </div>
        <div class="form-control">
-        <label for="">Medical Conditions/Allergies</label>
-        <input type="text">
+        <label for="postnatal_patient_medicalCondition/Allergies">Medical Conditions/Allergies</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_medicalCondition/Allergies" id="postnatal_patient_medicalCondition/Allergies">
         </div>
        <div class="form-control">
-        <label for="">Previous Pregnacies/Births</label>
-        <input type="text">
+        <label for="postnatal_patient_previousPregnacies/Births">Previous Pregnacies/Births</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_previousPregnacies/Births" id="postnatal_patient_previousPregnacies/Births">
         </div>
        <div class="form-control">
-        <label for="">Medications/Supplements during Pregnacy</label>
-        <input type="text">
+        <label for="postnatal_patient_medications/supplementsDuringPregnacy">Medications/Supplements during Pregnacy</label>
+        <input type="text" class="postnalInput" name="postnatal_patient_medications/supplementsDuringPregnacy" id="postnatal_patient_medications/supplementsDuringPregnacy">
         </div>
         </div>
 
         <h3>Delivery Details</h3>
         <div class="each_sections">
         <div class="form-control">
-        <label for="">Date of Delivery</label>
-        <input type="date">
+        <label for="dateOfDelivery">Date of Delivery</label>
+        <input type="date" name="dateOfDelivery" id="dateOfDelivery">
         </div>
         <div class="form-control">
-        <label for="">Time of Delivery</label>
-        <input type="time">
+        <label for="timeOfDelivery">Time of Delivery</label>
+        <input type="time" name="timeOfDelivery" id="timeOfDelivery">
         </div>
         <div class="form-control">
-        <label for="">Mode of Delivery</label>
-        <input type="text">
+        <label for="modeOfDelivery">Mode of Delivery</label>
+        <input type="text" class="postnalInput" name="modeOfDelivery" id="modeOfDelivery">
         </div>
         <div class="form-control">
-        <label for="">Birth Weight of Baby</label>
-        <input type="text">
+        <label for="birthWeightOfBaby">Birth Weight of Baby</label>
+        <input type="text" class="postnalInput" name="birthWeightOfBaby" id="birthWeightOfBaby">
         </div>
         <div class="form-control">
-        <label for="">Apgar Scores</label>
-        <input type="text"> 
+        <label for="apgarScores">Apgar Scores</label>
+        <input type="text" class="postnalInput" name="apgarScores" id="apgarScores"> 
         </div>
         <div class="form-control">
-        <label for="">Complications During Delivery</label>
-        <input type="text">
+        <label for="complicationsDuringDelivery">Complications During Delivery</label>
+        <input type="text" class="postnalInput" name="complicationsDuringDelivery" id="complicationsDuringDelivery">
         </div>
         </div>
-        <button class="btn_submit" type="button">Book</button>
+        <button id="submitPostnatalForm" class="btn_submit" type="button">Book</button>
         </form>
         </div>
         </div>
@@ -588,76 +588,123 @@
             </div>
             <h1>Medical Inputs</h1>
                     <div class="postnatal_accessment_form">
-                        <form action="">
+                        <form action="" id="patientPostnatalVitalInput">
                         <span>Mother's Vital Sign:</span>
                             <div class="each_sections">
                                 <div class="form-control">
-                                    <label for="">Temperature (C)</label>
-                                    <input type="text" name="" id="" >
+                                    <label for="temperature">Temperature (C)</label>
+                                    <input type="text" class="_input" name="temperature" id="temperature" >
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Blood Pressure (mmHg)</label>
-                                    <input type="text" name="" id="">
+                                    <label for="bloodPressure">Blood Pressure (mmHg)</label>
+                                    <input type="text" class="_input" name="bloodPressure" id="bloodPressure">
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Pulse (bpm)</label>
-                                    <input type="text" name="" id="" >
+                                    <label for="pulse">Pulse (bpm)</label>
+                                    <input type="text" class="_input" name="pulse" id="pulse" >
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Respiratory Rate (breaths/min)</label>
-                                    <input type="text" name="" id="" >
+                                    <label for="respiratoryRate">Respiratory Rate (breaths/min)</label>
+                                    <input type="text" class="_input" name="respiratoryRate" id="respiratoryRate" >
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Assessment of Uterine Involution</label>
-                                    <input type="text" name="" id="" >
+                                    <label for="assessmentOfUterineInvolution">Assessment of Uterine Involution</label>
+                                    <input type="text" class="_input" name="assessmentOfUterineInvolution" id="assessmentOfUterineInvolution" >
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Assessment of Perineal/Abdominal Wounds</label>
-                                    <input type="text" name="" id="">
+                                    <label for="assessmentPerinealAbdominalWounds">Assessment of Perineal/Abdominal Wounds</label>
+                                    <input type="text" class="_input" name="assessmentPerinealAbdominalWounds" id="assessmentPerinealAbdominalWounds">
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Assessment of Breastfeeding</label>
-                                    <input type="text" name="" id="" >
+                                    <label for="assessmentOfBreastfeeding">Assessment of Breastfeeding</label>
+                                    <input type="text" class="_input" name="assessmentOfBreastfeeding" id="assessmentOfBreastfeeding" >
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Immediate Concerns/Complications</label>
-                                    <input type="text" name="" id="" >
+                                    <label for="immediateConcernsComplications">Immediate Concerns/Complications</label>
+                                    <input type="text" class="_input" name="immediateConcernsComplications" id="immediateConcernsComplications" >
                                 </div>
                             </div>
-                        </form>
                     </div>
 
                     <div class="neonatal_assessmen_form">
-                        <form action="">
-                        <span>Baby's Condition:</span>
+                        <h1>Baby's Condition</h1>
                             <div class="each_sections">
                                 <div class="form-control">
-                                    <label for="">Feeding</label>
-                                    <input type="text" name="" id="" >
+                                    <label for="feeding">Feeding</label>
+                                    <input type="text" class="_input" name="feeding" id="feeding" >
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Urination</label>
-                                    <input type="text" name="" id="" >
+                                    <label for="urination">Urination</label>
+                                    <input type="text" class="_input" name="urination" id="urination" >
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Bowel Movements</label>
-                                    <input type="text" name="" id="" >
+                                    <label for="bowelMovements">Bowel Movements</label>
+                                    <input type="text" class="_input" name="bowelMovements" id="bowelMovements" >
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Signs of Jaundice or other concerns</label>
-                                    <input type="text" name="" id="">
+                                    <label for="signsOfJaundice">Signs of Jaundice or other concerns</label>
+                                    <input type="text" class="_input" name="signsOfJaundice" id="signsOfJaundice">
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Medications/Treatments Administered</label>
-                                    <input type="text" name="" id="">
+                                    <label for="medicationsTreatments">Medications/Treatments Administered</label>
+                                    <input type="text" class="_input" name="medicationsTreatments" id="medicationsTreatments">
                                 </div>
                                 <div class="form-control">
-                                    <label for="">Laboratory and Diagnostic Tests</label>
-                                    <input type="text" name="" id="">
+                                    <label for="labouratoryDiagnostic">Laboratory and Diagnostic Tests</label>
+                                    <input type="text" class="_input" name="labouratoryDiagnostic" id="labouratoryDiagnostic">
                                 </div>
+                                </form>
                             </div>
-                        </form>
+                            <div class="drug_prescription" id="section2">
+  <form action="" id="soo">
+    <h1>Drugs Prescription</h1>
+    <div class="each_sections">
+      <div class="form-control">
+        <label for="drug2">Drugs</label>
+        <input type="text" name="" id="drug2">
+      </div>
+      <div class="form-control">
+        <label for="drug_strength2">Strength</label>
+        <input type="text" name="" id="drug_strength2">
+      </div>
+      <div class="form-control">
+        <label for="drug_mode2">Mode</label>
+        <select name="" id="drug_mode2">
+          <option value="tablet">Tablet</option>
+          <option value="capsule">Capsule</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label for="drug_freq2">Frequency</label>
+        <select name="" id="drug_freq2">
+          <option value="2_days">2 Days</option>
+          <option value="24_hours">24 Hours</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label for="drug_qty2">Qty</label>
+        <input type="text" name="" id="drug_qty2">
+      </div>
+    </div>
+    <button type="button" class="btn add__drug" data-section="section2">Add Drugs</button>
+    <button type="button" class="btn" onclick="_bookDrugs()">Book Drugs</button>
+  </form>
+  <table id="dataTable2">
+    <thead>
+        <tr>
+            <td>Drugs</td>
+            <td>Strength</td>
+            <td>Mode</td>
+            <td>Frequency</td>
+            <td>Quantity</td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
                         </div>
+                        <button class="btn" id="updatePostnatalPatientData">Update data</button>
                         </div>
                         </div>                           
 
@@ -684,100 +731,101 @@
         <h3>Patient Info</h3>
         <div class="each_sections">
     <div class="form-control">
-        <label for="">Full name</label>
-        <input type="text">
+        <label for="labour_patient_name">Full name</label>
+        <input type= "text" class="labourInput" name="labour_patient_name" id="labour_patient_name">
         </div>
         <div class="form-control">
-        <label for="">Date of Birth</label>
-        <input type="date">
+        <label for="labour_patient_dob">Date of Birth</label>
+        <input type="date" class = "labourInput" name="labour_patient_dob" id="labour_patient_dob">
         </div>
         <div class="form-control">
-        <label for="">Address</label>
-        <input type="text">
+        <label for="labour_patient_address">Address</label>
+        <input type= "text" class="labourInput" name="labour_patient_address" id="labour_patient_address">
         </div>
         <div class="form-control">
-        <label for="">Contact Number</label>
-        <input type="text">
+        <label for="labour_patient_contactNumber">Contact Number</label>
+        <input type= "text" class="labourInput" name="labour_patient_contactNumber" id="labour_patient_contactNumber">
         </div>
         <div class="form-control">
-        <label for="">Occupation</label>
-        <input type="text">
+        <label for="labour_patient_occupation">Occupation</label>
+        <input type= "text" class="labourInput" name="labour_patient_occupation" id="labour_patient_occupation">
         </div>
         <div class="form-control">
-        <label for="">Next of Kin</label>
-        <input type="text">
+        <label for="labour_patient_nextOfKin">Next of Kin</label>
+        <input type= "text" class="labourInput" name="labour_patient_nextOfKin" id="labour_patient_nextOfKin">
         </div>
         <div class="form-control">
-        <label for="">Next of Kin's Phone Number</label>
-        <input type="text">
+        <label for="labour_patient_nexOfKinPhoneNumber">Next of Kin's Phone Number</label>
+        <input type= "text" class="labourInput" name="labour_patient_nexOfKinPhoneNumber" id="labour_patient_nexOfKinPhoneNumber">
         </div>
         </div>
 
         <h3>Medical History</h3>
         <div class="each_sections">
         <div class="form-control">
-        <label for="">Antenatal  Clinic Attended</label>
-        <input type="text">
+        <label for="labour_patient_anternatalClininAttended">Antenatal  Clinic Attended</label>
+        <input type= "text" class="labourInput" name="labour_patient_anternatalClininAttended" id="labour_patient_anternatalClininAttended">
        </div>
        <div class="form-control">
-        <label for="">Expected Due date of Delivery</label>
-        <input type="date">
+        <label for="labour_patient_expectedDueDateOfDelivery">Expected Due date of Delivery</label>
+        <input type="date"  class="labourInput"  name="labour_patient_expectedDueDateOfDelivery" id="labour_patient_expectedDueDateOfDelivery">
         </div>
        <div class="form-control">
-        <label for="">Number of Pregnacies and Live Births</label>
-        <input type="text">
+        <label for="labour_patient_numberOfPregnaciesAndLiveBirth">Number of Pregnacies and Live Births</label>
+        <input type= "text" class="labourInput" name="labour_patient_numberOfPregnaciesAndLiveBirth" id="labour_patient_numberOfPregnaciesAndLiveBirth">
         </div>
        <div class="form-control">
-        <label for="">Blood Group</label>
-        <input type="text">
+        <label for="labour_patient_bloodGroup">Blood Group</label>
+        <input type= "text" class="labourInput" name="labour_patient_bloodGroup" id="labour_patient_bloodGroup">
         </div>
        <div class="form-control">
-        <label for="">Rhesus Factor</label>
-        <input type="text">
+        <label for="labour_patient_rhesusFactor">Rhesus Factor</label>
+        <input type= "text" class="labourInput" name="labour_patient_rhesusFactor" id="labour_patient_rhesusFactor">
         </div>
        <div class="form-control">
-        <label for="">Hiv Status</label>
-        <input type="text">
+        <label for="labour_patient_hivStatus">Hiv Status</label>
+        <input type= "text" class="labourInput" name="labour_patient_hivStatus" id="labour_patient_hivStatus">
         </div>
        <div class="form-control">
-        <label for="">Medical Condition</label>
-        <input type="text">
+        <label for="labour_patient_medicalCondition">Medical Condition</label>
+        <input type= "text" class="labourInput" name="labour_patient_medicalCondition" id="labour_patient_medicalCondition">
         </div>
         </div>
 
         <h3>Labour Details</h3>
         <div class="each_sections">
         <div class="form-control">
-        <label for="">Date of Onset of Labor</label>
-        <input type="date">
+        <label for="dateOfOnsetOfLobour">Date of Onset of Labor</label>
+        <input type="date" class="labourInput"   name="dateOfOnsetOfLobour" id="dateOfOnsetOfLobour">
         </div>
         <div class="form-control">
-        <label for="">Time of Onset of Labor</label>
-        <input type="time">
+        <label for="timeOfOnsetOfLobour">Time of Onset of Labor</label>
+        <input type="time" class="labourInput"   name="timeOfOnsetOfLobour" id="timeOfOnsetOfLobour">
         </div>
         <div class="form-control">
-        <label for="">Duration of Labor</label>
-        <input type="text">
+        <label for="durationOfLabor">Duration of Labor</label>
+        <input type= "text" class="labourInput" name="durationOfLabor" id="durationOfLabor">
         </div>
         <div class="form-control">
-        <label for="">Constration</label>
-        <input type="text">
+        <label for="constration">Constration</label>
+        <input type= "text" class="labourInput" name="constration" id="constration">
         </div>
         <div class="form-control">
-        <label for="">Fetal Movements</label>
-        <input type="text"> 
+        <label for="fetalMovement">Fetal Movements</label>
+        <input type= "text" class="labourInput" name="fetalMovement" id="fetalMovement"> 
         </div>
         <div class="form-control">
-        <label for="">Pain Level</label>
-        <input type="text">
+        <label for="painLevel">Pain Level</label>
+        <input type= "text" class="labourInput" name="painLevel" id="painLevel">
         </div>
         </div>
-        <button class="btn_submit" type="button">Book</button>
+        <button id="submitLaborForm" class="btn_submit" type="button">Book</button>
         </form>
         </div>
    </div>
 
   <!----------------------------------------------------------------------------------->
+
 
 
 
@@ -795,6 +843,7 @@
                         <td>Patient Name</td>
                         <td>Patient ID</td>
                         <td>Date of Admission</td>
+                        <td>Transfer Patient to Postnatal Unit</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -806,6 +855,9 @@
                         <td>Micheal John</td>
                         <td>PAT01</td>
                         <td>22-09-2023</td>
+                        <td>
+                        <button type="button" class="btn" id="transferPatient">Transfer</button>
+                        </td>
                         <td>
                             <i class="bi bi-three-dots" id="bookPatient"></i>
                         </td>
@@ -820,6 +872,8 @@
                         <td>Linus Isreal</td>
                         <td>PAT0032</td>
                         <td>22-09-2023</td>
+                        <td><button type="button" class="btn" id="transferPatient">Transfer</button></td>
+                   
                         <td>
                             <i class="bi bi-three-dots" id="bookPatient"></i>
                         </td>
@@ -840,111 +894,159 @@
             </div>
             <h1>Medical Inputs</h1>
             <div class="vitals_input2">
-                <form action="" class="_inputs"> 
+                <form action="" id="patientLabourVitalInput"> 
                 <span>Blood Pressure</span>
                     <div class="each_sections">
                     <div class="form-control">
                         <span>Pre-Labor Baseline</span>
-                        <label for="">Systolic (mmHG)</label>
-                        <input type="text" name="" id="">
-                        <label for="">Diastolic (mmHG)</label>
-                        <input type="text" name="" id="">
+                        <label for="pre_systolic">Systolic (mmHG)</label>
+                        <input type="text" class="_input" name="pre_systolic" id="pre_systolic">
+                        <label for="pre_diastolic">Diastolic (mmHG)</label>
+                        <input type="text" class="_input" name="pre_diastolic" id="pre_diastolic">
                     </div>
                     <div class="form-control">
                         <span>During Labour</span>
                         <label for="">Time</label>
-                        <input type="time" name="" id="">
-                        <label for="">Systolic (mmHG)</label>
-                        <input type="text" name="" id="">
-                        <label for="">Diastolic (mmHG)</label>
-                        <input type="text" name="" id="">
+                        <input type="time" class="_input" name="" id="">
+                        <label for="during_Systolic">Systolic (mmHG)</label>
+                        <input type="text" class="_input" name="during_Systolic" id="during_Systolic">
+                        <label for="during_diastolic">Diastolic (mmHG)</label>
+                        <input type="text" class="_input" name="during_diastolic" id="during_diastolic">
                     </div>
                     <div class="form-control">
                         <span>Post Delivery</span>
-                        <label for="">Systolic (mmHG)</label>
-                        <input type="text" name="" id="">
-                        <label for="">Diastolic (mmHG)</label>
-                        <input type="text" name="" id="">
+                        <label for="post_Systolic">Systolic (mmHG)</label>
+                        <input type="text" class="_input" name="post_Systolic" id="post_Systolic">
+                        <label for="post_diastolic">Diastolic (mmHG)</label>
+                        <input type="text" class="_input" name="post_diastolic" id="post_diastolic">
                     </div>
                     </div>
                     <span>Pulse Rate</span>
                     <div class="each_sections">
                     <div class="form-control">
-                        <label for="">Pre-Labor Baseline (bpm)</label>
-                        <input type="text" name="" id="">
+                        <label for="pulseRate_Pre">Pre-Labor Baseline (bpm)</label>
+                        <input type="text" class="_input" name="pulseRate_Pre" id="pulseRate_Pre">
                     </div>
                     <div class="form-control">
                         <label for="">During Labor (bpm)</label>
                         <label for="">Time</label>
-                        <input type="time" name="" id="">
-                        <input type="text" name="" id="">
+                        <input type="time" class="_input" name="" id="">
+                        <input type="text" class="_input" name="" id="pulseRate_During">
                     </div>
                     <div class="form-control">
-                        <label for="">Post Delivery (bpm)</label>
-                        <input type="text" name="" id="">
+                        <label for="pulseRate_Post">Post Delivery (bpm)</label>
+                        <input type="text" class="_input" name="" id="pulseRate_Post">
                     </div>
                     </div>
                     <span>Respiratory Rate</span>
                     <div class="each_sections">
                     <div class="form-control">
-                        <label for="">Pre-Labor Baseline (breaths/min)</label>
-                        <input type="text" name="" id="">
+                        <label for="respiratoryPre">Pre-Labor Baseline (breaths/min)</label>
+                        <input type="text" class="_input" name="" id="respiratoryPre">
                     </div>
                     <div class="form-control">
-                        <label for="">During Labor (breaths/min)</label>
-                        <label for="">Time</label>
-                        <input type="time" name="" id="">
-                        <input type="text" name="" id="">
+                        <label for="respiratoryDuring">During Labor (breaths/min)</label>
+                        <label for="respiratoryDuring">Time</label>
+                        <input type="time" class="_input" name="respiratoryDuring" id="respiratoryDuring">
+                        <input type="text" class="_input" name="respiratoryDuring" id="respiratoryDuring">
                     </div>
                     <div class="form-control">
-                        <label for="">Post Delivery</label>
-                        <input type="text" name="" id="">
+                        <label for="respiratoryPost">Post Delivery</label>
+                        <input type="text" class="_input" name="respiratoryPost" id="respiratoryPost">
                     </div>
                     </div>
                     <span>Temperature</span>
                     <div class="each_sections">
                     <div class="form-control">
-                    <label for="">Pre-Labor Baseline (C/F)</label>
-                    <input type="text" name="" id="">
+                    <label for="tempPre">Pre-Labor Baseline (C/F)</label>
+                    <input type="text" class="_input" name="tempPre" id="tempPre">
                     </div>
                     <div class="form-control">
-                        <label for="">During Labor (C/F)</label>
-                        <input type="text" name="" id="">
+                        <label for="tempDuring">During Labor (C/F)</label>
+                        <input type="text" class="_input" name="tempDuring" id="tempDuring">
                     </div>
                     <div class="form-control">
-                        <label for="">Post Delivery (C/F)</label>
-                        <input type="text" name="" id="">
+                        <label for="tempPost">Post Delivery (C/F)</label>
+                        <input type="text" class="_input" name="tempPost" id="tempPost">
                     </div>
                     </div>
-                </form>
             </div>
 
+
             <div class="screening_input2">
-                <form action="" class="_inputs">
-                <div class="each_sections">
+                  <div class="each_sections">
                     <div class="form-control">
-                        <label for="">Continous Fetal Monitoring</label>
-                              <input type="text" name="" id="">
+                        <label for="continousFetalMonitoring">Continous Fetal Monitoring</label>
+                              <input type="text" class="_input" name="continousFetalMonitoring" id="continousFetalMonitoring">
                     </div>
                     <div class="form-control">
-                        <label for="">Cervical Dilatation Assessment</label>
-                              <input type="text" name="" id="">
+                        <label for="certivalDilatationAssessment">Cervical Dilatation Assessment</label>
+                              <input type="text" class="_input" name="certivalDilatationAssessment" id="certivalDilatationAssessment">
                     </div>
                     <div class="form-control">
-                        <label for="">Vaginal Examination</label>
-                              <input type="text" name="" id="">
+                        <label for="vaginalExamination">Vaginal Examination</label>
+                              <input type="text" class="_input" name="vaginalExamination" id="vaginalExamination">
                     </div>
                     <div class="form-control">
-                        <label for="">Group B Streptococcus (GBS) Status Check</label>
-                              <input type="text" name="" id="">
+                        <label for="groupBStreptpcoccus">Group B Streptococcus (GBS) Status Check</label>
+                              <input type="text" class="_input" name="groupBStreptpcoccus" id="groupBStreptpcoccus">
                     </div>
                     <div class="form-control">
-                        <label for="">Blood Pressure Monitoring</label>
-                              <input type="text" name="" id="">
+                        <label for="bloodPressureMonitoring">Blood Pressure Monitoring</label>
+                              <input type="text" class="_input" name="bloodPressureMonitoring" id="bloodPressureMonitoring">
                     </div>
                     </div>
                 </form>
+                <div class="drug_prescription" id="section3">
+  <form action="">
+    <h1>Drugs Prescription</h1>
+    <div class="each_sections">
+      <div class="form-control">
+        <label for="drug3">Drugs</label>
+        <input type="text" name="" id="drug3">
+      </div>
+      <div class="form-control">
+        <label for="drug_strength3">Strength</label>
+        <input type="text" name="" id="drug_strength3">
+      </div>
+      <div class="form-control">
+        <label for="drug_mode3">Mode</label>
+        <select name="" id="drug_mode3">
+          <option value="tablet">Tablet</option>
+          <option value="capsule">Capsule</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label for="drug_freq3">Frequency</label>
+        <select name="" id="drug_freq3">
+          <option value="2_days">2 Days</option>
+          <option value="24_hours">24 Hours</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label for="drug_qty3">Qty</label>
+        <input type="text" name="" id="drug_qty3">
+      </div>
+    </div>
+    <button type="button" class="btn add__drug" data-section="section3">Add Drugs</button>
+    <button type="button" class="btn" onclick="_bookDrugs()">Book Drugs</button>
+  </form>
+  <table id="dataTable3">
+  <thead>
+        <tr>
+            <td>Drugs</td>
+            <td>Strength</td>
+            <td>Mode</td>
+            <td>Frequency</td>
+            <td>Quantity</td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
             </div>
+            <button class="btn" id="updateLabourPatientData">Update data</button>
         </div>
 </div>
         <script src="js/jquery-3.7.1.js"></script>
