@@ -57,7 +57,7 @@ setInterval(() => createDate())
 
 
 function anternatalForm(){
-  const AnternatalData = document.querySelectorAll('#anternatal_unit_section .anternatalInput');
+  const emergencyInputData = document.querySelectorAll('#anternatal_unit_section .anternatalInput');
   const message = document.createElement('div'); 
 
   document.querySelector('#submitAnternatalForm').addEventListener('click', function(event) {

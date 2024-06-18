@@ -1,139 +1,125 @@
+
 @font-face {
-    font-family: 'Poppins';
-    src: url('Poppins-Light.ttf') format('truetype'); /* Adjust the path if necessary */
+    font-family: 'SEGOEUI';
+    src: url('SEGOEUI.TTF') format('truetype'); 
     font-weight: normal; /* Specify the weight if needed */
     font-style: normal; /* Specify the style if needed */
   }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: fadeIn 2s ease-in-out;
+        }
+        :root{
+            --bg-color:#fff;
+            --dg-color:#000000;
+            --extra-small-font:0.70rem;
+            ---small-font:0.80rem;
+            --medium-font:1.2rem;
+            --large-font:1.8rem;
+            --extra-large-font:3.5rem;
+            --font-color:rgb(42, 87, 215);
+            --navbar-icon-color:#c4bdbd;
+        }
+        
+        p, h3, h4, span, li {
+            font-size: var(--medium-font);
+            color: var(--font-color);
+        }
+        h5, h6{
+            font-size: var(--extra-small-font);
+        }
+        h1, h2{
+            font-size: var(--large-font);
+            color: var(--font-color);
+        }
+        span{
+            padding: 0.3rem;
+        }
+.alert_div{
+    width: auto;
+    height: auto;
+    max-width: 350px;
+    position: fixed;
+    top:0%;
+    right: 0%;
+    z-index: 3;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    color: rgb(255, 255, 255);;
+    background-color: red;
+    padding: 1em;
+    border-bottom-left-radius: 20px;
+    font-size: 1.4rem;
+    animation: headShake 1s ease-in-out;
 }
-body{
-    width: 100%;
-    height:100%;
+.alert_div.pending{
+    background-color:blue;
 }
+.alert_div.successful{
+    background-color: green;
+}
+
 .navbar{
     width: 100%;
-    height: 75px;
+    height: auto;
     position: fixed;
     display: flex;
-    justify-content: space-between;
-    align-items: center;;
-    top: 0;
     background-color: rgb(42, 87, 215);
-    z-index: 999;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    padding: 0.5rem;
+    z-index: 2;
 }
 
-.section1{
-    width: 500px;
+
+.display__date{
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    animation: zoomIn 1s ease-in-out;
+    position:relative;
+    color: var(--bg-color);
+    font-weight: 700;
+    font-size: var(--medium-font);
     align-items: center;
 }
-#back-arrow{
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-}
-.section2{
-    width: 600px;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    animation: zoomIn 1s ease-in-out;
-    justify-content: space-around;
-    align-items: center;
-}
-.sidebar_icons .icons{
-    color: #fff;
-    font-size: 25px;
-    margin: 1em 0;
-    position: relative;
-    cursor: pointer;
-}
-.icons{
-    color: #fff;
-    font-size: 30px;
-    width: 150px;
-    display: flex;
-    justify-content: center;;
-    align-items: center;
-    height: 100%;
-}
-#icon{
-    margin: 0 1rem;
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;
-    position: relative;
-}
-#icon-drop{
-    margin: 0 1rem;
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;
-    position: relative;
-}
-.notification1{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 20px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 100%;
-    background:rgb(0, 158, 251);;
-    border: 2px solid #fff;
-}
-.notification2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 25px;
-    width: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 100%;
-    background:rgb(0, 158, 251);;
-    border: 2px solid #fff;
-}
+
 .profile{
-    width: 50%;
-    height: 100%;
     display: flex;
     color: #fff;
     justify-content: center;
     align-items: center;;
 }
-.profile_account{
+.profile span{
+    color: #ffffff;
+}
+
+.profile .bi-caret-down-fill{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
+.profile_account {
     width: 300px;
     position: absolute;
-    height: fit-content;
+    height: auto;
     top: 100%;
-    animation: zoomIn 01s ease-in-out;
-    right: 2%;
-    padding: 1rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    display: flex;
     background-color: rgb(42, 87, 215);
+    animation: fadeIn ease-in-out 0.5s;
+    right: 0.5%;
+    padding: 1rem;
+    display: flex;
     flex-direction: column;
     align-items: center;
-}
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 
-#image_profile_account{
+  #image_profile_account{
     width: 140px;
     height: 140px;
     border-radius: 100%;
@@ -143,9 +129,10 @@ body{
     width: 100%;
     background-color: #fff;
     padding: 0.7rem;
-    border: none;
     color: rgb(42, 87, 215);
+    border: none;
     border-radius: 5px;
+    font-size: 1rem;
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
     margin: 1rem 0;
@@ -154,7 +141,7 @@ body{
     transform: scale(0.98);
     background: none;
     color:rgb(255, 255, 255);
-    border: 2px solid #fff;
+    border: 1px solid #fff;
 }
 .profile_account span{
     text-align: left;
@@ -163,10 +150,14 @@ body{
 .profile_account h3{
     color: rgb(255, 255, 255);
 }
-
+h3{
+    font-weight:normal;
+    font-size: 1.3rem;;
+    letter-spacing: 2px;
+    color: rgb(42, 87, 215);
+}
 .profile img{
     width: 50px;
-    margin: 0 0.8rem;
     border: 3px solid #fff;
     height: 50px;
     cursor: pointer;
@@ -175,7 +166,7 @@ body{
 .image{
     position: relative;
 }
-.profile .active_on{
+.active_on{
     position: absolute;
     bottom: 5%;
     right: 15%;
@@ -186,10 +177,9 @@ body{
 }
 #btn_appoitment{
     padding: 0.7rem 1rem;
-    border: none;
     background-color: #fff;
-    margin: 0 7rem;
     border-radius: 5px;
+    border: none;
     cursor: pointer;
     color: rgb(42, 87, 215);
     font-size: 12px;
@@ -204,806 +194,282 @@ body{
 }
 
 
+
 .sidebar{
-    width: 75px;
-    height: fit-content;
+    width: 100%;
+    width: 300px;
+    height: 100%;
     overflow: hidden;
     position: fixed;
-    background-color: rgb(42, 87, 215);;
-    left: 0;
     top: 0;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    z-index: 1000;
-}
-.sidebar_contents{
+    left: 0;
+    border-right: 1px solid rgb(234, 232, 232);
+    display: flex;
+    background: #fff;
+    flex-direction: column;
     justify-content: center;
-    display: flex;
-    align-items: center;
-   color: #fff;
-   height: 75px;
-   cursor: pointer;
-   text-align: center;
-   border-bottom: 2px solid rgba(255, 255, 255);
+    z-index: 1;
 }
-.sidebar_icons{
-    width: 100%;
-    animation: zoomIn 01s ease-in-out;
+.sidebar-header{
+width: 100%;
+display: flex;
+padding: 0.5rem;
+color: rgb(42, 87, 215);
+font-size: var(--extra-large-font);
+justify-content: space-evenly;
+align-items: center;
+}
+.sidebar-body{
+width: 100%;
+display: flex;
+padding: 0.5rem;
+color:rgb(42, 87, 215);
+align-items: center;
+}
+.sidebar-body ul{
+    text-decoration: none;
+    list-style: none;
     display: flex;
+    align-items: left;
     flex-direction: column;
-    align-items: center;
-    height: 100%;
 }
-.sidebar_icons #icon{
-    color: #fff;
-    font-size: 25px;
-    cursor: pointer;
-    margin: 1rem 0;
-}
-.landing_page_section{
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-.landing_page_section  .section1{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    overflow-y: auto;
-    margin: 0 0 0 5em;
-}
-.sections{
-    height: fit-content;
-    width: 100%;
-    display: flex;
-    height: 350px;
-    overflow: auto;
-    justify-content: space-between;
-    box-shadow: rgba(209, 207, 207, 0.35) 0px 5px 15px;
-}
-.sections .buttons{
-    width: 30%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-.sections .buttons button{
-    width: 100%;
-    padding: 1em;
-    background-color: rgb(42, 87, 215);;
-    border: none;
-    margin: 1em 0.5em;
-    color: #fff;
-    cursor: pointer;
-}
-.landing_page_section .section2{
-    width: 1500px;
-    height: 100vh;
-    overflow-y: auto;
-}
-.landing_page_section .section2 .table_container{
-    width: 100%;
-    height: 100%;
-}
-.landing_page_section .section2 .table_container .head_sec{
-    margin: 4.5em 0 0 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);;
-    font-size: 20px;
+.sidebar-body ul li{
+margin: 0.3rem 0;
+padding: 0.9rem;
+border-radius: 4px;
+cursor: pointer;
 }
 
-.landing_page_section .section2 .table_container .head_sec input{
-padding: 0.4em 0.4em;
-color: rgb(0, 0, 0);;
-width: 300px;
-border: none;
-height: 40px;
-margin: 0.4em 0.4em;
-outline: none;
+.sidebar-body ul li.active{
+margin: 0.3rem 0;
+padding: 0.9rem;
+background-color: #f0f7ff;
+width: 100%;
+border-radius: 4px;
+cursor: pointer;
 }
-.landing_page_section .section2 .table_container .head_sec input:focus{
-    border: 1px solid rgb(0, 0, 0);
-}
-.landing_page_section .table_container .color{
-    color: rgb(0, 0, 0);;
-    cursor: pointer;
-}
-.landing_page_section .table_container tbody td{
-    color: rgb(0, 0, 0);;;
-    position: relative;
-}
-.landing_page_section .table_container .ward_sec{
-    width: fit-content;
-    /* position: relative; */
-    height: fit-content;
-    padding: 1em;
-}
-.landing_page_section .table_container .ward_sec .section_list{
-  position: absolute;
-  padding: 1em;
-  top: 30%;
-  list-style: none;
-  width: 300px;
-  left: -250%;
-  box-shadow: rgba(209, 207, 207, 0.35) 0px 5px 15px;
-  background-color: rgb(255, 255, 255);
-}
-.landing_page_section .table_container .ward_sec .section_list .section{
-padding: 0.5em;
-border-bottom: 1px solid rgb(211, 206, 206);;
-}
-.landing_page_section .table_container .ward_sec .section_list  #close_icon{
-    position: absolute;
-    right: 0;
-    padding: 0 0.5em;
-    cursor: pointer;
- }
-.landing_page_section .table_container .ward_sec .section_list .section .ward li{
-padding: 0.5em;
-list-style: none;
-}
-.landing_page_section .table_container .ward_sec .sections{
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  width: 300px;
-  left: -100%;
-  cursor: pointer;
-  padding: 1.4em;
-  top: 100%;
-  position: absolute;
-}
-.landing_page_section .table_container .ward_sec .sections, .section{
-    margin: 0.1em 0;
-    cursor: pointer;
+.sidebar-body ul li{
+margin: 0.3rem 0;
+padding: 0.9rem;
+background: none;
+border-radius: 4px;
+cursor: pointer;
 }
 
-.landing_page_section .table_container .ward_sec .section_ward_bed{
- margin: 0.1em 0;
- cursor: pointer;
-}
 
-.ward1_beds, .ward2_beds, .ward3_beds{
-    background-color: #fff;
-    border: 1px solid  rgb(0, 0, 0);;;
-    padding: 0.5em;
-    color: rgb(0, 0, 0);;;;
+
+
+.container{
+    height: 100%;
     width: 100%;
+    display: flex;
 }
-
-.landing_page_section .section .table_container_sec{
-    height: 400px;
-    width: 400px;
-    background-color: red;
+.container .hide{
+   display: none;
 }
 .emergency_form_container{
-    width: 100%;
-    padding: 0.5em;
-    height: fit-content;
-    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
-    overflow-y: auto;
-    margin: 1em 1em;
-    background-color: rgb(255, 255, 255);
-    margin: 5em 0 1em 0;
-    animation: fadeIn 1s ease-in-out;
+    margin: 5rem 0 0 19rem;
 }
-.emergency_form_container h1{
-    font-weight: bold;
-}
-
-form{
-    width: 100%;
-    color: rgb(0, 0, 0);;
+.each_sections {
     display: flex;
-    flex-direction: column;
-}
-form span{
-    text-align: left;
-    font-size: 18px;
-    color: rgb(0, 0, 0);
-    /* animation: slideInLeft 1s ease-in-out; */
-}
-.form_control_group{
-    display: flex;
+    width: 100%;
+    margin: 1em 0;
+    border-radius: 10px;
+    flex-wrap: wrap;
   }
-.form_control{
-    width: 100%;
-    display: flex;
-    /* animation: slideInLeft 1s ease-in-out; */
-    margin: 0.8rem 0.5rem;
-    flex-direction: column;
-}
-.emergency_form_container .form_control input{
-    padding: 0.6rem;
-    border: 1px solid rgb(0, 0, 0);
+
+  .form-control{
+      margin: 1rem 0.5rem;
+      display: flex;
+      text-align: left;
+      flex-direction: column;
+      position: relative;
+      color: rgb(42, 87, 215);
+  }
+  label{
+    font-size: 1.2rem;
+      color: rgb(42, 87, 215);
+  }
+  input {
+    padding: 0.5rem 0;
+    color: rgb(42, 87, 215);
+    font-size: 1.1rem;
+    border: none;
+      border-bottom-width: medium;
+      width:300px;
+      border-bottom-style: none;
+      border-bottom-color: currentcolor;
+    border-bottom: 1px solid rgb(42, 87, 215);
     outline: none;
-    width: 100%;
-    color: #000000;
+  }
+  textarea{
+    padding: 0.5rem 0;
+    color: rgb(42, 87, 215);
+    font-size: 1.1rem;
+    border: none;
+      border-bottom-width: medium;
+      width:300px;
+      border-bottom-style: none;
+      border-bottom-color: currentcolor;
+    border-bottom: 1px solid rgb(42, 87, 215);
+    outline: none;
+  }
+  select {
+    padding: 0.5em;
+    color: rgb(42, 87, 215);
+    font-size: 1rem;
+     border: none;
+     width:300px;
+    border-bottom: 1px solid rgb(42, 87, 215);
+    outline: none;
+    text-transform: uppercase;
+    background: #fff;
+  }
 
-}
-.emergency_form_container .form_control input:focus{
-    border: 1px solid rgb(0, 0, 0);
-}
-
-.btn_submit{
-    width: 100%;
+   .btn_submit{
+    width: auto;
     background-color: rgb(42, 87, 215);
     padding: 0.7rem;
     border: none;
-    color: #fff;
-    transition: all  ease-in-out 0.6s;
-    cursor: pointer;
-    margin: 1rem 0;
-}
-.btn_submit:hover{
-    background-color: #fff;
-    color:rgb(0, 0, 0);
-    border: 1px solid rgb(42, 87, 215);
-}
-.nurse_section{
-    width: 500px;
-    padding: 1em;
-    height: fit-content;
-    margin: 1em 1em;
-    overflow: hidden;
-    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
-    background-color: rgb(255, 255, 255);
-}
-.nurse_section textarea{
-    border: 1px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);;
-    padding:  0.5em;
-    outline: none;
-}
-.nurse_section button{
-    width: 100%;
-    padding: 0.5em;
-    background-color:rgb(42, 87, 215);
-    border: none;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
-    margin: 0.5em 0.5em;
-}
-.nurse_section button:hover{
-    width: 100%;
-    background:none;
-    border: 1px solid rgb(42, 87, 215);
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    margin: 0.5em 0.5em;
-}
-.nurse_section h1{
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-}
-.nurse_section form{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-}
-.nurse_section form .form_control{
-    width: 100%;
-}
-.nurse_section form .form_control input{
-    padding: 0.5rem;
-    outline: none;
-    width: 100%;
-    color: rgb(0, 0, 0);;
-}
-.nurse_section form .form_control input:focus{
-    padding: 0.5rem;
-    border: 1px solid rgb(0, 0, 0);
-}
-
-.doc_section{
-    width: 500px;
-    overflow: hidden;
-    height: fit-content;
-    padding: 1em;
-    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
-    margin: 1em 1em;
-    background-color: rgb(255, 255, 255);
-}
-.doc_section .form_control{
-    margin: 0;
-    padding: 0;
-    margin: 0.5rem 0;
-}
-.doc_section .form_control input{
-    padding: 0.5em;
-    outline: none;
-    border: 1px solid rgb(0, 0, 0);;
-    color: rgb(0, 0, 0);;
-}
-
-.doc_section textarea{
-     width: 100%;
-    background-color: #fff;
-    font-size: 16px;
-    margin: 0.5rem 0;
-    padding: 0.5em;
-    cursor: pointer;
-    outline: none;
-    border: 1px solid rgb(0, 0, 0);
-    color:rgb(0, 0, 0);
-}
-.doc_section button{
-    width: 100%;
-    padding: 0.5em;
-    background-color: rgb(42, 87, 215);
-    border: none;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
-    margin: 0.5em 0;
-}
-.doc_section label{
-    color: rgb(0, 0, 0);;
-}
-.doc_section button:hover{
-    width: 100%;
-    padding: 0.5em;
-    background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    margin: 0.5em 0;
-}
-.doc_section h1{
-    font-weight: bold;
-    color: rgb(0, 0, 0);;
-}
-.doc_section #select_doc{
-    width: 100%;
-    background-color: #fff;
-    font-size: 16px;
-    margin: 0.5rem 0;
-    padding: 0.5em;
-    cursor: pointer;
-    border: 1px solid rgb(0, 0, 0);
-    color:rgb(0, 0, 0);
-}
-.doc_section #select_doc #opt{
-    color: rgb(0, 0, 0);
-    background: white;
-    border: none;
-    padding: 1rem;
-}
-.lab_setion{
-    width: 500px;
-    padding:1em;
-    height: fit-content;
-    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
-    overflow: hidden;
-    margin: 1em 1em;
-    background-color: rgb(255, 255, 255);
-}
-.lab_setion textarea{
-    border: 1px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);;
-    outline: none;
-    padding: 0.5em;
-}
-.lab_setion button{
-    width: 100%;
-    padding: 0.5em;
-    background-color:rgb(42, 87, 215);;
-    border: none;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
- margin: 0.5em 0.5em;
-}
-.lab_setion button:hover{
-    width: 100%;
-    padding: 0.5em;
-    background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
- margin: 0.5em 0.5em;
-}
-.lab_setion h1{
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-}
-.lab_setion form{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.lab_setion form .form_control{
-    width:100%;
-}
-.lab_setion form .form_control input{
-    padding: 0.5rem;
-    width: 100%;
-    outline: none;
-    color: rgb(0, 0, 0);;
-    border: 1px solid rgb(0, 0, 0);
-}
-
-.rad_setion{
-    width: 500px;
-    padding: 1em;
-    height: fit-content;
-    overflow: hidden;
-    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
-    overflow-y: auto;
-    margin: 1em 1em;
-    background-color: rgb(255, 255, 255);
-}
-.rad_setion textarea{
-    border: 1px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);;
-    outline: none;
-    padding: 0.5em;
-}
-.rad_setion button{
-    width: 100%;
-    padding: 0.5em;
-    background-color:rgb(42, 87, 215);;
-    border: none;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
-    margin: 0.5em 0.5em;
-}
-.rad_setion button:hover{
-    width: 100%;
-    padding: 0.5em;
-    background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    margin: 0.5em 0.5em;
-}
-.rad_setion h1{
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-}
-.rad_setion form{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-}
-.rad_setion form .form_control{
-    width: 100%;
-}
-.rad_setion form .form_control input{
-    padding: 0.5rem;
-    width: 100%;
-    outline: none;
-    color: rgb(0, 0, 0);;
-    border: 1px solid rgb(0, 0, 0);
-}
-
-.surgical_suite_section{
-    width: 500px;
-    padding: 1em;
-    height: fit-content;
-    overflow: hidden;
-    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
-    overflow-y: auto;
-    margin: 1em 1em;
-    background-color: rgb(255, 255, 255);
-}
-.surgical_suite_section textarea{
-    border: 1px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);;
-    padding: 0.5em;
-    outline: none;
-}
-.surgical_suite_section button{
-    width: 100%;
-    padding: 0.5em;
-    background-color:rgb(42, 87, 215);;
-    border: none;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
-  margin: 0.5em 0.5em;
-}
-.surgical_suite_section button:hover{
-    width: 100%;
-    padding: 0.5em;
-    background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-  margin: 0.5em 0.5em;
-}
-.surgical_suite_section h1{
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0);
-}
-.surgical_suite_section form{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-}
-.surgical_suite_section form .form_control{
-    width: 100%;
-}
-.surgical_suite_section form .form_control input{
-    padding: 0.5rem;
-    outline: none;
-    width: 100%;
-    color: rgb(0, 0, 0);;
-    border: 1px solid rgb(0, 0, 0);
-}
-.icu_section{
-    width: 500px;
-    padding: 1em;
-    height: fit-content;
-    overflow: hidden;
-    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
-    overflow-y: auto;
-    margin: 1em 1em;
-    background-color: rgb(255, 255, 255);
-}
-.icu_section textarea{
-    border: 1px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);;
-    outline: none;
-    padding: 0.5em;
-}
-.icu_section button{
-    width: 100%;
-    padding: 0.5em;
-    background-color:rgb(42, 87, 215);;
-    border: none;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
-    margin: 0.5em 0.5em;
-}
-.icu_section button:hover{
-    width: 100%;
-    padding: 0.5em;
-    background:none;
-    border: 1px solid rgb(42, 87, 215);;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    margin: 0.5em 0.5em;
-}
-.icu_section h1{
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-}
-.icu_section form{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-}
-.icu_section form .form_control{
-    width: 100%;
-}
-.icu_section form .form_control input{
-    padding: 0.5rem;
-    outline: none;
-    width: 100%;
-    color: rgb(0, 0, 0);;
-    border: 1px solid rgb(0, 0, 0);
-}
-.morgue_section{
-    width: 500px;
-    padding: 1em;
-    height: fit-content;
-    box-shadow: rgba(188, 187, 187, 0.35) 0px 5px 15px;
-    overflow-y: auto;
-    margin: 1em 1em;
-    background-color: rgb(255, 255, 255);
-    overflow: hidden;
-}
-.morgue_section textarea{
-    border: 1px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);;
-    padding: 0.5em;
-    outline: none;
-}
-.morgue_section button{
-    width: 100%;
-    padding: 0.5em;
-    background-color:rgb(42, 87, 215);;
-    border: none;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
-    margin: 0.5em 0.5em;
-}
-.morgue_section button:hover{
-    width: 100%;
-    padding: 0.5em;
-    background:none;
-    border: 1px solid rgb(42, 87, 215);;;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    margin: 0.5em 0.5em;
-}
-.morgue_section h1{
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-}
-.morgue_section form{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-}
-.morgue_section form .form_control{
-    width: 100%;
-}
-.morgue_section form .form_control input{
-    padding: 0.5rem;
-    width: 100%;
-    color: rgb(0, 0, 0);;
-    outline: none;
-    border: 1px solid rgb(0, 0, 0);
-}
-
-
-
-/*APPOITMENT SECTION*/
-.patient_list_section{
-    width:1200px;
-    display: flex;
-    margin: 0   auto;
-}
-
-.container{
-    width: 100%;
-    margin: 5rem auto;
-}
-.contents{
-    width:100%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.head-sec{
-    display: flex;
-    width: 100%;
-    height: 50px;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 1rem;
-    background-color: #ffffff;
-    justify-content: space-between;
-}
-
-.head-sec span{
-    font-size: 17px;
-}
-.appoitment_input_control{
-    position: relative;
-}
-.appoitment_input{
-    padding: 0.5rem 0.3rem;
-    margin-right: 1rem;
-    border: none;
-    font-size: 16px;
-    width: 100%;
-    outline: none;
-}
-.appoitment_input input{
-    background-color: rgb(0, 0, 0);;
-}
-input:focus{
-    border:1px solid rgb(42, 87, 215) 
-}
-#search-icon{
-    position: absolute;
-    top: 32%;
-    right: 15%;
-    color: #000000;
-    cursor: pointer;
-}
-.body_sec{
-    width: 100%;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    height: auto;
-}
-table{
-    width: 100%;
-    height: auto;
-    border-collapse: collapse;
-    overflow-y: hidden;
-}
- table thead td{
-    background-color: rgb(42, 87, 215);;
-    color: #fff;
-    padding: 1em 0.7em;
-    font-size: 18px;
-}
- table tbody{
-    margin: 1rem 0;
-}
- table tbody td{
-    background-color: rgb(255, 255, 255);;
-    font-size: 20px;
-    margin: 1rem 0;
-    border-bottom: 1px solid #ded9d9;
-    padding: 1rem;
-    color: #000000;
-}
-.yellow{
-    width: 20px;
-    height: 20px;
-    background-color: yellow;
-    border-radius: 100%;
-}
-.red{
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 100%;
-}
-.green{
-    width: 20px;
-    height: 20px;
-    background-color: green;
-    border-radius: 100%;
-}
-
-.switch_plan, .transfer{
-    border: none;
-    background-color: rgb(42, 87, 215);
-    width: 100%;
-    padding: 0.5rem;
-    color: #fff;
-    border-radius: 20px;
-    transition: all ease-in-out 0.5s;
-    cursor: pointer;
-}
-
-.switch_plan:hover, .transfer:hover{
-    border: 1px solid rgb(42, 87, 215);
-    background:none;
-    width: 100%;
-    padding: 0.5rem;
-    color: #000000;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.emergency_patient_list_pagination{
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    border-bottom-left-radius: 8px ;
-    border-bottom-right-radius: 8px ;
-    height: 50px;
-    margin: 0 auto;
-}
-.emergency_patient_list_pagination .flexs{
-    display: flex;;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-}
-.emergency_patient_list_pagination .flexs p{
-    background-color: rgb(42, 87, 215);
-    padding: 0.5em 1em;
+    color: rgb(255, 255, 255);
     border-radius: 5px;
+    transition: all ease-in-out 0.6s;
     cursor: pointer;
-    color: #fff;
-    transition: all ease-in-out  0.5s
-}
-.emergency_patient_list_pagination .flexs p:hover{
-   transform: scale(0.94);
-}
+    margin: 1rem 0;
+    }
+ 
+    .btn_submit:hover{
+      background:none;
+      border: 1px solid rgb(42, 87, 215);
+      color: rgb(42, 87, 215);
+    }
 
-.doctor_container{
-    width: 100vw;
-    height: 100vh;
-    background-color: red;
-}
+
+
+
+
+
+
+
+
+    .list_div {
+        margin: 5.5rem 0 0 19rem;
+    }
+     .search_bar_container {
+        background-color: #fff;
+        color:rgb(42, 87, 215);
+        padding: 0.5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        margin: 0.4em 0 0 0;
+    }
+    .search_bar_container span {
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+    .search_bar_container i{
+        position: absolute;
+        right: 1%;
+        cursor: pointer;
+    }
+    .search_bar_container input {
+        padding: 0.5em 0;
+    }
+    
+     table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+     table thead {
+        background-color: #fff; 
+        position: sticky; 
+        top: 0;
+        z-index: 1; 
+        background-color: #fff; 
+        font-size: 1.3em;
+        text-align: center;
+    }
+    table thead  td{
+        color: rgb(42, 87, 215);
+        padding: 0.5em;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        text-align: center;
+        padding: .77em .58em .74em .58em;
+          padding-right: 0.58em;
+        padding-right: 0.58em;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        vertical-align: top;
+        line-height: 1.2;
+    }
+     table tbody td img{
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+        border-radius: 100%;
+    }
+    
+     table tbody td {
+        padding: 0.5em;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        background-color: rgb(42, 87, 215);
+        padding: .77em .58em .74em .58em;
+        padding-right: 0.58em;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        font-size: 0.95rem;
+        cursor: pointer;
+        vertical-align: center;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        border-bottom: 1px solid #fff;
+    }
+    .green{
+        background-color: green;
+        border-radius: 100%;
+        width: 30px;
+        margin: 0 0 0 1.5rem;
+        height: 30px;
+    }
+    .red{
+        background-color: red;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        margin: 0 0 0 1.5rem;
+    }
+
+
+    .appoitment__div {
+        width: auto;
+        max-width:1000px;
+        height: auto;
+        background-color: #ffffff;
+        position: fixed;
+        top: 0;
+        padding: 1rem;
+        right: 0; /* Changed from right: 50% to left: 50% */
+        z-index: 3;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+    .appoitment__div .cancle{
+        position: absolute;
+        right: 3%;
+        color: red;
+        cursor: pointer;
+        top: 3%;
+    }
+
 .hide{
     display: none; ;
 }
