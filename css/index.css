@@ -50,6 +50,9 @@
           text-align: center;
           flex-direction: column;
         }
+        select option:hover{
+          color: red;
+        }
         form{
           display: flex;
           justify-content: left;

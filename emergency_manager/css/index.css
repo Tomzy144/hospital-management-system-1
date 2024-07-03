@@ -41,12 +41,14 @@
 .alert_div{
     width: auto;
     height: auto;
+    max-height: 100%;
     max-width: 350px;
     position: fixed;
     top:0%;
     right: 0%;
     z-index: 3;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    overflow: auto;
+    /* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
     color: rgb(255, 255, 255);;
     background-color: red;
     padding: 1em;
@@ -243,10 +245,13 @@ cursor: pointer;
 .sidebar-body ul li.active{
 margin: 0.3rem 0;
 padding: 0.9rem;
-background-color: #f0f7ff;
+background-color: rgb(42, 87, 215);
 width: 100%;
 border-radius: 4px;
 cursor: pointer;
+}
+.active span{
+    color: #fff;
 }
 .sidebar-body ul li{
 margin: 0.3rem 0;
@@ -261,7 +266,7 @@ cursor: pointer;
 
 .container{
     height: 100%;
-    width: 100%;
+    width: 84%;
     display: flex;
 }
 .container .hide{
@@ -286,6 +291,55 @@ cursor: pointer;
       position: relative;
       color: rgb(42, 87, 215);
   }
+
+  .radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.radio-group label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.radio-group input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.radio-group .custom-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    padding: 0;
+    border: 2px solid #d1d3e2;
+    border-radius: 50%;
+}
+.radio-group input[type="radio"]:checked ~ .custom-radio {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+.radio-group .custom-radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.radio-group input[type="radio"]:checked ~ .custom-radio:after {
+    display: block;
+}
+.radio-group .custom-radio:after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
   label{
     font-size: 1.2rem;
       color: rgb(42, 87, 215);
@@ -448,7 +502,14 @@ cursor: pointer;
         height: 30px;
         margin: 0 0 0 1.5rem;
     }
-
+    #sections ul{
+        list-style: none;
+        font-size: var(--medium-font);
+        text-transform: uppercase;
+    }
+    #sections ul .btn_submit{
+      width: 100%;
+    }
 
     .appoitment__div {
         width: auto;

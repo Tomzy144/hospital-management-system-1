@@ -58,7 +58,7 @@
   
 <div class="container">
 <div class="emergency_form_container">
-<form action="" id="emergencyInputData">
+<form method ="post" action="" id="emergencyInputData">
 <h3>EMERGENCY FORM</h3>
   <h3>Patient Info</h3>
   <div class="each_sections">
@@ -70,10 +70,26 @@
   <label for="dob">Date of Birth</label>
   <input type="date" name="dob" id="dob" class="emergencyInput"> 
   </div>
+  
   <div class="form-control">
   <label for="address">Address</label>
   <input type="text" name ="address" id=" address" class="emergencyInput">
   </div>
+  <div class="form-control">
+                      <label for="gender">Gender</label>
+                    <div class="radio-group">
+              <label>
+                  Male
+                  <input type="radio" name="gender" value="male" id="maleCheckbox">
+                  <span class="custom-radio"></span>
+              </label>
+              <label>
+                  Female
+                  <input type="radio" name="gender" value="female" id="femaleCheckbox">
+                  <span class="custom-radio"></span>
+              </label>
+            </div>
+                    </div>
   </div>
   <h3>Emergency Contact</h3>
   <div class="each_sections">
@@ -170,8 +186,8 @@
     <textarea ></textarea>
   </div>
   </div>
+<button class="btn_submit">Submit</button>  
 </form>
-  <button class="btn_submit">Submit</button>  
   </form>
 </div>
 
@@ -180,7 +196,8 @@
     <div class="table_container">
             <div class="search_bar_container">
                 <h3>Emergency Patient List</h3>
-                <input type="text" name="" id="" placeholder="Search">
+                <input type="text" name="" id="searchInput" placeholder="Search">
+                <i class="bi bi-search" id="searchPatient"></i>
             </div>
             <table id="TableData">
                 <thead>
@@ -188,6 +205,7 @@
                         <td>S/N</td>
                         <td>Patient Name</td>
                         <td>Patient ID</td>
+                        <!-- <td>Gender</td> -->
                         <td>Cause of Incident</td>
                         <td>Date of Incident</td>
                         <td>Time of Incident</td>

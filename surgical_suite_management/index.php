@@ -7,258 +7,313 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="awesome-font/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/icons-1.10.2/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
 <body>
+<!--------------------------------------------START OF NAVBAR------------------------------------------------------>
 <div class="navbar">
-        <div class="section1">
+        <div class="display__date">
         </div>
-        <div class="section2">
-            <div class="icons">
-          <i class="fa fa-user" id="icon">
-            <div class="notification1">9</div>
-          </i>
-          <i class="fa fa-bell" id="icon">
-          <div class="notification2">15</div>
-          </i>
-          </div>
           <div class="profile">
             <div class="profile_account hide">
-            <img id="image_profile_account" src="../Images/iii.jpg" alt="">
-            <h4>Roseline Asuquo Etim</h4>
+            <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <span>Doc. Henculus White</span>
             <button class="btn_submit">Upload Image</button>
-            <span>change password</span>
-        </div>
+           </div>
             <div class="image">
-            <img src="../Images/iii.jpg" alt="">
-            <div class="active"></div>
+            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
+            <div class="active_on"></div>
             </div>
-        </img>  
-            <span>Roseline Asuquo Etim</span>
-            <i class="fa fa-caret-down" id="icon-drop" onClick="click_icon_for_profile()"></i>
-          </div>
-        </div>
-    </div>
-        <div class="sidebar">
-               <div class="sidebar_contents">
-                <img width="80px" height="80px" src="../Images/Mount Tech Logo.jpg" alt="logo">
-               </div>
-            <div class="sidebar_icons">
-                <i class="fa fa-envelope" id="icon"></i>
-                <i class="fa fa-book" id="icon" onClick="consent_container()"></i>
-                <i class="fa fa-edit (alias)" id="icon"></i>
-                <i class="fa fa-sign-out" id="icon"></i>
-            </div>
-        </div> 
-        <div class="contents">
-<div class="appiontment_booking_container">
-<div class="appiontment">
-<div class="head_sec">
-  <span>Appoitment Details</span>
-  <div class="appoitment_input_control">
-  <i class="fa fa-search" id="search_icon"></i>
-      <input type="text" placeholder="Search here" class="appoitment_input">
-  </div>
-</div>
-<div class="table_container">
-<table id="appoitment_table">
-  <thead>
-    <td>Number</td>
-    <td>Patient Name/Patient Id</td>
-    <td>Date/Time</td>
-    <td>Request Type</td>
-    <td>Accept</td>
-    <td>Reject</td>
-  </thead>
-  <tbody>
-    <td>Princess Precious</td>
-    <td>Pat001</td>
-    <td>22-02-2024</td>
-    <td>2:30PM</td>
-    <td>Medical Test</td>
-    <td>
-      <button onClick="show_radiology_input()">Accept</button>
-      <button>Reject</button>
-    </td>
-  </tbody>
-  <tbody>
-   
-</table>
-</div>
-<div class="pending_transaction_list_pagination">
-        <div class="flexs">
-            <p id="prev_appoitment">Prev List</p>
-            <p id="next_appoitment">Next List</p>
-        </div>
-</div>
-</div>
-</div>
+            <span>Doc. Henculus White</span>
+            <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
+                 </div>
+                </div>
 
-<div class="approved_appoitment">
-<div class="table_container">
-<table id="approved_table">
-  <thead>
-    <td>Number</td>
-    <td>Patient Name</td>
-    <td>Patient Id</td>
-    <td> Type of Surgery</td>
-    <td> Date </td>
-  </thead>
-  <tbody>
 
-  </tbody>
-  </table>
-  <div class="hideselect">
-      <ul class="hide" id="selectWard">
-        <li id="ward">Ward 1
-        <select name="" id="selectBed">
-      <option value="">Bed 1</option>
-      <option value="">Bed 2</option>
-      <option value="">Bed 3</option>
-      <option value="">Bed 4</option>
-      <option value="">Bed 5</option>
-    </select>
+    <div class="sidebar">
+    <div class="sidebar__header"></div>
+    <div class="sidebar-body">
+      <ul>
+        <li  id="emergency__form__link" class="links active" onclick="surgeryAppoitment()">
+          <i class="fa-solid fa-person-pregnant"></i>
+          <span>Appoitment for surgery</span>
         </li>
-        <li id="ward">Ward 2
-        <select name="" id="selectBed">
-      <option value="">Bed 1</option>
-      <option value="">Bed 2</option>
-      <option value="">Bed 3</option>
-      <option value="">Bed 4</option>
-      <option value="">Bed 5</option>
-    </select>
+        <li id="emergency__link" class="links" onclick="pendingSurgeryList()">
+          <i class="fa-solid fa-person-pregnant"></i>
+          <span>Pending Surgery List</span>
         </li>
-        <li id="ward">Ward 3
-        <select name="" id="selectBed">
-      <option value="">Bed 1</option>
-      <option value="">Bed 2</option>
-      <option value="">Bed 3</option>
-      <option value="">Bed 4</option>
-      <option value="">Bed 5</option>
-    </select>
+        <li id="emergency__link" class="links" onclick="patientProfile()">
+          <i class="fa-solid fa-person-pregnant"></i>
+          <span>Patient Profile</span>
         </li>
-        <li id="ward">Ward 4
-        <select name="" id="selectBed">
-      <option value="">Bed 1</option>
-      <option value="">Bed 2</option>
-      <option value="">Bed 3</option>
-      <option value="">Bed 4</option>
-      <option value="">Bed 5</option>
-    </select>
-        </li>
-        <li id="ward">Ward 5
-        <select name="" id="selectBed">
-      <option value="">Bed 1</option>
-      <option value="">Bed 2</option>
-      <option value="">Bed 3</option>
-      <option value="">Bed 4</option>
-      <option value="">Bed 5</option>
-    </select>
+        <!-- <li id="emergency__link" class="links" onclick="bookinSection()">
+          <i class="fa-solid fa-person-pregnant"></i>
+          <span>Booking Surgery</span>
+        </li> -->
+        <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout</span>
+          <form method="post" action="../config/code.php" id="logoutform">
+            <input type="hidden" name="action" value="logout"/>
+          </form>
         </li>
       </ul>
-    <select name="" id="selectBed">
-      <option value="">Bed 1</option>
-      <option value="">Bed 2</option>
-      <option value="">Bed 3</option>
-      <option value="">Bed 4</option>
-      <option value="">Bed 5</option>
-    </select>
     </div>
-</div>
-      <div class="vital_form hide">
-      <i class="bi bi-x-lg" id="close_icon" onClick="close_show_vital_container()"></i>
-      <span>Call in Nurse</span>
-        <form action="">
-            <div class="form_control">
-              <label for="">Patient Name</label>
-              <input type="text" name="" id="">
-            </div>
-            <div class="form_control">
-              <label for="">Patient Id</label>
-              <input type="text" name="" id="">
-            </div>
-            <div class="form_control">
-              <label for="">Date</label>
-              <input type="date" name="" id="">
-            </div>
-            <div class="form_control">
-              <label for="">Time</label>
-              <input type="time" name="" id="">
-            </div>
-            <div class="form_control">
-              <label for="">Message</label>
-              <textarea name="" id="" cols="10" rows="10"></textarea>
-            </div>
-        </form>
-      </div>
+  </div>
+  <!----------------------------------------------------------------------------------->
 
-      <div class="threatre hide">
-      <i class="bi bi-x-lg" id="close_icon" onClick="close_show_threatre_container()"></i>
-      <span>Transfer to Threatre</span>
-        <form action="">
-            <div class="form_control">
-              <label for="">Patient Name</label>
-              <input type="text" name="" id="">
+
+
+  <div class="list_div" id="surgeryAppoitment">
+    <div class="table_container">
+            <div class="search_bar_container">
+                <h3>Surgery List</h3>
+                <input type="text" name="" id="" placeholder="Search">
             </div>
-            <div class="form_control">
-              <label for="">Patient Id</label>
-              <input type="text" name="" id="">
+            <table id="TableData">
+                <thead>
+                    <tr>
+                        <td>S/N</td>
+                        <td>Patient Name</td>
+                        <td>Patient Id</td>
+                        <td>Date</td>
+                        <td>Time</td>
+                        <td>Rquest type</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td colspan="7">No data</td>
+                </tr>
+                </tbody>
+        </table>
+  </div>
+  </div>
+
+  <div class="list_div hide" id="pendingSurgeryList">
+    <div class="table_container">
+            <div class="search_bar_container">
+                <h3>Pending Surgery List</h3>
+                <input type="text" name="" id="" placeholder="Search">
             </div>
-            <div class="form_control">
-              <label for="">Date</label>
-              <input type="date" name="" id="">
-            </div>
-            <div class="form_control">
-              <label for="">Time</label>
-              <input type="time" name="" id="">
-            </div>
-            <div class="form_control">
-              <label for="">Message</label>
-              <textarea name="" id="" cols="10" rows="10"></textarea>
-            </div>
-        </form>
-      </div>
-<div class="surgical_pagination">
-        <div class="flexs">
-            <p id="prev_approved_appoitment">Prev List</p>
-            <p id="next_approved_appoitment">Next List</p>
-        </div>
+            <table id="TableData">
+                <thead>
+                    <tr>
+                    <td>S/N</td>
+                        <td>Patient Name</td>
+                        <td>Patient Id</td>
+                        <td>Date</td>
+                        <td>Time</td>
+                        <td>Rquest type</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td colspan="7">No data</td>
+                </tr>
+                </tbody>
+        </table>
+  </div>
+  </div>
+
+
+
+
+<div class="patientProfile hide">
+ <div class="profileInfo listing">
+  <h3 class="heading">PERSONAL INFORMATION</h3>
+  <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+ </div>
+ <div class="bioData listing">
+  <h3 class="heading">BIO DATA</h3>
+  <div>
+  <h3>KINGSLEY PATRICK</h3>
+  <h3>PAT0003</h3>
+  <h3>MALE</h3>
+  <h3>23 SEPTEMBER 1998</h3>
+  <h3>40 MAIN LONDON ROAD</h3>
+  <h3>+23488993034</h3>
+  </div>
+  <h3 class="heading">NEXT OF KINS DETAIL</h3>
+  <div>
+  <h3>MERCY PATRICK</h3>
+  <h3>FEMALE</h3>
+  <h3>23 AUGUST 1498</h3>
+  <h3>40 MAIN LONDON ROAD</h3>
+  <h3>+2348893334</h3>
+  </div>
+  <h3 class="heading">SOCIAL HISTORY</h3>
+  <div>
+  <h3>NAN</h3>
+  </div>
+  <h3 class="heading">MEDICAL HISTORY</h3>
+  <div>
+  <h3>NAN</h3>
+  </div>
+  <h3 class="heading">SEXUAL HISTORY</h3>
+  <div>
+  <h3>NAN</h3>
+  </div>
+  <h3 class="heading">PAST DISEASE</h3>
+  <div>
+  <h3>NAN</h3>
+  </div>
+  <h3 class="heading">FAMILY DISEASE</h3>
+  <div>
+  <h3>NAN</h3>
+  </div>
+  <h3 class="heading">PAST SURGERY</h3>
+  <div>
+  <h3>NAN</h3>
+  </div>
+ </div>
+ <div class="labouratoryData">
+ <h3 class="heading">LABOURATORY TESTS</h3>
+  <table>
+    <thead>
+      <tr>
+      <td>Date</td>
+      <td>Time</td>
+      <td>Kind of Test</td>
+      <td>Test Specific</td>
+      <td>Test Result</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>23-08-2023</td>
+        <td>23:10</td>
+        <td>Immunoassay Single Tests</td>
+        <td> Drug Screening Test</td>
+        <td>download</td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+ <div class="radiologyData">
+ <h3 class="heading">RADIOLOGY TESTS</h3>
+  <table>
+    <thead>
+      <tr>
+      <td>Date</td>
+      <td>Time</td>
+      <td>Kind of Test</td>
+      <td>Test Specific</td>
+      <td>Test Result</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>23-08-2023</td>
+        <td>23:10</td>
+        <td>Immunoassay Single Tests</td>
+        <td> Drug Screening Test</td>
+        <td>download</td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+
+ <div class="vitalData">
+ <h3 class="heading">VITAL DATA</h3>
+  <table>
+    <thead>
+      <tr>
+      <td> 24/7</td> 	 	 	
+      <td>Temp(C)</td>
+      <td>BP(mmdg)</td>
+      <td>Pulse(bp/m)</td>
+      <td>Resp.(cm)</td>
+      <td>Spo2(%)</td>
+      <td>Weigdt(kg)</td>
+      <td>Intake(m/s)</td>
+      <td>Output</td>
+      <td>BMI</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div>1st Jan. 2024</div>
+          <div>2:30pm</div>
+      </td>
+        <td>36</td>
+        <td>120/60</td>
+        <td>60</td>
+        <td>16</td>
+        <td>97</td>
+        <td>0</td>
+        <td>0 </td>
+        <td>0 </td>
+        <td>0 </td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+
+ <div class="select-ward listing">
+  <h3>Select Ward</h3>
+  <div class="each_sections">
+    <div class="form-control">
+    <label>Ward 1</label>
+  <select name="" id="">
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+  </select>
+    </div>
+
+    <div class="form-control">
+  <label>Ward 2</label>
+  <select name="" id="">
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+  </select>
+  </div>
+ </div>
+ <button class="btn_submit">Book ward</button>
+ <button class="btn_submit" onclick="uploadSection()">Upload consent form</button>
+ <button class="btn_submit" onclick="bookinSection()">Book patient</button>
 </div>
 </div>
 
-</div>
+
         <div class="booking_section hide">
             <div class="booking_container">
-                <span>PAT0001</span>
                 <form action="">
-                    <div class="form_control_group">
-                    <div class="form_control">
+                    <div class="each_sections">
+                    <div class="form-control">
                         <label for="">Type of Surgery & Amount</label>
                         <input type="text">
                     </div>
-                    <div class="form_control">
+                    <div class="form-control">
                         <label for="">Amount</label>
                         <input type="text">
                     </div>
                     </div>
-                    <div class="form_control_group">
-                    <div class="form_control">
+                    <div class="each_sections">
+                    <div class="form-control">
                         <label for="">Special Equipment</label>
                         <input type="text">
                     </div>
-                    <div class="form_control">
+                    <div class="form-control">
                         <label for="">Date of Surgery</label>
                         <input type="date">
                     </div>
-                    <div class="form_control">
+                    <div class="form-control">
                         <label for="">Time of Surgery</label>
                         <input type="time">
                     </div>
                     .</div>
-                    <div class="form_control_group">
-                    <div class="form_control">
+                    <div class="each_sections">
+                    <div class="form-control">
                         <label for="">Select Surgeon</label>
                         <select name="" id="">
                             <option value=""></option>
@@ -268,7 +323,7 @@
                             <option value=""></option>
                         </select>
                     </div>
-                    <div class="form_control">
+                    <div class="form-control">
                         <label for="">Select Anostologist</label>
                         <select name="" id="">
                             <option value=""></option>
@@ -279,8 +334,8 @@
                         </select>
                     </div>
                     </div>
-                    <div class="form_control_group">
-                    <div class="form_control">
+                    <div class="each_sections">
+                    <div class="form-control">
                         <label for="">Select Nurse</label>
                         <select name="" id="">
                             <option value=""></option>
@@ -290,7 +345,7 @@
                             <option value=""></option>
                         </select>
                     </div>
-                    <div class="form_control">
+                    <div class="form-control">
                         <label for="">Select Opeating Room</label>
                         <select name="" id="">
                             <option value=""></option>
@@ -305,108 +360,21 @@
                 </form>
             </div>
           </div>
-          <div class="conscent_container hide">
-          <div class="all_patient_container">
-          <div class="search-container">
-    <div class="search-bar">
-        <div id="select">
-            <p id="selectText"></p>
-            <i class="fa fa-sort-desc"></i>
-            
-    <ul id="list">
-        <li class="options" id="0" onclick="showTable('All')">All</li>
-        <li class="options" id="1" onclick="showTable('Inpatients')">Inpatients</li>
-        <li class="options" id="2" onclick="showTable('Outpatients')">Outpatients</li>
-        <li class="options" id="3" onclick="showTable('Waitinglist')">Waiting List</li>
-        <li class="options" id="4" onclick="showTable('Appointment')">Appointment</li>
-        <li class="options" id="5"  onclick="showTable('Test')">Test</li>
-        <li class="options" id="6"  onclick="showTable('ANC')">ANC</li>
-        <li class="options" id="7"  onclick="showTable('Todayinputs')">Today inputs</li>
-        <!-- Add more options here -->
-    </ul>
-        </div>
-            <input id="search_term" name="search_term" type="text" placeholder="Type here to search..." title="Type here to search" />
-            <i class="fa fa-search"  id="submit-input"></i>
-    </div> 
-    </div>
 
-    <div class="patient_container">
-        <div class="flex_container">
-            <div class="each_container">
-                <div class="number_container">
-                    1.
-                </div>
-                <div class="patient_info">
-                    <span>Precious Joseph</span>
-                    <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
-                    <button class= "btn_upload" onClick="upload_document()">Upload</button>
-           </div>
-          </div>
-          </div>
-          </div>
 
-    <div class="patient_container">
-        <div class="flex_container">
-            <div class="each_container">
-                <div class="number_container">
-                    2.
-                </div>
-                <div class="patient_info">
-                    <span>Esther Patrick Joseph</span>
-                    <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
-                    <button class= "btn_upload">Upload</button>
-           </div>
-          </div>
-          </div>
-          </div>
-    <div class="patient_container">
-        <div class="flex_container">
-            <div class="each_container">
-                <div class="number_container">
-                    3.
-                </div>
-                <div class="patient_info">
-                    <span>Aniekan Joseph</span>
-                    <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
-                    <button class= "btn_upload">Upload</button>
-           </div>
-          </div>
-          </div>
-          </div>
-    <div class="patient_container">
-        <div class="flex_container">
-            <div class="each_container">
-                <div class="number_container">
-                    4.
-                </div>
-                <div class="patient_info">
-                    <span>Asuquo Eyo Joseph</span>
-                    <span>Admitted Tues 29 Nov, 2023 at 2.21pm, Born 20 Hune, 1990(age 54 years), Female</span>
-                    <button class= "btn_upload">Upload</button>
-           </div>
-          </div>
-          </div>
-          </div>
-          <div class="patient_container_pagination">
-        <div class="flexs">
-            <p id="prev_approved_appoitment">Prev List</p>
-            <p id="next_approved_appoitment">Next List</p>
-        </div>
-</div>
-          </div>
-          <div class="upload_document_page hide">
-            <h1>Upload Files & Documents</h1>
+          <div class="upload-section hide">
+            <h3>Upload Files & Documents</h3>
           <div class="flex_upload_div">
             <div class="upload_container">
               <i class="fa fa-folder-open" id="upload_icon"></i>
               <span>Drag and drop file</span>
-              <h1>-OR-</h1>
+              <h3>-OR-</h3>
               <input type="file" value="Upload File" class="browse_file">
             </div>
           </div>
           </div>
           </div>
-          <div class="vital_section hide">
+          <!-- <div class="vital_section">
             <div class="vital_input">
             <form action="">
                     <div class="form_control">
@@ -500,7 +468,7 @@
           </form>
         </div>
         <button id="btn_submit">Submit</button>
-          </div>
+          </div> -->
         
         <script src="index.js"></script>
 </body>

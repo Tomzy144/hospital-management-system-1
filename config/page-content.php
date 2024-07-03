@@ -175,8 +175,8 @@ if($s_staff_id != '') {
  <!-- staff Manager - -->
 
         <?php if ($page=='staffM_login') ?>
-        <div class="fill-form-div login-div" id="next_5">
-            <div class="staff_manager-login hidden">
+        <div class="fill-form-div login-div hidden" id="next_5">
+            <div class="staff_manager-login">
             <!-- Close icon for the login form -->
             <i class="bi bi-x-circle" id='close-icon-staff_manager' onclick="cancel();"></i>
             <i class="fa fa-times-circle"></i>
@@ -290,34 +290,27 @@ if($s_staff_id != '') {
  <!-- surgical_suite_manager  - -->
 
     <?php if ($page=='surgical_suite_manager_login') ?>
-    <div class="fill-form-div login-div" id="next_8">
-            <div class="surgical_suite_manager-login hidden">
-            <!-- Close icons for the login form -->
+    <div class="fill-form-div login-div hidden" id="next_8">
+            <div class="surgical_suite_manager-login">
             <i class="bi bi-x-circle" id='close-icon-surgical_suite_manager' onclick="cancel();"></i>
             <i class="fa fa-times-circle" id='close-icon-surgical_suite_manager'></i>
-            <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Surgical Suite Manager)</h1>
-            <!-- Surgical Suite Manager login form -->
             <form>
-                <!-- Email field -->
                 <div class="form-control">
                     <label for='email'>Email</label>
                     <i class="fa fa-address-book"></i>
                     <input type="email" name="email" autoComplete='off'/> 
                 </div>
-                <!-- ID field -->
                 <div class="form-control">
                     <label for='number'>Your ID</label>
                     <i class="fa fa-key"></i>
                     <input type="number" name="number" autoComplete='off'/> 
                 </div>
-                <!-- Password field -->
                 <div class="form-control">
                     <label for='password'>Password</label>
                     <i class="fa fa-lock"></i>
                     <input type="password" name="password" autoComplete='off'/> 
                 </div>
-                <!-- Login button -->
                 <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
             </form>
         </div>
@@ -368,8 +361,8 @@ if($s_staff_id != '') {
 <!-- pharmacist -- -->
 
     <?php if ($page=='pharmacist_login') ?>
-    <div class="fill-form-div login-div" id="next_10">
-            <div class="pharmacist-login hidden">
+    <div class="fill-form-div login-div hidden" id="next_10">
+            <div class="pharmacist-login">
             <!-- Close icon for the login form -->
             <i class="bi bi-x-circle" id='close-icon-pharmacist' onclick="cancel();"></i>
             <!-- Title for the login form -->
@@ -405,8 +398,8 @@ if($s_staff_id != '') {
 <!--  morgue_manager -- -->
 
     <?php if ($page=='morgue_manager_login') ?>
-    <div class="fill-form-div login-div" id="next_11">
-            <div class="morgue_manager-login hidden">
+    <div class="fill-form-div login-div hidden" id="next_11">
+            <div class="morgue_manager-login">
             <!-- Close icon for the login form -->
             <i class="bi bi-x-circle" id='close-icon-morgue_manager' onclick="cancel();"></i>
             <!-- Title for the login form -->

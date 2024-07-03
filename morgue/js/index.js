@@ -1,324 +1,202 @@
-"use strict";
-      //PROFILE IMAGE
-      function click_icon_for_profile (){
-        const profile_container  =  document.querySelector(".profile_account");
-        profile_container.classList.toggle("hide");
-      };
-
-function open_admission_form_section (){
-    document.querySelector(".admission_form_container").classList.remove("hide");
-    document.querySelector(".appoitment_section").style.display = "none";
-    document.querySelector(".outgoing_list_section").classList.add("hide")
-}
-function open_incoming_deceased_section (){
-    document.querySelector(".admission_form_container").classList.add("hide");
-    document.querySelector(".appoitment_section").style.display = "flex";
-    document.querySelector(".outgoing_list_section").classList.add("hide")
-}
-
-const autopsy_yes =   document.querySelector("#autopsy_yes")
-const autopsy_no =   document.querySelector("#autopsy_no")
-const checkAutopsy = ()=>{
-
-  if(autopsy_yes.checked){
-  autopsy_no.disabled = true;
-    document.querySelector(".autopsy_message").classList.remove("hide");
-  }else{
-    autopsy_no.disabled = false;
-    document.querySelector(".autopsy_message").classList.add("hide");
-  }
-  if(autopsy_no.checked){
-  autopsy_yes.disabled = true;
-  }else{
-    autopsy_yes.disabled = false;
-
-  }
-};
-
-autopsy_yes.addEventListener("change", checkAutopsy);
-autopsy_no.addEventListener("change", checkAutopsy);
-
-const arr_yes =   document.querySelector("#arr_yes")
-const arr_no =   document.querySelector("#arr_no")
-const arrMessage = ()=>{
-
-  if(arr_yes.checked){
-    arr_no.disabled = true;
-    document.querySelector(".arr_message").classList.remove("hide");
-  }else{
-    arr_no.disabled = false;
-    document.querySelector(".arr_message").classList.add("hide");
-  }
-  if(arr_no.checked){
-    arr_yes.disabled = true;
-  }else{
-    arr_yes.disabled = false;
-  }
-};
-
-arr_yes.addEventListener("change", arrMessage);
-arr_no.addEventListener("change", arrMessage);
-
-document.addEventListener("DOMContentLoaded", ()=>{
-    const pending_appoitment = [
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-        {number:1, deceased_name: "John Obi", deceased_id:"PAT0003", date:"23-02-2024", time:"00:00", request_type:"Death, sending to morgue"},
-
-    ];
-
-    let currentIndex = 0;
-    const appoitment_table = document.querySelector("#appoitment_table tbody");
-    const prev_appoitment = document.querySelector("#prev_appoitment")
-    const next_appoitment = document.querySelector("#next_appoitment")
-    
-    function updateAppoitmentTable(){
-        //set table to blank;
-        appoitment_table.innerHTML = ""
-
-        const endIndex  = Math.min(currentIndex + 12, pending_appoitment.length);
-        for(let i = currentIndex; i < endIndex; i++) {
-            const row = appoitment_table.insertRow();
-            let cell0 = row.insertCell(0);
-            let cell1 = row.insertCell(1);
-            let cell2 = row.insertCell(2);
-            let cell3 = row.insertCell(3);
-            let cell4 = row.insertCell(4);
-            let cell5 =row.insertCell(5);
-            let cell6 =row.insertCell(6);
-            let cell7 =row.insertCell(7);
-    
-
-            cell0.innerHTML = `${pending_appoitment[i].number}`;
-            cell1.innerHTML = `${pending_appoitment[i].deceased_name}`;
-            cell2.innerHTML = `${pending_appoitment[i].deceased_id}`;
-            cell3.innerHTML = `${pending_appoitment[i].date}`;
-            cell4.innerHTML = `${pending_appoitment[i].time}`;
-            cell5.innerHTML = `${pending_appoitment[i].request_type}`;
-            //accept button
-            const accept_appoitment_button = document.createElement('button');
-            accept_appoitment_button.id = "accept_button";
-            accept_appoitment_button.innerHTML = "Accept" ;
-            accept_appoitment_button.onclick = open_admission_form_section;
-           cell6.appendChild(accept_appoitment_button);
-            //reject button
-            const reject_appoitment_button = document.createElement('button');
-            reject_appoitment_button.id = "reject_button";
-            reject_appoitment_button.innerHTML = "Reject";
-            cell7.appendChild(reject_appoitment_button);
-        }
-    }
-updateAppoitmentTable()
-
-    prev_appoitment.addEventListener("click", ()=>{
-        currentIndex = Math.max(currentIndex - 12, 0);
-        updateAppoitmentTable();
-    })
-    next_appoitment.addEventListener("click", ()=>{
-        currentIndex += 8
-        if(currentIndex >= pending_appoitment.length){
-            currentIndex = 0;
-        }
-        updateAppoitmentTable()
-    })
-})
+    //PROFILE IMAGE
+    function displayUserProfile(){
+        document.querySelector(".profile_account").classList.toggle("hide");
+    };
 
 
-document.addEventListener("DOMContentLoaded",()=>{
-    const approved_appoitment = [
-        {number:1, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:2, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:3, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:4, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:5, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:6, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-        {number:7, patient_name: "John Smith", patient_id:"PAT0001"},
-    ];
-    let currentIndexApproved = 0;
-    const approved_table = document.querySelector("#approved_table tbody");
-    const prev_approved_appoitment = document.querySelector("#prev_approved_appoitment")
-        const next_approved_appoitment = document.querySelector("#next_approved_appoitment")
-    
-    function updateApprovedTransaction(){
-        //set table to blank
-        approved_table.innerHTML = '';
-        const endIndexApproved = Math.min(currentIndexApproved + 9, approved_appoitment.length)
-        for(let n = currentIndexApproved; n < endIndexApproved; n++) {
-            const row = approved_table.insertRow();
-            let cell0 = row.insertCell(0);
-            let cell1 = row.insertCell(1);
-            let cell2 = row.insertCell(2);
-            let cell3 = row.insertCell(3);
-            cell0.innerHTML = `${approved_appoitment[n].number}`    
-            cell1.innerHTML = `${ approved_appoitment[n].patient_name}`;
-            cell2.innerHTML = `${ approved_appoitment[n].patient_id}`;
-            const icon = document.createElement('i');
-            const dropdown = document.createElement('ul');
-            const closeIcon = document.createElement('i');
-            closeIcon.classList.add("bi","bi-x-lg");
-            closeIcon.style.position = "absolute";
-            closeIcon.style.top = "3%";
-            closeIcon.style.right = "10%";
-            dropdown.id = 'list_dropdown'
-            dropdown.classList.add("hide")
-            dropdown.style.position = "absolute";
-            dropdown.style.left = "12%";
-            dropdown.style.height = "max-content";
-            const list1  = document.createElement("li");
-            list1.textContent = "Room"
 
-            const list2  = document.createElement("li");
-            list2.textContent = "Checkout"
-          
-             
-            icon.classList.add ("bi", "bi-three-dots");
-            // icon.style.position = "relative";
-            icon.onclick = (event)=>{
-                if (event.target === icon) {
-                    dropdown.classList.remove('hide'); // Toggle the visibility of the dropdown
-                } else if (event.target === closeIcon) {
-                    dropdown.classList.add('hide'); // Hide the dropdown
-                }
-            }
-            dropdown.appendChild(closeIcon);
-            dropdown.appendChild(list1);
-            dropdown.appendChild(list2);
-            const beds = document.createElement("select");
-            beds.className = "beds";
-            beds.innerHTML = "Beds"
-            list1.appendChild(beds);
-            const listBed1 = document.createElement("option");
-            listBed1.innerHTML = "Bed 1"
-            beds.appendChild(listBed1)
-            icon.appendChild(dropdown);
-           ` ${cell3.appendChild(icon)}`
-            
-        }
-    }
-    updateApprovedTransaction()
-    prev_approved_appoitment.addEventListener("click", ()=>{
-        currentIndexApproved = Math.max(currentIndexApproved - 8, 0);
-        updateApprovedTransaction();
-    })
-    next_approved_appoitment.addEventListener("click", ()=>{
-        currentIndexApproved += 4
-        if(currentIndexApproved >= approved_appoitment.length){
-            currentIndexApproved = 0;
-        }
-        updateApprovedTransaction()
-    })
+    const sections = document.querySelectorAll('.section');
+    const allProfiles = document.querySelectorAll('.allProfiles');
+    const links = document.querySelectorAll('.sidebar-body ul li');
+    // const message = document.createElement('div');
+  
+    function toggleSidebarLinks(clickedLink){
+        links.forEach(link => link.classList.remove('active'));
+        clickedLink.classList.add('active');
+     }
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            toggleSidebarLinks(this);
+        });
     });
 
 
-    document.addEventListener("DOMContentLoaded", ()=>{
-        const outgoingAppoitmet = [
-            {number:1, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:2, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:3, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:4, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:5, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:6, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:7, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:8, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:9, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:10, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:11, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:12, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:13, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:14, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:15, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:16, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:18, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:19, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-            {number:20, patient_name_id: {name:"John Obi", id:"PAT0003"}, date_time:{date:"23-02-2024", time:"00:00"}, relative_name_id:{name:"John Prince", id: "PAT0003"}},
-    
-        ];
-    
-        let currentIndexOut = 0;
-        const outgoing_table = document.querySelector("#outgoing_table tbody");
-        const prev_outgoing = document.querySelector("#prev_outgoing");
-        const next_outgoing = document.querySelector("#next_outgoing");
-        
-        function updateOutgoingTable(){
-            //set table to blank;
-            outgoing_table.innerHTML = ""
-    
-            const endIndexOut  = Math.min(currentIndexOut + 15, outgoingAppoitmet.length);
-            for(let i = currentIndexOut; i < endIndexOut; i++) {
-                const row = outgoing_table.insertRow();
-                let cell0 = row.insertCell(0);
-                let cell1 = row.insertCell(1);
-                let cell2 = row.insertCell(2);
-                let cell3 = row.insertCell(3);
-                let cell4 = row.insertCell(4);
-                let cell5 =row.insertCell(5);
-        
-    
-                cell0.innerHTML = `${outgoingAppoitmet[i].number}`;
-                cell1.innerHTML = `${outgoingAppoitmet[i].patient_name_id.name} ${outgoingAppoitmet[i].patient_name_id.id}`;
-                cell2.innerHTML = `${outgoingAppoitmet[i].date_time.date} ${outgoingAppoitmet[i].date_time.time}`;
-                cell3.innerHTML = `${outgoingAppoitmet[i].relative_name_id.name} ${outgoingAppoitmet[i].relative_name_id.id}`;
-                cell4.innerHTML = "Successful"
-            //     //accept button
-            //     const accept_appoitment_button = document.createElement('button');
-            //     accept_appoitment_button.id = "accept_button";
-            //     accept_appoitment_button.innerHTML = "Accept" ;
-            //     // accept_appoitment_button.onclick = show_radiology_input;
-            //    cell4.appendChild(accept_appoitment_button);
-            //     //reject button
-            //     const reject_appoitment_button = document.createElement('button');
-            //     reject_appoitment_button.id = "reject_button";
-            //     reject_appoitment_button.innerHTML = "Reject";
-            //     cell5.appendChild(reject_appoitment_button);
-            }
-        }
-    updateOutgoingTable()
-    
-    prev_outgoing.addEventListener("click", ()=>{
-            currentIndexOut = Math.max(currentIndexOut - 8, 0);
-            updateOutgoingTable();
-        })
-        next_outgoing.addEventListener("click", ()=>{
-            currentIndexOut += 4
-            if(currentIndexOut >= outgoingAppoitmet.length){
-                currentIndexOut = 0;
-            }
-            updateOutgoingTable()
-        })
-    })
+  function createDate(){
+   const now = new Date();
+  const options = {
+    day:'numeric',
+    month:'numeric',
+    year:'numeric',
+    hour:'numeric',
+    minute:'numeric',
+    second:'numeric',
+  }
+  const dateTime = new Intl.DateTimeFormat(navigator.language, options).format(now)
+   document.querySelector('.display__date').textContent = dateTime
+  }
+  setInterval(() => createDate())
 
+  const message = document.createElement('div');
+  const showMessage = function(text, backgroundColor){
+    message.className= 'alert_div';
+    message.innerHTML = text;
+    message.style.backgroundColor = backgroundColor;
+    document.querySelector('body').appendChild(message);
+    setTimeout(() => message.classList.add('hide'),3000);
+}
 
-    //SHOW OUTGOING LIST
-    function outgoingList(){
-        document.querySelector(".outgoing_list_section").classList.remove("hide")
-        document.querySelector(".admission_form_container").classList.add("hide");
-        document.querySelector(".appoitment_section").style.display = "none";
+function createNoDataMessage() {
+    const noDataMessage = document.createElement('tr');
+    noDataMessage.innerHTML = '<td colspan="9" style="text-align: center;">No data</td>';
+    return noDataMessage;
+}
+
+function isInputValid(inputs) {
+    for (const input of inputs) {
+        if (input.value.trim() === '') return false;
     }
+    return true;
+}
+
+const isNumberValid = function(numeric){
+    const number = document.querySelector(numeric).value
+    if(!+number) return false;
+    return true;
+}
+const inputChecked = function(checked){
+    const input = document.querySelector(checked);
+    if(!input) return false;
+    return input.checked;
+}
+
+function generateId() {
+    return`MORGUE${Math.floor(Math.random() * 1000)}`
+}
+function isPhoneNumberValid(selector) {
+    const phoneNumber = document.querySelector(selector).value.trim();
+    const isNumeric = /^\d+$/.test(phoneNumber); // Checks if the input is all digits
+    const startsWith090 = phoneNumber.startsWith('090');
+    const startsWith081 = phoneNumber.startsWith('081');
+    const startsWith080 = phoneNumber.startsWith('080');
+    const startsWith091 = phoneNumber.startsWith('091');
+    const startsWith442 = phoneNumber.startsWith('442');
+    return phoneNumber.length === 10 && isNumeric && startsWith090 || startsWith081 || startsWith080 || startsWith091 || startsWith442 ;
+}
+function removeNoDataMessage(tableBody, noDataMessage) {
+    if (tableBody.contains(noDataMessage)) {
+        tableBody.removeChild(noDataMessage);
+    }
+}
+
+const relativeMorgueInputForm = document.querySelectorAll('#relativeDeasedForm input');
+const incomingMorgueList = document.querySelector('#IncomingTableData tbody');
+const noDataMessage = createNoDataMessage()
+incomingMorgueList.appendChild(noDataMessage)
+const morgueInputForm = document.querySelectorAll('#deceassedForm input');
+
+  function validateDeceasedForm() {
+      if(!isInputValid(morgueInputForm)) showMessage('Please fill all field', 'red');
+       else if(!isNumberValid('#deposit') || !isNumberValid('#ageAtTimeOfDeath'))  showMessage('Enter a valid Number', 'red');
+       else if(!inputChecked('#maleCheckbox') && !inputChecked('#femaleCheckbox') || !inputChecked('#autopsyPerformed') && !inputChecked('#autopsyNotPerformed')) showMessage('Please check the unchecked box', 'red');
+       else{
+        const patientId = generateId()
+       const generatedDeceassedId =  document.querySelector('#deceasedId');
+       generatedDeceassedId.value = patientId
+        removeNoDataMessage(incomingMorgueList, noDataMessage);
+        updateIncomingTable(incomingMorgueList,patientId);
+        showMessage('Form has been validated successfully', 'green')
+       }
+    }
+
+function validateRelativeForm(){
+    if(!isInputValid(relativeMorgueInputForm)) showMessage('Please fill all field', 'red');
+    else if(!isPhoneNumberValid("#relativePhoneNumber"))showMessage('Phone number is Invalid', 'red');
+    else if(!inputChecked('#maleChecked') && !inputChecked('#femaleChecked') || !inputChecked('#arrangementTrue') && !inputChecked('#arrangementFalse')) showMessage('Please check the unchecked box', 'red');
+    else showMessage('Form has been validated successfully', 'green')
+}
+
+
+const updateIncomingTable =function(incomingData, patientId){
+    const rowCount = incomingData.rows.length + 1;
+    const newRow = incomingData.insertRow();
+    const deceasedName = document.querySelector('#deceasedName');
+    const dob = document.querySelector('#dob');
+    const doa = document.querySelector('#doa');
+    const toa = document.querySelector('#toa');
+    const dod = document.querySelector('#dod');
+    const ageAtTimeOfDeath = document.querySelector('#ageAtTimeOfDeath');
+    const deposit = document.querySelector('#deposit');
+
+    newRow.insertCell(0).innerHTML = rowCount;
+    newRow.insertCell(1).innerHTML =deceasedName.value // Use the passed ID
+    newRow.insertCell(2).innerHTML = patientId;
+    newRow.insertCell(3).innerHTML = dob.value;
+    newRow.insertCell(4).innerHTML = toa.value;
+    newRow.insertCell(5).innerHTML = doa.value;
+    newRow.insertCell(6).innerHTML = dod.value;
+    newRow.insertCell(7).innerHTML = ageAtTimeOfDeath.value;
+    newRow.insertCell(8).innerHTML = `N${deposit.value}`;
+}
+
+
+function filterAvailablePatient() {
+    const tableBody = document.querySelector('#IncomingTableData tbody');
+    const tableRows = Array.from(tableBody.querySelectorAll('tr')); // Convert NodeList to Array
+    const searchInput = document.querySelector('#incomingSearchInput').value.trim().toLowerCase();
+
+    let hasVisibleRows = false;
+    tableRows.forEach((row) => {
+        if (row.children.length < 2)  return;
+
+        const patientName = row.children[1].textContent.trim().toLowerCase();
+        const patientId = row.children[2].textContent.trim().toLowerCase();
+        if (patientName.includes(searchInput) || patientId.includes(searchInput)){
+            row.style.display = ''; // Show the row
+            hasVisibleRows = true;
+           
+        } else row.style.display = 'none'; // Hide the row
+    });
+
+    const existingNoDataMessage = document.querySelector('#noDataMessage');
+    if (existingNoDataMessage) existingNoDataMessage.remove();
+
+    if (!hasVisibleRows) {
+        const noDataMessage = document.createElement('tr');
+        noDataMessage.id = 'noDataMessage';
+        noDataMessage.innerHTML = '<td colspan="9" style="text-align: center;">No User associated with this input</td>';
+        tableBody.appendChild(noDataMessage);
+    }
+}
+document.querySelector('#incomingSearchInput').addEventListener('input', filterAvailablePatient);
+console.log(document.querySelector('#incomingSearchInput'));
+
+
+
+
+
+function incomingAppoitment(){
+    document.querySelector(".container").classList.add("hide");
+    document.querySelector("#incomingDeceassed").classList.add("hide");
+    document.querySelector("#outgoingDeceassed").classList.add("hide");
+    document.querySelector("#incomingAppoitment").classList.remove("hide");
+}
+function admissionForm(){
+    document.querySelector(".container").classList.remove("hide");
+    document.querySelector("#incomingDeceassed").classList.add("hide");
+    document.querySelector("#outgoingDeceassed").classList.add("hide");
+    document.querySelector("#incomingAppoitment").classList.add("hide");
+}
+function incomingDeceassed(){
+    document.querySelector(".container").classList.add("hide");
+    document.querySelector(".list_div").classList.remove("hide");
+    document.querySelector("#incomingDeceassed").classList.remove("hide");
+    document.querySelector("#outgoingDeceassed").classList.add("hide");
+    document.querySelector("#incomingAppoitment").classList.add("hide");
+
+}
+function outgoingDeceassed(){
+    document.querySelector(".container").classList.add("hide");
+    document.querySelector("#outgoingDeceassed").classList.remove("hide");
+    document.querySelector("#incomingDeceassed").classList.add("hide");
+    document.querySelector("#incomingAppoitment").classList.add("hide");
+}

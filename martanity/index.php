@@ -38,31 +38,31 @@
     <div class="sidebar-body">
       <ul>
         <li  id="anternatal_unit_link" class="links active">
-          <i class="fa-solid fa-person-pregnant"></i>
+          <!-- <i class="fa-solid fa-person-pregnant"></i> -->
           <span>Anternatal unit</span>
         </li>
         <li id="anternatal_patient_list_link" class="links">
-          <i class="fa-solid fa-person-pregnant"></i>
+          <!-- <i class="fa-solid fa-person-pregnant"></i> -->
           <span>Anternatal patient list</span>
         </li>
         <li id="postnatal_unit_link" class="links">
-          <i class="fa-solid fa-baby"></i>
+          <!-- <i class="fa-solid fa-baby"></i> -->
           <span>Postnatal unit</span>
         </li>
         <li id="postnatal_patient_list_link" class="links">
-          <i class="fa-solid fa-baby"></i>
+          <!-- <i class="fa-solid fa-baby"></i> -->
           <span>Postnatal patient list</span>
         </li>
         <li id="labour_unit_link" class="links">
-          <i class="fa-solid fa-person-breastfeeding"></i>
+          <!-- <i class="fa-solid fa-person-breastfeeding"></i> -->
           <span>Labour unit</span>
         </li>
         <li id="labour_patient_list_link" class="links">
-          <i class="fa-solid fa-person-breastfeeding"></i>
+          <!-- <i class="fa-solid fa-person-breastfeeding"></i> -->
           <span>Labour patient list</span>
         </li>
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
-          <i class="fa-solid fa-right-from-bracket"></i>
+          <!-- <i class="fa-solid fa-right-from-bracket"></i> -->
           <span>Logout</span>
           <form method="post" action="../config/code.php" id="logoutform">
             <input type="hidden" name="action" value="logout"/>

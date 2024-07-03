@@ -1,139 +1,120 @@
-      //PROFILE IMAGE
-      function click_icon_for_profile (){
-        const profile_container  =  document.querySelector(".profile_account");
-        profile_container.classList.toggle("hide");
-      };
+    //PROFILE IMAGE
+    function displayUserProfile(){
+        document.querySelector(".profile_account").classList.toggle("hide");
+    };
 
-      document.addEventListener("DOMContentLoaded", ()=>{
-        const pending_appoitment = [
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-            {number:1, doctor_name: "Doc. John Obi", patient_name:"John Samuel", patient_id: "PAT0003", date:"23-02-2024", time:"00:00"},
-        ];
-    
-        let currentIndex = 0;
-        const appoitment_table = document.querySelector("#appoitment_table tbody");
-        const prev_appoitment = document.querySelector("#prev_appoitment")
-        const next_appoitment = document.querySelector("#next_appoitment")
-        
-        const updateAppoitmentTable = ()=>{
-            //set table to blank;
-            appoitment_table.innerHTML = ""
-    
-            const endIndex  = Math.min(currentIndex + 12, pending_appoitment.length);
-            for(let i = currentIndex; i < endIndex; i++) {
-                const row = appoitment_table.insertRow();
-                let cell0 = row.insertCell(0);
-                let cell1 = row.insertCell(1);
-                let cell2 = row.insertCell(2);
-                let cell3 = row.insertCell(3);
-                let cell4 = row.insertCell(4);
-                let cell5 =row.insertCell(5);
-                let cell6 =row.insertCell(6);
-                let cell7=row.insertCell(7);
-        
-    
-                cell0.innerHTML = `${pending_appoitment[i].number}`;
-                cell1.innerHTML = `${pending_appoitment[i].doctor_name}`;
-                cell2.innerHTML = `${pending_appoitment[i].patient_name}`;
-                cell3.innerHTML = `${pending_appoitment[i].patient_id}`;
-                cell4.innerHTML = `${pending_appoitment[i].date}`;
-                cell5.innerHTML = `${pending_appoitment[i].time}`;
-                //accept button
-                const accept_appoitment_button = document.createElement('button');
-                accept_appoitment_button.id = "accept_button";
-                accept_appoitment_button.innerHTML = "Accept" ;
-                accept_appoitment_button.onclick = showPrescriptionForm;
-               cell6.appendChild(accept_appoitment_button);
-                //reject button
-                const reject_appoitment_button = document.createElement('button');
-                reject_appoitment_button.id = "reject_button";
-                reject_appoitment_button.innerHTML = "Reject";
-                cell7.appendChild(reject_appoitment_button);
-            }
-        }
-    updateAppoitmentTable()
-    
-        prev_appoitment.addEventListener("click", ()=>{
-            currentIndex = Math.max(currentIndex - 12, 0);
-            updateAppoitmentTable();
-        })
-        next_appoitment.addEventListener("click", ()=>{
-            currentIndex += 8
-            if(currentIndex >= pending_appoitment.length){
-                currentIndex = 0;
-            }
-            updateAppoitmentTable()
-        })
-    })
-    
-    
-    document.addEventListener("DOMContentLoaded",()=>{
-        const approved_appoitment = [
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-            {number:1, patient_name: "John Smith", patient_id:"PAT0001", drug_purchased:"Maleria Drug"},
-        ];
-        let currentIndexApproved = 0;
-        const approved_table = document.querySelector("#approved_table tbody");
-        const prev_approved_appoitment = document.querySelector("#prev_approved_appoitment")
-            const next_approved_appoitment = document.querySelector("#next_approved_appoitment")
-        
-        const updateApprovedTransaction = ()=>{
-            //set table to blank
-            approved_table.innerHTML = '';
-            const endIndexApproved = Math.min(currentIndexApproved + 9, approved_appoitment.length)
-            for(let n = currentIndexApproved; n < endIndexApproved; n++) {
-                const row = approved_table.insertRow();
-                let cell0 = row.insertCell(0);
-                let cell1 = row.insertCell(1);
-                let cell2 = row.insertCell(2);
-                let cell3 = row.insertCell(3);
-                cell0.innerHTML = `${approved_appoitment[n].number}`    
-                cell1.innerHTML = `${ approved_appoitment[n].patient_name}`;
-                cell2.innerHTML = `${ approved_appoitment[n].patient_id}`;
-                cell3.innerHTML = `${ approved_appoitment[n].drug_purchased}`;
-                
-            }
-        }
-        updateApprovedTransaction()
-        prev_approved_appoitment.addEventListener("click", ()=>{
-            currentIndexApproved = Math.max(currentIndexApproved - 8, 0);
-            updateApprovedTransaction();
-        })
-        next_approved_appoitment.addEventListener("click", ()=>{
-            currentIndexApproved += 4
-            if(currentIndexApproved >= approved_appoitment.length){
-                currentIndexApproved = 0;
-            }
-            updateApprovedTransaction()
-        })
+    const sections = document.querySelectorAll('.section');
+    const allProfiles = document.querySelectorAll('.allProfiles');
+    const links = document.querySelectorAll('.sidebar-body ul li');
+  
+    function toggleSidebarLinks(clickedLink){
+        links.forEach(link => link.classList.remove('active'));
+        clickedLink.classList.add('active');
+     }
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            toggleSidebarLinks(this);
         });
+    });
 
-        function showPrescriptionForm(){
-            document.querySelector(".prescription_form_section").classList.remove("hide")
-            document.querySelector(".appoitment_section").style.display = "none";
-        }   
 
-        function showAppoitmentSection(){
-            document.querySelector(".prescription_form_section").classList.add("hide")
-            document.querySelector(".appoitment_section").style.display = "flex";
-        }   
+  function createDate(){
+   const now = new Date();
+  const options = {
+    day:'numeric',
+    month:'numeric',
+    year:'numeric',
+    hour:'numeric',
+    minute:'numeric',
+    second:'numeric',
+  }
+  const dateTime = new Intl.DateTimeFormat(navigator.language, options).format(now)
+   document.querySelector('.display__date').textContent = dateTime;
+  }
+  setInterval(() => createDate());
+  const message = document.createElement('div');
+  const showMessage = function(text, backgroundColor){
+    message.className= 'alert_div';
+    message.innerHTML = text;
+    message.style.backgroundColor = backgroundColor;
+    document.querySelector('body').appendChild(message);
+    setTimeout(() => message.classList.add('hide'),3000);
+}
+
+function createNoDataMessage() {
+    const noDataMessage = document.createElement('tr');
+    noDataMessage.innerHTML = '<td colspan="9" style="text-align: center;">No data</td>';
+    return noDataMessage;
+}
+
+function isInputValid(inputs) {
+    for (const input of inputs) {
+        if (input.value.trim() === '') return false;
+    }
+    return true;
+}
+
+const isNumberValid = function(numeric){
+    const number = document.querySelector(numeric).value
+    if(!+number) return false;
+    return true;
+}
+const inputChecked = function(checked){
+    const input = document.querySelector(checked);
+    if(!input) return false;
+    return input.checked;
+}
+
+function generateId() {
+    return`MORGUE${Math.floor(Math.random() * 1000)}`
+}
+function isPhoneNumberValid(selector) {
+    const phoneNumber = document.querySelector(selector).value.trim();
+    const isNumeric = /^\d+$/.test(phoneNumber); // Checks if the input is all digits
+    const startsWith090 = phoneNumber.startsWith('090');
+    const startsWith081 = phoneNumber.startsWith('081');
+    const startsWith080 = phoneNumber.startsWith('080');
+    const startsWith091 = phoneNumber.startsWith('091');
+    return phoneNumber.length === 11 && isNumeric && startsWith090 || startsWith081 || startsWith080 || startsWith091 ;
+}
+function removeNoDataMessage(tableBody, noDataMessage) {
+    if (tableBody.contains(noDataMessage)) {
+        tableBody.removeChild(noDataMessage);
+    }
+}
+
+
+  const drug_prescription = document.querySelectorAll('#drug_prescription input');
+function validataDrugBookInputField(){
+if(!isInputValid(drug_prescription)) showMessage('Please fill field', 'red');
+else if(!isNumberValid('#drugStrength') || !isNumberValid('#drugDose') || !isNumberValid('#drugQuantity'))showMessage('Input a valid Number', 'red');
+else{
+    showMessage('Drug Booked', 'green');
+}
+}
+
+
+function confirmedDrugPurchase(){
+    document.querySelector('#incomingDrugPurchasing').classList.add('hide')
+    document.querySelector('#confirmedDrugPurchase').classList.remove('hide');
+    document.querySelector('#drugStock').classList.add('hide');
+    document.querySelector('.drug_presciption').classList.add('hide');
+}
+function incomingDrugPurchasing(){
+    document.querySelector('#incomingDrugPurchasing').classList.remove('hide')
+    document.querySelector('#confirmedDrugPurchase').classList.add('hide')
+    document.querySelector('#drugStock').classList.add('hide');
+    document.querySelector('.drug_presciption').classList.add('hide');
+}
+function drugStock(){
+    document.querySelector('#incomingDrugPurchasing').classList.add('hide')
+    document.querySelector('#confirmedDrugPurchase').classList.add('hide')
+    document.querySelector('#drugStock').classList.remove('hide');
+    document.querySelector('.drug_presciption').classList.add('hide');
+}
+function bookDrug(){
+    document.querySelector('#incomingDrugPurchasing').classList.add('hide')
+    document.querySelector('#confirmedDrugPurchase').classList.add('hide')
+    document.querySelector('#drugStock').classList.add('hide');
+    document.querySelector('.drug_presciption').classList.remove('hide');
+}
