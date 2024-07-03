@@ -10,7 +10,7 @@
                     <input type="text" placeholder="Search here">
                 </div>
                     <table>
-                                                        <?php
+                        <?php
                                     $sql = "SELECT * FROM nurse_appointment_tab WHERE nurse_id ='$s_nurse_id'";
                                     $result = $conn->query($sql);
 

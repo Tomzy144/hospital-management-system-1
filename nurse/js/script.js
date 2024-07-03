@@ -31,6 +31,7 @@ function selectDoc(){
 function bookPatient(){
   $('.av_doctor_role').addClass('hide')
   $('.book_patient').removeClass('hide')
+  doctor_id = $()
 }
 
 const roles = {
@@ -45,12 +46,13 @@ function updateDoctors() {
   const doctorSelect = document.getElementById('av-doctors');
   const selectedRole = roleSelect.value;
 
-  doctorSelect.innerHTML = ''; // Clear existing options
-  roles[selectedRole].forEach(doctor => {
-      const option = document.createElement('option');
-      option.textContent = doctor;
-      option.value = doctor.toLowerCase().replace(/ /g, '-'); // Convert name to a slug-like value
-      doctorSelect.appendChild(option);
+  data.doctor.forEach(doctor => {
+    const option = document.createElement('option');
+    // option.setAttribute('id', "doctor_id");
+    option.textContent = doctor.fullname;
+    option.value = doctor.doctor_id;
+  
+    doctorSelect.appendChild(option);
   });
 }
 
@@ -73,17 +75,17 @@ function updateDoctors() {
        data: dataString, // Data to send with the request
        cache: false, // Disable caching
        success: function(html) {
-           // On success, update content of elements with class 'all_sections_input' with the received HTML
-           $('.booked-patient-container').html(html);
+        // On success, update content of elements with class 'all_sections_input' with the received HTML
+        $('.booked-patient-container').html(html);
 
-     
-           // Hide container with ID 'appointmentDetailsContainer'
-           var container = document.querySelector('.appoitment_section');
-           container.classList.add('hide')
+  
+        // Hide container with ID 'appointmentDetailsContainer'
+        var container = document.querySelector('.appoitment_section');
+        container.classList.add('hide')
 
-           // Remove 'hide' class from elements with class 'all_sections_input'
-           var hidden = document.querySelector('.booked-patient-container');
-           hidden.classList.remove("hide");
+        // Remove 'hide' class from elements with class 'all_sections_input'
+        var hidden = document.querySelector('.booked-patient-container');
+        hidden.classList.remove("hide");
        }
    });
                    document.addEventListener('click', function(event) {
@@ -308,6 +310,7 @@ function getDoctorsRoles() {
 function populaterolesDropdown(doctorRoles) {
   var rolesDropdown = document.getElementById('roles');
 
+
   // Clear existing options
   rolesDropdown.innerHTML = '';
 
@@ -374,13 +377,16 @@ function populatedoctorDropdown(doctor) {
   for (var i = 0; i < doctor.length; i++) {
     var option = document.createElement('option');
     option.value = doctor[i].doctor_id; // Assuming the bed object has a 'bed_id' property
-    option.id= doctor[i].bed_id;
+
+    option.id= "doctor_id";
 
     // Concatenate bed_number and bed_status_description
     var optionText = doctor[i].fullname;
+    $('#doctor_id2').val(doctor[i].doctor_id);
 
     option.textContent = optionText;
     doctorDropdown.appendChild(option);
+   
   }
 
   // Enable the dropdown after populating options
@@ -411,6 +417,52 @@ function updateDoctors() {
       option.value = doctor.toLowerCase().replace(/ /g, '-'); // Convert name to a slug-like value
       doctorSelect.appendChild(option);
   });
+}
+
+
+function transfer_to_doctor(){
+
+  var patient_id = $('#patient_id').val();
+  var patient_name = $('#patient_name').val();
+  var date = $('#date').val();
+  var time = $('#time').val();
+  var reason =$('#reason').val();
+  var doctor_id = $('#doctor_id2').val();
+
+  if(patient_id==""||patient_name==""||date==""||time==""||reason==""){
+    alert('Fill the required fields');
+  }
+  else{
+    var $btnSubmit = $('#btn-submit');
+    var btnText = $btnSubmit.html();
+    $btnSubmit.html('Processing...');
+    $btnSubmit.prop('disabled', true);
+
+    var action = 'transfer_patient';
+    var dataString = "action=" + action + "&patient_id=" + patient_id + "&patient_name=" + patient_name  + "&time=" + time + "&date=" + date +"&reason=" + reason + "&doctor_id=" + doctor_id;
+  
+
+    $.ajax({
+      type: 'POST',
+      url: "config/code.php",
+      data: dataString,
+      cache: false,
+      dataType: 'json',
+      success: function (data) {
+        if (data.success) {
+
+          alert("Patient Transfer is Successful");
+          $btnSubmit.html('BOOK');
+          $btnSubmit.prop('disabled', true);
+          window.location.reload();
+        } else {
+          console.error('Error:', data.message);
+          $btnSubmit.html(btnText);
+          $btnSubmit.prop('disabled', false);
+        }
+      },
+    });
+  }
 }
 
 
