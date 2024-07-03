@@ -205,7 +205,7 @@ h3{
     display: flex;
     background: #fff;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     z-index: 1;
 }
 .sidebar-header{
@@ -255,6 +255,7 @@ cursor: pointer;
 }
 
 .container{
+    height: 100%;
     width: 100%;
     display: flex;
 }
@@ -268,6 +269,7 @@ cursor: pointer;
     margin: 4.2rem 0 0 19em;
     color: rgb(42, 87, 215);
     position: relative;
+    width: 100%;
 }
 
 .upload_div{
@@ -409,6 +411,7 @@ cursor: pointer;
 
   .list_div {
     margin: 5.5rem 0 0 19rem;
+    width: 100%;
 }
  .search_bar_container {
     background-color: #fff;
@@ -452,7 +455,6 @@ table thead  td{
     color: rgb(42, 87, 215);
     padding: 0.5em;
     font-size: 0.8em;
-    letter-spacing: 3px;
     text-transform: uppercase;
     text-align: center;
     padding: .77em .58em .74em .58em;
@@ -484,6 +486,7 @@ table thead  td{
     white-space: nowrap;
     position: relative;
     font-size: 0.95rem;
+    cursor: pointer;
     vertical-align: center;
     font-size: 0.8rem;
     line-height: 1.2;
@@ -528,6 +531,16 @@ table thead  td{
     padding: 0.5rem;
     transition: all ease-in-out 0.5s;
 }
+.allProfiles{
+    margin: 4.6rem 0 0 19rem;
+    width: 100%;
+}
+.displayPatientNameIdContainer{
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+
 
 /*-------------------------PATIENT PROFILES---------------------------------------*/
 .antenatal_patients_profile{
@@ -539,7 +552,6 @@ table thead  td{
 }
 
 .patient_container{
-    width: 100%;
     padding: 0.5em;
     background-color:rgb(42, 87, 215);
 }
@@ -590,7 +602,7 @@ color: var(--bg-color);
   .patient_container input {
     padding: 0.5em 0;
     color: rgb(255, 255, 255);
-    font-size: 1.1rem;
+    font-size: 1rem;
     border: none;
     border-bottom: 1px solid rgb(255, 255, 255);
     outline: none;
@@ -599,23 +611,20 @@ color: var(--bg-color);
 
   .patient_container select{
     padding: 0.5em;
-    color: rgb(255, 255, 255);
-    font-size: 1.1rem;
+    color: rgb(42, 87, 215);
+    font-size: 1rem;
     border: none;
     max-height: 70px;
     border-bottom: 1px solid rgb(255, 255, 255);
     outline: none;
-    background: none;
 }
   .patient_container textarea{
     padding: 0.5em;
-    color: rgb(255, 255, 255);
-    font-size: 1.1rem;
+    color: rgb(42, 87, 215);
+    font-size: 1rem;
     border: none;
     max-height: 70px;
-    border: 1px solid rgb(255, 255, 255);
     outline: none;
-    background: none;
 }
 .drug_prescription{
     border-bottom: 1px solid rgb(255, 255, 255);

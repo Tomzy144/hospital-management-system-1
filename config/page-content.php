@@ -218,7 +218,7 @@ if($s_staff_id != '') {
     <?php if ($page=='martanity_login') ?>
     <div class="fill-form-div login-div hidden" id="next_6">
         <div class="martanity-login">
-        <i class="bi bi-x-circle" id='close-icon-martanity' onclick="cancel();"></i>
+        <i class="bi bi-x-square close" id='close-icon-martanity' onclick="cancel();"></i>
         <h1 class="login-form-h1">Login (Martanity)</h1>
 
             <form action="../backend/config/code.php" id="loginform" enctype="multipart/form-data" method="post">
@@ -329,31 +329,33 @@ if($s_staff_id != '') {
  <!-- emergency_manager -- -->
 
     <?php if ($page=='emergency_manager_login') ?>
-    <div class="fill-form-div login-div" id="next_9">
-            <div class="emergency_manager-login hidden">
+    <div class="fill-form-div login-div hidden" id="next_9">
+            <div class="emergency_manager-login">
             <!-- Close icon for the login form -->
-            <i class="bi bi-x-circle" id='close-icon-emergency_manager' onclick="cancel();"></i>
+            <i class="bi bi-x-square close" id='close-icon-emergency_manager' onclick="cancel();"></i>
             <!-- Title for the login form -->
             <h1 class="login-form-h1">Login (Emergency Manager)</h1>
             <!-- Emergency Manager login form -->
             <form>
                 <!-- Email field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='email'>Email</label>
-                    <i class="fa fa-address-book"></i>
+                    <i class="bi-envelope"></i>
                     <input type="email" name="email" autoComplete='off'/> 
                 </div>
                 <!-- ID field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='number'>Your ID</label>
-                    <i class="fa fa-key"></i>
+                    <i class="bi-key"></i>
                     <input type="number" name="number" autoComplete='off'/> 
                 </div>
                 <!-- Password field -->
-                <div class="form-control">
+                <div class="_form_control">
                     <label for='password'>Password</label>
-                    <i class="fa fa-lock"></i>
-                    <input type="password" name="password" autoComplete='off'/> 
+                    <i class="bi-lock"></i>
+                    <i class="bi bi-eye show_password hide" id="_show_matanity_password" onclick="show_staff_password()"></i>
+                    <i class="bi bi-eye-slash lock_password" id="_lock_matanity_password" onclick="show_staff_password()"></i>
+                    <input type="password" id="password" name="spass" class="all_password" autocomplete="off">
                 </div>
                 <!-- Login button -->
                 <button type="button" class="btn" onClick="isEmergency_manager_active()">Login</button>

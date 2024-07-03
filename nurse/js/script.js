@@ -3,13 +3,23 @@
       document.querySelector(".profile_account").classList.toggle("hide");
    };
 
-
+ const links =  document.querySelectorAll('#links');
+ function toggleSidebarLinks(clickedLink){
+     links.forEach(link => link.classList.remove('active'));
+     clickedLink.classList.add('active');
+ }
+ 
+ links.forEach(link => {
+     link.addEventListener('click', function() {
+         toggleSidebarLinks(this);
+     });
+ });
 
    
    //PERONAL PROFILE SECTION
    function personal_profile_section(){
     document.querySelector(".appoitment_section").classList.add("hide");
-    document.querySelector(".patient-profile").classList.remove("hide");
+    // document.querySelector(".patient-profile").classList.remove("hide");
     document.querySelector(".available-patient-list").classList.add("hide");
    }
 
@@ -88,7 +98,7 @@ function updateDoctors() {
         hidden.classList.remove("hide");
        }
    });
-                   document.addEventListener('click', function(event) {
+      document.addEventListener('click', function(event) {
        console.log('Event type:', event.type); // Output the type of event
        console.log('Event target:', event.target); // Output the target of the event
    });
@@ -97,105 +107,105 @@ function updateDoctors() {
 
 
 
+
 function getWards() {
-  $('#wards').html('<option>LOADING...</option>'); // Set loading message
-  $('#wards').prop('disabled', true); // Disable the dropdown
+  
+   $('#wards').html('<option>LOADING...</option>'); // Set loading message
+   $('#wards').prop('disabled', true); // Disable the dropdown
+ 
+   var action = 'getWards';
+   var data = { action: action }; // Use an object to define data
+ 
+   $.ajax({
+     type: "POST",
+     url: "config/code.php",
+     data: data, // Pass the data object directly
+     cache: false,
+     dataType: 'json',
+     success: function (data) {
+       // Check for success and populate the dropdown
+       if (data.success) {
+         populateWardsDropdown(data.wards); // Assuming 'roles' is the key for roles in your response
+       } else {
+         console.error('Error:', data.message);
+       }
+     },
+     error: function (xhr, status, error) {
+       console.error('AJAX Error:', status, error);
+     }
+   });
+ }
+ 
+ function populateWardsDropdown(wards) {
+   var wardsDropdown = document.getElementById("wards");
+ 
+   // Clear existing options
+   wardsDropdown.innerHTML = '';
+ 
+   // Add options based on the fetched data
+   for (var i = 0; i < wards.length; i++) {
+     var option = document.createElement("option");
+     option.value = wards[i].ward_id; 
+     option.textContent = wards[i].ward_number; 
+     wardsDropdown.appendChild(option);
+   }
+ 
+   // Enable the dropdown after populating options
+   $('#wards').prop('disabled', false);
+ }
 
-  var action = 'getWards';
-  var data = { action: action }; // Use an object to define data
 
-  $.ajax({
-    type: "POST",
-    url: "config/code.php",
-    data: data, // Pass the data object directly
-    cache: false,
-    dataType: 'json',
-    success: function (data) {
-      // Check for success and populate the dropdown
-      if (data.success) {
-        populateWardsDropdown(data.wards); // Assuming 'wards' is the key for wards in your response
-      } else {
-        console.error('Error:', data.message);
-      }
-    },
-    error: function (xhr, status, error) {
-      console.error('AJAX Error:', status, error);
-    }
-  });
-}
 
-function populateWardsDropdown(wards) {
-  var wardsDropdown = document.getElementById("wards");
 
-  // Clear existing options
-  wardsDropdown.innerHTML = '';
-
-  // Add options based on the fetched data
-  for (var i = 0; i < wards.length; i++) {
-    var option = document.createElement("option");
-    option.value = wards[i].ward_id;
-    option.id= wards[i].ward_id;
-    option.textContent = wards[i].ward_number;
-    wardsDropdown.appendChild(option);
-  }
-
-  // Enable the dropdown after populating options
-  $('#wards').prop('disabled', false);
-
-  // Attach the change event to trigger getBeds when a ward is selected
-  $('#wards').on('change', getBeds);
-}
-
-function getBeds() {
-  $('#beds').html('<option>LOADING...</option>'); // Set loading message
-  $('#beds').prop('disabled', true); // Disable the dropdown
-
-  var action = 'getBeds';
-  var wards = $('#wards').val();
-  var data = { action: action, wards: wards };
-
-  $.ajax({
-    type: 'POST',
-    url: "config/code.php",
-    data: data,
-    cache: false,
-    dataType: 'json',
-    success: function (data) {
-      // Check for success and populate the dropdown
-      if (data.success) {
-        populateBedsDropdown(data.beds); // Pass the entire array of beds
-      } else {
-        console.error('Error:', data.message);
-      }
-    },
-    error: function (xhr, status, error) {
-      console.error('AJAX Error:', status, error);
-    },
-  });
-}
-
-function populateBedsDropdown(beds) {
-  var bedsDropdown = document.getElementById('beds');
-
-  // Clear existing options
-  bedsDropdown.innerHTML = '';
-
-  // Add options based on the fetched data
-  for (var i = 0; i < beds.length; i++) {
-    var option = document.createElement('option');
-    option.value = beds[i].bed_id; // Assuming the bed object has a 'bed_id' property
-    option.id= beds[i].bed_id;
-
-    // Concatenate bed_number and bed_status_description
-    var optionText = beds[i].bed_number + " - " + beds[i].bed_description;
-
-    option.textContent = optionText;
-    bedsDropdown.appendChild(option);
-  }
-
-  // Enable the dropdown after populating options
-  $('#beds').prop('disabled', false);
-}
+ function getBeds() {
+   $('#beds').html('<option>LOADING...</option>'); // Set loading message
+   $('#beds').prop('disabled', true); // Disable the dropdown
+ 
+   var action = 'getBeds';
+   var wards = $('#wards').val();
+   var dataString = 'action=' + action + '&wards=' + wards;
+ 
+   $.ajax({
+     type: 'POST',
+     url: "config/code.php",
+     data: dataString,
+     cache: false,
+     dataType: 'json',
+     success: function (data) {
+       // Check for success and populate the dropdown
+       if (data.success) {
+         populateBedsDropdown(data.beds); // Pass the entire array of beds
+       } else {
+         console.error('Error:', data.message);
+       }
+     },
+     error: function (xhr, status, error) {
+       console.error('AJAX Error:', status, error);
+     },
+   });
+ }
+ 
+ function populateBedsDropdown(beds) {
+   var bedsDropdown = document.getElementById('beds');
+ 
+   // Clear existing options
+   bedsDropdown.innerHTML = '';
+ 
+   // Add options based on the fetched data
+   for (var i = 0; i < beds.length; i++) {
+     var option = document.createElement('option');
+     option.value = beds[i].bed_id; // Assuming the bed object has a 'bed_id' property
+ 
+     // Concatenate bed_number and bed_status_description
+     var optionText = beds[i].bed_number + " - " + beds[i].bed_description;
+ 
+     option.textContent = optionText; 
+     bedsDropdown.appendChild(option);
+   }
+ 
+   // Enable the dropdown after populating options
+   $('#beds').prop('disabled', false);
+ }
 
 
 
@@ -231,79 +241,36 @@ function vital_input() {
     w_hr: $('#w_hr').val()
   };
 
-  if (!patientData.patient_id || !patientData.ward || !patientData.stage || 
-    !patientData.temperature || !patientData.bp || !patientData.pulse || 
-    !patientData.respiratory || !patientData.weight || !patientData.height || 
-    !patientData.intake || !patientData.output || !patientData.spo2 || 
-    !patientData.bmi || !patientData.body_fat || !patientData.muscle_mass || 
-    !patientData.musc || !patientData.resting_metabolism || !patientData.body_age || 
-    !patientData.bmi_for_age || !patientData.visceral_fat || !patientData.head_circumference || 
-    !patientData.waist_circumference || !patientData.hip_circumference || !patientData.w_hr) {
-  alert("Please fill in all required fields.");
-  }
-  else{
+  // Disable the submit button and change text
+  var $btnSubmit = $('#btn_submit');
+  var btnText = $btnSubmit.html();
+  $btnSubmit.html('Processing...');
+  $btnSubmit.prop('disabled', true);
 
-      // Disable the submit button and change text
-      var $btnSubmit = $('#btn_submit');
-      var btnText = $btnSubmit.html();
-      $btnSubmit.html('Processing...');
-      $btnSubmit.prop('disabled', true);
-
-      // Send AJAX request
-      $.ajax({
-        type: 'POST',
-        url: "config/code.php",
-        data: patientData,
-        cache: false,
-        dataType: 'json',
-        success: function (data) {
-          if (data.success) {
-
-            alert("Patient Vital has been updated successfully");
-            $btnSubmit.html('Save All...');
-            $btnSubmit.prop('disabled', true);
-            window.location.reload();
-          } else {
-            console.error('Error:', data.message);
-            $btnSubmit.html(btnText);
-            $btnSubmit.prop('disabled', false);
-          }
-        },
-        error: function (xhr, status, error) {
-          console.error('AJAX Error:', status, error);
-          $btnSubmit.html(btnText);
-          $btnSubmit.prop('disabled', false);
-        }
-      });
-  }
-}
-
-function getDoctorsRoles() {
-
-  $('#roles').html('<option>LOADING...</option>'); // Set loading message
-  $('#roles').prop('disabled', true); // Disable the dropdown
-
-  var action = 'getDoctorsRoles';
-  // var wards = $('#roles').val();
-  var data = { action: action, roles: roles };
-
+  // Send AJAX request
   $.ajax({
     type: 'POST',
     url: "config/code.php",
-    data: data,
+    data: patientData,
     cache: false,
     dataType: 'json',
     success: function (data) {
-      // Check for success and populate the dropdown
       if (data.success) {
-        populaterolesDropdown(data.doctorRoles); // Pass the entire array of roles
+
+        alert("Patient Vital has been updated successfully")
+        $btnSubmit.html('Save All...');
+        $btnSubmit.prop('disabled', true);
       } else {
         console.error('Error:', data.message);
+        $btnSubmit.html(btnText);
+        $btnSubmit.prop('disabled', false);
       }
     },
     error: function (xhr, status, error) {
       console.error('AJAX Error:', status, error);
-    },
+      $btnSubmit.html(btnText);
+      $btnSubmit.prop('disabled', false);
+    }
   });
 }
 
