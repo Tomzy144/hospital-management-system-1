@@ -156,8 +156,7 @@ function addRowToTable(tableBody, patientId) {
         const causeOfIncident = document.querySelector('#coi').value;
         const dateOfIncident = document.querySelector('#doi').value;
         const timeOfIncident = document.querySelector('#toi').value;
-
-
+        
         const aliveStatus = document.createElement('div');
         const deadStatus = document.createElement('div');
         deadStatus.className = 'red'

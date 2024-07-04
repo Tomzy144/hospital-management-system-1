@@ -52,10 +52,42 @@ setInterval(() => createDate());
 
 
 const message = document.createElement('div');
-const showMessage = function(text, backgroundColor){
-message.className= 'alert_div';
+const successMessage = function(text){
+message.className= 'success alert';
+message.innerHTML = `
+  <div class="content">
+      <div class="icon">
+      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+    </div>
+      <h2>${text}</h2>
+    </div>
+`;
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
+
+const infoMessage = function(text){
+message.className= 'info alert';
 message.innerHTML = text;
-message.style.backgroundColor = backgroundColor;
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
+const warningMessage = function(text){
+message.className= 'warning alert';
+message.innerHTML = `
+  <div class="content">
+      <div class="icon">
+      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+    </div>
+      <h2>${text}</h2>
+    </div>
+`;
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
+const dangerMessage = function(text){
+message.className= 'danger alert';
+message.innerHTML = text;
 document.querySelector('body').appendChild(message);
 setTimeout(() => message.classList.add('hide'),3000);
 }
@@ -103,14 +135,14 @@ function generateId() {
 return`STAFF${Math.floor(Math.random() * 1000)}`
 }
 function isPhoneNumberValid(selector) {
-const phoneNumber = document.querySelector(selector).value.trim();
+const phoneNumber = document.getElementById(selector).value.trim();
 const isNumeric = /^\d+$/.test(phoneNumber); // Checks if the input is all digits
 const startsWith090 = phoneNumber.startsWith('090');
 const startsWith081 = phoneNumber.startsWith('081');
 const startsWith080 = phoneNumber.startsWith('080');
 const startsWith091 = phoneNumber.startsWith('091');
 const startsWith442 = phoneNumber.startsWith('442');
-return phoneNumber.length === 10 && isNumeric && startsWith090 || startsWith081 || startsWith080 || startsWith091 || startsWith442 ;
+return phoneNumber.length === 11 && isNumeric && startsWith090 || startsWith081 || startsWith080 || startsWith091 || startsWith442 ;
 }
 function removeNoDataMessage(tableBody, noDataMessage) {
 if (tableBody.contains(noDataMessage)) {
@@ -125,16 +157,16 @@ const noStaffList = createNoDataMessage();
 staffList.append(noStaffList);
 
 const registerStaff = function(){
-if(!isInputValid(staffFormInput)) showMessage('Please Input Field', 'red');
-else if(!isEmailValid('staffEmail'))showMessage('Please Input a Valid Email', 'red');
-else if(!inputChecked('maleCheckbox') && !inputChecked('femaleCheckbox')) showMessage('Please Select your Gender', 'red');
+if(!isInputValid(staffFormInput)) warningMessage('Please Input Field');
+else if(!isEmailValid('staffEmail'))warningMessage('Please Input a Valid Email');
+else if(!isPhoneNumberValid('staffPhoneNumber'))warningMessage('Please Input a Valid Phone Number');
+else if(!inputChecked('maleCheckbox') && !inputChecked('femaleCheckbox')) warningMessage('Please Select your Gender');
 else{
   removeNoDataMessage(staffList, noStaffList);
   const staffId = generateId();
   newStaffList(staffList, staffId)
-  showMessage('Form Validated', 'green')
+  successMessage('Staff Registered Successful');
 }
-
 }
 
 

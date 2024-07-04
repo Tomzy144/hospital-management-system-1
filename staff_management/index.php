@@ -6,6 +6,7 @@
     <title>Staff Management</title>
     <link rel="stylesheet" href="index.css"> 
     <link rel="stylesheet" href="awesome-font/css/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="awesome-font/css/animate.css">
 </head>
 <body>
 
@@ -45,10 +46,56 @@
     </div>
   </div>
 
+  <div id="popup1" class="overlay hidden">
+  <div class="popup">
+           <button class="btn_submit" id="generateStaffId">Edit Staff Information</button>
+           <button class="btn_submit" id="generateStaffId">Check Staff Profile</button>
+           <button class="btn_submit" id="generateStaffId">Print Staff Payroll</button>
+  </div>
+</div>
+
+  <!-- <div class="success alert">
+    <div class="content">
+      <div class="icon">
+      <i class="bi bi-check-circle-fill bootsrapIcon"></i>
+    </div>
+      <h2>A Success Message</h2>
+    </div>
+  </div>
+  <div class="info alert">
+    <div class="content">
+      <div class="icon">
+      <i class="bi bi-info-circle-fill bootsrapIcon"></i>
+    </div>
+      <h2>A Success Message</h2>
+    </div>
+  </div>
+  <div class="warning alert">
+    <div class="content">
+      <div class="icon">
+      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+    </div>
+      <h2>A Success Message</h2>
+    </div>
+  </div>
+  <div class="danger alert">
+    <div class="content">
+      <div class="icon">
+      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+    </div>
+      <h2>A Success Message</h2>
+    </div>
+  </div> -->
+  
+
+
   <div class="list_div" id="staffList">
     <div class="table_container">
             <div class="search_bar_container">
-                <h3>Staff Lists</h3>
+            <h2 class="modal__header">
+        Staff 
+      <span class="highlight">Registration</span>
+      </h2>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
             <table id="staffList">
@@ -110,8 +157,8 @@
           <input type="text" name="" id="">
           </div>
           <div class="form-control">
-          <label>Phone Number</label>
-          <input type="text" name="" id="">
+          <label for="staffPhoneNumber">Phone Number</label>
+          <input type="text" name="staffPhoneNumber" id="staffPhoneNumber">
           </div>
           <div class="form-control">
           <label for="staffEmail">Email Address</label>
@@ -179,7 +226,7 @@
              <input type="text" name="" id="" placeholder="Account Name">
           </div>
         </div>
-        <h3>System Access Information</h3>
+        <!-- <h3>System Access Information</h3>
         <div class="each_sections">
         <div class="form-control">
             <label for="">Username</label>
@@ -202,7 +249,7 @@
               <option value="">Staff Member</option>
              </select>
           </div>
-          </div>
+          </div> -->
         <button type="button" class="btn_submit" onclick="registerStaff()">Submit &rarr;</button>
       </form>
     </div>
