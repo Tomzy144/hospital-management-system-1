@@ -26,7 +26,7 @@ $patient_id = $_POST['patient_Id'];
         $category_id = $patient_profile_array['category_id'];
         $date = $patient_profile_array['date'];
         $last_login = $patient_profile_array['last_login'];
-        $passport = $patient_profile_array['passport'];
+        $passport = $patient_profile_array['patient_passport'];
         ///next of kin
         $kname = $patient_profile_array['kname'];
         $kgender = $patient_profile_array['kgender'];
@@ -75,7 +75,8 @@ $patient_id = $_POST['patient_Id'];
             <h2>PATIENT PASSPORT</h2>
     </div>
     <div class="circle">
-    <img src='" . $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"] . "' alt='Profile Picture'/>
+    <img src="<?php echo ($website_url . "/uploaded_files/profile_pix/patient/" . $passport); ?>" alt="Profile Picture" width="100%" height="100%" />
+
     </div>
    <div class="info_title">
             <h3>BIO DATA</h3>
