@@ -358,7 +358,7 @@ form{
   cursor: pointer;
 }
 ._form_control{
-  width: 90%;
+  width: 100%;
   margin: 1em 0;
   display: flex;
   animation: slideInDown 0.5s ease-in-out;
@@ -368,6 +368,7 @@ form{
 ._form_control i{
   position: absolute;
   top: 50%;
+  padding: 0 1rem;
 }
 ._form_control .show_password{
   right: 0;
@@ -377,34 +378,45 @@ form{
   right: 0;
   cursor: pointer;
 }
-input{
-  width: 100%;
-  color: #2a57d7;
-  padding: 0.5em;
-  font-size: 18px;
-  outline: none;
-  border: none;
- text-indent: 11px;
-  border-bottom: 1px solid #2a57d7;;;
+label{
+  font-size: 1.2rem;
+    color: rgb(42, 87, 215);
 }
-.select_staffs{
-  width: 100%;
-  height: auto;
-  background-color: #2a57d7;
-  color: #fff;
-  padding: 0.5em;
-  background: none;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  color: #2a57d7;
-  border-bottom: 1px solid #2a57d7;;;
+input{
+  text-indent: 14px;
+}
+select{
   cursor: pointer;
 }
-option:hover{
-  color: #2a57d7;
-  background-color: #2a57d7;
+
+input, select,textarea {
+  padding: 12px 20px;
+  background-color: #fff;
+  margin: 8px 0;
+  font-size: 1.1rem;
+  color: rgb(42, 87, 215);
+  width:auto;
+  display: inline-block;
+  border: 1px solid rgb(42, 87, 215);
+  border-radius: 4px;
+  box-sizing: border-box;
 }
+
+input[type=submit] {
+  width: 100%;
+  background-color: rgb(42, 87, 215);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(42, 87, 215);
+}
+
 ._fingerprint_authentication{
   text-align: right;
   width: 100%;

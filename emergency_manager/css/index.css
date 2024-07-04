@@ -339,45 +339,26 @@ cursor: pointer;
     border-radius: 50%;
     background: white;
 }
-
-  label{
+label{
     font-size: 1.2rem;
       color: rgb(42, 87, 215);
   }
-  input {
-    padding: 0.5rem 0;
-    color: rgb(42, 87, 215);
-    font-size: 1.1rem;
-    border: none;
-      border-bottom-width: medium;
-      width:300px;
-      border-bottom-style: none;
-      border-bottom-color: currentcolor;
-    border-bottom: 1px solid rgb(42, 87, 215);
-    outline: none;
+
+  select{
+    cursor: pointer;
   }
-  textarea{
-    padding: 0.5rem 0;
-    color: rgb(42, 87, 215);
+  
+  input, select,textarea {
+    padding: 12px 20px;
+    background-color: #fff;
+    margin: 8px 0;
     font-size: 1.1rem;
-    border: none;
-      border-bottom-width: medium;
-      width:300px;
-      border-bottom-style: none;
-      border-bottom-color: currentcolor;
-    border-bottom: 1px solid rgb(42, 87, 215);
-    outline: none;
-  }
-  select {
-    padding: 0.5em;
     color: rgb(42, 87, 215);
-    font-size: 1rem;
-     border: none;
-     width:300px;
-    border-bottom: 1px solid rgb(42, 87, 215);
-    outline: none;
-    text-transform: uppercase;
-    background: #fff;
+    width:300px;
+    display: inline-block;
+    border: 1px solid rgb(42, 87, 215);
+    border-radius: 4px;
+    box-sizing: border-box;
   }
 
    .btn_submit{
@@ -428,9 +409,6 @@ cursor: pointer;
         position: absolute;
         right: 1%;
         cursor: pointer;
-    }
-    .search_bar_container input {
-        padding: 0.5em 0;
     }
     
      table {

@@ -433,14 +433,7 @@ justify-content: center;
 .form-control_check input{
     margin: 0 1em;
 }
-.form-control select {
-    padding: 0.5em 0;
-    color: rgb(42, 87, 215);
-    font-size: 1.1rem;
-  border: none;
-  border-bottom: 1px solid rgb(42, 87, 215);
-    outline: none;
-  }
+
   .form-display2{
       display: flex;
       justify-content: center;
@@ -448,18 +441,24 @@ justify-content: center;
   }
   label{
     font-size: 1.2rem;
-    color: rgb(42, 87, 215);
-    font-weight: normal;
+      color: rgb(42, 87, 215);
   }
-  input {
-    padding: 0.5em 0;
-    color: rgb(42, 87, 215);
+
+  select{
+    cursor: pointer;
+  }
+  
+  input, select,textarea {
+    padding: 12px 20px;
+    background-color: #fff;
+    margin: 8px 0;
     font-size: 1.1rem;
-     border: none;
-     width: 300px;
-     font-weight: normal ;
-    border-bottom: 1px solid rgb(42, 87, 215);
-    outline: none;
+    color: rgb(42, 87, 215);
+    width:300px;
+    display: inline-block;
+    border: 1px solid rgb(42, 87, 215);
+    border-radius: 4px;
+    box-sizing: border-box;
   }
   .valid{
     color: rgb(42, 87, 215);
@@ -489,14 +488,7 @@ justify-content: center;
       border: 1px solid rgb(42, 87, 215);
       color: rgb(42, 87, 215);
     }
-    select{
-      padding: 0.5rem 0;
-      width: 100%;
-      margin: 1rem 0;
-      background-color: #fff;
-      font-size: .995rem;
-      cursor: pointer;
-  }
+
   .all_patient_list{
     display: flex;
   }

@@ -55,7 +55,11 @@
                 <thead>
                     <tr>
                         <td>S/N</td>
+                        <td>Profile</td>
                         <td>Name</td>
+                        <td>Staff Id</td>
+                        <td>Gender</td>
+                        <td>Staff Email</td>
                         <td>Position</td>
                         <td>Department</td>
                         <td>Status</td>
@@ -79,8 +83,8 @@
         <h3>Personal Infomation</h3>
         <div class="each_sections">
           <div class="form-control">
-          <label>Full Name</label>
-          <input type="text" name="" id="">
+          <label for="staffName">Full Name</label>
+          <input type="text" name="staffName" id="staffName">
           </div>
           <div class="form-control">
           <label>Date of Birth</label>
@@ -110,8 +114,8 @@
           <input type="text" name="" id="">
           </div>
           <div class="form-control">
-          <label>Email Address</label>
-          <input type="email" name="" id="staffEmail">
+          <label for="staffEmail">Email Address</label>
+          <input type="email" name="staffEmail" id="staffEmail">
           </div>
         </div>
 
@@ -122,12 +126,12 @@
              <input type="text" name="" id="">
           </div>
           <div class="form-control">
-            <label for="">Position/Job Title</label>
-             <input type="text" name="" id="">
+            <label for="jobPosition">Position/Job Title</label>
+             <input type="text" name="jobPosition" id="jobPosition">
           </div>
           <div class="form-control">
-            <label for="">Department</label>
-             <input type="text" name="" id="">
+            <label for="staffDepartment">Department</label>
+             <input type="text" name="staffDepartment" id="staffDepartment">
           </div>
           <div class="form-control">
             <label for="">Employment Type</label>

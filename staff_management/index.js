@@ -62,7 +62,7 @@ setTimeout(() => message.classList.add('hide'),3000);
 
 function createNoDataMessage() {
 const noDataMessage = document.createElement('tr');
-noDataMessage.innerHTML = '<td colspan="7" style="text-align: center;">No data</td>';
+noDataMessage.innerHTML = '<td colspan="11" style="text-align: center;">No data</td>';
 return noDataMessage;
 }
 
@@ -117,6 +117,7 @@ if (tableBody.contains(noDataMessage)) {
     tableBody.removeChild(noDataMessage);
 }
 }
+
 const staffFormInput = document.querySelectorAll('#staffFormInput input');
 const staffFormSelect = document.querySelectorAll('#staffFormInput select');
 const staffList = document.querySelector('#staffList tbody');
@@ -125,8 +126,34 @@ staffList.append(noStaffList);
 
 const registerStaff = function(){
 if(!isInputValid(staffFormInput)) showMessage('Please Input Field', 'red');
-// if(!areSelectsValid(staffFormSelect)) showMessage('Please Input Field', 'red');
 else if(!isEmailValid('staffEmail'))showMessage('Please Input a Valid Email', 'red');
 else if(!inputChecked('maleCheckbox') && !inputChecked('femaleCheckbox')) showMessage('Please Select your Gender', 'red');
+else{
+  removeNoDataMessage(staffList, noStaffList);
+  const staffId = generateId();
+  newStaffList(staffList, staffId)
+  showMessage('Form Validated', 'green')
+}
 
+}
+
+
+const newStaffList = function(staffs, staffId){
+  const rowCount = staffs.rows.length + 1;
+  const newRow = staffs.insertRow();
+  const staffName = document.getElementById('staffName');
+  const staffEmail = document.getElementById('staffEmail');
+  const jobPosition = document.getElementById('jobPosition');
+  const staffDepartment = document.getElementById('staffDepartment');
+
+  newRow.insertCell(0).innerHTML = rowCount;
+  newRow.insertCell(1).innerHTML = "Image";
+  newRow.insertCell(2).innerHTML = staffName.value;
+  newRow.insertCell(3).innerHTML = staffId;
+  newRow.insertCell(4).innerHTML = "Gender";
+  newRow.insertCell(5).innerHTML = staffEmail.value;
+  newRow.insertCell(6).innerHTML = jobPosition.value;
+  newRow.insertCell(7).innerHTML = staffDepartment.value
+  newRow.insertCell(7).innerHTML = staffDepartment.value
+  newRow.insertCell(7).innerHTML = staffDepartment.value
 }
