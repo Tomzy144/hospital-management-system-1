@@ -2,9 +2,9 @@
 <?php include '../config/doctor-session-validation.php';?>
 
 
-<?php
-$doctor_id = $_POST['doctor_id'];
-?>
+<!-- ?php
+$s_doctor_id = $_POST['doctor_id'];
+?> -->
 
     
 
@@ -43,7 +43,7 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
 
 
 <?php
-    $fetch_appointment = $callclass->_get_appointment_details($conn, $s_doctor_id);
+    $fetch_appointment = $callclass->_get_appointment_details($conn, $doctor_id);
     $doctor_appointment_array = json_decode($fetch_appointment, true);
 
     // Check if decoding was successful
@@ -172,20 +172,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 </div>
 
                 <div class="body_sec" id="appointmentDetailsContainer">
-    <?php
-        // Ensure connection is established
-        // Replace $conn with your database connection variable
-       ; // Example doctor ID, replace it with the actual variable
-        $sql = "SELECT doctor_appointment_tab.*, patient_tab.patient_passport 
+                    <?php 
+                    $s_doctor_id_escaped = $conn->real_escape_string($s_doctor_id);
+                   
+                    //  $s_doctor_id = 'DOC0001';
+                // SQL query to join doctor_appointment_tab with patient_tab to get appointment and patient details
+                $sql = "SELECT doctor_appointment_tab.*, patient_tab.patient_passport 
                 FROM doctor_appointment_tab
                 JOIN patient_tab ON doctor_appointment_tab.patient_id = patient_tab.patient_id
-                WHERE doctor_appointment_tab.doctor_id = ?";
+                WHERE doctor_appointment_tab.doctor_id = '$s_doctor_id_escaped'";
         
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $s_doctor_id); // Bind the doctor ID
-        $stmt->execute();
-        $result = $stmt->get_result();
-    ?>
+        $result = $conn->query($sql);
+                    ?>
 
     <table id="appointment_table">
         <thead>
@@ -203,6 +201,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </thead>
         <tbody>
             <?php
+           
             $appointmentCount = 0; // Initialize appointment count
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
