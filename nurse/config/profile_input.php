@@ -210,32 +210,34 @@ $patient_id = $_POST['patient_Id'];
     <div class="form-control">
         <label for="av-doctors">Available Doctors</label>
         <select name="doctors" id ="doctor" >
-            <!-- Options will be dynamically filled based on role selection -->
+           <option id ="doctor_id"></option>
         </select>
     </div>
     <button type="button" class="btn-submit" onclick="bookPatient()">Book patient</button>
 </form>
-                <form action="" class="book_patient hide">
-                    <div class="form-control">
-                        <label for="">Patient name</label>
-                        <input type="text" name="" id="patient_name"  value="<?php echo $patient_name ?>">
-                    </div>
-                    <div class="form-control">
-                        <label for="">Patient id</label>
-                        <input type="text" name="" id="patient_id"  value="<?php echo $patient_id ?>">
-                    </div>
-                    <div class="form-control">
-                        <label for="">Date</label>
-                        <input type="date" name="" id="date">
-                        <label for="">Time</label>
-                        <input type="time" name="" id="time">
-                    </div>
-                    <div class="form-control">
-                        <label for="">Reason for appoitment</label>
-                        <textarea name="" id="reason" cols="30" rows="10"></textarea>
-                    </div>
-                    <button class="btn-submit"> Book</button>
-                </form>
+        <form action="" class="book_patient hide" id="vital_input" enctype="multipart/form-data" method="post">
+            <div class="form-control">
+                <label for="">Patient name</label>
+                <input type="text" name="" id="patient_name"  value="<?php echo $patient_name ?>">
+                <input type="hidden" name="" id="doctor_id2"  value="">
             </div>
+            <div class="form-control">
+                <label for="">Patient id</label>
+                <input type="text" name="" id="patient_id"  value="<?php echo $patient_id ?>">
             </div>
+            <div class="form-control">
+                <label for="">Date</label>
+                <input type="date" name="" id="date" value="">
+                <label for="">Time</label>
+                <input type="time" name="" id="time" value="">
+            </div>
+            <div class="form-control">
+                <label for="">Reason for appoitment</label>
+                <textarea name="" value="" id="reason" cols="30" rows="10"></textarea>
+                
+            </div>
+            <button class="btn-submit" type="button" id="btn-submit" onclick="transfer_to_doctor();"> Book</button>
+        </form>
+    </div>
+    </div>
 

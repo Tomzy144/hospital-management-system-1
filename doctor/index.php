@@ -171,62 +171,73 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     <input type="text" placeholder="Search here">
                 </div>
 
-            <div class="body_sec" id="appointmentDetailsContainer">
-                <?php
-                    $sql = "SELECT * FROM appointment_tab WHERE doctor_id ='$s_doctor_id'";
-                    $result = $conn->query($sql);
+                <div class="body_sec" id="appointmentDetailsContainer">
+    <?php
+        // Ensure connection is established
+        // Replace $conn with your database connection variable
+       ; // Example doctor ID, replace it with the actual variable
+        $sql = "SELECT doctor_appointment_tab.*, patient_tab.patient_passport 
+                FROM doctor_appointment_tab
+                JOIN patient_tab ON doctor_appointment_tab.patient_id = patient_tab.patient_id
+                WHERE doctor_appointment_tab.doctor_id = ?";
+        
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $s_doctor_id); // Bind the doctor ID
+        $stmt->execute();
+        $result = $stmt->get_result();
+    ?>
+
+    <table id="appointment_table">
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>PASSPORT</th>
+                <th>Patient Name</th>
+                <th>Patient ID</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Request Type</th>
+                <th>Accept</th>
+                <th>Reject</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $appointmentCount = 0; // Initialize appointment count
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $appointmentCount++; // Increment appointment count for each row
+                    echo "<tr>";
+                    echo "<td>" . $appointmentCount . "</td>"; // Display appointment count
+                    echo "<td><img src='" . htmlspecialchars($website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]) . "' alt='Profile Picture' width='50' height='50'/></td>";
+                    echo "<td>" . htmlspecialchars($row["patient_name"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["patient_id"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["doctor_appointment_date"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["time"]) . "</td>";
+                    // echo "<td>" . htmlspecialchars($row["time"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["reason"]) . "</td>";
+                    echo "<td>";
                     ?>
-                    <table id="appointment_table">
-                        <thead>
-                            <tr>
-                                <td>S/N</td>
-                                <td>PASSPORT</td>
-                                <td>Patient Name</td>
-                                <td>Patient ID</td>
-                                <td>Date</td>
-                                <td>Time</td>
-                                <td>Request Type</td>
-                                <td>Accept</td>
-                                <td>Reject</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $appointmentCount = 0; // Initialize appointment count
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $appointmentCount++; // Increment appointment count for each row
-                                    echo "<tr>";
-                                    echo "<td id=\"appointment_count\">" . $appointmentCount . "</td>"; // Display appointment count
-                                    echo "<td><img src='" . $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"] . "' alt='Profile Picture'/></td>";
-                                    echo "<td>" . $row["patient_name"] . "</td>";
-                                    echo "<td>" . $row["patient_id"] . "</td>";
-                                    echo "<td>" . $row["appointment_date"] . "</td>";
-                                    echo "<td>" . $row["time"] . "</td>";
-                                    echo "<td>" . $row["reason"] . "</td>";
-                                    echo "<td>";
-                                    ?>
-                                    <button class="accept-btn" type="button"  onClick="accept('<?php echo $row["patient_id"]; ?>')">Accept</button>
-                                    <?php
-                                    echo "</td>";
-                                    echo "<td>";
-                                    ?>
-                                <button class="reject-btn" onClick="reject('<?php echo $row["patient_id"]; ?>')">Reject</button>
-                                    <?php
-                                    echo "</td>";
-                                    echo "</tr>";
-                                }
-                            } else {
-                                echo "<tr><td colspan='8'>No records found</td></tr>";
-                            }
-                        ?>
-                </tbody>
-                    </table>
-
-
-                <script>
+                    <button class="accept-btn" type="button" onClick="accept('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Accept</button>
+                    <?php
+                    echo "</td>";
+                    echo "<td>";
+                    ?>
+                    <button class="reject-btn" type="button" onClick="reject('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Reject</button>
+                    <?php
+                    echo "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='9'>No records found</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+    <script>
               function accept(patient_Id) {
                 // Fade in elements with class 'all_sections_input'
+                if (confirm("Are you sure you want to accept this patient?")) {
                 $('.all_sections_input').fadeIn(500);
 
                 // Construct data string to send in the AJAX request
@@ -255,6 +266,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     console.log('Event type:', event.type); // Output the type of event
                     console.log('Event target:', event.target); // Output the target of the event
                 });
+            }
 
             }
 
@@ -266,10 +278,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     }
 
                    
-                </script>   
-
-
-            </div>
+                </script>
+</div>
             
             <div class="all_sections_input hidden"></div>
 
