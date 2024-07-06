@@ -348,7 +348,7 @@ $patient_id = $_POST['patient_Id'];
     <i class="bi bi-dash-lg" id="complaint_icon_minus"></i>
    </div>
    <div class="complaint-section hidden">
-        <form action="">
+        <form action=""   method="post" enctype="multipart/form-data" >
             <div class="form-control">
             <label for="major_complaints">Major Complaints & Duration</label>
             <input type="text"  class="complaint-input" id="major_complaints">
@@ -382,7 +382,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_1"></i>
             <i class="bi bi-plus-lg" id="open_id_1"></i>
         </div>
-            <form action="" class="form1 hidden">
+            <form action="" class="form1 hidden"  method="post" enctype="multipart/form-data">
                 <div class="form-control">
                 <label for="headache">Headache</label>
                 <div class="radio">
@@ -443,7 +443,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_2"></i>
             <i class="bi bi-plus-lg" id="open_id_2"></i>
         </div>
-        <form action="" class="form2 hidden">
+        <form action="" class="form2 hidden"  method="post" enctype="multipart/form-data">
                 <div class="form-control">
                 <label for="headache">Change in mole(s)?</label>
                 <div class="radio">
@@ -495,7 +495,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_3"></i>
             <i class="bi bi-plus-lg" id="open_id_3"></i>
         </div>
-        <form action="" class="form3 hidden">
+        <form action="" class="form3 hidden"  method="post" enctype="multipart/form-data">
                 <div class="form-control">
                 <label for="headache">Enlarging glove or hat size?</label>
                 <div class="radio">
@@ -610,7 +610,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_4"></i>
             <i class="bi bi-plus-lg" id="open_id_4"></i>
         </div>
-        <form action="" class="form4 hidden">
+        <form action="" class="form4 hidden"  method="post" enctype="multipart/form-data">
                 <div class="form-control">
                 <label for="headache">Chemotherapy Management for Hematopoietic Disorders?</label>
                 <div class="radio">
@@ -716,7 +716,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_5"></i>
             <i class="bi bi-plus-lg" id="open_id_5"></i>
         </div>
-        <form action="" class="form5 hidden">
+        <form action="" class="form5 hidden"  method="post" enctype="multipart/form-data">
                 <div class="form-control">
                 <label for="headache">Physical therapy?</label>
                 <div class="radio">
@@ -804,7 +804,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_6"></i>
             <i class="bi bi-plus-lg" id="open_id_6"></i>
         </div>
-        <form action="" class="form6 hidden">
+        <form action="" class="form6 hidden"  method="post" enctype="multipart/form-data">
                 <div class="form-control">
                 <label for="headache">Symptom for head and neck issue?</label>
                 <div class="radio">
@@ -1079,7 +1079,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_8"></i>
             <i class="bi bi-plus-lg" id="open_id_8"></i>
         </div>
-        <form action="" class="form8 hidden">
+        <form action="" class="form8 hidden"  method="post" enctype="multipart/form-data">
                 <div class="form-control">
                 <label for="headache">Breast Disorder?</label>
                 <div class="radio">
@@ -1158,7 +1158,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_9"></i>
             <i class="bi bi-plus-lg" id="open_id_9"></i>
         </div>
-        <form action="" class="form9 hidden">
+        <form action="" class="form9 hidden"  method="post" enctype="multipart/form-data">
                 <div class="form-control">
                 <label for="headache">Respiratory symptom?</label>
                 <div class="radio">
@@ -1273,7 +1273,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_10"></i>
             <i class="bi bi-plus-lg" id="open_id_10"></i>
         </div>
-        <form action="" class="form10 hidden">
+        <form action="" class="form10 hidden"  method="post" enctype="multipart/form-data">
                 <div class="form-control">
                 <label for="headache">Cardiovascular condition?</label>
                 <div class="radio">
@@ -1361,7 +1361,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_11"></i>
             <i class="bi bi-plus-lg" id="open_id_11"></i>
 </div>
-<form action="" class="form11 hidden">
+<form action="" class="form11 hidden"  method="post" enctype="multipart/form-data">
                 <div class="form-control">
                 <label for="headache">Gastrointestinal symptom?</label>
                 <div class="radio">
@@ -1423,7 +1423,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus1"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus1"></i>
         </div>
-        <form action="" class="physical_examination_form1 hidden">
+        <form action="" class="physical_examination_form1 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="physical_examination">Physical Examination</label>
             <input type="text" id="physical_examination">
@@ -1434,7 +1434,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus2"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus2"></i>
         </div>
-        <form action="" class="physical_examination_form2 hidden">
+        <form action="" class="physical_examination_form2 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="mental_status">Mental Status</label>
             <input type="text" id="mental_status">
@@ -1521,7 +1521,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus3"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus3"></i>
         </div>
-        <form action="" class="physical_examination_form3 hidden">
+        <form action="" class="physical_examination_form3 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="physical_blood_pressure">Blood Pressure</label>
             <input type="text" id="physical_blood_pressure">
@@ -1548,7 +1548,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus4"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus4"></i>
         </div>
-        <form action="" class="physical_examination_form4 hidden">
+        <form action="" class="physical_examination_form4 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="level">Level of Consciousness</label>
             <input type="text" id="level">
@@ -1571,7 +1571,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus5"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus5"></i>
         </div>
-        <form action="" class="physical_examination_form5 hidden">
+        <form action="" class="physical_examination_form5 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="pigmentation">Color/Pigmentation</label>
             <input type="text" id="pigmentation">
@@ -1598,7 +1598,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus6"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus6"></i>
         </div>
-        <form action="" class="physical_examination_form6 hidden">
+        <form action="" class="physical_examination_form6 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="scalp/hair/nails">Scalp/Hair/Nails</label>
             <input type="text" id="scalp_hair_nails">
@@ -1629,7 +1629,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus7"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus7"></i>
         </div>
-        <form action="" class="physical_examination_form7 hidden">
+        <form action="" class="physical_examination_form7 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="inspection_palpation_of_precordium">Inspection/Palpation of Precordium</label>
             <input type="text" id="inspection_palpation_of_precordium">
@@ -1656,7 +1656,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus8"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus8"></i>
         </div>
-           <form action="" class="physical_examination_form8 hidden">
+           <form action="" class="physical_examination_form8 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="respiratory_effort_inspection">Respiratory Effort Inspection</label>
             <input type="text" id="respiratory_effort_inspection">
@@ -1679,7 +1679,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus9"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus9"></i>
         </div>
-        <form action="" class="physical_examination_form9 hidden">
+        <form action="" class="physical_examination_form9 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="presence_of _tenderness_masses">Presence of Tenderness/Masses</label>
             <input type="text" id="presence_of _tenderness_masses">
@@ -1694,7 +1694,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus10"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus10"></i>
         </div>
-        <form action="" class="physical_examination_form10 hidden">
+        <form action="" class="physical_examination_form10 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="genitalia_inspection">Genitalia Inspection</label>
             <input type="text" id="genitalia_inspection">
@@ -1717,7 +1717,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus11"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus11"></i>
         </div>
-        <form action="" class="physical_examination_form11 hidden">
+        <form action="" class="physical_examination_form11 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="genitalia_inspection_of_joint">Inspection/Palpation of Joints</label>
             <input type="text" id="genitalia_inspection_of_joint">
@@ -1740,7 +1740,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus12"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus12"></i>
         </div>
-        <form action="" class="physical_examination_form12 hidden">
+        <form action="" class="physical_examination_form12 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="mental_status_assessment">Mental Status Assessment</label>
             <input type="text" id="mental_status_assessment">
@@ -1767,7 +1767,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus13"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus13"></i>
         </div>
-        <form action="" class="physical_examination_form13 hidden">
+        <form action="" class="physical_examination_form13 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="cardiovascular_system">Cardiovascular System</label>
             <input type="text" id="cardiovascular_system">
@@ -1794,7 +1794,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="physical_examination_icon_minus14"></i>
             <i class="bi bi-plus-lg" id="physical_examination_icon_plus14"></i>
         </div>
-        <form action="" class="physical_examination_form14 hidden">
+        <form action="" class="physical_examination_form14 hidden"  method="post" enctype="multipart/form-data">
             <div class="physical_examination_form-control">
             <label for="social_habits(smoking,alcohol,drugs)">Social Habits (smoking, alcohol)</label>
             <input type="text" id="social_habits(smoking,alcohol,drugs)">
@@ -1822,7 +1822,7 @@ $patient_id = $_POST['patient_Id'];
     <i class="bi bi-dash-lg" id="treatment_prescribtion_minus"></i>
    </div>
    <div class="treatment_prescribtion-section hidden">
-        <form action="" class="treatment_prescribtion_form1">
+        <form action="" class="treatment_prescribtion_form1"  method="post" enctype="multipart/form-data">
         <div class="treatment_prescribtion_flexs">
             <div class="treatment_prescribtion_form-control">
             <label for="medicine">Store</label>
@@ -1888,7 +1888,7 @@ $patient_id = $_POST['patient_Id'];
     <div class="appoitment_con investigation_form hide">
     <i class="bi bi-x-square close-appoitment"onclick ="close_tranfer_patient_lab()"></i>
 
-        <form action="">
+        <form action=""  method="post" enctype="multipart/form-data">
             <div class="form-control">
             <label for="">Patient Name</label>
             <input type="text" name="" id="">
@@ -1914,7 +1914,7 @@ $patient_id = $_POST['patient_Id'];
         <i class="bi bi-dash-lg" id="advice_icon_minus"></i>
    </div>
    <div class="advice-section hidden">
-            <form action="">
+            <form action=""  method="post" enctype="multipart/form-data">
             <div class="form-control">
             <label for="major_complaints">Recommend patient for Surgery</label>
             <div class="checkbox">
@@ -1989,7 +1989,7 @@ $patient_id = $_POST['patient_Id'];
         <!-- <input type="text" id="procedure" placeholder="Procedure"> -->
         <i class="bi bi-x-square close-appoitment"  onClick="close_procedure_form()"></i>
 
-        <form>
+        <form  method="post" enctype="multipart/form-data">
             <div class="form-control">
             <label for='procedure'>Procedure</label>
             <input type="text" name="procedures" autoComplete='off' class="surgical_input" id="procedure"/> 
@@ -2023,7 +2023,7 @@ $patient_id = $_POST['patient_Id'];
     <i class="bi bi-dash-lg" id="diagnosis_icon_minus"></i>
    </div>
       <div class="diagnosis-section hidden">
-        <form action="">
+        <form action=""  method="post" enctype="multipart/form-data">
             <div class="form-control">
             <label for="">Attendance</label>
             <input type="text" name="" id="">
@@ -2054,7 +2054,7 @@ $patient_id = $_POST['patient_Id'];
         <div class="appoitment_con refer_doc_form hidden">
         <i class="bi bi-x-square close-appoitment" onClick="close_tranfer_patient_doc()"></i>
 
-        <form action="">
+        <form action=""  method="post" enctype="multipart/form-data">
             <div class="form-control">
             <label for="">Specialties</label>
             <select name="" id="">
@@ -2112,7 +2112,7 @@ $patient_id = $_POST['patient_Id'];
         <i class="bi bi-toggle-on" id="discharge_on" onClick="toogle_off_discharged()"></i>
         </div>
             <div class="discharge_form hidden">
-        <form action="">
+        <form action=""  method="post" enctype="multipart/form-data">
              <div class="form_control">
                 <label for="">Date of Discharge</label>
             <input type="date">
@@ -2141,7 +2141,7 @@ $patient_id = $_POST['patient_Id'];
         <i class="bi bi-toggle-on" id="confirmed_death_on" onClick="toogle_off_confirmed_death()"></i>
         </div>
             <div class="confirmed_death_form hidden">
-        <form action="">
+        <form action=""  method="post" enctype="multipart/form-data">
              <div class="form_control">
                 <label for="">Date of Death</label>
             <input type="date">
@@ -2162,7 +2162,7 @@ $patient_id = $_POST['patient_Id'];
     <div class="appoitment_con death_form_booking hidden">
     <i class="bi bi-x-square" onClick="close_death_form()"></i>
     <h3>Death Booking</h3>
-        <form>
+        <form  method="post" enctype="multipart/form-data">
         <div class="form-control">
         <label for=''>Date of death</label>
         <input type="date" name="procedures" autoComplete='off' id="death_of_death
