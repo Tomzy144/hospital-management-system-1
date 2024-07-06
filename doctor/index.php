@@ -175,7 +175,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     <?php 
                     $s_doctor_id_escaped = $conn->real_escape_string($s_doctor_id);
                    
-                    //  $s_doctor_id = 'DOC0001';
                 // SQL query to join doctor_appointment_tab with patient_tab to get appointment and patient details
                 $sql = "SELECT doctor_appointment_tab.*, patient_tab.patient_passport 
                 FROM doctor_appointment_tab

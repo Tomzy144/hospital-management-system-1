@@ -280,66 +280,66 @@ $patient_id = $_POST['patient_Id'];
     <i class="bi bi-dash-lg" id="vitals_icon_minus"></i>
     </div>
     <div class="vitals_section hide">
-                <table>
-                        <thead>
-                        <td>24/7</td>
-                        <td>Temp(C)</td>
-                        <td>BP(mmdg)</td>
-                        <td>Pulse(bp/m)</td>
-                        <td>Resp.(cm)</td>
-                        <td>Spo2(%)</td>
-                        <td>Weigdt(kg)</td>
-                        <td>Intake(m/s)</td>
-                        <td>Output</td>
-                        <td>BMI</td>
-                        </thead>
-                        <tbody>
-                                <td>
-                                        <p>1st Jan. 2024</p>
-                                        <p>2:30pm</p>
-                                </td>
-                                <td>36</td>
-                                <td>120/60</td>
-                                <td>60</td>
-                                <td>16</td>
-                                <td>97</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                        </tbody>
-                        <tbody>
-                                <td>
-                                        <p>2nd Jan. 2024</p>
-                                        <p>4.10pm</p>
-                                </td>
-                                <td>36</td>
-                                <td>120/60</td>
-                                <td>60</td>
-                                <td>16</td>
-                                <td>97</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                        </tbody>
-                        <tbody>
-                                <td>
-                                        <p>18th Feb. 2024</p>
-                                        <p >11.00am</p>
-                                </td>
-                                <td>36</td>
-                                <td>120/60</td>
-                                <td>60</td>
-                                <td>16</td>
-                                <td>97</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                        </tbody>
-                </table>
-    </div>
+    <?php
+    $patient_id_escaped = $conn->real_escape_string($patient_id);
+
+ 
+    $sql = "SELECT * FROM patient_vital_tab WHERE patient_id = '$patient_id_escaped'";
+    
+   
+    $result = $conn->query($sql);
+
+    if ($result === false) {
+        die('Query failed: ' . htmlspecialchars($conn->error));
+    }
+    ?>
+
+    <table>
+        <thead style="color:blue;">
+            
+                <th>24/7</th>
+                <th>Temp(C)</th>
+                <th>BP(mmdg)</th>
+                <th>Pulse(bp/m)</th>
+                <th>Resp.(cm)</th>
+                <th>Spo2(%)</th>
+                <th>Weight(kg)</th>
+                <th>Intake(m/s)</th>
+                <th>Output</th>
+                <th>BMI</th>
+            
+        </thead>
+        <tbody>
+            <?php
+            // Check if there are rows returned
+            if ($result->num_rows > 0) {
+                // Loop through each row in the result set
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>";
+                    // echo "<p>" . htmlspecialchars($row["vital_date"]) . "</p>";
+                    // echo "<p>" . htmlspecialchars($row["vital_time"]) . "</p>";
+                    // echo "</td>";
+                    echo "<td>" . htmlspecialchars($row["temperature"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["blood_pressure"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["pulse"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["respiration"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["spo2"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["weight"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["intake"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["output"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["bmi"]) . "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                // Display a message if no data is found
+                echo "<tr><td colspan='10'>No records found</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+</div>
+
   
     <!--Start of the complaint section--->
    <div class="complain_dropdown" onClick="complain_section()">
