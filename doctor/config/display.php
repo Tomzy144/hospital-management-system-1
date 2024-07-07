@@ -342,13 +342,477 @@ $patient_id = $_POST['patient_Id'];
     </div>
   
     <!--Start of the complaint section--->
+    <div class="all_section_input">
+    <form action="">
+  <!--Start of Physica, Examination-->
+  <div class="physical_dropdown"onClick="physical_section()">
+    <h3>Physical Examination</h3>
+    <i class="bi bi-plus-lg" id="physical_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="physical_icon_minus"></i>
+   </div>
+  <div class="physical_examination-section hidden">
+        <div class="physical_examination_drop-down1" onClick="physical_showForm1()">
+            <h3>General</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus1"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus1"></i>
+        </div>
+        <div  class="physical_examination_form1 hidden">
+            <div class="physical_examination_form-control">
+            <label for="physical_examination">Physical Examination</label>
+            <input type="text" id="physical_examination">
+</div>
+</div>
+        <div class="physical_examination_drop-down2" onClick="physical_showForm2()">
+            <h3>Neurological</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus2"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus2"></i>
+        </div>
+        <div class="physical_examination_form2 hidden">
+            <div class="physical_examination_form-control">
+            <label for="mental_status">Mental Status</label>
+            <input type="text" id="mental_status">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="cranial_nerves">Cranial Nerves</label>
+            <input type="text" id="cranial_nerves">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="position_sense">Position Sense</label>
+            <input type="text" id="position_sense">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="vibration_sense">Vibration Sense</label>
+            <input type="text" id="vibration_sense">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="reflex_technique">Reflex Technique</label>
+            <input type="text" id="reflex_technique">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="coordination_of_upper_extremities">Coordination of upper extremities</label>
+            <input type="text" id="coordination_of_upper_extremities">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="coordination_of_lower_extremities">Coordination of lower extremities</label>
+            <input type="text" id="coordination_of_lower_extremities">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="gait">Gait</label>
+            <input type="text" id="gait">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="glasgow">Glasgow coma scale</label>
+            <input type="text" id="glasgow">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="headache">Eye opening response</label>
+                <div class="radio">
+                <input type="radio" id="spontaneous" name="eye"/>
+                <label for="spontaneous">Spontaneous</label>
+                <input type="radio" id="to_speech" name="eye"/>
+                <label for="to_speech">To speech </label>
+                <input type="radio" id="to_pain" name="eye"/>
+                <label for="no_response">To Pain </label>
+                <input type="radio" id="no_response" name="eye"/>
+                <label for="no_response">No Response</label>
+                </div>
+</div>
+            <div class="physical_examination_form-control">
+            <label for="headache">Best verbal response</label>
+                <div class="radio">
+                <input type="radio" id="oriented" name="verbal"/>
+                <label for="oriented">Oriented to time, place & person </label>
+                <input type="radio" id="confused" name="verbal"/>
+                <label for="confused">Confused 3</label>
+                <input type="radio" id="inappropraite" name="verbal"/>
+                <label for="no_response">Inappropraite words</label>
+                <input type="radio" id="incmprehensible" name="verbal"/>
+                <label for="response">Incomprehensible sounds</label>
+                <input type="radio" id="response" name="verbal"/>
+                <label for="response">No Response</label>
+                </div>
+</div>
+            <div class="physical_examination_form-control">
+            <label for="headache">Best motor response</label>
+                <div class="radio">
+                <input type="radio" id="obey" name="motor"/>
+                <label for="obey">Obey command</label>
+                <input type="radio" id="localized" name="motor"/>
+                <label for="localized">Moved to localised pain</label>
+                <input type="radio" id="flexion" name="motor"/>
+                <label for="flexion">Flexion withdrawal from pain</label>
+                <input type="radio" id="abnornal" name="motor"/>
+                <label for="abnormal">Abnormal flexion(decorticate)</label>
+                <input type="radio" id="response" name="motor"/>
+                <label for="response">No Response</label>
+                </div>
+</div>
+        
+div        <div class="physical_examination_drop-down3" onClick="physical_showForm3()">
+            <h3>Vital Sign</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus3"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus3"></i>
+        </div>
+        <div class="physical_examination_form3 hidden">
+            <div class="physical_examination_form-control">
+            <label for="physical_blood_pressure">Blood Pressure</label>
+            <input type="text" id="physical_blood_pressure">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="heart_rate">Heart Rate</label>
+            <input type="text" id="heart_rate">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="respiratory_rate">Respiratory Rate</label>
+            <input type="text" id="respiratory_rate">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="temperature">Temperature</label>
+            <input type="text" id="temperature">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="oxygen_saturation">Oxygen Saturation</label>
+            <input type="text" id="oxygen_saturation">
+            </div>
+</div>
+<div class="physical_examination_drop-down4" onClick="physical_showForm4()">
+            <h3>General Apperance</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus4"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus4"></i>
+        </div>
+        <div  class="physical_examination_form4 hidden">
+            <div class="physical_examination_form-control">
+            <label for="level">Level of Consciousness</label>
+            <input type="text" id="level">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="nutritional">Nutritional Status</label>
+            <input type="text" id="nutritional">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="signs">Signs of Distress/Discomfort</label>
+            <input type="text" id="signs">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="body_habitus">Body Habitus</label>
+            <input type="text" id="body_habitus">
+            </div>
+</div>
+<div class="physical_examination_drop-down5"onClick="physical_showForm5()" >
+            <h3>Skin Examination</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus5"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus5"></i>
+        </div>
+        <div class="physical_examination_form5 hidden">
+            <div class="physical_examination_form-control">
+            <label for="pigmentation">Color/Pigmentation</label>
+            <input type="text" id="pigmentation">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="moisture/temperature">Moisture/Temperature</label>
+            <input type="text" id="moisture_temperature">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="lesions/rashes">Lesions/Rashes/Abnormalities</label>
+            <input type="text" id="lesions/rashes">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="bruising">Brusing/Petechiae</label>
+            <input type="text" id="bruising">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="scars">Scars/Surgical Incisions</label>
+            <input type="text" id="scars">
+            </div>
+</div>
+<div class="physical_examination_drop-down6" onClick="physical_showForm6()">
+            <h3>Head and Neck</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus6"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus6"></i>
+        </div>
+        <div class="physical_examination_form6 hidden">
+            <div class="physical_examination_form-control">
+            <label for="scalp/hair/nails">Scalp/Hair/Nails</label>
+            <input type="text" id="scalp_hair_nails">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="eyes/ears/nose/throat">Eyes/Ears/Nose/Throat:</label>
+            <input type="text" id="eyes_ears_nose_throat"">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="lesions/rashes">Lesions/Rashes/Abnormalities</label>
+            <input type="text" id="lesions_rashes">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="lymph_nodes">Lymph Nodes</label>
+            <input type="text" id="lymph_nodes">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="neck_rang_of_Motion">Neck Range of Motion</label>
+            <input type="text" id="neck_rang_of_Motion">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="presence_of_Bruits">Presence of Bruits (if applicable)</label>
+            <input type="text" id="presence_of_Bruits">
+            </div>
+</div>
+<div class="physical_examination_drop-down7" onClick="physical_showForm7()">
+            <h3>Cardiovascular Examination</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus7"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus7"></i>
+        </div>
+        <div  class="physical_examination_form7 hidden">
+            <div class="physical_examination_form-control">
+            <label for="inspection_palpation_of_precordium">Inspection/Palpation of Precordium</label>
+            <input type="text" id="inspection_palpation_of_precordium">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="auscultation_of_heart_sounds_murmurs">Auscultation of Heart Sounds/Murmurs</label>
+            <input type="text" id="auscultation_of_heart_sounds_murmurs">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="peripheral_pulses">Peripheral Pulses</label>
+            <input type="text" id="peripheral_pulses">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="edema_assessment">Edema Assessment</label>
+            <input type="text" id="edema_assessment">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="capillary_refill_time">Capillary Refill Time</label>
+            <input type="text" id="capillary_refill_time">
+</div>
+</div>
+<div class="physical_examination_drop-down8" onClick="physical_showForm8()">
+            <h3>Respiratory Examination</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus8"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus8"></i>
+        </div>
+           <div  class="physical_examination_form8 hidden">
+            <div class="physical_examination_form-control">
+            <label for="respiratory_effort_inspection">Respiratory Effort Inspection</label>
+            <input type="text" id="respiratory_effort_inspection">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="palpation_percussion_of_chest">Palpation/Percussion of Chest</label>
+            <input type="text" id="palpation_percussion_of_chest">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="auscultation_of_breath Sounds">Auscultation of Breath Sounds</label>
+            <input type="text" id="auscultation_of_breath">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="cough_sputum_assessment">Cough/Sputum Assessment</label>
+            <input type="text" id="cough_sputum_assessment">
+            </div>
+</div>
+<div class="physical_examination_drop-down9" onClick="physical_showForm9()">
+            <h3>Abdominal Examination</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus9"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus9"></i>
+        </div>
+        <div  class="physical_examination_form9 hidden">
+            <div class="physical_examination_form-control">
+            <label for="presence_of _tenderness_masses">Presence of Tenderness/Masses</label>
+            <input type="text" id="presence_of _tenderness_masses">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="bowel_sounds_assessment_sounds">Bowel Sounds Assessment</label>
+            <input type="text" id="bowel_sounds_assessment_sounds">
+            </div>
+</div>
+<div class="physical_examination_drop-down10" onClick="physical_showForm10()">
+            <h3>Genitourinary Examination</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus10"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus10"></i>
+        </div>
+        <div class="physical_examination_form10 hidden">
+            <div class="physical_examination_form-control">
+            <label for="genitalia_inspection">Genitalia Inspection</label>
+            <input type="text" id="genitalia_inspection">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="urinary_function_assessment">Urinary Function Assessment</label>
+            <input type="text" id="urinary_function_assessment">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="pelvic_examination_sounds">Pelvic Examination (if applicable)</label>
+            <input type="text" id="pelvic_examination_sounds">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="prostate_examination">Prostate Examination (if applicable)</label>
+            <input type="text" id="prostate_examination">
+            </div>
+</div>
+<div class="physical_examination_drop-down11" onClick="physical_showForm11()">
+            <h3>Musculoskeletal Examination</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus11"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus11"></i>
+        </div>
+        <div class="physical_examination_form11 hidden">
+            <div class="physical_examination_form-control">
+            <label for="genitalia_inspection_of_joint">Inspection/Palpation of Joints</label>
+            <input type="text" id="genitalia_inspection_of_joint">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="range_of_motion_assessment">Range of Motion Assessment</label>
+            <input type="text" id="range_of_motion_assessment">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="gait_balance_evaluation">Gait/Balance Evaluation</label>
+            <input type="text" id="gait_balance_evaluation">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="pine_examination">pine Examination</label>
+            <input type="text" id="pine_examination">
+            </div>
+</div>
+<div class="physical_examination_drop-down12" onClick="physical_showForm12()">
+            <h3>Neurological Examination</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus12"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus12"></i>
+        </div>
+        <div class="physical_examination_form12 hidden">
+            <div class="physical_examination_form-control">
+            <label for="mental_status_assessment">Mental Status Assessment</label>
+            <input type="text" id="mental_status_assessment">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="cranial_nerve_examination">Cranial Nerve Examination</label>
+            <input type="text" id="cranial_nerve_examination">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="motor/sensory_function">Motor/Sensory Function</label>
+            <input type="text" id="cranial_nerve_examination">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="reflexes">Reflexes</label>
+            <input type="text" id="reflexes">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="coordination_balance_assessment">Coordination/Balance Assessment</label>
+            <input type="text" id="coordination_balance_assessment">
+            </div>
+</div>
+<div class="physical_examination_drop-down13" onClick="physical_showForm13()">
+            <h3>Review of Systems (ROS)</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus13"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus13"></i>
+        </div>
+        <div class="physical_examination_form13 hidden">
+            <div class="physical_examination_form-control">
+            <label for="cardiovascular_system">Cardiovascular System</label>
+            <input type="text" id="cardiovascular_system">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="respiratory_system">Respiratory System</label>
+            <input type="text" id="respiratory_system">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="gastrointestinal_system">Gastrointestinal System</label>
+            <input type="text" id="gastrointestinal_system">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="genitourinary_system">Genitourinary System</label>
+            <input type="text" id="genitourinary_system">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="neurological_system">Neurological System</label>
+            <input type="text" id="neurological_system">
+            </div>
+</div>
+<div class="physical_examination_drop-down14" onClick="physical_showForm14()">
+            <h3>Social and Family History</h3>
+            <i class="bi bi-dash-lg" id="physical_examination_icon_minus14"></i>
+            <i class="bi bi-plus-lg" id="physical_examination_icon_plus14"></i>
+        </div>
+        <div  class="physical_examination_form14 hidden">
+            <div class="physical_examination_form-control">
+            <label for="social_habits(smoking,alcohol,drugs)">Social Habits (smoking, alcohol)</label>
+            <input type="text" id="social_habits(smoking,alcohol,drugs)">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="family_medical_history">Family Medical History</label>
+            <input type="text" id="family_medical_history">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="occupation_environmental_exposures">Occupation/Environmental</label>
+            <input type="text" id="occupation_environmental_exposures">
+            </div>
+            <div class="physical_examination_form-control">
+            <label for="living_conditions_support_system">Living Conditions/Support System</label>
+            <input type="text" id="living_conditions_support_system">
+            </div>
+</div>
+    </div>
+    </div>
+      <!--End of Physica, Examination-->
+ <!--Start for Treatment and Prescribtion--->
+ <div class="treatment_prescribtion_dropdown" onClick="treatment_prescribtion_section()">
+    <h3>Treatment & Prescription</h3>
+    <i class="bi bi-plus-lg" id="treatment_prescribtion_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="treatment_prescribtion_minus"></i>
+   </div>
+   <div class="treatment_prescribtion-section hidden">
+        <div  class="treatment_prescribtion_form1">
+        <div class="treatment_prescribtion_flexs">
+            <div class="treatment_prescribtion_form-control">
+            <label for="medicine">Store</label>
+        <select name="" id="" class="treatment_prescribtion-input" >
+            <option value="">Pharmacy 1</option>
+            <option value="">Pharmacy 2</option>
+        </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="medicine">Medicine</label>
+            <input type="text" class="treatment_prescribtion-input" id="drugs">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="strength">Strength</label>
+            <input type="text" class="treatment_prescribtion-input" id="strength">
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="mode">Mode</label>
+            <select name="mode" id="mode" class="treatment_prescribtion-input" id="mode">
+                <option value="injection">Injection</option>
+                <option value="capsule">Capsule</option>
+            </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="dos">Dos</label>
+            <input type="text" class="treatment_prescribtion-input" id="dos"> 
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="unit">Unit</label>
+            <select name="unit" id="unit" class="treatment_prescribtion-input">
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+        </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="frequency">Frequency</label>
+            <select name="frequency" id="frequency" class="treatment_prescribtion-input">
+                <option value="hours">24 hourly</option>
+                <option value="others">others</option>
+            </select>
+            </div>
+            <div class="treatment_prescribtion_form-control">
+            <label for="duration">Duration</label>
+            <input type="text" class="treatment_prescribtion-input">
+            </div>
+            <i class="fa fa-plus" id="prescribe_close"></i>
+            <!-- <div id="prescribe_close">Add more drugs</div> -->
+        </div>
+    </div>
+    </div>
+
    <div class="complain_dropdown" onClick="complain_section()">
     <h3>Complaints</h3>
     <i class="bi bi-plus-lg" id="complaint_icon_plus"></i>
     <i class="bi bi-dash-lg" id="complaint_icon_minus"></i>
    </div>
    <div class="complaint-section hidden">
-        <form action="">
+      
             <div class="form-control">
             <label for="major_complaints">Major Complaints & Duration</label>
             <input type="text"  class="complaint-input" id="major_complaints">
@@ -365,7 +829,6 @@ $patient_id = $_POST['patient_Id'];
             <label for="past_sugical_medical_history">Past Surgical/Medical History</label>
             <input type="text"  class="complaint-input" id="past_sugical_medical_history">
             </div>
-        </form>
    </div>
 
             <!--End of the complaint section--->
@@ -382,7 +845,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_1"></i>
             <i class="bi bi-plus-lg" id="open_id_1"></i>
         </div>
-            <form action="" class="form1 hidden">
+            <div class="form1 hidden">
                 <div class="form-control">
                 <label for="headache">Headache</label>
                 <div class="radio">
@@ -437,13 +900,13 @@ $patient_id = $_POST['patient_Id'];
                 <label for="no">No</label>
                 </div>
   </div>
-  </form>
+</div>
   <div class="drop-down2" onClick="showForm2()">
             <h3>Skin</h3>
             <i class="bi bi-dash-lg" id="close_id_2"></i>
             <i class="bi bi-plus-lg" id="open_id_2"></i>
         </div>
-        <form action="" class="form2 hidden">
+        <div class="form2 hidden">
                 <div class="form-control">
                 <label for="headache">Change in mole(s)?</label>
                 <div class="radio">
@@ -489,13 +952,13 @@ $patient_id = $_POST['patient_Id'];
                 <label for="no">No</label>
                 </div>
   </div>
-  </form>
+</div>
   <div class="drop-down3" onClick="showForm3()">
             <h3>Endocrine</h3>
             <i class="bi bi-dash-lg" id="close_id_3"></i>
             <i class="bi bi-plus-lg" id="open_id_3"></i>
         </div>
-        <form action="" class="form3 hidden">
+        <div class="form3 hidden">
                 <div class="form-control">
                 <label for="headache">Enlarging glove or hat size?</label>
                 <div class="radio">
@@ -604,13 +1067,13 @@ $patient_id = $_POST['patient_Id'];
                 <label for="no">No</label>
                 </div>
   </div>
-  </form>
+</div>
   <div class="drop-down4" onClick="showForm4()">
             <h3>Hematopoietic</h3>
             <i class="bi bi-dash-lg" id="close_id_4"></i>
             <i class="bi bi-plus-lg" id="open_id_4"></i>
         </div>
-        <form action="" class="form4 hidden">
+        <div class="form4 hidden">
                 <div class="form-control">
                 <label for="headache">Chemotherapy Management for Hematopoietic Disorders?</label>
                 <div class="radio">
@@ -716,7 +1179,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="close_id_5"></i>
             <i class="bi bi-plus-lg" id="open_id_5"></i>
         </div>
-        <form action="" class="form5 hidden">
+        <div class="form5 hidden">
                 <div class="form-control">
                 <label for="headache">Physical therapy?</label>
                 <div class="radio">
@@ -798,13 +1261,13 @@ $patient_id = $_POST['patient_Id'];
                 <label for="no">No</label>
                 </div>
   </div>
-  </form>
+</div>
   <div class="drop-down6" onClick="showForm6()">
             <h3>Head & Neck</h3>
             <i class="bi bi-dash-lg" id="close_id_6"></i>
             <i class="bi bi-plus-lg" id="open_id_6"></i>
         </div>
-        <form action="" class="form6 hidden">
+        <div class="form6 hidden">
                 <div class="form-control">
                 <label for="headache">Symptom for head and neck issue?</label>
                 <div class="radio">
@@ -895,13 +1358,13 @@ $patient_id = $_POST['patient_Id'];
                 <label for="no">No</label>
                 </div>
   </div>
-  </form>
+</div>
   <div class="drop-down7" onClick="showForm7()">
             <h3>Ears, Nose, Sinuses, Mouth & Throat</h3>
             <i class="bi bi-dash-lg" id="close_id_7"></i>
             <i class="bi bi-plus-lg" id="open_id_7"></i>
         </div>
-        <form action="" class="form7 hidden">
+        <div class="form7 hidden">
                 <div class="form-control">
                 <label for="headache">Hearing loss?</label>
                 <div class="radio">
@@ -1073,13 +1536,13 @@ $patient_id = $_POST['patient_Id'];
                 <label for="no">No</label>
                 </div>
   </div>
-  </form>
+</div>
   <div class="drop-down8" onClick="showForm8()">
             <h3>Breast</h3>
             <i class="bi bi-dash-lg" id="close_id_8"></i>
             <i class="bi bi-plus-lg" id="open_id_8"></i>
         </div>
-        <form action="" class="form8 hidden">
+        <div class="form8 hidden">
                 <div class="form-control">
                 <label for="headache">Breast Disorder?</label>
                 <div class="radio">
@@ -1152,13 +1615,13 @@ $patient_id = $_POST['patient_Id'];
                 <label for="no">No</label>
                 </div>
   </div>
-  </form>
+</div>
   <div class="drop-down9" onClick="showForm9()">
             <h3>Respiratory</h3>
             <i class="bi bi-dash-lg" id="close_id_9"></i>
             <i class="bi bi-plus-lg" id="open_id_9"></i>
         </div>
-        <form action="" class="form9 hidden">
+        <div class="form9 hidden">
                 <div class="form-control">
                 <label for="headache">Respiratory symptom?</label>
                 <div class="radio">
@@ -1267,13 +1730,13 @@ $patient_id = $_POST['patient_Id'];
                 <label for="no">No</label>
                 </div>
   </div>
-  </form>
+</div>
   <div class="drop-down10" onClick="showForm10()">
             <h3>Cardiovascular</h3>
             <i class="bi bi-dash-lg" id="close_id_10"></i>
             <i class="bi bi-plus-lg" id="open_id_10"></i>
         </div>
-        <form action="" class="form10 hidden">
+        <div class="form10 hidden">
                 <div class="form-control">
                 <label for="headache">Cardiovascular condition?</label>
                 <div class="radio">
@@ -1355,13 +1818,13 @@ $patient_id = $_POST['patient_Id'];
                 <label for="no">No</label>
                 </div>
   </div>
-  </form>
+</div>
   <div class="drop-down11" onClick="showForm11()">
             <h3>Gastrointestinal</h3>
             <i class="bi bi-dash-lg" id="close_id_11"></i>
             <i class="bi bi-plus-lg" id="open_id_11"></i>
 </div>
-<form action="" class="form11 hidden">
+<div class="form11 hidden">
                 <div class="form-control">
                 <label for="headache">Gastrointestinal symptom?</label>
                 <div class="radio">
@@ -1407,472 +1870,23 @@ $patient_id = $_POST['patient_Id'];
                 <label for="no">No</label>
                 </div>
   </div>
-  </form>
-  </div>
-        <!--End of the System & Review section--->
+</div>
+</div>
+</div>
+<button type="button">Save Input</button>
+</form>
+</div>
 
-  <!--Start of Physica, Examination-->
-  <div class="physical_dropdown"onClick="physical_section()">
-    <h3>Physical Examination</h3>
-    <i class="bi bi-plus-lg" id="physical_icon_plus"></i>
-    <i class="bi bi-dash-lg" id="physical_icon_minus"></i>
-   </div>
-  <div class="physical_examination-section hidden">
-        <div class="physical_examination_drop-down1" onClick="physical_showForm1()">
-            <h3>General</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus1"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus1"></i>
-        </div>
-        <form action="" class="physical_examination_form1 hidden">
-            <div class="physical_examination_form-control">
-            <label for="physical_examination">Physical Examination</label>
-            <input type="text" id="physical_examination">
-</div>
-        </form>
-        <div class="physical_examination_drop-down2" onClick="physical_showForm2()">
-            <h3>Neurological</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus2"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus2"></i>
-        </div>
-        <form action="" class="physical_examination_form2 hidden">
-            <div class="physical_examination_form-control">
-            <label for="mental_status">Mental Status</label>
-            <input type="text" id="mental_status">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="cranial_nerves">Cranial Nerves</label>
-            <input type="text" id="cranial_nerves">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="position_sense">Position Sense</label>
-            <input type="text" id="position_sense">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="vibration_sense">Vibration Sense</label>
-            <input type="text" id="vibration_sense">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="reflex_technique">Reflex Technique</label>
-            <input type="text" id="reflex_technique">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="coordination_of_upper_extremities">Coordination of upper extremities</label>
-            <input type="text" id="coordination_of_upper_extremities">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="coordination_of_lower_extremities">Coordination of lower extremities</label>
-            <input type="text" id="coordination_of_lower_extremities">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="gait">Gait</label>
-            <input type="text" id="gait">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="glasgow">Glasgow coma scale</label>
-            <input type="text" id="glasgow">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="headache">Eye opening response</label>
-                <div class="radio">
-                <input type="radio" id="spontaneous" name="eye"/>
-                <label for="spontaneous">Spontaneous</label>
-                <input type="radio" id="to_speech" name="eye"/>
-                <label for="to_speech">To speech </label>
-                <input type="radio" id="to_pain" name="eye"/>
-                <label for="no_response">To Pain </label>
-                <input type="radio" id="no_response" name="eye"/>
-                <label for="no_response">No Response</label>
-                </div>
-</div>
-            <div class="physical_examination_form-control">
-            <label for="headache">Best verbal response</label>
-                <div class="radio">
-                <input type="radio" id="oriented" name="verbal"/>
-                <label for="oriented">Oriented to time, place & person </label>
-                <input type="radio" id="confused" name="verbal"/>
-                <label for="confused">Confused 3</label>
-                <input type="radio" id="inappropraite" name="verbal"/>
-                <label for="no_response">Inappropraite words</label>
-                <input type="radio" id="incmprehensible" name="verbal"/>
-                <label for="response">Incomprehensible sounds</label>
-                <input type="radio" id="response" name="verbal"/>
-                <label for="response">No Response</label>
-                </div>
-</div>
-            <div class="physical_examination_form-control">
-            <label for="headache">Best motor response</label>
-                <div class="radio">
-                <input type="radio" id="obey" name="motor"/>
-                <label for="obey">Obey command</label>
-                <input type="radio" id="localized" name="motor"/>
-                <label for="localized">Moved to localised pain</label>
-                <input type="radio" id="flexion" name="motor"/>
-                <label for="flexion">Flexion withdrawal from pain</label>
-                <input type="radio" id="abnornal" name="motor"/>
-                <label for="abnormal">Abnormal flexion(decorticate)</label>
-                <input type="radio" id="response" name="motor"/>
-                <label for="response">No Response</label>
-                </div>
-</div>
-        
-        </form>
-        <div class="physical_examination_drop-down3" onClick="physical_showForm3()">
-            <h3>Vital Sign</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus3"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus3"></i>
-        </div>
-        <form action="" class="physical_examination_form3 hidden">
-            <div class="physical_examination_form-control">
-            <label for="physical_blood_pressure">Blood Pressure</label>
-            <input type="text" id="physical_blood_pressure">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="heart_rate">Heart Rate</label>
-            <input type="text" id="heart_rate">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="respiratory_rate">Respiratory Rate</label>
-            <input type="text" id="respiratory_rate">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="temperature">Temperature</label>
-            <input type="text" id="temperature">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="oxygen_saturation">Oxygen Saturation</label>
-            <input type="text" id="oxygen_saturation">
-            </div>
-</form>
-<div class="physical_examination_drop-down4" onClick="physical_showForm4()">
-            <h3>General Apperance</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus4"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus4"></i>
-        </div>
-        <form action="" class="physical_examination_form4 hidden">
-            <div class="physical_examination_form-control">
-            <label for="level">Level of Consciousness</label>
-            <input type="text" id="level">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="nutritional">Nutritional Status</label>
-            <input type="text" id="nutritional">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="signs">Signs of Distress/Discomfort</label>
-            <input type="text" id="signs">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="body_habitus">Body Habitus</label>
-            <input type="text" id="body_habitus">
-            </div>
-</form>
-<div class="physical_examination_drop-down5"onClick="physical_showForm5()" >
-            <h3>Skin Examination</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus5"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus5"></i>
-        </div>
-        <form action="" class="physical_examination_form5 hidden">
-            <div class="physical_examination_form-control">
-            <label for="pigmentation">Color/Pigmentation</label>
-            <input type="text" id="pigmentation">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="moisture/temperature">Moisture/Temperature</label>
-            <input type="text" id="moisture_temperature">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="lesions/rashes">Lesions/Rashes/Abnormalities</label>
-            <input type="text" id="lesions/rashes">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="bruising">Brusing/Petechiae</label>
-            <input type="text" id="bruising">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="scars">Scars/Surgical Incisions</label>
-            <input type="text" id="scars">
-            </div>
-</form>
-<div class="physical_examination_drop-down6" onClick="physical_showForm6()">
-            <h3>Head and Neck</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus6"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus6"></i>
-        </div>
-        <form action="" class="physical_examination_form6 hidden">
-            <div class="physical_examination_form-control">
-            <label for="scalp/hair/nails">Scalp/Hair/Nails</label>
-            <input type="text" id="scalp_hair_nails">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="eyes/ears/nose/throat">Eyes/Ears/Nose/Throat:</label>
-            <input type="text" id="eyes_ears_nose_throat"">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="lesions/rashes">Lesions/Rashes/Abnormalities</label>
-            <input type="text" id="lesions_rashes">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="lymph_nodes">Lymph Nodes</label>
-            <input type="text" id="lymph_nodes">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="neck_rang_of_Motion">Neck Range of Motion</label>
-            <input type="text" id="neck_rang_of_Motion">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="presence_of_Bruits">Presence of Bruits (if applicable)</label>
-            <input type="text" id="presence_of_Bruits">
-            </div>
-</form>
-<div class="physical_examination_drop-down7" onClick="physical_showForm7()">
-            <h3>Cardiovascular Examination</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus7"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus7"></i>
-        </div>
-        <form action="" class="physical_examination_form7 hidden">
-            <div class="physical_examination_form-control">
-            <label for="inspection_palpation_of_precordium">Inspection/Palpation of Precordium</label>
-            <input type="text" id="inspection_palpation_of_precordium">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="auscultation_of_heart_sounds_murmurs">Auscultation of Heart Sounds/Murmurs</label>
-            <input type="text" id="auscultation_of_heart_sounds_murmurs">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="peripheral_pulses">Peripheral Pulses</label>
-            <input type="text" id="peripheral_pulses">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="edema_assessment">Edema Assessment</label>
-            <input type="text" id="edema_assessment">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="capillary_refill_time">Capillary Refill Time</label>
-            <input type="text" id="capillary_refill_time">
-</div>
-</form>
-<div class="physical_examination_drop-down8" onClick="physical_showForm8()">
-            <h3>Respiratory Examination</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus8"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus8"></i>
-        </div>
-           <form action="" class="physical_examination_form8 hidden">
-            <div class="physical_examination_form-control">
-            <label for="respiratory_effort_inspection">Respiratory Effort Inspection</label>
-            <input type="text" id="respiratory_effort_inspection">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="palpation_percussion_of_chest">Palpation/Percussion of Chest</label>
-            <input type="text" id="palpation_percussion_of_chest">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="auscultation_of_breath Sounds">Auscultation of Breath Sounds</label>
-            <input type="text" id="auscultation_of_breath">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="cough_sputum_assessment">Cough/Sputum Assessment</label>
-            <input type="text" id="cough_sputum_assessment">
-            </div>
-</form>
-<div class="physical_examination_drop-down9" onClick="physical_showForm9()">
-            <h3>Abdominal Examination</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus9"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus9"></i>
-        </div>
-        <form action="" class="physical_examination_form9 hidden">
-            <div class="physical_examination_form-control">
-            <label for="presence_of _tenderness_masses">Presence of Tenderness/Masses</label>
-            <input type="text" id="presence_of _tenderness_masses">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="bowel_sounds_assessment_sounds">Bowel Sounds Assessment</label>
-            <input type="text" id="bowel_sounds_assessment_sounds">
-            </div>
-</form>
-<div class="physical_examination_drop-down10" onClick="physical_showForm10()">
-            <h3>Genitourinary Examination</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus10"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus10"></i>
-        </div>
-        <form action="" class="physical_examination_form10 hidden">
-            <div class="physical_examination_form-control">
-            <label for="genitalia_inspection">Genitalia Inspection</label>
-            <input type="text" id="genitalia_inspection">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="urinary_function_assessment">Urinary Function Assessment</label>
-            <input type="text" id="urinary_function_assessment">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="pelvic_examination_sounds">Pelvic Examination (if applicable)</label>
-            <input type="text" id="pelvic_examination_sounds">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="prostate_examination">Prostate Examination (if applicable)</label>
-            <input type="text" id="prostate_examination">
-            </div>
-</form>
-<div class="physical_examination_drop-down11" onClick="physical_showForm11()">
-            <h3>Musculoskeletal Examination</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus11"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus11"></i>
-        </div>
-        <form action="" class="physical_examination_form11 hidden">
-            <div class="physical_examination_form-control">
-            <label for="genitalia_inspection_of_joint">Inspection/Palpation of Joints</label>
-            <input type="text" id="genitalia_inspection_of_joint">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="range_of_motion_assessment">Range of Motion Assessment</label>
-            <input type="text" id="range_of_motion_assessment">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="gait_balance_evaluation">Gait/Balance Evaluation</label>
-            <input type="text" id="gait_balance_evaluation">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="pine_examination">pine Examination</label>
-            <input type="text" id="pine_examination">
-            </div>
-</form>
-<div class="physical_examination_drop-down12" onClick="physical_showForm12()">
-            <h3>Neurological Examination</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus12"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus12"></i>
-        </div>
-        <form action="" class="physical_examination_form12 hidden">
-            <div class="physical_examination_form-control">
-            <label for="mental_status_assessment">Mental Status Assessment</label>
-            <input type="text" id="mental_status_assessment">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="cranial_nerve_examination">Cranial Nerve Examination</label>
-            <input type="text" id="cranial_nerve_examination">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="motor/sensory_function">Motor/Sensory Function</label>
-            <input type="text" id="cranial_nerve_examination">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="reflexes">Reflexes</label>
-            <input type="text" id="reflexes">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="coordination_balance_assessment">Coordination/Balance Assessment</label>
-            <input type="text" id="coordination_balance_assessment">
-            </div>
-</form>
-<div class="physical_examination_drop-down13" onClick="physical_showForm13()">
-            <h3>Review of Systems (ROS)</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus13"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus13"></i>
-        </div>
-        <form action="" class="physical_examination_form13 hidden">
-            <div class="physical_examination_form-control">
-            <label for="cardiovascular_system">Cardiovascular System</label>
-            <input type="text" id="cardiovascular_system">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="respiratory_system">Respiratory System</label>
-            <input type="text" id="respiratory_system">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="gastrointestinal_system">Gastrointestinal System</label>
-            <input type="text" id="gastrointestinal_system">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="genitourinary_system">Genitourinary System</label>
-            <input type="text" id="genitourinary_system">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="neurological_system">Neurological System</label>
-            <input type="text" id="neurological_system">
-            </div>
-</form>
-<div class="physical_examination_drop-down14" onClick="physical_showForm14()">
-            <h3>Social and Family History</h3>
-            <i class="bi bi-dash-lg" id="physical_examination_icon_minus14"></i>
-            <i class="bi bi-plus-lg" id="physical_examination_icon_plus14"></i>
-        </div>
-        <form action="" class="physical_examination_form14 hidden">
-            <div class="physical_examination_form-control">
-            <label for="social_habits(smoking,alcohol,drugs)">Social Habits (smoking, alcohol)</label>
-            <input type="text" id="social_habits(smoking,alcohol,drugs)">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="family_medical_history">Family Medical History</label>
-            <input type="text" id="family_medical_history">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="occupation_environmental_exposures">Occupation/Environmental</label>
-            <input type="text" id="occupation_environmental_exposures">
-            </div>
-            <div class="physical_examination_form-control">
-            <label for="living_conditions_support_system">Living Conditions/Support System</label>
-            <input type="text" id="living_conditions_support_system">
-            </div>
-</form>
-    </div>
-      <!--End of Physica, Examination-->
 
-    <!--Start for Treatment and Prescribtion--->
-    <div class="treatment_prescribtion_dropdown" onClick="treatment_prescribtion_section()">
-    <h3>Treatment & Prescription</h3>
-    <i class="bi bi-plus-lg" id="treatment_prescribtion_icon_plus"></i>
-    <i class="bi bi-dash-lg" id="treatment_prescribtion_minus"></i>
-   </div>
-   <div class="treatment_prescribtion-section hidden">
-        <form action="" class="treatment_prescribtion_form1">
-        <div class="treatment_prescribtion_flexs">
-            <div class="treatment_prescribtion_form-control">
-            <label for="medicine">Store</label>
-        <select name="" id="" class="treatment_prescribtion-input" >
-            <option value="">Pharmacy 1</option>
-            <option value="">Pharmacy 2</option>
-        </select>
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="medicine">Medicine</label>
-            <input type="text" class="treatment_prescribtion-input" id="drugs">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="strength">Strength</label>
-            <input type="text" class="treatment_prescribtion-input" id="strength">
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="mode">Mode</label>
-            <select name="mode" id="mode" class="treatment_prescribtion-input" id="mode">
-                <option value="injection">Injection</option>
-                <option value="capsule">Capsule</option>
-            </select>
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="dos">Dos</label>
-            <input type="text" class="treatment_prescribtion-input" id="dos"> 
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="unit">Unit</label>
-            <select name="unit" id="unit" class="treatment_prescribtion-input">
-                <option value=""></option>
-                <option value=""></option>
-            </select>
-        </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="frequency">Frequency</label>
-            <select name="frequency" id="frequency" class="treatment_prescribtion-input">
-                <option value="hours">24 hourly</option>
-                <option value="others">others</option>
-            </select>
-            </div>
-            <div class="treatment_prescribtion_form-control">
-            <label for="duration">Duration</label>
-            <input type="text" class="treatment_prescribtion-input">
-            </div>
-            <i class="fa fa-plus" id="prescribe_close"></i>
-            <!-- <div id="prescribe_close">Add more drugs</div> -->
-        </div>
-    </div>
-        </form>
+
+
+
+
+
+
+
+<!----------------DIFFERENT SECTION FROM THE PATIENT INPUT, THIS IS FOR TRANSFERING PATIENT --->
+
                 <!--Investigation and procedure-->
                 <div class=" investigation_dropdown" onClick="investigation_section()">
     <h3>Investigation and Procedure</h3>

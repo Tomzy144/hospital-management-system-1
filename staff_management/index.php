@@ -33,7 +33,7 @@
     <div class="sidebar__header"></div>
     <div class="sidebar-body">
       <ul>
-        <li class="links active" onclick="openModal()">
+        <li class="links active" onclick="openModal('staffForm')">
           <span>Add New Staff</span>
         </li>
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
@@ -46,55 +46,70 @@
     </div>
   </div>
 
-  <div id="popup1" class="overlay hidden">
-  <div class="popup">
-           <button class="btn_submit" id="generateStaffId">Edit Staff Information</button>
-           <button class="btn_submit" id="generateStaffId">Check Staff Profile</button>
-           <button class="btn_submit" id="generateStaffId">Print Staff Payroll</button>
+  <!-- <div class="userInfo">
+                  <ul class="userList">
+                    <li id="personalDetailsTab">Personal Information</li>
+                    <li id="employmentDetailsTab">Employment Details</li>
+                    <li id="professionalInfoTab">Professional Information</li>
+                    <li id="payrollInfoTab">Payroll Info</li>
+                  </ul>
+                </div>
+                <div id="personalDetails" class="hide">
+                  <h3>Gender: Female</h3>
+                  <h3>Date of Birth: 23/07/1994</h3>
+                  <h3>Home Resident: London Road California</h3>
+                  <h3>Phone number: 442203323</h3>
+                  <h3>Email: miriam@gmail.com</h3>
+                </div>
+                <div id="employmentDetails" class="hide">
+                  <h3>Surgeon</h3>
+                  <h3>Dpt Head</h3>
+                  <h3>Full time</h3>
+                  <h3>Hired 27/7/2023</h3>
+                </div>
+                <div id="professionalInfo" class="hide">
+                  <h3>Qualification(pdf) <i class="bi bi-download"></i></h3>
+                  <h3>Certification/Licenses <i class="bi bi-download"></i></h3>
+                  <h3>Resume/C.V <i class="bi bi-download"></i></h3>
+                  <h3>Salary - $300</h3>
+                </div>
+                <div id="payrollInfo" class="hide">
+                  <h3>UBA</h3>
+                  <h3>3383323892</h3>
+                  <h3>Miriam Cleneen</h3>
+                </div>
+              </div> -->
+ 
+  <div class="modal hidden" id="staffInfo">
+      <div class="table_container">
+            <div class="search_bar_container">
+            <h2 class="modal__header">
+        Staff 
+      <span class="highlight">Profile</span>
+      </h2>
+            </div>
+            <table id="staffData">
+                <thead>
+                    <tr>
+                        <td>Personal Infomation</td>
+                        <td>Employment Detail</td>
+                        <td>Professional Information</td>
+                        <td>Payroll Info</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+        </table>
   </div>
+
 </div>
-
-  <!-- <div class="success alert">
-    <div class="content">
-      <div class="icon">
-      <i class="bi bi-check-circle-fill bootsrapIcon"></i>
-    </div>
-      <h2>A Success Message</h2>
-    </div>
-  </div>
-  <div class="info alert">
-    <div class="content">
-      <div class="icon">
-      <i class="bi bi-info-circle-fill bootsrapIcon"></i>
-    </div>
-      <h2>A Success Message</h2>
-    </div>
-  </div>
-  <div class="warning alert">
-    <div class="content">
-      <div class="icon">
-      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
-    </div>
-      <h2>A Success Message</h2>
-    </div>
-  </div>
-  <div class="danger alert">
-    <div class="content">
-      <div class="icon">
-      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
-    </div>
-      <h2>A Success Message</h2>
-    </div>
-  </div> -->
   
-
-
   <div class="list_div" id="staffList">
     <div class="table_container">
             <div class="search_bar_container">
             <h2 class="modal__header">
         Staff 
-      <span class="highlight">Registration</span>
+      <span class="highlight">List</span>
       </h2>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
@@ -107,7 +122,7 @@
                         <td>Staff Id</td>
                         <td>Gender</td>
                         <td>Staff Email</td>
-                        <td>Position</td>
+                        <td>Role</td>
                         <td>Department</td>
                         <td>Status</td>
                         <td>Duty Status</td>
@@ -120,8 +135,8 @@
   </div>
 
 
-  <div class="modal hidden">
-      <button class="btn--close-modal" onclick="closeModal()">&times;</button>
+  <div class="modal hidden" id="staffForm">
+      <button class="btn--close-modal" onclick="closeModal('staffForm')">&times;</button>
       <h2 class="modal__header">
         Staff 
       <span class="highlight">Registration</span>
@@ -193,6 +208,10 @@
             <label for="">Date of Hire</label>
              <input type="date" name="" id="">
           </div>
+          <div class="form-control">
+            <label for="staffStatus">Staff Status</label>
+             <input type="text" name="staffStatus" id="staffStatus">
+          </div>
         </div>
         <h3>Professional Information</h3>
         <div class="each_sections">
@@ -226,36 +245,10 @@
              <input type="text" name="" id="" placeholder="Account Name">
           </div>
         </div>
-        <!-- <h3>System Access Information</h3>
-        <div class="each_sections">
-        <div class="form-control">
-            <label for="">Username</label>
-             <input type="text" name="" id="">
-          </div>
-        <div class="form-control">
-            <label for="">Password</label>
-             <input type="text" name="" id="">
-          </div>
-        <div class="form-control">
-            <label for="">ID</label>
-             <input type="text" name="" id="">
-          </div>
-          <div class="form-control">
-            <label for="">Role-Based Access Level</label>
-             <select name="" id="">
-              <option value="">Admin</option>
-              <option value="">HR Manager</option>
-              <option value="">Department Head</option>
-              <option value="">Staff Member</option>
-             </select>
-          </div>
-          </div> -->
         <button type="button" class="btn_submit" onclick="registerStaff()">Submit &rarr;</button>
       </form>
     </div>
-    <div class="overlay hidden"></div>
-
-
+    <div class="black_blur hidden"></div>
         <script src="index.js"></script>
 </body>
 </html>

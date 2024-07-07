@@ -363,7 +363,6 @@ cursor: pointer;
 }
 .search_bar_container span {
     font-size: 20px;
-    text-transform: uppercase;
     letter-spacing: 3px;
   }
 .search_bar_container i{
@@ -376,14 +375,15 @@ cursor: pointer;
  table {
     width: 100%;
     border-collapse: collapse;
-    background: #00185b;
+    white-space: nowrap;
+    background: #2a57d7;
 }
 
  table thead {
     position: sticky; 
     top: 0;
     z-index: 1;
-    font-size: 1.3em;
+    font-size: 1.1em;
     border: 1px solid #fff;
     text-align: center;
     transition: background 0.25s ease;
@@ -404,7 +404,7 @@ table thead td{
     border-radius: 100%;
 }
 tbody tr:hover {
-  background: rgb(42, 87, 215);
+  background: #00185b;
 }
  table tbody td {
     padding: 0.5em;
@@ -420,11 +420,26 @@ tbody tr:hover {
     font-size: 0.85em;
     cursor: pointer;
     vertical-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.2;
 }
 .disabled td {
   color: #4F5F64;
+}
+
+/* .activeStaff{
+  background-color: orange;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+} */
+
+.notActiveStaff{
+  background-color: orange;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  margin: 0 3rem;
 }
 
 .each_sections {
@@ -608,7 +623,6 @@ tbody tr:hover {
   
   .modal__header {
     font-size: 3.25rem;
-    margin-bottom: 4.5rem;
     line-height: 1.5;
   }
   
@@ -645,7 +659,7 @@ tbody tr:hover {
 
   /*popup modal*/
 
-  .overlay {
+  .black_blur {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -655,6 +669,7 @@ tbody tr:hover {
     transition: opacity 500ms;
     visibility: visible;
     opacity: 1;
+    z-index: 7;
   }
 
   .popup {
@@ -698,8 +713,40 @@ tbody tr:hover {
       width: 70%;
     }
   }
+  #staffProfile{
+    background: linear-gradient(45deg, #0078d0 30%, #fff 30%)/* Second color (green) starts at 30% */;
+    width:auto;
+    border-radius: 1rem;
+  }
+  .staffPro{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .staffPro img{
+    border-radius: 100%;
+    width: 12rem;
+    border: 7px solid aliceblue;
+    height: 12rem;
+  }
+  .userNameId{
+    margin: 0 3rem;
+    font-size: 1.5rem;
+    color: #4e73df ;
+    font-style: oblique;
+    font-weight: 500;
+  }
+  #selectOption{
+    width: auto;
+    padding: 0;
+    border-radius: 1rem;
+  }
+  #viewmore{
+    border-bottom: 1px solid blue;
+    cursor: pointer;
+    width: fit-content;
+  }
 
-  
   .hidden {
     visibility: hidden;
     opacity: 0;
