@@ -197,7 +197,7 @@
           </div>
           <div class="form-control">
             <label for="">Employment Type</label>
-             <select name="" id="">
+             <select name="employmentType" id="employmentType">
               <option value="">Full-time</option>
               <option value="">Part-time</option>
               <option value="">Contract</option>
@@ -217,11 +217,11 @@
         <div class="each_sections">
         <div class="form-control">
             <label for="">Qualifications</label>
-             <input type="file" name="qualification" id="qualification">
+             <input type="file" name="qualification" id="qualification" accept="application/pdf" multiple>
           </div>
         <div class="form-control">
             <label for="">Certifications/Licenses</label>
-             <input type="file" name="cerification/licenses" id="cerification/licenses">
+             <input type="file" name="cerification/licenses" id="cerification/licenses" accept="application/pdf">
           </div>
         <div class="form-control">
             <label for="">Resume/C.V.</label>

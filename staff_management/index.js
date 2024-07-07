@@ -217,12 +217,26 @@ const registerStaff = function() {
     formData.forEach((value, key) => {
       data[key] = value;
     });
+    
+    const fileInput = document.getElementById('qualification');
+    const file = fileInput.files[0];
+    console.log(file);
+    if(file){
+      const reader = new FileReader();
+      reader.onload = (event) =>{
+        const pdfData = event.target.result;
+        data.certificateData = pdfData;
+        
     data.staffId = staffId;
     staffDb.push(data);
-
     localStorage.setItem('formData', JSON.stringify(staffDb));
     newStaffList(staffList, data);
     window.location.reload();
+      }
+      reader.readAsDataURL(file);
+      }else {
+        alert('Please select a PDF file.');
+      }
   }
 }
 
@@ -242,15 +256,12 @@ const newStaffList = function(staffList, staff) {
 }
 
 
-
-
 // Function to handle staff list actions
 const eachStaff = function() {
   staffList.addEventListener('click', function(e) {
     let staffName;
     let staffId;
     let popup;
-
 
     // Check if the staff list contains noStaffList
     if(staffDb.length === 0) {
@@ -311,14 +322,44 @@ const eachStaff = function() {
           closeModal('selectOption');
           closeModal('staffProfile');
           openModal('staffInfo');
+
+          const row1 = document.createElement('tr');
+          const column1 = document.createElement('td');
+          const column2 = document.createElement('td');
+          const staffData = document.querySelector('#staffData tbody');
+           staffDb.forEach(staff => {
+            if(staff.staffName === staffName){
+              console.log(staff)
+              column1.innerHTML = `
+              ${staff.staffName} <br/>${staff.staffId} <br/> ${staff.dob} </br> ${staff.gender} <br/> ${staff.address} </br/> ${staff.staffPhoneNumber} </br> ${staff.staffEmail}
+              `
+   
+
+              // Check if the PDF data exists and add the download link
+              if (staff.certificatePdf) {
+                const downloadLink = document.createElement('a');
+                downloadLink.href = staff.certificatePdf;
+                downloadLink.download = 'certificate.pdf';
+                downloadLink.innerHTML = '<i class="bi bi-download"></i>';
+                column2.appendChild(downloadLink);
+              }
+
+              row1.appendChild(column1);
+              row1.appendChild(column2);
+              staffData.appendChild(row1);
+            }
+          });
+
         });
 
         // Add event listener to close modal on escape key press
         document.addEventListener('keydown', function(event) {
           if (event.key === 'Escape') {
+            const staffData = document.querySelector('#staffData tbody');
             closeModal('staffProfile');
             closeModal('staffInfo');
             closeModal('selectOption');
+            staffData.innerHTML = '';
           }
         });
 
