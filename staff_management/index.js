@@ -168,13 +168,33 @@ if (tableBody.contains(noDataMessage)) {
 }
 }
 ///////////////////////////////////////////////
+let staffDb;
+document.addEventListener('DOMContentLoaded', function() {
+  loadStaffData();
+});
+
+// Function to load and render staff data from localStorage
+function loadStaffData() {
+   staffDb = JSON.parse(localStorage.getItem('formData')) || [];
+  
+  const staffList = document.querySelector('#staffList tbody');
+  staffList.innerHTML = ''; // Clear existing rows
+
+  if (staffDb.length === 0) {
+    const noStaffList = createNoDataMessage();
+    staffList.append(noStaffList);
+  } else {
+    staffDb.forEach(staff => {
+      newStaffList(staffList, staff);
+    });
+  }
+}
+
 const staffFormInput = document.querySelectorAll('#staffFormInput input');
 const staffFormSelect = document.querySelectorAll('#staffFormInput select');
 const staffList = document.querySelector('#staffList tbody');
-const noStaffList = createNoDataMessage();
-staffList.append(noStaffList);
+
 const registerStaff = function() {
-  // Validate the form inputs
   if (!isInputValid(staffFormInput)) {
     warningMessage('Please Input Field');
   } else if (!isEmailValid('staffEmail')) {
@@ -185,61 +205,40 @@ const registerStaff = function() {
     warningMessage('Please Select your Gender');
   } else {
     // If all validations pass, proceed with staff registration
-    removeNoDataMessage(staffList, noStaffList);
-    
-    // Generate a unique staff ID
+    removeNoDataMessage(staffList);
     const staffId = generateId();
-    
-    // Add the new staff to the list
-    newStaffList(staffList, staffId);
-    
-    // Display success message
     successMessage('Staff Registered Successfully');
-    
-  // Store the form inputs in localStorage for rendering the list
-  const inputsArray = Array.from(staffFormInput).map(input => ({
-    name: input.name,
-    value: input.value
-  }));
-  
-  // Add the generated staffId as a separate entry
-  inputsArray.push({ name: 'staffId', value: staffId });
-  
-  localStorage.setItem('staffInputs', JSON.stringify(inputsArray));
-    console.log(inputsArray)
+
+    let staffDb = JSON.parse(localStorage.getItem('formData')) || [];
+    const form = document.getElementById('staffFormInput');
+    const formData = new FormData(form);
+    const data = {};
+
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+    data.staffId = staffId;
+    staffDb.push(data);
+
+    localStorage.setItem('formData', JSON.stringify(staffDb));
+    newStaffList(staffList, data);
+    window.location.reload();
   }
-};
+}
 
-
-
-const newStaffList = function(staffs, staffId){
-  const rowCount = staffs.rows.length + 1;
-  const newRow = staffs.insertRow();
-  const staffName = document.getElementById('staffName');
-  const staffEmail = document.getElementById('staffEmail');
-  const jobPosition = document.getElementById('jobPosition');
-  const staffDepartment = document.getElementById('staffDepartment');
-  const staffStatus = document.getElementById('staffStatus');
-  const gender = document.querySelector('input[name="gender"]:checked').value;
-  let getData = JSON.parse(localStorage.getItem('staffInputs'));
-
-  getData.forEach((data,entries)=>{
-    console.log(data,entries)
-  })
-
-
-
-
+const newStaffList = function(staffList, staff) {
+  const rowCount = staffList.rows.length + 1;
+  const newRow = staffList.insertRow();
   newRow.insertCell(0).innerHTML = rowCount;
   newRow.insertCell(1).innerHTML = "Image";
-  newRow.insertCell(2).innerHTML = staffName.value;
-  newRow.insertCell(3).innerHTML = staffId;
-  newRow.insertCell(4).innerHTML = gender;
-  newRow.insertCell(5).innerHTML = staffEmail.value;
-  newRow.insertCell(6).innerHTML = jobPosition.value;
-  newRow.insertCell(7).innerHTML = staffDepartment.value
-  newRow.insertCell(8).innerHTML = staffStatus.value
-  newRow.insertCell(9).innerHTML = `<div class="notActiveStaff"></div>`
+  newRow.insertCell(2).innerHTML = staff.staffName;
+  newRow.insertCell(3).innerHTML = staff.staffId;
+  newRow.insertCell(4).innerHTML = staff.gender;
+  newRow.insertCell(5).innerHTML = staff.staffEmail;
+  newRow.insertCell(6).innerHTML = staff.jobPosition;
+  newRow.insertCell(7).innerHTML = staff.staffDepartment;
+  newRow.insertCell(8).innerHTML = staff.staffStatus;
+  newRow.insertCell(9).innerHTML = `<div class="notActiveStaff"></div>`;
 }
 
 
@@ -252,8 +251,9 @@ const eachStaff = function() {
     let staffId;
     let popup;
 
+
     // Check if the staff list contains noStaffList
-    if(staffList.contains(noStaffList)) {
+    if(staffDb.length === 0) {
       warningMessage('No staff list found');
       return; 
     } else {

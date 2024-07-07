@@ -150,7 +150,7 @@
           </div>
           <div class="form-control">
           <label>Date of Birth</label>
-          <input type="date" name="" id="">
+          <input type="date" name="dob" id="dob">
           </div>
           <div class="form-control">
           <label for="gender">Gender</label>
@@ -169,7 +169,7 @@
           </div>
           <div class="form-control">
           <label>Address</label>
-          <input type="text" name="" id="">
+          <input type="text" name="address" id="address">
           </div>
           <div class="form-control">
           <label for="staffPhoneNumber">Phone Number</label>
@@ -185,7 +185,7 @@
         <div class="each_sections">
           <div class="form-control">
             <label for="">Employee ID</label>
-             <input type="text" name="" id="">
+             <input type="text" name="employmentId" id="employmentId">
           </div>
           <div class="form-control">
             <label for="jobPosition">Position/Job Title</label>
@@ -206,7 +206,7 @@
           </div>
           <div class="form-control">
             <label for="">Date of Hire</label>
-             <input type="date" name="" id="">
+             <input type="date" name="doh" id="doh">
           </div>
           <div class="form-control">
             <label for="staffStatus">Staff Status</label>
@@ -217,15 +217,15 @@
         <div class="each_sections">
         <div class="form-control">
             <label for="">Qualifications</label>
-             <input type="file" name="" id="">
+             <input type="file" name="qualification" id="qualification">
           </div>
         <div class="form-control">
             <label for="">Certifications/Licenses</label>
-             <input type="file" name="" id="">
+             <input type="file" name="cerification/licenses" id="cerification/licenses">
           </div>
         <div class="form-control">
             <label for="">Resume/C.V.</label>
-             <input type="file" name="" id="">
+             <input type="file" name="resume" id="resume">
           </div>
         </div>
         <h3>Payroll Information</h3>
@@ -240,9 +240,9 @@
           </div>
         <div class="form-control">
             <label for="">Bank Account Details for Direct Deposit</label>
-             <input type="text" name="" id="" placeholder="Bank Name">
-             <input type="text" name="" id="" placeholder="Account Number">
-             <input type="text" name="" id="" placeholder="Account Name">
+             <input type="text" name="bankName" id="bankName" placeholder="Bank Name">
+             <input type="text" name="bankAccountNumber" id="bankAccountNumber" placeholder="Account Number">
+             <input type="text" name="AccountName" id="AccountName" placeholder="Account Name">
           </div>
         </div>
         <button type="button" class="btn_submit" onclick="registerStaff()">Submit &rarr;</button>
