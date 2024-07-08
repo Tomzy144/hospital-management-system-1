@@ -142,6 +142,17 @@
       <span class="highlight">Registration</span>
       </h2>
       <form class="modal__form" id="staffFormInput">
+        <div class="passport">
+          <video src="" id="passportVideo" width="400" height="300" autoplay></video>
+          <i class="bi bi-plus" id="openCamera"></i>
+          <canvas id="canvasPassport" style="display: none"></canvas>
+          <img src="" alt="staff image" id="capturedPassport" style="display: none">
+        </div>
+        <div class="capture__div hide">
+        <button type="button" id="captureImage" class="btn_submit">Capture Staff</button>
+        <button type="button" id="recaptureImage" class="btn_submit">Recapture Staff</button>
+        </div>
+       
         <h3>Personal Infomation</h3>
         <div class="each_sections">
           <div class="form-control">
@@ -198,10 +209,10 @@
           <div class="form-control">
             <label for="">Employment Type</label>
              <select name="employmentType" id="employmentType">
-              <option value="">Full-time</option>
-              <option value="">Part-time</option>
-              <option value="">Contract</option>
-              <option value="">Temporary</option>
+              <option value="Full-time">Full-time</option>
+              <option value="part-time">Part-time</option>
+              <option value="contract">Contract</option>
+              <option value="temporary">Temporary</option>
              </select>
           </div>
           <div class="form-control">
@@ -217,15 +228,15 @@
         <div class="each_sections">
         <div class="form-control">
             <label for="">Qualifications</label>
-             <input type="file" name="qualification" id="qualification" accept="application/pdf" multiple>
+             <input type="file" name="qualification" id="qualification" accept="application/pdf">
           </div>
         <div class="form-control">
             <label for="">Certifications/Licenses</label>
-             <input type="file" name="cerification/licenses" id="cerification/licenses" accept="application/pdf">
+             <input type="file" name="cerification/licenses" id="cerification" accept="application/pdf">
           </div>
         <div class="form-control">
             <label for="">Resume/C.V.</label>
-             <input type="file" name="resume" id="resume">
+             <input type="file" name="resume" id="resume" accept="application/pdf">
           </div>
         </div>
         <h3>Payroll Information</h3>
@@ -245,7 +256,7 @@
              <input type="text" name="AccountName" id="AccountName" placeholder="Account Name">
           </div>
         </div>
-        <button type="button" class="btn_submit" onclick="registerStaff()">Submit &rarr;</button>
+        <button type="button" class="btn_submit" id="registerStaff">Submit &rarr;</button>
       </form>
     </div>
     <div class="black_blur hidden"></div>

@@ -539,7 +539,44 @@ tbody tr:hover {
   input[type=submit]:hover {
     background-color: rgb(42, 87, 215);
   }
-  
+  .passport{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: rgba(196, 191, 191, 0.35) 0px 5px 15px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    border-radius: 100%;
+    text-align: center;
+  }
+  #openCamera{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 0.5rem;
+    position: absolute;
+    right: 12%;
+    bottom: 17%;
+    background-color: rgb(42, 87, 215);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #openCamera.hide{
+    display: none;
+  }
+  #capturedPassport{
+    position: absolute;
+  }
+  .capture__div{
+    width: 30rem;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+  }
 
     
     /* CSS */
@@ -607,6 +644,9 @@ tbody tr:hover {
     box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
     z-index: 100;
     transition: all 0.5s;
+  }
+  #staffInfo{
+    width: 80%;
   }
   
   .overlay {
@@ -714,8 +754,8 @@ tbody tr:hover {
     }
   }
   #staffProfile{
-    background: linear-gradient(45deg, #0078d0 30%, #fff 30%)/* Second color (green) starts at 30% */;
-    width:auto;
+    background: linear-gradient(45deg, #061d45 30%, #fff 30%);
+    width: auto;
     border-radius: 1rem;
   }
   .staffPro{
@@ -732,9 +772,9 @@ tbody tr:hover {
   .userNameId{
     margin: 0 3rem;
     font-size: 1.5rem;
-    color: #4e73df ;
-    font-style: oblique;
-    font-weight: 500;
+  color: #061d45;
+  font-style: oblique;
+  font-weight: 700;
   }
   #selectOption{
     width: auto;
@@ -742,13 +782,21 @@ tbody tr:hover {
     border-radius: 1rem;
   }
   #viewmore{
-    border-bottom: 1px solid blue;
     cursor: pointer;
     width: fit-content;
   }
+
+
+  #staffData tbody tr {
+    background: #00185b;
+  }
   #staffData tbody td{
     font-size: 1.2rem;
-    margin: 1rem 0;
+    text-align: left;
+  }
+  #staffData #downloadIcon{
+    color: #fff;
+    /* font-size: 2rem; */
   }
 
   .hidden {

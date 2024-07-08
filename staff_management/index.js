@@ -192,9 +192,58 @@ function loadStaffData() {
 
 const staffFormInput = document.querySelectorAll('#staffFormInput input');
 const staffFormSelect = document.querySelectorAll('#staffFormInput select');
+const registerStaffButton = document.querySelector('#registerStaff'); // Changed to querySelector
 const staffList = document.querySelector('#staffList tbody');
+let videoElement = document.getElementById('passportVideo');
+let canvasElement = document.getElementById('canvasPassport');
+let capturedPassportElement = document.getElementById('capturedPassport'); // Fixed typo
+let captureImage = document.getElementById('captureImage');
+let recaptureImage = document.getElementById('recaptureImage');
+const openCamera = document.getElementById('openCamera');
+const capture__div = document.querySelector('.capture__div');
+let stream;
 
-const registerStaff = function() {
+openCamera.addEventListener('click', () => {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then((cameraStream) => {
+      stream = cameraStream;
+      videoElement.srcObject = cameraStream;
+      capture__div.classList.remove('hide');
+      openCamera.classList.add('hide');
+    })
+    .catch((error) => {
+      alert('Error accessing Camera, please check if your camera is on');
+    });
+});
+
+const stopCamera = function() {
+  if (stream) {
+    let track = stream.getTracks();
+    track.forEach((track) => track.stop());
+    videoElement.srcObject = null;
+  }
+};
+
+captureImage.addEventListener('click', () => {
+  let context = canvasElement.getContext('2d');
+  canvasElement.width = videoElement.videoWidth;
+  canvasElement.height = videoElement.videoHeight;
+  context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+  let passportUrl = canvasElement.toDataURL('image/png');
+  capturedPassportElement.src = passportUrl; // Fixed typo
+  capturedPassportElement.style.display = 'block';
+  canvasElement.classList.add('hide');
+  stopCamera();
+});
+
+recaptureImage.addEventListener('click', () => {
+  capturedPassportElement.style.display = 'none';
+  canvasElement.classList.remove('hide');
+  stopCamera();
+  openCamera.click();
+});
+
+registerStaffButton.addEventListener('click', () => { // Changed to registerStaffButton
   if (!isInputValid(staffFormInput)) {
     warningMessage('Please Input Field');
   } else if (!isEmailValid('staffEmail')) {
@@ -217,34 +266,79 @@ const registerStaff = function() {
     formData.forEach((value, key) => {
       data[key] = value;
     });
-    
-    const fileInput = document.getElementById('qualification');
-    const file = fileInput.files[0];
-    console.log(file);
-    if(file){
-      const reader = new FileReader();
-      reader.onload = (event) =>{
-        const pdfData = event.target.result;
-        data.certificateData = pdfData;
-        
-    data.staffId = staffId;
-    staffDb.push(data);
-    localStorage.setItem('formData', JSON.stringify(staffDb));
-    newStaffList(staffList, data);
-    window.location.reload();
+
+    // Function to read file and store in localStorage
+    function readFile(inputId, key, callback) {
+      const fileInput = document.getElementById(inputId);
+      const file = fileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const pdfData = event.target.result;
+          data[key] = pdfData;
+          callback();
+        };
+        reader.readAsDataURL(file);
+      } else {
+        alert('Please select a PDF file for ' + key + '.');
       }
-      reader.readAsDataURL(file);
-      }else {
-        alert('Please select a PDF file.');
+    }
+
+    let filesProcessed = 0;
+    const totalFiles = 3; // Total number of file inputs
+
+    function checkCompletion() {
+      filesProcessed++;
+      if (filesProcessed === totalFiles) {
+        // All files have been processed
+        data.passport = capturedPassportElement.src; // Include captured passport photo
+        data.staffId = staffId;
+        staffDb.push(data);
+        localStorage.setItem('formData', JSON.stringify(staffDb));
+        newStaffList(staffList, data); // Assuming you have this function defined
+        window.location.reload();
       }
+    }
+
+    // Process each file input
+    readFile('qualification', 'qualificationPdf', checkCompletion);
+    readFile('cerification', 'certificationPdf', checkCompletion); // Fixed ID
+    readFile('resume', 'resumePdf', checkCompletion);
   }
-}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const newStaffList = function(staffList, staff) {
   const rowCount = staffList.rows.length + 1;
   const newRow = staffList.insertRow();
   newRow.insertCell(0).innerHTML = rowCount;
-  newRow.insertCell(1).innerHTML = "Image";
+  const imageCell = newRow.insertCell(1);
+  const images = document.createElement('img');
+  images.src = staff.passport;
+  images.alt = 'Staff Passport';
+  images.style.width = '50px'; // Adjust size as needed
+  images.style.height = '50px'; // Adjust size as needed
+  imageCell.appendChild(images);
+
   newRow.insertCell(2).innerHTML = staff.staffName;
   newRow.insertCell(3).innerHTML = staff.staffId;
   newRow.insertCell(4).innerHTML = staff.gender;
@@ -253,7 +347,8 @@ const newStaffList = function(staffList, staff) {
   newRow.insertCell(7).innerHTML = staff.staffDepartment;
   newRow.insertCell(8).innerHTML = staff.staffStatus;
   newRow.insertCell(9).innerHTML = `<div class="notActiveStaff"></div>`;
-}
+};
+
 
 
 // Function to handle staff list actions
@@ -262,6 +357,7 @@ const eachStaff = function() {
     let staffName;
     let staffId;
     let popup;
+    let staffPassport;
 
     // Check if the staff list contains noStaffList
     if(staffDb.length === 0) {
@@ -272,6 +368,11 @@ const eachStaff = function() {
       popup = document.createElement('div');
       staffName = e.target.closest('tr').children[2].textContent;
       staffId = e.target.closest('tr').children[3].textContent;
+      staffDb.forEach(function(staff){
+        if(staff.staffId === staffId) {
+         staffPassport = staff.passport;
+        }
+      })
 
       popup.innerHTML = `
       <div class="modal hidden" id="selectOption">
@@ -302,7 +403,7 @@ const eachStaff = function() {
         staffProfile.innerHTML = `
           <div class="modal hidden" id="staffProfile">
             <div class="staffPro">
-              <img src="Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="staff Image">
+              <img src="${staffPassport}" alt="staff Image">
               <div class="staffInfo">
                 <div class="userNameId">
                   <div>${staffName} <br/> ${staffId}</div>
@@ -326,26 +427,64 @@ const eachStaff = function() {
           const row1 = document.createElement('tr');
           const column1 = document.createElement('td');
           const column2 = document.createElement('td');
+          const column3 = document.createElement('td');
+          const column4 = document.createElement('td');
           const staffData = document.querySelector('#staffData tbody');
            staffDb.forEach(staff => {
-            if(staff.staffName === staffName){
+            if(staff.staffId === staffId){
               console.log(staff)
               column1.innerHTML = `
-              ${staff.staffName} <br/>${staff.staffId} <br/> ${staff.dob} </br> ${staff.gender} <br/> ${staff.address} </br/> ${staff.staffPhoneNumber} </br> ${staff.staffEmail}
+             Staff name:  ${staff.staffName} <br/>Staff Id: ${staff.staffId} <br/> Staff date of birth: ${staff.dob} </br>Staff gender: ${staff.gender} <br/> Staff address: ${staff.address} </br/> Staff phonenumber: ${staff.staffPhoneNumber} </br> Staff email: ${staff.staffEmail}
               `
-   
 
-              // Check if the PDF data exists and add the download link
-              if (staff.certificatePdf) {
-                const downloadLink = document.createElement('a');
-                downloadLink.href = staff.certificatePdf;
-                downloadLink.download = 'certificate.pdf';
-                downloadLink.innerHTML = '<i class="bi bi-download"></i>';
-                column2.appendChild(downloadLink);
+
+              column2.innerHTML = `
+              Staff employment id: ${staff.employmentId} </br> Staff job title: ${staff.jobPosition} <br/> Staff department: ${staff.staffDepartment} </br> Staff employment type${staff.employmentType} <br/> Date of hire: ${staff.doh} <br/> Staff Status: ${staff.staffStatus}
+              `
+
+
+              if (staff.staffId === staffId && staff.certificationPdf) {
+                const certificationPdf = document.createElement('a');
+                const qualificationPdf = document.createElement('a');
+                const resumePdf = document.createElement('a');
+
+
+
+                certificationPdf.href = staff.certificationPdf;
+                console.log(staff.certificationPdf);
+                certificationPdf.download = 'certificate.pdf';
+                certificationPdf.id = "downloadIcon";
+                certificationPdf.innerHTML = 'Staff Certificate: <i class="bi bi-download"></i> <br/>';
+
+                qualificationPdf.href = staff.qualificationPdf;
+                console.log(staff.qualificationPdf);
+                qualificationPdf.download = 'qualification.pdf';
+                qualificationPdf.id = "downloadIcon";
+                qualificationPdf.innerHTML = 'Staff Qualification: <i class="bi bi-download"></i> <br/>';
+
+
+                resumePdf.href = staff.resumePdf;
+                console.log(staff.qualificationPdf);
+                resumePdf.download = 'resume.pdf';
+                resumePdf.id = "downloadIcon";
+                resumePdf.innerHTML = 'Staff Resume: <i class="bi bi-download"></i>';
+
+
+
+                column3.appendChild(certificationPdf);
+                column3.appendChild(qualificationPdf);
+                column3.appendChild(resumePdf);
+                console.log('working');
               }
+
+              column4.innerHTML = `
+              Bank name: ${staff.bankName} <br/> Staff account number${staff.bankAccountNumber} <br/> Staff account name${staff.AccountName}
+              `
 
               row1.appendChild(column1);
               row1.appendChild(column2);
+              row1.appendChild(column3);
+              row1.appendChild(column4);
               staffData.appendChild(row1);
             }
           });
