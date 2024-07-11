@@ -243,7 +243,7 @@ recaptureImage.addEventListener('click', () => {
   openCamera.click();
 });
 
-registerStaffButton.addEventListener('click', () => { // Changed to registerStaffButton
+registerStaffButton.addEventListener('click', () => { 
   if (!isInputValid(staffFormInput)) {
     warningMessage('Please Input Field');
   } else if (!isEmailValid('staffEmail')) {
@@ -258,7 +258,7 @@ registerStaffButton.addEventListener('click', () => { // Changed to registerStaf
     const staffId = generateId();
     successMessage('Staff Registered Successfully');
 
-    let staffDb = JSON.parse(localStorage.getItem('formData')) || [];
+     staffDb = JSON.parse(localStorage.getItem('formData')) || [];
     const form = document.getElementById('staffFormInput');
     const formData = new FormData(form);
     const data = {};
@@ -349,7 +349,7 @@ const newStaffList = function(staffList, staff) {
   newRow.insertCell(9).innerHTML = `<div class="notActiveStaff"></div>`;
 };
 
-
+  let staffProfile;
 
 // Function to handle staff list actions
 const eachStaff = function() {
@@ -376,7 +376,7 @@ const eachStaff = function() {
 
       popup.innerHTML = `
       <div class="modal hidden" id="selectOption">
-        <button class="btn_submit" id="editStaffBtn">Edit Staff Information</button>
+        <button class="btn_submit" id="deleteStaff">Delete Staff</button>
         <button class="btn_submit" id="checkProfileBtn">Check Staff Profile</button>
         <button class="btn_submit" id="printPayrollBtn1">Print Staff Payroll</button>
         <button class="btn_submit" id="closePopupBtn">Close</button>
@@ -386,9 +386,8 @@ const eachStaff = function() {
       openModal('selectOption');
 
       // Add event listeners for the buttons
-      document.getElementById('editStaffBtn').addEventListener('click', function(){
-        openModal('staffForm');
-        popup.remove();
+      document.getElementById('deleteStaff').addEventListener('click', function(){
+        closeModal('selectOption');
       });
 
       document.getElementById('checkProfileBtn').addEventListener('click', function() {
@@ -399,7 +398,7 @@ const eachStaff = function() {
         }
         
         // Create the staff profile modal dynamically
-        const staffProfile = document.createElement('div');
+       staffProfile = document.createElement('div');
         staffProfile.innerHTML = `
           <div class="modal hidden" id="staffProfile">
             <div class="staffPro">
@@ -430,6 +429,7 @@ const eachStaff = function() {
           const column3 = document.createElement('td');
           const column4 = document.createElement('td');
           const staffData = document.querySelector('#staffData tbody');
+
            staffDb.forEach(staff => {
             if(staff.staffId === staffId){
               console.log(staff)
@@ -470,7 +470,6 @@ const eachStaff = function() {
                 resumePdf.innerHTML = 'Staff Resume: <i class="bi bi-download"></i>';
 
 
-
                 column3.appendChild(certificationPdf);
                 column3.appendChild(qualificationPdf);
                 column3.appendChild(resumePdf);
@@ -480,7 +479,6 @@ const eachStaff = function() {
               column4.innerHTML = `
               Bank name: ${staff.bankName} <br/> Staff account number${staff.bankAccountNumber} <br/> Staff account name${staff.AccountName}
               `
-
               row1.appendChild(column1);
               row1.appendChild(column2);
               row1.appendChild(column3);
@@ -488,7 +486,6 @@ const eachStaff = function() {
               staffData.appendChild(row1);
             }
           });
-
         });
 
         // Add event listener to close modal on escape key press
@@ -498,6 +495,7 @@ const eachStaff = function() {
             closeModal('staffProfile');
             closeModal('staffInfo');
             closeModal('selectOption');
+            closeModal('clockInForm');
             staffData.innerHTML = '';
           }
         });
@@ -520,3 +518,126 @@ const eachStaff = function() {
 
 // Initialize the eachStaff function
 eachStaff();
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeModal('clockInForm');
+    closeModal('clockOutForm');
+    closeModal('fingerPrint');
+    closeModal('staffProfile');
+  }});
+
+
+
+function showClockInModal(){
+  closeModal('staffTracking');
+openModal('clockInForm');
+}
+function showClockOutModal(){
+  closeModal('staffTracking');
+openModal('clockOutForm');
+}
+
+const clockInButton = document.getElementById('clockInButton');
+const clockOutButton = document.getElementById('clockOutButton');
+const clockInStaffId = document.getElementById('clockInStaffId');
+const clockOutStaffId = document.getElementById('clockOutStaffId');
+
+clockInButton.addEventListener('click', function() {
+    let staffFound = false;
+    staffDb.forEach(function(staff) {
+        console.log(`Checking staffId: ${staff.staffId} against input: ${clockInStaffId.value}`);
+        if (staff.staffId === clockInStaffId.value) {
+            staffFound = true;
+            console.log(staff);
+            const now = new Date();
+            console.log(now.toLocaleString());
+            closeModal('clockInForm');
+
+            // Create the staff profile modal dynamically
+            const staffProfile = document.createElement('div');
+            staffProfile.innerHTML = `
+                <div class="modal hidden" id="staffProfile">
+                    <div class="staffPro">
+                        <img src="${staff.passport}" alt="staff Image">
+                        <div class="staffInfo">
+                            <div class="userNameId">
+                                <div>${staff.staffName} <br/> ${staff.staffId}</div>
+                                <button type="button" class="btn_submit" id="authenticateButton">Authenticate <i class="bi bi-fingerprint"></i> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(staffProfile);
+            openModal('staffProfile');
+
+            document.querySelector('#authenticateButton').addEventListener('click', function() {
+                closeModal('staffProfile');
+                document.getElementById('clockinStaff').classList.remove('hide');
+                document.getElementById('staffList').classList.add('hide');
+                // closeModal('clockInStaff');
+
+                const clockinStaffs = document.querySelector('#clockinStaffs tbody');
+                const newRow = clockinStaffs.insertRow();
+                
+                const rowCount = clockinStaffs.rows.length;
+                newRow.insertCell(0).innerHTML = rowCount;
+                // newRow.insertCell(1).innerHTML = staff.passport;
+                newRow.insertCell(1).innerHTML = staff.staffName;
+                console.log('working')
+                newRow.insertCell(2).innerHTML = staff.staffId;
+            });
+            return; // Exit the forEach loop early
+        }
+    });
+
+    if (!staffFound) {
+        warningMessage('Staff does not exist');
+    }
+});
+
+clockOutButton.addEventListener('click', function() {
+    let staffFound = false;
+    staffDb.forEach(function(staff) {
+        console.log(`Checking staffId: ${staff.staffId} against input: ${clockOutStaffId.value}`);
+        if (staff.staffId === clockOutStaffId.value) {
+            staffFound = true;
+            console.log(staff);
+            const now = new Date();
+            console.log(now.toLocaleString());
+            closeModal('clockOutForm');
+
+            // Create the staff profile modal dynamically
+            const staffProfile = document.createElement('div');
+            staffProfile.innerHTML = `
+                <div class="modal hidden" id="staffProfile">
+                    <div class="staffPro">
+                        <img src="${staff.passport}" alt="staff Image">
+                        <div class="staffInfo">
+                            <div class="userNameId">
+                                <div>${staff.staffName} <br/> ${staff.staffId}</div>
+                                <button type="button" class="btn_submit" id="authenticateButton">Authenticate <i class="bi bi-fingerprint"></i> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(staffProfile);
+            openModal('staffProfile');
+
+            document.querySelector('#authenticateButton').addEventListener('click', function() {
+                closeModal('staffProfile');
+                document.getElementById('clockinStaff').classList.remove('hide');
+                document.getElementById('staffList').classList.add('hide');
+                closeModal('clockOutStaff');
+
+              
+            });
+            return; // Exit the forEach loop early
+        }
+    });
+
+    if (!staffFound) {
+        warningMessage('Staff does not exist');
+    }
+});
