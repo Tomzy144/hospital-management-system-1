@@ -667,21 +667,120 @@ function display_input () {
 function doctor_input(){
 var physical_examination = $("physical_examination").val();
 var mental_status = $("mental_status").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
-var physical_examination = $("physical_examination").val();
+var cranial_nerves = $("cranial_nerves").val();
+var position_sense = $("position_sense").val();
+var vibration_sense = $("vibration_sense").val();
+var reflex_technique = $("reflex_technique").val();
+var coordination_of_upper_extremities = $("coordination_of_upper_extremities").val();
+var coordination_of_lower_extremities = $("coordination_of_lower_extremities").val();
+var gait = $("gait").val();
+var glasgow = $("glasgow").val();
+var spontaneous = $("spontaneous").val();
+var to_speech = $("to_speech").val();
+var to_pain = $("to_pain").val();
+var no_response = $("no_response").val();
+var oriented = $("oriented").val();
+var confused = $("confused").val();
+var inappropraite = $("inappropraite").val();
+var incmprehensible = $("incmprehensible").val();
+var response = $("response").val();
+var obey = $("obey").val();
+var localized = $("localized").val();
+var flexion = $("flexion").val();
+var abnornal = $("abnornal").val();
+var response = $("response").val();
+var physical_blood_pressure = $("physical_blood_pressure").val();
+var heart_rate = $("heart_rate").val();
+var respiratory_rate = $("respiratory_rate").val();
+var temperature = $("temperature").val();
+var oxygen_saturation = $("oxygen_saturation").val();
+var level = $("level").val();
+var nutritional = $("nutritional").val();
+var signs = $("signs").val();
+var body_habitus = $("body_habitus").val();
+var pigmentation = $("pigmentation").val();
+var moisture_temperature = $("moisture_temperature").val();
+var lesions = $("lesions/rashes").val();
+var bruising = $("bruising").val();
+var scars = $("scars").val();
+var scalp_hair_nails = $("scalp_hair_nails").val();
+var eyes_ears_nose_throat = $("eyes_ears_nose_throat").val();
+var lesions_rashes = $("lesions_rashes").val();
+var lymph_nodes = $("lymph_nodes").val();
+var neck_rang_of_Motion = $("neck_rang_of_Motion").val();
+var presence_of_Bruits = $("presence_of_Bruits").val();
+var inspection_palpation_of_precordium = $("inspection_palpation_of_precordium").val();
+var auscultation_of_heart_sounds_murmurs = $("auscultation_of_heart_sounds_murmurs").val();
+var peripheral_pulses = $("peripheral_pulses").val();
+var edema_assessment = $("edema_assessment").val();
+var capillary_refill_time = $("capillary_refill_time").val();
+var respiratory_effort_inspection = $("respiratory_effort_inspection").val();
+var palpation_percussion_of_chest = $("palpation_percussion_of_chest").val();
+var auscultation_of_breath = $("auscultation_of_breath").val();
+var cough_sputum_assessment = $("cough_sputum_assessment").val();
+var presence_of_tenderness_masses = $("presence_of_tenderness_masses").val();
+var bowel_sounds_assessment_sounds = $("bowel_sounds_assessment_sounds").val();
+var genitalia_inspection = $("genitalia_inspection").val();
+var urinary_function_assessment = $("urinary_function_assessment").val();
+var pelvic_examination_sounds = $("pelvic_examination_sounds").val();
+var prostate_examination = $("prostate_examination").val();
+var genitalia_inspection_of_joint = $("genitalia_inspection_of_joint").val();
+var range_of_motion_assessment = $("range_of_motion_assessment").val();
+var gait_balance_evaluation = $("gait_balance_evaluation").val();
+var pine_examination = $("mental_status_assessment").val();
+var pine_examination = $("cranial_nerve_examination").val();
+var pine_examination = $("cranial_nerve_examination").val();
+var reflexes = $("reflexes").val();
+var coordination_balance_assessment = $("coordination_balance_assessment").val();
+var cardiovascular_system = $("cardiovascular_system").val();
+var respiratory_system = $("respiratory_system").val();
+var gastrointestinal_system = $("gastrointestinal_system").val();
+var genitourinary_system = $("genitourinary_system").val();
+var neurological_system = $("neurological_system").val();
+var social = $("social_habits(smoking,alcohol,drugs)").val();
+var family_medical_history = $("family_medical_history").val();
+var occupation_environmental_exposures = $("occupation_environmental_exposures").val();
+var living_conditions_support_system = $("living_conditions_support_system").val();
+var treatment_prescribtion = $("treatment_prescribtion").val();
+var drugs = $("drugs").val();
+var strength = $("strength").val();
+var mode = $("mode").val();
+var dos = $("dos").val();
+var unit = $("unit").val();
+var frequency = $("frequency").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+var duration = $("duration").val();
+
+
+
+
+
+
+
+
+
+
 
 
     // Create a FormData object to store form data

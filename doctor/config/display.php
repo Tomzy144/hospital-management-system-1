@@ -616,7 +616,7 @@ $patient_id = $_POST['patient_Id'];
                 <div  class="physical_examination_form9 hidden">
                     <div class="physical_examination_form-control">
                     <label for="presence_of _tenderness_masses">Presence of Tenderness/Masses</label>
-                    <input type="text" id="presence_of _tenderness_masses">
+                    <input type="text" id="presence_of_tenderness_masses">
                     </div>
                     <div class="physical_examination_form-control">
                     <label for="bowel_sounds_assessment_sounds">Bowel Sounds Assessment</label>
@@ -760,7 +760,7 @@ $patient_id = $_POST['patient_Id'];
                 <div class="treatment_prescribtion_flexs">
                     <div class="treatment_prescribtion_form-control">
                     <label for="medicine">Store</label>
-                <select name="" id="" class="treatment_prescribtion-input" >
+                <select name="" id="treatment_prescribtion" class="treatment_prescribtion-input" >
                     <option value="">Pharmacy 1</option>
                     <option value="">Pharmacy 2</option>
                 </select>
@@ -775,7 +775,7 @@ $patient_id = $_POST['patient_Id'];
                     </div>
                     <div class="treatment_prescribtion_form-control">
                     <label for="mode">Mode</label>
-                    <select name="mode" id="mode" class="treatment_prescribtion-input" id="mode">
+                    <select name="mode" id="mode" class="treatment_prescribtion-input">
                         <option value="injection">Injection</option>
                         <option value="capsule">Capsule</option>
                     </select>
@@ -800,7 +800,7 @@ $patient_id = $_POST['patient_Id'];
                     </div>
                     <div class="treatment_prescribtion_form-control">
                     <label for="duration">Duration</label>
-                    <input type="text" class="treatment_prescribtion-input">
+                    <input type="text" class="treatment_prescribtion-input" id="duration">
                     </div>
                     <i class="fa fa-plus" id="prescribe_close"></i>
                     <!-- <div id="prescribe_close">Add more drugs</div> -->
