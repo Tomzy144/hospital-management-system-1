@@ -664,3 +664,46 @@ function display_input () {
 
 
 
+function doctor_input(){
+var physical_examination = $("physical_examination").val();
+var mental_status = $("mental_status").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+var physical_examination = $("physical_examination").val();
+
+
+    // Create a FormData object to store form data
+    var formData = new FormData();
+    formData.append('patient_id', patient_id);
+
+    // Make an asynchronous request using Fetch API
+    fetch('index.php', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        // Assuming the server sends back HTML content
+        display_input(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
