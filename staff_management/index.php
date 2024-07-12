@@ -49,6 +49,17 @@
     </div>
   </div>
 
+
+<!-- <div class="modal hidden" id="staffProfile">
+<button class="btn--close-modal" onclick="closeModal('staffTracking')">&times;</button>
+      <h2 class="modal__header">
+        Staff 
+      <span class="highlight">Profile</span>
+      </h2>
+
+</div> -->
+
+
   <div class="modal hidden" id="staffTracking">
   <button class="btn--close-modal" onclick="closeModal('staffTracking')">&times;</button>
       <h2 class="modal__header">
@@ -124,6 +135,7 @@
             <table id="clockinStaffs">
                 <thead>
                     <tr>
+                        <td>S/N</td>
                         <td>Profile</td>
                         <td>StaffName</td>
                         <td>Staff Id</td>
@@ -160,9 +172,8 @@
                         <td>Staff Email</td>
                         <td>Role</td>
                         <td>Department</td>
-                        <td>Status</td>
                         <td>Duty Status</td>
-                    </tr>
+                    </tr> 
                 </thead>
                 <tbody>
                 </tbody>
@@ -197,7 +208,7 @@
           </div>
           <div class="form-control">
           <label>Date of Birth</label>
-          <input type="date" name="dob" id="dob">
+          <input type="date" name="dob" id="dateOfBirth">
           </div>
           <div class="form-control">
           <label for="gender">Gender</label>
@@ -229,14 +240,10 @@
         </div>
 
         <h3>Employment Details</h3>
-        <div class="each_sections">
-          <div class="form-control">
-            <label for="">Employee ID</label>
-             <input type="text" name="employmentId" id="employmentId">
-          </div>
+        <div class="each_section">
           <div class="form-control">
             <label for="jobPosition">Position/Job Title</label>
-             <input type="text" name="jobPosition" id="jobPosition">
+             <input type="text" name="staffPosition" id="staffPosition">
           </div>
           <div class="form-control">
             <label for="staffDepartment">Department</label>
@@ -252,12 +259,8 @@
              </select>
           </div>
           <div class="form-control">
-            <label for="">Date of Hire</label>
-             <input type="date" name="doh" id="doh">
-          </div>
-          <div class="form-control">
-            <label for="staffStatus">Staff Status</label>
-             <input type="text" name="staffStatus" id="staffStatus">
+            <label for="dateOfHire">Date of Hire</label>
+             <input type="date" name="dateOfHire" id="dateOfHire">
           </div>
         </div>
         <h3>Professional Information</h3>
@@ -268,7 +271,7 @@
           </div>
         <div class="form-control">
             <label for="">Certifications/Licenses</label>
-             <input type="file" name="cerification/licenses" id="cerification" accept="application/pdf">
+             <input type="file" name="certification/licenses" id="certification" accept="application/pdf">
           </div>
         <div class="form-control">
             <label for="">Resume/C.V.</label>
@@ -279,10 +282,10 @@
         <div class="each_sections">
         <div class="form-control">
             <label for="">Salary/Hourly Rate</label>
-             <select name="" id="">
-              <option value="">$3000/hrs</option>
-              <option value="">$5000/hrs</option>
-              <option value="">$13000/hrs</option>
+             <select name="salaryrate" id="salaryrate">
+              <option value="$300">$3000/hrs</option>
+              <option value="$5000">$5000/hrs</option>
+              <option value="$13000">$13000/hrs</option>
              </select>
           </div>
         <div class="form-control">

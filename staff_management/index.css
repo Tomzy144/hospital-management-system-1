@@ -754,7 +754,7 @@ tbody tr:hover {
     }
   }
   #staffProfile{
-    background: linear-gradient(45deg, #061d45 30%, #fff 30%);
+    background: linear-gradient(45deg, #5377df 30%, #fff 30%);
     width: auto;
     border-radius: 1rem;
   }
