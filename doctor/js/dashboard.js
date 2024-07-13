@@ -664,7 +664,7 @@ function display_input () {
 
 
 
-function doctor_input(){
+function save_input(){
 var physical_examination = $("physical_examination").val();
 var mental_status = $("mental_status").val();
 var cranial_nerves = $("cranial_nerves").val();
@@ -749,37 +749,782 @@ var dos = $("dos").val();
 var unit = $("unit").val();
 var frequency = $("frequency").val();
 var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
-var duration = $("duration").val();
+var major_complaints = $("major_complaints").val();
+var history_of_presenting_complaints = $("history_of_presenting_complaints").val();
+var family_social_history = $("family_social_history").val();
+var past_sugical_medical_history = $("past_sugical_medical_history").val();
+var selectedValue = document.getElementsByName('f1');
+var fatigue;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = fatigue.value;
+break; }}
+
+var selectedValue = document.getElementsByName('h1');
+var headache;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = headache.value;
+break; }}
+
+var selectedValue = document.getElementsByName('o1');
+var weakness;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = weakness.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ca1');
+var appetite;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = appetite.value;
+break; }}
+
+var selectedValue = document.getElementsByName('cw1');
+var weight;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = weight.value;
+break; }}
+
+var selectedValue = document.getElementsByName('fv1');
+var Fever;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = Fever.value;
+break; }}
+
+var selectedValue = document.getElementsByName('cm');
+var mole;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = mole.value;
+break; }}
+
+var selectedValue = document.getElementsByName('h/n');
+var nail;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = nail.value;
+break; }}
+
+var selectedValue = document.getElementsByName('c/t');
+var texture;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = texture.value;
+break; }}
+
+var selectedValue = document.getElementsByName('i/r');
+var Rashes;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = Rashes.value;
+break; }}
+
+var selectedValue = document.getElementsByName('sores');
+var sores;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = sores.value;
+break; }}
+
+var selectedValue = document.getElementsByName('et');
+var thirst;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = thirst.value;
+break; }}
+
+var selectedValue = document.getElementsByName('e_hs');
+var e_hs;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = e_hs.value;
+break; }}
+
+var selectedValue = document.getElementsByName('salt_craving');
+var salt_craving;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = salt_craving.value;
+break; }}
+
+var selectedValue = document.getElementsByName('lsd');
+var lsd;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = lsd.value;
+break; }}
+
+var selectedValue = document.getElementsByName('hci');
+var hci;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = hci.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ag');
+var ag;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ag.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ia');
+var ia;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ia.value;
+break; }}
+
+var selectedValue = document.getElementsByName('iup');
+var iup;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = iup.value;
+break; }}
+
+var selectedValue = document.getElementsByName('tr');
+var tr;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = tr.value;
+break; }}
+
+var selectedValue = document.getElementsByName('es');
+var es;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = es.value;
+break; }}
+
+var selectedValue = document.getElementsByName('diabetes');
+var diabetes;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = diabetes.value;
+break; }}
+
+var selectedValue = document.getElementsByName('cmhd');
+var cmhd;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = cmhd.value;
+break; }}
+
+var selectedValue = document.getElementsByName('rtihc');
+var rtihc;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = rtihc.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ithd');
+var ithd;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ithd.value;
+break; }}
+
+var selectedValue = document.getElementsByName('sct');
+var cmhd;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = cmhd.value;
+break; }}
+
+var selectedValue = document.getElementsByName('cmhd');
+var sct;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = sct.value;
+break; }}
+
+var selectedValue = document.getElementsByName('am');
+var am;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = cmhd.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ic');
+var ic;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ic.value;
+break; }}
+
+var selectedValue = document.getElementsByName('hg');
+var hg;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = hg.value;
+break; }}
+
+var selectedValue = document.getElementsByName('bt');
+var bt;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = bt.value;
+break; }}
+
+var selectedValue = document.getElementsByName('etin');
+var etin;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = etin.value;
+break; }}
+
+var selectedValue = document.getElementsByName('gcs');
+var gcs;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = gcs.value;
+break; }}
+
+var selectedValue = document.getElementsByName('imin');
+var imin;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = imin.value;
+break; }}
+
+var selectedValue = document.getElementsByName('pt');
+var pt;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = pt.value;
+break; }}
+
+var selectedValue = document.getElementsByName('occpt');
+var occpt;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = occpt.value;
+break; }}
+
+var selectedValue = document.getElementsByName('oc');
+var oc;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = oc.value;
+break; }}
+
+var selectedValue = document.getElementsByName('pm');
+var pm;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = pm.value;
+break; }}
+var selectedValue = document.getElementsByName('ja');
+var ja;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ja.value;
+break; }}
+
+var selectedValue = document.getElementsByName('mr');
+var mr;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = mr.value;
+break; }}
+
+var selectedValue = document.getElementsByName('si');
+var si;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = si.value;
+break; }}
+
+var selectedValue = document.getElementsByName('anti-in');
+var anti_in;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = anti_in.value;
+break; }}
+
+var selectedValue = document.getElementsByName('assistive');
+var assistive;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = assistive.value;
+break; }}
+
+var selectedValue = document.getElementsByName('shni');
+var shni;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = shni.value;
+break; }}
+
+var selectedValue = document.getElementsByName('rente');
+var rente;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = rente.value;
+break; }}
+
+var selectedValue = document.getElementsByName('hnc');
+var hnc;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = hnc.value;
+break; }}
+
+var selectedValue = document.getElementsByName('doh');
+var doh;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = doh.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ssa');
+var doh;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = doh.value;
+break; }}
+
+var selectedValue = document.getElementsByName('bnm');
+var doh;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = doh.value;
+break; }}
+
+var selectedValue = document.getElementsByName('doh');
+var doh;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = doh.value;
+break; }}
+
+var selectedValue = document.getElementsByName('tft');
+var doh;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = doh.value;
+break; }}
+
+var selectedValue = document.getElementsByName('sgd');
+var doh;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = doh.value;
+break; }}
+
+var selectedValue = document.getElementsByName('tmj');
+var tmj;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = tmj.value;
+break; }}
+
+var selectedValue = document.getElementsByName('is_b');
+var is_b;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = is_b.value;
+break; }}
+
+var selectedValue = document.getElementsByName('hl');
+var hl;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = hl.value;
+break; }}
+
+var selectedValue = document.getElementsByName('te');
+var te;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = te.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ep');
+var ep;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ep.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ed');
+var ed;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ed.value;
+break; }}
+
+var selectedValue = document.getElementsByName('nc');
+var nc;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = nc.value;
+break; }}
+
+var selectedValue = document.getElementsByName('sd');
+var sd;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = sd.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ar');
+var ar;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ar.value;
+break; }}
+
+var selectedValue = document.getElementsByName('op');
+var op;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = op.value;
+break; }}
+
+var selectedValue = document.getElementsByName('tp');
+var tp;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = tp.value;
+break; }}
+
+var selectedValue = document.getElementsByName('dysphagia');
+var dysphagia;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = dysphagia.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ml');
+var ml;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ml.value;
+break; }}
+
+
+var selectedValue = document.getElementsByName('vc');
+var vc;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = vc.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ml');
+var ml;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ml.value;
+break; }}
+
+var selectedValue = document.getElementsByName('halitosis');
+var halitosis;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = halitosis.value;
+break; }}
+
+var selectedValue = document.getElementsByName('gr');
+var gr;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = gr.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ot');
+var ot;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ot.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ml');
+var ml;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ml.value;
+break; }}
+
+var selectedValue = document.getElementsByName('Tonsillitis');
+var Tonsillitis;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = Tonsillitis.value;
+break; }}
 
 
 
+var selectedValue = document.getElementsByName('Hoarseness');
+var Hoarseness;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = Hoarseness.value;
+break; }}
+
+var selectedValue = document.getElementsByName('oral_cancer');
+var oral_cancer;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = oral_cancer.value;
+break; }}
+
+var selectedValue = document.getElementsByName('Tonsillitis');
+var Tonsillitis;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = Tonsillitis.value;
+break; }}
+
+var selectedValue = document.getElementsByName('rsc');
+var rsc;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = rsc.value;
+break; }}
+
+var selectedValue = document.getElementsByName('bd');
+var bd;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = bd.value;
+break; }}
+
+var selectedValue = document.getElementsByName('simbc');
+var simbc;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = simbc.value;
+break; }}
+
+var selectedValue = document.getElementsByName('hr');
+var hr;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = hr.value;
+break; }}
+
+var selectedValue = document.getElementsByName('bifu');
+var bifu;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = bifu.value;
+break; }}
+
+var selectedValue = document.getElementsByName('rs');
+var rs;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = rs.value;
+break; }}
+
+var selectedValue = document.getElementsByName('bp');
+var bp;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = bp.value;
+break; }}
+
+var selectedValue = document.getElementsByName('nutritional');
+var nutritional;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = nutritional.value;
+break; }}
+
+var selectedValue = document.getElementsByName('pi');
+var pi;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = pi.value;
+break; }}
+
+var selectedValue = document.getElementsByName('rs');
+var rs;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = rs.value;
+break; }}
+
+var selectedValue = document.getElementsByName('pft');
+var pft;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = pft.value;
+break; }}
+
+var selectedValue = document.getElementsByName('cxi');
+var cxi;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = cxi.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ot');
+var ot;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ot.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ventilator');
+var ventilator;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ventilator.value;
+break; }}
+
+var selectedValue = document.getElementsByName('bronchoscopy');
+var bronchoscopy;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = bronchoscopy.value;
+break; }}
+
+var selectedValue = document.getElementsByName('pneumonia');
+var pneumonia;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = pneumonia.value;
+break; }}
+
+var selectedValue = document.getElementsByName('aa');
+var aa;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = aa.value;
+break; }}
+
+var selectedValue = document.getElementsByName('ri');
+var ri;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = ri.value;
+break; }}
+
+var selectedValue = document.getElementsByName('copd');
+var copd;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = copd.value;
+break; }}
+
+var selectedValue = document.getElementsByName('st');
+var st;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = st.value;
+break; }}
+
+var selectedValue = document.getElementsByName('sc');
+var sc;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = sc.value;
+break; }}
 
 
+var selectedValue = document.getElementsByName('cardiovascular_condition');
+var cardiovascular_condition;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = cardiovascular_condition.value;
+break; }}
+
+var selectedValue = document.getElementsByName('cl');
+var cl;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = cl.value;
+break; }}
+
+var selectedValue = document.getElementsByName('antiplatelet');
+var antiplatelet;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = antiplatelet.value;
+break; }}
 
 
+var selectedValue = document.getElementsByName('bb');
+var bb;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = bb.value;
+break; }}
+
+var selectedValue = document.getElementsByName('acei');
+var acei;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = acei.value;
+break; }}
+
+var selectedValue = document.getElementsByName('anticoagulant');
+var anticoagulant;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = anticoagulant.value;
+break; }}
+
+var selectedValue = document.getElementsByName('cardiac');
+var cardiac;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = cardiac.value;
+break; }}
 
 
+var selectedValue = document.getElementsByName('hf_d');
+var hf_d;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = hf_d.value;
+break; }}
+
+var selectedValue = document.getElementsByName('gastrointestinal_symptom');
+var gastrointestinal_symptom;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = gastrointestinal_symptom.value;
+break; }}
+
+
+var selectedValue = document.getElementsByName('endoscopy');
+var endoscopy;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = endoscopy.value;
+break; }}
+
+var selectedValue = document.getElementsByName('bd');
+var bd;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = bd.value;
+break; }}
+
+
+var selectedValue = document.getElementsByName('colonoscopy');
+var colonoscopy;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = colonoscopy.value;
+break; }}
+
+var selectedValue = document.getElementsByName('gd');
+var gd;
+for (let radio of radios) {
+    if (radio.checked) {
+        selectedValue = gd.value;
+break; }}
+
+
+var duration = $("duration").val();
 
 
 
