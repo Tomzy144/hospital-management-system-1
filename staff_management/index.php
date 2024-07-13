@@ -36,6 +36,9 @@
         <li class="links active" onclick="openModal('staffForm')">
           <span>Add New Staff</span>
         </li>
+        <li class="links" onclick="openModal('staffTracking')">
+          <span>Attendance Tracking</span>
+        </li>
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
           <span>Logout</span>
           <form method="post" action="../config/code.php" id="logoutform">
@@ -46,39 +49,53 @@
     </div>
   </div>
 
-  <!-- <div class="userInfo">
-                  <ul class="userList">
-                    <li id="personalDetailsTab">Personal Information</li>
-                    <li id="employmentDetailsTab">Employment Details</li>
-                    <li id="professionalInfoTab">Professional Information</li>
-                    <li id="payrollInfoTab">Payroll Info</li>
-                  </ul>
-                </div>
-                <div id="personalDetails" class="hide">
-                  <h3>Gender: Female</h3>
-                  <h3>Date of Birth: 23/07/1994</h3>
-                  <h3>Home Resident: London Road California</h3>
-                  <h3>Phone number: 442203323</h3>
-                  <h3>Email: miriam@gmail.com</h3>
-                </div>
-                <div id="employmentDetails" class="hide">
-                  <h3>Surgeon</h3>
-                  <h3>Dpt Head</h3>
-                  <h3>Full time</h3>
-                  <h3>Hired 27/7/2023</h3>
-                </div>
-                <div id="professionalInfo" class="hide">
-                  <h3>Qualification(pdf) <i class="bi bi-download"></i></h3>
-                  <h3>Certification/Licenses <i class="bi bi-download"></i></h3>
-                  <h3>Resume/C.V <i class="bi bi-download"></i></h3>
-                  <h3>Salary - $300</h3>
-                </div>
-                <div id="payrollInfo" class="hide">
-                  <h3>UBA</h3>
-                  <h3>3383323892</h3>
-                  <h3>Miriam Cleneen</h3>
-                </div>
-              </div> -->
+
+<!-- <div class="modal hidden" id="staffProfile">
+<button class="btn--close-modal" onclick="closeModal('staffTracking')">&times;</button>
+      <h2 class="modal__header">
+        Staff 
+      <span class="highlight">Profile</span>
+      </h2>
+
+</div> -->
+
+
+  <div class="modal hidden" id="staffTracking">
+  <button class="btn--close-modal" onclick="closeModal('staffTracking')">&times;</button>
+      <h2 class="modal__header">
+        Staff 
+      <span class="highlight">time and attendance</span>
+      </h2>
+      <div class="clockinoutDiv">
+      <button type="button" class="btn_submit" onclick="showClockInModal()">Clock In &rarr;</button>
+      <button type="button" class="btn_submit" onclick="showClockOutModal()">Clock Out &rarr;</button>
+      </div>
+  </div>
+
+  <div class="modal hidden" id="clockInForm">
+        <h2 class="modal__header">
+        Clock 
+      <span class="highlight">in</span>
+      </h2>
+        <label for="clockInStaffId">Staff Id</label>
+        <input type="text" id="clockInStaffId" placeholder="Enter Staff ID" required>
+        <button type="button" class="btn_submit" id="clockInButton">Authenticate <i class="bi bi-fingerprint"></i> </button>
+    </div>
+  <div class="modal hidden" id="clockOutForm">
+        <h2 class="modal__header">
+        Clock 
+      <span class="highlight">out</span>
+      </h2>
+
+        <label for="clockOutStaffId">Staff Id</label>
+        <input type="text" id="clockOutStaffId" placeholder="Enter Staff ID" required>
+        <button type="button" class="btn_submit" id="clockOutButton">Clock Out &rarr;</button>
+    </div>
+
+  <div class="modal hidden" id="fingerPrint">
+        <i class="bi bi-fingerprint"></i>
+    </div>
+
  
   <div class="modal hidden" id="staffInfo">
       <div class="table_container">
@@ -104,6 +121,37 @@
 
 </div>
   
+
+
+<!---ACTIVE STAFF--->
+<div class="list_div hide" id="clockinStaff">
+      <div class="table_container">
+            <div class="search_bar_container">
+            <h2 class="modal__header">
+        Staff 
+      <span class="highlight">attendance tracking</span>
+      </h2>
+            </div>
+            <table id="clockinStaffs">
+                <thead>
+                    <tr>
+                        <td>S/N</td>
+                        <td>Profile</td>
+                        <td>StaffName</td>
+                        <td>Staff Id</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+        </table>
+  </div>
+
+</div>
+  
+
+
+
+
   <div class="list_div" id="staffList">
     <div class="table_container">
             <div class="search_bar_container">
@@ -124,9 +172,8 @@
                         <td>Staff Email</td>
                         <td>Role</td>
                         <td>Department</td>
-                        <td>Status</td>
                         <td>Duty Status</td>
-                    </tr>
+                    </tr> 
                 </thead>
                 <tbody>
                 </tbody>
@@ -161,7 +208,7 @@
           </div>
           <div class="form-control">
           <label>Date of Birth</label>
-          <input type="date" name="dob" id="dob">
+          <input type="date" name="dob" id="dateOfBirth">
           </div>
           <div class="form-control">
           <label for="gender">Gender</label>
@@ -193,14 +240,10 @@
         </div>
 
         <h3>Employment Details</h3>
-        <div class="each_sections">
-          <div class="form-control">
-            <label for="">Employee ID</label>
-             <input type="text" name="employmentId" id="employmentId">
-          </div>
+        <div class="each_section">
           <div class="form-control">
             <label for="jobPosition">Position/Job Title</label>
-             <input type="text" name="jobPosition" id="jobPosition">
+             <input type="text" name="staffPosition" id="staffPosition">
           </div>
           <div class="form-control">
             <label for="staffDepartment">Department</label>
@@ -216,12 +259,8 @@
              </select>
           </div>
           <div class="form-control">
-            <label for="">Date of Hire</label>
-             <input type="date" name="doh" id="doh">
-          </div>
-          <div class="form-control">
-            <label for="staffStatus">Staff Status</label>
-             <input type="text" name="staffStatus" id="staffStatus">
+            <label for="dateOfHire">Date of Hire</label>
+             <input type="date" name="dateOfHire" id="dateOfHire">
           </div>
         </div>
         <h3>Professional Information</h3>
@@ -232,7 +271,7 @@
           </div>
         <div class="form-control">
             <label for="">Certifications/Licenses</label>
-             <input type="file" name="cerification/licenses" id="cerification" accept="application/pdf">
+             <input type="file" name="certification/licenses" id="certification" accept="application/pdf">
           </div>
         <div class="form-control">
             <label for="">Resume/C.V.</label>
@@ -243,10 +282,10 @@
         <div class="each_sections">
         <div class="form-control">
             <label for="">Salary/Hourly Rate</label>
-             <select name="" id="">
-              <option value="">$3000/hrs</option>
-              <option value="">$5000/hrs</option>
-              <option value="">$13000/hrs</option>
+             <select name="salaryrate" id="salaryrate">
+              <option value="$300">$3000/hrs</option>
+              <option value="$5000">$5000/hrs</option>
+              <option value="$13000">$13000/hrs</option>
              </select>
           </div>
         <div class="form-control">
