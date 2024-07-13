@@ -11,6 +11,7 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* animation: fadeIn 2s ease-in-out; */
 }
+
 :root{
     --bg-color:#fff;
     --dg-color:#000000;
@@ -781,7 +782,7 @@ tbody tr:hover {
     padding: 0;
     border-radius: 1rem;
   }
-  #viewmore{
+  #viewMoreData{
     cursor: pointer;
     width: fit-content;
   }
@@ -821,7 +822,7 @@ width: 100%;
   cursor: pointer;
 }
 #fingerPrint .bi-fingerprint {
-  font-size: 5rem;
+  font-size: 20rem;
   color: #0078d0;
 }
   .hidden {
