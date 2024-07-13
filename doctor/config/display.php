@@ -948,9 +948,9 @@ $patient_id = $_POST['patient_Id'];
                         <div class="form-control">
                         <label for="headache">Sores </label>
                         <div class="radio">
-                        <input type="radio" id="yes" name="s" />
+                        <input type="radio" id="yes" name="sores" />
                         <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="s" />
+                        <input type="radio" id="no" name="sores" />
                         <label for="no">No</label>
                         </div>
         </div>
@@ -964,9 +964,9 @@ $patient_id = $_POST['patient_Id'];
                         <div class="form-control">
                         <label for="headache">Enlarging glove or hat size?</label>
                         <div class="radio">
-                        <input type="radio" id="yes" name="e/hs" />
+                        <input type="radio" id="yes" name="e_hs" />
                         <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="e/hs" />
+                        <input type="radio" id="no" name="e_hs" />
                         <label for="no">No</label>
                         </div>
         </div>
@@ -982,9 +982,9 @@ $patient_id = $_POST['patient_Id'];
                         <div class="form-control">
                         <label for="headache">Salt craving ?</label>
                         <div class="radio">
-                        <input type="radio" id="yes" name="sc" />
+                        <input type="radio" id="yes" name="salt_craving" />
                         <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="sc" />
+                        <input type="radio" id="no" name="salt_craving" />
                         <label for="no">No</label>
                         </div>
         </div>
@@ -1063,9 +1063,9 @@ $patient_id = $_POST['patient_Id'];
                         <div class="form-control">
                         <label for="headache">Diabetes?</label>
                         <div class="radio">
-                        <input type="radio" id="yes" name="d"/>
+                        <input type="radio" id="yes" name="diabetes"/>
                         <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="d"/>
+                        <input type="radio" id="no" name="diabetes"/>
                         <label for="no">No</label>
                         </div>
         </div>
@@ -1354,9 +1354,9 @@ $patient_id = $_POST['patient_Id'];
                 <div class="form-control">
                 <label for="headache">imaging for skull and bones?</label>
                 <div class="radio">
-                <input type="radio" id="yes" name="is&b"/>
+                <input type="radio" id="yes" name="is_b"/>
                 <label for="yes">Yes</label>
-                <input type="radio" id="no" name="is&b"/>
+                <input type="radio" id="no" name="is_b"/>
                 <label for="no">No</label>
                 </div>
   </div>
@@ -1602,9 +1602,9 @@ $patient_id = $_POST['patient_Id'];
                 <div class="form-control">
                 <label for="headache">Nutritional?</label>
                 <div class="radio">
-                <input type="radio" id="yes" name="n"/>
+                <input type="radio" id="yes" name="nutritional"/>
                 <label for="yes">Yes</label>
-                <input type="radio" id="no" name="n"/>
+                <input type="radio" id="no" name="nutritional"/>
                 <label for="no">No</label>
                 </div>
   </div>
@@ -1805,18 +1805,18 @@ $patient_id = $_POST['patient_Id'];
                 <div class="form-control">
                 <label for="headache">Cardiac?</label>
                 <div class="radio">
-                <input type="radio" id="yes" name="c"/>
+                <input type="radio" id="yes" name="cardiac"/>
                 <label for="yes">Yes</label>
-                <input type="radio" id="no" name="c"/>
+                <input type="radio" id="no" name="cardiac"/>
                 <label for="no">No</label>
                 </div>
   </div>
                 <div class="form-control">
                 <label for="headache">Heart failure & Diuretic?</label>
                 <div class="radio">
-                <input type="radio" id="yes" name="hf&d"/>
+                <input type="radio" id="yes" name="hf_d"/>
                 <label for="yes">Yes</label>
-                <input type="radio" id="no" name="hf&d"/>
+                <input type="radio" id="no" name="hf_d"/>
                 <label for="no">No</label>
                 </div>
   </div>
@@ -1875,7 +1875,7 @@ $patient_id = $_POST['patient_Id'];
 </div>
 </div>
 </div>
-<button type="button">Save Input</button>
+<button type="button" onclick="save_input();">Save Input</button>
 </form>
 </div>
 
