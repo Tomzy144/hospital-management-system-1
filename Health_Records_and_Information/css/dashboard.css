@@ -196,7 +196,7 @@ transform: scale(0.98);
 
 .sidebar{
 width: 100%;
-width: 300px;
+width: 350px;
 height: 100%;
 overflow: hidden;
 position: fixed;
@@ -272,7 +272,7 @@ cursor: pointer;
     max-width: 100%;
     flex-direction: column;
     padding: 1em;
-    margin: 5em 0 0 19em;
+    margin: 5em 0 0 22rem;
 }
 .upload_image{
     width: 300px;
@@ -409,27 +409,147 @@ cursor: pointer;
       justify-content: center;
       margin: 0.5rem 0;
   }
-  label{
-    font-size: 1.2rem;
-      color: rgb(42, 87, 215);
-  }
-
-  select{
-    cursor: pointer;
-  }
+  .each_sections {
+      display: flex;
+      width: 100%;
+      margin: 1em 0;
+      border-radius: 10px;
+      flex-wrap: wrap;
+    }
   
-  input, select,textarea {
-    padding: 12px 20px;
-    background-color: #fff;
-    margin: 8px 0;
-    font-size: 1.1rem;
-    color: rgb(42, 87, 215);
-    width:300px;
-    display: inline-block;
-    border: 1px solid rgb(42, 87, 215);
-    border-radius: 4px;
-    box-sizing: border-box;
+    .form-control{
+        margin: 1rem 0.5rem;
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        position: relative;
+        color: rgb(42, 87, 215);
+    }
+  
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
   }
+  .radio-group label {
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+      font-size: 18px;
+  }
+  .radio-group input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+  }
+  .radio-group .custom-radio {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      padding: 0;
+      border: 2px solid #d1d3e2;
+      border-radius: 50%;
+  }
+  .radio-group input[type="radio"]:checked ~ .custom-radio {
+      background-color: #4e73df;
+      border-color: #4e73df;
+  }
+  .radio-group .custom-radio:after {
+      content: "";
+      position: absolute;
+      display: none;
+  }
+  .radio-group input[type="radio"]:checked ~ .custom-radio:after {
+      display: block;
+  }
+  .radio-group .custom-radio:after {
+      top: 6px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+    
+    label{
+      font-size: 1.2rem;
+        color: rgb(42, 87, 215);
+    }
+    
+    input, select,textarea {
+      padding: 12px 20px;
+      margin: 8px 0;
+      font-size: 1.1rem;
+      color: rgb(42, 87, 215);
+      width:300px;
+      background-color: #fff;
+      display: inline-block;
+      border: 1px solid rgb(42, 87, 215);
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+      width: 100%;
+      background-color: rgb(42, 87, 215);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: rgb(42, 87, 215);
+    }
+
+  
+      
+      /* CSS */
+      .btn_submit {
+        background-color: #0078d0;
+        border: 0;
+        border-radius: 56px;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        outline: 0;
+        padding: 16px 21px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transition: all .3s;
+        user-select: none;
+        margin: 0.5rem;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+      
+      .btn_submit:before {
+        background-color: initial;
+        background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+        border-radius: 125px;
+        content: "";
+        height: 50%;
+        left: 4%;
+        opacity: .5;
+        position: absolute;
+        top: 0;
+        transition: all .3s;
+        width: 92%;
+      }
+      
+      .btn_submit:hover {
+        box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+        transform: scale(1.05);
+      }
   .valid{
     color: rgb(42, 87, 215);
   }
@@ -459,16 +579,14 @@ cursor: pointer;
       color: rgb(42, 87, 215);
     }
 
-  .all_patient_list{
-    display: flex;
-  }
+
   .patient_list_div {
     width: auto;
-    margin: 5.5rem 0 0 19rem;
+    margin: 5.5rem 0 0 22rem;
 }
 
 
- .search_bar_container {
+.search_bar_container {
     background-color: #fff;
     color:rgb(42, 87, 215);
     padding: 0.5em;
@@ -483,14 +601,6 @@ cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 3px;
   }
-.search_bar_container i{
-    position: absolute;
-    right: 1%;
-    cursor: pointer;
-}
-.search_bar_container input {
-    padding: 0.5em;
-}
 
  table {
     width: 100%;
@@ -508,7 +618,8 @@ cursor: pointer;
 }
 table thead  td{
     color: rgb(42, 87, 215);
-    font-size: .995rem;
+    padding: 0.5em;
+    font-size: 1.2rem;
     text-transform: uppercase;
     text-align: center;
     padding: .77em .58em .74em .58em;
@@ -528,6 +639,8 @@ table thead  td{
 }
 
  table tbody td {
+    padding: 0.5em;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     text-align: center;
     color: rgb(255, 255, 255);
@@ -538,14 +651,15 @@ table thead  td{
     white-space: nowrap;
     position: relative;
     font-size: 0.95rem;
+    cursor: pointer;
     vertical-align: center;
-    font-size: .995rem;
+    font-size: 1.2rem;
     line-height: 1.2;
     border-bottom: 1px solid #fff;
 }
 
 .walkin_patient_list_div{
-    margin: 5.5rem 0 0 19rem;
+    margin: 5.5rem 0 0 22rem;
     width: auto;
 }
 ._action{
@@ -716,7 +830,7 @@ cursor: pointer;
     padding: 1em;
     overflow-x:hidden;
     overflow-y: visible;
-    z-index: 1100;
+    z-index: 5;
 }
 .close_icon{
     position: absolute;

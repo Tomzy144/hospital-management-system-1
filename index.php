@@ -74,7 +74,7 @@
           <button type="button" class="btn" id="login_btn" onclick="s_sign_in()">Login</button>
       </form>
     </div>
-    <div class="admin_alert hide">
+    <div class="admin_alert hide" id="admin_verification">
         <span>Verification Successful <i class="bi bi-hand-thumbs-up-fill"></i></span>
     </div>
     <div class="admin_alert vf hide">

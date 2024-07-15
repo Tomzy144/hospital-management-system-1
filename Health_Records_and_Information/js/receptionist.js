@@ -1,16 +1,18 @@
 'use strict';
 
-const links =  document.querySelectorAll('#links');
+const sections = document.querySelectorAll('.section');
+const allProfiles = document.querySelectorAll('.allProfiles');
+const links = document.querySelectorAll('.sidebar-body ul li');
+
 function toggleSidebarLinks(clickedLink){
     links.forEach(link => link.classList.remove('active'));
     clickedLink.classList.add('active');
-}
+ }
 links.forEach(link => {
     link.addEventListener('click', function() {
         toggleSidebarLinks(this);
     });
 });
-
 function timeDate(){
   const now  = new Date();
   const options = {
@@ -369,7 +371,7 @@ if($('#gender1').is(':checked')){
 
 if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')||(health_history=='') || (hospital_plan =="")){
   $('.alert_div').removeClass('hide');
-  $('.alert_div').html('<div></div> USER ERROR! <i class="bi-exclamation-triangle"></i><br /><span>Fill All Fields.</span>').fadeIn(500).delay(5000).fadeOut(500);
+  $('.alert_div').html('<div></div> USER ERROR! <i class="bi-exclamation-triangle"></i><br />Fill All Fields.').fadeIn(500).delay(5000).fadeOut(500);
   }else{
    //////////////// get btn text ////////////////
        $('#proceed-btn').html('PROCESSING...');
@@ -985,7 +987,7 @@ function _add_patient2() {
 
 if((wpatient_name=='')||(wphonenumber=='')||(wdob=='')||(waddress=='')||(vgender=='')){
   $('.alert_div').removeClass('hide');
-  $('.alert_div').html('<div> USER ERROR! <br/><span>Fill All fields</span> <i class="bi-exclamation-triangle"></i></div>').fadeIn(500).delay(5000).fadeOut(100);
+  $('.alert_div').html('<div> USER ERROR! <br/>Fill All fields<i class="bi-exclamation-triangle"></i></div>').fadeIn(500).delay(5000).fadeOut(100);
 
   }else{
    //////////////// get btn text ////////////////

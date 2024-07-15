@@ -38,23 +38,18 @@
     <div class="sidebar-body">
       <ul>
         <li  id="anternatal_unit_link" class="links active">
-          <!-- <i class="fa-solid fa-person-pregnant"></i> -->
           <span>Anternatal unit</span>
         </li>
         <li id="anternatal_patient_list_link" class="links">
-          <!-- <i class="fa-solid fa-person-pregnant"></i> -->
           <span>Anternatal patient list</span>
         </li>
         <li id="postnatal_unit_link" class="links">
-          <!-- <i class="fa-solid fa-baby"></i> -->
           <span>Postnatal unit</span>
         </li>
         <li id="postnatal_patient_list_link" class="links">
-          <!-- <i class="fa-solid fa-baby"></i> -->
           <span>Postnatal patient list</span>
         </li>
         <li id="labour_unit_link" class="links">
-          <!-- <i class="fa-solid fa-person-breastfeeding"></i> -->
           <span>Labour unit</span>
         </li>
         <li id="labour_patient_list_link" class="links">
