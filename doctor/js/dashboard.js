@@ -1523,31 +1523,38 @@ for (let radio of radios) {
         selectedValue = gd.value;
 break; }}
 
-
-var duration = $("duration").val();
-
-
-
-    // Create a FormData object to store form data
-    var formData = new FormData();
-    formData.append('patient_id', patient_id);
+var patient_id = $("patient_id").val();
 
     // Make an asynchronous request using Fetch API
-    fetch('index.php', {
-        method: 'POST',
-        body: formData,
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+ 
+
+    var $btnSubmit = $('#doctor_input');
+    var btnText = $btnSubmit.html();
+    $btnSubmit.html('Processing...');
+    $btnSubmit.prop('disabled', true);
+
+    var action = 'doctor_input';
+    var dataString = "action=" + action + "&patient_id=" + patient_id + "&patient_name=" + patient_name  + "&time=" + time + "&date=" + date +"&reason=" + reason + "&doctor_id=" + doctor_id;
+  
+
+    $.ajax({
+      type: 'POST',
+      url: "config/code.php",
+      data: dataString,
+      cache: false,
+      dataType: 'json',
+      success: function (data) {
+        if (data.success) {
+
+          alert("Patient Bio data saved Successful");
+          $btnSubmit.html('Save All');
+          $btnSubmit.prop('disabled', true);
+          window.location.reload();
+        } else {
+          console.error('Error:', data.message);
+          $btnSubmit.html(btnText);
+          $btnSubmit.prop('disabled', false);
         }
-        return response.text();
-    })
-    .then(data => {
-        // Assuming the server sends back HTML content
-        display_input(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
+      },
     });
 }

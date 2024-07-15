@@ -104,6 +104,60 @@ function cancel(){
 }
 
 
+
+
+function s_sign_in(){ 
+    var email = $('#admin_email').val();
+    var password = $('#admin_password').val();
+    if((email!='')&&(password!='')){
+        suser_login(email,password);
+    }else{
+        $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
+        alert("these fields are empty");
+    }
+}
+
+
+function suser_login(email,password){
+    var action='alogin_check';
+    
+   //////////////// get btn text ////////////////
+   var btn_text=$('#login_btn').html();
+   $('#login_btn').html('Authenticating...');
+   document.getElementById('login_btn').disabled=true;
+   ////////////////////////////////////////////////	
+    
+    var dataString ='action='+ action+'&email='+ email + '&password='+ password;
+   
+   $.ajax({
+   type: "POST",
+   url: "config/code.php",
+   data: dataString,
+   dataType: 'json',
+   cache: false,
+   success: function(data){
+    var scheck = data.check;
+
+   if(scheck==1){
+    $('#success-div').html('<div><i class="bi-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
+    $('#aloginform').submit();
+   }else if(scheck==2){
+           $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Account Suspended<br /><span>Contact the admin for help</span>').fadeIn(500).delay(5000).fadeOut(100);
+    }else{
+    $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> Login Error!<br /><span>Invalid Email or Password</span>').fadeIn(500).delay(5000).fadeOut(100);
+
+    }
+    $('#login_btn').html(btn_text);
+    document.getElementById('login_btn').disabled=false;
+       $('#login_btn').html('<i class="fa fa-sign-in"></i> Log-In');
+   }
+   });
+}
+
+
+
+
+//////////////////////////////////
 function _sign_in(){ 
     var email = $('#email').val();
     var password = $('#password').val();
