@@ -1875,7 +1875,8 @@ $patient_id = $_POST['patient_Id'];
 </div>
 </div>
 </div>
-<button type="button" onclick="save_input();">Save Input</button>
+<input type="hidden" id="patient_id" value="<?php echo $patient_id?> ">
+<button type="button" id ="doctor_input" onclick="save_input();">Save Input</button>
 </form>
 </div>
 

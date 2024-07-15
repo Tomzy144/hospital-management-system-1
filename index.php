@@ -53,25 +53,26 @@
     <div class="admin_container">
       <div class="_admin_contents">
       <h3>Admin Login</h3>
-          <form action="">
-            <div class="_form_control">
+      <form action="config/code.php" id="aloginform" enctype="multipart/form-data" method="post">
+          <div class="_form_control">
               <label for="email">Email</label>
               <i class="bi bi-envelope-open"></i>
-              <input type="email" name="email" id="email">
-            </div>
-            <div class="_form_control">
-              <label for="test">Password</label>
+              <input type="email" name="email" id="admin_email" value="">
+          </div>
+          <div class="_form_control">
+              <label for="password">Password</label>
               <i class="bi bi-key"></i>
-              <i class="bi bi-eye show_password hide" id="show_admin_password" onclick="show_admin_password()"></i>
-              <i class="bi bi-eye-slash lock_password" id="lock_admin_password" onclick="show_admin_password()"></i>
-              <input type="password" name="password" id="admin_password">
-            </div>
-            <div class="_fingerprint_authentication">
+              <i class="bi bi-eye show_password hide" id="show_admin_password" onclick="togglePasswordVisibility()"></i>
+              <i class="bi bi-eye-slash lock_password" id="lock_admin_password" onclick="togglePasswordVisibility()"></i>
+              <input type="password" id="admin_password" value="" name="spass" autocomplete="off" >
+          </div>
+          <input name="action" value="alogin" type="hidden">
+          <div class="_fingerprint_authentication">
               <i class="bi bi-fingerprint"></i>
               <span>FingerPrint Authentication</span>
-            </div>
-            <button type="button" class="btn" onclick="sigInSuper()">Login</button>
-          </form>
+          </div>
+          <button type="button" class="btn" id="login_btn" onclick="s_sign_in()">Login</button>
+      </form>
     </div>
     <div class="admin_alert hide">
         <span>Verification Successful <i class="bi bi-hand-thumbs-up-fill"></i></span>
