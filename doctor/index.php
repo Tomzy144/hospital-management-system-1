@@ -264,9 +264,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     console.log('Event type:', event.type); // Output the type of event
                     console.log('Event target:', event.target); // Output the target of the event
                 });
-            }
-
-            }
+            };
+            };
+            
 
 
 

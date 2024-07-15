@@ -18,50 +18,43 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         
 <!--- START OF SIDEBAR AND NAVBAR-->
 <div class="navbar">
-        <div class="section1">
+        <div class="display__date">
         </div>
-        <div class="section2">
-
-          </div>
           <div class="profile">
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
-            <h4>Immaculater Odu</h4>
+            <span>Doc. Henculus White</span>
             <button class="btn_submit">Upload Image</button>
-            <h4>change password</h4>
-        </div>
+           </div>
+
             <div class="image">
-            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
             <div class="active_on"></div>
             </div>
-        </img>  
-            <span>Precious Effiom</span>
-            <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
-          </div>
-        </div>
+            <span>Dr. Mike</span>
+            <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
+                 </div>
+                </div>
+
+    <div class="sidebar">
+    <div class="sidebar__header"></div>
+    <div class="sidebar-body">
+      <ul>
+        <li class="links active" onclick="appoitment_list_section()">
+          <span>Available appoitments</span>
+        </li>
+        <li class="links" onclick="approved_appoitment__section()">
+          <span>Accepted appoitments</span>
+        </li>
+        <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
+          <span>Logout</span>
+          <form method="post" action="../config/code.php" id="logoutform">
+            <input type="hidden" name="action" value="logout"/>
+          </form>
+        </li>
+      </ul>
     </div>
-        <div class="sidebar">
-               <div class="_sidebar_contents">
-          
-               </div>
-            <div class="_sidebar_links">
-            <div class="_links" onclick="appoitment_list_section()">
-                <i class="bi bi-calendar-date-fill"></i> 
-                <span id="rm">Available appoitments</span>
-                </div>
-            <div class="_links" onclick="approved_appoitment__section()">
-                <i class="bi bi-calendar-check-fill"></i> 
-                <span id="rm">Accepted appoitments</span>
-                </div>
-                <div class="_links" onclick="document.getElementById('logoutform').submit();">
-                <i class="fa-solid fa-right-from-bracket"> </i> 
-                <span id="rm">Logout</span>
-                </div>
-                <form method="post" action="../config/code.php" id="logoutform">
-                    <input type="hidden" name="action" value="logout"/>    
-                </form>
-            </div>
-        </div>
+  </div>
                  <!--- END OF SIDEBAR AND NAVBAR-->
 
                  <!--- START OF AVAILABLE APPOITMENT AND APPROVED APPOITMENT SECTION-->

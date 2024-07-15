@@ -70,7 +70,7 @@
               <i class="bi bi-fingerprint"></i>
               <span>FingerPrint Authentication</span>
             </div>
-            <button type="button" class="btn" onclick="log_in()">Login</button>
+            <button type="button" class="btn" onclick="sigInSuper()">Login</button>
           </form>
     </div>
     <div class="admin_alert hide">

@@ -5,6 +5,87 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="navbar">
+        <div class="display__date">
+        </div>
+          <div class="profile">
+            <div class="profile_account hide">
+            <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <span>Doc. Henculus White</span>
+            <button class="btn_submit">Upload Image</button>
+           </div>
+
+            <div class="image">
+            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
+            <div class="active_on"></div>
+            </div>
+            <span>Doc. Henculus White</span>
+            <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
+                 </div>
+                </div>
+
+    <div class="sidebar">
+    <div class="sidebar__header"></div>
+    <div class="sidebar-body">
+      <ul>
+        <li class="links active" onclick="patient_admission_form_section()">
+          <span>Patient admission form</span>
+        </li>
+        <li class="links" onclick="walkin_patient_form()" >
+          <span>Walkin patient admission Form</span>
+        </li>
+        <li class="links" onclick="checkup_form()">
+          <span>Check up</span>
+        </li>
+        <li class="links" onclick="patient_list()">
+          <span>Patient list</span>
+        </li>
+        <li class="links" onclick="_walkin_patient_list()">
+          <span>Walkin patient list</span>
+        </li>
+        <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
+          <span>Logout</span>
+          <form method="post" action="../config/code.php" id="logoutform">
+            <input type="hidden" name="action" value="logout"/>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
  $staff_id= $_POST['staff_id'];
 ?>
