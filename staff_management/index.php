@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="awesome-font/css/animate.css">
 </head>
 <body>
+  
 
     <div class="navbar">
         <div class="display__date">
@@ -60,40 +61,40 @@
 </div> -->
 
 
-  <div class="modal hidden" id="staffTracking">
-  <button class="btn--close-modal" onclick="closeModal('staffTracking')">&times;</button>
-      <h2 class="modal__header">
-        Staff 
-      <span class="highlight">time and attendance</span>
-      </h2>
-      <div class="clockinoutDiv">
-      <button type="button" class="btn_submit" onclick="showClockInModal()">Clock In &rarr;</button>
-      <button type="button" class="btn_submit" onclick="showClockOutModal()">Clock Out &rarr;</button>
-      </div>
-  </div>
-
-  <div class="modal hidden" id="clockInForm">
+<div class="modal hidden" id="staffTracking">
+        <button class="btn--close-modal" onclick="closeModal('staffTracking')">&times;</button>
         <h2 class="modal__header">
-        Clock 
-      <span class="highlight">in</span>
-      </h2>
+            Staff 
+            <span class="highlight">time and attendance</span>
+        </h2>
+        <div class="clockinoutDiv">
+            <button type="button" class="btn_submit" onclick="showClockInModal()">Clock In &rarr;</button>
+            <button type="button" class="btn_submit" onclick="showClockOutModal()">Clock Out &rarr;</button>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="clockInForm">
+        <h2 class="modal__header">
+            Clock 
+            <span class="highlight">in</span>
+        </h2>
         <label for="clockInStaffId">Staff Id</label>
         <input type="text" id="clockInStaffId" placeholder="Enter Staff ID" required>
         <button type="button" class="btn_submit" id="clockInButton">Authenticate <i class="bi bi-fingerprint"></i> </button>
     </div>
-  <div class="modal hidden" id="clockOutForm">
-        <h2 class="modal__header">
-        Clock 
-      <span class="highlight">out</span>
-      </h2>
 
+    <div class="modal hidden" id="clockOutForm">
+        <h2 class="modal__header">
+            Clock 
+            <span class="highlight">out</span>
+        </h2>
         <label for="clockOutStaffId">Staff Id</label>
         <input type="text" id="clockOutStaffId" placeholder="Enter Staff ID" required>
         <button type="button" class="btn_submit" id="clockOutButton">Clock Out &rarr;</button>
     </div>
 
-  <div class="modal hidden" id="fingerPrint">
-        <i class="bi bi-fingerprint"></i>
+    <div class="modal hidden" id="fingerPrint">
+        <i class="bi bi-fingerprint" id="greenColourFingerPrint"></i>
     </div>
 
  

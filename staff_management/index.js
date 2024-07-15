@@ -15,6 +15,7 @@ const openModal = function (modalId) {
   blackBlur.classList.remove('hidden');
 };
 
+
 const closeModal = function (modalId) {
   const modal = document.getElementById(modalId);
   
@@ -100,6 +101,8 @@ message.innerHTML = text;
 document.querySelector('body').appendChild(message);
 setTimeout(() => message.classList.add('hide'),3000);
 }
+
+
 
 
 
@@ -568,4 +571,212 @@ document.getElementById('staffList').addEventListener('click', async function(ev
   } else {
     warningMessage('No staff data available');
   }
+});
+
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal('staffInfo');
+    closeModal('staffProfile');
+  }
+});
+
+// Show Clock In Modal
+function showClockInModal() {
+  closeModal('staffTracking');
+  openModal('clockInForm');
+}
+
+// Show Clock Out Modal
+function showClockOutModal() {
+  closeModal('staffTracking');
+  openModal('clockOutForm');
+}
+// Clock In Function
+document.getElementById('clockInButton').addEventListener('click', function() {
+  const staffId = document.getElementById('clockInStaffId').value;
+  if (!staffId) return warningMessage('Please enter your Staff ID');
+
+  // Fetch staff profile first
+  fetch(`http://localhost:5000/api/v1/staffProfile/${staffId}`)
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        const { staffProfile } = data;
+        const staffName = staffProfile.formData.staffName; // Adjust based on your data structure
+        const staffImage = staffProfile.capturedImage; // Adjust based on your data structure
+
+        // Create and show the staff profile modal
+        const staffProfileModal = document.createElement('div');
+        staffProfileModal.className = 'modal';
+        staffProfileModal.id = 'staffProfile';
+        staffProfileModal.innerHTML = `
+          <button class="btn--close-modal" onclick="closeModal('staffProfile')">&times;</button>
+          <div class="staffPro">
+            <img src="${staffImage}" alt="Staff Image">
+            <div class="staffInfo">
+              <div class="userNameId">
+                <div>${staffName} <br/> ${staffId}</div>
+                <button id="clockInNowButton" class="btn_submit">Clock In Now</button>
+              </div>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(staffProfileModal);
+        closeModal('clockInForm');
+        openModal('staffProfile');
+
+        
+        // Add event listener for the Clock In Now button
+        document.getElementById('clockInNowButton').addEventListener('click', function() {
+          closeModal('staffProfile');
+          openModal('fingerPrint'); // Show fingerprint modal
+
+          // Simulate fingerprint authentication (remove this when backend is ready)
+          setTimeout(function() {
+            document.getElementById('greenColourFingerPrint').style.color = 'green';
+          }, 3000);
+
+          setTimeout(() => {
+            document.getElementById('greenColourFingerPrint').style.color = ''; // Reset color
+            closeModal('fingerPrint');
+            fetch(`http://localhost:5000/api/v1/clockinstaff/${staffId}`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.status === 'success') {
+                successMessage(`Clocked in at ${data.time}`);
+                closeModal('staffProfile');
+                updateClockInTable(staffId, staffName, staffImage);
+              } else {
+                warningMessage(data.message);
+              }
+            })
+            .catch(error => console.error('Error:', error));
+          }, 5000); // Simulate fingerprint scanning delay
+        });
+      } else {
+        throw new Error(data.message);
+      }
+    })
+    .catch(error => console.error('Error:', error));
+});
+
+// Function to update clock-in table
+function updateClockInTable(staffId, staffName, staffImage) {
+  const tableBody = document.getElementById('clockinStaffs').querySelector('tbody');
+  const newRow = document.createElement('tr');
+
+  const serialNumberCell = document.createElement('td');
+  serialNumberCell.textContent = tableBody.rows.length + 1;
+
+  const profileCell = document.createElement('td');
+  const profileImage = document.createElement('img');
+  profileImage.src = staffImage;
+  profileImage.alt = 'Staff Image';
+  profileImage.width = 50; // Adjust the width as needed
+  profileCell.appendChild(profileImage);
+
+  const staffNameCell = document.createElement('td');
+  staffNameCell.textContent = staffName;
+
+  const staffIdCell = document.createElement('td');
+  staffIdCell.textContent = staffId;
+
+  newRow.appendChild(serialNumberCell);
+  newRow.appendChild(profileCell);
+  newRow.appendChild(staffNameCell);
+  newRow.appendChild(staffIdCell);
+
+  tableBody.appendChild(newRow);
+
+  // Optionally show the table if it's hidden
+  const clockinStaffDiv = document.getElementById('clockinStaff');
+  if (clockinStaffDiv.classList.contains('hide')) {
+    clockinStaffDiv.classList.remove('hide');
+    document.getElementById('staffList').classList.add('hide');
+  }
+}
+
+
+
+
+// Clock Out Function
+document.getElementById('clockOutButton').addEventListener('click', function() {
+  const staffId = document.getElementById('clockOutStaffId').value;
+  if (!staffId) return warningMessage('Please enter your Staff ID');
+
+  // Fetch staff profile first
+  fetch(`http://localhost:5000/api/v1/staffProfile/${staffId}`)
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        const { staffProfile } = data;
+        const staffName = staffProfile.formData.staffName; // Adjust based on your data structure
+        const staffImage = staffProfile.capturedImage; // Adjust based on your data structure
+
+        // Create and show the staff profile modal
+        const staffProfileModal = document.createElement('div');
+        staffProfileModal.className = 'modal';
+        staffProfileModal.id = 'staffProfile';
+        staffProfileModal.innerHTML = `
+          <button class="btn--close-modal" onclick="closeModal('staffProfile')">&times;</button>
+          <div class="staffPro">
+            <img src="${staffImage}" alt="Staff Image">
+            <div class="staffInfo">
+              <div class="userNameId">
+                <div>${staffName} <br/> ${staffId}</div>
+                <button id="clockOutNowButton" class="btn_submit">Clock Out Now</button>
+              </div>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(staffProfileModal);
+        closeModal('clockOutForm');
+        openModal('staffProfile');
+
+        // Add event listener for the Clock Out Now button
+        document.getElementById('clockOutNowButton').addEventListener('click', function() {
+          closeModal('staffProfile');
+          openModal('fingerPrint'); // Show fingerprint modal
+
+          // Simulate fingerprint authentication (remove this when backend is ready)
+          setTimeout(function() {
+            document.getElementById('greenColourFingerPrint').style.color = 'green';
+            closeModal('staffProfile');
+          }, 3000);
+
+          setTimeout(() => {
+            document.getElementById('greenColourFingerPrint').style.color = ''; // Reset color
+            closeModal('staffProfile');
+            closeModal('fingerPrint');
+            fetch(`http://localhost:5000/api/v1/clockoutstaff/${staffId}`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.status === 'success') {
+                successMessage(`Clocked out at ${data.time}`);
+                closeModal('staffProfile');
+                window.location.reload();
+              } else {
+                warningMessage(data.message);
+              }
+            })
+            .catch(error => console.error('Error:', error));
+          }, 5000); // Simulate fingerprint scanning delay
+        });
+      } else {
+        warningMessage(data.message);
+        // throw new Error(data.message);
+      }
+    })
+    .catch(error => console.error('Error:', error));
 });
