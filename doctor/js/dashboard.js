@@ -946,7 +946,7 @@ var selectedValue = document.getElementsByName('am');
 var am;
 for (let radio of radios) {
     if (radio.checked) {
-        selectedValue = cmhd.value;
+        selectedValue = am.value;
 break; }}
 
 var selectedValue = document.getElementsByName('ic');
@@ -1534,7 +1534,8 @@ var patient_id = $("patient_id").val();
     $btnSubmit.prop('disabled', true);
 
     var action = 'doctor_input';
-    var dataString = "action=" + action + "&patient_id=" + patient_id + "&patient_name=" + patient_name  + "&time=" + time + "&date=" + date +"&reason=" + reason + "&doctor_id=" + doctor_id;
+    var dataString = "action=" + action + "&patient_id=" + patient_id + "&patient_name=" + patient_name  + "&time=" + time + "&date=" + date +"&reason=" + reason + "&doctor_id=" + doctor_id
+                      "";
   
 
     $.ajax({

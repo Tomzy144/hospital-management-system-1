@@ -16,7 +16,56 @@
 	break;
 
     
-case 'patients_profile':
+  case 'patients_profile':
+    $patient_id = $_POST['patient_id'];
+    $physical_examination = $_POST['physical_examination'];
+    $mental_status = $_POST['mental_status'];
+    $cranial_nerves = $_POST['cranial_nerves'];
+    $position_sense = $_POST['position_sense'];
+    $vibration_sense = $_POST['vibration_sense'];
+    $reflex_technique = $_POST['reflex_technique'];
+    $coordination_of_upper_extremities = $_POST['coordination_of_upper_extremities'];
+    $coordination_of_lower_extremities = $_POST['coordination_of_lower_extremities'];
+    $gait = $_POST['gait'];
+    $glasgow = $_POST['glasgow'];
+    $spontaneous = $_POST['spontaneous'];
+    $to_speech = $_POST['to_speech'];
+    $to_pain = $_POST['to_pain'];
+    $no_response = $_POST['no_response'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];    
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];    
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];    
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];    
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];    
+    $patient_id = $_POST['patient_id'];
+    $patient_id = $_POST['patient_id'];    
     $patient_id = $_POST['patient_id'];
 
     // Confirm user existence
@@ -29,6 +78,12 @@ case 'patients_profile':
     echo json_encode(array("check" => $result));
 
     // Do not redirect here
+
+  break;
+
+
+  case 'doctor_input':
+  
 
     break;
 
