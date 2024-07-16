@@ -16,7 +16,24 @@
 	break;
 
     
-case 'patients_profile':
+  case 'patients_profile':
+    $patient_id = $_POST['patient_id'];
+
+    // Confirm user existence
+    $query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");
+
+    // Assuming $query is the result you want to send
+    $result = mysqli_fetch_assoc($query);
+
+    // Sending JSON response
+    echo json_encode(array("check" => $result));
+
+    // Do not redirect here
+
+  break;
+
+
+  case 'patients_profile':
     $patient_id = $_POST['patient_id'];
 
     // Confirm user existence
