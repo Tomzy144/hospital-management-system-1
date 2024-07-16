@@ -1,3 +1,5 @@
+
+
 function displayUserProfile(){
     document.querySelector(".profile_account").classList.toggle("hide");
 };
@@ -32,3 +34,172 @@ const dateTime = new Intl.DateTimeFormat(navigator.language, options).format(now
 document.querySelector('.display__date').textContent = dateTime
 }
 setInterval(() => createDate());
+
+
+
+
+const message = document.createElement('div');
+const successMessage = function(text){
+message.className= 'success alert';
+message.innerHTML = `
+  <div class="content">
+      <div class="icon">
+      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+    </div>
+      <h2>${text}</h2>
+    </div>
+`;
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
+
+const infoMessage = function(text){
+message.className= 'info alert';
+message.innerHTML = text;
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
+const warningMessage = function(text){
+message.className= 'warning alert';
+message.innerHTML = `
+  <div class="content">
+      <div class="icon">
+      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+    </div>
+      <h2>${text}</h2>
+    </div>
+`;
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
+const dangerMessage = function(text){
+message.className= 'danger alert';
+message.innerHTML = text;
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
+
+
+
+
+
+////////////////////////////////////////////
+
+//Validate All Input Fields
+function isInputValid(inputs) {
+for (const input of inputs) {
+    if (input.value.trim() === '') return false;
+}
+return true;
+}
+function isEmailValid(inputId) {
+    const email = document.getElementById(inputId).value.trim();
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+}
+function areSelectsValid(selects) {
+    let allValid = true;
+    selects.forEach(select => {
+      if (select.value === "") {
+        allValid = false;
+      }
+    });
+    return allValid;
+  }
+
+const isNumberValid = function(numeric){
+const number = document.querySelector(numeric).value
+if(!+number) return false;
+return true;
+}
+const inputChecked = function(checked){
+const input = document.getElementById(checked);
+if(!input) return false;
+return input.checked;
+}
+
+function generateId() {
+return`STAFF${Math.floor(Math.random() * 1000)}`
+}
+function isPhoneNumberValid(selector) {
+  const phoneNumber = document.getElementById(selector).value.trim();
+  const isNumeric = /^\d+$/.test(phoneNumber); 
+  const startsWith090 = phoneNumber.startsWith('090');
+  const startsWith081 = phoneNumber.startsWith('081');
+  const startsWith080 = phoneNumber.startsWith('080');
+  const startsWith091 = phoneNumber.startsWith('091');
+  const startsWith442 = phoneNumber.startsWith('442');
+
+  return phoneNumber.length === 11 && isNumeric && (
+      startsWith090 || 
+      startsWith081 || 
+      startsWith080 || 
+      startsWith091 || 
+      startsWith442
+  );
+}
+
+/// Function to remove no data message
+function removeNoDataMessage(tableBody, noDataMessage) {
+    if (tableBody.contains(noDataMessage)) {
+        tableBody.removeChild(noDataMessage);
+    }
+  }
+  
+  function createNoDataMessage() {
+    const noDataMessage = document.createElement('tr');
+    noDataMessage.innerHTML = '<td colspan="9">No data available</td>';
+    return noDataMessage;
+  }
+  
+  const noDataMessage = createNoDataMessage();
+  
+  // PATIENT LIST 
+  const availablePatientList = document.querySelector('#availablePatientList tbody');
+  
+  document.addEventListener('DOMContentLoaded', async () => {
+      await patientList(); // Call patientList directly; handle message inside
+  });
+  
+  const patientList = async function() {
+      try {
+          const response = await fetch('../../backend/config/search.php?search_term=');
+          const data = await response.json();
+          
+          if (Array.isArray(data) && data.length > 0) {
+              newPatientList(availablePatientList, data);
+              removeNoDataMessage(availablePatientList, noDataMessage);
+              console.log('Data fetched successfully');
+          } else {
+              availablePatientList.appendChild(noDataMessage);
+              console.log('No patients found');
+          }
+      } catch (error) {
+          console.log('Fetch error:', error);
+          availablePatientList.appendChild(noDataMessage); // Optionally show no data on error
+      }
+  };
+  
+  const newPatientList = function(patientList, patients) {
+      patients.forEach((patient, index) => {
+          const newRow = patientList.insertRow();
+          newRow.insertCell(0).innerHTML = index + 1;
+  
+          const imageCell = newRow.insertCell(1);
+          const image = document.createElement('img');
+          image.src = `../../uploaded_files/profile_pix/patient/${patient.patient_passport}`; // Ensure this field exists
+          image.alt = 'Patient Passport';
+          image.style.width = '50px';
+          image.style.height = '50px';
+          imageCell.appendChild(image);
+  
+          newRow.insertCell(2).innerHTML = patient.fullname || 'N/A';
+          newRow.insertCell(3).innerHTML = patient.patient_id || 'N/A';
+          newRow.insertCell(4).innerHTML = patient.gender || 'N/A';
+          newRow.insertCell(5).innerHTML = patient.phonenumber || 'N/A';
+          newRow.insertCell(6).innerHTML = patient.hospital_card_id || 'N/A';
+          newRow.insertCell(7).innerHTML = patient.address || 'N/A';
+          newRow.insertCell(8).innerHTML = patient.occupation || 'N/A';
+      });
+  };
+  

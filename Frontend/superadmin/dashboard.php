@@ -135,6 +135,35 @@ l
       </ul>
     </div>
   </div>
+  <div class="list_div" id="availablePatientList">
+      <div class="table_container">
+            <div class="search_bar_container">
+            <h2 class="modal__header">
+        Staff 
+      <span class="highlight">lists</span>
+      </h2>
+            </div>
+            <table id="availablePatientList">
+                <thead>
+                    <tr>
+                        <td>S/N</td>
+                        <td>Profile</td>
+                        <td>StaffName</td>
+                        <td>Staff Id</td>
+                        <td>Gender</td>
+                        <td>Phone number</td>
+                        <td>Hospital card Id</td>
+                        <td>Address</td>
+                        <td>Occupation</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+        </table>
+  </div>
+
+</div>
+  
 
 
     <script src="js/dashboard.js"></script>
