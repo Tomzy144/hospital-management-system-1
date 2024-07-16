@@ -1,6 +1,13 @@
 
 
 
+
+const sigInSuper = function(){
+    let url="Frontend/superadmin/dashboard.php"
+    window.parent(location =(url))
+}
+
+
 //using this function to pass into all the section login
 const log_inAll = function(roles, formHtml){
     let container = document.getElementById(roles + '-container');

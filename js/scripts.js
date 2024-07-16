@@ -105,15 +105,20 @@ function cancel(){
 
 
 
-
+const admin_alert =  document.querySelector('.admin_alert');
 function s_sign_in(){ 
     var email = $('#admin_email').val();
     var password = $('#admin_password').val();
     if((email!='')&&(password!='')){
         suser_login(email,password);
+        $('#admin_verification').removeClass('hide');
+        $('#admin_verification').removeClass('vf');
+        $('#admin_verification').html('<div>LOGIN SUCCESSFUL! <i class="bi bi-hand-thumbs-up-fill"></i></div> ').fadeIn(100).fadeOut(1000);
     }else{
-        $('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
-        alert("these fields are empty");
+        $('#admin_verification').removeClass('hide');
+        $('#admin_verification').addClass('vf');
+        $('#admin_verification').html(`Field in the neccessary field <i class="bi-exclamation-triangle"></i></i>`)
+        $('#admin_verification').fadeIn(500).delay(2000).fadeOut(1000);
     }
 }
 

@@ -5,6 +5,87 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="navbar">
+        <div class="display__date">
+        </div>
+          <div class="profile">
+            <div class="profile_account hide">
+            <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <span>Doc. Henculus White</span>
+            <button class="btn_submit">Upload Image</button>
+           </div>
+
+            <div class="image">
+            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
+            <div class="active_on"></div>
+            </div>
+            <span>Doc. Henculus White</span>
+            <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
+                 </div>
+                </div>
+
+    <div class="sidebar">
+    <div class="sidebar__header"></div>
+    <div class="sidebar-body">
+      <ul>
+        <li class="links active" onclick="patient_admission_form_section()">
+          <span>Patient admission form</span>
+        </li>
+        <li class="links" onclick="walkin_patient_form()" >
+          <span>Walkin patient admission Form</span>
+        </li>
+        <li class="links" onclick="checkup_form()">
+          <span>Check up</span>
+        </li>
+        <li class="links" onclick="patient_list()">
+          <span>Patient list</span>
+        </li>
+        <li class="links" onclick="_walkin_patient_list()">
+          <span>Walkin patient list</span>
+        </li>
+        <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
+          <span>Logout</span>
+          <form method="post" action="../config/code.php" id="logoutform">
+            <input type="hidden" name="action" value="logout"/>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
  $staff_id= $_POST['staff_id'];
 ?>
@@ -88,27 +169,21 @@
         </div>
     </div>
 
-    <div class="sidebar">
+    <!-- <div class="sidebar">
             <div class="sidebar-body">
                 <ul>
-                    <li onclick="patient_admission_form_section()" id="links" class="active">
-                        <i class="fa-solid fa-bed"></i>
-                       Patient admission form
+                    <li onclick="patient_admission_form_section()" id="links" class="active"> Patient admission form 
                     </li>
                     <li onclick="walkin_patient_form()" id="links">
-                        <i class="fa-solid fa-baby"></i>
                         <span>Walkin patient admission Form</span>
                     </li>
                     <li onclick="checkup_form()" id="links">
-                        <i class="fa-solid fa-person-circle-check"></i>
                         <span>Check up</span>
                     </li>
                     <li onclick="patient_list()" id="links">
-                        <i class="fa-solid fa-people-group"></i>
                         <span>Patient list</span>
                     </li>
                     <li onclick="_walkin_patient_list()" id="links">
-                        <i class="fa-solid fa-people-group"></i>
                         <span>Walkin patient list</span>
                     </li>
                     <li onclick="document.getElementById('logoutform').submit();" id="links">
@@ -120,7 +195,42 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
+
+
+
+
+
+
+        <div class="sidebar">
+    <div class="sidebar__header"></div>
+    <div class="sidebar-body">
+      <ul>
+        <li onclick="patient_admission_form_section()" class="links active">
+          <span>Patient admission form </span>
+        </li>
+        <li onclick="walkin_patient_form()" class="links">
+          <span>Walkin patient admission Form</span>
+        </li>
+        <li onclick="checkup_form()" class="links">
+          <span>Check up</span>
+        </li>
+        <li onclick="patient_list()" class="links">
+          <span>Patient list</span>
+        </li>
+        <li onclick="_walkin_patient_list()" class="links">
+          <span>Walkin patient list</span>
+        </li>
+        <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
+          <!-- <i class="fa-solid fa-right-from-bracket"></i> -->
+          <span>Logout</span>
+          <form method="post" action="../config/code.php" id="logoutform">
+            <input type="hidden" name="action" value="logout"/>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
 
          <!--END OF SIDEBAR AND NAVBAR-->
 
@@ -470,7 +580,6 @@
     <div class="patient_list_div">
             <div class="search_bar_container">
                 <h3>Patient admission list</h3>
-                <i class = "bi bi-search"></i>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
             <?php 
@@ -570,7 +679,6 @@
     <div class="walkin_patient_list_div hide">
             <div class="search_bar_container">
                 <h3>Walkin patient admission list</h3>
-                <i class="bi bi-search"></i>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
             <?php 
