@@ -1,15 +1,13 @@
 @font-face {
     font-family: 'SEGOEUI';
     src: url('awesome-font/css/SEGOEUI.TTF') format('truetype'); 
-    font-weight: normal; /* Specify the weight if needed */
-    font-style: normal; /* Specify the style if needed */
+    font-weight: normal;
+    font-style: normal; 
   }
-  body, html {
+  body, html{
     margin: 0;
     padding: 0;
-    /* overflow-x: hidden; */
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* animation: fadeIn 2s ease-in-out; */
 }
 
 :root{
@@ -414,6 +412,198 @@ tbody tr:hover {
 .disabled td {
   color: #4F5F64;
 }
+
+.each_sections{
+    display: flex;
+    width: 100%;
+    margin: 1em 0;
+    border-radius: 10px;
+    flex-wrap: wrap;
+  }
+
+  .form-control{
+      margin: 1rem 0.5rem;
+      display: flex;
+      text-align: left;
+      flex-direction: column;
+      position: relative;
+      color: rgb(42, 87, 215);
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.radio-group label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.radio-group input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.radio-group .custom-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    padding: 0;
+    border: 2px solid #d1d3e2;
+    border-radius: 50%;
+}
+.radio-group input[type="radio"]:checked ~ .custom-radio {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+.radio-group .custom-radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.radio-group input[type="radio"]:checked ~ .custom-radio:after {
+    display: block;
+}
+.radio-group .custom-radio:after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+  
+  label{
+    font-size: 1.2rem;
+      color: rgb(42, 87, 215);
+  }
+  input {
+    padding: 0.5rem 0;
+    color: rgb(42, 87, 215);
+    font-size: 1.1rem;
+    border: none;
+      border-bottom-width: medium;
+      width:300px;
+      border-bottom-style: none;
+      border-bottom-color: currentcolor;
+    border-bottom: 1px solid rgb(42, 87, 215);
+    outline: none;
+  }
+  textarea{
+    padding: 0.5rem 0;
+    color: rgb(42, 87, 215);
+    font-size: 1.1rem;
+    border: none;
+      border-bottom-width: medium;
+      width:300px;
+      border-bottom-style: none;
+      border-bottom-color: currentcolor;
+    border-bottom: 1px solid rgb(42, 87, 215);
+    outline: none;
+  }
+  select {
+    padding: 0.5em;
+    color: rgb(42, 87, 215);
+    font-size: 1rem;
+     border: none;
+     width:300px;
+     cursor: pointer;
+    border-bottom: 1px solid rgb(42, 87, 215);
+    outline: none;
+    text-transform: uppercase;
+    background: #fff;
+  }
+
+   .btn_submit{
+    width: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 0.7rem;
+    border: none;
+    color: rgb(42, 87, 215);
+    border-radius: 5px;
+    transition: all ease-in-out 0.6s;
+    cursor: pointer;
+    margin: 1rem 0;
+    }
+ 
+    .btn_submit:hover{
+      background:none;
+      border: 1px solid rgb(255, 255, 255);
+      color: rgb(255, 255, 255);
+    }
+    
+  /* MODAL WINDOW */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background-color: #ffffff;
+    padding:1rem 5rem;
+    height: 100%;
+    overflow: auto;
+    box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: all 0.5s;
+  }
+
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 4;
+    transition: all 0.5s;
+  }
+  
+  .modal__header {
+    font-size: 3.25rem;
+    line-height: 1.5;
+  }
+  
+  .modal__form {
+    align-items: center;
+    overflow: auto;
+    width: 100%;
+    overflow-x: hidden;
+    height: 450px;
+    gap: 2.5rem;
+  }
+  
+  
+  .modal__form button {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    margin-top: 1rem;
+  }
+  
+  .btn--close-modal {
+    font-family: inherit;
+    color: inherit;
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+    font-size: 4rem;
+    color: #4e73df;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+
+
+  /*popup modal*/
+
 .hidden{
     display: none;
 }

@@ -1,4 +1,28 @@
+'use strict';
 
+///////////////////////////////////////
+// Modal window
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.btn--close-modal');
+const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+
+
+const openModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+
+const closeModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+////////////////////////////////////////////////////////////////////
 
 function displayUserProfile(){
     document.querySelector(".profile_account").classList.toggle("hide");
@@ -202,4 +226,84 @@ function removeNoDataMessage(tableBody, noDataMessage) {
           newRow.insertCell(8).innerHTML = patient.occupation || 'N/A';
       });
   };
+  
+  const patientsProfile = async function() {
+    const availablePatientList = document.getElementById('availablePatientList');
+    let patientId;
+    if (availablePatientList) {
+      availablePatientList.addEventListener('click', async function(e) {
+        const row = e.target.closest('tr');
+        if (row && row.children.length > 3) {
+          patientId = row.children[3].innerText.trim().toLowerCase()
+  
+          try {
+            const response = await fetch('../../backend/config/search.php?search_term=');
+            const data = await response.json();
+  
+  
+            data.find(patient =>{
+              if(patient.patient_id === patientId) {
+                console.log(patient); 
+                const patientPassport = document.getElementById('patient_passport');
+                const patientFullname = document.getElementById('fullname');
+                const patientId = document.getElementById('patient_id');
+                const patientPhoneNumber = document.getElementById('phonenumber');
+                const patientHospitalCardId = document.getElementById('hospital_card_id');
+                const patientFamilyCardId = document.getElementById('family_card_id');
+                const patientGender= document.getElementById('gender');
+                const patientDateOfBirth = document.getElementById('dateofbirth');
+                const patientFamilyDisease= document.getElementById('family_disease');
+                const patientNextOfKinAddress= document.getElementById('kaddress');
+                const patientNextOfKinGender = document.getElementById('kgender');
+                const patientNextOfKinName = document.getElementById('kname');
+                const patientNextOfKinPhoneNumber = document.getElementById('kphonenumber');
+                const patientNextOfKinRelationship = document.getElementById('krelationship');
+                const patientMedicalHistory= document.getElementById('medical_history');
+                const patientOccupation = document.getElementById('occupation');
+                const patientPastDisease = document.getElementById('past_disease');
+                const patientPastObsterics = document.getElementById('past_obsterics');
+                const patientSexualHistory = document.getElementById('sexual_history');
+                const patientPastSurgery= document.getElementById('past_surgery');
+                const patientStatusId= document.getElementById('status_id');
+                openModal('patientProfile');
+                patientPassport.src = `../../uploaded_files/profile_pix/patient/${patient.patient_passport}`;
+                patientFullname.innerHTML = `Patient Name: ${patient.fullname}`;
+                patientId.innerHTML = `Patient Id: ${patient.patient_id}`;
+                patientDateOfBirth.innerHTML = `Patient Date of Birth: ${patient.dateofbirth}`;
+                patientPhoneNumber.innerHTML = `Patient Phone Number: ${patient.phonenumber}`;
+                patientHospitalCardId.innerHTML = `Patient Hospital Card: ${patient.hospital_card_id}`;
+                patientGender.innerHTML = `Patient Gender: ${patient.gender}`;
+                patientFamilyDisease.innerHTML = `Patient Family Disease: ${patient.family_disease}`;
+                patientFamilyCardId.innerHTML = `Patient Family Card: ${patient.family_card_id}`;
+                patientNextOfKinAddress.innerHTML = `Patient Next of Kin Address
+                : ${patient.kaddress}`;
+                patientNextOfKinGender.innerHTML = `Patient Next of kin Gender: ${patient.kgender}`;
+                patientNextOfKinName.innerHTML =`Patient Next of Kin Name: ${patient.kname}` ;
+                patientNextOfKinPhoneNumber.innerHTML = `Patient Next of Kin Phone Number ${patient.kphonenumber}`;
+                patientNextOfKinRelationship.innerHTML = `Patient Next of Kin Relationship: ${patient.krelationship}`;
+                patientMedicalHistory.innerHTML = `Patient Medical History: ${patient.medical_history}`;
+                patientOccupation.innerHTML = `Patient Occupation: ${patient.occupation}`;
+                patientPastDisease.innerHTML = `Patient Past Disease: ${patient.past_disease}`;
+                patientPastSurgery.innerHTML = `Patient Past Surgery: ${patient.past_surgery}`;
+                patientStatusId.innerHTML = `Patient Status ID: ${patient.status_id}`;
+                patientPastObsterics.innerHTML = `Patient Past Obsterics: ${patient.past_obsterics}`;
+                patientSexualHistory.innerHTML = `Pactient Sexual History: ${patient.sexual_history}`;
+              }  
+              else return;
+            });
+  
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        } else {
+          console.log('No valid patient ID found in the clicked row');
+        }
+      });
+    } else {
+      console.log('Element with id "availablePatientList" not found.');
+    }
+  };
+  
+  patientsProfile();
+  
   

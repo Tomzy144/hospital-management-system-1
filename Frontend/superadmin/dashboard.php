@@ -142,6 +142,7 @@ l
         Staff 
       <span class="highlight">lists</span>
       </h2>
+      <input type="text" name="" id="" placeholder="Search">
             </div>
             <table id="availablePatientList">
                 <thead>
@@ -161,8 +162,49 @@ l
                 </tbody>
         </table>
   </div>
-
 </div>
+
+
+<!----PATIENT PROFILE-->
+<div class="modal hidden" id="patientProfile">
+      <button class="btn--close-modal" onclick="closeModal('patientProfile')">&times;</button>
+      <h2 class="modal__header">
+        Staff 
+      <span class="highlight">Profile</span>
+      </h2>
+
+    <div class="personalInfo">
+      <img src="" alt="" id="patient_passport">
+      <p id="fullname"></p>
+      <p id="patient_id"></p>
+      <p id="phonenumber"></p>
+      <p id="status_id"></p>
+      <p id="hospital_card_id"></p>
+      <p id="family_card_id"></p>
+      <p id="gender"></p>
+      <p id="dateofbirth"></p>
+      <p id="family_disease"></p>
+      <p id="kaddress"></p>
+      <p id="kgender"></p>
+      <p id="kname"></p>
+      <p id="kphonenumber"></p>
+      <p id="krelationship"></p>
+      <p id="medical_history"></p>
+      <p id="occupation"></p>
+      <p id="past_disease"></p>
+      <p id="past_obsterics"></p>
+      <p id="past_surgery"></p>
+      <p id="sexual_history"></p>
+      <p id="status_id"></p>
+    </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+
+
+
+
+
   
 
 
