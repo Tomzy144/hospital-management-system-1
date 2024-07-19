@@ -729,7 +729,7 @@ var range_of_motion_assessment = $("range_of_motion_assessment").val();
 var gait_balance_evaluation = $("gait_balance_evaluation").val();
 var pine_examination = $("mental_status_assessment").val();
 var pine_examination = $("cranial_nerve_examination").val();
-var pine_examination = $("cranial_nerve_examination").val();
+// var pine_examination = $("cranial_nerve_examination").val();
 var reflexes = $("reflexes").val();
 var coordination_balance_assessment = $("coordination_balance_assessment").val();
 var cardiovascular_system = $("cardiovascular_system").val();
@@ -1082,38 +1082,38 @@ for (let radio of radios) {
 break; }}
 
 var selectedValue = document.getElementsByName('ssa');
-var doh;
+var ssa;
 for (let radio of radios) {
     if (radio.checked) {
-        selectedValue = doh.value;
+        selectedValue = ssa.value;
 break; }}
 
 var selectedValue = document.getElementsByName('bnm');
-var doh;
+var bnm;
 for (let radio of radios) {
     if (radio.checked) {
-        selectedValue = doh.value;
+        selectedValue = bnm.value;
 break; }}
 
-var selectedValue = document.getElementsByName('doh');
-var doh;
-for (let radio of radios) {
-    if (radio.checked) {
-        selectedValue = doh.value;
-break; }}
+// var selectedValue = document.getElementsByName('doh');
+// var doh;
+// for (let radio of radios) {
+//     if (radio.checked) {
+//         selectedValue = doh.value;
+// break; }}
 
 var selectedValue = document.getElementsByName('tft');
-var doh;
+var tft;
 for (let radio of radios) {
     if (radio.checked) {
-        selectedValue = doh.value;
+        selectedValue = tft.value;
 break; }}
 
 var selectedValue = document.getElementsByName('sgd');
-var doh;
+var sgd;
 for (let radio of radios) {
     if (radio.checked) {
-        selectedValue = doh.value;
+        selectedValue = sgd.value;
 break; }}
 
 var selectedValue = document.getElementsByName('tmj');
@@ -1343,12 +1343,12 @@ for (let radio of radios) {
         selectedValue = pi.value;
 break; }}
 
-var selectedValue = document.getElementsByName('rs');
-var rs;
-for (let radio of radios) {
-    if (radio.checked) {
-        selectedValue = rs.value;
-break; }}
+// var selectedValue = document.getElementsByName('rs');
+// var rs;
+// for (let radio of radios) {
+//     if (radio.checked) {
+//         selectedValue = rs.value;
+// break; }}
 
 var selectedValue = document.getElementsByName('pft');
 var pft;
