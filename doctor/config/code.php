@@ -18,6 +18,24 @@
     
   case 'patients_profile':
     $patient_id = $_POST['patient_id'];
+   
+
+
+    // Confirm user existence
+    $query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");
+
+    // Assuming $query is the result you want to send
+    $result = mysqli_fetch_assoc($query);
+
+    // Sending JSON response
+    echo json_encode(array("check" => $result));
+
+    // Do not redirect here
+
+  break;
+
+  case 'doctor_input':
+    $patient_id = $_POST['patient_id'];
     $physical_examination = $_POST['physical_examination'];
     $mental_status = $_POST['mental_status'];
     $cranial_nerves = $_POST['cranial_nerves'];
@@ -96,144 +114,503 @@
     $treatment_prescribtion = $_POST['treatment_prescribtion'];
     $drugs = $_POST['drugs'];
     $strength = $_POST['strength'];
-     $mode = $_POST['mode'];
-     $dos = $_POST['dos'];
-     $unit = $_POST['unit'];
-     $frequency = $_POST['frequency'];
-     $duration = $_POST['duration'];
-     $major_complaints = $_POST['major_complaints'];
-     $history_of_presenting_complaints = $_POST['history_of_presenting_complaints'];
-     $family_social_history = $_POST['family_social_history'];
-     $past_sugical_medical_history = $_POST['past_sugical_medical_history'];
-     $fatigue = $_POST['fatigue'];
-     $headache = $_POST['headache'];
-     $weakness = $_POST['weakness'];
-     $appetite = $_POST['appetite'];
-     $weight = $_POST['weight'];
-     $Fever = $_POST['Fever'];
-     $mole = $_POST['mole'];
-     $nail = $_POST['nail'];
-     $texture = $_POST['texture'];
-     $Rashes = $_POST['Rashes'];
-     $sores = $_POST['sores'];
-     $thirst = $_POST['thirst'];
-     $e_hs = $_POST['e_hs'];
-     $salt_craving = $_POST['salt_craving'];
-     $lsd = $_POST['lsd'];
-     $hci = $_POST['hci'];
-     $ag = $_POST['ag'];
-     $ia = $_POST['ia'];
-     $iup = $_POST['iup'];
-     $tr = $_POST['tr'];
-     $es = $_POST['es'];
-     $diabetes = $_POST['diabetes'];
-     $cmhd = $_POST['cmhd'];
-     $rtihc = $_POST['rtihc'];
-     $ithd = $_POST['ithd'];
-     $cmhd = $_POST['cmhd'];
-     $sct = $_POST['sct'];
-     $am = $_POST['am'];
-     $ic = $_POST['ic'];
-     $hg = $_POST['hg'];
-     $bt = $_POST['bt'];
-     $etin = $_POST['etin'];
-     $gcs = $_POST['gcs'];
-     $imin = $_POST['imin'];
-     $pt = $_POST['pt'];
-     $occpt = $_POST['occpt'];
-     $oc = $_POST['oc'];
-     $pm = $_POST['pm'];
-     $ja = $_POST['ja'];
-     $mr = $_POST['mr'];
-     $si = $_POST['si'];
-     $anti_in = $_POST['anti_in'];
-     $assistive = $_POST['assistive'];
-     $shni = $_POST['shni'];
-     $rente = $_POST['rente'];
-     $hnc = $_POST['hnc'];
-     $doh = $_POST['doh'];
-     $ssa = $_POST['ssa'];
-     $bnm = $_POST['bnm'];
-     $tft = $_POST['tft'];
-     $sgd = $_POST['sgd'];
-     $tmj = $_POST['tmj'];
-     $is_b = $_POST['is_b'];
-     $hl = $_POST['hl'];
-     $te = $_POST['te'];
-     $ep = $_POST['ep'];
-     $nc = $_POST['nc'];
-     $sd = $_POST['sd'];
-     $ar = $_POST['ar'];
-     $op = $_POST['op'];
-     $tp = $_POST['tp'];
-     $dysphagia = $_POST['dysphagia'];
-     $ml = $_POST['ml'];
-     $vc = $_POST['vc'];
-     $ml = $_POST['ml'];
-     $halitosis = $_POST['halitosis'];
-     $gr = $_POST['gr'];
-     $ot = $_POST['ot'];
-     $ml = $_POST['ml'];
-     $Tonsillitis = $_POST['Tonsillitis'];
-     $Hoarseness = $_POST['Hoarseness'];
-     $oral_cancer = $_POST['oral_cancer'];
-     $Tonsillitis = $_POST['Tonsillitis'];
-     $rsc = $_POST['rsc'];
-     $bd = $_POST['bd'];
-     $simbc = $_POST['simbc'];
-     $hr = $_POST['hr'];
-     $bifu = $_POST['bifu'];
-     $rs = $_POST['rs'];
-     $bp = $_POST['bp'];
-     $nutritional = $_POST['nutritional'];
-     $pi = $_POST['pi'];
-     $pft = $_POST['pft'];
-     $cxi = $_POST['cxi'];
-     $ot = $_POST['ot'];
-     $ventilator = $_POST['ventilator'];
-     $bronchoscopy = $_POST['bronchoscopy'];
-     $pneumonia = $_POST['pneumonia'];
-     $aa = $_POST['aa'];
-     $ri = $_POST['ri'];
-     $copd = $_POST['copd'];
-     $st = $_POST['st'];
-     $sc = $_POST['sc'];
-     $cardiovascular_condition = $_POST['cardiovascular_condition'];
-     $cl = $_POST['cl'];
-     $antiplatelet = $_POST['antiplatelet'];
-     $bb = $_POST['bb'];
-     $acei = $_POST['acei'];
-     $anticoagulant = $_POST['anticoagulant'];
-     $cardiac = $_POST['cardiac'];
-     $hf_d = $_POST['hf_d'];
-     $gastrointestinal_symptom = $_POST['gastrointestinal_symptom'];
-     $endoscopy = $_POST['endoscopy'];
-     $bd = $_POST['bd'];
-     $colonoscopy = $_POST['colonoscopy'];
-     $gd = $_POST['gd'];
+    $mode = $_POST['mode'];
+    $dos = $_POST['dos'];
+    $unit = $_POST['unit'];
+    $frequency = $_POST['frequency'];
+    $duration = $_POST['duration'];
+    $major_complaints = $_POST['major_complaints'];
+    $history_of_presenting_complaints = $_POST['history_of_presenting_complaints'];
+    $family_social_history = $_POST['family_social_history'];
+    $past_sugical_medical_history = $_POST['past_sugical_medical_history'];
+    $fatigue = $_POST['fatigue'];
+    $headache = $_POST['headache'];
+    $weakness = $_POST['weakness'];
+    $appetite = $_POST['appetite'];
+    $weight = $_POST['weight'];
+    $Fever = $_POST['Fever'];
+    $mole = $_POST['mole'];
+    $nail = $_POST['nail'];
+    $texture = $_POST['texture'];
+    $Rashes = $_POST['Rashes'];
+    $sores = $_POST['sores'];
+    $thirst = $_POST['thirst'];
+    $e_hs = $_POST['e_hs'];
+    $salt_craving = $_POST['salt_craving'];
+    $lsd = $_POST['lsd'];
+    $hci = $_POST['hci'];
+    $ag = $_POST['ag'];
+    $ia = $_POST['ia'];
+    $iup = $_POST['iup'];
+    $tr = $_POST['tr'];
+    $es = $_POST['es'];
+    $diabetes = $_POST['diabetes'];
+    $cmhd = $_POST['cmhd'];
+    $rtihc = $_POST['rtihc'];
+    $ithd = $_POST['ithd'];
+    $cmhd = $_POST['cmhd'];
+    $sct = $_POST['sct'];
+    $am = $_POST['am'];
+    $ic = $_POST['ic'];
+    $hg = $_POST['hg'];
+    $bt = $_POST['bt'];
+    $etin = $_POST['etin'];
+    $gcs = $_POST['gcs'];
+    $imin = $_POST['imin'];
+    $pt = $_POST['pt'];
+    $occpt = $_POST['occpt'];
+    $oc = $_POST['oc'];
+    $pm = $_POST['pm'];
+    $ja = $_POST['ja'];
+    $mr = $_POST['mr'];
+    $si = $_POST['si'];
+    $anti_in = $_POST['anti_in'];
+    $assistive = $_POST['assistive'];
+    $shni = $_POST['shni'];
+    $rente = $_POST['rente'];
+    $hnc = $_POST['hnc'];
+    $doh = $_POST['doh'];
+    $ssa = $_POST['ssa'];
+    $bnm = $_POST['bnm'];
+    $tft = $_POST['tft'];
+    $sgd = $_POST['sgd'];
+    $tmj = $_POST['tmj'];
+    $is_b = $_POST['is_b'];
+    $hl = $_POST['hl'];
+    $te = $_POST['te'];
+    $ep = $_POST['ep'];
+    $nc = $_POST['nc'];
+    $sd = $_POST['sd'];
+    $ar = $_POST['ar'];
+    $op = $_POST['op'];
+    $tp = $_POST['tp'];
+    $dysphagia = $_POST['dysphagia'];
+    $ml = $_POST['ml'];
+    $vc = $_POST['vc'];
+    $ml = $_POST['ml'];
+    $halitosis = $_POST['halitosis'];
+    $gr = $_POST['gr'];
+    $ot = $_POST['ot'];
+    $ml = $_POST['ml'];
+    $Tonsillitis = $_POST['Tonsillitis'];
+    $Hoarseness = $_POST['Hoarseness'];
+    $oral_cancer = $_POST['oral_cancer'];
+    $Tonsillitis = $_POST['Tonsillitis'];
+    $rsc = $_POST['rsc'];
+    $bd = $_POST['bd'];
+    $simbc = $_POST['simbc'];
+    $hr = $_POST['hr'];
+    $bifu = $_POST['bifu'];
+    $rs = $_POST['rs'];
+    $bp = $_POST['bp'];
+    $nutritional = $_POST['nutritional'];
+    $pi = $_POST['pi'];
+    $pft = $_POST['pft'];
+    $cxi = $_POST['cxi'];
+    $ot = $_POST['ot'];
+    $ventilator = $_POST['ventilator'];
+    $bronchoscopy = $_POST['bronchoscopy'];
+    $pneumonia = $_POST['pneumonia'];
+    $aa = $_POST['aa'];
+    $ri = $_POST['ri'];
+    $copd = $_POST['copd'];
+    $st = $_POST['st'];
+    $sc = $_POST['sc'];
+    $cardiovascular_condition = $_POST['cardiovascular_condition'];
+    $cl = $_POST['cl'];
+    $antiplatelet = $_POST['antiplatelet'];
+    $bb = $_POST['bb'];
+    $acei = $_POST['acei'];
+    $anticoagulant = $_POST['anticoagulant'];
+    $cardiac = $_POST['cardiac'];
+    $hf_d = $_POST['hf_d'];
+    $gastrointestinal_symptom = $_POST['gastrointestinal_symptom'];
+    $endoscopy = $_POST['endoscopy'];
+    $bd = $_POST['bd'];
+    $colonoscopy = $_POST['colonoscopy'];
+    $gd = $_POST['gd'];
 
+    // Insert data into the database
+    $sql = "INSERT INTO doctor_input_tab (
+        patient_id,
+        physical_examination,
+        mental_status,
+        cranial_nerves,
+        position_sense,
+        vibration_sense,
+        reflex_technique,
+        coordination_of_upper_extremities,
+        coordination_of_lower_extremities,
+        gait,
+        glasgow,
+        spontaneous,
+        to_speech,
+        to_pain,
+        no_response,
+        oriented,
+        confused,
+        inappropraite,
+        incmprehensible,
+        response,
+        obey,
+        localized,
+        flexion,
+        abnornal,
+        physical_blood_pressure,
+        heart_rate,
+        respiratory_rate,
+        temperature,
+        oxygen_saturation,
+        level,
+        nutritional,
+        signs,
+        body_habitus,
+        pigmentation,
+        moisture_temperature,
+        lesions,
+        bruising,
+        scars,
+        scalp_hair_nails,
+        eyes_ears_nose_throat,
+        lesions_rashes,
+        lymph_nodes,
+        neck_rang_of_Motion,
+        presence_of_Bruits,
+        inspection_palpation_of_precordium,
+        auscultation_of_heart_sounds_murmurs,
+        peripheral_pulses,
+        edema_assessment,
+        capillary_refill_time,
+        respiratory_effort_inspection,
+        palpation_percussion_of_chest,
+        auscultation_of_breath,
+        cough_sputum_assessment,
+        presence_of_tenderness_masses,
+        bowel_sounds_assessment_sounds,
+        genitalia_inspection,
+        urinary_function_assessment,
+        pelvic_examination_sounds,
+        prostate_examination,
+        genitalia_inspection_of_joint,
+        range_of_motion_assessment,
+        gait_balance_evaluation,
+        mental_status_assessment,
+        cranial_nerve_examination,
+        reflexes,
+        coordination_balance_assessment,
+        cardiovascular_system,
+        respiratory_system,
+        gastrointestinal_system,
+        genitourinary_system,
+        neurological_system,
+        social,
+        family_medical_history,
+        occupation_environmental_exposures,
+        living_conditions_support_system,
+        treatment_prescribtion,
+        drugs,
+        strength,
+        mode,
+        dos,
+        unit,
+        frequency,
+        duration,
+        major_complaints,
+        history_of_presenting_complaints,
+        family_social_history,
+        past_sugical_medical_history,
+        fatigue,
+        headache,
+        weakness,
+        appetite,
+        weight,
+        Fever,
+        mole,
+        nail,
+        texture,
+        Rashes,
+        sores,
+        thirst,
+        e_hs,
+        salt_craving,
+        lsd,
+        hci,
+        ag,
+        ia,
+        iup,
+        tr,
+        es,
+        diabetes,
+        cmhd,
+        rtihc,
+        ithd,
+        sct,
+        am,
+        ic,
+        hg,
+        bt,
+        etin,
+        gcs,
+        imin,
+        pt,
+        occpt,
+        oc,
+        pm,
+        ja,
+        mr,
+        si,
+        anti_in,
+        assistive,
+        shni,
+        rente,
+        hnc,
+        doh,
+        ssa,
+        bnm,
+        tft,
+        sgd,
+        tmj,
+        is_b,
+        hl,
+        te,
+        ep,
+        nc,
+        sd,
+        ar,
+        op,
+        tp,
+        dysphagia,
+        vc,
+        halitosis,
+        gr,
+        ot,
+        Tonsillitis,
+        Hoarseness,
+        oral_cancer,
+        rsc,
+        bd,
+        simbc,
+        hr,
+        bifu,
+        rs,
+        bp,
+        pi,
+        pft,
+        cxi,
+        ventilator,
+        bronchoscopy,
+        pneumonia,
+        aa,
+        ri,
+        copd,
+        st,
+        sc,
+        cardiovascular_condition,
+        cl,
+        antiplatelet,
+        bb,
+        acei,
+        anticoagulant,
+        cardiac,
+        hf_d,
+        gastrointestinal_symptom,
+        endoscopy,
+        colonoscopy,
+        gd
+    ) VALUES (
+        '$patient_id',
+        '$physical_examination',
+        '$mental_status',
+        '$cranial_nerves',
+        '$position_sense',
+        '$vibration_sense',
+        '$reflex_technique',
+        '$coordination_of_upper_extremities',
+        '$coordination_of_lower_extremities',
+        '$gait',
+        '$glasgow',
+        '$spontaneous',
+        '$to_speech',
+        '$to_pain',
+        '$no_response',
+        '$oriented',
+        '$confused',
+        '$inappropraite',
+        '$incmprehensible',
+        '$response',
+        '$obey',
+        '$localized',
+        '$flexion',
+        '$abnornal',
+        '$physical_blood_pressure',
+        '$heart_rate',
+        '$respiratory_rate',
+        '$temperature',
+        '$oxygen_saturation',
+        '$level',
+        '$nutritional',
+        '$signs',
+        '$body_habitus',
+        '$pigmentation',
+        '$moisture_temperature',
+        '$lesions',
+        '$bruising',
+        '$scars',
+        '$scalp_hair_nails',
+        '$eyes_ears_nose_throat',
+        '$lesions_rashes',
+        '$lymph_nodes',
+        '$neck_rang_of_Motion',
+        '$presence_of_Bruits',
+        '$inspection_palpation_of_precordium',
+        '$auscultation_of_heart_sounds_murmurs',
+        '$peripheral_pulses',
+        '$edema_assessment',
+        '$capillary_refill_time',
+        '$respiratory_effort_inspection',
+        '$palpation_percussion_of_chest',
+        '$auscultation_of_breath',
+        '$cough_sputum_assessment',
+        '$presence_of_tenderness_masses',
+        '$bowel_sounds_assessment_sounds',
+        '$genitalia_inspection',
+        '$urinary_function_assessment',
+        '$pelvic_examination_sounds',
+        '$prostate_examination',
+        '$genitalia_inspection_of_joint',
+        '$range_of_motion_assessment',
+        '$gait_balance_evaluation',
+        '$mental_status_assessment',
+        '$cranial_nerve_examination',
+        '$reflexes',
+        '$coordination_balance_assessment',
+        '$cardiovascular_system',
+        '$respiratory_system',
+        '$gastrointestinal_system',
+        '$genitourinary_system',
+        '$neurological_system',
+        '$social',
+        '$family_medical_history',
+        '$occupation_environmental_exposures',
+        '$living_conditions_support_system',
+        '$treatment_prescribtion',
+        '$drugs',
+        '$strength',
+        '$mode',
+        '$dos',
+        '$unit',
+        '$frequency',
+        '$duration',
+        '$major_complaints',
+        '$history_of_presenting_complaints',
+        '$family_social_history',
+        '$past_sugical_medical_history',
+        '$fatigue',
+        '$headache',
+        '$weakness',
+        '$appetite',
+        '$weight',
+        '$Fever',
+        '$mole',
+        '$nail',
+        '$texture',
+        '$Rashes',
+        '$sores',
+        '$thirst',
+        '$e_hs',
+        '$salt_craving',
+        '$lsd',
+        '$hci',
+        '$ag',
+        '$ia',
+        '$iup',
+        '$tr',
+        '$es',
+        '$diabetes',
+        '$cmhd',
+        '$rtihc',
+        '$ithd',
+        '$sct',
+        '$am',
+        '$ic',
+        '$hg',
+        '$bt',
+        '$etin',
+        '$gcs',
+        '$imin',
+        '$pt',
+        '$occpt',
+        '$oc',
+        '$pm',
+        '$ja',
+        '$mr',
+        '$si',
+        '$anti_in',
+        '$assistive',
+        '$shni',
+        '$rente',
+        '$hnc',
+        '$doh',
+        '$ssa',
+        '$bnm',
+        '$tft',
+        '$sgd',
+        '$tmj',
+        '$is_b',
+        '$hl',
+        '$te',
+        '$ep',
+        '$nc',
+        '$sd',
+        '$ar',
+        '$op',
+        '$tp',
+        '$dysphagia',
+        '$vc',
+        '$halitosis',
+        '$gr',
+        '$ot',
+        '$Tonsillitis',
+        '$Hoarseness',
+        '$oral_cancer',
+        '$rsc',
+        '$bd',
+        '$simbc',
+        '$hr',
+        '$bifu',
+        '$rs',
+        '$bp',
+        '$pi',
+        '$pft',
+        '$cxi',
+        '$ventilator',
+        '$bronchoscopy',
+        '$pneumonia',
+        '$aa',
+        '$ri',
+        '$copd',
+        '$st',
+        '$sc',
+        '$cardiovascular_condition',
+        '$cl',
+        '$antiplatelet',
+        '$bb',
+        '$acei',
+        '$anticoagulant',
+        '$cardiac',
+        '$hf_d',
+        '$gastrointestinal_symptom',
+        '$endoscopy',
+        '$colonoscopy',
+        '$gd'
+    )";
 
-
-
-    // Confirm user existence
-    $query = mysqli_query($conn, "SELECT * FROM patient_tab WHERE patient_id='$patient_id'");
-
-    // Assuming $query is the result you want to send
-    $result = mysqli_fetch_assoc($query);
-
-    // Sending JSON response
-    echo json_encode(array("check" => $result));
-
-    // Do not redirect here
-
-  break;
-
-
-  case 'doctor_input':
-  
-
+    if (mysqli_query($conn, $sql)) {
+        echo json_encode(array("check" => "success"));
+    } else {
+        echo json_encode(array("check" => "failure", "error" => mysqli_error($conn)));
+    }
     break;
-
 
     }
 
