@@ -635,7 +635,7 @@
           echo json_encode(array("check" => "failure", "error" => mysqli_error($conn)));
       }
   
-      break;
+    break;
   
 
     }
