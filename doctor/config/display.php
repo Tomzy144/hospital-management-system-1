@@ -1905,20 +1905,20 @@ $patient_id = $_POST['patient_Id'];
     <div class="appoitment_con investigation_form hide">
     <i class="bi bi-x-square close-appoitment"onclick ="close_tranfer_patient_lab()"></i>
 
-        <form action="">
+        <form action="" method="post" enctype="multipart/form-data">
             <div class="form-control">
             <label for="">Patient Name</label>
-            <input type="text" name="" id="">
+            <input type="text" value="<?php echo $patient_name?>" name="" id="patient_name">
             </div>
             <div class="form-control">
             <label for="">Patient ID</label>
-            <input type="text" name="" id="">
+            <input type="text" value="<?php echo $patient_id?>" name="" id="patient_id">
             </div>
             <div class="form-control">
             <label for="">Message</label>
-            <textarea name="" id=""></textarea>
+            <textarea name="" value="" id="message"></textarea>
             </div>
-            <button type="button">SUBMIT</button>
+            <button type="button" id="submit_btn" onclick="transfer_to_lab();">SUBMIT</button>
         </form>
     </div>
  

@@ -612,6 +612,32 @@
     }
     break;
 
-    }
+   
 
+    case 'transfer_to_lab':
+
+      $patient_id = $_POST['patient_id'];
+      $patient_name = $_POST['patient_name'];
+      $message = $_POST['message'];
+  
+      $sequence = $callclass->_get_sequence_count($conn, 'LABAPP');
+      $array = json_decode($sequence, true);
+      $no = $array[0]['no'];
+      $lab_scientist_appointment_id = 'LABAPP' . $no;
+  
+      $query = "INSERT INTO `lab_appointment_tab`
+                (`patient_id`, `lab_scientist_appointment_id`, `message`, `patient_name`, `time`) 
+                VALUES ('$patient_id', '$lab_scientist_appointment_id', '$message', '$patient_name', now())";
+  
+      if (mysqli_query($conn, $query)) {
+          echo json_encode(array("check" => "success"));
+      } else {
+          echo json_encode(array("check" => "failure", "error" => mysqli_error($conn)));
+      }
+  
+      break;
+  
+
+    }
     ?>
+     
