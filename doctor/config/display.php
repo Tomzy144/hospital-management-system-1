@@ -2073,48 +2073,25 @@ $patient_id = $_POST['patient_Id'];
 
         <form action="">
             <div class="form-control">
-            <label for="">Specialties</label>
-            <select name="" id="">
-            <option value="cardiologist">Cardiologist</option>
-    <option value="dermatologist">Dermatologist</option>
-    <option value="surgeon">Surgeon</option>
-    <option value="psychiatrist">Psychiatrist:</option>
-    <option value="family_medicine">Family Medicine</option>
-    <option value="dermatologist">Dermatologist</option>
-    <option value="anaesthesiology">Anaesthesiology</option>
-    <option value="rheumatologist">Rheumatologist</option>
-    <option value="endocrinologist">Endocrinologist</option>
-    <option value="nephrologist">Nephrologist</option>
-    <option value="neurologist">Neurologist</option>
-    <option value="pediatrician">Pediatrician</option>                
-    <option value="urologist">Urologist</option>
-    <option value="radiologist">Radiologist</option>
-    <option value="dentist">Dentist</option>
-    <option value="pulmonologist">Pulmonologist</option>
-    <option value="podiatristian">Podiatristian</option>
-    <option value="emergency_physician">Emergency Physician</option>
-    <option value="anaesthesiologist">Anaesthesiologist</option>
-    <option value="cardiologist">Cardiologist</option>
-    <option value="oncologist">Oncologist</option>
-    <option value="gastroenterologist">Gastroenterologist</option>
-    <option value="ophthanlmologist">Ophthanlmologist</option>
-    <option value="cardology">Cardology</option>
-    <option value="allergist">Allergist</option>
-    <option value="orthopedic_surgoen">Orthopedic Surgoen</option> 
+            <label for="av-roles">Specialties</label>
+            <select name="roles" id="roles">
+                <option value="">Select</option>
             </select>
             </div>
             <div class="form-control">
             <label for="">Name</label>
-            <select name="" id="">
-                <option value="">Kingsley</option>
-                <option value="">Prince</option>
+            <select name="doctors" id ="doctor" >
+                <option id ="doctor_id"></option>
             </select>
             </div>
             <div class="form-control">
             <label for="">Remark</label>
-            <textarea name="" id=""></textarea>
+            <textarea name="" id="remark" value=""></textarea>
+            <input type="hidden" name="" id="doctor_id2"  value="">
+            <input type="hidden" name="" id="patient_id"  value="<?php echo $patient_id ?>">
+            <input type="hidden" name="" id="patient_name"  value="<?php echo $patient_name ?>">
             </div>
-            <button>SUBMIT</button>
+            <button type="button" id='transfer_to_doctor_btn' onclick="transfer_to_doctor();">SUBMIT</button>
         </form>
     </div>
         <!--Discharge Section--->

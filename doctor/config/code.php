@@ -638,6 +638,110 @@
     break;
   
 
+
+
+    
+
+
+    case 'getDoctorsRoles':
+      // Execute the query to fetch all doctor roles
+      $query = mysqli_query($conn, "SELECT * FROM doctor_role_tab");
+
+      // Check if the query executed successfully
+      if ($query) {
+          $doctorRoles = array();
+
+          // Fetch the data from the result set
+          while ($row = mysqli_fetch_assoc($query)) {
+              $doctorRoles[] = $row;
+          }
+
+          // Return the data as JSON
+          echo json_encode(array("success" => true, "doctorRoles" => $doctorRoles));
+      } else {
+          // Return an error message if the query failed
+          echo json_encode(array("success" => false, "message" => "Error executing the query"));
+      }
+      break;
+
+
+  case 'getDoctors':
+      $role = $_POST['roles'];
+
+      // Sanitize the role input to prevent SQL injection
+      $role = mysqli_real_escape_string($conn, $role);
+  
+      // Execute the query to fetch doctors based on the role
+      $query = mysqli_query($conn, "SELECT doctor_tab.fullname, doctor_tab.doctor_id FROM doctor_tab
+                              JOIN doctor_role_tab ON doctor_role_tab.doctor_role_id = doctor_tab.doctor_role_id 
+                              WHERE doctor_tab.doctor_role_id ='$role'");
+  
+      // Check if the query executed successfully
+      if ($query) {
+          $doctor = array();
+  
+          // Fetch the data from the result set
+          while ($row = mysqli_fetch_assoc($query)) {
+              $doctor[] = $row;
+          }
+  
+          // Return the data as JSON
+          echo json_encode(array("success" => true, "doctor" => $doctor));
+      } else {
+          // Return an error message if the query failed
+          echo json_encode(array("success" => false, "message" => "Error executing the query"));
+      }
+      break;
+
+      case 'transfer_patient':
+        $patient_id = $_POST['patient_id'];
+        $patient_name = $_POST['patient_name'];
+        $remark = $_POST['remark']; // Assuming 'remark' is the correct variable name
+        $doctor_id = $_POST['doctor_id'];
+        $status_id = "1";
+    
+        // Get the appointment ID sequence
+        $sequence = $callclass->_get_sequence_count($conn, 'APP');
+        $array = json_decode($sequence, true);
+        $no = $array[0]['no'];
+        $appointment_id = 'APP' . $no;
+    
+        // Prepare the SQL query with the correct number of placeholders
+        $stmt = $conn->prepare("
+        INSERT INTO doctor_appointment_tab
+        (doctor_appointment_id, patient_id, patient_name, reason, time, doctor_appointment_status_id, doctor_id, doctor_appointment_date)
+        VALUES (?, ?, ?, ?, NOW(), ?, ?, CURDATE())
+    ");
+    
+    
+        if ($stmt) {
+            // Bind the parameters
+            $stmt->bind_param(
+                "ssssss",
+                $appointment_id,
+                $patient_id,
+                $patient_name,
+                $remark,
+                $status_id,
+                $doctor_id
+            );
+    
+            // Execute the statement
+            if ($stmt->execute()) {
+                echo json_encode(array("success" => true, "message" => "Patient transferred successfully"));
+            } else {
+                echo json_encode(array("success" => false, "message" => "Error executing query: " . $stmt->error));
+            }
+    
+            // Close the statement
+            $stmt->close();
+        } else {
+            echo json_encode(array("success" => false, "message" => "Error preparing query: " . $conn->error));
+        }
+        break;
+    
+
+
     }
     ?>
      
