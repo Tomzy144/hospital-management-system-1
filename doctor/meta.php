@@ -16,8 +16,8 @@
 <meta property="og:site_name" content="<?php echo $thename?>">
 <meta property="og:url" content="<?php echo $website_address?>" />
 
-<script src="<?php echo $website_url?>/doctor/js/jquery-v3.6.1.min.js"></script>
-<script src="<?php echo $website_url?>/doctor/js/dashboard.js"></script>
-<script src="<?php echo $website_url?>/doctor/js/aos.js"></script> 
+<script defer src="<?php echo $website_url?>/doctor/js/jquery-v3.6.1.min.js"></script>
+<script defer src="<?php echo $website_url?>/doctor/js/dashboard.js"></script>
+<script  defer src="<?php echo $website_url?>/doctor/js/aos.js"></script> 
 
 

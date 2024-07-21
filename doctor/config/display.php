@@ -64,7 +64,7 @@ $patient_id = $_POST['patient_Id'];
      <!----Start from here-->
    <div class="all_sections_input">
     <!---PATIENT PERSONAL INFO-->
-   <div class="info_dropdown"    onClick="personal_info_section()">
+   <div class="info_dropdown"    onclick="personal_info_section()">
     <h3>Personal Information</h3>
     
         <i class="bi bi-plus-lg" id="info_icon_plus"></i>
@@ -187,7 +187,7 @@ $patient_id = $_POST['patient_Id'];
    </div>
  
    <!---LABOURATORY INFORMATIONS--->
-   <div class="lab_dropdown" onClick="lab_section()">
+   <div class="lab_dropdown" onclick="lab_section()">
     <h3>Labouratory Information</h3>
     <i class="bi bi-plus-lg" id="lab_icon_plus"></i>
     <i class="bi bi-dash-lg" id="lab_icon_minus"></i>
@@ -234,7 +234,7 @@ $patient_id = $_POST['patient_Id'];
     </div>
  
    <!---RADIOLOGY INFORMATIONS--->
-   <div class="radiology_dropdown" onClick="radiology_section()">
+   <div class="radiology_dropdown" onclick="radiology_section()">
     <h3>Radiology Information</h3>
     <i class="bi bi-plus-lg" id="radiology_icon_plus"></i>
     <i class="bi bi-dash-lg" id="radiology_icon_minus"></i>
@@ -265,7 +265,7 @@ $patient_id = $_POST['patient_Id'];
             </table>
     </div>
    <!---NURSES VITAL INFORMATIONS--->
-   <div class="vitals_dropdown" onClick="vitals_section()">
+   <div class="vitals_dropdown" onclick="vitals_section()">
     <h3>Vitals Information</h3>
     <i class="bi bi-plus-lg" id="vitals_icon_plus"></i>
     <i class="bi bi-dash-lg" id="vitals_icon_minus"></i>
@@ -338,13 +338,13 @@ $patient_id = $_POST['patient_Id'];
     <div class="all_section_input">
     <form action="" method="post" enctype="multipart/form-data">
   <!--Start of Physica, Examination-->
-        <div class="physical_dropdown"onClick="physical_section()">
+        <div class="physical_dropdown"onclick="physical_section()">
             <h3>Physical Examination</h3>
             <i class="bi bi-plus-lg" id="physical_icon_plus"></i>
             <i class="bi bi-dash-lg" id="physical_icon_minus"></i>
         </div>
         <div class="physical_examination-section hidden">
-                <div class="physical_examination_drop-down1" onClick="physical_showForm1()">
+                <div class="physical_examination_drop-down1" onclick="physical_showForm1()">
                     <h3>General</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus1"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus1"></i>
@@ -355,7 +355,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="physical_examination" value="">
         </div>
         </div>
-                <div class="physical_examination_drop-down2" onClick="physical_showForm2()">
+                <div class="physical_examination_drop-down2" onclick="physical_showForm2()">
                     <h3>Neurological</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus2"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus2"></i>
@@ -441,7 +441,7 @@ $patient_id = $_POST['patient_Id'];
                         </div>
         </div>
                 
-        div        <div class="physical_examination_drop-down3" onClick="physical_showForm3()">
+         <div class="physical_examination_drop-down3" onclick="physical_showForm3()">
                     <h3>Vital Sign</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus3"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus3"></i>
@@ -468,7 +468,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="oxygen_saturation">
                     </div>
         </div>
-        <div class="physical_examination_drop-down4" onClick="physical_showForm4()">
+        <div class="physical_examination_drop-down4" onclick="physical_showForm4()">
                     <h3>General Apperance</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus4"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus4"></i>
@@ -491,7 +491,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="body_habitus">
                     </div>
         </div>
-        <div class="physical_examination_drop-down5"onClick="physical_showForm5()" >
+        <div class="physical_examination_drop-down5"onclick="physical_showForm5()" >
                     <h3>Skin Examination</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus5"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus5"></i>
@@ -518,7 +518,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="scars">
                     </div>
         </div>
-        <div class="physical_examination_drop-down6" onClick="physical_showForm6()">
+        <div class="physical_examination_drop-down6" onclick="physical_showForm6()">
                     <h3>Head and Neck</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus6"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus6"></i>
@@ -549,7 +549,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="presence_of_Bruits">
                     </div>
         </div>
-        <div class="physical_examination_drop-down7" onClick="physical_showForm7()">
+        <div class="physical_examination_drop-down7" onclick="physical_showForm7()">
                     <h3>Cardiovascular Examination</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus7"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus7"></i>
@@ -576,7 +576,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="capillary_refill_time">
         </div>
         </div>
-        <div class="physical_examination_drop-down8" onClick="physical_showForm8()">
+        <div class="physical_examination_drop-down8" onclick="physical_showForm8()">
                     <h3>Respiratory Examination</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus8"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus8"></i>
@@ -599,7 +599,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="cough_sputum_assessment">
                     </div>
         </div>
-        <div class="physical_examination_drop-down9" onClick="physical_showForm9()">
+        <div class="physical_examination_drop-down9" onclick="physical_showForm9()">
                     <h3>Abdominal Examination</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus9"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus9"></i>
@@ -614,7 +614,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="bowel_sounds_assessment_sounds">
                     </div>
         </div>
-        <div class="physical_examination_drop-down10" onClick="physical_showForm10()">
+        <div class="physical_examination_drop-down10" onclick="physical_showForm10()">
                     <h3>Genitourinary Examination</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus10"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus10"></i>
@@ -637,7 +637,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="prostate_examination">
                     </div>
         </div>
-        <div class="physical_examination_drop-down11" onClick="physical_showForm11()">
+        <div class="physical_examination_drop-down11" onclick="physical_showForm11()">
                     <h3>Musculoskeletal Examination</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus11"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus11"></i>
@@ -660,7 +660,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="pine_examination">
                     </div>
         </div>
-        <div class="physical_examination_drop-down12" onClick="physical_showForm12()">
+        <div class="physical_examination_drop-down12" onclick="physical_showForm12()">
                     <h3>Neurological Examination</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus12"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus12"></i>
@@ -687,7 +687,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="coordination_balance_assessment">
                     </div>
         </div>
-        <div class="physical_examination_drop-down13" onClick="physical_showForm13()">
+        <div class="physical_examination_drop-down13" onclick="physical_showForm13()">
                     <h3>Review of Systems (ROS)</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus13"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus13"></i>
@@ -714,7 +714,7 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="neurological_system">
                     </div>
         </div>
-        <div class="physical_examination_drop-down14" onClick="physical_showForm14()">
+        <div class="physical_examination_drop-down14" onclick="physical_showForm14()">
                     <h3>Social and Family History</h3>
                     <i class="bi bi-dash-lg" id="physical_examination_icon_minus14"></i>
                     <i class="bi bi-plus-lg" id="physical_examination_icon_plus14"></i>
@@ -741,7 +741,7 @@ $patient_id = $_POST['patient_Id'];
             </div>
             <!--End of Physica, Examination-->
         <!--Start for Treatment and Prescribtion--->
-        <div class="treatment_prescribtion_dropdown" onClick="treatment_prescribtion_section()">
+        <div class="treatment_prescribtion_dropdown" onclick="treatment_prescribtion_section()">
             <h3>Treatment & Prescription</h3>
             <i class="bi bi-plus-lg" id="treatment_prescribtion_icon_plus"></i>
             <i class="bi bi-dash-lg" id="treatment_prescribtion_minus"></i>
@@ -799,7 +799,7 @@ $patient_id = $_POST['patient_Id'];
             </div>
             </div>
 
-        <div class="complain_dropdown" onClick="complain_section()">
+        <div class="complain_dropdown" onclick="complain_section()">
             <h3>Complaints</h3>
             <i class="bi bi-plus-lg" id="complaint_icon_plus"></i>
             <i class="bi bi-dash-lg" id="complaint_icon_minus"></i>
@@ -827,13 +827,13 @@ $patient_id = $_POST['patient_Id'];
                     <!--End of the complaint section--->
 
                     <!--Start of the System & Review section--->
-                    <div class="system_dropdown" onClick="system_review_section()">
+                    <div class="system_dropdown" onclick="system_review_section()">
             <h3>System Review and Symptom</h3>
             <i class="bi bi-plus-lg" id="system_icon_plus"></i>
             <i class="bi bi-dash-lg" id="system_icon_minus"></i>
         </div>
                     <div class="system_review-section hidden">
-                <div class="drop-down1" onClick="showForm1()">
+                <div class="drop-down1" onclick="showForm1()">
                     <h3>General</h3>
                     <i class="bi bi-dash-lg" id="close_id_1"></i>
                     <i class="bi bi-plus-lg" id="open_id_1"></i>
@@ -894,7 +894,7 @@ $patient_id = $_POST['patient_Id'];
                         </div>
         </div>
         </div>
-        <div class="drop-down2" onClick="showForm2()">
+        <div class="drop-down2" onclick="showForm2()">
                     <h3>Skin</h3>
                     <i class="bi bi-dash-lg" id="close_id_2"></i>
                     <i class="bi bi-plus-lg" id="open_id_2"></i>
@@ -946,7 +946,7 @@ $patient_id = $_POST['patient_Id'];
                         </div>
         </div>
         </div>
-        <div class="drop-down3" onClick="showForm3()">
+        <div class="drop-down3" onclick="showForm3()">
                     <h3>Endocrine</h3>
                     <i class="bi bi-dash-lg" id="close_id_3"></i>
                     <i class="bi bi-plus-lg" id="open_id_3"></i>
@@ -1061,7 +1061,7 @@ $patient_id = $_POST['patient_Id'];
                         </div>
         </div>
         </div>
-        <div class="drop-down4" onClick="showForm4()">
+        <div class="drop-down4" onclick="showForm4()">
                     <h3>Hematopoietic</h3>
                     <i class="bi bi-dash-lg" id="close_id_4"></i>
                     <i class="bi bi-plus-lg" id="open_id_4"></i>
@@ -1167,7 +1167,7 @@ $patient_id = $_POST['patient_Id'];
                         </div>
         </div>
   </form>
-  <div class="drop-down5" onClick="showForm5()">
+  <div class="drop-down5" onclick="showForm5()">
             <h3>Muscoskeletal</h3>
             <i class="bi bi-dash-lg" id="close_id_5"></i>
             <i class="bi bi-plus-lg" id="open_id_5"></i>
@@ -1255,7 +1255,7 @@ $patient_id = $_POST['patient_Id'];
                 </div>
   </div>
 </div>
-  <div class="drop-down6" onClick="showForm6()">
+  <div class="drop-down6" onclick="showForm6()">
             <h3>Head & Neck</h3>
             <i class="bi bi-dash-lg" id="close_id_6"></i>
             <i class="bi bi-plus-lg" id="open_id_6"></i>
@@ -1352,7 +1352,7 @@ $patient_id = $_POST['patient_Id'];
                 </div>
   </div>
 </div>
-  <div class="drop-down7" onClick="showForm7()">
+  <div class="drop-down7" onclick="showForm7()">
             <h3>Ears, Nose, Sinuses, Mouth & Throat</h3>
             <i class="bi bi-dash-lg" id="close_id_7"></i>
             <i class="bi bi-plus-lg" id="open_id_7"></i>
@@ -1530,7 +1530,7 @@ $patient_id = $_POST['patient_Id'];
                 </div>
   </div>
 </div>
-  <div class="drop-down8" onClick="showForm8()">
+  <div class="drop-down8" onclick="showForm8()">
             <h3>Breast</h3>
             <i class="bi bi-dash-lg" id="close_id_8"></i>
             <i class="bi bi-plus-lg" id="open_id_8"></i>
@@ -1609,7 +1609,7 @@ $patient_id = $_POST['patient_Id'];
                 </div>
   </div>
 </div>
-  <div class="drop-down9" onClick="showForm9()">
+  <div class="drop-down9" onclick="showForm9()">
             <h3>Respiratory</h3>
             <i class="bi bi-dash-lg" id="close_id_9"></i>
             <i class="bi bi-plus-lg" id="open_id_9"></i>
@@ -1724,7 +1724,7 @@ $patient_id = $_POST['patient_Id'];
                 </div>
   </div>
 </div>
-  <div class="drop-down10" onClick="showForm10()">
+  <div class="drop-down10" onclick="showForm10()">
             <h3>Cardiovascular</h3>
             <i class="bi bi-dash-lg" id="close_id_10"></i>
             <i class="bi bi-plus-lg" id="open_id_10"></i>
@@ -1812,7 +1812,7 @@ $patient_id = $_POST['patient_Id'];
                 </div>
   </div>
 </div>
-  <div class="drop-down11" onClick="showForm11()">
+  <div class="drop-down11" onclick="showForm11()">
             <h3>Gastrointestinal</h3>
             <i class="bi bi-dash-lg" id="close_id_11"></i>
             <i class="bi bi-plus-lg" id="open_id_11"></i>
@@ -1882,26 +1882,27 @@ $patient_id = $_POST['patient_Id'];
 <!----------------DIFFERENT SECTION FROM THE PATIENT INPUT, THIS IS FOR TRANSFERING PATIENT --->
 
                 <!--Investigation and procedure-->
-                <div class=" investigation_dropdown" onClick="investigation_section()">
+                <div class=" investigation_dropdown" onclick="investigation_section()">
     <h3>Investigation and Procedure</h3>
     <i class="bi bi-plus-lg" id="investigation_icon_plus"></i>
     <i class="bi bi-dash-lg" id="investigation_icon_minus"></i>
    </div>
       <div class="investigation-section hidden">
       <div class="advice_form_control_appoitment">
-            <button type="button">Transfer to Lab</button>
-            <button type="button">Transfer to Radiology</button>
+            <button type="button" onclick="openModalTransferLab()">Transfer to Lab</button>
+            <button type="button" onclick="openModalTransferRad()">Transfer to Radiology</button>
     </div>
 </div>
 
-    <div class="modal hidden" id="patient__transfer">
-        <button class="btn--close-modal" onclick="closeModal('staffTracking')">&times;</button>
+    <div class="modal hidden" id="patient__transfer--lab">
+        <button class="btn--close-modal" onclick="closeModal('patient__transfer--lab')">&times;</button>
         <h2 class="modal__header">
             Transfer 
-            <span class="highlight">to Labouratory/Radiology</span>
+            <span class="highlight">to Labouratory</span>
         </h2>
         <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-control">
+            <div class="each_sections">
+             <div class="form-control">
             <label for="">Patient Name</label>
             <input type="text" value="<?php echo $patient_name?>" name="" id="patient_name">
             </div>
@@ -1911,9 +1912,37 @@ $patient_id = $_POST['patient_Id'];
             </div>
             <div class="form-control">
             <label for="">Message</label>
-            <textarea name="" value="" id="message"></textarea>
+            <input  type="text" name="" value="" id="message"></input>
             </div>
-            <button type="button" id="submit_btn" onclick="transfer_to_lab();">SUBMIT</button>
+            </div>
+            <button type="button" id="submit_btn" onclick="transfer_to_lab()">SUBMIT</button>
+        </form>
+        </div>
+    </div>
+
+
+    <div class="modal hidden" id="patient__transfer--rad">
+        <button class="btn--close-modal" onclick="closeModal('patient__transfer--rad')">&times;</button>
+        <h2 class="modal__header">
+            Transfer 
+            <span class="highlight">to Radiology</span>
+        </h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="each_sections">
+             <div class="form-control">
+            <label for="">Patient Name</label>
+            <input type="text" value="<?php echo $patient_name?>" name="" id="patient_name">
+            </div>
+            <div class="form-control">
+            <label for="">Patient ID</label>
+            <input type="text" value="<?php echo $patient_id?>" name="" id="patient_id">
+            </div>
+            <div class="form-control">
+            <label for="">Message</label>
+            <input  type="text" name="" value="" id="message"></input>
+            </div>
+            </div>
+            <button type="button" id="submit_btn" onclick="transfer_to_lab()">SUBMIT</button>
         </form>
         </div>
     </div>
@@ -1921,7 +1950,7 @@ $patient_id = $_POST['patient_Id'];
     
 
                 <!--Advice-->
-                <div class="advice_dropdown" onClick="advice_section()">
+                <div class="advice_dropdown" onclick="advice_section()">
         <h3>Advice</h3>
         <i class="bi bi-plus-lg" id="advice_icon_plus"></i>
         <i class="bi bi-dash-lg" id="advice_icon_minus"></i>
@@ -1958,79 +1987,41 @@ $patient_id = $_POST['patient_Id'];
         </div>
             </div>
     </div>
-            <div class="form-control">
-            <label for="major_complaints">Book Patient</label>
-            <div class="checkbox">
-
-                 <!-- Checkbox for YES -->
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" id="book__true"type="checkbox" name ="book__true" style="display: none;" />
-            <label class="cbx" for="book__true">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>Yes</span>
-            </label>
-        </div>
-
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" id="book__false" type="checkbox" name ="book__false" style="display: none;" />
-            <label class="cbx" for="book__false">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>No</span>
-            </label>
-        </div>
-
-
-
-
-            </div>
     </div>
-            </form>
-        </div>
-        <div class="appoitment_con surgical_booking hidden">
-<link href='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.css' rel="stylesheet">
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-<script src='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.js'></script>
 
-        <!-- <input type="text" id="procedure" placeholder="Procedure"> -->
-        <i class="bi bi-x-square close-appoitment"  onClick="close_procedure_form()"></i>
-
-        <form>
-            <div class="form-control">
-            <label for='procedure'>Procedure</label>
-            <input type="text" name="procedures" autoComplete='off' class="surgical_input" id="procedure"/> 
+    <div class="modal hidden" id="procedure">
+        <button class="btn--close-modal" onclick="closeModal('procedure')">&times;</button>
+        <h2 class="modal__header">
+            Pro 
+            <span class="highlight">cedure</span>
+        </h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="each_sections">
+             <div class="form-control">
+            <label for="">Procedure</label>
+            <input type="text" value="" name="" id="">
             </div>
             <div class="form-control">
-            <label for='phone_number'>Phone Number</label>
-            <input type="text" name="phone_number" autoComplete='off' class="surgical_input" id="phone_number"/> 
+            <label for="">Phone Number</label>
+            <input type="text" value="" name="" id="">
             </div>
             <div class="form-control">
-            <label for='pass_surgery'>Past Surgery</label>
-            <input type="text" name="pass_surgery" autoComplete='off' class="surgical_input" id="pass_surgery"/> 
+            <label for="">Past Surgery</label>
+            <input type="text" value="" name="" id="">
             </div>
             <div class="form-control">
-            <label for='message'>Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <label for="">Message</label>
+            <input name="" value="" id="message"></input>
             </div>
-            <button type="button" class="btn" onClick="if_details_correct_login()">Transfer</button>
-            <!-- <button type="button" class="btn" onClick="if_details_correct_login()">Submit</button> -->
+            </div>
+            <button type="button" id="submit_btn" onclick="transfer_to_lab()">Transfer</button>
         </form>
-
-        
-<script>
-    new Def.Autocompleter.Search('procedure', 'https://clinicaltables.nlm.nih.gov/api/procedures/v3/search');
-              
-</script>
+        </div>
     </div>
+
+
         <!--Diagnosis-->
-        <div class="diagnosis_dropdown" onClick="diagnosis_section()">
+        <div class="diagnosis_dropdown" onclick="diagnosis_section()">
     <h3>Diagnosis</h3>
     <i class="bi bi-plus-lg" id="diagnosis_icon_plus"></i>
     <i class="bi bi-dash-lg" id="diagnosis_icon_minus"></i>
@@ -2056,19 +2047,24 @@ $patient_id = $_POST['patient_Id'];
         </form>
         </div>
         <!--Refer to doctor-->
-        <div class="refer_doc_dropdown" onClick="refer_doc_section()">
+        <div class="refer_doc_dropdown" onclick="refer_doc_section()">
     <h3>Refer to Doctor</h3>
     <i class="bi bi-plus-lg" id="refer_doc_icon_plus"></i>
     <i class="bi bi-dash-lg" id="refer_doc_icon_minus"></i>
    </div>
       <div class="refer_doc-section hidden">
-      <button type="button" class="btn_book_appoitment" onClick="tranfer_patient_doc()">Transfer to Doctor</button>
+      <button type="button" class="btn_book_appoitment" onclick="tranfer_patient_doc()">Transfer to Doctor</button>
         </div>
-        <div class="appoitment_con refer_doc_form hidden">
-        <i class="bi bi-x-square close-appoitment" onClick="close_tranfer_patient_doc()"></i>
-
-        <form action="">
-            <div class="form-control">
+    
+    <div class="modal hidden" id="available--doc">
+        <button class="btn--close-modal" onclick="closeModal('available--doc')">&times;</button>
+        <h2 class="modal__header">
+            Transfer 
+            <span class="highlight">to selected doctor</span>
+        </h2>
+        <form action="" >
+            <div class="each_sections">
+           <div class="form-control">
             <label for="av-roles">Specialties</label>
             <select name="roles" id="roles">
                 <option value="">Select</option>
@@ -2082,16 +2078,21 @@ $patient_id = $_POST['patient_Id'];
             </div>
             <div class="form-control">
             <label for="">Remark</label>
-            <textarea name="" id="remark" value=""></textarea>
+            <input type="text" name="" id="remark" value=""></input>
             <input type="hidden" name="" id="doctor_id2"  value="">
             <input type="hidden" name="" id="patient_id"  value="<?php echo $patient_id ?>">
             <input type="hidden" name="" id="patient_name"  value="<?php echo $patient_name ?>">
             </div>
+            </div>
             <button type="button" id='transfer_to_doctor_btn' onclick="transfer_to_doctor();">SUBMIT</button>
         </form>
+        </div>
     </div>
+
+
+
         <!--Discharge Section--->
-        <div class="discharged_dropdown" onClick="discharged_section()">
+        <div class="discharged_dropdown" onclick="discharged_section()">
     <h3>Discharged</h3>
     <i class="bi bi-plus-lg" id="discharged_icon_plus"></i>
     <i class="bi bi-dash-lg" id="discharged_icon_minus"></i>
@@ -2120,7 +2121,7 @@ $patient_id = $_POST['patient_Id'];
         </div>
    </div>
         <!--Discharge Section--->
-        <div class="confirmed_death_dropdown" onClick="confirmed_death_section()">
+        <div class="confirmed_death_dropdown" onclick="confirmed_death_section()">
     <h3>Confirmed Death</h3>
     <i class="bi bi-plus-lg" id="confirmed_death_icon_plus"></i>
     <i class="bi bi-dash-lg" id="confirmed_death_icon_minus"></i>
@@ -2128,7 +2129,7 @@ $patient_id = $_POST['patient_Id'];
    <div class="confirmed_death-section hidden">
    <div class="off_on_button ">
         <i class="bi bi-toggle-off" id="confirmed_death_off" onClick="toogle_on_confirmed_death()"></i>
-        <i class="bi bi-toggle-on" id="confirmed_death_on" onClick="toogle_off_confirmed_death()"></i>
+        <i class="bi bi-toggle-on" id="confirmed_death_on" onclick="toogle_off_confirmed_death()"></i>
         </div>
             <div class="confirmed_death_form hidden">
         <form action="">
@@ -2144,44 +2145,53 @@ $patient_id = $_POST['patient_Id'];
                 <label for="">Cause of Death</label><br/>
                 <textarea name="" id="" cols="20" rows="5"></textarea>
             </div> 
-            <button type="button" id="btn_save_confirmed_death" class="save" onClick="show_death_form()">Comfirm Dead</button>
+            <button type="button" id="btn_save_confirmed_death" class="save" onclick="show_death_form()">Comfirm Dead</button>
         </form>
         </div>
     </div>
 
-    <div class="appoitment_con death_form_booking hidden">
-    <i class="bi bi-x-square" onClick="close_death_form()"></i>
-    <h3>Death Booking</h3>
-        <form>
-        <div class="form-control">
-        <label for=''>Date of death</label>
-        <input type="date" name="procedures" autoComplete='off' id="death_of_death
-        _name"/> 
+    <div class="modal hidden" id="death--booking">
+        <button class="btn--close-modal" onclick="closeModal('death--booking')">&times;</button>
+        <h2 class="modal__header">
+            Death 
+            <span class="highlight">booking</span>
+        </h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="each_sections">
+             <div class="form-control">
+            <label for="">Date of death</label>
+            <input type="date" value="" name="" id="">
+            </div>
+            <div class="form-control">
+            <label for="">Date of birth </label>
+            <input type="date" value="" name="" id="">
+            </div>
+            <div class="form-control">
+            <label for="">Cause of death</label>
+            <input type="text" value="" name="" id="">
+            </div>
+            </div>
+            <h3>Next of kin</h3>   
+            <div class="each_sections">
+            <div class="form-control">
+            <label for="">Full name</label>
+            <input name="" value="" id="message"></input>
+            </div>
+            <div class="form-control">
+            <label for="">Full name</label>
+            <input name="" value="" id="message"></input>
+            </div>
+            <div class="form-control">
+            <label for="">Relationship to deceassed</label>
+            <input name="" value="" id="message"></input>
+            </div>
+            <div class="form-control">
+            <label for="">Contact info</label>
+            <input name="" value="" id="message"></input>
+            </div>
+            </div>
+            <button type="button" id="submit_btn">Transfer</button>
+        </form>
         </div>
-        <div class="form-control">
-        <label for=''>Date of birth </label>
-        <input type="date" name="phone_number" autoComplete='off'  id="date_of_birth"/> 
-        </div>
-        <div class="form-control">
-        <label for=''>Cause of death</label>
-        <textarea name="" id="" cols="20" rows="5"></textarea>
-        </div>
-
-        <h3>Next of kin</h3>
-        <div class="form-control">
-        <label for=''>Full name</label>
-        <input type="text" name="next_of_kin" autoComplete='off'  id="next_of_kin"/> 
-        </div>
-        <div class="form-control">
-        <label for=''>Relationship to deceassed</label>
-        <input type="text" name="next_of_kin" autoComplete='off'  id="next_of_kin"/> 
-        </div>
-        <div class="form-control">
-        <label for=''>Contact info</label>
-        <input type="text" name="contact_info" autoComplete='off'  id="contact_info"/> 
-        </div>
-        <button type="button" class="btn" onClick="if_details_correct_login()">Transfer</button>
-</form>
     </div>
     <button id="btn" class="save">Enter</button>
-    <div class="overlay hidden"></div>

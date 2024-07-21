@@ -3,16 +3,17 @@
 ///////////////////////////////////////
 // Modal window
 const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.btn--close-modal');
-const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const blackBackground = document.querySelector('.black--background');
+console.log(blackBackground)
+
+
 
 
 const openModal = function (modalId) {
   const modal = document.getElementById(modalId);
   
   modal.classList.remove('hidden');
-  overlay.classList.remove('hidden');
+  blackBackground.classList.remove('hidden');
 };
 
 
@@ -20,7 +21,7 @@ const closeModal = function (modalId) {
   const modal = document.getElementById(modalId);
   
   modal.classList.add('hidden');
-  overlay.classList.add('hidden');
+  blackBackground.classList.add('hidden');
 };
 ////////
 
@@ -517,13 +518,10 @@ if(check_2.checked){
 
 }
 function open_procedure_form(){
-    document.querySelector(".surgical_booking").classList.remove("hidden");
+   openModal('procedure');
 };
+open_procedure_form();
 
-function close_procedure_form(){
-    document.querySelector(".surgical_booking").classList.add("hidden");
-    document.querySelector(".overlay_popup").classList.add("hidden");
-};
 
 check_1.addEventListener("change", handle_change);
 check_2.addEventListener("change", handle_change);
@@ -556,15 +554,10 @@ function refer_doc_section(){
 
     //TRANFER TO OTHERS DOC
      function tranfer_patient_doc(){
-        document.querySelector(".refer_doc_form").classList.remove("hidden");
+        openModal('available--doc');
         getDoctorsRoles();
 
     }
-     function close_tranfer_patient_doc(){
-        document.querySelector(".refer_doc_form").classList.add("hidden");
-        document.querySelector(".overlay_popup").classList.add("hidden");
-    }
-
 
 
 //SHOW LIST OF APPOITMENT 
@@ -634,18 +627,10 @@ function confirmed_death_section(){
 
 
     //DEATH FORM
-
     function show_death_form(){
-        document.querySelector(".death_form_booking").classList.remove("hidden");
-
-        document.querySelector("#back-arrow").style.display="none";
+       openModal('death--booking')
     }
 
-    function close_death_form(){
-        document.querySelector(".death_form_booking").classList.add("hidden");
-        document.querySelector(".overlay_popup").classList.add("hidden");
-        document.querySelector("#back-arrow").style.display="block";
-    }
     ///END OF DEATH FORM
 
 
@@ -1598,6 +1583,14 @@ var patient_id = $("patient_id").val();
       },
     });
 }
+
+function openModalTransferLab(){
+   openModal('patient__transfer--lab');
+};
+function openModalTransferRad(){
+   openModal('patient__transfer--rad');
+}
+
 
 function transfer_to_lab() {
     var patient_id = $("#patient_id").val();
