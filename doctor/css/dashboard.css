@@ -36,30 +36,86 @@ h1, h2{
 span{
     padding: 0.3rem;
 }
-.alert_div{
-width: auto;
-height: auto;
-max-height: 100%;
-max-width: 350px;
-position: fixed;
-top:0%;
-right: 0%;
-z-index: 110;
-overflow: auto;
-color: rgb(255, 255, 255);;
-background-color: red;
-padding: 1em;
-border-bottom-left-radius: 20px;
-font-size: 1.4rem;
-animation: headShake 1s ease-in-out;
-}
-.alert_div.pending{
-background-color:blue;
-}
-.alert_div.successful{
-background-color: green;
-}
 
+.alert{
+    display: flex;
+    align-items:center;
+    padding: 0.55rem 0.65rem 0.55rem 0.75rem;
+    min-width:400px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    z-index: 110;
+    box-shadow:
+    0px 3.2px 13.8px rgba(0, 0, 0, 0.02),
+    0px 7.6px 33.3px rgba(0, 0, 0, 0.028),
+    0px 14.4px 62.6px rgba(0, 0, 0, 0.035),
+    0px 25.7px 111.7px c
+    0px 48px 208.9px rgba(0, 0, 0, 0.05),
+    0px 115px 500px rgba(0, 0, 0, 0.07)
+  }
+  .alert h2{
+    color: #fff;
+  }
+  
+  .content{
+    display: flex;
+    align-items:center;
+  }
+  .icon{
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border-radius:39% 61% 42% 58% / 50% 51% 49% 50%;
+    box-shadow:
+    0px 3.2px 13.8px rgba(0, 0, 0, 0.02),
+    0px 7.6px 33.3px rgba(0, 0, 0, 0.028),
+    0px 14.4px 62.6px rgba(0, 0, 0, 0.035),
+    0px 25.7px 111.7px rgba(0, 0, 0, 0.042),
+    0px 48px 208.9px rgba(0, 0, 0, 0.05),
+    0px 115px 500px rgba(0, 0, 0, 0.07)
+  }
+  .bootsrapIcon{
+    font-size: 3rem;
+    color: #fff;
+  }
+  
+  .success{
+    background-color: rgb(62, 189, 97);
+    border:2px solid #3ebd61;
+    animation: slideInDown 0.5s ease-in-out;
+  }
+  .success .icon{
+    background-color:#3ebd61;
+  }
+  .info{
+    background-color: rgb(0, 102, 221);
+    border:2px solid #006CE3;
+    animation: bounce 1s ease-in-out;
+  }
+  .info .icon{
+    background-color: #006CE3;
+  }
+  .warning{
+    background-color: rgb(235, 144, 0);
+    border:2px solid #EF9400;
+    animation: swing 0.5s ease-in-out;
+  }
+  .warning .icon{
+    background-color: #EF9400;
+  }
+  
+  .danger{
+    background-color: rgb(236, 77, 43);
+    animation: swing 0.5s ease-in-out;
+    border:2px solid #EF9400;
+  }
+  .danger .icon{
+    background-color: #EC4D2B;
+  }
+  
+  
 .navbar{
 width: 100%;
 height: auto;
@@ -770,9 +826,9 @@ form{
 #close_id_1, #close_id_2, #close_id_3, #close_id_4, #close_id_5, #close_id_6, #close_id_7, #close_id_8,#close_id_9, #close_id_10,  #close_id_11{
     display: none;
 }
-.active{
+/* .active{
     display: none;
-}
+} */
 .form1, .form2, .form3, .form4, .form5,  .form6, .form7, .form8, .form9, .form10, .form11{
     width: 100%;
     padding: 0.5rem;
@@ -876,9 +932,9 @@ label {
 }
 
 
-.active{
+/* .active{
     display: none;
-}
+} */
 .physical_examination_form1, .physical_examination_form2, .physical_examination_form3,
 .physical_examination_form4, .physical_examination_form5 .physical_examination_form6,.physical_examination_form7,
 .physical_examination_form8, .physical_examination_form9,

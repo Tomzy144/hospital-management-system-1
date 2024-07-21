@@ -4,7 +4,6 @@
 // Modal window
 const modal = document.querySelector('.modal');
 const blackBackground = document.querySelector('.black--background');
-console.log(blackBackground)
 
 
 
@@ -36,8 +35,8 @@ const allProfiles = document.querySelectorAll('.allProfiles');
 const links = document.querySelectorAll('.sidebar-body ul li');
 
 function toggleSidebarLinks(clickedLink){
-    links.forEach(link => link.classList.remove('active'));
-    clickedLink.classList.add('active');
+    links.forEach(link => link.classList.remove('available'));
+    clickedLink.classList.add('available');
  }
 links.forEach(link => {
     link.addEventListener('click', function() {
@@ -61,6 +60,11 @@ document.querySelector('.display__date').textContent = dateTime
 }
 setInterval(() => createDate());
 ////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 function appointmentCountin() {
     // Counting the number of appointments based on the number of rows in the table
@@ -488,43 +492,48 @@ function diagnosis_section(){
     }
 }
 
-//ADVICE
-function advice_section(){
-    document.querySelector(".advice-section").classList.toggle("hidden");
-    document.querySelector("#advice_icon_plus").style.display = "none";
-    document.querySelector("#advice_icon_minus").style.display = "block";
-    if(document.querySelector(".advice-section").classList.contains("hidden")){
-        document.querySelector("#advice_icon_plus").style.display = "block";
-        document.querySelector("#advice_icon_minus").style.display = "none";
+
+
+
+// Example of advice_section toggle logic
+function advice_section() {
+    let adviceSection = document.querySelector(".advice-section");
+    let iconPlus = document.querySelector("#advice_icon_plus");
+    let iconMinus = document.querySelector("#advice_icon_minus");
+
+    adviceSection.classList.toggle("hidden");
+    iconPlus.classList.toggle("hidden");
+    iconMinus.classList.toggle("hidden");
+
+    let check_1 = document.querySelector("#check1");
+    let check_2 = document.querySelector("#check2");
+
+    function handle_change() {
+        if (check_1.checked) {
+            check_2.disabled = true;
+            check_2.checked = false;
+            open_procedure_form();
+        } else {
+            check_2.disabled = false;
+        }
+
+        if (check_2.checked) {
+            check_1.disabled = true;
+            check_1.checked = false;
+        } else {
+            check_1.disabled = false;
+        }
     }
+
+    function open_procedure_form() {
+        openModal('procedure');
+    }
+
+    // Add event listeners inside the function
+    check_1.addEventListener("change", handle_change);
+    check_2.addEventListener("change", handle_change);
 }
 
-
-const check_1 = document.querySelector("#check1")
-const check_2 = document.querySelector("#check2")
-//For the surgical form 
-function handle_change(){
-    if(check_1.checked){
-    check_2.disabled = true;
-    open_procedure_form();
-}else{
-    check_2.disabled = false;
-}
-if(check_2.checked){
-    check_1.disabled = true;
-}else{
-    check_1.disabled = false;
-}
-
-}
-function open_procedure_form(){
-   openModal('procedure');
-};
-open_procedure_form();
-
-
-check_1.addEventListener("change", handle_change);
-check_2.addEventListener("change", handle_change);
 
 
 

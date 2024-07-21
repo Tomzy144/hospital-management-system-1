@@ -1950,45 +1950,48 @@ $patient_id = $_POST['patient_Id'];
 
     
 
-                <!--Advice-->
-                <div class="advice_dropdown" onclick="advice_section()">
-        <h3>Advice</h3>
-        <i class="bi bi-plus-lg" id="advice_icon_plus"></i>
-        <i class="bi bi-dash-lg" id="advice_icon_minus"></i>
-   </div>
-   <div class="advice-section hidden">
-            <form action="">
-            <div class="form-control">
+           <!-- Advice -->
+<div class="advice_dropdown" onclick="advice_section()">
+    <h3>Advice</h3>
+    <i class="bi bi-plus-lg" id="advice_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="advice_icon_minus"></i>
+</div>
+<div class="advice-section hidden">
+    <form action="">
+        <div class="form-control">
             <label for="major_complaints">Recommend patient for Surgery</label>
             <div class="checkbox">
 
-                 <!-- Checkbox for YES -->
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" id="check1"  onchange="open_procedure_form() "type="checkbox" name ="check1" style="display: none;" />
-            <label class="cbx" for="check1">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>Yes</span>
-            </label>
-        </div>
+                <!-- Checkbox for YES -->
+                <div class="checkbox-wrapper-46">
+                    <input class="inp-cbx" id="check1" type="checkbox" name="check1" style="display: none;" />
+                    <label class="cbx" for="check1">
+                        <span>
+                            <svg width="12px" height="10px" viewBox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </svg>
+                        </span>
+                        <span>Yes</span>
+                    </label>
+                </div>
 
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" id="check2" type="checkbox" name ="check2" style="display: none;" />
-            <label class="cbx" for="check2">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>No</span>
-            </label>
-        </div>
+                <!-- Checkbox for NO -->
+                <div class="checkbox-wrapper-46">
+                    <input class="inp-cbx" id="check2" type="checkbox" name="check2" style="display: none;" />
+                    <label class="cbx" for="check2">
+                        <span>
+                            <svg width="12px" height="10px" viewBox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </svg>
+                        </span>
+                        <span>No</span>
+                    </label>
+                </div>
+
             </div>
-    </div>
-    </div>
+        </div>
+    </form>
+</div>
 
     <div class="modal hidden" id="procedure">
         <button class="btn--close-modal" onclick="closeModal('procedure')">&times;</button>

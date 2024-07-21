@@ -125,7 +125,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <div class="sidebar__header"></div>
     <div class="sidebar-body">
       <ul>
-        <li class="links available" onclick="openModal('staffForm')">
+        <li class="links available">
           <span>Appoitments</span>
         </li>
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
@@ -209,47 +209,100 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </tbody>
     </table>
     <script>
-              function accept(patient_Id) {
-                // Fade in elements with class 'all_sections_input'
-                if (confirm("Are you sure you want to accept this patient?")) {
-                $('.all_sections_input').fadeIn(500);
 
-                // Construct data string to send in the AJAX request
-                var dataString = 'patient_Id=' + patient_Id;
+const messageContainer = document.createElement('div');
+document.body.appendChild(messageContainer);
 
-                // Perform AJAX request
-                $.ajax({
-                    type: "POST", // HTTP method
-                    url: 'config/display.php', // URL of the PHP script
-                    data: dataString, // Data to send with the request
-                    cache: false, // Disable caching
-                    success: function(html) {
-                        $('.search_bar_container').addClass('hide');
-                        // On success, update content of elements with class 'all_sections_input' with the received HTML
-                        $('.all_sections_input').html(html);
+const createAlertMessage = (text, className, duration = 5000) => {
+  const message = document.createElement('div');
+  message.className = className + ' alert';
+  message.innerHTML = `
+    <div class="content">
+      <div class="icon">
+        <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+      </div>
+      <h2>${text}</h2>
+    </div>
+  `;
+  messageContainer.appendChild(message);
+  setTimeout(() => {
+    message.classList.add('hide');
+    setTimeout(() => message.remove(), 500); 
+  }, duration);
+  return message;
+}
 
-                        // Hide container with ID 'appointmentDetailsContainer'
-                        var container = document.getElementById('appointmentDetailsContainer');
-                        container.style.display = "none";
+const successMessage = (text) => createAlertMessage(text, 'success');
+const infoMessage = (text) => createAlertMessage(text, 'info');
+const warningMessage = (text) => createAlertMessage(text, 'warning');
+const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000); 
 
-                        // Remove 'hide' class from elements with class 'all_sections_input'
-                        var hidden = document.querySelector(".all_sections_input");
-                        hidden.classList.remove("hide");
-                    }
-                });
-                                document.addEventListener('click', function(event) {
-                    console.log('Event type:', event.type); // Output the type of event
-                    console.log('Event target:', event.target); // Output the target of the event
-                });
-            };
-            };
-            
+const confirmDialog = (text, onConfirm) => {
+  const message = createAlertMessage(text, 'info');
+  const buttonContainer = document.createElement('div');
+  buttonContainer.innerHTML = `  <br/><br/><br/>
+    <button class="confirm-yes">Yes</button>
+    <button class="confirm-no">No</button>
+  `;
+  message.querySelector('.content').appendChild(buttonContainer);
+
+  const yesButton = buttonContainer.querySelector('.confirm-yes');
+  const noButton = buttonContainer.querySelector('.confirm-no');
+
+  yesButton.addEventListener('click', () => {
+    onConfirm();
+    successMessage(`You ca now have access `)
+    message.remove();
+  });
+
+  noButton.addEventListener('click', () => {
+    dangerMessage('Patient rejected');
+    message.remove();
+  });
+};
+
+function accept(patient_Id) {
+  confirmDialog("Are you sure you want to accept this patient?", () => {
+    $('.all_sections_input').fadeIn(500);
+
+    // Construct data string to send in the AJAX request
+    var dataString = 'patient_Id=' + patient_Id;
+
+    // Perform AJAX request
+    $.ajax({
+      type: "POST", // HTTP method
+      url: 'config/display.php', // URL of the PHP script
+      data: dataString, // Data to send with the request
+      cache: false, // Disable caching
+      success: function(html) {
+        $('.search_bar_container').addClass('hide');
+        // On success, update content of elements with class 'all_sections_input' with the received HTML
+        $('.all_sections_input').html(html);
+
+        // Hide container with ID 'appointmentDetailsContainer'
+        var container = document.getElementById('appointmentDetailsContainer');
+        container.style.display = "none";
+
+        // Remove 'hide' class from elements with class 'all_sections_input'
+        var hidden = document.querySelector(".all_sections_input");
+        hidden.classList.remove("hide");
+      }
+    });
+
+    // document.addEventListener('click', function(event) {
+    //   console.log('Event type:', event.type); // Output the type of event
+    //   console.log('Event target:', event.target); // Output the target of the event
+    // });
+  });
+}
+
 
 
 
                     function reject(patient_Id) {
                         // delete_input(patient_Id);
-                        alert("Rejected patient with ID: " + patient_Id);
+                        dangerMessage(`Rejected patient with ID: ${patient_Id}`);
+
                     }
 
                    
