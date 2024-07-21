@@ -287,6 +287,9 @@ cursor: pointer;
     position: relative;
     margin: 0.4em 0 0 0;
 }
+.search_bar_container.hide{
+    display:none;
+}
 .search_bar_container span {
     font-size: 20px;
     letter-spacing: 3px;
@@ -871,16 +874,7 @@ label {
     font-size: 1.3rem;
     margin: 1rem 0;
 }
-.physical_examination-section input {
-    padding: 1rem;
-    border: none;
-    outline: none;
-    background:none;
-    color: #fff;
-    border-bottom: 2px solid #fff;
-    font-size: 1.3rem;
-    border-radius: 2px;
-}
+
 
 .active{
     display: none;
@@ -1184,42 +1178,6 @@ width: 100%;
     display: flex;
     flex-direction: column;
 }
-.discharge_form form .form_control{
-    margin: 0.6rem 0;
-}
-.discharge_form form .form_control input{
-    border: none;
-  border-bottom: 2px solid #fff;
-  background: none;
-  color: #fff;
-  font-size: 18px;
-}
-.discharge_form form .form_control label{
-    font-size: 18px;
-}
-.discharge_form form .form_control textarea{
-    border: none;
-    outline: none;
-    border: 2px solid #fff;
-    background-color: #fff;
-    color: #000000;
-    font-size: 18px;
-}
-.discharge_form form #btn_save_discharge{
-    border: none;
-    outline: none;
-    width: fit-content;
-    padding: 0.5rem;
-    background:none;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-    border: 2px solid #fff;
-    color: #ffffff;
-}
-.discharge_form form #btn_save_discharge:hover{
-background-color: #fff;
-color: #000000;
-}
 
 /*COMFIRMED DEATH SECTION*/
 .confirmed_death_dropdown{
@@ -1272,42 +1230,7 @@ color: #000000;
     display: flex;
     flex-direction: column;
 }
-.confirmed_death_form form .form_control{
-    margin: 0.6rem 0;
-}
-.confirmed_death_form form .form_control input{
-    border: none;
-  border-bottom: 2px solid #fff;
-  background: none;
-  color: #fff;
-  font-size: 18px;
-}
-.confirmed_death_form form .form_control label{
-  font-size: 20px;
-}
-.confirmed_death_form form .form_control textarea{
-    border: none;
-    outline: none;
-    border: 2px solid #fff;
-    background-color: #fff;
-    color: #000000;
-    font-size: 18px;
-}
-.confirmed_death_form form #btn_save_confirmed_death{
-    border: none;
-    outline: none;
-    width: fit-content;
-    padding: 0.5rem;
-    background:none;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-    border: 2px solid #fff;
-    color: #ffffff;
-}
-.confirmed_death_form form #btn_save_confirmed_death:hover{
-background-color: #fff;
-color: #000000;
-}
+
 
 /*DEATH FORM*/
 
@@ -1435,7 +1358,7 @@ color: #000000;
   #death--booking{
     height: 80%;
   }
-  .modal h1, span, h4,h2 {
+  .modal h1, span,h2 {
     color: rgb(42, 87, 215);
   }
   .modal form h3{

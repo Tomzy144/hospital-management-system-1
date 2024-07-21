@@ -805,7 +805,7 @@ $patient_id = $_POST['patient_Id'];
             <i class="bi bi-dash-lg" id="complaint_icon_minus"></i>
         </div>
         <div class="complaint-section hidden">
-            
+        <div class="each_sections">
                     <div class="form-control">
                     <label for="major_complaints">Major Complaints & Duration</label>
                     <input type="text"  class="complaint-input" id="major_complaints">
@@ -821,6 +821,7 @@ $patient_id = $_POST['patient_Id'];
                     <div class="form-control">
                     <label for="past_sugical_medical_history">Past Surgical/Medical History</label>
                     <input type="text"  class="complaint-input" id="past_sugical_medical_history">
+                    </div>
                     </div>
         </div>
 

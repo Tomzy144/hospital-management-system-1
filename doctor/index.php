@@ -192,12 +192,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     echo "<td>" . htmlspecialchars($row["reason"]) . "</td>";
                     echo "<td>";
                     ?>
-                    <button class="accept-btn" type="button" onClick="accept('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Accept</button>
+                    <button class="accept-btn" type="button" onclick="accept('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Accept</button>
                     <?php
                     echo "</td>";
                     echo "<td>";
                     ?>
-                    <button class="reject-btn" type="button" onClick="reject('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Reject</button>
+                    <button class="reject-btn" type="button" onclick="reject('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Reject</button>
                     <?php
                     echo "</td>";
                     echo "</tr>";
@@ -224,6 +224,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     data: dataString, // Data to send with the request
                     cache: false, // Disable caching
                     success: function(html) {
+                        $('.search_bar_container').addClass('hide');
                         // On success, update content of elements with class 'all_sections_input' with the received HTML
                         $('.all_sections_input').html(html);
 
