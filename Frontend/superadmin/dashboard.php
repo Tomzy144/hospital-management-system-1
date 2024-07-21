@@ -91,40 +91,7 @@ l
           <span>Patients tab</span>
         </li>
         <li class="links">
-          <span>Doctor tab</span>
-        </li>
-        <li class="links">
-          <span>Nurse tab</span>
-        </li>
-        <li class="links">
-          <span>Health record tab</span>
-        </li>
-        <li class="links">
-          <span>Labouratory tab</span>
-        </li>
-        <li class="links">
-          <span>Radiology tab</span>
-        </li>
-        <li class="links">
-          <span>Matanity tab</span>
-        </li>
-        <li class="links">
-          <span>Account tab</span>
-        </li>
-        <li class="links">
-          <span>Pharmacy tab</span>
-        </li>
-        <li class="links">
-          <span>Emergency tab</span>
-        </li>
-        <li class="links">
           <span>Staff manager tab</span>
-        </li>
-        <li class="links">
-          <span>Surgical suite tab</span>
-        </li>
-        <li class="links">
-          <span>Morgue tab</span>
         </li>
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
           <span>Logout</span>
@@ -175,27 +142,29 @@ l
 
     <div class="personalInfo">
       <img src="" alt="" id="patient_passport">
-      <p id="fullname"></p>
-      <p id="patient_id"></p>
-      <p id="phonenumber"></p>
-      <p id="status_id"></p>
-      <p id="hospital_card_id"></p>
-      <p id="family_card_id"></p>
-      <p id="gender"></p>
-      <p id="dateofbirth"></p>
-      <p id="family_disease"></p>
-      <p id="kaddress"></p>
-      <p id="kgender"></p>
-      <p id="kname"></p>
-      <p id="kphonenumber"></p>
-      <p id="krelationship"></p>
-      <p id="medical_history"></p>
-      <p id="occupation"></p>
-      <p id="past_disease"></p>
-      <p id="past_obsterics"></p>
-      <p id="past_surgery"></p>
-      <p id="sexual_history"></p>
-      <p id="status_id"></p>
+      <div class="details">
+      <button id="fullname"></button>
+      <button id="patient_id"></button>
+      <button id="phonenumber"></button>
+      <button id="status_id"></button>
+      <button id="hospital_card_id"></button>
+      <button id="family_card_id"></button>
+      <button id="gender"></button>
+      <button id="dateofbirth"></button>
+      <button id="family_disease"></button>
+      <button id="kaddress"></button>
+      <button id="kgender"></button>
+      <button id="kname"></button>
+      <button id="kphonenumber"></button>
+      <button id="krelationship"></button>
+      <button id="medical_history"></button>
+      <button id="occupation"></button>
+      <button id="past_disease"></button>
+      <button id="past_obsterics"></button>
+      <button id="past_surgery"></button>
+      <button id="sexual_history"></button>
+      <button id="more--datails">View all details</button>
+      </div>
     </div>
     </div>
     <div class="overlay hidden"></div>

@@ -221,7 +221,7 @@ function removeNoDataMessage(tableBody, noDataMessage) {
           newRow.insertCell(3).innerHTML = patient.patient_id || 'N/A';
           newRow.insertCell(4).innerHTML = patient.gender || 'N/A';
           newRow.insertCell(5).innerHTML = patient.phonenumber || 'N/A';
-          newRow.insertCell(6).innerHTML = patient.hospital_card_id || 'N/A';
+          newRow.insertCell(6).innerHTML = patient.hospital_card_id || 'No Id associated with this user';
           newRow.insertCell(7).innerHTML = patient.address || 'N/A';
           newRow.insertCell(8).innerHTML = patient.occupation || 'N/A';
       });

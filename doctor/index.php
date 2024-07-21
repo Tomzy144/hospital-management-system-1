@@ -85,9 +85,7 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 /> -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="css/icons-1.10.2/font/bootstrap-icons.css">
 <?php include 'meta.php'?>
 </head>
 <body>
@@ -104,70 +102,48 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         }
     </script>
 
-
-   
-
-    <!---SIDEBAR AND NAVBAR-->
-    <div class="navbar" >
-
-        <div class="section1">
+        <div class="navbar">
+        <div class="display__date">
         </div>
-        <div class="section2">
-        </div>
-            <div class="profile">
-                <div class="profile_account hide">
-                <img id="image_profile_account" src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="">
-                <h4><?php echo $fullname ?></h4>
-                <button class="btn_submit">Upload Image</button>
-                <span>change password</span>
-            </div>
-                <div class="image">
-                <img src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="">
-                <div class="active_on"></div>
-                </div> 
-                <span><?php echo $fullname ?></span>
-                <i class="bi bi-caret-down-fill _profile_arrow_icon"  onclick="click_icon_for_profile()"></i>
-            </div>
-        </div>
+          <div class="profile">
+            <div class="profile_account hide">
+            <img id="image_profile_account" src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="">
+            <span><?php echo $fullname ?></span>
+            <button class="btn_submit">Upload Image</button>
+           </div>
 
-        <div class="sidebar">
-    <!-- <div class="sidebar-header">
-            <div>
-                <i class="bi bi-cloud-arrow-down-fill"></i>
-                <span>cloudcash</span>
+            <div class="image">
+            <img src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="userImage"/>
+            <div class="active_on"></div>
             </div>
-    </div> -->
+            <span><?php echo $fullname ?></span>
+            <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
+                 </div>
+                </div>
+
+    <div class="sidebar">
+    <div class="sidebar__header"></div>
     <div class="sidebar-body">
-        <ul>
-            <li>
-                <i class="bi bi-calendar2-plus"></i>
-                <span>Appoitments</span>
-            </li>
-            <li onclick="document.getElementById('logoutform').submit();">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Logout</span>
-                <form method="post" action="../config/code.php" id="logoutform">
-                    <input type="hidden" name="action" value="logout"/>    
-                </form>
-            </li>
-        </ul>
+      <ul>
+        <li class="links available" onclick="openModal('staffForm')">
+          <span>Appoitments</span>
+        </li>
+        <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
+          <span>Logout</span>
+          <form method="post" action="../config/code.php" id="logoutform">
+            <input type="hidden" name="action" value="logout"/>
+          </form>
+        </li>
+      </ul>
     </div>
-    <!-- <div class="sidebar-footer">
-            <div>
-            <i class="bi bi-person"></i><span>USER0001</span>
-            </div>
-            <span>Cash: $0.00</span>
-            <span>P0S:$0.00</span>
-        </div> -->
-    </div>
-</div>
-         <!--END OF SIDEBAR AND NAVBAR-->
+  </div>
 
-    <div class="appoitment_section">
+
+
+    <div class="list_div">
         <div class="patient_list_div" >
         <div class="search_bar_container">
                 <h3>Appoitment details</h3>
-                <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
 
@@ -187,15 +163,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <table id="appointment_table">
         <thead>
             <tr>
-                <th>S/N</th>
-                <th>PASSPORT</th>
-                <th>Patient Name</th>
-                <th>Patient ID</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Request Type</th>
-                <th>Accept</th>
-                <th>Reject</th>
+                <td>S/N</td>
+                <td>PASSPORT</td>
+                <td>Patient Name</td>
+                <td>Patient ID</td>
+                <td>Date</td>
+                <td>Time</td>
+                <td>Request Type</td>
+                <td>Accept</td>
+                <td>Reject</td>
             </tr>
         </thead>
         <tbody>

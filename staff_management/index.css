@@ -208,6 +208,7 @@ background: #fff;
 flex-direction: column;
 justify-content: center;
 z-index: 2;
+align-items: center;
 }
 .sidebar-header{
 width: 100%;

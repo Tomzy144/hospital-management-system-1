@@ -1,10 +1,65 @@
+'use strict';
 
-//PROFILE IMAGE
-   //PROFILE IMAGE
+///////////////////////////////////////
+// Modal window
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.btn--close-modal');
+const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
-   function click_icon_for_profile(){
+
+const openModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+
+const closeModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+////////
+
+
+   function displayUserProfile(){
     document.querySelector(".profile_account").classList.toggle("hide");
-   };
+};
+
+
+const sections = document.querySelectorAll('.section');
+const allProfiles = document.querySelectorAll('.allProfiles');
+const links = document.querySelectorAll('.sidebar-body ul li');
+
+function toggleSidebarLinks(clickedLink){
+    links.forEach(link => link.classList.remove('active'));
+    clickedLink.classList.add('active');
+ }
+links.forEach(link => {
+    link.addEventListener('click', function() {
+        toggleSidebarLinks(this);
+    });
+});
+/////////////////////////////////////////////////////
+
+function createDate(){
+const now = new Date();
+const options = {
+day:'numeric',
+month:'numeric',
+year:'numeric',
+hour:'numeric',
+minute:'numeric',
+second:'numeric',
+}
+const dateTime = new Intl.DateTimeFormat(navigator.language, options).format(now)
+document.querySelector('.display__date').textContent = dateTime
+}
+setInterval(() => createDate());
+////////////////////////////////////////////////////////////////////
 
 function appointmentCountin() {
     // Counting the number of appointments based on the number of rows in the table
@@ -486,24 +541,7 @@ function investigation_section(){
     }
 }
 
-    //TRANFER TO LABORATORY
-     function tranfer_patient_lab(){
-        document.querySelector(".investigation_form").classList.remove("hide");
 
-    }
-     function close_tranfer_patient_lab(){
-        document.querySelector(".investigation_form").classList.add("hide");
-        document.querySelector(".overlay_popup").classList.add("hidden");
-    }
-    //TRANSFER TO RADIOLOGY
-    function tranfer_patient_rad(){
-        document.querySelector(".investigation_form").classList.remove("hide");
-
-    }
-    //  function close_tranfer_patient_rad(){
-    //     document.querySelector(".investigation_form").classList.add("hide");
-    //     document.querySelector(".overlay_popup").classList.add("hidden");
-    // }
 
     //TRANSFER TO OTHERS DOCTORS AVAILABLE
 function refer_doc_section(){

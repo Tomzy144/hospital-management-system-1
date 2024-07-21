@@ -51,15 +51,6 @@
   </div>
 
 
-<!-- <div class="modal hidden" id="staffProfile">
-<button class="btn--close-modal" onclick="closeModal('staffTracking')">&times;</button>
-      <h2 class="modal__header">
-        Staff 
-      <span class="highlight">Profile</span>
-      </h2>
-
-</div> -->
-
 
 <div class="modal hidden" id="staffTracking">
         <button class="btn--close-modal" onclick="closeModal('staffTracking')">&times;</button>

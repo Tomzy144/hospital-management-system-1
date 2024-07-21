@@ -212,10 +212,7 @@ $patient_id = $_POST['patient_Id'];
                         <p> Rheumatoid Factor (RF) Test</p>
                     </td>
                     <td>
-                        <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-</svg></button>
+                        <button><i class="bi bi-download"></i></button>
                     </td>
                 </tbody>
                 <tbody>
@@ -229,10 +226,7 @@ $patient_id = $_POST['patient_Id'];
                         <p> Rheumatoid Factor (RF) Test</p>
                     </td>
                     <td>
-                        <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-</svg></button>
+                        <button><i class="bi bi-download"></i></button>
                     </td>
                 </tbody>
             </table>
@@ -265,10 +259,7 @@ $patient_id = $_POST['patient_Id'];
                         <p> Cervical Spine X-ray</p>
                     </td>
                     <td>
-                        <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-</svg></button>
+                        <button><i class="bi bi-download"></i></button>
                     </td>
                 </tbody>
             </table>
@@ -300,18 +291,18 @@ $patient_id = $_POST['patient_Id'];
     ?>
 
     <table>
-        <thead style="color:blue;">
+        <thead>
             <tr>
-                <th>24/7</th>
-                <th>Temp(C)</th>
-                <th>BP(mmdg)</th>
-                <th>Pulse(bp/m)</th>
-                <th>Resp.(cm)</th>
-                <th>Spo2(%)</th>
-                <th>Weight(kg)</th>
-                <th>Intake(m/s)</th>
-                <th>Output</th>
-                <th>BMI</th>
+                <td>24/7</td>
+                <td>Temp(C)</td>
+                <td>BP(mmdg)</td>
+                <td>Pulse(bp/m)</td>
+                <td>Resp.(cm)</td>
+                <td>Spo2(%)</td>
+                <td>Weight(kg)</td>
+                <td>Intake(m/s)</td>
+                <td>Output</td>
+                <td>BMI</td>
             </tr>
         </thead>
         <tbody>
@@ -1898,13 +1889,17 @@ $patient_id = $_POST['patient_Id'];
    </div>
       <div class="investigation-section hidden">
       <div class="advice_form_control_appoitment">
-            <button type="button" class="btn_book_appoitment" onClick="tranfer_patient_lab()">Transfer to Lab</button>
-            <button type="button" class="btn_book_appoitment" onClick="tranfer_patient_rad()">Transfer to Radiology</button>
+            <button type="button">Transfer to Lab</button>
+            <button type="button">Transfer to Radiology</button>
     </div>
 </div>
-    <div class="appoitment_con investigation_form hide">
-    <i class="bi bi-x-square close-appoitment"onclick ="close_tranfer_patient_lab()"></i>
 
+    <div class="modal hidden" id="patient__transfer">
+        <button class="btn--close-modal" onclick="closeModal('staffTracking')">&times;</button>
+        <h2 class="modal__header">
+            Transfer 
+            <span class="highlight">to Labouratory/Radiology</span>
+        </h2>
         <form action="">
             <div class="form-control">
             <label for="">Patient Name</label>
@@ -1920,8 +1915,9 @@ $patient_id = $_POST['patient_Id'];
             </div>
             <button type="button">SUBMIT</button>
         </form>
+        </div>
     </div>
- 
+
     
 
                 <!--Advice-->
@@ -2211,3 +2207,4 @@ $patient_id = $_POST['patient_Id'];
 </form>
     </div>
     <button id="btn" class="save">Enter</button>
+    <div class="overlay hidden"></div>

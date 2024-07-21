@@ -16,6 +16,8 @@
           toggleSidebarLinks(this);
       });
   });
+
+  
     function hideAllSections() {
       sections.forEach(section => section.classList.add('hide'));
     }
