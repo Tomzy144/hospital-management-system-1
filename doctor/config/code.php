@@ -636,6 +636,29 @@
       }
   
     break;
+
+    case 'transfer_to_rad':
+
+        $patient_id = $_POST['patient_id'];
+        $patient_name = $_POST['patient_name'];
+        $message = $_POST['message'];
+    
+        $sequence = $callclass->_get_sequence_count($conn, 'RADAPP');
+        $array = json_decode($sequence, true);
+        $no = $array[0]['no'];
+        $radiology_appointment_id = 'RADAPP' . $no;
+    
+        $query = "INSERT INTO `radiology_appointment_tab`
+                  (`patient_id`, `radiology_appointment_id`, `message`, `patient_name`, `time`) 
+                  VALUES ('$patient_id', '$radiology_appointment_id', '$message', '$patient_name', now())";
+    
+        if (mysqli_query($conn, $query)) {
+            echo json_encode(array("check" => "success"));
+        } else {
+            echo json_encode(array("check" => "failure", "error" => mysqli_error($conn)));
+        }
+    
+      break;
   
 
 

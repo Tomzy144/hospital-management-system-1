@@ -1940,10 +1940,10 @@ $patient_id = $_POST['patient_Id'];
             </div>
             <div class="form-control">
             <label for="">Message</label>
-            <input  type="text" name="" value="" id="message"></input>
+            <input  type="text" name="" value="" id="message2"></input>
             </div>
             </div>
-            <button type="button" id="submit_btn" onclick="transfer_to_lab()">SUBMIT</button>
+            <button type="button" id="rad_submit_btn" onclick="transfer_to_rad()">SUBMIT</button>
         </form>
         </div>
     </div>
