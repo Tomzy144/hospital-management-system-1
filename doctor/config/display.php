@@ -60,7 +60,6 @@ $patient_id = $_POST['patient_Id'];
 
 
 
-
      <!----Start from here-->
    <div class="all_sections_input">
     <!---PATIENT PERSONAL INFO-->
@@ -2046,7 +2045,7 @@ $patient_id = $_POST['patient_Id'];
             </div>
             <div class="form-control">
             <label for="">Diagnosis</label>
-            <input type="text" name="" id="" placeholder="api insert">
+            <input type="text" name="" id="condition" placeholder="condition">
             </div>
         </form>
         </div>
@@ -2199,3 +2198,19 @@ $patient_id = $_POST['patient_Id'];
         </div>
     </div>
     <button id="btn" class="save">Enter</button>
+
+
+
+ <script>
+       
+        $(document).ready(function() {
+            // Initialize the autocompleter
+            new Def.Autocompleter.Search(
+                'condition',
+                'https://clinicaltables.nlm.nih.gov/api/conditions/v3/search'
+            );
+        });
+    </script>
+   
+
+ 

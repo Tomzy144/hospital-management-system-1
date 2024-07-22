@@ -18,6 +18,14 @@
 
 <script defer src="<?php echo $website_url?>/doctor/js/jquery-v3.6.1.min.js"></script>
 <script defer src="<?php echo $website_url?>/doctor/js/dashboard.js"></script>
-<script  defer src="<?php echo $website_url?>/doctor/js/aos.js"></script> 
+<script  defer src="<?php echo $website_url?>/doctor/js/aos.js"></script>
+
+<!-- api link -->
+
+<link href='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/19.2.4/autocomplete-lhc.min.css' rel="stylesheet">
+    <!-- Include jQuery -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <!-- Include the JavaScript for autocomplete-lhc -->
+    <script src='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/19.2.4/autocomplete-lhc.min.js'></script>
 
 
