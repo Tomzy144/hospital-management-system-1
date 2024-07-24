@@ -218,10 +218,12 @@ const createAlertMessage = (text, className, duration = 5000) => {
   message.className = className + ' alert';
   message.innerHTML = `
     <div class="content">
+    <div class="message">
       <div class="icon">
         <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
-      </div>
-      <h2>${text}</h2>
+        </div>
+        <h2>${text}</h2>
+        </div>
     </div>
   `;
   messageContainer.appendChild(message);
@@ -240,7 +242,7 @@ const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000);
 const confirmDialog = (text, onConfirm) => {
   const message = createAlertMessage(text, 'info');
   const buttonContainer = document.createElement('div');
-  buttonContainer.innerHTML = `  <br/><br/><br/>
+  buttonContainer.innerHTML = `  
     <button class="confirm-yes">Yes</button>
     <button class="confirm-no">No</button>
   `;
@@ -256,7 +258,7 @@ const confirmDialog = (text, onConfirm) => {
   });
 
   noButton.addEventListener('click', () => {
-    dangerMessage('Patient rejected');
+    dangerMessage('Request cancelled');
     message.remove();
   });
 };

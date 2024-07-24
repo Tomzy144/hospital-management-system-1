@@ -41,7 +41,7 @@ span{
     display: flex;
     align-items:center;
     padding: 0.55rem 0.65rem 0.55rem 0.75rem;
-    min-width:400px;
+    max-width:400px;
     position: fixed;
     right: 0;
     top: 0;
@@ -62,11 +62,18 @@ span{
   
   .content{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items:center;
+  }
+  .message{
+    display: flex;;
   }
   .icon{
     padding: 0.5rem;
     margin-right: 1rem;
+    width: auto;
+    height: fit-content;
     border-radius:39% 61% 42% 58% / 50% 51% 49% 50%;
     box-shadow:
     0px 3.2px 13.8px rgba(0, 0, 0, 0.02),
@@ -74,7 +81,7 @@ span{
     0px 14.4px 62.6px rgba(0, 0, 0, 0.035),
     0px 25.7px 111.7px rgba(0, 0, 0, 0.042),
     0px 48px 208.9px rgba(0, 0, 0, 0.05),
-    0px 115px 500px rgba(0, 0, 0, 0.07)
+    0px 115px 500px rgba(0, 0, 0, 0.07);
   }
   .bootsrapIcon{
     font-size: 3rem;
