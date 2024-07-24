@@ -354,12 +354,12 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="physical_examination" value="">
         </div>
         </div>
-        <div class="physical_examination_drop-down5"onclick="physical_showForm5()" >
+        <div class="physical_examination_drop-down2"onclick="physical_showForm2()" >
                     <h3>Skin Examination</h3>
-                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus5"></i>
-                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus5"></i>
+                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus2"></i>
+                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus2"></i>
                 </div>
-                <div class="physical_examination_form5 hidden">
+                <div class="physical_examination_form2 hidden">
                     <div class="physical_examination_form-control">
                     <label for="pigmentation">Color/Pigmentation</label>
                     <input type="text" id="pigmentation">
@@ -370,7 +370,7 @@ $patient_id = $_POST['patient_Id'];
                     </div>
                     <div class="physical_examination_form-control">
                     <label for="lesions/rashes">Lesions/Rashes/Abnormalities</label>
-                    <input type="text" id="lesions/rashes">
+                    <input type="text" id="lesions_rashes">
                     </div>
                     <div class="physical_examination_form-control">
                     <label for="bruising">Brusing/Petechiae</label>
@@ -381,211 +381,15 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" id="scars">
                     </div>
         </div>
-        <div class="physical_examination_drop-down6" onclick="physical_showForm6()">
-                    <h3>Head and Neck</h3>
-                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus6"></i>
-                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus6"></i>
-                </div>
-                <div class="physical_examination_form6 hidden">
-                    <div class="physical_examination_form-control">
-                    <label for="scalp/hair/nails">Scalp/Hair/Nails</label>
-                    <input type="text" id="scalp_hair_nails">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="eyes/ears/nose/throat">Eyes/Ears/Nose/Throat:</label>
-                    <input type="text" id="eyes_ears_nose_throat"">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="lesions/rashes">Lesions/Rashes/Abnormalities</label>
-                    <input type="text" id="lesions_rashes">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="lymph_nodes">Lymph Nodes</label>
-                    <input type="text" id="lymph_nodes">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="neck_rang_of_Motion">Neck Range of Motion</label>
-                    <input type="text" id="neck_rang_of_Motion">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="presence_of_Bruits">Presence of Bruits (if applicable)</label>
-                    <input type="text" id="presence_of_Bruits">
-                    </div>
-        </div>
-        <div class="physical_examination_drop-down7" onclick="physical_showForm7()">
-                    <h3>Cardiovascular Examination</h3>
-                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus7"></i>
-                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus7"></i>
-                </div>
-                <div  class="physical_examination_form7 hidden">
-                    <div class="physical_examination_form-control">
-                    <label for="inspection_palpation_of_precordium">Inspection/Palpation of Precordium</label>
-                    <input type="text" id="inspection_palpation_of_precordium">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="auscultation_of_heart_sounds_murmurs">Auscultation of Heart Sounds/Murmurs</label>
-                    <input type="text" id="auscultation_of_heart_sounds_murmurs">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="peripheral_pulses">Peripheral Pulses</label>
-                    <input type="text" id="peripheral_pulses">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="edema_assessment">Edema Assessment</label>
-                    <input type="text" id="edema_assessment">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="capillary_refill_time">Capillary Refill Time</label>
-                    <input type="text" id="capillary_refill_time">
-        </div>
-        </div>
-        <div class="physical_examination_drop-down8" onclick="physical_showForm8()">
-                    <h3>Respiratory Examination</h3>
-                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus8"></i>
-                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus8"></i>
-                </div>
-                <div  class="physical_examination_form8 hidden">
-                    <div class="physical_examination_form-control">
-                    <label for="respiratory_effort_inspection">Respiratory Effort Inspection</label>
-                    <input type="text" id="respiratory_effort_inspection">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="palpation_percussion_of_chest">Palpation/Percussion of Chest</label>
-                    <input type="text" id="palpation_percussion_of_chest">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="auscultation_of_breath Sounds">Auscultation of Breath Sounds</label>
-                    <input type="text" id="auscultation_of_breath">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="cough_sputum_assessment">Cough/Sputum Assessment</label>
-                    <input type="text" id="cough_sputum_assessment">
-                    </div>
-        </div>
-        <div class="physical_examination_drop-down9" onclick="physical_showForm9()">
-                    <h3>Abdominal Examination</h3>
-                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus9"></i>
-                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus9"></i>
-                </div>
-                <div  class="physical_examination_form9 hidden">
-                    <div class="physical_examination_form-control">
-                    <label for="presence_of _tenderness_masses">Presence of Tenderness/Masses</label>
-                    <input type="text" id="presence_of_tenderness_masses">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="bowel_sounds_assessment_sounds">Bowel Sounds Assessment</label>
-                    <input type="text" id="bowel_sounds_assessment_sounds">
-                    </div>
-        </div>
-        <div class="physical_examination_drop-down10" onclick="physical_showForm10()">
-                    <h3>Genitourinary Examination</h3>
-                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus10"></i>
-                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus10"></i>
-                </div>
-                <div class="physical_examination_form10 hidden">
-                    <div class="physical_examination_form-control">
-                    <label for="genitalia_inspection">Genitalia Inspection</label>
-                    <input type="text" id="genitalia_inspection">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="urinary_function_assessment">Urinary Function Assessment</label>
-                    <input type="text" id="urinary_function_assessment">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="pelvic_examination_sounds">Pelvic Examination (if applicable)</label>
-                    <input type="text" id="pelvic_examination_sounds">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="prostate_examination">Prostate Examination (if applicable)</label>
-                    <input type="text" id="prostate_examination">
-                    </div>
-        </div>
-        <div class="physical_examination_drop-down11" onclick="physical_showForm11()">
-                    <h3>Musculoskeletal Examination</h3>
-                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus11"></i>
-                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus11"></i>
-                </div>
-                <div class="physical_examination_form11 hidden">
-                    <div class="physical_examination_form-control">
-                    <label for="genitalia_inspection_of_joint">Inspection/Palpation of Joints</label>
-                    <input type="text" id="genitalia_inspection_of_joint">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="range_of_motion_assessment">Range of Motion Assessment</label>
-                    <input type="text" id="range_of_motion_assessment">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="gait_balance_evaluation">Gait/Balance Evaluation</label>
-                    <input type="text" id="gait_balance_evaluation">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="pine_examination">pine Examination</label>
-                    <input type="text" id="pine_examination">
-                    </div>
-        </div>
-        <div class="physical_examination_drop-down12" onclick="physical_showForm12()">
-                    <h3>Neurological Examination</h3>
-                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus12"></i>
-                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus12"></i>
-                </div>
-                <div class="physical_examination_form12 hidden">
-                    <div class="physical_examination_form-control">
-                    <label for="mental_status_assessment">Mental Status Assessment</label>
-                    <input type="text" id="mental_status_assessment">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="cranial_nerve_examination">Cranial Nerve Examination</label>
-                    <input type="text" id="cranial_nerve_examination">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="motor/sensory_function">Motor/Sensory Function</label>
-                    <input type="text" id="cranial_nerve_examination">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="reflexes">Reflexes</label>
-                    <input type="text" id="reflexes">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="coordination_balance_assessment">Coordination/Balance Assessment</label>
-                    <input type="text" id="coordination_balance_assessment">
-                    </div>
-        </div>
-        <div class="physical_examination_drop-down13" onclick="physical_showForm13()">
-                    <h3>Review of Systems (ROS)</h3>
-                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus13"></i>
-                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus13"></i>
-                </div>
-                <div class="physical_examination_form13 hidden">
-                    <div class="physical_examination_form-control">
-                    <label for="cardiovascular_system">Cardiovascular System</label>
-                    <input type="text" id="cardiovascular_system">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="respiratory_system">Respiratory System</label>
-                    <input type="text" id="respiratory_system">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="gastrointestinal_system">Gastrointestinal System</label>
-                    <input type="text" id="gastrointestinal_system">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="genitourinary_system">Genitourinary System</label>
-                    <input type="text" id="genitourinary_system">
-                    </div>
-                    <div class="physical_examination_form-control">
-                    <label for="neurological_system">Neurological System</label>
-                    <input type="text" id="neurological_system">
-                    </div>
-        </div>
-        <div class="physical_examination_drop-down14" onclick="physical_showForm14()">
+        <div class="physical_examination_drop-down3" onclick="physical_showForm3()">
                     <h3>Social and Family History</h3>
-                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus14"></i>
-                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus14"></i>
+                    <i class="bi bi-dash-lg" id="physical_examination_icon_minus3"></i>
+                    <i class="bi bi-plus-lg" id="physical_examination_icon_plus3"></i>
                 </div>
-                <div  class="physical_examination_form14 hidden">
+                <div  class="physical_examination_form3 hidden">
                     <div class="physical_examination_form-control">
                     <label for="social_habits(smoking,alcohol,drugs)">Social Habits (smoking, alcohol)</label>
-                    <input type="text" id="social_habits(smoking,alcohol,drugs)">
+                    <input type="text" id="social_habits">
                     </div>
                     <div class="physical_examination_form-control">
                     <label for="family_medical_history">Family Medical History</label>
@@ -603,6 +407,8 @@ $patient_id = $_POST['patient_Id'];
             </div>
             </div>
             <!--End of Physica, Examination-->
+
+
         <!--Start for Treatment and Prescribtion--->
         <div class="treatment_prescribtion_dropdown" onclick="treatment_prescribtion_section()">
             <h3>Treatment & Prescription</h3>
@@ -657,7 +463,6 @@ $patient_id = $_POST['patient_Id'];
                     <input type="text" class="treatment_prescribtion-input" id="duration">
                     </div>
                     <i class="fa fa-plus" id="prescribe_close"></i>
-                    <!-- <div id="prescribe_close">Add more drugs</div> -->
                 </div>
             </div>
             </div>
@@ -706,7 +511,7 @@ $patient_id = $_POST['patient_Id'];
                         <div class="form-control">
                         <label for="headache">Headache</label>
                         <div class="radio">
-                        <input type="radio" id="yes" name="h1" />
+                        <input type="radio" id="yes" name="h1"/>
                         <label for="yes">Yes</label>
                         <input type="radio" id="no" name="h1" />
                         <label for="no">No</label>
@@ -925,118 +730,12 @@ $patient_id = $_POST['patient_Id'];
                         </div>
         </div>
         </div>
-        <div class="drop-down4" onclick="showForm4()">
-                    <h3>Hematopoietic</h3>
-                    <i class="bi bi-dash-lg" id="close_id_4"></i>
-                    <i class="bi bi-plus-lg" id="open_id_4"></i>
-                </div>
-                <div class="form4 hidden">
-                        <div class="form-control">
-                        <label for="headache">Chemotherapy Management for Hematopoietic Disorders?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="cmhd" />
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="cmhd" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Radiation therapy integration for Hermatopoietic condition?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="rtihc" />
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="rtihc" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Immunotherapy traking for Hermatopoietic disorder ?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="ithd" />
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="ithd" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Steam cell transplantation?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="sct" />
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="sct" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Anticoagulant medication?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="am" />
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="am" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Iron chelation?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="ic" />
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="ic" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Hematopoietic growth?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="hg"/>
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="hg"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Blood tranfusion?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="bt"/>
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="bt"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Erthropoletin?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="etin"/>
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="etin"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Granalocyte colony-stimulation?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="gcs"/>
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="gcs"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Intravenous immunogubullin?</label>
-                        <div class="radio">
-                        <input type="radio" id="yes" name="imin"/>
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="imin"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-  </form>
-  <div class="drop-down5" onclick="showForm5()">
+  <div class="drop-down4" onclick="showForm4()">
             <h3>Muscoskeletal</h3>
-            <i class="bi bi-dash-lg" id="close_id_5"></i>
-            <i class="bi bi-plus-lg" id="open_id_5"></i>
+            <i class="bi bi-dash-lg" id="close_id_4"></i>
+            <i class="bi bi-plus-lg" id="open_id_4"></i>
         </div>
-        <div class="form5 hidden">
+        <div class="form4 hidden">
                 <div class="form-control">
                 <label for="headache">Physical therapy?</label>
                 <div class="radio">
@@ -1119,12 +818,12 @@ $patient_id = $_POST['patient_Id'];
                 </div>
   </div>
 </div>
-  <div class="drop-down6" onclick="showForm6()">
+  <div class="drop-down5" onclick="showForm5()">
             <h3>Head & Neck</h3>
-            <i class="bi bi-dash-lg" id="close_id_6"></i>
-            <i class="bi bi-plus-lg" id="open_id_6"></i>
+            <i class="bi bi-dash-lg" id="close_id_5"></i>
+            <i class="bi bi-plus-lg" id="open_id_5"></i>
         </div>
-        <div class="form6 hidden">
+        <div class="form5 hidden">
                 <div class="form-control">
                 <label for="headache">Symptom for head and neck issue?</label>
                 <div class="radio">
@@ -1216,522 +915,10 @@ $patient_id = $_POST['patient_Id'];
                 </div>
   </div>
 </div>
-  <div class="drop-down7" onclick="showForm7()">
-            <h3>Ears, Nose, Sinuses, Mouth & Throat</h3>
-            <i class="bi bi-dash-lg" id="close_id_7"></i>
-            <i class="bi bi-plus-lg" id="open_id_7"></i>
-        </div>
-        <div class="form7 hidden">
-                <div class="form-control">
-                <label for="headache">Hearing loss?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="hl" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="hl" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Tinnitus Evalution?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="te" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="te" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Ear pain?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ep" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ep" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Ear discharge?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ed" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ed" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Nasal congestion?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="nc" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="nc" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Sinus discharge?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="sd" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="sd" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Allergic Rhinitis?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ar"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ar"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Oral pain?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="op"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="op"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Throat pain?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="tp"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="tp"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Dysphagia?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="dysphagia"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="dysphagia"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Mouth Lessions?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ml"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ml"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Voice changes?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="vc"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="vc"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Halitosis(Bad breath)?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="halitosis"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="halitosis"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Gag reflex?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="gr"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="gr"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Oral thrush?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ot"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ot"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Tonsillitis?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="Tonsillitis"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="Tonsillitis"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Hoarseness?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="Hoarseness"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="Hoarseness"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Oral  cancer?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="oral_cancer"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="oral_cancer"/>
-                <label for="no">No</label>
-                </div>
-</div>
-                <div class="form-control">
-                <label for="headache">Recurrent Sore Throat?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="rsc"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="rsc"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-</div>
-  <div class="drop-down8" onclick="showForm8()">
-            <h3>Breast</h3>
-            <i class="bi bi-dash-lg" id="close_id_8"></i>
-            <i class="bi bi-plus-lg" id="open_id_8"></i>
-        </div>
-        <div class="form8 hidden">
-                <div class="form-control">
-                <label for="headache">Breast Disorder?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="bd" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="bd" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Surgical Invervention monitoring for breast condition?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="simbc" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="simbc" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Hormone replacement?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="hr" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="hr" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Breast imaging follow-up?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="bifu" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="bifu" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Reconstructive surgery?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="rs" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="rs" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Breast pain?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="bp" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="bp" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Nutritional?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="nutritional"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="nutritional"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Pschosicial Intergration?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="pi"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="pi"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-</div>
-  <div class="drop-down9" onclick="showForm9()">
-            <h3>Respiratory</h3>
-            <i class="bi bi-dash-lg" id="close_id_9"></i>
-            <i class="bi bi-plus-lg" id="open_id_9"></i>
-        </div>
-        <div class="form9 hidden">
-                <div class="form-control">
-                <label for="headache">Respiratory symptom?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="rs" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="rs" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Pulmonary function test?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="pft" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="pft" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Chest X-ray imaging?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="cxi" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="cxi" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Oxygen therapy?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ot" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ot" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Ventilator?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ventilator" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ventilator" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Bronchoscopy?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="bronchoscopy" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="bronchoscopy" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Pneumonia?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="pneumonia"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="pneumonia"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Asthma action?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="aa"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="aa"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Respiratory infection?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ri"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ri"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">COPD?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="copd"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="copd"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Spiometer test?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="st"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="st"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Smoking cessation?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="sc"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="sc"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-</div>
-  <div class="drop-down10" onclick="showForm10()">
-            <h3>Cardiovascular</h3>
-            <i class="bi bi-dash-lg" id="close_id_10"></i>
-            <i class="bi bi-plus-lg" id="open_id_10"></i>
-        </div>
-        <div class="form10 hidden">
-                <div class="form-control">
-                <label for="headache">Cardiovascular condition?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="cardiovascular_condition" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="cardiovascular_condition" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Bood pressure?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="bp" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="bp" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Cholesterol Level?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="cl" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="cl" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Antiplatelet?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="antiplatelet" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="antiplatelet" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Beta-Blocker?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="bb" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="bb" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Angiotensin-converting enzyme (ACE) inhibitor?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="acei" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="acei" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Anticoagulant?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="anticoagulant"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="anticoagulant"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Cardiac?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="cardiac"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="cardiac"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Heart failure & Diuretic?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="hf_d"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="hf_d"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-</div>
-  <div class="drop-down11" onclick="showForm11()">
-            <h3>Gastrointestinal</h3>
-            <i class="bi bi-dash-lg" id="close_id_11"></i>
-            <i class="bi bi-plus-lg" id="open_id_11"></i>
-</div>
-<div class="form11 hidden">
-                <div class="form-control">
-                <label for="headache">Gastrointestinal symptom?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="gastrointestinal_symptom" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="gastrointestinal_symptom" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Endoscopy?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="endoscopy" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="endoscopy" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Colonoscopy?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="colonoscopy" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="colonoscopy" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Radiology Issue?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ri" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ri" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Gastrointestinal disorder?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="gd" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="gd" />
-                <label for="no">No</label>
-                </div>
-  </div>
-</div>
 </div>
 </div>
 <input type="hidden" id="patient_id" value="<?php echo $patient_id?> ">
-<button type="button" id ="doctor_input" onclick="save_input();">Save Input</button>
+<button type="button" id ="doctor_input" onclick="gatherDoctorInputs()">Save Input</button>
 </form>
 </div>
 

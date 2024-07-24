@@ -548,7 +548,9 @@ h4{
     border-radius: 4px;
     box-sizing: border-box;
   }
-  
+  input[type="radio"]{
+    width: fit-content;
+  }
   input[type=submit] {
     width: 100%;
     background-color: rgb(42, 87, 215);
@@ -809,7 +811,7 @@ form{
      background-color: #2a57d7;;
     padding: 1rem;
 }
-.drop-down1, .drop-down2,  .drop-down3, .drop-down4, .drop-down5, .drop-down6, .drop-down7, .drop-down8, .drop-down9, .drop-down10, .drop-down11{
+.drop-down1, .drop-down2,  .drop-down3, .drop-down4, .drop-down5{
    border-bottom: 4px solid #fff;
    width: 100%;
     padding: 1rem;
@@ -823,20 +825,17 @@ form{
     font-size: 15px;
 }
 #open_id_1, #close_id_1, #open_id_2, #close_id_2, #open_id_3, #close_id_3,
-#open_id_4, #close_id_4, #open_id_5, #close_id_5,
-#open_id_6, #close_id_6, #open_id_7, #close_id_7,
-#open_id_8, #close_id_8, #open_id_9, #close_id_9,
-#open_id_10, #close_id_10, #open_id_11, #close_id_11{
+#open_id_4, #close_id_4, #open_id_5{
     color: #fff;
     font-size: 20px;
 }
-#close_id_1, #close_id_2, #close_id_3, #close_id_4, #close_id_5, #close_id_6, #close_id_7, #close_id_8,#close_id_9, #close_id_10,  #close_id_11{
+#close_id_1, #close_id_2, #close_id_3, #close_id_4, #close_id_5{
     display: none;
 }
 /* .active{
     display: none;
 } */
-.form1, .form2, .form3, .form4, .form5,  .form6, .form7, .form8, .form9, .form10, .form11{
+.form1, .form2, .form3, .form4, .form5{
     width: 100%;
     padding: 0.5rem;
     display: flex;
@@ -861,18 +860,7 @@ form{
     padding: 1rem;
     width: 100%;
 }
-.physical_examination_drop-down1, .physical_examination_drop-down2, .physical_examination_drop-down3,
-.physical_examination_drop-down4,
-.physical_examination_drop-down5,
-.physical_examination_drop-down6,
-.physical_examination_drop-down7,
-.physical_examination_drop-down8,
-.physical_examination_drop-down9,
-.physical_examination_drop-down10,
-.physical_examination_drop-down11,
-.physical_examination_drop-down12,
-.physical_examination_drop-down13,
-.physical_examination_drop-down14{
+.physical_examination_drop-down1, .physical_examination_drop-down2,.physical_examination_drop-down3{
    border-bottom: 4px solid #fff;
     padding: 1rem;
     display: flex;
@@ -889,34 +877,12 @@ form{
     font-size: 15px;
 }
 #physical_examination_icon_plus1, #physical_examination_icon_minus1, #physical_examination_icon_plus2, #physical_examination_icon_minus2
-#physical_examination_icon_plus3, #physical_examination_icon_minus3,
-#physical_examination_icon_plus4, #physical_examination_icon_minus4,
-#physical_examination_icon_plus5, #physical_examination_icon_minus5,
-#physical_examination_icon_plus6, #physical_examination_icon_minus6,
-#physical_examination_icon_plus7, #physical_examination_icon_minus7,
-#physical_examination_icon_plus8, #physical_examination_icon_minus8,
-#physical_examination_icon_plus9, #physical_examination_icon_minus9,
-#physical_examination_icon_plus10, #physical_examination_icon_minus10,
-#physical_examination_icon_plus11, #physical_examination_icon_minus11,
-#physical_examination_icon_plus12, #physical_examination_icon_minus12,
-#physical_examination_icon_plus13, #physical_examination_icon_minus13,
-#physical_examination_icon_plus14, #physical_examination_icon_minus14{
+#physical_examination_icon_plus3, #physical_examination_icon_minus3{
     color: #fff;
     font-size: 20px;
 }
 #physical_examination_icon_minus1, #physical_examination_icon_minus2,
-#physical_examination_icon_minus3,
-#physical_examination_icon_minus4,
-#physical_examination_icon_minus5,
-#physical_examination_icon_minus6,
-#physical_examination_icon_minus7,
-#physical_examination_icon_minus8,
-#physical_examination_icon_minus9,
-#physical_examination_icon_minus10,
-#physical_examination_icon_minus11,
-#physical_examination_icon_minus12,
-#physical_examination_icon_minus13,
-#physical_examination_icon_minus14{
+#physical_examination_icon_minus3{
     display: none;
 }
 form{
@@ -943,12 +909,7 @@ label {
     display: none;
 } */
 .physical_examination_form1, .physical_examination_form2, .physical_examination_form3,
-.physical_examination_form4, .physical_examination_form5 .physical_examination_form6,.physical_examination_form7,
-.physical_examination_form8, .physical_examination_form9,
-.physical_examination_form10,.physical_examination_form11
-,.physical_examination_form12,
-.physical_examination_form13,
-.physical_examination_form14{
+.physical_examination_form4, .physical_examination_form5,.physical_examination_form6{
     display: flex;
     width: 100%;
     flex-direction: row;

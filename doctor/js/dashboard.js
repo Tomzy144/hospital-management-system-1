@@ -224,73 +224,6 @@ function showForm5(){
 }
 
 
-//For head & neck Dropdown
-function showForm6(){
-    document.querySelector(".form6").classList.toggle("hidden");
-    document.querySelector("#close_id_6").style.display = "block";
-    document.querySelector("#open_id_6").style.display = "none";
-    if(document.querySelector(".form6").classList.contains("hidden")){
-        document.querySelector("#close_id_6").style.display = "none";
-        document.querySelector("#open_id_6").style.display = "block";
-    }
-}
-
-//For Ears, Nose, Sinuses, Mouth & Throat Dropdown
-function showForm7(){
-    document.querySelector(".form7").classList.toggle("hidden");
-    document.querySelector("#close_id_7").style.display = "block";
-    document.querySelector("#open_id_7").style.display = "none";
-    if(document.querySelector(".form7").classList.contains("hidden")){
-        document.querySelector("#close_id_7").style.display = "none";
-        document.querySelector("#open_id_7").style.display = "block";
-    }
-}
-
-//For Breast Dropdown
-function showForm8(){
-     document.querySelector(".form8").classList.toggle("hidden");
-    document.querySelector("#close_id_8").style.display = "block";
-    document.querySelector("#open_id_8").style.display = "none";
-    if( document.querySelector(".form8").classList.contains("hidden")){
-        document.querySelector("#close_id_8").style.display = "none";
-        document.querySelector("#open_id_8").style.display = "block";
-    }
-}
-
-//For Respiratory Dropdown
-function showForm9(){
-    document.querySelector(".form9").classList.toggle("hidden");
-    document.querySelector("#close_id_9").style.display = "block";
-    document.querySelector("#open_id_9").style.display = "none";
-    if(document.querySelector(".form9").classList.contains("hidden")){
-        document.querySelector("#close_id_9").style.display = "none";
-        document.querySelector("#open_id_9").style.display = "block";
-    }
-}
-
-//For Cardiovascular Dropdown
-function showForm10(){
-    document.querySelector(".form10").classList.toggle("hidden");
-     document.querySelector("#close_id_10").style.display = "block";
-    document.querySelector("#open_id_10").style.display = "none";
-    if(document.querySelector(".form10").classList.contains("hidden")){
-         document.querySelector("#close_id_10").style.display = "none";
-        document.querySelector("#open_id_10").style.display = "block";
-    }
-}
-   
-//For Gastrointestinal Dropdown
-function showForm11(){
-    document.querySelector(".form11").classList.toggle("hidden");
-    document.querySelector("#close_id_11").style.display = "block";
-    document.querySelector("#open_id_11").style.display = "none";
-    if(document.querySelector(".form11").classList.contains("hidden")){
-        document.querySelector("#close_id_11").style.display = "none";
-        document.querySelector("#open_id_11").style.display = "block";
-    }
-}
-
-
 //form input
 //Physical dropdown
 function physical_section(){
@@ -354,14 +287,14 @@ function physical_showForm4(){
 function physical_showForm5(){
     document.querySelector(".physical_examination_form5").classList.toggle("hidden");
     document.querySelector("#physical_examination_icon_minus5").style.display = "block";
-    document.querySelector("#physical_examination_icon_minus5").style.display = "none";
+    document.querySelector("#physical_examination_icon_plus5").style.display = "none";
     if(document.querySelector(".physical_examination_form5").classList.contains("hidden")){
         document.querySelector("#physical_examination_icon_minus5").style.display = "none";
-        document.querySelector("#physical_examination_icon_minus5").style.display = "block";
+        document.querySelector("#physical_examination_icon_plus5").style.display = "block";
     }
 }
 
-//For Head and Neck Dropdown
+//Social and Family History
 function physical_showForm6(){
     document.querySelector(".physical_examination_form6").classList.toggle("hidden");
     document.querySelector("#physical_examination_icon_minus6").style.display = "block";
@@ -371,104 +304,6 @@ function physical_showForm6(){
         document.querySelector("#physical_examination_icon_plus6").style.display = "block";
     }
 }
-
-//For Cardiovascular Examination Dropdown
-function physical_showForm7(){
-    document.querySelector(".physical_examination_form7").classList.toggle("hidden");
-    document.querySelector("#physical_examination_icon_minus7").style.display = "block";
-    document.querySelector("#physical_examination_icon_plus7").style.display = "none";
-    if(document.querySelector(".physical_examination_form7").classList.contains("hidden")){
-        document.querySelector("#physical_examination_icon_minus7").style.display = "none";
-        document.querySelector("#physical_examination_icon_plus7").style.display = "block";
-    }
-}
-
-
-//For Respiratory Examination Dropdown
-function physical_showForm8(){
-    document.querySelector(".physical_examination_form8").classList.toggle("hidden");
-    document.querySelector("#physical_examination_icon_minus8").style.display = "block";
-    document.querySelector("#physical_examination_icon_plus8").style.display = "none";
-    if(document.querySelector(".physical_examination_form8").classList.contains("hidden")){
-        document.querySelector("#physical_examination_icon_minus8").style.display = "none";
-        document.querySelector("#physical_examination_icon_plus8").style.display = "block";
-    }
-}
-
-
-//For Adominal Examination Dropdown
-
-function physical_showForm9(){
-    document.querySelector(".physical_examination_form9").classList.toggle("hidden");
-    document.querySelector("#physical_examination_icon_minus9").style.display = "block";
-    document.querySelector("#physical_examination_icon_plus9").style.display = "none";
-    if(document.querySelector(".physical_examination_form9").classList.contains("hidden")){
-        document.querySelector("#physical_examination_icon_minus9").style.display = "none";
-        document.querySelector("#physical_examination_icon_plus9").style.display = "block";
-    }
-}
-
-
-//For Genitourinary Examination Dropdown
-function physical_showForm10(){
-    document.querySelector(".physical_examination_form10").classList.toggle("hidden");
-    document.querySelector("#physical_examination_icon_minus10").style.display = "block";
-    document.querySelector("#physical_examination_icon_plus10").style.display = "none";
-    if(document.querySelector(".physical_examination_form10").classList.contains("hidden")){
-        document.querySelector("#physical_examination_icon_minus10").style.display = "none";
-        document.querySelector("#physical_examination_icon_plus10").style.display = "block";
-    }
-}
-
-
-//For Musculoskeletal Examination Dropdown
-function physical_showForm11(){
-    document.querySelector(".physical_examination_form11").classList.toggle("hidden");
-    document.querySelector("#physical_examination_icon_minus11").style.display = "block";
-    document.querySelector("#physical_examination_icon_plus11").style.display = "none";
-    if(document.querySelector(".physical_examination_form11").classList.contains("hidden")){
-        document.querySelector("#physical_examination_icon_minus11").style.display = "none";
-        document.querySelector("#physical_examination_icon_plus11").style.display = "block";
-    }
-}
-
-//For Neurovascular Assessment of Extremities Dropdown
-function physical_showForm12(){
-    document.querySelector(".physical_examination_form12").classList.toggle("hidden");
-    document.querySelector("#physical_examination_icon_minus12").style.display = "block";
-    document.querySelector("#physical_examination_icon_plus12").style.display = "none";
-    if(document.querySelector(".physical_examination_form12").classList.contains("hidden")){
-        document.querySelector("#physical_examination_icon_minus12").style.display = "none";
-        document.querySelector("#physical_examination_icon_plus12").style.display = "block";
-    }
-}
-
-//For Review of Systems (ROS) of Extremities Dropdown
-function physical_showForm13(){
-    document.querySelector(".physical_examination_form13").classList.toggle("hidden");
-    document.querySelector("#physical_examination_icon_minus13").style.display = "block";
-    document.querySelector("#physical_examination_icon_plus13").style.display = "none";
-    if(document.querySelector(".physical_examination_form13").classList.contains("hidden")){
-        document.querySelector("#physical_examination_icon_minus13").style.display = "none";
-        document.querySelector("#physical_examination_icon_plus13").style.display = "block";
-    }
-}
-
-
-//For Social and Family History Dropdown
-
-function  physical_showForm14(){
-    document.querySelector(".physical_examination_form14").classList.toggle("hidden");
-    document.querySelector("#physical_examination_icon_minus14").style.display = "block";
-    document.querySelector("#physical_examination_icon_plus14").style.display = "none";
-    if(document.querySelector("#physical_examination_icon_minus14").classList.contains("hidden")){
-        document.querySelector("#physical_examination_icon_minus14").style.display = "block"
-        document.querySelector("#physical_examination_icon_plus14").style.display = "block";
-    }
-}
-
-
-
 
 //Treatment and Prescribtion JS
 function treatment_prescribtion_section(){
@@ -640,7 +475,185 @@ function confirmed_death_section(){
        openModal('death--booking')
     }
 
-    ///END OF DEATH FORM
+
+
+        //Doctor Inputs 
+   // Function to get selected radio button value
+function getSelectedRadioButton(name) {
+    const radios = document.getElementsByName(name);
+    let selectedValue = null;
+
+    for (const radio of radios) {
+        if (radio.checked) {
+            selectedValue = radio.value;
+            break;
+        }
+    }
+
+    return { name, value: selectedValue };
+}
+
+// Function to gather doctor inputs and send to backend
+function gatherDoctorInputs() {
+    // Physical Examinations
+    const physical_examination = document.getElementById('physical_examination').value;
+    const pigmentation = document.getElementById('pigmentation').value;
+    const moisture_temperature = document.getElementById('moisture_temperature').value;
+    const lesions_rashes = document.getElementById('lesions_rashes').value;
+    const bruising = document.getElementById('bruising').value;
+    const scars = document.getElementById('scars').value;
+    const social_habits = document.getElementById('social_habits').value;
+    const family_medical_history = document.getElementById('family_medical_history').value;
+    const occupation_environmental_exposures = document.getElementById('occupation_environmental_exposures').value;
+    const living_conditions_support_system = document.getElementById('living_conditions_support_system').value;
+
+    // Drugs Prescriptions
+    const treatment_prescribtion = document.getElementById('treatment_prescribtion').value;
+    const drugs = document.getElementById('drugs').value;
+    const mode = document.getElementById('mode').value;
+    const dos = document.getElementById('dos').value;
+    const unit = document.getElementById('unit').value;
+    const frequency = document.getElementById('frequency').value;
+    const duration = document.getElementById('duration').value;
+
+    // Complaints section
+    const major_complaints = document.getElementById('major_complaints').value;
+    const history_of_presenting_complaints = document.getElementById('history_of_presenting_complaints').value;
+    const family_social_history = document.getElementById('family_social_history').value;
+    const past_surgical_medical_history = document.getElementById('past_sugical_medical_history').value;
+
+    // System review section
+    const selectedH1 = getSelectedRadioButton('h1');
+    const selectedF1 = getSelectedRadioButton('f1');
+    const selectedO1 = getSelectedRadioButton('o1');
+    const selectedCA1 = getSelectedRadioButton('ca1');
+    const selectedCW1 = getSelectedRadioButton('cw1');
+    const selectedFV1 = getSelectedRadioButton('fv1');
+
+    const selectedCM = getSelectedRadioButton('cm');
+    const selectedHN = getSelectedRadioButton('h/n');
+    const selectedCT = getSelectedRadioButton('c/t');
+    const selectedIR = getSelectedRadioButton('i/r');
+    const selectedSores = getSelectedRadioButton('sores');
+    
+    const selectedEHS = getSelectedRadioButton('e_hs');
+    const selectedET = getSelectedRadioButton('et');
+    const selectedSaltCraving = getSelectedRadioButton('salt_craving');
+    const selectedLSD = getSelectedRadioButton('lsd');
+    const selectedHCI = getSelectedRadioButton('hci');
+    const selectedTE = getSelectedRadioButton('te');
+    const selectedAG = getSelectedRadioButton('ag');
+    const selectedIA = getSelectedRadioButton('ia');
+    const selectedIUP = getSelectedRadioButton('iup');
+    const selectedTR = getSelectedRadioButton('tr');
+    const selectedES = getSelectedRadioButton('es');
+    const selectedDiabetes = getSelectedRadioButton('diabetes');
+    
+    const selectedPT = getSelectedRadioButton('pt');
+    const selectedOCCPT = getSelectedRadioButton('occpt');
+    const selectedOC = getSelectedRadioButton('oc');
+    const selectedPM = getSelectedRadioButton('pm');
+    const selectedJA = getSelectedRadioButton('ja');
+    const selectedMR = getSelectedRadioButton('mr');
+    const selectedSI = getSelectedRadioButton('si');
+    const selectedAntiIN = getSelectedRadioButton('anti-in');
+    const selectedAssistive = getSelectedRadioButton('assistive');
+    
+    const selectedSHNI = getSelectedRadioButton('shni');
+    const selectedRENTE = getSelectedRadioButton('rente');
+    const selectedHNC = getSelectedRadioButton('hnc');
+    const selectedDOH = getSelectedRadioButton('doh');
+    const selectedSSA = getSelectedRadioButton('ssa');
+    const selectedBNM = getSelectedRadioButton('bnm');
+    const selectedTFT = getSelectedRadioButton('tft');
+    const selectedSGD = getSelectedRadioButton('sgd');
+    const selectedTMJ = getSelectedRadioButton('tmj');
+    const selectedISB = getSelectedRadioButton('is_b');
+
+    // Combine all inputs into a single object
+    const data = {
+        physical_examination,
+        pigmentation,
+        moisture_temperature,
+        lesions_rashes,
+        bruising,
+        scars,
+        social_habits,
+        family_medical_history,
+        occupation_environmental_exposures,
+        living_conditions_support_system,
+        treatment_prescribtion,
+        drugs,
+        mode,
+        dos,
+        unit,
+        frequency,
+        duration,
+        major_complaints,
+        history_of_presenting_complaints,
+        family_social_history,
+        past_surgical_medical_history,
+        [selectedH1.name]: selectedH1.value,
+        [selectedF1.name]: selectedF1.value,
+        [selectedO1.name]: selectedO1.value,
+        [selectedCA1.name]: selectedCA1.value,
+        [selectedCW1.name]: selectedCW1.value,
+        [selectedFV1.name]: selectedFV1.value,
+        [selectedCM.name]: selectedCM.value,
+        [selectedHN.name]: selectedHN.value,
+        [selectedCT.name]: selectedCT.value,
+        [selectedIR.name]: selectedIR.value,
+        [selectedSores.name]: selectedSores.value,
+        [selectedEHS.name]: selectedEHS.value,
+        [selectedET.name]: selectedET.value,
+        [selectedSaltCraving.name]: selectedSaltCraving.value,
+        [selectedLSD.name]: selectedLSD.value,
+        [selectedHCI.name]: selectedHCI.value,
+        [selectedTE.name]: selectedTE.value,
+        [selectedAG.name]: selectedAG.value,
+        [selectedIA.name]: selectedIA.value,
+        [selectedIUP.name]: selectedIUP.value,
+        [selectedTR.name]: selectedTR.value,
+        [selectedES.name]: selectedES.value,
+        [selectedDiabetes.name]: selectedDiabetes.value,
+        [selectedPT.name]: selectedPT.value,
+        [selectedOCCPT.name]: selectedOCCPT.value,
+        [selectedOC.name]: selectedOC.value,
+        [selectedPM.name]: selectedPM.value,
+        [selectedJA.name]: selectedJA.value,
+        [selectedMR.name]: selectedMR.value,
+        [selectedSI.name]: selectedSI.value,
+        [selectedAntiIN.name]: selectedAntiIN.value,
+        [selectedAssistive.name]: selectedAssistive.value,
+        [selectedSHNI.name]: selectedSHNI.value,
+        [selectedRENTE.name]: selectedRENTE.value,
+        [selectedHNC.name]: selectedHNC.value,
+        [selectedDOH.name]: selectedDOH.value,
+        [selectedSSA.name]: selectedSSA.value,
+        [selectedBNM.name]: selectedBNM.value,
+        [selectedTFT.name]: selectedTFT.value,
+        [selectedSGD.name]: selectedSGD.value,
+        [selectedTMJ.name]: selectedTMJ.value,
+        [selectedISB.name]: selectedISB.value,
+    };
+
+    // Send data to the backend
+    fetch('https://config/code.php/doctor_input', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
 
 
 
