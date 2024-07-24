@@ -405,7 +405,6 @@ $patient_id = $_POST['patient_Id'];
                     </div>
         </div>
             </div>
-            </div>
             <!--End of Physica, Examination-->
 
 
@@ -461,8 +460,7 @@ $patient_id = $_POST['patient_Id'];
                     <div class="treatment_prescribtion_form-control">
                     <label for="duration">Duration</label>
                     <input type="text" class="treatment_prescribtion-input" id="duration">
-                    </div>
-                    <i class="fa fa-plus" id="prescribe_close"></i>
+        </div>
                 </div>
             </div>
             </div>
@@ -918,7 +916,7 @@ $patient_id = $_POST['patient_Id'];
 </div>
 </div>
 <input type="hidden" id="patient_id" value="<?php echo $patient_id?> ">
-<button type="button" id ="doctor_input" onclick="gatherDoctorInputs()">Save Input</button>
+<button type="button" id ="btn" onclick="gatherDoctorInputs()">Save Input</button>
 </form>
 </div>
 

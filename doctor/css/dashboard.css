@@ -256,7 +256,7 @@ transform: scale(0.98);
 
 .sidebar{
 width: 100%;
-width: 300px;
+width: 230px;
 height: 100%;
 overflow: hidden;
 position: fixed;
@@ -332,7 +332,7 @@ cursor: pointer;
 
 
 .list_div {
-    margin: 5.5rem 0 0 19rem;
+    margin: 5.5rem 0 0 14.6rem;
     width: auto;
     overflow-x: auto;
 }
