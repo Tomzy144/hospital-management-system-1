@@ -8,6 +8,7 @@ $s_doctor_id = $_POST['doctor_id'];
 
     
 
+
 <?php    
 
 $fetch_doctor_profile = $callclass->_get_doctor_details($conn, $s_doctor_id);
@@ -321,6 +322,7 @@ function accept(patient_Id) {
 </div>
 <div class="black--background hidden"></div>
   
+
 </body>
 </html>
 

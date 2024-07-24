@@ -885,5 +885,47 @@ function getDoctorsRoles() {
   }
   
   
+function transfer_to_rad() {
+    var patient_id = $("#patient_id").val();
+    var patient_name = $("#patient_name").val();
+    var message = $("#message2").val();
+
+    if (message === "") {
+        alert("Fill the message field");
+    } else {
+        var $btnSubmit = $('#rad_submit_btn');
+        var btnText = $btnSubmit.html();
+        $btnSubmit.html('Processing...');
+        $btnSubmit.prop('disabled', true);
+
+        var action = 'transfer_to_rad';
+        var dataString = "action=" + action + "&patient_id=" + patient_id + "&patient_name=" + patient_name + "&message=" + message;
+
+        $.ajax({
+            type: 'POST',
+            url: "config/code.php",
+            data: dataString,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data.check === "success") {
+                    alert("Patient has been transferred to the Radiology successfully");
+                    $btnSubmit.html('Transfer');
+                    $btnSubmit.prop('disabled', false);
+                    close_tranfer_patient_lab();
+                } else {
+                    console.error('Error:', data.error);
+                    $btnSubmit.html(btnText);
+                    $btnSubmit.prop('disabled', false);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX Error:', error);
+                $btnSubmit.html(btnText);
+                $btnSubmit.prop('disabled', false);
+            }
+        });
+    }
+}
   
-  
+         
