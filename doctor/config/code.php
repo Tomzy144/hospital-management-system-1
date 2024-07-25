@@ -808,6 +808,53 @@
                 echo json_encode(array("success" => false, "message" => "Error preparing query: " . $conn->error));
             }
             break;
+
+/////////////////////////////
+            case 'confirm_death':
+                $patient_id = $_POST['patient_id'];
+                $patient_name = $_POST['patient_name'];
+                $date_of_death = $_POST['date_of_death']; 
+                $doctor_id = $_POST['doctor_id'];
+                $time_of_death = $_POST['time_of_death']; 
+                
+                // Get the appointment ID sequence
+                $sequence = $callclass->_get_sequence_count($conn, 'MORGAPP');
+                $array = json_decode($sequence, true);
+                $no = $array[0]['no'];
+                $morgue_appointment_id = 'MORGAPP' . $no;
+                
+                // Prepare the SQL query with the correct number of placeholders
+                $stmt = $conn->prepare("
+                INSERT INTO morgue_appointment_tab
+                (doctor_discharge_id, patient_id, patient_name, date_of_death, time_of_death, doctor_id)
+                VALUES (?, ?, ?, ?, ?, ?)
+                ");
+                
+                if ($stmt) {
+                    // Bind the parameters
+                    $stmt->bind_param(
+                        "ssssss",
+                        $doctor_discharge_id,
+                        $patient_id,
+                        $patient_name,
+                        $time_of_death,
+                        $date_of_death,
+                        $doctor_id
+                    );
+                
+                    
+                    if ($stmt->execute()) {
+                        echo json_encode(array("success" => true, "message" => "Patient discharged successfully"));
+                    } else {
+                        echo json_encode(array("success" => false, "message" => "Error executing query: " . $stmt->error));
+                    }
+                
+                    
+                    $stmt->close();
+                } else {
+                    echo json_encode(array("success" => false, "message" => "Error preparing query: " . $conn->error));
+                }
+                break;
         
         }
 
