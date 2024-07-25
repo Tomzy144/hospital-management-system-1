@@ -638,7 +638,7 @@ function gatherDoctorInputs() {
     };
 
     // Send data to the backend
-    fetch('https://config/code.php/doctor_input', {
+    fetch('https://hospital-managment-system/doctor/config/code.php/doctor_input', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -158,24 +158,47 @@
                                                     <td>Reject</td>
                                                 </tr>
                                             </thead>
+                                            <?php 
+                                            //$sql = "SELECT * FROM lab_appointment_tab";
+                                           
+                                            
+                                            
+                                            $sql = "SELECT lab_appointment_tab.*, patient_tab.patient_passport 
+                                            FROM lab_appointment_tab
+                                            JOIN patient_tab ON lab_appointment_tab.patient_id = patient_tab.patient_id";
+                                            
+                                            $result = $conn->query($sql);
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            ?>
                                             <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <td>
-                                                        <img src="" alt="">
-                                                </td>
-                                                <td>Kingsley effiong</td>
-                                                <td>PAT0001</td>
-                                                <td>23/09/2000</td>
-                                                <td>23:00</td>
-                                              <td>
-                                              <button class="accept-btn" type="button" onclick="click_labouratory_examination()">Accept</button>
-                                              </td>
-                                              <td>
-                                              <button class="reject-btn">Reject</button>
-                                              </td>
-                                              </tr>
-                                            </tbody>
+            <?php $appointmentCount = 0;
+             while ($appointment = $result->fetch_assoc()): 
+                 
+                  $appointmentCount++;
+                  ?>
+                <tr>
+                    <td><?php echo $appointmentCount ?></td>
+                    
+                    <td><?php echo htmlspecialchars($appointment['patient_name']); ?></td>
+                    <td>
+                        <img src="<?php echo htmlspecialchars($website_url . '/uploaded_files/profile_pix/patient/' . $appointment['patient_passport']); ?>" alt="Profile Picture" width="50" height="50">
+                    </td>
+                    <td><?php echo htmlspecialchars($appointment['patient_id']); ?></td>
+                    <td><?php echo htmlspecialchars($appointment['appointment_date']); ?></td>
+                    <td><?php echo htmlspecialchars($appointment['time']); ?></td>
+                    <td>
+                        <button class="accept-btn" type="button" onclick="click_labouratory_examination(<?php echo htmlspecialchars($appointment['id']); ?>)">Accept</button>
+                    </td>
+                    <td>
+                        <button class="reject-btn" type="button" onclick="reject_labouratory_examination(<?php echo htmlspecialchars($appointment['id']); ?>)">Reject</button>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </tbody>
                         </table>
                     </div>
                 </div>
@@ -192,44 +215,44 @@
                     <input type="text" placeholder="Search here">
                 </div>
                 <table>
-                                            <thead>
-                                                <tr>
-                                                    <td>S/N</td>
-                                                    <td>PASSPORT</td>
-                                                    <td>Patient Name</td>
-                                                    <td>patient id</td>
-                                                    <td>Status</td>
-                                                    <td>Delete Patient</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <td>
-                                                        <img src="" alt="">
-                                                </td>
-                                                <td>Kingsley effiong</td>
-                                                <td>PAT0001</td>
-                                                <td>Pending transaction</td>
-                                        <td><i class="bi bi-x-square"></i></td>
-                                              </tr>
-                                            </tbody>
-                                            <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <td>
-                                                        <img src="" alt="">
-                                                </td>
-                                                <td>Kingsley effiong</td>
-                                                <td>PAT0001</td>
-                                                <td>
-                                                        <button class="accept-btn" onclick="uploadResult()">Upload test result</button>
-                                                </td>
+                                        <thead>
+                                        <tr>
+                                                <td>S/N</td>
+                                                <td>PASSPORT</td>
+                                                <td>Patient Name</td>
+                                                <td>patient id</td>
+                                                <td>Status</td>
+                                                <td>Delete Patient</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                        <td>1</td>
                                         <td>
-                                                <i class="bi bi-x-square"></i>
+                                                <img src="" alt="">
                                         </td>
-                                              </tr>
-                                            </tbody>
+                                        <td>Kingsley effiong</td>
+                                        <td>PAT0001</td>
+                                        <td>Pending transaction</td>
+                                <td><i class="bi bi-x-square"></i></td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody>
+                                        <tr>
+                                        <td>1</td>
+                                        <td>
+                                                <img src="" alt="">
+                                        </td>
+                                        <td>Kingsley effiong</td>
+                                        <td>PAT0001</td>
+                                        <td>
+                                                <button class="accept-btn" onclick="uploadResult()">Upload test result</button>
+                                        </td>
+                                <td>
+                                        <i class="bi bi-x-square"></i>
+                                </td>
+                                        </tr>
+                                        </tbody>
                         </table>
                     </div>
                 </div>
