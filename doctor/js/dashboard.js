@@ -651,6 +651,7 @@ function gatherDoctorInputs() {
     })
     .catch(error => {
         console.error('Error:', error);
+        
     });
 }
 
