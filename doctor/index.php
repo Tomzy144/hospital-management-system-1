@@ -144,7 +144,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <div class="patient_list_div" >
         <div class="search_bar_container">
                 <h3>Appoitment details</h3>
-                    <input type="text" placeholder="Search here">
+                    <input type="text" placeholder="Search here" id="incomingSearchInput">
                 </div>
 
                 <div class="body_sec" id="appointmentDetailsContainer">

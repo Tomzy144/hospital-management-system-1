@@ -963,3 +963,36 @@ function transfer_to_rad() {
         });
     }
 }
+
+
+
+
+function filterAvailablePatient() {
+    const availablePatientList = document.querySelector('#appointment_table tbody');
+    const tableRows = Array.from(availablePatientList.querySelectorAll('tr')); // Convert NodeList to Array
+    const searchInput = document.querySelector('#incomingSearchInput').value.trim().toLowerCase();
+
+    let hasVisibleRows = false;
+    tableRows.forEach((row) => {
+        if (row.children.length < 2)  return;
+
+        const patientName = row.children[2].textContent.trim().toLowerCase();
+        const patientId = row.children[3].textContent.trim().toLowerCase();
+        if (patientName.includes(searchInput) || patientId.includes(searchInput)){
+            row.style.display = ''; // Show the row
+            hasVisibleRows = true;
+           
+        } else row.style.display = 'none'; // Hide the row
+    });
+
+    const existingNoDataMessage = document.querySelector('#noDataMessage');
+    if (existingNoDataMessage) existingNoDataMessage.remove();
+
+    if (!hasVisibleRows) {
+        const noDataMessage = document.createElement('tr');
+        noDataMessage.id = 'noDataMessage';
+        noDataMessage.innerHTML = '<td colspan="9" style="text-align: center;">No Patient associated with this input</td>';
+        availablePatientList.appendChild(noDataMessage);
+    }
+}
+document.querySelector('#incomingSearchInput').addEventListener('input', filterAvailablePatient);
