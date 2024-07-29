@@ -647,6 +647,39 @@ h4{
     transition: all ease-in-out 0.5s;
 }
 
+
+/*SURGERY INFORMATION*/
+.surgery_dropdown{
+    width: auto;
+    display: flex;
+    padding:1rem;
+    flex-direction: row;
+    font-size: 18px;
+    justify-content: space-between;
+    background-color: #2a57d7;
+    cursor: pointer;
+}
+.surgery_dropdown span{
+    font-size: 18px;
+}
+
+#surgery_icon_minus{
+    display: none;
+}
+.surgery_section{
+    height: fit-content;
+     background-color: #2a57d7;
+}
+
+.surgery_section button{
+    padding: 0.8rem;
+    background-color: #2a57d7;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+
 /*RADIOLOGY INFORMATION*/
 .radiology_dropdown{
     width: auto;

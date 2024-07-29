@@ -60,7 +60,6 @@ $patient_id = $_POST['patient_Id'];
 
 
 <!-- PERSONAL PROFILE VITAL AFTER CLICKING ON THE ACCEPT BUTTON -->
-<div class="patient-personal-detail"></div>
 <div class="patient-profile">
   <div class="patient-info">
     <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/patient/<?php echo $passport; ?>" alt="Profile Picture" />
@@ -69,121 +68,125 @@ $patient_id = $_POST['patient_Id'];
       <span><?php echo $patient_id ?></span>
     </div>
   </div>
-  <div class="flex-div">
-    <div class="ward-div">
+  <div class="each_sections">
+    <div class="form-control">
       <label for="ward">Change Ward</label>
       <select name="ward" id="wards">
         <option>SELECT WARD</option>
       </select>
     </div>
-    <div class="ward-div bed">
+    <div class="form-control bed">
       <label for="bed">Change Bed</label>
       <select name="bed" id="beds">
         <option>SELECT BED</option>
       </select>
     </div>
-    <div class="ward-div">
+    <div class="form-control">
       <label for="stage">Stage</label>
       <select name="stage" id="stage">
         <option value="no_selection"></option>
         <option value="am">Am</option>
         <option value="pm">Pm</option>
       </select>
+      </div>
+      <div class="form-control">
       <label for="note">WR Note</label>
-      <textarea name="note" id="note" cols="30" rows="10"></textarea>
+     <input type="text" name="note" id="note">
     </div>
-  </div>
+    </div>
 
   <div class="ward-div">
     <form id="vital_input" enctype="multipart/form-data" method="post">
         <input type ="hidden" value="<?php echo $patient_id?>" id="patient_id"/>
-      <div class="form_control">
+        <div class="each_sections">
+      <div class="form-control">
         <label for="temperature">Temperature</label>
         <input type="text" id="temperature" name="temperature">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="bp">B/P (mm/HG)</label>
         <input type="text" id="bp" name="bp">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="pulse">Pulse (bp/m)</label>
         <input type="text" id="pulse" name="pulse">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="respiratory">Respiratory (cm)</label>
         <input type="text" id="respiratory" name="respiratory">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="weight">Weight (kg)</label>
         <input type="text" id="weight" name="weight">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="height">Height (cm)</label>
         <input type="text" id="height" name="height">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="intake">Intake (m/s)</label>
         <input type="text" id="intake" name="intake">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="output">Output (m/s)</label>
         <input type="text" id="output" name="output">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="spo2">SPO2 (%)</label>
         <input type="text" id="spo2" name="spo2">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="bmi">BMI</label>
         <input type="text" id="bmi" name="bmi">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="body_fat">Body Fat (%)</label>
         <input type="text" id="body_fat" name="body_fat">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="muscle_mass">Muscle Mass</label>
         <input type="text" id="muscle_mass" name="muscle_mass">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="musc">MUAC</label>
         <input type="text" id="musc" name="musc">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="resting_metabolism">Resting Metabolism</label>
         <input type="text" id="resting_metabolism" name="resting_metabolism">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="body_age">Body Age</label>
         <input type="text" id="body_age" name="body_age">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="bmi_for_age">BMI for Age</label>
         <input type="text" id="bmi_for_age" name="bmi_for_age">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="visceral_fat">Visceral Fat</label>
         <input type="text" id="visceral_fat" name="visceral_fat">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="head_circumference">Head Circumference</label>
         <input type="text" id="head_circumference" name="head_circumference">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="wfa">WFA</label>
         <input type="text" id="wfa" name="wfa">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="waist_circumference">Waist Circumference</label>
         <input type="text" id="waist_circumference" name="waist_circumference">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="hip_circumference">Hip Circumference</label>
         <input type="text" id="hip_circumference" name="hip_circumference">
       </div>
-      <div class="form_control">
+      <div class="form-control">
         <label for="w_hr">W-HR</label>
         <input type="text" id="w_hr" name="w_hr">
+      </div>
       </div>
     </form>
   </div>
@@ -193,9 +196,12 @@ $patient_id = $_POST['patient_Id'];
 </div>
 </div>
 
-
-<div class="avalable_doctor hide">
-            <div class="appoitment">
+<div class="modal hidden" id="patientBooking">
+<button class="btn--close-modal" onclick="closeModal('patientBooking')">&times;</button>
+        <h2 class="modal__header">
+            Doctor 
+            <span class="highlight">booking</span>
+        </h2>
             <form action="" class="av_doctor_role hide">
     <div class="form-control">
         <label for="av-roles">Doctor Roles</label>
@@ -206,7 +212,6 @@ $patient_id = $_POST['patient_Id'];
         
 <!-- /////////    transfer patient   //////////////// -->
 
-   
     <div class="form-control">
         <label for="av-doctors">Available Doctors</label>
         <select name="doctors" id ="doctor" >
@@ -216,6 +221,7 @@ $patient_id = $_POST['patient_Id'];
     <button type="button" class="btn-submit" onclick="bookPatient()">Book patient</button>
 </form>
         <form action="" class="book_patient hide" id="vital_input" enctype="multipart/form-data" method="post">
+        <div class="each_sections">
             <div class="form-control">
                 <label for="">Patient name</label>
                 <input type="text" name="" id="patient_name"  value="<?php echo $patient_name ?>">
@@ -228,16 +234,17 @@ $patient_id = $_POST['patient_Id'];
             <div class="form-control">
                 <label for="">Date</label>
                 <input type="date" name="" id="date" value="">
-                <label for="">Time</label>
-                <input type="time" name="" id="time" value="">
+            </div>
+            <div class="form-control">
+            <label for="">Time</label>
+            <input type="time" name="" id="time" value="">
             </div>
             <div class="form-control">
                 <label for="">Reason for appoitment</label>
-                <textarea name="" value="" id="reason" cols="30" rows="10"></textarea>
-                
+              <input type="text" name="" id="reason">
+            </div>
             </div>
             <button class="btn-submit" type="button" id="btn-submit" onclick="transfer_to_doctor();"> Book</button>
         </form>
     </div>
-    </div>
-
+  </div>

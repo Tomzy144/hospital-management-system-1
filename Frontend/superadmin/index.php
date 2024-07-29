@@ -70,7 +70,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <p class='text'>
              <a href='forgotten-password.php' class="password-link">Forgotten Password</a>
             </p>
-            <p class='text' onClick="homepage()">Log out</p>
+            <p class='text' onclick="homepage()">Log out</p>
         </form>
     </div>
   </div>

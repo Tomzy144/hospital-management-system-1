@@ -71,7 +71,6 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
 
 <body >
 
-
     <script>
        if (window.history && window.history.pushState) {
             window.history.pushState('forward', null,);
@@ -81,63 +80,48 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
         }
     </script>
             
-        <div class="navbar">
-            <div class="section1">
-                
+    
+<div class="navbar">
+        <div class="display__date">
+        </div>
+          <div class="profile">
+            <div class="profile_account hide">
+            <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <span><?php echo $fullname ?></span>
+            <button class="btn_submit">Upload Image</button>
+           </div>
+
+            <div class="image">
+            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
+            <div class="active_on"></div>
             </div>
-            <div class="section2">
-                
-            </div>
-            <div class="profile">
-                    <div class="profile_account hide">
-                        <img id="image_profile_account" src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
-                        <h4><?php echo $fullname ?></h4>
-                        <button class="btn_submit">Upload Image</button>
-                        <span>change password</span>
-                    </div>
-                    <div class="image">
-                        <img src="../Images/24cc97ebee8475a31c597fdb32b32d3a.jpg" alt="">
-                        <div class="active"></div>
-                    </div> 
-                    <span><?php echo $fullname ?></span>
-                    <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
+            <span><?php echo $fullname ?></span>
+            <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
+                 </div>
                 </div>
-        </div>
-      <!------Sidebar built by kingsley-->
-      <div class="sidebar">
-<div class="sidebar-body">
-    <ul>
-        <li onclick="appoitmentSection()" id="links" class="active">
-            <i class="bi bi-calendar2-plus"></i>
-            <span>Appoitments</span>
+
+    <div class="sidebar">
+    <div class="sidebar__header"></div>
+    <div class="sidebar-body">
+      <ul>
+        <li class="links active" onclick="appoitmentSection()">
+          <span>Appoitments</span>
         </li>
-        <li onclick="availablePatientList()" id="links">
-            <i class="fa-solid fa-people-group"></i>
-            <span>Patient list</span>
+        <li class="links" onclick="availablePatientList()">
+          <span>Patient list</span>
         </li>
-        <li onclick="document.getElementById('logoutform').submit();" id="links">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <span>Logout</span>
-            <form method="post" action="../config/code.php" id="logoutform">
-        <input type="hidden" name="action" value="logout"/>    
-    </form>
+        <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
+          <span>Logout</span>
+          <form method="post" action="../config/code.php" id="logoutform">
+            <input type="hidden" name="action" value="logout"/>
+          </form>
         </li>
-    </ul>
-</div>
-<!-- <div class="sidebar-footer">
-        <div>
-        <i class="bi bi-person"></i>
-        <span>USER0001</span>
-        </div>
-        <span>Cash: $0.00</span>
-        <span>P0S:$0.00</span>
-    </div> -->
-</div>
-</div>
-         <!--END OF SIDEBAR AND NAVBAR-->
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="overlay"></div> -->
+  <script src="js/script.js"></script>
 <?php include 'config/page-content.php'?>
-    <script src="js/script.js"></script>
-    <!-- <script src="js/section.js"></script> -->
 </body>
 </html>
 

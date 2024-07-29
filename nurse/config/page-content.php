@@ -2,11 +2,9 @@
 
 <div id="landing_section-container">
               <!----APPOITMENT SECTION-->
-        <div class="appoitment_section">
-            <div class="patient_list_div">
+            <div class="list_div">
             <div class="search_bar_container">
                 <h3>Appoitment details</h3>
-                <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
                     <table>
@@ -85,10 +83,9 @@
     </div>
 
     <div class="available-patient-list hide">
-    <div class="patient_list_div">
+    <div class="list_div">
             <div class="search_bar_container">
                 <h3>Available patients</h3>
-                <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
                 <table>
@@ -98,7 +95,6 @@
                             <td>PASSPORT</td>
                             <td>PATIENT NAME</td>
                             <td>PATIENT ID</td>
-                            <td>ACTION</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -109,15 +105,10 @@
                             </td>
                             <td>KINGSLEY EFFIONG</td>
                             <td>PAT0001</td>
-                            <td>
-                                <i class="bi bi-three-dots _action" onclick="selectDoc()"></i>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
                 </div>
     </div>
-
-    
 
     

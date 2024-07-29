@@ -88,10 +88,10 @@ l
     <div class="sidebar-body">
       <ul>
         <li class="links active">
-          <span>Patients tab</span>
+          <span>Patients</span>
         </li>
         <li class="links">
-          <span>Staff manager tab</span>
+          <span>Staff manager</span>
         </li>
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
           <span>Logout</span>
@@ -109,7 +109,7 @@ l
         Staff 
       <span class="highlight">lists</span>
       </h2>
-      <input type="text" name="" id="" placeholder="Search">
+      <input type="text" name="" id="incomingSearchInput" placeholder="Search">
             </div>
             <table id="availablePatientList">
                 <thead>
@@ -167,6 +167,9 @@ l
       </div>
     </div>
     </div>
+
+
+    <!----Staff Management--->
     <div class="overlay hidden"></div>
 
 

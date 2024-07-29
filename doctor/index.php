@@ -110,7 +110,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <div class="profile_account hide">
             <img id="image_profile_account" src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="">
             <span><?php echo $fullname ?></span>
-            <button class="btn_submit">Upload Image</button>
            </div>
 
             <div class="image">

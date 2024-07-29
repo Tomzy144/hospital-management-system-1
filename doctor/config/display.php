@@ -231,6 +231,33 @@ $patient_id = $_POST['patient_Id'];
             </table>
           
     </div>
+
+
+     <!---LABOURATORY INFORMATIONS--->
+   <div class="surgery_dropdown" onclick="surgery_section()">
+    <h3>Surgery Information</h3>
+    <i class="bi bi-plus-lg" id="surgery_icon_plus"></i>
+    <i class="bi bi-dash-lg" id="surgery_icon_minus"></i>
+    </div>
+    <div class="surgery_section hide">
+            <table>
+                <thead>
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>Type of Surgery</td>
+                    <td>Surgery Result</td>
+                </thead>
+                <tbody>
+                    <td>22-09-2024</td>
+                    <td>3:30PM</td>
+                    <td>Lorem ipsum dolor</td>
+                    <td>
+                        <button><i class="bi bi-download"></i></button>
+                    </td>
+                </tbody>
+            </table>
+          
+    </div>
  
    <!---RADIOLOGY INFORMATIONS--->
    <div class="radiology_dropdown" onclick="radiology_section()">
@@ -1094,9 +1121,10 @@ $patient_id = $_POST['patient_Id'];
             </div>
             <div class="form-control">
             <label for="">Diagnosis</label>
-            <input type="text" name="" id="condition" placeholder="condition">
+            <input type="text" name="condition" id="condition">
             </div>
         </form>
+        <button id="" class="save">Enter</button>
         </div>
         <!--Refer to doctor-->
         <div class="refer_doc_dropdown" onclick="refer_doc_section()">
@@ -1158,17 +1186,17 @@ $patient_id = $_POST['patient_Id'];
         <form action="">
              <div class="form_control">
                 <label for="">Date of Discharge</label>
-            <input type="date">
+            <input type="date" id="discharged--date">
             </div> 
              <div class="form_control">
                 <label for="">Time of Discharge</label>
-            <input type="time">
+            <input type="time" id="discharged--time">
             </div> 
              <div class="form_control">
                 <label for="">Message</label><br/>
-                <textarea name="" id="" cols="20" rows="5"></textarea>
+                <textarea name="" id="" cols="20" rows="5" id="discharged--message"></textarea>
             </div> 
-            <button type="button" id="btn_save_discharge" class="save" onClick="death_form_popup()">Comfirm Discharge</button>
+            <button type="button" id="btn_save_discharge" class="save">Comfirm Discharge</button>
         </form>
         </div>
    </div>
@@ -1201,64 +1229,7 @@ $patient_id = $_POST['patient_Id'];
         </form>
         </div>
     </div>
-
-    <div class="modal hidden" id="death--booking">
-        <button class="btn--close-modal" onclick="closeModal('death--booking')">&times;</button>
-        <h2 class="modal__header">
-            Death 
-            <span class="highlight">booking</span>
-        </h2>
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="each_sections">
-             <div class="form-control">
-            <label for="">Date of death</label>
-            <input type="date" value="" name="" id="">
-            </div>
-            <div class="form-control">
-            <label for="">Date of birth </label>
-            <input type="date" value="" name="" id="">
-            </div>
-            <div class="form-control">
-            <label for="">Cause of death</label>
-            <input type="text" value="" name="" id="">
-            </div>
-            </div>
-            <h3>Next of kin</h3>   
-            <div class="each_sections">
-            <div class="form-control">
-            <label for="">Full name</label>
-            <input name="" value="" id="message"></input>
-            </div>
-            <div class="form-control">
-            <label for="">Full name</label>
-            <input name="" value="" id="message"></input>
-            </div>
-            <div class="form-control">
-            <label for="">Relationship to deceassed</label>
-            <input name="" value="" id="message"></input>
-            </div>
-            <div class="form-control">
-            <label for="">Contact info</label>
-            <input name="" value="" id="message"></input>
-            </div>
-            </div>
-            <button type="button" id="submit_btn">Transfer</button>
-        </form>
-        </div>
-    </div>
-    <button id="btn" class="save">Enter</button>
-
-
-
  <script>
-       
-        $(document).ready(function() {
-            // Initialize the autocompleter
-            new Def.Autocompleter.Search(
-                'condition',
-                'https://clinicaltables.nlm.nih.gov/api/conditions/v3/search'
-            );
-        });
     </script>
    
 

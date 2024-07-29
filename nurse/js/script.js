@@ -1,36 +1,92 @@
-   //PROFILE IMAGE
-   function click_icon_for_profile(){
-      document.querySelector(".profile_account").classList.toggle("hide");
-   };
+
+function displayUserProfile(){
+  document.querySelector(".profile_account").classList.toggle("hide");
+};
+//////////////////////////////////////////
+///////////////////////////////////////
+// Modal window
+const modal = document.querySelector('.modal');
+
+const overlay = document.createElement('div');
+overlay.className = 'overlay';
+
+const openModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+
+  overlay.style.opacity = 1;
+  document.querySelector('body').appendChild(overlay);
+  modal.classList.remove('hidden');
+}
 
 
+const closeModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  overlay.style.opacity = 0;
+  overlay.classList.add('hidden');
+  document.querySelector('body').removeChild(overlay);
+  modal.classList.add('hidden');
+};
+////////////////////////////////////////////////////////////////////
 
+const sections = document.querySelectorAll('.section');
+const links = document.querySelectorAll('.sidebar-body ul li');
+
+function toggleSidebarLinks(clickedLink){
+  links.forEach(link => link.classList.remove('active'));
+  clickedLink.classList.add('active');
+}
+links.forEach(link => {
+  link.addEventListener('click', function() {
+      toggleSidebarLinks(this);
+  });
+});
+/////////////////////////////////////////////////////
+
+function createDate(){
+const now = new Date();
+const options = {
+day:'numeric',
+month:'numeric',
+year:'numeric',
+hour:'numeric',
+minute:'numeric',
+second:'numeric',
+}
+const dateTime = new Intl.DateTimeFormat(navigator.language, options).format(now)
+document.querySelector('.display__date').textContent = dateTime
+}
+setInterval(() => createDate());
+////////////////////////////////////////////////////////////////////
    
    //PERONAL PROFILE SECTION
    function personal_profile_section(){
-    document.querySelector(".appoitment_section").classList.add("hide");
+    document.querySelector(".list_div").classList.add("hide");
     document.querySelector(".patient-profile").classList.remove("hide");
     document.querySelector(".available-patient-list").classList.add("hide");
    }
 
    function availablePatientList(){
-      document.querySelector(".appoitment_section").classList.add("hide");
+      document.querySelector(".list_div").classList.add("hide");
       document.querySelector(".available-patient-list").classList.remove("hide");
       document.querySelector(".patient-profile").classList.add("hide");
    }
 function appoitmentSection(){
-   document.querySelector(".appoitment_section").classList.remove("hide");
+   document.querySelector(".list_div").classList.remove("hide");
    document.querySelector(".available-patient-list").classList.add("hide");
    document.querySelector(".patient-profile").classList.add("hide");
 }
 
 function selectDoc(){
-  $('.avalable_doctor').removeClass('hide')
-  $('.av_doctor_role').removeClass('hide')
+  openModal('patientBooking');
+  document.querySelector('.av_doctor_role').classList.remove("hide");
+  document.querySelector('.book_patient').classList.add("hide");
+  document.querySelector('.modal').style.width = "40%";
 }
+
 function bookPatient(){
   $('.av_doctor_role').addClass('hide')
   $('.book_patient').removeClass('hide')
+  document.querySelector('.modal').style.width = "70%";
   doctor_id = $()
 }
 
@@ -80,7 +136,7 @@ function updateDoctors() {
 
   
         // Hide container with ID 'appointmentDetailsContainer'
-        var container = document.querySelector('.appoitment_section');
+        var container = document.querySelector('.list_div');
         container.classList.add('hide')
 
         // Remove 'hide' class from elements with class 'all_sections_input'
@@ -468,6 +524,9 @@ function transfer_to_doctor(){
 
 
 
+// const fetchAvailablePatients = async function(){
+//   await fetch('')
+// }
 
 
 
@@ -481,22 +540,3 @@ function transfer_to_doctor(){
 
 
 
-
-
-
-
-
-
-//dont touch i would fix this later, good night😎
-
-//  const links =  document.querySelectorAll('#links');
-//  function toggleSidebarLinks(clickedLink){
-//      links.forEach(link => link.classList.remove('active'));
-//      clickedLink.classList.add('active');
-//  }
- 
-//  links.forEach(link => {
-//      link.addEventListener('click', function() {
-//          toggleSidebarLinks(this);
-//      });
-//  });

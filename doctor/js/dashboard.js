@@ -1,5 +1,6 @@
 'use strict';
 
+
 ///////////////////////////////////////
 // Modal window
 const modal = document.querySelector('.modal');
@@ -104,6 +105,19 @@ function lab_section(){
         document.querySelector("#lab_icon_minus").style.display="none";
     }
 }
+//SURGERY SECTION AS READ ONLY
+function surgery_section(){
+    document.querySelector(".surgery_section").classList.toggle("hide");
+    document.querySelector("#surgery_icon_plus").style.display="none";
+    document.querySelector("#surgery_icon_minus").style.display="block";
+    if(document.querySelector(".surgery_section").classList.contains("hide")){
+        document.querySelector("#surgery_icon_plus").style.display="block";
+        document.querySelector("#surgery_icon_minus").style.display="none";
+    }
+}
+
+
+
 //RADIOLOOGY SECTION AS READ ONLY
 function radiology_section(){
     document.querySelector(".radiology_section").classList.toggle("hide");
@@ -719,8 +733,16 @@ function transfer_to_lab() {
     }
 }
 
-
-
+$(document).ready(function() {
+    if (typeof Def !== 'undefined') {
+        new Def.Autocompleter.Search(
+            'condition',
+            'https://clinicaltables.nlm.nih.gov/api/conditions/v3/search'
+        );
+    } else {
+        console.error("Def is not defined. ");
+    }
+});
 function getDoctorsRoles() {
 
     $('#roles').html('<option>LOADING...</option>'); // Set loading message
@@ -941,5 +963,3 @@ function transfer_to_rad() {
         });
     }
 }
-  
-         
