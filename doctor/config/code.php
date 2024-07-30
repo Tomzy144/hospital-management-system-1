@@ -706,19 +706,18 @@
                 // Prepare the SQL query with the correct number of placeholders
                 $stmt = $conn->prepare("
                 INSERT INTO morgue_appointment_tab
-                (doctor_id, patient_id, date_of_death, time_of_death, doctor_id,morgue_appointment_id)
-                VALUES (?, ?, ?, ?, ?,?)
+                (doctor_id, patient_id, date_of_death, time_of_death, morgue_appointment_id)
+                VALUES (?, ?, ?, ?, ?)
                 ");
                 
                 if ($stmt) {
                     // Bind the parameters
                     $stmt->bind_param(
-                        "ssssss",
+                        "sssss",
                         $doctor_id,
                         $patient_id,
                         $time_of_death,
                         $date_of_death,
-                        $doctor_id,
                         $morgue_appointment_id
                     );
                 
