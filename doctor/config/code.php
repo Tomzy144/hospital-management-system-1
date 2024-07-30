@@ -724,7 +724,7 @@
                 
                     
                     if ($stmt->execute()) {
-                        echo json_encode(array("success" => true, "message" => "Transfer Success"));
+                        echo json_encode(array("success" => true, "message" => "success"));
                     } else {
                         echo json_encode(array("success" => false, "message" => "Error executing query: " . $stmt->error));
                     }
