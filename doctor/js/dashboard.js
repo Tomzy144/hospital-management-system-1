@@ -586,6 +586,7 @@ function gatherDoctorInputs() {
 
     // Combine all inputs into a single object
     const data = {
+        action:action,
         physical_examination,
         pigmentation,
         moisture_temperature,
@@ -650,23 +651,124 @@ function gatherDoctorInputs() {
         [selectedTMJ.name]: selectedTMJ.value,
         [selectedISB.name]: selectedISB.value,
     };
-
-    // Send data to the backend
-    fetch('https://hospital-managment-system/doctor/config/code.php/doctor_input', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
+    var action = 'doctor_input';
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: data,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+            if (data.check === "success") {
+                alert("Patient input has been successuful");
+            } else {
+                console.error('Error:', data.error);
+            }
         },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+        }
     });
+}
+
+$(document).ready(function() {
+if (typeof Def !== 'undefined') {
+    new Def.Autocompleter.Search(
+        'condition',
+        'https://clinicaltables.nlm.nih.gov/api/conditions/v3/search'
+    );
+} else {
+    console.error("Def is not defined. ");
+}
+});
+function getDoctorsRoles() {
+
+$('#roles').html('<option>LOADING...</option>'); // Set loading message
+$('#roles').prop('disabled', true); // Disable the dropdown
+
+var action = 'getDoctorsRoles';
+var roles = $('#roles').val();
+var data = { action: action, roles: roles };
+
+$.ajax({
+  type: 'POST',
+  url: "config/code.php",
+  data: data,
+  cache: false,
+  dataType: 'json',
+  success: function (data) {
+    // Check for success and populate the dropdown
+    if (data.success) {
+      populaterolesDropdown(data.doctorRoles); // Pass the entire array of roles
+    } else {
+      console.error('Error:', data.message);
+    }
+  },
+  error: function (xhr, status, error) {
+    console.error('AJAX Error:', status, error);
+  },
+});
+}
+
+function populaterolesDropdown(doctorRoles) {
+var rolesDropdown = document.getElementById('roles');
+
+
+// Clear existing options
+rolesDropdown.innerHTML = '';
+
+// Add options based on the fetched data
+for (var i = 0; i < doctorRoles.length; i++) {
+  var option = document.createElement('option');
+  option.value = doctorRoles[i].doctor_role_id; // Assuming the bed object has a 'bed_id' property
+  option.id= doctorRoles[i].doctor_role_id;
+
+  // Concatenate bed_number and bed_status_description
+  var optionText = doctorRoles[i].doctor_role_name;
+
+  option.textContent = optionText;
+
+  rolesDropdown.appendChild(option);
+   
+}
+
+// Enable the dropdown after populating options
+$('#roles').on('change', getDoctors);
+$('#roles').prop('disabled', false);
+}
+
+
+//////////////////////////////
+
+
+
+
+function getDoctors() {
+$('#doctors').html('<option>LOADING...</option>'); // Set loading message
+$('#doctors').prop('disabled', true); // Disable the dropdown
+
+var action = 'getDoctors';
+var roles = $('#roles').val();
+var data = { action: action, roles: roles };
+
+$.ajax({
+  type: 'POST',
+  url: "config/code.php",
+  data: data,
+  cache: false,
+  dataType: 'json',
+  success: function (data) {
+    // Check for success and populate the dropdown
+    if (data.success) {
+      populatedoctorDropdown(data.doctor); // Pass the entire array of beds
+    } else {
+      console.error('Error:', data.message);
+    }
+  },
+  error: function (xhr, status, error) {
+    console.error('AJAX Error:', status, error);
+  },
+});
 }
 
 
