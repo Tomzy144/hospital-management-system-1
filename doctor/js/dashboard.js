@@ -531,6 +531,9 @@ function gatherDoctorInputs() {
     const family_social_history = document.getElementById('family_social_history').value;
     const past_surgical_medical_history = document.getElementById('past_sugical_medical_history').value;
 
+
+//admit patient
+    const admitPatient = getSelectedRadioButton('admit--patient');
     // System review section
     const selectedH1 = getSelectedRadioButton('h1');
     const selectedF1 = getSelectedRadioButton('f1');
@@ -582,6 +585,8 @@ function gatherDoctorInputs() {
     // Combine all inputs into a single object
     const data = {
         action:action,
+        checkboxValue,
+        admitPatient,
         physical_examination,
         pigmentation,
         moisture_temperature,
@@ -1137,11 +1142,6 @@ function filterAvailablePatient() {
             }
         });
     }
-
-
-
-
-
  }
 
  

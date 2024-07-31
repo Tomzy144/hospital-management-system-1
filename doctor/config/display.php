@@ -515,6 +515,15 @@ $patient_id = $_POST['patient_Id'];
                     <label for="past_sugical_medical_history">Past Surgical/Medical History</label>
                     <input type="text"  class="complaint-input" id="past_sugical_medical_history">
                     </div>
+                    <div class="form-control">
+                        <label for="headache">Admit Patient?</label>
+                        <div class="radio">
+                        <input type="radio" id="admit" name="admit--patient"/>
+                        <label for="yes">Yes</label>
+                        <input type="radio" id="admit--no" name="admit--patient" />
+                        <label for="no">No</label>
+                        </div>
+        </div>
                     </div>
         </div>
 
@@ -1118,6 +1127,10 @@ $patient_id = $_POST['patient_Id'];
             <div class="form-control">
             <label for="">Categories</label>
             <input type="text" name="" id="">
+            </div>
+            <div class="form-control">
+            <label for="">Diagnosis</label>
+            <input type="text" name="condition" id="condition">
             </div>
             <div class="form-control">
             <label for="">Diagnosis</label>
