@@ -484,11 +484,6 @@ function confirmed_death_section(){
     }
 
 
-    //DEATH FORM
-    function show_death_form(){
-       openModal('death--booking')
-    }
-
 
 
         //Doctor Inputs 
@@ -1097,4 +1092,63 @@ function filterAvailablePatient() {
         availablePatientList.appendChild(noDataMessage);
     }
 }
+ //DEATH FORM
+ function show_death_form(){
+    // openModal('death--booking')
+
+    var patient_id = $("#patient_id").val();
+    var doctor_id = $("#sdoctor_id").val();
+    var date_of_death = $("#date_of_death").val();
+    var cause_of_death = $("#cause_of_death").val();
+    var time_of_death =$('#time_of_death').val();
+
+    if (cause_of_death === ""||time_of_death==""||date_of_death=="" ) {
+        alert("Fill the required fields");
+    } else {
+        var $btnSubmit = $('#btn_save_confirmed_death');
+        var btnText = $btnSubmit.html();
+        $btnSubmit.html('Processing...');
+        $btnSubmit.prop('disabled', true);
+
+        var action = 'confirm_death';
+        var dataString = "action=" + action + "&patient_id=" + patient_id + "&doctor_id=" + doctor_id + "&cause_of_death=" + cause_of_death +"&date_of_death=" + date_of_death  +"&time_of_death=" + time_of_death ;
+
+        $.ajax({
+            type: 'POST',
+            url: "config/code.php",
+            data: dataString,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data.check === "success") {
+                    alert(" Transfer successful");
+                    $btnSubmit.html('Transfer');
+                    $btnSubmit.prop('disabled', false);
+                } else {
+                    console.error('Error:', data.error);
+                    $btnSubmit.html(btnText);
+                    $btnSubmit.prop('disabled', false);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX Error:', error);
+                $btnSubmit.html(btnText);
+                $btnSubmit.prop('disabled', false);
+            }
+        });
+    }
+
+
+
+
+
+ }
+
+ 
 document.querySelector('#incomingSearchInput').addEventListener('input', filterAvailablePatient);
+
+
+
+
+
+   

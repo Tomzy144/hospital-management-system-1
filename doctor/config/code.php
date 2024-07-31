@@ -693,7 +693,6 @@
 /////////////////////////////
             case 'confirm_death':
                 $patient_id = $_POST['patient_id'];
-                $patient_name = $_POST['patient_name'];
                 $date_of_death = $_POST['date_of_death']; 
                 $doctor_id = $_POST['doctor_id'];
                 $time_of_death = $_POST['time_of_death']; 
@@ -707,25 +706,24 @@
                 // Prepare the SQL query with the correct number of placeholders
                 $stmt = $conn->prepare("
                 INSERT INTO morgue_appointment_tab
-                (doctor_discharge_id, patient_id, patient_name, date_of_death, time_of_death, doctor_id)
-                VALUES (?, ?, ?, ?, ?, ?)
+                (doctor_id, patient_id, date_of_death, time_of_death, morgue_appointment_id)
+                VALUES (?, ?, ?, ?, ?)
                 ");
                 
                 if ($stmt) {
                     // Bind the parameters
                     $stmt->bind_param(
-                        "ssssss",
-                        $doctor_discharge_id,
+                        "sssss",
+                        $doctor_id,
                         $patient_id,
-                        $patient_name,
                         $time_of_death,
                         $date_of_death,
-                        $doctor_id
+                        $morgue_appointment_id
                     );
                 
                     
                     if ($stmt->execute()) {
-                        echo json_encode(array("success" => true, "message" => "Patient discharged successfully"));
+                        echo json_encode(array("success" => true, "message" => "success"));
                     } else {
                         echo json_encode(array("success" => false, "message" => "Error executing query: " . $stmt->error));
                     }

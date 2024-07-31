@@ -1212,19 +1212,22 @@ $patient_id = $_POST['patient_Id'];
         <i class="bi bi-toggle-on" id="confirmed_death_on" onclick="toogle_off_confirmed_death()"></i>
         </div>
             <div class="confirmed_death_form hidden">
-        <form action="">
+        <form action="" method="post" enctype="multipart/form-data">
              <div class="form_control">
                 <label for="">Date of Death</label>
-            <input type="date">
+            <input type="date" id="date_of_death" value="">
             </div> 
              <div class="form_control">
                 <label for="">Time of Death</label>
-            <input type="time">
+            <input type="time" id="time_of_death" value="">
             </div> 
              <div class="form_control">
                 <label for="">Cause of Death</label><br/>
-                <textarea name="" id="" cols="20" rows="5"></textarea>
+                <textarea name="" id="cause_of_death" cols="20" rows="5" value=""></textarea>
             </div> 
+            <input type="hidden" id ='patient_id' value="<?php echo $patient_id?>">
+            <input type="hidden" id ='sdoctor_id' value="<?php echo $s_doctor_id?>">
+            
             <button type="button" id="btn_save_confirmed_death" class="save" onclick="show_death_form()">Comfirm Dead</button>
         </form>
         </div>
