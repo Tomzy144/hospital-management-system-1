@@ -17,11 +17,16 @@
     <meta property="og:url" content="<?php echo $website_address?>" />
 
     <!-- Include jQuery -->
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script> -->
     <!-- Include the CSS and JavaScript for autocomplete-lhc -->
-    <link href='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/19.2.4/autocomplete-lhc.min.css' rel="stylesheet">
-    <script src='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/19.2.4/autocomplete-lhc.min.js'></script>
+  
 
     <!-- Include custom scripts -->
     <script defer src="<?php echo $website_url?>/doctor/js/dashboard.js"></script>
     <script defer src="<?php echo $website_url?>/doctor/js/aos.js"></script>
+    <script defer src="<?php echo $website_url?>/doctor/js/jquery-v3.6.1.min.js"></script>
+
+    
+    <link href='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/19.2.4/autocomplete-lhc.min.css' rel="stylesheet">
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/19.2.4/autocomplete-lhc.min.js'></script>

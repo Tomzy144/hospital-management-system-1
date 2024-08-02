@@ -90,7 +90,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <?php include 'meta.php'?>
 </head>
 <body>
+<script>
+new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/icd9cm_dx/v3/search',
+{tableFormat: true, valueCols: [0], colHeaders: ['Code', 'Name']});  
 
+</script>
 
 
 
@@ -110,6 +114,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <div class="profile_account hide">
             <img id="image_profile_account" src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="">
             <span><?php echo $fullname ?></span>
+           
            </div>
 
             <div class="image">
@@ -143,7 +148,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <div class="list_div">
         <div class="patient_list_div" >
         <div class="search_bar_container">
-                <h3>Appoitment details</h3>
+                <h3>Appoitment details</h3>  
+                <input type="text" id="condition" placeholder="Condition">
+              
                     <input type="text" placeholder="Search here" id="incomingSearchInput">
                 </div>
 
@@ -321,6 +328,7 @@ function accept(patient_Id) {
 </div>
 <div class="black--background hidden"></div>
   
+
 
 </body>
 </html>
