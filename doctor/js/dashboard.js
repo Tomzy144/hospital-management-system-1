@@ -583,7 +583,7 @@ function gatherDoctorInputs() {
     const selectedISB = getSelectedRadioButton('is_b');
 
     // Combine all inputs into a single object
-    const data = {
+    const info = {
         action:action,
         admitPatient,
         physical_examination,
@@ -654,7 +654,7 @@ function gatherDoctorInputs() {
     $.ajax({
         type: 'POST',
         url: "config/code.php",
-        data: data,
+        data: info,
         cache: false,
         dataType: 'json',
         success: function (data) {
@@ -670,16 +670,7 @@ function gatherDoctorInputs() {
     });
 }
 
-$(document).ready(function() {
-if (typeof Def !== 'undefined') {
-    new Def.Autocompleter.Search(
-        'condition',
-        'https://clinicaltables.nlm.nih.gov/api/conditions/v3/search'
-    );
-} else {
-    console.error("Def is not defined. ");
-}
-});
+
 function getDoctorsRoles() {
 
 $('#roles').html('<option>LOADING...</option>'); // Set loading message
@@ -834,16 +825,16 @@ function transfer_to_lab() {
     }
 }
 
-$(document).ready(function() {
-    if (typeof Def !== 'undefined') {
-        new Def.Autocompleter.Search(
-            'condition',
-            'https://clinicaltables.nlm.nih.gov/api/conditions/v3/search'
-        );
-    } else {
-        console.error("Def is not defined. ");
-    }
-});
+// $(document).ready(function() {
+//     if (typeof Def !== 'undefined') {
+//         new Def.Autocompleter.Search(
+//             'condition',
+//             'https://clinicaltables.nlm.nih.gov/api/conditions/v3/search'
+//         );
+//     } else {
+//         console.error("Def is not defined. ");
+//     }
+// });
 function getDoctorsRoles() {
 
     $('#roles').html('<option>LOADING...</option>'); // Set loading message

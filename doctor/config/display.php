@@ -1132,10 +1132,10 @@ $patient_id = $_POST['patient_Id'];
             <label for="">Diagnosis</label>
             <input type="text" name="condition" id="condition">
             </div>
-            <div class="form-control">
+            <!-- <div class="form-control">
             <label for="">Diagnosis</label>
             <input type="text" name="condition" id="condition">
-            </div>
+            </div> -->
         </form>
         <button id="" class="save">Enter</button>
         </div>
