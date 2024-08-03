@@ -524,7 +524,7 @@ $patient_id = $_POST['patient_Id'];
                         <label for="no">No</label>
                         </div>
         </div>
-                    </div>
+        </div>
         </div>
 
                     <!--End of the complaint section--->

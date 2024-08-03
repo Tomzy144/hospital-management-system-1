@@ -1,5 +1,28 @@
 'use strict';
 
+// Modal window
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.btn--close-modal');
+const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+
+
+const openModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+
+const closeModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+////////////////////////////////////////////////////////////////////
+
 const sections = document.querySelectorAll('.section');
 const allProfiles = document.querySelectorAll('.allProfiles');
 const links = document.querySelectorAll('.sidebar-body ul li');
@@ -28,6 +51,58 @@ function timeDate(){
   document.querySelector('.display__date').textContent = date
 }
 setInterval(()=> timeDate())
+
+
+
+const message = document.createElement('div');
+const successMessage = function(text){
+message.className= 'success alert';
+message.innerHTML = `
+  <div class="content">
+      <div class="icon">
+      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+    </div>
+      <h2>${text}</h2>
+    </div>
+`;
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
+
+const infoMessage = function(text){
+message.className= 'info alert';
+message.innerHTML = `
+  <div class="content">
+      <div class="icon">
+      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+    </div>
+      <h2>${text}</h2>
+    </div>
+`;
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
+
+const warningMessage = function(text){
+message.className= 'warning alert';
+message.innerHTML = `
+  <div class="content">
+      <div class="icon">
+      <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+    </div>
+      <h2>${text}</h2>
+    </div>
+`;
+
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
+const dangerMessage = function(text){
+message.className= 'danger alert';
+message.innerHTML = text;
+document.querySelector('body').appendChild(message);
+setTimeout(() => message.classList.add('hide'),3000);
+}
 
 
 //BOOK APPOITMENT WITH AVAILABLE DOCTOR
@@ -187,47 +262,19 @@ function patient_admission_form_section(){
   document.querySelector('.form_sections').style.display = 'flex';
   document.querySelector('.all_patient_list').classList.add("hide")
   document.querySelector('.appoitment_section').classList.add("hide")
-  document.querySelector("#btn_appoitment").style.display = "none"
-  document.querySelector('.profile_container').style.display = 'none';
 };
 
 function walkin_patient_form(){
-  $('.overlay_div').removeClass('hide');
-  document.querySelector('.form_sections').style.display = 'flex';
+  openModal('walkin--patient');
   document.querySelector('.all_patient_list').classList.add("hide")
   document.querySelector('.checkup_section').classList.add("hide")
-  $('.walkin_admission_form').removeClass('hide');
-}
-function close_walkin_patient_form(){
-  $('.walkin_admission_form').addClass('hide');
 }
 
 function checkup_form(){
-  $('.checkup_section').removeClass('hide');
-}
-function close_checkup_form(){
-  $('.checkup_section').addClass('hide');
+  openModal('check--up--section')
 }
 
 
-
-
-function activateFingerPrint(){
-  document.querySelector('.finger_print_div').classList.remove("hide");
-}
-function deactivateFingerPrint(){
-  document.querySelector('.finger_print_div').classList.add("hide");
-}
-function close_profile(){
-  document.querySelector('.checkup_section').classList.add("hide");
-  document.querySelector('.profile_container').classList.add('hide');
-  $('.print_icon').css({
-    color:'#fff'
-  })
-  $('.finger_print_div').css({
-    backgroundColor:'rgb(42, 87, 215)'
-  })
-}
 
 
 function _show_book_popup() {
@@ -370,8 +417,9 @@ if($('#gender1').is(':checked')){
   
 
 if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||(kname=='') ||(krelationship=='') ||(kaddress=='') ||(kphonenumber=='') ||(vkgender=='') ||(occupation=='')||(past_obsterics=='') ||(sexual_history=='')||(past_disease=='')||(family_disease=='') ||(past_surgery=='')||(medical_history=='')||(health_history=='') || (hospital_plan =="")){
-  $('.alert_div').removeClass('hide');
-  $('.alert_div').html('<div></div> USER ERROR! <i class="bi-exclamation-triangle"></i><br />Fill All Fields.').fadeIn(500).delay(5000).fadeOut(500);
+
+  warningMessage('Registration Error <br/> Fill All Fields');
+  // warningMessage('Please fill all input fields');
   }else{
    //////////////// get btn text ////////////////
        $('#proceed-btn').html('PROCESSING...');
@@ -393,18 +441,11 @@ if((fullname=='')||(phonenumber=='')||(dob=='')||(address=='')||(vgender=='') ||
                 var phonenumber = data.phonenumber;
                 
                 if(scheck==0){ //user Active
-                  $('.alert_div').removeClass('hide');
-                  $('alert_div').html('<div></div> REGISTRATION ERROR! <i class="bi-exclamation-triangle"></i><br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(500);
-
-                  $('.alert_div').removeClass('hide');
-                  $('.alert_div').html(`<div>PATIENT PHONE NUMBER IS ALREADY REGISTERED <i class="bi-exclamation-triangle"></i></div>`).fadeIn(500).delay(5000).fadeOut(100);
+                  warningMessage("REGISTRATION ERROR! </br>Email Address Cannot Be Used")
+                  warningMessage(`PATIENT PHONE NUMBER IS ALREADY REGISTERED`)   
               }else{ //user suspended
-                    $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
-                  $('.alert_div').removeClass('hide');
-                  $('.alert_div').addClass('successful');
-                  $('.alert_div').html(`<div>Registration Successful </div> <br/> This patient's ID is  ${fpatient_id} `).fadeIn(500).delay(5000).fadeOut(100);
                     getLatestImage(fpatient_id);
-                   
+                    successMessage(`Registration Successful </br>This patient's ID is  ${fpatient_id} `)          
               }
               $('#proceed-btn').html('<i class="bi-check2"></i> SUBMIT');
               document.getElementById('proceed-btn').disabled=false;
@@ -511,14 +552,16 @@ function _upload_profile_pix(fpatient_id,latestImage) {
 function create_family_card() {
   // $('#generation_alert').html('GENERATING ID...');
   $('.family_plan_section').addClass('hide');
-  $('#generating_id').removeClass('hide');
-  $('#generating_id').addClass('pending');
-  $('#generating_id').text('GENERATING ID....');
+  // $('#generating_id').removeClass('hide');
+  // $('#generating_id').addClass('pending');
+  // $('#generating_id').text('GENERATING ID....');
+  infoMessage('Generating card ID .........');
   setTimeout(function(){
-    $('#generating_id').addClass('hide');
-    $('#generating_id').removeClass('hide');
-    $('#generating_id').addClass('successful');
-    $('#generating_id').html('GENERATED ID<i class="bi-check"></i>').fadeIn(500).delay(5000).fadeOut(100);
+    // $('#generating_id').addClass('hide');
+    // $('#generating_id').removeClass('hide');
+    // $('#generating_id').addClass('successful');
+    // $('#generating_id').html('GENERATED ID<i class="bi-check"></i>').fadeIn(500).delay(5000).fadeOut(100);
+    successMessage('Generated card ID')
   }, 3000);
 
 
@@ -956,9 +999,9 @@ function _upload_profile_pix2(fpatient_id2,latestImage) {
       cache: false,
       processData: false,
       success: function(html) {
-          $('#success-div').html('<div><i class="bi-check"></i></div> PROFILE PICTURE UPDATED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
           $('#passport').val('');
           location.reload(true);
+          successMessage('PROFILE PICTURE UPDATED SUCCESSFULLY')
       },
       error: function(xhr, status, error) {
           console.error("Error uploading image:", error);
@@ -986,8 +1029,7 @@ function _add_patient2() {
   
 
 if((wpatient_name=='')||(wphonenumber=='')||(wdob=='')||(waddress=='')||(vgender=='')){
-  $('.alert_div').removeClass('hide');
-  $('.alert_div').html('<div> USER ERROR! <br/>Fill All fields<i class="bi-exclamation-triangle"></i></div>').fadeIn(500).delay(5000).fadeOut(100);
+  warningMessage('Registration Error </br>Fill All Fields')
 
   }else{
    //////////////// get btn text ////////////////
@@ -1011,15 +1053,8 @@ if((wpatient_name=='')||(wphonenumber=='')||(wdob=='')||(waddress=='')||(vgender
                 var wphonenumber = data.wphonenumber;
                 
                 if(scheck==0){ //user Active
-                  $('#warning-div').html('<div><i class="bi-exclamation-triangle"></i></div> REGISTRATION ERROR!<br /><span>Email Address Cannot Be Used</span>').fadeIn(500).delay(5000).fadeOut(100);
-                  window.alert("Patient's phonenumber is already registered");
               }else{ //user suspended
-                    $('#success-div').html('<div><i class="bi-check"></i></div> STAFF REGISTERED SUCCESSFULLY').fadeIn(500).delay(5000).fadeOut(100);
-                    // _get_page('active-staff','active-staff');
-                    // alert_close();
-                    $('.alert_div').removeClass('hide');
-                    $('.alert_div').addClass('successful');
-                    $('.alert_div').html(`<div>Registration Successful <br/>This patients ID is ${fpatient_id2}</div>`).fadeIn(500).delay(5000).fadeOut(100);
+                    successMessage(`Registration Successful <br/>This patients ID is ${fpatient_id2}`)
                     getLatestImage2(fpatient_id2);
                    
               }

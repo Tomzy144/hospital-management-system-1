@@ -585,7 +585,6 @@ function gatherDoctorInputs() {
     // Combine all inputs into a single object
     const data = {
         action:action,
-        checkboxValue,
         admitPatient,
         physical_examination,
         pigmentation,

@@ -5,87 +5,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<div class="navbar">
-        <div class="display__date">
-        </div>
-          <div class="profile">
-            <div class="profile_account hide">
-            <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
-            <span>Doc. Henculus White</span>
-            <button class="btn_submit">Upload Image</button>
-           </div>
-
-            <div class="image">
-            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
-            <div class="active_on"></div>
-            </div>
-            <span>Doc. Henculus White</span>
-            <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
-                 </div>
-                </div>
-
-    <div class="sidebar">
-    <div class="sidebar__header"></div>
-    <div class="sidebar-body">
-      <ul>
-        <li class="links active" onclick="patient_admission_form_section()">
-          <span>Patient admission form</span>
-        </li>
-        <li class="links" onclick="walkin_patient_form()" >
-          <span>Walkin patient admission Form</span>
-        </li>
-        <li class="links" onclick="checkup_form()">
-          <span>Check up</span>
-        </li>
-        <li class="links" onclick="patient_list()">
-          <span>Patient list</span>
-        </li>
-        <li class="links" onclick="_walkin_patient_list()">
-          <span>Walkin patient list</span>
-        </li>
-        <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
-          <span>Logout</span>
-          <form method="post" action="../config/code.php" id="logoutform">
-            <input type="hidden" name="action" value="logout"/>
-          </form>
-        </li>
-      </ul>
-    </div>
-  </div>
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
  $staff_id= $_POST['staff_id'];
 ?>
@@ -155,8 +74,6 @@
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
             <h4>Doc. Henculus White</h4>
-            <button class="btn_submit">Upload Image</button>
-            <!-- <h4>change password</h4> -->
         </div>
             <div class="image">
             <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
@@ -168,39 +85,6 @@
           </div>
         </div>
     </div>
-
-    <!-- <div class="sidebar">
-            <div class="sidebar-body">
-                <ul>
-                    <li onclick="patient_admission_form_section()" id="links" class="active"> Patient admission form 
-                    </li>
-                    <li onclick="walkin_patient_form()" id="links">
-                        <span>Walkin patient admission Form</span>
-                    </li>
-                    <li onclick="checkup_form()" id="links">
-                        <span>Check up</span>
-                    </li>
-                    <li onclick="patient_list()" id="links">
-                        <span>Patient list</span>
-                    </li>
-                    <li onclick="_walkin_patient_list()" id="links">
-                        <span>Walkin patient list</span>
-                    </li>
-                    <li onclick="document.getElementById('logoutform').submit();" id="links">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <span>Logout</span>
-                        <form method="post" action="../config/code.php" id="logoutform">
-                    <input type="hidden" name="action" value="logout"/>    
-                </form>
-                    </li>
-                </ul>
-            </div>
-        </div> -->
-
-
-
-
-
 
         <div class="sidebar">
     <div class="sidebar__header"></div>
@@ -234,31 +118,44 @@
 
          <!--END OF SIDEBAR AND NAVBAR-->
 
-         <!----ALERTS DIV-->
  <!--START OF ADMISSION FORM1-->
- <div class="overlay_div hide"></div>
-    <div class="form_sections">
-    <div class="alert_div hide" id='generating_id'></div>
-    <div class="alert_div hide" id='generated_id'></div>
-    <div class="alert_div hide" id='successful_registered'></div>
-    <div class="alert_div hide" id='patient_id'></div>
+
                <!----START OF CHECKUP SECTION-->
-               <div class="checkup_section hide">
-            <!-- <div class="form-control">
-                <label for="">Patient Name</label>
-                <input type="text" name="" id="">
-            </div>
-            <div class="form-control">
-            <label for="">Patient Id</label>
-                <input type="text" name="" id="">
-            </div> -->
-            <div  id="authenticate" onclick="activateFingerPrint()">
-            <i class="bi bi-fingerprint"></i> Fingerprint authentication</div>
-            <div class="finger_print_div hide">
-            <!-- <i class="bi bi-x-lg close_icon" onclick="deactivateFingerPrint()" ></i> -->
-            <i class="bi bi-fingerprint print_icon" onclick="display_profile()"></i>
-            </div> 
-        </div>
+
+
+
+        <div class="modal hidden" id="check--up--section">
+        <div id="fingerPrint">
+        <i class="bi bi-fingerprint" id="greenColourFingerPrint"></i>
+    </div>
+    <h2 class="modal__header">
+            Patient 
+            <span class="highlight">profile</span>
+        </h2>
+    <div class="patient--profile">
+    <ul class="personal--detail">
+                      <li>Juliet Patrick</li>
+                        <li>PAT0003</li>
+                        <li>Female</li>
+                        <li>23-09-2023</li>
+                        <li>531 RockVale Dr, Piedmont, South Carolina.</li>
+                        <li>+122 3521 222</li>
+                        <li>Active</li>
+                    </ul>
+                    <div class="patient-image">
+                        <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+                        <div>
+                            <button class="" onclick="appoitment_booking()">Book an Appoitment</button>
+                        </div>
+                        </div>
+                    </div>
+                        </div>
+
+
+
+
+
+
         <!---END OF CHECKUP SECTION--->
     <div class="new_intake_admission_form">
     <div class="form-container">
@@ -435,7 +332,6 @@
         </div>
     </div>
 </div>
-
     </div>
 
 <h3>Social history</h3>
@@ -485,8 +381,8 @@
              <!--END OF ADMISSION FORM1-->
 
         <!--START OF WALKIN ADMISSION FORM2-->
-            <div class="walkin_admission_form hide">
-            <i  class="bi bi-x-square close_icon" onclick="close_walkin_patient_form()"></i>
+            <div class="modal walkin_admission_form hidden" id="walkin--patient">
+            <button class="btn--close-modal" onclick="closeModal('walkin--patient')">&times;</button>
             <div class="form-container">
         <h3>WalkIn admission form</h3>
         <div class="walkin_in_section_upload_image">
@@ -566,6 +462,7 @@
     </div>
     </div>
     </div>
+
 <!--END OF WALKIN ADMISSION FORM2-->
 
 
@@ -775,7 +672,6 @@
 
         <!-----START ALREADY EXISTING PROFILE-->
                 <div class="profile_container hide">
-                <!-- <i class="bi bi-x-lg close_icon" onclick="close_profile()"></i> -->
                     <div class="div1">
                     <h3>Date of birth : 23-09-2023</h3>
                         <h3>Address: 531 RockVale Dr, Piedmont, South Carolina.</h3>
@@ -840,7 +736,7 @@
                 </form>
             </div>
             </div>
-
+            <div class="overlay hidden"></div>
         <script src="js/receptionist.js"></script>
 </body>
 </html>
