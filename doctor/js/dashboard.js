@@ -581,9 +581,10 @@ function gatherDoctorInputs() {
     const selectedSGD = getSelectedRadioButton('sgd');
     const selectedTMJ = getSelectedRadioButton('tmj');
     const selectedISB = getSelectedRadioButton('is_b');
-
+    var action= 'doctor_input';
     // Combine all inputs into a single object
     const info = {
+        
         action:action,
         admitPatient,
         physical_examination,
@@ -650,7 +651,7 @@ function gatherDoctorInputs() {
         [selectedTMJ.name]: selectedTMJ.value,
         [selectedISB.name]: selectedISB.value,
     };
-    var action = 'doctor_input';
+   
     $.ajax({
         type: 'POST',
         url: "config/code.php",
