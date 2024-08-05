@@ -1196,20 +1196,23 @@ $patient_id = $_POST['patient_Id'];
         <i class="bi bi-toggle-on" id="discharge_on" onClick="toogle_off_discharged()"></i>
         </div>
             <div class="discharge_form hidden">
-        <form action="">
+        <form action="" method="post" enctype="multipart/form-data">
              <div class="form_control">
                 <label for="">Date of Discharge</label>
-            <input type="date" id="discharged--date">
+            <input type="date" id="discharged_date">
             </div> 
              <div class="form_control">
                 <label for="">Time of Discharge</label>
-            <input type="time" id="discharged--time">
+            <input type="time" id="discharged_time">
             </div> 
              <div class="form_control">
                 <label for="">Message</label><br/>
-                <textarea name="" id="" cols="20" rows="5" id="discharged--message"></textarea>
+                <textarea name="" id="discharge_message" cols="20" rows="5" ></textarea>
+                <input type="hidden" name="" id="patient_id"  value="<?php echo $patient_id ?>">
+                <input type="hidden" name="" id="patient_name"  value="<?php echo $patient_name ?>">
+                <input type="hidden" id ='sdoctor_id' value="<?php echo $s_doctor_id?>">
             </div> 
-            <button type="button" id="btn_save_discharge" class="save">Comfirm Discharge</button>
+            <button type="button" onclick="confirm_discharge();" id="btn_save_discharge" class="save">Comfirm Discharge</button>
         </form>
         </div>
    </div>

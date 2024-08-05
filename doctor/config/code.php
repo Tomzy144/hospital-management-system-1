@@ -646,95 +646,139 @@
     
         case 'confirm_discharge':
             $patient_id = $_POST['patient_id'];
-            $patient_name = $_POST['patient_name'];
-            $date_of_discharge = $_POST['date_of_discharge']; 
+            $date_of_discharge = $_POST['discharged_date']; 
             $doctor_id = $_POST['doctor_id'];
-            $time_of_discharge = $_POST['time_of_discharge']; 
-            
+            $time_of_discharge = $_POST['discharged_time']; 
+            $discharge_message = $_POST['discharge_message']; 
+        
             // Get the appointment ID sequence
             $sequence = $callclass->_get_sequence_count($conn, 'DDIS');
             $array = json_decode($sequence, true);
             $no = $array[0]['no'];
             $doctor_discharge_id = 'DDIS' . $no;
-            
-            // Prepare the SQL query with the correct number of placeholders
-            $stmt = $conn->prepare("
-            INSERT INTO doctor_discharge_tab
-            (doctor_discharge_id, patient_id, patient_name, date_of_discharge, time_of_discharge, doctor_id)
-            VALUES (?, ?, ?, ?, ?, ?)
+        
+            // Prepare the first SQL query to insert into doctor_discharge_tab
+            $stmt1 = $conn->prepare("
+                INSERT INTO doctor_discharge_tab
+                (doctor_discharge_id, patient_id, date_of_discharge, time_of_discharge, doctor_id, discharge_message )
+                VALUES (?, ?, ?, ?, ?,?)
             ");
-            
-            if ($stmt) {
-                // Bind the parameters
-                $stmt->bind_param(
+        
+            if ($stmt1) {
+                // Bind the parameters for the first query
+                $stmt1->bind_param(
                     "ssssss",
                     $doctor_discharge_id,
                     $patient_id,
-                    $patient_name,
                     $date_of_discharge,
                     $time_of_discharge,
-                    $doctor_id
+                    $doctor_id,
+                    $discharge_message
                 );
-            
-                
-                if ($stmt->execute()) {
-                    echo json_encode(array("success" => true, "message" => "Patient discharged successfully"));
+        
+                if ($stmt1->execute()) {
+                    // Prepare the second SQL query to update patient_tab
+                    $stmt2 = $conn->prepare("
+                        UPDATE patient_tab
+                        SET category_id = 1
+                        WHERE patient_id = ?
+                    ");
+        
+                    if ($stmt2) {
+                        // Bind the parameter for the second query
+                        $stmt2->bind_param(
+                            "s",
+                            $patient_id
+                        );
+        
+                        if ($stmt2->execute()) {
+                            echo json_encode(array("success" => true, "message" => "Patient discharged successfully and category updated"));
+                        } else {
+                            echo json_encode(array("success" => false, "message" => "Error executing second query: " . $stmt2->error));
+                        }
+        
+                        $stmt2->close();
+                    } else {
+                        echo json_encode(array("success" => false, "message" => "Error preparing second query: " . $conn->error));
+                    }
                 } else {
-                    echo json_encode(array("success" => false, "message" => "Error executing query: " . $stmt->error));
+                    echo json_encode(array("success" => false, "message" => "Error executing first query: " . $stmt1->error));
                 }
-            
-                
-                $stmt->close();
+        
+                $stmt1->close();
             } else {
-                echo json_encode(array("success" => false, "message" => "Error preparing query: " . $conn->error));
+                echo json_encode(array("success" => false, "message" => "Error preparing first query: " . $conn->error));
             }
             break;
+        
+        
 
 /////////////////////////////
-            case 'confirm_death':
-                $patient_id = $_POST['patient_id'];
-                $date_of_death = $_POST['date_of_death']; 
-                $doctor_id = $_POST['doctor_id'];
-                $time_of_death = $_POST['time_of_death']; 
-                
-                // Get the appointment ID sequence
-                $sequence = $callclass->_get_sequence_count($conn, 'MORGAPP');
-                $array = json_decode($sequence, true);
-                $no = $array[0]['no'];
-                $morgue_appointment_id = 'MORGAPP' . $no;
-                
-                // Prepare the SQL query with the correct number of placeholders
-                $stmt = $conn->prepare("
-                INSERT INTO morgue_appointment_tab
-                (doctor_id, patient_id, date_of_death, time_of_death, morgue_appointment_id)
-                VALUES (?, ?, ?, ?, ?)
-                ");
-                
-                if ($stmt) {
-                    // Bind the parameters
-                    $stmt->bind_param(
-                        "sssss",
-                        $doctor_id,
-                        $patient_id,
-                        $time_of_death,
-                        $date_of_death,
-                        $morgue_appointment_id
-                    );
-                
-                    
-                    if ($stmt->execute()) {
-                        echo json_encode(array("success" => true, "message" => "success"));
-                    } else {
-                        echo json_encode(array("success" => false, "message" => "Error executing query: " . $stmt->error));
-                    }
-                
-                    
-                    $stmt->close();
-                } else {
-                    echo json_encode(array("success" => false, "message" => "Error preparing query: " . $conn->error));
-                }
-                break;
+case 'confirm_death':
+    $patient_id = $_POST['patient_id'];
+    $date_of_death = $_POST['date_of_death'];
+    $doctor_id = $_POST['doctor_id'];
+    $time_of_death = $_POST['time_of_death'];
+    
+    // Get the appointment ID sequence
+    $sequence = $callclass->_get_sequence_count($conn, 'MORGAPP');
+    $array = json_decode($sequence, true);
+    $no = $array[0]['no'];
+    $morgue_appointment_id = 'MORGAPP' . $no;
+    
+    // Prepare the SQL query to insert into morgue_appointment_tab
+    $stmt1 = $conn->prepare("
+        INSERT INTO morgue_appointment_tab
+        (doctor_id, patient_id, date_of_death, time_of_death, morgue_appointment_id)
+        VALUES (?, ?, ?, ?, ?)
+    ");
+    
+    if ($stmt1) {
+        // Bind the parameters for the first query
+        $stmt1->bind_param(
+            "sssss",
+            $doctor_id,
+            $patient_id,
+            $date_of_death,
+            $time_of_death,
+            $morgue_appointment_id
+        );
         
+        if ($stmt1->execute()) {
+            // Prepare the second SQL query to update patient_tab
+            $stmt2 = $conn->prepare("
+                UPDATE patient_tab
+                SET status_id = 2
+                WHERE patient_id = ?
+            ");
+            
+            if ($stmt2) {
+                // Bind the parameter for the second query
+                $stmt2->bind_param(
+                    "s",
+                    $patient_id
+                );
+                
+                if ($stmt2->execute()) {
+                    echo json_encode(array("success" => true, "message" => "Patient death confirmed and category updated"));
+                } else {
+                    echo json_encode(array("success" => false, "message" => "Error executing second query: " . $stmt2->error));
+                }
+                
+                $stmt2->close();
+            } else {
+                echo json_encode(array("success" => false, "message" => "Error preparing second query: " . $conn->error));
+            }
+        } else {
+            echo json_encode(array("success" => false, "message" => "Error executing first query: " . $stmt1->error));
+        }
+        
+        $stmt1->close();
+    } else {
+        echo json_encode(array("success" => false, "message" => "Error preparing first query: " . $conn->error));
+    }
+    break;
+
         }
 
     ?>

@@ -1116,7 +1116,7 @@ function filterAvailablePatient() {
             cache: false,
             dataType: 'json',
             success: function (data) {
-                if (data.check === "success") {
+                if ((data.success)) {
                     alert(" Transfer successful");
                     $btnSubmit.html('Transfer');
                     $btnSubmit.prop('disabled', false);
@@ -1140,6 +1140,48 @@ document.querySelector('#incomingSearchInput').addEventListener('input', filterA
 
 
 
+function confirm_discharge(){
+    var patient_id = $("#patient_id").val();
+    var doctor_id = $("#sdoctor_id").val();
+    var discharged_date = $("#discharged_date").val();
+    var discharged_time = $("#discharged_time").val();
+    var discharge_message =$('#discharge_message').val();
 
+    if (cause_of_death === ""||time_of_death==""||date_of_death=="" ) {
+        alert("Fill the required fields");
+    } else {
+        var $btnSubmit = $('#btn_save_discharge');
+        var btnText = $btnSubmit.html();
+        $btnSubmit.html('Processing...');
+        $btnSubmit.prop('disabled', true);
+
+        var action = 'confirm_discharge';
+        var dataString = "action=" + action + "&patient_id=" + patient_id + "&doctor_id=" + doctor_id + "&discharged_date=" + discharged_date +"&discharged_time=" + discharged_time  +"&discharge_message=" + discharge_message ;
+
+        $.ajax({
+            type: 'POST',
+            url: "config/code.php",
+            data: dataString,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                if ((data.success)) {
+                    alert(" Transfer successful");
+                    $btnSubmit.html('Confirm Discharge');
+                    $btnSubmit.prop('disabled', false);
+                } else {
+                    console.error('Error:', data.error);
+                    $btnSubmit.html(btnText);
+                    $btnSubmit.prop('disabled', false);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX Error:', error);
+                $btnSubmit.html(btnText);
+                $btnSubmit.prop('disabled', false);
+            }
+        });
+    }
+}
 
    
