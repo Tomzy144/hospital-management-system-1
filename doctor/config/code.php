@@ -779,6 +779,32 @@ case 'confirm_death':
     }
     break;
 
+
+    case 'surgical_procedure':
+
+        $patient_id = $_POST['patient_id'];
+        $past_surgery = $_POST['past_surgery'];
+        $procedure = $_POST['procedure'];
+        $phonenumber = $_POST['phonenumber'];
+    
+        $sequence = $callclass->_get_sequence_count($conn, 'SURGAPP');
+        $array = json_decode($sequence, true);
+        $no = $array[0]['no'];
+        $surgial_appointment_id = 'SURGAPP' . $no;
+    
+        $query = "INSERT INTO `surgical_suite_appointment_tab`
+                  (`patient_id`, `surgial_appointment_id`, `past_surgery`, `procedure`, `phonenumber`, `time`) 
+                  VALUES ('$patient_id', '$surgial_appointment_id', '$past_surgery', '$procedure', '$phonenumber', now())";
+    
+        if (mysqli_query($conn, $query)) {
+            echo json_encode(array("check" => "success"));
+        } else {
+            echo json_encode(array("check" => "failure", "error" => mysqli_error($conn)));
+        }
+    
+      break;
+
+
         }
 
     ?>

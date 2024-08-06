@@ -1184,4 +1184,50 @@ function confirm_discharge(){
     }
 }
 
-   
+function surgical_procedure(){
+
+    var patient_id = $("#patient_id").val();
+    // var patient_name = $("#patient_name").val();
+    var message = $("#message").val();
+    var past_surgery = $("#past_surgery").val();
+    var procedure = $("#procedure").val();
+    var phonenumber =$("#phone_number").val();
+
+    if (message === "") {
+        alert("Fill the message field");
+    } else {
+        var $btnSubmit = $('#pro_btn');
+        var btnText = $btnSubmit.html();
+        $btnSubmit.html('Processing...');
+        $btnSubmit.prop('disabled', true);
+
+        var action = 'surgical_procedure';
+        var dataString = "action=" + action + "&patient_id=" + patient_id + "&past_surgery=" + past_surgery + "&message=" + message + "&procedure" + procedure + "&phonenumber"+ phonenumber;
+
+        $.ajax({
+            type: 'POST',
+            url: "config/code.php",
+            data: dataString,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data.check === "success") {
+                    alert("Patient has been transferred to the Surgical suit successfully");
+                    $btnSubmit.html('Transfer');
+                    $btnSubmit.prop('disabled', false);
+                    close_tranfer_patient_lab();
+                } else {
+                    console.error('Error:', data.error);
+                    $btnSubmit.html(btnText);
+                    $btnSubmit.prop('disabled', false);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX Error:', error);
+                $btnSubmit.html(btnText);
+                $btnSubmit.prop('disabled', false);
+            }
+        });
+    }
+
+}

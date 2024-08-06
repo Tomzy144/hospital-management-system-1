@@ -1087,22 +1087,22 @@ $patient_id = $_POST['patient_Id'];
             <div class="each_sections">
              <div class="form-control">
             <label for="">Procedure</label>
-            <input type="text" value="" name="" id="">
+            <input type="text" value="" name="" id="procedure">
             </div>
             <div class="form-control">
             <label for="">Phone Number</label>
-            <input type="text" value="" name="" id="">
+            <input type="text" value="<?php echo $phonenumber ?>" name="" id="phone_number">
             </div>
             <div class="form-control">
             <label for="">Past Surgery</label>
-            <input type="text" value="" name="" id="">
+            <input type="text" value="" name="" id="past_surgery">
             </div>
             <div class="form-control">
             <label for="">Message</label>
             <input name="" value="" id="message"></input>
             </div>
             </div>
-            <button type="button" id="submit_btn" onclick="transfer_to_lab()">Transfer</button>
+            <button type="button" id="pro_btn" onclick="surgical_procedure()">Transfer</button>
         </form>
         </div>
     </div>
