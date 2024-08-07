@@ -1,4 +1,31 @@
 
+///////////////////////////////////////
+// Modal window
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+
+
+
+
+const openModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+
+const closeModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+//////////////////////////////////////
+
+
+
+
 const sections = document.querySelectorAll('.section');
 const allProfiles = document.querySelectorAll('.allProfiles');
 const links = document.querySelectorAll('.sidebar-body ul li');
@@ -91,8 +118,8 @@ window.onload = function() {
                       if(checkbox.checked){
                         sum += parseInt(checkbox.value, 10);
                       }
-                      let testSum = document.querySelector("#total");
-                    testSum.textContent = `$${sum}.00` 
+                      let testSum = document.querySelector("#totalLabTest");
+                    testSum.textContent =  `₦ ${new Intl.NumberFormat('en-NG').format((sum))}`
         })
         }
         checkboxs.forEach(function(checkbox){
@@ -104,16 +131,22 @@ window.onload = function() {
 }
 
 //TEST  BOOKING
-function show_test_booking(){
-        document.querySelector(".test_booking").classList.remove("hide");
-}
-function hide_test_booking(){
-        document.querySelector(".test_booking").classList.add("hide");
+
+function uncheckLabTest(){
         const checkboxs = document.querySelectorAll(".checkbox");
         checkboxs.forEach(function(checkbox){
               checkbox.checked = false;
                 })
 }
+
+
+function showtestBooking(){
+    openModal('test--booking');
+}
+function collapseTestBooking(){
+    closeModal('test--booking');
+}
+
    
 
 
@@ -231,3 +264,28 @@ function form9(){
     }
 };
 
+function bookNow() {
+    var action = 'bookLabouratoryTest';
+    var testAmount = $('#totalLabTest');
+    console.log(testAmount)
+    var data = { action: action, testAmount: testAmount };
+  
+    $.ajax({
+      type: 'POST',
+      url: "config/code.php",
+      data: data,
+      cache: false,
+      dataType: 'json',
+      success: function (data) {
+        // Check for success and populate the dropdown
+        if (data.success) {
+        console.log("Lab test booked")
+        } else {
+          console.error('Error:', data.message);
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error('AJAX Error:', status, error);
+      },
+    });
+  }

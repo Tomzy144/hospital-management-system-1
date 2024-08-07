@@ -740,14 +740,26 @@
         <label for="">Bleeding Time and Clotting Time</label>
 </div>
 </form>
-<button id="btn" class="save" onClick="show_test_booking()">Book</button>
+<button id="btn" class="save" onclick="showtestBooking()">Book</button>
 </div>
 <!--- END OF LABOURATORY INPUT-->
 
-<!--- START OF TEST BOOKING SECTION-->
-<div class="test_booking hide">
-<i class="bi bi-x-square" onclick="hide_test_booking()"></i>
-<table id="dataTable">
+<!--- END OF TEST BOOKING SECTION-->
+
+
+
+
+
+
+
+<div class="modal hidden" id="test--booking">
+<button class="btn--close-modal" onclick="closeModal('test--booking'); uncheckLabTest()">&times;</button>
+
+        <h2 class="modal__header">
+            Book 
+            <span class="highlight">labouartory test</span>
+        </h2>
+        <table id="dataTable">
         <thead>
                 <td>Test </td>
                 <td>Amount</td>
@@ -755,14 +767,13 @@
         <tbody>
         </tbody>
 </table>
-<div class="total">
+<div class="totalprice">
         <p>Total</p>
-        <p id="total">$0.000.00</p>
+        <p id="totalLabTest"></p>
 </div>
-<button>Book Now</button>
-</div>
-<!--- END OF TEST BOOKING SECTION-->
-
+<button onclick="bookNow()">Book Now</button>
+<button onclick="collapseTestBooking()">Add more test</button>
+    </div>
 
 
 <!--- START OF TEST RESULT UPLOAD-->
@@ -796,8 +807,9 @@
         </form>
 </div>
 <button>Submit</button>
-<!--- END OF TEST RESULT UPLOAD-->
-</div>             
+
+</div>   
+<div class="overlay hidden"></div>          
 <script src="js/script.js"></script>
 <script src="js/jquery-v3.6.1.min.js"></script>
 </body>
