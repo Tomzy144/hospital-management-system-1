@@ -149,8 +149,8 @@
                                             <thead>
                                                 <tr>
                                                     <td>S/N</td>
-                                                    <td>PASSPORT</td>
                                                     <td>Patient Name</td>
+                                                    <td>PASSPORT</td>
                                                     <td>Patient ID</td>
                                                     <td>Date</td>
                                                     <td>Time</td>
@@ -732,7 +732,7 @@
         <label for="">Bone Marrow Aspiration </label>
 </div>
 <div class="form_control">
-        <input type="checkbox" id="platelet" value="6000" class="checkbox"
+        <input type="checkbox" id="platelet" value="6000" class="checkbox">
         <label for="">Platelet Count (#6,000)</label>
 </div>
 <div class="form_control">
@@ -740,7 +740,7 @@
         <label for="">Bleeding Time and Clotting Time</label>
 </div>
 </form>
-<button id="btn" class="save" onClick="show_test_booking()">Book</button>
+<button id="btn" class="save" onClick="show_test_booking();">Book</button>
 </div>
 <!--- END OF LABOURATORY INPUT-->
 
