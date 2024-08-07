@@ -266,22 +266,36 @@ function form9(){
 
 function bookNow() {
     var action = 'bookLabouratoryTest';
-    var testAmount = $('#totalLabTest');
-    console.log(testAmount)
-    var data = { action: action, testAmount: testAmount };
+    var dataTable = document.querySelector("#dataTable tbody");
+    var totalLabTestElement = document.getElementById('totalLabTest');
+    var totalLabTest = totalLabTestElement.textContent || totalLabTestElement.innerText;
+    console.log(totalLabTest)
+    var tests = {};
+  
+    dataTable.querySelectorAll('tr').forEach(function(row) {
+      var test = row.cells[0].textContent;
+      var amount = row.cells[1].textContent;
+      tests[test] = amount;
+    });
+  
+    var data = { 
+      action: action, 
+      totalAmount: totalLabTest, 
+      tests: tests 
+    };
   
     $.ajax({
       type: 'POST',
       url: "config/code.php",
-      data: data,
+      data: JSON.stringify(data),
       cache: false,
+      contentType: 'application/json',
       dataType: 'json',
-      success: function (data) {
-        // Check for success and populate the dropdown
-        if (data.success) {
-        console.log("Lab test booked")
+      success: function (response) {
+        if (response.success) {
+          console.log("Lab test booked");
         } else {
-          console.error('Error:', data.message);
+          console.error('Error:', response.message);
         }
       },
       error: function (xhr, status, error) {

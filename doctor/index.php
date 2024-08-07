@@ -67,25 +67,12 @@ $page = "doctor_dash"; // Assign the value "doctor_dash" to the $page variable
 
 ?>
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Dashboard</title>
-    <!-- <link rel="stylesheet" href="./dashboard.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href='css/awesome-font/css/font-awesome.min.css'>
-    <link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/> -->
 <link rel="stylesheet" href="css/icons-1.10.2/font/bootstrap-icons.css">
 <?php include 'meta.php'?>
 </head>
@@ -114,7 +101,6 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
             <div class="profile_account hide">
             <img id="image_profile_account" src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="">
             <span><?php echo $fullname ?></span>
-           
            </div>
 
             <div class="image">
@@ -126,34 +112,30 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
                  </div>
                 </div>
 
-    <div class="sidebar">
-    <div class="sidebar__header"></div>
-    <div class="sidebar-body">
-      <ul>
-        <li class="links available">
-          <span>Appoitments</span>
-        </li>
-        <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
-          <span>Logout</span>
-          <form method="post" action="../config/code.php" id="logoutform">
-            <input type="hidden" name="action" value="logout"/>
-          </form>
-        </li>
-      </ul>
-    </div>
-  </div>
-
+              <div class="sidebar">
+              <div class="sidebar__header"></div>
+              <div class="sidebar-body">
+                <ul>
+                  <li class="links available">
+                    <span>Appoitments</span>
+                  </li>
+                  <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
+                    <span>Logout</span>
+                    <form method="post" action="../config/code.php" id="logoutform">
+                      <input type="hidden" name="action" value="logout"/>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
 
     <div class="list_div">
         <div class="patient_list_div" >
         <div class="search_bar_container">
                 <h3>Appoitment details</h3>  
-                <input type="text" id="condition" placeholder="Condition">
-              
                     <input type="text" placeholder="Search here" id="incomingSearchInput">
                 </div>
-
                 <div class="body_sec" id="appointmentDetailsContainer">
                     <?php 
                     $s_doctor_id_escaped = $conn->real_escape_string($s_doctor_id);
@@ -199,12 +181,12 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
                     echo "<td>" . htmlspecialchars($row["reason"]) . "</td>";
                     echo "<td>";
                     ?>
-                    <button class="accept-btn" type="button" onclick="accept('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Accept</button>
+                    <button class="accept-btn" type="button" onclick="accept('<?php echo htmlspecialchars($row["patient_id"]); ?>')"><p>accept</p></button>
                     <?php
                     echo "</td>";
                     echo "<td>";
                     ?>
-                    <button class="reject-btn" type="button" onclick="reject('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Reject</button>
+                    <button class="reject-btn" type="button" onclick="reject('<?php echo htmlspecialchars($row["patient_id"]); ?>')"><p>reject</p></button>
                     <?php
                     echo "</td>";
                     echo "</tr>";

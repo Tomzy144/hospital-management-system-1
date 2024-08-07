@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'SEGOEUI';
-    src: url('awesome-font/css/SEGOEUI.TTF') format('truetype'); 
+    font-family: 'Inter';
+    src: url('./static/Inter_18pt-SemiBold.ttf') format('truetype'); 
     font-weight: normal; /* Specify the weight if needed */
     font-style: normal; /* Specify the style if needed */
   }
@@ -8,14 +8,14 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* animation: fadeIn 2s ease-in-out; */
+    font-family:'Inter';
 }
 
 :root{
     --bg-color:#fff;
     --dg-color:#000000;
     --extra-small-font:0.70rem;
+    --heading--font:1.3rem;
     ---small-font:0.80rem;
     --medium-font:1.2rem;
     --large-font:1.8rem;
@@ -147,7 +147,7 @@ justify-content: center;
 position:relative;
 color: var(--bg-color);
 font-weight: 700;
-font-size: var(--medium-font);
+font-size: var(--heading--font);
 align-items: center;
 }
 
@@ -159,6 +159,8 @@ align-items: center;;
 }
 .profile span{
 color: #ffffff;
+text-transform: uppercase;;
+font-size: var(--heading--font);
 }
 
 .profile .bi-caret-down-fill{
@@ -178,6 +180,7 @@ right: 0.5%;
 padding: 1rem;
 display: flex;
 flex-direction: column;
+box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
 align-items: center;
 border-bottom-left-radius: 5px;
 border-bottom-right-radius: 5px;
@@ -196,7 +199,7 @@ padding: 0.7rem;
 color: rgb(42, 87, 215);
 border: none;
 border-radius: 5px;
-font-size: 1rem;
+font-size: var(--heading--font);
 transition: all  ease-in-out 0.6s;
 cursor: pointer;
 margin: 1rem 0;
@@ -210,14 +213,11 @@ border: 1px solid #fff;
 .profile_account span{
 text-align: left;
 cursor: pointer;
+font-size: var(--heading--font);
 }
 .profile_account h3{
 color: rgb(255, 255, 255);
-}
-h3{
-font-weight:normal;
-font-size: 1.3rem;;
-letter-spacing: 2px;
+font-size: var(--heading--font);
 }
 .profile img{
 width: 50px;
@@ -329,7 +329,11 @@ cursor: pointer;
     border-radius: 10px;
 }
 
-
+h3{
+    font-weight:normal;
+    font-size: 1.3rem;;
+    letter-spacing: 2px;
+    }
 
 
 
