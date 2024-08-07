@@ -323,19 +323,22 @@ cursor: pointer;
     text-align: center;
 }
 table thead  td{
-    color: rgb(42, 87, 215);
-    padding: 0.5em;
-    font-size: 1em;
-    letter-spacing: 3px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     text-align: center;
+    color: rgb(42, 87, 215);
+    background-color: rgb(255, 255, 255);
     padding: .77em .58em .74em .58em;
+      padding-right: 0.58em;
     padding-right: 0.58em;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    vertical-align: top;
+    font-size: 1.2rem;
+    vertical-align: center;
     line-height: 1.2;
+    border-bottom: 1px solid #fff;
+    font-weight: 550;
 }
  table tbody td img{
     width: 50px;
@@ -350,14 +353,16 @@ table thead  td{
     color: rgb(255, 255, 255);
     background-color: rgb(42, 87, 215);
     padding: .77em .58em .74em .58em;
+      padding-right: 0.58em;
     padding-right: 0.58em;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    font-size: 1rem;
+    font-size: 1.2rem;
     vertical-align: center;
     line-height: 1.2;
     border-bottom: 1px solid #fff;
+    font-weight: 550;
 }
 .accept-btn{
     padding: 0.5rem;
@@ -485,10 +490,11 @@ color: #fff;
 }
 .lab_container h3{
     color: #fff;
+  font-weight: 550;
 }
 
 h3{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 h4{
     font-size: 1.2rem;
@@ -679,7 +685,9 @@ border-radius: 100%;
   display: flex;
   justify-content: space-around;
   color: #2a57d7;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 550;
   text-transform: uppercase;
 }
 
