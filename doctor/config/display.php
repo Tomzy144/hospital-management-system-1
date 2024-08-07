@@ -1087,7 +1087,7 @@ $patient_id = $_POST['patient_Id'];
             <div class="each_sections">
              <div class="form-control">
             <label for="">Procedure</label>
-            <input type="text" value="" name="" id="procedure">
+            <input type="text" value="" name="" id="sprocedure">
             </div>
             <div class="form-control">
             <label for="">Phone Number</label>
@@ -1095,11 +1095,11 @@ $patient_id = $_POST['patient_Id'];
             </div>
             <div class="form-control">
             <label for="">Past Surgery</label>
-            <input type="text" value="" name="" id="past_surgery">
+            <input type="text" value="<?php echo $past_surgery?>" name="" id="past_surgery">
             </div>
             <div class="form-control">
             <label for="">Message</label>
-            <input name="" value="" id="message"></input>
+            <input type="text" name="" value="" id="smessage">
             </div>
             </div>
             <button type="button" id="pro_btn" onclick="surgical_procedure()">Transfer</button>

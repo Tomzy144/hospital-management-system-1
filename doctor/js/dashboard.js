@@ -1188,13 +1188,13 @@ function surgical_procedure(){
 
     var patient_id = $("#patient_id").val();
     // var patient_name = $("#patient_name").val();
-    var message = $("#message").val();
+    var smessage = $("#smessage").val();
     var past_surgery = $("#past_surgery").val();
-    var procedure = $("#procedure").val();
+    var procedure = $("#sprocedure").val();
     var phonenumber =$("#phone_number").val();
 
-    if (message === "") {
-        alert("Fill the message field");
+    if (smessage === ""|| procedure ==="") {
+        alert("Fill the required fields");
     } else {
         var $btnSubmit = $('#pro_btn');
         var btnText = $btnSubmit.html();
@@ -1202,7 +1202,7 @@ function surgical_procedure(){
         $btnSubmit.prop('disabled', true);
 
         var action = 'surgical_procedure';
-        var dataString = "action=" + action + "&patient_id=" + patient_id + "&past_surgery=" + past_surgery + "&message=" + message + "&procedure" + procedure + "&phonenumber"+ phonenumber;
+        var dataString = "action=" + action + "&patient_id=" + patient_id + "&past_surgery=" + past_surgery + "&smessage=" + smessage + "&procedure=" + procedure + "&phonenumber="+ phonenumber;
 
         $.ajax({
             type: 'POST',
