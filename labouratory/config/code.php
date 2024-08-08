@@ -21,7 +21,7 @@
 
         $tests = $_POST['tests'];
         $total_amount = $_POST['total_amount'];
-        $message = $_POST['message'];
+        $patient_id = $_POST['patient_id'];
     
         $sequence = $callclass->_get_sequence_count($conn, 'LABAPP');
         $array = json_decode($sequence, true);

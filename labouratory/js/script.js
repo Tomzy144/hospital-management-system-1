@@ -268,6 +268,7 @@ function bookNow() {
     var action = 'bookLabouratoryTest';
     var dataTable = document.querySelector("#dataTable tbody");
     var totalLabTestElement = document.getElementById('totalLabTest');
+    var patient_id = document.getElementById('patient_id');
     var totalLabTest = totalLabTestElement.textContent || totalLabTestElement.innerText;
     console.log(totalLabTest)
     var tests = {};
@@ -281,7 +282,8 @@ function bookNow() {
     var data = { 
       action: action, 
       totalAmount: totalLabTest, 
-      tests: tests 
+      tests: tests,
+      patient_id:patient_id
     };
   
     $.ajax({
