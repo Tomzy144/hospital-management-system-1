@@ -293,9 +293,9 @@ function bookNow() {
       dataType: 'json',
       success: function (response) {
         if (response.success) {
-          console.log("Lab test booked");
+         alert("Lab test booked");
         } else {
-          console.error('Error:', response.message);
+            alert('Error:', response.message);
         }
       },
       error: function (xhr, status, error) {
