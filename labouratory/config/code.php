@@ -23,14 +23,14 @@
         $total_amount = $_POST['total_amount'];
         $patient_id = $_POST['patient_id'];
     
-        $sequence = $callclass->_get_sequence_count($conn, 'LABAPP');
+        $sequence = $callclass->_get_sequence_count($conn, 'ACCTAPP');
         $array = json_decode($sequence, true);
         $no = $array[0]['no'];
-        $lab_scientist_appointment_id = 'LABAPP' . $no;
+        $account_appointment_id = 'ACCTAPP' . $no;
     
-        $query = "INSERT INTO `lab_appointment_tab`
-                  (`patient_id`, `lab_scientist_appointment_id`, `message`, `patient_name`, `time`) 
-                  VALUES ('$patient_id', '$lab_scientist_appointment_id', '$message', '$patient_name', now())";
+        $query = "INSERT INTO `account_appointment_tab`
+                  (`patient_id`, `account_appointment_id`, `tests`, `total_amount`, `time`) 
+                  VALUES ('$patient_id', '$account_appointment_id', '$tests', '$total_amount', now())";
     
         if (mysqli_query($conn, $query)) {
             echo json_encode(array("check" => "success"));
