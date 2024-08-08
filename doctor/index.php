@@ -279,11 +279,6 @@ function accept(patient_Id) {
         hidden.classList.remove("hide");
       }
     });
-
-    // document.addEventListener('click', function(event) {
-    //   console.log('Event type:', event.type); // Output the type of event
-    //   console.log('Event target:', event.target); // Output the target of the event
-    // });
   });
 }
 

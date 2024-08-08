@@ -471,6 +471,7 @@ h3{
 }
 h4{
     font-size: 1.2rem;
+    font-weight: 500;
 }
 .each_sections {
     display: flex;
@@ -554,9 +555,37 @@ h4{
     border-radius: 4px;
     box-sizing: border-box;
   }
-  input[type="radio"]{
-    width: fit-content;
-  }
+
+  /* Specific styling for checkboxes */
+input[type="radio"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    appearance: none;
+    padding: 0;
+    border-radius: 100%;
+    -webkit-appearance: none; /* for Safari */
+    -moz-appearance: none; /* for Firefox */
+    background-color: #fff;
+    border: 2px solid rgb(42, 87, 215);
+    position: relative;
+}
+
+/* Change background color and checkmark visibility when the radio is checked */
+input[type="radio"]:checked {
+    background-color: rgb(42, 87, 215);
+    border: 1px solid #fff;
+}
+
+input[type="radio"]:checked::after {
+    content: '\2713'; /* Checkmark symbol */
+    color: white;
+    /* font-size: 18px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
   input[type=submit] {
     width: 100%;
     background-color: rgb(42, 87, 215);
