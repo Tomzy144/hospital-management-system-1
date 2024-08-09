@@ -242,7 +242,7 @@ const confirmDialog = (text, onConfirm) => {
 
   yesButton.addEventListener('click', () => {
     onConfirm();
-    successMessage(`You ca now have access `)
+    successMessage(`You can now have access `)
     message.remove();
   });
 

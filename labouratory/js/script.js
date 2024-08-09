@@ -150,42 +150,9 @@ function collapseTestBooking(){
    
 
 
-function click_labouratory_examination(patient_id){
-    $(".appoitment_section").addClass("hide");
-    $(".lab_input ").removeClass("hide");
-    $('.approved_appoitment').addClass('hide')
-    
-}
 
-function accept(patient_Id) {
-    confirmDialog("Are you sure you want to accept this patient?", () => {
-      $('.all_sections_input').fadeIn(500);
-  
-      // Construct data string to send in the AJAX request
-      var dataString = 'patient_Id=' + patient_Id;
-  
-      // Perform AJAX request
-      $.ajax({
-        type: "POST", // HTTP method
-        url: 'config/display.php', // URL of the PHP script
-        data: dataString, // Data to send with the request
-        cache: false, // Disable caching
-        success: function(html) {
-          $('.search_bar_container').addClass('hide');
-          // On success, update content of elements with class 'all_sections_input' with the received HTML
-          $('.all_sections_input').html(html);
-  
-          // Hide container with ID 'appointmentDetailsContainer'
-          var container = document.getElementById('appointmentDetailsContainer');
-          container.style.display = "none";
-  
-          // Remove 'hide' class from elements with class 'all_sections_input'
-          var hidden = document.querySelector(".all_sections_input");
-          hidden.classList.remove("hide");
-        }
-      });
-    });
-  }
+
+
 
 
 //Lab  Inputs
