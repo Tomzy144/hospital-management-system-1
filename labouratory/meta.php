@@ -28,10 +28,10 @@
 <meta property="og:site_name" content="<?php echo $thename?>">
 <meta property="og:url" content="<?php echo $website_address?>"/>
 
-<!-- <script src="?php echo $website_url?>/js/jquery-v3.6.1.min.js"></script>
-<script src="?php echo $website_url?>/js/aos.js"></script>  -->
+<!-- <script src="?php echo $website_url?>/js/jquery-v3.6.1.min.js"></script>--->
+<script src="<?php echo $website_url?>/labouratory/js/aos.js"></script>
 
-<script src="<?php echo $website_url?>/js/jquery-v3.6.1.min.js"></script> 
-    <script src="<?php echo $website_url?>/js/script.js"></script> 
+<script src="<?php echo $website_url?>/labouratory/js/jquery-v3.6.1.min.js"></script> 
+    <script src="<?php echo $website_url?>/labouratory/js/script.js"></script> 
        
 
