@@ -664,3 +664,72 @@ function nurse_login(nurse_email,nurse_password,nurse_id){
 }
 
 
+//////////emergency unit login 
+
+
+function _emergency_unit_sign_in(){ 
+    var emergency_unit_email = $('#emergency_unit_email').val();
+    var emergency_unit_password = $('#emergency_unit_password').val();
+    var emergency_unit_id = $('#emergency_unit_id').val();
+    if((emergency_unit_email!='')&&(emergency_unit_password!='')&&(emergency_unit_id!='')){
+        emergency_unit_login(emergency_unit_email,emergency_unit_password,emergency_unit_id);
+    }else{
+      $('#staff_verification').removeClass('hide');
+          $('#staff_verification').addClass('vf');
+          $('#staff_verification').html(`Field in the neccessary field <i class="bi-exclamation-triangle"></i></i>`)
+          $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
+    }
+  };
+  
+  
+  
+  
+  ///////////////////// emergency_unit login ///////////////////////////////////////////
+  function emergency_unit_login(emergency_unit_email,emergency_unit_password,emergency_unit_id){
+    var action='emergency_unit_login_check';
+    
+   //////////////// get btn text ////////////////
+   var btn_text=$('#emergency_unit_login_btn').html();
+   $('#emergency_unit_login_btn').html('Authenticating...');
+   document.getElementById('emergency_unit_login_btn').disabled=true;
+   ////////////////////////////////////////////////	
+    
+    var dataString ='action='+ action+'&emergency_unit_email='+ emergency_unit_email + '&emergency_unit_password='+ emergency_unit_password + '&emergency_unit_id='+ emergency_unit_id;
+   
+   $.ajax({
+   type: "POST",
+   url: "config/code.php",
+   data: dataString,
+   dataType: 'json',
+   cache: false,
+   success: function(data){
+    var scheck = data.check;
+  
+   if(scheck==1){
+      $('#staff_verification').removeClass('hide');
+      $('#staff_verification').removeClass('vf');
+      $('#staff_verification').html('<div>LOGIN SUCCESSFUL! <i class="bi bi-hand-thumbs-up-fill"></i></div> ').fadeIn(100).fadeOut(1000);
+    $('#emergency_unit_loginform').submit();
+    // window.parent("location=emergency_unit/");
+    
+    
+   }else if(scheck==2){
+      $('#staff_verification').html(`Account does not exist <i class="bi-exclamation-triangle"></i>`)
+      $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
+      $('#staff_verification').removeClass('hide');
+      $('#staff_verification').addClass('vf');
+             $('#staff_verification').html('<div></div> Account Suspended<br /><span>Contact the admin for help</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
+    }else{
+      $('#staff_verification').removeClass('hide');
+          $('#staff_verification').addClass('vf');
+      $('#staff_verification').html('<div></div> Login Error!<br /><span>Invalid Login Details</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
+    }
+    $('#emergency_unit_login_btn').html(btn_text);
+    document.getElementById('emergency_unit_login_btn').disabled=false;
+       $('#emergency_unit_login_btn').html('<i class="fa fa-sign-in"></i> Log-In');
+   }
+   });
+  }
+  
+  
+  

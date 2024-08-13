@@ -349,7 +349,7 @@ if($s_staff_id != '') {
                     <input name="action" value="emergency_unit_login" type="hidden" />
                 </div>
                 <!-- Login button -->
-                <button type="button" class="btn" onClick="isEmergency_manager_active()">Login</button>
+                <button type="button" id="emergency_unit_login_btn" class="btn" onclick="_emergency_unit_sign_in();">Login</button>
             </form>
         </div>
 
