@@ -114,8 +114,23 @@ if ($_POST && !empty($_POST['nurse_email'])) {
     $nurse_password=($_SESSION['nurse_password']);
 
 
-?>
 
+
+////////// login session
+
+/////for emergency units
+if ($_POST && !empty($_POST['emergency_unit_email'])) {
+    $_SESSION['emergency_unit_email'] = $_POST['emergency_unit_email'];
+    }
+    $emergency_unit_email=$_SESSION['emergency_unit_email'];
+    if ($_POST && !empty($_POST['emergency_unit_password'])) {
+    $_SESSION['emergency_unit_password'] = $_POST['emergency_unit_password'];
+    
+    }
+    $emergency_unit_password=($_SESSION['emergency_unit_password']);
+
+
+?>
 
 
 

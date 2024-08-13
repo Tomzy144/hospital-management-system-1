@@ -326,18 +326,18 @@ if($s_staff_id != '') {
             <!-- Title for the login form -->
             <h3 class="login-form-h1">Login (Emergency Manager)</h3>
             <!-- Emergency Manager login form -->
-            <form>
+            <form action="config/code.php" id="emergency_unit_loginform" enctype="multipart/form-data" method="post">
                 <!-- Email field -->
                 <div class="_form_control">
                     <label for='email'>Email</label>
                     <i class="bi-envelope"></i>
-                    <input type="email" name="email" autoComplete='off'/> 
+                    <input type="email" name="emergency_unit_email" autoComplete='off'/> 
                 </div>
                 <!-- ID field -->
                 <div class="_form_control">
                     <label for='number'>Your ID</label>
                     <i class="bi-key"></i>
-                    <input type="number" name="number" autoComplete='off'/> 
+                    <input type="text" name="number" id="emergency_unit_id" autoComplete='off'/> 
                 </div>
                 <!-- Password field -->
                 <div class="_form_control">
@@ -345,7 +345,8 @@ if($s_staff_id != '') {
                     <i class="bi-lock"></i>
                     <i class="bi bi-eye show_password hide" id="_show_matanity_password" onclick="show_staff_password()"></i>
                     <i class="bi bi-eye-slash lock_password" id="_lock_matanity_password" onclick="show_staff_password()"></i>
-                    <input type="password" id="password" name="spass" class="all_password" autocomplete="off">
+                    <input type="password" id="emergency_unit_id_password" name="spass" class="all_password" autocomplete="off">
+                    <input name="action" value="emergency_unit_login" type="hidden" />
                 </div>
                 <!-- Login button -->
                 <button type="button" class="btn" onClick="isEmergency_manager_active()">Login</button>
