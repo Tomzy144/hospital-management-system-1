@@ -481,7 +481,7 @@
 						// echo $s_emergency_unit_id;				
 					?>
 								<script>
-									window.parent(location="../emergency_unit/");
+									window.parent(location="../emergency_manager/");
 								</script>
 					<?php
 	
