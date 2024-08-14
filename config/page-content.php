@@ -331,7 +331,7 @@ if($s_staff_id != '') {
                 <div class="_form_control">
                     <label for='email'>Email</label>
                     <i class="bi-envelope"></i>
-                    <input type="email" name="emergency_unit_email" autoComplete='off'/> 
+                    <input type="email" name="emergency_unit_email" id="emergency_unit_email" autoComplete='off'/> 
                 </div>
                 <!-- ID field -->
                 <div class="_form_control">
@@ -345,7 +345,7 @@ if($s_staff_id != '') {
                     <i class="bi-lock"></i>
                     <i class="bi bi-eye show_password hide" id="_show_matanity_password" onclick="show_staff_password()"></i>
                     <i class="bi bi-eye-slash lock_password" id="_lock_matanity_password" onclick="show_staff_password()"></i>
-                    <input type="password" id="emergency_unit_id_password" name="spass" class="all_password" autocomplete="off">
+                    <input type="password" id="emergency_unit_password" name="spass" class="all_password" autocomplete="off">
                     <input name="action" value="emergency_unit_login" type="hidden" />
                 </div>
                 <!-- Login button -->
