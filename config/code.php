@@ -435,6 +435,64 @@
 			break;
 
 
+
+				/////////////////////emergency_units
+
+
+						
+				case 'emergency_unit_login_check': // for emergency_unit login
+					$emergency_unit_email=trim($_POST['emergency_unit_email']);
+				///	$temp_password=trim(($_POST['password']));
+					$emergency_unit_password=trim(($_POST['emergency_unit_password']));
+					$emergency_unit_id=trim(($_POST['emergency_unit_id']));
+	
+						$query=mysqli_query($conn,"SELECT * FROM emergency_unit_tab WHERE `email`='$emergency_unit_email' AND `password`='$emergency_unit_password' AND `emergency_unit_id` = '$emergency_unit_id'");
+						$usercount = mysqli_num_rows($query);
+						if ($usercount>0){
+							$usersel=mysqli_fetch_array($query);
+							$emergency_unit_id=$usersel['emergency_unit_id'];
+							$status_id=$usersel['status_id'];
+							
+								if ($status_id==1){
+									$check=1; ///// account is active
+	
+									
+								}else if($status_id==2){
+									$check=2; ///// account is suspended
+									
+								}else {
+									$check=0;
+								}
+						}else{
+							$check=0;
+						}
+										
+						echo json_encode(array("check" => $check, )); 
+				break;
+	
+	
+				case 'emergency_unit_login': // login from index
+					$userquery = mysqli_query ($conn,"SELECT * FROM `emergency_unit_tab` WHERE email = '$email' AND `password` = '$emergency_unit_password' AND status_id=1") ;
+							$usersel=mysqli_fetch_array($userquery);
+							$emergency_unit_id=$usersel['emergency_unit_id'];
+							$_SESSION['emergency_unit_id'] = $emergency_unit_id;
+							$s_emergency_unit_id=$_SESSION['emergency_unit_id'];
+							mysqli_query($conn,"UPDATE `emergency_unit_tab` SET last_login=NOW() WHERE emergency_unit_id='$s_emergency_unit_id'") or die("cannot update") ; //// update last login
+						// echo $s_emergency_unit_id;				
+					?>
+								<script>
+									window.parent(location="../emergency_unit/");
+								</script>
+					<?php
+	
+	
+				// <!-- for checking action and page  -->
+	
+						
+						
+				break;
+
+
 	
 
 
