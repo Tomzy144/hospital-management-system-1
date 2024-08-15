@@ -1,5 +1,42 @@
 <?php include '../backend/config/connection.php';?>
-<?php include '../config/doctor-session-validation.php';?>
+<?php include '../config/emergency_unit-session-validation.php';?>
+
+<?php
+$emergency_unit_id = $_POST['emergency_unit_id'];
+?>
+
+<?php    
+
+$fetch_emergency_unit_profile = $callclass->_get_emergency_unit_details($conn, $s_emergency_unit_id);
+$emergency_unit_profile_array = json_decode($fetch_emergency_unit_profile, true);
+$fullname = $emergency_unit_profile_array[0]['fullname'];
+$email = $emergency_unit_profile_array[0]['email'];
+$phonenumber = $emergency_unit_profile_array[0]['phonenumber'];
+// $role_id= $emergency_unit_profile_array[0]['role_id'];
+$status_id = $emergency_unit_profile_array[0]['status_id'];
+$date = $emergency_unit_profile_array[0]['date'];
+$last_login = $emergency_unit_profile_array[0]['last_login'];
+$passport = $emergency_unit_profile_array[0]["passport"]; 
+$fetch_status = $callclass->_get_status_details($conn, $status_id);
+$status_array = json_decode($fetch_status, true);
+$status_name = $status_array[0]['status_name'];
+?>
+
+<?php 
+$page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the $page variable
+?>
+
+
+
+<?php 
+    
+
+
+    $fetch_status = $callclass->_get_status_details($conn, $status_id);
+    $status_array = json_decode($fetch_status, true);
+    
+    ?>
+
 
 
 <!DOCTYPE html>
@@ -11,6 +48,17 @@
 <?php include 'meta.php'?>
 </head>
 <body>
+
+
+<script>
+       if (window.history && window.history.pushState) {
+            window.history.pushState('forward', null,);
+            window.onpopstate = function () {
+                window.history.pushState('forward', null);
+            };
+        }
+    </script>
+
     
 <!--------------------------------------------START OF NAVBAR------------------------------------------------------>
 <div class="navbar">
@@ -19,15 +67,15 @@
           <div class="profile">
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
-            <span>Doc. Henculus White</span>
+            <span><?php echo $fullname ?></span>
             <button class="btn_submit">Upload Image</button>
            </div>
 
             <div class="image">
-            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
+            <img src="<?php echo $website_url?>/Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
             <div class="active_on"></div>
             </div>
-            <span>Doc. Henculus White</span>
+            <span><?php echo $fullname ?></span>
             <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
                  </div>
                 </div>
