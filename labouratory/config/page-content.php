@@ -63,7 +63,7 @@ $patient_id = $_POST['patient_id'];
 
 
 
-
+<div class="display">
 
 
 
@@ -554,6 +554,32 @@ $patient_id = $_POST['patient_id'];
         </div>
         <!--- END OF LABOURATORY INPUT-->
 
+        <div class="modal hidden" id="test--booking">
+                <button class="btn--close-modal" onclick="closeModal('test--booking'); uncheckLabTest()">&times;</button>
+
+                        <h2 class="modal__header">
+                        Book 
+                        <span class="highlight">labouartory test</span>
+                        </h2>
+                        <table id="dataTable">
+                        <thead>
+                                <td>Test </td>
+                                <td>Amount</td>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                </table>
+                <div class="totalprice">
+                        <p>Total</p>
+                        <p id="totalLabTest"></p>
+                        <p style="display:none" id="patient_id"><?php echo" $patient_id"?></p>
+                </div>
+                <button onclick="bookNow()">Book Now</button>
+                <button onclick="collapseTestBooking()">Add more test</button>
+        </div>
+        <!-- <div class="overlay hidden"></div>  -->
 
 
+
+        </div>
        

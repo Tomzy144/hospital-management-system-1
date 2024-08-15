@@ -208,35 +208,39 @@
 
         <script>
                 function click_labouratory_examination(patient_id) {
-                        // Use the built-in confirm dialog
-                        if (confirm("Are you sure you want to accept this patient?")) {
-                                // Show the lab input section
-                                document.querySelector('.lab_input').style.display = 'block';
-
-                                // Construct data string to send in the AJAX request
-                                var dataString = 'patient_id=' + encodeURIComponent(patient_id);
-
-                                // Perform AJAX request
-                                $.ajax({
-                                type: "POST", // HTTP method
-                                url: 'config/page-content.php', // URL of the PHP script
-                                data: dataString, // Data to send with the request
-                                cache: false, // Disable caching
-                                success: function(html) {
-                                        // Hide appointment and approved appointment sections
-                                        document.querySelector('.appoitment_section').classList.add('hide');
-                                        document.querySelector('.approved_appoitment').classList.add('hide');
-                                        
-                                        // Update the lab input section with the received HTML
-                                        document.querySelector('.lab_input').innerHTML = html;
-                                },
-                                error: function(xhr, status, error) {
-                                        console.error('AJAX Error:', error); // Log any error
-                                        alert("An error occurred: " + error); // Show an alert with the error
-                                }
-                                });
+                    // Use the built-in confirm dialog
+                    if (confirm("Are you sure you want to accept this patient?")) {
+                        // Show the lab input section
+                        var display = document.querySelector('.display');
+                        if (display) {
+                            display.classList.remove('hidden');
                         }
+
+                        // Construct data string to send in the AJAX request
+                        var dataString = 'patient_id=' + encodeURIComponent(patient_id);
+
+                        // Perform AJAX request
+                        $.ajax({
+                            type: "POST", // HTTP method
+                            url: 'config/page-content.php', // URL of the PHP script
+                            data: dataString, // Data to send with the request
+                            cache: false, // Disable caching
+                            success: function(html) {
+                                // Hide appointment and approved appointment sections
+                                document.querySelector('.appoitment_section').classList.add('hide');
+                                document.querySelector('.approved_appoitment').classList.add('hide');
+                                
+                                // Update the lab input section with the received HTML
+                                document.querySelector('.display').innerHTML = html;
+                            },
+                            error: function(xhr, status, error) {
+                                console.error('AJAX Error:', error); // Log any error
+                                alert("An error occurred: " + error); // Show an alert with the error
+                            }
+                        });
+                    }
                 }
+
         </script>
 
 
@@ -299,31 +303,8 @@
 
 
 
-<div class="lab_input hide"></div>
+<div class="display "></div>
 
-<div class="modal hidden" id="test--booking">
-                <button class="btn--close-modal" onclick="closeModal('test--booking'); uncheckLabTest()">&times;</button>
-
-                        <h2 class="modal__header">
-                        Book 
-                        <span class="highlight">labouartory test</span>
-                        </h2>
-                        <table id="dataTable">
-                        <thead>
-                                <td>Test </td>
-                                <td>Amount</td>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                </table>
-                <div class="totalprice">
-                        <p>Total</p>
-                        <p id="totalLabTest"></p>
-                        <p style="display:none" id="patient_id"><?php echo" $patient_id"?></p>
-                </div>
-                <button onclick="bookNow()">Book Now</button>
-                <button onclick="collapseTestBooking()">Add more test</button>
-        </div>
 
 
 
@@ -362,7 +343,7 @@
 <button>Submit</button>
 
 </div>   
-<div class="overlay hidden"></div>   
+  
 
 
 <!-- <script src="js/script.js"></script>
