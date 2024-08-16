@@ -360,12 +360,7 @@
         </form>
 </div>
 <button>Submit</button>
-
 </div>   
-<div class="overlay hidden"></div>   
-
-
-<!-- <script src="js/script.js"></script>
-<script src="js/jquery-v3.6.1.min.js"></script> -->
+<div class="overlay hidden"></div>
 </body>
 </html>

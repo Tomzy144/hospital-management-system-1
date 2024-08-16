@@ -2,24 +2,24 @@
 ///////////////////////////////////////
 // Modal window
 const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
+// const overlay = document.querySelector('.overlay');
 
 
 
 
-const openModal = function (modalId) {
+function openModal (modalId) {
   const modal = document.getElementById(modalId);
   
   modal.classList.remove('hidden');
-  overlay.classList.remove('hidden');
+//   overlay.classList.remove('hidden');
 };
 
 
-const closeModal = function (modalId) {
+function closeModal (modalId) {
   const modal = document.getElementById(modalId);
   
   modal.classList.add('hidden');
-  overlay.classList.add('hidden');
+//   overlay.classList.add('hidden');
 };
 //////////////////////////////////////
 
@@ -84,11 +84,15 @@ function closeResult(){
 $('.lab_input').addClass('hide')
 $('.lab_container').addClass('hide')
 }
-        //ADD THE AMOUNT ON WHICH CLICKED TO THE LIST OF RECEIPT
+
+
+    //Disable all checkboxes
         const checkboxes = document.querySelectorAll(".checkbox");
         checkboxes.forEach(function(checkbox){
         checkbox.checked = false;
         });
+
+            //Update the table with the test inputs and price
         function update_table(){
                 const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
                 
@@ -96,10 +100,7 @@ $('.lab_container').addClass('hide')
                 const checkboxes = document.querySelectorAll(".checkbox");
                 checkboxes.forEach(function(checkbox){
                         if(checkbox.checked){
-                                  // Create a new row
-                                var newRow = tableBody.insertRow();
-
-                        // Insert cells with checkbox value and label
+                        var newRow = tableBody.insertRow();
                         var cell1 = newRow.insertCell(0);
                          cell1.textContent = checkbox.parentNode.textContent.trim().replace(/[^a-zA-Z\s]/g, '');
                         var cell2 = newRow.insertCell(1);
@@ -108,29 +109,27 @@ $('.lab_container').addClass('hide')
                 })
         }
 
-
-//SUM ALL THE LAB TEST PRICES
-window.onload = function() {
-        const checkboxs = document.querySelectorAll(".checkbox");
-        function updateSum(){
-                let sum = 0;
-        checkboxs.forEach(function(checkbox){
-                      if(checkbox.checked){
-                        sum += parseInt(checkbox.value, 10);
-                      }
-                      let testSum = document.querySelector("#totalLabTest");
-                    testSum.textContent =  `₦ ${new Intl.NumberFormat('en-NG').format((sum))}`
-        })
+function updateSum() {
+    let sum = 0;
+    const checkboxes = document.querySelectorAll(".checkbox");
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            sum += parseInt(checkbox.value, 10);
         }
-        checkboxs.forEach(function(checkbox){
-                checkbox.addEventListener('change', ()=>{
-                        update_table();
-                        updateSum();
-                })
-        })
+    })
+    let testSum = document.querySelector("#totalLabTest");
+    testSum.textContent = `₦ ${new Intl.NumberFormat('en-NG').format(sum)}`;
 }
 
-//TEST  BOOKING
+
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', () => {
+        update_table(); 
+        updateSum();  
+    });
+});
+
+
 
 function uncheckLabTest(){
         const checkboxs = document.querySelectorAll(".checkbox");
@@ -142,6 +141,8 @@ function uncheckLabTest(){
 
 function showtestBooking(){
     openModal('test--booking');
+    updateSum();
+    update_table();
 }
 function collapseTestBooking(){
     closeModal('test--booking');

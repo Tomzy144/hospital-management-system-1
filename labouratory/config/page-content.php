@@ -400,7 +400,7 @@ $patient_id = $_POST['patient_id'];
                 </div>
                 <div class="form_control">
                         <input type="checkbox" value="6000" class="checkbox">
-                        <label for="">otal Plate Count (TPC) Test</label>
+                        <label for="">Total Plate Count (TPC) Test</label>
                 </div>
                 </form>
 
@@ -551,8 +551,9 @@ $patient_id = $_POST['patient_id'];
                 </form>
                 <button id="btn" class="save" onclick="showtestBooking()">Book</button>
         </div>
-        </div>
-        <!--- END OF LABOURATORY INPUT-->
+</div>
+<div class="overlay hidden"></div>   
+
 
 
 

@@ -29,9 +29,9 @@
 <meta property="og:url" content="<?php echo $website_address?>"/>
 
 <!-- <script src="?php echo $website_url?>/js/jquery-v3.6.1.min.js"></script>--->
+<script src="<?php echo $website_url?>/labouratory/js/script.js"></script> 
 <script src="<?php echo $website_url?>/labouratory/js/aos.js"></script>
 
 <script src="<?php echo $website_url?>/labouratory/js/jquery-v3.6.1.min.js"></script> 
-    <script src="<?php echo $website_url?>/labouratory/js/script.js"></script> 
        
 
