@@ -266,40 +266,41 @@ function bookNow() {
     var action = 'bookLabouratoryTest';
     var dataTable = document.querySelector("#dataTable tbody");
     var totalLabTestElement = document.getElementById('totalLabTest');
-    var patient_id = document.getElementById('patient_id');
+    var patient_id = document.getElementById('patient_id').textContent;  // Correct for a <p> tag
     var totalLabTest = totalLabTestElement.textContent || totalLabTestElement.innerText;
-    console.log(totalLabTest)
+    console.log(totalLabTest);
     var tests = {};
-  
+
     dataTable.querySelectorAll('tr').forEach(function(row) {
-      var test = row.cells[0].textContent;
-      var amount = row.cells[1].textContent;
-      tests[test] = amount;
+        var test = row.cells[0].textContent;
+        var amount = row.cells[1].textContent;
+        tests[test] = amount;
     });
-  
+
     var data = { 
-      action: action, 
-      totalAmount: totalLabTest, 
-      tests: tests,
-      patient_id:patient_id
+        action: action, 
+        totalAmount: totalLabTest, 
+        tests: tests,
+        patient_id: patient_id,
     };
-  
+
     $.ajax({
-      type: 'POST',
-      url: "config/code.php",
-      data: JSON.stringify(data),
-      cache: false,
-      contentType: 'application/json',
-      dataType: 'json',
-      success: function (response) {
-        if (response.success) {
-         alert("Lab test booked");
-        } else {
-            alert('Error:', response.message);
-        }
-      },
-      error: function (xhr, status, error) {
-        console.error('AJAX Error:', status, error);
-      },
+        type: 'POST',
+        url: "config/code.php",
+        data: data,
+        cache: false,
+        dataType: 'json',
+        success: function (response) {
+            if (response.success) {
+                alert("Lab test booked");
+            } else {
+                alert('Error: ' + response.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+            console.log('Response:', xhr.responseText);
+        },
     });
-  }
+}
+

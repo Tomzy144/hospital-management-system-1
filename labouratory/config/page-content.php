@@ -573,7 +573,7 @@ $patient_id = $_POST['patient_id'];
                 <div class="totalprice">
                         <p>Total</p>
                         <p id="totalLabTest"></p>
-                        <p style="display:none" id="patient_id"><?php echo" $patient_id"?></p>
+                        <p style="display:block" value="<?php echo $patient_id ?>" id="patient_id"><?php echo $patient_id ?> </p>
                 </div>
                 <button onclick="bookNow()">Book Now</button>
                 <button onclick="collapseTestBooking()">Add more test</button>
