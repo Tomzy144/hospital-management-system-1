@@ -472,7 +472,7 @@
 	
 	
 				case 'emergency_unit_login': // login from index
-					$userquery = mysqli_query ($conn,"SELECT * FROM `emergency_unit_tab` WHERE email = '$email' AND `password` = '$emergency_unit_password' AND status_id=1") ;
+					$userquery = mysqli_query ($conn,"SELECT * FROM `emergency_unit_tab` WHERE email = '$emergency_unit_email' AND `password` = '$emergency_unit_password' AND status_id=1") ;
 							$usersel=mysqli_fetch_array($userquery);
 							$emergency_unit_id=$usersel['emergency_unit_id'];
 							$_SESSION['emergency_unit_id'] = $emergency_unit_id;
