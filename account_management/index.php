@@ -4,6 +4,42 @@
 <?php
   $account_unit_id = $_POST['account_unit_id'];
 ?>
+
+
+
+<?php    
+
+$fetch_account_unit_profile = $callclass->_get_account_unit_details($conn, $s_account_unit_id);
+$account_unit_profile_array = json_decode($fetch_account_unit_profile, true);
+$fullname = $account_unit_profile_array[0]['fullname'];
+$email = $account_unit_profile_array[0]['email'];
+$phonenumber = $account_unit_profile_array[0]['phonenumber'];
+// $role_id= $account_unit_profile_array[0]['role_id'];
+$status_id = $account_unit_profile_array[0]['status_id'];
+$date = $account_unit_profile_array[0]['date'];
+$last_login = $account_unit_profile_array[0]['last_login'];
+$passport = $account_unit_profile_array[0]["passport"]; 
+$fetch_status = $callclass->_get_status_details($conn, $status_id);
+$status_array = json_decode($fetch_status, true);
+$status_name = $status_array[0]['status_name'];
+?>
+
+<?php 
+$page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $page variable
+?>
+
+
+
+<?php 
+    
+
+
+    $fetch_status = $callclass->_get_status_details($conn, $status_id);
+    $status_array = json_decode($fetch_status, true);
+    
+    ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +52,19 @@
 </head>
 <body>
 
+
+
+
+<script>
+       if (window.history && window.history.pushState) {
+            window.history.pushState('forward', null,);
+            window.onpopstate = function () {
+                window.history.pushState('forward', null);
+            };
+        }
+    </script>
+
+
     <!--DIFFERENT SECTIONS--->
     <div class="navbar">
         <div class="section1">
@@ -26,7 +75,7 @@
           <div class="profile">
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
-            <h4>Doc. Henculus White</h4>
+            <h4><?php echo $fullname ?></h4>
             <button class="btn_submit">Upload Image</button>
             <!-- <h4>change password</h4> -->
         </div>
@@ -35,7 +84,7 @@
             <div class="active_on"></div>
             </div>
         </img>  
-            <span>Doc. Henculus White</span>
+            <span><?php echo $fullname ?></span>
             <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
           </div>
         </div>
