@@ -22,6 +22,6 @@
   
 
     <!-- Include custom scripts -->
-    <script defer src="<?php echo $website_url?>/emergency_manager /js/dashboard.js"></script>
+    <script defer src="<?php echo $website_url?>/emergency_manager /js/script.js"></script>
     <script defer src="<?php echo $website_url?>/emergency_manager /js/aos.js"></script>
     <script defer src="<?php echo $website_url?>/emergency_manager /js/jquery-v3.6.1.min.js"></script>

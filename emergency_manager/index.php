@@ -174,7 +174,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <input type="text" name ="coi" id="coi" class="emergencyInput">
   </div>
   </div>
-  <button class="btn_submit" type="button" id="submitEmergencyInput"> Submit</button>
+  <button class="btn_submit" type="button" id="submitEmergencyInput" onclick="EmergencyPatient()"> Submit</button>
 </form>
 </div>
 </div>
@@ -290,6 +290,21 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
               }
               ?>
 
+<script>
+     const links = document.querySelectorAll('.sidebar-body ul li');
+  
+    function toggleSidebarLinks(clickedLink){
+        links.forEach(link => link.classList.remove('active'));
+        clickedLink.classList.add('active');
+     }
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            toggleSidebarLinks(this);
+        });
+    });
+    
+
+</script>
   </div>
   </div>
 

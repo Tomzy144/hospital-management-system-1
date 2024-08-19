@@ -2,43 +2,34 @@
 ///////////////////////////////////////
 // Modal window
 const modal = document.querySelector('.modal');
-// const overlay = document.querySelector('.overlay');
 
-
-
-
-function openModal (modalId) {
+function openModal(modalId) {
   const modal = document.getElementById(modalId);
   
+  // Create and append overlay
+  const overlay = document.createElement('div');
+  overlay.className = "overlay";
+  overlay.onclick = () => closeModal(modalId); // Close modal when overlay is clicked
+  document.querySelector('body').appendChild(overlay);
+  
+  // Show modal
   modal.classList.remove('hidden');
-//   overlay.classList.remove('hidden');
-};
+}
 
-
-function closeModal (modalId) {
+function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   
+  // Hide modal
   modal.classList.add('hidden');
-//   overlay.classList.add('hidden');
-};
+  
+  // Remove overlay
+  const overlay = document.querySelector('.overlay');
+  if (overlay) {
+    overlay.remove();
+  }
+}
+
 //////////////////////////////////////
-
-
-
-
-const sections = document.querySelectorAll('.section');
-const allProfiles = document.querySelectorAll('.allProfiles');
-const links = document.querySelectorAll('.sidebar-body ul li');
-
-function toggleSidebarLinks(clickedLink){
-    links.forEach(link => link.classList.remove('active'));
-    clickedLink.classList.add('active');
- }
-links.forEach(link => {
-    link.addEventListener('click', function() {
-        toggleSidebarLinks(this);
-    });
-});
 /////////////////////////////////////////////////////
 
 function createDate(){
@@ -303,4 +294,3 @@ function bookNow() {
         },
     });
 }
-

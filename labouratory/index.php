@@ -142,10 +142,9 @@
             <div class="patient_list_div">
             <div class="search_bar_container">
                 <h3>Appoitment details</h3>
-                <i class="bi bi-search"></i>
-                    <input type="text" placeholder="Search here">
+                    <input type="text" placeholder="Search here" id="searchInput">
                 </div>
-                    <table>
+                    <table id="patient">
                                             <thead>
                                                 <tr>
                                                     <td>S/N</td>
@@ -341,7 +340,53 @@
         </form>
 </div>
 <button>Submit</button>
-</div>   
-<div class="overlay hidden"></div>
+</div> 
+
+<script>
+
+    
+    const links = document.querySelectorAll('.sidebar-body ul li');
+    function toggleSidebarLinks(clickedLink){
+        links.forEach(link => link.classList.remove('active'));
+        clickedLink.classList.add('active');
+    }
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            toggleSidebarLinks(this);
+        });
+    });
+
+
+
+    function filterAvailablePatient() {
+    const tableBody = document.querySelector('#patient tbody');
+    const tableRows = Array.from(tableBody.querySelectorAll('tr')); // Convert NodeList to Array
+    const searchInput = document.querySelector('#searchInput').value.trim().toLowerCase();
+
+    let hasVisibleRows = false;
+    tableRows.forEach((row) => {
+        if (row.children.length < 2)  return;
+
+        const patientName = row.children[1].textContent.trim().toLowerCase();
+        const patientId = row.children[3].textContent.trim().toLowerCase();
+        if (patientName.includes(searchInput) || patientId.includes(searchInput)){
+            row.style.display = ''; // Show the row
+            hasVisibleRows = true;
+           
+        } else row.style.display = 'none'; // Hide the row
+    });
+
+    const existingNoDataMessage = document.querySelector('#noDataMessage');
+    if (existingNoDataMessage) existingNoDataMessage.remove();
+
+    if (!hasVisibleRows) {
+        const noDataMessage = document.createElement('tr');
+        noDataMessage.id = 'noDataMessage';
+        noDataMessage.innerHTML = '<td colspan="9" style="text-align: center;">No User associated with this input</td>';
+        tableBody.appendChild(noDataMessage);
+    }
+}
+document.querySelector('#searchInput').addEventListener('input', filterAvailablePatient);
+</script>
 </body>
 </html>
