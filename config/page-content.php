@@ -257,17 +257,17 @@ if($s_staff_id != '') {
         <div class="account_manager-login">
         <i class="bi bi-x-square close"  id='close-icon-account_manager' onclick="cancel();"></i>
         <h3 class="login-form-h1">Login (Account Manager)</h3>
-            <form>
+            <form action="config/code.php" id="account_unit_loginform" enctype="multipart/form-data" method="post">
                 <div class="_form_control">
                 <label for='email'>Email</label>
                 <i class="bi-envelope"></i>
-                <input type="email" name="email" autoComplete='off'/> 
+                <input type="email" name="email" id="account_unit_email" autoComplete='off'/> 
                 </div>
 
                 <div class="_form_control">
                 <label for='number'>Your ID</label>
                 <i class="bi-key"></i>
-                <input type="number" name="number" autoComplete='off'/> 
+                <input type="text" name="number" id="account_unit_id" autoComplete='off'/> 
                 </div>
 
                 <div class="_form_control">
@@ -275,9 +275,10 @@ if($s_staff_id != '') {
                 <i class="bi-lock"></i>
                     <i class="bi bi-eye show_password hide" id="_show_nurse_password" onclick="show_staff_password()"></i>
                     <i class="bi bi-eye-slash lock_password" id="_lock_nurse_password" onclick="show_staff_password()"></i>
-                <input type="password" name="password" autoComplete='off'/> 
+                <input type="password" name="password"id="account_unit_password" autoComplete='off'/> 
+                <input name="action" value="account_unit_login" type="hidden" />
                 </div>
-                <button type="button" class="btn" onClick="isAccount_manager_active()">Login</button>
+                <button type="button" id="account_unit_login_btn" class="btn" onclick="_account_unit_sign_in();">Login</button>
             <form>
         </div>
     </div>

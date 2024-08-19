@@ -1,5 +1,9 @@
 <?php include '../backend/config/connection.php';?>
 <?php include '../config/account-manager-session-validation.php';?>
+
+<?php
+  $account_unit_id = $_POST['account_unit_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,5 +1,5 @@
 <?php
-if (empty($s_account_id)) {
+if (empty($s_account_unit_id)) {
     session_destroy();
 ?>
     <script>
@@ -8,7 +8,7 @@ if (empty($s_account_id)) {
 <?php
     exit;
 } else {
-    $fetch_user = $callclass->_get_account_unit_details($conn, $s_account_id);
+    $fetch_user = $callclass->_get_account_unit_details($conn, $s_account_unit_id);
     $user_array = json_decode($fetch_user, true);
     $fullname = $user_array[0]['fullname'];
     $passport = $user_array[0]['passport'];

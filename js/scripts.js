@@ -733,3 +733,72 @@ function _emergency_unit_sign_in(){
   
   
   
+//////////account unit login 
+
+
+function _account_unit_sign_in(){ 
+    var account_unit_email = $('#account_unit_email').val();
+    var account_unit_password = $('#account_unit_password').val();
+    var account_unit_id = $('#account_unit_id').val();
+    if((account_unit_email!='')&&(account_unit_password!='')&&(account_unit_id!='')){
+        account_unit_login(account_unit_email,account_unit_password,account_unit_id);
+    }else{
+        $('#staff_verification').removeClass('hide');
+        $('#staff_verification').addClass('vf');
+        $('#staff_verification').html(`Field in the neccessary field <i class="bi-exclamation-triangle"></i></i>`)
+        $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
+    }
+  };
+  
+  
+  
+  
+  ///////////////////// account_unit login ///////////////////////////////////////////
+  function account_unit_login(account_unit_email,account_unit_password,account_unit_id){
+    var action='account_unit_login_check';
+    
+   //////////////// get btn text ////////////////
+   var btn_text=$('#account_unit_login_btn').html();
+   $('#account_unit_login_btn').html('Authenticating...');
+   document.getElementById('account_unit_login_btn').disabled=true;
+   ////////////////////////////////////////////////	
+    
+    var dataString ='action='+ action+'&account_unit_email='+ account_unit_email + '&account_unit_password='+ account_unit_password + '&account_unit_id='+ account_unit_id;
+   
+   $.ajax({
+   type: "POST",
+   url: "config/code.php",
+   data: dataString,
+   dataType: 'json',
+   cache: false,
+   success: function(data){
+    var scheck = data.check;
+  
+   if(scheck==1){
+      $('#staff_verification').removeClass('hide');
+      $('#staff_verification').removeClass('vf');
+      $('#staff_verification').html('<div>LOGIN SUCCESSFUL! <i class="bi bi-hand-thumbs-up-fill"></i></div> ').fadeIn(100).fadeOut(1000);
+    $('#account_unit_loginform').submit();
+    // window.parent("location=account_unit/");
+    
+    
+   }else if(scheck==2){
+      $('#staff_verification').html(`Account does not exist <i class="bi-exclamation-triangle"></i>`)
+      $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
+      $('#staff_verification').removeClass('hide');
+      $('#staff_verification').addClass('vf');
+             $('#staff_verification').html('<div></div> Account Suspended<br /><span>Contact the admin for help</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
+    }else{
+      $('#staff_verification').removeClass('hide');
+          $('#staff_verification').addClass('vf');
+      $('#staff_verification').html('<div></div> Login Error!<br /><span>Invalid Login Details</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
+    }
+    $('#account_unit_login_btn').html(btn_text);
+    document.getElementById('account_unit_login_btn').disabled=false;
+       $('#account_unit_login_btn').html('<i class="fa fa-sign-in"></i> Log-In');
+   }
+   });
+  }
+  
+  
+  

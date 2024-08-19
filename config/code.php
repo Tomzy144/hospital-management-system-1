@@ -486,7 +486,64 @@
 					<?php
 	
 	
-				// <!-- for checking action and page  -->
+
+	
+						
+						
+				break;
+
+
+				/////////////////////account_units
+
+
+						
+				case 'account_unit_login_check': // for account_unit login
+					$account_unit_email=trim($_POST['account_unit_email']);
+				///	$temp_password=trim(($_POST['password']));
+					$account_unit_password=trim(($_POST['account_unit_password']));
+					$account_unit_id=trim(($_POST['account_unit_id']));
+	
+						$query=mysqli_query($conn,"SELECT * FROM account_unit_tab WHERE `email`='$account_unit_email' AND `password`='$account_unit_password' AND `account_unit_id` = '$account_unit_id'");
+						$usercount = mysqli_num_rows($query);
+						if ($usercount>0){
+							$usersel=mysqli_fetch_array($query);
+							$account_unit_id=$usersel['account_unit_id'];
+							$status_id=$usersel['status_id'];
+							
+								if ($status_id==1){
+									$check=1; ///// account is active
+	
+									
+								}else if($status_id==2){
+									$check=2; ///// account is suspended
+									
+								}else {
+									$check=0;
+								}
+						}else{
+							$check=0;
+						}
+										
+						echo json_encode(array("check" => $check, )); 
+				break;
+	
+	
+				case 'account_unit_login': // login from index
+					$userquery = mysqli_query ($conn,"SELECT * FROM `account_unit_tab` WHERE email = '$account_unit_email' AND `password` = '$account_unit_password' AND status_id=1") ;
+							$usersel=mysqli_fetch_array($userquery);
+							$account_unit_id=$usersel['account_unit_id'];
+							$_SESSION['account_unit_id'] = $account_unit_id;
+							$s_account_unit_id=$_SESSION['account_unit_id'];
+							mysqli_query($conn,"UPDATE `account_unit_tab` SET last_login=NOW() WHERE account_unit_id='$s_account_unit_id'") or die("cannot update") ; //// update last login
+						// echo $s_account_unit_id;				
+					?>
+								<script>
+									window.parent(location="../account_management/");
+								</script>
+					<?php
+	
+	
+
 	
 						
 						
