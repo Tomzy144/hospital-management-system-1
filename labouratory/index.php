@@ -341,7 +341,21 @@
         </form>
 </div>
 <button>Submit</button>
-</div>   
-<div class="overlay hidden"></div>
+</div> 
+
+<script>
+
+    
+    const links = document.querySelectorAll('.sidebar-body ul li');
+    function toggleSidebarLinks(clickedLink){
+        links.forEach(link => link.classList.remove('active'));
+        clickedLink.classList.add('active');
+    }
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            toggleSidebarLinks(this);
+        });
+    });
+</script>
 </body>
 </html>
