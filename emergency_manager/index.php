@@ -249,25 +249,47 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                 <input type="text" name="" id="searchInput" placeholder="Search">
                 <i class="bi bi-search" id="searchPatient"></i>
             </div>
-            <table id="TableData">
-                <thead>
-                    <tr>
-                        <td>S/N</td>
-                        <td>Patient Name</td>
-                        <td>Patient ID</td>
-                        <!-- <td>Gender</td> -->
-                        <td>Cause of Incident</td>
-                        <td>Date of Incident</td>
-                        <td>Time of Incident</td>
-                        <td>Status</td>
-                    </tr>
-                </thead>
-                <tbody>
-                <!-- <tr>
-                  <td colspan="7">No data</td>
-                </tr> -->
-                </tbody>
-        </table>
+             
+           
+            <?php
+              // Assuming you have a valid connection to the database in $conn
+              $sql = "SELECT * FROM emergency_patient_tab";
+              $result = mysqli_query($conn, $sql);
+
+              if (mysqli_num_rows($result) > 0) {
+                  echo '<table id="TableData">
+                          <thead>
+                              <tr>
+                                  <td>S/N</td>
+                                  <td>Patient Name</td>
+                                  <td>Patient ID</td>
+                                  <td>Cause of Incident</td>
+                                  <td>Date of Incident</td>
+                                  <td>Time of Incident</td>
+                                  <td>Status</td>
+                              </tr>
+                          </thead>
+                          <tbody>';
+                          
+                  $sn = 1; // Serial number counter
+                  while ($row = mysqli_fetch_assoc($result)) {
+                      echo '<tr>
+                              <td>' . $sn++ . '</td>
+                              <td>' . htmlspecialchars($row['Epatient_name']) . '</td>
+                              <td>' . htmlspecialchars($row['emergency_patient_id']) . '</td>
+                              <td>' . htmlspecialchars($row['cause_of_incident']) . '</td>
+                              <td>' . htmlspecialchars($row['date_of_incident']) . '</td>
+                              <td>' . htmlspecialchars($row['time_of_incident']) . '</td>
+                              <td>' . htmlspecialchars($row['status_id']) . '</td>
+                            </tr>';
+                  }
+                  
+                  echo '</tbody></table>';
+              } else {
+                  echo '<p>No data found.</p>';
+              }
+              ?>
+
   </div>
   </div>
 
