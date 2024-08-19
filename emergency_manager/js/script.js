@@ -19,26 +19,6 @@
             toggleSidebarLinks(this);
         });
     });
-    //   function hideAllSections() {
-    //     sections.forEach(section => section.classList.add('hide'));
-    //   }
-    //   function showSection(sectionId) {
-    //     document.getElementById(sectionId).classList.remove('hide');
-    //   }
-    //   function deactivateAllLinks() {
-    //     links.forEach(link => link.classList.remove('active'));
-    //   }
-    //   links.forEach(link => {
-    //     link.addEventListener('click', function() {
-    //       deactivateAllLinks();
-    //       this.classList.add('active');
-    //       hideAllSections();
-    //       message.remove()
-    //       showSection(this.id.replace('_link', '_section'));
-    //       allProfiles.forEach(profile =>!profile.classList.contains('hide') ? profile.classList.add('hide') : null);
-    //       console.log(allProfiles);
-    //     });
-    //   });
     
   
   function createDate(){
@@ -55,37 +35,9 @@
    document.querySelector('.display__date').textContent = dateTime
   }
   setInterval(() => createDate())
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-    function EmergencyPatient() {
-    const emergencyInputData = document.querySelectorAll('#emergencyInputData .emergencyInput');
-    const tableBody = document.querySelector('#TableData tbody');
-    const noDataMessage = createNoDataMessage();
-    tableBody.appendChild(noDataMessage);
-
-    document.getElementById('submitEmergencyInput').addEventListener('click', (event) => {
-    event.preventDefault();
-    const message = document.createElement('div');
-
-        if (!isFormValid(emergencyInputData)) {
-            showMessage(message, '<i class="bi bi-exclamation-triangle-fill"></i> Alert<br/>Fill all fields', 'red');
-        } else if (!isPhoneNumberValid('#contactNumber')) {
-            showMessage(message, '<i class="bi bi-exclamation-triangle-fill"></i> Alert<br/>Invalid Phone Number', 'red');
-        }else if(!isInputChecked('#maleCheckbox') && !isInputChecked('#femaleCheckbox')){
-            showMessage(message, '<i class="bi bi-exclamation-triangle-fill"></i> Alert<br/>Select Gender', 'red');
-        }
-         else {
-            const patientName = document.querySelector('#fullName').value;
-            const patientId = generateId(); // Generate the ID here
-              showMessage(message, `REGISTERED <br/> ${patientName.toUpperCase()} <br/>${patientId.toUpperCase()}`, 'rgb(42, 87, 215)');
-             removeNoDataMessage(tableBody, noDataMessage);
-            addRowToTable(tableBody, patientId);
-            updateUIAfterSubmission();
-        }
-    });
-}
 
 function createNoDataMessage() {
     const noDataMessage = document.createElement('tr');
@@ -110,17 +62,10 @@ function isInputChecked(selector) {
     }
     return inputElement.checked;
  }
- 
-//  const isMaleChecked = isInputChecked('#maleCheckbox');
-//  const isFemaleChecked = isInputChecked('#femaleCheckbox');
-
- 
 
     function isPhoneNumberValid(selector) {
         const phoneNumber = document.querySelector(selector).value.trim();
-    
-        // Check if the number is exactly 11 characters long, all digits, and starts with "090"
-        const isNumeric = /^\d+$/.test(phoneNumber); // Checks if the input is all digits
+        const isNumeric = /^\d+$/.test(phoneNumber);
         const startsWith090 = phoneNumber.startsWith('090');
         const startsWith081 = phoneNumber.startsWith('081');
         const startsWith080 = phoneNumber.startsWith('080');
@@ -145,6 +90,104 @@ function removeNoDataMessage(tableBody, noDataMessage) {
 }
 function generateId() {
     return`EMG${Math.floor(Math.random() * 1000)}`
+}
+
+
+const messageContainer = document.createElement('div');
+document.body.appendChild(messageContainer);
+
+const createAlertMessage = (text, className, duration = 5000) => {
+  const message = document.createElement('div');
+  message.className = className + ' alert';
+  message.innerHTML = `
+    <div class="content">
+    <div class="message">
+      <div class="icon">
+        <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+        </div>
+        <h2>${text}</h2>
+        </div>
+    </div>
+  `;
+  messageContainer.appendChild(message);
+  setTimeout(() => {
+    message.classList.add('hide');
+    setTimeout(() => message.remove(), 500); 
+  }, duration);
+  return message;
+}
+
+const successMessage = (text) => createAlertMessage(text, 'success');
+const infoMessage = (text) => createAlertMessage(text, 'info');
+const warningMessage = (text) => createAlertMessage(text, 'warning');
+const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000); 
+
+
+
+    function EmergencyPatient() {
+    const emergencyInputData = document.querySelectorAll('#emergencyInputData .emergencyInput');
+        let oppositeGender;
+        function saveOppositeGender() {
+      const maleCheckbox = document.getElementById('maleCheckbox');
+      const femaleCheckbox = document.getElementById('femaleCheckbox');
+      maleCheckbox.addEventListener('change', () => {
+        if (maleCheckbox.checked) oppositeGender = 'female';
+      });
+      femaleCheckbox.addEventListener('change', () => {
+        if (femaleCheckbox.checked) oppositeGender = 'male';
+      });
+    }
+    saveOppositeGender();
+
+        if (!isFormValid(emergencyInputData)) {
+            warningMessage('Please input field');
+        } else if (!isPhoneNumberValid('#contactNumber')) {
+            warningMessage('Invalid Phone Number');
+        }else if(!isInputChecked('#maleCheckbox') && !isInputChecked('#femaleCheckbox')){
+            warningMessage('Select Gender');
+        }
+         else {
+            const fullName = document.getElementById('fullName');
+            const dob = document.getElementById('dob');
+            const gender = oppositeGender
+            const address = document.getElementById('address');
+            const emergencyFullName = document.getElementById('efullName');
+            const contactNumber = document.getElementById('contactNumber');
+            const relationship = document.getElementById('relationship');
+            const dateOfIncident = document.getElementById('doi');
+            const timeOfIncident = document.getElementById('toi');
+            const causeOfIncident = document.getElementById('coi');
+
+                  var action = 'surgical_procedure';
+                    var dataString = "action=" + action + "&fullName=" + fullName + "&dob=" + dob + "&gender=" + gender + "&address=" + address + "&emergencyFullName="+ emergencyFullName + "&contactNumber="+ contactNumber + "&relationship="+ relationship + "&dateOfIncident="+ dateOfIncident + "&timeOfIncident="+ timeOfIncident + "&causeOfIncident="+ causeOfIncident ;
+
+      $.ajax({
+          type: 'POST',
+          url: "config/code.php",
+          data: dataString,
+          cache: false,
+          dataType: 'json',
+          success: function (data) {
+              if (data.check === "success") {
+                  successMessage('Patient has been transferred to the Surgical suit successfully')
+                  $btnSubmit.html('Transfer');
+                  $btnSubmit.prop('disabled', false);
+                  close_tranfer_patient_lab();
+              } else {
+                  console.error('Error:', data.error);
+                  dangerMessage('Error:', data.error);
+                  $btnSubmit.html(btnText);
+                  $btnSubmit.prop('disabled', false);
+              }
+          },
+          error: function (xhr, status, error) {
+              console.error('AJAX Error:', error);
+              dangerMessage('Error:', data.error);
+              $btnSubmit.html(btnText);
+              $btnSubmit.prop('disabled', false);
+          }
+      });
+        }
 }
 
 
@@ -173,6 +216,7 @@ function addRowToTable(tableBody, patientId) {
         statusCell.appendChild(aliveStatus)
 //    statusCell.appendChild(deadStatus)
 }
+
 
 
 
@@ -306,5 +350,6 @@ function emergencyForm() {
 function emergencyList() {
     updateUI('#emergency_list_section', '.container', '#emergency__link', '#emergency__form__link');
 }
-EmergencyPatient();
+
+
 emergencyForm(); // Initial UI state
