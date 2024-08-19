@@ -9,7 +9,12 @@
     <link href="<?php echo $website_url?>/account_management/css/icons-1.10.2/font/bootstrap-icons.css" type="text/css" rel="stylesheet" >
     <link href="<?php echo $website_url?>/account_management/css/animate.css" type="text/css" rel="stylesheet" media="all">
     <link href="<?php echo $website_url?>/account_management/css/aos.css" type="text/css" rel="stylesheet" />
-    <link href="<?php echo $website_url?>/index.css" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $website_url?>/account_management/index.css" type="text/css" rel="stylesheet" />
+
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <!-- <link rel="stylesheet" href="awesome-font/fontawesome/css/all.min.css"> 
+    <link rel="stylesheet" href="awesome-font/css/animate.min.css"> 
+    <link rel="stylesheet" href="awesome-font/css/icons-1.10.2/font/bootstrap-icons.css">  -->
 
 
     <meta property="og:type" content="Website" />
@@ -22,6 +27,7 @@
   
 
     <!-- Include custom scripts -->
-    <script defer src="<?php echo $website_url?>/account_management /js/dashboard.js"></script>
+    <script defer src="<?php echo $website_url?>/account_management /js/index.js"></script>
+    <script defer src="<?php echo $website_url?>/account_management /js/section.js"></script>
     <script defer src="<?php echo $website_url?>/account_management /js/aos.js"></script>
     <script defer src="<?php echo $website_url?>/account_management /js/jquery-v3.6.1.min.js"></script>

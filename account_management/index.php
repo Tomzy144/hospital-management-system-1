@@ -1,14 +1,12 @@
 <?php include '../backend/config/connection.php';?>
+<?php include '../config/account-manager-session-validation.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Management</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="awesome-font/fontawesome/css/all.min.css"> 
-    <link rel="stylesheet" href="awesome-font/css/animate.min.css"> 
-    <link rel="stylesheet" href="awesome-font/css/icons-1.10.2/font/bootstrap-icons.css"> 
+    
     <?php include 'meta.php'?>
 
 </head>
@@ -319,7 +317,7 @@
 
 
         <!---SCRIPT TAGS-->
-    <script src="js/index.js"></script>
-    <script src="js/jquery-v3.6.1.min.js"></script>
+    <!-- <script src="js/index.js"></script>
+    <script src="js/jquery-v3.6.1.min.js"></script> -->
 </body>
 </html>
