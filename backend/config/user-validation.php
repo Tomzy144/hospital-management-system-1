@@ -28,6 +28,12 @@
              window.parent(location="../");
          </script> 
          <?php 
+          }
+    elseif($s_account_unit_id==""){ ?>
+        <script>
+                window.parent(location="../");
+        </script> 
+            <?php 
          
     }else{
         $fetch_user=$callclass->_get_user_details($conn, $s_staff_id);
@@ -70,6 +76,15 @@
         $emergency_unit_id= $user_array[0]['emergency_unit_id'];
         $fullname= $user_array[0]['fullname'];
         $emergency_unit_email= $user_array[0]['emergency_unit_email'];
+        $phonenumber= $user_array[0]['phonenumber'];
+        $passport= $user_array[0]['passport'];
+
+
+        $fetch_user=$callclass->_get_account_unit_details($conn, $s_account_unit_id);
+        $user_array = json_decode($fetch_user, true);
+        $account_unit_id= $user_array[0]['account_unit_id'];
+        $fullname= $user_array[0]['fullname'];
+        $account_unit_email= $user_array[0]['account_unit_email'];
         $phonenumber= $user_array[0]['phonenumber'];
         $passport= $user_array[0]['passport'];
 

@@ -136,6 +136,25 @@ if ($_POST && !empty($_POST['emergency_unit_email'])) {
 ?>
 
 
+<?php 
+
+/////for account units
+$s_account_unit_id=$_SESSION['account_unit_id']; 
+
+if ($_POST && !empty($_POST['account_unit_email'])) {
+    $_SESSION['account_unit_email'] = $_POST['account_unit_email'];
+    }
+    $account_unit_email=$_SESSION['account_unit_email'];
+    if ($_POST && !empty($_POST['account_unit_password'])) {
+    $_SESSION['account_unit_password'] = $_POST['account_unit_password'];
+    
+    }
+    $account_unit_password=($_SESSION['account_unit_password']);
+
+
+?>
+
+
 
 
 
@@ -519,6 +538,24 @@ function _get_emergency_unit_details($conn, $s_emergency_unit_id){
     $last_login=$fetch['last_login'];
 
     return '[{"emergency_unit_id":"'.$emergency_unit_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
+}
+
+
+/////////////////account unit
+function _get_account_unit_details($conn, $s_account_unit_id){
+    $query=mysqli_query($conn, "SELECT * FROM account_unit_tab WHERE account_unit_id='$s_account_unit_id'");    
+    $fetch=mysqli_fetch_array($query);
+    $account_unit_id=$fetch['account_unit_id'];
+    $fullname=$fetch['fullname'];
+    $email=$fetch['email'];
+    $phonenumber=$fetch['phonenumber'];
+    $role_id=$fetch['role_id'];
+    $status_id=$fetch['status_id'];
+    $passport=$fetch['passport'];
+    $date=$fetch['date'];
+    $last_login=$fetch['last_login'];
+
+    return '[{"account_unit_id":"'.$account_unit_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
 }
 
 function _get_family_card_details($conn,$s_family_card_id){

@@ -1,3 +1,4 @@
+<?php include '../backend/config/connection.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="awesome-font/fontawesome/css/all.min.css"> 
     <link rel="stylesheet" href="awesome-font/css/animate.min.css"> 
     <link rel="stylesheet" href="awesome-font/css/icons-1.10.2/font/bootstrap-icons.css"> 
- 
+    <?php include 'meta.php'?>
 
 </head>
 <body>
