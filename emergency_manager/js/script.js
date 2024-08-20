@@ -4,21 +4,6 @@
     };
 
 
-
-    const sections = document.querySelectorAll('.section');
-    const allProfiles = document.querySelectorAll('.allProfiles');
-    const links = document.querySelectorAll('.sidebar-body ul li');
-    // const message = document.createElement('div');
-  
-    function toggleSidebarLinks(clickedLink){
-        links.forEach(link => link.classList.remove('active'));
-        clickedLink.classList.add('active');
-     }
-    links.forEach(link => {
-        link.addEventListener('click', function() {
-            toggleSidebarLinks(this);
-        });
-    });
     
   
   function createDate(){
@@ -93,7 +78,7 @@ function generateId() {
 }
 
 
-const messageContainer = document.createElement('div');
+let messageContainer = document.createElement('div');
 document.body.appendChild(messageContainer);
 
 const createAlertMessage = (text, className, duration = 5000) => {
@@ -191,31 +176,7 @@ const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000);
 }
 
 
-function addRowToTable(tableBody, patientId) {
-        const rowCount = tableBody.rows.length + 1;
-        const newRow = tableBody.insertRow();
 
-        const fullName = document.querySelector('#fullName').value;
-        const causeOfIncident = document.querySelector('#coi').value;
-        const dateOfIncident = document.querySelector('#doi').value;
-        const timeOfIncident = document.querySelector('#toi').value;
-        
-        const aliveStatus = document.createElement('div');
-        const deadStatus = document.createElement('div');
-        deadStatus.className = 'red'
-        aliveStatus.className = 'green'
-
-
-        newRow.insertCell(0).innerHTML = rowCount;
-        newRow.insertCell(1).innerHTML =fullName; // Use the passed ID
-        newRow.insertCell(2).innerHTML = patientId;
-        newRow.insertCell(3).innerHTML = causeOfIncident;
-        newRow.insertCell(4).innerHTML = dateOfIncident;
-        newRow.insertCell(5).innerHTML = timeOfIncident;
-        const statusCell =  newRow.insertCell(6);
-        statusCell.appendChild(aliveStatus)
-//    statusCell.appendChild(deadStatus)
-}
 
 
 
@@ -252,104 +213,3 @@ function filterAvailablePatient() {
 document.querySelector('#searchInput').addEventListener('input', filterAvailablePatient);
 
 
-
-
-
-
-////////////////////////////////////////////BOOK APPOITMENT////////////////////////// && TRANSFER///////////////////
-const appoitment__div = document.querySelector('.appoitment__div');
-function bookPatient(){
-    const patient = document.querySelectorAll('#TableData tbody');
-    patient.forEach(patient => {
-       patient.addEventListener('click', function(e){
-        const message = document.createElement('div');
-          
-           const formInput = document.querySelectorAll('#bookForm #select_doc, #bookForm input,#bookForm textarea');
-           console.log(formInput);
-           const patientName = e.target.closest('tr').children[1].innerHTML;
-           const patientId = e.target.closest('tr').children[2].innerHTML;
-
-           formInput[0].value = patientName
-           formInput[1].value = patientId
-           message.innerHTML = `
-            <div>PATIENT: ${patientName.toUpperCase()}<br/> ID:  ${patientId.toUpperCase()}</div><br/>
-            <div id ="sections">
-            <ul>
-                <li><button class="btn_submit" type="button" data-section="nurse">Call in Nurse</button><li>
-                <li><button class="btn_submit" type="button" data-section="doctor">Call in Doctor</button><li>
-                <li><button class="btn_submit" type="button" data-section="rad">Transfer to Radiology</button><li>
-                <li><button class="btn_submit" type="button" data-section="lab">Transfer to Labouratory</button><li>
-                <li><button class="btn_submit" type="button" data-section="matanity">Transfer to Matanity</button><li>
-                <li><button class="btn_submit" type="button" data-section="icu">Transfer to ICU</button><li>
-                <li><button class="btn_submit" type="button" data-section="surgicalSuite">Transfer to Surgical Suite</button><li>
-            </ul>
-            </div>
-            `
-            message.className = 'alert_div'
-            message.style.color = 'rgb(42, 87, 215)',
-            message.style.backgroundColor = '#fff'
-            message.style.maxWidth = '500px'
-            document.querySelector('body').prepend(message);
-
-            const sectionButtons = document.querySelectorAll('#sections button');
-            const originalFormContent = document.querySelector('#bookForm').innerHTML;
-           
-            sectionButtons.forEach((section) => {
-                section.addEventListener('click', () => {
-                    const sectionName = section.getAttribute('data-section');
-                    const sectionText = section.innerHTML;
-                    console.log(sectionText);
-                    const form = document.querySelector('#bookForm');
-                    form.innerHTML = originalFormContent;
-
-                    if (sectionName === 'nurse' || sectionName === 'lab' || sectionName === 'rad' || sectionName === 'maternity' || sectionName === 'icu' || sectionName === 'surgicalSuite') {
-                        document.querySelector('.appoitment__div h3').innerHTML = `Available ${sectionText}`.toUpperCase();
-                        const selectElements = document.querySelectorAll('#bookForm .availableDoctor');
-        
-                        selectElements.forEach(element => {
-                            element.remove();
-                        });
-                        
-                        appoitment__div.classList.remove('hide');
-                    } else {
-                        document.querySelector('.appoitment__div h3').innerHTML = `Available ${sectionText}`.toUpperCase();
-                        const sectionForm = appoitment__div.children[2];
-                        console.log(sectionForm)
-                        appoitment__div.classList.remove('hide');
-                    }
-            })
-           })
-       })
-    })
-}
-document.querySelectorAll('.cancle').forEach(closeElement => {
-    closeElement.addEventListener('click', () => {
-        appoitment__div.classList.add('hide');
-    });
-    });
-   
-bookPatient()
-
-
-
-function updateUI(sectionToShow, sectionToHide, linkToActivate, linkToDeactivate) {
-    document.querySelector(sectionToShow).classList.remove('hide');
-    document.querySelector(sectionToHide).classList.add('hide');
-    document.querySelector(linkToActivate).classList.add('active');
-    document.querySelector(linkToDeactivate).classList.remove('active');
-}
-
-function updateUIAfterSubmission() {
-    updateUI('#emergency_list_section', '.container', '#emergency__link', '#emergency__form__link');
-}
-
-function emergencyForm() {
-    updateUI('.container', '#emergency_list_section', '#emergency__form__link', '#emergency__link');
-}
-
-function emergencyList() {
-    updateUI('#emergency_list_section', '.container', '#emergency__link', '#emergency__form__link');
-}
-
-
-emergencyForm(); // Initial UI state
