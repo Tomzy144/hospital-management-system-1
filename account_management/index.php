@@ -132,75 +132,54 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                 <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
-                    <table>
-                                            <thead>
-                                                <tr>
-                                                    <td>S/N</td>
-                                                    <td>PASSPORT</td>
-                                                    <td>Patient Name</td>
-                                                    <td>Patient ID</td>
-                                                    <td>Date</td>
-                                                    <td>Time</td>
-                                                    <td>Request type</td>
-                                                    <td>Amount($)</td>
-                                                    <td>Status</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <td>
-                                                        <img src="" alt="">
-                                                </td>
-                                                <td>Jeff Ben</td>
-                                                <td>PAT0001</td>
-                                                <td>23/09/2000</td>
-                                                <td>23:00</td>
-                                                <td>Drug purchased</td>
-                                                <td>3000</td>
-                                              <td>
-                                              <button class="accept-btn" type="button" onclick="show_radiology_input()">Paid</button>
-                                              <button class="reject-btn">Cancelled</button>
-                                              </td>
-                                              </tr>
-                                            </tbody>
-                                            <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <td>
-                                                        <img src="" alt="">
-                                                </td>
-                                                <td>Jeff Ben</td>
-                                                <td>PAT0001</td>
-                                                <td>23/09/2000</td>
-                                                <td>23:00</td>
-                                                <td>Drug purchased</td>
-                                                <td>3000</td>
-                                              <td>
-                                              <button class="accept-btn" type="button" onclick="show_radiology_input()">Paid</button>
-                                              <button class="reject-btn">Cancelled</button>
-                                              </td>
-                                              </tr>
-                                            </tbody>
-                                            <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <td>
-                                                        <img src="" alt="">
-                                                </td>
-                                                <td>Jeff Ben</td>
-                                                <td>PAT0001</td>
-                                                <td>23/09/2000</td>
-                                                <td>23:00</td>
-                                                <td>Drug purchased</td>
-                                                <td>3000</td>
-                                              <td>
-                                              <button class="accept-btn" type="button" onclick="show_radiology_input()">Paid</button>
-                                              <button class="reject-btn">Cancelled</button>
-                                              </td>
-                                              </tr>
-                                            </tbody>
-                        </table>
+                <?php
+                  $sql = "SELECT a.*, p.fullname, p.patient_passport 
+                  FROM account_appointment_tab a
+                  INNER JOIN patient_tab p ON a.patient_id = p.patient_id";
+                  $result = mysqli_query($conn, $sql);
+                  ?>
+
+                  <table>
+                      <thead>
+                          <tr>
+                              <td>S/N</td>
+                              <td>PASSPORT</td>
+                              <td>Patient Name</td>
+                              <td>Patient ID</td>
+                              <td>Date & Time</td>
+                              <td>Request type</td>
+                              <td>Amount($)</td>
+                              <td>Status</td>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <?php
+                          // Initialize the counter for serial number
+                          $sn = 1;
+                          // Loop through the result set
+                          while ($row = mysqli_fetch_assoc($result)) {
+                              echo "<tr>
+                                      <td>{$sn}</td>
+                                      <td><img src='{$website_url}/uploaded_files/profile_pix/patient/{$row["patient_passport"]}' alt='passport'></td>
+                                      <td>{$row['fullname']}</td>
+                                      <td>{$row['patient_id']}</td>
+                                      <td>{$row['date']} {$row['time']}</td>
+                                      <td>{$row['tests']}</td>
+                                      <td>{$row['total_amount']}</td>
+                                      <td>{$row['payment_status']}</td>
+
+                                      <td>
+                                          <button class='accept-btn' type'button' onclick='show_radiology_input()'>Paid</button>
+                                          <button class='reject-btn'>Cancelled</button>
+                                      </td>
+                                  </tr>";
+                              $sn++; // Increment the serial number
+                          }
+                          ?>
+                      </tbody>
+                  </table>
+
+
                     </div>
                 </div>
             </div>
