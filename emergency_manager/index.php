@@ -85,11 +85,11 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <div class="sidebar__header"></div>
     <div class="sidebar-body">
       <ul>
-        <li  id="emergency__form__link" class="links active" onclick="emergencyForm()">
+        <li  id="emergency__form__link" class="links active">
           <i class="fa-solid fa-person-pregnant"></i>
           <span>Emergecy Unit Form</span>
         </li>
-        <li id="emergency__link" class="links" onclick="emergencyList()">
+        <li id="emergency__link" class="links">
           <i class="fa-solid fa-person-pregnant"></i>
           <span>Emergency Patient List</span>
         </li>

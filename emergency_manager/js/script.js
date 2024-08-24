@@ -56,8 +56,9 @@ function isInputChecked(selector) {
         const startsWith080 = phoneNumber.startsWith('080');
         const startsWith091 = phoneNumber.startsWith('091');
         const startsWith442 = phoneNumber.startsWith('442');
+        const startsWith070 = phoneNumber.startsWith('070');
 
-        return phoneNumber.length === 10 && isNumeric && startsWith090 || startsWith081 || startsWith080 || startsWith091 || startsWith442 ;
+        return phoneNumber.length === 10 && isNumeric && startsWith090 || startsWith070 || startsWith081 || startsWith080 || startsWith091 || startsWith442 ;
     }
 
 function showMessage(message, text, backgroundColor) {
@@ -171,9 +172,8 @@ const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000);
               $btnSubmit.html(btnText);
               $btnSubmit.prop('disabled', false);
           }
-      });
-        }
-}
+          });
+        }}
 
 
 
