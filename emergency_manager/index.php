@@ -114,16 +114,16 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
 <div class="form-control">
   <label for="fullName">Full name</label>
-  <input type="text" name ="fullName" id="fullName" class="emergencyInput">
+  <input type="text" name ="fullName" id="fullName" value="" class="emergencyInput">
   </div>
   <div class="form-control">
   <label for="dob">Date of Birth</label>
-  <input type="date" name="dob" id="dob" class="emergencyInput"> 
+  <input type="date" name="dob" id="dob" value="" class="emergencyInput"> 
   </div>
   
   <div class="form-control">
   <label for="address">Address</label>
-  <input type="text" name ="address" id=" address" class="emergencyInput">
+  <input type="text" name ="address" id="address" value="" class="emergencyInput">
   </div>
   <div class="form-control">
                       <label for="gender">Gender</label>
@@ -145,16 +145,16 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
   <label for="efullName">Full Name</label>
-  <input type="text" name ="efullName" id="efullName" class="emergencyInput">
+  <input type="text" name ="efullName" id="efullName" value="" class="emergencyInput">
  </div>
 
  <div class="form-control">
   <label for="contactNumber">Contact Number</label>
-  <input type="text" name ="contactNumber" id="contactNumber" class="emergencyInput">
+  <input type="text" name ="contactNumber" id="contactNumber" value="" class="emergencyInput">
   </div>
   <div class="form-control">
   <label for="relationship">Relatonship</label>
-  <input type="text" name ="relationship" class="emergencyInput" id="relationship" >
+  <input type="text" name ="relationship" class="emergencyInput" value="" id="relationship" >
   </div>
 
   </div>
@@ -162,16 +162,16 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
   <label for="doi">Date of the Incident</label>
-  <input type="date" name="doi" id="doi" class="emergencyInput"> 
+  <input type="date" name="doi" id="doi" value="" class="emergencyInput"> 
  </div>
 
  <div class="form-control">
   <label for="toi">Time of the Incident</label>
-  <input type="time" name="toi" id="toi" class="emergencyInput"> 
+  <input type="time" name="toi" value="" id="toi" class="emergencyInput"> 
   </div>
  <div class="form-control">
   <label for="coi">Cause of the Incident</label>
-  <input type="text" name ="coi" id="coi" class="emergencyInput">
+  <input type="text" name ="coi" id="coi" value="" class="emergencyInput">
   </div>
   </div>
   <button class="btn_submit" type="button" id="submitEmergencyInput" onclick="EmergencyPatient()"> Submit</button>

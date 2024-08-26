@@ -58,7 +58,7 @@ function isInputChecked(selector) {
         const startsWith442 = phoneNumber.startsWith('442');
         const startsWith070 = phoneNumber.startsWith('070');
 
-        return phoneNumber.length === 10 && isNumeric && startsWith090 || startsWith070 || startsWith081 || startsWith080 || startsWith091 || startsWith442 ;
+        return phoneNumber.length === 11 && isNumeric && startsWith090 || startsWith070 || startsWith081 || startsWith080 || startsWith091 || startsWith442 ;
     }
 
 function showMessage(message, text, backgroundColor) {
@@ -111,41 +111,48 @@ const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000);
 
 
     function EmergencyPatient() {
-    const emergencyInputData = document.querySelectorAll('#emergencyInputData .emergencyInput');
-        let oppositeGender;
-        function saveOppositeGender() {
-      const maleCheckbox = document.getElementById('maleCheckbox');
-      const femaleCheckbox = document.getElementById('femaleCheckbox');
-      maleCheckbox.addEventListener('change', () => {
-        if (maleCheckbox.checked) oppositeGender = 'female';
-      });
-      femaleCheckbox.addEventListener('change', () => {
-        if (femaleCheckbox.checked) oppositeGender = 'male';
-      });
-    }
-    saveOppositeGender();
-
+        const emergencyInputData = document.querySelectorAll('#emergencyInputData .emergencyInput');
+        let selectedGender = null;
+    
+        function saveSelectedGender() {
+            const maleCheckbox = document.getElementById('maleCheckbox');
+            const femaleCheckbox = document.getElementById('femaleCheckbox');
+    
+            maleCheckbox.addEventListener('change', () => {
+                if (maleCheckbox.checked) selectedGender = 'male';
+            });
+    
+            femaleCheckbox.addEventListener('change', () => {
+                if (femaleCheckbox.checked) selectedGender = 'female';
+            });
+        }
+        saveSelectedGender();
+    
         if (!isFormValid(emergencyInputData)) {
-            warningMessage('Please input field');
+            warningMessage('Please fill in all required fields.');
         } else if (!isPhoneNumberValid('#contactNumber')) {
             warningMessage('Invalid Phone Number');
-        }else if(!isInputChecked('#maleCheckbox') && !isInputChecked('#femaleCheckbox')){
+        } else if (!isInputChecked('#maleCheckbox') && !isInputChecked('#femaleCheckbox')) {
             warningMessage('Select Gender');
-        }
-         else {
-            const fullName = document.getElementById('fullName');
-            const dob = document.getElementById('dob');
-            const gender = oppositeGender
-            const address = document.getElementById('address');
-            const emergencyFullName = document.getElementById('efullName');
-            const contactNumber = document.getElementById('contactNumber');
-            const relationship = document.getElementById('relationship');
-            const dateOfIncident = document.getElementById('doi');
-            const timeOfIncident = document.getElementById('toi');
-            const causeOfIncident = document.getElementById('coi');
-
-                  var action = 'surgical_procedure';
-                    var dataString = "action=" + action + "&fullName=" + fullName + "&dob=" + dob + "&gender=" + gender + "&address=" + address + "&emergencyFullName="+ emergencyFullName + "&contactNumber="+ contactNumber + "&relationship="+ relationship + "&dateOfIncident="+ dateOfIncident + "&timeOfIncident="+ timeOfIncident + "&causeOfIncident="+ causeOfIncident ;
+        } else {
+            var fullName = document.getElementById('fullName').value;
+            var dob = document.getElementById('dob').value;
+            var gender = selectedGender;
+            var address = document.getElementById('address').value;
+            var emergencyFullName = document.getElementById('efullName').value;
+            var contactNumber = document.getElementById('contactNumber').value;
+            var relationship = document.getElementById('relationship').value;
+            var dateOfIncident = document.getElementById('doi').value;
+            var timeOfIncident = document.getElementById('toi').value;
+            var causeOfIncident = document.getElementById('coi').value;
+    
+            var $btnSubmit = $('#submitEmergencyInput'); // Assuming you're using a button with this ID
+            var btnText = $btnSubmit.html();
+            $btnSubmit.html('Processing...');
+            $btnSubmit.prop('disabled', true);
+    
+            var action = 'emergency_input';
+            var dataString = "action=" + action + "&fullName=" + fullName + "&dob=" + dob + "&gender=" + gender + "&address=" + address + "&emergencyFullName="+ emergencyFullName + "&contactNumber="+ contactNumber + "&relationship="+ relationship + "&dateOfIncident="+ dateOfIncident + "&timeOfIncident="+ timeOfIncident + "&causeOfIncident="+ causeOfIncident ;
 
       $.ajax({
           type: 'POST',
