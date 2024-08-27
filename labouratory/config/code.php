@@ -34,7 +34,7 @@
         // Prepare the SQL query with placeholders
         $query = "INSERT INTO `account_appointment_tab`
                   (`patient_id`, `account_appointment_id`, `tests`, `total_amount`, `payment_status` ,`time`) 
-                  VALUES (?, ?, ?, ?, ? now())";
+                  VALUES (?, ?, ?, ?, ?, now())";
     
         // Use a prepared statement to avoid SQL injection
         $stmt = $conn->prepare($query);
