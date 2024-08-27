@@ -291,7 +291,6 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 
 <script>
      const links = document.querySelectorAll('.sidebar-body ul li');
-  
     function toggleSidebarLinks(clickedLink){
         links.forEach(link => link.classList.remove('active'));
         clickedLink.classList.add('active');
@@ -301,24 +300,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
             toggleSidebarLinks(this);
         });
     });
-    
-
 </script>
   </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-  
   </div>
-
     <script src="js/section.js"></script> 
     <script src="js/script.js"></script> 
 </body>

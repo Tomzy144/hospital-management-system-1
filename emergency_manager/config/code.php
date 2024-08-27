@@ -21,23 +21,23 @@
     case 'emergency_input':
 
         // Capture POST data
-        $Epatient_name = $_POST['fullname'];
+        $Epatient_name = $_POST['fullName'];
         $dob = $_POST['dob'];
         $address = $_POST['address'];
         $gender = $_POST['gender'];
-        $ec_name = $_POST['ec_name'];
-        $ec_contact_no = $_POST['ec_contact_no'];
-        $ec_relationship = $_POST['ec_relationship'];
-        $date_of_incident = $_POST['date_of_incident'];
-        $time_of_incident = $_POST['time_of_incident'];
-        $cause_of_incident = $_POST['cause_of_incident'];
+        $ec_name = $_POST['emergencyFullName'];
+        $ec_contact_no = $_POST['contactNumber'];
+        $ec_relationship = $_POST['relationship'];
+        $date_of_incident = $_POST['dateOfIncident'];
+        $time_of_incident = $_POST['timeOfIncident'];
+        $cause_of_incident = $_POST['causeOfIncident'];
         $status_id = "1";
     
         // Assuming wphonenumber is a part of the form data, make sure to capture it.
-        $wphonenumber = $_POST['wphonenumber'];
+        // $wphonenumber = $_POST['wphonenumber'];
     
         // Check for existing record with the same phone number
-        $phonenumber_query = mysqli_query($conn, "SELECT * FROM emergency_patient_tab WHERE `wphonenumber`='$wphonenumber'");
+        $phonenumber_query = mysqli_query($conn, "SELECT * FROM emergency_patient_tab WHERE `ec_contact_no`='$ec_contact_no'");
         $check_query_count = mysqli_num_rows($phonenumber_query);
     
         if ($check_query_count > 0) {    
