@@ -68,7 +68,6 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
             <span><?php echo $fullname ?></span>
-            <button class="btn_submit">Upload Image</button>
            </div>
 
             <div class="image">
@@ -85,11 +84,11 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <div class="sidebar__header"></div>
     <div class="sidebar-body">
       <ul>
-        <li  id="emergency__form__link" class="links active">
+        <li  id="emergency__form__link" class="links active" onclick="patientLForm()">
           <i class="fa-solid fa-person-pregnant"></i>
           <span>Emergecy Unit Form</span>
         </li>
-        <li id="emergency__link" class="links">
+        <li id="emergency__link" class="links" onclick="patientList()">
           <i class="fa-solid fa-person-pregnant"></i>
           <span>Emergency Patient List</span>
         </li>
@@ -121,13 +120,14 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <input type="date" name="dob" id="dob" class="emergencyInput"> 
   </div>
   
+
   <div class="form-control">
   <label for="address">Address</label>
   <input type="text" name ="address" id=" address" class="emergencyInput">
   </div>
-  <div class="form-control">
-                      <label for="gender">Gender</label>
-                    <div class="radio-group">
+  <div class="form-control" onchange='saveOppositeGender()'>
+                <label for="gender">Gender</label>
+                <div class="radio-group">
               <label>
                   Male
                   <input type="radio" name="gender" value="male" id="maleCheckbox">
@@ -139,8 +139,9 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                   <span class="custom-radio"></span>
               </label>
             </div>
-                    </div>
-  </div>
+              </div>
+            </div>
+
   <h3>Emergency Contact</h3>
   <div class="each_sections">
   <div class="form-control">
@@ -178,7 +179,6 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 </form>
 </div>
 </div>
-
 
 <div class="appoitment__div hide">
   <h3>AVAILABLE</h3>
@@ -247,7 +247,6 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
             <div class="search_bar_container">
                 <h3>Emergency Patient List</h3>
                 <input type="text" name="" id="searchInput" placeholder="Search">
-                <i class="bi bi-search" id="searchPatient"></i>
             </div>
              
            

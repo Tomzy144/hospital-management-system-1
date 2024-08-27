@@ -110,21 +110,23 @@ const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000);
 
 
 
+
+
+let oppositeGender;
+function saveOppositeGender() {
+    const maleCheckbox = document.getElementById('maleCheckbox');
+    const femaleCheckbox = document.getElementById('femaleCheckbox');
+    if(maleCheckbox.checked){
+    oppositeGender = maleCheckbox.value
+    }
+    if(femaleCheckbox.checked){
+    oppositeGender = femaleCheckbox.value
+    }
+    }
+
+
     function EmergencyPatient() {
     const emergencyInputData = document.querySelectorAll('#emergencyInputData .emergencyInput');
-        let oppositeGender;
-        function saveOppositeGender() {
-      const maleCheckbox = document.getElementById('maleCheckbox');
-      const femaleCheckbox = document.getElementById('femaleCheckbox');
-      maleCheckbox.addEventListener('change', () => {
-        if (maleCheckbox.checked) oppositeGender = 'female';
-      });
-      femaleCheckbox.addEventListener('change', () => {
-        if (femaleCheckbox.checked) oppositeGender = 'male';
-      });
-    }
-    saveOppositeGender();
-
         if (!isFormValid(emergencyInputData)) {
             warningMessage('Please input field');
         } else if (!isPhoneNumberValid('#contactNumber')) {
@@ -173,12 +175,8 @@ const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000);
               $btnSubmit.prop('disabled', false);
           }
           });
-        }}
-
-
-
-
-
+        }
+    }
 
 
 function filterAvailablePatient() {
@@ -213,3 +211,20 @@ function filterAvailablePatient() {
 document.querySelector('#searchInput').addEventListener('input', filterAvailablePatient);
 
 
+function patientList(){
+    const emergency_list_section = document.getElementById('emergency_list_section');
+    const container = document.querySelector('.container');
+    const emergency_form_container = document.querySelector('.emergency_form_container');
+    emergency_list_section.classList.remove('hide');
+    emergency_form_container.classList.add('hide');
+    container.classList.add('hide');
+
+}
+function patientLForm(){
+    const emergency_list_section = document.getElementById('emergency_list_section');
+    const container = document.querySelector('.container');
+    const emergency_form_container = document.querySelector('.emergency_form_container');
+    emergency_list_section.classList.add('hide');
+    emergency_form_container.classList.remove('hide');
+    container.classList.remove('hide');
+}
