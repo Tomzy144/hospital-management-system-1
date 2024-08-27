@@ -119,11 +119,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <label for="dob">Date of Birth</label>
   <input type="date" name="dob" id="dob" class="emergencyInput"> 
   </div>
-  
 
   <div class="form-control">
   <label for="address">Address</label>
-  <input type="text" name ="address" id=" address" class="emergencyInput">
+  <input type="text" name ="address" id="address" class="emergencyInput">
   </div>
   <div class="form-control" onchange='saveOppositeGender()'>
                 <label for="gender">Gender</label>
@@ -148,6 +147,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <label for="efullName">Full Name</label>
   <input type="text" name ="efullName" id="efullName" class="emergencyInput">
  </div>
+
 
  <div class="form-control">
   <label for="contactNumber">Contact Number</label>

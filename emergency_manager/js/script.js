@@ -112,7 +112,7 @@ const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000);
 
 
 
-let oppositeGender;
+let selectedGender;
 function saveOppositeGender() {
     const maleCheckbox = document.getElementById('maleCheckbox');
     const femaleCheckbox = document.getElementById('femaleCheckbox');
