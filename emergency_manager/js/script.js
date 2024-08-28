@@ -116,13 +116,17 @@ let selectedGender;
 function saveOppositeGender() {
     const maleCheckbox = document.getElementById('maleCheckbox');
     const femaleCheckbox = document.getElementById('femaleCheckbox');
-    if(maleCheckbox.checked){
-    oppositeGender = maleCheckbox.value
+    
+    if (maleCheckbox.checked) {
+        selectedGender = maleCheckbox.value;
+    } else if (femaleCheckbox.checked) {
+        selectedGender = femaleCheckbox.value;
     }
-    if(femaleCheckbox.checked){
-    oppositeGender = femaleCheckbox.value
-    }
-    }
+    
+    // console.log(selectedGender);
+}
+
+   
 
 
     function EmergencyPatient() {
