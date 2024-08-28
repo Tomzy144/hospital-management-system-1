@@ -252,7 +252,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
            
             <?php
               // Assuming you have a valid connection to the database in $conn
-              $sql = "SELECT * FROM emergency_unit_tab";
+              $sql = "SELECT * FROM emergency_patient_tab";
               $result = mysqli_query($conn, $sql);
 
               if (mysqli_num_rows($result) > 0) {
