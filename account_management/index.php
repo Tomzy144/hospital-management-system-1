@@ -116,7 +116,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
             <div class="sidebar-footer">
                     <div>
                     <!-- <i class="bi bi-person"></i> -->
-                    <span>USER0001</span>
+                    <span>USER ID: <?php echo $s_account_unit_id?></span>
                     </div>
                     <span>Cash: $0.00</span>
                     <span>P0S:$0.00</span>
@@ -133,55 +133,63 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                     <input type="text" placeholder="Search here">
                 </div>
                 <?php
-                  $sql = "SELECT a.*, p.fullname, p.patient_passport 
-                  FROM account_appointment_tab a
-                  INNER JOIN patient_tab p ON a.patient_id = p.patient_id";
-                  $result = mysqli_query($conn, $sql);
-                  ?>
+                    $sql = "SELECT a.*, p.fullname, p.patient_passport 
+                            FROM account_appointment_tab a
+                            INNER JOIN patient_tab p ON a.patient_id = p.patient_id";
+                    $result = mysqli_query($conn, $sql);
+                    ?>
 
-                  <table>
-                      <thead>
-                          <tr>
-                              <td>S/N</td>
-                              <td>PASSPORT</td>
-                              <td>Patient Name</td>
-                              <td>Patient ID</td>
-                              <td>Date & Time</td>
-                              <td>Request type</td>
-                              <td>Amount($)</td>
-                              <td>Status</td>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <?php
-                          // Initialize the counter for serial number
-                          $sn = 1;
-                          // Loop through the result set
-                          if (mysqli_num_rows($result) > 0) {
-                            // Loop through the result set
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                echo "<tr>
-                                        <td>{$sn}</td>
-                                        <td><img src='{$website_url}/uploaded_files/profile_pix/patient/{$row["patient_passport"]}' alt='passport'></td>
-                                        <td>{$row['fullname']}</td>
-                                        <td data-patient-id='{$row['patient_id']}'>{$row['patient_id']}</td>
-                                        <td data-time='{$row['time']}'>{$row['time']}</td>
-                                        <td>{$row['tests']}</td>
-                                        <td>{$row['total_amount']}</td>
-                                        <td>{$row['payment_status']}</td>
-                                        <td>
-                                            <button class='accept-btn' type='button' id='paid_btn_{$sn}' onclick='paid(\"{$row['patient_id']}\", \"{$row['time']}\")'>Paid</button>
-                                            <button class='reject-btn'>Cancelled</button>
-                                        </td>
-                                    </tr>";
-                                $sn++; // Increment the serial number
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>S/N</td>
+                                <td>PASSPORT</td>
+                                <td>Patient Name</td>
+                                <td>Patient ID</td>
+                                <td>Date & Time</td>
+                                <td>Request type</td>
+                                <td>Amount($)</td>
+                                <td>Status</td>
+                                <td>Actions</td> <!-- Added a column header for actions -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $sn = 1; // Initialize the counter for serial number
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    // Escaping output to prevent XSS attacks
+                                    $patient_passport = htmlspecialchars($row["patient_passport"]);
+                                    $fullname = htmlspecialchars($row['fullname']);
+                                    $patient_id = htmlspecialchars($row['patient_id']);
+                                    $time = htmlspecialchars($row['time']);
+                                    $tests = htmlspecialchars($row['tests']);
+                                    $total_amount = htmlspecialchars($row['total_amount']);
+                                    $payment_status = htmlspecialchars($row['payment_status']);
+
+                                    echo "<tr>
+                                            <td>{$sn}</td>
+                                            <td><img src='{$website_url}/uploaded_files/profile_pix/patient/{$patient_passport}' alt='passport'></td>
+                                            <td>{$fullname}</td>
+                                            <td data-patient-id='{$patient_id}'>{$patient_id}</td>
+                                            <td data-time='{$time}'>{$time}</td>
+                                            <td>{$tests}</td>
+                                            <td>{$total_amount}</td>
+                                            <td>{$payment_status}</td>
+                                            <td>
+                                                <button class='accept-btn' type='button' id='paid_btn_{$sn}' onclick='paid(\"{$patient_id}\", \"{$time}\")'>Paid</button>
+                                                <button class='reject-btn'>Cancelled</button>
+                                            </td>
+                                        </tr>";
+                                    $sn++; // Increment the serial number
+                                }
+                            } else {
+                                echo "<tr><td colspan='9'>No records for now</td></tr>";
                             }
-                        } else {
-                            echo "<tr><td colspan='9'>No records for now </td></tr>";
-                        }
-                          ?>
-                      </tbody>
-                  </table>
+                            ?>
+                        </tbody>
+                    </table>
+
 
 
                     </div>
@@ -263,6 +271,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                 <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
+                <!-- ?php $sql = "SELECT * FROM account_appointment_tab AND account_appointment_confirm_tab"?> -->
                     <table>
                                             <thead>
                                                 <tr>
