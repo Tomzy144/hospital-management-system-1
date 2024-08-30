@@ -33,18 +33,16 @@
         $cause_of_incident = $_POST['causeOfIncident'];
         $status_id = "1";
     
-        // Assuming wphonenumber is a part of the form data, make sure to capture it.
-        // $wphonenumber = $_POST['wphonenumber'];
-    
         // Check for existing record with the same phone number
-        $phonenumber_query = mysqli_query($conn, "SELECT * FROM emergency_patient_tab WHERE `ec_contact_no`='$ec_contact_no'");
-        $check_query_count = mysqli_num_rows($phonenumber_query);
+        $stmt = $conn->prepare("SELECT * FROM emergency_patient_tab WHERE `ec_contact_no` = ?");
+        $stmt->bind_param("s", $ec_contact_no);
+        $stmt->execute();
+        $stmt->store_result();
+        $check_query_count = $stmt->num_rows;
     
         if ($check_query_count > 0) {    
-            $check = 0; // invalid phone number.
             echo json_encode(array("success" => false, "message" => "Phone number already exists."));
         } else {
-            $check = 1;
     
             // Get sequence
             $sequence = $callclass->_get_sequence_count($conn, 'Epat');
@@ -52,20 +50,25 @@
             $no = $array[0]['no'];
             $emergency_patient_id = 'Epat' . $no;
     
-            // Insert the new emergency patient record
-            $insert_query = "INSERT INTO `emergency_patient_tab`
+            // Prepare the insert query
+            $stmt = $conn->prepare("INSERT INTO `emergency_patient_tab`
             (`emergency_patient_id`, `Epatient_name`, `status_id`, `dob`, `address`, `gender`, `ec_name`, `ec_contact_no`, `ec_relationship`, `date_of_incident`, `time_of_incident`, `cause_of_incident`, `date`) 
-            VALUES ('$emergency_patient_id', '$Epatient_name', '$status_id', '$dob', '$address', '$gender','$ec_name','$ec_contact_no','$ec_relationship','$date_of_incident','$time_of_incident','$cause_of_incident', NOW())";
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
     
-            if (mysqli_query($conn, $insert_query)) {
+            $stmt->bind_param("ssssssssssss", $emergency_patient_id, $Epatient_name, $status_id, $dob, $address, $gender, $ec_name, $ec_contact_no, $ec_relationship, $date_of_incident, $time_of_incident, $cause_of_incident);
+    
+            if ($stmt->execute()) {
                 echo json_encode(array("success" => true, "patient_id" => $emergency_patient_id));
             } else {
-                echo json_encode(array("success" => false, "message" => mysqli_error($conn)));
+                echo json_encode(array("success" => false, "message" => $stmt->error));
             }
+    
+            $stmt->close();
         }
         
         break;
-    }    
+    }
+    
 
     ?>
      
