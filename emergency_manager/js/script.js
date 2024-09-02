@@ -167,6 +167,7 @@ function saveOppositeGender() {
             success: function (data) {
                 if (data.success === true) { // Use boolean comparison
                     successMessage(data.message || 'Patient has been transferred to the Surgical suit successfully');
+                    window.location.reload();
                 } else if (data.success === false) {
                     dangerMessage(data.message || 'Phone number already exists');
                 }

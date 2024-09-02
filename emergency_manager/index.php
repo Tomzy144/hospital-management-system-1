@@ -304,7 +304,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   </div>
   </div>
-    <script src="js/section.js"></script> 
-    <script src="js/script.js"></script> 
+    <!-- <script src="js/section.js"></script> 
+    <script src="js/script.js"></script>  -->
 </body>
 </html>
