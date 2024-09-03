@@ -229,7 +229,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                       <tbody>
                          <tr>
                             <td>1</td>
-                            <td><img src='$website_url}/uploaded_files/profile_pix/patient/the image name from the database' alt='passport'></td>
+                            <td><img src='$website_url/uploaded_files/profile_pix/patient/the image name from the database' alt='passport'></td>
                             <td>fullname</td>
                             <td>patient_id</td>
                             <td>time</td>
