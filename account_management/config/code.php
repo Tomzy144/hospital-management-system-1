@@ -16,6 +16,45 @@
         break;
 
 
+
+        case 'pending_transaction':
+
+            // Retrieve the patient_id from the POST request
+            $patient_id = $_POST['patient_id'];
+        
+            $response = array(); // Initialize the response array
+        
+            // SQL query to fetch appointment details for the specific patient along with patient details
+            $sql = "SELECT a.*, p.fullname, p.patient_passport 
+                    FROM account_appointment_tab a
+                    INNER JOIN patient_tab p ON a.patient_id = p.patient_id
+                    WHERE a.patient_id = '$patient_id'"; // Filter by patient_id
+        
+            $result = mysqli_query($conn, $sql);
+        
+            // Check if any rows are returned
+            if (mysqli_num_rows($result) > 0) {
+                $pending_appointments = array();
+        
+                // Fetch each row and add to the appointments array
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $pending_appointments[] = $row;
+                }
+        
+                $response['success'] = true;
+                $response['data'] = $pending_appointments; // Add the appointments data to the response
+        
+            } else {
+                $response['success'] = false;
+                $response['message'] = "No pending transactions found for the patient.";
+            }
+        
+            // Return the response as JSON
+            echo json_encode($response);
+        
+            break;
+        
+
         case 'paid':
 
             // Retrieve the patient_id and time from the POST request
