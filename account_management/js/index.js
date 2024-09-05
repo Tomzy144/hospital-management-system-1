@@ -209,35 +209,30 @@ accept();
 
 
 
-async function displayPendingTransactions() {
-//     try{
-//       const response =  await  fetch('config/code.php/pending_transactions');
-//       if(!response.ok) throw new Error('Network Issue');
-//         const data = await response.json();
-//         console.log(data)
-//     }catch(err){
-//         console.log(err.message)
-//     }
-// }
-var action = 'pending_transactions';
-var dataString = "action=" + action 
+function displayPendingTransactions() {
+    var action = 'pending_transactions';
+    var dataString = "action=" + action;
 
-$.ajax({
-    type: 'GET',
-    url: "config/code.php",
-    data: dataString,
-    cache: false,
-    dataType: 'json',
-    success: function (data) {
-        if (data.success) {
-            console.log(data)
-        } else {
-            console.error('Error:', data.error);
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (response) {
+            if (response.success) {
+                console.log(response.data); // Logs the pending transactions data
+                alert(JSON.stringify(response.data)); // Alerts the transaction data
+            } else {
+                console.error('Error:', response.message); // Display the error message
+                alert('Error: ' + response.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error); // Logs the AJAX error
+            alert('AJAX Error: ' + error); // Alerts the AJAX error
         }
-    },
-    error: function (xhr, status, error) {
-        console.error('AJAX Error:', error);
-    }
-})
+    });
 }
-displayPendingTransactions();
+
+// displayPendingTransactions();

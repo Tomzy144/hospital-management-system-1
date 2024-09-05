@@ -50,7 +50,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
     <?php include 'meta.php'?>
 
 </head>
-<body>
+<body onload="displayPendingTransactions();">
 
 
 

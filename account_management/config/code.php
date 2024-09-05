@@ -17,7 +17,7 @@
 
 
 
-        case 'pending_transaction':
+        case 'pending_transactions':
 
             // Retrieve the patient_id from the POST request
             $patient_id = $_POST['patient_id'];
@@ -25,10 +25,8 @@
             $response = array(); // Initialize the response array
         
             // SQL query to fetch appointment details for the specific patient along with patient details
-            $sql = "SELECT a.*, p.fullname, p.patient_passport 
-                    FROM account_appointment_tab a
-                    INNER JOIN patient_tab p ON a.patient_id = p.patient_id
-                    WHERE a.patient_id = '$patient_id'"; // Filter by patient_id
+            $sql = "SELECT *
+                    FROM account_appointment_tab"; // Filter by patient_id
         
             $result = mysqli_query($conn, $sql);
         
@@ -39,6 +37,9 @@
         
                 $response['success'] = true;
                 $response['data'] = $row; // Send the row as data in the response
+
+                // $response['success'] = true;
+                // $response['message'] = "Successful Payment.";
         
             } else {
                 $response['success'] = false;
