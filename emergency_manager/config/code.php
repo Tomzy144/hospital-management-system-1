@@ -67,6 +67,11 @@
         }
         
         break;
+
+//         doctor
+// nurse
+// lab
+// radiology
     }
     
 

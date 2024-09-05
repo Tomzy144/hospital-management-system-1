@@ -281,6 +281,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                               <td>' . htmlspecialchars($row['date_of_incident']) . '</td>
                               <td>' . htmlspecialchars($row['time_of_incident']) . '</td>
                               <td>' . htmlspecialchars($row['status_id']) . '</td>
+                              <td><i class="bi bi-three-dots" onclick=""></td>
                             </tr>';
                   }
                   
