@@ -210,15 +210,6 @@ accept();
 
 
 async function displayPendingTransactions() {
-//     try{
-//       const response =  await  fetch('config/code.php/pending_transactions');
-//       if(!response.ok) throw new Error('Network Issue');
-//         const data = await response.json();
-//         console.log(data)
-//     }catch(err){
-//         console.log(err.message)
-//     }
-// }
 var action = 'pending_transactions';
 var dataString = "action=" + action 
 
