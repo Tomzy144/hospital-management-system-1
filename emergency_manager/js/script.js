@@ -111,7 +111,6 @@ const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000);
 
 
 
-
 let selectedGender;
 function saveOppositeGender() {
     const maleCheckbox = document.getElementById('maleCheckbox');
@@ -149,7 +148,7 @@ function saveOppositeGender() {
             var timeOfIncident = document.getElementById('toi').value;
             var causeOfIncident = document.getElementById('coi').value;
     
-            var $btnSubmit = $('#submitEmergencyInput'); // Assuming you're using a button with this ID
+            var $btnSubmit = $('#submitEmergencyInput'); 
             var btnText = $btnSubmit.html();
             $btnSubmit.html('Processing...');
             $btnSubmit.prop('disabled', true);
@@ -165,7 +164,7 @@ function saveOppositeGender() {
           dataType: 'json',
           success: function (data) {
               if (data.check === "success") {
-                  successMessage('Patient has been transferred to the Surgical suit successfully')
+                  successMessage('Successful');
                   $btnSubmit.html('Transfer');
                   $btnSubmit.prop('disabled', false);
                   close_tranfer_patient_lab();

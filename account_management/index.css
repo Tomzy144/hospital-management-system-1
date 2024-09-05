@@ -57,6 +57,104 @@
     background-color: green;
 }
 
+.alert{
+    display: flex;
+    align-items:center;
+    padding: 0.55rem 0.65rem 0.55rem 0.75rem;
+    max-width:400px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    z-index: 1200;
+    box-shadow:
+    0px 3.2px 13.8px rgba(0, 0, 0, 0.02),
+    0px 7.6px 33.3px rgba(0, 0, 0, 0.028),
+    0px 14.4px 62.6px rgba(0, 0, 0, 0.035),
+    0px 25.7px 111.7px c
+    0px 48px 208.9px rgba(0, 0, 0, 0.05),
+    0px 115px 500px rgba(0, 0, 0, 0.07)
+  }
+  .alert h2{
+    color: #fff;
+  }
+
+  .buttonflex{
+    display: flex;;
+    width: 200px;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .buttonflex button{
+    background-color: #ffffff;
+    color: #006CE3;
+  }
+  
+  .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+  }
+  .message{
+    display: flex;;
+  }
+  .icon{
+    padding: 0.5rem;
+    margin-right: 1rem;
+    width: auto;
+    height: fit-content;
+    border-radius:39% 61% 42% 58% / 50% 51% 49% 50%;
+    box-shadow:
+    0px 3.2px 13.8px rgba(0, 0, 0, 0.02),
+    0px 7.6px 33.3px rgba(0, 0, 0, 0.028),
+    0px 14.4px 62.6px rgba(0, 0, 0, 0.035),
+    0px 25.7px 111.7px rgba(0, 0, 0, 0.042),
+    0px 48px 208.9px rgba(0, 0, 0, 0.05),
+    0px 115px 500px rgba(0, 0, 0, 0.07);
+  }
+  .bootsrapIcon{
+    font-size: 3rem;
+    color: #fff;
+  }
+  
+  .success{
+    background-color: rgb(62, 189, 97);
+    border:2px solid #3ebd61;
+    animation: slideInDown 0.5s ease-in-out;
+  }
+  .success .icon{
+    background-color:#3ebd61;
+  }
+  .info{
+    background-color: rgb(0, 102, 221);
+    border:2px solid #006CE3;
+    animation: bounce 1s ease-in-out;
+  }
+  .info .icon{
+    background-color: #006CE3;
+  }
+  .warning{
+    background-color: rgb(235, 144, 0);
+    border:2px solid #EF9400;
+    animation: swing 0.5s ease-in-out;
+  }
+  .warning .icon{
+    background-color: #EF9400;
+  }
+  
+  .danger{
+    background-color: rgb(236, 77, 43);
+    animation: swing 0.5s ease-in-out;
+    border:2px solid #EF9400;
+  }
+  .danger .icon{
+    background-color: #EC4D2B;
+  }
+  
+
 .navbar{
     width: 100%;
     height: auto;
@@ -250,13 +348,17 @@ cursor: pointer;
 }
 
 .sidebar-body ul li.active{
-margin: 0.3rem 0;
-padding: 0.9rem;
-background-color: #f0f7ff;
-width: 100%;
-border-radius: 4px;
-cursor: pointer;
-}
+    margin: 0.3rem 0;
+    padding: 0.9rem;
+    background-color: rgb(42, 87, 215);
+    width: 100%;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+    .active span{
+        color: #fff;
+    }
 .sidebar-body ul li{
 margin: 0.3rem 0;
 padding: 0.9rem;
@@ -444,8 +546,84 @@ table thead  td{
     align-items: center;
 }
 
+.patient__receipt{
+  margin: 5rem 0 0 19rem;
+  /* width: 100%; */
+  height: auto;
+}
 
+
+  /* MODAL WINDOW */
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background-color: #ffffff;
+    padding:1rem 5rem;
+    overflow: auto;
+    box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: all 0.5s;
+  }
+  
+  .black--background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 4;
+    transition: all 0.5s;
+  }
+  
+  .modal__header {
+    font-size: 3.25rem;
+    line-height: 1.5;
+  }
+  
+  .modal__form {
+    align-items: center;
+    overflow: auto;
+    width: 100%;
+    overflow-x: hidden;
+    height: 450px;
+    gap: 2.5rem;
+  }
+  
+  
+  .modal__form button {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    margin-top: 1rem;
+  }
+  
+  .btn--close-modal {
+    font-family: inherit;
+    color: inherit;
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+    font-size: 4rem;
+    color: #4e73df;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
 
 .hide{
     display: none;
+}
+
+@media print {
+  body * {
+      visibility: hidden;
+  }
+  .patient__receipt * {
+      visibility: visible;
+      width: fit-content;
+  }
 }

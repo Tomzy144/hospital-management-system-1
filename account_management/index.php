@@ -76,8 +76,6 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
             <h4><?php echo $fullname ?></h4>
-            <button class="btn_submit">Upload Image</button>
-            <!-- <h4>change password</h4> -->
         </div>
             <div class="image">
             <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
@@ -115,17 +113,17 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
             </div>
             <div class="sidebar-footer">
                     <div>
-                    <!-- <i class="bi bi-person"></i> -->
+                    <i class="bi bi-person"></i>
                     <span>USER ID: <?php echo $s_account_unit_id?></span>
                     </div>
-                    <span>Cash: $0.00</span>
-                    <span>P0S:$0.00</span>
+                    <div id="pos">POS: ₦0.00</div>
+                    <div id="cash">Cash: ₦0.00</div>
                 </div>
             </div>
         </div>
 
 
-        <div class="pending__transactions">
+        <div class="pending__transactions hide">
             <div class="patient_list_div">
             <div class="search_bar_container">
                 <h3>Pending Transactions</h3>
@@ -139,7 +137,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                     $result = mysqli_query($conn, $sql);
                     ?>
 
-                    <table>
+                    <table id="pending">
                         <thead>
                             <tr>
                                 <td>S/N</td>
@@ -189,14 +187,33 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                             ?>
                         </tbody>
                     </table>
-
-
-
                     </div>
                 </div>
             </div>
             </div>
         </div>
+
+
+        <div class="patient__receipt">
+        <!-- <img src="./image/Mount_Tech_Logo-removebg-preview.png" alt="Company Logo" class="nount tech logo"> -->
+        <h1>Invoice</h1>
+        <h3>Customer: John Doe</h3>
+        <h3>Date: 2024-08-28</h3>
+        <table id="receipt__table">
+            <thead>
+                <tr>
+                    <td>Request type</td>
+                    <td>Price</td>
+                    <td>Date</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <h3>Total: ₦3,000</h3>
+        <button onclick="printInvoice()">Print</button>
+    </div>
 
         <div class="successful__transactions hide">
         <div class="patient_list_div">

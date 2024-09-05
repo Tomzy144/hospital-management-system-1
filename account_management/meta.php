@@ -12,9 +12,9 @@
     <link href="<?php echo $website_url?>/account_management/index.css" type="text/css" rel="stylesheet" />
 
     <!-- <link rel="stylesheet" href="index.css"> -->
-    <!-- <link rel="stylesheet" href="awesome-font/fontawesome/css/all.min.css"> 
+    <link rel="stylesheet" href="awesome-font/fontawesome/css/all.min.css"> 
     <link rel="stylesheet" href="awesome-font/css/animate.min.css"> 
-    <link rel="stylesheet" href="awesome-font/css/icons-1.10.2/font/bootstrap-icons.css">  -->
+    <link rel="stylesheet" href="awesome-font/css/icons-1.10.2/font/bootstrap-icons.css"> 
 
 
     <meta property="og:type" content="Website" />

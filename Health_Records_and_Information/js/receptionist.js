@@ -242,7 +242,7 @@ function display_profile(){
   }
 
 function patient_list(){
-  document.querySelector('.form_sections').style.display = 'none';
+  // document.querySelector('.form_sections').style.display = 'none';
   document.querySelector('.all_patient_list').classList.remove("hide")
   document.querySelector('.patient_list_div').classList.remove("hide")
   document.querySelector('.walkin_patient_list_div').classList.add("hide")
@@ -250,12 +250,11 @@ function patient_list(){
 }
 
 function _walkin_patient_list(){
-  document.querySelector('.form_sections').style.display = 'none';
+  // document.querySelector('.form_sections').style.display = 'none';
   document.querySelector('.all_patient_list').classList.remove("hide")
   document.querySelector('.patient_list_div').classList.add("hide")
   document.querySelector('.walkin_patient_list_div').classList.remove("hide")
   document.querySelector('.profile_container').classList.add("hide")
-  document.querySelector('.checkup_section').classList.add("hide")
 }
 
 function patient_admission_form_section(){
