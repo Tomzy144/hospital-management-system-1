@@ -130,60 +130,59 @@ function saveOppositeGender() {
 
     function EmergencyPatient() {
     const emergencyInputData = document.querySelectorAll('#emergencyInputData .emergencyInput');
-        if (!isFormValid(emergencyInputData)) {
-            warningMessage('Please fill in all required fields.');
-        } else if (!isPhoneNumberValid('#contactNumber')) {
-            warningMessage('Invalid Phone Number');
-        } else if (!isInputChecked('#maleCheckbox') && !isInputChecked('#femaleCheckbox')) {
-            warningMessage('Select Gender');
-        } else {
-            var fullName = document.getElementById('fullName').value;
-            var dob = document.getElementById('dob').value;
-            var gender = selectedGender;
-            var address = document.getElementById('address').value;
-            var emergencyFullName = document.getElementById('efullName').value;
-            var contactNumber = document.getElementById('contactNumber').value;
-            var relationship = document.getElementById('relationship').value;
-            var dateOfIncident = document.getElementById('doi').value;
-            var timeOfIncident = document.getElementById('toi').value;
-            var causeOfIncident = document.getElementById('coi').value;
-    
-            var $btnSubmit = $('#submitEmergencyInput'); 
-            var btnText = $btnSubmit.html();
-            $btnSubmit.html('Processing...');
-            $btnSubmit.prop('disabled', true);
-    
-            var action = 'emergency_input';
-            var dataString = "action=" + action + "&fullName=" + fullName + "&dob=" + dob + "&gender=" + gender + "&address=" + address + "&emergencyFullName="+ emergencyFullName + "&contactNumber="+ contactNumber + "&relationship="+ relationship + "&dateOfIncident="+ dateOfIncident + "&timeOfIncident="+ timeOfIncident + "&causeOfIncident="+ causeOfIncident ;
 
-      $.ajax({
-          type: 'POST',
-          url: "config/code.php",
-          data: dataString,
-          cache: false,
-          dataType: 'json',
-          success: function (data) {
-              if (data.check === "success") {
-                  successMessage('Successful');
-                  $btnSubmit.html('Transfer');
-                  $btnSubmit.prop('disabled', false);
-                  close_tranfer_patient_lab();
-              } else {
-                  console.error('Error:', data.error);
-                  dangerMessage('Error:', data.error);
-                  $btnSubmit.html(btnText);
-                  $btnSubmit.prop('disabled', false);
-              }
-          },
-          error: function (xhr, status, error) {
-              console.error('AJAX Error:', error);
-              dangerMessage('Error:', data.error);
-              $btnSubmit.html(btnText);
-              $btnSubmit.prop('disabled', false);
-          }
-          });
-        }
+    if (!isFormValid(emergencyInputData)) {
+        warningMessage('Please fill in all required fields.');
+    } else if (!isPhoneNumberValid('#contactNumber')) {
+        warningMessage('Invalid Phone Number');
+    } else if (!isInputChecked('#maleCheckbox') && !isInputChecked('#femaleCheckbox')) {
+        warningMessage('Select Gender');
+    } else {
+        var fullName = document.getElementById('fullName').value;
+        var dob = document.getElementById('dob').value;
+        var gender = selectedGender;
+        var address = document.getElementById('address').value;
+        var emergencyFullName = document.getElementById('efullName').value;
+        var contactNumber = document.getElementById('contactNumber').value;
+        var relationship = document.getElementById('relationship').value;
+        var dateOfIncident = document.getElementById('doi').value;
+        var timeOfIncident = document.getElementById('toi').value;
+        var causeOfIncident = document.getElementById('coi').value;
+
+        var $btnSubmit = $('#submitEmergencyInput'); // Assuming you're using a button with this ID
+        var btnText = $btnSubmit.html();
+        $btnSubmit.html('Processing...');
+        $btnSubmit.prop('disabled', true);
+
+        var action = 'emergency_input';
+        var dataString = "action=" + action + "&fullName=" + fullName + "&dob=" + dob + "&gender=" + gender + "&address=" + address + "&emergencyFullName=" + emergencyFullName + "&contactNumber=" + contactNumber + "&relationship=" + relationship + "&dateOfIncident=" + dateOfIncident + "&timeOfIncident=" + timeOfIncident + "&causeOfIncident=" + causeOfIncident;
+
+        $.ajax({
+            type: 'POST',
+            url: "config/code.php",
+            data: dataString,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data.success === true) { // Use boolean comparison
+                    successMessage(data.message || 'Patient has been transferred to the Surgical suit successfully');
+                    window.location.reload();
+                } else if (data.success === false) {
+                    dangerMessage(data.message || 'Phone number already exists');
+                }
+                $btnSubmit.html('Transfer');
+                $btnSubmit.prop('disabled', false);
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX Error:', error);
+                dangerMessage('An error occurred while processing your request.');
+                $btnSubmit.html(btnText);
+                $btnSubmit.prop('disabled', false);
+            }
+        });
     }
+}
+
 
 
 function filterAvailablePatient() {

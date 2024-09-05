@@ -244,33 +244,18 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                           </tr>
                       </thead>
                       <tbody>
-                          <?php
-                          // Initialize the counter for serial number
-                          $sn = 1;
-
-                          // Loop through the result set
-                          if (mysqli_num_rows($result) > 0) {
-                            // Loop through the result set
-                            while ($row = mysqli_fetch_assoc($result)) {
-                              // Assuming columns in account_appointment_confirm_tab are:
-                              // patient_passport, fullname, patient_id, time, approved_time, tests, total_amount, and status
-                              echo "<tr>
-                                      <td>{$sn}</td>
-                                      <td><img src='{$website_url}/uploaded_files/profile_pix/patient/{$row["patient_passport"]}' alt='passport'></td>
-                                      <td>{$row['fullname']}</td>
-                                      <td>{$row['patient_id']}</td>
-                                      <td>{$row['time']}</td>
-                                      <td>{$row['approved_time']}</td>
-                                      <td>{$row['tests']}</td>
-                                      <td>{$row['total_amount']}</td>
-                                      <td>{$row['payment_status']}</td>
-                                    </tr>";
-                              $sn++; // Increment the serial number
-                            }
-                          } else {
-                              echo "<tr><td colspan='9'>No records for now </td></tr>";
-                          }
-                          ?>
+                         <tr>
+                            <td>1</td>
+                            <td><img src='$website_url/uploaded_files/profile_pix/patient/the image name from the database' alt='passport'></td>
+                            <td>fullname</td>
+                            <td>patient_id</td>
+                            <td>time</td>
+                            <td>approved_time</td>
+                            <td>tests</td>
+                            <td>total_amount</td>
+                            <td>payment_status</td>
+                        </tr>
+                          
                       </tbody>
                   </table>
                     </div>
