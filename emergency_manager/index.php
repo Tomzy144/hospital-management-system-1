@@ -180,9 +180,9 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 </div>
 </div>
 
-<div class="appoitment__div hide">
+<div class="modal transfer__patient">
   <h3>AVAILABLE</h3>
-<i class="bi bi-x-square cancle"></i>
+<i class="bi bi-x-square close__icon"></i>
   <form action="" id="bookForm">
   <div class="each_sections">
   <div class="form-control">
@@ -266,6 +266,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                                   <td>Date of Incident</td>
                                   <td>Time of Incident</td>
                                   <td>Status</td>
+                                  <td>Option</td>
                               </tr>
                           </thead>
                           <tbody>';

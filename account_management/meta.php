@@ -26,8 +26,8 @@
     <!-- Include the CSS and JavaScript for autocomplete-lhc -->
   
 
+    <script defer src="<?php echo $website_url?>/account_management /js/jquery-v3.6.1.min.js"></script>
     <!-- Include custom scripts -->
     <script defer src="<?php echo $website_url?>/account_management /js/index.js"></script>
     <script defer src="<?php echo $website_url?>/account_management /js/section.js"></script>
     <script defer src="<?php echo $website_url?>/account_management /js/aos.js"></script>
-    <script defer src="<?php echo $website_url?>/account_management /js/jquery-v3.6.1.min.js"></script>

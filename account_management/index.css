@@ -548,7 +548,6 @@ table thead  td{
 
 .patient__receipt{
   margin: 5rem 0 0 19rem;
-  /* width: 100%; */
   height: auto;
 }
 
@@ -622,8 +621,11 @@ table thead  td{
   body * {
       visibility: hidden;
   }
+  .patient__receipt {
+    margin: 0; /* Remove the margin when printing */
+}
   .patient__receipt * {
       visibility: visible;
-      width: fit-content;
   }
 }
+

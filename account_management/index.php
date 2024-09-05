@@ -195,7 +195,6 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
 
 
         <div class="patient__receipt">
-        <!-- <img src="./image/Mount_Tech_Logo-removebg-preview.png" alt="Company Logo" class="nount tech logo"> -->
         <h1>Invoice</h1>
         <h3>Customer: John Doe</h3>
         <h3>Date: 2024-08-28</h3>

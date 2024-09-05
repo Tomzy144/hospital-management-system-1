@@ -1,3 +1,4 @@
+
 //PROFILE IMAGE
 const profile_container  =  document.querySelector(".profile_account");
 const click_icon_for_profile = ()=>{
@@ -172,7 +173,7 @@ function accept() {
 }
 
 
-function handlePayment(type, amount, reqType, price) {
+function handlePayment(type, amount) {
     const currentDate = new Date().toLocaleDateString();
 
     // Add the payment details to the receipt table
@@ -182,7 +183,6 @@ function handlePayment(type, amount, reqType, price) {
     row.insertCell(1).textContent = `₦${amount.toFixed(2)}`;
     row.insertCell(2).textContent = currentDate;
 
-    // Update the local storage and display for POS or Cash
     let storageKey = type === 'POS' ? 'totalPos' : 'totalCash';
     let totalAmount = parseFloat(localStorage.getItem(storageKey) || '0');
     totalAmount += amount;
@@ -200,10 +200,44 @@ function updateDisplay() {
 }
 
 function printInvoice() {
-    // Here, you can add any additional actions you want to perform before printing
     window.print();
 }
 
 // Initialize the display with values from local storage
 updateDisplay();
 accept();
+
+
+
+async function displayPendingTransactions() {
+//     try{
+//       const response =  await  fetch('config/code.php/pending_transactions');
+//       if(!response.ok) throw new Error('Network Issue');
+//         const data = await response.json();
+//         console.log(data)
+//     }catch(err){
+//         console.log(err.message)
+//     }
+// }
+var action = 'pending_transactions';
+var dataString = "action=" + action 
+
+$.ajax({
+    type: 'GET',
+    url: "config/code.php",
+    data: dataString,
+    cache: false,
+    dataType: 'json',
+    success: function (data) {
+        if (data.success) {
+            console.log(data)
+        } else {
+            console.error('Error:', data.error);
+        }
+    },
+    error: function (xhr, status, error) {
+        console.error('AJAX Error:', error);
+    }
+})
+}
+displayPendingTransactions();
