@@ -34,15 +34,11 @@
         
             // Check if any rows are returned
             if (mysqli_num_rows($result) > 0) {
-                $pending_appointments = array();
-        
-                // Fetch each row and add to the appointments array
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $pending_appointments[] = $row;
-                }
+                // Fetch the row
+                $row = mysqli_fetch_assoc($result);  // We fetch only one row if a specific patient_id is queried
         
                 $response['success'] = true;
-                $response['data'] = $pending_appointments; // Add the appointments data to the response
+                $response['data'] = $row; // Send the row as data in the response
         
             } else {
                 $response['success'] = false;
@@ -53,6 +49,7 @@
             echo json_encode($response);
         
             break;
+        
         
 
         case 'paid':
