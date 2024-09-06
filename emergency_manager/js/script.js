@@ -3,6 +3,27 @@
         document.querySelector(".profile_account").classList.toggle("hide");
     };
 
+    const modal = document.querySelector('.modal');
+const blackBackground = document.querySelector('.black--background');
+
+
+
+
+const openModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  
+  modal.classList.remove('hidden');
+  blackBackground.classList.remove('hidden');
+};
+
+
+const closeModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  
+  modal.classList.add('hidden');
+  blackBackground.classList.add('hidden');
+};
+
 
     
   
@@ -236,4 +257,65 @@ function patientLForm(){
     emergency_list_section.classList.add('hide');
     emergency_form_container.classList.remove('hide');
     container.classList.remove('hide');
+}
+
+
+let patientName;
+let patientId;
+function docForm(){
+  document.querySelector('#bookDocForm #name').value = patientName;
+  document.querySelector('#bookDocForm #id').value = patientId;
+    closeModal('book__patient');
+    openModal('docForm')
+}
+function nurseForm(){
+  document.querySelector('#booknurseForm #name').value = patientName;
+  document.querySelector('#booknurseForm #id').value = patientId;
+    closeModal('book__patient');
+    openModal('nurseForm');
+}
+function surgicalsuiteForm(){
+  document.querySelector('#booksurgicalsuiteForm #name').value = patientName;
+  document.querySelector('#booksurgicalsuiteForm #id').value = patientId;
+    closeModal('book__patient');
+    openModal('surgicalsuiteForm');
+}
+function labForm(){
+  document.querySelector('#booklabForm #name').value = patientName;
+  document.querySelector('#booklabForm #id').value = patientId;
+    closeModal('book__patient');
+    openModal('labForm');
+}
+function radiologyForm(){
+  document.querySelector('#bookradiologyForm #name').value = patientName;
+  document.querySelector('#bookradiologyForm #id').value = patientId;
+    closeModal('book__patient');
+    openModal('radiologyForm');
+}
+
+function isPatientStable() {
+    const message = document.createElement('div');
+    message.className = "alert info";
+    message.innerHTML = `
+    <div style="display:block">
+       <h2>Is patient ${patientName} stable?</h2>
+       <div style="display:flex; justify-content:space-around; width:100%">
+           <button id="yes">Yes</button>
+           <button id="no">No</button>
+       </div>
+    </div>
+    `;
+    document.body.appendChild(message);
+    document.getElementById('yes').addEventListener('click', function() {
+        window.location.reload();
+    });
+    document.getElementById('no').addEventListener('click', function() {
+        window.location.reload();
+    });
+}
+
+function showBookModal(e){
+patientName = e.target.closest('tr').children[1].textContent;
+patientId = e.target.closest('tr').children[2].textContent;
+  openModal('book__patient');
 }
