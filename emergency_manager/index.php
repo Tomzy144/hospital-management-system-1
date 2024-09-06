@@ -454,7 +454,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   <div class="form-control">
     <label>Gender</label>
-    <input type="text" name="" id=""/>
+    <input type="text" name="" id="gender"/>
   </div>
   </div>
   <div class="each_sections">
