@@ -180,18 +180,31 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 </div>
 </div>
 
-<div class="modal transfer__patient">
-  <h3>AVAILABLE</h3>
-<i class="bi bi-x-square close__icon"></i>
-  <form action="" id="bookForm">
+
+
+<div class="modal hidden" id="book__patient">
+  <div class="">
+    <button onclick="docForm()">Transfer to doctor</button>
+    <button onclick="nurseForm()">Transfer to nurse</button>
+    <button onclick="surgicalsuiteForm()">Transfer to surgical suite</button>
+    <button onclick="labForm()">Transfer to lab</button>
+    <button onclick="radiologyForm()">Transfer to radiology</button>
+    <button onclick="isPatientStable()">Is the patient stable</button>
+  </div>
+</div>
+
+<div class="modal hidden" id="docForm">
+  <h3>AVAILABLE DOCTORS</h3>
+<i class="bi bi-x-square close__icon" onclick ="closeModal('docForm')"></i>
+  <form action="" id="bookDocForm">
   <div class="each_sections">
   <div class="form-control">
     <label>Patient Name</label>
-    <input type="text" name="patient_name" />
+    <input type="text" name="patient_name" id="name"/>
   </div>
   <div class="form-control">
     <label>Patient Id</label>
-    <input type="text" name="patient_id" />
+    <input type="text" name="patient_id" id="id"/>
   </div>
   </div>
   <div class="each_sections">
@@ -237,10 +250,192 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   </div>
 <button class="btn_submit">Submit</button>  
-</form>
   </form>
 </div>
 
+
+<div class="modal hidden" id="nurseForm">
+  <h3>AVAILABLE NURSES</h3>
+<i class="bi bi-x-square close__icon" onclick ="closeModal('nurseForm')"></i>
+  <form action="" id="booknurseForm">
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Patient Name</label>
+    <input type="text" name="patient_name" id="name"/>
+  </div>
+  <div class="form-control">
+    <label>Patient Id</label>
+    <input type="text" name="patient_id" id="id"/>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Selected date</label>
+    <input type="date" name="selected_date" />
+  </div>
+  <div class="form-control">
+    <label>Selected time</label>
+    <input type="time" name="selected_time" />
+  </div>
+  </div>
+  <div class="each_sections">
+<div class="form-control availablenurse">
+<label>Available Nurses</label>
+<select  id="select_doc">
+<option value="" id="opt">Doc. Mathew </option>
+<option value="">Doc. Prince</option>
+<option value="">Doc. Peter</option>
+<option value="">Doc. Patrick</option>
+</select>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Comment</label>
+    <textarea ></textarea>
+  </div>
+  </div>
+<button class="btn_submit">Submit</button>  
+  </form>
+</div>
+
+
+
+<div class="modal hidden" id="surgicalsuiteForm">
+  <h3>AVAILABLE SURGICAL SUITE ATTENDANT</h3>
+<i class="bi bi-x-square close__icon" onclick ="closeModal('surgicalsuiteForm')"></i>
+  <form action="" id="booksurgicalsuiteForm">
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Patient Name</label>
+    <input type="text" name="patient_name" id="name"/>
+  </div>
+  <div class="form-control">
+    <label>Patient Id</label>
+    <input type="text" name="patient_id" id="id"/>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Selected date</label>
+    <input type="date" name="selected_date" />
+  </div>
+  <div class="form-control">
+    <label>Selected time</label>
+    <input type="time" name="selected_time" />
+  </div>
+  </div>
+  <div class="each_sections">
+<div class="form-control availablenurse">
+<label>Available attendant</label>
+<select  id="select_doc">
+<option value="" id="opt">Doc. Mathew </option>
+<option value="">Doc. Prince</option>
+<option value="">Doc. Peter</option>
+<option value="">Doc. Patrick</option>
+</select>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Comment</label>
+    <textarea ></textarea>
+  </div>
+  </div>
+<button class="btn_submit">Submit</button>  
+  </form>
+</div>
+
+
+<div class="modal hidden" id="labForm">
+  <h3>AVAILABLE Lab scientist</h3>
+<i class="bi bi-x-square close__icon" onclick ="closeModal('labForm')"></i>
+  <form action="" id="booklabForm">
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Patient Name</label>
+    <input type="text" name="patient_name" id="name"/>
+  </div>
+  <div class="form-control">
+    <label>Patient Id</label>
+    <input type="text" name="patient_id" id="id"/>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Selected date</label>
+    <input type="date" name="selected_date" />
+  </div>
+  <div class="form-control">
+    <label>Selected time</label>
+    <input type="time" name="selected_time" />
+  </div>
+  </div>
+  <div class="each_sections">
+<div class="form-control availablenurse">
+<label>Available lab scientist</label>
+<select  id="select_doc">
+<option value="" id="opt">Doc. Mathew </option>
+<option value="">Doc. Prince</option>
+<option value="">Doc. Peter</option>
+<option value="">Doc. Patrick</option>
+</select>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Comment</label>
+    <textarea ></textarea>
+  </div>
+  </div>
+<button class="btn_submit">Submit</button>  
+  </form>
+</div>
+
+<div class="modal hidden" id="radiologyForm">
+  <h3>AVAILABLE Radiology scientist</h3>
+<i class="bi bi-x-square close__icon" onclick ="closeModal('radiologyForm')"></i>
+  <form action="" id="bookradiologyForm">
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Patient Name</label>
+    <input type="text" name="patient_name" id="name"/>
+  </div>
+  <div class="form-control">
+    <label>Patient Id</label>
+    <input type="text" name="patient_id" id="id"/>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Selected date</label>
+    <input type="date" name="selected_date" />
+  </div>
+  <div class="form-control">
+    <label>Selected time</label>
+    <input type="time" name="selected_time" />
+  </div>
+  </div>
+  <div class="each_sections">
+<div class="form-control availablenurse">
+<label>Available radiology scientist</label>
+<select  id="select_doc">
+<option value="" id="opt">Doc. Mathew </option>
+<option value="">Doc. Prince</option>
+<option value="">Doc. Peter</option>
+<option value="">Doc. Patrick</option>
+</select>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Comment</label>
+    <textarea ></textarea>
+  </div>
+  </div>
+<button class="btn_submit">Submit</button>  
+  </form>
+</div>
 
   <div class="list_div section hide" id="emergency_list_section">
     <div class="table_container">
@@ -281,7 +476,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                               <td>' . htmlspecialchars($row['date_of_incident']) . '</td>
                               <td>' . htmlspecialchars($row['time_of_incident']) . '</td>
                               <td>' . htmlspecialchars($row['status_id']) . '</td>
-                              <td><i class="bi bi-three-dots" onclick=""></td>
+                              <td><i class="bi bi-three-dots" onclick="showBookModal(event)"></td>
                             </tr>';
                   }
                   
@@ -306,6 +501,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   </div>
   </div>
+  <div class="black--background hidden"></div>
     <!-- <script src="js/section.js"></script> 
     <script src="js/script.js"></script>  -->
 </body>
