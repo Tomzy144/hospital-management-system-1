@@ -242,39 +242,75 @@ function display_profile(){
   }
 
 function patient_list(){
-  // document.querySelector('.form_sections').style.display = 'none';
   document.querySelector('.all_patient_list').classList.remove("hide")
   document.querySelector('.patient_list_div').classList.remove("hide")
   document.querySelector('.walkin_patient_list_div').classList.add("hide")
-  document.querySelector('.profile_container').style.display = 'none';
+  document.querySelector('.new_intake_admission_form').style.display = 'none';
+  document.querySelector('.emergency_patient_list_div').classList.add("hide")
 }
 
 function _walkin_patient_list(){
-  // document.querySelector('.form_sections').style.display = 'none';
   document.querySelector('.all_patient_list').classList.remove("hide")
   document.querySelector('.patient_list_div').classList.add("hide")
   document.querySelector('.walkin_patient_list_div').classList.remove("hide")
-  document.querySelector('.profile_container').classList.add("hide")
+  document.querySelector('.emergency_patient_list_div').classList.add("hide")
+  document.querySelector('.new_intake_admission_form').style.display = 'none';
+}
+function _emergency_patient_list(){
+  document.querySelector('.all_patient_list').classList.remove("hide")
+  document.querySelector('.patient_list_div').classList.add("hide")
+  document.querySelector('.walkin_patient_list_div').classList.add("hide")
+  document.querySelector('.emergency_patient_list_div').classList.remove("hide")
+  document.querySelector('.new_intake_admission_form').style.display = 'none';
 }
 
 function patient_admission_form_section(){
-  document.querySelector('.form_sections').style.display = 'flex';
-  document.querySelector('.all_patient_list').classList.add("hide")
-  document.querySelector('.appoitment_section').classList.add("hide")
+  document.querySelector('.new_intake_admission_form').style.display = 'block';
+  document.querySelector('.emergency_patient_list_div').classList.add("hide")
+  document.querySelector('.patient_list_div').classList.add("hide")
+  document.querySelector('.walkin_patient_list_div').classList.add("hide")
 };
 
 function walkin_patient_form(){
   openModal('walkin--patient');
   document.querySelector('.all_patient_list').classList.add("hide")
-  document.querySelector('.checkup_section').classList.add("hide")
+  document.querySelector('.new_intake_admission_form').style.display = 'block';
 }
 
-function checkup_form(){
-  openModal('check--up--section')
+let patientName;
+let patientId;
+
+function showNurseTransferForm() {
+  document.querySelector('#nurseFormTransfer #name').value = patientName;
+  document.querySelector('#nurseFormTransfer #id').value = patientId;
+  closeModal('nurse__transfer__dialogue');
+openModal('nurseForm')
+}
+function showLabTransferForm() {
+  document.querySelector('#LabFormTransfer #name').value = patientName;
+  document.querySelector('#LabFormTransfer #id').value = patientId;
+  closeModal('other__unit');
+  openModal('labForm')
+}
+function showRadTransferForm() {
+  document.querySelector('#RadFormTransfer #name').value = patientName;
+  document.querySelector('#RadFormTransfer #id').value = patientId;
+  closeModal('other__unit');
+  openModal('radForm')
+  console.log('show')
 }
 
+function showTransferPatientToNurse(e){
+  patientName = e.target.closest('tr').children[1].textContent;
+  patientId = e.target.closest('tr').children[2].textContent;
+    openModal('nurse__transfer__dialogue');
+  }
 
-
+function showTransferPatientToOtherSection(e){
+  patientName = e.target.closest('tr').children[1].textContent;
+  patientId = e.target.closest('tr').children[2].textContent;
+    openModal('other__unit');
+  }
 
 function _show_book_popup() {
   $('#walkin_popup').removeClass('hide');
@@ -320,10 +356,8 @@ function _close_all_patient_appoitments() {
 }
 
 
-function _show_patient_transfer_popup() {
-  $('#patient_popup').removeClass('hide');
-  $('.overlay_div').removeClass('hide');
-}
+
+
 function close_show_patient_transfer_popup() {
   $('#patient_popup').addClass('hide');
   $('.overlay_div').addClass('hide');
@@ -1063,4 +1097,80 @@ if((wpatient_name=='')||(wphonenumber=='')||(wdob=='')||(waddress=='')||(vgender
       });
 }
 }	
+function filterTable1() {
+  const tableBody1 = document.querySelector('#table1 tbody');
+  const tableRows1 = Array.from(tableBody1.querySelectorAll('tr'));
 
+  const searchInput = document.querySelector('#psearch').value.trim().toLowerCase();
+  let hasVisibleRows1 = false;
+
+  // Filter rows in Table 1
+  tableRows1.forEach((row) => {
+    if (row.children.length < 2) return;
+
+    const patientName = row.children[1].textContent.trim().toLowerCase();
+    const patientId = row.children[2].textContent.trim().toLowerCase();
+
+    if (patientName.includes(searchInput) || patientId.includes(searchInput)) {
+      row.style.display = ''; // Show the row
+      hasVisibleRows1 = true;
+    } else {
+      row.style.display = 'none'; // Hide the row
+    }
+  });
+
+  // Remove any existing 'No User' message for Table 1
+  const existingNoDataMessage1 = document.querySelector('#noDataMessage1');
+  if (existingNoDataMessage1) {
+    existingNoDataMessage1.remove();
+  }
+
+  // Display 'No User' message if no rows are visible in Table 1
+  if (!hasVisibleRows1) {
+    const noDataMessage1 = document.createElement('tr');
+    noDataMessage1.id = 'noDataMessage1';
+    noDataMessage1.innerHTML = '<td colspan="8" style="text-align: center;">No User associated with this input</td>';
+    tableBody1.appendChild(noDataMessage1);
+  }
+}
+
+function filterTable2() {
+  const tableBody2 = document.querySelector('#table2 tbody');
+  const tableRows2 = Array.from(tableBody2.querySelectorAll('tr'));
+
+  const searchInput = document.querySelector('#wsearch').value.trim().toLowerCase();
+  let hasVisibleRows2 = false;
+
+  // Filter rows in Table 2
+  tableRows2.forEach((row) => {
+    if (row.children.length < 2) return;
+
+    const patientName = row.children[1].textContent.trim().toLowerCase();
+    const patientId = row.children[2].textContent.trim().toLowerCase();
+
+    if (patientName.includes(searchInput) || patientId.includes(searchInput)) {
+      row.style.display = ''; // Show the row
+      hasVisibleRows2 = true;
+    } else {
+      row.style.display = 'none'; // Hide the row
+    }
+  });
+
+  // Remove any existing 'No User' message for Table 2
+  const existingNoDataMessage2 = document.querySelector('#noDataMessage2');
+  if (existingNoDataMessage2) {
+    existingNoDataMessage2.remove();
+  }
+
+  // Display 'No User' message if no rows are visible in Table 2
+  if (!hasVisibleRows2) {
+    const noDataMessage2 = document.createElement('tr');
+    noDataMessage2.id = 'noDataMessage2';
+    noDataMessage2.innerHTML = '<td colspan="8" style="text-align: center;">No User associated with this input</td>';
+    tableBody2.appendChild(noDataMessage2);
+  }
+}
+
+// Attach the filter function to each search input field
+document.querySelector('#psearch').addEventListener('input', filterTable1);
+document.querySelector('#wsearch').addEventListener('input', filterTable2);

@@ -456,57 +456,59 @@ justify-content: center;
         outline: none;
 }
 
- table {
-    width: 100%;
-    border-collapse: collapse;
-    animation: fadeIn 1.2s ease-in-out;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  background: #2a57d7;
 }
 
- table thead {
-    background-color: #fff; 
-    position: sticky; 
-    top: 0;
-    z-index: 1; 
-    background-color: #fff; 
-    font-size: 1em;
-    text-align: center;
+table thead {
+  position: sticky; 
+  top: 0;
+  z-index: 1;
+  font-size: 1.1em;
+  border: 1px solid #fff;
+  text-align: center;
+  transition: background 0.25s ease;
 }
-table thead  td{
-    color: rgb(42, 87, 215);
-    padding: 0.5em;
-    font-size: 1em;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    text-align: center;
-    padding: .77em .58em .74em .58em;
-    padding-right: 0.58em;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    vertical-align: top;
-    line-height: 1.2;
-}
- table tbody td img{
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+tbody tr {
+transition: background 0.25s ease;
 }
 
- table tbody td {
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    background-color: rgb(42, 87, 215);
-    padding: .77em .58em .74em .58em;
-    padding-right: 0.58em;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    font-size: 1rem;
-    vertical-align: center;
-    line-height: 1.2;
-    border-bottom: 1px solid #fff;
+table thead td{
+color: #fff;
+font-weight: 400;
+padding: 0.65em 1em;
+}
+table tbody td img{
+  width: 50px;
+  height: 50px;
+  font-size: 1rem;
+  border-radius: 100%;
+}
+tbody tr:hover {
+background: #00185b;
+}
+table tbody td {
+  padding: 0.5em;
+  letter-spacing: 1.5px;
+  text-transform:capitalize;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding: .77em .58em .74em .58em;
+  padding-right: 0.58em;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  font-size: 0.85em;
+  cursor: pointer;
+  vertical-align: center;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+.disabled td {
+color: #4F5F64;
 }
 .accept-btn{
     padding: 0.5rem;

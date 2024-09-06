@@ -262,6 +262,7 @@ function patientLForm(){
 
 let patientName;
 let patientId;
+let patientGender;
 function docForm(){
   document.querySelector('#bookDocForm #name').value = patientName;
   document.querySelector('#bookDocForm #id').value = patientId;
@@ -286,11 +287,19 @@ function labForm(){
     closeModal('book__patient');
     openModal('labForm');
 }
+
 function radiologyForm(){
   document.querySelector('#bookradiologyForm #name').value = patientName;
   document.querySelector('#bookradiologyForm #id').value = patientId;
     closeModal('book__patient');
     openModal('radiologyForm');
+}
+function healthrecordForm(){
+  document.querySelector('#bookhealthrecordForm #name').value = patientName;
+  document.querySelector('#bookhealthrecordForm #id').value = patientId;
+  document.querySelector('#bookhealthrecordForm #gender').value = patientGender;
+    closeModal('book__patient');
+    openModal('healthrecordForm');
 }
 
 function isPatientStable() {
@@ -307,7 +316,8 @@ function isPatientStable() {
     `;
     document.body.appendChild(message);
     document.getElementById('yes').addEventListener('click', function() {
-        window.location.reload();
+        healthrecordForm()
+        message.remove();
     });
     document.getElementById('no').addEventListener('click', function() {
         window.location.reload();
@@ -316,7 +326,8 @@ function isPatientStable() {
 
 function showBookModal(e){
 patientName = e.target.closest('tr').children[1].textContent;
-patientId = e.target.closest('tr').children[2].textContent;
+patientGender = e.target.closest('tr').children[2].textContent;
+patientId = e.target.closest('tr').children[3].textContent;
   openModal('book__patient');
 }
 

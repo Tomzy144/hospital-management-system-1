@@ -195,7 +195,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 
 <div class="modal hidden" id="docForm">
   <h3>AVAILABLE DOCTORS</h3>
-<i class="bi bi-x-square close__icon" onclick ="closeModal('docForm')"></i>
+<button class="btn--close-modal" onclick="closeModal('docForm')">&times;</button>
   <form action="" id="bookDocForm">
   <div class="each_sections">
   <div class="form-control">
@@ -256,7 +256,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 
 <div class="modal hidden" id="nurseForm">
   <h3>AVAILABLE NURSES</h3>
-<i class="bi bi-x-square close__icon" onclick ="closeModal('nurseForm')"></i>
+<button class="btn--close-modal" onclick="closeModal('nurseForm')">&times;</button>
   <form action="" id="booknurseForm">
   <div class="each_sections">
   <div class="form-control">
@@ -303,7 +303,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 
 <div class="modal hidden" id="surgicalsuiteForm">
   <h3>AVAILABLE SURGICAL SUITE ATTENDANT</h3>
-<i class="bi bi-x-square close__icon" onclick ="closeModal('surgicalsuiteForm')"></i>
+<button class="btn--close-modal" onclick="closeModal('surgicalsuiteForm')">&times;</button>
   <form action="" id="booksurgicalsuiteForm">
   <div class="each_sections">
   <div class="form-control">
@@ -348,8 +348,8 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 
 
 <div class="modal hidden" id="labForm">
-  <h3>AVAILABLE Lab scientist</h3>
-<i class="bi bi-x-square close__icon" onclick ="closeModal('labForm')"></i>
+  <h3>AVAILABLE LAB SCIENTIST</h3>
+<button class="btn--close-modal" onclick="closeModal('labForm')">&times;</button>
   <form action="" id="booklabForm">
   <div class="each_sections">
   <div class="form-control">
@@ -393,8 +393,9 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 </div>
 
 <div class="modal hidden" id="radiologyForm">
-  <h3>AVAILABLE Radiology scientist</h3>
-<i class="bi bi-x-square close__icon" onclick ="closeModal('radiologyForm')"></i>
+  <h3>AVAILABLE RADIOLOGY SCIENTIST</h3>
+<button class="btn--close-modal" onclick="closeModal('radiologyForm')">&times;</button>
+  <form action="" id="labForm">
   <form action="" id="bookradiologyForm">
   <div class="each_sections">
   <div class="form-control">
@@ -437,6 +438,35 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </form>
 </div>
 
+
+<div class="modal hidden" id="healthrecordForm">
+  <h3>TRANSFER PATIENT TO HEALTH RECORD SECTION</h3>
+<button class="btn--close-modal" onclick="closeModal('healthrecordForm')">&times;</button>
+  <form action="" id="bookhealthrecordForm">
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Patient Name</label>
+    <input type="text" name="patient_name" id="name"/>
+  </div>
+  <div class="form-control">
+    <label>Patient Id</label>
+    <input type="text" name="patient_id" id="id"/>
+  </div>
+  <div class="form-control">
+    <label>Gender</label>
+    <input type="text" name="" id="gender"/>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Comment</label>
+    <textarea ></textarea>
+  </div>
+  </div>
+<button class="btn_submit">Submit</button>  
+  </form>
+</div>
+
   <div class="list_div section hide" id="emergency_list_section">
     <div class="table_container">
             <div class="search_bar_container">
@@ -456,13 +486,13 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                               <tr>
                                   <td>S/N</td>
                                   <td>Patient Name</td>
+                                  <td>Gender</td>
                                   <td>Patient ID</td>
                                   <td>Gender</td>
                                   <td>Cause of Incident</td>
                                   <td>Date of Incident</td>
                                   <td>Time of Incident</td>
                                   <td>Status</td>
-                                  <td>Option</td>
                               </tr>
                           </thead>
                           <tbody>';
@@ -472,6 +502,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                       echo '<tr>
                               <td>' . $sn++ . '</td>
                               <td>' . htmlspecialchars($row['Epatient_name']) . '</td>
+                              <td>' . htmlspecialchars($row['gender']) . '</td>
                               <td>' . htmlspecialchars($row['emergency_patient_id']) . '</td>
                                <td>' . htmlspecialchars($row['gender']) . '</td>
                               <td>' . htmlspecialchars($row['cause_of_incident']) . '</td>
@@ -504,7 +535,5 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   </div>
   <div class="black--background hidden"></div>
-    <!-- <script src="js/section.js"></script> 
-    <script src="js/script.js"></script>  -->
 </body>
 </html>

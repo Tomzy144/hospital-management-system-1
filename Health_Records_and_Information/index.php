@@ -96,8 +96,9 @@
         <li onclick="walkin_patient_form()" class="links">
           <span>Walkin patient admission Form</span>
         </li>
-        <li onclick="checkup_form()" class="links">
+        <li class="links">
           <span>Check up</span>
+          <!-- onclick="checkup_form()"  -->
         </li>
         <li onclick="patient_list()" class="links">
           <span>Patient list</span>
@@ -105,8 +106,10 @@
         <li onclick="_walkin_patient_list()" class="links">
           <span>Walkin patient list</span>
         </li>
+        <li onclick="_emergency_patient_list()" class="links">
+          <span>Emergecy patient list</span>
+        </li>
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
-          <!-- <i class="fa-solid fa-right-from-bracket"></i> -->
           <span>Logout</span>
           <form method="post" action="../config/code.php" id="logoutform">
             <input type="hidden" name="action" value="logout"/>
@@ -116,47 +119,6 @@
     </div>
   </div>
 
-         <!--END OF SIDEBAR AND NAVBAR-->
-
- <!--START OF ADMISSION FORM1-->
-
-               <!----START OF CHECKUP SECTION-->
-
-
-
-        <div class="modal hidden" id="check--up--section">
-        <div id="fingerPrint">
-        <i class="bi bi-fingerprint" id="greenColourFingerPrint"></i>
-    </div>
-    <h2 class="modal__header">
-            Patient 
-            <span class="highlight">profile</span>
-        </h2>
-    <div class="patient--profile">
-    <ul class="personal--detail">
-                      <li>Juliet Patrick</li>
-                        <li>PAT0003</li>
-                        <li>Female</li>
-                        <li>23-09-2023</li>
-                        <li>531 RockVale Dr, Piedmont, South Carolina.</li>
-                        <li>+122 3521 222</li>
-                        <li>Active</li>
-                    </ul>
-                    <div class="patient-image">
-                        <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
-                        <div>
-                            <button class="" onclick="appoitment_booking()">Book an Appoitment</button>
-                        </div>
-                        </div>
-                    </div>
-                        </div>
-
-
-
-
-
-
-        <!---END OF CHECKUP SECTION--->
     <div class="new_intake_admission_form">
     <div class="form-container">
         <h3>Patient admission form</h3>
@@ -203,74 +165,41 @@
             <label for="phone_number">Phone number</label>
             <input type="text" id="phonenumber">
         </div>
-        <div class="form-control2">
-    <label>Gender</label>
-    <div class="wrap">
-        <!-- Checkbox for Male -->
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" id="gender1" type="checkbox" style="display: none;" />
-            <label class="cbx" for="gender1">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>Male</span>
-            </label>
-        </div>
-
-        <!-- Checkbox for Female -->
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" id="gender2" type="checkbox" style="display: none;" />
-            <label class="cbx" for="gender2">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>Female</span>
-            </label>
-        </div>
-    </div>
+        <div class="form-control">
+        <label for="gender">Gender</label>
+                <div class="radio-group">
+              <label>
+                  Male
+                  <input type="radio" name="gender" value="male" id="gender1">
+                  <span class="custom-radio"></span>
+              </label>
+              <label>
+                  Female
+                  <input type="radio" name="gender" value="female" id="gender2">
+                  <span class="custom-radio"></span>
+              </label>
+</div>
 </div>
         <div class="form-control">
         <label for="hmo" id ="hospital_plan">Hospital plans</label>
         <select name="" id="select_box">
             <option id="option" value="">Loading...</option>
         </select>
-
-          
-             
     </div>
         <!--Check if any existing family plan--->
-        <div class="form-control2 hide" id="existing_plan_or_not"">
-        <label for="">Any existing family plan?</label>
-    <div class="wrap">
-        <!-- Checkbox for Male -->
-        <div class="checkbox-wrapper-46">
-        <input class="inp-cbx" type="checkbox" name="yes" id="_family_plan" onchange="familyPlanSection()" style="display: none;">
-            <label class="cbx" for="_family_plan">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>Yes</span>
-            </label>
-        </div>
-
-        <!-- Checkbox for Female -->
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" type="checkbox" id="_create_card"  name = "no" onchange="create_family_card()" style="display: none;" />
-          
-            <label class="cbx" for="_create_card">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>No</span>
-            </label>
+        <div class="form-control hide" id="existing_plan_or_not">
+        <label for="gender">Any existing family plan?</label>
+                <div class="radio-group">
+              <label>
+                  Yes
+                  <input type="radio" name="boolean" id="_family_plan" onchange="familyPlanSection()" style="display: none;">
+                  <span class="custom-radio"></span>
+              </label>
+              <label>
+                  No
+                  <input type="radio" id="_create_card"  name= "boolean" onchange="create_family_card()" style="display: none;" >
+                  <span class="custom-radio"></span>
+              </label>
             <input type="hidden" id="accept" value="">
         <div class="generating-div" id="generation_alert" style="display:block"></div>
         </div>
@@ -302,35 +231,20 @@
         <label for="phone_number">Phone number</label>
         <input type="text"  id="kphonenumber">
     </div>
-   <div class="form-control2">
-    <label>Gender</label>
-    <div class="wrap">
-        <!-- Checkbox for Male -->
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" id="kgender1" type="checkbox" style="display: none;" />
-            <label class="cbx" for="kgender1">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>Male</span>
-            </label>
-        </div>
-
-        <!-- Checkbox for Female -->
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" id="kgender2" type="checkbox" style="display: none;" />
-            <label class="cbx" for="kgender2">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>Female</span>
-            </label>
-        </div>
-    </div>
+   <div class="form-control">
+   <label for="gender">Gender</label>
+                <div class="radio-group">
+              <label>
+                  Male
+                  <input type="radio" name="gender" value="male" id="kgender1">
+                  <span class="custom-radio"></span>
+              </label>
+              <label>
+                  Female
+                  <input type="radio" name="gender" value="female" id="kgender2">
+                  <span class="custom-radio"></span>
+              </label>
+            </div>
 </div>
     </div>
 
@@ -389,7 +303,6 @@
              <video id="walkin_in_section_videoElement" width="400" height="300" autoplay></video>
             <i class="bi bi-plus" id="walkin_in_section_capture_image" onclick="openCamera2()"></i>
             <canvas id="walkin_in_section_canvasElement" style="display: none;"></canvas>
-            <!-- <img id="walkin_in_section_capturedImage" style="display: none;"> -->
 
             <?php if ($passport==''){?>
                     <img src="<?php echo $website_url; ?>/uploaded_files/profile_pix/walkin_patient/19374.jpg" id="walkin_in_section_capturedImage" style="display: none;" alt="profile picture"/>
@@ -424,46 +337,31 @@
             <label for="phone_number">Phone number</label>
             <input type="text" id="wphonenumber">
         </div> 
-        <div class="form-control2">
-    <label>Gender</label>
-    <div class="wrap">
-        <!-- Checkbox for Male -->
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" id="wgender1" type="checkbox" style="display: none;" />
-            <label class="cbx" for="wgender1">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>Male</span>
-            </label>
-        </div>
-
-        <!-- Checkbox for Female -->
-        <div class="checkbox-wrapper-46">
-            <input class="inp-cbx" id="wgender2" type="checkbox" style="display: none;" />
-            <label class="cbx" for="wgender2">
-                <span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                </span>
-                <span>Female</span>
-            </label>
-        </div>
-    </div>
+        <div class="form-control">
+        <label for="gender">Gender</label>
+                <div class="radio-group">
+              <label>
+                  Male
+                  <input type="radio" name="gender" value="male" id="wgender1">
+                  <span class="custom-radio"></span>
+              </label>
+              <label>
+                  Female
+                  <input type="radio" name="gender" value="female" id="wgender2">
+                  <span class="custom-radio"></span>
+              </label>
 </div>
 </div>
-
+</div>
     <button type="button" id="wproceed-btn" onclick="_add_patient2();" class="btn-submit">Submit</button>
     </form>
     </div>
     </div>
     </div>
     </div>
-
 <!--END OF WALKIN ADMISSION FORM2-->
+
+
 
 
 
@@ -477,7 +375,7 @@
     <div class="patient_list_div">
             <div class="search_bar_container">
                 <h3>Patient admission list</h3>
-                <input type="text" name="" id="" placeholder="Search">
+                <input type="text" name="" id="psearch" placeholder="Search">
             </div>
             <?php 
     $sql = "SELECT * FROM patient_tab";
@@ -492,7 +390,6 @@
                         <td>Patient ID</td>
                         <td>Patient Profile</td>
                         <td>Date of Admission</td>
-                        <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -507,7 +404,7 @@
                         <td><?php echo $row["patient_id"]; ?></td>
                         <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]; ?>" alt="Profile Picture"></td>
                         <td><?php echo $row["date"]; ?></td>
-                        <td><i class="bi bi-three-dots _action" onclick="_show_patient_transfer_popup()"></i></td>
+                        <td><i class="bi bi-three-dots _action" onclick="showTransferPatientToNurse(event)"></i></td>
                     </tr>
                 <?php
                     }
@@ -520,29 +417,27 @@
 
 
 
-            <div class="_box_popup hide" id="patient_popup">
-        <i class="bi bi-x-square red" onclick="close_show_patient_transfer_popup()"></i>
-        <div>
-            <h5 onclick="nurse_appoitment()">Transfer to nurse unit</h5>
+            <div class="modal hidden" id="nurse__transfer__dialogue">
+            <button onclick="showNurseTransferForm()">Transfer to nurse unit</button>
         </div>
-        </div>
+
             <!----NURSE APPOITMENT-->
-<div class="appoitment hide" id="nurse_appoitment">
-            <i class="bi bi-x-square red" onclick="_close_all_patient_appoitments()"></i>
+        <div class="modal hidden" id="nurseForm">
+            <button class="btn--close-modal" onclick="closeModal('nurseForm')">&times;</button>
                 <h3>Transfer to nurse unit</h3>
-                <form action="" id="">
+                <form action="" id="nurseFormTransfer">
                     <div class="sections">
                 <div class="form-control">
                     <label for="">Patient name</label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="name">
                 </div>
                 <div class="form-control">
                     <label for="">Patient id</label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="id">
                 </div>
                 <div class="form-control">
                     <label for="">Reasons for booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <textarea name="" id=""></textarea>
                 </div>
                 </div>
                 <button class="btn-submit">Request</button>
@@ -552,31 +447,11 @@
       <!--END OF ADMITTED PATIENTS FOR LIST1-->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!--START OF WALKIN PATIENTS FOR LIST2-->
     <div class="walkin_patient_list_div hide">
             <div class="search_bar_container">
                 <h3>Walkin patient admission list</h3>
-                <input type="text" name="" id="" placeholder="Search">
+                <input type="text" name="" id="wsearch" placeholder="Search">
             </div>
             <?php 
     $sql = "SELECT * FROM walkin_patient_tab";
@@ -588,8 +463,7 @@
                     <td>Patient Name</td>
                     <td>Patient ID</td>
                     <td>Patient Profile</td>
-                    <td>date of Admission</td>
-                    <td>action</td>
+                    <td>Date of Admission</td>
                 </thead>
                 <?php
                 if ($result->num_rows > 0) {
@@ -602,7 +476,7 @@
                         <td><?php echo $row["wpatient_id"]; ?></td>
                         <td><img src="<?php echo $website_url . "/uploaded_files/profile_pix/walkin_patient/" . $row["wpassport"]; ?>" alt="Profile Picture"></td>
                         <td><?php echo $row["date"]; ?></td>
-                        <td><i class="bi bi-three-dots _action" onclick="_show_book_popup()"></i></td>
+                        <td><i class="bi bi-three-dots _action" onclick="showTransferPatientToOtherSection(event)"></i></td>
                     </tr>
                 <?php
                     }
@@ -613,58 +487,87 @@
                 </tbody>
             </table>
             
-        <div class="_box_popup hide" id="walkin_popup">
-        <i class="bi bi-x-square red" onclick="close_show_book_popup()"></i>
-        <div>
-            <h5 onclick="lab_appoitment()">Transfer to labouratory unit</h5>
 
-            <h5 onclick="rad_appoitment()">Transfer to radiology unit</h5>
-            </div>
-</div>
+<div class="modal hidden" id="other__unit">
+            <button onclick="showLabTransferForm()">Transfer to labouratory unit</button>
+            <button onclick="showRadTransferForm()">Transfer to radiology unit</button>
+        </div>
+
 <!----LAB APPOITMENT---->
-<div class="appoitment hide" id="lab_appoitment">
-            <i class="bi bi-x-square red" onclick="_close_all_appoitment()"></i>
+<div class="modal hidden" id="labForm">
+            <button class="btn--close-modal" onclick="closeModal('labForm')">&times;</button>
                 <h3>Labouratory unit</h3>
-                <form action="" id="">
-                <div class="form-control">
-                    <label for="">Patient name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control">
-                    <label for="">Patient id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control">
-                    <label for="">Reasons for booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
-                </div>
+                <form action="" id="LabFormTransfer">
+                    <div class="sections">
+                        <div class="form-control">
+                            <label for="">Patient name</label>
+                            <input type="text" name="" id="name">
+                        </div>
+                        <div class="form-control">
+                            <label for="">Patient id</label>
+                            <input type="text" name="" id="id">
+                        </div>
+                        <div class="form-control">
+                            <label for="">Reasons for booking</label>
+                            <textarea name="" id=""></textarea>
+                        </div>
+                    </div>
                 <button class="btn-submit">Request</button>
                 </form>
             </div>
             <!-----RADIOLOGY APPOITMENT-->
-<div class="appoitment hide" id="rad_appoitment">
-            <i class="bi bi-x-square red" onclick="_close_all_appoitment()"></i>
+        <div class="modal hidden" id="radForm">
+            <button class="btn--close-modal"  onclick="closeModal('radForm')">&times;</button>
                 <h3>Radiology unit</h3>
-                <form action="" id="">
-                <div class="form-control">
-                    <label for="">Patient name</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control">
-                    <label for="">Patient id</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="form-control">
-                    <label for="">Reasons for booking</label>
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
-                </div>
+                <form action="" id="RadFormTransfer">
+                    <div class="sections">
+                        <div class="form-control">
+                            <label for="">Patient name</label>
+                            <input type="text" name="" id="name">
+                        </div>
+                        <div class="form-control">
+                            <label for="">Patient id</label>
+                            <input type="text" name="" id="id">
+                        </div>
+                        <div class="form-control">
+                            <label for="">Reasons for booking</label>
+                            <textarea name="" id=""></textarea>
+                        </div>
+                    </div>
                 <button class="btn-submit">Request</button>
                 </form>
             </div>
     </div>
+    <div class="emergency_patient_list_div">
+            <div class="search_bar_container">
+                <h3>Emergency list</h3>
+                <input type="text" name="" id="wsearch" placeholder="Search">
+            </div>
+            <table id="table1">
+                <thead>
+                    <tr>
+                        <td>S/N</td>
+                        <td>Patient Name</td>
+                        <td>Patient Emergecy ID</td>
+                        <td>Date of Admission</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5">No emergency patient available</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
     </div>
+
+
+    
   </div>
     <!--END OF WALKIN PATIENTS FOR LIST2-->
+
+
+    
 
 
 
@@ -706,7 +609,6 @@
     <div class="form-control">
         <label for="av-doctors">Available doctors</label>
         <select name="doctors" id="av-doctors">
-            <!-- Options will be dynamically filled based on role selection -->
         </select>
     </div>
     <button type="button" class="btn-submit" onclick="bookPatient()">BOOK PATIENT</button>
