@@ -123,19 +123,14 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
         </div>
 
 
-        <div class="pending__transactions hide">
+        <div class="pending__transactions">
             <div class="patient_list_div">
             <div class="search_bar_container">
                 <h3>Pending Transactions</h3>
                 <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
-                <?php
-                    $sql = "SELECT a.*, p.fullname, p.patient_passport 
-                            FROM account_appointment_tab a
-                            INNER JOIN patient_tab p ON a.patient_id = p.patient_id";
-                    $result = mysqli_query($conn, $sql);
-                    ?>
+
 
                     <table id="pending">
                         <thead>
@@ -152,39 +147,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            $sn = 1; // Initialize the counter for serial number
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    // Escaping output to prevent XSS attacks
-                                    $patient_passport = htmlspecialchars($row["patient_passport"]);
-                                    $fullname = htmlspecialchars($row['fullname']);
-                                    $patient_id = htmlspecialchars($row['patient_id']);
-                                    $time = htmlspecialchars($row['time']);
-                                    $tests = htmlspecialchars($row['tests']);
-                                    $total_amount = htmlspecialchars($row['total_amount']);
-                                    $payment_status = htmlspecialchars($row['payment_status']);
-
-                                    echo "<tr>
-                                            <td>{$sn}</td>
-                                            <td><img src='{$website_url}/uploaded_files/profile_pix/patient/{$patient_passport}' alt='passport'></td>
-                                            <td>{$fullname}</td>
-                                            <td data-patient-id='{$patient_id}'>{$patient_id}</td>
-                                            <td data-time='{$time}'>{$time}</td>
-                                            <td>{$tests}</td>
-                                            <td>{$total_amount}</td>
-                                            <td>{$payment_status}</td>
-                                            <td>
-                                                <button class='accept-btn' type='button' id='paid_btn_{$sn}' onclick='paid(\"{$patient_id}\", \"{$time}\")'>Paid</button>
-                                                <button class='reject-btn'>Cancelled</button>
-                                            </td>
-                                        </tr>";
-                                    $sn++; // Increment the serial number
-                                }
-                            } else {
-                                echo "<tr><td colspan='9'>No records for now</td></tr>";
-                            }
-                            ?>
+                        
                         </tbody>
                     </table>
                     </div>
@@ -192,9 +155,9 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
             </div>
             </div>
         </div>
+    
 
-
-        <div class="patient__receipt">
+        <div class="patient__receipt hide">
         <h1>Invoice</h1>
         <h3>Customer: John Doe</h3>
         <h3>Date: 2024-08-28</h3>
