@@ -19,36 +19,39 @@
 
         case 'pending_transactions':
 
-            // Retrieve the patient_id from the POST request
+            // Retrieve the patient_id from the POST request (optional if needed)
             $patient_id = $_POST['patient_id'];
         
             $response = array(); // Initialize the response array
         
-            // SQL query to fetch appointment details for the specific patient along with patient details
-            $sql = "SELECT * FROM account_appointment_tab"; // Filter by patient_id
+            // SQL query to fetch appointment details for the specific patient or all records
+            $sql = "SELECT * FROM account_appointment_tab"; // Add WHERE clause to filter by patient_id if needed
         
             $result = mysqli_query($conn, $sql);
         
             // Check if any rows are returned
             if (mysqli_num_rows($result) > 0) {
-                // Fetch the row
-                $row = mysqli_fetch_assoc($result);  // We fetch only one row if a specific patient_id is queried
+                $pending_appointments = array(); // Initialize an array to hold all rows
         
+                // Loop through all rows and store them in the array
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $pending_appointments[] = $row; // Add each row to the array
+                }
+        
+                // Pass the array to the JSON response
                 $response['success'] = true;
-                $response['data'] = $row; // Send the row as data in the response
-
-                // $response['success'] = true;
-                // $response['message'] = "Successful Payment.";
+                $response['data'] = $pending_appointments; // Send the array of rows as data in the response
         
             } else {
                 $response['success'] = false;
-                $response['message'] = "No pending transactions found for the patient.";
+                $response['message'] = "No pending transactions found.";
             }
         
             // Return the response as JSON
             echo json_encode($response);
         
             break;
+        
         
         
 
