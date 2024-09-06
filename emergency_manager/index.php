@@ -457,6 +457,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                                   <td>S/N</td>
                                   <td>Patient Name</td>
                                   <td>Patient ID</td>
+                                  <td>Gender</td>
                                   <td>Cause of Incident</td>
                                   <td>Date of Incident</td>
                                   <td>Time of Incident</td>
@@ -472,6 +473,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                               <td>' . $sn++ . '</td>
                               <td>' . htmlspecialchars($row['Epatient_name']) . '</td>
                               <td>' . htmlspecialchars($row['emergency_patient_id']) . '</td>
+                               <td>' . htmlspecialchars($row['gender']) . '</td>
                               <td>' . htmlspecialchars($row['cause_of_incident']) . '</td>
                               <td>' . htmlspecialchars($row['date_of_incident']) . '</td>
                               <td>' . htmlspecialchars($row['time_of_incident']) . '</td>
