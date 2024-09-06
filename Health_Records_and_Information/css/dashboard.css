@@ -715,6 +715,11 @@ tbody tr:hover {
     margin: 5.5rem 0 0 22rem;
     width: auto;
 }
+.emergency_patient_list_div {
+  width: auto;
+  margin: 5em 0 0 21.5em;
+}
+
 ._action{
     cursor: pointer;
 }
@@ -842,6 +847,8 @@ cursor: pointer;
 }
 
 
+
+
   /* MODAL WINDOW */
   .modal {
     position: fixed;
@@ -858,6 +865,9 @@ cursor: pointer;
   }
   #walkin--patient{
    height: 80%;
+  }
+  #nurse__transfer__dialogue, #other__unit{
+    width: fit-content;
   }
   
   .overlay {
@@ -1012,6 +1022,7 @@ cursor: pointer;
     margin: 5em 0 0 19em;
 }
 
+
  .new_intake_admission_form{
     margin: 5em 0 0 19em;
     width: 90%;
@@ -1156,97 +1167,79 @@ cursor: pointer;
     }
     }
 
-
-.wrap{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-evenly;
-}
-/* Style for hidden checkboxes */
-.checkbox-wrapper-46 input[type="checkbox"] {
-    display: none;
-    visibility: hidden;
-}
-
-/* General style for labels acting as checkbox */
-.checkbox-wrapper-46 .cbx {
-    margin: auto;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center; /* Center the label text with the custom checkbox */
-}
-
-/* Styling for the custom checkbox appearance */
-.checkbox-wrapper-46 .cbx span:first-child {
-    position: relative;
-    width: 0.45rem;
-    height: 0.45rem;
-    padding: 0.29rem;
-    border-radius: 3px;
-    border: 1px solid #2a57d7;;
-    transition: all 0.2s ease;
-    margin-right: 8px; /* Space between the checkbox and the label text */
-}
-
-/* SVG inside the custom checkbox */
-.checkbox-wrapper-46 .cbx span:first-child svg {
-    position: absolute;
-    top: 3px;
-    left: 2px;
-    fill: none;
-    stroke: #FFFFFF;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-dasharray: 16px;
-    stroke-dashoffset: 16px;
-    transition: all 0.3s ease;
-    transition-delay: 0.1s;
-}
-
-/* Hover effect for the custom checkbox */
-.checkbox-wrapper-46 .cbx:hover span:first-child {
-    border-color: #506EEC;
-}
-
-/* Style changes when the checkbox is checked */
-.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
-    background: #506EEC;
-    border-color: #506EEC;
-    animation: wave-46 0.4s ease;
-}
-
-.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
-    stroke-dashoffset: 0;
-}
-
-.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #506EEC;
-    display: block;
-    transform: scale(3.5);
-    opacity: 0;
-    border-radius: 50%;
-    transition: all 0.6s ease;
-}
-
-/* Animation effect for the checkbox background */
-@keyframes wave-46 {
-    50% {
-        transform: scale(0.9);
-    }
-}
-
-
 .hide{
     display: none;
 }
 .hidden{
     display: none;
+  }
+
+
+  .radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.radio-group label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.radio-group input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.radio-group .custom-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    padding: 0;
+    border: 2px solid #d1d3e2;
+    border-radius: 50%;
+}
+.radio-group input[type="radio"]:checked ~ .custom-radio {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+.radio-group .custom-radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.radio-group input[type="radio"]:checked ~ .custom-radio:after {
+    display: block;
+}
+.radio-group .custom-radio:after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+label{
+    font-size: 1.2rem;
+      color: rgb(42, 87, 215);
+  }
+
+  select{
+    cursor: pointer;
+  }
+  
+  input, select,textarea {
+    padding: 12px 20px;
+    background-color: #fff;
+    margin: 8px 0;
+    font-size: 1.1rem;
+    color: rgb(42, 87, 215);
+    width:300px;
+    display: inline-block;
+    border: 1px solid rgb(42, 87, 215);
+    border-radius: 4px;
+    box-sizing: border-box;
   }
