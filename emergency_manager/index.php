@@ -184,7 +184,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 
 <div class="modal hidden" id="book__patient">
   <div class="">
-    <button onclick="docForm()">Transfer to doctor</button>
+    <button onclick="docForm(),getDoctorsRoles()">Transfer to doctor</button>
     <button onclick="nurseForm()">Transfer to nurse</button>
     <button onclick="surgicalsuiteForm()">Transfer to surgical suite</button>
     <button onclick="labForm()">Transfer to lab</button>
