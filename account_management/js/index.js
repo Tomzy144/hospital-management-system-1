@@ -225,7 +225,7 @@ function displayPendingTransactions() {
                 const data = response.data;
 
                 // Check if data is an object (not an array)
-                if (typeof data === 'object' && !Array.isArray(data)) {
+                if (!typeof data === 'object' && Array.isArray(data)) {
                     // Directly pass the transaction data and handle the table update
                     pending__transactions(data);
                 } else {

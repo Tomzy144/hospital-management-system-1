@@ -127,7 +127,6 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
             <div class="patient_list_div">
             <div class="search_bar_container">
                 <h3>Pending Transactions</h3>
-                <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
 
