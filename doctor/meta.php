@@ -16,7 +16,7 @@
     <meta property="og:site_name" content="<?php echo $thename?>">
     <meta property="og:url" content="<?php echo $website_address?>" />
 
-    <!-- Include jQuery -->
+    <!-- Include jQuery --->
     <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script> -->
     <!-- Include the CSS and JavaScript for autocomplete-lhc -->
   

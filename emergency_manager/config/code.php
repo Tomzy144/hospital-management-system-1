@@ -45,7 +45,7 @@
         } else {
     
             // Get sequence
-            $sequence = $callclass->_get_sequence_count($conn, 'Epat');
+            $sequence = $callclass->_get_sequence_count($conn, 'EPAT');
             $array = json_decode($sequence, true);
             $no = $array[0]['no'];
             $emergency_patient_id = 'Epat' . $no;
