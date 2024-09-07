@@ -183,14 +183,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                 <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
-                <?php $sql = "SELECT a.*, p.fullname, p.patient_passport 
-                  FROM account_appointment_confirm_tab a
-                  INNER JOIN patient_tab p ON a.patient_id = p.patient_id";
-                  $result = mysqli_query($conn, $sql);
-
-                  ?>
-
-                  <table>
+                  <table id="success">
                       <thead>
                           <tr>
                               <td>S/N</td>
@@ -205,18 +198,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                           </tr>
                       </thead>
                       <tbody>
-                         <tr>
-                            <td>1</td>
-                            <td><img src='$website_url/uploaded_files/profile_pix/patient/the image name from the database' alt='passport'></td>
-                            <td>fullname</td>
-                            <td>patient_id</td>
-                            <td>time</td>
-                            <td>approved_time</td>
-                            <td>tests</td>
-                            <td>total_amount</td>
-                            <td>payment_status</td>
-                        </tr>
-                          
+                       
                       </tbody>
                   </table>
                     </div>
@@ -251,9 +233,6 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                                             <tbody>
                                               <tr>
                                                 <td>1</td>
-                                                <!-- <td>
-                                                        <img src="" alt="">
-                                                </td> -->
                                                 <td>Peace Harry</td>
                                                 <td>PAT009</td>
                                                 <td>23/09/2000</td>

@@ -67,40 +67,39 @@ function showMessage(message, text, backgroundColor) {
 
 
 
-let messageContainer = document.createElement('div');
-document.body.appendChild(messageContainer);
+// let messageContainer = document.createElement('div');
+// document.body.appendChild(messageContainer);
 
-const createAlertMessage = (text, className, duration = 5000) => {
-  const message = document.createElement('div');
-  message.className = className + ' alert';
-  message.innerHTML = `
-    <div class="content">
-    <div class="message">
-      <div class="icon">
-        <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
-        </div>
-        <h2>${text}</h2>
-        </div>
-    </div>
-  `;
-  messageContainer.appendChild(message);
-  if(duration !== 0){
-    setTimeout(() => {
-        message.classList.add('hide');
-        setTimeout(() => message.remove(), 500); 
-      }, duration);
-  }
-  return message;
-}
+// const createAlertMessage = (text, className, duration = 5000) => {
+//   const message = document.createElement('div');
+//   message.className = className + ' alert';
+//   message.innerHTML = `
+//     <div class="content">
+//     <div class="message">
+//       <div class="icon">
+//         <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+//         </div>
+//         <h2>${text}</h2>
+//         </div>
+//     </div>
+//   `;
+//   messageContainer.appendChild(message);
+//   if(duration !== 0){
+//     setTimeout(() => {
+//         message.classList.add('hide');
+//         setTimeout(() => message.remove(), 500); 
+//       }, duration);
+//   }
+//   return message;
+// }
 
-const successMessage = (text) => createAlertMessage(text, 'success');
-const infoMessage = (text) => createAlertMessage(text, 'info');
-const warningMessage = (text) => createAlertMessage(text, 'warning');
-const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000); 
-const optionsMessage = (text, opt1, opt2) =>{
-    const message = createAlertMessage(text, 'info', 0);
-
-} 
+// const successMessage = (text) => createAlertMessage(text, 'success');
+// const infoMessage = (text) => createAlertMessage(text, 'info');
+// const warningMessage = (text) => createAlertMessage(text, 'warning');
+// const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000); 
+// const optionsMessage = (text, opt1, opt2) =>{
+//     const message = createAlertMessage(text, 'info', 0)
+// } 
 
 
 
@@ -123,10 +122,13 @@ function paid(patient_id, time) {
         success: function (data) {
             if (data.success) {
                 alert('Payment Approved');
+                console.log(data)
                 $btnSubmit.html('Transfer');
                 $btnSubmit.prop('disabled', false);
                 // window.location.reload(); // Reload the page to reflect the changes
-            } else {
+            } 
+            
+            else {
                 console.error('Error:', data.error);
                 $btnSubmit.html(btnText);
                 $btnSubmit.prop('disabled', false);
@@ -141,71 +143,7 @@ function paid(patient_id, time) {
 }
 
 
-function accept() {
-    const paid_buttons = document.querySelectorAll('#paid_btn_1');
-    paid_buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            //PATIENT DETAILS
-            const reqType = e.target.closest('tr').children[5].textContent
-            console.log(reqType);
-            const totalAmount = e.target.closest('tr').children[6].textContent;
-            const totalAmountNumber = Number(totalAmount.replace(/[₦ ,]+/g, ''));
 
-            // Create the POS or Cash selection popup
-            const selectMessage = document.createElement('div');
-            selectMessage.className = 'alert info';
-            selectMessage.innerHTML = `
-                <div class="buttonflex">
-                    <button id="posButton">POS</button>
-                    <button id="cashButton">CASH</button>
-                </div>
-            `;
-            document.body.appendChild(selectMessage);
-
-            // Add event listeners for POS and Cash buttons
-            document.getElementById('posButton').addEventListener('click', () => handlePayment('POS', totalAmountNumber));
-            document.getElementById('cashButton').addEventListener('click', () => handlePayment('Cash', totalAmountNumber));
-
-            // Remove the popup after a selection
-            selectMessage.addEventListener('click', () => selectMessage.remove());
-        });
-    });
-}
-
-
-function handlePayment(type, amount) {
-    const currentDate = new Date().toLocaleDateString();
-
-    // Add the payment details to the receipt table
-    const receiptTable = document.getElementById('receipt__table').querySelector('tbody');
-    const row = receiptTable.insertRow();
-    row.insertCell(0).textContent = `${type} Payment`;
-    row.insertCell(1).textContent = `₦${amount.toFixed(2)}`;
-    row.insertCell(2).textContent = currentDate;
-
-    let storageKey = type === 'POS' ? 'totalPos' : 'totalCash';
-    let totalAmount = parseFloat(localStorage.getItem(storageKey) || '0');
-    totalAmount += amount;
-    localStorage.setItem(storageKey, totalAmount.toString());
-
-    updateDisplay();
-}
-
-function updateDisplay() {
-    const posAmount = parseFloat(localStorage.getItem('totalPos') || '0');
-    const cashAmount = parseFloat(localStorage.getItem('totalCash') || '0');
-
-    document.getElementById('pos').textContent = `POS: ₦${posAmount.toFixed(2)}`;
-    document.getElementById('cash').textContent = `Cash: ₦${cashAmount.toFixed(2)}`;
-}
-
-function printInvoice() {
-    window.print();
-}
-
-// Initialize the display with values from local storage
-updateDisplay();
-accept();
 function displayPendingTransactions() {
     var action = 'pending_transactions';
     var dataString = "action=" + action;
@@ -217,14 +155,9 @@ function displayPendingTransactions() {
         cache: false,
         dataType: 'json', // Expecting a JSON response
         success: function (response) {
-            // Logging the full response to inspect the structure
-            console.log('Full response:', response);
 
             if (response.success) {
-                const data = response.data; // Directly access the array of transactions
-                console.log('Data:', data);
-
-                // Check if `data` is an array
+                const data = response.data; 
                 if (Array.isArray(data)) {
                     // Loop through the array of transactions
                     data.forEach(transaction => {
@@ -234,29 +167,27 @@ function displayPendingTransactions() {
                     console.error('Expected data to be an array, but got:', typeof data);
                 }
             } else {
-                // Handle cases where success is false
                 console.error('Error:', response.message);
                 alert('Error: ' + response.message);
             }
         },
         error: function (xhr, status, error) {
-            // Logs the AJAX error for debugging
             console.error('AJAX Error:', error);
-            console.log('Response Text:', xhr.responseText); // Logs the full server response
+            console.log('Response Text:', xhr.responseText);
             alert('AJAX Error: ' + error);
         }
     });
 }
+
+
+
 const pending__transactions = function(transaction) {
     const pending = document.querySelector('#pending tbody');
-    
-    // Ensure rowCount is calculated correctly
-    const rowCount = pending.rows.length; // Use row count directly without adding 1
-    const newRow = pending.insertRow(rowCount); // Insert a new row
+    const rowCount = pending.rows.length; 
+    const newRow = pending.insertRow(rowCount);
 
-    // Insert the correct number of cells (9 in total)
     newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
-    newRow.insertCell(1).innerHTML = `<img src="path_to_default_image.png" alt="Passport" width="50" height="50">`; // Placeholder for passport image
+    newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
     newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
     newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
     newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
@@ -266,31 +197,24 @@ const pending__transactions = function(transaction) {
 
     // Action buttons
     newRow.insertCell(8).innerHTML = `
-    <button class="action-button">Accept</button>
+    <button class="action-button" id="accept">Accept</button>
     <button class="action-button">Reject</button>
     `;
-
     // Handle 'tests' field (JSON parsing)
     if (transaction.tests) {
         try {
             const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
-            console.log(testsObj)
             let test = '<ul style="list-style: none; text-align:left">'; // Create an unordered list
 
             // Loop through the tests object
             for (let testName in testsObj) {
                 if (testsObj.hasOwnProperty(testName)) {
-                    let testValue = testsObj[testName]; // Declare testValue with let
-            
-                    // Reassign testValue to 'Free' if it equals 0
-                    testValue = testValue == 0 ? 'Free' : testValue;
-            
-                    test += `<li style="color: white; font-size: 1rem;">${testName}: ${testValue}</li>`;
+                    let test__price = testsObj[testName]; // Declare testValue with let
+                    test__price = test__price == 0 ? 'Free' : test__price;
+                    test += `<li style="color: white; font-size: 1rem;">${testName}: ${test__price}</li>`;
                 }
             }
-            
             test += '</ul>'; // Close the list
-
             newRow.cells[5].innerHTML = test;
         } catch (error) {
             console.error('Error parsing tests:', error);
@@ -299,4 +223,91 @@ const pending__transactions = function(transaction) {
     } else {
         newRow.cells[5].innerHTML = 'N/A'; // If tests field is missing
     }
+
+    const paid_buttons = document.querySelectorAll('#accept');
+    paid_buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const selectMessage = document.createElement('div');
+            selectMessage.className = 'alert info';
+            selectMessage.innerHTML = `
+                <div class="buttonflex">
+                    <button id="posButton">POS</button>
+                    <button id="cashButton">CASH</button>
+                </div>
+            `;
+            document.body.appendChild(selectMessage);
+
+            // Add event listeners for POS and Cash buttons
+            document.getElementById('posButton').addEventListener('click', () => {
+                // handlePayment('POS', totalAmountNumber)
+                paid(transaction.patient_id, transaction.time); // Call the paid function
+
+                // Move the transaction to success
+                moveTransactionToSuccess(transaction, newRow);
+                selectMessage.remove(); // Remove the popup after payment
+            });
+            document.getElementById('cashButton').addEventListener('click', () => {
+                // handlePayment('Cash', totalAmountNumber)
+                paid(transaction.patient_id, transaction.time); // Call the paid function
+
+                // Move the transaction to success
+                moveTransactionToSuccess(transaction, newRow);
+                selectMessage.remove(); // Remove the popup after payment
+            });
+
+            // Remove the popup after a selection
+            selectMessage.addEventListener('click', () => selectMessage.remove());
+        });
+    });
 };
+
+// Function to move transaction from pending to successful
+const moveTransactionToSuccess = (transaction, row) => {
+    console.log('Moving to success:', transaction); // Log the transaction data
+    successful_transactions(transaction);  // Add transaction to the success table
+    console.log('Pending row to remove:', row);  // Log the pending row
+    row.remove();  // Remove the row from the pending table
+    console.log('Row removed');
+};
+
+
+const successful_transactions = function(transaction) {
+    const successTable = document.querySelector('#success tbody');
+    const rowCount = successTable.rows.length;
+    const newRow = successTable.insertRow(rowCount);
+
+    newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
+    newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
+    newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
+    newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
+    newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
+    newRow.insertCell(5).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
+    newRow.insertCell(6).innerHTML = 'Test' || 'N/A'; // Request type
+    newRow.insertCell(7).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
+    newRow.insertCell(8).innerHTML = 'Success'; // Payment Status
+
+
+    if (transaction.tests) {
+        try {
+            const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
+            let test = '<ul style="list-style: none; text-align:left">'; // Create an unordered list
+
+            // Loop through the tests object
+            for (let testName in testsObj) {
+                if (testsObj.hasOwnProperty(testName)) {
+                    let test__price = testsObj[testName]; // Declare testValue with let
+                    test__price = test__price == 0 ? 'Free' : test__price;
+                    test += `<li style="color: white; font-size: 1rem;">${testName}: ${test__price}</li>`;
+                }
+            }
+            test += '</ul>'; // Close the list
+            newRow.cells[6].innerHTML = test;
+        } catch (error) {
+            console.error('Error parsing tests:', error);
+            newRow.cells[6].innerHTML = 'Invalid test data'; // Fallback for parsing errors
+        }
+    } else {
+        newRow.cells[6].innerHTML = 'N/A'; // If tests field is missing
+    }
+};
+
