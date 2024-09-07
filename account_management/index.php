@@ -67,26 +67,23 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
 
     <!--DIFFERENT SECTIONS--->
     <div class="navbar">
-        <div class="section1">
+        <div class="display__date">
         </div>
-        <div class="section2">
-
-          </div>
           <div class="profile">
             <div class="profile_account hide">
-            <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
-            <h4><?php echo $fullname ?></h4>
-        </div>
+            <img id="image_profile_account" src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="">
+            <span><?php echo $fullname ?></span>
+           </div>
+
             <div class="image">
-            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <img src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="userImage"/>
             <div class="active_on"></div>
             </div>
-        </img>  
             <span><?php echo $fullname ?></span>
-            <i class="bi bi-caret-down-fill _profile_arrow_icon" onclick="click_icon_for_profile()"></i>
-          </div>
-        </div>
-    </div>
+            <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
+                 </div>
+                </div>
+
     <div class="sidebar">
             <div class="sidebar-body">
                 <ul>

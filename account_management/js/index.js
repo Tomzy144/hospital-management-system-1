@@ -35,7 +35,27 @@ const closeModal = function (modalId) {
   blackBackground.classList.add('hidden');
 };
 ////////
+function displayUserProfile(){
+    document.querySelector(".profile_account").classList.toggle("hide");
+};
 
+
+
+function createDate(){
+    const now = new Date();
+    const options = {
+    day:'numeric',
+    month:'numeric',
+    year:'numeric',
+    hour:'numeric',
+    minute:'numeric',
+    second:'numeric',
+    }
+    const dateTime = new Intl.DateTimeFormat(navigator.language, options).format(now)
+    document.querySelector('.display__date').textContent = dateTime
+    }
+    setInterval(() => createDate());
+    ////////////////////////////////////////////////////////////////////
 
 
 function pendingTransaction() {
