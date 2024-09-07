@@ -122,6 +122,7 @@ function paid(patient_id, time,option) {
         success: function (data) {
             if (data.success) {
                 alert('Payment Approved');
+                window.location.reload();
                 console.log(data)
                 $btnSubmit.html('Transfer');
                 $btnSubmit.prop('disabled', false);
@@ -143,7 +144,6 @@ function paid(patient_id, time,option) {
 }
 
 
-
 function displayPendingTransactions() {
     var action = 'pending_transactions';
     var dataString = "action=" + action;
@@ -155,20 +155,34 @@ function displayPendingTransactions() {
         cache: false,
         dataType: 'json', // Expecting a JSON response
         success: function (response) {
+            const pending = document.querySelector('#pending tbody');
+            // Clear any existing rows
+            pending.innerHTML = '';
 
             if (response.success) {
-                const data = response.data; 
-                if (Array.isArray(data)) {
-                    // Loop through the array of transactions
+                const data = response.data;
+
+                if (Array.isArray(data) && data.length > 0) {
+                    // If transactions are found, loop through them and add to the table
                     data.forEach(transaction => {
                         pending__transactions(transaction);
                     });
                 } else {
-                    console.error('Expected data to be an array, but got:', typeof data);
+                    // No transactions found, show "No transaction found" message
+                    const noTransactionRow = pending.insertRow(0);
+                    const noTransactionCell = noTransactionRow.insertCell(0);
+                    noTransactionCell.colSpan = 9; // Span across all columns
+                    noTransactionCell.innerHTML = 'No transaction found';
+                    noTransactionCell.style.textAlign = 'center';
                 }
-            } else {
+            } 
+            if(response.message === 'No pending transactions found.'){
                 console.error('Error:', response.message);
-                alert('Error: ' + response.message);
+                const noTransactionRow = pending.insertRow(0);
+                const noTransactionCell = noTransactionRow.insertCell(0);
+                noTransactionCell.colSpan = 9; // Span across all columns
+                noTransactionCell.innerHTML = 'No pending transactions found.';
+                noTransactionCell.style.textAlign = 'center';
             }
         },
         error: function (xhr, status, error) {
@@ -180,11 +194,13 @@ function displayPendingTransactions() {
 }
 
 
+
 const pending__transactions = function(transaction) {
     const pending = document.querySelector('#pending tbody');
     const rowCount = pending.rows.length; 
     const newRow = pending.insertRow(rowCount);
 
+    
     newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
     newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
     newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
@@ -199,8 +215,6 @@ const pending__transactions = function(transaction) {
     <button class="action-button" id="accept_${rowCount}">Accept</button>
     <button class="action-button">Reject</button>
     `;
-
-    // Handle 'tests' field (JSON parsing)
     if (transaction.tests) {
         try {
             const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
@@ -222,7 +236,6 @@ const pending__transactions = function(transaction) {
     } else {
         newRow.cells[5].innerHTML = 'N/A'; // If tests field is missing
     }
-
     const paidButton = document.querySelector(`#accept_${rowCount}`);
     paidButton.addEventListener('click', function(e) {
        
@@ -274,64 +287,199 @@ const pending__transactions = function(transaction) {
 
 
 
+const displaySuccessfullTransaction = function() {
+    var action = 'transactions';
+    var dataString = "action=" + action;
+
+    $.ajax({
+        type: 'GET',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json', // Expecting a JSON response
+        success: function (response) {
+            const success = document.querySelector('#success tbody');
+            // Clear any existing rows
+            success.innerHTML = '';
+            if (response.success) {
+                const data = response.data;
+                if (Array.isArray(data) && data.length > 0) {
+                    data.forEach(transaction => {
+                        successful__transactions(transaction);
+                    });
+                } else {
+                    // No transactions found, show "No transaction found" message
+                    const noTransactionRow = success.insertRow(0);
+                    const noTransactionCell = noTransactionRow.insertCell(0);
+                    noTransactionCell.colSpan = 9; // Span across all columns
+                    noTransactionCell.innerHTML = 'No transaction found';
+                    noTransactionCell.style.textAlign = 'center';
+                }
+            } 
+            if(response.message === 'No success transactions found.'){
+                console.error('Error:', response.message);
+                const noTransactionRow = success.insertRow(0);
+                const noTransactionCell = noTransactionRow.insertCell(0);
+                noTransactionCell.colSpan = 9; // Span across all columns
+                noTransactionCell.innerHTML = 'No success transactions found.';
+                noTransactionCell.style.textAlign = 'center';
+            }
+            if(!response.ok){
+                console.error('Error:', response.message);
+                const noTransactionRow = success.insertRow(0);
+                const noTransactionCell = noTransactionRow.insertCell(0);
+                noTransactionCell.colSpan = 9; // Span across all columns
+                noTransactionCell.innerHTML = 'Error in the response.';
+                noTransactionCell.style.textAlign = 'center';
+            }
+    },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+            console.log('Response Text:', xhr.responseText);
+            alert('AJAX Error: ' + error);
+        }
+    });
+};
+
+const successful__transactions = function(transaction){
+    const successTable = document.querySelector('#success tbody');
+    const rowCount = successTable.rows.length;
+    const newRow = successTable.insertRow(rowCount);
+
+    newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
+    newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
+    newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
+    newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
+    newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
+    newRow.insertCell(5).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
+    newRow.insertCell(6).innerHTML = 'Test' || 'N/A'; // Request type
+    newRow.insertCell(7).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
+    newRow.insertCell(8).innerHTML = 'Success'; // Payment Status
+
+
+    if (transaction.tests) {
+        try {
+            const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
+            let test = '<ul style="list-style: none; text-align:left">'; // Create an unordered list
+
+            // Loop through the tests object
+            for (let testName in testsObj) {
+                if (testsObj.hasOwnProperty(testName)) {
+                    let test__price = testsObj[testName]; // Declare testValue with let
+                    test__price = test__price == 0 ? 'Free' : test__price;
+                    test += `<li style="color: white; font-size: 1rem;">${testName}: ${test__price}</li>`;
+                }
+            }
+            test += '</ul>'; // Close the list
+            newRow.cells[6].innerHTML = test;
+        } catch (error) {
+            console.error('Error parsing tests:', error);
+            newRow.cells[6].innerHTML = 'Invalid test data'; // Fallback for parsing errors
+        }
+    } else {
+        newRow.cells[6].innerHTML = 'N/A'; // If tests field is missing
+    }
+}
+
+displaySuccessfullTransaction()
 
 
 
 
 
 
+const displayOverallTransaction = function() {
+    var action = 'all_transactions';
+    var dataString = "action=" + action;
+
+    $.ajax({
+        type: 'GET',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json', // Expecting a JSON response
+        success: function (response) {
+            const overall__transactions = document.querySelector('#overall__transactions tbody');
+            // Clear any existing rows
+            overall__transactions.innerHTML = '';
+            if (response.success) {
+                const data = response.data;
+                if (Array.isArray(data) && data.length > 0) {
+                    data.forEach(transaction => {
+                        overall___transactions(transaction);
+                    });
+                } else {
+                    // No transactions found, show "No transaction found" message
+                    const noTransactionRow = overall__transactions.insertRow(0);
+                    const noTransactionCell = noTransactionRow.insertCell(0);
+                    noTransactionCell.colSpan = 9; // Span across all columns
+                    noTransactionCell.innerHTML = 'No transaction found';
+                    noTransactionCell.style.textAlign = 'center';
+                }
+            } 
+            if(response.message === 'No success transactions found.'){
+                console.error('Error:', response.message);
+                const noTransactionRow = overall__transactions.insertRow(0);
+                const noTransactionCell = noTransactionRow.insertCell(0);
+                noTransactionCell.colSpan = 9; // Span across all columns
+                noTransactionCell.innerHTML = 'No success transactions found.';
+                noTransactionCell.style.textAlign = 'center';
+            }
+            if(!response.ok){
+                console.error('Error:', response.message);
+                const noTransactionRow = overall__transactions.insertRow(0);
+                const noTransactionCell = noTransactionRow.insertCell(0);
+                noTransactionCell.colSpan = 9; // Span across all columns
+                noTransactionCell.innerHTML = 'Error in the response.';
+                noTransactionCell.style.textAlign = 'center';
+            }
+    },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+            console.log('Response Text:', xhr.responseText);
+            alert('AJAX Error: ' + error);
+        }
+    });
+};
+
+const overall__transactions = function(transaction){
+    const overall__transactions = document.querySelector('#overall__transactions tbody');
+    const rowCount = overall__transactions.rows.length;
+    const newRow = overall__transactions.insertRow(rowCount);
+
+    newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
+    newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
+    newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
+    newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
+    newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
+    newRow.insertCell(5).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
+    newRow.insertCell(6).innerHTML = 'Test' || 'N/A'; // Request type
+    newRow.insertCell(7).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
+    newRow.insertCell(8).innerHTML = 'Success'; // Payment Status
 
 
+    if (transaction.tests) {
+        try {
+            const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
+            let test = '<ul style="list-style: none; text-align:left">'; // Create an unordered list
 
+            // Loop through the tests object
+            for (let testName in testsObj) {
+                if (testsObj.hasOwnProperty(testName)) {
+                    let test__price = testsObj[testName]; // Declare testValue with let
+                    test__price = test__price == 0 ? 'Free' : test__price;
+                    test += `<li style="color: white; font-size: 1rem;">${testName}: ${test__price}</li>`;
+                }
+            }
+            test += '</ul>'; // Close the list
+            newRow.cells[6].innerHTML = test;
+        } catch (error) {
+            console.error('Error parsing tests:', error);
+            newRow.cells[6].innerHTML = 'Invalid test data'; // Fallback for parsing errors
+        }
+    } else {
+        newRow.cells[6].innerHTML = 'N/A'; // If tests field is missing
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-// const successful_transactions = function(transaction) {
-//     const successTable = document.querySelector('#success tbody');
-//     const rowCount = successTable.rows.length;
-//     const newRow = successTable.insertRow(rowCount);
-
-//     newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
-//     newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
-//     newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
-//     newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
-//     newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
-//     newRow.insertCell(5).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
-//     newRow.insertCell(6).innerHTML = 'Test' || 'N/A'; // Request type
-//     newRow.insertCell(7).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
-//     newRow.insertCell(8).innerHTML = 'Success'; // Payment Status
-
-
-//     if (transaction.tests) {
-//         try {
-//             const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
-//             let test = '<ul style="list-style: none; text-align:left">'; // Create an unordered list
-
-//             // Loop through the tests object
-//             for (let testName in testsObj) {
-//                 if (testsObj.hasOwnProperty(testName)) {
-//                     let test__price = testsObj[testName]; // Declare testValue with let
-//                     test__price = test__price == 0 ? 'Free' : test__price;
-//                     test += `<li style="color: white; font-size: 1rem;">${testName}: ${test__price}</li>`;
-//                 }
-//             }
-//             test += '</ul>'; // Close the list
-//             newRow.cells[6].innerHTML = test;
-//         } catch (error) {
-//             console.error('Error parsing tests:', error);
-//             newRow.cells[6].innerHTML = 'Invalid test data'; // Fallback for parsing errors
-//         }
-//     } else {
-//         newRow.cells[6].innerHTML = 'N/A'; // If tests field is missing
-//     }
-// };
-
+displayOverallTransaction()

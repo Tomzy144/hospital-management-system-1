@@ -200,7 +200,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                       </thead>
                       <tbody>
                        <tr>
-                        <td colspan="7">No data available</td>
+                        <td colspan="10">No data available</td>
                        </tr>
                       </tbody>
                   </table>
@@ -219,8 +219,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                 <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here">
                 </div>
-                <!-- ?php $sql = "SELECT * FROM account_appointment_tab AND account_appointment_confirm_tab"?> -->
-                    <table>
+                    <table id="overall__transactions">
                                             <thead>
                                                 <tr>
                                                     <td>S/N</td>
@@ -234,46 +233,9 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <td>Peace Harry</td>
-                                                <td>PAT009</td>
-                                                <td>23/09/2000</td>
-                                                <td>23:00</td>
-                                                <td>Check up</td>
-                                                <td>100</td>
-                                              <td>Successful</td>
-                                              </tr>
-                                            </tbody>
-                                            <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <!-- <td>
-                                                        <img src="" alt="">
-                                                </td> -->
-                                                <td>Peace Harry</td>
-                                                <td>PAT009</td>
-                                                <td>23/09/2000</td>
-                                                <td>23:00</td>
-                                                <td>Check up</td>
-                                                <td>100</td>
-                                              <td>Successful</td>
-                                              </tr>
-                                            </tbody>
-                                            <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <!-- <td>
-                                                        <img src="" alt="">
-                                                </td> -->
-                                                <td>Peace Harry</td>
-                                                <td>PAT009</td>
-                                                <td>23/09/2000</td>
-                                                <td>23:00</td>
-                                                <td>Check up</td>
-                                                <td>100</td>
-                                              <td>Successful</td>
-                                              </tr>
+                                            <tr>
+                        <td colspan="8">No data available</td>
+                       </tr>
                                             </tbody>
                         </table>
                     </div>
