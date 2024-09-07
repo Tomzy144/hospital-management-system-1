@@ -219,28 +219,17 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   <div class="each_sections">
   <div class="form-control availableDoctor">
-    <label for="">Role</label>
-  <select  id="select_doc">
-<option value="" id="opt">Gyancoligist</option>
-<option value="">Surgeon</option>
-<option value="">Dentist</option>
-<option value="" id="opt">Gyancoligist</option>
-<option value="">Surgeon</option>
-<option value="">Dentist</option>
-<option value="" id="opt">Gyancoligist</option>
-<option value="">Surgeon</option>
-<option value="">Dentist</option>
-</select>
+  <label for="av-roles">Specialties</label>
+    <select name="roles" id="roles">
+        <option value="">Select</option>
+    </select>
 </div>
 
 <div class="form-control availableDoctor">
 <label>Available Doctor</label>
-<select  id="select_doc">
-<option value="" id="opt">Doc. Mathew </option>
-<option value="">Doc. Prince</option>
-<option value="">Doc. Peter</option>
-<option value="">Doc. Patrick</option>
-</select>
+<select name="doctors" id ="doctor" >
+                <option id ="doctor_id"></option>
+            </select>
   </div>
   </div>
   <div class="each_sections">
