@@ -104,14 +104,14 @@ function showMessage(message, text, backgroundColor) {
 
 
 
-function paid(patient_id, time) {
+function paid(patient_id, time,option) {
     var $btnSubmit = $('#paid_btn_' + patient_id);
     var btnText = $btnSubmit.html();
     $btnSubmit.html('Processing...');
     $btnSubmit.prop('disabled', true);
 
     var action = 'paid';
-    var dataString = "action=" + action + "&patient_id=" + encodeURIComponent(patient_id) + "&time=" + encodeURIComponent(time);
+    var dataString = "action=" + action + "&patient_id=" + encodeURIComponent(patient_id) + "&time=" + encodeURIComponent(time)+"&option=" + encodeURIComponent(option);
 
     $.ajax({
         type: 'POST',

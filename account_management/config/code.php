@@ -55,57 +55,60 @@
         
         
 
-        case 'paid':
+            case 'paid':
 
-            // Retrieve the patient_id and time from the POST request
-            $patient_id = $_POST['patient_id'];
-            $time = $_POST['time'];
-        
-            // SQL query to select the row(s) from account_appointment_tab based on patient_id and time
-            $sql = "SELECT * FROM account_appointment_tab WHERE patient_id = '$patient_id' AND time = '$time'";
-            $result = mysqli_query($conn, $sql);
-        
-            $response = array(); // Initialize the response array
-        
-            if (mysqli_num_rows($result) > 0) {
-                // Prepare SQL queries to insert the record into two tables
-                $insert_sql1 = "
-                    INSERT INTO account_appointment_confirm_tab (patient_id, account_appointment_id, total_amount, tests, time, approved_time, payment_status)
-                    SELECT patient_id, account_appointment_id, total_amount, tests, time, NOW(), 'APPROVED'
-                    FROM account_appointment_tab
-                    WHERE patient_id = '$patient_id' AND time = '$time'";
-        
-                $insert_sql2 = "
-                    INSERT INTO account_appointment_overall_tab (patient_id, account_appointment_id, total_amount, tests, time, approved_time, payment_status)
-                    SELECT patient_id, account_appointment_id, total_amount, tests, time, NOW(), 'APPROVED'
-                    FROM account_appointment_tab
-                    WHERE patient_id = '$patient_id' AND time = '$time'";
-        
-                // Execute the first insert query
-                if (mysqli_query($conn, $insert_sql1) && mysqli_query($conn, $insert_sql2)) {
-                    // If both insertions are successful, delete the original record
-                    $delete_sql = "DELETE FROM account_appointment_tab WHERE patient_id = '$patient_id' AND time = '$time'";
-                    if (mysqli_query($conn, $delete_sql)) {
-                        $response['success'] = true;
-                        $response['message'] = "Successful Payment.";
+                // Retrieve the patient_id, time, and option from the POST request
+                $patient_id = $_POST['patient_id'];
+                $time = $_POST['time'];
+                $option = $_POST['option'];
+            
+                // SQL query to select the row(s) from account_appointment_tab based on patient_id and time
+                $sql = "SELECT * FROM account_appointment_tab WHERE patient_id = '$patient_id' AND time = '$time'";
+                $result = mysqli_query($conn, $sql);
+            
+                $response = array(); // Initialize the response array
+            
+                if (mysqli_num_rows($result) > 0) {
+                    // Prepare SQL queries to insert the record into two tables
+                    $insert_sql1 = "
+                        INSERT INTO account_appointment_confirm_tab 
+                        (patient_id, account_appointment_id, total_amount, tests, time, approved_time, payment_status, type)
+                        SELECT patient_id, account_appointment_id, total_amount, tests, time, NOW(), 'APPROVED', '$option'
+                        FROM account_appointment_tab
+                        WHERE patient_id = '$patient_id' AND time = '$time'";
+            
+                    $insert_sql2 = "
+                        INSERT INTO account_appointment_overall_tab 
+                        (patient_id, account_appointment_id, total_amount, tests, time, approved_time, payment_status,type)
+                        SELECT patient_id, account_appointment_id, total_amount, tests, time, NOW(), 'APPROVED', '$option'
+                        FROM account_appointment_tab
+                        WHERE patient_id = '$patient_id' AND time = '$time'";
+            
+                    // Execute both insert queries
+                    if (mysqli_query($conn, $insert_sql1) && mysqli_query($conn, $insert_sql2)) {
+                        // If both insertions are successful, delete the original record
+                        $delete_sql = "DELETE FROM account_appointment_tab WHERE patient_id = '$patient_id' AND time = '$time'";
+                        if (mysqli_query($conn, $delete_sql)) {
+                            $response['success'] = true;
+                            $response['message'] = "Successful Payment.";
+                        } else {
+                            $response['success'] = false;
+                            $response['message'] = "Error confirming payment: " . mysqli_error($conn);
+                        }
                     } else {
                         $response['success'] = false;
-                        $response['message'] = "Error confirming payment: " . mysqli_error($conn);
+                        $response['message'] = "Error occurred during insertion: " . mysqli_error($conn);
                     }
                 } else {
                     $response['success'] = false;
-                    $response['message'] = "Error occurred during insertion: " . mysqli_error($conn);
+                    $response['message'] = "No record found with the given patient ID and time.";
                 }
-            } else {
-                $response['success'] = false;
-                $response['message'] = "No record found with the given patient ID and time.";
-            }
-        
-            // Return the response as JSON
-            echo json_encode($response);
-        
-            break;
-        
+            
+                // Return the response as JSON
+                echo json_encode($response);
+            
+                break;
+            
 
 
 
