@@ -206,7 +206,6 @@ function printInvoice() {
 // Initialize the display with values from local storage
 updateDisplay();
 accept();
-
 function displayPendingTransactions() {
     var action = 'pending_transactions';
     var dataString = "action=" + action;
@@ -222,14 +221,17 @@ function displayPendingTransactions() {
             console.log('Full response:', response);
 
             if (response.success) {
-                const data = response.data;
+                const data = response.data; // Directly access the array of transactions
+                console.log('Data:', data);
 
-                // Check if data is an object (not an array)
-                if (!typeof data === 'object' && Array.isArray(data)) {
-                    // Directly pass the transaction data and handle the table update
-                    pending__transactions(data);
+                // Check if `data` is an array
+                if (Array.isArray(data)) {
+                    // Loop through the array of transactions
+                    data.forEach(transaction => {
+                        pending__transactions(transaction);
+                    });
                 } else {
-                    console.error('Expected data to be an object, but got:', typeof data);
+                    console.error('Expected data to be an array, but got:', typeof data);
                 }
             } else {
                 // Handle cases where success is false
@@ -247,64 +249,54 @@ function displayPendingTransactions() {
 }
 const pending__transactions = function(transaction) {
     const pending = document.querySelector('#pending tbody');
-    const rowCount = pending.rows.length + 1; // This counts the current rows for serial number
-    const newRow = pending.insertRow(); // Insert a new row
+    
+    // Ensure rowCount is calculated correctly
+    const rowCount = pending.rows.length; // Use row count directly without adding 1
+    const newRow = pending.insertRow(rowCount); // Insert a new row
 
-    // Correctly insert cells based on your table structure (9 columns)
-    newRow.insertCell(0).innerHTML = rowCount || 'N/A'; // Serial Number
+    // Insert the correct number of cells (9 in total)
+    newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
     newRow.insertCell(1).innerHTML = `<img src="path_to_default_image.png" alt="Passport" width="50" height="50">`; // Placeholder for passport image
     newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
     newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
     newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
-    newRow.insertCell(5).innerHTML = 'Test Request'; // Request type (you may want to extract this from tests)
+    newRow.insertCell(5).innerHTML = 'Test Request'; // Request type (can be dynamic)
     newRow.insertCell(6).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
     newRow.insertCell(7).innerHTML = transaction.payment_status || 'N/A'; // Payment Status
-    
-    // Action buttons (you can add functionality for these buttons)
+
+    // Action buttons
     newRow.insertCell(8).innerHTML = `
-    
     <button class="action-button">Accept</button>
     <button class="action-button">Reject</button>
     `;
 
-    // Handle the 'tests' field (which is a JSON string)
+    // Handle 'tests' field (JSON parsing)
     if (transaction.tests) {
         try {
             const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
-            let testsHtml = '<ul style="list-style: none; text-align:left">'; // Create an unordered list to hold the tests
+            console.log(testsObj)
+            let test = '<ul style="list-style: none; text-align:left">'; // Create an unordered list
 
-            // Loop through the tests object and add each test and value to the list
+            // Loop through the tests object
             for (let testName in testsObj) {
                 if (testsObj.hasOwnProperty(testName)) {
-                    const testValue = testsObj[testName];
-                    testsHtml += `<li style="color: white; font-size: 1rem;">${testName}: ${testValue}</li>`;
-
+                    let testValue = testsObj[testName]; // Declare testValue with let
+            
+                    // Reassign testValue to 'Free' if it equals 0
+                    testValue = testValue == 0 ? 'Free' : testValue;
+            
+                    test += `<li style="color: white; font-size: 1rem;">${testName}: ${testValue}</li>`;
                 }
             }
+            
+            test += '</ul>'; // Close the list
 
-            testsHtml += '</ul>'; // Close the list
-
-            // Insert the tests HTML in the 'Request type' column (assuming it is the 5th column)
-            newRow.cells[5].innerHTML = testsHtml;
+            newRow.cells[5].innerHTML = test;
         } catch (error) {
             console.error('Error parsing tests:', error);
-            newRow.cells[5].innerHTML = 'Invalid test data'; // Fallback if parsing fails
+            newRow.cells[5].innerHTML = 'Invalid test data'; // Fallback for parsing errors
         }
     } else {
         newRow.cells[5].innerHTML = 'N/A'; // If tests field is missing
     }
 };
-
-
-
-//   / Uncomment to call the function
-// displayPendingTransactions();
-
-    
-// const imageCell = newRow.insertCell(1);
-    // const image = document.createElement('img');
-    // image.src = staff.capturedImage; // Assuming staff.capturedImage is a base64 string from the server
-    // image.alt = 'Staff Passport';
-    // image.style.width = '50px'; // Adjust size as needed
-    // image.style.height = '50px'; // Adjust size as needed
-    // imageCell.appendChild(image);
