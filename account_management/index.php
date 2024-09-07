@@ -193,12 +193,15 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                               <td>Time</td>
                               <td>Approved Time</td>
                               <td>Request Type</td>
+                              <td>Payment Type</td>
                               <td>Amount($)</td>
                               <td>Status</td>
                           </tr>
                       </thead>
                       <tbody>
-                       
+                       <tr>
+                        <td colspan="7">No data available</td>
+                       </tr>
                       </tbody>
                   </table>
                     </div>

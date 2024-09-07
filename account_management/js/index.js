@@ -225,6 +225,8 @@ const pending__transactions = function(transaction) {
 
     const paidButton = document.querySelector(`#accept_${rowCount}`);
     paidButton.addEventListener('click', function(e) {
+       
+        console.log( e.target.closest('tr'))
         // Create the selectMessage element
         const selectMessage = document.createElement('div');
         selectMessage.className = 'alert info';
