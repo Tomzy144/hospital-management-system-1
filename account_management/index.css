@@ -369,7 +369,7 @@ cursor: pointer;
 .sidebar-footer{
  width: 300px;
 display: flex;
-padding: 0.5rem 0;
+padding: 0.5rem 0.5rem;
 color:rgb(255, 255, 255);
 justify-content:left;
 height: auto !important;
