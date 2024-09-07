@@ -884,8 +884,10 @@ function getDoctorsRoles() {
       option.textContent = optionText;
   
       rolesDropdown.appendChild(option);
+
        
     }
+    getDoctors();
   
     // Enable the dropdown after populating options
     $('#roles').on('change', getDoctors);

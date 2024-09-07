@@ -353,6 +353,7 @@ function getDoctorsRoles() {
         // Check for success and populate the dropdown
         if (data.success) {
           populaterolesDropdown(data.doctorRoles); // Pass the entire array of roles
+         
         } else {
           console.error('Error:', data.message);
         }
@@ -382,8 +383,10 @@ function getDoctorsRoles() {
       option.textContent = optionText;
   
       rolesDropdown.appendChild(option);
+     
        
     }
+    getDoctors();
   
     // Enable the dropdown after populating options
     $('#roles').on('change', getDoctors);
