@@ -122,7 +122,63 @@
         break;
 
 
+        case 'transfer_patient':
+            $patient_id = $_POST['patient_id'];
+            $patient_name = $_POST['patient_name'];
+            $comment = $_POST['comment'];
+            $time = $_POST['time'];
+            $date = $_POST['date'];
+            $doctor_id = $_POST['doctor_id'];
+            $status_id = "1"; // Default status ID for new transfer
+        
+            // Get the appointment ID sequence
+            $sequence = $callclass->_get_sequence_count($conn, 'APP');
+            $array = json_decode($sequence, true);
+            $no = $array[0]['no'];
+            $appointment_id = 'APP' . $no;
+        
+            // Prepare the SQL query with placeholders
+            $stmt = $conn->prepare("
+                INSERT INTO doctor_appointment_tab
+                (doctor_appointment_id, patient_id, patient_name, reason, time, doctor_appointment_status_id, doctor_id, doctor_appointment_date)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            ");
+        
+            if ($stmt) {
+                // Bind the parameters
+                $stmt->bind_param(
+                    "ssssssss",
+                    $appointment_id,
+                    $patient_id,
+                    $patient_name,
+                    $comment,
+                    $time,
+                    $status_id,
+                    $doctor_id,
+                    $date
+                );
+        
+                // Execute the statement and return appropriate response
+                if ($stmt->execute()) {
+                    echo json_encode(array("success" => true, "message" => "Patient transferred successfully"));
+                } else {
+                    echo json_encode(array("success" => false, "message" => "Error executing query."));
+                    // Optional: Log the detailed error to a log file instead of showing it
+                    error_log("SQL Error: " . $stmt->error);
+                }
+        
+                // Close the statement
+                $stmt->close();
+            } else {
+                echo json_encode(array("success" => false, "message" => "Error preparing query."));
+                // Optional: Log the detailed error
+                error_log("SQL Prepare Error: " . $conn->error);
+            }
+            break;
+        
+
     }
+    
     
 
     ?>
