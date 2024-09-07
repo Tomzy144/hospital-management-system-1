@@ -83,7 +83,7 @@
   .buttonflex{
     display: flex;;
     width: 200px;
-    height: 50px;
+    height: 48px;
     justify-content: space-around;
     align-items: center;
   }
@@ -567,87 +567,131 @@ color: #4F5F64;
     justify-content: center;
     align-items: center;
 }
-
-.patient__receipt{
-  margin: 5rem 0 0 19rem;
-  height: auto;
+#patient__receipt {
+  height: 90%;
+  width: 92%;
+  padding: 1rem 1rem;
 }
 
+/* MODAL WINDOW */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  background-color: #ffffff;
+  padding: 1rem 5rem;
+  overflow: auto;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 1170;
+  transition: all 0.5s;
+}
 
-  /* MODAL WINDOW */
-  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    background-color: #ffffff;
-    padding:1rem 5rem;
-    overflow: auto;
-    box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
-    z-index: 100;
-    transition: all 0.5s;
+.black--background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 4;
+  transition: all 0.5s;
+}
+
+.modal__header {
+  font-size: 3.25rem;
+  line-height: 1.5;
+}
+
+.modal__form {
+  align-items: center;
+  overflow: auto;
+  width: 100%;
+  overflow-x: hidden;
+  height: 450px;
+  gap: 2.5rem;
+}
+
+.modal__form button {
+  grid-column: 1 / span 2;
+  justify-self: center;
+  margin-top: 1rem;
+}
+
+.btn--close-modal {
+  font-family: inherit;
+  color: inherit;
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  font-size: 4rem;
+  color: #4e73df;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+@media print {
+  /* Hide everything except the receipt modal */
+  body * {
+    visibility: hidden;
   }
-  
-  .black--background{
+
+  #patient__receipt {
+    visibility: visible;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-    z-index: 4;
-    transition: all 0.5s;
+    margin: 0;
+    height: auto;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: none;
+    transform: none;
   }
-  
-  .modal__header {
-    font-size: 3.25rem;
-    line-height: 1.5;
+
+  #patient__receipt * {
+    visibility: visible;
   }
-  
-  .modal__form {
-    align-items: center;
-    overflow: auto;
+
+  table {
     width: 100%;
-    overflow-x: hidden;
-    height: 450px;
-    gap: 2.5rem;
+    border-collapse: collapse;
+    white-space: nowrap;
+    background-color: #2a57d7; /* Changed to background-color */
+    -webkit-print-color-adjust: exact; /* Ensures color is printed in WebKit browsers */
+    color-adjust: exact; /* Ensures color is printed in other browsers */
   }
-  
-  
-  .modal__form button {
-    grid-column: 1 / span 2;
-    justify-self: center;
-    margin-top: 1rem;
+  table tbody td {
+  text-align: left;
   }
-  
-  .btn--close-modal {
-    font-family: inherit;
-    color: inherit;
-    position: absolute;
-    top: 0.5rem;
-    right: 2rem;
-    font-size: 4rem;
-    color: #4e73df;
-    cursor: pointer;
-    border: none;
-    background: none;
+  table thead {
+    position: sticky; 
+    top: 0;
+    z-index: 1;
+    font-size: 1.1em;
+    border: 1px solid #fff;
+    text-align: left;
+    transition: background 0.25s ease;
+    background-color: #2a57d7; /* Ensure header background color */
+    color: #fff; /* Text color for better contrast */
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
   }
 
-.hide{
+  .btn--close-modal{
     display: none;
-}
-
-@media print {
-  body * {
-      visibility: hidden;
-  }
-  .patient__receipt {
-    margin: 0; /* Remove the margin when printing */
-}
-  .patient__receipt * {
-      visibility: visible;
   }
 }
 
+
+
+.hidden{
+  display: none;
+}
+.hide {
+  display: none;
+}

@@ -122,7 +122,7 @@ function paid(patient_id, time,option) {
         success: function (data) {
             if (data.success) {
                 alert('Payment Approved');
-                window.location.reload();
+                // window.location.reload();
                 console.log(data)
                 $btnSubmit.html('Transfer');
                 $btnSubmit.prop('disabled', false);
@@ -215,27 +215,45 @@ const pending__transactions = function(transaction) {
     <button class="action-button" id="accept_${rowCount}">Accept</button>
     <button class="action-button">Reject</button>
     `;
+    document.querySelector('#customerId').textContent = `Customer Id: ${transaction.account_appointment_id}`
+    document.querySelector('#date').textContent = `Date: ${new Date().toLocaleDateString()}`
+    document.querySelector('#total__amount').textContent = `Total: ${transaction.total_amount}`
+    console.log(transaction.tests)
     if (transaction.tests) {
         try {
             const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
-            let test = '<ul style="list-style: none; text-align:left">'; // Create an unordered list
-
+            const receipt__table = document.querySelector('#receipt__table tbody'); // Get the receipt table body
+    
             for (let testName in testsObj) {
                 if (testsObj.hasOwnProperty(testName)) {
-                    let test__price = testsObj[testName]; // Declare testValue with let
-                    test__price = test__price == 0 ? 'Free' : test__price;
-                    test += `<li style="color: white; font-size: 1rem;">${testName}: ${test__price}</li>`;
+                    let test__price = testsObj[testName]; // Get the price of the test
+                    test__price = test__price == 0 ? 'Free' : `₦${test__price}`; // Handle free tests
+    
+                    // Create a new row for each test
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${testName}</td>
+                        <td>${test__price}</td>
+                    `;
+                    
+                    // Append the row to the table body
+                    receipt__table.appendChild(newRow);
                 }
             }
-            test += '</ul>'; // Close the list
-            newRow.cells[5].innerHTML = test;
         } catch (error) {
             console.error('Error parsing tests:', error);
-            newRow.cells[5].innerHTML = 'Invalid test data'; // Fallback for parsing errors
+            const receipt__table = document.querySelector('#receipt__table tbody');
+            const errorRow = document.createElement('tr');
+            errorRow.innerHTML = `<td colspan="3">Invalid test data</td>`;
+            receipt__table.appendChild(errorRow);
         }
     } else {
-        newRow.cells[5].innerHTML = 'N/A'; // If tests field is missing
+        const receipt__table = document.querySelector('#receipt__table tbody');
+        const noDataRow = document.createElement('tr');
+        noDataRow.innerHTML = `<td colspan="3">No tests available</td>`;
+        receipt__table.appendChild(noDataRow);
     }
+    
     const paidButton = document.querySelector(`#accept_${rowCount}`);
     paidButton.addEventListener('click', function(e) {
        
@@ -255,7 +273,7 @@ const pending__transactions = function(transaction) {
         document.querySelector('.posButton').onclick = (event) => {
             event.stopPropagation(); // Prevent triggering parent click event
             paid(transaction.patient_id, transaction.time, 1);
-            console.log('Transaction successful');
+            openModal('patient__receipt');
             if (selectMessage.parentNode) {
                 document.body.removeChild(selectMessage); // Remove the message
             }
@@ -265,7 +283,7 @@ const pending__transactions = function(transaction) {
         document.querySelector('.cashButton').onclick = (event) => {
             event.stopPropagation(); // Prevent triggering parent click event
             paid(transaction.patient_id, transaction.time, 2);
-            console.log('Transaction successful');
+            openModal('patient__receipt');
             if (selectMessage.parentNode) {
                 document.body.removeChild(selectMessage); // Remove the message
             }
@@ -282,10 +300,11 @@ const pending__transactions = function(transaction) {
 };
 
 
-
-
-
-
+function printInvoice() {
+    window.print();
+    closeModal('patient__receipt')
+    window.location.reload();
+  }
 
 const displaySuccessfullTransaction = function() {
     var action = 'transactions';
@@ -381,7 +400,7 @@ const successful__transactions = function(transaction){
     }
 }
 
-displaySuccessfullTransaction()
+// displaySuccessfullTransaction()
 
 
 
@@ -482,4 +501,4 @@ const overall__transactions = function(transaction){
     }
 }
 
-displayOverallTransaction()
+// displayOverallTransaction()

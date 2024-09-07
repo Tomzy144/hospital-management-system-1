@@ -156,23 +156,31 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
         </div>
     
 
-        <div class="patient__receipt hide">
-        <h1>Invoice</h1>
-        <h3>Customer: John Doe</h3>
-        <h3>Date: 2024-08-28</h3>
+        <div class="modal hidden" id="patient__receipt">
+        <button class="btn--close-modal" onclick="closeModal('patient__receipt')">&times;</button>
+        <h2 class="modal__header">
+        Invoice
+      <span class="highlight">slip</span>
+      </h2>
+            <div class="heading">
+            <h3 id="customerId">CustomerId: John Doe</h3>
+            <h3 id="date">Date: 2024-08-28</h3>
+            </div>
         <table id="receipt__table">
             <thead>
                 <tr>
                     <td>Request type</td>
                     <td>Price</td>
-                    <td>Date</td>
                 </tr>
+                <tbody>
+            
+                </tbody>
             </thead>
             <tbody>
                 <!-- Rows will be dynamically inserted here -->
             </tbody>
         </table>
-        <h3>Total: ₦3,000</h3>
+        <h3 id="total__amount">Total: ₦3,000</h3>
         <button onclick="printInvoice()">Print</button>
     </div>
 
@@ -246,21 +254,6 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
             </div>
             </div>
         </div>
-
-            <div class="print_receipt">
-                <div class="overall__transactions">
-                    <span>Overall transaction: $20,000</span>
-                </div>
-            </div>
-
- 
-        <div id="printing_receipt-container"></div>
-        <div id="successful_transaction-container"></div>
-        <div class="overlay hide"></div>
-
-
-        <!---SCRIPT TAGS-->
-    <!-- <script src="js/index.js"></script>
-    <script src="js/jquery-v3.6.1.min.js"></script> -->
+        <div class="black--background hidden"></div>
 </body>
 </html>
