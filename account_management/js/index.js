@@ -327,7 +327,7 @@ function printInvoice() {
   }
 
 const displaySuccessfullTransaction = function() {
-    var action = 'transactions';
+    var action = 'fetch_appointment_list';
     var dataString = "action=" + action;
 
     $.ajax({
@@ -428,11 +428,11 @@ const successful__transactions = function(transaction){
 
 
 const displayOverallTransaction = function() {
-    var action = 'all_transactions';
+    var action = 'fetch_overall_appointment_list';
     var dataString = "action=" + action;
 
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: "config/code.php",
         data: dataString,
         cache: false,
