@@ -294,10 +294,17 @@ function radiologyForm(){
     closeModal('book__patient');
     openModal('radiologyForm');
 }
+function morgueForm(){
+  document.querySelector('#bookmorgueForm #name').value = patientName;
+  document.querySelector('#bookmorgueForm #id').value = patientId;
+    closeModal('book__patient');
+    openModal('morgueForm');
+}
 function healthrecordForm(){
   document.querySelector('#bookhealthrecordForm #name').value = patientName;
   document.querySelector('#bookhealthrecordForm #id').value = patientId;
   document.querySelector('#bookhealthrecordForm #gender').value = patientGender;
+  console.log(patientGender);
     closeModal('book__patient');
     openModal('healthrecordForm');
 }
@@ -324,6 +331,40 @@ function isPatientStable() {
     });
 }
 
+function bookHealthRecordForm() {
+  const patient_name = document.querySelector('#name').value
+  const patient_id = document.querySelector('#name').value
+  const comment = document.querySelector('#comment').value
+  var action = 'health_record';
+    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+            if (data.success === true) { 
+                successMessage(data.message || 'Patient has been transfered successfully');
+                setTimeout(()=>{
+                      window.location.reload();
+                },2000)
+              
+            } else if (data.success === false) {
+                dangerMessage(data.message || 'Error occured during transfer.');
+            }
+            $btnSubmit.html('Transfer');
+            $btnSubmit.prop('disabled', false);
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+            dangerMessage('An error occurred while processing your request.');
+            $btnSubmit.html(btnText);
+            $btnSubmit.prop('disabled', false);
+        }
+    });
+}
 
 
 function showBookModal(e){

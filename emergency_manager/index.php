@@ -189,6 +189,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <button onclick="surgicalsuiteForm()">Transfer to surgical suite</button>
     <button onclick="labForm()">Transfer to lab</button>
     <button onclick="radiologyForm()">Transfer to radiology</button>
+    <button onclick="morgueForm()">Transfer to Morgue</button>
     <button onclick="isPatientStable()">Is the patient stable</button>
   </div>
 </div>
@@ -384,8 +385,52 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 <div class="modal hidden" id="radiologyForm">
   <h3>AVAILABLE RADIOLOGY SCIENTIST</h3>
 <button class="btn--close-modal" onclick="closeModal('radiologyForm')">&times;</button>
-  <form action="" id="labForm">
   <form action="" id="bookradiologyForm">
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Patient Name</label>
+    <input type="text" name="patient_name" id="name"/>
+  </div>
+  <div class="form-control">
+    <label>Patient Id</label>
+    <input type="text" name="patient_id" id="id"/>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Selected date</label>
+    <input type="date" name="selected_date" />
+  </div>
+  <div class="form-control">
+    <label>Selected time</label>
+    <input type="time" name="selected_time" />
+  </div>
+  </div>
+  <div class="each_sections">
+<div class="form-control availablenurse">
+<label>Available radiology scientist</label>
+<select  id="select_doc">
+<option value="" id="opt">Doc. Mathew </option>
+<option value="">Doc. Prince</option>
+<option value="">Doc. Peter</option>
+<option value="">Doc. Patrick</option>
+</select>
+  </div>
+  </div>
+  <div class="each_sections">
+  <div class="form-control">
+    <label>Comment</label>
+    <textarea ></textarea>
+  </div>
+  </div>
+<button class="btn_submit">Submit</button>  
+  </form>
+</div>
+
+<div class="modal hidden" id="morgueForm">
+  <h3>TRANSFER TO MORGUE</h3>
+<button class="btn--close-modal" onclick="closeModal('morgueForm')">&times;</button>
+  <form action="" id="bookmorgueForm">
   <div class="each_sections">
   <div class="form-control">
     <label>Patient Name</label>
@@ -449,10 +494,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
     <label>Comment</label>
-    <textarea ></textarea>
+    <textarea id="comment"></textarea>
   </div>
   </div>
-<button class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit" onclick="bookHealthRecordForm()">Submit</button>  
   </form>
 </div>
 

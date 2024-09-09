@@ -613,7 +613,7 @@ label{
   -webkit-user-select: none;
   touch-action: manipulation;
   }
-  #docForm, #nurseForm, #surgicalsuiteForm, #labForm, #radiologyForm, #healthrecordForm{
+  #docForm, #nurseForm, #surgicalsuiteForm, #labForm, #radiologyForm, #healthrecordForm, #morgueForm{
    height: 80%;
   }
   .close__icon{

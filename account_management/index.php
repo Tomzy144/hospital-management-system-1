@@ -113,8 +113,8 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                     <i class="bi bi-person"></i>
                     <span>USER ID: <?php echo $s_account_unit_id?></span>
                     </div>
-                    <div id="pos">POS: ₦0.00</div>
-                    <div id="cash">Cash: ₦0.00</div>
+                    <div id="pos"></div>
+                    <div id="cash"></div>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
             <div class="patient_list_div">
             <div class="search_bar_container">
                 <h3>Pending Transactions</h3>
-                    <input type="text" placeholder="Search here">
+                    <input type="text" placeholder="Search here" id="psearch">
                 </div>
 
 
@@ -133,8 +133,8 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                             <tr>
                                 <td>S/N</td>
                                 <td>PASSPORT</td>
-                                <td>Patient Name</td>
-                                <td>Patient ID</td>
+                                <td>Patient Id</td>
+                                <td>Transactions Id</td>
                                 <td>Date & Time</td>
                                 <td>Request type</td>
                                 <td>Amount($)</td>
@@ -160,8 +160,8 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
       <span class="highlight">slip</span>
       </h2>
             <div class="heading">
-            <h3 id="customerId">CustomerId: John Doe</h3>
-            <h3 id="date">Date: 2024-08-28</h3>
+            <h3 id="customerId"></h3>
+            <h3 id="date"></h3>
             </div>
         <table id="receipt__table">
             <thead>
@@ -186,7 +186,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
             <div class="search_bar_container">
                 <h3>Successful Transactions</h3>
                 <i class="bi bi-search"></i>
-                    <input type="text" placeholder="Search here">
+                    <input type="text" placeholder="Search here" id="ssearch">
                 </div>
                   <table id="success">
                       <thead>
@@ -199,7 +199,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                               <td>Approved Time</td>
                               <td>Request Type</td>
                               <td>Payment Type</td>
-                              <td>Amount($)</td>
+                              <td>Amount</td>
                               <td>Status</td>
                           </tr>
                       </thead>
@@ -221,18 +221,18 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
         <div class="patient_list_div">
             <div class="search_bar_container">
                 <h3>Overall transactions</h3>
-                    <input type="text" placeholder="Search here">
+                    <input type="text" placeholder="Search here" id="osearch">
                 </div>
                     <table id="overall__transactions">
                                             <thead>
                                                 <tr>
                                                     <td>S/N</td>
-                                                    <td>STAFF NAME</td>
-                                                    <td>STAFF ID</td>
-                                                    <td>Date of transaction</td>
-                                                    <td>Time of transaction</td>
+                                                    <td>Passport</td>
+                                                    <td>Patient Id</td>
+                                                    <td>Transactions Id</td>
+                                                    <td>Date and time of transaction</td>
                                                     <td>Request type</td>
-                                                    <td>Amount($)</td>
+                                                    <td>Amount</td>
                                                     <td>Status</td>
                                                 </tr>
                                             </thead>
@@ -244,7 +244,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                         </table>
                     </div>
                     <div class="overall_amount">
-                <h3>Overall amount: $40,000.00</h3>
+                <h3 id="overall__amounts"></h3>
             </div>
                 </div>
             </div>

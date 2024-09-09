@@ -68,7 +68,6 @@ function successfulTransaction(){
     $('.pending__transactions').addClass('hide');
     $('.successful__transactions').removeClass('hide');
     $('.overall__transactions').addClass('hide');
-    displaySuccessfullTransaction();
 }
 
 function overallTransactions(){
@@ -229,7 +228,7 @@ const pending__transactions = function(transaction) {
     newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
     newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
     newRow.insertCell(5).innerHTML = 'Test Request'; // Request type (can be dynamic)
-    newRow.insertCell(6).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
+    newRow.insertCell(6).innerHTML = transaction.total_amount.replace(/[' ']/g, '') || 'N/A'; // Total Amount
     newRow.insertCell(7).innerHTML = transaction.payment_status || 'N/A'; // Payment Status
 
     // Action buttons
@@ -237,7 +236,7 @@ const pending__transactions = function(transaction) {
     <button class="action-button" id="accept_${rowCount}">Accept</button>
     <button class="action-button">Reject</button>
     `;
-    document.querySelector('#customerId').textContent = `Customer Id: ${transaction.account_appointment_id}`
+    document.querySelector('#customerId').textContent = `Transaction Id: ${transaction.account_appointment_id}`
     document.querySelector('#date').textContent = `Date: ${new Date().toLocaleDateString()}`
     document.querySelector('#total__amount').textContent = `Total: ${transaction.total_amount}`
     console.log(transaction.tests)
@@ -268,7 +267,6 @@ const pending__transactions = function(transaction) {
             test += '</ul>'; // Close the list
             newRow.cells[5].innerHTML = test;
         } catch (error) {
-            console.error('Error parsing tests:', error);
             console.error('Error parsing tests:', error);
             newRow.cells[5].innerHTML = 'Invalid test data'; // Fallback for parsing errors
             const receipt__table = document.querySelector('#receipt__table tbody');
@@ -335,6 +333,7 @@ function printInvoice() {
     window.location.reload();
   }
 
+  
  function  displaySuccessfullTransaction() {
     var action = 'fetch_appointment_list';
     var dataString = "action=" + action;
@@ -390,7 +389,15 @@ function printInvoice() {
     });
 };
 
-const successful__transactions = function(transaction){
+
+let cash = 0;
+let pos = 0;
+
+$(document).ready(function () {
+    displaySuccessfullTransaction();
+});
+
+async function successful__transactions(transaction){
     const successTable = document.querySelector('#success tbody');
     const rowCount = successTable.rows.length;
     const newRow = successTable.insertRow(rowCount);
@@ -403,9 +410,20 @@ const successful__transactions = function(transaction){
     newRow.insertCell(5).innerHTML = transaction.approved_time || 'N/A'; // Date & Time
     newRow.insertCell(6).innerHTML = 'Test' || 'N/A'; // Total Amount
     newRow.insertCell(7).innerHTML = transaction.type  === '2' ? 'Cash' : 'POS' || 'N/A'; // Request type
-    newRow.insertCell(8).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
+    newRow.insertCell(8).innerHTML = transaction.total_amount.replace(/[' ']/g, '') || 'N/A'; // Total Amount
     newRow.insertCell(9).innerHTML = 'Success'; // Payment Status
 
+    if(transaction.type === '2'){
+        const cleanAmount = transaction.total_amount.replace(/[₦,]/g, ""); // Removes ₦ and commas
+        const totalAmount = parseFloat(cleanAmount) || 0; // Ensure it's a valid number
+            cash += totalAmount; 
+    document.querySelector('#cash').textContent = `Cash Amount: ${new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(cash)}`
+    }else{
+        const cleanAmount = transaction.total_amount.replace(/[₦,]/g, ""); // Removes ₦ and commas
+        const totalAmount = parseFloat(cleanAmount) || 0; // Ensure it's a valid number
+            pos += totalAmount; 
+    document.querySelector('#pos').textContent = `Pos Amount: ${new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(pos)}`
+    }
 
     if (transaction.tests) {
         try {
@@ -492,43 +510,158 @@ const successful__transactions = function(transaction){
     });
 };
 
-     function overall_transactions(transaction){
+
+let cumulativeTotal = 0; // Initialize cumulative total to 0
+function overall_transactions(transaction) {
     const overall__transactions = document.querySelector('#overall__transactions tbody');
     const rowCount = overall__transactions.rows.length;
     const newRow = overall__transactions.insertRow(rowCount);
-
     newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
-    newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
-    newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
-    newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
-    newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
-    newRow.insertCell(5).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
-    newRow.insertCell(6).innerHTML = 'Test' || 'N/A'; // Request type
-    newRow.insertCell(7).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
-    newRow.insertCell(8).innerHTML = 'Success'; // Payment Status
+newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
+newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
+newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
+newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
+newRow.insertCell(5).innerHTML = 'Test type' || 'N/A'; // Test type
+newRow.insertCell(6).innerHTML = transaction.total_amount.replace(/\s/g, '') === '₦0' ? 'Free' : transaction.total_amount.replace(/\s/g, '');
+newRow.insertCell(7).innerHTML = transaction.payment_status.includes('APPROVED') ? 'Success' : 'Failed';
+
+    // console.log(transaction.total_amount.replace(/[' ']/g, ''));
+ 
+    // Parse total_amount and remove any currency symbols/commas
+    const cleanAmount = transaction.total_amount.replace(/[₦, ' ']/g, ""); // Removes ₦ and commas
+    const totalAmount = parseFloat(cleanAmount) || 0; // Ensure it's a valid number
+
+    // Add the amount to the cumulative total
+    cumulativeTotal += totalAmount; 
+    document.querySelector('#overall__amounts').textContent = `Overall Transaction Amount: ${new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(cumulativeTotal)}`
 
 
+    // Handle test data if it exists
     if (transaction.tests) {
         try {
             const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
-            let test = '<div style="list-style: none; text-align:left; display:flex; flex-wrap:wrap;">'; // Create an unordered list
-
+            let test = '<div style="list-style: none; display:flex; flex-wrap:wrap;">'; // Create a list for tests
 
             // Loop through the tests object
             for (let testName in testsObj) {
                 if (testsObj.hasOwnProperty(testName)) {
-                    let test__price = testsObj[testName]; // Declare testValue with let
-                    test__price = test__price == 0 ? 'Free' : test__price;
-                    test += `<li style="color: white; font-size: 1rem; width:fit-content">${testName}: ${test__price}</li>`;
+                    let test__price = testsObj[testName]; // Get test price
+                    test__price = test__price == 0 ? 'Free' : test__price; // Handle 'Free' case
+                    test += `<li style="color: white; font-size: 1rem; width:fit-content">${testName}</li>`;
+                    // : ${test__price}
                 }
             }
             test += '</ul>'; // Close the list
-            newRow.cells[6].innerHTML = test;
+            newRow.cells[5].innerHTML = test;
         } catch (error) {
             console.error('Error parsing tests:', error);
-            newRow.cells[6].innerHTML = 'Invalid test data'; // Fallback for parsing errors
+            newRow.cells[5].innerHTML = 'Invalid test data'; // Fallback for parsing errors
         }
     } else {
-        newRow.cells[6].innerHTML = 'N/A'; // If tests field is missing
+        newRow.cells[5].innerHTML = 'N/A'; // If tests field is missing
     }
 }
+
+
+
+
+
+
+function filterPendingTransactions() {
+    const tableBody = document.querySelector('#pending tbody');
+    const tableRows = Array.from(tableBody.querySelectorAll('tr')); // Convert NodeList to Array
+    const searchInput = document.querySelector('#psearch').value.trim().toLowerCase();
+
+    let hasVisibleRows = false;
+    tableRows.forEach((row) => {
+        if (row.children.length < 2)  return;
+
+        const patientId = row.children[2].textContent.trim().toLowerCase();
+        const transactionId = row.children[3].textContent.trim().toLowerCase();
+        if (transactionId.includes(searchInput) || patientId.includes(searchInput)){
+            row.style.display = ''; // Show the row
+            hasVisibleRows = true;
+           
+        } else row.style.display = 'none'; // Hide the row
+    });
+
+    const existingNoDataMessage = document.querySelector('#noDataMessage');
+    if (existingNoDataMessage) {
+        existingNoDataMessage.remove();
+    }
+    if (!hasVisibleRows) {
+        const noDataMessage = document.createElement('tr');
+        noDataMessage.id = 'noDataMessage';
+        noDataMessage.innerHTML = '<td colspan="8" style="text-align: center;">No User associated with this input</td>';
+        tableBody.appendChild(noDataMessage);
+    }
+}
+document.querySelector('#psearch').addEventListener('input', filterPendingTransactions);
+
+
+
+function filterSuccessfulTransactions() {
+    const tableBody = document.querySelector('#success tbody');
+    const tableRows = Array.from(tableBody.querySelectorAll('tr')); // Convert NodeList to Array
+    const searchInput = document.querySelector('#ssearch').value.trim().toLowerCase();
+
+    let hasVisibleRows = false;
+    tableRows.forEach((row) => {
+        if (row.children.length < 2)  return;
+
+        const patientId = row.children[2].textContent.trim().toLowerCase();
+        const transactionId = row.children[3].textContent.trim().toLowerCase();
+        const paymentType = row.children[7].textContent.trim().toLowerCase();
+        if (transactionId.includes(searchInput) || patientId.includes(searchInput)  || paymentType.includes(searchInput)){
+            row.style.display = ''; // Show the row
+            hasVisibleRows = true;
+           
+        } else row.style.display = 'none'; // Hide the row
+    });
+
+    const existingNoDataMessage = document.querySelector('#noDataMessage');
+    if (existingNoDataMessage) {
+        existingNoDataMessage.remove();
+    }
+    if (!hasVisibleRows) {
+        const noDataMessage = document.createElement('tr');
+        noDataMessage.id = 'noDataMessage';
+        noDataMessage.innerHTML = '<td colspan="8" style="text-align: center;">No User associated with this input</td>';
+        tableBody.appendChild(noDataMessage);
+    }
+}
+document.querySelector('#ssearch').addEventListener('input', filterSuccessfulTransactions);
+
+
+
+function filterOverallTransactions() {
+    const tableBody = document.querySelector('#overall__transactions tbody');
+    const tableRows = Array.from(tableBody.querySelectorAll('tr')); // Convert NodeList to Array
+    const searchInput = document.querySelector('#osearch').value.trim().toLowerCase();
+
+    let hasVisibleRows = false;
+    tableRows.forEach((row) => {
+        if (row.children.length < 2)  return;
+
+        const patientId = row.children[2].textContent.trim().toLowerCase();
+        const transactionId = row.children[3].textContent.trim().toLowerCase();
+        const paymentType = row.children[7].textContent.trim().toLowerCase();
+        if (transactionId.includes(searchInput) || patientId.includes(searchInput)  || paymentType.includes(searchInput)){
+            row.style.display = ''; // Show the row
+            hasVisibleRows = true;
+           
+        } else row.style.display = 'none'; // Hide the row
+    });
+
+    const existingNoDataMessage = document.querySelector('#noDataMessage');
+    if (existingNoDataMessage) {
+        existingNoDataMessage.remove();
+    }
+    if (!hasVisibleRows) {
+        const noDataMessage = document.createElement('tr');
+        noDataMessage.id = 'noDataMessage';
+        noDataMessage.innerHTML = '<td colspan="8" style="text-align: center;">No User associated with this input</td>';
+        tableBody.appendChild(noDataMessage);
+    }
+}
+document.querySelector('#osearch').addEventListener('input', filterOverallTransactions);
