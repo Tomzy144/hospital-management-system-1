@@ -470,3 +470,52 @@ function getDoctorsRoles() {
     });
   }
   
+
+  function doctor_submit(){
+
+  var patient_name = document.getElementsByClassName(".patient_name");
+  var patient_id = document.getElementsByClassName(".patient_id");
+  var selected_date = document.getElementsByClassName(".selected_date");
+  var selected_time = document.getElementsByClassName(".selected_time");
+  var doctor_id = document.getElementsByClassName(".doctor_id");
+  // var patient_id = document.getElementsByClassName(".patient_id");
+  // var patient_id = document.getElementsByClassName(".patient_id");
+  // var patient_id = document.getElementsByClassName(".patient_id");
+  // var patient_id = document.getElementsByClassName(".patient_id");
+
+
+    var $btnSubmit = $('#doctor_submit'); // Assuming you're using a button with this ID
+    var btnText = $btnSubmit.html();
+    $btnSubmit.html('Processing...');
+    $btnSubmit.prop('disabled', true);
+
+    var action = 'transfer_patient_to_doctor';
+    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&selected_date=" + selected_date + "&selected_time=" + selected_time + "&doctor_id=" + doctor_id;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+            if (data.success === true) { 
+                successMessage(data.message || 'Patient has been registered successfully');
+                setTimeout(()=>{
+                      window.location.reload();
+                },2000)
+              
+            } else if (data.success === false) {
+                dangerMessage(data.message || 'Error occured during transfer.');
+            }
+            $btnSubmit.html('Transfer');
+            $btnSubmit.prop('disabled', false);
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+            dangerMessage('An error occurred while processing your request.');
+            $btnSubmit.html(btnText);
+            $btnSubmit.prop('disabled', false);
+        }
+    });
+}

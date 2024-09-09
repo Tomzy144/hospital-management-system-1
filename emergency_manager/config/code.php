@@ -122,7 +122,7 @@
         break;
 
 
-        case 'transfer_patient':
+        case 'transfer_patient_to_doctor':
             $patient_id = $_POST['patient_id'];
             $patient_name = $_POST['patient_name'];
             $comment = $_POST['comment'];
