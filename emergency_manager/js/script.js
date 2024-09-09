@@ -512,28 +512,27 @@ function getDoctorsRoles() {
         doctorSelect.appendChild(option);
     });
   }
-  
+  function doctor_submit_btn() {
+    // Use querySelector to select the first element with the given class
+    var patient_name = document.querySelector("[name='patient_name']").value;
+    var patient_id = document.querySelector("[name='patient_id']").value;
+    var selected_date = document.querySelector("[name='selected_date']").value;
+    var selected_time = document.querySelector("[name='selected_time']").value;
+    var doctor_id = document.getElementById("doctor_id").value;
+    var comment = document.getElementById("comment").value;
 
-  function doctor_submit(){
-
-  var patient_name = document.getElementsByClassName(".patient_name");
-  var patient_id = document.getElementsByClassName(".patient_id");
-  var selected_date = document.getElementsByClassName(".selected_date");
-  var selected_time = document.getElementsByClassName(".selected_time");
-  var doctor_id = document.getElementsById("#doctor_id");
-  var comment = document.getElementsByClassName("#comment");
-  // var patient_id = document.getElementsByClassName(".patient_id");
-  // var patient_id = document.getElementsByClassName(".patient_id");
-  // var patient_id = document.getElementsByClassName(".patient_id");
-
-
-    var $btnSubmit = $('#doctor_submit'); // Assuming you're using a button with this ID
+    var $btnSubmit = $('#doctor_submit'); // Button ID
     var btnText = $btnSubmit.html();
     $btnSubmit.html('Processing...');
     $btnSubmit.prop('disabled', true);
 
     var action = 'transfer_patient_to_doctor';
-    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&selected_date=" + selected_date + "&selected_time=" + selected_time + "&doctor_id=" + doctor_id + "&comment=" + comment;
+    var dataString = "action=" + action + "&patient_name=" + encodeURIComponent(patient_name) + 
+                     "&patient_id=" + encodeURIComponent(patient_id) + 
+                     "&selected_date=" + encodeURIComponent(selected_date) + 
+                     "&selected_time=" + encodeURIComponent(selected_time) + 
+                     "&doctor_id=" + encodeURIComponent(doctor_id) + 
+                     "&comment=" + encodeURIComponent(comment);
 
     $.ajax({
         type: 'POST',
@@ -544,12 +543,11 @@ function getDoctorsRoles() {
         success: function (data) {
             if (data.success === true) { 
                 successMessage(data.message || 'Patient has been registered successfully');
-                setTimeout(()=>{
-                      window.location.reload();
-                },2000)
-              
+                setTimeout(() => {
+                    window.location.reload(); // Reload if needed
+                }, 2000);
             } else if (data.success === false) {
-                dangerMessage(data.message || 'Error occured during transfer.');
+                dangerMessage(data.message || 'Error occurred during transfer.');
             }
             $btnSubmit.html('Transfer');
             $btnSubmit.prop('disabled', false);

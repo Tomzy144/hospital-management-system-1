@@ -239,7 +239,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment"></textarea>
   </div>
   </div>
-<button class="btn_submit" id ="doctor_submit" onclick="doctor_submit();">Submit</button>  
+<button class="btn_submit" id ="doctor_submit" onclick="doctor_submit_btn();">Submit</button>  
   </form>
 </div>
 
