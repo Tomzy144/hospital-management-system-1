@@ -477,8 +477,8 @@ function getDoctorsRoles() {
   var patient_id = document.getElementsByClassName(".patient_id");
   var selected_date = document.getElementsByClassName(".selected_date");
   var selected_time = document.getElementsByClassName(".selected_time");
-  var doctor_id = document.getElementsByClassName(".doctor_id");
-  // var patient_id = document.getElementsByClassName(".patient_id");
+  var doctor_id = document.getElementsById("#doctor_id");
+  var comment = document.getElementsByClassName("#comment");
   // var patient_id = document.getElementsByClassName(".patient_id");
   // var patient_id = document.getElementsByClassName(".patient_id");
   // var patient_id = document.getElementsByClassName(".patient_id");
@@ -490,7 +490,7 @@ function getDoctorsRoles() {
     $btnSubmit.prop('disabled', true);
 
     var action = 'transfer_patient_to_doctor';
-    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&selected_date=" + selected_date + "&selected_time=" + selected_time + "&doctor_id=" + doctor_id;
+    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&selected_date=" + selected_date + "&selected_time=" + selected_time + "&doctor_id=" + doctor_id + "&comment=" + comment;
 
     $.ajax({
         type: 'POST',
