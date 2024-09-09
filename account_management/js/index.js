@@ -244,12 +244,15 @@ const pending__transactions = function(transaction) {
     if (transaction.tests) {
         try {
             const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
+            let test = '<ul style="list-style: none; text-align:left">'; // Create an unordered list
             const receipt__table = document.querySelector('#receipt__table tbody'); // Get the receipt table body
     
             for (let testName in testsObj) {
                 if (testsObj.hasOwnProperty(testName)) {
                     let test__price = testsObj[testName]; // Get the price of the test
-                    test__price = test__price == 0 ? 'Free' : `₦${test__price}`; // Handle free tests
+                    test__price = test__price == 0 ? 'Free' : test__price; // Handle free tests
+                    test += `<li style="color: white; font-size: 1rem;">${testName}</li>`;
+                    // : ${test__price}
     
                     // Create a new row for each test
                     const newRow = document.createElement('tr');
@@ -262,8 +265,12 @@ const pending__transactions = function(transaction) {
                     receipt__table.appendChild(newRow);
                 }
             }
+            test += '</ul>'; // Close the list
+            newRow.cells[5].innerHTML = test;
         } catch (error) {
             console.error('Error parsing tests:', error);
+            console.error('Error parsing tests:', error);
+            newRow.cells[5].innerHTML = 'Invalid test data'; // Fallback for parsing errors
             const receipt__table = document.querySelector('#receipt__table tbody');
             const errorRow = document.createElement('tr');
             errorRow.innerHTML = `<td colspan="3">Invalid test data</td>`;
@@ -274,12 +281,12 @@ const pending__transactions = function(transaction) {
         const noDataRow = document.createElement('tr');
         noDataRow.innerHTML = `<td colspan="3">No tests available</td>`;
         receipt__table.appendChild(noDataRow);
+        newRow.cells[6].innerHTML = 'N/A'; // If tests field is missing
     }
     
     const paidButton = document.querySelector(`#accept_${rowCount}`);
     paidButton.addEventListener('click', function(e) {
-       
-        console.log( e.target.closest('tr'))
+
         // Create the selectMessage element
         const selectMessage = document.createElement('div');
         selectMessage.className = 'alert info';
@@ -344,6 +351,7 @@ function printInvoice() {
             success.innerHTML = '';
             if (response.success) {
                 const data = response.data;
+                console.log(data)
                 if (Array.isArray(data) && data.length > 0) {
                     data.forEach(transaction => {
                         successful__transactions(transaction);
@@ -365,14 +373,14 @@ function printInvoice() {
                 noTransactionCell.innerHTML = 'No success transactions found.';
                 noTransactionCell.style.textAlign = 'center';
             }
-            if(!response.ok){
-                console.error('Error:', response.message);
-                const noTransactionRow = success.insertRow(0);
-                const noTransactionCell = noTransactionRow.insertCell(0);
-                noTransactionCell.colSpan = 9; // Span across all columns
-                noTransactionCell.innerHTML = 'Error in the response.';
-                noTransactionCell.style.textAlign = 'center';
-            }
+            // if(!response.ok){
+            //     console.error('Error:', response.message);
+            //     const noTransactionRow = success.insertRow(0);
+            //     const noTransactionCell = noTransactionRow.insertCell(0);
+            //     noTransactionCell.colSpan = 9; // Span across all columns
+            //     noTransactionCell.innerHTML = 'Error in the response.';
+            //     noTransactionCell.style.textAlign = 'center';
+            // }
     },
         error: function (xhr, status, error) {
             console.error('AJAX Error:', error);
@@ -392,26 +400,28 @@ const successful__transactions = function(transaction){
     newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
     newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
     newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
-    newRow.insertCell(5).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
-    newRow.insertCell(6).innerHTML = 'Test' || 'N/A'; // Request type
-    newRow.insertCell(7).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
-    newRow.insertCell(8).innerHTML = 'Success'; // Payment Status
+    newRow.insertCell(5).innerHTML = transaction.approved_time || 'N/A'; // Date & Time
+    newRow.insertCell(6).innerHTML = 'Test' || 'N/A'; // Total Amount
+    newRow.insertCell(7).innerHTML = transaction.type  === '2' ? 'Cash' : 'POS' || 'N/A'; // Request type
+    newRow.insertCell(8).innerHTML = transaction.total_amount || 'N/A'; // Total Amount
+    newRow.insertCell(9).innerHTML = 'Success'; // Payment Status
 
 
     if (transaction.tests) {
         try {
             const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
-            let test = '<ul style="list-style: none; text-align:left">'; // Create an unordered list
+            let test = '<div style="list-style: none; text-align:left; display:flex; flex-wrap:wrap;">'; // Create an unordered list
 
             // Loop through the tests object
             for (let testName in testsObj) {
                 if (testsObj.hasOwnProperty(testName)) {
                     let test__price = testsObj[testName]; // Declare testValue with let
-                    test__price = test__price == 0 ? 'Free' : test__price;
-                    test += `<li style="color: white; font-size: 1rem;">${testName}: ${test__price}</li>`;
+                    test__price = test__price == 0 ? 'Free' : test__priceformat =  `₦${new Intl.NumberFormat('en-NG').format(test__price)}`
+                    test += `<li style="color: white; font-size: 1rem; width:fit-content">${testName}</li>`;
+                    // : ${test__price}
                 }
             }
-            test += '</ul>'; // Close the list
+            test += '</div>'; // Close the list
             newRow.cells[6].innerHTML = test;
         } catch (error) {
             console.error('Error parsing tests:', error);
@@ -446,7 +456,7 @@ const successful__transactions = function(transaction){
                 const data = response.data;
                 if (Array.isArray(data) && data.length > 0) {
                     data.forEach(transaction => {
-                        overall___transactions(transaction);
+                        overall_transactions(transaction);
                     });
                 } else {
                     // No transactions found, show "No transaction found" message
@@ -465,14 +475,14 @@ const successful__transactions = function(transaction){
                 noTransactionCell.innerHTML = 'No success transactions found.';
                 noTransactionCell.style.textAlign = 'center';
             }
-            if(!response.ok){
-                console.error('Error:', response.message);
-                const noTransactionRow = overall__transactions.insertRow(0);
-                const noTransactionCell = noTransactionRow.insertCell(0);
-                noTransactionCell.colSpan = 9; // Span across all columns
-                noTransactionCell.innerHTML = 'Error in the response.';
-                noTransactionCell.style.textAlign = 'center';
-            }
+            // if(!response.ok){
+            //     console.error('Error:', response.message);
+            //     const noTransactionRow = overall__transactions.insertRow(0);
+            //     const noTransactionCell = noTransactionRow.insertCell(0);
+            //     noTransactionCell.colSpan = 9; // Span across all columns
+            //     noTransactionCell.innerHTML = 'Error in the response.';
+            //     noTransactionCell.style.textAlign = 'center';
+            // }
     },
         error: function (xhr, status, error) {
             console.error('AJAX Error:', error);
@@ -482,7 +492,7 @@ const successful__transactions = function(transaction){
     });
 };
 
-     function overall__transactions(transaction){
+     function overall_transactions(transaction){
     const overall__transactions = document.querySelector('#overall__transactions tbody');
     const rowCount = overall__transactions.rows.length;
     const newRow = overall__transactions.insertRow(rowCount);
@@ -501,14 +511,15 @@ const successful__transactions = function(transaction){
     if (transaction.tests) {
         try {
             const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
-            let test = '<ul style="list-style: none; text-align:left">'; // Create an unordered list
+            let test = '<div style="list-style: none; text-align:left; display:flex; flex-wrap:wrap;">'; // Create an unordered list
+
 
             // Loop through the tests object
             for (let testName in testsObj) {
                 if (testsObj.hasOwnProperty(testName)) {
                     let test__price = testsObj[testName]; // Declare testValue with let
                     test__price = test__price == 0 ? 'Free' : test__price;
-                    test += `<li style="color: white; font-size: 1rem;">${testName}: ${test__price}</li>`;
+                    test += `<li style="color: white; font-size: 1rem; width:fit-content">${testName}: ${test__price}</li>`;
                 }
             }
             test += '</ul>'; // Close the list

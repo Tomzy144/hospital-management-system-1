@@ -28,18 +28,7 @@ const closeModal = function (modalId) {
 };
 ////////////////////////////////////////////////////////////////////
 
-const sections = document.querySelectorAll('.section');
-const links = document.querySelectorAll('.sidebar-body ul li');
 
-function toggleSidebarLinks(clickedLink){
-  links.forEach(link => link.classList.remove('active'));
-  clickedLink.classList.add('active');
-}
-links.forEach(link => {
-  link.addEventListener('click', function() {
-      toggleSidebarLinks(this);
-  });
-});
 /////////////////////////////////////////////////////
 
 function createDate(){
@@ -73,7 +62,7 @@ setInterval(() => createDate());
 function appoitmentSection(){
    document.querySelector(".list_div").classList.remove("hide");
    document.querySelector(".available-patient-list").classList.add("hide");
-   document.querySelector(".patient-profile").classList.add("hide");
+   document.querySelector("patient-profile").classList.add("hide");
 }
 
 function selectDoc(){

@@ -122,6 +122,20 @@ $page = "nurse_dash"; // Assign the value "nurse_dash" to the $page variable
   <!-- <div class="overlay"></div> -->
   <script src="js/script.js"></script>
 <?php include 'config/page-content.php'?>
+<script>
+  const sections = document.querySelectorAll('.section');
+const links = document.querySelectorAll('.sidebar-body ul li');
+
+function toggleSidebarLinks(clickedLink){
+  links.forEach(link => link.classList.remove('active'));
+  clickedLink.classList.add('active');
+}
+links.forEach(link => {
+  link.addEventListener('click', function() {
+      toggleSidebarLinks(this);
+  });
+});
+</script>
 </body>
 </html>
 

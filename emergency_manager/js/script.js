@@ -324,6 +324,8 @@ function isPatientStable() {
     });
 }
 
+
+
 function showBookModal(e){
 patientName = e.target.closest('tr').children[1].textContent;
 patientGender = e.target.closest('tr').children[2].textContent;

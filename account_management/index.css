@@ -401,10 +401,10 @@ justify-content: center;
     position: fixed;
     bottom: 0;
     right: 0;
-    background-color: rgb(42, 87, 215);;
+    background-color: rgb(255, 255, 255);
 }
 .overall_amount h3{
-    color: #fff;
+    color: rgb(42, 87, 215);;
     padding: 0.5rem;
 }
 
