@@ -328,12 +328,12 @@ function printInvoice() {
     window.location.reload();
   }
 
-const displaySuccessfullTransaction = function() {
+ function  displaySuccessfullTransaction() {
     var action = 'fetch_appointment_list';
     var dataString = "action=" + action;
 
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: "config/code.php",
         data: dataString,
         cache: false,

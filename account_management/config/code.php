@@ -120,7 +120,7 @@
                 $response = array(); // Initialize the response array
             
                 // SQL query to fetch appointment details along with patient details
-                $sql = "SELECT * account_appointment_confirm_tab ";
+                $sql = "SELECT * FROM account_appointment_confirm_tab ";
                 $result = mysqli_query($conn, $sql);
             
                 // Check if any rows are returned
@@ -154,10 +154,8 @@
                     $response = array(); // Initialize the response array
                 
                     // SQL query to fetch appointment details along with patient details
-                    $sql = "SELECT a.*, p.fullname, p.patient_passport 
-                            FROM account_appointment_overall_tab a
-                            INNER JOIN patient_tab p ON a.patient_id = p.patient_id
-                            WHERE a.patient_id = '$patient_id'";
+                    $sql = "SELECT *
+                            FROM account_appointment_overall_tab";
                     $result = mysqli_query($conn, $sql);
                 
                     // Check if any rows are returned
