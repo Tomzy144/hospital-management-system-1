@@ -68,12 +68,14 @@ function successfulTransaction(){
     $('.pending__transactions').addClass('hide');
     $('.successful__transactions').removeClass('hide');
     $('.overall__transactions').addClass('hide');
+    displaySuccessfullTransaction();
 }
 
 function overallTransactions(){
     $('.pending__transactions').addClass('hide');
     $('.successful__transactions').addClass('hide');
     $('.overall__transactions').removeClass('hide');
+    displayOverallTransaction();
 }
 
 
@@ -420,14 +422,13 @@ const successful__transactions = function(transaction){
     }
 }
 
-// displaySuccessfullTransaction()
 
 
 
 
 
 
-const displayOverallTransaction = function() {
+ function displayOverallTransaction() {
     var action = 'fetch_overall_appointment_list';
     var dataString = "action=" + action;
 
@@ -481,7 +482,7 @@ const displayOverallTransaction = function() {
     });
 };
 
-const overall__transactions = function(transaction){
+     function overall__transactions(transaction){
     const overall__transactions = document.querySelector('#overall__transactions tbody');
     const rowCount = overall__transactions.rows.length;
     const newRow = overall__transactions.insertRow(rowCount);
@@ -520,5 +521,3 @@ const overall__transactions = function(transaction){
         newRow.cells[6].innerHTML = 'N/A'; // If tests field is missing
     }
 }
-
-// displayOverallTransaction()
