@@ -112,38 +112,58 @@
 
 
 
-            case 'fetch_appointment_list':
+                case 'fetch_appointment_list':
 
-                // Retrieve the patient_id from the POST request
-                $patient_id = $_POST['patient_id'];
-            
-                $response = array(); // Initialize the response array
-            
-                // SQL query to fetch appointment details along with patient details
-                $sql = "SELECT * FROM account_appointment_confirm_tab ";
-                $result = mysqli_query($conn, $sql);
-            
-                // Check if any rows are returned
-                if (mysqli_num_rows($result) > 0) {
-                    $appointments = array();
-                    
-                    // Fetch each row and add to the appointments array
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $appointments[] = $row;
+                    // Initialize the response array
+                    $response = array();
+                
+                    // SQL query to fetch appointment details
+                    $sql = "SELECT * FROM account_appointment_confirm_tab";
+                    $result = mysqli_query($conn, $sql);
+                
+                    // Check if any rows are returned
+                    if (mysqli_num_rows($result) > 0) {
+                        $appointments = array();
+                
+                        // Loop through each appointment and fetch the corresponding passport from patient_tab
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $patient_id = $row['patient_id']; // Extract patient_id from the current row
+                            
+                            // SQL query to fetch the passport from patient_tab for this patient_id
+                            $passport_sql = "SELECT patient_passport FROM patient_tab WHERE patient_id = ?";
+                            $stmt = $conn->prepare($passport_sql);
+                            $stmt->bind_param('s', $patient_id); // Bind the patient_id to the query
+                            
+                            // Execute the query to fetch passport
+                            if ($stmt->execute()) {
+                                $passport_result = $stmt->get_result();
+                                $passport_row = $passport_result->fetch_assoc();
+                                
+                                // Add the passport to the current row
+                                $row['patient_passport'] = $passport_row['patient_passport'] ?? 'N/A'; // Use 'N/A' if no passport is found
+                            } else {
+                                $row['patient_passport'] = 'N/A'; // If passport query fails, add a fallback
+                            }
+                
+                            // Add the row (with appointment and passport details) to the appointments array
+                            $appointments[] = $row;
+                        }
+                
+                        // Success response
+                        $response['success'] = true;
+                        $response['data'] = $appointments; // Add the appointments data to the response
+                
+                    } else {
+                        // No appointments found
+                        $response['success'] = false;
+                        $response['message'] = "No appointments found.";
                     }
-            
-                    $response['success'] = true;
-                    $response['data'] = $appointments; // Add the appointments data to the response
-            
-                } else {
-                    $response['success'] = false;
-                    $response['message'] = "No appointments found for this patient.";
-                }
-            
-                // Return the response as JSON
-                echo json_encode($response);
-            
-                break;
+                
+                    // Return the response as JSON
+                    echo json_encode($response);
+                
+                    break;
+                
 
 
                 case 'fetch_overall_appointment_list':
@@ -154,32 +174,49 @@
                     $response = array(); // Initialize the response array
                 
                     // SQL query to fetch appointment details along with patient details
-                    $sql = "SELECT *
-                            FROM account_appointment_overall_tab";
+                    $sql = "SELECT * FROM account_appointment_overall_tab";
                     $result = mysqli_query($conn, $sql);
                 
                     // Check if any rows are returned
                     if (mysqli_num_rows($result) > 0) {
                         $appointments = array();
-                        
-                        // Fetch each row and add to the appointments array
+                
+                        // Loop through each appointment and fetch the corresponding passport from patient_tab
                         while ($row = mysqli_fetch_assoc($result)) {
+                            $patient_id = $row['patient_id']; // Extract patient_id from the current row
+                            
+                            // SQL query to fetch the passport from patient_tab for this patient_id
+                            $passport_sql = "SELECT patient_passport FROM patient_tab WHERE patient_id = ?";
+                            $stmt = $conn->prepare($passport_sql);
+                            $stmt->bind_param('s', $patient_id); // Bind the patient_id to the query
+                            
+                            // Execute the query to fetch passport
+                            if ($stmt->execute()) {
+                                $passport_result = $stmt->get_result();
+                                $passport_row = $passport_result->fetch_assoc();
+                                
+                                // Add the passport to the current row
+                                $row['patient_passport'] = $passport_row['patient_passport'] ?? 'N/A'; // Use 'N/A' if no passport is found
+                            } else {
+                                $row['patient_passport'] = 'N/A'; // If passport query fails, add a fallback
+                            }
+                
+                            // Add the row (with appointment and passport details) to the appointments array
                             $appointments[] = $row;
                         }
                 
+                        // Success response
                         $response['success'] = true;
                         $response['data'] = $appointments; // Add the appointments data to the response
                 
                     } else {
+                        // No appointments found
                         $response['success'] = false;
-                        $response['message'] = "No appointments found for this patient.";
+                        $response['message'] = "No appointments found.";
                     }
                 
                     // Return the response as JSON
                     echo json_encode($response);
-                
-                    break;
-            
            
         
         
