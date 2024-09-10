@@ -224,7 +224,7 @@ const pending__transactions = function(transaction) {
 
     
     newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
-    newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
+    newRow.insertCell(1).innerHTML = "<img src = ../uploaded_files/profile_pix/patient/"+transaction.patient_passport+">";
     newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
     newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
     newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time

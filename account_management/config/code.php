@@ -20,37 +20,67 @@
         case 'pending_transactions':
 
             // Retrieve the patient_id from the POST request (optional if needed)
-            $patient_id = $_POST['patient_id'];
+            $patient_id; // Use null coalescing to handle optional parameter
         
             $response = array(); // Initialize the response array
         
-            // SQL query to fetch appointment details for the specific patient or all records
-            $sql = "SELECT * FROM account_appointment_tab"; // Add WHERE clause to filter by patient_id if needed
+            // SQL query to fetch appointment details
+            $sql = "SELECT * FROM account_appointment_tab";
+            $stmt = $conn->prepare($sql);
         
-            $result = mysqli_query($conn, $sql);
+            // Execute the query to fetch appointments
+            if ($stmt->execute()) {
+                $result = $stmt->get_result();
         
-            // Check if any rows are returned
-            if (mysqli_num_rows($result) > 0) {
-                $pending_appointments = array(); // Initialize an array to hold all rows
+                // Check if any rows are returned
+                if (mysqli_num_rows($result) > 0) {
+                    $pending_appointments = array(); // Initialize an array to hold all rows
         
-                // Loop through all rows and store them in the array
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $pending_appointments[] = $row; // Add each row to the array
+                    // Loop through each row and fetch the corresponding passport from patient_tab
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $patient_id = $row['patient_id']; // Extract patient_id from the current row
+                        
+                        // SQL query to fetch the passport from patient_tab for this patient_id
+                        $passport_sql = "SELECT patient_passport FROM patient_tab WHERE patient_id = ?";
+                        $passport_stmt = $conn->prepare($passport_sql);
+                        $passport_stmt->bind_param('s', $patient_id); // Bind the patient_id to the query
+                        
+                        // Execute the query to fetch passport
+                        if ($passport_stmt->execute()) {
+                            $passport_result = $passport_stmt->get_result();
+                            $passport_row = $passport_result->fetch_assoc();
+                            
+                            // Add the passport to the current row
+                            $row['patient_passport'] = $passport_row['patient_passport'] ?? 'N/A'; // Use 'N/A' if no passport is found
+                        } else {
+                            $row['patient_passport'] = 'N/A'; // If passport query fails, add a fallback
+                        }
+        
+                        // Add the row (with appointment and passport details) to the appointments array
+                        $pending_appointments[] = $row;
+                    }
+        
+                    // Success response
+                    $response['success'] = true;
+                    $response['data'] = $pending_appointments; // Add the appointments data to the response
+        
+                } else {
+                    // No appointments found
+                    $response['success'] = false;
+                    $response['message'] = "No pending transactions found.";
                 }
         
-                // Pass the array to the JSON response
-                $response['success'] = true;
-                $response['data'] = $pending_appointments; // Send the array of rows as data in the response
-        
             } else {
+                // Query execution failed
                 $response['success'] = false;
-                $response['message'] = "No pending transactions found.";
+                $response['message'] = "Error executing query: " . $stmt->error;
             }
         
             // Return the response as JSON
             echo json_encode($response);
         
             break;
+        
         
         
         
