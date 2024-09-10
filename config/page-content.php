@@ -425,7 +425,7 @@ if($s_staff_id != '') {
                     <i class="bi-lock"></i>
                     <i class="bi bi-eye show_password hide" id="_showdoc_password" onclick="show_staff_password()"></i>
                     <i class="bi bi-eye-slash lock_password" id="_lock_doc_password" onclick="show_staff_password()"></i>
-                    <input type="password" class="all_password" id="doctor_password" name="password"  name="password" autoComplete='off'/> 
+                    <input type="password" class="all_password" id="doctor_assword" name="password"  name="password" autoComplete='off'/> 
                 </div>
                 <!-- Login button -->
                 <button type="button" class="btn" onClick="open_morgue_page()">Login</button>

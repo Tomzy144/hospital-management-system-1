@@ -440,15 +440,15 @@ function _resend_otp(ids,staff_id){
 
 
 // Delay the execution of existingFunction by 1 second
-setTimeout(function() {
-    getWards();
-  }, 1000);
+// setTimeout(function() {
+//     getWards();
+//   }, 1000);
   
   
-  document.addEventListener("DOMContentLoaded", function() {
-    // Call the function to populate the dropdown when the page is fully loaded
-    getWards();
-  });
+//   document.addEventListener("DOMContentLoaded", function() {
+//     // Call the function to populate the dropdown when the page is fully loaded
+//     getWards();
+//   });
   
   
 
