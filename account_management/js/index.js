@@ -74,7 +74,6 @@ function overallTransactions(){
     $('.pending__transactions').addClass('hide');
     $('.successful__transactions').addClass('hide');
     $('.overall__transactions').removeClass('hide');
-    displayOverallTransaction();
 }
 
 
@@ -354,7 +353,7 @@ function printInvoice() {
             success.innerHTML = '';
             if (response.success) {
                 const data = response.data;
-                console.log(data)
+                // console.log(data)
                 if (Array.isArray(data) && data.length > 0) {
                     data.forEach(transaction => {
                         successful__transactions(transaction);
@@ -368,8 +367,8 @@ function printInvoice() {
                     noTransactionCell.style.textAlign = 'center';
                 }
             } 
-            if(response.message === 'No success transactions found.'){
-                console.error('Error:', response.message);
+            if(response.message === 'No appointments found.'){
+                // console.error('Error:', response.message);
                 const noTransactionRow = success.insertRow(0);
                 const noTransactionCell = noTransactionRow.insertCell(0);
                 noTransactionCell.colSpan = 9; // Span across all columns
@@ -393,15 +392,15 @@ function printInvoice() {
     });
 };
 
-
-let cash = 0;
-let pos = 0;
+let cash = 0; // Initialize cash amount
+let pos = 0;  // Initialize POS amount
 
 $(document).ready(function () {
     displaySuccessfullTransaction();
+    displayOverallTransaction();
 });
 
-async function successful__transactions(transaction){
+function successful__transactions(transaction){
     const successTable = document.querySelector('#success tbody');
     const rowCount = successTable.rows.length;
     const newRow = successTable.insertRow(rowCount);
@@ -413,39 +412,43 @@ async function successful__transactions(transaction){
     newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
     newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
     newRow.insertCell(5).innerHTML = transaction.approved_time || 'N/A'; // Date & Time
-    newRow.insertCell(6).innerHTML = 'Test' || 'N/A'; // Total Amount
-    newRow.insertCell(7).innerHTML = transaction.type  === '2' ? 'Cash' : 'POS' || 'N/A'; // Request type
+    newRow.insertCell(6).innerHTML = 'Test' || 'N/A'; // Test Amount
+    newRow.insertCell(7).innerHTML = (transaction.type === '2') ? 'Cash' : 'POS'; // Payment type
     newRow.insertCell(8).innerHTML = transaction.total_amount.replace(/[' ']/g, '') || 'N/A'; // Total Amount
     newRow.insertCell(9).innerHTML = 'Success'; // Payment Status
 
-    if(transaction.type === '2'){
-        const cleanAmount = transaction.total_amount.replace(/[₦,]/g, ""); // Removes ₦ and commas
-        const totalAmount = parseFloat(cleanAmount) || 0; // Ensure it's a valid number
-            cash += totalAmount; 
-    document.querySelector('#cash').textContent = `Cash Amount: ${new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(cash)}`
-    }else{
-        const cleanAmount = transaction.total_amount.replace(/[₦,]/g, ""); // Removes ₦ and commas
-        const totalAmount = parseFloat(cleanAmount) || 0; // Ensure it's a valid number
-            pos += totalAmount; 
-    document.querySelector('#pos').textContent = `Pos Amount: ${new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(pos)}`
+    // Process Cash or POS
+    const cleanAmount = transaction.total_amount.replace(/[₦,]/g, ""); // Removes ₦ and commas
+    const totalAmount = parseFloat(cleanAmount) || 0; // Ensure it's a valid number
+
+    if (transaction.type === '2') {
+        cash += totalAmount;
+        document.querySelector('#cash').textContent = cash > 0
+            ? `Cash Amount: ${new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(cash)}`
+            : `Cash Amount: 0.00`;
+    } else {
+        pos += totalAmount;
+        document.querySelector('#pos').textContent = pos > 0
+            ? `POS Amount: ${new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(pos)}`
+            : `POS Amount: 0.00`;
     }
 
+    // Handle tests data (if any)
     if (transaction.tests) {
         try {
             const testsObj = JSON.parse(transaction.tests); // Parse the JSON string
-            let test = '<div style="list-style: none; text-align:left; display:flex; flex-wrap:wrap;">'; // Create an unordered list
+            let test = '<div style="list-style: none; text-align:left; display:flex; flex-wrap:wrap;">';
 
             // Loop through the tests object
             for (let testName in testsObj) {
                 if (testsObj.hasOwnProperty(testName)) {
-                    let test__price = testsObj[testName]; // Declare testValue with let
-                    test__price = test__price == 0 ? 'Free' : test__priceformat =  `₦${new Intl.NumberFormat('en-NG').format(test__price)}`
-                    test += `<li style="color: white; font-size: 1rem; width:fit-content">${testName}</li>`;
-                    // : ${test__price}
+                    let test__price = testsObj[testName]; // Get the price of the test
+                    test__price = test__price == 0 ? 'Free' : `₦${new Intl.NumberFormat('en-NG').format(test__price)}`;
+                    test += `<li style="color: white; font-size: 1rem; width:fit-content">${testName}: ${test__price}</li>`;
                 }
             }
-            test += '</div>'; // Close the list
-            newRow.cells[6].innerHTML = test;
+            test += '</div>'; // Close the div
+            newRow.cells[6].innerHTML = test; // Add the formatted tests
         } catch (error) {
             console.error('Error parsing tests:', error);
             newRow.cells[6].innerHTML = 'Invalid test data'; // Fallback for parsing errors
@@ -490,12 +493,12 @@ async function successful__transactions(transaction){
                     noTransactionCell.style.textAlign = 'center';
                 }
             } 
-            if(response.message === 'No success transactions found.'){
+            if(response.message === 'No appointments found.'){
                 console.error('Error:', response.message);
                 const noTransactionRow = overall__transactions.insertRow(0);
                 const noTransactionCell = noTransactionRow.insertCell(0);
                 noTransactionCell.colSpan = 9; // Span across all columns
-                noTransactionCell.innerHTML = 'No success transactions found.';
+                noTransactionCell.innerHTML = 'No ovarall transactions found.';
                 noTransactionCell.style.textAlign = 'center';
             }
             // if(!response.ok){
@@ -568,31 +571,42 @@ newRow.insertCell(7).innerHTML = transaction.payment_status.includes('APPROVED')
 
 
 
-
-
-
 function filterPendingTransactions() {
     const tableBody = document.querySelector('#pending tbody');
     const tableRows = Array.from(tableBody.querySelectorAll('tr')); // Convert NodeList to Array
     const searchInput = document.querySelector('#psearch').value.trim().toLowerCase();
 
+    // Check if the table has one row and it contains the "No pending transactions found." message
+    if (tableRows.length === 1 && tableRows[0].textContent.trim().toLowerCase().includes('no pending transactions found')) {
+        alert('No data available to search.');
+        return; // Exit the function since there's no valid data
+    }
+
     let hasVisibleRows = false;
+
+    // Filter logic for valid rows
     tableRows.forEach((row) => {
-        if (row.children.length < 2)  return;
+        if (row.children.length < 2) return;
 
         const patientId = row.children[2].textContent.trim().toLowerCase();
         const transactionId = row.children[3].textContent.trim().toLowerCase();
-        if (transactionId.includes(searchInput) || patientId.includes(searchInput)){
+
+        // Check if the patient ID or transaction ID includes the search input
+        if (transactionId.includes(searchInput) || patientId.includes(searchInput)) {
             row.style.display = ''; // Show the row
             hasVisibleRows = true;
-           
-        } else row.style.display = 'none'; // Hide the row
+        } else {
+            row.style.display = 'none'; // Hide the row
+        }
     });
 
+    // Remove any existing "No Data" message
     const existingNoDataMessage = document.querySelector('#noDataMessage');
     if (existingNoDataMessage) {
         existingNoDataMessage.remove();
     }
+
+    // Display "No Data" message if no rows match the search
     if (!hasVisibleRows) {
         const noDataMessage = document.createElement('tr');
         noDataMessage.id = 'noDataMessage';
@@ -600,7 +614,11 @@ function filterPendingTransactions() {
         tableBody.appendChild(noDataMessage);
     }
 }
+
+// Add an event listener to trigger search/filtering on input
 document.querySelector('#psearch').addEventListener('input', filterPendingTransactions);
+
+
 
 
 
@@ -609,6 +627,10 @@ function filterSuccessfulTransactions() {
     const tableRows = Array.from(tableBody.querySelectorAll('tr')); // Convert NodeList to Array
     const searchInput = document.querySelector('#ssearch').value.trim().toLowerCase();
 
+    if (tableRows.length === 1 && tableRows[0].textContent.trim().toLowerCase().includes('no success transactions found')) {
+        alert('No data available to search.');
+        return; // Exit the function since there's no valid data
+    }
     let hasVisibleRows = false;
     tableRows.forEach((row) => {
         if (row.children.length < 2)  return;
@@ -643,6 +665,10 @@ function filterOverallTransactions() {
     const tableRows = Array.from(tableBody.querySelectorAll('tr')); // Convert NodeList to Array
     const searchInput = document.querySelector('#osearch').value.trim().toLowerCase();
 
+    if (tableRows.length === 1 && tableRows[0].textContent.trim().toLowerCase().includes('no ovarall transactions found')) {
+        alert('No data available to search.');
+        return; // Exit the function since there's no valid data
+    }
     let hasVisibleRows = false;
     tableRows.forEach((row) => {
         if (row.children.length < 2)  return;

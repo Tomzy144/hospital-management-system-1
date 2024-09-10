@@ -77,7 +77,6 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
 
             <div class="image">
             <img src="<?php echo $website_url ?>/doctor/images/doctor2.jpg" alt="userImage"/>
-            <div class="active_on"></div>
             </div>
             <span><?php echo $fullname ?></span>
             <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
@@ -87,7 +86,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
     <div class="sidebar">
             <div class="sidebar-body">
                 <ul>
-                    <li onclick="pendingTransaction()" id="links" class="active">
+                    <li onclick="pendingTransaction()" id="links" class="active scale-up-center">
                         <i class="bi bi-graph-up"></i>
                         <span>Pending transaction</span>
                     </li>
@@ -113,8 +112,8 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
                     <i class="bi bi-person"></i>
                     <span>USER ID: <?php echo $s_account_unit_id?></span>
                     </div>
-                    <div id="pos"></div>
-                    <div id="cash"></div>
+                    <div id="pos">POS Amount: 0.00</div>
+                    <div id="cash">Cash Amount: 0.00</div>
                 </div>
             </div>
         </div>
@@ -186,7 +185,6 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
             <div class="search_bar_container">
                 <input type="hidden" id="account_id" value="<?php echo $s_account_unit_id ?>"/>
                 <h3>Successful Transactions</h3>
-                <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here" id="ssearch">
                 </div>
                   <table id="success">
