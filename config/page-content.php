@@ -61,13 +61,13 @@ if($s_staff_id != '') {
                 <div class="_form_control">
                     <label for='email'>Email</label>
                     <i class="bi-envelope"></i>
-                    <input type="email" id="doctor_email" name="email" autoComplete='off'/>
+                    <input type="email" id="doctor_email" name="doctor_email" autoComplete='off'/>
                 </div>
                 <!-- ID field -->
                 <div class="_form_control">
                     <label for='number'>Your ID</label>
                     <i class="bi-key"></i>
-                    <input type="text" id="doctor_id" name="number" autoComplete='off'/>
+                    <input type="text" id="doctor_id" name="doctor_id" autoComplete='off'/>
                 </div>
                 <!-- Password field -->
                 <div class="_form_control">

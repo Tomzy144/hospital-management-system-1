@@ -4,16 +4,6 @@ const profile_container  =  document.querySelector(".profile_account");
 const click_icon_for_profile = ()=>{
     profile_container.classList.toggle("hide");
 };
-const links =  document.querySelectorAll('#links');
-function toggleSidebarLinks(clickedLink){
-    links.forEach(link => link.classList.remove('active'));
-    clickedLink.classList.add('active');
-}
-links.forEach(link => {
-    link.addEventListener('click', function() {
-        toggleSidebarLinks(this);
-    });
-});
 
 
 
@@ -87,39 +77,37 @@ function showMessage(message, text, backgroundColor) {
 
 
 
-// let messageContainer = document.createElement('div');
-// document.body.appendChild(messageContainer);
+let messageContainer = document.createElement('div');
+document.body.appendChild(messageContainer);
 
-// const createAlertMessage = (text, className, duration = 5000) => {
-//   const message = document.createElement('div');
-//   message.className = className + ' alert';
-//   message.innerHTML = `
-//     <div class="content">
-//     <div class="message">
-//       <div class="icon">
-//         <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
-//         </div>
-//         <h2>${text}</h2>
-//         </div>
-//     </div>
-//   `;
-//   messageContainer.appendChild(message);
-//   if(duration !== 0){
-//     setTimeout(() => {
-//         message.classList.add('hide');
-//         setTimeout(() => message.remove(), 500); 
-//       }, duration);
-//   }
-//   return message;
-// }
+const createAlertMessage = (text, className, duration = 5000) => {
+  const message = document.createElement('div');
+  message.className = className + ' alert';
+  message.innerHTML = `
+    <div class="content">
+    <div class="message">
+      <div class="icon">
+        <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+        </div>
+        <h2>${text}</h2>
+        </div>
+    </div>
+  `;
+  messageContainer.appendChild(message);
+  if(duration !== 0){
+    setTimeout(() => {
+        message.classList.add('hide');
+        setTimeout(() => message.remove(), 500); 
+      }, duration);
+  }
+  return message;
+}
 
-// const successMessage = (text) => createAlertMessage(text, 'success');
-// const infoMessage = (text) => createAlertMessage(text, 'info');
-// const warningMessage = (text) => createAlertMessage(text, 'warning');
-// const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000); 
-// const optionsMessage = (text, opt1, opt2) =>{
-//     const message = createAlertMessage(text, 'info', 0)
-// } 
+const successMessage = (text) => createAlertMessage(text, 'success');
+const infoMessage = (text) => createAlertMessage(text, 'info');
+const warningMessage = (text) => createAlertMessage(text, 'warning');
+const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000); 
+
 
 
 
@@ -142,12 +130,7 @@ function paid(patient_id, time,option) {
         dataType: 'json',
         success: function (data) {
             if (data.success) {
-                alert('Payment Approved');
-                // window.location.reload();
-                console.log(data)
-                $btnSubmit.html('Transfer');
-                $btnSubmit.prop('disabled', false);
-                // window.location.reload(); // Reload the page to reflect the changes
+                successMessage('Payment Approved');
             } 
             
             else {
@@ -234,8 +217,8 @@ const pending__transactions = function(transaction) {
 
     // Action buttons
     newRow.insertCell(8).innerHTML = `
-    <button class="action-button" id="accept_${rowCount}">Accept</button>
-    <button class="action-button">Reject</button>
+    <button class="bg-white" id="accept_${rowCount}">Accept</button>
+    <button class="bg-white">Reject</button>
     `;
     document.querySelector('#customerId').textContent = `Transaction Id: ${transaction.account_appointment_id}`
     document.querySelector('#date').textContent = `Date: ${new Date().toLocaleDateString()}`
@@ -291,8 +274,8 @@ const pending__transactions = function(transaction) {
         selectMessage.className = 'alert info';
         selectMessage.innerHTML = `
             <div class="buttonflex">
-                <button class="posButton">POS</button>
-                <button class="cashButton">CASH</button>
+                <button class="posButton bg-white">POS</button>
+                <button class="cashButton bg-white">CASH</button>
             </div>
         `;
         document.body.appendChild(selectMessage);
@@ -444,7 +427,8 @@ function successful__transactions(transaction){
                 if (testsObj.hasOwnProperty(testName)) {
                     let test__price = testsObj[testName]; // Get the price of the test
                     test__price = test__price == 0 ? 'Free' : `₦${new Intl.NumberFormat('en-NG').format(test__price)}`;
-                    test += `<li style="color: white; font-size: 1rem; width:fit-content">${testName}: ${test__price}</li>`;
+                    test += `<li style="color: white; font-size: 1rem; width:fit-content">${testName}</li>`;
+                    // : ${test__price}
                 }
             }
             test += '</div>'; // Close the div
