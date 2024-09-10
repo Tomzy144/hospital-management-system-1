@@ -126,8 +126,8 @@
             $patient_id = $_POST['patient_id'];
             $patient_name = $_POST['patient_name'];
             $comment = $_POST['comment'];
-            $time = $_POST['time'];
-            $date = $_POST['date'];
+            $time = $_POST['selected_time'];
+            $date = $_POST['selected_date'];
             $doctor_id = $_POST['doctor_id'];
             $status_id = "1"; // Default status ID for new transfer
         

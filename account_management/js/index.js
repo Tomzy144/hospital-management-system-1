@@ -126,13 +126,14 @@ function showMessage(message, text, backgroundColor) {
 
 
 function paid(patient_id, time,option) {
+    var account_id = $('#account_id').val();
     var $btnSubmit = $('#paid_btn_' + patient_id);
     var btnText = $btnSubmit.html();
     $btnSubmit.html('Processing...');
     $btnSubmit.prop('disabled', true);
 
     var action = 'paid';
-    var dataString = "action=" + action + "&patient_id=" + encodeURIComponent(patient_id) + "&time=" + encodeURIComponent(time)+"&option=" + encodeURIComponent(option);
+    var dataString = "action=" + action + "&patient_id=" + encodeURIComponent(patient_id) + "&time=" + encodeURIComponent(time)+"&option=" + encodeURIComponent(option)+"&account_id=" + encodeURIComponent(account_id);
 
     $.ajax({
         type: 'POST',
@@ -217,6 +218,7 @@ function displayPendingTransactions() {
 
 
 const pending__transactions = function(transaction) {
+    var account_id = $('#patient_id').val();
     const pending = document.querySelector('#pending tbody');
     const rowCount = pending.rows.length; 
     const newRow = pending.insertRow(rowCount);
@@ -299,7 +301,7 @@ const pending__transactions = function(transaction) {
         // Handle POS button click
         document.querySelector('.posButton').onclick = (event) => {
             event.stopPropagation(); // Prevent triggering parent click event
-            paid(transaction.patient_id, transaction.time, 1);
+            paid(transaction.patient_id, transaction.time, 1,account_id);
             openModal('patient__receipt');
             if (selectMessage.parentNode) {
                 document.body.removeChild(selectMessage); // Remove the message
@@ -309,7 +311,7 @@ const pending__transactions = function(transaction) {
         // Handle CASH button click
         document.querySelector('.cashButton').onclick = (event) => {
             event.stopPropagation(); // Prevent triggering parent click event
-            paid(transaction.patient_id, transaction.time, 2);
+            paid(transaction.patient_id, transaction.time, 2,account_id);
             openModal('patient__receipt');
             if (selectMessage.parentNode) {
                 document.body.removeChild(selectMessage); // Remove the message
@@ -336,7 +338,9 @@ function printInvoice() {
   
  function  displaySuccessfullTransaction() {
     var action = 'fetch_appointment_list';
-    var dataString = "action=" + action;
+    var account_id = $('#account_id').val();
+    var dataString = "action=" + action + "&account_id="+ account_id;
+    
 
     $.ajax({
         type: 'POST',
@@ -403,7 +407,8 @@ async function successful__transactions(transaction){
     const newRow = successTable.insertRow(rowCount);
 
     newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
-    newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
+    newRow.insertCell(1).innerHTML = "<img src = ../uploaded_files/profile_pix/patient/"+transaction.patient_passport+">";
+
     newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
     newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
     newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
@@ -517,7 +522,7 @@ function overall_transactions(transaction) {
     const rowCount = overall__transactions.rows.length;
     const newRow = overall__transactions.insertRow(rowCount);
     newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
-newRow.insertCell(1).innerHTML = `PASSPORT`; // Placeholder for passport image
+    newRow.insertCell(1).innerHTML = "<img src = ../uploaded_files/profile_pix/patient/"+transaction.patient_passport+">";
 newRow.insertCell(2).innerHTML = transaction.patient_id || 'N/A'; // Patient ID
 newRow.insertCell(3).innerHTML = transaction.account_appointment_id || 'N/A'; // Appointment ID
 newRow.insertCell(4).innerHTML = transaction.time || 'N/A'; // Date & Time
