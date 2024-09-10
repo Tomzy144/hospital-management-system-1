@@ -525,7 +525,6 @@ newRow.insertCell(5).innerHTML = 'Test type' || 'N/A'; // Test type
 newRow.insertCell(6).innerHTML = transaction.total_amount.replace(/\s/g, '') === '₦0' ? 'Free' : transaction.total_amount.replace(/\s/g, '');
 newRow.insertCell(7).innerHTML = transaction.payment_status.includes('APPROVED') ? 'Success' : 'Failed';
 
-    // console.log(transaction.total_amount.replace(/[' ']/g, ''));
  
     // Parse total_amount and remove any currency symbols/commas
     const cleanAmount = transaction.total_amount.replace(/[₦, ' ']/g, ""); // Removes ₦ and commas
