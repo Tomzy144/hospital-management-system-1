@@ -126,13 +126,14 @@ function showMessage(message, text, backgroundColor) {
 
 
 function paid(patient_id, time,option) {
+    var account_id = $('#account_id').val();
     var $btnSubmit = $('#paid_btn_' + patient_id);
     var btnText = $btnSubmit.html();
     $btnSubmit.html('Processing...');
     $btnSubmit.prop('disabled', true);
 
     var action = 'paid';
-    var dataString = "action=" + action + "&patient_id=" + encodeURIComponent(patient_id) + "&time=" + encodeURIComponent(time)+"&option=" + encodeURIComponent(option);
+    var dataString = "action=" + action + "&patient_id=" + encodeURIComponent(patient_id) + "&time=" + encodeURIComponent(time)+"&option=" + encodeURIComponent(option)+"&account_id=" + encodeURIComponent(account_id);
 
     $.ajax({
         type: 'POST',
@@ -217,6 +218,7 @@ function displayPendingTransactions() {
 
 
 const pending__transactions = function(transaction) {
+    var account_id = $('#patient_id').val();
     const pending = document.querySelector('#pending tbody');
     const rowCount = pending.rows.length; 
     const newRow = pending.insertRow(rowCount);
@@ -299,7 +301,7 @@ const pending__transactions = function(transaction) {
         // Handle POS button click
         document.querySelector('.posButton').onclick = (event) => {
             event.stopPropagation(); // Prevent triggering parent click event
-            paid(transaction.patient_id, transaction.time, 1);
+            paid(transaction.patient_id, transaction.time, 1,account_id);
             openModal('patient__receipt');
             if (selectMessage.parentNode) {
                 document.body.removeChild(selectMessage); // Remove the message
@@ -309,7 +311,7 @@ const pending__transactions = function(transaction) {
         // Handle CASH button click
         document.querySelector('.cashButton').onclick = (event) => {
             event.stopPropagation(); // Prevent triggering parent click event
-            paid(transaction.patient_id, transaction.time, 2);
+            paid(transaction.patient_id, transaction.time, 2,account_id);
             openModal('patient__receipt');
             if (selectMessage.parentNode) {
                 document.body.removeChild(selectMessage); // Remove the message
