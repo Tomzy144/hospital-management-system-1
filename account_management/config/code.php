@@ -61,6 +61,8 @@
                 $patient_id = $_POST['patient_id'];
                 $time = $_POST['time'];
                 $option = $_POST['option'];
+                $account_id = $_POST['account_id'];
+                
             
                 // SQL query to select the row(s) from account_appointment_tab based on patient_id and time
                 $sql = "SELECT * FROM account_appointment_tab WHERE patient_id = '$patient_id' AND time = '$time'";
@@ -72,15 +74,15 @@
                     // Prepare SQL queries to insert the record into two tables
                     $insert_sql1 = "
                         INSERT INTO account_appointment_confirm_tab 
-                        (patient_id, account_appointment_id, total_amount, tests, time, approved_time, payment_status, type)
-                        SELECT patient_id, account_appointment_id, total_amount, tests, time, NOW(), 'APPROVED', '$option'
+                        (patient_id, account_appointment_id,account_unit_id, total_amount, tests, time, approved_time, payment_status, type)
+                        SELECT patient_id, account_appointment_id, $account_id, total_amount, tests, time, NOW(), 'APPROVED', '$option'
                         FROM account_appointment_tab
                         WHERE patient_id = '$patient_id' AND time = '$time'";
             
                     $insert_sql2 = "
                         INSERT INTO account_appointment_overall_tab 
-                        (patient_id, account_appointment_id, total_amount, tests, time, approved_time, payment_status,type)
-                        SELECT patient_id, account_appointment_id, total_amount, tests, time, NOW(), 'APPROVED', '$option'
+                        (patient_id, account_appointment_id,account_unit_id, total_amount, tests, time, approved_time, payment_status,type)
+                        SELECT patient_id, account_appointment_id, $account_id, total_amount, tests, time, NOW(), 'APPROVED', '$option'
                         FROM account_appointment_tab
                         WHERE patient_id = '$patient_id' AND time = '$time'";
             
@@ -114,11 +116,13 @@
 
                 case 'fetch_appointment_list':
 
+                    $account_id = $_POST['account_id'];
+
                     // Initialize the response array
                     $response = array();
                 
                     // SQL query to fetch appointment details
-                    $sql = "SELECT * FROM account_appointment_confirm_tab";
+                    $sql = "SELECT * FROM account_appointment_confirm_tab WHERE account_unit_id = '$account_id'";
                     $result = mysqli_query($conn, $sql);
                 
                     // Check if any rows are returned

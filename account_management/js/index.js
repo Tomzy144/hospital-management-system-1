@@ -336,7 +336,9 @@ function printInvoice() {
   
  function  displaySuccessfullTransaction() {
     var action = 'fetch_appointment_list';
-    var dataString = "action=" + action;
+    var account_id = $('#account_id').val();
+    var dataString = "action=" + action + "&account_id="+ account_id;
+    
 
     $.ajax({
         type: 'POST',

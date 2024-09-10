@@ -184,6 +184,7 @@ $page = "account_unit_dash"; // Assign the value "account_unit_dash" to the $pag
         <div class="successful__transactions hide">
         <div class="patient_list_div">
             <div class="search_bar_container">
+                <input type="hidden" id="account_id" value="<?php echo $s_account_unit_id ?>"/>
                 <h3>Successful Transactions</h3>
                 <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search here" id="ssearch">
