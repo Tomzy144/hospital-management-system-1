@@ -427,7 +427,8 @@ function successful__transactions(transaction){
                 if (testsObj.hasOwnProperty(testName)) {
                     let test__price = testsObj[testName]; // Get the price of the test
                     test__price = test__price == 0 ? 'Free' : `₦${new Intl.NumberFormat('en-NG').format(test__price)}`;
-                    test += `<li style="color: white; font-size: 1rem; width:fit-content">${testName}: ${test__price}</li>`;
+                    test += `<li style="color: white; font-size: 1rem; width:fit-content">${testName}</li>`;
+                    // : ${test__price}
                 }
             }
             test += '</div>'; // Close the div
