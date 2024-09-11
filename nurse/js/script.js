@@ -513,19 +513,4 @@ function transfer_to_doctor(){
 
 
 
-// const fetchAvailablePatients = async function(){
-//   await fetch('')
-// }
-
-
-
-
-
-
-
-
-
-
-
-
 

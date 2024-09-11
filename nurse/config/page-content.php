@@ -49,12 +49,12 @@
                                                     echo "<td>" . $row["time"] . "</td>";
                                                     echo "<td>";
                                                     ?>
-                                                    <button class="accept-btn" type="button" onClick="accept('<?php echo $row["patient_id"]; ?>'),getWards();">Accept</button>
+                                                    <button class="bg-white" type="button" onClick="accept('<?php echo $row["patient_id"]; ?>'),getWards();">Accept</button>
                                                     <?php
                                                     echo "</td>";
                                                     echo "<td>";
                                                     ?>
-                                                    <button class="reject-btn" onClick="reject('<?php echo $row["patient_id"]; ?>')">Reject</button>
+                                                    <button class="bg-white" onClick="reject('<?php echo $row["patient_id"]; ?>')">Reject</button>
                                                     <?php
                                                     echo "</td>";
                                                     echo "</tr>";
@@ -88,7 +88,7 @@
                 <h3>Available patients</h3>
                     <input type="text" placeholder="Search here">
                 </div>
-                <table>
+                <table id="available__patients">
                     <thead>
                         <tr>
                             <td>S/N</td>
@@ -98,14 +98,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <img src="" alt="">
-                            </td>
-                            <td>KINGSLEY EFFIONG</td>
-                            <td>PAT0001</td>
-                        </tr>
+                       
                     </tbody>
                 </table>
                 </div>
