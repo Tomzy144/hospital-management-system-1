@@ -312,19 +312,24 @@
 
 
 			case 'doctor_login': // login from index
-				$userquery = mysqli_query ($conn,"SELECT * FROM `doctor_tab` WHERE email = '$email' AND `password` = '$doctor_password' AND status_id=1") ;
+				$userquery = mysqli_query ($conn,"SELECT * FROM `doctor_tab` WHERE email = '$doctor_email' AND `password` = '$doctor_password' AND status_id=1") ;
 						$usersel=mysqli_fetch_array($userquery);
 						$doctor_id=$usersel['doctor_id'];
 						$_SESSION['doctor_id'] = $doctor_id;
 						$s_doctor_id=$_SESSION['doctor_id'];
-						mysqli_query($conn,"UPDATE `doctor_tab` SET last_login=NOW() WHERE doctor_id='$s_doctor=_id'") or die("cannot update") ; //// update last login
+						mysqli_query($conn,"UPDATE `doctor_tab` SET last_login=NOW() WHERE doctor_id='$s_doctor_id'") or die("cannot update") ; //// update last login
 									
 				?>
 							<script>
 
 								window.parent(location="../doctor/");
+								// alert('hello');
 							</script>
 				<?php
+			break;
+
+
+
 
 			/////////////labs
 				
