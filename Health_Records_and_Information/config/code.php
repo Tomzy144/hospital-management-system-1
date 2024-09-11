@@ -273,7 +273,7 @@
 			
 				// Prepare the SQL INSERT query
 				$sql = "INSERT INTO nurse_appointment_tab 
-						(nurse_appointment_id, patient_id, patient_name, reason, time, appointment_status_id, staff_id) 
+						(nurse_appointment_id, patient_id, patient_name, reason, time, nurse_appointment_status_id, staff_id) 
 						VALUES (?, ?, ?, ?, NOW(), ?, ?)"; // Use NOW() for the current timestamp
 			
 				// Prepare the statement
