@@ -439,7 +439,7 @@
                     <textarea name="" id="reason"></textarea>
                 </div>
                 </div>
-                <button class="bg-blue" onclick="transfer__patient__to__nurse()">Request</button>
+                <button type="button" class="bg-blue" onclick="transfer__patient__to__nurse()">Request</button>
                 </form>
             </div>
         </div>
