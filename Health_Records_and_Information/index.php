@@ -288,7 +288,7 @@
     <input type="text" id="health_history" autocapitalize="off" autocomplete="off">
 </div>
 </div>
-<button type="button" id ="proceed-btn" onclick="_add_patient();" class="btn-submit">Book</button>
+<button type="button" id ="proceed-btn" onclick="_add_patient();" class="bg-blue">Book</button>
         </form>
         </div>
         </div>
@@ -353,7 +353,7 @@
 </div>
 </div>
 </div>
-    <button type="button" id="wproceed-btn" onclick="_add_patient2();" class="btn-submit">Submit</button>
+    <button type="button" id="wproceed-btn" onclick="_add_patient2();" class="bg-blue">Submit</button>
     </form>
     </div>
     </div>
@@ -418,7 +418,7 @@
 
 
             <div class="modal hidden" id="nurse__transfer__dialogue">
-            <button onclick="showNurseTransferForm()">Transfer to nurse unit</button>
+            <button onclick="showNurseTransferForm()" class="bg-blue">Transfer to nurse unit</button>
         </div>
 
             <!----NURSE APPOITMENT-->
@@ -437,10 +437,10 @@
                 </div>
                 <div class="form-control">
                     <label for="">Reasons for booking</label>
-                    <textarea name="" id=""></textarea>
+                    <textarea name="" id="reason"></textarea>
                 </div>
                 </div>
-                <button class="btn-submit">Request</button>
+                <button class="bg-blue" onclick="transfer__patient__to__nurse()">Request</button>
                 </form>
             </div>
         </div>
@@ -512,7 +512,7 @@
                             <textarea name="" id=""></textarea>
                         </div>
                     </div>
-                <button class="btn-submit">Request</button>
+                <button class="bg-blue">Request</button>
                 </form>
             </div>
             <!-----RADIOLOGY APPOITMENT-->
@@ -534,7 +534,7 @@
                             <textarea name="" id=""></textarea>
                         </div>
                     </div>
-                <button class="btn-submit">Request</button>
+                <button class="bg-blue">Request</button>
                 </form>
             </div>
     </div>
@@ -587,8 +587,8 @@
                         <h3>Female</h3>
                         <h3>Active</h3>
                         <div>
-                            <button class="btn-submit" onclick="close_profile()">Cancle</button>
-                            <button class="btn-submit" onclick="appoitment_booking()">Book an Appoitment</button>
+                            <button class="bg-blue" onclick="close_profile()">Cancle</button>
+                            <button class="bg-blue" onclick="appoitment_booking()">Book an Appoitment</button>
                         </div>
                     </div>
                 </div>
@@ -611,7 +611,7 @@
         <select name="doctors" id="av-doctors">
         </select>
     </div>
-    <button type="button" class="btn-submit" onclick="bookPatient()">BOOK PATIENT</button>
+    <button type="button" class="bg-blue" onclick="bookPatient()">BOOK PATIENT</button>
 </form>
                 <form action="" class="book_patient hide">
                     <div class="form-control">
@@ -634,7 +634,7 @@
                         <label for="">Reason for appoitment</label>
                         <textarea name="" id="" cols="30" rows="10"></textarea>
                     </div>
-                    <button class="btn-submit">Book</button>
+                    <button class="bg-blue">Book</button>
                 </form>
             </div>
             </div>
