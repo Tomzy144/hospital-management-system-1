@@ -317,7 +317,7 @@
 						$doctor_id=$usersel['doctor_id'];
 						$_SESSION['doctor_id'] = $doctor_id;
 						$s_doctor_id=$_SESSION['doctor_id'];
-						mysqli_query($conn,"UPDATE `doctor_tab` SET last_login=NOW() WHERE doctor_id='$s_staff_id'") or die("cannot update") ; //// update last login
+						mysqli_query($conn,"UPDATE `doctor_tab` SET last_login=NOW() WHERE doctor_id='$s_doctor=_id'") or die("cannot update") ; //// update last login
 									
 				?>
 							<script>
