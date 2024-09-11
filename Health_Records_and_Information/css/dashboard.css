@@ -721,17 +721,6 @@ cursor: pointer;
 .appoitment label {
     color: rgb(42, 87, 215); 
 }
-.appoitment textarea{
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    height: 50px;
-    color: rgb(42, 87, 215); 
-    border: 1px solid rgb(42, 87, 215); ;
-    outline: none;
-    text-transform: uppercase;
-}
 .patient--profile {
     width: auto;
     height: auto;
@@ -1146,24 +1135,3 @@ cursor: pointer;
     border-radius: 50%;
     background: white;
 }
-label{
-    font-size: 1.2rem;
-      color: rgb(42, 87, 215);
-  }
-
-  select{
-    cursor: pointer;
-  }
-  
-  input, select,textarea {
-    padding: 12px 20px;
-    background-color: #fff;
-    margin: 8px 0;
-    font-size: 1.1rem;
-    color: rgb(42, 87, 215);
-    width:300px;
-    display: inline-block;
-    border: 1px solid rgb(42, 87, 215);
-    border-radius: 4px;
-    box-sizing: border-box;
-  }

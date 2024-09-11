@@ -235,12 +235,12 @@
                 <div class="radio-group">
               <label>
                   Male
-                  <input type="radio" name="gender" value="male" id="kgender1">
+                  <input type="radio" name="kgender" value="male" id="kgender1">
                   <span class="custom-radio"></span>
               </label>
               <label>
                   Female
-                  <input type="radio" name="gender" value="female" id="kgender2">
+                  <input type="radio" name="kgender" value="female" id="kgender2">
                   <span class="custom-radio"></span>
               </label>
             </div>
@@ -489,8 +489,8 @@
             
 
 <div class="modal hidden" id="other__unit">
-            <button onclick="showLabTransferForm()">Transfer to labouratory unit</button>
-            <button onclick="showRadTransferForm()">Transfer to radiology unit</button>
+            <button onclick="showLabTransferForm()" class="bg-blue">Transfer to labouratory unit</button>
+            <button onclick="showRadTransferForm()" class="bg-blue">Transfer to radiology unit</button>
         </div>
 
 <!----LAB APPOITMENT---->
