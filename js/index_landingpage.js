@@ -8,6 +8,7 @@ const sigInSuper = function(){
 }
 
 
+
 //using this function to pass into all the section login
 const log_inAll = function(roles, formHtml){
     let container = document.getElementById(roles + '-container');

@@ -1174,3 +1174,57 @@ function filterTable2() {
 // Attach the filter function to each search input field
 document.querySelector('#psearch').addEventListener('input', filterTable1);
 document.querySelector('#wsearch').addEventListener('input', filterTable2);
+
+
+
+
+
+  var action = 'get_hospital_plan';
+  var dataString = 'action=' + action;
+
+  $.ajax({
+      type: "POST",
+      url: "config/code.php",
+      data: dataString,
+      cache: false,
+      dataType: 'json',
+      success: function(data) {
+          var plans = data;
+          var selectBox = document.getElementById("select_box");
+          selectBox.innerHTML = "";
+          plans.forEach(function(plan) {
+              var option = document.createElement("option");
+              option.text = plan.name; // Use plan name
+              option.value = plan.id; // Use plan ID
+              selectBox.appendChild(option);
+          });
+      },
+      error: function(xhr, status, error) {
+          console.error("Error fetching hospital plan data:", error);
+      }
+  });
+
+
+  function transfer__patient__to__nurse(){
+    const patientName = document.querySelector('#nurseFormTransfer #name').value
+    const patientId = document.querySelector('#nurseFormTransfer #id').value;
+    const patientReason = document.querySelector('#nurseFormTransfer #reason').value
+    console.log(patientName, patientId, patientReason)
+    var action = 'get_hospital_plan';
+    var dataString = 'action=' + action + 'patientId=' + patientId + 'patientName' + patientName + 'patientReason' + patientReason
+  
+    $.ajax({
+        type: "POST",
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function(data) {
+           console.log(data)
+        },
+        error: function(xhr, status, error) {
+            console.error("Error fetching hospital plan data:", error);
+        }
+    });
+  }
+

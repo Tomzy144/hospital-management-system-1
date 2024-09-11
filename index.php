@@ -62,8 +62,8 @@
           <div class="_form_control">
               <label for="password">Password</label>
               <i class="bi bi-key"></i>
-              <i class="bi bi-eye show_password hide" id="show_admin_password" onclick="togglePasswordVisibility()"></i>
-              <i class="bi bi-eye-slash lock_password" id="lock_admin_password" onclick="togglePasswordVisibility()"></i>
+              <i class="bi bi-eye show_password hide" id="show_admin_password" onclick="show_admin_password()"></i>
+              <i class="bi bi-eye-slash lock_password" id="lock_admin_password" onclick="show_admin_password()"></i>
               <input type="password" id="admin_password" value="" name="spass" autocomplete="off" >
           </div>
           <input name="action" value="alogin" type="hidden">
