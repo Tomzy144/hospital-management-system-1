@@ -116,19 +116,24 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
               <div class="sidebar">
               <div class="sidebar__header"></div>
               <div class="sidebar-body">
-                <ul>
-                  <li class="links available">
-                    <span>Appoitments</span>
-                  </li>
-                  <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
-                    <span>Logout</span>
-                    <form method="post" action="../config/code.php" id="logoutform">
-                      <input type="hidden" name="action" value="logout"/>
-                    </form>
-                  </li>
-                </ul>
+              <ul>
+            <li onclick="pendingTransaction()" class="active scaleup" id="links">
+            <span>Appoitments</span>
+            </li>
+            <li onclick="document.getElementById('logoutform').submit();" class="scaleup" id="links">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>Logout</span>
+              <form method="post" action="../config/code.php" id="logoutform">
+                <input type="hidden" name="action" value="logout" />
+              </form>
+            </li>
+          </ul>
               </div>
             </div>
+
+
+
+
 
 
     <div class="list_div">
@@ -182,12 +187,12 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
                     echo "<td>" . htmlspecialchars($row["reason"]) . "</td>";
                     echo "<td>";
                     ?>
-                    <button class="accept-btn" type="button" onclick="accept('<?php echo htmlspecialchars($row["patient_id"]); ?>')"><p>accept</p></button>
+                    <button class="bg-white" type="button" onclick="accept('<?php echo htmlspecialchars($row["patient_id"]); ?>')">accept</button>
                     <?php
                     echo "</td>";
                     echo "<td>";
                     ?>
-                    <button class="reject-btn" type="button" onclick="reject('<?php echo htmlspecialchars($row["patient_id"]); ?>')"><p>reject</p></button>
+                    <button class="bg-white" type="button" onclick="reject('<?php echo htmlspecialchars($row["patient_id"]); ?>')">reject</button>
                     <?php
                     echo "</td>";
                     echo "</tr>";
@@ -199,8 +204,7 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
         </tbody>
     </table>
     <script>
-
-const messageContainer = document.createElement('div');
+let messageContainer = document.createElement('div');
 document.body.appendChild(messageContainer);
 
 const createAlertMessage = (text, className, duration = 5000) => {
@@ -208,79 +212,94 @@ const createAlertMessage = (text, className, duration = 5000) => {
   message.className = className + ' alert';
   message.innerHTML = `
     <div class="content">
-    <div class="message">
-      <div class="icon">
-        <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
+      <div class="message">
+        <div class="icon">
+          <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
         </div>
         <h2>${text}</h2>
-        </div>
+      </div>
     </div>
   `;
   messageContainer.appendChild(message);
-  setTimeout(() => {
-    message.classList.add('hide');
-    setTimeout(() => message.remove(), 500); 
-  }, duration);
+  
+  if (duration !== 0) {
+    setTimeout(() => {
+      message.classList.add('hide');
+      setTimeout(() => message.remove(), 500);
+    }, duration);
+  }
+  
   return message;
-}
+};
 
 const successMessage = (text) => createAlertMessage(text, 'success');
 const infoMessage = (text) => createAlertMessage(text, 'info');
 const warningMessage = (text) => createAlertMessage(text, 'warning');
-const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000); 
+const dangerMessage = (text) => createAlertMessage(text, 'danger', 4000);
 
-const confirmDialog = (text, onConfirm) => {
-  const message = createAlertMessage(text, 'info');
-  const buttonContainer = document.createElement('div');
-  buttonContainer.innerHTML = `  
-    <button class="confirm-yes">Yes</button>
-    <button class="confirm-no">No</button>
-  `;
-  message.querySelector('.content').appendChild(buttonContainer);
+const acceptMessage = document.createElement('div');
+acceptMessage.className = 'alert info';
+acceptMessage.innerHTML = `
+  <div style="display:flex; flex-direction:column; align-items:center;">
+    <h3 style="color:white">Do you want to accept this patient?</h3>
+    <div style="display:flex; gap:10px; margin-top:10px;">
+      <button class="bg-white" id="accept__patient">Accept patient</button>
+      <button class="bg-white" id="reject__patient">Reject patient</button>
+    </div>
+  </div>
+`;
+messageContainer.appendChild(acceptMessage);
+acceptMessage.style.display = 'none';
 
-  const yesButton = buttonContainer.querySelector('.confirm-yes');
-  const noButton = buttonContainer.querySelector('.confirm-no');
-
-  yesButton.addEventListener('click', () => {
-    onConfirm();
-    successMessage(`You can now have access `)
-    message.remove();
-  });
-
-  noButton.addEventListener('click', () => {
-    dangerMessage('Request cancelled');
-    message.remove();
-  });
-};
-
+// Main accept function with AJAX request
 function accept(patient_Id) {
-  confirmDialog("Are you sure you want to accept this patient?", () => {
+  // Show the acceptMessage popup when the user clicks "Accept"
+  acceptMessage.style.display = 'block';
+  
+  // Handle the "Accept patient" button click
+  document.getElementById('accept__patient').addEventListener('click', function() {
+    // Hide the acceptMessage popup
+    acceptMessage.style.display = 'none';
+    successMessage('Patient Accepted')
+    
+    // Proceed with accepting the patient (AJAX request)
     $('.all_sections_input').fadeIn(500);
-
-    // Construct data string to send in the AJAX request
+    
     var dataString = 'patient_Id=' + patient_Id;
 
-    // Perform AJAX request
     $.ajax({
-      type: "POST", // HTTP method
-      url: 'config/display.php', // URL of the PHP script
-      data: dataString, // Data to send with the request
-      cache: false, // Disable caching
+      type: "POST",
+      url: 'config/display.php',
+      data: dataString,
+      cache: false,
       success: function(html) {
         $('.search_bar_container').addClass('hide');
-        // On success, update content of elements with class 'all_sections_input' with the received HTML
         $('.all_sections_input').html(html);
 
-        // Hide container with ID 'appointmentDetailsContainer'
+        // Hide appointment details container
         var container = document.getElementById('appointmentDetailsContainer');
         container.style.display = "none";
 
-        // Remove 'hide' class from elements with class 'all_sections_input'
+        // Remove 'hide' class from .all_sections_input
         var hidden = document.querySelector(".all_sections_input");
         hidden.classList.remove("hide");
       }
     });
   });
+
+  // Handle the "Reject patient" button click
+  document.getElementById('reject__patient').addEventListener('click', function() {
+    // Hide the acceptMessage popup and refresh the page
+    acceptMessage.style.display = 'none';
+    location.reload(); // Refresh the page
+  });
+}
+
+// Mockup of confirmDialog function (since it's not provided)
+function confirmDialog(message, onConfirm) {
+  if (confirm(message)) {
+    onConfirm();
+  }
 }
 
 
