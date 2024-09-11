@@ -1223,7 +1223,7 @@ document.querySelector('#wsearch').addEventListener('input', filterTable2);
            console.log(data)
         },
         error: function(xhr, status, error) {
-            console.error("Error fetching hospital plan data:", error);
+            console.error("Error fetching data:", error);
         }
     });
   }
