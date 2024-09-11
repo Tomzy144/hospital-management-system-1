@@ -445,7 +445,7 @@
         </div>
       <!--END OF ADMITTED PATIENTS FOR LIST1-->
 
-      <input type="hidden" value="<?php echo $s_staff_id?>" />
+      <input id="staff_id" type="hidden" value="<?php echo $s_staff_id?>"  />
 
         <!--START OF WALKIN PATIENTS FOR LIST2-->
     <div class="walkin_patient_list_div hide">
