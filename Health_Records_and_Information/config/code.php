@@ -254,6 +254,48 @@
 			}
 			break;
 
+
+			case 'transfer_to_nurse':
+				// Retrieve data from POST request
+				$reason = $_POST['reason'];
+				$patient_name = $_POST['patient_name'];
+				$patient_id = $_POST['patient_id'];
+				$staff_id = $_POST['staff_id']; // Assuming staff_id is needed for reference
+				
+				// Get the appointment ID sequence
+				$sequence = $callclass->_get_sequence_count($conn, 'APP');
+				$array = json_decode($sequence, true);
+				$no = $array[0]['no'];
+				$appointment_id = 'APP' . $no;
+			
+				// Define the appointment status ID (assuming it's passed or predefined)
+				$appointment_status_id = 1; // Replace with the actual value if different
+			
+				// Prepare the SQL INSERT query
+				$sql = "INSERT INTO nurse_appointment_tab (nurse_appointment_id, patient_id, patient_name, reason, time, appointment_status_id, staff_id) 
+						VALUES (?, ?, ?, ?, NOW(), ?, ?)"; // Use NOW() for the current timestamp
+			
+				// Prepare the statement
+				$stmt = $conn->prepare($sql);
+			
+				// Bind the parameters ('ssssii' -> string, string, string, string, integer, integer)
+				$stmt->bind_param('ssssss', $appointment_id, $patient_id, $patient_name, $reason, $appointment_status_id, $staff_id);
+			
+				// Execute the query
+				if ($stmt->execute()) {
+					$response['success'] = true;
+					$response['message'] = "Patient transferred to nurse successfully.";
+				} else {
+					$response['success'] = false;
+					$response['message'] = "Error transferring patient: " . $stmt->error;
+				}
+			
+				// Return the response as JSON
+				echo json_encode($response);
+			
+				break;
+			
+
 	
 	
 		
