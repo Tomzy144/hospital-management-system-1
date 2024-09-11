@@ -240,6 +240,67 @@ case 'getBeds':
                     echo json_encode(array("success" => false, "message" => "Error preparing query: " . $conn->error));
                 }
                 break;
+
+
+
+
+                case 'accept_appointment':
+
+                    // Retrieve the necessary data from the POST request
+                    $patient_id = $_POST['patient_id'];
+                    $time = $_POST['time'];
+                    $nurse_id = $_POST['nurse_id'];
+                    
+                    $response = array(); // Initialize the response array
+                
+                    // Use prepared statement to select the row from nurse_appointment_tab
+                    $stmt = $conn->prepare("SELECT * FROM nurse_appointment_tab WHERE patient_id = ? AND time = ?");
+                    $stmt->bind_param("ss", $patient_id, $time);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                
+                    if ($result->num_rows > 0) {
+                        // Fetch the row data
+                        $appointment = $result->fetch_assoc();
+                
+                        // Prepare the insert query to move data to nurse_accepted_appointment_tab
+                        $insert_sql = "
+                            INSERT INTO nurse_accepted_appointment_tab 
+                            (patient_id, nurse_appointment_id, nurse_unit_id, staff_id, reason, patient_name, time, approved_time) 
+                            SELECT patient_id, nurse_appointment_id, ?, ?, reason, patient_name, time, NOW() 
+                            FROM nurse_appointment_tab 
+                            WHERE patient_id = ? AND time = ?";
+                        
+                        // Use prepared statement for insertion
+                        $stmt1 = $conn->prepare($insert_sql);
+                        $stmt1->bind_param("ssss", $nurse_id, $nurse_id, $patient_id, $time); // nurse_unit_id and staff_id are set to nurse_id here
+                
+                        if ($stmt1->execute()) {
+                            // Delete the original record from nurse_appointment_tab
+                            $delete_stmt = $conn->prepare("DELETE FROM nurse_appointment_tab WHERE patient_id = ? AND time = ?");
+                            $delete_stmt->bind_param("ss", $patient_id, $time);
+                
+                            if ($delete_stmt->execute()) {
+                                $response['success'] = true;
+                                $response['message'] = "Appointment accepted and transferred successfully.";
+                            } else {
+                                $response['success'] = false;
+                                $response['message'] = "Error deleting original record: " . $delete_stmt->error;
+                            }
+                        } else {
+                            $response['success'] = false;
+                            $response['message'] = "Error inserting record into nurse_accepted_appointment_tab: " . $stmt1->error;
+                        }
+                    } else {
+                        $response['success'] = false;
+                        $response['message'] = "No appointment found with the given patient ID and time.";
+                    }
+                
+                    // Return the response as JSON
+                    echo json_encode($response);
+                
+                    break;
+                
             
             
         
