@@ -130,6 +130,9 @@ function updateDoctors() {
 
 
 
+
+
+
 //PROFILE IMAGE
 function click_icon_for_profile (){
   document.querySelector(".profile_account").classList.toggle("hide");
@@ -1205,13 +1208,23 @@ document.querySelector('#wsearch').addEventListener('input', filterTable2);
   });
 
 
-  function transfer__patient__to__nurse(){
-    const patientName = document.querySelector('#nurseFormTransfer #name').value
-    const patientId = document.querySelector('#nurseFormTransfer #id').value;
-    const patientReason = document.querySelector('#nurseFormTransfer #reason').value
-    console.log(patientName, patientId, patientReason)
-    var action = 'get_hospital_plan';
-    var dataString = 'action=' + action + 'patientId=' + patientId + 'patientName' + patientName + 'patientReason' + patientReason
+
+
+  function transfer__patient__to__nurse() {
+    const patient_name = document.querySelector('#nurseFormTransfer #name').value;
+    const patient_id = document.querySelector('#nurseFormTransfer #id').value;
+    const reason = document.querySelector('#nurseFormTransfer #reason').value;
+    var staff_id = $('#staff_id').val();
+  
+    var action = 'transfer_to_nurse';
+  
+    // Ensure all fields are filled
+    if (patient_name === "" || patient_id === "" || reason === "") {
+        alert("Please fill in all the required fields to continue.");
+        return; // Stop execution if validation fails
+    }
+  
+    var dataString = 'action=' + action + '&patient_id=' + patient_id + '&patient_name=' + patient_name + '&reason=' + reason + '&staff_id=' + staff_id;
   
     $.ajax({
         type: "POST",
@@ -1220,11 +1233,18 @@ document.querySelector('#wsearch').addEventListener('input', filterTable2);
         cache: false,
         dataType: 'json',
         success: function(data) {
-           console.log(data)
+            if (data.success) {
+                alert("Patient successfully transferred to the nurse.");
+                // You can also update the UI here if needed
+                console.log(data);
+            } else {
+                alert("Error: " + data.message);
+                console.error(data.message);
+            }
         },
         error: function(xhr, status, error) {
             console.error("Error fetching data:", error);
+            alert("There was an error processing your request. Please try again later.");
         }
     });
-  }
-
+}
