@@ -191,8 +191,8 @@ $patient_id = $_POST['patient_Id'];
     </form>
   </div>
   <div class="flex">
-  <button class="btn_submit" id="btn_submit" onclick="vital_input()">Save all</button>
-  <button class="btn_submit" onclick="selectDoc(),getDoctorsRoles()">Transfer patient</button>
+  <button class="bg-white" id="btn_submit" onclick="vital_input()">Save all</button>
+  <button class="bg-white" onclick="selectDoc(),getDoctorsRoles()">Transfer patient</button>
 </div>
 </div>
 
@@ -218,7 +218,7 @@ $patient_id = $_POST['patient_Id'];
            <option id ="doctor_id"></option>
         </select>
     </div>
-    <button type="button" class="btn-submit" onclick="bookPatient()">Book patient</button>
+    <button type="button" class="bg-blue" onclick="bookPatient()">Book patient</button>
 </form>
         <form action="" class="book_patient hide" id="vital_input" enctype="multipart/form-data" method="post">
         <div class="each_sections">
@@ -244,7 +244,7 @@ $patient_id = $_POST['patient_Id'];
               <input type="text" name="" id="reason">
             </div>
             </div>
-            <button class="btn-submit" type="button" id="btn-submit" onclick="transfer_to_doctor();"> Book</button>
+            <button class="bg-blue" type="button" id="btn-submit" onclick="transfer_to_doctor();"> Book</button>
         </form>
     </div>
   </div>

@@ -77,7 +77,6 @@
         </div>
             <div class="image">
             <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
-            <div class="active_on"></div>
             </div>
         </img>  
             <span>Doc. Henculus White</span>
@@ -96,10 +95,10 @@
         <li onclick="walkin_patient_form()" class="links">
           <span>Walkin patient admission Form</span>
         </li>
-        <li class="links">
+        <!-- <li class="links">
           <span>Check up</span>
-          <!-- onclick="checkup_form()"  -->
-        </li>
+          onclick="checkup_form()" 
+        </li> -->
         <li onclick="patient_list()" class="links">
           <span>Patient list</span>
         </li>
@@ -440,7 +439,7 @@
                     <textarea name="" id="reason"></textarea>
                 </div>
                 </div>
-                <button class="bg-blue" onclick="transfer__patient__to__nurse()">Request</button>
+                <button type="button" class="bg-blue" onclick="transfer__patient__to__nurse()">Request</button>
                 </form>
             </div>
         </div>
