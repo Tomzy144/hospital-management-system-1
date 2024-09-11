@@ -254,6 +254,38 @@
 			}
 			break;
 
+
+			case 'transfer_to_nurse':
+				// Retrieve data from POST request
+				$reason = $_POST['reason'];
+				$patient_name = $_POST['patient_name'];
+				$patient_id = $_POST['patient_id'];
+			
+				// Prepare the SQL INSERT query with relevant columns and values
+				$sql = "INSERT INTO nurse_appointment_tab (patient_id, patient_name, reason, transfer_time) 
+						VALUES (?, ?, ?, NOW())"; // Using NOW() to store the current timestamp for transfer_time
+				
+				// Prepare the statement
+				$stmt = $conn->prepare($sql);
+			
+				// Bind the parameters
+				$stmt->bind_param('sss', $patient_id, $patient_name, $reason); // 'sss' indicates three string types
+			
+				// Execute the query
+				if ($stmt->execute()) {
+					$response['success'] = true;
+					$response['message'] = "Patient transferred to nurse successfully.";
+				} else {
+					$response['success'] = false;
+					$response['message'] = "Error transferring patient: " . $stmt->error;
+				}
+			
+				// Return the response as JSON
+				echo json_encode($response);
+			
+				break;
+			
+
 	
 	
 		
