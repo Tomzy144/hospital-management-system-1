@@ -367,6 +367,204 @@ function bookHealthRecordForm() {
 }
 
 
+function bookNurseForm() {
+  const patient_name = document.querySelector('#booknurseForm #name').value
+  const patient_id = document.querySelector('#booknurseForm #name').value
+  const comment = document.querySelector('#booknurseForm #comment').value
+  const time = document.querySelector('#booknurseForm #selected_time').value
+  const date = document.querySelector('#booknurseForm #selected_time').value
+  const nurseavailable = document.querySelector('#booknurseForm #select_nurse').value
+
+  var action = 'health_record';
+  var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + nurseavailable;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+            if (data.success === true) { 
+                successMessage(data.message || 'Patient has been transfered successfully');
+                setTimeout(()=>{
+                      window.location.reload();
+                },2000)
+              
+            } else if (data.success === false) {
+                dangerMessage(data.message || 'Error occured during transfer.');
+            }
+            $btnSubmit.html('Transfer');
+            $btnSubmit.prop('disabled', false);
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+            dangerMessage('An error occurred while processing your request.');
+            $btnSubmit.html(btnText);
+            $btnSubmit.prop('disabled', false);
+        }
+    });
+}
+
+function bookSurgicalsuiteForm() {
+  const patient_name = document.querySelector('#booksurgicalsuiteForm #name').value
+  const patient_id = document.querySelector('#booksurgicalsuiteForm #name').value
+  const comment = document.querySelector('#booksurgicalsuiteForm #comment').value
+  const time = document.querySelector('#booksurgicalsuiteForm #selected_time').value
+  const date = document.querySelector('#booksurgicalsuiteForm #selected_time').value
+  const suravailable = document.querySelector('#booksurgicalsuiteForm #select_sur').value
+  
+  var action = 'health_record';
+    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + suravailable;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+            if (data.success === true) { 
+                successMessage(data.message || 'Patient has been transfered successfully');
+                setTimeout(()=>{
+                      window.location.reload();
+                },2000)
+              
+            } else if (data.success === false) {
+                dangerMessage(data.message || 'Error occured during transfer.');
+            }
+            $btnSubmit.html('Transfer');
+            $btnSubmit.prop('disabled', false);
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+            dangerMessage('An error occurred while processing your request.');
+            $btnSubmit.html(btnText);
+            $btnSubmit.prop('disabled', false);
+        }
+    });
+}
+
+
+function bookLabForm() {
+  const patient_name = document.querySelector('#booklabForm #name').value
+  const patient_id = document.querySelector('#booklabForm #name').value
+  const comment = document.querySelector('#booklabForm #comment').value
+  const time = document.querySelector('#booklabForm #selected_time').value
+  const date = document.querySelector('#booklabForm #selected_time').value
+  const labavailable = document.querySelector('#booklabForm #select_lab').value
+  
+  var action = 'health_record';
+    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + labavailable;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+            if (data.success === true) { 
+                successMessage(data.message || 'Patient has been transfered successfully');
+                setTimeout(()=>{
+                      window.location.reload();
+                },2000)
+              
+            } else if (data.success === false) {
+                dangerMessage(data.message || 'Error occured during transfer.');
+            }
+            $btnSubmit.html('Transfer');
+            $btnSubmit.prop('disabled', false);
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+            dangerMessage('An error occurred while processing your request.');
+            $btnSubmit.html(btnText);
+            $btnSubmit.prop('disabled', false);
+        }
+    });
+}
+
+
+function bookRadForm() {
+  const patient_name = document.querySelector('#bookradiologyForm #name').value
+  const patient_id = document.querySelector('#bookradiologyForm #name').value
+  const comment = document.querySelector('#bookradiologyForm #comment').value
+  const time = document.querySelector('#bookradiologyForm #selected_time').value
+  const date = document.querySelector('#bookradiologyForm #selected_time').value
+  const radavailable = document.querySelector('#bookradiologyForm #select_rad').value
+  
+  var action = 'health_record';
+    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + radavailable;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+            if (data.success === true) { 
+                successMessage(data.message || 'Patient has been transfered successfully');
+                setTimeout(()=>{
+                      window.location.reload();
+                },2000)
+              
+            } else if (data.success === false) {
+                dangerMessage(data.message || 'Error occured during transfer.');
+            }
+            $btnSubmit.html('Transfer');
+            $btnSubmit.prop('disabled', false);
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+            dangerMessage('An error occurred while processing your request.');
+            $btnSubmit.html(btnText);
+            $btnSubmit.prop('disabled', false);
+        }
+    });
+}
+
+function bookMorgueForm() {
+  const patient_name = document.querySelector('#bookmorgueForm #name').value
+  const patient_id = document.querySelector('#bookmorgueForm #name').value
+  const comment = document.querySelector('#bookmorgueForm #comment').value
+  const time = document.querySelector('#bookmorgueForm #selected_time').value
+  const date = document.querySelector('#bookmorgueForm #selected_time').value
+  const morgueavailable = document.querySelector('#bookmorgueForm #select_morgue').value
+  
+  var action = 'health_record';
+    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + morgueavailable;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+            if (data.success === true) { 
+                successMessage(data.message || 'Patient has been transfered successfully');
+                setTimeout(()=>{
+                      window.location.reload();
+                },2000)
+              
+            } else if (data.success === false) {
+                dangerMessage(data.message || 'Error occured during transfer.');
+            }
+            $btnSubmit.html('Transfer');
+            $btnSubmit.prop('disabled', false);
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', error);
+            dangerMessage('An error occurred while processing your request.');
+            $btnSubmit.html(btnText);
+            $btnSubmit.prop('disabled', false);
+        }
+    });
+}
+
+
 function showBookModal(e){
 patientName = e.target.closest('tr').children[1].textContent;
 patientGender = e.target.closest('tr').children[2].textContent;
@@ -512,6 +710,8 @@ function getDoctorsRoles() {
         doctorSelect.appendChild(option);
     });
   }
+
+
   function doctor_submit_btn() {
     // Use querySelector to select the first element with the given class
     var patient_name = document.querySelector("[name='patient_name']").value;

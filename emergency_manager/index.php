@@ -239,7 +239,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment"></textarea>
   </div>
   </div>
-<button class="btn_submit" id ="doctor_submit" onclick="doctor_submit_btn();">Submit</button>  
+<button type="button" class="btn_submit" id ="doctor_submit" onclick="doctor_submit_btn();">Submit</button>  
   </form>
 </div>
 
@@ -269,10 +269,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   </div>
   <div class="each_sections">
-<div class="form-control availablenurse">
+<div class="form-control">
 <label>Available Nurses</label>
-<select  id="select_doc">
-<option value="" id="opt">Doc. Mathew </option>
+<select  id="select_nurse">
+<option value="" >Doc. Mathew </option>
 <option value="">Doc. Prince</option>
 <option value="">Doc. Peter</option>
 <option value="">Doc. Patrick</option>
@@ -282,10 +282,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
     <label>Comment</label>
-    <textarea ></textarea>
+    <textarea id="comment"></textarea>
   </div>
   </div>
-<button class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit">Submit</button>  
   </form>
 </div>
 
@@ -308,18 +308,18 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
     <label>Selected date</label>
-    <input type="date" name="selected_date" />
+    <input type="date" name="selected_date" id="selected_date"/>
   </div>
   <div class="form-control">
     <label>Selected time</label>
-    <input type="time" name="selected_time" />
+    <input type="time" name="selected_time" id="selected_time"/>
   </div>
   </div>
   <div class="each_sections">
-<div class="form-control availablenurse">
+<div class="form-control">
 <label>Available attendant</label>
-<select  id="select_doc">
-<option value="" id="opt">Doc. Mathew </option>
+<select  id="select_sur">
+<option value="">Doc. Mathew </option>
 <option value="">Doc. Prince</option>
 <option value="">Doc. Peter</option>
 <option value="">Doc. Patrick</option>
@@ -329,10 +329,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
     <label>Comment</label>
-    <textarea ></textarea>
+    <textarea  id="comment"></textarea>
   </div>
   </div>
-<button class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit">Submit</button>  
   </form>
 </div>
 
@@ -362,10 +362,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   </div>
   <div class="each_sections">
-<div class="form-control availablenurse">
+<div class="form-control">
 <label>Available lab scientist</label>
-<select  id="select_doc">
-<option value="" id="opt">Doc. Mathew </option>
+<select  id="select_lab">
+<option value="" >Doc. Mathew </option>
 <option value="">Doc. Prince</option>
 <option value="">Doc. Peter</option>
 <option value="">Doc. Patrick</option>
@@ -375,10 +375,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
     <label>Comment</label>
-    <textarea ></textarea>
+    <textarea id="comment" ></textarea>
   </div>
   </div>
-<button class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit">Submit</button>  
   </form>
 </div>
 
@@ -407,10 +407,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   </div>
   <div class="each_sections">
-<div class="form-control availablenurse">
+<div class="form-control">
 <label>Available radiology scientist</label>
-<select  id="select_doc">
-<option value="" id="opt">Doc. Mathew </option>
+<select  id="select_rad">
+<option value="">Doc. Mathew </option>
 <option value="">Doc. Prince</option>
 <option value="">Doc. Peter</option>
 <option value="">Doc. Patrick</option>
@@ -420,10 +420,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
     <label>Comment</label>
-    <textarea ></textarea>
+    <textarea id="comment"></textarea>
   </div>
   </div>
-<button class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit">Submit</button>  
   </form>
 </div>
 
@@ -452,10 +452,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   </div>
   <div class="each_sections">
-<div class="form-control availablenurse">
+<div class="form-control">
 <label>Available radiology scientist</label>
-<select  id="select_doc">
-<option value="" id="opt">Doc. Mathew </option>
+<select  id="select_morgue">
+<option value="">Doc. Mathew </option>
 <option value="">Doc. Prince</option>
 <option value="">Doc. Peter</option>
 <option value="">Doc. Patrick</option>
@@ -465,10 +465,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
     <label>Comment</label>
-    <textarea ></textarea>
+    <textarea id="comment"></textarea>
   </div>
   </div>
-<button class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit">Submit</button>  
   </form>
 </div>
 

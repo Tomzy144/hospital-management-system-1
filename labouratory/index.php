@@ -190,10 +190,10 @@
                     <td><?php echo htmlspecialchars($appointment['appointment_date']); ?></td>
                     <td><?php echo htmlspecialchars($appointment['time']); ?></td>
                     <td>
-                        <button class="accept-btn" type="button" onclick="click_labouratory_examination('<?php echo htmlspecialchars($appointment['patient_id']); ?>')">Accept</button>
+                        <button class="bg-white" type="button" onclick="click_labouratory_examination('<?php echo htmlspecialchars($appointment['patient_id']); ?>')">Accept</button>
                     </td>
                     <td>
-                        <button class="reject-btn" type="button" onclick="reject_labouratory_examination(<?php echo htmlspecialchars($appointment['patient_id']); ?>)">Reject</button>
+                        <button class="bg-white" type="button" onclick="reject_labouratory_examination(<?php echo htmlspecialchars($appointment['patient_id']); ?>)">Reject</button>
                     </td>
                 </tr>
             <?php endwhile; ?>

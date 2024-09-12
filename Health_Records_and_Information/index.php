@@ -139,8 +139,8 @@
             </div>
        
             <div class="flex_capture_div">
-                <div class="btn_re_capture hide"  onclick="retakePicture()">Recapture</div>
-                <div class="btn_capture hide" onClick="takePicture()">Capture</div>
+                <div class="btn_re_capture bg-blue hide"  onclick="retakePicture()">Recapture</div>
+                <div class="btn_capture bg-blue hide" onclick="takePicture()">Capture</div>
                 <!-- <button class="btn_re_capture" style="display:none" type="button" id="uploadButton" title="Submit"  onclick="_upload_profile_pix();"> Submit PASSPORT <i class="bi-check"></i></button> -->
             </div>
         </form>
@@ -314,8 +314,8 @@
 
         </div>
         <div class="flex_capture_div">
-        <div class="walkin_in_section_btn_re_capture hide"  onclick="retakePicture2()">Recapture</div>
-        <div class="walkin_in_section_btn_capture hide" onclick="takePicture2()">Capture</div>
+        <div class="walkin_in_section_btn_re_capture bg-blue hide"  onclick="retakePicture2()">Recapture</div>
+        <div class="walkin_in_section_btn_capture bg-blue hide" onclick="takePicture2()">Capture</div>
         </div>
         <form action="walkin_registration_form">
             <h3>Personal details</h3>
