@@ -373,10 +373,10 @@ function bookNurseForm() {
   const comment = document.querySelector('#booknurseForm #comment').value
   const time = document.querySelector('#booknurseForm #selected_time').value
   const date = document.querySelector('#booknurseForm #selected_time').value
-  const nurseavailable = document.querySelector('#booknurseForm #select_nurse').value
+  const nurse_id = document.querySelector('#booknurseForm #select_nurse').value
 
-  var action = 'health_record';
-  var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + nurseavailable;
+  var action = 'transfer_to_nurse';
+  var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + nurse_id;
 
     $.ajax({
         type: 'POST',
