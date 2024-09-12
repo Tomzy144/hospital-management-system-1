@@ -252,6 +252,80 @@
                     error_log("SQL Prepare Check Error: " . $conn->error);
                 }
                 break;
+
+
+
+
+                case 'transfer_to_surgical_suite':
+                    // Retrieve data from POST request
+                    $patient_id = $_POST['patient_id'];
+                    $patient_name = $_POST['patient_name'];
+                    $comment = $_POST['comment'];
+                    $time = $_POST['selected_time'];
+                    $date = $_POST['selected_date'];
+                    $surgical_suite_id = $_POST['surgical_suite_id'];
+                    $status_id = "1"; // Default status ID for new transfer
+                
+                    // Check if the appointment already exists
+                    $check_stmt = $conn->prepare("SELECT * FROM surgical_suite_appointment_tab WHERE patient_id = ? AND time = ? AND _date= ?");
+                    if ($check_stmt) {
+                        $check_stmt->bind_param("sss", $patient_id, $time, $date);
+                        $check_stmt->execute();
+                        $check_result = $check_stmt->get_result();
+                
+                        if ($check_result->num_rows > 0) {
+                            echo json_encode(array("success" => false, "message" => "Appointment already exists."));
+                        } else {
+                            // Get the appointment ID sequence
+                            $sequence = $callclass->_get_sequence_count($conn, 'SURGAPP');
+                            $array = json_decode($sequence, true);
+                            $no = $array[0]['no'];
+                            $appointment_id = 'SURGAPP' . $no;
+                
+                            // Prepare the SQL INSERT query
+                            $stmt = $conn->prepare("
+                                INSERT INTO surgical_suite_appointment_tab
+                                (surgical_suite_appointment_id, patient_id, patient_name, message, time,  surgical_suite_id, date)
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                            ");
+                
+                            if ($stmt) {
+                                // Bind the parameters
+                                $stmt->bind_param(
+                                    "sssssss",
+                                    $appointment_id,
+                                    $patient_id,
+                                    $patient_name,
+                                    $comment,
+                                    $time,
+                                    $surgical_suite_id,
+                                    $date
+                                );
+                
+                                // Execute the statement and return the appropriate response
+                                if ($stmt->execute()) {
+                                    echo json_encode(array("success" => true, "message" => "Patient transferred successfully."));
+                                } else {
+                                    echo json_encode(array("success" => false, "message" => "Error executing query."));
+                                    error_log("SQL Error: " . $stmt->error);
+                                }
+                
+                                // Close the statement
+                                $stmt->close();
+                            } else {
+                                echo json_encode(array("success" => false, "message" => "Error preparing query."));
+                                error_log("SQL Prepare Error: " . $conn->error);
+                            }
+                        }
+                
+                        // Close the check statement
+                        $check_stmt->close();
+                    } else {
+                        echo json_encode(array("success" => false, "message" => "Error preparing check query."));
+                        error_log("SQL Prepare Check Error: " . $conn->error);
+                    }
+                    break;
+                
             
         
 

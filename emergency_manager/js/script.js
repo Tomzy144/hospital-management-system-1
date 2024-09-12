@@ -414,7 +414,7 @@ function bookSurgicalsuiteForm() {
   const date = document.querySelector('#booksurgicalsuiteForm #selected_time').value
   const suravailable = document.querySelector('#booksurgicalsuiteForm #select_sur').value
   
-  var action = 'health_record';
+  var action = 'transfer_to_surgical_suite';
     var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + suravailable;
 
     $.ajax({
