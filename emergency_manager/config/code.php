@@ -131,11 +131,14 @@
             $doctor_id = $_POST['doctor_id'];
             $status_id = "1"; // Default status ID for new transfer
         
+
+
+           
             // Get the appointment ID sequence
-            $sequence = $callclass->_get_sequence_count($conn, 'APP');
+            $sequence = $callclass->_get_sequence_count($conn,  'DOCAPP');
             $array = json_decode($sequence, true);
             $no = $array[0]['no'];
-            $appointment_id = 'APP' . $no;
+            $appointment_id = 'DOCAPP' . $no;
         
             // Prepare the SQL query with placeholders
             $stmt = $conn->prepare("
@@ -179,59 +182,77 @@
 
 
             
-        case 'transfer_to_nurse':
-            $patient_id = $_POST['patient_id'];
-            $patient_name = $_POST['patient_name'];
-            $comment = $_POST['comment'];
-            $time = $_POST['selected_time'];
-            $date = $_POST['selected_date'];
-            $nurse_id = $_POST['nurse_id'];
-            $status_id = "1"; // Default status ID for new transfer
-        
-            // Get the appointment ID sequence
-            $sequence = $callclass->_get_sequence_count($conn, 'APP');
-            $array = json_decode($sequence, true);
-            $no = $array[0]['no'];
-            $appointment_id = 'APP' . $no;
-        
-            // Prepare the SQL query with placeholders
-            $stmt = $conn->prepare("
-                INSERT INTO nurse_appointment_tab
-                (nurse_appointment_id, patient_id, patient_name, reason, time, nurse_appointment_status_id, nurse_id, nurse_appointment_date)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            ");
-        
-            if ($stmt) {
-                // Bind the parameters
-                $stmt->bind_param(
-                    "ssssssss",
-                    $appointment_id,
-                    $patient_id,
-                    $patient_name,
-                    $comment,
-                    $time,
-                    $status_id,
-                    $nurse_id,
-                    $date
-                );
-        
-                // Execute the statement and return appropriate response
-                if ($stmt->execute()) {
-                    echo json_encode(array("success" => true, "message" => "Patient transferred successfully"));
+            case 'transfer_to_nurse':
+                // Retrieve data from POST request
+                $patient_id = $_POST['patient_id'];
+                $patient_name = $_POST['patient_name'];
+                $comment = $_POST['comment'];
+                $time = $_POST['selected_time'];
+                $date = $_POST['selected_date'];
+                $nurse_id = $_POST['nurse_id'];
+                $status_id = "1"; // Default status ID for new transfer
+            
+                // Check if the appointment already exists
+                $check_stmt = $conn->prepare("SELECT * FROM nurse_appointment_tab WHERE patient_id = ? AND time = ? AND nurse_appointment_date= ?");
+                if ($check_stmt) {
+                    $check_stmt->bind_param("sss", $patient_id, $time, $date);
+                    $check_stmt->execute();
+                    $check_result = $check_stmt->get_result();
+            
+                    if ($check_result->num_rows > 0) {
+                        echo json_encode(array("success" => false, "message" => "Appointment already exists."));
+                    } else {
+                        // Get the appointment ID sequence
+                        $sequence = $callclass->_get_sequence_count($conn, 'APP');
+                        $array = json_decode($sequence, true);
+                        $no = $array[0]['no'];
+                        $appointment_id = 'APP' . $no;
+            
+                        // Prepare the SQL INSERT query
+                        $stmt = $conn->prepare("
+                            INSERT INTO nurse_appointment_tab
+                            (nurse_appointment_id, patient_id, patient_name, reason, time, nurse_appointment_status_id, nurse_id, nurse_appointment_date)
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        ");
+            
+                        if ($stmt) {
+                            // Bind the parameters
+                            $stmt->bind_param(
+                                "ssssssss",
+                                $appointment_id,
+                                $patient_id,
+                                $patient_name,
+                                $comment,
+                                $time,
+                                $status_id,
+                                $nurse_id,
+                                $date
+                            );
+            
+                            // Execute the statement and return the appropriate response
+                            if ($stmt->execute()) {
+                                echo json_encode(array("success" => true, "message" => "Patient transferred successfully."));
+                            } else {
+                                echo json_encode(array("success" => false, "message" => "Error executing query."));
+                                error_log("SQL Error: " . $stmt->error);
+                            }
+            
+                            // Close the statement
+                            $stmt->close();
+                        } else {
+                            echo json_encode(array("success" => false, "message" => "Error preparing query."));
+                            error_log("SQL Prepare Error: " . $conn->error);
+                        }
+                    }
+            
+                    // Close the check statement
+                    $check_stmt->close();
                 } else {
-                    echo json_encode(array("success" => false, "message" => "Error executing query."));
-                    // Optional: Log the detailed error to a log file instead of showing it
-                    error_log("SQL Error: " . $stmt->error);
+                    echo json_encode(array("success" => false, "message" => "Error preparing check query."));
+                    error_log("SQL Prepare Check Error: " . $conn->error);
                 }
-        
-                // Close the statement
-                $stmt->close();
-            } else {
-                echo json_encode(array("success" => false, "message" => "Error preparing query."));
-                // Optional: Log the detailed error
-                error_log("SQL Prepare Error: " . $conn->error);
-            }
-            break;
+                break;
+            
         
 
     }

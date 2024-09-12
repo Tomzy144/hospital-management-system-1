@@ -376,7 +376,7 @@ function bookNurseForm() {
   const nurse_id = document.querySelector('#booknurseForm #select_nurse').value
 
   var action = 'transfer_to_nurse';
-  var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + nurse_id;
+  var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&nurse_id=" + nurse_id;
 
     $.ajax({
         type: 'POST',
