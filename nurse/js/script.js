@@ -514,3 +514,77 @@ function transfer_to_doctor(){
 
 
 
+
+function  displayAcceptedNursePatient() {
+  var action = 'fetch_appointment_list';
+  var staff_id = $('#account_id').val();
+  var dataString = "action=" + action + "&staff_id="+ staff_id;
+  
+  $.ajax({
+      type: 'POST',
+      url: "config/code.php",
+      data: dataString,
+      cache: false,
+      dataType: 'json', // Expecting a JSON response
+      success: function (response) {
+          const success = document.querySelector('#success tbody');
+          // Clear any existing rows
+          success.innerHTML = '';
+          if (response.success) {
+              const data = response.data;
+              // console.log(data)
+              if (Array.isArray(data) && data.length > 0) {
+                  data.forEach(accepted => {
+                      nurse__accepted__patient(accepted);
+                  });
+              } else {
+                  // No transactions found, show "No transaction found" message
+                  const noTransactionRow = success.insertRow(0);
+                  const noTransactionCell = noTransactionRow.insertCell(0);
+                  noTransactionCell.colSpan = 9; // Span across all columns
+                  noTransactionCell.innerHTML = 'No accepted appoitment found';
+                  noTransactionCell.style.textAlign = 'center';
+              }
+          } 
+          if(response.message === 'No appointments found.'){
+              // console.error('Error:', response.message);
+              const noTransactionRow = success.insertRow(0);
+              const noTransactionCell = noTransactionRow.insertCell(0);
+              noTransactionCell.colSpan = 9; // Span across all columns
+              noTransactionCell.innerHTML = 'No accepted appoitment found';
+              noTransactionCell.style.textAlign = 'center';
+          }
+          // if(!response.ok){
+          //     console.error('Error:', response.message);
+          //     const noTransactionRow = success.insertRow(0);
+          //     const noTransactionCell = noTransactionRow.insertCell(0);
+          //     noTransactionCell.colSpan = 9; // Span across all columns
+          //     noTransactionCell.innerHTML = 'Error in the response.';
+          //     noTransactionCell.style.textAlign = 'center';
+          // }
+  },
+      error: function (xhr, status, error) {
+          console.error('AJAX Error:', error);
+          console.log('Response Text:', xhr.responseText);
+          alert('AJAX Error: ' + error);
+      }
+  });
+};
+
+
+$(document).ready(function () {
+  displayAcceptedNursePatient();
+});
+
+function nurse__accepted__patient(accepted){
+  const available__patients = document.querySelector('#available__patients tbody');
+  const rowCount = available__patients.rows.length;
+  const newRow = available__patients.insertRow(rowCount);
+
+  newRow.insertCell(0).innerHTML = rowCount + 1; // Serial Number (start from 1)
+  newRow.insertCell(1).innerHTML = "<img src = ../uploaded_files/profile_pix/patient/"+accepted.patient_passport+">";
+  newRow.insertCell(2).innerHTML = accepted.patient_id || 'N/A'; // Patient ID
+  newRow.insertCell(3).innerHTML = accepted.account_appointment_id || 'N/A'; // Appointment ID
+  newRow.insertCell(4).innerHTML = accepted.time || 'N/A'; // Date & Time
+  newRow.insertCell(5).innerHTML = accepted.approved_time || 'N/A'; // Date & Time
+}
