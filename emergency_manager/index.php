@@ -285,7 +285,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment"></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit" onclick="bookNurseForm()">Submit</button>  
   </form>
 </div>
 
@@ -332,7 +332,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea  id="comment"></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit" onclick="bookSurgicalsuiteForm()">Submit</button>  
   </form>
 </div>
 
@@ -378,7 +378,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment" ></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit" onclick="bookLabForm()">Submit</button>  
   </form>
 </div>
 
@@ -423,7 +423,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment"></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit" onclick="bookRadForm()">Submit</button>  
   </form>
 </div>
 
@@ -468,7 +468,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment"></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit">Submit</button>  
+<button type="button" class="btn_submit" onclick="bookMorgueForm()">Submit</button>  
   </form>
 </div>
 

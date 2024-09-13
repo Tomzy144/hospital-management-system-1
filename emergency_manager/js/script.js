@@ -451,7 +451,7 @@ function bookLabForm() {
   const patient_id = document.querySelector('#booklabForm #name').value
   const comment = document.querySelector('#booklabForm #comment').value
   const time = document.querySelector('#booklabForm #selected_time').value
-  const date = document.querySelector('#booklabForm #selected_time').value
+  const date = document.querySelector('#booklabForm #selected_date').value
   const labavailable = document.querySelector('#booklabForm #select_lab').value
   
   var action = 'health_record';
