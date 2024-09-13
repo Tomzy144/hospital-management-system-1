@@ -491,7 +491,7 @@ function bookRadForm() {
   const patient_id = document.querySelector('#bookradiologyForm #name').value
   const comment = document.querySelector('#bookradiologyForm #comment').value
   const time = document.querySelector('#bookradiologyForm #selected_time').value
-  const date = document.querySelector('#bookradiologyForm #selected_time').value
+  const date = document.querySelector('#bookradiologyForm #selected_date').value
   const radavailable = document.querySelector('#bookradiologyForm #select_rad').value
   
   var action = 'health_record';
@@ -530,7 +530,7 @@ function bookMorgueForm() {
   const patient_id = document.querySelector('#bookmorgueForm #name').value
   const comment = document.querySelector('#bookmorgueForm #comment').value
   const time = document.querySelector('#bookmorgueForm #selected_time').value
-  const date = document.querySelector('#bookmorgueForm #selected_time').value
+  const date = document.querySelector('#bookmorgueForm #selected_date').value
   const morgueavailable = document.querySelector('#bookmorgueForm #select_morgue').value
   
   var action = 'health_record';
