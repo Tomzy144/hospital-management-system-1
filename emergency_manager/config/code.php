@@ -488,7 +488,7 @@ case 'transfer_to_nurse':
                 $check_stmt->execute();
                 $check_result = $check_stmt->get_result();
         
-                if ($check_result->num_rows > 0) {
+                if ($check_result->num_rows > 0) { 
                     echo json_encode(array("success" => false, "message" => "Appointment already exists."));
                 } else {
                     // Get the appointment ID sequence
