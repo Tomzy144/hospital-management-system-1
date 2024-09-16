@@ -185,7 +185,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 <div class="modal hidden" id="book__patient">
   <div class="">
     <button onclick="docForm(),getDoctorsRoles()">Transfer to doctor</button>
-    <button onclick="nurseForm()">Transfer to nurse</button>
+    <button onclick="nurseForm(),getnurse();">Transfer to nurse</button>
     <button onclick="surgicalsuiteForm()">Transfer to surgical suite</button>
     <button onclick="labForm()">Transfer to lab</button>
     <button onclick="radiologyForm()">Transfer to radiology</button>
@@ -272,10 +272,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 <div class="form-control">
 <label>Available Nurses</label>
 <select  id="select_nurse">
-<option value="" >Doc. Mathew </option>
-<option value="">Doc. Prince</option>
-<option value="">Doc. Peter</option>
-<option value="">Doc. Patrick</option>
+  <option value="" >Loading</option>
 </select>
   </div>
   </div>

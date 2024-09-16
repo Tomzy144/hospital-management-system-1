@@ -181,6 +181,31 @@
 
 
 
+        case 'get_nurse':
+
+            // Execute the query to fetch nurses
+            $query = mysqli_query($conn, "SELECT fullname, nurse_id FROM nurse_tab");
+        
+            // Check if the query executed successfully
+            if ($query) {
+                $nurse = array();
+        
+                // Fetch the data from the result set
+                while ($row = mysqli_fetch_assoc($query)) {
+                    $nurse[] = $row; // Storing data in $nurse
+                }
+        
+                // Return the data as JSON
+                echo json_encode(array("success" => true, "nurse" => $nurse));
+            } else {
+                // Return an error message if the query failed
+                echo json_encode(array("success" => false, "message" => "Error executing the query"));
+            }
+            break;
+        
+        
+    
+
             
 case 'transfer_to_nurse':
     // Retrieve data from POST request

@@ -147,7 +147,7 @@ function saveOppositeGender() {
 }
 
    
-
+/////emergency
 
     function EmergencyPatient() {
     const emergencyInputData = document.querySelectorAll('#emergencyInputData .emergencyInput');
@@ -367,6 +367,52 @@ function bookHealthRecordForm() {
 }
 
 
+////////nurse
+function getnurse() {
+    $('#select_nurse').html('<option>LOADING...</option>'); // Set loading message
+    $('#select_nurse').prop('disabled', true); // Disable the dropdown
+
+    var action = 'get_nurse'; // No roles needed
+  
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php", // Adjust URL as needed
+        data: { action: action }, // Only action is passed, no roles
+        cache: false,
+        dataType: 'json',
+        success: function (response) {
+            // Check for success and populate the dropdown
+            if (response.success) {
+                populateNurseDropdown(response.nurse); // Populate with nurse data
+            } else {
+                console.error('Error:', response.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+        },
+    });
+}
+
+function populateNurseDropdown(nurse) {
+    var nurseDropdown = document.getElementById('select_nurse');
+  
+    // Clear existing options
+    nurseDropdown.innerHTML = '';
+  
+    // Add options based on the fetched data
+    for (var i = 0; i < nurse.length; i++) {
+        var option = document.createElement('option');
+        option.value = nurse[i].nurse_id; // Assuming nurse object has 'nurse_id'
+        option.textContent = nurse[i].fullname; // Assuming nurse object has 'nurse_name'
+        nurseDropdown.appendChild(option);
+    }
+  
+    // Enable the dropdown after populating options
+    $('#select_nurse').prop('disabled', false);
+}
+  
+
 function bookNurseForm() {
   const patient_name = document.querySelector('#booknurseForm #name').value
   const patient_id = document.querySelector('#booknurseForm #name').value
@@ -405,6 +451,9 @@ function bookNurseForm() {
         }
     });
 }
+
+
+////////surgical suite
 
 function bookSurgicalsuiteForm() {
   const patient_name = document.querySelector('#booksurgicalsuiteForm #name').value
@@ -446,6 +495,8 @@ function bookSurgicalsuiteForm() {
 }
 
 
+////lab
+
 function bookLabForm() {
   const patient_name = document.querySelector('#booklabForm #name').value
   const patient_id = document.querySelector('#booklabForm #name').value
@@ -485,7 +536,7 @@ function bookLabForm() {
     });
 }
 
-
+///////radiology 
 function bookRadForm() {
   const patient_name = document.querySelector('#bookradiologyForm #name').value
   const patient_id = document.querySelector('#bookradiologyForm #name').value
@@ -525,6 +576,8 @@ function bookRadForm() {
     });
 }
 
+
+////////morgue
 function bookMorgueForm() {
   const patient_name = document.querySelector('#bookmorgueForm #name').value
   const patient_id = document.querySelector('#bookmorgueForm #name').value
@@ -635,7 +688,8 @@ function getDoctorsRoles() {
   }
   
   
-  //////////////////////////////
+  //////////////////////////////doctors 
+
   
   
   
