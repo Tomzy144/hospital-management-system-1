@@ -279,8 +279,30 @@ case 'transfer_to_nurse':
     break;
 
 
+///////////////surgical unit 
 
 
+case 'get_surgical_unit':
+
+    // Execute the query to fetch nurses
+    $query = mysqli_query($conn, "SELECT fullname, surgical_unit_id FROM surgical_unit_tab");
+
+    // Check if the query executed successfully
+    if ($query) {
+        $surgical_unit = array();
+
+        // Fetch the data from the result set
+        while ($row = mysqli_fetch_assoc($query)) {
+            $surgical_unit[] = $row; // Storing data in $nurse
+        }
+
+        // Return the data as JSON
+        echo json_encode(array("success" => true, "surgical_unit" => $surgical_unit));
+    } else {
+        // Return an error message if the query failed
+        echo json_encode(array("success" => false, "message" => "Error executing the query"));
+    }
+    break;
     case 'transfer_to_surgical_suite':
         // Retrieve data from POST request
         $patient_id = $_POST['patient_id'];
@@ -292,7 +314,7 @@ case 'transfer_to_nurse':
         $status_id = "1"; // Default status ID for new transfer
     
         // Check if the appointment already exists
-        $check_stmt = $conn->prepare("SELECT * FROM surgical_suite_appointment_tab WHERE patient_id = ? AND time = ? AND _date= ?");
+        $check_stmt = $conn->prepare("SELECT * FROM surgical_suite_appointment_tab WHERE patient_id = ? AND time = ? AND date = ?");
         if ($check_stmt) {
             $check_stmt->bind_param("sss", $patient_id, $time, $date);
             $check_stmt->execute();
@@ -310,21 +332,22 @@ case 'transfer_to_nurse':
                 // Prepare the SQL INSERT query
                 $stmt = $conn->prepare("
                     INSERT INTO surgical_suite_appointment_tab
-                    (surgical_suite_appointment_id, patient_id, patient_name, message, time,  surgical_suite_id, date)
+                    (surgical_suite_appointment_id, patient_id, patient_name, procedure, time, surgical_suite_id, date, status_id)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 ");
     
                 if ($stmt) {
                     // Bind the parameters
                     $stmt->bind_param(
-                        "sssssss",
+                        "ssssssss",
                         $appointment_id,
                         $patient_id,
                         $patient_name,
                         $comment,
                         $time,
                         $surgical_suite_id,
-                        $date
+                        $date,
+                        $status_id
                     );
     
                     // Execute the statement and return the appropriate response
@@ -350,6 +373,7 @@ case 'transfer_to_nurse':
             error_log("SQL Prepare Check Error: " . $conn->error);
         }
         break;
+    
 
 
         case 'transfer_to_lab':
