@@ -330,11 +330,9 @@ case 'get_surgical_unit':
                 $appointment_id = 'SURGAPP' . $no;
     
                 // Prepare the SQL INSERT query
-                $stmt = $conn->prepare("
-                    INSERT INTO surgical_suite_appointment_tab
-                    (surgical_suite_appointment_id, patient_id, patient_name, procedure, time, surgical_suite_id, date, status_id)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                ");
+                $stmt = $conn->prepare(" INSERT INTO surgical_suite_appointment_tab
+                    (surgical_suite_appointment_id, patient_id, patient_name, surgical_procedure , time, surgical_suite_id, date, status_id)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     
                 if ($stmt) {
                     // Bind the parameters
