@@ -303,6 +303,7 @@ case 'get_surgical_unit':
         echo json_encode(array("success" => false, "message" => "Error executing the query"));
     }
     break;
+
     case 'transfer_to_surgical_suite':
         // Retrieve data from POST request
         $patient_id = $_POST['patient_id'];
@@ -373,6 +374,32 @@ case 'get_surgical_unit':
         break;
     
 
+        ////////////lab
+
+
+                
+        case 'get_lab_unit':
+
+            // Execute the query to fetch labs
+            $query = mysqli_query($conn, "SELECT radiology_name,radiology_id FROM radiology_tab");
+
+            // Check if the query executed successfully
+            if ($query) {
+                $lab_unit = array();
+
+                // Fetch the data from the result set
+                while ($row = mysqli_fetch_assoc($query)) {
+                    $lab_unit[] = $row; // Storing data in $nurse
+                }
+
+                // Return the data as JSON
+                echo json_encode(array("success" => true, "lab_unit" => $lab_unit));
+            } else {
+                // Return an error message if the query failed
+                echo json_encode(array("success" => false, "message" => "Error executing the query"));
+            }
+        break;
+
 
         case 'transfer_to_lab':
             // Retrieve data from POST request
@@ -381,11 +408,11 @@ case 'get_surgical_unit':
             $comment = $_POST['comment'];
             $time = $_POST['selected_time'];
             $date = $_POST['selected_date'];
-            $lab_id = $_POST['lab_id'];
+            $lab_scientist_id = $_POST['lab_scientist_id'];
             $status_id = "1"; // Default status ID for new transfer
         
             // Check if the appointment already exists
-            $check_stmt = $conn->prepare("SELECT * FROM lab_appointment_tab WHERE patient_id = ? AND time = ? AND _date= ?");
+            $check_stmt = $conn->prepare("SELECT * FROM lab_appointment_tab WHERE patient_id = ? AND time = ? AND date= ?");
             if ($check_stmt) {
                 $check_stmt->bind_param("sss", $patient_id, $time, $date);
                 $check_stmt->execute();
@@ -398,13 +425,13 @@ case 'get_surgical_unit':
                     $sequence = $callclass->_get_sequence_count($conn, 'LABAPP');
                     $array = json_decode($sequence, true);
                     $no = $array[0]['no'];
-                    $appointment_id = 'LABGAPP' . $no;
+                    $appointment_id = 'LABAPP' . $no;
         
                     // Prepare the SQL INSERT query
                     $stmt = $conn->prepare("
-                        INSERT INTO lab_appointment_tab
-                        (lab_scientist_appointment_id, patient_id, patient_name, message, time,  lab_id, date)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        INSERT INTO lab_appointment_tab (lab_scientist_appointment_id, patient_id, patient_name, message, time, lab_scientist_id, date)
+                        VALUES (?, ?, ?, ?, ?, ?, ?)
+
                     ");
         
                     if ($stmt) {
@@ -416,7 +443,7 @@ case 'get_surgical_unit':
                             $patient_name,
                             $comment,
                             $time,
-                            $lab_id,
+                            $lab_scientist_id,
                             $date
                         );
         
@@ -445,19 +472,50 @@ case 'get_surgical_unit':
            
         break;
 
+///////////radiology
+
+
+        case 'get_radiology':
+
+            // Execute the query to fetch labs
+            $query = mysqli_query($conn, "SELECT fullname,radiology_id FROM radiology_tab");
+
+            // Check if the query executed successfully
+            if ($query) {
+                $radiology_unit = array();
+
+                // Fetch the data from the result set
+                while ($row = mysqli_fetch_assoc($query)) {
+                    $radiology_unit[] = $row; // Storing data in $nurse
+                }
+
+                // Return the data as JSON
+                echo json_encode(array("success" => true, "radiology" => $radiology_unit));
+            } else {
+                // Return an error message if the query failed
+                echo json_encode(array("success" => false, "message" => "Error executing the query"));
+            }
+        break;
+
 
         case 'transfer_to_radiology':
             // Retrieve data from POST request
-            $patient_id = $_POST['patient_id'];
-            $patient_name = $_POST['patient_name'];
-            $comment = $_POST['comment'];
-            $time = $_POST['selected_time'];
-            $date = $_POST['selected_date'];
-            $radiology_id = $_POST['radiology_id'];
+            $patient_id = isset($_POST['patient_id']) ? $_POST['patient_id'] : null;
+            $patient_name = isset($_POST['patient_name']) ? $_POST['patient_name'] : null;
+            $comment = isset($_POST['comment']) ? $_POST['comment'] : null;
+            $time = isset($_POST['selected_time']) ? $_POST['selected_time'] : null;
+            $date = isset($_POST['selected_date']) ? $_POST['selected_date'] : null;
+            $radiology_id = isset($_POST['radiology_id']) ? $_POST['radiology_id'] : null;
             $status_id = "1"; // Default status ID for new transfer
         
+            // Ensure required data is present
+            if (!$patient_id || !$patient_name || !$time || !$date || !$radiology_id) {
+                echo json_encode(array("success" => false, "message" => "Missing required data."));
+                break;
+            }
+        
             // Check if the appointment already exists
-            $check_stmt = $conn->prepare("SELECT * FROM radiology_appointment_tab WHERE patient_id = ? AND time = ? AND _date= ?");
+            $check_stmt = $conn->prepare("SELECT * FROM radiology_appointment_tab WHERE patient_id = ? AND time = ? AND date = ?");
             if ($check_stmt) {
                 $check_stmt->bind_param("sss", $patient_id, $time, $date);
                 $check_stmt->execute();
@@ -475,8 +533,8 @@ case 'get_surgical_unit':
                     // Prepare the SQL INSERT query
                     $stmt = $conn->prepare("
                         INSERT INTO radiology_appointment_tab
-                        (radiology_scientist_appointment_id, patient_id, patient_name, message, time,  radiology_id, date)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        (radiology_appointment_id, patient_id, patient_name, message, time, radiology_id, date)
+                        VALUES (?, ?, ?, ?, ?, ?, ?)
                     ");
         
                     if ($stmt) {
@@ -514,8 +572,9 @@ case 'get_surgical_unit':
                 echo json_encode(array("success" => false, "message" => "Error preparing check query."));
                 error_log("SQL Prepare Check Error: " . $conn->error);
             }
-           
-        break;
+        
+            break;
+        
 
         
         case 'transfer_to_morgue':
