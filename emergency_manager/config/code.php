@@ -575,39 +575,69 @@ case 'get_surgical_unit':
         
             break;
         
+////////////morgue 
+
+
+        case 'get_morgue':
+
+            // Execute the query to fetch labs
+            $query = mysqli_query($conn, "SELECT fullname,morgue_id FROM morgue_tab");
+
+            // Check if the query executed successfully
+            if ($query) {
+                $morgue_unit = array();
+
+                // Fetch the data from the result set
+                while ($row = mysqli_fetch_assoc($query)) {
+                    $morgue_unit[] = $row; // Storing data in $nurse
+                }
+
+                // Return the data as JSON
+                echo json_encode(array("success" => true, "morgue" => $morgue_unit));
+            } else {
+                // Return an error message if the query failed
+                echo json_encode(array("success" => false, "message" => "Error executing the query"));
+            }
+        break;
 
         
         case 'transfer_to_morgue':
-            // Retrieve data from POST request
-            $patient_id = $_POST['patient_id'];
-            $patient_name = $_POST['patient_name'];
-            $comment = $_POST['comment'];
-            $time = $_POST['selected_time'];
-            $date = $_POST['selected_date'];
-            $radiology_id = $_POST['radiology_id'];
+            // Retrieve data from POST request and ensure required fields are provided
+            $patient_id = isset($_POST['patient_id']) ? $_POST['patient_id'] : null;
+            $patient_name = isset($_POST['patient_name']) ? $_POST['patient_name'] : null;
+            $comment = isset($_POST['comment']) ? $_POST['comment'] : null;
+            $time = isset($_POST['selected_time']) ? $_POST['selected_time'] : null;
+            $date = isset($_POST['selected_date']) ? $_POST['selected_date'] : null;
+            $morgue_id = isset($_POST['morgue_id']) ? $_POST['morgue_id'] : null;
             $status_id = "1"; // Default status ID for new transfer
         
+            // Validate that required fields are not missing
+            if (!$patient_id || !$patient_name || !$time || !$date || !$morgue_id) {
+                echo json_encode(array("success" => false, "message" => "Missing required data."));
+                break;
+            }
+        
             // Check if the appointment already exists
-            $check_stmt = $conn->prepare("SELECT * FROM radiology_appointment_tab WHERE patient_id = ? AND time = ? AND _date= ?");
+            $check_stmt = $conn->prepare("SELECT * FROM morgue_appointment_tab WHERE patient_id = ? AND time_of_death = ? AND date_of_death = ?");
             if ($check_stmt) {
                 $check_stmt->bind_param("sss", $patient_id, $time, $date);
                 $check_stmt->execute();
                 $check_result = $check_stmt->get_result();
         
-                if ($check_result->num_rows > 0) { 
+                if ($check_result->num_rows > 0) {
                     echo json_encode(array("success" => false, "message" => "Appointment already exists."));
                 } else {
                     // Get the appointment ID sequence
-                    $sequence = $callclass->_get_sequence_count($conn, 'RADAPP');
+                    $sequence = $callclass->_get_sequence_count($conn, 'MORGAPP');
                     $array = json_decode($sequence, true);
                     $no = $array[0]['no'];
-                    $appointment_id = 'RADAPP' . $no;
+                    $appointment_id = 'MORGAPP' . $no;
         
                     // Prepare the SQL INSERT query
                     $stmt = $conn->prepare("
-                        INSERT INTO radiology_appointment_tab
-                        (radiology_scientist_appointment_id, patient_id, patient_name, message, time,  radiology_id, date)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        INSERT INTO morgue_appointment_tab
+                        (morgue_appointment_id, patient_id, patient_name, message, time_of_death, staff_id, date_of_death)
+                        VALUES (?, ?, ?, ?, ?, ?, ?)
                     ");
         
                     if ($stmt) {
@@ -619,7 +649,7 @@ case 'get_surgical_unit':
                             $patient_name,
                             $comment,
                             $time,
-                            $radiology_id,
+                            $morgue_id,
                             $date
                         );
         
@@ -645,9 +675,9 @@ case 'get_surgical_unit':
                 echo json_encode(array("success" => false, "message" => "Error preparing check query."));
                 error_log("SQL Prepare Check Error: " . $conn->error);
             }
-           
-        break;
-
+        
+            break;
+        
 
 
                         
