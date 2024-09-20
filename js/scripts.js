@@ -802,3 +802,74 @@ function _account_unit_sign_in(){
   
   
   
+  
+  
+//////////surgical unit login 
+
+
+function _surgical_unit_sign_in(){ 
+    var surgical_unit_email = $('#surgical_unit_email').val();
+    var surgical_unit_password = $('#surgical_unit_password').val();
+    var surgical_unit_id = $('#surgical_unit_id').val();
+    if((surgical_unit_email!='')&&(surgical_unit_password!='')&&(surgical_unit_id!='')){
+        surgical_unit_login(surgical_unit_email,surgical_unit_password,surgical_unit_id);
+    }else{
+        $('#staff_verification').removeClass('hide');
+        $('#staff_verification').addClass('vf');
+        $('#staff_verification').html(`Field in the neccessary field <i class="bi-exclamation-triangle"></i></i>`)
+        $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
+    }
+  };
+  
+  
+  
+  
+  ///////////////////// surgical_unit login ///////////////////////////////////////////
+  function surgical_unit_login(surgical_unit_email,surgical_unit_password,surgical_unit_id){
+    var action='surgical_unit_login_check';
+    
+   //////////////// get btn text ////////////////
+   var btn_text=$('#surgical_unit_login_btn').html();
+   $('#surgical_unit_login_btn').html('Authenticating...');
+   document.getElementById('surgical_unit_login_btn').disabled=true;
+   ////////////////////////////////////////////////	
+    
+    var dataString ='action='+ action+'&surgical_unit_email='+ surgical_unit_email + '&surgical_unit_password='+ surgical_unit_password + '&surgical_unit_id='+ surgical_unit_id;
+   
+   $.ajax({
+   type: "POST",
+   url: "config/code.php",
+   data: dataString,
+   dataType: 'json',
+   cache: false,
+   success: function(data){
+    var scheck = data.check;
+  
+   if(scheck==1){
+      $('#staff_verification').removeClass('hide');
+      $('#staff_verification').removeClass('vf');
+      $('#staff_verification').html('<div>LOGIN SUCCESSFUL! <i class="bi bi-hand-thumbs-up-fill"></i></div> ').fadeIn(100).fadeOut(1000);
+    $('#surgical_unit_loginform').submit();
+    // window.parent("location=surgical_unit/");
+    
+    
+   }else if(scheck==2){
+      $('#staff_verification').html(`Account does not exist <i class="bi-exclamation-triangle"></i>`)
+      $('#staff_verification').fadeIn(500).delay(2000).fadeOut(1000);
+      $('#staff_verification').removeClass('hide');
+      $('#staff_verification').addClass('vf');
+             $('#staff_verification').html('<div></div> Account Suspended<br /><span>Contact the admin for help</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
+    }else{
+      $('#staff_verification').removeClass('hide');
+          $('#staff_verification').addClass('vf');
+      $('#staff_verification').html('<div></div> Login Error!<br /><span>Invalid Login Details</span> <i class="bi-exclamation-triangle"></i>').fadeIn(500).delay(2000).fadeOut(1000);
+    }
+    $('#surgical_unit_login_btn').html(btn_text);
+    document.getElementById('surgical_unit_login_btn').disabled=false;
+       $('#surgical_unit_login_btn').html('<i class="fa fa-sign-in"></i> Log-In');
+   }
+   });
+  }
+  
+  
+  

@@ -502,57 +502,110 @@
 
 
 						
-				case 'account_unit_login_check': // for account_unit login
-					$account_unit_email=trim($_POST['account_unit_email']);
-				///	$temp_password=trim(($_POST['password']));
-					$account_unit_password=trim(($_POST['account_unit_password']));
-					$account_unit_id=trim(($_POST['account_unit_id']));
-	
-						$query=mysqli_query($conn,"SELECT * FROM account_unit_tab WHERE `email`='$account_unit_email' AND `password`='$account_unit_password' AND `account_unit_id` = '$account_unit_id'");
-						$usercount = mysqli_num_rows($query);
-						if ($usercount>0){
-							$usersel=mysqli_fetch_array($query);
-							$account_unit_id=$usersel['account_unit_id'];
-							$status_id=$usersel['status_id'];
+		case 'account_unit_login_check': // for account_unit login
+			$account_unit_email=trim($_POST['account_unit_email']);
+		///	$temp_password=trim(($_POST['password']));
+			$account_unit_password=trim(($_POST['account_unit_password']));
+			$account_unit_id=trim(($_POST['account_unit_id']));
+
+				$query=mysqli_query($conn,"SELECT * FROM account_unit_tab WHERE `email`='$account_unit_email' AND `password`='$account_unit_password' AND `account_unit_id` = '$account_unit_id'");
+				$usercount = mysqli_num_rows($query);
+				if ($usercount>0){
+					$usersel=mysqli_fetch_array($query);
+					$account_unit_id=$usersel['account_unit_id'];
+					$status_id=$usersel['status_id'];
+					
+						if ($status_id==1){
+							$check=1; ///// account is active
+
 							
-								if ($status_id==1){
-									$check=1; ///// account is active
-	
-									
-								}else if($status_id==2){
-									$check=2; ///// account is suspended
-									
-								}else {
-									$check=0;
-								}
-						}else{
+						}else if($status_id==2){
+							$check=2; ///// account is suspended
+							
+						}else {
 							$check=0;
 						}
-										
-						echo json_encode(array("check" => $check, )); 
-				break;
-	
-	
-				case 'account_unit_login': // login from index
-					$userquery = mysqli_query ($conn,"SELECT * FROM `account_unit_tab` WHERE email = '$account_unit_email' AND `password` = '$account_unit_password' AND status_id=1") ;
-							$usersel=mysqli_fetch_array($userquery);
-							$account_unit_id=$usersel['account_unit_id'];
-							$_SESSION['account_unit_id'] = $account_unit_id;
-							$s_account_unit_id=$_SESSION['account_unit_id'];
-							mysqli_query($conn,"UPDATE `account_unit_tab` SET last_login=NOW() WHERE account_unit_id='$s_account_unit_id'") or die("cannot update") ; //// update last login
-						// echo $s_account_unit_id;				
-					?>
-								<script>
-									window.parent(location="../account_management/");
-								</script>
-					<?php
-	
-	
+				}else{
+					$check=0;
+				}
+								
+				echo json_encode(array("check" => $check, )); 
+		break;
 
-	
-						
-						
-				break;
+
+		case 'account_unit_login': // login from index
+			$userquery = mysqli_query ($conn,"SELECT * FROM `account_unit_tab` WHERE email = '$account_unit_email' AND `password` = '$account_unit_password' AND status_id=1") ;
+					$usersel=mysqli_fetch_array($userquery);
+					$account_unit_id=$usersel['account_unit_id'];
+					$_SESSION['account_unit_id'] = $account_unit_id;
+					$s_account_unit_id=$_SESSION['account_unit_id'];
+					mysqli_query($conn,"UPDATE `account_unit_tab` SET last_login=NOW() WHERE account_unit_id='$s_account_unit_id'") or die("cannot update") ; //// update last login
+				// echo $s_account_unit_id;				
+			?>
+						<script>
+							window.parent(location="../account_management/");
+						</script>
+			<?php
+
+
+
+
+				
+				
+		break;
+
+///////////////////surgical suite login
+		case 'surgical_unit_login_check': // for surgical_unit login
+			$surgical_unit_email=trim($_POST['surgical_unit_email']);
+		///	$temp_password=trim(($_POST['password']));
+			$surgical_unit_password=trim(($_POST['surgical_unit_password']));
+			$surgical_unit_id=trim(($_POST['surgical_unit_id']));
+
+				$query=mysqli_query($conn,"SELECT * FROM surgical_unit_tab WHERE `email`='$surgical_unit_email' AND `password`='$surgical_unit_password' AND `surgical_unit_id` = '$surgical_unit_id'");
+				$usercount = mysqli_num_rows($query);
+				if ($usercount>0){
+					$usersel=mysqli_fetch_array($query);
+					$surgical_unit_id=$usersel['surgical_unit_id'];
+					$status_id=$usersel['status_id'];
+					
+						if ($status_id==1){
+							$check=1; ///// surgical is active
+
+							
+						}else if($status_id==2){
+							$check=2; ///// surgical is suspended
+							
+						}else {
+							$check=0;
+						}
+				}else{
+					$check=0;
+				}
+								
+				echo json_encode(array("check" => $check, )); 
+		break;
+
+
+		case 'surgical_unit_login': // login from index
+			$userquery = mysqli_query ($conn,"SELECT * FROM `surgical_unit_tab` WHERE email = '$surgical_unit_email' AND `password` = '$surgical_unit_password' AND status_id=1") ;
+					$usersel=mysqli_fetch_array($userquery);
+					$surgical_unit_id=$usersel['surgical_unit_id'];
+					$_SESSION['surgical_unit_id'] = $surgical_unit_id;
+					$s_surgical_unit_id=$_SESSION['surgical_unit_id'];
+					mysqli_query($conn,"UPDATE `surgical_unit_tab` SET last_login=NOW() WHERE surgical_unit_id='$s_surgical_unit_id'") or die("cannot update") ; //// update last login
+				// echo $s_surgical_unit_id;				
+			?>
+						<script>
+							window.parent(location="../surgical_suite_management/");
+						</script>
+			<?php
+
+
+
+
+				
+				
+		break;
 
 
 	

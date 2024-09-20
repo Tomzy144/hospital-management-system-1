@@ -292,25 +292,26 @@ if($s_staff_id != '') {
             <div class="surgical_suite_manager-login">
             <i class="bi bi-x-square close" id='close-icon-surgical_suite_manager' onclick="cancel();"></i>
             <h3 class="login-form-h1">Login (Surgical Suite Manager)</h3>
-            <form>
+            <form action="config/code.php" id="surgical_unit_loginform" enctype="multipart/form-data" method="post">
                 <div class="_form_control">
                 <label for='email'>Email</label>
                     <i class="bi-envelope"></i>
-                    <input type="email" name="email" autoComplete='off'/> 
+                    <input type="email" name="email" id="surgical_unit_email" autoComplete='off'/> 
                 </div>
                 <div class="_form_control">
                 <label for='number'>Your ID</label>
                     <i class="bi-key"></i>
-                    <input type="number" name="number" autoComplete='off'/> 
+                    <input type="text" name="number" id="surgical_unit_id"  autoComplete='off'/> 
                 </div>
                 <div class="_form_control">
                 <label for='password'>Password</label>
                     <i class="bi-lock"></i>
                     <i class="bi bi-eye show_password hide" id="_showdoc_password" onclick="show_staff_password()"></i>
                     <i class="bi bi-eye-slash lock_password" id="_lock_doc_password" onclick="show_staff_password()"></i>
-                    <input type="password" class="all_password"  name="password" autoComplete='off'/> 
+                    <input type="password" class="all_password" id="surgical_unit_password"  name="password" autoComplete='off'/> 
+                    <input name="action" value="surgical_unit_login" type="hidden" />
                 </div>
-                <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
+                <button type="button" class="btn" id="surgical_unit_login_btn" onclick="_surgical_unit_sign_in();" >Login</button>
             </form>
         </div>
     </div>
