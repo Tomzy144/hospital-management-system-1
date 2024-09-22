@@ -33,7 +33,15 @@
         <script>
                 window.parent(location="../");
         </script> 
+            <?php }
+    elseif($s_surgical_unit_id==""){ ?>
+        <script>
+                window.parent(location="../");
+        </script> 
             <?php 
+            
+            
+            
          
     }else{
         $fetch_user=$callclass->_get_user_details($conn, $s_staff_id);
@@ -85,6 +93,15 @@
         $account_unit_id= $user_array[0]['account_unit_id'];
         $fullname= $user_array[0]['fullname'];
         $account_unit_email= $user_array[0]['account_unit_email'];
+        $phonenumber= $user_array[0]['phonenumber'];
+        $passport= $user_array[0]['passport'];
+
+
+        $fetch_user=$callclass->_get_surgical_suite_details($conn, $s_surgical_unit_id);
+        $user_array = json_decode($fetch_user, true);
+        $surgical_unit_id= $user_array[0]['surgical_unit_id'];
+        $fullname= $user_array[0]['fullname'];
+        $surgical_unit_email= $user_array[0]['surgical_unit_email'];
         $phonenumber= $user_array[0]['phonenumber'];
         $passport= $user_array[0]['passport'];
 

@@ -129,17 +129,17 @@ if ($_POST && !empty($_POST['account_unit_email'])) {
 <?php 
 
 /////for surgical_suite
-$s_surgical_suite_id=$_SESSION['surgical_suite_id']; 
+$s_surgical_unit_id=$_SESSION['surgical_unit_id']; 
 
-if ($_POST && !empty($_POST['surgical_suite_email'])) {
-    $_SESSION['surgical_suite_email'] = $_POST['surgical_suite_email'];
+if ($_POST && !empty($_POST['surgical_unit_email'])) {
+    $_SESSION['surgical_unit_email'] = $_POST['surgical_unit_email'];
     }
-    $surgical_suite_email=$_SESSION['surgical_suite_email'];
-    if ($_POST && !empty($_POST['surgical_suite_password'])) {
-    $_SESSION['surgical_suite_password'] = $_POST['surgical_suite_password'];
+    $surgical_unit_email=$_SESSION['surgical_unit_email'];
+    if ($_POST && !empty($_POST['surgical_unit_password'])) {
+    $_SESSION['surgical_unit_password'] = $_POST['surgical_unit_password'];
     
     }
-    $surgical_suite_password=($_SESSION['surgical_suite_password']);
+    $surgical_unit_password=($_SESSION['surgical_unit_password']);
 
 
 ?>

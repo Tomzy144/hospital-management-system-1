@@ -555,6 +555,8 @@
 		break;
 
 ///////////////////surgical suite login
+
+
 		case 'surgical_unit_login_check': // for surgical_unit login
 			$surgical_unit_email=trim($_POST['surgical_unit_email']);
 		///	$temp_password=trim(($_POST['password']));
@@ -587,6 +589,7 @@
 
 
 		case 'surgical_unit_login': // login from index
+			
 			$userquery = mysqli_query ($conn,"SELECT * FROM `surgical_unit_tab` WHERE email = '$surgical_unit_email' AND `password` = '$surgical_unit_password' AND status_id=1") ;
 					$usersel=mysqli_fetch_array($userquery);
 					$surgical_unit_id=$usersel['surgical_unit_id'];

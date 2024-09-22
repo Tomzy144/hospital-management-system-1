@@ -1,14 +1,14 @@
 <?php include '../backend/config/connection.php';?>
-<!-- ?php include '../config/surgical-suit-session-validation.php';?> -->
+<?php include '../config/surgical_suit-session-validation.php';?>
 
 
 <?php
-$surgical_suite_id = $_POST['surgical_suite_id'];
+$surgical_unit_id = $_POST['surgical_suite_id'];
 ?>
 
 <?php    
 
-$fetch_surgical_suite_profile = $callclass->_get_surgical_suite_details($conn, $s_surgical_suite_id);
+$fetch_surgical_suite_profile = $callclass->_get_surgical_suite_details($conn, $s_surgical_unit_id);
 $surgical_suite_profile_array = json_decode($fetch_surgical_suite_profile, true);
 $fullname = $surgical_suite_profile_array[0]['fullname'];
 $email = $surgical_suite_profile_array[0]['email'];

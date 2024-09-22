@@ -415,10 +415,10 @@ function _get_account_unit_details($conn, $s_account_unit_id){
 
 
 /////////////////emergency unit
-function _get_surgical_suite_details($conn, $s_surgical_suite_id){
-    $query=mysqli_query($conn, "SELECT * FROM surgical_suite_tab WHERE surgical_suite_id='$s_surgical_suite_id'");    
+function _get_surgical_suite_details($conn, $s_surgical_unit_id){
+    $query=mysqli_query($conn, "SELECT * FROM surgical_unit_tab WHERE surgical_unit_id='$s_surgical_unit_id'");    
     $fetch=mysqli_fetch_array($query);
-    $surgical_suite_id=$fetch['surgical_suite_id'];
+    $surgical_unit_id=$fetch['surgical_unit_id'];
     $fullname=$fetch['fullname'];
     $email=$fetch['email'];
     $phonenumber=$fetch['phonenumber'];
@@ -428,7 +428,7 @@ function _get_surgical_suite_details($conn, $s_surgical_suite_id){
     $date=$fetch['date'];
     $last_login=$fetch['last_login'];
 
-    return '[{"surgical_suite_id":"'.$surgical_suite_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
+    return '[{"surgical_suite_id":"'.$surgical_unit_id.'","fullname":"'.$fullname.'","email":"'.$email.'","phonenumber":"'.$phonenumber.'","role_id":"'.$role_id.'","status_id":"'.$status_id.'","passport":"'.$passport.'","date":"'.$date.'","last_login":"'.$last_login.'"}]';
 }
 
 
