@@ -418,7 +418,7 @@ function bookNurseForm() {
   const patient_id = document.querySelector('#booknurseForm #name').value
   const comment = document.querySelector('#booknurseForm #comment').value
   const time = document.querySelector('#booknurseForm #selected_time').value
-  const date = document.querySelector('#booknurseForm #selected_time').value
+  const date = document.querySelector('#booknurseForm #selected_date').value
   const nurse_id = document.querySelector('#booknurseForm #select_nurse').value
 
   var action = 'transfer_to_nurse';

@@ -261,11 +261,11 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
     <label>Selected date</label>
-    <input type="date" name="selected_date" />
+    <input type="date" name="selected_date" id="selected_date"/>
   </div>
   <div class="form-control">
     <label>Selected time</label>
-    <input type="time" name="selected_time" />
+    <input type="time" name="selected_time" id="selected_time"/>
   </div>
   </div>
   <div class="each_sections">
