@@ -794,7 +794,7 @@ case 'confirm_death':
         $surgical_suite_appointment_id = 'SURGAPP' . $no;
     
         $query = "INSERT INTO `surgical_suite_appointment_tab`
-                  (`patient_id`, `surgical_suite_appointment_id`, `past_surgery`, `procedure`, `phonenumber`,`message`,`time`) 
+                  (`patient_id`, `surgical_suite_appointment_id`, `past_surgery`, `surgical_procedure`, `phonenumber`,`message`,`time`) 
                   VALUES ('$patient_id', '$surgical_suite_appointment_id', '$past_surgery', '$procedure', '$phonenumber','$smessage', now())";
     
         if (mysqli_query($conn, $query)) {

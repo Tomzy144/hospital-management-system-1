@@ -287,33 +287,39 @@ if($s_staff_id != '') {
 
  <!-- surgical_suite_manager  - -->
 
-    <?php if ($page=='surgical_suite_manager_login') ?>
+<?php if ($page == 'surgical_suite_manager_login')  ?>
     <div class="fill-form-div login-div hidden" id="next_8">
-            <div class="surgical_suite_manager-login">
+        <div class="surgical_suite_manager-login">
             <i class="bi bi-x-square close" id='close-icon-surgical_suite_manager' onclick="cancel();"></i>
             <h3 class="login-form-h1">Login (Surgical Suite Manager)</h3>
-            <form>
+
+            <form action="code.php" id="surgical_unit_loginform" enctype="multipart/form-data" method="post">
+
                 <div class="_form_control">
-                <label for='email'>Email</label>
-                    <i class="bi-envelope"></i>
-                    <input type="email" name="email" autoComplete='off'/> 
+                    <label for='surgical_unit_email'>Email</label>
+                    <i class="bi bi-envelope"></i>
+                    <input type="email" name="surgical_unit_email" id="surgical_unit_email" autoComplete="off" required/> 
                 </div>
                 <div class="_form_control">
-                <label for='number'>Your ID</label>
-                    <i class="bi-key"></i>
-                    <input type="number" name="number" autoComplete='off'/> 
+                    <label for='surgical_unit_id'>Your ID</label>
+                    <i class="bi bi-key"></i>
+                    <input type="text" name="surgical_unit_id" id="surgical_unit_id" autoComplete="off" required/> 
                 </div>
                 <div class="_form_control">
-                <label for='password'>Password</label>
-                    <i class="bi-lock"></i>
+                    <label for='surgical_unit_password'>Password</label>
+                    <i class="bi bi-lock"></i>
                     <i class="bi bi-eye show_password hide" id="_showdoc_password" onclick="show_staff_password()"></i>
                     <i class="bi bi-eye-slash lock_password" id="_lock_doc_password" onclick="show_staff_password()"></i>
-                    <input type="password" class="all_password"  name="password" autoComplete='off'/> 
+                    <input type="password" class="all_password" id="surgical_unit_password" name="surgical_unit_password" autoComplete="off" required/> 
+                    
+                  
                 </div>
-                <button type="button" class="btn" onClick="isSurgical_suite_active()">Login</button>
+                <input name="action" value="surgical_unit_login" type="hidden" />
+                <button type="button" class="btn" id="surgical_unit_login_btn" onclick="_surgical_unit_sign_in();">Login</button>
             </form>
         </div>
     </div>
+<?php  ?>
 
 
 

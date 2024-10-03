@@ -1,12 +1,53 @@
+<?php include '../backend/config/connection.php';?>
+<?php include '../config/surgical_suit-session-validation.php';?>
+
+
+<?php
+$surgical_unit_id = $_POST['surgical_suite_id'];
+?>
+
+<?php    
+
+$fetch_surgical_suite_profile = $callclass->_get_surgical_suite_details($conn, $s_surgical_unit_id);
+$surgical_suite_profile_array = json_decode($fetch_surgical_suite_profile, true);
+$fullname = $surgical_suite_profile_array[0]['fullname'];
+$email = $surgical_suite_profile_array[0]['email'];
+$phonenumber = $surgical_suite_profile_array[0]['phonenumber'];
+// $role_id= $surgical_suite_profile_array[0]['role_id'];
+$status_id = $surgical_suite_profile_array[0]['status_id'];
+$date = $surgical_suite_profile_array[0]['date'];
+$last_login = $surgical_suite_profile_array[0]['last_login'];
+$passport = $surgical_suite_profile_array[0]["passport"]; 
+$fetch_status = $callclass->_get_status_details($conn, $status_id);
+$status_array = json_decode($fetch_status, true);
+$status_name = $status_array[0]['status_name'];
+?>
+
+<?php 
+$page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the $page variable
+?>
+
+
+
+<?php 
+    
+
+
+    $fetch_status = $callclass->_get_status_details($conn, $status_id);
+    $status_array = json_decode($fetch_status, true);
+    
+    ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surgica Suite Management</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="awesome-font/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/icons-1.10.2/font/bootstrap-icons.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surgical Suite Management</title>
+  <?php include 'meta.php' ?> 
+</head>
 <body>
 <!--------------------------------------------START OF NAVBAR------------------------------------------------------>
 <div class="navbar">
@@ -470,6 +511,6 @@
         <button id="btn_submit">Submit</button>
           </div> -->
         
-        <script src="index.js"></script>
+        <!-- <script src="index.js"></script> -->
 </body>
 </html>
