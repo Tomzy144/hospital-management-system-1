@@ -952,7 +952,7 @@ $patient_id = $_POST['patient_Id'];
 </div>
 </div>
 <input type="hidden" id="patient_id" value="<?php echo $patient_id?> ">
-<button type="button" id ="btn" onclick="gatherDoctorInputs()">Save Input</button>
+<button type="button" class="bg-blue" id="btn" onclick="gatherDoctorInputs()">Save Input</button>
 </form>
 </div>
 
@@ -974,8 +974,8 @@ $patient_id = $_POST['patient_Id'];
    </div>
       <div class="investigation-section hidden">
       <div class="advice_form_control_appoitment">
-            <button type="button" onclick="openModalTransferLab()">Transfer to Lab</button>
-            <button type="button" onclick="openModalTransferRad()">Transfer to Radiology</button>
+            <button type="button" class="bg-white" onclick="openModalTransferLab()">Transfer to Lab</button>
+            <button type="button" class="bg-white" onclick="openModalTransferRad()">Transfer to Radiology</button>
     </div>
 </div>
 
@@ -1038,7 +1038,7 @@ $patient_id = $_POST['patient_Id'];
 <div class="advice_dropdown" onclick="advice_section()">
     <h3>Advice</h3>
     <i class="bi bi-plus-lg" id="advice_icon_plus"></i>
-    <i class="bi bi-dash-lg" id="advice_icon_minus"></i>
+    <i class="bi bi-dash-lg" id="advice_icon_minus" class="hidden"></i>
 </div>
 <div class="advice-section hidden">
     <form action="">
@@ -1132,12 +1132,8 @@ $patient_id = $_POST['patient_Id'];
             <label for="">Diagnosis</label>
             <input type="text" name="condition" id="condition">
             </div>
-            <!-- <div class="form-control">
-            <label for="">Diagnosis</label>
-            <input type="text" name="condition" id="condition">
-            </div> -->
         </form>
-        <button id="" class="save">Enter</button>
+        <button class="bg-white">Enter</button>
         </div>
         <!--Refer to doctor-->
         <div class="refer_doc_dropdown" onclick="refer_doc_section()">
@@ -1146,7 +1142,7 @@ $patient_id = $_POST['patient_Id'];
     <i class="bi bi-dash-lg" id="refer_doc_icon_minus"></i>
    </div>
       <div class="refer_doc-section hidden">
-      <button type="button" class="btn_book_appoitment" onclick="tranfer_patient_doc()">Transfer to Doctor</button>
+      <button type="button" class="bg-white" onclick="tranfer_patient_doc()">Transfer to Doctor</button>
         </div>
     
     <div class="modal hidden" id="available--doc">
@@ -1212,7 +1208,7 @@ $patient_id = $_POST['patient_Id'];
                 <input type="hidden" name="" id="patient_name"  value="<?php echo $patient_name ?>">
                 <input type="hidden" id ='sdoctor_id' value="<?php echo $s_doctor_id?>">
             </div> 
-            <button type="button" onclick="confirm_discharge();" id="btn_save_discharge" class="save">Comfirm Discharge</button>
+            <button type="button" class="bg-white" onclick="confirm_discharge();" id="btn_save_discharge" class="save">Comfirm Discharge</button>
         </form>
         </div>
    </div>
@@ -1244,7 +1240,7 @@ $patient_id = $_POST['patient_Id'];
             <input type="hidden" id ='patient_id' value="<?php echo $patient_id?>">
             <input type="hidden" id ='sdoctor_id' value="<?php echo $s_doctor_id?>">
             
-            <button type="button" id="btn_save_confirmed_death" class="save" onclick="show_death_form()">Comfirm Dead</button>
+            <button type="button" id="btn_save_confirmed_death" class="bg-white" onclick="show_death_form()">Comfirm Dead</button>
         </form>
         </div>
     </div>

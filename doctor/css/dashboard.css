@@ -134,6 +134,7 @@ span{
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+    margin: 0.5rem;
     opacity: 1;
     outline: 0 solid transparent;
     padding: 8px 18px;
@@ -156,6 +157,7 @@ span{
     line-height: 24px;
     opacity: 1;
     outline: 0 solid transparent;
+    margin: 0.5rem;
     padding: 8px 18px;
     user-select: none;
     -webkit-user-select: none;
@@ -888,22 +890,6 @@ form{
         display: flex;
         flex-direction: column;
     }
-#btn{
-    width: auto;
-    margin: 1rem 0;
-    border-radius: 0.43rem;
-    background-color: #2a57d7;
-    border: none;
-    color: #fff;
-    padding: 1em;
-    transition: all 0.5s ease-in-out;
-    cursor: pointer;
-}
-#btn:hover{
-    border: 1px solid #2a57d7;;
-    color: #2a57d7;;
-    background:none;
-}
 
 /*End of the complaints Section*/
 
@@ -1052,7 +1038,6 @@ label {
     flex-direction: column;
     position: relative;
     justify-content: center;
-    align-items: center;
     position: relative;
 }
 
@@ -1165,7 +1150,7 @@ width: 100%;
     position: relative;
 }
 .advice-section span{
-   padding: 1em;
+    padding: 0.5em;
 }
 
 /*Start of Investigation and Procdure*/
@@ -1398,6 +1383,12 @@ width: 100%;
     visibility: hidden;
 }
 
+.checkbox{
+    display: flex;
+}
+.checkbox span{
+    color: white;
+}
 /* General style for labels acting as checkbox */
 .checkbox-wrapper-46 .cbx {
     margin: auto;
@@ -1411,8 +1402,6 @@ width: 100%;
 /* Styling for the custom checkbox appearance */
 .checkbox-wrapper-46 .cbx span:first-child {
     position: relative;
-    width: 18px;
-    height: 18px;
     border-radius: 3px;
     border: 1px solid #ffffff;;
     transition: all 0.2s ease;
@@ -1422,8 +1411,8 @@ width: 100%;
 /* SVG inside the custom checkbox */
 .checkbox-wrapper-46 .cbx span:first-child svg {
     position: absolute;
-    top: 50%;
-    left: 42%;
+    top: 30%;
+    left: 20%;
     fill: none;
     stroke: rgb(42, 87, 215);
     stroke-width: 2;

@@ -1,17 +1,14 @@
 'use strict';
 
 
+
 ///////////////////////////////////////
 // Modal window
 const modal = document.querySelector('.modal');
 const blackBackground = document.querySelector('.black--background');
 
-
-
-
 const openModal = function (modalId) {
   const modal = document.getElementById(modalId);
-  
   modal.classList.remove('hidden');
   blackBackground.classList.remove('hidden');
 };
@@ -23,7 +20,7 @@ const closeModal = function (modalId) {
   modal.classList.add('hidden');
   blackBackground.classList.add('hidden');
 };
-////////
+
 
 
    function displayUserProfile(){
@@ -62,6 +59,52 @@ document.querySelector('.display__date').textContent = dateTime
 setInterval(() => createDate());
 ////////////////////////////////////////////////////////////////////
 
+function filterAppoitment() {
+    const tableBody = document.querySelector('#appointment_table tbody');
+    const tableRows = Array.from(tableBody.querySelectorAll('tr')); // Convert NodeList to Array
+    const searchInput = document.querySelector('#incomingSearchInput').value.trim().toLowerCase();
+
+    // Check if the table has one row and it contains the "No pending transactions found." message
+    if (tableRows.length === 1 && tableRows[0].textContent.trim().toLowerCase().includes('no pending appoitment found')) {
+        alert('No data available to search.');
+        return; // Exit the function since there's no valid data
+    }
+
+    let hasVisibleRows = false;
+
+    // Filter logic for valid rows
+    tableRows.forEach((row) => {
+        if (row.children.length < 2) return;
+
+        const patientId = row.children[3].textContent.trim().toLowerCase();
+        const patientName = row.children[2].textContent.trim().toLowerCase();
+        const request__type = row.children[6].textContent.trim().toLowerCase();
+
+        // Check if the patient ID or transaction ID includes the search input
+        if (patientName.includes(searchInput) || patientId.includes(searchInput) || request__type.includes(searchInput)) {
+            row.style.display = ''; // Show the row
+            hasVisibleRows = true;
+        } else {
+            row.style.display = 'none'; // Hide the row
+        }
+    });
+
+    // Remove any existing "No Data" message
+    const existingNoDataMessage = document.querySelector('#noDataMessage');
+    if (existingNoDataMessage) {
+        existingNoDataMessage.remove();
+    }
+
+    // Display "No Data" message if no rows match the search
+    if (!hasVisibleRows) {
+        const noDataMessage = document.createElement('tr');
+        noDataMessage.id = 'noDataMessage';
+        noDataMessage.innerHTML = '<td colspan="8" style="text-align: center;">No User associated with this input</td>';
+        tableBody.appendChild(noDataMessage);
+    }
+}
+
+document.querySelector('#incomingSearchInput').addEventListener('input', filterAppoitment);
 
 
 
@@ -142,10 +185,6 @@ function vitals_section(){
 
 
     //Doctor Inputs
-    
-
-
-
 
 function complain_section(){
     document.querySelector(".complaint-section").classList.toggle("hidden");
@@ -344,6 +383,10 @@ function diagnosis_section(){
 
 
 
+
+
+
+
 // Example of advice_section toggle logic
 function advice_section() {
     let adviceSection = document.querySelector(".advice-section");
@@ -352,7 +395,7 @@ function advice_section() {
 
     adviceSection.classList.toggle("hidden");
     iconPlus.classList.toggle("hidden");
-    iconMinus.classList.toggle("hidden");
+    iconMinus.classList.remove("hidden");
 
     let check_1 = document.querySelector("#check1");
     let check_2 = document.querySelector("#check2");
@@ -1059,38 +1102,7 @@ function transfer_to_rad() {
     }
 }
 
-
-
-
-function filterAvailablePatient() {
-    const availablePatientList = document.querySelector('#appointment_table tbody');
-    const tableRows = Array.from(availablePatientList.querySelectorAll('tr')); // Convert NodeList to Array
-    const searchInput = document.querySelector('#incomingSearchInput').value.trim().toLowerCase();
-
-    let hasVisibleRows = false;
-    tableRows.forEach((row) => {
-        if (row.children.length < 2)  return;
-
-        const patientName = row.children[2].textContent.trim().toLowerCase();
-        const patientId = row.children[3].textContent.trim().toLowerCase();
-        if (patientName.includes(searchInput) || patientId.includes(searchInput)){
-            row.style.display = ''; // Show the row
-            hasVisibleRows = true;
-           
-        } else row.style.display = 'none'; // Hide the row
-    });
-
-    const existingNoDataMessage = document.querySelector('#noDataMessage');
-    if (existingNoDataMessage) existingNoDataMessage.remove();
-
-    if (!hasVisibleRows) {
-        const noDataMessage = document.createElement('tr');
-        noDataMessage.id = 'noDataMessage';
-        noDataMessage.innerHTML = '<td colspan="9" style="text-align: center;">No Patient associated with this input</td>';
-        availablePatientList.appendChild(noDataMessage);
-    }
-}
- //DEATH FORM
+//DEATH FORM
  function show_death_form(){
     // openModal('death--booking')
 
@@ -1138,7 +1150,6 @@ function filterAvailablePatient() {
  }
 
  
-document.querySelector('#incomingSearchInput').addEventListener('input', filterAvailablePatient);
 
 
 
@@ -1233,3 +1244,6 @@ function surgical_procedure(){
     }
 
 }
+
+
+
