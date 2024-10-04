@@ -279,7 +279,7 @@ if($s_staff_id != '') {
                 <input name="action" value="account_unit_login" type="hidden" />
                 </div>
                 <button type="button" id="account_unit_login_btn" class="btn" onclick="_account_unit_sign_in();">Login</button>
-            <form>
+            </form>
         </div>
     </div>
 
@@ -293,7 +293,7 @@ if($s_staff_id != '') {
             <i class="bi bi-x-square close" id='close-icon-surgical_suite_manager' onclick="cancel();"></i>
             <h3 class="login-form-h1">Login (Surgical Suite Manager)</h3>
 
-            <form action="code.php" id="surgical_unit_loginform" enctype="multipart/form-data" method="post">
+            <form action="config/code.php" id="surgical_unit_loginform" enctype="multipart/form-data" method="post">
 
                 <div class="_form_control">
                     <label for='surgical_unit_email'>Email</label>

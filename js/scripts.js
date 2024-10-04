@@ -846,6 +846,8 @@ function surgical_unit_login(surgical_unit_email, surgical_unit_password, surgic
                 $('#staff_verification').removeClass('hide').removeClass('vf');
                 $('#staff_verification').html('<div>LOGIN SUCCESSFUL! <i class="bi bi-hand-thumbs-up-fill"></i></div>').fadeIn(100).fadeOut(1000);
                 $('#surgical_unit_loginform').submit();
+                // alert("login");
+                // window.parent(location="../surgical_suite_management/index.php");
                 // Redirect or further processing here if needed
             } else if (scheck == 2) {
                 // Account does not exist or is suspended
