@@ -56,14 +56,14 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
           <div class="profile">
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
-            <span>Doc. Henculus White</span>
+            <span><?php echo $fullname ?></span>
             <button class="btn_submit">Upload Image</button>
            </div>
             <div class="image">
             <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
             <div class="active_on"></div>
             </div>
-            <span>Doc. Henculus White</span>
+            <span><?php echo $fullname ?></span>
             <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
                  </div>
                 </div>
