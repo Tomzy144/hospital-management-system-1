@@ -281,7 +281,6 @@
     border-right: 1px solid rgb(234, 232, 232);
     display: flex;
     background: #fff;
-    flex-direction: column;
     justify-content: space-between;
     z-index: 2;
 }
@@ -415,9 +414,9 @@ table thead {
   top: 0;
   z-index: 1;
   font-size: 1.1em;
-  border: 1px solid #fff;
   text-align: center;
   transition: background 0.25s ease;
+  border: 1px solid rgb(255, 255, 255);
 }
 tbody tr {
 transition: background 0.25s ease;
@@ -791,18 +790,23 @@ input[type="radio"]:checked::after {
   text-transform:lowercase;
 }
 .patientProfile{
-    margin: 4.3rem 0 0 21.9rem;
-    background-color: rgb(42, 87, 215);
+    margin: 4.3rem 0 0 19rem;
+    background: #00185b;
+}
+.patientProfile table thead {
+  position: sticky; 
+  top: 0;
+  z-index: 1;
+  font-size: 1.1em;
+  text-align: center;
+  transition: background 0.25s ease;
+  border: none;
 }
 .patientProfile h3{
     color: #fff;
 }
 .listing{
     padding: 0 1rem;
-    border-bottom: 1px solid #fff;
-}
-.heading{
-   text-align: center;
 }
 .select-ward .form-control{
     margin: 0 0.5rem;
@@ -811,14 +815,15 @@ input[type="radio"]:checked::after {
     color: #fff;
 }
 .booking_section{
-    margin: 5.5rem 0 0 22rem;
+    margin: 5.5rem 0 0 19rem;
+    color: rgb(0, 87, 194);
 }
 .upload-section{
-    background-color: rgb(0, 87, 194);
+  background: #00185b;
     padding: 2rem;
     height: 100%;
     text-align: center;
-    margin: 4.5rem 0 0 22rem;
+    margin: 4.5rem 0 0 19rem;
 }
 .upload-section h3{
     color: #fff;
@@ -832,13 +837,15 @@ input[type="radio"]:checked::after {
 }
 .upload_container{
     border-style: dashed;
-    width: 600px;
+    width: 300px;
+    height: 300px;
+    background-color: #2a57d7;
     margin: 0.5rem 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    padding: 1rem;
     border: 3px dashed rgb(255, 255, 255);
     border-radius: 4px;
 }
@@ -851,13 +858,7 @@ input[type="radio"]:checked::after {
     font-size: 23px;
     color: #fff;
 }
-.browse_file{
-    padding: 1rem 1rem;
-    background-color: #fff;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-}
+
 .hide{
     display: none;
 }

@@ -113,12 +113,19 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                         <td>Date</td>
                         <td>Time</td>
                         <td>Rquest type</td>
-                        <td>Status</td>
                     </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td colspan="7">No data</td>
+                  <td>1</td>
+                  <td>Mercy Jane</td>
+                  <td>Pat0003</td>
+                  <td>23/09/2024</td>
+                  <td>23:40</td>
+                  <td>Nose surgery</td>
+                  <td>
+                  <i class="bi bi-three-dots-vertical"></i>
+                </td>
                 </tr>
                 </tbody>
         </table>
@@ -140,12 +147,19 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                         <td>Date</td>
                         <td>Time</td>
                         <td>Rquest type</td>
-                        <td>Status</td>
                     </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td colspan="7">No data</td>
+                  <td>1</td>
+                  <td>Mercy Jane</td>
+                  <td>Pat0003</td>
+                  <td>23/09/2024</td>
+                  <td>23:40</td>
+                  <td>Nose surgery</td>
+                  <td>
+                  <i class="bi bi-three-dots-vertical"></i>
+                </td>
                 </tr>
                 </tbody>
         </table>
@@ -158,7 +172,10 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
 <div class="patientProfile hide">
  <div class="profileInfo listing">
   <h3 class="heading">PERSONAL INFORMATION</h3>
-  <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="">
+  <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="" 
+  style="border-radius: 100%;
+  height: 200px;
+  width: 200px;">
  </div>
  <div class="bioData listing">
   <h3 class="heading">BIO DATA</h3>
@@ -205,7 +222,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
  </div>
 
 
- <div class="labouratoryData">
+ <div class="labouratoryData listing">
  <h3 class="heading">LABOURATORY TESTS</h3>
   <table>
     <thead>
@@ -230,7 +247,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
  </div>
 
  
- <div class="radiologyData">
+ <div class="radiologyData listing">
  <h3 class="heading">RADIOLOGY TESTS</h3>
   <table>
     <thead>
@@ -254,7 +271,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
   </table>
  </div>
 
- <div class="vitalData" style="overflow: auto">
+ <div class="vitalData listing" style="overflow: auto">
  <h3 class="heading">VITAL DATA</h3>
   <table>
     <thead>
@@ -327,6 +344,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
 
         <div class="booking_section hide">
             <div class="booking_container">
+              <h3>Book patient for surgery</h3>
                 <form action="">
                     <div class="each_sections">
                     <div class="form-control">
@@ -396,14 +414,13 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                         </select>
                     </div>
                     </div>
-                    <button>Book</button>
+                    <button class="bg-blue">Book</button>
                 </form>
             </div>
           </div>
 
 
           <div class="upload-section hide">
-            <h3>Upload Files & Documents</h3>
           <div class="flex_upload_div">
             <div class="upload_container">
               <i class="fa fa-folder-open" id="upload_icon"></i>
@@ -414,102 +431,5 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
           </div>
           </div>
           </div>
-          <!-- <div class="vital_section">
-            <div class="vital_input">
-            <form action="">
-                    <div class="form_control">
-          <label for="temperature">Temperature</label>
-          <input type="text">
-          </div>
-                
-                    <div class="form_control">
-          <label for="b/p">B/P(mm/HG)</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="pulse">Pulse(bp/m)</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="respiratory">Respiratory(cm)</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="weight">Weight(kg)</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="height">Height(cm)</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="intake">Intake(m/s)</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="output">Output(m/s)</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="spo2">SPO2(%)</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="bmi">BMI</label>
-          <input type="text">
-          </div>
-             <div class="form_control">
-          <label for="body_fat">Body fat(%)</label>
-          <input type="text">
-          </div>
-          <div class="form_control">
-          <label for="muscle_mass">Muscle mass</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="musc">MUAC</label>
-          <input type="text">
-          </div>
-          <div class="form_control">
-          <label for="resting_metabolism">Restinng metabolism</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="body_age">Body age</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="bmi_for_age">BMI for age</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="visceral_fat">Visceral fat</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="head_circumference">Head circumference</label>
-          <input type="text">
-          </div>
-          <div class="form_control">
-          <label for="wfa">WFA</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="waist_circumference">Waist Circumference</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="hip_circumference">Hip Circumference</label>
-          <input type="text">
-          </div>
-                    <div class="form_control">
-          <label for="w_hr">W-HR</label>
-          <input type="text">
-          </form>
-        </div>
-        <button id="btn_submit">Submit</button>
-          </div> -->
-        
-        <!-- <script src="index.js"></script> -->
 </body>
 </html>
