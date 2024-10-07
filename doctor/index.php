@@ -118,6 +118,7 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
               <div class="sidebar-body">
               <ul>
             <li onclick="pendingTransaction()" class="active scaleup" id="links">
+            <i class="bi bi-clock"></i>
             <span>Appoitments</span>
             </li>
             <li onclick="document.getElementById('logoutform').submit();" class="scaleup" id="links">
@@ -187,12 +188,12 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
                     echo "<td>" . htmlspecialchars($row["reason"]) . "</td>";
                     echo "<td>";
                     ?>
-                    <button class="bg-white" type="button" onclick="accept('<?php echo htmlspecialchars($row["patient_id"]); ?>')">accept</button>
+                    <button class="bg-white" type="button" onclick="accept('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Accept</button>
                     <?php
                     echo "</td>";
                     echo "<td>";
                     ?>
-                    <button class="bg-white" type="button" onclick="reject('<?php echo htmlspecialchars($row["patient_id"]); ?>')">reject</button>
+                    <button class="bg-white" type="button" onclick="reject('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Reject</button>
                     <?php
                     echo "</td>";
                     echo "</tr>";
@@ -216,7 +217,7 @@ const createAlertMessage = (text, className, duration = 5000) => {
         <div class="icon">
           <i class="bi bi-exclamation-triangle-fill bootsrapIcon"></i>
         </div>
-        <h2>${text}</h2>
+        <h4 style="color:white">${text}</h4>
       </div>
     </div>
   `;

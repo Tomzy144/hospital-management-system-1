@@ -65,8 +65,7 @@ function filterAppoitment() {
     const searchInput = document.querySelector('#incomingSearchInput').value.trim().toLowerCase();
 
     // Check if the table has one row and it contains the "No pending transactions found." message
-    if (tableRows.length === 1 && tableRows[0].textContent.trim().toLowerCase().includes('no pending appoitment found')) {
-        alert('No data available to search.');
+    if (tableRows.length === 1) {
         return; // Exit the function since there's no valid data
     }
 
@@ -703,9 +702,10 @@ function gatherDoctorInputs() {
         dataType: 'json',
         success: function (data) {
             if (data.check === "success") {
-                alert("Patient input has been successuful");
+                // alert("Patient input has been successuful");
+                successMessage('Patient input has been updated successfully')
             } else {
-                console.error('Error:', data.error);
+                dangerMessage('Error:', data.message)
             }
         },
         error: function (xhr, status, error) {
@@ -736,6 +736,7 @@ $.ajax({
       populaterolesDropdown(data.doctorRoles); // Pass the entire array of roles
     } else {
       console.error('Error:', data.message);
+      dangerMessage('Error:', data.message)
     }
   },
   error: function (xhr, status, error) {
@@ -797,6 +798,7 @@ $.ajax({
       populatedoctorDropdown(data.doctor); // Pass the entire array of beds
     } else {
       console.error('Error:', data.message);
+      dangerMessage('Error:', data.message)
     }
   },
   error: function (xhr, status, error) {
@@ -832,7 +834,7 @@ function transfer_to_lab() {
     var message = $("#message").val();
 
     if (message === "") {
-        alert("Fill the message field");
+        warningMessage("Fill the message field")
     } else {
         var $btnSubmit = $('#submit_btn');
         var btnText = $btnSubmit.html();
@@ -850,7 +852,7 @@ function transfer_to_lab() {
             dataType: 'json',
             success: function (data) {
                 if (data.check === "success") {
-                    alert("Patient has been transferred to the Laboratory successfully");
+                    successMessage("Patient has been transferred to the Laboratory successfully")
                     $btnSubmit.html('Transfer');
                     $btnSubmit.prop('disabled', false);
                     close_tranfer_patient_lab();
@@ -900,6 +902,8 @@ function getDoctorsRoles() {
           populaterolesDropdown(data.doctorRoles); // Pass the entire array of roles
         } else {
           console.error('Error:', data.message);
+          dangerMessage('Error:', data.message)
+
         }
       },
       error: function (xhr, status, error) {
@@ -963,6 +967,7 @@ function getDoctorsRoles() {
           populatedoctorDropdown(data.doctor); // Pass the entire array of beds
         } else {
           console.error('Error:', data.message);
+          dangerMessage('Error:', data.message)
         }
       },
       error: function (xhr, status, error) {
@@ -1023,7 +1028,7 @@ function getDoctorsRoles() {
     var patient_name =$('#patient_name').val();
   
     if(remark==""){
-      alert('Fill the remark field');
+      warningMessage('Fill the remark field')
     }
     else{
       var $btnSubmit = $('#transfer_to_doctor_btn');
@@ -1044,12 +1049,13 @@ function getDoctorsRoles() {
         success: function (data) {
           if (data.success) {
   
-            alert("Patient Transfer is Successful");
+            successMessage("Patient Transfer is Successful")
             $btnSubmit.html('BOOK');
             $btnSubmit.prop('disabled', true);
             window.location.reload();
           } else {
             console.error('Error:', data.message);
+            dangerMessage('Error:', data.message)
             $btnSubmit.html(btnText);
             $btnSubmit.prop('disabled', false);
           }
@@ -1065,13 +1071,12 @@ function transfer_to_rad() {
     var message = $("#message2").val();
 
     if (message === "") {
-        alert("Fill the message field");
+        warningMessage("Fill the message field")
     } else {
         var $btnSubmit = $('#rad_submit_btn');
         var btnText = $btnSubmit.html();
         $btnSubmit.html('Processing...');
         $btnSubmit.prop('disabled', true);
-
         var action = 'transfer_to_rad';
         var dataString = "action=" + action + "&patient_id=" + patient_id + "&patient_name=" + patient_name + "&message=" + message;
 
@@ -1083,12 +1088,13 @@ function transfer_to_rad() {
             dataType: 'json',
             success: function (data) {
                 if (data.check === "success") {
-                    alert("Patient has been transferred to the Radiology successfully");
+                    successMessage("Patient has been transferred to the Radiology successfully")
                     $btnSubmit.html('Transfer');
                     $btnSubmit.prop('disabled', false);
                     close_tranfer_patient_lab();
                 } else {
                     console.error('Error:', data.error);
+                    dangerMessage('Error:', data.error)
                     $btnSubmit.html(btnText);
                     $btnSubmit.prop('disabled', false);
                 }
@@ -1104,8 +1110,6 @@ function transfer_to_rad() {
 
 //DEATH FORM
  function show_death_form(){
-    // openModal('death--booking')
-
     var patient_id = $("#patient_id").val();
     var doctor_id = $("#sdoctor_id").val();
     var date_of_death = $("#date_of_death").val();
@@ -1113,7 +1117,7 @@ function transfer_to_rad() {
     var time_of_death =$('#time_of_death').val();
 
     if (cause_of_death === ""||time_of_death==""||date_of_death=="" ) {
-        alert("Fill the required fields");
+        warningMessage("Fill the required fields")
     } else {
         var $btnSubmit = $('#btn_save_confirmed_death');
         var btnText = $btnSubmit.html();
@@ -1131,11 +1135,12 @@ function transfer_to_rad() {
             dataType: 'json',
             success: function (data) {
                 if ((data.success)) {
-                    alert(" Transfer successful");
+                    successMessage('Transfer patient successfully')
                     $btnSubmit.html('Transfer');
                     $btnSubmit.prop('disabled', false);
                 } else {
                     console.error('Error:', data.error);
+                    dangerMessage('Error:', data.error);
                     $btnSubmit.html(btnText);
                     $btnSubmit.prop('disabled', false);
                 }
@@ -1161,7 +1166,7 @@ function confirm_discharge(){
     var discharge_message =$('#discharge_message').val();
 
     if (cause_of_death === ""||time_of_death==""||date_of_death=="" ) {
-        alert("Fill the required fields");
+        warningMessage("Fill the required fields")
     } else {
         var $btnSubmit = $('#btn_save_discharge');
         var btnText = $btnSubmit.html();
@@ -1179,11 +1184,12 @@ function confirm_discharge(){
             dataType: 'json',
             success: function (data) {
                 if ((data.success)) {
-                    alert(" Transfer successful");
+                    successMessage('Patient is discharged successfully')
                     $btnSubmit.html('Confirm Discharge');
                     $btnSubmit.prop('disabled', false);
                 } else {
                     console.error('Error:', data.error);
+                    dangerMessage('Error:', data.error);
                     $btnSubmit.html(btnText);
                     $btnSubmit.prop('disabled', false);
                 }
@@ -1207,7 +1213,7 @@ function surgical_procedure(){
     var phonenumber =$("#phone_number").val();
 
     if (smessage === ""|| procedure ==="") {
-        alert("Fill the required fields");
+        warningMessage("Fill the required fields")
     } else {
         var $btnSubmit = $('#pro_btn');
         var btnText = $btnSubmit.html();
@@ -1225,12 +1231,13 @@ function surgical_procedure(){
             dataType: 'json',
             success: function (data) {
                 if (data.check === "success") {
-                    alert("Patient has been transferred to the Surgical suit successfully");
+                    successMessage("Patient has been transferred to the Surgical suit successfully")
                     $btnSubmit.html('Transfer');
                     $btnSubmit.prop('disabled', false);
                     close_tranfer_patient_lab();
                 } else {
                     console.error('Error:', data.error);
+                    dangerMessage('Error:', data.error)
                     $btnSubmit.html(btnText);
                     $btnSubmit.prop('disabled', false);
                 }
@@ -1242,8 +1249,8 @@ function surgical_procedure(){
             }
         });
     }
-
 }
+
 
 
 

@@ -175,7 +175,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <input type="text" name ="coi" id="coi" class="emergencyInput">
   </div>
   </div>
-  <button class="btn_submit" type="button" id="submitEmergencyInput" onclick="EmergencyPatient()"> Submit</button>
+  <button class="bg-blue" type="button" id="submitEmergencyInput" onclick="EmergencyPatient()"> Submit</button>
 </form>
 </div>
 </div>
@@ -184,18 +184,18 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
 
 <div class="modal hidden" id="book__patient">
   <div class="">
-    <button onclick="docForm(),getDoctorsRoles()">Transfer to doctor</button>
-    <button onclick="nurseForm(),getnurse();">Transfer to nurse</button>
-    <button onclick="surgicalsuiteForm()">Transfer to surgical suite</button>
-    <button onclick="labForm()">Transfer to lab</button>
-    <button onclick="radiologyForm()">Transfer to radiology</button>
-    <button onclick="morgueForm()">Transfer to Morgue</button>
-    <button onclick="isPatientStable()">Is the patient stable</button>
+    <button onclick="docForm(),getDoctorsRoles()" class="bg-blue">Transfer to doctor</button>
+    <button onclick="nurseForm(),getnurse();" class="bg-blue">Transfer to nurse</button>
+    <button onclick="surgicalsuiteForm()" class="bg-blue">Transfer to surgical suite</button>
+    <button onclick="labForm()" class="bg-blue">Transfer to lab</button>
+    <button onclick="radiologyForm()" class="bg-blue">Transfer to radiology</button>
+    <button onclick="morgueForm()" class="bg-blue">Transfer to Morgue</button>
+    <button onclick="isPatientStable()" class="bg-blue">Is the patient stable</button>
   </div>
 </div>
 
 <div class="modal hidden" id="docForm">
-  <h3>AVAILABLE DOCTORS</h3>
+  <h4>Book patient to available doctor</h4>
 <button class="btn--close-modal" onclick="closeModal('docForm')">&times;</button>
   <form action="" id="bookDocForm">
   <div class="each_sections">
@@ -239,13 +239,13 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment"></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit" id ="doctor_submit" onclick="doctor_submit_btn();">Submit</button>  
+<button type="button" class="bg-blue" id ="doctor_submit" onclick="doctor_submit_btn();">Submit</button>  
   </form>
 </div>
 
 
 <div class="modal hidden" id="nurseForm">
-  <h3>AVAILABLE NURSES</h3>
+  <h4>Book patient to available nurses</h4>
 <button class="btn--close-modal" onclick="closeModal('nurseForm')">&times;</button>
   <form action="" id="booknurseForm">
   <div class="each_sections">
@@ -282,14 +282,14 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment"></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit" onclick="bookNurseForm()">Submit</button>  
+<button type="button" class="bg-blue" onclick="bookNurseForm()">Submit</button>  
   </form>
 </div>
 
 
 
 <div class="modal hidden" id="surgicalsuiteForm">
-  <h3>AVAILABLE SURGICAL SUITE ATTENDANT</h3>
+  <h4>Book for Operation</h4>
 <button class="btn--close-modal" onclick="closeModal('surgicalsuiteForm')">&times;</button>
   <form action="" id="booksurgicalsuiteForm">
   <div class="each_sections">
@@ -329,13 +329,13 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea  id="comment"></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit" onclick="bookSurgicalsuiteForm()">Submit</button>  
+<button type="button" class="bg-blue" onclick="bookSurgicalsuiteForm()">Submit</button>  
   </form>
 </div>
 
 
 <div class="modal hidden" id="labForm">
-  <h3>AVAILABLE LAB SCIENTIST</h3>
+  <h4>Book available Lab scientist</h4>
 <button class="btn--close-modal" onclick="closeModal('labForm')">&times;</button>
   <form action="" id="booklabForm">
   <div class="each_sections">
@@ -375,12 +375,12 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment" ></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit" onclick="bookLabForm()">Submit</button>  
+<button type="button" class="bg-blue" onclick="bookLabForm()">Submit</button>  
   </form>
 </div>
 
 <div class="modal hidden" id="radiologyForm">
-  <h3>AVAILABLE RADIOLOGY SCIENTIST</h3>
+  <h4>Book available radiologist</h4>
 <button class="btn--close-modal" onclick="closeModal('radiologyForm')">&times;</button>
   <form action="" id="bookradiologyForm">
   <div class="each_sections">
@@ -420,12 +420,12 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment"></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit" onclick="bookRadForm()">Submit</button>  
+<button type="button" class="bg-blue" onclick="bookRadForm()">Submit</button>  
   </form>
 </div>
 
 <div class="modal hidden" id="morgueForm">
-  <h3>TRANSFER TO MORGUE</h3>
+  <h4>Transfer patient to Morgue</h4>
 <button class="btn--close-modal" onclick="closeModal('morgueForm')">&times;</button>
   <form action="" id="bookmorgueForm">
   <div class="each_sections">
@@ -465,13 +465,13 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment"></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit" onclick="bookMorgueForm()">Submit</button>  
+<button type="button" class="bg-blue" onclick="bookMorgueForm()">Submit</button>  
   </form>
 </div>
 
 
 <div class="modal hidden" id="healthrecordForm">
-  <h3>TRANSFER PATIENT TO HEALTH RECORD SECTION</h3>
+  <h4>Transfer patient to health record</h4>
 <button class="btn--close-modal" onclick="closeModal('healthrecordForm')">&times;</button>
   <form action="" id="bookhealthrecordForm">
   <div class="each_sections">
@@ -494,7 +494,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <textarea id="comment"></textarea>
   </div>
   </div>
-<button type="button" class="btn_submit" onclick="bookHealthRecordForm()">Submit</button>  
+<button type="button" class="bg-blue" onclick="bookHealthRecordForm()">Submit</button>  
   </form>
 </div>
 

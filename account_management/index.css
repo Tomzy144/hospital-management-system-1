@@ -9,33 +9,6 @@
             padding: 0;
             height: 100%;
             font-family:'Inter', Tahoma, Geneva, Verdana, sans-serif;
-            /* animation: fadeIn 2s ease-in-out; */
-        }
-        :root{
-            --bg-color:#fff;
-            --dg-color:#000000;
-            --extra-small-font:0.70rem;
-            ---small-font:0.80rem;
-            --medium-font:1.2rem;
-            --large-font:1.8rem;
-            --extra-large-font:3.5rem;
-            --font-color:rgb(42, 87, 215);
-            --navbar-icon-color:#c4bdbd;
-        }
-        
-        p, h3, h4, span, li {
-            font-size: var(--medium-font);
-            color: var(--font-color);
-        }
-        h5, h6{
-            font-size: var(--extra-small-font);
-        }
-        h1, h2{
-            font-size: var(--large-font);
-            color: var(--font-color);
-        }
-        span{
-            padding: 0.3rem;
         }
 .alert_div{
     width: auto;
@@ -78,14 +51,6 @@
   }
   .alert h2{
     color: #fff;
-  }
-
-  .buttonflex{
-    display: flex;;
-    width: 200px;
-    height: 50px;
-    justify-content: space-around;
-    align-items: center;
   }
 
 .bg-blue {
@@ -212,9 +177,9 @@
     flex-direction: column;
     justify-content: center;
     position:relative;
-    color: var(--bg-color);
+    color: white;
     font-weight: 700;
-    font-size: var(--heading--font);
+    font-size: 1rem;
     align-items: center;
     }
     
@@ -227,7 +192,6 @@
     .profile span{
     color: #ffffff;
     text-transform: uppercase;;
-    font-size: var(--heading--font);
     }
     
     .profile .bi-caret-down-fill{
@@ -266,7 +230,6 @@
     color: rgb(42, 87, 215);
     border: none;
     border-radius: 5px;
-    font-size: var(--heading--font);
     transition: all  ease-in-out 0.6s;
     cursor: pointer;
     margin: 1rem 0;
@@ -280,11 +243,9 @@
     .profile_account span{
     text-align: left;
     cursor: pointer;
-    font-size: var(--heading--font);
     }
     .profile_account h3{
     color: rgb(255, 255, 255);
-    font-size: var(--heading--font);
     }
     .profile img{
     width: 50px;
@@ -315,7 +276,6 @@ width: 100%;
 display: flex;
 padding: 0.5rem;
 color: rgb(42, 87, 215);
-font-size: var(--extra-large-font);
 justify-content: space-evenly;
 align-items: center;
 }
@@ -372,14 +332,6 @@ bottom: 0;
 background-color: rgb(42, 87, 215);;
 align-items: left;
 justify-content: center;
-}
-.sidebar-footer  .bi-person{
-    font-size: var(--medium-font);
-    color: var(--bg-color);
-}
-.sidebar-footer span{
-    font-size: var(--medium-font);
-    color: var(--bg-color);
 }
 
 .pending__transactions{
@@ -660,38 +612,3 @@ color: #4F5F64;
 .hide {
   display: none;
 }
-
-@keyframes scaleup {
-  0% {
-    transform: scale(0.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes animatetext {
-  0% {
-    letter-spacing: -0.5em;
-    transform: translateZ(-700px);
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateZ(0);
-    opacity: 1;
-  }
-}
-
-
-
-/* Animation class */
-.scaleup {
-  animation: scaleup 0.5s ease-in-out both;
-}
-.animatetext {
-  animation: animatetext 0.5s ease-in-out both;
-}
-
-

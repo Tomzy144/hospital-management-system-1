@@ -1000,7 +1000,7 @@ $patient_id = $_POST['patient_Id'];
             <input  type="text" name="" value="" id="message"></input>
             </div>
             </div>
-            <button type="button" id="submit_btn" onclick="transfer_to_lab()">SUBMIT</button>
+            <button type="button" id="submit_btn" class="bg-blue" onclick="transfer_to_lab()">SUBMIT</button>
         </form>
         </div>
     </div>
@@ -1027,7 +1027,7 @@ $patient_id = $_POST['patient_Id'];
             <input  type="text" name="" value="" id="message2"></input>
             </div>
             </div>
-            <button type="button" id="rad_submit_btn" onclick="transfer_to_rad()">SUBMIT</button>
+            <button type="button" id="rad_submit_btn" class="bg-blue" onclick="transfer_to_rad()">SUBMIT</button>
         </form>
         </div>
     </div>
@@ -1102,7 +1102,7 @@ $patient_id = $_POST['patient_Id'];
             <input type="text" name="" value="" id="smessage">
             </div>
             </div>
-            <button type="button" id="pro_btn" onclick="surgical_procedure()">Transfer</button>
+            <button type="button" id="pro_btn" class="bg-blue" onclick="surgical_procedure()">Transfer</button>
         </form>
         </div>
     </div>
@@ -1173,7 +1173,7 @@ $patient_id = $_POST['patient_Id'];
             <input type="hidden" name="" id="patient_name"  value="<?php echo $patient_name ?>">
             </div>
             </div>
-            <button type="button" id='transfer_to_doctor_btn' onclick="transfer_to_doctor();">SUBMIT</button>
+            <button type="button" id='transfer_to_doctor_btn' class="bg-blue" onclick="transfer_to_doctor();">SUBMIT</button>
         </form>
         </div>
     </div>
@@ -1208,7 +1208,7 @@ $patient_id = $_POST['patient_Id'];
                 <input type="hidden" name="" id="patient_name"  value="<?php echo $patient_name ?>">
                 <input type="hidden" id ='sdoctor_id' value="<?php echo $s_doctor_id?>">
             </div> 
-            <button type="button" class="bg-white" onclick="confirm_discharge();" id="btn_save_discharge" class="save">Comfirm Discharge</button>
+            <button type="button" class="bg-white" onclick="confirm_discharge();" id="btn_save_discharge">Comfirm Discharge</button>
         </form>
         </div>
    </div>

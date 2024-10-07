@@ -316,8 +316,8 @@ function isPatientStable() {
     <div style="display:block">
        <h2>Is patient ${patientName} stable?</h2>
        <div style="display:flex; justify-content:space-around; width:100%">
-           <button id="yes">Yes</button>
-           <button id="no">No</button>
+           <button id="yes" class="bg-white">Yes</button>
+           <button id="no" class="bg-white">No</button>
        </div>
     </div>
     `;

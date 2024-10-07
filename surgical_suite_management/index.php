@@ -57,7 +57,6 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
             <div class="profile_account hide">
             <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
             <span><?php echo $fullname ?></span>
-            <button class="btn_submit">Upload Image</button>
            </div>
             <div class="image">
             <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
@@ -74,21 +73,17 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
     <div class="sidebar-body">
       <ul>
         <li  id="emergency__form__link" class="links active" onclick="surgeryAppoitment()">
-          <i class="fa-solid fa-person-pregnant"></i>
+        <i class="bi bi-clock"></i>
           <span>Appoitment for surgery</span>
         </li>
         <li id="emergency__link" class="links" onclick="pendingSurgeryList()">
-          <i class="fa-solid fa-person-pregnant"></i>
+        <i class="bi bi-book"></i>
           <span>Pending Surgery List</span>
         </li>
         <li id="emergency__link" class="links" onclick="patientProfile()">
-          <i class="fa-solid fa-person-pregnant"></i>
+        <i class="bi bi-person"></i>
           <span>Patient Profile</span>
         </li>
-        <!-- <li id="emergency__link" class="links" onclick="bookinSection()">
-          <i class="fa-solid fa-person-pregnant"></i>
-          <span>Booking Surgery</span>
-        </li> -->
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
           <i class="fa-solid fa-right-from-bracket"></i>
           <span>Logout</span>
@@ -167,47 +162,49 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
  </div>
  <div class="bioData listing">
   <h3 class="heading">BIO DATA</h3>
-  <div>
-  <h3>KINGSLEY PATRICK</h3>
-  <h3>PAT0003</h3>
-  <h3>MALE</h3>
-  <h3>23 SEPTEMBER 1998</h3>
-  <h3>40 MAIN LONDON ROAD</h3>
-  <h3>+23488993034</h3>
+  <div class="column">
+  <span>KINGSLEY PATRICK</span>
+  <span>PAT0003</span>
+  <span>MALE</span>
+  <span>23 SEPTEMBER 1998</span>
+  <span>40 MAIN LONDON ROAD</span>
+  <span>+23488993034</span>
   </div>
   <h3 class="heading">NEXT OF KINS DETAIL</h3>
-  <div>
-  <h3>MERCY PATRICK</h3>
-  <h3>FEMALE</h3>
-  <h3>23 AUGUST 1498</h3>
-  <h3>40 MAIN LONDON ROAD</h3>
-  <h3>+2348893334</h3>
+  <div class="column">
+  <span>MERCY PATRICK</span>
+  <span>FEMALE</span>
+  <span>23 AUGUST 1498</span>
+  <span>40 MAIN LONDON ROAD</span>
+  <span>+2348893334</span>
   </div>
   <h3 class="heading">SOCIAL HISTORY</h3>
   <div>
-  <h3>NAN</h3>
+  <span>NAN</span>
   </div>
   <h3 class="heading">MEDICAL HISTORY</h3>
   <div>
-  <h3>NAN</h3>
+  <span>NAN</span>
   </div>
   <h3 class="heading">SEXUAL HISTORY</h3>
   <div>
-  <h3>NAN</h3>
+  <span>NAN</span>
   </div>
   <h3 class="heading">PAST DISEASE</h3>
   <div>
-  <h3>NAN</h3>
+  <span>NAN</span>
   </div>
   <h3 class="heading">FAMILY DISEASE</h3>
   <div>
-  <h3>NAN</h3>
+  <span>NAN</span>
   </div>
   <h3 class="heading">PAST SURGERY</h3>
   <div>
-  <h3>NAN</h3>
+  <span>NAN</span>
   </div>
  </div>
+
+
  <div class="labouratoryData">
  <h3 class="heading">LABOURATORY TESTS</h3>
   <table>
@@ -231,6 +228,8 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
     </tbody>
   </table>
  </div>
+
+ 
  <div class="radiologyData">
  <h3 class="heading">RADIOLOGY TESTS</h3>
   <table>
@@ -255,7 +254,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
   </table>
  </div>
 
- <div class="vitalData">
+ <div class="vitalData" style="overflow: auto">
  <h3 class="heading">VITAL DATA</h3>
   <table>
     <thead>
@@ -319,9 +318,9 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
   </select>
   </div>
  </div>
- <button class="btn_submit">Book ward</button>
- <button class="btn_submit" onclick="uploadSection()">Upload consent form</button>
- <button class="btn_submit" onclick="bookinSection()">Book patient</button>
+ <button class="bg-white">Book ward</button>
+ <button class="bg-white" onclick="uploadSection()">Upload consent form</button>
+ <button class="bg-white" onclick="bookinSection()">Book patient</button>
 </div>
 </div>
 

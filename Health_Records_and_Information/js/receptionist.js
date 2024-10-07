@@ -1113,6 +1113,11 @@ function filterTable1() {
 
     const patientName = row.children[1].textContent.trim().toLowerCase();
     const patientId = row.children[2].textContent.trim().toLowerCase();
+   // Check if the table has one row and it contains the "No pending transactions found." message
+   if (tableRows1.length === 1 && tableRows[0].textContent.trim().toLowerCase().includes('No patients found')) {
+    // alert('No data available to search.');
+    return; // Exit the function since there's no valid data
+}
 
     if (patientName.includes(searchInput) || patientId.includes(searchInput)) {
       row.style.display = ''; // Show the row
@@ -1158,6 +1163,10 @@ function filterTable2() {
       row.style.display = 'none'; // Hide the row
     }
   });
+  if (tableRows2.length === 1 && tableRows[0].textContent.trim().toLowerCase().includes('No patients found')) {
+    // alert('No data available to search.');
+    return; // Exit the function since there's no valid data
+}
 
   // Remove any existing 'No User' message for Table 2
   const existingNoDataMessage2 = document.querySelector('#noDataMessage2');
@@ -1220,3 +1229,5 @@ document.querySelector('#wsearch').addEventListener('input', filterTable2);
         }
     });
 }
+
+

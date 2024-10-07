@@ -77,3 +77,15 @@ function uploadSection(){
 }
  
     
+
+// async function availableSurgeryAppoitments(){
+//     try{
+//         const response = await fetch('config/surgery');
+//         const data = response.json();
+//         console.log(data)
+//     }catch(error){
+//         console.error("Error" error.message)
+//     }finally{
+//         console.log('Done')
+//     }
+// }

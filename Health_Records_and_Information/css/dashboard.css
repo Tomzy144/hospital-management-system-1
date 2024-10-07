@@ -11,33 +11,6 @@
     font-family:'Inter', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-:root{
-    --bg-color:#fff;
-    --dg-color:#000000;
-    --extra-small-font:0.70rem;
-    ---small-font:0.80rem;
-    --medium-font:1.2rem;
-    --large-font:1.8rem;
-    --extra-large-font:3.5rem;
-    --font-color:rgb(42, 87, 215);
-    --navbar-icon-color:#c4bdbd;
-}
-
-p, h3, h4, span, li {
-    font-size: var(--medium-font);
-    color: var(--font-color);
-}
-h5, h6{
-    font-size: var(--extra-small-font);
-}
-h1, h2{
-    font-size: var(--large-font);
-    color: var(--font-color);
-}
-span{
-    padding: 0.3rem;
-}
-
 .alert{
     display: flex;
     align-items:center;
@@ -179,9 +152,8 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 position:relative;
-color: var(--bg-color);
 font-weight: 700;
-font-size: var(--medium-font);
+color: white;
 align-items: center;
 }
 
@@ -264,28 +236,26 @@ border-radius: 100%;
 .image{
 position: relative;
 }
-
 .sidebar{
-width: 100%;
-width: 350px;
-height: 100%;
-overflow: hidden;
-position: fixed;
-top: 0;
-left: 0;
-border-right: 1px solid rgb(234, 232, 232);
-display: flex;
-background: #fff;
-flex-direction: column;
-justify-content: center;
-z-index: 2;
+  width: 100%;
+  width: 300px;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-right: 1px solid rgb(234, 232, 232);
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
 }
 .sidebar-header{
 width: 100%;
 display: flex;
 padding: 0.5rem;
 color: rgb(42, 87, 215);
-font-size: var(--extra-large-font);
 justify-content: space-evenly;
 align-items: center;
 }
@@ -295,13 +265,14 @@ display: flex;
 padding: 0.5rem;
 color:rgb(42, 87, 215);
 align-items: center;
+margin: 8rem 0;
 }
 .sidebar-body ul{
-text-decoration: none;
-list-style: none;
-display: flex;
-align-items: left;
-flex-direction: column;
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
 }
 .sidebar-body ul li{
 margin: 0.3rem 0;
@@ -311,16 +282,17 @@ cursor: pointer;
 }
 
 .sidebar-body ul li.active{
-margin: 0.3rem 0;
-padding: 0.9rem;
-background-color: rgb(42, 87, 215);
-width: 100%;
-border-radius: 4px;
-cursor: pointer;
-}
-.active span{
-color: #fff;
-}
+  margin: 0.3rem 0;
+  padding: 0.9rem;
+  background-color: rgb(42, 87, 215);
+  width: 100%;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  }
+  .active span{
+      color: #fff;
+  }
 .sidebar-body ul li{
 margin: 0.3rem 0;
 padding: 0.9rem;
@@ -328,7 +300,6 @@ background: none;
 border-radius: 4px;
 cursor: pointer;
 }
-
 /*PATIENT FORM*/
 .form_sections{
     width: 100%;
@@ -343,7 +314,7 @@ cursor: pointer;
     max-width: 100%;
     flex-direction: column;
     padding: 1em;
-    margin: 5em 0 0 22rem;
+    margin: 5em 0 0 19rem;
 }
 .upload_image{
     width: 300px;
@@ -561,7 +532,7 @@ cursor: pointer;
 
   .patient_list_div {
     width: auto;
-    margin: 5.5rem 0 0 22rem;
+    margin: 5em 0 0 19rem;
 }
 
 
@@ -636,12 +607,12 @@ tbody tr:hover {
 }
 
 .walkin_patient_list_div{
-    margin: 5.5rem 0 0 22rem;
+  margin: 5em 0 0 19rem;
     width: auto;
 }
 .emergency_patient_list_div {
   width: auto;
-  margin: 5em 0 0 21.5em;
+  margin: 5em 0 0 19rem;
 }
 
 ._action{

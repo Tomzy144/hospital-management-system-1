@@ -562,7 +562,7 @@ function filterPendingTransactions() {
 
     // Check if the table has one row and it contains the "No pending transactions found." message
     if (tableRows.length === 1 && tableRows[0].textContent.trim().toLowerCase().includes('no pending transactions found')) {
-        alert('No data available to search.');
+        // alert('No data available to search.');
         return; // Exit the function since there's no valid data
     }
 

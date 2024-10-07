@@ -10,6 +10,7 @@
     <link href="<?php echo $website_url?>/surgical_suite_management/css/animate.css" type="text/css" rel="stylesheet" media="all">
     <link href="<?php echo $website_url?>/surgical_suite_management/css/aos.css" type="text/css" rel="stylesheet" />
     <link href="<?php echo $website_url?>/surgical_suite_management/index.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="./awesome-font/fontawesome/css/all.min.css"> 
 
 
     <meta property="og:type" content="Website" />
