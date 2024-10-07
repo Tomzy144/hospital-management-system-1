@@ -1,8 +1,4 @@
 'use strict';
-
-
-
-///////////////////////////////////////
 // Modal window
 const modal = document.querySelector('.modal');
 const blackBackground = document.querySelector('.black--background');
@@ -22,25 +18,14 @@ const closeModal = function (modalId) {
 };
 
 
-
    function displayUserProfile(){
     document.querySelector(".profile_account").classList.toggle("hide");
 };
 
 
-const sections = document.querySelectorAll('.section');
-const allProfiles = document.querySelectorAll('.allProfiles');
-const links = document.querySelectorAll('.sidebar-body ul li');
 
-function toggleSidebarLinks(clickedLink){
-    links.forEach(link => link.classList.remove('available'));
-    clickedLink.classList.add('available');
- }
-links.forEach(link => {
-    link.addEventListener('click', function() {
-        toggleSidebarLinks(this);
-    });
-});
+
+
 /////////////////////////////////////////////////////
 
 function createDate(){
@@ -1250,7 +1235,4 @@ function surgical_procedure(){
         });
     }
 }
-
-
-
 

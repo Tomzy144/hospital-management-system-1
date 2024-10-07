@@ -117,15 +117,15 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
               <div class="sidebar__header"></div>
               <div class="sidebar-body">
               <ul>
-            <li onclick="pendingTransaction()" class="active scaleup" id="links">
+            <li onclick="appoitment__patient()" class="active" id="links">
             <i class="bi bi-clock"></i>
             <span>Appoitments</span>
             </li>
-            <li id="emergency__link" class="links" onclick="pendingSurgeryList()">
+            <li  class="links" onclick="accepted__patient()">
         <i class="bi bi-book"></i>
           <span>Accepted Patients</span>
         </li>
-            <li onclick="document.getElementById('logoutform').submit();" class="scaleup" id="links">
+            <li onclick="document.getElementById('logoutform').submit();" id="links">
               <i class="fa-solid fa-right-from-bracket"></i>
               <span>Logout</span>
               <form method="post" action="../config/code.php" id="logoutform">
@@ -141,7 +141,7 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
 
 
 
-    <div class="list_div">
+    <div class="list_div" id="appoitment__patient">
         <div class="patient_list_div" >
         <div class="search_bar_container">
                 <h3>Appoitment details</h3>  
@@ -268,7 +268,8 @@ function accept(patient_Id) {
     successMessage('Patient Accepted')
     
     // Proceed with accepting the patient (AJAX request)
-    $('.all_sections_input').fadeIn(500);
+    // $('.all_sections_input').fadeIn(500);
+    document.querySelector('.patients__data').classList.remove('hide')
     
     var dataString = 'patient_Id=' + patient_Id;
 
@@ -278,16 +279,12 @@ function accept(patient_Id) {
       data: dataString,
       cache: false,
       success: function(html) {
-        $('.search_bar_container').addClass('hide');
-        $('.all_sections_input').html(html);
+        $('.patients__data').html(html);
 
         // Hide appointment details container
-        var container = document.getElementById('appointmentDetailsContainer');
-        container.style.display = "none";
-
-        // Remove 'hide' class from .all_sections_input
-        var hidden = document.querySelector(".all_sections_input");
-        hidden.classList.remove("hide");
+         document.getElementById('appoitment__patient').classList.add('hide');
+         document.getElementById('working__on__patient').classList.add('hide');
+        document.querySelector(".patients__data").classList.remove('hide');
       }
     });
   });
@@ -306,32 +303,81 @@ function confirmDialog(message, onConfirm) {
     onConfirm();
   }
 }
-
-
-
-
                     function reject(patient_Id) {
                         // delete_input(patient_Id);
                         dangerMessage(`Rejected patient with ID: ${patient_Id}`);
 
                     }
-
-                   
                 </script>
 </div>
-            
-            <div class="all_sections_input hidden"></div>
-
-                <!----Start from here-->
-               
-        </div>
-        
-    </div>
 </div>
+</div>
+</div>
+<div class="patients__data hide"></div>
+
+    <div class="list_div hide" id="working__on__patient">
+            <div class="patient_list_div">
+            <div class="search_bar_container">
+                    <h3>Accepted patients</h3>  
+                        <input type="text" placeholder="Search here" id="">
+                    </div>
+        <table id="">
+            <thead>
+                <tr>
+                    <td>S/N</td>
+                    <td>PASSPORT</td>
+                    <td>Patient Name</td>
+                    <td>Patient ID</td>
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>Request Type</td>
+                </tr>
+            </thead>
+            <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Image</td>
+                        <td>kingsley</td>
+                        <td>PAT002</td>
+                        <td>23/09/2024</td>
+                        <td>23:90</td>
+                        <td>lol</td>
+                        <td>
+                        <i class="bi bi-three-dots-vertical"></i>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+              </div>
 <div class="black--background hidden"></div>
   
 
+<script>
+const links = document.querySelectorAll('.sidebar-body ul li');
+function toggleSidebarLinks(clickedLink){
+    links.forEach(link => link.classList.remove('active'));
+    clickedLink.classList.add('active');
+ }
+links.forEach(link => {
+    link.addEventListener('click', function() {
+        toggleSidebarLinks(this);
+    });
+});
 
+
+function appoitment__patient(){
+    document.getElementById('appoitment__patient').classList.remove('hide')
+    document.getElementById('working__on__patient').classList.add('hide')
+    document.querySelector('.patients__data').classList.add('hide')
+}
+
+function accepted__patient(){
+  document.getElementById('appoitment__patient').classList.add('hide')
+  document.querySelector('.patients__data').classList.add('hide')
+  document.getElementById('working__on__patient').classList.remove('hide')
+}
+</script>
 </body>
 </html>
 

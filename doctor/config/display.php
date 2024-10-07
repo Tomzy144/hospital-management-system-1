@@ -285,8 +285,9 @@ $patient_id = $_POST['patient_Id'];
     </table>
 </div>
   
+
     <!--Start of the complaint section--->
-    <div class="all_section_input">
+    <div class="doctor__input">
     <form action="" method="post" enctype="multipart/form-data">
   <!--Start of Physica, Examination-->
         <div class="physical_dropdown"onclick="physical_section()">
@@ -1180,7 +1181,6 @@ $patient_id = $_POST['patient_Id'];
                     </div>
                     </div>
                     </div>
-                    </div>
 <input type="hidden" id="patient_id" value="<?php echo $patient_id?> ">
 <button type="button" class="bg-blue" id="btn" onclick="gatherDoctorInputs()">Save all Inputs</button>
 </form>
@@ -1233,7 +1233,6 @@ $patient_id = $_POST['patient_Id'];
             <button type="button" id="submit_btn" class="bg-blue" onclick="transfer_to_lab()">SUBMIT</button>
         </form>
         </div>
-    </div>
 
 
     <div class="modal hidden" id="patient__transfer--rad">
@@ -1260,7 +1259,6 @@ $patient_id = $_POST['patient_Id'];
             <button type="button" id="rad_submit_btn" class="bg-blue" onclick="transfer_to_rad()">SUBMIT</button>
         </form>
         </div>
-    </div>
 
     
 
@@ -1301,7 +1299,6 @@ $patient_id = $_POST['patient_Id'];
                         <span>No</span>
                     </label>
                 </div>
-
             </div>
         </div>
     </form>
@@ -1335,7 +1332,6 @@ $patient_id = $_POST['patient_Id'];
             <button type="button" id="pro_btn" class="bg-blue" onclick="surgical_procedure()">Transfer</button>
         </form>
         </div>
-    </div>
 
 
         <!--Diagnosis-->
@@ -1406,7 +1402,6 @@ $patient_id = $_POST['patient_Id'];
             <button type="button" id='transfer_to_doctor_btn' class="bg-blue" onclick="transfer_to_doctor();">SUBMIT</button>
         </form>
         </div>
-    </div>
 
 
 
