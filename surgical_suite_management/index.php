@@ -80,10 +80,10 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
         <i class="bi bi-book"></i>
           <span>Pending Surgery List</span>
         </li>
-        <li id="emergency__link" class="links" onclick="patientProfile()">
+        <!-- <li id="emergency__link" class="links" onclick="patientProfile()">
         <i class="bi bi-person"></i>
           <span>Patient Profile</span>
-        </li>
+        </li> -->
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
           <i class="fa-solid fa-right-from-bracket"></i>
           <span>Logout</span>
@@ -96,7 +96,11 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
   </div>
   <!----------------------------------------------------------------------------------->
 
-
+  <div class="modal hidden" id="patient">
+  <div class="">
+    <button onclick="PatientProfiles()" class="bg-blue">Display Patient Profile</button>
+  </div>
+</div>
 
   <div class="list_div" id="surgeryAppoitment">
     <div class="table_container">
@@ -131,7 +135,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                               echo "<td>" . $row['date'] . "</td>";
                               echo "<td>" . $row['time'] . "</td>";
                               echo "<td>" . $row['surgical_procedure'] . "</td>";
-                              echo "<td><i class='bi bi-three-dots-vertical'></i></td>";
+                              echo "<td><i class='bi bi-three-dots-vertical' onclick='showPatientProfile(event)'></i></td>";
                               echo "</tr>";
                           }
                       } else {
@@ -179,63 +183,62 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
   </div>
 
 
-
-
 <div class="patientProfile hide">
  <div class="profileInfo listing">
-  <h3 class="heading">PERSONAL INFORMATION</h3>
+  <h3>PERSONAL INFORMATION</h3>
   <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="" 
   style="border-radius: 100%;
   height: 200px;
   width: 200px;">
  </div>
  <div class="bioData listing">
-  <h3 class="heading">BIO DATA</h3>
+  <h3  style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">BIO DATA</h3>
   <div class="column">
-  <span>KINGSLEY PATRICK</span>
-  <span>PAT0003</span>
-  <span>MALE</span>
-  <span>23 SEPTEMBER 1998</span>
-  <span>40 MAIN LONDON ROAD</span>
-  <span>+23488993034</span>
+  <span id="pname">KINGSLEY PATRICK</span>
+  <span id="pId">PAT0003</span>
+  <span id="pgender">MALE</span>
+  <span id="pdob">23 SEPTEMBER 1998</span>
+  <span id="phome_address">40 MAIN LONDON ROAD</span>
+  <span id="p_phone_number">+23488993034</span>
   </div>
-  <h3 class="heading">NEXT OF KINS DETAIL</h3>
+
+  <h3  style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">NEXT OF KINS DETAIL</h3>
   <div class="column">
-  <span>MERCY PATRICK</span>
-  <span>FEMALE</span>
-  <span>23 AUGUST 1498</span>
-  <span>40 MAIN LONDON ROAD</span>
-  <span>+2348893334</span>
+  <span id="pnx_name">MERCY PATRICK</span>
+  <span id="pnx_gender">FEMALE</span>
+  <span id="pnx_address">40 MAIN LONDON ROAD</span>
+  <span id="pnx_phone_number">+2348893334</span>
+  <span id="pnx_relationship">Brother</span>
   </div>
-  <h3 class="heading">SOCIAL HISTORY</h3>
+  <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">SOCIAL HISTORY</h3>
   <div>
-  <span>NAN</span>
+  <span ID="p_sh">NAN</span>
   </div>
-  <h3 class="heading">MEDICAL HISTORY</h3>
+  <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">MEDICAL HISTORY</h3>
   <div>
-  <span>NAN</span>
+  <span id="p_mh">NAN</span>
   </div>
-  <h3 class="heading">SEXUAL HISTORY</h3>
+  <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">SEXUAL HISTORY</h3>
   <div>
-  <span>NAN</span>
+  <span id="p_sxh">NAN</span>
   </div>
-  <h3 class="heading">PAST DISEASE</h3>
+  <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">PAST DISEASE</h3>
   <div>
-  <span>NAN</span>
+  <span id="p_pd">NAN</span>
   </div>
-  <h3 class="heading">FAMILY DISEASE</h3>
+  <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">FAMILY DISEASE</h3>
   <div>
-  <span>NAN</span>
+  <span id="p_fd">NAN</span>
   </div>
-  <h3 class="heading">PAST SURGERY</h3>
+  <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">PAST SURGERY</h3>
   <div>
-  <span>NAN</span>
+  <span id="p_ps">NAN</span>
   </div>
  </div>
 
 
  <div class="labouratoryData listing">
- <h3 class="heading">LABOURATORY TESTS</h3>
+ <h3>LABOURATORY TESTS</h3>
   <table>
     <thead>
       <tr>
@@ -260,7 +263,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
 
  
  <div class="radiologyData listing">
- <h3 class="heading">RADIOLOGY TESTS</h3>
+ <h3>RADIOLOGY TESTS</h3>
   <table>
     <thead>
       <tr>
@@ -284,7 +287,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
  </div>
 
  <div class="vitalData listing" style="overflow: auto">
- <h3 class="heading">VITAL DATA</h3>
+ <h3>VITAL DATA</h3>
   <table>
     <thead>
       <tr>
@@ -442,6 +445,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
             </div>
           </div>
           </div>
-          </div>
+        </div>
+        <div class="overlay hidden"></div>
 </body>
 </html>

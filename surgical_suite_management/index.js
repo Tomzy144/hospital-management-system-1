@@ -2,9 +2,25 @@
     function displayUserProfile(){
         document.querySelector(".profile_account").classList.toggle("hide");
     };
+  
+    const modal = document.querySelector('.modal');
+    const overlay = document.querySelector('.overlay');
+
+    const openModal = function (modalId) {
+    const modal = document.getElementById(modalId);
+    
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+    };
 
 
+    const closeModal = function (modalId) {
+    const modal = document.getElementById(modalId);
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+};
 
+   
     const sections = document.querySelectorAll('.section');
     const allProfiles = document.querySelectorAll('.allProfiles');
     const links = document.querySelectorAll('.sidebar-body ul li');
@@ -76,16 +92,58 @@ function uploadSection(){
     document.querySelector('.upload-section').classList.remove('hide');
 }
  
-    
 
-// async function availableSurgeryAppoitments(){
-//     try{
-//         const response = await fetch('config/surgery');
-//         const data = response.json();
-//         console.log(data)
-//     }catch(error){
-//         console.error("Error" error.message)
-//     }finally{
-//         console.log('Done')
-//     }
-// }
+let patientId;
+
+function showPatientProfile(e){
+patientId = e.target.closest('tr').children[2].textContent;
+  openModal('patient')
+}
+
+
+async function PatientProfiles() {
+    try {
+        const response = await fetch('config/code.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', 
+            },
+            body: new URLSearchParams({
+                'action': 'fetch_patient_profile',
+                'patient_id': patientId
+            })
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json(); 
+        console.log(data.data)
+        const patientData = data.data
+        document.getElementById('pname').textContent = `${patientData.fullname}`;
+        document.getElementById('pId').textContent = `${patientData.patient_id}`;
+        document.getElementById('pgender').textContent = `${patientData.gender}`;
+        document.getElementById('pdob').textContent = `${patientData.date}`;
+        document.getElementById('phome_address').textContent = `${patientData.address}`;
+        document.getElementById('p_phone_number').textContent = `${patientData.phonenumber}`;
+        document.getElementById('pnx_name').textContent = `${patientData.kname}`;
+        document.getElementById('pnx_gender').textContent = `${patientData.kgender}`;
+        document.getElementById('pnx_address').textContent = `${patientData.kaddress}`;
+        document.getElementById('pnx_phone_number').textContent = `${patientData.kphonenumber}`;
+        document.getElementById('pnx_relationship').textContent = `${patientData.krelationship}`;
+        document.getElementById('p_sh').textContent = `${NaN}`;
+        document.getElementById('p_mh').textContent = `${patientData.medical_history}`;
+        document.getElementById('p_sxh').textContent = `${patientData.sexual_history}`;
+        document.getElementById('p_pd').textContent = `${patientData.past_disease}`;
+        document.getElementById('p_fd').textContent = `${patientData.family_disease}`;
+        document.getElementById('p_ps').textContent = `${patientData.past_surgery}`;
+        patientProfile()
+    } catch (error) {
+        console.error("Error:", error);
+    } finally {
+        console.log('Done');
+        closeModal('patient')
+    }
+}
+
+
+

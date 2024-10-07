@@ -4,7 +4,7 @@
     };
 
     const modal = document.querySelector('.modal');
-const blackBackground = document.querySelector('.black--background');
+    const blackBackground = document.querySelector('.black--background');
 
 
 
