@@ -109,6 +109,7 @@
     font-weight: 700;
     line-height: 24px;
     margin: 0.5rem;
+    font: inherit;
     opacity: 1;
     outline: 0 solid transparent;
     padding: 8px 18px;
@@ -127,6 +128,7 @@
     color: rgb(42, 87, 215);
     cursor: pointer;
     font-size: 16px;
+    font: inherit;
     font-weight: 700;
     line-height: 24px;
     opacity: 1;
@@ -485,13 +487,6 @@ tbody tr:hover {
     width: 100%;
     color: #fff;
 }
-h3{
-    font-size: 1.3rem;
-}
-h4{
-    font-size: 1.2rem;
-    font-weight: 500;
-}
 .each_sections {
     display: flex;
     width: 100%;
@@ -556,54 +551,28 @@ h4{
     border-radius: 50%;
     background: white;
 }
-  
-  label{
-    font-size: 1.2rem;
+
+label{
       color: rgb(42, 87, 215);
+  }
+
+  select{
+    cursor: pointer;
   }
   
   input, select,textarea {
     padding: 12px 20px;
+    background-color: #fff;
     margin: 8px 0;
     font-size: 1.1rem;
     color: rgb(42, 87, 215);
     width:300px;
-    background-color: #fff;
+    font-family: inherit;
     display: inline-block;
     border: 1px solid rgb(42, 87, 215);
     border-radius: 4px;
     box-sizing: border-box;
   }
-
-  /* Specific styling for checkboxes */
-input[type="radio"] {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    appearance: none;
-    padding: 0;
-    border-radius: 100%;
-    -webkit-appearance: none; /* for Safari */
-    -moz-appearance: none; /* for Firefox */
-    background-color: #fff;
-    border: 2px solid rgb(42, 87, 215);
-    position: relative;
-}
-
-/* Change background color and checkmark visibility when the radio is checked */
-input[type="radio"]:checked {
-    background-color: rgb(42, 87, 215);
-    border: 1px solid #fff;
-}
-
-input[type="radio"]:checked::after {
-    content: '\2713'; /* Checkmark symbol */
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
   input[type=submit] {
     width: 100%;
     background-color: rgb(42, 87, 215);
@@ -618,19 +587,27 @@ input[type="radio"]:checked::after {
   input[type=submit]:hover {
     background-color: rgb(42, 87, 215);
   }
+
+  .all_sections_input{
+    background: #00185b;
+  }
+  .all_sections_input table thead {
+    position: sticky; 
+    top: 0;
+    z-index: 1;
+    font-size: 1.1em;
+    border: none;
+    text-align: center;
+    transition: background 0.25s ease;
+}
 /*PATIENT PERSONAL INFORMATION*/
 .info_dropdown{
     width: auto;
     display: flex;
     padding:1rem;
     flex-direction: row;
-    font-size: 18px;
     justify-content: space-between;
-    background-color: #2a57d7;
     cursor: pointer;
-}
-.info_dropdown span{
-    font-size: 18px;
 }
 
 #info_icon_minus{
@@ -638,31 +615,13 @@ input[type="radio"]:checked::after {
 }
 .info_section{
     height: fit-content;
-    background-color: #2a57d7;
     padding: 1rem;
 }
-.info_title{
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;;
-    padding: 1rem;
-}
-.info_section .circle{
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    border-bottom: 1px solid #fff;
-    overflow: hidden;
-}
+
 .personal_info_section{
     height: fit-content;
     width: auto;
     margin: 1rem 1rem;
-    border-bottom: 1px solid #fff;
 }
 .personal_info_section .details_flexs{
     display: flex;
@@ -674,26 +633,21 @@ input[type="radio"]:checked::after {
     display: flex;
     padding:1rem;
     flex-direction: row;
-    font-size: 18px;
     justify-content: space-between;
-    background-color: #2a57d7;
     cursor: pointer;
 }
-.lab_dropdown span{
-    font-size: 18px;
-}
+
 
 #lab_icon_minus{
     display: none;
 }
 .lab_section{
     height: fit-content;
-     background-color: #2a57d7;
+
 }
 
 .lab_section button{
     padding: 0.8rem;
-    background-color: #2a57d7;
     border: none;
     cursor: pointer;
     color: #fff;
@@ -707,13 +661,8 @@ input[type="radio"]:checked::after {
     display: flex;
     padding:1rem;
     flex-direction: row;
-    font-size: 18px;
     justify-content: space-between;
-    background-color: #2a57d7;
     cursor: pointer;
-}
-.surgery_dropdown span{
-    font-size: 18px;
 }
 
 #surgery_icon_minus{
@@ -721,12 +670,11 @@ input[type="radio"]:checked::after {
 }
 .surgery_section{
     height: fit-content;
-     background-color: #2a57d7;
+
 }
 
 .surgery_section button{
     padding: 0.8rem;
-    background-color: #2a57d7;
     border: none;
     cursor: pointer;
     color: #fff;
@@ -739,25 +687,20 @@ input[type="radio"]:checked::after {
     display: flex;
     padding:1rem;
     flex-direction: row;
-    font-size: 18px;
     justify-content: space-between;
-    background-color: #2a57d7;
     cursor: pointer;
 }
-.radiology_dropdown span{
-    font-size: 18px;
-}
+
 
 #radiology_icon_minus{
     display: none;
 }
 .radiology_section{
     height: fit-content;
-     background-color: #2a57d7;
+
 }
 .radiology_section button{
     padding: 0.8rem;
-    background-color: #2a57d7;
     border: none;
     color: #fff;
     cursor: pointer;
@@ -769,22 +712,16 @@ input[type="radio"]:checked::after {
     width: auto;
     display: flex;
     padding:1rem;
-    font-size: 18px;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #2a57d7;
     cursor: pointer;
 }
-.vitals_dropdown span{
-    font-size: 18px;
-}
-
 #vitals_icon_minus{
     display: none;
 }
 .vitals_section{
     height: fit-content;
-     background-color: #2a57d7;
+
 }
 
 
@@ -799,14 +736,9 @@ input[type="radio"]:checked::after {
     width: 100%;
     display: flex;
     padding:1rem;
-    font-size: 18px;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #2a57d7;
     cursor: pointer;
-}
-.complain_dropdown span{
-    font-size: 18px;
 }
 
 #complaint_icon_minus{
@@ -814,7 +746,7 @@ input[type="radio"]:checked::after {
 }
 .complaint-section{
     height: fit-content;;
-     background-color: #2a57d7;
+
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -867,8 +799,6 @@ form{
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #2a57d7;
-    font-size: 18px;
     cursor: pointer;
 }
 
@@ -878,8 +808,11 @@ form{
 .system_review-section{
     height: fit-content;
     width: 100%;
-     background-color: #2a57d7;;
     padding: 1rem;
+}
+
+.system_review-section .form-control{
+    margin: 1rem 2rem;
 }
 .drop-down1, .drop-down2,  .drop-down3, .drop-down4, .drop-down5{
    border-bottom: 4px solid #fff;
@@ -889,10 +822,7 @@ form{
     align-items: center;
     cursor: pointer;
 }
-.system_review-section span{
-    color: #fff;
-    font-size: 15px;
-}
+
 #open_id_1, #close_id_1, #open_id_2, #close_id_2, #open_id_3, #close_id_3,
 #open_id_4, #close_id_4, #open_id_5{
     color: #fff;
@@ -901,14 +831,11 @@ form{
 #close_id_1, #close_id_2, #close_id_3, #close_id_4, #close_id_5{
     display: none;
 }
-/* .active{
-    display: none;
-} */
+
 .form1, .form2, .form3, .form4, .form5{
     width: 100%;
     padding: 0.5rem;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -919,14 +846,11 @@ form{
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #2a57d7;
-    font-size: 18px;
     cursor: pointer;
 }
 .physical_examination-section{
     height: fit-content;
     width: 100%;
-     background-color: #2a57d7;;
     padding: 1rem;
 }
 .physical_examination_drop-down1, .physical_examination_drop-down2,.physical_examination_drop-down3{
@@ -990,8 +914,6 @@ label {
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color:#2a57d7;
-    font-size: 18px;
     cursor: pointer;
 }
 #diagnosis_icon_minus{
@@ -999,7 +921,7 @@ label {
 }
 .diagnosis-section{
     height: fit-content;;
-     background-color: #2a57d7;;
+;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -1014,8 +936,6 @@ label {
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #2a57d7;
-    font-size: 18px;
     cursor: pointer;
 }
 #refer_doc_icon_minus{
@@ -1023,7 +943,7 @@ label {
 }
 .refer_doc-section{
     height: fit-content;;
-     background-color: #2a57d7;;
+;
     padding: 1rem;
     position: relative;
 }
@@ -1079,7 +999,6 @@ width: 100%;
 .appoitment_con button{
     width: auto;
     border-radius: 0.43rem;
-    background-color: #2a57d7;
     border: none;
     color: #fff;
     padding: 1em;
@@ -1098,8 +1017,6 @@ width: 100%;
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #2a57d7;
-    font-size: 18px;
     cursor: pointer;
 }
 #advice_icon_minus{
@@ -1107,7 +1024,7 @@ width: 100%;
 }
 .advice-section{
     height: fit-content;;
-     background-color: #2a57d7;;
+;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -1126,8 +1043,6 @@ width: 100%;
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #2a57d7;
-    font-size: 18px;
     cursor: pointer;
 }
 #investigation_icon_minus{
@@ -1135,7 +1050,7 @@ width: 100%;
 }
 .investigation-section{
     height: fit-content;;
-     background-color: #2a57d7;;
+;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -1149,7 +1064,6 @@ width: 100%;
 /*Start of the Treatment and Prescribtion*/
 .treatment_prescribtion-section{
     height: fit-content;;
-    background-color: #2a57d7;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -1164,19 +1078,16 @@ width: 100%;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #2a57d7;
-    font-size: 18px;
     cursor: pointer;
 }
 .treatment_prescribtion_form1{
     width: 100%;
-     background-color: #2a57d7;;
     border-radius: 14px;
 }
 .treatment_prescribtion_flexs{
     display: flex;
     flex-wrap: wrap;
-     background-color: #2a57d7;
+
     align-items: center;
     border-bottom: 2px solid #fff;
     height: fit-content;
@@ -1221,8 +1132,6 @@ width: 100%;
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #2a57d7;
-    font-size: 18px;
     cursor: pointer;
 }
 
@@ -1231,7 +1140,7 @@ width: 100%;
 }
 .discharged-section{
     height: fit-content;
-     background-color: #2a57d7;
+
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -1271,8 +1180,6 @@ width: 100%;
     padding:1rem;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #2a57d7;
-    font-size: 18px;
     cursor: pointer;
 }
 
@@ -1281,7 +1188,7 @@ width: 100%;
 }
 .confirmed_death-section{
     height: fit-content;
-     background-color: #2a57d7;
+
     padding: 1rem;
     display: flex;
     border: 2px solid #fff;
