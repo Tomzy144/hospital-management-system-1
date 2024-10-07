@@ -121,6 +121,10 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
             <i class="bi bi-clock"></i>
             <span>Appoitments</span>
             </li>
+            <li id="emergency__link" class="links" onclick="pendingSurgeryList()">
+        <i class="bi bi-book"></i>
+          <span>Accepted Patients</span>
+        </li>
             <li onclick="document.getElementById('logoutform').submit();" class="scaleup" id="links">
               <i class="fa-solid fa-right-from-bracket"></i>
               <span>Logout</span>

@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'SEGOEUI';
+    font-family: 'Inter';
     src: url('./awesome-font/static/Inter_18pt-Regular.ttf') format('truetype'); 
     font-weight: normal; /* Specify the weight if needed */
     font-style: normal; /* Specify the style if needed */
@@ -791,6 +791,7 @@ input[type="radio"]:checked::after {
 }
 .patientProfile{
     margin: 4.3rem 0 0 19rem;
+    padding: 1rem 0;
     background: #00185b;
 }
 .patientProfile table thead {

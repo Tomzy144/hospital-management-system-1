@@ -70,121 +70,65 @@ $patient_id = $_POST['patient_Id'];
     <i class="bi bi-dash-lg" id="info_icon_minus"></i>
    </div>
    <div class="info_section hide">
-   <div class="info_title">
-            <h2>PATIENT PASSPORT</h2>
-    </div>
-    <div class="circle">
-    <img src="<?php echo ($website_url . "/uploaded_files/profile_pix/patient/" . $passport); ?>" alt="Profile Picture" width="100%" height="100%" />
+    <img src="<?php echo ($website_url . "/uploaded_files/profile_pix/patient/" . $passport); ?>" alt="Profile Picture"  style="border-radius: 100%;
+  height: 200px;
+  width: 200px;" />
 
-    </div>
-   <div class="info_title">
-            <h3>BIO DATA</h3>
-    </div>
+            <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">Bio Data</h3>
     <div class="personal_info_section">
-        <div class="details_flexs">
-        <h4>Name: <?php echo $patient_name ?> </h4>
-        </div>
-        <div class="details_flexs">
-        <h4>Gender:</h4>
-        <h4><?php echo $gender ?></h4>
-        </div>
-        <div class="details_flexs">
-        <h4>Date of Birth:</h4>
-        <h4><?php echo $dateofbirth ?></h4>
-        </div>
-        <div class="details_flexs">
-        <h4>Home Address:</h4>
-        <h4><?php echo $address ?></h4>
-        </div>
-        <div class="details_flexs">
-        <h4>Phone Number:</h4>
-        <h4><?php echo $phonenumber ?></h4>
-        </div>
+        <h4>Name: <?php echo $patient_name ?></h4>
+        <h4>Gender: <?php echo $gender ?></h4>
+        <h4>Date of Birth: <?php echo $dateofbirth ?></h4>
+        <h4>Home Address: <?php echo $address ?></h4>
+        <h4>Phone Number: <?php echo $phonenumber ?></h4>
     </div>
-    <div class="info_title">
-            <h3>NEXT OF KIN BIO DATA</h3>
+
+            <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">Next of Kins Bio Data</h3>
+     <div class="personal_info_section">
+        <h4>Name: <?php echo $kname ?></h4>
+        <h4>Gender: <?php echo $kgender ?></h4>
+        <h4>Home Address: <?php echo $kaddress ?></h4>
+        <h4>Phone Number: <?php echo $kphonenumber ?></h4>
+        <h4>Relationship: <?php echo $krelationship ?></h4>
     </div>
+
     <div class="personal_info_section">
-        <div class="details_flexs">
-        <h4>Name:</h4>
-        <h4><?php echo $kname ?></h4>
-        </div>
-        <div class="details_flexs">
-        <h4>Gender:</h4>
-        <h4><?php echo $kgender ?></h4>
-        </div>
-        <div class="details_flexs">
-        <h4>Home Address:</h4>
-        <h4><?php echo $kaddress ?></h4>
-        </div>
-        <div class="details_flexs">
-        <h4>Phone Number:</h4>
-        <h4><?php echo $kphonenumber ?></h4>
-        </div>
-        <div class="details_flexs">
-        <h4>Relationship:</h4>
-        <h4><?php echo $krelationship ?></h4>
-        </div>
+        <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">Social Info</h3>
+        <h4>Occupation: <?php echo $occupation ?></h4>
     </div>
-    <div class="info_title">
-            <h3>SOCIAL HISTORY</h3>
-    </div>
+
     <div class="personal_info_section">
-        <div class="details_flexs">
-        <h4>Occupation:</h4>
-        <h4><?php echo $occupation ?></h4>
-        </div>
-        </div>
-        <div class="info_title">
-            <h3>PAST OBSTERICS</h3>
-    </div>
-    <div class="personal_info_section">
-        <div class="details_flexs">
+        <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">Past Obsterics</h3>
         <h4><?php echo $past_obsterics ?></h4>
-        </div>
-        </div>
-        <div class="info_title">
-            <h3>MEDICAL HISTORY</h3>
-    </div>
+    </div>  
+
     <div class="personal_info_section">
-        <div class="details_flexs">
+        <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">Medical History</h3>
         <h4><?php echo $medical_history ?></h4>
-        </div>
-        </div>
-        <div class="info_title">
-            <h3>SEXUAL HISTORY</h3>
     </div>
+
     <div class="personal_info_section">
-        <div class="details_flexs">
+        <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">Sexual History</h3>
         <h4><?php echo $sexual_history ?></h4>
-        </div>
-        </div>
-        <div class="info_title">
-            <h3>PAST DISEASES</h3>
     </div>
+
     <div class="personal_info_section">
-        <div class="details_flexs">
+        <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">Past Diesase</h3>
         <h4><?php echo $past_disease ?></h4>
-        </div>
-        </div>
-        <div class="info_title">
-            <h3>FAMILY DISEASE</h3>
     </div>
+
     <div class="personal_info_section">
-        <div class="details_flexs">
+        <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">Family Diesase</h3>
         <h4><?php echo $family_disease ?></h4>
-        </div>
-        </div>
-        <div class="info_title">
-            <h3>PAST SURGERY</h3>
     </div>
+
     <div class="personal_info_section">
-        <div class="details_flexs">
+        <h3 style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">Past Surgery</h3>
         <h4><?php echo $past_surgery ?></h4>
-        </div>
-        </div>
+   </div>
    </div>
  
+
    <!---LABOURATORY INFORMATIONS--->
    <div class="lab_dropdown" onclick="lab_section()">
     <h3>Labouratory Information</h3>
@@ -207,25 +151,9 @@ $patient_id = $_POST['patient_Id'];
                     <td>
                         <p> Drug Screening Test</p>
                         <p> Digoxin Test</p>
-                        <p> Cortisol Test</p>
-                        <p> Rheumatoid Factor (RF) Test</p>
                     </td>
                     <td>
-                        <button><i class="bi bi-download"></i></button>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>22-09-2024</td>
-                    <td>3:30PM</td>
-                    <td>Immunoassay Single Tests</td>
-                    <td>
-                        <p> Drug Screening Test</p>
-                        <p> Digoxin Test</p>
-                        <p> Cortisol Test</p>
-                        <p> Rheumatoid Factor (RF) Test</p>
-                    </td>
-                    <td>
-                        <button><i class="bi bi-download"></i></button>
+                    <i class="bi bi-download" style="color:white"></i>
                     </td>
                 </tbody>
             </table>
@@ -252,7 +180,7 @@ $patient_id = $_POST['patient_Id'];
                     <td>3:30PM</td>
                     <td>Lorem ipsum dolor</td>
                     <td>
-                        <button><i class="bi bi-download"></i></button>
+                    <i class="bi bi-download" style="color:white"></i>
                     </td>
                 </tbody>
             </table>
@@ -280,12 +208,9 @@ $patient_id = $_POST['patient_Id'];
                     <td>X-ray (Radiography)</td>
                     <td>
                         <p> Chest X-ray (CXR)</p>
-                        <p> Bone X-ray (Bone Radiography)</p>
-                        <p>  X-ray for Foreign Body Detection</p>
-                        <p> Cervical Spine X-ray</p>
                     </td>
                     <td>
-                        <button><i class="bi bi-download"></i></button>
+                    <i class="bi bi-download" style="color:white"></i>
                     </td>
                 </tbody>
             </table>
@@ -515,14 +440,20 @@ $patient_id = $_POST['patient_Id'];
                     <label for="past_sugical_medical_history">Past Surgical/Medical History</label>
                     <input type="text"  class="complaint-input" id="past_sugical_medical_history">
                     </div>
-                    <div class="form-control">
-                        <label for="headache">Admit Patient?</label>
-                        <div class="radio">
-                        <input type="radio" id="admit" name="admit--patient"/>
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="admit--no" name="admit--patient" />
-                        <label for="no">No</label>
-                        </div>
+                        <div class="form-control" onchange='saveOppositeGender()'>
+                <label for="gender">Admit Patient?</label>
+                <div class="radio-group">
+              <label>
+                  Yes
+                  <input type="radio" name="gender" value="male" id="maleCheckbox">
+                  <span class="custom-radio"></span>
+              </label>
+              <label>
+                  No
+                  <input type="radio" name="gender" value="female" id="femaleCheckbox">
+                  <span class="custom-radio"></span>
+              </label>
+            </div>
         </div>
         </div>
         </div>
@@ -541,418 +472,717 @@ $patient_id = $_POST['patient_Id'];
                     <i class="bi bi-dash-lg" id="close_id_1"></i>
                     <i class="bi bi-plus-lg" id="open_id_1"></i>
                 </div>
-                    <div class="form1 hidden">
-                        <div class="form-control">
-                        <label for="headache">Headache</label>
-                        <div class="radio">
+
+             <div class="form1 hidden">
+                <div class="form-control">
+                        <label for="gender">Headache</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="h1"/>
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="h1" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Fatigue?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                      <div class="form-control">
+                        <label for="gender">Fatigue</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="f1" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="f1" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Overall Weekness?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                     <div class="form-control">
+                        <label for="gender">Overall Weekness</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="o1" />
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="no" name="01" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Change in appetite?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="o1" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Change in appetite</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="ca1" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="ca1" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Change in weight</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Change in weight</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="cw1" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="cw1" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Fever</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+
+                     <div class="form-control">
+                        <label for="gender">Change in weight</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="fv1" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="fv1" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-        </div>
-        <div class="drop-down2" onclick="showForm2()">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+                    </div>
+                    
+            <div class="drop-down2" onclick="showForm2()">
                     <h3>Skin</h3>
                     <i class="bi bi-dash-lg" id="close_id_2"></i>
                     <i class="bi bi-plus-lg" id="open_id_2"></i>
                 </div>
                 <div class="form2 hidden">
-                        <div class="form-control">
-                        <label for="headache">Change in mole(s)?</label>
-                        <div class="radio">
+                    <div class="form-control">
+                        <label for="gender">Change in mole(s)</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="cm" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="cm" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Hair or nail changes?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                     <div class="form-control">
+                        <label for="gender">Hair or nail changes</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="h/n" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="h/n" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Color or texture change ?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                      <div class="form-control">
+                        <label for="gender">Color or texture change</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="c/t" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="c/t" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Itching or Rashes ?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Itching or Rashes</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="i/r" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="i/r" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Sores </label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                   <div class="form-control">
+                        <label for="gender">Sores</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="sores" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="sores" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-        </div>
-        <div class="drop-down3" onclick="showForm3()">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+                    </div>
+
+
+                 <div class="drop-down3" onclick="showForm3()">
                     <h3>Endocrine</h3>
                     <i class="bi bi-dash-lg" id="close_id_3"></i>
                     <i class="bi bi-plus-lg" id="open_id_3"></i>
                 </div>
                 <div class="form3 hidden">
-                        <div class="form-control">
-                        <label for="headache">Enlarging glove or hat size?</label>
-                        <div class="radio">
+                    <div class="form-control">
+                        <label for="gender">Enlarging glove or hat size</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="e_hs" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="e_hs" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Excessive thirst?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Excessive thirst</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="et" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="et" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Salt craving ?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Salt craving</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="salt_craving" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="salt_craving" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Lost of Sexual drive (libido)?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Lost of Sexual drive (libido)</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="lsd" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="lsd" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Heat or cold intolerance?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Heat or cold intolerance</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="hci" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="hci" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
                         <div class="form-control">
-                        <label for="headache">Thyriod enlargement?</label>
-                        <div class="radio">
+                        <label for="gender">Thyriod enlargement</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="te" />
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="te" />
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Abnormal growth?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Abnormal growth</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="ag"/>
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="ag"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Increased appetite?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Increased appetite</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="ia"/>
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="ia"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Increased urine production?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+    
+                 <div class="form-control">
+                        <label for="gender">Increased urine production</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="iup"/>
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="iup"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Thyriod trouble?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Thyriod trouble</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="tr"/>
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="tr"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Excessive swearing?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                     <div class="form-control">
+                        <label for="gender">Excessive swearing</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="es"/>
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="es"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-                        <div class="form-control">
-                        <label for="headache">Diabetes?</label>
-                        <div class="radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                     <div class="form-control">
+                        <label for="gender">Diabetes</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
                         <input type="radio" id="yes" name="diabetes"/>
-                        <label for="yes">Yes</label>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
                         <input type="radio" id="no" name="diabetes"/>
-                        <label for="no">No</label>
-                        </div>
-        </div>
-        </div>
-  <div class="drop-down4" onclick="showForm4()">
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+                    </div>
+
+        <div class="drop-down4" onclick="showForm4()">
             <h3>Muscoskeletal</h3>
             <i class="bi bi-dash-lg" id="close_id_4"></i>
             <i class="bi bi-plus-lg" id="open_id_4"></i>
-        </div>
+         </div>
         <div class="form4 hidden">
+                <div div class="form-control">
+                        <label for="gender">Physical therapy</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="pt" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="pt" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div div class="form-control">
+                        <label for="gender">Occupational therapy</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="occpt" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="occpt" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div div class="form-control">
+                        <label for="gender">Orthopedic consultion</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="oc" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="oc" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div div class="form-control">
+                        <label for="gender">Pain medication</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="pm" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="pm" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                 <div div class="form-control">
+                        <label for="gender">Join aspiration</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="ja" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="ja" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+
                 <div class="form-control">
-                <label for="headache">Physical therapy?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="pt" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="pt" />
-                <label for="no">No</label>
-                </div>
-  </div>
+                        <label for="gender">Muscle relaxant</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="mr" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="mr" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
                 <div class="form-control">
-                <label for="headache">Occupational therapy?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="occpt" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="occpt" />
-                <label for="no">No</label>
-                </div>
-  </div>
+                        <label for="gender">Surgical intervention</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="si"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="si"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
                 <div class="form-control">
-                <label for="headache">Orthopedic consultion ?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="oc" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="oc" />
-                <label for="no">No</label>
-                </div>
-  </div>
+                        <label for="gender">Anti-inflammation</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="anti-in"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="anti-in"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
                 <div class="form-control">
-                <label for="headache">Pain medication?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="pm" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="pm" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Join aspiration?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ja" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ja" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Muscle relaxant?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="mr" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="mr" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Surgical intervention?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="si"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="si"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Anti-inflammation?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="anti-in"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="anti-in"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Assistive?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="assistive"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="assistive"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-</div>
-  <div class="drop-down5" onclick="showForm5()">
+                        <label for="gender">Assistive</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="assistive"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="assistive"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+                    </div>
+
+
+     <div class="drop-down5" onclick="showForm5()">
             <h3>Head & Neck</h3>
             <i class="bi bi-dash-lg" id="close_id_5"></i>
             <i class="bi bi-plus-lg" id="open_id_5"></i>
         </div>
         <div class="form5 hidden">
+
                 <div class="form-control">
-                <label for="headache">Symptom for head and neck issue?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="shni" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="shni" />
-                <label for="no">No</label>
-                </div>
-  </div>
+                        <label for="gender">Symptom for head and neck issue</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="shni" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="shni" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
                 <div class="form-control">
-                <label for="headache">Record ear, nose, throat (ENT) exams?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="rente" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="rente" />
-                <label for="no">No</label>
-                </div>
-  </div>
+                        <label for="gender">Record ear, nose, throat (ENT) exams</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="rente" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="rente" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
                 <div class="form-control">
-                <label for="headache">Head and neck cancers ?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="hnc" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="hnc" />
-                <label for="no">No</label>
-                </div>
-  </div>
+                        <label for="gender">Head and neck cancers</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="hnc" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                     <input type="radio" id="no" name="hnc" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
                 <div class="form-control">
-                <label for="headache">Dental and oral health?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="doh" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="doh" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Speech and swallowing assesment?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="ssa" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="ssa" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Biopsies for neck masses?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="bnm" />
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="bnm" />
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Thyriod function tests?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="tft"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="tft"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">Salivary gland disorders?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="sgd"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="sgd"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">TMJ evaluations?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="tmj"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="tmj"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-                <div class="form-control">
-                <label for="headache">imaging for skull and bones?</label>
-                <div class="radio">
-                <input type="radio" id="yes" name="is_b"/>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="is_b"/>
-                <label for="no">No</label>
-                </div>
-  </div>
-</div>
-</div>
-</div>
+                        <label for="gender">Dental and oral health</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="doh" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="doh" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">peech and swallowing assesment</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="ssa" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="ssa" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Biopsies for neck masses</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="bnm" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="bnm" />
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                 <div class="form-control">
+                        <label for="gender">Thyriod function tests</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="tft"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="tft"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+              <div class="form-control">
+                        <label for="gender">TSalivary gland disorders</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="sgd"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="sgd"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">TMJ evaluations</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="tmj"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="tmj"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="gender">Imaging for skull and bones</label>
+                        <div class="radio-group">
+                    <label>
+                        Yes
+                        <input type="radio" id="yes" name="is_b"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label>
+                        No
+                        <input type="radio" id="no" name="is_b"/>
+                        <span class="custom-radio"></span>
+                    </label>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
 <input type="hidden" id="patient_id" value="<?php echo $patient_id?> ">
-<button type="button" class="bg-blue" id="btn" onclick="gatherDoctorInputs()">Save Input</button>
+<button type="button" class="bg-blue" id="btn" onclick="gatherDoctorInputs()">Save all Inputs</button>
 </form>
 </div>
 
