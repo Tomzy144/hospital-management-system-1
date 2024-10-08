@@ -117,8 +117,8 @@ async function PatientProfiles() {
             throw new Error('Network response was not ok');
         }
         const data = await response.json(); 
-        console.log(data.data)
-        const patientData = data.data
+        console.log(data.data.patient_info)
+        const patientData = data.data.patient_info
         document.getElementById('p_profile_image').src = `.././uploaded_files/profile_pix/patient/${patientData.patient_passport}`;
         document.getElementById('pname').textContent = `${patientData.fullname}`;
         document.getElementById('pId').textContent = `${patientData.patient_id}`;
