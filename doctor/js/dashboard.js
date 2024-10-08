@@ -1196,6 +1196,7 @@ function surgical_procedure(){
     var past_surgery = $("#past_surgery").val();
     var procedure = $("#sprocedure").val();
     var phonenumber =$("#phone_number").val();
+    var patientName =$("#patient_name").val();
 
     if (smessage === ""|| procedure ==="") {
         warningMessage("Fill the required fields")
@@ -1206,7 +1207,7 @@ function surgical_procedure(){
         $btnSubmit.prop('disabled', true);
 
         var action = 'surgical_procedure';
-        var dataString = "action=" + action + "&patient_id=" + patient_id + "&past_surgery=" + past_surgery + "&smessage=" + smessage + "&procedure=" + procedure + "&phonenumber="+ phonenumber;
+        var dataString = "action=" + action + "&patient_id=" + patient_id + "&past_surgery=" + past_surgery + "&smessage=" + smessage + "&procedure=" + procedure + "&phonenumber="+ phonenumber + "&patientName=" + patientName;
 
         $.ajax({
             type: 'POST',
