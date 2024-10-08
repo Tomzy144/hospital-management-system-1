@@ -722,7 +722,7 @@ label{
 }
 .vitals_section{
     height: fit-content;
-
+    overflow: auto;
 }
 
 

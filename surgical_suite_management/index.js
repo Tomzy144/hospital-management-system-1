@@ -119,6 +119,7 @@ async function PatientProfiles() {
         const data = await response.json(); 
         console.log(data.data)
         const patientData = data.data
+        document.getElementById('p_profile_image').src = `.././uploaded_files/profile_pix/patient/${patientData.patient_passport}`;
         document.getElementById('pname').textContent = `${patientData.fullname}`;
         document.getElementById('pId').textContent = `${patientData.patient_id}`;
         document.getElementById('pgender').textContent = `${patientData.gender}`;

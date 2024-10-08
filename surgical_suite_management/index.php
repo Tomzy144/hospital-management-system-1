@@ -189,7 +189,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
   <img src="Images/80e729b199b61a6c183b85263d35a6ef.jpg" alt="" 
   style="border-radius: 100%;
   height: 200px;
-  width: 200px;">
+  width: 200px;" id="p_profile_image">
  </div>
  <div class="bioData listing">
   <h3  style="background:white; color:rgb(42, 87, 215); padding:1rem; width:fit-content; border-radius: 999px; box-shadow: rgb(42, 87, 215) 0 10px 20px -10px;">BIO DATA</h3>
