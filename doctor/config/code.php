@@ -787,7 +787,7 @@ case 'confirm_death':
         $procedure = $_POST['procedure'];
         $phonenumber = $_POST['phonenumber'];
         $smessage = $_POST['smessage'];
-        $patient_name = $_POST['patient_name'];
+        $patientName = $_POST['patientName'];
     
         $sequence = $callclass->_get_sequence_count($conn, 'SURGAPP');
         $array = json_decode($sequence, true);
@@ -796,7 +796,7 @@ case 'confirm_death':
     
         $query = "INSERT INTO `surgical_suite_appointment_tab`
                   (`patient_id`,`patient_name`,  `surgical_suite_appointment_id`, `past_surgery`, `surgical_procedure`, `phonenumber`,`message`,`time`) 
-                  VALUES ('$patient_id', '$patient_name', '$surgical_suite_appointment_id', '$past_surgery', '$procedure', '$phonenumber','$smessage', now())";
+                  VALUES ('$patient_id', '$patientName', '$surgical_suite_appointment_id', '$past_surgery', '$procedure', '$phonenumber','$smessage', now())";
     
         if (mysqli_query($conn, $query)) {
             echo json_encode(array("check" => "success"));
