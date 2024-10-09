@@ -264,7 +264,7 @@ $patient_id = $_POST['patient_Id'];
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                    
-                    echo "<td>" . htmlspecialchars($row[""]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["date"]) . "</td>";
                     echo "<td>" . htmlspecialchars($row["temperature"]) . "</td>";
                     echo "<td>" . htmlspecialchars($row["bp"]) . "</td>";
                     echo "<td>" . htmlspecialchars($row["pulse"]) . "</td>";
