@@ -1312,7 +1312,7 @@ $patient_id = $_POST['patient_Id'];
         </h2>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="each_sections">
-             <div class="form-control">
+             <div class="form-control hidden">
             <input type="hidden" value="<?php echo $patient_name?>" name="" id="patient_name">
             </div>
              <div class="form-control">

@@ -51,62 +51,74 @@
   }
   setInterval(() => createDate())
 
-function  surgeryAppoitment(){
+function incomingAppoitment(){
     document.querySelector('#pendingSurgeryList').classList.add('hide');
-    document.querySelector('#surgeryAppoitment').classList.add('hide');
+    document.querySelector('#incomingAppouitment').classList.remove('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
     document.querySelector('.booking_section').classList.add('hide');
     document.querySelector('.patientProfile').classList.add('hide');
-    document.querySelector('#surgeryAppoitment').classList.remove('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
+    document.querySelector('.upload-section').classList.add('hide');
+}
+function  acceptedAppoitment(){
+    document.querySelector('#pendingSurgeryList').classList.add('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
+    document.querySelector('#incomingAppouitment').classList.add('hide');
+    document.querySelector('.booking_section').classList.add('hide');
+    document.querySelector('.patientProfile').classList.add('hide');
+    document.querySelector('#acceptedAppoitment').classList.remove('hide');
     document.querySelector('.upload-section').classList.add('hide');
 }
 function  pendingSurgeryList(){
     document.querySelector('#pendingSurgeryList').classList.remove('hide');
-    document.querySelector('#surgeryAppoitment').classList.add('hide');
+document.querySelector('#incomingAppouitment').classList.add('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
     document.querySelector('.booking_section').classList.add('hide');
     document.querySelector('.patientProfile').classList.add('hide');
-    document.querySelector('#surgeryAppoitment').classList.add('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
     document.querySelector('.upload-section').classList.add('hide');
 }
 function bookinSection(){
     document.querySelector('#pendingSurgeryList').classList.add('hide');
-    document.querySelector('#surgeryAppoitment').classList.add('hide');
+    document.querySelector('#incomingAppouitment').classList.add('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
     document.querySelector('.booking_section').classList.remove('hide');
-    document.querySelector('#surgeryAppoitment').classList.add('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
     document.querySelector('.patientProfile').classList.add('hide');
     document.querySelector('.upload-section').classList.add('hide');
 }
 function patientProfile(){
     document.querySelector('#pendingSurgeryList').classList.add('hide');
-    document.querySelector('#surgeryAppoitment').classList.add('hide');
+    document.querySelector('#incomingAppouitment').classList.add('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
     document.querySelector('.booking_section').classList.add('hide');
     document.querySelector('.upload-section').classList.add('hide');
-    document.querySelector('#surgeryAppoitment').classList.add('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
     document.querySelector('.patientProfile').classList.remove('hide');
 }
 function uploadSection(){
     document.querySelector('#pendingSurgeryList').classList.add('hide');
-    document.querySelector('#surgeryAppoitment').classList.add('hide');
+    document.querySelector('#incomingAppouitment').classList.add('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
     document.querySelector('.booking_section').classList.add('hide');
-    document.querySelector('#surgeryAppoitment').classList.add('hide');
+    document.querySelector('#acceptedAppoitment').classList.add('hide');
     document.querySelector('.patientProfile').classList.add('hide');
     document.querySelector('.upload-section').classList.remove('hide');
 }
  
 
 let patientId;
-
 function showPatientProfile(e){
 patientId = e.target.closest('tr').children[2].textContent;
   openModal('patient')
 }
-
 
 async function PatientProfiles() {
     try {
         const response = await fetch('config/code.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded', 
+                'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: new URLSearchParams({
                 'action': 'fetch_patient_profile',
@@ -117,8 +129,10 @@ async function PatientProfiles() {
             throw new Error('Network response was not ok');
         }
         const data = await response.json(); 
-        console.log(data.data.patient_info)
-        const patientData = data.data.patient_info
+        console.log(data.data);
+
+        // Person data profile
+        const patientData = data.data.patient_info;
         document.getElementById('p_profile_image').src = `.././uploaded_files/profile_pix/patient/${patientData.patient_passport}`;
         document.getElementById('pname').textContent = `${patientData.fullname}`;
         document.getElementById('pId').textContent = `${patientData.patient_id}`;
@@ -137,14 +151,43 @@ async function PatientProfiles() {
         document.getElementById('p_pd').textContent = `${patientData.past_disease}`;
         document.getElementById('p_fd').textContent = `${patientData.family_disease}`;
         document.getElementById('p_ps').textContent = `${patientData.past_surgery}`;
+
+        const patientVitals = data.data.patient_vitals;
+        console.log(patientVitals);
+
+        const tableBody = document.querySelector('#patient__vitals tbody');
+        tableBody.innerHTML = ''
+        if(patientVitals === null){
+            console.log('No data for patient')
+            const noTableData = tableBody.insertRow(0);
+            const noTableDataCell = noTableData.insertCell(0);
+            noTableDataCell.colSpan = 9;
+            noTableDataCell.innerHTML = 'No Vitals found';
+            noTableDataCell.style.textAlign = 'center';
+        }else{
+            patientVitalsRow(patientVitals);
+        }
         patientProfile()
     } catch (error) {
         console.error("Error:", error);
     } finally {
         console.log('Done');
-        closeModal('patient')
+        closeModal('patient');
     }
 }
 
-
-
+function patientVitalsRow(data) {
+    const tableBody = document.querySelector('#patient__vitals tbody');
+    const row = tableBody.insertRow();
+    row.insertCell(0).textContent = 'date'
+    row.insertCell(1).textContent = data.temperature || 'N/A'; 
+    row.insertCell(2).textContent = data.bp || 'N/A';  
+    row.insertCell(3).textContent = data.pulse || 'N/A';
+    row.insertCell(4).textContent = data.temperature || 'N/A'; 
+    row.insertCell(5).textContent = data.respiratory || 'N/A'; 
+    row.insertCell(6).textContent = data.spo2 || 'N/A'; 
+    row.insertCell(7).textContent = data.intake || 'N/A'; 
+    row.insertCell(8).textContent = data.weight || 'N/A'; 
+    row.insertCell(9).textContent = data.output || 'N/A';  
+    row.insertCell(10).textContent = data.bmi || 'N/A'; 
+}

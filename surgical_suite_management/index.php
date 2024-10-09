@@ -72,9 +72,13 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
     <div class="sidebar__header"></div>
     <div class="sidebar-body">
       <ul>
-        <li  id="emergency__form__link" class="links active" onclick="surgeryAppoitment()">
+        <li  id="emergency__form__link" class="links active" onclick="incomingAppoitment()">
         <i class="bi bi-clock"></i>
-          <span>Appoitment for surgery</span>
+          <span>Incoming Appoitment for surgery</span>
+        </li>
+        <li  id="emergency__form__link" class="links" onclick="acceptedAppoitment()">
+        <i class="bi bi-clock"></i>
+          <span>Accepted appoitment for surgery</span>
         </li>
         <li id="emergency__link" class="links" onclick="pendingSurgeryList()">
         <i class="bi bi-book"></i>
@@ -96,13 +100,49 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
   </div>
   <!----------------------------------------------------------------------------------->
 
+
+  <div class="list_div" id="incomingAppouitment">
+    <div class="table_container">
+            <div class="search_bar_container">
+                <h3>Incoming Surgery List</h3>
+                <input type="text" name="" id="" placeholder="Search">
+            </div>
+            <table id="TableData">
+                <thead>
+                    <tr>
+                    <td>S/N</td>
+                        <td>Patient Name</td>
+                        <td>Patient Id</td>
+                        <td>Date</td>
+                        <td>Time</td>
+                        <td>Rquest type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mercy Jane</td>
+                  <td>Pat0003</td>
+                  <td>23/09/2024</td>
+                  <td>23:40</td>
+                  <td>Nose surgery</td>
+                  <td>
+                  <button class="bg-white">Accept</button>
+                  <button class="bg-white">Reject</button>
+                </td>
+                </tr>
+                </tbody>
+        </table>
+  </div>
+  </div>
+
   <div class="modal hidden" id="patient">
   <div class="">
     <button onclick="PatientProfiles()" class="bg-blue">Display Patient Profile</button>
   </div>
 </div>
 
-  <div class="list_div" id="surgeryAppoitment">
+  <div class="list_div hide" id="acceptedAppoitment">
     <div class="table_container">
             <div class="search_bar_container">
                 <h3>Surgery List</h3>
@@ -288,7 +328,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
 
  <div class="vitalData listing" style="overflow: auto">
  <h3>VITAL DATA</h3>
-  <table>
+  <table id="patient__vitals">
     <thead>
       <tr>
       <td> 24/7</td> 	 	 	
@@ -304,21 +344,6 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>
-          <div>1st Jan. 2024</div>
-          <div>2:30pm</div>
-      </td>
-        <td>36</td>
-        <td>120/60</td>
-        <td>60</td>
-        <td>16</td>
-        <td>97</td>
-        <td>0</td>
-        <td>0 </td>
-        <td>0 </td>
-        <td>0 </td>
-      </tr>
     </tbody>
   </table>
  </div>
