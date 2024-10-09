@@ -808,6 +808,43 @@ case 'confirm_death':
       break;
 
 
+      case 'move_patient':
+
+        $doctor_id = $_POST['doctor_id'];
+        $doctor_appointment_id = $_POST['doctor_appointment_id'];
+    
+        // Query to select the appointment from the original table
+        $sql = "SELECT * FROM doctor_appointment_tab WHERE doctor_appointment_id ='$doctor_appointment_id'";
+        $result = mysqli_query($conn, $sql);
+    
+        if (mysqli_num_rows($result) > 0) {
+            // If appointment is found, update the status, accepted doctor, and accepted date
+            $update_sql = "UPDATE doctor_appointment_tab 
+                           SET doctor_appointment_status_id = 2, 
+                               accepted_doctor_id = '$doctor_id', 
+                               accepted_date = NOW() 
+                           WHERE doctor_appointment_id = '$doctor_appointment_id'";
+    
+            if (mysqli_query($conn, $update_sql)) {
+                // Respond with success if the update was successful
+                $response = array('check' => 'success');
+            } else {
+                // Respond with failure if the update failed
+                $response = array('check' => 'fail', 'error' => 'Failed to update appointment status');
+            }
+        } else {
+            // Respond with failure if the appointment is not found
+            $response = array('check' => 'fail', 'error' => 'Appointment not found');
+        }
+    
+        echo json_encode($response);
+        break;
+    
+    
+    
+    
+
+
         }
 
     ?>

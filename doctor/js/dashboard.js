@@ -1237,3 +1237,41 @@ function surgical_procedure(){
     }
 }
 
+                  
+function move_patient(doctor_id,doctor_appointment_id) {
+  
+
+    if (!doctor_id || !doctor_appointment_id) {
+        dangerMessage('Doctor ID and Appointment ID are required.');
+        return;
+    }
+  
+    var action = "move_patient";
+    var dataString = "action=" + action +
+                     "&doctor_id=" + encodeURIComponent(doctor_id) +
+                     "&doctor_appointment_id=" + encodeURIComponent(doctor_appointment_id);
+  
+    // Optionally show a loading message
+    // loadingMessage("Processing...");
+  
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function(data) {
+            if (data.check === "success") {
+                successMessage("Patient has been moved successfully");
+            } else {
+                console.error('Error:', data.error);
+                dangerMessage('Error: ' + data.error);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('AJAX Error:', error);
+            dangerMessage('AJAX Error: ' + error);
+        }
+    });
+  }
+  

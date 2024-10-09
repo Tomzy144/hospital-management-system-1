@@ -149,16 +149,16 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
                 </div>
                 <div class="body_sec" id="appointmentDetailsContainer">
                     <?php 
-                    $s_doctor_id_escaped = $conn->real_escape_string($s_doctor_id);
-                   
-                // SQL query to join doctor_appointment_tab with patient_tab to get appointment and patient details
-                $sql = "SELECT doctor_appointment_tab.*, patient_tab.patient_passport 
-                FROM doctor_appointment_tab
-                JOIN patient_tab ON doctor_appointment_tab.patient_id = patient_tab.patient_id
-                WHERE doctor_appointment_tab.doctor_id = '$s_doctor_id_escaped'";
-        
-        $result = $conn->query($sql);
-                    ?>
+                        $s_doctor_id_escaped = $conn->real_escape_string($s_doctor_id);
+                      
+                        $sql = "SELECT doctor_appointment_tab.*, patient_tab.patient_passport 
+                        FROM doctor_appointment_tab
+                        LEFT JOIN patient_tab ON doctor_appointment_tab.patient_id = patient_tab.patient_id
+                        WHERE doctor_appointment_tab.doctor_id = '$s_doctor_id_escaped' 
+                        AND doctor_appointment_tab.doctor_appointment_status_id = '1'";
+                
+                        $result = $conn->query($sql);
+                    ?>                   
 
     <table id="appointment_table">
         <thead>
@@ -189,10 +189,11 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
                     echo "<td>" . htmlspecialchars($row["doctor_appointment_date"]) . "</td>";
                     echo "<td>" . htmlspecialchars($row["time"]) . "</td>";
                     // echo "<td>" . htmlspecialchars($row["time"]) . "</td>";
-                    echo "<td>" . htmlspecialchars($row["reason"]) . "</td>";
+                    echo "<td>" . htmlspecialchars(string: $row["reason"]) . "</td>";
                     echo "<td>";
                     ?>
-                    <button class="bg-white" type="button" onclick="accept('<?php echo htmlspecialchars($row["patient_id"]); ?>')">Accept</button>
+                   <button class="bg-white" type="button" onclick="accept('<?php echo $row['patient_id']; ?>'); move_patient('<?php echo $s_doctor_id; ?>', '<?php echo $row['doctor_appointment_id']; ?>')">Accept</button>
+
                     <?php
                     echo "</td>";
                     echo "<td>";
@@ -308,6 +309,15 @@ function confirmDialog(message, onConfirm) {
                         dangerMessage(`Rejected patient with ID: ${patient_Id}`);
 
                     }
+
+
+
+
+  
+
+
+
+
                 </script>
 </div>
 </div>
@@ -321,33 +331,57 @@ function confirmDialog(message, onConfirm) {
                     <h3>Accepted patients</h3>  
                         <input type="text" placeholder="Search here" id="">
                     </div>
-        <table id="">
-            <thead>
-                <tr>
-                    <td>S/N</td>
-                    <td>PASSPORT</td>
-                    <td>Patient Name</td>
-                    <td>Patient ID</td>
-                    <td>Date</td>
-                    <td>Time</td>
-                    <td>Request Type</td>
-                </tr>
-            </thead>
-            <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Image</td>
-                        <td>kingsley</td>
-                        <td>PAT002</td>
-                        <td>23/09/2024</td>
-                        <td>23:90</td>
-                        <td>lol</td>
-                        <td>
-                        <i class="bi bi-three-dots-vertical"></i>
-                        </td>
-                      </tr>
-                  </tbody>
-                </table>
+
+                    <?php 
+                      $s_doctor_id_escaped = $conn->real_escape_string($s_doctor_id);
+
+                      $sql = "SELECT doctor_appointment_tab.*, patient_tab.patient_passport 
+                              FROM doctor_appointment_tab
+                              LEFT JOIN patient_tab ON doctor_appointment_tab.patient_id = patient_tab.patient_id
+                              WHERE doctor_appointment_tab.doctor_id = '$s_doctor_id_escaped' 
+                              AND doctor_appointment_tab.doctor_appointment_status_id = '2'";
+
+                      $result = $conn->query($sql);
+                      ?>
+
+                      <table id="">
+                          <thead>
+                              <tr>
+                                  <td>S/N</td>
+                                  <td>PASSPORT</td>
+                                  <td>Patient Name</td>
+                                  <td>Patient ID</td>
+                                  <td>Date</td>
+                                  <td>Time</td>
+                                  <td>Request Type</td>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <?php 
+                              if ($result->num_rows > 0) {
+                                  $serial_number = 1; // Initialize serial number
+                                  while ($row = $result->fetch_assoc()) {
+                                      // Assuming you have 'patient_name', 'patient_id', 'appointment_date', 'appointment_time', and 'request_type' columns in your table
+                                      echo '<tr>';
+                                      echo '<td>' . $serial_number++ . '</td>'; // Increment serial number
+                                      echo "<td><img src='" . htmlspecialchars($website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]) . "' alt='Profile Picture' width='50' height='50'/></td>";
+                                      echo '<td>' . $row['patient_name'] . '</td>'; // Replace with the correct column name for patient name
+                                      echo '<td>' . $row['patient_id'] . '</td>'; // Replace with the correct column name for patient ID
+                                      echo '<td>' . date('d/m/Y', strtotime($row['appointment_date'])) . '</td>'; // Format date
+                                      echo '<td>' . date('H:i', strtotime($row['appointment_time'])) . '</td>'; // Format time
+                                      echo '<td>' . $row['reason'] . '</td>'; // Replace with the correct column name for request type
+                                      echo '<td>';
+                                      echo '<i class="bi bi-three-dots-vertical"></i>';
+                                      echo '</td>';
+                                      echo '</tr>';
+                                  }
+                              } else {
+                                  echo '<tr><td colspan="7">No appointments found.</td></tr>'; // Message if no results found
+                              }
+                              ?>
+                          </tbody>
+                      </table>
+
               </div>
               </div>
 <div class="black--background hidden"></div>
@@ -377,6 +411,9 @@ function accepted__patient(){
   document.querySelector('.patients__data').classList.add('hide')
   document.getElementById('working__on__patient').classList.remove('hide')
 }
+
+
+
 </script>
 </body>
 </html>
