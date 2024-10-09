@@ -799,6 +799,7 @@ case 'confirm_death':
                   VALUES ('$patient_id', '$patientName', '$surgical_suite_appointment_id', '$past_surgery', '$procedure', '$phonenumber','$smessage', now())";
     
         if (mysqli_query($conn, $query)) {
+            
             echo json_encode(array("check" => "success"));
         } else {
             echo json_encode(array("check" => "failure", "error" => mysqli_error($conn)));
