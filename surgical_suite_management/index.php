@@ -107,32 +107,47 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                 <h3>Incoming Surgery List</h3>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
-            <table id="TableData">
-                <thead>
-                    <tr>
-                    <td>S/N</td>
-                        <td>Patient Name</td>
-                        <td>Patient Id</td>
-                        <td>Date</td>
-                        <td>Time</td>
-                        <td>Rquest type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mercy Jane</td>
-                  <td>Pat0003</td>
-                  <td>23/09/2024</td>
-                  <td>23:40</td>
-                  <td>Nose surgery</td>
-                  <td>
-                  <button class="bg-white">Accept</button>
-                  <button class="bg-white">Reject</button>
-                </td>
-                </tr>
-                </tbody>
-        </table>
+            <?php
+              $sql = "SELECT * FROM surgical_suite_appointment_tab";
+              $result = $conn->query($sql);
+              ?>
+              <table id="TableData">
+                  <thead>
+                      <tr>
+                          <td>S/N</td>
+                          <td>Patient Name</td>
+                          <td>Patient Id</td>
+                          <td>Date</td>
+                          <td>Time</td>
+                          <td>Request type</td>
+                          <td>Actions</td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <?php
+                      if ($result->num_rows > 0) {
+                          $sn = 1;
+                          while ($row = $result->fetch_assoc()) {
+                              echo "<tr>";
+                              echo "<td>" . $sn++ . "</td>";
+                              echo "<td>" . $row['patient_name'] . "</td>";
+                              echo "<td>" . $row['patient_id'] . "</td>";
+                              echo "<td>" . $row['date'] . "</td>";
+                              echo "<td>" . $row['time'] . "</td>";
+                              echo "<td>" . $row['surgical_procedure'] . "</td>";
+                              echo '<td>
+                                  <button class="bg-white">Accept</button>
+                                  <button class="bg-white">Reject</button>
+                              </td>';
+                              echo "</tr>";
+                          }
+                      } else {
+                          echo "<tr><td colspan='7'>No data found</td></tr>";
+                      }
+                      ?>
+                  </tbody>
+              </table>
+
   </div>
   </div>
 
