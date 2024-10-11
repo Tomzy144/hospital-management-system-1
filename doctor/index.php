@@ -192,7 +192,7 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
                     echo "<td>" . htmlspecialchars(string: $row["reason"]) . "</td>";
                     echo "<td>";
                     ?>
-                   <button class="bg-white" type="button" onclick="accept('<?php echo $row['patient_id']; ?>'); move_patient('<?php echo $s_doctor_id; ?>', '<?php echo $row['doctor_appointment_id']; ?>')">Accept</button>
+                   <button class="bg-white" type="button" onclick="accept('<?php echo $row['patient_id']; ?>','<?php echo $row['doctor_appointment_id']; ?>');">Accept</button>
 
                     <?php
                     echo "</td>";
@@ -258,7 +258,7 @@ messageContainer.appendChild(acceptMessage);
 acceptMessage.style.display = 'none';
 
 // Main accept function with AJAX request
-function accept(patient_Id) {
+function accept(patient_Id,doctor_appointment_id) {
   // Show the acceptMessage popup when the user clicks "Accept"
   acceptMessage.style.display = 'block';
   
@@ -282,6 +282,8 @@ function accept(patient_Id) {
       success: function(html) {
         $('.patients__data').html(html);
 
+        move_patient('<?php echo $s_doctor_id; ?>',doctor_appointment_id);
+    
         // Hide appointment details container
          document.getElementById('appoitment__patient').classList.add('hide');
          document.getElementById('working__on__patient').classList.add('hide');
