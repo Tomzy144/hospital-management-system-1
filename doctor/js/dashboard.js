@@ -1245,11 +1245,12 @@ function move_patient(doctor_id,doctor_appointment_id) {
         dangerMessage('Doctor ID and Appointment ID are required.');
         return;
     }
+    
   
     var action = "move_patient";
     var dataString = "action=" + action +
                      "&doctor_id=" + encodeURIComponent(doctor_id) +
-                     "&doctor_appointment_id=" + encodeURIComponent(doctor_appointment_id);
+                     "&doctor_appointment_id=" + encodeURIComponent(doctor_appointment_id);  
   
     // Optionally show a loading message
     // loadingMessage("Processing...");

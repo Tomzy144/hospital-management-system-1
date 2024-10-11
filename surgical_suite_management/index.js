@@ -191,3 +191,29 @@ function patientVitalsRow(data) {
     row.insertCell(9).textContent = data.output || 'N/A';  
     row.insertCell(10).textContent = data.bmi || 'N/A'; 
 }
+
+
+
+async function accept_patient() {
+    try {
+        const response = await fetch('config/code.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                'action': 'fetch_patient',
+                'patient_id': patientId
+            })
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json(); 
+    } catch (error) {
+        console.error("Error:", error);
+    } finally {
+        console.log('Done');
+
+    }
+}

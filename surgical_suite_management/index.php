@@ -127,7 +127,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                   <td>23:40</td>
                   <td>Nose surgery</td>
                   <td>
-                  <button class="bg-white">Accept</button>
+                  <button class="bg-white" onclick="accept_patient()">Accept</button>
                   <button class="bg-white">Reject</button>
                 </td>
                 </tr>
