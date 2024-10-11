@@ -136,9 +136,11 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                               echo "<td>" . $row['time'] . "</td>";
                               echo "<td>" . $row['surgical_procedure'] . "</td>";
                               echo '<td>
-                                  <button class="bg-white" onclick="accept_patient()">Accept</button>
-                                  <button class="bg-white">Reject</button>
-                              </td>';
+                                        <button class="bg-white" onclick="accept_patient(' . $row["surgical_suite_appointment_id"] . ', ' . $s_surgical_unit_id . ')">Accept</button>
+                                        <button class="bg-white">Reject</button>
+                                      </td>';
+                      
+
                               echo "</tr>";
                           }
                       } else {
@@ -162,7 +164,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                 <h3>Surgery List</h3>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
-              <?php $sql = "SELECT * FROM surgical_suite_appointment_tab";
+              <?php $sql = "SELECT * FROM surgical_suite_appointment_tab WHERE status_id ='2'";
               $result = $conn->query($sql);
               ?>
 
@@ -208,31 +210,50 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                 <h3>Pending Surgery List</h3>
                 <input type="text" name="" id="" placeholder="Search">
             </div>
-            <table id="TableData">
-                <thead>
-                    <tr>
-                    <td>S/N</td>
-                        <td>Patient Name</td>
-                        <td>Patient Id</td>
-                        <td>Date</td>
-                        <td>Time</td>
-                        <td>Rquest type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mercy Jane</td>
-                  <td>Pat0003</td>
-                  <td>23/09/2024</td>
-                  <td>23:40</td>
-                  <td>Nose surgery</td>
-                  <td>
-                  <i class="bi bi-three-dots-vertical"></i>
-                </td>
-                </tr>
-                </tbody>
-        </table>
+            <?php
+                // Your SQL query to fetch appointments with status_id = 1
+                $sql = "SELECT * FROM surgical_suite_appointment_tab WHERE status_id = '3'";
+                $result = mysqli_query($conn, $sql); // Assuming $conn is your database connection
+
+                ?>
+
+                <table id="TableData">
+                    <thead>
+                        <tr>
+                            <td>S/N</td>
+                            <td>Patient Name</td>
+                            <td>Patient Id</td>
+                            <td>Date</td>
+                            <td>Time</td>
+                            <td>Request type</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        // Initialize serial number
+                        $sn = 1;
+
+                        // Fetch and display each row from the result set
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '<tr>';
+                                echo '<td>' . $sn++ . '</td>';
+                                echo '<td>' . $row["patient_name"] . '</td>';
+                                echo '<td>' . $row["patient_id"] . '</td>';
+                                echo '<td>' . date('d/m/Y', strtotime($row["date"])) . '</td>';
+                                echo '<td>' . date('H:i', strtotime($row["time"])) . '</td>';
+                                echo '<td>' . $row["surgical_procedure"] . '</td>';
+                                echo '<td><i class="bi bi-three-dots-vertical"></i></td>';
+                                echo '</tr>';
+                            }
+                        } else {
+                            echo '<tr><td colspan="7">No appointments found</td></tr>';
+                        }
+                        ?>
+                    </tbody>
+                </table>
+
   </div>
   </div>
 

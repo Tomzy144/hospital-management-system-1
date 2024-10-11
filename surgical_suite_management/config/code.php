@@ -68,6 +68,35 @@
         $stmt->close();
     
     break;
+
+
+    
+        case 'accept_appointment':
+            $appointment_id = $_POST['appointment_id'];
+            $surgical_unit_id = $_POST['surgical_unit_id'];
+    
+            // Select the appointment from the database
+            $sql = "SELECT * FROM surgical_suite_appointment_tab WHERE surgical_suite_appointment_id = '$appointment_id'";
+            $result = mysqli_query($conn, $sql);
+    
+            if (mysqli_num_rows($result) > 0) {
+                // If appointment is found, update the status_id to 2
+                $update_sql = "UPDATE surgical_suite_appointment_tab 
+                               SET status_id = 2,  	accepted_surgical_id  = '$surgical_unit_id' 
+                               WHERE appointment_id = '$appointment_id'";
+    
+                if (mysqli_query($conn, $update_sql)) {
+                    echo json_encode(['status' => 'success', 'message' => 'Appointment accepted']);
+                } else {
+                    echo json_encode(['status' => 'error', 'message' => 'Failed to update the appointment']);
+                }
+            } else {
+                echo json_encode(['status' => 'error', 'message' => 'Appointment not found']);
+            }
+    
+        break;
+    
+    
     
     
 

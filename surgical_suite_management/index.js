@@ -194,7 +194,7 @@ function patientVitalsRow(data) {
 
 
 
-async function accept_patient() {
+async function accept_patient(appointment_id,surgical_unit_id) {
     try {
         const response = await fetch('config/code.php', {
             method: 'POST',
@@ -202,7 +202,7 @@ async function accept_patient() {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: new URLSearchParams({
-                'action': 'fetch_patient',
+                'action': 'accept_appointment',
                 'patient_id': patientId
             })
         });
