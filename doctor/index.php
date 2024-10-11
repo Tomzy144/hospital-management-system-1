@@ -139,7 +139,11 @@ new Def.Autocompleter.Search('icd9dx', 'https://clinicaltables.nlm.nih.gov/api/i
 
 
 
-
+            <div class="modal hidden" id="patient">
+  <div class="">
+    <button onclick="PatientProfiles()" class="bg-blue">Display Patient Profile</button>
+  </div>
+</div>
 
     <div class="list_div" id="appoitment__patient">
         <div class="patient_list_div" >
@@ -259,10 +263,7 @@ acceptMessage.style.display = 'none';
 
 // Main accept function with AJAX request
 function accept(patient_Id,doctor_appointment_id) {
-  // Show the acceptMessage popup when the user clicks "Accept"
   acceptMessage.style.display = 'block';
-  
-  // Handle the "Accept patient" button click
   document.getElementById('accept__patient').addEventListener('click', function() {
     // Hide the acceptMessage popup
     acceptMessage.style.display = 'none';
@@ -317,7 +318,7 @@ function confirmDialog(message, onConfirm) {
 
   
 
-
+                   
 
 
                 </script>
@@ -373,7 +374,7 @@ function confirmDialog(message, onConfirm) {
                                       echo '<td>' . date('H:i', strtotime($row['appointment_time'])) . '</td>'; // Format time
                                       echo '<td>' . $row['reason'] . '</td>'; // Replace with the correct column name for request type
                                       echo '<td>';
-                                      echo '<i class="bi bi-three-dots-vertical"></i>';
+                                      echo '<button class="bg-white" onclick="showPatientProfile(event)">Open patient profile</button>';
                                       echo '</td>';
                                       echo '</tr>';
                                   }
@@ -383,9 +384,35 @@ function confirmDialog(message, onConfirm) {
                               ?>
                           </tbody>
                       </table>
+              </div>
+              </div>
+              <script>
 
-              </div>
-              </div>
+
+                let patientId;
+                function showPatientProfile(e){
+                patientId = e.target.closest('tr').children[3].textContent;
+                patientProfiles(patientId)
+                }
+
+              function patientProfiles(patient_Id) {
+              var dataString = 'patient_Id=' + patient_Id;
+              $.ajax({
+                type: "POST",
+                url: 'config/display.php',
+                data: dataString,
+                cache: false,
+                success: function(html) {
+                  $('.patients__data').html(html);
+
+                  // Hide appointment details container
+                  document.getElementById('appoitment__patient').classList.add('hide');
+                  document.getElementById('working__on__patient').classList.add('hide');
+                  document.querySelector(".patients__data").classList.remove('hide');
+                }
+              });
+              }
+              </script>
 <div class="black--background hidden"></div>
   
 

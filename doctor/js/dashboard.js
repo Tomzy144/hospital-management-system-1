@@ -1276,3 +1276,6 @@ function move_patient(doctor_id,doctor_appointment_id) {
     });
   }
   
+
+
+  

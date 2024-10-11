@@ -147,7 +147,6 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                       ?>
                   </tbody>
               </table>
-
   </div>
   </div>
 
