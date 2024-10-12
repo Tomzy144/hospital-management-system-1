@@ -83,7 +83,7 @@
                 // If appointment is found, update the status_id to 2
                 $update_sql = "UPDATE surgical_suite_appointment_tab 
                                SET status_id = 2,  	accepted_surgical_id  = '$surgical_unit_id' 
-                               WHERE appointment_id = '$appointment_id'";
+                               WHERE surgical_suit_appointment_id = '$appointment_id'";
     
                 if (mysqli_query($conn, $update_sql)) {
                     echo json_encode(['status' => 'success', 'message' => 'Appointment accepted']);
