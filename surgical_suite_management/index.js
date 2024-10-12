@@ -194,26 +194,34 @@ function patientVitalsRow(data) {
 
 
 
-async function accept_patient(appointment_id,surgical_unit_id) {
-    try {
-        const response = await fetch('config/code.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-                'action': 'accept_appointment',
-                'patient_id': patientId
-            })
-        });
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json(); 
-    } catch (error) {
-        console.error("Error:", error);
-    } finally {
-        console.log('Done');
 
+function accept_patient(appointment_id, surgical_unit_id){
+
+        var action = 'accept_appointment';
+        var dataString = "action=" + action + "&patient_id=" + surgical_unit_id + "&appointment_id=" + appointment_id
+        $.ajax({
+            type: 'POST',
+            url: "config/code.php",
+            data: dataString,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data.check === "success") {
+                    successMessage("Patient has been moved successfully")
+                    $btnSubmit.html('Transfer');
+                    $btnSubmit.prop('disabled', false);
+                    close_tranfer_patient_lab();
+                } else {
+                    console.error('Error:', data.error);
+                    dangerMessage('Error:', data.error)
+                    $btnSubmit.html(btnText);
+                    $btnSubmit.prop('disabled', false);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX Error:', error);
+                $btnSubmit.html(btnText);
+                $btnSubmit.prop('disabled', false);
+            }
+        });
     }
-}

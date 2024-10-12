@@ -115,6 +115,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                   <thead>
                       <tr>
                           <td>S/N</td>
+                          <td>Patient Profile</td>
                           <td>Patient Name</td>
                           <td>Patient Id</td>
                           <td>Date</td>
