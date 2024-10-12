@@ -793,10 +793,11 @@ case 'confirm_death':
         $array = json_decode($sequence, true);
         $no = $array[0]['no'];
         $surgical_suite_appointment_id = 'SURGAPP' . $no;
+        $status_id = '1';
     
         $query = "INSERT INTO `surgical_suite_appointment_tab`
-                  (`patient_id`,`patient_name`,  `surgical_suite_appointment_id`, `past_surgery`, `surgical_procedure`, `phonenumber`,`message`,`time`) 
-                  VALUES ('$patient_id', '$patientName', '$surgical_suite_appointment_id', '$past_surgery', '$procedure', '$phonenumber','$smessage', now())";
+                  (`patient_id`,`patient_name`,  `surgical_suite_appointment_id`, `past_surgery`, `surgical_procedure`, `phonenumber`,`message`,`time`,status_id) 
+                  VALUES ('$patient_id', '$patientName', '$surgical_suite_appointment_id', '$past_surgery', '$procedure', '$phonenumber','$smessage', now(),'$status_id')";
     
         if (mysqli_query($conn, $query)) {
             
