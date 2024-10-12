@@ -25,4 +25,4 @@
     <!-- Include custom scripts -->
     <script defer src="<?php echo $website_url?>/surgical_suite_management/index.js"></script>
     <!-- <script defer src="?php echo $website_url?>/emergency_manager /js/aos.js"></script> -->
-    <script defer src="<?php echo $website_url?>/surgical_suite_management /js/jquery-v3.6.1.min.js"></script>
+    <script defer src="<?php echo $website_url?>/surgical_suite_management /jquery-v3.6.1.min.js"></script>

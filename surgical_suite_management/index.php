@@ -108,48 +108,59 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                 <input type="text" name="" id="" placeholder="Search">
             </div>
             <?php
-              $sql = "SELECT * FROM surgical_suite_appointment_tab";
-              $result = $conn->query($sql);
-              ?>
-              <table id="TableData">
-                  <thead>
-                      <tr>
-                          <td>S/N</td>
-                          <td>Patient Profile</td>
-                          <td>Patient Name</td>
-                          <td>Patient Id</td>
-                          <td>Date</td>
-                          <td>Time</td>
-                          <td>Request type</td>
-                          <td>Actions</td>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <?php
-                      if ($result->num_rows > 0) {
-                          $sn = 1;
-                          while ($row = $result->fetch_assoc()) {
-                              echo "<tr>";
-                              echo "<td>" . $sn++ . "</td>";
-                              echo "<td>" . $row['patient_name'] . "</td>";
-                              echo "<td>" . $row['patient_id'] . "</td>";
-                              echo "<td>" . $row['date'] . "</td>";
-                              echo "<td>" . $row['time'] . "</td>";
-                              echo "<td>" . $row['surgical_procedure'] . "</td>";
-                              echo '<td>
-                                        <button class="bg-white" onclick="accept_patient(' . $row["surgical_suite_appointment_id"] . ', ' . $s_surgical_unit_id . ')">Accept</button>
-                                        <button class="bg-white">Reject</button>
-                                      </td>';
-                      
+                $sql = "SELECT surgical_suite_appointment_tab.*, patient_tab.patient_passport 
+                        FROM surgical_suite_appointment_tab
+                        LEFT JOIN patient_tab ON surgical_suite_appointment_tab.patient_id = patient_tab.patient_id
+                        WHERE  surgical_suite_appointment_tab.status_id = '1'";
 
-                              echo "</tr>";
-                          }
-                      } else {
-                          echo "<tr><td colspan='7'>No data found</td></tr>";
-                      }
+                      $result = $conn->query($sql);
                       ?>
-                  </tbody>
-              </table>
+                      <table id="TableData">
+                          <thead>
+                              <tr>
+                                  <td>S/N</td>
+                                  <td>Patient Profile</td>
+                                  <td>Patient Name</td>
+                                  <td>Patient Id</td>
+                                  <td>Date</td>
+                                  <td>Time</td>
+                                  <td>Request type</td>
+                                  <td>Actions</td>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <?php
+                              if ($result->num_rows > 0) {
+                                  $sn = 1;
+                                  while ($row = $result->fetch_assoc()) {
+                                      echo "<tr>";
+                                      echo "<td>" . $sn++ . "</td>";
+                                      echo "<td><img src='" . htmlspecialchars($website_url . "/uploaded_files/profile_pix/patient/" . $row["patient_passport"]) . "' alt='Profile Picture' width='50' height='50'/></td>";
+                                      echo "<td>" . htmlspecialchars($row['patient_name']) . "</td>";
+                                      echo "<td>" . htmlspecialchars($row['patient_id']) . "</td>";
+                                      echo "<td>" . htmlspecialchars($row['date']) . "</td>";
+                                      echo "<td>" . htmlspecialchars($row['time']) . "</td>";
+                                      echo "<td>" . htmlspecialchars($row['surgical_procedure']) . "</td>";
+                                      echo '<td>
+                                              <button class="bg-white" onclick="accept_patient(\'' . $row["surgical_suite_appointment_id"] . '\', \'' . $s_surgical_unit_id . '\')">Accept</button>
+                                              <button class="bg-white">Reject</button>
+                                            </td>';
+                              
+                              
+                              
+                                      echo "</tr>";
+                                  }
+                              } else {
+                                  echo "<tr><td colspan='8'>No data found</td></tr>";
+                              }
+                              ?>
+                          </tbody>
+                      </table>
+
+
+
+                     
+
   </div>
   </div>
 

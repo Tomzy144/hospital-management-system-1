@@ -195,10 +195,19 @@ function patientVitalsRow(data) {
 
 
 
-function accept_patient(appointment_id, surgical_unit_id){
-
+    function accept_patient(appointment_id, surgical_unit_id) {
         var action = 'accept_appointment';
-        var dataString = "action=" + action + "&patient_id=" + surgical_unit_id + "&appointment_id=" + appointment_id
+        var vsurgical_unit_id = surgical_unit_id;
+        var vappointment_id = appointment_id;
+
+        var dataString = "action=" + action + "&surgical_unit_id=" + vsurgical_unit_id + "&appointment_id=" + vappointment_id;
+
+        // var btnSubmit = $('#submit-btn');
+        // var btnText = btnSubmit.html();
+
+        // btnSubmit.html('Transferring...');
+        // btnSubmit.prop('disabled', true);
+
         $.ajax({
             type: 'POST',
             url: "config/code.php",
@@ -207,21 +216,24 @@ function accept_patient(appointment_id, surgical_unit_id){
             dataType: 'json',
             success: function (data) {
                 if (data.check === "success") {
-                    successMessage("Patient has been moved successfully")
-                    $btnSubmit.html('Transfer');
-                    $btnSubmit.prop('disabled', false);
+                    successMessage("Appointment has been moved successfully");
+                    // btnSubmit.html('Transfer');
+                    // btnSubmit.prop('disabled', false);
                     close_tranfer_patient_lab();
                 } else {
-                    console.error('Error:', data.error);
-                    dangerMessage('Error:', data.error)
-                    $btnSubmit.html(btnText);
-                    $btnSubmit.prop('disabled', false);
+                    dangerMessage('Error: ' + data.error);
+                    // btnSubmit.html(btnText);
+                    // btnSubmit.prop('disabled', false);
                 }
             },
             error: function (xhr, status, error) {
-                console.error('AJAX Error:', error);
-                $btnSubmit.html(btnText);
-                $btnSubmit.prop('disabled', false);
+                dangerMessage('AJAX Error: ' + error);
+                // btnSubmit.html(btnText);
+                // btnSubmit.prop('disabled', false);
             }
         });
     }
+
+
+
+
