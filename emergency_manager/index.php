@@ -530,8 +530,16 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                             
                     $sn = 1; // Serial number counter
                     while ($row = mysqli_fetch_assoc($result)) {
-                        // Determine status
-                        $status = ($row['status_id'] == 1) ? 'Active' : 'Inactive';
+                        // Determine status icon and color based on status_id
+                        if ($row['status_id'] == 1) {
+                            $status_icon = '<i class="bi bi-circle-fill"title= "Stable and Transfered"  style="color: green;"></i>';
+                        } elseif ($row['status_id'] == 2) {
+                            $status_icon = '<i class="bi bi-circle-fill" title= "Unstable" style="color: yellow;"></i>';
+                        } elseif ($row['status_id'] == 3) {
+                            $status_icon = '<i class="bi bi-circle-fill" title= "Deceased" style="color: red;"></i>';
+                        } else {
+                            $status_icon = '<i class="bi bi-circle-fill" style="color: grey;"></i>'; // Default for any other status
+                        }
                         
                         echo '<tr>
                                 <td>' . $sn++ . '</td>
@@ -541,7 +549,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                                 <td>' . htmlspecialchars($row['cause_of_incident']) . '</td>
                                 <td>' . htmlspecialchars($row['date_of_incident']) . '</td>
                                 <td>' . htmlspecialchars($row['time_of_incident']) . '</td>
-                                <td>' . $status . '</td>
+                                <td>' . $status_icon . '</td>
                                 <td><i class="bi bi-three-dots" onclick="showBookModal(event)"></i></td>
                               </tr>';
                     }
@@ -551,6 +559,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                     echo '<p>No data found.</p>';
                 }
                 ?>
+
 
 
 <script>
