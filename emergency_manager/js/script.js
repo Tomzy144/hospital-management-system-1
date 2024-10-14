@@ -333,10 +333,11 @@ function isPatientStable() {
 
 function bookHealthRecordForm() {
   const patient_name = document.querySelector('#name').value
-  const patient_id = document.querySelector('#name').value
+  const patient_id = document.querySelector('#id').value
   const comment = document.querySelector('#comment').value
-  var action = 'health_record';
-    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment;
+  var emergency_unit_id = document.getElementById('emergency_unit_id');
+  var action = 'transfer_to_health_record';
+    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment+ "&emergency_unit_id=" + emergency_unit_id;
 
     $.ajax({
         type: 'POST',

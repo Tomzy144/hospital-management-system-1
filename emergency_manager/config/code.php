@@ -31,7 +31,7 @@
         $date_of_incident = $_POST['dateOfIncident'];
         $time_of_incident = $_POST['timeOfIncident'];
         $cause_of_incident = $_POST['causeOfIncident'];
-        $status_id = "1";
+        $status_id = "2";
     
         // Check for existing record with the same phone number
         $stmt = $conn->prepare("SELECT * FROM emergency_patient_tab WHERE `ec_contact_no` = ?");
@@ -677,6 +677,62 @@ case 'get_surgical_unit':
             }
         
             break;
+
+
+
+            case 'transfer_to_health_record':
+                $patient_name = $_POST['patient_name'];
+                $patient_id = $_POST['patient_id'];
+                $comment = $_POST['comment'];
+                $emergency_unit_id = $_POST['emergency_unit_id'];
+            
+                // Check if required data is missing
+                if (!$patient_id || !$patient_name || !$comment) {
+                    echo json_encode(array("success" => false, "message" => "Missing required data."));
+                    break;
+                }
+            
+                // Check if the patient record already exists
+                $check_stmt = $conn->prepare("SELECT * FROM emergency_patient_tab WHERE emergency_patient_id = ?");
+                if ($check_stmt) {
+                    $check_stmt->bind_param("s", $patient_id);
+                    $check_stmt->execute();
+                    $check_result = $check_stmt->get_result();
+            
+                    if ($check_result->num_rows > 0) {
+                        // Fetch the row data
+                        $row = $check_result->fetch_assoc();
+            
+                        // Check if patient is already transferred
+                        if ($row['status_id'] == "1") {
+                            echo json_encode(array("success" => true, "message" => "Patient has already been transferred."));
+                        } else {
+                            // Update the record
+                            $update_query = "UPDATE emergency_patient_tab SET status_id = 1, time_of_transfer = NOW(), emergency_unit_id = ? WHERE emergency_patient_id = ?";
+                            $update_stmt = $conn->prepare($update_query);
+                            if ($update_stmt) {
+                                $update_stmt->bind_param("ss", $emergency_unit_id, $patient_id);
+                                $update_stmt->execute();
+                                echo json_encode(array("success" => true, "message" => "Patient transferred successfully."));
+                            } else {
+                                echo json_encode(array("success" => false, "message" => "Error preparing update query."));
+                                error_log("SQL Update Error: " . $conn->error);
+                            }
+                        }
+                    } else {
+                        echo json_encode(array("success" => false, "message" => "Patient record not found."));
+                    }
+            
+                    // Close the check statement
+                    $check_stmt->close();
+                } else {
+                    echo json_encode(array("success" => false, "message" => "Error preparing check query."));
+                    error_log("SQL Prepare Check Error: " . $conn->error);
+                }
+            
+                break;
+            
+            
         
 
 

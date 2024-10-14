@@ -492,6 +492,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="form-control">
     <label>Comment</label>
     <textarea id="comment"></textarea>
+    <input type="hidden" value ="<?php echo $s_emergency_unit_id ?>" id="emergency_unit_id" />
   </div>
   </div>
 <button type="button" class="bg-blue" onclick="bookHealthRecordForm()">Submit</button>  
