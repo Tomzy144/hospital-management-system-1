@@ -536,7 +536,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                         } elseif ($row['status_id'] == 2) {
                             $status_icon = '<i class="bi bi-circle-fill" title= "Unstable" style="color: yellow;"></i>';
                         } elseif ($row['status_id'] == 3) {
-                            $status_icon = '<i class="bi bi-circle-fill" title= "Deceased" style="color: red;"></i>';
+                            $status_icon = '<i class="bi bi-circle-fill" title= "Deceased" style="color: orange;"></i>';
                         } else {
                             $status_icon = '<i class="bi bi-circle-fill" style="color: grey;"></i>'; // Default for any other status
                         }
