@@ -532,7 +532,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
                     while ($row = mysqli_fetch_assoc($result)) {
                         // Determine status icon and color based on status_id
                         if ($row['status_id'] == 1) {
-                            $status_icon = '<i class="bi bi-circle-fill"title= "Stable and Transfered"  style="color: green;"></i>';
+                            $status_icon = '<i class="bi bi-circle-fill"title= "Stable and Transfered"  style="color: lime;"></i>';
                         } elseif ($row['status_id'] == 2) {
                             $status_icon = '<i class="bi bi-circle-fill" title= "Unstable" style="color: yellow;"></i>';
                         } elseif ($row['status_id'] == 3) {
