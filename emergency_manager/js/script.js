@@ -420,12 +420,12 @@ function bookNurseForm() {
   const patient_name = document.querySelector('#booknurseForm #name').value
   const patient_id = document.querySelector('#booknurseForm #name').value
   const comment = document.querySelector('#booknurseForm #comment').value
-  const time = document.querySelector('#booknurseForm #selected_time').value
-  const date = document.querySelector('#booknurseForm #selected_date').value
+  const selected_time = document.querySelector('#booknurseForm #selected_time').value
+  const selected_date = document.querySelector('#booknurseForm #selected_date').value
   const nurse_id = document.querySelector('#booknurseForm #select_nurse').value
 
   var action = 'transfer_to_nurse';
-  var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&nurse_id=" + nurse_id;
+  var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&selected_time=" + selected_time + "&selected_date=" + selected_date + "&nurse_id=" + nurse_id;
 
     $.ajax({
         type: 'POST',
@@ -437,7 +437,8 @@ function bookNurseForm() {
             if (data.success === true) { 
                 successMessage(data.message || 'Patient has been transfered successfully');
                 setTimeout(()=>{
-                      window.location.reload();
+                    //   window.location.reload();
+                    closeModal('nurseForm');
                 },2000)
               
             } else if (data.success === false) {
@@ -456,18 +457,66 @@ function bookNurseForm() {
 }
 
 
+
+////////surgical suite
+function get_surgical_suite() {
+    $('#select_surgical_suite').html('<option>LOADING...</option>'); // Set loading message
+    $('#select_surgical_suite').prop('disabled', true); // Disable the dropdown
+
+    var action = 'get_surgical_unit'; // No roles needed
+  
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php", // Adjust URL as needed
+        data: { action: action }, // Only action is passed, no roles
+        cache: false,
+        dataType: 'json',
+        success: function (response) {
+            // Check for success and populate the dropdown
+            if (response.success) {
+                populateNurseDropdown(response.surgical_unit); // Populate with surgical_suite data
+            } else {
+                console.error('Error:', response.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+        },
+    });
+}
+
+function populateNurseDropdown(surgical_unit) {
+    var surgical_suiteDropdown = document.getElementById('select_surgical_suite');
+  
+    // Clear existing options
+    surgical_suiteDropdown.innerHTML = '';
+  
+    // Add options based on the fetched data
+    for (var i = 0; i < surgical_unit.length; i++) {
+        var option = document.createElement('option');
+        option.value = surgical_unit[i].surgical_unit_id; // Assuming surgical_suite object has 'surgical_suite_id'
+        option.textContent = surgical_unit[i].fullname; // Assuming surgical_suite object has 'surgical_suite_name'
+        surgical_suiteDropdown.appendChild(option);
+    }
+  
+    // Enable the dropdown after populating options
+    $('#select_surgical_suite').prop('disabled', false);
+}
+ 
+
+
 ////////surgical suite
 
 function bookSurgicalsuiteForm() {
   const patient_name = document.querySelector('#booksurgicalsuiteForm #name').value
-  const patient_id = document.querySelector('#booksurgicalsuiteForm #name').value
+  const patient_id = document.querySelector('#booksurgicalsuiteForm #id').value
   const comment = document.querySelector('#booksurgicalsuiteForm #comment').value
   const time = document.querySelector('#booksurgicalsuiteForm #selected_time').value
   const date = document.querySelector('#booksurgicalsuiteForm #selected_time').value
-  const suravailable = document.querySelector('#booksurgicalsuiteForm #select_sur').value
+  const staffavailable = document.querySelector('#booksurgicalsuiteForm #select_surgical_suite').value
   
   var action = 'transfer_to_surgical_suite';
-    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + suravailable;
+    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + staffavailable;
 
     $.ajax({
         type: 'POST',
@@ -479,7 +528,8 @@ function bookSurgicalsuiteForm() {
             if (data.success === true) { 
                 successMessage(data.message || 'Patient has been transfered successfully');
                 setTimeout(()=>{
-                      window.location.reload();
+                    //   window.location.reload();
+                    closeModal('surgicalsuiteForm');
                 },2000)
               
             } else if (data.success === false) {

@@ -186,10 +186,10 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="">
     <button onclick="docForm(),getDoctorsRoles()" class="bg-blue">Transfer to doctor</button>
     <button onclick="nurseForm(),getnurse();" class="bg-blue">Transfer to nurse</button>
-    <button onclick="surgicalsuiteForm()" class="bg-blue">Transfer to surgical suite</button>
-    <button onclick="labForm()" class="bg-blue">Transfer to lab</button>
-    <button onclick="radiologyForm()" class="bg-blue">Transfer to radiology</button>
-    <button onclick="morgueForm()" class="bg-blue">Transfer to Morgue</button>
+    <button onclick="surgicalsuiteForm(),get_surgical_suite();" class="bg-blue">Transfer to surgical suite</button>
+    <button onclick="labForm(),get_lab();" class="bg-blue">Transfer to lab</button>
+    <button onclick="radiologyForm(),get_radiology();" class="bg-blue">Transfer to radiology</button>
+    <button onclick="morgueForm(),get_morgue();" class="bg-blue">Transfer to Morgue</button>
     <button onclick="isPatientStable()" class="bg-blue">Is the patient stable</button>
   </div>
 </div>
@@ -315,11 +315,8 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
 <div class="form-control">
 <label>Available attendant</label>
-<select  id="select_sur">
-<option value="">Doc. Mathew </option>
-<option value="">Doc. Prince</option>
-<option value="">Doc. Peter</option>
-<option value="">Doc. Patrick</option>
+<select  id="select_surgical_suite">
+  <option value="" >Loading</option>
 </select>
   </div>
   </div>

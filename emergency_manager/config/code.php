@@ -309,9 +309,9 @@ case 'get_surgical_unit':
         $patient_id = $_POST['patient_id'];
         $patient_name = $_POST['patient_name'];
         $comment = $_POST['comment'];
-        $time = $_POST['selected_time'];
-        $date = $_POST['selected_date'];
-        $surgical_suite_id = $_POST['surgical_suite_id'];
+        $time = $_POST['time'];
+        $date = $_POST['date'];
+        $surgical_suite_id = $_POST['staffavailable'];
         $status_id = "1"; // Default status ID for new transfer
     
         // Check if the appointment already exists
