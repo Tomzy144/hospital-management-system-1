@@ -565,7 +565,7 @@ function get_lab() {
         success: function (response) {
             // Check for success and populate the dropdown
             if (response.success) {
-                populateLabDropdown(response.surgical_unit); // Populate with lab data
+                populateLabDropdown(response.lab_unit); // Populate with lab data
             } else {
                 console.error('Error:', response.message);
             }
@@ -576,17 +576,17 @@ function get_lab() {
     });
 }
 
-function populateLabDropdown(surgical_unit) {
+function populateLabDropdown(lab_unit) {
     var labDropdown = document.getElementById('select_lab');
   
     // Clear existing options
     labDropdown.innerHTML = '';
   
     // Add options based on the fetched data
-    for (var i = 0; i < surgical_unit.length; i++) {
+    for (var i = 0; i < lab_unit.length; i++) {
         var option = document.createElement('option');
-        option.value = surgical_unit[i].surgical_unit_id; // Assuming lab object has 'lab_id'
-        option.textContent = surgical_unit[i].fullname; // Assuming lab object has 'lab_name'
+        option.value = lab_unit[i].lab_scientist_id; // Assuming lab object has 'lab_id'
+        option.textContent = lab_unit[i].lab_scientist_name; // Assuming lab object has 'lab_name'
         labDropdown.appendChild(option);
     }
   
@@ -599,14 +599,14 @@ function populateLabDropdown(surgical_unit) {
 
 function bookLabForm() {
   const patient_name = document.querySelector('#booklabForm #name').value
-  const patient_id = document.querySelector('#booklabForm #name').value
+  const patient_id = document.querySelector('#booklabForm #id').value
   const comment = document.querySelector('#booklabForm #comment').value
   const time = document.querySelector('#booklabForm #selected_time').value
   const date = document.querySelector('#booklabForm #selected_date').value
-  const labavailable = document.querySelector('#booklabForm #select_lab').value
+  const staffavailable = document.querySelector('#booklabForm #select_lab').value
   
-  var action = 'health_record';
-    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + labavailable;
+  var action = 'transfer_to_lab';
+    var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + staffavailable;
 
     $.ajax({
         type: 'POST',
@@ -617,7 +617,9 @@ function bookLabForm() {
         success: function (data) {
             if (data.success === true) { 
                 successMessage(data.message || 'Patient has been transfered successfully');
+                closeModal('labForm');
                 setTimeout(()=>{
+                  
                       window.location.reload();
                 },2000)
               
