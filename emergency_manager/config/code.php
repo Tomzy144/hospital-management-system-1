@@ -381,7 +381,7 @@ case 'get_surgical_unit':
         case 'get_lab_unit':
 
             // Execute the query to fetch labs
-            $query = mysqli_query($conn, "SELECT radiology_name,radiology_id FROM radiology_tab");
+            $query = mysqli_query($conn, "SELECT lab_scientist_name,lab_scientist_id FROM lab_scientist_tab");
 
             // Check if the query executed successfully
             if ($query) {

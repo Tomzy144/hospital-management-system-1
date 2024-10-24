@@ -474,7 +474,7 @@ function get_surgical_suite() {
         success: function (response) {
             // Check for success and populate the dropdown
             if (response.success) {
-                populateNurseDropdown(response.surgical_unit); // Populate with surgical_suite data
+                populateSurgDropdown(response.surgical_unit); // Populate with surgical_suite data
             } else {
                 console.error('Error:', response.message);
             }
@@ -485,7 +485,7 @@ function get_surgical_suite() {
     });
 }
 
-function populateNurseDropdown(surgical_unit) {
+function populateSurgDropdown(surgical_unit) {
     var surgical_suiteDropdown = document.getElementById('select_surgical_suite');
   
     // Clear existing options
@@ -547,6 +547,53 @@ function bookSurgicalsuiteForm() {
     });
 }
 
+
+
+////////get lab
+function get_lab() {
+    $('#select_lab').html('<option>LOADING...</option>'); // Set loading message
+    $('#select_lab').prop('disabled', true); // Disable the dropdown
+
+    var action = 'get_lab_unit'; // No roles needed
+  
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php", // Adjust URL as needed
+        data: { action: action }, // Only action is passed, no roles
+        cache: false,
+        dataType: 'json',
+        success: function (response) {
+            // Check for success and populate the dropdown
+            if (response.success) {
+                populateLabDropdown(response.surgical_unit); // Populate with lab data
+            } else {
+                console.error('Error:', response.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+        },
+    });
+}
+
+function populateLabDropdown(surgical_unit) {
+    var labDropdown = document.getElementById('select_lab');
+  
+    // Clear existing options
+    labDropdown.innerHTML = '';
+  
+    // Add options based on the fetched data
+    for (var i = 0; i < surgical_unit.length; i++) {
+        var option = document.createElement('option');
+        option.value = surgical_unit[i].surgical_unit_id; // Assuming lab object has 'lab_id'
+        option.textContent = surgical_unit[i].fullname; // Assuming lab object has 'lab_name'
+        labDropdown.appendChild(option);
+    }
+  
+    // Enable the dropdown after populating options
+    $('#select_lab').prop('disabled', false);
+}
+ 
 
 ////lab
 
