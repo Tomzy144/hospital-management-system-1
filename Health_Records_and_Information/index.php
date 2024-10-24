@@ -567,6 +567,7 @@
                                 <td>Patient Name</td>
                                 <td>Patient Emergency ID</td>
                                 <td>Date of Admission</td>
+                                <td>Option</td>
                             </tr>
                         </thead>
                         <tbody>';
@@ -580,6 +581,7 @@
                                 <td>' . htmlspecialchars($row['Epatient_name']) . '</td>
                                 <td>' . htmlspecialchars($row['emergency_patient_id']) . '</td>
                                 <td>' . htmlspecialchars($row['date']) . '</td>
+                                 <td>  <i class ="bi-three-dots"></i></td>
                             </tr>';
                     }
                 } else {
