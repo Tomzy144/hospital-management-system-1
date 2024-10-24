@@ -594,6 +594,52 @@ function populateLabDropdown(lab_unit) {
     $('#select_lab').prop('disabled', false);
 }
  
+////////get rad
+function get_radiology() {
+    $('#select_rad').html('<option>LOADING...</option>'); // Set loading message
+    $('#select_rad').prop('disabled', true); // Disable the dropdown
+
+    var action = 'get_radiology'; // No roles needed
+  
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php", // Adjust URL as needed
+        data: { action: action }, // Only action is passed, no roles
+        cache: false,
+        dataType: 'json',
+        success: function (response) {
+            // Check for success and populate the dropdown
+            if (response.success) {
+                populateRadDropdown(response.radiology); // Populate with rad data
+            } else {
+                console.error('Error:', response.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+        },
+    });
+}
+
+function populateRadDropdown(rad_unit) {
+    var radDropdown = document.getElementById('select_rad');
+  
+    // Clear existing options
+    radDropdown.innerHTML = '';
+  
+    // Add options based on the fetched data
+    for (var i = 0; i < rad_unit.length; i++) {
+        var option = document.createElement('option');
+        option.value = rad_unit[i].radiology_id; // Assuming rad object has 'rad_id'
+        option.textContent = rad_unit[i].fullname; // Assuming rad object has 'rad_name'
+        radDropdown.appendChild(option);
+    }
+  
+    // Enable the dropdown after populating options
+    $('#select_rad').prop('disabled', false);
+}
+ 
+
 
 ////lab
 
@@ -641,13 +687,13 @@ function bookLabForm() {
 ///////radiology 
 function bookRadForm() {
   const patient_name = document.querySelector('#bookradiologyForm #name').value
-  const patient_id = document.querySelector('#bookradiologyForm #name').value
+  const patient_id = document.querySelector('#bookradiologyForm #id').value
   const comment = document.querySelector('#bookradiologyForm #comment').value
   const time = document.querySelector('#bookradiologyForm #selected_time').value
   const date = document.querySelector('#bookradiologyForm #selected_date').value
   const radavailable = document.querySelector('#bookradiologyForm #select_rad').value
   
-  var action = 'health_record';
+  var action = 'transfer_to_radiology';
     var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + radavailable;
 
     $.ajax({

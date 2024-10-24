@@ -390,21 +390,18 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
     <label>Selected date</label>
-    <input type="date" name="selected_date" />
+    <input type="date" id="selected_date" name="selected_date" />
   </div>
   <div class="form-control">
     <label>Selected time</label>
-    <input type="time" name="selected_time" />
+    <input type="time" id="selected_time" name="selected_time" />
   </div>
   </div>
   <div class="each_sections">
 <div class="form-control">
 <label>Available radiology scientist</label>
 <select  id="select_rad">
-<option value="">Doc. Mathew </option>
-<option value="">Doc. Prince</option>
-<option value="">Doc. Peter</option>
-<option value="">Doc. Patrick</option>
+  <option value="" >Loading</option>
 </select>
   </div>
   </div>
@@ -435,11 +432,11 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <div class="each_sections">
   <div class="form-control">
     <label>Selected date</label>
-    <input type="date" name="selected_date" />
+    <input type="date" id="selected_date" name="selected_date" />
   </div>
   <div class="form-control">
     <label>Selected time</label>
-    <input type="time" name="selected_time" />
+    <input type="time" id="selected_time" name="selected_time" />
   </div>
   </div>
   <div class="each_sections">
