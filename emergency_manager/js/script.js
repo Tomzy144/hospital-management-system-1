@@ -332,10 +332,10 @@ function isPatientStable() {
 }
 
 function bookHealthRecordForm() {
-  const patient_name = document.querySelector('#name').value
-  const patient_id = document.querySelector('#id').value
-  const comment = document.querySelector('#comment').value
-  var emergency_unit_id = document.getElementById('emergency_unit_id');
+  const patient_name = document.querySelector('#bookhealthrecordForm #name').value;
+  const patient_id = document.querySelector('#bookhealthrecordForm #id').value;
+  const comment = document.getElementById('health_record_comment').value;
+  var emergency_unit_id = document.getElementById('emergency_unit_id').value;
   var action = 'transfer_to_health_record';
     var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment+ "&emergency_unit_id=" + emergency_unit_id;
 
@@ -349,7 +349,9 @@ function bookHealthRecordForm() {
             if (data.success === true) { 
                 successMessage(data.message || 'Patient has been transfered successfully');
                 setTimeout(()=>{
-                      window.location.reload();
+                     
+                      closeModal('healthrecordForm');
+                      patientList();
                 },2000)
               
             } else if (data.success === false) {
@@ -581,13 +583,13 @@ function bookRadForm() {
 ////////morgue
 function bookMorgueForm() {
   const patient_name = document.querySelector('#bookmorgueForm #name').value
-  const patient_id = document.querySelector('#bookmorgueForm #name').value
+  const patient_id = document.querySelector('#bookmorgueForm #id').value
   const comment = document.querySelector('#bookmorgueForm #comment').value
   const time = document.querySelector('#bookmorgueForm #selected_time').value
   const date = document.querySelector('#bookmorgueForm #selected_date').value
   const morgueavailable = document.querySelector('#bookmorgueForm #select_morgue').value
   
-  var action = 'health_record';
+  var action = 'transfer_to_morgue';
     var dataString = "action=" + action + "&patient_name=" + patient_name + "&patient_id=" + patient_id + "&comment=" + comment + "&time=" + time + "&date=" + date + "&staffavailable=" + morgueavailable;
 
     $.ajax({

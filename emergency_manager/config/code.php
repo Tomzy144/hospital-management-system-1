@@ -609,7 +609,7 @@ case 'get_surgical_unit':
             $time = isset($_POST['selected_time']) ? $_POST['selected_time'] : null;
             $date = isset($_POST['selected_date']) ? $_POST['selected_date'] : null;
             $morgue_id = isset($_POST['morgue_id']) ? $_POST['morgue_id'] : null;
-            $status_id = "1"; // Default status ID for new transfer
+            $status_id = "3"; // Default status ID for new transfer
         
             // Validate that required fields are not missing
             if (!$patient_id || !$patient_name || !$time || !$date || !$morgue_id) {

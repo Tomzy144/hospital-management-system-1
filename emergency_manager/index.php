@@ -474,28 +474,28 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   <h4>Transfer patient to health record</h4>
 <button class="btn--close-modal" onclick="closeModal('healthrecordForm')">&times;</button>
   <form action="" id="bookhealthrecordForm">
-  <div class="each_sections">
-  <div class="form-control">
-    <label>Patient Name</label>
-    <input type="text" name="patient_name" id="name"/>
-  </div>
-  <div class="form-control">
-    <label>Patient Id</label>
-    <input type="text" name="patient_id" id="id"/>
-  </div>
-  <div class="form-control">
-    <label>Gender</label>
-    <input type="text" name="" id="gender"/>
-  </div>
-  </div>
-  <div class="each_sections">
-  <div class="form-control">
-    <label>Comment</label>
-    <textarea id="comment"></textarea>
-    <input type="hidden" value ="<?php echo $s_emergency_unit_id ?>" id="emergency_unit_id" />
-  </div>
-  </div>
-<button type="button" class="bg-blue" onclick="bookHealthRecordForm()">Submit</button>  
+      <div class="each_sections">
+      <div class="form-control">
+        <label>Patient Name</label>
+        <input type="text" name="name" id="name"/>
+      </div>
+      <div class="form-control">
+        <label>Patient Id</label>
+        <input type="text" name="id" value="" id="id"/>
+      </div>
+      <div class="form-control">
+        <label>Gender</label>
+        <input type="text" name="gender" value="" id="gender"/>
+      </div>
+      </div>
+      <div class="each_sections">
+      <div class="form-control">
+        <label>Comment</label>
+        <textarea id="health_record_comment"></textarea>
+        <input type="hidden" value ="<?php echo $s_emergency_unit_id ?>" id="emergency_unit_id" />
+      </div>
+      </div>
+    <button type="button" class="bg-blue" onclick="bookHealthRecordForm()">Submit</button>  
   </form>
 </div>
 
