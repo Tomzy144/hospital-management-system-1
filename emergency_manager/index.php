@@ -189,7 +189,7 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
     <button onclick="surgicalsuiteForm(),get_surgical_suite();" class="bg-blue">Transfer to surgical suite</button>
     <button onclick="labForm(),get_lab();" class="bg-blue">Transfer to lab</button>
     <button onclick="radiologyForm(),get_radiology();" class="bg-blue">Transfer to radiology</button>
-    <button onclick="morgueForm(),get_morgue();" class="bg-blue">Transfer to Morgue</button>
+    <button onclick="morgueForm(),get_morgue();" class="bg-blue">Confirm Dead</button>
     <button onclick="isPatientStable()" class="bg-blue">Is the patient stable</button>
   </div>
 </div>
