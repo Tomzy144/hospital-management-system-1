@@ -500,12 +500,12 @@ case 'get_surgical_unit':
 
         case 'transfer_to_radiology':
             // Retrieve data from POST request
-            $patient_id = isset($_POST['patient_id']) ? $_POST['patient_id'] : null;
-            $patient_name = isset($_POST['patient_name']) ? $_POST['patient_name'] : null;
-            $comment = isset($_POST['comment']) ? $_POST['comment'] : null;
-            $time = isset($_POST['selected_time']) ? $_POST['selected_time'] : null;
-            $date = isset($_POST['selected_date']) ? $_POST['selected_date'] : null;
-            $radiology_id = isset($_POST['radiology_id']) ? $_POST['radiology_id'] : null;
+            $patient_id = $_POST['patient_id'];
+            $patient_name = $_POST['patient_name'];
+            $comment = $_POST['comment'];
+            $time = $_POST['time'] ;
+            $date = $_POST['date'];
+            $radiology_id = $_POST['radavailable'];
             $status_id = "1"; // Default status ID for new transfer
         
             // Ensure required data is present
@@ -603,16 +603,17 @@ case 'get_surgical_unit':
         
         case 'transfer_to_morgue':
             // Retrieve data from POST request and ensure required fields are provided
-            $patient_id = isset($_POST['patient_id']) ? $_POST['patient_id'] : null;
-            $patient_name = isset($_POST['patient_name']) ? $_POST['patient_name'] : null;
-            $comment = isset($_POST['comment']) ? $_POST['comment'] : null;
-            $time = isset($_POST['selected_time']) ? $_POST['selected_time'] : null;
-            $date = isset($_POST['selected_date']) ? $_POST['selected_date'] : null;
-            $morgue_id = isset($_POST['morgue_id']) ? $_POST['morgue_id'] : null;
+            $patient_id = $_POST['patient_id'] ?? null;
+            $patient_name = $_POST['patient_name'] ?? null;
+            $comment = $_POST['comment'] ?? null;
+            $time = $_POST['time'] ?? null;
+            $date = $_POST['date'] ?? null;
+            $morgue_id = $_POST['morgueavailable'] ?? null;
             $status_id = "3"; // Default status ID for new transfer
+            $emergency_unit_id = $_POST['emergency_unit_id'] ?? null;
         
             // Validate that required fields are not missing
-            if (!$patient_id || !$patient_name || !$time || !$date || !$morgue_id) {
+            if (!$patient_id || !$patient_name || !$time || !$date || !$morgue_id || !$emergency_unit_id) {
                 echo json_encode(array("success" => false, "message" => "Missing required data."));
                 break;
             }
@@ -625,48 +626,86 @@ case 'get_surgical_unit':
                 $check_result = $check_stmt->get_result();
         
                 if ($check_result->num_rows > 0) {
-                    echo json_encode(array("success" => false, "message" => "Appointment already exists."));
-                } else {
-                    // Get the appointment ID sequence
-                    $sequence = $callclass->_get_sequence_count($conn, 'MORGAPP');
-                    $array = json_decode($sequence, true);
-                    $no = $array[0]['no'];
-                    $appointment_id = 'MORGAPP' . $no;
-        
-                    // Prepare the SQL INSERT query
-                    $stmt = $conn->prepare("
-                        INSERT INTO morgue_appointment_tab
-                        (morgue_appointment_id, patient_id, patient_name, message, time_of_death, staff_id, date_of_death)
-                        VALUES (?, ?, ?, ?, ?, ?, ?)
-                    ");
-        
-                    if ($stmt) {
-                        // Bind the parameters
-                        $stmt->bind_param(
-                            "sssssss",
-                            $appointment_id,
-                            $patient_id,
-                            $patient_name,
-                            $comment,
-                            $time,
-                            $morgue_id,
-                            $date
-                        );
-        
-                        // Execute the statement and return the appropriate response
-                        if ($stmt->execute()) {
-                            echo json_encode(array("success" => true, "message" => "Patient transferred successfully."));
-                        } else {
-                            echo json_encode(array("success" => false, "message" => "Error executing query."));
-                            error_log("SQL Error: " . $stmt->error);
-                        }
-        
-                        // Close the statement
-                        $stmt->close();
+                    // Fetch the row data and check if patient is already transferred
+                    $row = $check_result->fetch_assoc();
+                    if ($row['status_id'] == "3") {
+                        echo json_encode(array("success" => true, "message" => "Patient has already been transferred."));
                     } else {
-                        echo json_encode(array("success" => false, "message" => "Error preparing query."));
-                        error_log("SQL Prepare Error: " . $conn->error);
+                        // Update record and proceed with appointment insertion
+                        $update_query = "UPDATE emergency_patient_tab SET status_id = 3, time_of_transfer = NOW(), emergency_unit_id = ? WHERE emergency_patient_id = ?";
+                        $update_stmt = $conn->prepare($update_query);
+                        if ($update_stmt) {
+                            $update_stmt->bind_param("ss", $emergency_unit_id, $patient_id);
+                            $update_stmt->execute();
+        
+                            // Insert the new morgue appointment
+                            $sequence = $callclass->_get_sequence_count($conn, 'MORGAPP');
+                            $array = json_decode($sequence, true);
+                            $no = $array[0]['no'];
+                            $appointment_id = 'MORGAPP' . $no;
+        
+                            $stmt = $conn->prepare("
+                                INSERT INTO morgue_appointment_tab
+                                (morgue_appointment_id, patient_id, patient_name, message, time_of_death, staff_id, date_of_death)
+                                VALUES (?, ?, ?, ?, ?, ?, ?)
+                            ");
+                            
+                            if ($stmt) {
+                                $stmt->bind_param("sssssss", $appointment_id, $patient_id, $patient_name, $comment, $time, $morgue_id, $date);
+                                if ($stmt->execute()) {
+                                    echo json_encode(array("success" => true, "message" => "Patient transferred successfully."));
+                                } else {
+                                    echo json_encode(array("success" => false, "message" => "Error executing query."));
+                                    error_log("SQL Error: " . $stmt->error);
+                                }
+                                $stmt->close();
+                            } else {
+                                echo json_encode(array("success" => false, "message" => "Error preparing insert query."));
+                                error_log("SQL Prepare Error: " . $conn->error);
+                            }
+                        } else {
+                            echo json_encode(array("success" => false, "message" => "Error preparing update query."));
+                            error_log("SQL Update Error: " . $conn->error);
+                        }
                     }
+                } else {
+                    // echo json_encode(array("success" => false, "message" => "No existing appointment found for this patient."));
+                      // Update record and proceed with appointment insertion
+                      $update_query = "UPDATE emergency_patient_tab SET status_id = 3, time_of_transfer = NOW(), emergency_unit_id = ? WHERE emergency_patient_id = ?";
+                      $update_stmt = $conn->prepare($update_query);
+                      if ($update_stmt) {
+                          $update_stmt->bind_param("ss", $emergency_unit_id, $patient_id);
+                          $update_stmt->execute();
+      
+                          // Insert the new morgue appointment
+                          $sequence = $callclass->_get_sequence_count($conn, 'MORGAPP');
+                          $array = json_decode($sequence, true);
+                          $no = $array[0]['no'];
+                          $appointment_id = 'MORGAPP' . $no;
+      
+                          $stmt = $conn->prepare("
+                              INSERT INTO morgue_appointment_tab
+                              (morgue_appointment_id, patient_id, patient_name, message, time_of_death, staff_id, date_of_death)
+                              VALUES (?, ?, ?, ?, ?, ?, ?)
+                          ");
+                          
+                          if ($stmt) {
+                              $stmt->bind_param("sssssss", $appointment_id, $patient_id, $patient_name, $comment, $time, $morgue_id, $date);
+                              if ($stmt->execute()) {
+                                  echo json_encode(array("success" => true, "message" => "Patient transferred successfully."));
+                              } else {
+                                  echo json_encode(array("success" => false, "message" => "Error executing query."));
+                                  error_log("SQL Error: " . $stmt->error);
+                              }
+                              $stmt->close();
+                          } else {
+                              echo json_encode(array("success" => false, "message" => "Error preparing insert query."));
+                              error_log("SQL Prepare Error: " . $conn->error);
+                          }
+                      } else {
+                          echo json_encode(array("success" => false, "message" => "Error preparing update query."));
+                          error_log("SQL Update Error: " . $conn->error);
+                      }
                 }
         
                 // Close the check statement
@@ -675,9 +714,9 @@ case 'get_surgical_unit':
                 echo json_encode(array("success" => false, "message" => "Error preparing check query."));
                 error_log("SQL Prepare Check Error: " . $conn->error);
             }
-        
             break;
-
+        
+        
 
 
             case 'transfer_to_health_record':

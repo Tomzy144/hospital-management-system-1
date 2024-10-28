@@ -431,29 +431,27 @@ $page = "emergency_unit_dash"; // Assign the value "emergency_unit_dash" to the 
   </div>
   <div class="each_sections">
   <div class="form-control">
-    <label>Selected date</label>
+    <label>Date of death</label>
     <input type="date" id="selected_date" name="selected_date" />
   </div>
   <div class="form-control">
-    <label>Selected time</label>
+    <label>Time of death</label>
     <input type="time" id="selected_time" name="selected_time" />
   </div>
   </div>
   <div class="each_sections">
 <div class="form-control">
-<label>Available radiology scientist</label>
-<select  id="select_morgue">
-<option value="">Doc. Mathew </option>
-<option value="">Doc. Prince</option>
-<option value="">Doc. Peter</option>
-<option value="">Doc. Patrick</option>
-</select>
+<label>Available Morgue Unit</label>
+  <select  id="select_morgue">
+    <option value="" >Loading</option>
+  </select>
   </div>
   </div>
   <div class="each_sections">
   <div class="form-control">
     <label>Comment</label>
     <textarea id="comment"></textarea>
+    <!-- <input type="hidden" value ="?php echo $s_emergency_unit_id ?>" id="emergency_unit_id" /> -->
   </div>
   </div>
 <button type="button" class="bg-blue" onclick="bookMorgueForm()">Submit</button>  
