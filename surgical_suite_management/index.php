@@ -398,37 +398,38 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
 
  </div>
 
- <div class="select-ward listing">
-  <h3>Select Ward</h3>
-  <div class="each_sections">
-    <div class="form-control">
-    <label>Ward 1</label>
-  <select name="" id="">
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-  </select>
-    </div>
+  <!-- <div class="select-ward listing">
+    <h3>Select Ward</h3>
+    <div class="each_sections">
+      <div class="form-control">
+      <label>Ward 1</label>
+    <select name="" id="">
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+    </select>
+      </div>
 
-    <div class="form-control">
-  <label>Ward 2</label>
-  <select name="" id="">
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-  </select>
+      <div class="form-control">
+    <label>Ward 2</label>
+    <select name="" id="">
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+    </select>
+    </div>
   </div>
- </div>
- <button class="bg-white">Book ward</button>
- <button class="bg-white" onclick="uploadSection()">Upload consent form</button>
- <button class="bg-white" onclick="bookinSection()">Book patient</button>
-</div>
+  <button class="bg-white">Book ward</button>
+  <button class="bg-white" onclick="uploadSection()">Upload consent form</button>
+ 
+  </div> -->
+  <button class="bg-white" onclick="bookinSection()">Book patient</button>
 </div>
 
 
@@ -504,7 +505,40 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                         </select>
                     </div>
                     </div>
+                    
+                    <div class="select-ward listing">
+                      <h3>Select Ward</h3>
+                      <div class="each_sections">
+                        <div class="form-control">
+                        <label>Ward 1</label>
+                      <select name="" id="">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+                        </div>
+
+                        <div class="form-control">
+                      <label>Ward 2</label>
+                      <select name="" id="">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+                      </div>
+                    </div>
+                    <button class="bg-white">Book ward</button>
+                    <button class="bg-white" onclick="uploadSection()">Upload consent form</button>
                     <button class="bg-blue">Book</button>
+                    </div>
+
+                   
                 </form>
             </div>
           </div>
