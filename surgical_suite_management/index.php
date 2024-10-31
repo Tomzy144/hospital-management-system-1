@@ -326,7 +326,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
 
  <div class="labouratoryData listing">
  <h3>LABOURATORY TESTS</h3>
-  <table>
+  <table id="lab_test_tab">
     <thead>
       <tr>
       <td>Date</td>
@@ -338,10 +338,10 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
     </thead>
     <tbody>
       <tr>
-        <td>23-08-2023</td>
-        <td>23:10</td>
-        <td>Immunoassay Single Tests</td>
-        <td> Drug Screening Test</td>
+        <td>xxxxxxxxxx</td>
+        <td>xxxxxxxxxx</td>
+        <td>xxxxxxxxxx</td>
+        <td>xxxxxxxxxx</td>
         <td>download</td>
       </tr>
     </tbody>

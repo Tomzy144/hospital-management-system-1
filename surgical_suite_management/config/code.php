@@ -95,9 +95,45 @@
             }
     
         break;
-    
-    
-    
+        case 'fetch_patient_lab_info':
+            $patient_id = $_POST['patient_id'];
+            
+            // Prepare and execute the query
+            $sql = "SELECT * FROM lab_appointment_tab WHERE patient_id = '$patient_id' AND status_id ='1'";
+            $result = mysqli_query($conn, $sql);
+            
+            if ($result) {
+                $data = [];
+        
+                // Fetch all rows and store them in the array
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $data[] = $row;
+                }
+        
+                // Check if any data was fetched
+                if (!empty($data)) {
+                    // Return the data in a response
+                    echo json_encode([
+                        'success' => true,
+                        'data' => $data
+                    ]);
+                } else {
+                    // Return an error response if no data found
+                    echo json_encode([
+                        'success' => false,
+                        'message' => 'No patient lab info found.'
+                    ]);
+                }
+            } else {
+                // Handle query execution error
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Query execution error: ' . mysqli_error($conn)
+                ]);
+            }
+        
+            break;
+        
     
 
 

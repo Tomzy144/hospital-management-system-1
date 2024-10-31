@@ -166,6 +166,10 @@ async function PatientProfiles() {
             noTableDataCell.style.textAlign = 'center';
         }else{
             patientVitalsRow(patientVitals);
+
+            fetch_patient_lab_info(patientData.patient_id);
+            // fetch_patient_radiology_info(patientData.patient_id);
+            // fetch_patient_vitals_info(patientData.patient_id);
         }
         patientProfile()
     } catch (error) {
@@ -175,6 +179,78 @@ async function PatientProfiles() {
         closeModal('patient');
     }
 }
+
+function fetch_patient_lab_info(patient_id) {
+    var action = "fetch_patient_lab_info";
+    var dataString = "action=" + action + "&patient_id=" + patient_id;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (response) {
+            if (response.success) {
+                const data = response.data; // This is now an array
+                const tableBody = document.querySelector('#lab_test_tab tbody');
+                
+                // Clear existing rows before appending new ones
+                tableBody.innerHTML = '';
+
+                // Loop through each record in the array
+                data.forEach(item => {
+                    const row = tableBody.insertRow();
+                    row.insertCell(0).textContent = item.date || 'N/A'; // Assuming date field
+                    row.insertCell(1).textContent = item.time || 'N/A'; // Assuming time field
+                    row.insertCell(2).textContent = item.kind_of_test || 'N/A'; // Assuming kind_of_test field
+                    row.insertCell(3).textContent = item.test_specific || 'N/A'; // Assuming test_specific field
+                    
+                    // Create a download link for the test result
+                    const resultCell = row.insertCell(4);
+                    if (item.test_result) {
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = item.test_result; // Assuming this is the download link
+                        downloadLink.textContent = 'Download';
+                        downloadLink.target = '_blank'; // Open link in a new tab
+                        resultCell.appendChild(downloadLink);
+                    } else {
+                        resultCell.textContent = 'N/A';
+                    }
+                });
+            } else {
+                console.error('Error:', response.message);
+                dangerMessage('Error:', response.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function patientVitalsRow(data) {
     const tableBody = document.querySelector('#patient__vitals tbody');
@@ -217,6 +293,7 @@ function patientVitalsRow(data) {
             success: function (data) {
                 if (data.check === "success") {
                     successMessage("Appointment has been moved successfully");
+                    alert("Appointment has been moved successfully");
                     // btnSubmit.html('Transfer');
                     // btnSubmit.prop('disabled', false);
                     close_tranfer_patient_lab();
