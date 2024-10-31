@@ -95,12 +95,19 @@
             }
     
         break;
+
+
         case 'fetch_patient_lab_info':
             $patient_id = $_POST['patient_id'];
             
-            // Prepare and execute the query
-            $sql = "SELECT * FROM lab_appointment_tab WHERE patient_id = '$patient_id' AND status_id ='1'";
+           // Prepare and execute the query
+            $sql = "SELECT lab_appointment_tab.*, account_appointment_confirm_tab.tests 
+            FROM lab_appointment_tab
+            JOIN account_appointment_confirm_tab ON lab_appointment_tab.patient_id = account_appointment_confirm_tab.patient_id
+            WHERE lab_appointment_tab.patient_id = '$patient_id' AND lab_appointment_tab.status_id = '1'";
+
             $result = mysqli_query($conn, $sql);
+
             
             if ($result) {
                 $data = [];
@@ -133,6 +140,84 @@
             }
         
             break;
+
+
+            case 'fetch_patient_radiology_info':
+                $patient_id = $_POST['patient_id'];
+                
+                // Prepare and execute the query using a prepared statement
+                $stmt = $conn->prepare("SELECT * FROM `radiology_appointment_tab` WHERE status_id = ? AND patient_id = ?");
+                $status_id = "1"; // Assuming '1' is an active status
+                $stmt->bind_param("ss", $status_id, $patient_id); // 'i' for integer, 's' for string
+                
+                if ($stmt->execute()) {
+                    $result = $stmt->get_result();
+                    $data = [];
+                    
+                    while ($row = $result->fetch_assoc()) {
+                        $data[] = $row;
+                    }
+                    
+                    if (!empty($data)) {
+                        echo json_encode([
+                            'success' => true,
+                            'data' => $data
+                        ]);
+                    } else {
+                        echo json_encode([
+                            'success' => false,
+                            'message' => 'No patient radiology info found.'
+                        ]);
+                    }
+                } else {
+                    echo json_encode([
+                        'success' => false,
+                        'message' => 'Query execution error: ' . $stmt->error
+                    ]);
+                }
+                
+                $stmt->close();
+                break;
+
+
+
+                case 'fetch_patient_vital_info':
+                    $patient_id = $_POST['patient_id'];
+                    
+                    // Prepare and execute the query using a prepared statement
+                    $stmt = $conn->prepare("SELECT * FROM `patient_vital_tab` WHERE patient_id = ?");
+                    $status_id = "1"; // Assuming '1' is an active status
+                    $stmt->bind_param("s", $patient_id); // 'i' for integer, 's' for string
+                    
+                    if ($stmt->execute()) {
+                        $result = $stmt->get_result();
+                        $data = [];
+                        
+                        while ($row = $result->fetch_assoc()) {
+                            $data[] = $row;
+                        }
+                        
+                        if (!empty($data)) {
+                            echo json_encode([
+                                'success' => true,
+                                'data' => $data
+                            ]);
+                        } else {
+                            echo json_encode([
+                                'success' => false,
+                                'message' => 'No patient vital info found.'
+                            ]);
+                        }
+                    } else {
+                        echo json_encode([
+                            'success' => false,
+                            'message' => 'Query execution error: ' . $stmt->error
+                        ]);
+                    }
+                    
+                    $stmt->close();
+                    break;
+            
         
     
 

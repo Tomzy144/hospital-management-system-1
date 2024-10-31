@@ -351,48 +351,51 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
  
  <div class="radiologyData listing">
  <h3>RADIOLOGY TESTS</h3>
-  <table>
-    <thead>
-      <tr>
-      <td>Date</td>
-      <td>Time</td>
-      <td>Kind of Test</td>
-      <td>Test Specific</td>
-      <td>Test Result</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>23-08-2023</td>
-        <td>23:10</td>
-        <td>Immunoassay Single Tests</td>
-        <td> Drug Screening Test</td>
-        <td>download</td>
-      </tr>
-    </tbody>
-  </table>
+
+    <table id="lab_rad_tab">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Kind of Test</th>
+                <th>Test Specific</th>
+                <th>Test Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>xxxxxxxxxx</td>
+                <td>xxxxxxxxxx</td>
+                <td>xxxxxxxxxx</td>
+                <td>xxxxxxxxxx</td>
+                <td>download</td>
+            </tr>
+        </tbody>
+    </table>
  </div>
 
  <div class="vitalData listing" style="overflow: auto">
  <h3>VITAL DATA</h3>
-  <table id="patient__vitals">
+ <table id="vital_tab">
     <thead>
-      <tr>
-      <td> 24/7</td> 	 	 	
-      <td>Temp(C)</td>
-      <td>BP(mmdg)</td>
-      <td>Pulse(bp/m)</td>
-      <td>Resp.(cm)</td>
-      <td>Spo2(%)</td>
-      <td>Weigdt(kg)</td>
-      <td>Intake(m/s)</td>
-      <td>Output</td>
-      <td>BMI</td>
-      </tr>
+        <tr>
+            <th>Date</th>
+            <th>Temp (°C)</th>
+            <th>BP (mmHg)</th>
+            <th>Pulse (bpm)</th>
+            <th>Resp. (cm)</th>
+            <th>SpO2 (%)</th>
+            <th>Weight (kg)</th>
+            <th>Intake (mL/s)</th>
+            <th>Output</th>
+            <th>BMI</th>
+        </tr>
     </thead>
     <tbody>
+        <!-- Data will be populated here -->
     </tbody>
-  </table>
+</table>
+
  </div>
 
  <div class="select-ward listing">

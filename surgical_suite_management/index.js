@@ -155,23 +155,24 @@ async function PatientProfiles() {
         const patientVitals = data.data.patient_vitals;
         console.log(patientVitals);
 
-        const tableBody = document.querySelector('#patient__vitals tbody');
-        tableBody.innerHTML = ''
-        if(patientVitals === null){
-            console.log('No data for patient')
-            const noTableData = tableBody.insertRow(0);
-            const noTableDataCell = noTableData.insertCell(0);
-            noTableDataCell.colSpan = 9;
-            noTableDataCell.innerHTML = 'No Vitals found';
-            noTableDataCell.style.textAlign = 'center';
-        }else{
-            patientVitalsRow(patientVitals);
+        // const tableBody = document.querySelector('#patient__vitals tbody');
+        // tableBody.innerHTML = ''
+        // if(patientVitals === null){
+        //     console.log('No data for patient')
+        //     const noTableData = tableBody.insertRow(0);
+        //     const noTableDataCell = noTableData.insertCell(0);
+        //     noTableDataCell.colSpan = 9;
+        //     noTableDataCell.innerHTML = 'No Vitals found';
+        //     noTableDataCell.style.textAlign = 'center';
+        // }else{
+        //     patientVitalsRow(patientVitals);
 
-            fetch_patient_lab_info(patientData.patient_id);
-            // fetch_patient_radiology_info(patientData.patient_id);
-            // fetch_patient_vitals_info(patientData.patient_id);
-        }
-        patientProfile()
+      
+        // }
+        patientProfile();
+              fetch_patient_lab_info(patientData.patient_id);
+            fetch_patient_radiology_info(patientData.patient_id);
+            fetch_patient_vitals_info(patientData.patient_id);
     } catch (error) {
         console.error("Error:", error);
     } finally {
@@ -192,7 +193,7 @@ function fetch_patient_lab_info(patient_id) {
         dataType: 'json',
         success: function (response) {
             if (response.success) {
-                const data = response.data; // This is now an array
+                const data = response.data;
                 const tableBody = document.querySelector('#lab_test_tab tbody');
                 
                 // Clear existing rows before appending new ones
@@ -201,18 +202,23 @@ function fetch_patient_lab_info(patient_id) {
                 // Loop through each record in the array
                 data.forEach(item => {
                     const row = tableBody.insertRow();
-                    row.insertCell(0).textContent = item.date || 'N/A'; // Assuming date field
-                    row.insertCell(1).textContent = item.time || 'N/A'; // Assuming time field
-                    row.insertCell(2).textContent = item.kind_of_test || 'N/A'; // Assuming kind_of_test field
-                    row.insertCell(3).textContent = item.test_specific || 'N/A'; // Assuming test_specific field
-                    
+                    row.insertCell(0).textContent = item.date || 'N/A';
+                    row.insertCell(1).textContent = item.time || 'N/A';
+
+                    // Parse the tests JSON and get the test names
+                    let testsObj = JSON.parse(item.tests || '{}');
+                    let testNames = Object.keys(testsObj).join(', ');
+                    row.insertCell(2).textContent = testNames || 'N/A';
+
+                    row.insertCell(3).textContent = item.test_specific || 'N/A';
+
                     // Create a download link for the test result
                     const resultCell = row.insertCell(4);
                     if (item.test_result) {
                         const downloadLink = document.createElement('a');
-                        downloadLink.href = item.test_result; // Assuming this is the download link
+                        downloadLink.href = item.test_result;
                         downloadLink.textContent = 'Download';
-                        downloadLink.target = '_blank'; // Open link in a new tab
+                        downloadLink.target = '_blank';
                         resultCell.appendChild(downloadLink);
                     } else {
                         resultCell.textContent = 'N/A';
@@ -225,6 +231,120 @@ function fetch_patient_lab_info(patient_id) {
         },
         error: function (xhr, status, error) {
             console.error('AJAX Error:', status, error);
+        }
+    });
+}
+
+function fetch_patient_radiology_info(patient_id) {
+    var action = "fetch_patient_radiology_info";
+    var dataString = "action=" + action + "&patient_id=" + patient_id;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (response) {
+            if (response.success) {
+                const data = response.data;
+                const tableBody = document.querySelector('#lab_rad_tab tbody');
+
+                // Check if tableBody exists
+                if (!tableBody) {
+                    console.error("Table body element not found.");
+                    return;
+                }
+
+                // Clear existing rows before appending new ones
+                tableBody.innerHTML = '';
+
+                // Loop through each record in the array
+                data.forEach(item => {
+                    const row = tableBody.insertRow();
+                    row.insertCell(0).textContent = item.date || 'N/A';
+                    row.insertCell(1).textContent = item.time || 'N/A';
+
+                    // Safely parse the tests JSON to get test names
+                    let testNames = 'N/A';
+                    try {
+                        let testsObj = JSON.parse(item.tests || '{}');
+                        testNames = Object.keys(testsObj).join(', ') || 'N/A';
+                    } catch (error) {
+                        console.error("Error parsing tests JSON:", error);
+                    }
+                    row.insertCell(2).textContent = testNames;
+
+                    row.insertCell(3).textContent = item.test_specific || 'N/A';
+
+                    // Create a download link for the test result
+                    const resultCell = row.insertCell(4);
+                    if (item.test_result) {
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = item.test_result;
+                        downloadLink.textContent = 'Download';
+                        downloadLink.target = '_blank';
+                        resultCell.appendChild(downloadLink);
+                    } else {
+                        resultCell.textContent = 'N/A';
+                    }
+                });
+            } else {
+                console.error('Error:', response.message);
+                // Use your dangerMessage function for UI error display
+                dangerMessage('Error:', response.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+            // Use your dangerMessage function for AJAX error display
+            dangerMessage('AJAX Error:', `${status}: ${error}`);
+        }
+    });
+}
+
+function fetch_patient_vitals_info(patient_id) {
+    var action = "fetch_patient_vital_info";
+    var dataString = "action=" + action + "&patient_id=" + patient_id;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function (response) {
+            if (response.success) {
+                const data = response.data;
+                const tableBody = document.getElementById('vital_tab').getElementsByTagName('tbody')[0]; // Access tbody correctly
+
+                // Clear existing rows before appending new ones
+                tableBody.innerHTML = '';
+
+                // Loop through each record in the array
+                data.forEach(item => {
+                    const row = tableBody.insertRow();
+                    row.insertCell(0).textContent = item.date || 'N/A'; // Assuming a date or timestamp field
+                    row.insertCell(1).textContent = item.temperature || 'N/A';
+                    row.insertCell(2).textContent = item.blood_pressure || 'N/A';
+                    row.insertCell(3).textContent = item.pulse || 'N/A';
+                    row.insertCell(4).textContent = item.respiratory_rate || 'N/A';
+                    row.insertCell(5).textContent = item.spO2 || 'N/A';
+                    row.insertCell(6).textContent = item.weight || 'N/A';
+                    row.insertCell(7).textContent = item.intake || 'N/A';
+                    row.insertCell(8).textContent = item.output || 'N/A';
+                    row.insertCell(9).textContent = item.bmi || 'N/A';
+                });
+            } else {
+                console.error('Error:', response.message);
+                // Use your dangerMessage function for UI error display
+                dangerMessage('Error:', response.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+            // Use your dangerMessage function for AJAX error display
+            dangerMessage('AJAX Error:', `${status}: ${error}`);
         }
     });
 }
@@ -252,21 +372,24 @@ function fetch_patient_lab_info(patient_id) {
 
 
 
-function patientVitalsRow(data) {
-    const tableBody = document.querySelector('#patient__vitals tbody');
-    const row = tableBody.insertRow();
-    row.insertCell(0).textContent = 'date'
-    row.insertCell(1).textContent = data.temperature || 'N/A'; 
-    row.insertCell(2).textContent = data.bp || 'N/A';  
-    row.insertCell(3).textContent = data.pulse || 'N/A';
-    row.insertCell(4).textContent = data.temperature || 'N/A'; 
-    row.insertCell(5).textContent = data.respiratory || 'N/A'; 
-    row.insertCell(6).textContent = data.spo2 || 'N/A'; 
-    row.insertCell(7).textContent = data.intake || 'N/A'; 
-    row.insertCell(8).textContent = data.weight || 'N/A'; 
-    row.insertCell(9).textContent = data.output || 'N/A';  
-    row.insertCell(10).textContent = data.bmi || 'N/A'; 
-}
+
+
+
+// function patientVitalsRow(data) {
+//     const tableBody = document.querySelector('#patient__vitals tbody');
+//     const row = tableBody.insertRow();
+//     row.insertCell(0).textContent = 'date'
+//     row.insertCell(1).textContent = data.temperature || 'N/A'; 
+//     row.insertCell(2).textContent = data.bp || 'N/A';  
+//     row.insertCell(3).textContent = data.pulse || 'N/A';
+//     row.insertCell(4).textContent = data.temperature || 'N/A'; 
+//     row.insertCell(5).textContent = data.respiratory || 'N/A'; 
+//     row.insertCell(6).textContent = data.spo2 || 'N/A'; 
+//     row.insertCell(7).textContent = data.intake || 'N/A'; 
+//     row.insertCell(8).textContent = data.weight || 'N/A'; 
+//     row.insertCell(9).textContent = data.output || 'N/A';  
+//     row.insertCell(10).textContent = data.bmi || 'N/A'; 
+// }
 
 
 
