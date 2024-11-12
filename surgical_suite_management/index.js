@@ -1,4 +1,5 @@
-    //PROFILE IMAGE
+
+//PROFILE IMAGE
     function displayUserProfile(){
         document.querySelector(".profile_account").classList.toggle("hide");
     };
@@ -435,5 +436,42 @@ function fetch_patient_vitals_info(patient_id) {
     }
 
 
+
+
+  function fetchProcedures(query) {
+    if (query.length < 2) {
+        document.getElementById("procedureDropdown").style.display = "none"; // Hide dropdown when input is too short
+        return;
+    }
+
+    fetch(`https://clinicaltables.nlm.nih.gov/api/procedures/v3/search?terms=${query}`)
+        .then(response => response.json())
+        .then(data => {
+            let suggestions = data[3]; // Array of procedure names
+            populateDropdown(suggestions);
+        })
+        .catch(error => console.log("Error fetching procedures:", error));
+}
+
+function populateDropdown(suggestions) {
+    const dropdown = document.getElementById("procedureDropdown");
+    dropdown.innerHTML = ""; // Clear previous options
+    if (suggestions.length === 0) {
+        dropdown.style.display = "none"; // Hide if no suggestions
+        return;
+    }
+    suggestions.forEach(surgery => {
+        const option = document.createElement("option");
+        option.value = surgery[0]; // Set the value as procedure name
+        option.text = surgery[0];
+        dropdown.appendChild(option);
+    });
+    dropdown.style.display = "block"; // Show dropdown with suggestions
+}
+
+function selectProcedure(procedure) {
+    document.getElementById("procedure").value = procedure;
+    document.getElementById("procedureDropdown").style.display = "none"; // Hide dropdown after selection
+}
 
 

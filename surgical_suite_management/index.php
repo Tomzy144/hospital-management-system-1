@@ -439,9 +439,14 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                 <form action="">
                     <div class="each_sections">
                     <div class="form-control">
-                        <label for="">Type of Surgery & Amount</label>
-                        <input type="text">
-                    </div>
+                    <label for="procedure">Type of Surgery & Amount</label>
+                    <input type="text" id="procedure" onkeyup="fetchProcedures(this.value)" autocomplete="off">
+                    <select id="procedureDropdown" size="5" style="display:none;" onchange="selectProcedure(this.value)">
+                    </select>
+
+                    
+
+                    
                     <div class="form-control">
                         <label for="">Amount</label>
                         <input type="text">
