@@ -448,7 +448,7 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
 
                     
                     <div class="form-control">
-                        <label for="">Amount</label>
+                        <label for="">Total Amount</label>
                         <input type="text">
                     </div>
                     </div>
