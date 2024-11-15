@@ -469,34 +469,22 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                     <div class="each_sections">
                     <div class="form-control">
                         <label for="">Select Surgeon</label>
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                        <select id="surgeonDropdown">
+                            <option value="">Select Surgeon</option>
                         </select>
                     </div>
                     <div class="form-control">
                         <label for="">Select Anostologist</label>
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                        <select id="anesthesiologistDropdown">
+                            <option value="">Select Anesthesiologist</option>
                         </select>
                     </div>
                     </div>
                     <div class="each_sections">
                     <div class="form-control">
                         <label for="">Select Nurse</label>
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                        <select id="nurseDropdown">
+                            <option value="">Select Nurse</option>
                         </select>
                     </div>
                     <div class="form-control">

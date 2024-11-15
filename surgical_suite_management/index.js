@@ -87,6 +87,10 @@ function bookinSection(){
     document.querySelector('#acceptedAppoitment').classList.add('hide');
     document.querySelector('.patientProfile').classList.add('hide');
     document.querySelector('.upload-section').classList.add('hide');
+    fetch_anostologist();
+    fetch_surgeon();
+    fetch_nurse();
+
 }
 function patientProfile(){
     document.querySelector('#pendingSurgeryList').classList.add('hide');
@@ -475,3 +479,113 @@ function selectProcedure(procedure) {
 }
 
 
+
+function fetch_anostologist() {
+    var action = "fetch_anostologist";
+    var dataString = "action=" + action;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function(data) {
+            if (data.check === "success") {
+                populateAnesthesiologistDropdown(data.anesthesiologists);
+                close_tranfer_patient_lab();
+            } else {
+                dangerMessage('Error: ' + data.error);
+            }
+        },
+        error: function(xhr, status, error) {
+            dangerMessage('AJAX Error: ' + error);
+        }
+    });
+}
+
+function populateAnesthesiologistDropdown(anesthesiologists) {
+    var dropdown = document.getElementById("anesthesiologistDropdown");
+    dropdown.innerHTML = ""; // Clear existing options
+
+    anesthesiologists.forEach(function(anesthesiologist) {
+        var option = document.createElement("option");
+        option.value = anesthesiologist.anostologist_id;
+        option.text = anesthesiologist.fullname;
+        dropdown.appendChild(option);
+    });
+}
+
+
+
+function fetch_surgeon() {
+    var action = "fetch_surgeon";
+    var dataString = "action=" + action;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function(data) {
+            if (data.check === "success") {
+                populatesurgeonDropdown(data.surgeon);
+                // close_tranfer_patient_lab();
+            } else {
+                dangerMessage('Error: ' + data.error);
+            }
+        },
+        error: function(xhr, status, error) {
+            dangerMessage('AJAX Error: ' + error);
+        }
+    });
+}
+
+function populatesurgeonDropdown(surgeon) {
+    var dropdown = document.getElementById("surgeonDropdown");
+    dropdown.innerHTML = ""; // Clear existing options
+
+    surgeon.forEach(function(surgeon) {
+        var option = document.createElement("option");
+        option.value = surgeon.surgeon_id;
+        option.text = surgeon.fullname;
+        dropdown.appendChild(option);
+    });
+}
+
+function fetch_nurse() {
+    var action = "fetch_nurse";
+    var dataString = "action=" + action;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function(data) {
+            if (data.check === "success") {
+                populatenurseDropdown(data.nurse);
+                // close_tranfer_patient_lab();
+            } else {
+                dangerMessage('Error: ' + data.error);
+            }
+        },
+        error: function(xhr, status, error) {
+            dangerMessage('AJAX Error: ' + error);
+        }
+    });
+}
+
+function populatenurseDropdown(nurse) {
+    var dropdown = document.getElementById("nurseDropdown");
+    dropdown.innerHTML = ""; // Clear existing options
+
+    nurse.forEach(function(nurse) {
+        var option = document.createElement("option");
+        option.value = nurse.nurse_id;
+        option.text = nurse.fullname;
+        dropdown.appendChild(option);
+    });
+}

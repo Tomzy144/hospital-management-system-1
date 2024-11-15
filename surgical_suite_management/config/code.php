@@ -219,7 +219,71 @@
                     break;
             
         
-    
+                    case "fetch_anostologist":
+                        $anesthesiologists = []; // Initialize an empty array for anesthesiologists
+                    
+                        // SQL query to get anesthesiologists from both nurse_tab and doctor_tab
+                        $query = "
+                            SELECT anostologist_id, fullname FROM nurse_tab WHERE anostology_status = '1'
+                            UNION
+                            SELECT anostologist_id, fullname FROM doctor_tab WHERE anostology_status = '1'
+                        ";
+                        
+                        $result = mysqli_query($conn, $query);
+                    
+                        if ($result) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $anesthesiologists[] = $row; // Append each anesthesiologist to the array
+                            }
+                            echo json_encode(['check' => 'success', 'anesthesiologists' => $anesthesiologists]);
+                        } else {
+                            echo json_encode(['check' => 'error', 'error' => 'Failed to fetch data from database.']);
+                        }
+        break;
+
+
+        case "fetch_surgeon":
+            $anesthesiologists = []; // Initialize an empty array for surgeon
+        
+         
+            $query = "
+                SELECT surgeon_id, fullname FROM surgeon_tab WHERE surgeon_status = '1'
+            ";
+            
+            $result = mysqli_query($conn, $query);
+        
+            if ($result) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $surgeon[] = $row; // Append each anesthesiologist to the array
+                }
+                echo json_encode(['check' => 'success', 'surgeon' => $surgeon]);
+            } else {
+                echo json_encode(['check' => 'error', 'error' => 'Failed to fetch data from database.']);
+            }
+break;
+
+
+
+            case "fetch_nurse":
+                $nurse = []; // Initialize an empty array for nurse
+
+            
+                $query = "
+                    SELECT nurse_id, fullname FROM nurse_tab WHERE status_id = '1'
+                ";
+                
+                $result = mysqli_query($conn, $query);
+
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $nurse[] = $row; // Append each anesthesiologist to the array
+                    }
+                    echo json_encode(['check' => 'success', 'nurse' => $nurse]);
+                } else {
+                    echo json_encode(['check' => 'error', 'error' => 'Failed to fetch data from database.']);
+                }
+            break;
+                    
 
 
     }
