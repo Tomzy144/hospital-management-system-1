@@ -489,12 +489,8 @@ $page = "surgical_suite_dash"; // Assign the value "surgical_suite_dash" to the 
                     </div>
                     <div class="form-control">
                         <label for="">Select Opeating Room</label>
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                        <select id="theatreDropdown" onclick="fetch_theatre()">
+                            <option value="">Select Theatre</option>
                         </select>
                     </div>
                     </div>

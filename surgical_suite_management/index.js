@@ -589,3 +589,52 @@ function populatenurseDropdown(nurse) {
         dropdown.appendChild(option);
     });
 }
+
+
+function fetch_theatre() {
+    var action = "fetch_theatre";
+    var dataString = "action=" + action;
+
+    $.ajax({
+        type: 'POST',
+        url: "config/code.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json',
+        success: function(data) {
+            if (data.check === "success") {
+                populateTheatreDropdown(data.theatre);
+                // close_tranfer_patient_lab();
+            } else {
+                dangerMessage('Error: ' + data.error);
+            }
+        },
+        error: function(xhr, status, error) {
+            dangerMessage('AJAX Error: ' + error);
+        }
+    });
+}
+
+function populateTheatreDropdown(theatre) {
+    var dropdown = document.getElementById("theatreDropdown");
+    dropdown.innerHTML = ""; // Clear existing options
+
+    theatre.forEach(function(theatre) {
+        var option = document.createElement("option");
+        option.value = theatre.theatre_id;
+        option.text = theatre.theatre_name;
+        dropdown.appendChild(option);
+    });
+}
+// function onTheatreSelect() {
+//     var theatreDropdown = document.getElementById("theatreDropdown");
+//     var selectedValue = theatreDropdown.value;
+
+//     if (selectedValue) {
+//         console.log("Selected Theatre ID: " + selectedValue);
+//         // You can add more actions here, such as fetching more data or updating other UI elements
+//     } else {
+//         console.log("No theatre selected");
+//     }
+// }
+

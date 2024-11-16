@@ -283,6 +283,28 @@ break;
                     echo json_encode(['check' => 'error', 'error' => 'Failed to fetch data from database.']);
                 }
             break;
+
+
+
+            case "fetch_theatre":
+                $theatre = []; // Initialize an empty array for theatres
+            
+                $query = "
+                    SELECT theatre_id, theatre_name FROM theatre_tab WHERE theatre_status = '1'
+                ";
+                
+                $result = mysqli_query($conn, $query);
+            
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $theatre[] = $row; // Append each theatre to the array
+                    }
+                    echo json_encode(['check' => 'success', 'theatre' => $theatre]);
+                } else {
+                    echo json_encode(['check' => 'error', 'error' => 'Failed to fetch data from database.']);
+                }
+                break;
+            
                     
 
 
