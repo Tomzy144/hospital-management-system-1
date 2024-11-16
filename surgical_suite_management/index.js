@@ -626,15 +626,3 @@ function populateTheatreDropdown(theatre) {
         dropdown.appendChild(option);
     });
 }
-// function onTheatreSelect() {
-//     var theatreDropdown = document.getElementById("theatreDropdown");
-//     var selectedValue = theatreDropdown.value;
-
-//     if (selectedValue) {
-//         console.log("Selected Theatre ID: " + selectedValue);
-//         // You can add more actions here, such as fetching more data or updating other UI elements
-//     } else {
-//         console.log("No theatre selected");
-//     }
-// }
-
