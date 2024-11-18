@@ -1,4 +1,4 @@
-<?php include '../../backend/config/connection.php';?>
+<?php include '../../../backend/config/connection.php';?>
 
 <?php require_once('session-validation.php');?>
 
@@ -51,7 +51,7 @@
 		?>
 		<script>
 			window.alert("Logging Out");
-			window.parent(location="../../frontend/superadmin");
+			window.parent(location="../../");
 		</script>
 		<?php
 	break;

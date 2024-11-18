@@ -1,5 +1,5 @@
 <?php include '../../backend/config/connection.php';?>
-<?php include '../../backend/dashboardconfig/session-validation.php';?>
+<?php include $website_url.'superadmin/dashboard/dashboardconfig/session-validation.php';?>
 <!-- ?php include '../../backend/config/user-validation.php';?> -->
 
 
@@ -79,7 +79,7 @@ l
             <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
             <div class="active_on"></div>
             </div>
-            <span>Super admin</span>
+            <span><?php echo $fullname?></span>
             <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
                  </div>
                 </div>
@@ -95,7 +95,7 @@ l
         </li>
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
           <span>Logout</span>
-          <form method="post" action="../../backend/dashboardconfig/code.php" id="logoutform">
+          <form method="post" action="dashboardconfig/code.php" id="logoutform">
             <input type="hidden" name="action" value="logout"/>
           </form>
         </li>
