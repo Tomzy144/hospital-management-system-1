@@ -3,7 +3,7 @@
         session_destroy();
 ?>
         <script>
-            window.parent.location = "<?php echo $website_url?>/";
+            window.parent.location = "<?php echo $website_url?>/superadmin";
         </script>
 <?php
         exit; // Exit the script if $s_staff_id is empty
@@ -21,7 +21,7 @@
         session_destroy();
 ?>
         <script>
-            window.parent.location = "<?php echo $website_url?>/";
+            window.parent.location = "<?php echo $website_url?>/superadmin";
         </script>
 <?php
     }
