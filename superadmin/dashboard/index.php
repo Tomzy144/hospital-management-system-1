@@ -57,35 +57,53 @@
         }
     </script>
 </head>
-<body>
-<div class="navbar">
-        <div class="display__date">
+<body onload="updateTime(),setInterval(updateTime, 1000);">
+  <div class="navbar">
+        <div class="display__date" id="timer">
+          00:00:00 00-00-00
         </div>
           <div class="profile">
             <div class="profile_account hide">
-            <img id="image_profile_account" src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="">
+            <img id="image_profile_account" src="<?php echo $website_url.'/profile_pix/staff_passport/default_passport.jpg' ?>" alt="Default Passport">
+
             <span>Super admin</span>
             <button class="btn_submit">Upload Image</button>
            </div>
 
             <div class="image">
-            <img src="../Images/24b23c44ac34e5a0fb80978cd976604c.jpg" alt="userImage"/>
+            <img id="image_profile_account1" src="<?php echo $website_url.'/profile_pix/staff_passport/default_passport.jpg' ?>" alt="Default Passport">
             <div class="active_on"></div>
             </div>
             <span><?php echo $fullname?></span>
             <i class="bi bi-caret-down-fill" onclick="displayUserProfile()"></i>
                  </div>
-                </div>
+  </div>
 
-    <div class="sidebar">
+  <div class="sidebar">
     <div class="sidebar-body">
       <ul>
         <li class="links active">
+          <span>Overview</span>
+        </li>
+        <li class="links">
           <span>Patients</span>
         </li>
         <li class="links">
-          <span>Staff manager</span>
+          <span>Staff management</span>
         </li>
+        <li class="links">
+          <span>Account</span>
+        </li>
+        <li class="links">
+          <span>Pharmacy</span>
+        </li>
+        <li class="links">
+          <span>Equipment Inventory</span>
+        </li>
+        <li class="links">
+          <span>Settings</span>
+        </li>
+
         <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
           <span>Logout</span>
           <form method="post" action="dashboardconfig/code.php" id="logoutform">
@@ -95,84 +113,8 @@
       </ul>
     </div>
   </div>
-  <div class="list_div" id="availablePatientList">
-      <div class="table_container">
-            <div class="search_bar_container">
-            <h2 class="modal__header">
-        Staff 
-      <span class="highlight">lists</span>
-      </h2>
-      <input type="text" name="" id="incomingSearchInput" placeholder="Search">
-            </div>
-            <table id="availablePatientList">
-                <thead>
-                    <tr>
-                        <td>S/N</td>
-                        <td>Profile</td>
-                        <td>StaffName</td>
-                        <td>Staff Id</td>
-                        <td>Gender</td>
-                        <td>Phone number</td>
-                        <td>Hospital card Id</td>
-                        <td>Address</td>
-                        <td>Occupation</td>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-        </table>
-  </div>
-</div>
-
-
-<!----PATIENT PROFILE-->
-<div class="modal hidden" id="patientProfile">
-      <button class="btn--close-modal" onclick="closeModal('patientProfile')">&times;</button>
-      <h2 class="modal__header">
-        Staff 
-      <span class="highlight">Profile</span>
-      </h2>
-
-    <div class="personalInfo">
-      <img src="" alt="" id="patient_passport">
-      <div class="details">
-      <button id="fullname"></button>
-      <button id="patient_id"></button>
-      <button id="phonenumber"></button>
-      <button id="status_id"></button>
-      <button id="hospital_card_id"></button>
-      <button id="family_card_id"></button>
-      <button id="gender"></button>
-      <button id="dateofbirth"></button>
-      <button id="family_disease"></button>
-      <button id="kaddress"></button>
-      <button id="kgender"></button>
-      <button id="kname"></button>
-      <button id="kphonenumber"></button>
-      <button id="krelationship"></button>
-      <button id="medical_history"></button>
-      <button id="occupation"></button>
-      <button id="past_disease"></button>
-      <button id="past_obsterics"></button>
-      <button id="past_surgery"></button>
-      <button id="sexual_history"></button>
-      <button id="more--datails">View all details</button>
-      </div>
-    </div>
-    </div>
-
-
-    <!----Staff Management--->
-    <div class="overlay hidden"></div>
 
 
 
-
-
-
-  
-
-
-    <script src="js/dashboard.js"></script>
 </body>
 </html>

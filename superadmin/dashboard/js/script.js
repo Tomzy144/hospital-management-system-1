@@ -106,6 +106,22 @@ $(function(){
 
 
 
+function updateTime() {
+    const timerElement = document.getElementById("timer");
+    const now = new Date();
+
+    // Format time as HH:MM:SS
+    const time = now.toLocaleTimeString('en-GB'); // 24-hour format
+    // Format date as DD-MM-YYYY
+    const date = now.toLocaleDateString('en-GB').split('/').join('-'); // Replacing '/' with '-'
+
+    timerElement.textContent = `${time} ${date}`;
+}
+
+
+
+
+
 
     function _update_user_profile(staff_id){
         var fullname = $('#fullname').val();
