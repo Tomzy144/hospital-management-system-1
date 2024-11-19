@@ -18,4 +18,6 @@
 <script src="<?php echo $website_url?>/superadmin/dashboard/js/jquery-v3.6.1.min.js"></script>
 <script src="<?php echo $website_url?>/superadmin/dashboard/js/aos.js"></script> 
 <script src="<?php echo $website_url?>/superadmin/dashboard/js/script.js"></script> 
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
 

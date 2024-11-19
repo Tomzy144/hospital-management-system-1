@@ -123,6 +123,8 @@ function updateTime() {
 
 
 
+
+
     function _update_user_profile(staff_id){
         var fullname = $('#fullname').val();
         var email = $('#email').val();

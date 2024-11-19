@@ -114,6 +114,50 @@
     </div>
   </div>
 
+  <section class="overview">
+    <div class="inner-div">
+      <div class="cards">
+       Total Patients
+      </div>
+      <div class="cards">
+       Total Staffs
+      </div>
+      <div class="cards">
+       Total Patients
+      </div>
+      <div class="cards">
+       Total Patients
+      </div>
+      <div class="cards">
+       Total Patients
+      </div>
+      <div class="cards">
+       Total Patients
+      </div>
+      <div class="cards">
+       Total Patients
+      </div>
+      <div class="cards">
+       Total Patients
+      </div>
+
+      <div class="cards">
+       Total Patients
+      </div>
+      <div class="cards">
+       Total Patients
+      </div>
+      <div class="cards">
+       Total Patients
+      </div>
+      <div class="cards">
+       Total Patients
+      </div>
+      
+    </div>
+  
+  </section>
+
 
 
 </body>
