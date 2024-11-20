@@ -115,49 +115,45 @@
   </div>
 
   <section class="overview">
-    <div class="inner-div">
-      <div class="cards">
-       Total Patients
-      </div>
-      <div class="cards">
-       Total Staffs
-      </div>
-      <div class="cards">
-       Total Patients
-      </div>
-      <div class="cards">
-       Total Patients
-      </div>
-      <div class="cards">
-       Total Patients
-      </div>
-      <div class="cards">
-       Total Patients
-      </div>
-      <div class="cards">
-       Total Patients
-      </div>
-      <div class="cards">
-       Total Patients
-      </div>
-
-      <div class="cards">
-       Total Patients
-      </div>
-      <div class="cards">
-       Total Patients
-      </div>
-      <div class="cards">
-       Total Patients
-      </div>
-      <div class="cards">
-       Total Patients
-      </div>
-      
+  <div class="inner-div">
+    <div class="cards">
+      <span>Information and Health Records</span>
+      <canvas id="patientsChart"></canvas>
     </div>
-  
-  </section>
+    <div class="cards">
+      <span>Total Staffs</span>
+      <canvas id="staffsChart"></canvas>
+    </div>
+    <div class="cards">
+      <span>Total Appointments</span>
+      <canvas id="appointmentsChart"></canvas>
+    </div>
+    <div class="cards">
+      <span>Pharmacy Sales</span>
+      <canvas id="pharmacyChart"></canvas>
+    </div>
+    <div class="cards">
+      <span>Pharmacy Sales</span>
+      <canvas id="pharmacyChart"></canvas>
+    </div>
+    <div class="cards">
+      <span>Pharmacy Sales</span>
+      <canvas id="pharmacyChart"></canvas>
+    </div>
+    <div class="cards">
+      <span>Pharmacy Sales</span>
+      <canvas id="pharmacyChart"></canvas>
+    </div>
+    <div class="cards">
+      <span>Pharmacy Sales</span>
+      <canvas id="pharmacyChart"></canvas>
+    </div>
+    
+  </div>
+</section>
 
+
+<?php include 'scripts_meta.php'?>
 
 
 </body>

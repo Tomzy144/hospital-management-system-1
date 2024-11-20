@@ -350,55 +350,57 @@ color: #fff;
   }
   
 
-.overview {
-  margin: 5.5rem 0 0 1%;
-  width: 80%;
-  overflow: auto;
-  background-color: #eef0f3;
-  height: auto;
-  float: right;
-}
-
-.overview .inner-div{
-  width: 99%;
-  max-width: 1300px;
-  min-height: 10px;
-  padding: 10px 0px;
-  text-align: center;
-  margin: auto;
-}
-
-.overview .inner-div .cards{
-  width: 22%;
-  vertical-align: top;
-  display: inline-block;
-  margin: auto;
-  height: 200px;
-  background-color: #006CE3;
-  border-radius: 15px;
-  color:#fff;
-  margin: 1%;
-  text-align: center;
-}
-
-/* .cards {
-  width: 22%;
-  height: 200px;
-  background-color: #006CE3;
-  border-radius: 15px;
-  color: #fff;
-  margin: 1%;
-  position: relative;
-  overflow: hidden;
-
-  padding: 1rem;
-} */
-
-.overview .inner-div .cards canvas {
-  width: 100%;
-  height: 70%; /* Adjust height as needed */
-  margin-top: 1rem;
-}
+  .overview {
+    margin: 5.5rem 0 0 1%;
+    width: 80%;
+    overflow: auto;
+    background-color: #eef0f3;
+    height: auto;
+    float: right;
+  }
+  
+  .overview .inner-div {
+    width: 99%;
+    max-width: 1300px;
+    padding: 10px 0;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; /* Ensure cards wrap properly */
+    justify-content: center; /* Center cards horizontally */
+  }
+  
+  .overview .inner-div .cards {
+    width: 22%;
+    height: 250px;
+    background-color: #006CE3;
+    border-radius: 15px;
+    color: #fff; /* Ensure text color is white */
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center canvas and text */
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+  
+  .overview .inner-div .cards canvas {
+    width: 90%; /* Ensure canvas scales properly */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 70%; /* Adjust maximum height */
+    margin-top: 1rem;
+  }
+  
+  .overview .inner-div .cards span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff; /* Make sure the label is white */
+    margin-bottom: 1rem;
+  }
+  
 
 
 
