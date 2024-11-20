@@ -372,7 +372,7 @@ color: #fff;
   
   .overview .inner-div .cards {
     width: 22%;
-    height: 250px;
+    max-height: 20%;
     background-color: #006CE3;
     border-radius: 15px;
     color: #fff; /* Ensure text color is white */
@@ -385,6 +385,11 @@ color: #fff;
     overflow: hidden;
     box-sizing: border-box;
     padding: 1rem;
+    cursor: pointer;
+  }
+
+  .overview .inner-div .cards p{
+    color: #ffff;
   }
   
   .overview .inner-div .cards canvas {

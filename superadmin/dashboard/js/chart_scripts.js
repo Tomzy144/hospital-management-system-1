@@ -1,48 +1,55 @@
  // Total Patients Chart (Doughnut)
- const patientsCtx = document.getElementById('patientsChart').getContext('2d');
- new Chart(patientsCtx, {
-   type: 'doughnut', 
-   data: {
-     labels: ['Admitted', 'Discharged', 'Outpatients','Walkin Patients'],
-     datasets: [{
-       label: 'Total Patients',
-       data: [120, 80, 50,10],
-       backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56','green'],
-     }]
-   },
-   options: {
-     responsive: true,
-     plugins: {
-       legend: {
-         labels: {
-           color: '#fff' // Legend text color to white
-         }
-       },
-       tooltip: {
-         bodyColor: '#fff', // Tooltip text color to white
-         titleColor: '#fff' // Tooltip title color to white
-       }
-     },
-     scales: {
-       x: {
-         ticks: {
-           color: '#fff' // x-axis ticks color to white
-         },
-         grid: {
-           color: '#fff' // x-axis grid lines color to white
-         }
-       },
-       y: {
-         ticks: {
-           color: '#fff' // y-axis ticks color to white
-         },
-         grid: {
-           color: '#fff' // y-axis grid lines color to white
-         }
-       }
-     }
-   }
- });
+const patientsCtx = document.getElementById('patientsChart').getContext('2d');
+const totalPatients = [120, 80, 50, 150].reduce((acc, val) => acc + val, 0); // Summing up data
+
+document.getElementById('total_patients').textContent = totalPatients;
+var inpatients = 120;
+var emergency_patients = 80;
+var outpatients =50;
+var walkin_patients =150;
+new Chart(patientsCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Inpatients:'+inpatients, 'Emergency patients:'+emergency_patients, 'Outpatients:'+outpatients, 'Walkin Patients:'+walkin_patients], // Only the categories
+    datasets: [{
+      label: 'Total Patients',
+      data: [120, 80, 50, 150],
+      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', 'green'],
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: {
+          color: '#fff' // Legend text color to white
+        }
+      },
+      tooltip: {
+        bodyColor: '#fff', // Tooltip text color to white
+        titleColor: '#fff' // Tooltip title color to white
+      }
+    }
+  },
+  plugins: [
+    {
+      id: 'customText',
+      beforeDraw: (chart) => {
+        const { width, height } = chart;
+        const ctx = chart.ctx;
+
+        ctx.save();
+        ctx.font = '16px Arial'; // Set the font style and size
+        ctx.fillStyle = '#fff'; // Set the text color
+        ctx.textAlign = 'center'; // Horizontally center the text
+        ctx.textBaseline = 'middle'; // Vertically center the text
+        ctx.restore();
+      }
+    }
+  ]
+});
+
+
 
  // Total Staffs Chart (Bar)
  const staffsCtx = document.getElementById('staffsChart').getContext('2d');

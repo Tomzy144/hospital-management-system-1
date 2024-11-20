@@ -117,7 +117,8 @@
   <section class="overview">
   <div class="inner-div">
     <div class="cards">
-      <span>Information and Health Records</span>
+      <span>Information and Health Records</span><br>
+      <p>Total Patients: <span id="total_patients"></span></p>
       <canvas id="patientsChart"></canvas>
     </div>
     <div class="cards">
