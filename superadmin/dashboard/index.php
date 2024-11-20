@@ -123,6 +123,7 @@
     </div>
     <div class="cards">
       <span>Total Staffs</span>
+      <p>Total Staffs: <span id="total_staff"></span></p>
       <canvas id="staffsChart"></canvas>
     </div>
     <div class="cards">
