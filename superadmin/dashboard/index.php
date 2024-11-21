@@ -127,28 +127,29 @@
       <canvas id="staffsChart"></canvas>
     </div>
     <div class="cards">
-      <span>Total Appointments</span>
-      <canvas id="appointmentsChart"></canvas>
+      <span>Monthly Income</span>
+      <canvas id="incomeChart"></canvas>
+
     </div>
     <div class="cards">
       <span>Pharmacy Sales</span>
       <canvas id="pharmacyChart"></canvas>
     </div>
     <div class="cards">
-      <span>Pharmacy Sales</span>
-      <canvas id="pharmacyChart"></canvas>
+      <span>Surgery</span>
+      <canvas id="surgery_rate"></canvas>
     </div>
     <div class="cards">
-      <span>Pharmacy Sales</span>
-      <canvas id="pharmacyChart"></canvas>
+      <span>Radiology Appointments</span>
+      <canvas id="radiology_appointments"></canvas>
     </div>
     <div class="cards">
-      <span>Pharmacy Sales</span>
-      <canvas id="pharmacyChart"></canvas>
+      <span>Labouratory Appointments</span>
+      <canvas id="labouratory_appointments"></canvas>
     </div>
     <div class="cards">
-      <span>Pharmacy Sales</span>
-      <canvas id="pharmacyChart"></canvas>
+      <span>Matanity</span>
+      <canvas id="matanityChart"></canvas>
     </div>
     
   </div>
