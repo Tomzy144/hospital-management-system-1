@@ -151,6 +151,11 @@
       <span>Matanity</span>
       <canvas id="matanityChart"></canvas>
     </div>
+
+    <div class="cards">
+      <span>Morgue</span>
+      <canvas id="MorgueChart"></canvas>
+    </div>
     
   </div>
 </section>

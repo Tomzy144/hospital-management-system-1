@@ -367,3 +367,69 @@ new Chart(incomeCtx, {
     }
     });
 //#endregion
+
+
+//#region maternity
+// Surgery Rates Chart (Pie)
+const maternityCtx = document.getElementById('matanityChart').getContext('2d');
+
+new Chart(maternityCtx, {
+  type: 'pie',
+  data: {
+    labels: ['Successful Labour', 'Unsuccessful Labour', 'Labour', 'Antenatal', 'Postnatal'], // Updated labels
+    datasets: [{
+      label: 'Maternity Outcomes', // Updated chart label
+      data: [70, 5, 50, 40, 30], // Example data: Adjust values as per actual stats
+      backgroundColor: ['#4CAF50', '#FF5722', '#F44336', '#2196F3', '#9C27B0'], // Colors for each segment
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: {
+          color: '#fff' // Legend text color to white
+        }
+      },
+      tooltip: {
+        bodyColor: '#fff', // Tooltip body text color to white
+        titleColor: '#fff' // Tooltip title color to white
+      }
+    }
+  }
+});
+//#endregion
+
+
+//#region morgue
+// Morgue Rates Chart (Pie)
+const morgueCtx = document.getElementById('MorgueChart').getContext('2d');
+
+new Chart(morgueCtx, {
+  type: 'pie',
+  data: {
+    labels: ['Beds', 'Cold Rooms'], // Updated labels
+    datasets: [{
+      label: 'Morgue Statistics', // Updated chart label
+      data: [60, 20], // Example data: Adjust values as per actual stats
+      backgroundColor: ['#607D8B', '#FFC107'], // Colors for each segment
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: {
+          color: '#fff' // Legend text color to white
+        }
+      },
+      tooltip: {
+        bodyColor: '#fff', // Tooltip body text color to white
+        titleColor: '#fff' // Tooltip title color to white
+      }
+    }
+  }
+});
+//#endregion
