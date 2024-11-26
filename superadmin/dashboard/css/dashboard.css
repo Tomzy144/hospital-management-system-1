@@ -407,6 +407,26 @@ color: #fff;
   }
   
 
+  .patients_info {
+    margin: 5.5rem 0 0 1%;
+    width: 80%;
+    overflow: auto;
+    background-color: #eef0f3;
+    height: auto;
+    float: right;
+  }
+  
+  .patients_info .inner-div {
+    width: 99%;
+    max-width: 1300px;
+    padding: 10px 0;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; /* Ensure cards wrap properly */
+    justify-content: center; /* Center cards horizontally */
+  }
+  
 
 
 
@@ -508,3 +528,20 @@ color: #fff;
 .hide{
   display: none;
 }
+
+
+
+.fill-form-div{
+  width: 100%;
+  
+}
+
+.fill-form-div .login-div{
+  display: none;
+}
+
+.fill-form-div #next_1{
+   display: block;
+}
+
+

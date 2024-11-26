@@ -81,85 +81,49 @@
 
   <div class="sidebar">
     <div class="sidebar-body">
-      <ul>
-        <li class="links active">
-          <span>Overview</span>
-        </li>
-        <li class="links">
-          <span>Patients</span>
-        </li>
-        <li class="links">
-          <span>Staff management</span>
-        </li>
-        <li class="links">
-          <span>Account</span>
-        </li>
-        <li class="links">
-          <span>Pharmacy</span>
-        </li>
-        <li class="links">
-          <span>Equipment Inventory</span>
-        </li>
-        <li class="links">
-          <span>Settings</span>
-        </li>
-
-        <li onclick="document.getElementById('logoutform').submit();" id="logout_link" class="links">
-          <span>Logout</span>
-          <form method="post" action="dashboardconfig/code.php" id="logoutform">
-            <input type="hidden" name="action" value="logout"/>
-          </form>
-        </li>
-      </ul>
+        <ul>
+            <li class="links active" onclick="_next_page('next_1',this)">
+                <span>Overview</span>
+            </li>
+            <li class="links" id="patients-link" onclick="_next_page('next_2',this); fetch_patients();">
+                <span>Patients</span>
+            </li>
+            <li class="links" onclick="_next_page('staff-management')">
+                <span>Staff Management</span>
+            </li>
+            <li class="links" onclick="_next_page('account')">
+                <span>Account</span>
+            </li>
+            <li class="links" onclick="_next_page('pharmacy')">
+                <span>Pharmacy</span>
+            </li>
+            <li class="links" onclick="_next_page('equipment-inventory')">
+                <span>Equipment Inventory</span>
+            </li>
+            <li class="links" onclick="_next_page('room')">
+                <span>Rooms</span>
+            </li>
+            <li class="links" onclick="_next_page('morgue')">
+                <span>Morgue</span>
+            </li>
+            <li class="links" onclick="_next_page('settings')">
+                <span>Settings</span>
+            </li>
+            <li id="logout_link" class="links" onclick="document.getElementById('logoutform').submit();">
+                <span>Logout</span>
+                <form method="post" action="dashboardconfig/code.php" id="logoutform">
+                    <input type="hidden" name="action" value="logout" />
+                </form>
+            </li>
+        </ul>
     </div>
   </div>
 
-  <section class="overview">
-  <div class="inner-div">
-    <div class="cards">
-      <span>Information and Health Records</span><br>
-      <p>Total Patients: <span id="total_patients"></span></p>
-      <canvas id="patientsChart"></canvas>
-    </div>
-    <div class="cards">
-      <span>Total Staffs</span>
-      <p>Total Staffs: <span id="total_staff"></span></p>
-      <canvas id="staffsChart"></canvas>
-    </div>
-    <div class="cards">
-      <span>Monthly Income</span>
-      <canvas id="incomeChart"></canvas>
 
-    </div>
-    <div class="cards">
-      <span>Pharmacy Sales</span>
-      <canvas id="pharmacyChart"></canvas>
-    </div>
-    <div class="cards">
-      <span>Surgery</span>
-      <canvas id="surgery_rate"></canvas>
-    </div>
-    <div class="cards">
-      <span>Radiology Appointments</span>
-      <canvas id="radiology_appointments"></canvas>
-    </div>
-    <div class="cards">
-      <span>Labouratory Appointments</span>
-      <canvas id="labouratory_appointments"></canvas>
-    </div>
-    <div class="cards">
-      <span>Matanity</span>
-      <canvas id="matanityChart"></canvas>
-    </div>
-
-    <div class="cards">
-      <span>Morgue</span>
-      <canvas id="MorgueChart"></canvas>
-    </div>
-    
-  </div>
-</section>
-
+  <div class="fill-form-div" id="more-info">
+        <?php $page='overview';?>
+    <?php include 'dashboardconfig/page-content.php';?>
+</div>
 
 <?php include 'scripts_meta.php'?>
 

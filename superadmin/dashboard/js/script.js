@@ -1,4 +1,5 @@
 
+
 function _get_page(page){
     $('#more-info').html('<div class="ajax-loader"><img src="all-images/images/ajax-loader.gif"/></div>').fadeIn('fast');
     action='get_page';
@@ -16,10 +17,28 @@ function _get_page(page){
 
 
 
-function _next_page(next_id) {
-$('.login-div').hide();
-$('#'+next_id).fadeIn(1000);
+function _next_page(next_id, element) {
+    // Hide all login divs
+    $('.login-div').hide();
+
+    // Fade in the specified page div by ID
+    $('#' + next_id).fadeIn(1000);
+
+    // Get all elements with the 'links' class
+    var links = document.querySelectorAll(".links");
+
+    // Loop through all 'links' and remove the 'active' class
+    links.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // Add 'active' class to the clicked link
+    if (element) {
+        element.classList.add('active');
+    }
 }
+
+
 
 
 
@@ -886,8 +905,24 @@ function updateTime() {
 //  });
 // }
 
+function fetch_patients() {
+    // var patients_list = document.getElementById("patients");
+    // var links = document.querySelectorAll(".links");
+    // var overview = document.getElementById("overview"); 
 
+    // if (patients_list) {
+    //     // Loop through all elements with the class 'links' and remove the 'active' class
+    //     links.forEach(link => {
+    //         link.classList.remove('active');
+    //         overview.style.display="none";
+    //     });
 
+    //     // Add the 'active' class to the 'patients_list' element
+    //     patients_list.classList.add('active');
+    // } else {
+    //     console.error("Element with ID 'patients' not found.");
+    // }
+}
 
 
 
